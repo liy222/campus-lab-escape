@@ -9,3 +9,5 @@ M5 T23 pilot <- T22,approved provider/budget; T24 experiment <- T23; T25 conclus
 M6 T28 change <- baseline v1 (engineering rehearsal unless teacher approved); T29 implement <- T28; T30 adversarial QA <- T29.
 M7 T31 release <- T30; T32 reproduction/human acceptance <- T31.
 All not otherwise marked are PLANNED. R/A matrix is retained in source sections 3 and 18 and will be mapped to actual evidence, never inferred from test counts.
+
+2026-10-01 M0 accepted: T01/T02/T03 complete; T04 isolated mock complete, real provider explicitly blocked. T05/T06 IN_PROGRESS; T07 READY; T08 waits for stable R1. Main approved contract1.0.0.

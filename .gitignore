@@ -1,0 +1,35 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+# Databases, runtime data and raw logs
+data/
+*.sqlite
+*.sqlite3
+*.db
+*.sqlite-*
+*.db-*
+*.log
+logs/
+raw-sensitive/
+# Dependencies, environments and build artifacts
+node_modules/
+frontend/dist/
+.venv/
+venv/
+env/
+envs/
+.conda/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+coverage/
+.DS_Store
+Thumbs.db

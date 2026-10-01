@@ -7,3 +7,5 @@
 - Ordinary terminal calls initially worked then failed with the same sandbox initialization failure. Approved elevated calls work. Git needs per-command `-c safe.directory=D:/深度能力` because initial .git was created by sandbox account. Do not add blanket global safe.directory.
 - Request to user sent: create private empty remote and authenticate local Git if possible. Development continues. No repository URL or pushed SHA is claimed as a completed artifact.
 - API model, credentials and paid budget requested. Mock only until configured and approved; no paid experiment will run automatically.
+
+Correction after user question: GitHub Connector DOES expose create_blob/create_tree/create_commit/update_ref/create_file. Repository creation itself is absent. An accessible pre-created repository may be synchronized via Connector without local Git login; do not require local login as the only route.

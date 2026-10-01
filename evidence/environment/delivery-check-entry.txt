@@ -1,0 +1,13 @@
+Running frontend-build��
+Evidence: D:\�������\evidence\runs\check\20261001T131102.170596Z-4c2c09cb
+Exit code: 0
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\�������\scripts\check.py", line 88, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "D:\�������\scripts\check.py", line 65, in main
+    print(log.read_text(encoding="utf-8", errors="replace"), end="")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'gbk' codec can't encode character '\u2713' in position 143: illegal multibyte sequence

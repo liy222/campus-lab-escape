@@ -1,0 +1,347 @@
+{
+  "task": "T04",
+  "scope": "isolated offline mock provider probe",
+  "executed_at": "2026-10-01T13:04:57.930550+00:00",
+  "python": "3.14.7",
+  "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+  "real_api_called": false,
+  "provider_model_id": null,
+  "provider_model_version": null,
+  "cost": null,
+  "cost_reason": "No provider/model/budget approved; no paid call was performed.",
+  "limits": {
+    "max_model_calls": 3,
+    "max_read_tools": 5,
+    "request_timeout_seconds": 0.02,
+    "turn_timeout_seconds": 0.2
+  },
+  "results": [
+    {
+      "scenario": "normal",
+      "status": "COMPLETED",
+      "model_calls": 2,
+      "read_tools": 1,
+      "elapsed_ms": 0.732,
+      "answer": "Mock inventory is empty; inspect visible objects next.",
+      "usage": null,
+      "usage_reason": "No real model call; synthetic fixtures do not have measured token usage.",
+      "events": [
+        {
+          "kind": "mock_response",
+          "call": 1,
+          "response": {
+            "answer": "",
+            "tools": [
+              "get_inventory"
+            ]
+          }
+        },
+        {
+          "kind": "mock_read",
+          "ordinal": 1,
+          "result": {
+            "tool": "get_inventory",
+            "inventory": [],
+            "source": "synthetic_fixture"
+          }
+        },
+        {
+          "kind": "mock_response",
+          "call": 2,
+          "response": {
+            "answer": "Mock inventory is empty; inspect visible objects next.",
+            "tools": []
+          }
+        }
+      ],
+      "expected": {
+        "status": "COMPLETED",
+        "model_calls": 2,
+        "read_tools": 1
+      },
+      "passed": true
+    },
+    {
+      "scenario": "timeout",
+      "status": "REQUEST_TIMEOUT",
+      "model_calls": 1,
+      "read_tools": 0,
+      "elapsed_ms": 26.234,
+      "answer": "",
+      "usage": null,
+      "usage_reason": "No real model call; synthetic fixtures do not have measured token usage.",
+      "events": [
+        {
+          "kind": "stopped",
+          "reason": "REQUEST_TIMEOUT"
+        }
+      ],
+      "expected": {
+        "status": "REQUEST_TIMEOUT",
+        "model_calls": 1,
+        "read_tools": 0
+      },
+      "passed": true
+    },
+    {
+      "scenario": "malformed",
+      "status": "MALFORMED_RESPONSE",
+      "model_calls": 1,
+      "read_tools": 0,
+      "elapsed_ms": 0.034,
+      "answer": "",
+      "usage": null,
+      "usage_reason": "No real model call; synthetic fixtures do not have measured token usage.",
+      "events": [
+        {
+          "kind": "stopped",
+          "reason": "MALFORMED_RESPONSE"
+        }
+      ],
+      "expected": {
+        "status": "MALFORMED_RESPONSE",
+        "model_calls": 1,
+        "read_tools": 0
+      },
+      "passed": true
+    },
+    {
+      "scenario": "auth",
+      "status": "AUTH_ERROR",
+      "model_calls": 1,
+      "read_tools": 0,
+      "elapsed_ms": 0.015,
+      "answer": "",
+      "usage": null,
+      "usage_reason": "No real model call; synthetic fixtures do not have measured token usage.",
+      "events": [
+        {
+          "kind": "stopped",
+          "reason": "AUTH_ERROR"
+        }
+      ],
+      "expected": {
+        "status": "AUTH_ERROR",
+        "model_calls": 1,
+        "read_tools": 0
+      },
+      "passed": true
+    },
+    {
+      "scenario": "service",
+      "status": "SERVICE_ERROR",
+      "model_calls": 1,
+      "read_tools": 0,
+      "elapsed_ms": 0.011,
+      "answer": "",
+      "usage": null,
+      "usage_reason": "No real model call; synthetic fixtures do not have measured token usage.",
+      "events": [
+        {
+          "kind": "stopped",
+          "reason": "SERVICE_ERROR"
+        }
+      ],
+      "expected": {
+        "status": "SERVICE_ERROR",
+        "model_calls": 1,
+        "read_tools": 0
+      },
+      "passed": true
+    },
+    {
+      "scenario": "loop",
+      "status": "READ_TOOL_LIMIT",
+      "model_calls": 3,
+      "read_tools": 5,
+      "elapsed_ms": 0.036,
+      "answer": "",
+      "usage": null,
+      "usage_reason": "No real model call; synthetic fixtures do not have measured token usage.",
+      "events": [
+        {
+          "kind": "mock_response",
+          "call": 1,
+          "response": {
+            "answer": "",
+            "tools": [
+              "get_inventory",
+              "get_inventory"
+            ]
+          }
+        },
+        {
+          "kind": "mock_read",
+          "ordinal": 1,
+          "result": {
+            "tool": "get_inventory",
+            "inventory": [],
+            "source": "synthetic_fixture"
+          }
+        },
+        {
+          "kind": "mock_read",
+          "ordinal": 2,
+          "result": {
+            "tool": "get_inventory",
+            "inventory": [],
+            "source": "synthetic_fixture"
+          }
+        },
+        {
+          "kind": "mock_response",
+          "call": 2,
+          "response": {
+            "answer": "",
+            "tools": [
+              "get_inventory",
+              "get_inventory"
+            ]
+          }
+        },
+        {
+          "kind": "mock_read",
+          "ordinal": 3,
+          "result": {
+            "tool": "get_inventory",
+            "inventory": [],
+            "source": "synthetic_fixture"
+          }
+        },
+        {
+          "kind": "mock_read",
+          "ordinal": 4,
+          "result": {
+            "tool": "get_inventory",
+            "inventory": [],
+            "source": "synthetic_fixture"
+          }
+        },
+        {
+          "kind": "mock_response",
+          "call": 3,
+          "response": {
+            "answer": "",
+            "tools": [
+              "get_inventory",
+              "get_inventory"
+            ]
+          }
+        },
+        {
+          "kind": "mock_read",
+          "ordinal": 5,
+          "result": {
+            "tool": "get_inventory",
+            "inventory": [],
+            "source": "synthetic_fixture"
+          }
+        }
+      ],
+      "expected": {
+        "status": "READ_TOOL_LIMIT",
+        "model_calls": 3,
+        "read_tools": 5
+      },
+      "passed": true
+    },
+    {
+      "scenario": "model_limit",
+      "status": "MODEL_CALL_LIMIT",
+      "model_calls": 3,
+      "read_tools": 3,
+      "elapsed_ms": 0.03,
+      "answer": "",
+      "usage": null,
+      "usage_reason": "No real model call; synthetic fixtures do not have measured token usage.",
+      "events": [
+        {
+          "kind": "mock_response",
+          "call": 1,
+          "response": {
+            "answer": "",
+            "tools": [
+              "get_inventory"
+            ]
+          }
+        },
+        {
+          "kind": "mock_read",
+          "ordinal": 1,
+          "result": {
+            "tool": "get_inventory",
+            "inventory": [],
+            "source": "synthetic_fixture"
+          }
+        },
+        {
+          "kind": "mock_response",
+          "call": 2,
+          "response": {
+            "answer": "",
+            "tools": [
+              "get_inventory"
+            ]
+          }
+        },
+        {
+          "kind": "mock_read",
+          "ordinal": 2,
+          "result": {
+            "tool": "get_inventory",
+            "inventory": [],
+            "source": "synthetic_fixture"
+          }
+        },
+        {
+          "kind": "mock_response",
+          "call": 3,
+          "response": {
+            "answer": "",
+            "tools": [
+              "get_inventory"
+            ]
+          }
+        },
+        {
+          "kind": "mock_read",
+          "ordinal": 3,
+          "result": {
+            "tool": "get_inventory",
+            "inventory": [],
+            "source": "synthetic_fixture"
+          }
+        }
+      ],
+      "expected": {
+        "status": "MODEL_CALL_LIMIT",
+        "model_calls": 3,
+        "read_tools": 3
+      },
+      "passed": true
+    },
+    {
+      "scenario": "illegal_tool",
+      "status": "ILLEGAL_TOOL",
+      "model_calls": 1,
+      "read_tools": 0,
+      "elapsed_ms": 0.01,
+      "answer": "",
+      "usage": null,
+      "usage_reason": "No real model call; synthetic fixtures do not have measured token usage.",
+      "events": [
+        {
+          "kind": "stopped",
+          "reason": "ILLEGAL_TOOL"
+        }
+      ],
+      "expected": {
+        "status": "ILLEGAL_TOOL",
+        "model_calls": 1,
+        "read_tools": 0
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

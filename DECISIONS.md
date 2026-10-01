@@ -4,3 +4,5 @@
 - COURSE01 OPEN: solo submission, free topic, genuine peer review alternatives, grading/deadlines and formal CH01 approval need teacher confirmation; no surrogate human evidence.
 - Human accept/reject-AI decision and playtest OPEN; do not fabricate.
 - Real provider credentials/model and paid budget OPEN. Mock first, no paid requests. Engineering CH01 rehearsal may proceed after baseline; never claim teacher approval.
+
+- M0 contract1.0.0 frozen by main after SPEC/schema review. Explicit knowledge-only inspect may add discovered clue/revision; AI progress always proposal. Control requests carry versions; reset preserves save, restore/reset new generation. Actual scaffold health/front200, build/pip check and 8 isolated mock checks accepted; no gameplay/real-AI claim.

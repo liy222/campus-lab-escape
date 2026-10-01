@@ -1,0 +1,27 @@
+{
+  "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe contracts/check_contracts.py",
+  "exit_code": 0,
+  "checks": [
+    {
+      "file": "api.schema.json",
+      "json_parse": "PASS",
+      "local_refs": "PASS",
+      "strict_objects": "PASS"
+    },
+    {
+      "file": "tools.schema.json",
+      "json_parse": "PASS",
+      "local_refs": "PASS",
+      "strict_objects": "PASS"
+    }
+  ],
+  "tool_count": 6,
+  "route_count": 9,
+  "route_refs": "PASS",
+  "public_answer_literals": "ABSENT",
+  "limitations": [
+    "jsonschema is unavailable in the specified interpreter; no dependencies installed",
+    "This is structural review, not full Draft2020-12 instance validation",
+    "No game implementation, formal QA, real model calls, or course approvals verified"
+  ]
+}

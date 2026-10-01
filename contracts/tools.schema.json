@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://campus-lab-escape.local/contracts/tools.schema.json",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "inspect"
+        },
+        "arguments": {
+          "type": "object",
+          "properties": {
+            "object_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            }
+          },
+          "required": [
+            "object_id"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "tool",
+        "arguments"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "get_inventory"
+        },
+        "arguments": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "tool",
+        "arguments"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "take"
+        },
+        "arguments": {
+          "type": "object",
+          "properties": {
+            "item_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            }
+          },
+          "required": [
+            "item_id"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "tool",
+        "arguments"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "use_item"
+        },
+        "arguments": {
+          "type": "object",
+          "properties": {
+            "item_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "target_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            }
+          },
+          "required": [
+            "item_id",
+            "target_id"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "tool",
+        "arguments"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "submit_code"
+        },
+        "arguments": {
+          "type": "object",
+          "properties": {
+            "target_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "code": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 16,
+              "pattern": "^[0-9]+$"
+            }
+          },
+          "required": [
+            "target_id",
+            "code"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "tool",
+        "arguments"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "move"
+        },
+        "arguments": {
+          "type": "object",
+          "properties": {
+            "destination_id": {
+              "enum": [
+                "R1",
+                "R2",
+                "R3",
+                "EXIT"
+              ]
+            }
+          },
+          "required": [
+            "destination_id"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "tool",
+        "arguments"
+      ],
+      "additionalProperties": false
+    }
+  ],
+  "$defs": {
+    "inspect": {
+      "type": "object",
+      "properties": {
+        "object_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        }
+      },
+      "required": [
+        "object_id"
+      ],
+      "additionalProperties": false
+    },
+    "get_inventory": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "take": {
+      "type": "object",
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        }
+      },
+      "required": [
+        "item_id"
+      ],
+      "additionalProperties": false
+    },
+    "use_item": {
+      "type": "object",
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "target_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        }
+      },
+      "required": [
+        "item_id",
+        "target_id"
+      ],
+      "additionalProperties": false
+    },
+    "submit_code": {
+      "type": "object",
+      "properties": {
+        "target_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "code": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 16,
+          "pattern": "^[0-9]+$"
+        }
+      },
+      "required": [
+        "target_id",
+        "code"
+      ],
+      "additionalProperties": false
+    },
+    "move": {
+      "type": "object",
+      "properties": {
+        "destination_id": {
+          "enum": [
+            "R1",
+            "R2",
+            "R3",
+            "EXIT"
+          ]
+        }
+      },
+      "required": [
+        "destination_id"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

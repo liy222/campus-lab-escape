@@ -1,0 +1,11 @@
+normal: COMPLETED calls=2 reads=1 passed=True
+timeout: REQUEST_TIMEOUT calls=1 reads=0 passed=True
+malformed: MALFORMED_RESPONSE calls=1 reads=0 passed=True
+auth: AUTH_ERROR calls=1 reads=0 passed=True
+service: SERVICE_ERROR calls=1 reads=0 passed=True
+loop: READ_TOOL_LIMIT calls=3 reads=5 passed=True
+model_limit: MODEL_CALL_LIMIT calls=3 reads=3 passed=True
+illegal_tool: ILLEGAL_TOOL calls=1 reads=0 passed=True
+real_api_called=False
+exit_code=0
+evidence=evidence\provider\probe-20261001T130457931379Z\report.json

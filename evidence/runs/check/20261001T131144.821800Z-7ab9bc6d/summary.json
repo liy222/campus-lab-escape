@@ -1,0 +1,75 @@
+{
+  "run_id": "20261001T131144.821800Z-7ab9bc6d",
+  "release_id": "unreleased-working-tree",
+  "suite": "deterministic",
+  "python": "3.14.7 | packaged by Anaconda, Inc. | (main, Aug 14 2026, 10:12:46) [MSC v.1942 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "provider": "mock",
+  "steps": [
+    {
+      "name": "frontend-build",
+      "command": [
+        "C:\\Windows\\system32\\cmd.exe",
+        "/d",
+        "/c",
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "--prefix",
+        "frontend",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-10-01T13:11:45.164140+00:00",
+      "completed_at": "2026-10-01T13:11:47.196737+00:00",
+      "log": "frontend-build.txt",
+      "sha256": "f10220a4bee5203ce7552ef3544662384ae3794a9e1324f1b01b63ec452035c0"
+    },
+    {
+      "name": "deterministic-tests",
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "exit_code": 4,
+      "started_at": "2026-10-01T13:11:47.203386+00:00",
+      "completed_at": "2026-10-01T13:11:47.784600+00:00",
+      "log": "deterministic-tests.txt",
+      "sha256": "03dceade4fbc69a8c97264f0df6222b0eaaec5bc9c222a2b31c3d82fd56fcd45"
+    }
+  ],
+  "source_hashes": {
+    "backend/__init__.py": "678b058c761ee3af2cdc84b51b12645d79e182e2954a54491b94a50c1d32c665",
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/main.py": "95d415e22298dd634fc560555bb959df31f41d9b077e3da0af0993f7469e8db5",
+    "backend/requirements.in": "aaced86597cd860bfa31542a848c7370a5ad8cb1de6d91c98f7ee84d3b65dd5b",
+    "backend/requirements.lock.txt": "5177bbdf079845c5c3d84174ca9b7ebef325b24e6fae66501143c34e60b80856",
+    "frontend/index.html": "4386eb2ac1270f1931d50352771cef46826b48025ac966e9aa38492196c252bb",
+    "frontend/package-lock.json": "a1cee7f94ba68bb4318f85f9f44c80b35073335d4f6ff6f67f5a177f3ac188a8",
+    "frontend/package.json": "45f61ee822911b1e8cd25dd1c53eef21e1650dcee79ecd51f362f40c63246c75",
+    "frontend/src/main.tsx": "99f4ad35be9500d1c05a21f5eddef65757ff4111f7bf297281692bf59852544e",
+    "frontend/src/style.css": "15765f56fe865547deed09fcf0d1d0d81e60b9c669e114937e05fccfcdc524aa",
+    "frontend/tsconfig.json": "cd0639f19a39ce6ff3d972d43666df37c86d9f36f45ee58d2b1098c805ceec28",
+    "frontend/vite.config.ts": "c901ba5b1af403af9f63e55713dd1c0b73080691b89dcce7fcccf1152559f3f7",
+    "scripts/__init__.py": "d300f03ba477086b372899726efa12f89fe9e99cf2f67e07116db2712514e41f",
+    "scripts/check.py": "43c53020cd73fcebc55c8d75eb532a47dfbb0cc3091a886b8e362d0f0f4f457b",
+    "scripts/dev.py": "675ec7cdbfbb32539faba61f321200c38c1ddcbde2a128d491efda2becd7b5f1",
+    "scripts/lock_dependencies.py": "2de5fffee18904faf3d28018b4381d5d1caa0828127301ae279144c284817064",
+    "scripts/reset.py": "c75fd8518aaa22b926f996c63300391577b00b08b99a71e7fb6f9f261bb6fec0",
+    "contracts/api.schema.json": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+    "contracts/build_contracts.py": "66189eeff96706f5fd38ca17a8c6761399dcaf59bf4b5c0b17db5251aca844f2",
+    "contracts/routes.json": "5f196d17db47d99180e5df729dc682982a3868e6ed34cea36d8f03bdb2c0c5ca",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "contracts/tools.schema.json": "f88d79a4d8e53c04f531e159fb47bb0d99439cd37d9409635bfef25238edb691"
+  },
+  "source_unchanged": true,
+  "exit_code": 4,
+  "status": "FAIL"
+}
