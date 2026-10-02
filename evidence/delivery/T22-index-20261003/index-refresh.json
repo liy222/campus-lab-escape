@@ -1,0 +1,33 @@
+{
+  "task": "T22 delivery index refresh",
+  "date": "2026-10-03",
+  "changed_files": [
+    "README.md",
+    "release/README.md"
+  ],
+  "scope": "Delivery documentation only",
+  "previous_sha256": {
+    "README.md": "97d94d7b18d27b2d81f4b13f208dfa84f6819476e5a3902325d9847ee91875e0",
+    "release/README.md": "932578139d648b9b3bf72e9385e451181cd9bb23d8d8cc2fed5e48eed777b785"
+  },
+  "new_sha256": {
+    "README.md": "62689fff7e48200a90b404e57a6b3ff96f29974eb34a0e3f4827ae998ebf12d4",
+    "release/README.md": "548b1bfcf43a79847f97687cf153e0a34681f0cc956995da6e1f2588862576c6"
+  },
+  "read_only_inspection": [
+    {
+      "command": "Get-Content AGENTS.md; Get-Content docs/execution-plan.md; Get-Content README.md; Get-Content release/README.md; Get-ChildItem -Force; Get-ChildItem -Recurse -File experiments,evaluation,backend,scripts,release,evidence/delivery",
+      "exit_code": 0
+    },
+    {
+      "command": "Get-Content review/findings/T22-acceptance-20261003.md; Get-Content review/findings/T26-EVAL-002-unvalidated-audit-suggestion.md; Get-ChildItem experiments/runs -Directory; Get-Content STATUS.md",
+      "exit_code": 0
+    }
+  ],
+  "limitations": [
+    "T22 QA evidence is an independent synthetic/mock engineering run; no real pilot or formal experiment has run.",
+    "T26-EVAL-002 remains open pending Evaluator Owner repair and independent re-review.",
+    "Human sign-off and teacher approval are not provided.",
+    "No overall completion claim; no public deployment."
+  ]
+}

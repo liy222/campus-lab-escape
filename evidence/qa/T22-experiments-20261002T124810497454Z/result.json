@@ -1,0 +1,459 @@
+{
+  "kind": "independent-T22-prepilot-QA",
+  "command": [
+    "D:\\深度能力\\tests\\review_e1.py",
+    "--transport-only"
+  ],
+  "python": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+  "checks": [
+    {
+      "name": "401_journal_before_transport",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "401_response_received",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "401_delivery_known",
+      "passed": false,
+      "observed": null
+    },
+    {
+      "name": "401_no_resend",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "401_wire_hash",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "403_journal_before_transport",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "403_response_received",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "403_delivery_known",
+      "passed": false,
+      "observed": null
+    },
+    {
+      "name": "403_no_resend",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "403_wire_hash",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "429_journal_before_transport",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "429_response_received",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "429_delivery_known",
+      "passed": false,
+      "observed": null
+    },
+    {
+      "name": "429_no_resend",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "429_wire_hash",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "503_journal_before_transport",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "503_response_received",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "503_delivery_known",
+      "passed": false,
+      "observed": null
+    },
+    {
+      "name": "503_no_resend",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "503_wire_hash",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "connect_error_journal_before_transport",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "connect_error_response_unknown",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "connect_error_delivery_unknown",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "connect_error_no_resend",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "connect_error_wire_hash",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "timeout_journal_before_transport",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "timeout_response_unknown",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "timeout_delivery_unknown",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "timeout_no_resend",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "timeout_wire_hash",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "malformed_200_journal_before_transport",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "malformed_200_response_received",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "malformed_200_delivery_known",
+      "passed": false,
+      "observed": null
+    },
+    {
+      "name": "malformed_200_no_resend",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "malformed_200_wire_hash",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "success_journal_before_transport",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "success_journal_before_transport",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "success_journal_before_transport",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "success_journal_before_transport",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "success_journal_before_transport",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "success_journal_before_transport",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "success_wire_hash",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "product_sources_unchanged",
+      "passed": true,
+      "observed": null
+    }
+  ],
+  "failed": [
+    {
+      "name": "401_response_received",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "401_delivery_known",
+      "passed": false,
+      "observed": null
+    },
+    {
+      "name": "403_response_received",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "403_delivery_known",
+      "passed": false,
+      "observed": null
+    },
+    {
+      "name": "429_response_received",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "429_delivery_known",
+      "passed": false,
+      "observed": null
+    },
+    {
+      "name": "503_response_received",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "503_delivery_known",
+      "passed": false,
+      "observed": null
+    },
+    {
+      "name": "connect_error_response_unknown",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "timeout_response_unknown",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "malformed_200_response_received",
+      "passed": false,
+      "observed": false
+    },
+    {
+      "name": "malformed_200_delivery_known",
+      "passed": false,
+      "observed": null
+    }
+  ],
+  "passed": false,
+  "source_before": {
+    "backend/__init__.py": "678b058c761ee3af2cdc84b51b12645d79e182e2954a54491b94a50c1d32c665",
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+    "backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "a93901a5d791cb2550ecdbe2a6cdb935a5b7126637061b6172adf9ed9c422d4a",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/rules.py": "34a3ec19ec4ba8bf764e737b2bcbaf8a72601972190de6c772614abc532cf750",
+    "backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "8c93b995d6f19d4a3657b09058656b0e4636cd723bcad69327c116d77d733386",
+    "backend/app/storage/sqlite.py": "ea094fce6270f1b47dca19885b1bb40df6275c198f13b4c5c57541e653c991ff",
+    "backend/requirements.in": "9b2bc77abffea6ca6feedb31d3adca0022043867ea0c133ac69b3927448ad2c8",
+    "backend/requirements.lock.txt": "926bd0476c6671a4783700631dc61380d08e66fdac8ae289b874cd797eb235ea",
+    "contracts/api.schema.json": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+    "contracts/build_contracts.py": "66189eeff96706f5fd38ca17a8c6761399dcaf59bf4b5c0b17db5251aca844f2",
+    "contracts/check_contracts.py": "18eabf2093b961005931528aaea2f1442466930fc677597aab0fff1dca486f97",
+    "contracts/routes.json": "5f196d17db47d99180e5df729dc682982a3868e6ed34cea36d8f03bdb2c0c5ca",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "contracts/tools.schema.json": "f88d79a4d8e53c04f531e159fb47bb0d99439cd37d9409635bfef25238edb691",
+    "contracts/validation.json": "a70cbea8d2afff0ada41f99bbb834d0b02d22ba1b2955d723fecb52f0f8a8e9e",
+    "evidence/integration/baseline_v1-manifest.json": "9c36943cbb6e4fe08b6e176445ba91835fafa79a2077c2155bbf8d613f8b07c1",
+    "experiments/.gitignore": "e5471b0e3513d1aaa9e97c2e587e5c3a983cfbfa6e8a933ac274fbf1c54a59fb",
+    "experiments/__init__.py": "385b83b10f655e782152f0a660854cf5a6f788ce00fc27d3520b062c5421f38c",
+    "experiments/check.py": "3cc6c9487325d907b91e4fac1c660c33cab2f5942cd6a69b4da2a75b05e4f79b",
+    "experiments/common.py": "a19551dee5ea9fb2b7404da40fb018a195aa20d5a9a00b8dc3d03400fe06db82",
+    "experiments/config.json": "dab8f150186590b6cfdc8ff3d4e7acbfac03af2931aeb8eda0d8f94dcb45293b",
+    "experiments/context.py": "53ebb0a49ada2cc6c4a369cc0212b3e62a3d974e7ad58ac28c6a6e5fad0570ad",
+    "experiments/experiment-card.md": "ec87784fe5af929d7429d1fb0c46934c50eb84a4bef70e3a8f56bd00f00e2583",
+    "experiments/fixtures/C01.json": "af98066002f38e6c00356754878241d0bec056306b18ce871c6e2f9e2c8a8fff",
+    "experiments/fixtures/C02.json": "eb39c3e17cff4ff5ec7e7ed76ca52e72a4df03ae054c88cef23b890fb06022eb",
+    "experiments/fixtures/C03.json": "f84c7538cc7ef412208f5cf707bb76a9750975a9b63d354f96aa1c26ce9fda2c",
+    "experiments/fixtures/C04.json": "531c01e46be753d2f7dcb7a2758b32d1300ec95aa48c1a2eda08b6481d205164",
+    "experiments/fixtures/C05.json": "b1979a2aaaa027f512e2455029391d1a86615ebfa248b7f731bfccac910ec776",
+    "experiments/fixtures/C06.json": "793c0d758ecbf5d8e3b5cee3ac92afd3605d8e264ad926bb6edd44c6601857f7",
+    "experiments/fixtures/C07.json": "7e6fe5e18c98baab8ccb66cb350db3688a25aa6a1b62efde97881fa02a33a5de",
+    "experiments/fixtures/C08.json": "fe027719dfd07821cef477b8eddb9f915b06e19fafb7fde03b8439600bbf31c8",
+    "experiments/fixtures/C09.json": "d230a0860715bad945a5c7c1dc9510b7cec58ad9128d056571cc56191eaba6aa",
+    "experiments/fixtures/C10.json": "af22cecf889c9ac855c530c077fbcff8eb57d0ca1f3d6bfe0bc756a0c46225e9",
+    "experiments/fixtures/C11.json": "3c0fc0dbcfe509e36ad657f09b3b8a574560f145ee3a20335f9d77e2ea9b8b0f",
+    "experiments/fixtures/C12.json": "9a5f0b7e96fd573695282bbb463b9c9f1424afa65b1998e09d103b28c60b4f56",
+    "experiments/fixtures/index.json": "dc4c704506ea87eb8101fbe6254c8587e4779f44ee968bfe9adce1f7aca42243",
+    "experiments/ground_truth/C01.json": "f5501e08078a628a1a57fa4eaf366bf341e3add744059ad1485e3001a15dc0ad",
+    "experiments/ground_truth/C02.json": "b34f09407349efa5c2342b8dd72528eccea8d33c2c968480e1010948d5a932a0",
+    "experiments/ground_truth/C03.json": "071be2315a14aeda55d500f82c8fe6b27fd8fee3dc0e56e2ab0db26138c0b997",
+    "experiments/ground_truth/C04.json": "682230f6cb73255988b88060c332117587a70bbce08bcf87ae97482ea6163750",
+    "experiments/ground_truth/C05.json": "882ebfd735e0f9ffc8ce1ba718ef840a449ec9130fd879a853472cbcf0c50422",
+    "experiments/ground_truth/C06.json": "10bc887f54641ad11a64a5c922f2785bd97bbca54a704a0a7f84cc6e9b417ca3",
+    "experiments/ground_truth/C07.json": "9ba8bc8ffec2b94cfb6c9e2c78e0019e64a71f97b97d35c114e6cd0fa780e788",
+    "experiments/ground_truth/C08.json": "0c86ba8482037c7baf0ce2dec25c6bc08ac6479c2c0aec19ed9452348bb2dc2f",
+    "experiments/ground_truth/C09.json": "be9563a00df19d52538ba918f7523213c7df795a93832484d4c631ef455c6ddb",
+    "experiments/ground_truth/C10.json": "e82f8e55837bf8451333e3e79e0b70b5219869f0410570f788253a50ccfe562c",
+    "experiments/ground_truth/C11.json": "79059fd7057569352950bd16b012a567c944873e43a6adbc9f673fc3712ccc14",
+    "experiments/ground_truth/C12.json": "e3ef195766818b40b2f2daaee6781866b8ab42ace87f964be7d177cebf0275a8",
+    "experiments/judger.py": "7ed3eec118f648c7a44fe8e24cfd02102e6b88cc3bf22753f172bc9125e5b0df",
+    "experiments/plan.py": "0f7a02bc26e579948b59954f63735289b24dad3d24b2d8617a23d6150b1c4698",
+    "experiments/prompt.txt": "591d9e89ef64bdf55bae7df71c8a3c2d97944a7fdc5aaf5a8d63d807ef01e0f8",
+    "experiments/README.md": "be58a06d3d1c72a8cee293a411599c38c7da5464e319591d13773e689fef032d",
+    "experiments/runner.py": "5c9787e1d7b70cc4e091d56a5c343feee61639bcdfeebcc4b3cfd67540e8275b",
+    "experiments/samples.py": "d6b9ab83900f3b17614ea816bf6c49d8dcb2fc5043faf016aff33e81feefa711",
+    "experiments/schema.json": "091b60d0a97e76da69723a18c6ba13314ded373d8dd0748c3648264e8dce19d0",
+    "experiments/summarize.py": "5cc2884de20130d0b65925cd408843935caf6c72fe2f46ed205ea263ec0ccd4d",
+    "frontend/package-lock.json": "7172b8263043ff6370b42f310e5e3b9fe6bdb17a14880f1d17558ff500177e84",
+    "frontend/package.json": "23b85643b3baef03b7280cf618d736dcc03c2e80502e5141c1029f8d43667353",
+    "frontend/src/api.ts": "1c5e2219f557504cb9d1171f64460484f3bd2e4e560116297e6dd98a31a47aa7",
+    "frontend/src/App.tsx": "a8c3bcb0de3f716b7d05d41ec22f8e08e250671c988c462c0ce4d6054c6155e8",
+    "frontend/src/Assistant.tsx": "67a65d63730223d0bc33f78726f4e3d27a3a293a8c550462be805a6b919541c9",
+    "frontend/src/main.tsx": "7254a29d506487188f48b2a7f33912401fe8510fcdc3306f0efad67ff25df159",
+    "frontend/src/style.css": "3aab25ba2b3e34e153c4368996f2db06300dbe04317f76ec1ad793cce7167900",
+    "scripts/__init__.py": "d300f03ba477086b372899726efa12f89fe9e99cf2f67e07116db2712514e41f",
+    "scripts/check.py": "c3bd234bb080d124235f43489422ee890244b972744c96eea41f274b700b9801",
+    "scripts/dev.py": "db5b89ee5f4cbd35727d00795681dbd197b58025cac84af95665c086a325760b",
+    "scripts/lock_dependencies.py": "2de5fffee18904faf3d28018b4381d5d1caa0828127301ae279144c284817064",
+    "scripts/reset.py": "ba665745d04ff4e57349b1c61c813b2f077635e2ec899b59794f3c2fd125e661"
+  },
+  "source_after": {
+    "backend/__init__.py": "678b058c761ee3af2cdc84b51b12645d79e182e2954a54491b94a50c1d32c665",
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+    "backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "a93901a5d791cb2550ecdbe2a6cdb935a5b7126637061b6172adf9ed9c422d4a",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/rules.py": "34a3ec19ec4ba8bf764e737b2bcbaf8a72601972190de6c772614abc532cf750",
+    "backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "8c93b995d6f19d4a3657b09058656b0e4636cd723bcad69327c116d77d733386",
+    "backend/app/storage/sqlite.py": "ea094fce6270f1b47dca19885b1bb40df6275c198f13b4c5c57541e653c991ff",
+    "backend/requirements.in": "9b2bc77abffea6ca6feedb31d3adca0022043867ea0c133ac69b3927448ad2c8",
+    "backend/requirements.lock.txt": "926bd0476c6671a4783700631dc61380d08e66fdac8ae289b874cd797eb235ea",
+    "contracts/api.schema.json": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+    "contracts/build_contracts.py": "66189eeff96706f5fd38ca17a8c6761399dcaf59bf4b5c0b17db5251aca844f2",
+    "contracts/check_contracts.py": "18eabf2093b961005931528aaea2f1442466930fc677597aab0fff1dca486f97",
+    "contracts/routes.json": "5f196d17db47d99180e5df729dc682982a3868e6ed34cea36d8f03bdb2c0c5ca",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "contracts/tools.schema.json": "f88d79a4d8e53c04f531e159fb47bb0d99439cd37d9409635bfef25238edb691",
+    "contracts/validation.json": "a70cbea8d2afff0ada41f99bbb834d0b02d22ba1b2955d723fecb52f0f8a8e9e",
+    "evidence/integration/baseline_v1-manifest.json": "9c36943cbb6e4fe08b6e176445ba91835fafa79a2077c2155bbf8d613f8b07c1",
+    "experiments/.gitignore": "e5471b0e3513d1aaa9e97c2e587e5c3a983cfbfa6e8a933ac274fbf1c54a59fb",
+    "experiments/__init__.py": "385b83b10f655e782152f0a660854cf5a6f788ce00fc27d3520b062c5421f38c",
+    "experiments/check.py": "3cc6c9487325d907b91e4fac1c660c33cab2f5942cd6a69b4da2a75b05e4f79b",
+    "experiments/common.py": "a19551dee5ea9fb2b7404da40fb018a195aa20d5a9a00b8dc3d03400fe06db82",
+    "experiments/config.json": "dab8f150186590b6cfdc8ff3d4e7acbfac03af2931aeb8eda0d8f94dcb45293b",
+    "experiments/context.py": "53ebb0a49ada2cc6c4a369cc0212b3e62a3d974e7ad58ac28c6a6e5fad0570ad",
+    "experiments/experiment-card.md": "ec87784fe5af929d7429d1fb0c46934c50eb84a4bef70e3a8f56bd00f00e2583",
+    "experiments/fixtures/C01.json": "af98066002f38e6c00356754878241d0bec056306b18ce871c6e2f9e2c8a8fff",
+    "experiments/fixtures/C02.json": "eb39c3e17cff4ff5ec7e7ed76ca52e72a4df03ae054c88cef23b890fb06022eb",
+    "experiments/fixtures/C03.json": "f84c7538cc7ef412208f5cf707bb76a9750975a9b63d354f96aa1c26ce9fda2c",
+    "experiments/fixtures/C04.json": "531c01e46be753d2f7dcb7a2758b32d1300ec95aa48c1a2eda08b6481d205164",
+    "experiments/fixtures/C05.json": "b1979a2aaaa027f512e2455029391d1a86615ebfa248b7f731bfccac910ec776",
+    "experiments/fixtures/C06.json": "793c0d758ecbf5d8e3b5cee3ac92afd3605d8e264ad926bb6edd44c6601857f7",
+    "experiments/fixtures/C07.json": "7e6fe5e18c98baab8ccb66cb350db3688a25aa6a1b62efde97881fa02a33a5de",
+    "experiments/fixtures/C08.json": "fe027719dfd07821cef477b8eddb9f915b06e19fafb7fde03b8439600bbf31c8",
+    "experiments/fixtures/C09.json": "d230a0860715bad945a5c7c1dc9510b7cec58ad9128d056571cc56191eaba6aa",
+    "experiments/fixtures/C10.json": "af22cecf889c9ac855c530c077fbcff8eb57d0ca1f3d6bfe0bc756a0c46225e9",
+    "experiments/fixtures/C11.json": "3c0fc0dbcfe509e36ad657f09b3b8a574560f145ee3a20335f9d77e2ea9b8b0f",
+    "experiments/fixtures/C12.json": "9a5f0b7e96fd573695282bbb463b9c9f1424afa65b1998e09d103b28c60b4f56",
+    "experiments/fixtures/index.json": "dc4c704506ea87eb8101fbe6254c8587e4779f44ee968bfe9adce1f7aca42243",
+    "experiments/ground_truth/C01.json": "f5501e08078a628a1a57fa4eaf366bf341e3add744059ad1485e3001a15dc0ad",
+    "experiments/ground_truth/C02.json": "b34f09407349efa5c2342b8dd72528eccea8d33c2c968480e1010948d5a932a0",
+    "experiments/ground_truth/C03.json": "071be2315a14aeda55d500f82c8fe6b27fd8fee3dc0e56e2ab0db26138c0b997",
+    "experiments/ground_truth/C04.json": "682230f6cb73255988b88060c332117587a70bbce08bcf87ae97482ea6163750",
+    "experiments/ground_truth/C05.json": "882ebfd735e0f9ffc8ce1ba718ef840a449ec9130fd879a853472cbcf0c50422",
+    "experiments/ground_truth/C06.json": "10bc887f54641ad11a64a5c922f2785bd97bbca54a704a0a7f84cc6e9b417ca3",
+    "experiments/ground_truth/C07.json": "9ba8bc8ffec2b94cfb6c9e2c78e0019e64a71f97b97d35c114e6cd0fa780e788",
+    "experiments/ground_truth/C08.json": "0c86ba8482037c7baf0ce2dec25c6bc08ac6479c2c0aec19ed9452348bb2dc2f",
+    "experiments/ground_truth/C09.json": "be9563a00df19d52538ba918f7523213c7df795a93832484d4c631ef455c6ddb",
+    "experiments/ground_truth/C10.json": "e82f8e55837bf8451333e3e79e0b70b5219869f0410570f788253a50ccfe562c",
+    "experiments/ground_truth/C11.json": "79059fd7057569352950bd16b012a567c944873e43a6adbc9f673fc3712ccc14",
+    "experiments/ground_truth/C12.json": "e3ef195766818b40b2f2daaee6781866b8ab42ace87f964be7d177cebf0275a8",
+    "experiments/judger.py": "7ed3eec118f648c7a44fe8e24cfd02102e6b88cc3bf22753f172bc9125e5b0df",
+    "experiments/plan.py": "0f7a02bc26e579948b59954f63735289b24dad3d24b2d8617a23d6150b1c4698",
+    "experiments/prompt.txt": "591d9e89ef64bdf55bae7df71c8a3c2d97944a7fdc5aaf5a8d63d807ef01e0f8",
+    "experiments/README.md": "be58a06d3d1c72a8cee293a411599c38c7da5464e319591d13773e689fef032d",
+    "experiments/runner.py": "5c9787e1d7b70cc4e091d56a5c343feee61639bcdfeebcc4b3cfd67540e8275b",
+    "experiments/samples.py": "d6b9ab83900f3b17614ea816bf6c49d8dcb2fc5043faf016aff33e81feefa711",
+    "experiments/schema.json": "091b60d0a97e76da69723a18c6ba13314ded373d8dd0748c3648264e8dce19d0",
+    "experiments/summarize.py": "5cc2884de20130d0b65925cd408843935caf6c72fe2f46ed205ea263ec0ccd4d",
+    "frontend/package-lock.json": "7172b8263043ff6370b42f310e5e3b9fe6bdb17a14880f1d17558ff500177e84",
+    "frontend/package.json": "23b85643b3baef03b7280cf618d736dcc03c2e80502e5141c1029f8d43667353",
+    "frontend/src/api.ts": "1c5e2219f557504cb9d1171f64460484f3bd2e4e560116297e6dd98a31a47aa7",
+    "frontend/src/App.tsx": "a8c3bcb0de3f716b7d05d41ec22f8e08e250671c988c462c0ce4d6054c6155e8",
+    "frontend/src/Assistant.tsx": "67a65d63730223d0bc33f78726f4e3d27a3a293a8c550462be805a6b919541c9",
+    "frontend/src/main.tsx": "7254a29d506487188f48b2a7f33912401fe8510fcdc3306f0efad67ff25df159",
+    "frontend/src/style.css": "3aab25ba2b3e34e153c4368996f2db06300dbe04317f76ec1ad793cce7167900",
+    "scripts/__init__.py": "d300f03ba477086b372899726efa12f89fe9e99cf2f67e07116db2712514e41f",
+    "scripts/check.py": "c3bd234bb080d124235f43489422ee890244b972744c96eea41f274b700b9801",
+    "scripts/dev.py": "db5b89ee5f4cbd35727d00795681dbd197b58025cac84af95665c086a325760b",
+    "scripts/lock_dependencies.py": "2de5fffee18904faf3d28018b4381d5d1caa0828127301ae279144c284817064",
+    "scripts/reset.py": "ba665745d04ff4e57349b1c61c813b2f077635e2ec899b59794f3c2fd125e661"
+  },
+  "actual_paid_calls": 0,
+  "network_calls": 0,
+  "credentials_read": false
+}

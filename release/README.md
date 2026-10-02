@@ -1,72 +1,47 @@
 # 交付索引
 
-此索引按六类列出当前可核验材料。文件存在表示材料已保存；各条目注明对应的验收范围。M1/R1 已独立 QA 并推送，提交 `8a7348a09561102e5cb7146ad575349a2086bb30`。M2 手动范围已由独立 T13 API、浏览器及综合 checker 验收并接受于 `165a961c9d6694ceb44c88ef86c1ea28de2eae71`。M3 已完成独立 mock QA 与一次受控真实游戏 AI 段，提交身份由 Main 在 STATUS 和冻结 manifest 中记录。M2 验收不构成 baseline_v1 正式 manifest，也不替代 `STATUS.md`。
+项目仍在正式开发，不是最终交付。此页按六类材料指向当前事实；完整范围以实际证据为准。产品冻结基线为 `7821af4efe0613c20a80ea164c1dab1c0f288bab`，T21 元数据修正已同步至 `9702fe39432aa78fc7286f796aa11c616355ec84`。T21 独立校正结论见 `review/findings/T21-identity-review-20261002.md`；产品 baseline v1 manifest 和 60 个源码身份未因元数据校正而改写。
 
 ## 源码
 
-- `backend/app/`：M2 手动游戏范围实现三房间规则及单槽保存/恢复/重置。
-- `frontend/src/`：M2 手动三房间流程与保存/恢复/重置界面。
-- `scripts/`：开发服务启动、检查与数据重置入口。
-- `backend/requirements.lock.txt`、`frontend/package-lock.json`：依赖锁定文件。
-- `backend/app/ai/` 与前端 AI 面板：M3 可在 `--provider mock` 下问答并显示行动提案；提案参数由服务端固定，玩家确认后才执行，取消不执行。AI 单轮等待上限为 45 秒。
-- 限制：mock 与真实段分开保存；受控真实段首次强制只读工具，不证明自然工具选择、完整 AI 通关或真人试玩。
+- `backend/app/`：游戏规则、API、SQLite 存储和 AI Provider。
+- `frontend/`：三房间浏览器界面；`scripts/` 提供本机开发、确定性检查、依赖锁定与受限数据重置入口。
+- `experiments/`：E1 冻结样本、A/B 输入构造、预试/正式计划、受限真实调用门和逐行汇总。入口：`python -m experiments.runner check|plan|pilot`，另有 `mock`、`run`、`summarize`、`reconcile` 子命令。真实模式需 Main 为该 phase 提供一次性有限授权。
+- `evaluation/`：只读登记证据的预检、确定性评价、判读与校准入口：`python -m evaluation.cli precheck|evaluate|calibrate`。评价器仍是 Owner 候选；T26-EVAL-002 待修复和独立复测。
+- 所有付费路径共用原账本和预算。不得以 mock/fake 或 Owner 检查描述真实模型效果。
 
 ## 契约
 
-- `docs/SPEC.md`：冻结契约说明。
-- `contracts/api.schema.json`、`contracts/tools.schema.json`、`contracts/tools.json`、`contracts/routes.json`：机器可读契约。
-- `docs/level_design.md`：离线关卡设计资料。
-- `contracts/validation.json`：契约验证材料。
-- 限制：契约规定目标行为，不证明代码已经实现或满足所有条款。
+- `docs/SPEC.md`、`docs/level_design.md`、`contracts/`：产品、关卡和机器可读接口契约。
+- `docs/execution-plan.md`：接受的项目范围与课程材料要求；计划文本不代表执行证据。
+- `evaluation/trusted/`：冻结的评价器契约、输入 pin 和可信 gate 配置。当前 `paid-gates.json` 没有付费批准。
 
 ## 检查
 
-- `evidence/environment/delivery-build.txt`、`delivery-pip-check.txt`、`delivery-http-smoke.json`：交付环境与入口检查材料。
-- `evidence/delivery/20261002-entry-review/report.json` 及同目录 `results.json`：检查入口审阅材料。
-- `evidence/frontend/T07-report-20261002.md`：前端构建和 Owner 冒烟报告。
-- `evidence/backend/m1_smoke_result_20261002.json`：后端冒烟结果。
-- `evidence/qa/20261002T062147341889Z-r1-api/run.json`：T08 独立 API QA，记录 14 项、0 失败、1 项跳过，候选源码在运行期间未变化。
-- `evidence/qa/20261002T062022883Z-r1-browser/run.json`：T08 独立浏览器 QA，记录 1280/768/390 视口运行，exit 0，候选源码在运行期间未变化；截图及检查明细在同目录。
-- `evidence/qa/20261002T070100514544Z-m2-api/run.json`：T13 独立 API，27 tests、0 failures/errors/skips，exit 0，源码运行期间未变化。
-- `evidence/qa/20261002T070144835Z-m2-browser/run.json`：T13 独立浏览器，1280/768/390 宽度完整三房间路线及存档/恢复/重置，exit 0，源码运行期间未变化。
-- `evidence/qa/check/20261002T070319.030443Z-f6c70a6e/summary.json`：综合 checker PASS、exit 0、源码未变化；前端 build 0、pytest 27 passed 与 115 subtests；有 1 条 deprecation warning。
-- `evidence/ai/runs/20261002T113705132650Z/T14-T15-owner-report.json` 与 `evidence/backend/T16-owner-recovery-report-20261002.md`：Owner mock 检查和候选稳定交接报告；非独立验收。
-- 限制：旧 T13 仅证明当时 M2；新增 M3 证据证明各自实际范围。实验、评价器、CH01、干净目录复现和真人试玩仍待完成。
+- M0 基线及 M1/M2/M3 的阶段性结果保存在 `evidence/` 与 `review/findings/`；各报告注明其实际候选版本、范围和限制。
+- T21 元数据校正独立复核：`evidence/qa/T21-identity-correction-review-20261002.json`，结论见 `review/findings/T21-identity-review-20261002.md`。
+- T22 实验工程独立复跑：`evidence/qa/T22-experiments-20261002T164754631028Z/result.json` 与 `process-result.json`；764 项通过、进程 exit 0、83 条源记录运行前后相同。它覆盖工程门、输入与合成传输，不表示任何真实实验结果。
+- T26 评价器独立复核：`review/findings/T26-EVAL-002-unvalidated-audit-suggestion.md`。179 项中一项失败，发现非法模型建议字段可能进入审计对象；Owner 修复及独立复测待完成，不能称评价器 QA 全通过。
+- 此索引没有把旧阶段的通过结果扩展到后续功能；正式 QA 只在各候选稳定后报告。
 
 ## 证据
 
-- `evidence/index-M0.json`：已接受 M0 基线证据索引。
-- `evidence/delivery/docs-index-M2-accepted-20261002.json`：M2 手动范围证据摘要与验收界限。
-- `evidence/backend/`、`evidence/frontend/`：候选实现冒烟与界面截图。
-- `evidence/qa/20261002T062147341889Z-r1-api/` 和 `evidence/qa/20261002T062022883Z-r1-browser/`：T08 最终独立 QA 证据，分别覆盖 API 与浏览器视口流程；结果见上方“检查”。早期失败运行仍保存在各自时间戳目录中，作为修复前记录。
-- `evidence/provider/handoff-20261002T064002444444Z/report.json`：独立 DeepSeek Provider adapter 工具请求及结果回传验证通过；累计 4 次真实请求，计费上限估算 ¥0.00230824，账单未核实。
-- `evidence/ai/runs/20261002T113705132650Z/`、`evidence/ai/runs/20261002T113715376935Z/`：AI Owner mock 运行证据；无付费或真实网络调用。
-- 限制：Provider adapter 与游戏段分别记录；游戏真实段为 1 轮受控联调，不能扩大成完整 AI 玩法或真人接受建议。
+- `evidence/index-M0.json` 与 `evidence/integration/baseline_v1-manifest.json`：接受的产品基线及其身份绑定。
+- `evidence/delivery/T22-index-20261003/`：本次索引更新的文件 SHA-256 与核对命令记录。
+- `evidence/qa/`、`evidence/provider/`、`evidence/backend/`、`evidence/frontend/`：阶段性 QA、Provider 和 Owner 证据。文件存在本身不扩大报告中的验收范围。
+- `experiments/runs/` 中的已有计划、mock 和合成故障记录只作本地工程材料；真实 pilot 与 formal 尚未执行。
+- `evaluation/runs/` 中的 Owner 结果不是独立验收、真实校准或正式 E1 判读。
 
 ## 变更
 
-- `DECISIONS.md`：当前决定记录。
-- `docs/task-dispatch.md`：任务分派和职责记录。
-- `evidence/integration/recovery-20261002.json`：恢复过程记录。
-- Git 当前提交和工作区状态由主负责人维护；本索引不记录未经核实的提交或发布版本。
-- 未完成：baseline_v1 产品已冻结于 `7821af4efe0613c20a80ea164c1dab1c0f288bab`，身份清单为 `evidence/integration/baseline_v1-manifest.json`；实验与评价、CH01、干净目录复现及真人签署待完成，没有整体完成声明。
+- T21 修正只更新派生验收事实和附录，保留原始 manifest 与源证据；产品提交和标签仍为 `7821af4`。
+- T22 实验范围独立 QA 已通过；预试与正式调用仍需之后的有限授权。
+- T26-EVAL-002 保持开放，由 Evaluator Owner 修复；完成后须由独立 QA 复测。
+- CH01 有限变更、对抗复测和干净目录交接尚未完成。Git 与项目状态文件由 Main 维护。
 
-## 报告
+## 报告与剩余工作
 
-- `STATUS.md`、`PLAN.md`：项目当前状态和计划。
-- `review/M0-review.md`、`review/findings/QA-R1-001-scope-gap.md`：已有评审和 QA finding。
-- `review/human-checkpoints.md`：人类检查点记录。
-- `evidence/provider/handoff-20261002T064002444444Z/report.json`：Provider adapter 验证报告；不证明游戏 AI 真实模型验收通过，账单也未核实。
-- 未完成：实验与评价、CH01、干净目录复现、真人签署。
-
-## M3 当前实际结果
-
-- `evidence/qa/20261002T120504699455Z-m3-api/run.json`：46 tests、0失败/错误/跳过，exit0。
-- `evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json`：build0、pytest46 passed/159subtests、source_unchanged=true、exit0；1条现有deprecation提示。
-- `evidence/qa/20261002T115503579Z-m3-browser/run.json`：Chrome与Edge各1280/768/390，AI加载、引用键盘定位、取消/确认、旧版本响应与确认结果不确定恢复，exit0。
-- `evidence/qa/20261002T115601621Z-m2-browser/run.json`：当前手动三宽度全程通关、存档控制回归，exit0。
-- `evidence/qa/20261002T120735404563Z-m3-real/run.json`：真实DeepSeek1turn/2calls，首次forced get_inventory→真实工具结果→开柜提案→测试玩家fixed{}confirm；重放无新call，exit0。本段保守上界0.00804624元；全项目累计0.01035448元，非账单核验。
-- 原始QA脚本的Windows资源清理、随机ID误报、极短墙钟调度断言与旧响应按钮预期失败均保留于各时间戳目录；实际产品源码未因此改变。
-- 版本绑定采用原始raw SHA256与Git blob/commit/tree及Main批准的CRLF→LF转换链；正式manifest已生成并作为实验基线。真人试玩、接受/拒绝AI建议与签署均未提供。
-
-- T21元数据修订：`evidence/integration/acceptance-M3-v2.json` 与 `baseline_v1-identity-addendum-20261002.json` 修正旧paid_scope；原facts/manifest保留。独立闭环见 `review/findings/T21-identity-review-20261002.md`，不改变产品提交。
+- `STATUS.md`、`PLAN.md`、`DECISIONS.md`：项目当前状态、计划和 Main 决策。
+- 仍待完成：评价器修复及独立复测；受控真实 pilot 和 72 行正式 E1 实验；真实 paid 校准/正式评价（须另获 Main 有限 GO）；CH01 与对抗复测；干净目录安装和恢复交接。
+- 真人试玩、玩家接受/拒绝 AI 建议的实际决策记录、人类签署和教师批准未提供，不由软件或 Agent 推断。课程确认已按用户指示从阻塞项中移除。
+- 没有公开部署。上述未决事项完成前，不声明整体交付或项目完成。

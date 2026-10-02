@@ -1,9 +1,9 @@
 # Status
 updated_at: 2026-10-02 (Asia/Shanghai)
-milestone: M3 accepted/pushed; T21 baseline_v1 product identity frozen; T22 implementation ready
+milestone: M3 accepted/pushed; T21 independently verified; T22 experiments passed original independent QA; T26 review recovering
 last_verified_release: baseline_v1 product commit7821af4efe0613c20a80ea164c1dab1c0f288bab; raw/Git binding in evidence/integration/baseline_v1-manifest.json
 remote: https://github.com/liy222/campus-lab-escape (PRIVATE, gh verified)
-last_pushed_sha: 1fe091b3310021f697a0f0fc3a8ac3b8c0fecba4 (T21metadata; product/tag7821af4, both remote exact-match verified)
+last_pushed_sha: 9702fe39432aa78fc7286f796aa11c616355ec84 (T21identitycorrection; product/tag7821af4, both remote exact-match verified)
 
 ## Actual progress
 - T01/T02/T03 accepted M0; contract and baseline level 1.0.0 frozen.
@@ -38,3 +38,9 @@ Active: experiments_design T22 implementation + evaluator_design T22/T26 impleme
 T21 independent read review found P2 T21-META-001: initial derivedacceptance-M3 paid_scope contradicted correctreal_scope. Main adds acceptance-M3-v2/correction and subsequentidentityaddendum; originalfacts/manifest hashes kept immutable. Productcommit andactualQA/realrun unchanged; independent metadata re-review pending.
 
 T21 correction independently CLOSED: QA T21-DOC-001/MainT21-META-001 via evidence/qa/T21-identity-correction-review-20261002.json exit0 andreview/findings/T21-identity-review-20261002.md. Original14artifacts/60sources/manifest unchanged; v2facts+ADD001/002 correct. Metadata commitb1bff748c2ff91c30c143cb529d04f5640659508 plus approvedaddendum now syncing; product/tag7821 unchanged.
+
+T22 experiments candidate Owner stable149checks0/72plan+6pilotplan/72mock0paid. Independent QA reproduced P2 T22-EXP-001 via43checks12fail exit1 at evidence/qa/T22-experiments-20261002T124810497454Z/result.json: HTTP-error receipt misrecordedfalse, networktimeoutcertainty shouldnull; summary missingunknownresponses. Main returned exactFinding toOwner, fixes confinedexperiments, frozenProvider unchanged; no T23 realGO. EvaluatorOwner stillfinalizing localcandidate, no realcalls.
+
+2026-10-03 recovery: prior automatic approval review could not complete a progress-file patch because of account usage limit; that patch was not executed, no unsafe-action determination was made. Access now restored. No prior live agents remain; newly spawned qa_e1_eval_recovery, experiments_recovery and evaluator_recovery each explicitly requested gpt-6.1-sol/high. Main runtime is not independently verified. Independent experiment result evidence/qa/T22-experiments-20261002T130448812384Z/result.json records passed=true/no failed checks; QA recovery verifies report and closes response-statistics Finding before finite pilot GO. Evaluator Owner95-check budget repair remains stable, original full QA evidence/qa/T26-evaluation-20261002T130450797665Z/result.json stopped with two possible harness issues; recovery QA diagnoses its own assertions then independently reviews candidate. T23 preparation only; no new real calls. Product baseline7821/tag/manifest unchanged. Human acceptance remains unprovided; course questions excluded by user direction.
+
+T22 experiments independently ACCEPTED: fresh full QA actual exit0/764 checks/83 source maps unchanged at evidence/qa/T22-experiments-20261002T164754631028Z/{result,process-result}.json; review/findings/T22-acceptance-20261003.md closes T22-EXP-001. Pilot6/formal72 inputs and plan hashes stable; preparation worst reservations0.659256/7.757232CNY, no calls. Main prepares finite pilot6 cap0.70CNY, original ledger remains6settled/upper0.01035448/remaining9.98964552/no pending/frozen. T26 independent fresh179checks actualexit1, budget matrix passes, OPEN T26-EVAL-002 audit reflects invalid suggestion fields; only Evaluator Owner repairs evaluation/, old fixture freeze stays immutable. Simple delivery_progress_index spawned actual gpt-6-luna/medium, owns README/release index and evidence/delivery/T22-index-20261003 only.

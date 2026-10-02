@@ -27,3 +27,7 @@ T04 isolatedrealAdapter DONE (actualDeepSeek toolcall/resultreturn completed); e
 2026-10-02 M2 accepted: T09-T13 complete for manual baseline1.0.0; independentAPI27/0skip, browser3width complete/save/resetrestore, overallcheck0/source stable. T14/T15/T16/T17 READY after M2 commit; T18 waits stable M3candidate.
 
 T21 DONE: baseline_v1 product commit7821af4efe0613c20a80ea164c1dab1c0f288bab accepted with explicit scopes/hash chain/unfinished items. T22 implementation READY for experiments/evaluator; T23/T24 real calls await Main finite pilot/formal gates. CH01 stays deferred until E1 on unchanged baseline.
+
+2026-10-03 authoritative continuation: T21 corrected identity independently accepted/pushed9702fe3. T22 experiments original independent review passed; recovery verifies handoff. T26 budget repair stable with independent full review recovering from possible QA harness failures. T23 finite pilot preparation active, no real GO. T24/T25/T27-T32 pending. Course confirmation excluded from blockers by user instruction; no human-signoff claim.
+
+T22 experiment sample/harness scope DONE by independent fresh764checks/actualexit0/83sourcesunchanged. Evaluator T22 fixtures frozen; T26 candidate waits OPEN T26-EVAL-002 Owner fix/independent retest. T23 READY for Main finite pilot6 gate after staged artifact audit/sync; T24 waits actual pilot. Baseline v1 remains unchanged before E1.
