@@ -3,7 +3,7 @@ updated_at: 2026-10-02 (Asia/Shanghai)
 milestone: M3 accepted/pushed; T21 baseline_v1 product identity frozen; T22 implementation ready
 last_verified_release: baseline_v1 product commit7821af4efe0613c20a80ea164c1dab1c0f288bab; raw/Git binding in evidence/integration/baseline_v1-manifest.json
 remote: https://github.com/liy222/campus-lab-escape (PRIVATE, gh verified)
-last_pushed_sha: 7821af4efe0613c20a80ea164c1dab1c0f288bab (M3; push and ls-remote exact-match verified)
+last_pushed_sha: 1fe091b3310021f697a0f0fc3a8ac3b8c0fecba4 (T21metadata; product/tag7821af4, both remote exact-match verified)
 
 ## Actual progress
 - T01/T02/T03 accepted M0; contract and baseline level 1.0.0 frozen.
@@ -32,3 +32,7 @@ Not yet completed: E1 controlled comparison, evaluator/calibration, CH01/adversa
 Recovery: read AGENTS, PLAN, DECISIONS, SPEC, docs/execution-plan.md, docs/task-dispatch.md and actual Git status. No background continuation promised after turn stops.
 
 T21 Main accepted product scope: 60 source files bound to commit/tree and Git blobs; 14 original artifacts registered; 3 ignored built resources retain runtime-only identities; 6 historical browser-run QA-file hashes explicitly remain unbound because those API harnesses were corrected later. No product hash mismatch, evidence rewriting or covert normalization. Manifest rawSHA2569c36943cbb6e4fe08b6e176445ba91835fafa79a2077c2155bbf8d613f8b07c1. Main manifest-helper two compatibility failures retained separately; no product change. T22 implementations can now start on frozen product.
+
+Active: experiments_design T22 implementation + evaluator_design T22/T26 implementation under original requestedSol/high roles; no realcalls before separately reviewed finite gates. qa_m3 independently reads/verifies T21 identity. New Luna-index spawn failed threadlimit (not counted as a model call); Main narrowDelivery docs handoff recorded.
+
+T21 independent read review found P2 T21-META-001: initial derivedacceptance-M3 paid_scope contradicted correctreal_scope. Main adds acceptance-M3-v2/correction and subsequentidentityaddendum; originalfacts/manifest hashes kept immutable. Productcommit andactualQA/realrun unchanged; independent metadata re-review pending.

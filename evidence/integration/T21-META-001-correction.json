@@ -1,0 +1,14 @@
+{
+  "finding_id": "T21-META-001",
+  "severity": "P2",
+  "type": "Main derived acceptance facts contradiction; no product/runtime change",
+  "original_artifact": "evidence/integration/acceptance-M3.json",
+  "original_raw_sha256": "57630a6d2704c5635c2bfe33114892567669dbc5b25b644f43dbf258a118d16c",
+  "corrected_artifact": "evidence/integration/acceptance-M3-v2.json",
+  "corrected_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+  "original_manifest_retained": "evidence/integration/baseline_v1-manifest.json",
+  "original_manifest_raw_sha256": "9c36943cbb6e4fe08b6e176445ba91835fafa79a2077c2155bbf8d613f8b07c1",
+  "product_commit_unchanged": "7821af4efe0613c20a80ea164c1dab1c0f288bab",
+  "independent_review_status": "Await correction identity review",
+  "proof": "evidence/qa/20261002T120735404563Z-m3-real/run.json; raw usage and ledger6settled rows preserved"
+}

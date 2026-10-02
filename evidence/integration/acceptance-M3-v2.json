@@ -1,0 +1,350 @@
+{
+  "milestone": "M3/T21 product baseline candidate",
+  "commit": "7821af4efe0613c20a80ea164c1dab1c0f288bab",
+  "kind": "Engineering progress facts; not evaluator grades, human signoff, or whole project completion",
+  "source": "docs/execution-plan.md A01-A28 retained",
+  "acceptance": [
+    {
+      "acceptance_id": "A01",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "New/reset sessions and isolation",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A02",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Current full18step manual API/browser route toEXIT",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A03",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Missingcard/fuse/key rejected unchanged",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A04",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Wrongcodes rejected with no answer in semantic content; random tracking IDs excluded, full responses retained",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A05",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Shared action/control/AI IDs, pending/completed duplicates and confirm replay; no secondProvider or side effect",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A06",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Stale revision/generation rejected with unchanged current state",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A07",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Six strict tools/read-only callbacks; unknown/extra/malformed/multiple-progress rejected",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "evidence/qa/20261002T120735404563Z-m3-real/run.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A08",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Four progress tools only proposals; cancel/confirm fixed parameters",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "evidence/qa/20261002T120735404563Z-m3-real/run.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A09",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "TTL/currentrevision/generation/invalidation including committed proposals",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A10",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Visible context/history/currentbundle and hidden-object checks; targeted disclosure evidence",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A11",
+      "status": "PARTIAL_SCOPE",
+      "actual_scope": "Known/unknown references, keyboard location and insufficient-input mock cases; real two-clue controlled segment",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "evidence/qa/20261002T120735404563Z-m3-real/run.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A12",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Current M3 actual uvicorn OS processes PID20340 stop(return1)→PID12352 sameDB restart/restore; events14→15, newgeneration/currentrev+1; manual slot/reset checks",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A13",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Invalid checksum/owner/structure/invariants/version rejected without overwriting state",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A14",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Foreign/missing/invalid token rejected across state/actions/controls/AI/confirm/cancel even nonexistent IDs",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A15",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Mock/scripted real-transport 401/service/malformed/timeout/errors; manual play preserved",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A16",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "3calls/5reads/1proposal/20single/45total/1000output/1repair; shortened real timeout and logical45sec total test disclosed",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A17",
+      "status": "PARTIAL_SCOPE",
+      "actual_scope": "Current scripted prompt/control boundaries; evaluator evidence injection and CH01 RT01-06 still pending",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A18",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Selected credential/token/path scans and typedTrace/bundle checks; no exhaustive security proof",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A19",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Sanitized real versions/input hash/read observations/proposed vs committed/event linkage; actual real result separate",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "evidence/qa/20261002T120735404563Z-m3-real/run.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A20",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Chrome+Edge 1280/768/390 AI controls, keyboard refs, late response discard and uncertain confirm no resend; manual regression",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A21",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Concurrent sameconfirm and fuseconsumptiononce; baseline key retained, CH01 keyconsumption not claimed",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A22",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Unified build+pytest46/159subtests/sourceunchanged/exit0 without credentials",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A23",
+      "status": "VERIFIED_SCOPE",
+      "actual_scope": "Reset/restore generation makes old pending and committed proposal invalid",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A24",
+      "status": "NOT_RUN",
+      "actual_scope": "E1 planned; no calls or experiment results yet",
+      "evidence": []
+    },
+    {
+      "acceptance_id": "A25",
+      "status": "NOT_RUN",
+      "actual_scope": "Evaluator design only; no implementation/calibration yet",
+      "evidence": []
+    },
+    {
+      "acceptance_id": "A26",
+      "status": "PARTIAL_SCOPE",
+      "actual_scope": "Actual evidence paths and hashes; formal Main commit/blob binding is subsequent T21 manifest",
+      "evidence": [
+        "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+        "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+        "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+        "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+        "review/findings/T18-report-20261002.md"
+      ]
+    },
+    {
+      "acceptance_id": "A27",
+      "status": "NOT_RUN",
+      "actual_scope": "CH01 planned; no v2 implementation or tests yet",
+      "evidence": []
+    },
+    {
+      "acceptance_id": "A28",
+      "status": "NOT_RUN",
+      "actual_scope": "Clean-copy reproduction and actual human acceptance not yet run",
+      "evidence": []
+    }
+  ],
+  "open_human_course": [
+    "actualhumanplaytest/accept-or-rejectAIdecision/signoff only; course eligibility/deadline/teacher approver pursuit excluded by direct user request, no teacher approval claimed"
+  ],
+  "paid_scope": "Actual isolatedT04 probe4requests plus controlledT18game1turn/2requests(firstforcedget_inventory thenauto→proposal→testplayerconfirm) accepted only within recorded scope; E1/evaluator paid calls not yet run; human acceptance not provided.",
+  "commit_binding": "Original product source binding remains baseline_v1-manifest.json; corrected facts artifact separately registered in baseline_v1-identity-addendum-20261002.json",
+  "real_scope": {
+    "turns": 1,
+    "actual_calls": 2,
+    "forced_first_tool": "get_inventory",
+    "subsequent_tool_choice": "auto",
+    "additional_upper_cny": 0.00804624,
+    "total_upper_cny": 0.01035448,
+    "provider_bill_verified": false,
+    "human_player": false
+  },
+  "human_signoff": null,
+  "limitations": [
+    "Raw source hashes and each original run scope are authoritative; manifest may bind only explicitly verified LF normalization.",
+    "M3 real controlled segment does not prove natural tool selection or whole-game AI completion.",
+    "Test harness initial failures retained; mock does not prove arbitrary natural-language safety.",
+    "Course eligibility/deadline/teacher-approval pursuit excluded by direct user request; no approval/person invented."
+  ],
+  "facts_revision": 2,
+  "supersedes_facts_path": "evidence/integration/acceptance-M3.json",
+  "supersedes_facts_raw_sha256": "57630a6d2704c5635c2bfe33114892567669dbc5b25b644f43dbf258a118d16c",
+  "correction": "T21 independent review P2: prior top-level paid_scope stale despite correct real_scope; prior immutable artifact retained, original provider/game runs unchanged."
+}
