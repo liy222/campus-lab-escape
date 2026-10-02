@@ -1,6 +1,6 @@
 # 逃离校园实验室
 
-本地网页 AI 解谜游戏。M0 工程骨架已接受，提供 React 页面、FastAPI 健康检查和统一启动/检查入口；R1 游戏接口与界面处于候选实现阶段，尚待独立 QA。当前已接受版本与证据入口见 `STATUS.md` 和 `evidence/index-M0.json`。完整范围见 `docs/SPEC.md` 与 `docs/execution-plan.md`，规格和候选代码不代表验收通过。
+本地网页解谜游戏。M0 与 M1/R1 已验收；M2 手动范围现已通过独立 API、浏览器和综合 deterministic checker，证据见 `release/README.md` 与 `evidence/delivery/docs-index-M2-accepted-20261002.json`。M2 包含三房间手动通关及单槽保存、恢复、重置。游戏 AI 尚未开放。完整范围见 `docs/SPEC.md` 与 `docs/execution-plan.md`；M2 验收不代表项目整体完成。
 
 ## 环境与安装
 
@@ -22,7 +22,7 @@ npm.cmd --prefix frontend ci
 & $ProjectPython -m scripts.dev --provider mock
 ```
 
-启动后打开 <http://127.0.0.1:5173/>，后端健康检查为 <http://127.0.0.1:8000/api/health>。前端 `/api` 请求代理到后端。当前工作区包含 R1 候选游戏页面：点击“开始新游戏”创建会话；之后可点“同步进度”或刷新页面，在当前浏览器标签页继续游戏。若当前已有会话，再开新游戏会先询问确认；确认后当前标签页切换到新会话，旧会话不能从该标签页恢复。进度关联浏览器标签页，不是服务端存档。
+启动后打开 <http://127.0.0.1:5173/>，后端健康检查为 <http://127.0.0.1:8000/api/health>。前端 `/api` 请求代理到后端。当前实现包含三房间手动游戏，可在 R1/R2/R3 探索并通关至 EXIT，也可使用网页单槽保存、恢复和重置。重置清除当前游戏进度但保留存档。点击“开始新游戏”创建会话；之后可同步或刷新当前浏览器标签页。
 
 选择场景物件后，按页面提供的操作查看、拾取或使用道具。密码框只接受 1–16 位数字；提交错误密码时页面显示服务端返回的错误信息，可根据已发现线索修正后再试。服务异常时可用“同步进度”核对服务器当前状态。
 
@@ -30,11 +30,11 @@ npm.cmd --prefix frontend ci
 
 启动脚本读取项目根目录 `D:\深度能力\.env`，文件每行使用 `KEY=VALUE`；允许空行、整行 `#` 注释和一对包围值的引号，不支持多行值、`export` 或重复键，也不会执行 Shell 语法或展开变量。已有进程环境变量优先；`--provider mock` 显式覆盖 Provider，因此上方启动命令仍用于 mock 验证。省略 `--provider` 时使用加载后的 `AI_PROVIDER`，未设置则为 mock。启动日志不打印配置值。
 
-用户选择 DeepSeek 4.1 Flash，根目录 `.env` 本地配置项为 `AI_PROVIDER=deepseek`、`MODEL_BASE_URL=https://api.deepseek.com`、`MODEL_NAME=deepseek-flash`、`MODEL_API_KEY=本地密钥`；可参考 `.env.example`。若要配置，将此组值写入项目根目录 `.env`，并仅在本机填入 API 密钥。人民币 10 元项目总预算已获授权，涵盖所有付费调用；当前 R1 候选尚未集成真实 AI，网页中的 AI 区域显示“尚未开放”，因此不能据此配置或启动真实模型调用，也不能宣称模型可用。当前没有真实模型调用验收证据。不要把 API 密钥放入前端变量、证据或仓库。
+用户选择 DeepSeek 4.1 Flash，根目录 `.env` 本地配置项为 `AI_PROVIDER=deepseek`、`MODEL_BASE_URL=https://api.deepseek.com`、`MODEL_NAME=deepseek-flash`、`MODEL_API_KEY=本地密钥`；可参考 `.env.example`。真实凭据未在此处读取或展示。人民币 10 元项目总预算已获授权，涵盖所有付费调用。独立 Provider adapter 的工具请求与结果回传已通过验证，报告记录 4 次请求，累计计费上限估算为 ¥0.00230824；账单尚未核实。该验证不包含游戏 AI 集成：游戏 AI 仍未集成、网页中仍显示“尚未开放”，当前不可用。不要把 API 密钥放入前端变量、证据或仓库。
 
 `.env` 只加载到后端子进程。前端 npm/Vite 使用单独的环境，剥离继承的模型配置及名称含 API_KEY、TOKEN、SECRET 等敏感标识的变量，仅添加本地后端代理地址。
 
-R1 后端候选提供创建会话、读取状态和手动动作接口；它使用本项目 `data/game.sqlite` 持久化数据，可用服务端环境变量 `SQLITE_PATH` 改到独立位置。能力令牌仅在创建会话响应中返回，不能复制到证据或日志。AI 区域、保存进度、恢复存档和重新开始按钮目前禁用；不要把契约中的接口或配置项当成这些网页功能已开放。
+后端使用本项目 `data/game.sqlite` 持久化数据，可用服务端环境变量 `SQLITE_PATH` 改到其他位置。能力令牌仅在创建会话响应中返回，不能复制到证据或日志。游戏 AI 区域尚未开放；独立 Provider adapter 的验证不等于游戏 AI 已集成。
 
 ## 构建与确定性检查
 
@@ -54,12 +54,12 @@ npm.cmd --prefix frontend run build
 & $ProjectPython -m scripts.reset --data-dir '.\data' --confirm
 ```
 
-确认后删除该目录中的 `game.sqlite`、`game.sqlite-wal`、`game.sqlite-shm`，清除该数据库中的所有会话和存档。其他文件、项目外路径、符号链接或目录联接均会拒绝；不会删除 Python 环境。若设置了其他数据库位置，不要把此命令用于项目外目录；请先核对数据库归属。保存与恢复流程尚待实现和独立验证。
+确认后只删除该指定目录中已知名称的 `game.sqlite`、`game.sqlite-wal`、`game.sqlite-shm`，清除其中的游戏会话与存档。目录必须位于项目 `data/` 内；含其他文件（包括总预算 ledger）的目录、项目外路径、符号链接或目录联接均会拒绝。此入口不会删除或绕过总预算数据。若使用其他数据库位置，请确认其归属并遵守目录限制。
 
 ## 当前验证范围与限制
 
-当前独立 R1 浏览器 QA 仍在进行；已有运行记录和失败批次见 `evidence/qa/`，不能据此声称浏览器验收通过。后端 QA 有实际运行报告，范围与限制见交付索引。完整手动通关、保存/恢复/重置网页流程、真实 AI、实验、CH01、干净目录交接及真人课程签署尚无完成证据。当前不可声明项目完成或发布通过。没有公开部署或 GitHub Actions。
+M2 手动范围已通过独立 API（27 tests、0 skip）、浏览器（1280/768/390 完整路线、存档/恢复/重置）和综合 checker（前端构建、27 tests、115 subtests；源码运行期间未变化）。AI 游戏集成与提案、实验、CH01、干净目录交接及真人课程签署仍未完成；不能据此声明项目整体完成或发布通过。没有公开部署或 GitHub Actions。
 
 ## 交付材料索引
 
-按六类查看当前材料与未完成项：[`release/README.md`](release/README.md)。M0 正式基线证据入口为 [`evidence/index-M0.json`](evidence/index-M0.json)；尚未生成 R1 正式发布清单。
+按六类查看当前材料与未完成项：[`release/README.md`](release/README.md)。M0 基线入口为 [`evidence/index-M0.json`](evidence/index-M0.json)；尚未生成 baseline_v1 正式 manifest。

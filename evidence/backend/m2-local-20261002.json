@@ -1,0 +1,199 @@
+{
+  "scope": "Backend owner local verification for T09/T11/T12; not independent T13 QA",
+  "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -m evidence.backend.m2_local",
+  "started_at": "2026-10-02T06:43:28.555079+00:00",
+  "paid_model_calls": 0,
+  "checks": [
+    {
+      "check": "initial hidden item, missing card, locked/nonadjacent move, wrong code and missing save fail without progress",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 1, revision 1",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 2, revision 2",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 3, revision 3",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 4, revision 4",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 5, revision 5",
+      "passed": true
+    },
+    {
+      "check": "R2 unpowered screen discovers nothing, missing fuse/key and unpowered code reject",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 6, revision 6",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 7, revision 7",
+      "passed": true
+    },
+    {
+      "check": "fuse consumed once; installed reuse unchanged; power does not auto-discover screen clue",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 8, revision 8",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 9, revision 9",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 10, revision 10",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 11, revision 11",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 12, revision 12",
+      "passed": true
+    },
+    {
+      "check": "baseline key retained and wrong-code failure replay keeps original event with current projection",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 13, revision 13",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 14, revision 14",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 15, revision 15",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 16, revision 16",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 17, revision 17",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 18, revision 18",
+      "passed": true
+    },
+    {
+      "check": "won blocks four progress tools; inventory remains readable and no objects can be inspected",
+      "passed": true
+    },
+    {
+      "check": "save leaves revision unchanged, replays original slot and shares request namespace with actions",
+      "passed": true
+    },
+    {
+      "check": "reset increments current revision, changes generation, clears progress and preserves slot; old retries rejected",
+      "passed": true
+    },
+    {
+      "check": "rebuilt service retains session and slot; restore takes current revision plus one, fresh generation and ordered clues",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: bad hash",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: foreign owner",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: schema mismatch",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: level mismatch",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: duplicate inventory",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: unknown item",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: held installed fuse",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: baseline missing key",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: status inconsistency",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: unknown flag",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: wrong flag type",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: extra revision field",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: missing field",
+      "passed": true
+    },
+    {
+      "check": "corrupt snapshot rejected and immutable failure replay: wrong saved timestamp",
+      "passed": true
+    },
+    {
+      "check": "event sequence continues across controls and corruption rejections",
+      "passed": true
+    },
+    {
+      "check": "single slot isolation and all four mutations reject foreign capabilities",
+      "passed": true
+    },
+    {
+      "check": "strict control/action input forbids uploaded snapshots and client flags",
+      "passed": true
+    },
+    {
+      "check": "same-version concurrent changed actions commit once and reject loser as STALE_STATE",
+      "passed": true
+    },
+    {
+      "check": "concurrent same request has one immutable receipt and one replay",
+      "passed": true
+    },
+    {
+      "check": "save replay projects current overwritten slot, not stale saved summary",
+      "passed": true
+    }
+  ],
+  "exit_code": 0,
+  "finished_at": "2026-10-02T06:43:30.043074+00:00",
+  "source_sha256": {
+    "backend\\app\\domain\\rules.py": "b3743c8dfac83ea7ccf6b361058d61bb19ea2b292e4651e0bc94ec30e43b1d9d",
+    "backend\\app\\storage\\sqlite.py": "0d6bdc00e94b8f1aa63ca319bd2fbccda8f6d3d19d4746ed65ce69c37b5dd307",
+    "backend\\app\\api\\routes.py": "21484a73461f482755db5dccaabdb8ac9da254da5c48d1c188b940a2c933717c"
+  }
+}

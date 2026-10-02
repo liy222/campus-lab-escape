@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-02 Asia/Shanghai",
+  "status": "accepted_manual_m2_scope",
+  "scope": "Three-room manual gameplay and single-slot save/restore/reset only; no gameplay AI or proposal endpoints accepted.",
+  "candidate_head_at_qa": "6b775f5a42c6f177869c77f7ddbafedf7b1af630",
+  "working_tree_commit": null,
+  "evidence": [
+    {
+      "path": "evidence/qa/20261002T070100514544Z-m2-api/run.json",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -m tests.qa_runner --suite m2 --candidate m2-manual-frozen-working-tree-20261002",
+      "exit_code": 0,
+      "result": "27 tests; 0 failures, errors, or skips; source_changed_during_run=false"
+    },
+    {
+      "path": "evidence/qa/20261002T070144835Z-m2-browser/run.json",
+      "command": "C:\\Program Files\\nodejs\\node.exe tests/e2e/run_m2.mjs m2-manual-frozen-working-tree-20261002",
+      "exit_code": 0,
+      "result": "Complete route and save/advance/restore/reset checks at widths 1280, 768, and 390; source_unchanged=true"
+    },
+    {
+      "path": "evidence/qa/check/20261002T070319.030443Z-f6c70a6e/summary.json",
+      "command": "scripts.check deterministic suite; exact build and pytest commands are recorded in summary.json",
+      "exit_code": 0,
+      "result": "PASS; frontend build exit 0; pytest 27 passed and 115 subtests; source_unchanged=true; one deprecation warning"
+    }
+  ],
+  "limitations": [
+    "Gameplay AI, tool proposals, paid model use, experiments, CH01, clean-directory reproduction, human playtest, and course sign-off are not accepted by this evidence.",
+    "No commit SHA is claimed for the accepted working-tree candidate."
+  ]
+}

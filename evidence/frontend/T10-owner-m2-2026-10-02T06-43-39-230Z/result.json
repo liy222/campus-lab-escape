@@ -1,0 +1,95 @@
+{
+  "scope": "frontend owner local development; not independent QA or human playtest",
+  "provider": "mock; no model calls",
+  "command": "node scripts/owner-m2-smoke.mjs",
+  "source_before": {
+    "frontend/src/App.tsx": "9fb542f8a56a254544674d953ce2af5d3efd0520885f29a34beae5c3005c8ac1",
+    "frontend/src/api.ts": "69974390259734687de99f99473f4c885a40ec9e7e76d3ef30570236430d4ade",
+    "frontend/src/style.css": "0da054b4af92f51558e91d9152710f13dae28fdbce0c121771fe82efcc8017f1",
+    "backend/app/domain/rules.py": "b3743c8dfac83ea7ccf6b361058d61bb19ea2b292e4651e0bc94ec30e43b1d9d",
+    "backend/app/storage/sqlite.py": "0d6bdc00e94b8f1aa63ca319bd2fbccda8f6d3d19d4746ed65ce69c37b5dd307",
+    "backend/app/api/routes.py": "21484a73461f482755db5dccaabdb8ac9da254da5c48d1c188b940a2c933717c"
+  },
+  "source_after": {
+    "frontend/src/App.tsx": "9fb542f8a56a254544674d953ce2af5d3efd0520885f29a34beae5c3005c8ac1",
+    "frontend/src/api.ts": "69974390259734687de99f99473f4c885a40ec9e7e76d3ef30570236430d4ade",
+    "frontend/src/style.css": "0da054b4af92f51558e91d9152710f13dae28fdbce0c121771fe82efcc8017f1",
+    "backend/app/domain/rules.py": "b3743c8dfac83ea7ccf6b361058d61bb19ea2b292e4651e0bc94ec30e43b1d9d",
+    "backend/app/storage/sqlite.py": "0d6bdc00e94b8f1aa63ca319bd2fbccda8f6d3d19d4746ed65ce69c37b5dd307",
+    "backend/app/api/routes.py": "21484a73461f482755db5dccaabdb8ac9da254da5c48d1c188b940a2c933717c"
+  },
+  "source_unchanged": true,
+  "checks": [
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "initial",
+      "width": 1280
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "r2",
+      "width": 1280
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "r3",
+      "width": 1280
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "won",
+      "width": 1280
+    },
+    {
+      "name": "18-step complete manual UI route; post-win inventory and save",
+      "result": "passed",
+      "width": 1280,
+      "steps": [
+        "inspect note",
+        "inspect cabinet",
+        "submit visible-clue cabinet code",
+        "take card",
+        "use card",
+        "move R2",
+        "take fuse",
+        "use fuse",
+        "inspect powered monitor",
+        "inspect drawer",
+        "submit visible-clue drawer code",
+        "take key",
+        "use key",
+        "move R3",
+        "inspect checklist",
+        "inspect panel",
+        "submit visible-clue check code",
+        "move EXIT"
+      ]
+    },
+    {
+      "name": "reset preserves winning save; restore returns to won",
+      "result": "passed"
+    }
+  ],
+  "errors": [
+    "expect(locator).toHaveText(expected) failed\n\nLocator: locator('.save-summary')\nTimeout: 5000ms\n- Expected  - 5\n+ Received  + 1\n\n- 已有存档\n-\n- 保存时间：2026/10/2 14:43:44\n-\n- 保存时进度 10 · 关卡 1.0.0\n+ 已有存档保存时间：2026/10/2 14:43:44保存时进度 10 · 关卡 1.0.0\n\nCall log:\n  - Expect \"toHaveText\" locator('.save-summary') with timeout 5000ms\n  - waiting for locator('.save-summary')\n    14 × locator resolved to <div class=\"save-summary\">…</div>\n       - unexpected value \"已有存档保存时间：2026/10/2 14:43:44保存时进度 10 · 关卡 1.0.0\"\n"
+  ],
+  "cleanup": [
+    {
+      "name": "frontend",
+      "exit_code": null,
+      "signal": "SIGTERM",
+      "stopped": true
+    },
+    {
+      "name": "backend",
+      "exit_code": null,
+      "signal": "SIGTERM",
+      "stopped": true
+    }
+  ],
+  "result": "failed"
+}

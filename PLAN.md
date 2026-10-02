@@ -17,3 +17,7 @@ All not otherwise marked are PLANNED. R/A matrix is retained in source sections 
 2026-10-02 M1 accepted: T05/T06/T07/T08 complete within R1 scope. Independent API13passed/1T13deferred, browser3widths passed, checker0/source stable. T09/T10/T11/T12 READY; T13 waits for stable complete manual candidate. RealProvider independent T04 work continues; T14+game AI waits M2. All initial QA scope/launcher/reload-assumption failures retained and do not reduce full-level requirements.
 
 T04 isolatedrealAdapter DONE (actualDeepSeek toolcall/resultreturn completed); exactsuccesssourcehash bound inproviderhandoff; local19checks0 and4realrequests. GameAI T14/T15 notstarted; independentT18 notclaimed. Tokenreservation boundbytes*4+8192 is conservativeengineeringestimate, not officialtokenizerproof; accountingusesreportedusage/high-peakrates andfreeze-on-overrun. Priorfailureprecisesourcehashmissing disclosed.
+
+2026-10-02 M2 stable candidates: Backend T09/T11/T12 owner49checks0; Frontend T10/T12 owner22checks0/build0. Both stopped. T13 formal GO; M2 not accepted until independent results. AI T14/T15 read-only preparation only, no source writes until M2 gate.
+
+2026-10-02 M2 accepted: T09-T13 complete for manual baseline1.0.0; independentAPI27/0skip, browser3width complete/save/resetrestore, overallcheck0/source stable. T14/T15/T16/T17 READY after M2 commit; T18 waits stable M3candidate.

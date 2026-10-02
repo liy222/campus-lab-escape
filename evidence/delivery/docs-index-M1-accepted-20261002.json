@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-10-02 Asia/Shanghai",
+  "command": "Get-ChildItem/Test-Path checks on referenced paths; did not read .env",
+  "exit_code": 0,
+  "checks": [
+    {
+      "path": "README.md",
+      "exists": true
+    },
+    {
+      "path": "release/README.md",
+      "exists": true
+    },
+    {
+      "path": "evidence/qa/20261002T062147341889Z-r1-api/run.json",
+      "exists": true
+    },
+    {
+      "path": "evidence/qa/20261002T062022883Z-r1-browser/run.json",
+      "exists": true
+    },
+    {
+      "path": "evidence/qa/20261002T062022883Z-r1-browser/checks.json",
+      "exists": true
+    },
+    {
+      "path": "evidence/provider/handoff-20261002T064002444444Z/report.json",
+      "exists": true
+    },
+    {
+      "path": "evidence/provider/adapter-20261002T063154317917Z/report.json",
+      "exists": true
+    },
+    {
+      "path": "backend/app/ai/provider.py",
+      "exists": true
+    },
+    {
+      "path": "backend/app/ai/provider_check.py",
+      "exists": true
+    },
+    {
+      "path": "release/baseline_v1.json",
+      "exists": false
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "scope": "Backend owner local verification for T09/T11/T12; not independent T13 QA",
+  "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -m evidence.backend.m2_local",
+  "started_at": "2026-10-02T06:44:49.758879+00:00",
+  "paid_model_calls": 0,
+  "checks": [
+    {
+      "check": "initial hidden item, missing card, locked/nonadjacent move, wrong code and missing save fail without progress",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 1, revision 1",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 2, revision 2",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 3, revision 3",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 4, revision 4",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 5, revision 5",
+      "passed": true
+    },
+    {
+      "check": "R2 unpowered screen discovers nothing, missing fuse/key and unpowered code reject",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 6, revision 6",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 7, revision 7",
+      "passed": true
+    },
+    {
+      "check": "fuse consumed once; installed reuse unchanged; power does not auto-discover screen clue",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 8, revision 8",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 9, revision 9",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 10, revision 10",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 11, revision 11",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 12, revision 12",
+      "passed": true
+    },
+    {
+      "check": "baseline key retained and wrong-code failure replay keeps original event with current projection",
+      "passed": true
+    },
+    {
+      "check": "standard manual route step 13, revision 13",
+      "passed": true
+    }
+  ],
+  "exit_code": 1,
+  "failure_type": "AssertionError"
+}

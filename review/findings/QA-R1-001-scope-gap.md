@@ -11,3 +11,7 @@ Full-level SPEC expectation (A03): `PRECONDITION_FAILED` with no state change. A
 Classification: scope gap awaiting T09/T13, not an R1 defect. Backend candidate was explicitly limited to R1 and R2 return; no implementation fix requested for M1. The dependent unpowered monitor and missing-key checks are not yet verified. QA retains this test with an explicit deferred skip reason and must activate it in T13. A03 is only verified for missing R1 card at M1.
 
 Owner: backend for T09; QA for T13. No claim of complete A03/A10 or full-level acceptance is made.
+
+## T13 follow-up — 2026-10-02
+
+The M1 evidence and original scope decision above are retained. The deferred R2 test was activated after Main froze the M2 candidate. It now passed in the independent 27-test API run at `evidence/qa/20261002T070100514544Z-m2-api/` and the unified checker at `evidence/qa/check/20261002T070319.030443Z-f6c70a6e/`. Both commands exited 0; no test was skipped. Missing fuse/key, hidden key, unpowered monitor observation and no knowledge/revision side effect are now verified. This closes the M1-to-M2 scope gap, without relabeling the original failure as a pass. Full M2 tested scope is in `T13-report-20261002.md`; AI-related A10 remains a later-stage check.

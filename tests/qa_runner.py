@@ -29,15 +29,17 @@ def git_read(*args):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--candidate', required=True)
+    parser.add_argument('--suite', choices=['r1', 'm2'], default='r1')
     parser.add_argument('--output', default='evidence/qa')
     args = parser.parse_args()
-    folder = ROOT / args.output / (datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ') + '-r1-api')
+    folder = ROOT / args.output / (datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ') + '-' + args.suite + '-api')
     folder.mkdir(parents=True, exist_ok=False)
     before = sources()
     start = datetime.now(timezone.utc).isoformat()
     stream, stderr = io.StringIO(), io.StringIO()
     with contextlib.redirect_stderr(stderr):
-        result = unittest.TextTestRunner(stream=stream, verbosity=2).run(unittest.defaultTestLoader.loadTestsFromName('tests.api.test_r1'))
+        names = ['tests.api.test_r1'] + (['tests.api.test_m2'] if args.suite == 'm2' else [])
+        result = unittest.TextTestRunner(stream=stream, verbosity=2).run(unittest.defaultTestLoader.loadTestsFromNames(names))
     from tests.api.test_r1 import EXCHANGES, sanitize
     raw = sanitize(stream.getvalue())
     (folder / 'unittest-output.txt').write_text(raw, encoding='utf-8')
@@ -45,7 +47,7 @@ def main():
     (folder / 'http-exchanges.json').write_text(json.dumps(EXCHANGES, ensure_ascii=False, indent=2), encoding='utf-8')
     after = sources()
     code = 0 if result.wasSuccessful() and before == after else 1
-    metadata = {'candidate': args.candidate, 'target': 'M1 working-tree backend candidate; frontend and independent backend/app/ai provider probe excluded, no AI calls in M1', 'head': git_read('rev-parse', 'HEAD'), 'working_tree': git_read('status', '--short'), 'start': start, 'end': datetime.now(timezone.utc).isoformat(), 'command': [sys.executable, '-m', 'tests.qa_runner', *sys.argv[1:]], 'python': sys.version, 'provider': 'mock explicitly; no model invocation', 'tests_run': result.testsRun, 'failures': len(result.failures), 'errors': len(result.errors), 'skipped': len(result.skipped), 'source_sha256_before': before, 'source_sha256_after': after, 'source_changed_during_run': before != after, 'exit_code': code, 'evidence_sha256': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in folder.iterdir() if p.is_file()}, 'sanitization': 'No headers/database copied; token keys and known token values redacted.'}
+    metadata = {'candidate': args.candidate, 'suite': args.suite, 'target': 'Manual baseline working-tree backend candidate; frontend and independent backend/app/ai provider probe excluded, no gameplay AI calls', 'head': git_read('rev-parse', 'HEAD'), 'working_tree': git_read('status', '--short'), 'start': start, 'end': datetime.now(timezone.utc).isoformat(), 'command': [sys.executable, '-m', 'tests.qa_runner', *sys.argv[1:]], 'python': sys.version, 'provider': 'mock explicitly; no model invocation', 'tests_run': result.testsRun, 'failures': len(result.failures), 'errors': len(result.errors), 'skipped': len(result.skipped), 'source_sha256_before': before, 'source_sha256_after': after, 'source_changed_during_run': before != after, 'exit_code': code, 'evidence_sha256': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in folder.iterdir() if p.is_file()}, 'sanitization': 'No headers/database copied; token keys and known token values redacted.'}
     (folder / 'run.json').write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding='utf-8')
     print(raw, end='')
     print('Evidence:', folder)

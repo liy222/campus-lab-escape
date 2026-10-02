@@ -12,8 +12,9 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const requireFrontend = createRequire(path.join(root, 'frontend/package.json'));
 const { chromium, expect } = requireFrontend('@playwright/test');
 const candidate = process.argv[2];
+const suite = process.env.QA_SUITE || 'r1';
 if (!candidate) throw new Error('Explicit Main-frozen candidate ID is required');
-const folder = path.join(root, 'evidence/qa', new Date().toISOString().replace(/[-:.]/g, '') + '-r1-browser');
+const folder = path.join(root, 'evidence/qa', new Date().toISOString().replace(/[-:.]/g, '') + '-' + suite + '-browser');
 fs.mkdirSync(folder, { recursive: true });
 const python = 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe';
 const browserPath = process.env.QA_BROWSER_PATH || 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
@@ -122,7 +123,7 @@ async function route(width) {
   assert.equal(moved.payload.data.visible_state.room.room_id, 'R2');
   await expect(page.locator('#room-title')).toHaveText('设备间');
   await expect(page.locator('.clues .clue-list li')).toHaveCount(2);
-  const returned = await act(page, () => page.locator('.exit-button').click());
+  const returned = await act(page, () => page.locator('.exit-button').filter({ hasText: '值班室' }).click());
   assert.equal(returned.payload.data.visible_state.room.room_id, 'R1');
   await expect(page.locator('#room-title')).toHaveText('值班室');
   await page.reload({ waitUntil: 'networkidle' });
@@ -138,9 +139,122 @@ async function route(width) {
   await expect(page.locator('.inventory')).toContainText('门卡');
   await visibleLayout(page, width, 'continued');
   await page.screenshot({ path: path.join(folder, `continued-${width}.png`), fullPage: true });
+  if (suite === 'm2') await completeM2(page, width);
   assert.deepEqual(pageErrors, [], 'Browser page errors');
   checks.push({ width, route: 'R1 inspect both clues → wrong code denied → keyboard correct code → take → use → R2 → return → reload → keyboard cancel new game', passed: true, revisions: [1, 2, 3, 4, 5, 6, 7], page_errors: pageErrors });
   await context.close();
+}
+async function select(page, name) {
+  await page.locator('.object-grid').getByRole('button', { name: new RegExp(name) }).press('Enter');
+}
+async function inspect(page, name, text) {
+  await select(page, name);
+  const response = await act(page, () => page.locator('.object-details').getByRole('button', { name: /查看/ }).press('Enter'));
+  assert.equal(response.status, 200);
+  await expect(page.locator('.clues')).toContainText(text);
+  return response.payload.data.visible_state;
+}
+async function code(page, objectName, value) {
+  await select(page, objectName);
+  const input = page.getByLabel(objectName + '密码', { exact: true });
+  await input.fill(value);
+  const response = await act(page, () => input.press('Enter'));
+  assert.equal(response.status, 200);
+  return response.payload.data.visible_state;
+}
+async function take(page, objectName) {
+  await select(page, objectName);
+  const response = await act(page, () => page.locator('.object-details').getByRole('button', { name: /拾取/ }).press('Enter'));
+  assert.equal(response.status, 200);
+  return response.payload.data.visible_state;
+}
+async function use(page, itemName, targetName) {
+  const item = page.locator('.inventory-item').filter({ has: page.getByRole('heading', { name: itemName, exact: true }) });
+  const response = await act(page, () => item.getByRole('button', { name: new RegExp('使用于' + targetName) }).press('Enter'));
+  assert.equal(response.status, 200);
+  return response.payload.data.visible_state;
+}
+async function move(page, roomName) {
+  const response = await act(page, () => page.locator('.exit-button').filter({ hasText: roomName }).press('Enter'));
+  assert.equal(response.status, 200);
+  await expect(page.locator('#room-title')).toHaveText(roomName);
+  return response.payload.data.visible_state;
+}
+async function controlUI(page, operation) {
+  const responsePromise = page.waitForResponse(response => response.url().endsWith('/' + operation) && response.request().method() === 'POST');
+  if (operation === 'save') await page.getByRole('button', { name: '保存进度', exact: true }).press('Enter');
+  else {
+    await page.getByRole('button', { name: operation === 'reset' ? '重新开始' : '恢复存档', exact: true }).press('Enter');
+    await expect(page.getByRole('dialog')).toBeVisible();
+    if (operation === 'reset') await expect(page.getByRole('dialog')).toContainText('已有存档仍可恢复');
+    await page.getByRole('dialog').getByRole('button', { name: operation === 'reset' ? '确认开始' : '确认恢复', exact: true }).press('Enter');
+  }
+  const response = await responsePromise;
+  const payload = await response.json();
+  assert.equal(response.status(), 200);
+  assert(!JSON.stringify(payload).includes('"token"'), 'Control response token field');
+  await expect(page.getByRole('dialog')).not.toBeVisible();
+  return payload.data.visible_state;
+}
+function gameProjection(state) {
+  return Object.fromEntries(['status', 'room', 'objects', 'inventory', 'clues', 'exits', 'progress'].map(key => [key, state[key]]));
+}
+async function completeM2(page, width) {
+  await move(page, '设备间');
+  await expect(page.locator('.exit-button').filter({ hasText: '出口控制室' })).toBeDisabled();
+  await select(page, '屏幕');
+  const noPower = await act(page, () => page.locator('.object-details').getByRole('button', { name: /查看/ }).press('Enter'));
+  assert.equal(noPower.status, 200);
+  assert(noPower.payload.data.receipt.observation.includes('当前无显示'));
+  assert(!noPower.payload.data.visible_state.clues.some(clue => clue.clue_id === 'r2_monitor_clue'));
+  await take(page, '备用保险丝');
+  const powered = await use(page, '保险丝', '电源箱');
+  assert.equal(powered.progress.power_on, true);
+  assert(!powered.inventory.some(item => item.item_id === 'fuse'));
+  assert(!powered.clues.some(clue => clue.clue_id === 'r2_monitor_clue'));
+  await inspect(page, '屏幕', '青色7');
+  await inspect(page, '抽屉', '抽屉标签从左到右');
+  const saved = await controlUI(page, 'save');
+  await expect(page.locator('.save-panel')).toContainText('已有存档');
+  await visibleLayout(page, width, 'R2_saved');
+  await page.screenshot({ path: path.join(folder, `R2-saved-${width}.png`), fullPage: true });
+  await code(page, '抽屉', '724');
+  const progressed = await take(page, '应急钥匙');
+  const restored = await controlUI(page, 'restore');
+  assert.deepEqual(gameProjection(restored), gameProjection(saved));
+  assert.equal(restored.revision, progressed.revision + 1);
+  assert.notEqual(restored.generation, progressed.generation);
+  await expect(page.locator('.inventory')).not.toContainText('应急钥匙');
+  await select(page, '抽屉');
+  await expect(page.getByLabel('抽屉密码', { exact: true })).toHaveValue('');
+  const reset = await controlUI(page, 'reset');
+  assert.equal(reset.room.room_id, 'R1');
+  assert.deepEqual(reset.inventory, []);
+  assert.deepEqual(reset.clues, []);
+  assert.deepEqual(reset.save, saved.save);
+  await expect(page.locator('#room-title')).toHaveText('值班室');
+  const afterResetRestore = await controlUI(page, 'restore');
+  assert.deepEqual(gameProjection(afterResetRestore), gameProjection(saved));
+  await expect(page.locator('#room-title')).toHaveText('设备间');
+  await code(page, '抽屉', '724');
+  await take(page, '应急钥匙');
+  const unlocked = await use(page, '应急钥匙', '出口控制室钥匙门');
+  assert(unlocked.inventory.some(item => item.item_id === 'emergency_key'));
+  await move(page, '出口控制室');
+  await expect(page.locator('.exit-button').filter({ hasText: '实验室出口' })).toBeDisabled();
+  await inspect(page, '出口检查单', '依次确认');
+  await inspect(page, '检查面板', '冷却对应2');
+  await visibleLayout(page, width, 'R3_before_check');
+  await page.screenshot({ path: path.join(folder, `R3-${width}.png`), fullPage: true });
+  const checked = await code(page, '检查面板', '231');
+  assert.equal(checked.progress.check_done, true);
+  const won = await move(page, '实验室出口');
+  assert.equal(won.status, 'won');
+  await expect(page.getByRole('heading', { name: '成功逃离实验室', exact: true })).toBeVisible();
+  await expect(page.locator('.clues .clue-list li')).toHaveCount(6);
+  await visibleLayout(page, width, 'won');
+  await page.screenshot({ path: path.join(folder, `won-${width}.png`), fullPage: true });
+  checks.push({ width, stage: 'M2_full_manual_save_restore_reset_route', passed: true, evidence: 'Actual UI control responses verified; no session capability recorded', final_status: won.status, final_revision: won.revision });
 }
 function scanBuiltResources() {
   const dist = path.join(root, 'frontend/dist');
@@ -177,13 +291,20 @@ finally {
     const result = spawnSync('taskkill', ['/PID', String(child.pid), '/T', '/F'], { encoding: 'utf8', windowsHide: true });
     checks.push({ stage: 'stop_QA_owned_process_tree', pid: child.pid, exit_code: result.status });
   }
-  try { fs.rmSync(temp, { recursive: true }); } catch (error) { issues.push({ stage: 'temporary_database_cleanup', error: error.message }); }
+  try {
+    const resolvedTemp = fs.realpathSync(temp);
+    const resolvedRoot = fs.realpathSync(os.tmpdir());
+    assert.equal(path.dirname(resolvedTemp).toLowerCase(), resolvedRoot.toLowerCase(), 'Cleanup path escaped owned temp root');
+    assert(path.basename(resolvedTemp).startsWith('campus-qa-browser-'), 'Cleanup path lacks QA-owned prefix');
+    assert.equal(path.resolve(temp).toLowerCase(), resolvedTemp.toLowerCase(), 'Cleanup target resolved elsewhere');
+    fs.rmSync(resolvedTemp, { recursive: true });
+  } catch (error) { issues.push({ stage: 'temporary_database_cleanup', error: error.message }); }
   const after = sourceHashes();
   if (JSON.stringify(before) !== JSON.stringify(after)) issues.push({ stage: 'source_freeze', error: 'Hashed target files changed during test; result cannot certify frozen candidate' });
   fs.writeFileSync(path.join(folder, 'checks.json'), JSON.stringify({ checks, issues }, null, 2));
   fs.writeFileSync(path.join(folder, 'server-output.json'), JSON.stringify(serverLogs, null, 2));
   const evidenceHashes = Object.fromEntries(fs.readdirSync(folder).map(name => [name, crypto.createHash('sha256').update(fs.readFileSync(path.join(folder, name))).digest('hex')]));
-  const metadata = { candidate, target: 'M1 working-tree local backend/frontend candidate; backend/app/ai independent provider probe excluded, not called in M1', head: gitRead('rev-parse', 'HEAD'), working_tree: gitRead('status', '--short'), command: [process.execPath, ...process.argv.slice(1)], started, ended: new Date().toISOString(), provider: 'AI_PROVIDER=mock explicitly; no model call', node: process.version, playwright: requireFrontend('@playwright/test/package.json').version, browser_executable: browserPath, browser_mode: 'new isolated headless context; no user profile', widths: [1280, 768, 390], source_sha256_before: before, source_sha256_after: after, evidence_sha256: evidenceHashes, exit_code: issues.length ? 1 : 0, privacy: 'No create response, request headers, sessionStorage, HAR, or browser trace recorded. Screenshots only UI.' };
+  const metadata = { candidate, suite, target: 'Manual baseline working-tree local backend/frontend candidate; backend/app/ai independent provider probe excluded, no gameplay AI calls', head: gitRead('rev-parse', 'HEAD'), working_tree: gitRead('status', '--short'), command: [process.execPath, ...process.argv.slice(1)], started, ended: new Date().toISOString(), provider: 'AI_PROVIDER=mock explicitly; no model call', node: process.version, playwright: requireFrontend('@playwright/test/package.json').version, browser_executable: browserPath, browser_mode: 'new isolated headless context; no user profile', widths: [1280, 768, 390], source_sha256_before: before, source_sha256_after: after, evidence_sha256: evidenceHashes, exit_code: issues.length ? 1 : 0, privacy: 'No create response, request headers, sessionStorage, HAR, or browser trace recorded. Screenshots only UI.' };
   fs.writeFileSync(path.join(folder, 'run.json'), JSON.stringify(metadata, null, 2));
   console.log(JSON.stringify({ evidence: folder, passed_widths: checks.filter(c => c.route && c.passed).map(c => c.width), issues, exit_code: metadata.exit_code }, null, 2));
   process.exitCode = metadata.exit_code;

@@ -26,7 +26,7 @@ def sanitize(value):
     return value
 
 
-class R1Acceptance(unittest.TestCase):
+class HTTPFixture(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix='campus-qa-r1-')
         os.environ['AI_PROVIDER'] = 'mock'
@@ -38,6 +38,9 @@ class R1Acceptance(unittest.TestCase):
 
     def tearDown(self):
         self.client.__exit__(None, None, None)
+        resolved = Path(self.temp.name).resolve()
+        self.assertEqual(resolved.parent, Path(tempfile.gettempdir()).resolve(), 'Fixture cleanup escaped owned temp root')
+        self.assertTrue(resolved.name.startswith('campus-qa-r1-'), 'Fixture cleanup lacks QA-owned prefix')
         self.temp.cleanup()
 
     def exchange(self, method, path, *, definition=None, headers=None, **kwargs):
@@ -96,6 +99,7 @@ class R1Acceptance(unittest.TestCase):
         for tool, args in [('inspect', {'object_id': 'r1_note'}), ('inspect', {'object_id': 'r1_cabinet'}), ('submit_code', {'target_id': 'r1_cabinet', 'code': '382'}), ('take', {'item_id': 'access_card'}), ('use_item', {'item_id': 'access_card', 'target_id': 'r1_door'}), ('move', {'destination_id': 'R2'})]:
             self.action(tool, args)
 
+class R1Acceptance(HTTPFixture):
     def test_A01_new_and_independent_sessions(self):
         first, other = self.state(), self.create()
         second = self.state(other)
@@ -254,7 +258,6 @@ class R1Acceptance(unittest.TestCase):
         self.assertFalse(result['receipt']['changed'])
         self.assertEqual(result['visible_state'], before)
 
-    @unittest.skip('T13 deferred: M1 frozen candidate implements R1 and R2 return only; R2 power/monitor gameplay is T09')
     def test_R2_boundary_missing_items_unpowered_monitor(self):
         self.to_r2()
         self.reject(self.request('use_item', {'item_id': 'fuse', 'target_id': 'r2_powerbox'}), 'PRECONDITION_FAILED')
