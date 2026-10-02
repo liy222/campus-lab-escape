@@ -49,7 +49,7 @@
 - `docs/task-dispatch.md`：任务分派和职责记录。
 - `evidence/integration/recovery-20261002.json`：恢复过程记录。
 - Git 当前提交和工作区状态由主负责人维护；本索引不记录未经核实的提交或发布版本。
-- 未完成：baseline_v1 manifest 正由 Main 冻结；实验与评价、CH01、干净目录复现及真人签署待完成，没有整体完成声明。
+- 未完成：baseline_v1 产品已冻结于 `7821af4efe0613c20a80ea164c1dab1c0f288bab`，身份清单为 `evidence/integration/baseline_v1-manifest.json`；实验与评价、CH01、干净目录复现及真人签署待完成，没有整体完成声明。
 
 ## 报告
 
@@ -67,4 +67,4 @@
 - `evidence/qa/20261002T115601621Z-m2-browser/run.json`：当前手动三宽度全程通关、存档控制回归，exit0。
 - `evidence/qa/20261002T120735404563Z-m3-real/run.json`：真实DeepSeek1turn/2calls，首次forced get_inventory→真实工具结果→开柜提案→测试玩家fixed{}confirm；重放无新call，exit0。本段保守上界0.00804624元；全项目累计0.01035448元，非账单核验。
 - 原始QA脚本的Windows资源清理、随机ID误报、极短墙钟调度断言与旧响应按钮预期失败均保留于各时间戳目录；实际产品源码未因此改变。
-- 版本绑定采用原始raw SHA256与Git blob/commit/tree及Main批准的CRLF→LF转换链；正式manifest生成后作为实验基线。真人试玩、接受/拒绝AI建议与签署均未提供。
+- 版本绑定采用原始raw SHA256与Git blob/commit/tree及Main批准的CRLF→LF转换链；正式manifest已生成并作为实验基线。真人试玩、接受/拒绝AI建议与签署均未提供。

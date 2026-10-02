@@ -62,4 +62,4 @@ M2 手动范围已独立验收。M3 最终 API 46 tests、0 skip；统一 checke
 
 ## 交付材料索引
 
-按六类查看当前材料与未完成项：[`release/README.md`](release/README.md)。M0 基线入口为 [`evidence/index-M0.json`](evidence/index-M0.json)；尚未生成 baseline_v1 正式 manifest。
+按六类查看当前材料与未完成项：[`release/README.md`](release/README.md)。M0 基线入口为 [`evidence/index-M0.json`](evidence/index-M0.json)；v1 产品提交为 `7821af4efe0613c20a80ea164c1dab1c0f288bab`；正式身份清单为 [`evidence/integration/baseline_v1-manifest.json`](evidence/integration/baseline_v1-manifest.json)。原始运行哈希、Git blob 和忽略构建产物身份分别记录。

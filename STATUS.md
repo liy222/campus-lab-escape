@@ -1,9 +1,9 @@
 # Status
 updated_at: 2026-10-02 (Asia/Shanghai)
-milestone: M3 independent mock/controlled real validation complete; T21 commit identity freeze in progress
-last_verified_release: M2 manual scope, 165a961c9d6694ceb44c88ef86c1ea28de2eae71; exact tested working-tree hashes in T13 evidence
+milestone: M3 accepted/pushed; T21 baseline_v1 product identity frozen; T22 implementation ready
+last_verified_release: baseline_v1 product commit7821af4efe0613c20a80ea164c1dab1c0f288bab; raw/Git binding in evidence/integration/baseline_v1-manifest.json
 remote: https://github.com/liy222/campus-lab-escape (PRIVATE, gh verified)
-last_pushed_sha: 165a961c9d6694ceb44c88ef86c1ea28de2eae71 (M2; push and ls-remote exact-match verified)
+last_pushed_sha: 7821af4efe0613c20a80ea164c1dab1c0f288bab (M3; push and ls-remote exact-match verified)
 
 ## Actual progress
 - T01/T02/T03 accepted M0; contract and baseline level 1.0.0 frozen.
@@ -30,3 +30,5 @@ M3 final facts: API46 exit0 (20261002T120504699455Z), checker build0/pytest46pas
 Controlled real T18: evidence/qa/20261002T120735404563Z-m3-real/run.json PASS/exit0,1turn/2actualcalls/3458input+204output tokens/1readonly. Firstforcedget_inventory→actualtoolresult→two-known-clue submit382 proposal→testplayerfixed{}confirmrev2→3; AI/confirm replays no extraProvider. Not natural tool selection or human acceptance. Original ledger6calls/allsettled/0unknown; cumulative conservative upper0.01035448CNY, not provider bill. No more game QA paid calls authorized in this segment.
 Not yet completed: E1 controlled comparison, evaluator/calibration, CH01/adversarial, clean reproduction/release and human acceptance. T21 manifest will bind actual product commit and original hashes without rewriting raw evidence.
 Recovery: read AGENTS, PLAN, DECISIONS, SPEC, docs/execution-plan.md, docs/task-dispatch.md and actual Git status. No background continuation promised after turn stops.
+
+T21 Main accepted product scope: 60 source files bound to commit/tree and Git blobs; 14 original artifacts registered; 3 ignored built resources retain runtime-only identities; 6 historical browser-run QA-file hashes explicitly remain unbound because those API harnesses were corrected later. No product hash mismatch, evidence rewriting or covert normalization. Manifest rawSHA2569c36943cbb6e4fe08b6e176445ba91835fafa79a2077c2155bbf8d613f8b07c1. Main manifest-helper two compatibility failures retained separately; no product change. T22 implementations can now start on frozen product.
