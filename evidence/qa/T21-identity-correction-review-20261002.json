@@ -1,0 +1,991 @@
+{
+  "review": "T21 append-only correction identity review",
+  "actual_exit_code": 0,
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "D:\\深度能力\\evidence\\qa\\T21-identity-correction-review-20261002.py"
+  ],
+  "reviewed_head": "b1bff748c2ff91c30c143cb529d04f5640659508",
+  "product_commit": "7821af4efe0613c20a80ea164c1dab1c0f288bab",
+  "initial_review_preserved_raw_sha256": "1db7981fe052cb33d666496aaae0aa07401bc6c44aad4caefd3062624c5642e4",
+  "original_manifest_raw_sha256": "9c36943cbb6e4fe08b6e176445ba91835fafa79a2077c2155bbf8d613f8b07c1",
+  "addendum_raw_sha256": "0b181dda973d62cb3c212b4a85766fe576851f6afd98f19c8e5284e38c87ca53",
+  "new_artifacts": [
+    {
+      "path": "evidence/integration/acceptance-M3-v2.json",
+      "source_commit": "b1bff748c2ff91c30c143cb529d04f5640659508",
+      "recorded_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+      "current_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+      "git_blob_sha256": "f5c23d4914bea6ec6e338ad959be88ea5793ffadf9b5f16b4d6222e5e34faa7c",
+      "git_blob_oid": "1945bbd5371dcb581f2cd33194942b147d7682a8",
+      "utf8_lf_v1_sha256": "f5c23d4914bea6ec6e338ad959be88ea5793ffadf9b5f16b4d6222e5e34faa7c",
+      "raw_equal": false,
+      "canonical_equal": true
+    },
+    {
+      "path": "evidence/integration/T21-META-001-correction.json",
+      "source_commit": "b1bff748c2ff91c30c143cb529d04f5640659508",
+      "recorded_raw_sha256": "11f6f07e43fed73ab3e064e110de73969ef2901aa14b2405b5b9745943f94f4e",
+      "current_raw_sha256": "11f6f07e43fed73ab3e064e110de73969ef2901aa14b2405b5b9745943f94f4e",
+      "git_blob_sha256": "1b250e8e671031226b786c318267abc333ff7f4e77ba0194b9fc13b0ed11fede",
+      "git_blob_oid": "faf09abef27e08a7ed5ac01cd5df88539aeda1fd",
+      "utf8_lf_v1_sha256": "1b250e8e671031226b786c318267abc333ff7f4e77ba0194b9fc13b0ed11fede",
+      "raw_equal": false,
+      "canonical_equal": true
+    }
+  ],
+  "original_artifacts_preserved": [
+    {
+      "path": "evidence/qa/20261002T120504699455Z-m3-api/run.json",
+      "original_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+      "current_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+      "unchanged": true
+    },
+    {
+      "path": "evidence/qa/20261002T120504699455Z-m3-api/http-exchanges.json",
+      "original_raw_sha256": "0cda41540f4d13f56eb44ea8c33cb94951151f59a13987eaa591e301da9f783a",
+      "current_raw_sha256": "0cda41540f4d13f56eb44ea8c33cb94951151f59a13987eaa591e301da9f783a",
+      "unchanged": true
+    },
+    {
+      "path": "evidence/qa/20261002T115503579Z-m3-browser/run.json",
+      "original_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+      "current_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+      "unchanged": true
+    },
+    {
+      "path": "evidence/qa/20261002T115601621Z-m2-browser/run.json",
+      "original_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+      "current_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+      "unchanged": true
+    },
+    {
+      "path": "evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json",
+      "original_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+      "current_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+      "unchanged": true
+    },
+    {
+      "path": "evidence/qa/check/20261002T120553.430164Z-b81339d5/deterministic-tests.txt",
+      "original_raw_sha256": "9bfcc374110f7c25561c1bf00297aac30a624cca34d0477446ddd13c02333905",
+      "current_raw_sha256": "9bfcc374110f7c25561c1bf00297aac30a624cca34d0477446ddd13c02333905",
+      "unchanged": true
+    },
+    {
+      "path": "evidence/qa/20261002T120735404563Z-m3-real/run.json",
+      "original_raw_sha256": "0159c8132493c1a109c8aaf200591af98c6c20737448a5456ef4cff6332e4a92",
+      "current_raw_sha256": "0159c8132493c1a109c8aaf200591af98c6c20737448a5456ef4cff6332e4a92",
+      "unchanged": true
+    },
+    {
+      "path": "evidence/qa/20261002T120735404563Z-m3-real/checks.json",
+      "original_raw_sha256": "a8c3a4df8d65c17ce6a5f94aee76d34dc9727ff6f0f0b603dc24bd92f8b6c4ab",
+      "current_raw_sha256": "a8c3a4df8d65c17ce6a5f94aee76d34dc9727ff6f0f0b603dc24bd92f8b6c4ab",
+      "unchanged": true
+    },
+    {
+      "path": "evidence/qa/20261002T120735404563Z-m3-real/public-runtime-trace.json",
+      "original_raw_sha256": "6e608b2ebdc889cd4d2458f784c8a4f6602f24ddfb9b309157cb226357097e8c",
+      "current_raw_sha256": "6e608b2ebdc889cd4d2458f784c8a4f6602f24ddfb9b309157cb226357097e8c",
+      "unchanged": true
+    },
+    {
+      "path": "evidence/qa/20261002T120735404563Z-m3-real/http-exchanges.json",
+      "original_raw_sha256": "a6360252286bc9c233fb863db2548448b33c0dba3a0151cf134d9e237b20a477",
+      "current_raw_sha256": "a6360252286bc9c233fb863db2548448b33c0dba3a0151cf134d9e237b20a477",
+      "unchanged": true
+    },
+    {
+      "path": "review/findings/T18-report-20261002.md",
+      "original_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+      "current_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+      "unchanged": true
+    },
+    {
+      "path": "evidence/integration/acceptance-M3.json",
+      "original_raw_sha256": "57630a6d2704c5635c2bfe33114892567669dbc5b25b644f43dbf258a118d16c",
+      "current_raw_sha256": "57630a6d2704c5635c2bfe33114892567669dbc5b25b644f43dbf258a118d16c",
+      "unchanged": true
+    },
+    {
+      "path": "evidence/integration/baseline-v1-facts.md",
+      "original_raw_sha256": "c522b2d58e0cc6771304321d31a2a0153c8002bb91159d6cf909bbc8904c5354",
+      "current_raw_sha256": "c522b2d58e0cc6771304321d31a2a0153c8002bb91159d6cf909bbc8904c5354",
+      "unchanged": true
+    },
+    {
+      "path": "evidence/qa/T18-audit-20261002.json",
+      "original_raw_sha256": "2df650495ed1a30d3cf7f78728b0f2f46be478f141cde6277932a03592752fc5",
+      "current_raw_sha256": "2df650495ed1a30d3cf7f78728b0f2f46be478f141cde6277932a03592752fc5",
+      "unchanged": true
+    }
+  ],
+  "source_count_preserved": 60,
+  "accepted_real_run_ledger_record": {
+    "before_rows": 4,
+    "after_rows": 6,
+    "after_states": [
+      "settled",
+      "settled",
+      "settled",
+      "settled",
+      "settled",
+      "settled"
+    ],
+    "actual_new_game_rows": 2,
+    "additional_upper_cny": 0.00804624,
+    "total_upper_cny": 0.01035448,
+    "live_ledger_read": false
+  },
+  "finding_closure": {
+    "id": "T21-DOC-001",
+    "alias": "T21-META-001",
+    "status": "CLOSED",
+    "reason": "Explicit v2 facts/correction/addendum supersede contradictory derived paid scope and retain immutable original evidence."
+  },
+  "remote_snapshot": "1fe091b3310021f697a0f0fc3a8ac3b8c0fecba4\trefs/heads/main\n7821af4efe0613c20a80ea164c1dab1c0f288bab\trefs/tags/baseline_v1",
+  "git_commands": [
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "rev-parse",
+        "HEAD"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "rev-parse",
+        "baseline_v1^{commit}"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "merge-base",
+        "--is-ancestor",
+        "7821af4efe0613c20a80ea164c1dab1c0f288bab",
+        "b1bff748c2ff91c30c143cb529d04f5640659508"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/integration/acceptance-M3-v2.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "rev-parse",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/integration/acceptance-M3-v2.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/integration/T21-META-001-correction.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "rev-parse",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/integration/T21-META-001-correction.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/qa/20261002T120504699455Z-m3-api/run.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/qa/20261002T120504699455Z-m3-api/http-exchanges.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/qa/20261002T115503579Z-m3-browser/run.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/qa/20261002T115601621Z-m2-browser/run.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/qa/check/20261002T120553.430164Z-b81339d5/summary.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/qa/check/20261002T120553.430164Z-b81339d5/deterministic-tests.txt"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/qa/20261002T120735404563Z-m3-real/run.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/qa/20261002T120735404563Z-m3-real/checks.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/qa/20261002T120735404563Z-m3-real/public-runtime-trace.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/qa/20261002T120735404563Z-m3-real/http-exchanges.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:review/findings/T18-report-20261002.md"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/integration/acceptance-M3.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/integration/baseline-v1-facts.md"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/qa/T18-audit-20261002.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:AGENTS.md"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/__init__.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/ai/__init__.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/ai/budget.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/ai/context.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/ai/mock.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/ai/provider.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/ai/provider_check.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/ai/provider_probe.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/ai/runtime.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/ai/types.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/api/__init__.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/api/routes.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/domain/__init__.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/domain/models.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/domain/rules.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/main.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/storage/__init__.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/storage/ai.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/app/storage/sqlite.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/requirements.lock.txt"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:contracts/api.schema.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:contracts/build_contracts.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:contracts/check_contracts.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:contracts/routes.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:contracts/tools.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:contracts/tools.schema.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:contracts/validation.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:docs/level_design.md"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:docs/SPEC.md"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:frontend/src/api.ts"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:frontend/src/App.tsx"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:frontend/src/Assistant.tsx"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:frontend/src/main.tsx"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:frontend/src/style.css"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:scripts/__init__.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:scripts/check.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:scripts/dev.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:scripts/lock_dependencies.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:scripts/reset.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:tests/__init__.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:tests/api/__init__.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:tests/api/test_m2.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:tests/api/test_m3.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:tests/api/test_r1.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:tests/e2e/run_m2.mjs"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:tests/e2e/run_m3.mjs"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:tests/e2e/run_r1.mjs"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:tests/qa_runner.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:tests/real_m3_runner.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:frontend/package-lock.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:frontend/vite.config.ts"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:frontend/index.html"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/__init__.py"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:backend/requirements.in"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:frontend/package.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:frontend/scripts/owner-ai-smoke.mjs"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:frontend/scripts/owner-m2-smoke.mjs"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:frontend/scripts/owner-smoke.mjs"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:frontend/tsconfig.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "b1bff748c2ff91c30c143cb529d04f5640659508:evidence/integration/baseline_v1-manifest.json"
+      ],
+      "actual_exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "ls-remote",
+        "origin",
+        "refs/heads/main",
+        "refs/tags/baseline_v1"
+      ],
+      "actual_exit_code": 0
+    }
+  ],
+  "ended": "2026-10-02T12:32:25.009165+00:00",
+  "limitations": [
+    "Addendum is verified by supplied current raw identity; its own future commit/publication is Main responsibility.",
+    "Correction source commit is local reviewed state; remote snapshot below is separately observed, not an assumed push.",
+    "No application/tests/.env/credentials/live ledger/provider/model execution; no human grade/signature/teacher approval.",
+    "T22/E1/evaluator/CH01/clean reproduction remains outside this review."
+  ]
+}

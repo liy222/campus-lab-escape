@@ -68,3 +68,5 @@
 - `evidence/qa/20261002T120735404563Z-m3-real/run.json`：真实DeepSeek1turn/2calls，首次forced get_inventory→真实工具结果→开柜提案→测试玩家fixed{}confirm；重放无新call，exit0。本段保守上界0.00804624元；全项目累计0.01035448元，非账单核验。
 - 原始QA脚本的Windows资源清理、随机ID误报、极短墙钟调度断言与旧响应按钮预期失败均保留于各时间戳目录；实际产品源码未因此改变。
 - 版本绑定采用原始raw SHA256与Git blob/commit/tree及Main批准的CRLF→LF转换链；正式manifest已生成并作为实验基线。真人试玩、接受/拒绝AI建议与签署均未提供。
+
+- T21元数据修订：`evidence/integration/acceptance-M3-v2.json` 与 `baseline_v1-identity-addendum-20261002.json` 修正旧paid_scope；原facts/manifest保留。独立闭环见 `review/findings/T21-identity-review-20261002.md`，不改变产品提交。

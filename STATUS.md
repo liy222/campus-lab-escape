@@ -36,3 +36,5 @@ T21 Main accepted product scope: 60 source files bound to commit/tree and Git bl
 Active: experiments_design T22 implementation + evaluator_design T22/T26 implementation under original requestedSol/high roles; no realcalls before separately reviewed finite gates. qa_m3 independently reads/verifies T21 identity. New Luna-index spawn failed threadlimit (not counted as a model call); Main narrowDelivery docs handoff recorded.
 
 T21 independent read review found P2 T21-META-001: initial derivedacceptance-M3 paid_scope contradicted correctreal_scope. Main adds acceptance-M3-v2/correction and subsequentidentityaddendum; originalfacts/manifest hashes kept immutable. Productcommit andactualQA/realrun unchanged; independent metadata re-review pending.
+
+T21 correction independently CLOSED: QA T21-DOC-001/MainT21-META-001 via evidence/qa/T21-identity-correction-review-20261002.json exit0 andreview/findings/T21-identity-review-20261002.md. Original14artifacts/60sources/manifest unchanged; v2facts+ADD001/002 correct. Metadata commitb1bff748c2ff91c30c143cb529d04f5640659508 plus approvedaddendum now syncing; product/tag7821 unchanged.

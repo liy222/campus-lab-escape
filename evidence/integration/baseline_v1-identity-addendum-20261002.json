@@ -1,0 +1,43 @@
+{
+  "release_id": "baseline_v1",
+  "addendum_id": "baseline_v1-facts-revision2-20261002",
+  "approved_at": "2026-10-02T12:29:38.092066+00:00",
+  "approved_by": "Main engineering acceptance under user authorization",
+  "product_commit": "7821af4efe0613c20a80ea164c1dab1c0f288bab",
+  "original_manifest_path": "evidence/integration/baseline_v1-manifest.json",
+  "original_manifest_raw_sha256": "9c36943cbb6e4fe08b6e176445ba91835fafa79a2077c2155bbf8d613f8b07c1",
+  "original_manifest_not_modified": true,
+  "facts_authoritative_revision": 2,
+  "authoritative_facts_path": "evidence/integration/acceptance-M3-v2.json",
+  "superseded_derived_facts_path": "evidence/integration/acceptance-M3.json",
+  "reason": "T21-META-001 / QA T21-DOC-001: stale paid_scope contradicted actual correct real_scope; course pursuit stale label also clarified per direct user request. Product and raw Provider/game evidence unchanged.",
+  "evidence": [
+    {
+      "evidence_id": "baseline_v1:ADD001",
+      "release_id": "baseline_v1",
+      "path": "evidence/integration/acceptance-M3-v2.json",
+      "artifact_source_commit": "b1bff748c2ff91c30c143cb529d04f5640659508",
+      "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+      "artifact_git_blob_sha256": "f5c23d4914bea6ec6e338ad959be88ea5793ffadf9b5f16b4d6222e5e34faa7c",
+      "artifact_git_blob_oid": "1945bbd5371dcb581f2cd33194942b147d7682a8",
+      "artifact_utf8_lf_v1_sha256": "f5c23d4914bea6ec6e338ad959be88ea5793ffadf9b5f16b4d6222e5e34faa7c",
+      "artifact_binding": "approved_crlf_to_lf_only"
+    },
+    {
+      "evidence_id": "baseline_v1:ADD002",
+      "release_id": "baseline_v1",
+      "path": "evidence/integration/T21-META-001-correction.json",
+      "artifact_source_commit": "b1bff748c2ff91c30c143cb529d04f5640659508",
+      "artifact_raw_sha256": "11f6f07e43fed73ab3e064e110de73969ef2901aa14b2405b5b9745943f94f4e",
+      "artifact_git_blob_sha256": "1b250e8e671031226b786c318267abc333ff7f4e77ba0194b9fc13b0ed11fede",
+      "artifact_git_blob_oid": "faf09abef27e08a7ed5ac01cd5df88539aeda1fd",
+      "artifact_utf8_lf_v1_sha256": "1b250e8e671031226b786c318267abc333ff7f4e77ba0194b9fc13b0ed11fede",
+      "artifact_binding": "approved_crlf_to_lf_only"
+    }
+  ],
+  "hash_policy": "Same Main-approved strict UTF8 CRLF-to-LF-only policy as original manifest; raw inequality never asserted equal.",
+  "independent_review_initial": "evidence/qa/T21-identity-review-20261002.json",
+  "independent_review_correction": "Pending new independent correction record; no self-claimed closure.",
+  "teacher_approval": null,
+  "human_signoff": null
+}
