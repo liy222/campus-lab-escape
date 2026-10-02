@@ -1,0 +1,374 @@
+{
+  "kind": "owner_local_mock_checks",
+  "real_network_calls": 0,
+  "paid_calls": 0,
+  "checks": [
+    {
+      "name": "visible_clues_and_own_inspect_version",
+      "passed": true,
+      "status": "completed",
+      "stop_reason": null,
+      "usage": {
+        "provider": "mock",
+        "model": "deterministic-visible-v1",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 2,
+        "read_tool_calls": 2
+      },
+      "read_callbacks": 2,
+      "prechecks": 1
+    },
+    {
+      "name": "unknown_refs_stop_without_repair",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "extra_arguments_stop",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "invalid_tool_stop",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "mock",
+        "model": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "two_progress_tools_no_partial_callback",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "AI_LIMIT_REACHED",
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "repeated_read_loop",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "AI_LIMIT_REACHED",
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 2,
+        "read_tool_calls": 1
+      },
+      "read_callbacks": 1,
+      "prechecks": 0
+    },
+    {
+      "name": "provider_timeout",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_TIMEOUT",
+      "usage": {
+        "provider": "mock",
+        "model": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "provider_unavailable",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_UNAVAILABLE",
+      "usage": {
+        "provider": "mock",
+        "model": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "false_completion_rejected",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "false_completion_without_proposal_rejected",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "english_completion_without_proposal_rejected",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "known_unlocked_exit_statement_allowed",
+      "passed": true,
+      "status": "completed",
+      "stop_reason": null,
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 1
+    },
+    {
+      "name": "one_format_repair",
+      "passed": true,
+      "status": "no_suggestion",
+      "stop_reason": null,
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 2,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "second_format_failure_stops",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 2,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "backend_precheck_rejects",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 1
+    },
+    {
+      "name": "fixed_candidate_cannot_change",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 2,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 1
+    },
+    {
+      "name": "manual_change_rejects_candidate",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "STALE_STATE",
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 1
+    },
+    {
+      "name": "runtime_enforces_fake_provider_timeout",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_TIMEOUT",
+      "usage": {
+        "provider": "mock",
+        "model": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "failure_metadata_current_call_aggregates",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_UNAVAILABLE",
+      "usage": {
+        "provider": "mock",
+        "model": "scripted",
+        "input_tokens": 11,
+        "output_tokens": 3,
+        "model_calls": 2,
+        "read_tool_calls": 1
+      },
+      "read_callbacks": 1,
+      "prechecks": 0
+    },
+    {
+      "name": "failure_metadata_mismatch_not_counted",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_UNAVAILABLE",
+      "usage": {
+        "provider": "mock",
+        "model": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "delayed_fake_transport_runtime_timeout_retains",
+      "passed": true,
+      "status": "stopped",
+      "stop_reason": "MODEL_TIMEOUT",
+      "usage": {
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "input_tokens": null,
+        "output_tokens": null,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      },
+      "read_callbacks": 0,
+      "prechecks": 0
+    },
+    {
+      "name": "fake_transport_cancellation_propagates_retains",
+      "passed": true,
+      "synthetic_ledger_retains": 1
+    },
+    {
+      "name": "two_context_layouts_same_visible_facts",
+      "passed": true,
+      "history_records": 2
+    },
+    {
+      "name": "three_clue_grammar_patterns_no_hidden_answers",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+    "backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e"
+  },
+  "limitations": [
+    "Not formal QA or real model acceptance.",
+    "Public synthetic fixtures do not prove backend atomicity; backend owns integration checks.",
+    "Text guard detects a limited set of completion claims, not every deceptive sentence.",
+    "Structured summary is lossless grouping, not a trained summarizer or selected experiment winner."
+  ]
+}

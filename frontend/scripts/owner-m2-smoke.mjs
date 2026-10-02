@@ -213,7 +213,7 @@ try {
       await expect(page.getByRole('alert')).toBeVisible();
       await expect(page.locator('.scene .eyebrow')).toContainText('R2');
       check('wrong drawer code renders error without progress');
-      await expect(page.locator('.assistant')).toContainText('尚未开放');
+      await expect(page.locator('.assistant')).toContainText('AI 探索伙伴');
     }
     await context.close();
   }

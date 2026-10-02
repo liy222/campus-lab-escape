@@ -1,0 +1,51 @@
+{
+  "task": "T19 delivery entry and docs closeout",
+  "timestamp_utc": "2026-10-02T11:44:58.722744+00:00",
+  "status": "stable; Delivery stops writing after this report; independent T18 may begin",
+  "accepted_m2_commit": "165a961c9d6694ceb44c88ef86c1ea28de2eae71",
+  "changed_files": [
+    "scripts/check.py",
+    "README.md",
+    "release/README.md"
+  ],
+  "change_summary": [
+    "Added .mjs to deterministic checker source hashing while preserving existing exclusions and execution behavior.",
+    "Updated README and release index to describe M3 as an unaccepted mock-connected candidate, state fixed-parameter confirm/cancel and 45-second turn bound, and leave independent T18 / real gameplay validation pending."
+  ],
+  "commands": [
+    {
+      "command": "& 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -m py_compile scripts/check.py",
+      "exit_code": 0
+    },
+    {
+      "command": "AST-extracted scripts.check.source_hashes with project ROOT and hashlib; asserted .mjs included and node_modules/dist/data and database paths excluded",
+      "exit_code": 0,
+      "mjs_paths": [
+        "frontend/scripts/owner-ai-smoke.mjs",
+        "frontend/scripts/owner-m2-smoke.mjs",
+        "frontend/scripts/owner-smoke.mjs",
+        "tests/e2e/run_m2.mjs",
+        "tests/e2e/run_r1.mjs"
+      ],
+      "source_hash_count": 54
+    },
+    {
+      "command": "rg stale M3-unavailable wording and inspect updated M3 boundaries in README.md and release/README.md",
+      "exit_code": 0
+    }
+  ],
+  "source_sha256": {
+    "scripts/check.py": "c3bd234bb080d124235f43489422ee890244b972744c96eea41f274b700b9801",
+    "README.md": "97d94d7b18d27b2d81f4b13f208dfa84f6819476e5a3902325d9847ee91875e0",
+    "release/README.md": "932578139d648b9b3bf72e9385e451181cd9bb23d8d8cc2fed5e48eed777b785"
+  },
+  "evidence_paths": [
+    "evidence/ai/runs/20261002T113705132650Z/T14-T15-owner-report.json",
+    "evidence/backend/T16-owner-recovery-report-20261002.md"
+  ],
+  "limitations": [
+    "No deterministic full suite or formal QA was run; independent T18 should run after all owners stop writing.",
+    "M3 is a working-tree candidate and has no accepted M3 commit. Mock checks do not establish paid real-game behavior.",
+    "No .env, credential, model, or database contents were read."
+  ]
+}

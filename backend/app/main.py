@@ -8,12 +8,18 @@ from .api.routes import router
 from .storage.sqlite import Store, error_body, new_id
 
 
-def create_app(sqlite_path: str | Path | None = None, *, db_path: str | Path | None = None) -> FastAPI:
+def create_app(sqlite_path: str | Path | None = None, *, db_path: str | Path | None = None, provider=None, runtime=None) -> FastAPI:
     application = FastAPI(title="逃离校园实验室", version="0.1.0")
     default_path = Path(__file__).resolve().parents[2] / "data" / "game.sqlite"
     if sqlite_path is not None and db_path is not None:
         raise ValueError("Choose one SQLite path argument")
     application.state.store = Store(sqlite_path or db_path or os.environ.get("SQLITE_PATH") or default_path)
+    if provider is not None and runtime is not None:
+        raise ValueError("Choose one AI runtime or Provider injection")
+    if runtime is None:
+        from .ai.runtime import Runtime
+        runtime = Runtime(provider=provider)
+    application.state.ai_runtime = runtime
     application.include_router(router)
 
     @application.get("/api/health")
@@ -30,3 +36,4 @@ def create_app(sqlite_path: str | Path | None = None, *, db_path: str | Path | N
 
 
 app = create_app()
+

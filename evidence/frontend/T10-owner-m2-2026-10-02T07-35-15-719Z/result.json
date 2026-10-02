@@ -1,0 +1,215 @@
+{
+  "scope": "frontend owner local development; not independent QA or human playtest",
+  "provider": "mock; no model calls",
+  "command": "node scripts/owner-m2-smoke.mjs",
+  "source_before": {
+    "frontend/src/App.tsx": "a8c3bcb0de3f716b7d05d41ec22f8e08e250671c988c462c0ce4d6054c6155e8",
+    "frontend/src/api.ts": "1c5e2219f557504cb9d1171f64460484f3bd2e4e560116297e6dd98a31a47aa7",
+    "frontend/src/style.css": "3aab25ba2b3e34e153c4368996f2db06300dbe04317f76ec1ad793cce7167900",
+    "backend/app/domain/rules.py": "34a3ec19ec4ba8bf764e737b2bcbaf8a72601972190de6c772614abc532cf750",
+    "backend/app/storage/sqlite.py": "ea094fce6270f1b47dca19885b1bb40df6275c198f13b4c5c57541e653c991ff",
+    "backend/app/api/routes.py": "a93901a5d791cb2550ecdbe2a6cdb935a5b7126637061b6172adf9ed9c422d4a"
+  },
+  "source_after": {
+    "frontend/src/App.tsx": "a8c3bcb0de3f716b7d05d41ec22f8e08e250671c988c462c0ce4d6054c6155e8",
+    "frontend/src/api.ts": "1c5e2219f557504cb9d1171f64460484f3bd2e4e560116297e6dd98a31a47aa7",
+    "frontend/src/style.css": "3aab25ba2b3e34e153c4368996f2db06300dbe04317f76ec1ad793cce7167900",
+    "backend/app/domain/rules.py": "34a3ec19ec4ba8bf764e737b2bcbaf8a72601972190de6c772614abc532cf750",
+    "backend/app/storage/sqlite.py": "ea094fce6270f1b47dca19885b1bb40df6275c198f13b4c5c57541e653c991ff",
+    "backend/app/api/routes.py": "a93901a5d791cb2550ecdbe2a6cdb935a5b7126637061b6172adf9ed9c422d4a"
+  },
+  "source_unchanged": true,
+  "checks": [
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "initial",
+      "width": 1280
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "r2",
+      "width": 1280
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "r3",
+      "width": 1280
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "won",
+      "width": 1280
+    },
+    {
+      "name": "18-step complete manual UI route; post-win inventory and save",
+      "result": "passed",
+      "width": 1280,
+      "steps": [
+        "inspect note",
+        "inspect cabinet",
+        "submit visible-clue cabinet code",
+        "take card",
+        "use card",
+        "move R2",
+        "take fuse",
+        "use fuse",
+        "inspect powered monitor",
+        "inspect drawer",
+        "submit visible-clue drawer code",
+        "take key",
+        "use key",
+        "move R3",
+        "inspect checklist",
+        "inspect panel",
+        "submit visible-clue check code",
+        "move EXIT"
+      ]
+    },
+    {
+      "name": "reset preserves winning save; restore returns to won",
+      "result": "passed"
+    },
+    {
+      "name": "R2 save, advance to R3, restore clears temporary input/history, refresh continues",
+      "result": "passed"
+    },
+    {
+      "name": "keyboard reset confirmation focuses cancel; Escape preserves progress",
+      "result": "passed"
+    },
+    {
+      "name": "lost reset response reconciles with GET without mutation resend; generation clears code",
+      "result": "passed"
+    },
+    {
+      "name": "uncertain control and unavailable GET disables mutations until explicit successful sync",
+      "result": "passed"
+    },
+    {
+      "name": "wrong drawer code renders error without progress",
+      "result": "passed"
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "initial",
+      "width": 768
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "r2",
+      "width": 768
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "r3",
+      "width": 768
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "won",
+      "width": 768
+    },
+    {
+      "name": "18-step complete manual UI route; post-win inventory and save",
+      "result": "passed",
+      "width": 768,
+      "steps": [
+        "inspect note",
+        "inspect cabinet",
+        "submit visible-clue cabinet code",
+        "take card",
+        "use card",
+        "move R2",
+        "take fuse",
+        "use fuse",
+        "inspect powered monitor",
+        "inspect drawer",
+        "submit visible-clue drawer code",
+        "take key",
+        "use key",
+        "move R3",
+        "inspect checklist",
+        "inspect panel",
+        "submit visible-clue check code",
+        "move EXIT"
+      ]
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "initial",
+      "width": 390
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "r2",
+      "width": 390
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "r3",
+      "width": 390
+    },
+    {
+      "name": "responsive layout without horizontal overflow",
+      "result": "passed",
+      "stage": "won",
+      "width": 390
+    },
+    {
+      "name": "18-step complete manual UI route; post-win inventory and save",
+      "result": "passed",
+      "width": 390,
+      "steps": [
+        "inspect note",
+        "inspect cabinet",
+        "submit visible-clue cabinet code",
+        "take card",
+        "use card",
+        "move R2",
+        "take fuse",
+        "use fuse",
+        "inspect powered monitor",
+        "inspect drawer",
+        "submit visible-clue drawer code",
+        "take key",
+        "use key",
+        "move R3",
+        "inspect checklist",
+        "inspect panel",
+        "submit visible-clue check code",
+        "move EXIT"
+      ]
+    },
+    {
+      "name": "no browser runtime errors observed; no AI request initiated",
+      "result": "passed"
+    }
+  ],
+  "errors": [],
+  "cleanup": [
+    {
+      "name": "frontend",
+      "exit_code": null,
+      "signal": "SIGTERM",
+      "stopped": true
+    },
+    {
+      "name": "backend",
+      "exit_code": null,
+      "signal": "SIGTERM",
+      "stopped": true
+    }
+  ],
+  "result": "passed"
+}

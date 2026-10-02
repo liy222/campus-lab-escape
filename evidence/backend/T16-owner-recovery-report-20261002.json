@@ -1,0 +1,51 @@
+{
+  "scope": "Backend T16 recovered owner stable handoff; local only, not independent T18 PASS",
+  "time_utc": "2026-10-02T11:39:04.077933+00:00",
+  "production_source_changed_by_recovery_owner": [],
+  "files_written_by_recovery_owner": [
+    "evidence/backend/t16_recovery.py",
+    "evidence/backend/t16-local-20261002T113615933883Z.json",
+    "evidence/backend/t16-recovery-20261002T113741655233Z.json",
+    "evidence/backend/T16-owner-recovery-report-20261002.json",
+    "evidence/backend/T16-owner-recovery-report-20261002.md"
+  ],
+  "actual_validation_commands": [
+    {
+      "command": "$env:AI_PROVIDER='mock'; & 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -m evidence.backend.t16_local",
+      "exit_code": 0,
+      "checks": 29,
+      "evidence": "evidence/backend/t16-local-20261002T113615933883Z.json"
+    },
+    {
+      "command": "$env:AI_PROVIDER='mock'; & 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -m evidence.backend.t16_recovery",
+      "exit_code": 0,
+      "checks": 2,
+      "evidence": "evidence/backend/t16-recovery-20261002T113741655233Z.json"
+    }
+  ],
+  "sha256": {
+    "backend\\app\\storage\\ai.py": "8c93b995d6f19d4a3657b09058656b0e4636cd723bcad69327c116d77d733386",
+    "backend\\app\\storage\\sqlite.py": "ea094fce6270f1b47dca19885b1bb40df6275c198f13b4c5c57541e653c991ff",
+    "backend\\app\\domain\\models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend\\app\\api\\routes.py": "a93901a5d791cb2550ecdbe2a6cdb935a5b7126637061b6172adf9ed9c422d4a",
+    "backend\\app\\main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "evidence\\backend\\t16_local.py": "e39d0fa0cb6dfb88dae161865f5951ac24f9f6b09df43adcb0f191250e96dc67",
+    "evidence\\backend\\t16_recovery.py": "fac5cbd632167ac6821d5186bf1d5d42c22d1f935b552e2f79eb63579ce0803c",
+    "evidence\\backend\\t16-local-20261002T073600788291Z.json": "9792c0695b2e01a795538de7202649403b0f9403a76a75b2c776663a348200e7",
+    "evidence\\backend\\t16-local-20261002T073627954459Z.json": "91507d74f9aa36a47443ad51ec151e65a879894e9fd0e1f8e4b3cf6d0a03e7b6",
+    "evidence\\backend\\t16-local-20261002T113615933883Z.json": "b7a9d28275ac00ac89b406deed8e7034cfb045bb325f399e5c84de6112a16cd1",
+    "evidence\\backend\\t16-recovery-20261002T113741655233Z.json": "00f78a03a2e54dcff945d7cd070f82a57907c5e272f5698419b942017648c9ea"
+  },
+  "stable": true,
+  "paid_model_calls": 0,
+  "limitations": [
+    "No formal independent T18 QA performed by this owner.",
+    "No real Provider call performed; canonical budget ledger was neither read nor modified.",
+    "Mock TestClient is in-process; crash check reconstructs Store without finish/abandon, not an OS process kill.",
+    "AI and Frontend owned separately; full candidate hashes must be captured after all owners stop.",
+    "Existing failed timestamp records were retained; 073600 failed AssertionError and 073627 passed 29 checks are actual distinct results.",
+    "Normal sandbox process creation failed helper_unknown_error; require_escalated executed the authorized reads and local checks.",
+    "One initial read used shortened nonexistent timestamp filenames and exited 1; exact existing files were then read successfully.",
+    "Starlette emitted a TestClient/httpx deprecation warning; no dependency/environment changes made."
+  ]
+}

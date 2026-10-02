@@ -154,14 +154,14 @@ def validate_final_content(content: str | None, discovered_clue_ids: set[str], t
         value = strict_json(content or "")
         if not isinstance(value, dict) or set(value) != {"answer", "clue_refs", "proposal"}:
             raise ValueError()
-        if not isinstance(value["answer"], str) or not 1 <= len(value["answer"]) <= 4096 or not isinstance(value["clue_refs"], list):
+        if not isinstance(value["answer"], str) or not 1 <= len(value["answer"]) <= 4000 or not isinstance(value["clue_refs"], list):
             raise ValueError()
         refs = value["clue_refs"]
         if any(not isinstance(r, str) or r not in discovered_clue_ids for r in refs) or len(refs) != len(set(refs)):
             raise ValueError()
         proposal = value["proposal"]
         if proposal is not None:
-            if not isinstance(proposal, dict) or set(proposal) != {"tool", "arguments", "clue_refs", "summary"} or proposal["tool"] not in {"take", "use_item", "submit_code", "move"} or not isinstance(proposal["arguments"], dict) or not isinstance(proposal["clue_refs"], list) or any(not isinstance(r, str) or r not in discovered_clue_ids for r in proposal["clue_refs"]) or not isinstance(proposal["summary"], str) or not 1 <= len(proposal["summary"]) <= 4096:
+            if not isinstance(proposal, dict) or set(proposal) != {"tool", "arguments", "clue_refs", "summary"} or proposal["tool"] not in {"take", "use_item", "submit_code", "move"} or not isinstance(proposal["arguments"], dict) or not isinstance(proposal["clue_refs"], list) or any(not isinstance(r, str) or r not in discovered_clue_ids for r in proposal["clue_refs"]) or not isinstance(proposal["summary"], str) or not 1 <= len(proposal["summary"]) <= 4000:
                 raise ValueError()
             schemas = _validate_tools(tools or [])
             if proposal["tool"] not in schemas:
@@ -205,6 +205,7 @@ class DeepSeekProvider:
             raise ProviderError("UNAPPROVED_BUDGET_LEDGER")
 
     async def complete(self, messages, tools, limits=CallLimits(), *, scope="game", tool_choice="auto"):
+        self.last_response_metadata = None
         limits.validate()
         if not self.config.api_key.strip():
             raise ProviderError("MISSING_CREDENTIALS")
@@ -251,6 +252,9 @@ class DeepSeekProvider:
                 p, c, h = usage.get("prompt_tokens"), usage.get("completion_tokens"), usage.get("prompt_cache_hit_tokens", 0)
                 if all(type(x) is int and x >= 0 for x in (p,c,h)) and h <= p and type(usage.get("total_tokens")) is int and usage.get("total_tokens") == p+c and usage.get("prompt_cache_miss_tokens",p-h) == p-h:
                     normalized_usage = {"prompt_tokens":p,"completion_tokens":c,"total_tokens":p+c,"prompt_cache_hit_tokens":h}
+                    # Preserve known current-call usage even when settlement or
+                    # a subsequent bound/model check fails before diagnostics.
+                    self.last_response_metadata = {"call_id": call_id, "usage": normalized_usage}
                     try:
                         charged = self.ledger.settle(call_id, prompt_tokens=p, completion_tokens=c, cache_hit_tokens=h)
                         settled = True
@@ -267,6 +271,7 @@ class DeepSeekProvider:
             diagnostic_calls = diagnostic_message.get("tool_calls")
             reported_model = body.get("model") if isinstance(body,dict) else None
             self.last_response_metadata = {
+                "call_id": call_id,
                 "reported_model": reported_model if isinstance(reported_model,str) and re.fullmatch(r"[A-Za-z0-9_.:-]{1,128}",reported_model) else None,
                 "usage": normalized_usage,
                 "finish_reason": first.get("finish_reason") if first.get("finish_reason") in {"stop","tool_calls","length","content_filter","insufficient_system_resource","aborted"} else "unknown",
@@ -305,7 +310,10 @@ class DeepSeekProvider:
             if not settled:
                 self.ledger.retain(call_id, error.code)
             raise ProviderError(error.code, call_id=call_id) from None
-        except BaseException:
+        except asyncio.CancelledError:
+            self.ledger.retain(call_id, "INTERRUPTED_OR_INTERNAL")
+            raise
+        except Exception:
             self.ledger.retain(call_id, "INTERRUPTED_OR_INTERNAL")
             raise ProviderError("MODEL_UNAVAILABLE", call_id=call_id) from None
 

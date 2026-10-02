@@ -1,6 +1,6 @@
 # 逃离校园实验室
 
-本地网页解谜游戏。M0 与 M1/R1 已验收；M2 手动范围现已通过独立 API、浏览器和综合 deterministic checker，证据见 `release/README.md` 与 `evidence/delivery/docs-index-M2-accepted-20261002.json`。M2 包含三房间手动通关及单槽保存、恢复、重置。游戏 AI 尚未开放。完整范围见 `docs/SPEC.md` 与 `docs/execution-plan.md`；M2 验收不代表项目整体完成。
+本地网页解谜游戏。三房间手动通关、单槽保存恢复及 M3 AI 提案确认已完成实际验证。M3 独立检查覆盖 API、两个浏览器的三个宽度和一次受控真实 DeepSeek 游戏段；实验、评价器、CH01、干净目录交接与真人签署仍待完成。版本与范围见 `release/README.md`、`STATUS.md`；完整需求见 `docs/SPEC.md` 与 `docs/execution-plan.md`。
 
 ## 环境与安装
 
@@ -22,7 +22,7 @@ npm.cmd --prefix frontend ci
 & $ProjectPython -m scripts.dev --provider mock
 ```
 
-启动后打开 <http://127.0.0.1:5173/>，后端健康检查为 <http://127.0.0.1:8000/api/health>。前端 `/api` 请求代理到后端。当前实现包含三房间手动游戏，可在 R1/R2/R3 探索并通关至 EXIT，也可使用网页单槽保存、恢复和重置。重置清除当前游戏进度但保留存档。点击“开始新游戏”创建会话；之后可同步或刷新当前浏览器标签页。
+启动后打开 <http://127.0.0.1:5173/>，后端健康检查为 <http://127.0.0.1:8000/api/health>。前端 `/api` 请求代理到后端。可在 R1/R2/R3 探索并通关至 EXIT，也可使用单槽保存、恢复和重置。AI 探索伙伴依据已发现线索回答并提出固定参数行动，玩家明确确认后才执行，也可取消。上方 `--provider mock` 使用开发模拟输出。点击“开始新游戏”创建会话；之后可同步或刷新当前浏览器标签页。
 
 选择场景物件后，按页面提供的操作查看、拾取或使用道具。密码框只接受 1–16 位数字；提交错误密码时页面显示服务端返回的错误信息，可根据已发现线索修正后再试。服务异常时可用“同步进度”核对服务器当前状态。
 
@@ -30,11 +30,11 @@ npm.cmd --prefix frontend ci
 
 启动脚本读取项目根目录 `D:\深度能力\.env`，文件每行使用 `KEY=VALUE`；允许空行、整行 `#` 注释和一对包围值的引号，不支持多行值、`export` 或重复键，也不会执行 Shell 语法或展开变量。已有进程环境变量优先；`--provider mock` 显式覆盖 Provider，因此上方启动命令仍用于 mock 验证。省略 `--provider` 时使用加载后的 `AI_PROVIDER`，未设置则为 mock。启动日志不打印配置值。
 
-用户选择 DeepSeek 4.1 Flash，根目录 `.env` 本地配置项为 `AI_PROVIDER=deepseek`、`MODEL_BASE_URL=https://api.deepseek.com`、`MODEL_NAME=deepseek-flash`、`MODEL_API_KEY=本地密钥`；可参考 `.env.example`。真实凭据未在此处读取或展示。人民币 10 元项目总预算已获授权，涵盖所有付费调用。独立 Provider adapter 的工具请求与结果回传已通过验证，报告记录 4 次请求，累计计费上限估算为 ¥0.00230824；账单尚未核实。该验证不包含游戏 AI 集成：游戏 AI 仍未集成、网页中仍显示“尚未开放”，当前不可用。不要把 API 密钥放入前端变量、证据或仓库。
+用户选择 DeepSeek 4.1 Flash（`deepseek-flash`），人民币 10 元项目总预算已获授权。密钥放在根目录 `.env` 的 `MODEL_API_KEY`，真实启动使用 `--provider deepseek`。所有真实调用共用原 `data/ai-budget.sqlite`；不能删除账本或在复制目录建立新的付费额度。2026-10-02 受控游戏联调已完成 1 轮、2 次真实调用：首次强制 `get_inventory`，模型收到真实工具结果后提出开柜建议，测试玩家确认执行；这不证明模型自然选择工具或真人试玩。与此前 4 次 adapter 请求合计，保守费用上界为 ¥0.01035448，供应商账单未独立核实。不要将密钥放入前端变量、证据或仓库。
 
 `.env` 只加载到后端子进程。前端 npm/Vite 使用单独的环境，剥离继承的模型配置及名称含 API_KEY、TOKEN、SECRET 等敏感标识的变量，仅添加本地后端代理地址。
 
-后端使用本项目 `data/game.sqlite` 持久化数据，可用服务端环境变量 `SQLITE_PATH` 改到其他位置。能力令牌仅在创建会话响应中返回，不能复制到证据或日志。游戏 AI 区域尚未开放；独立 Provider adapter 的验证不等于游戏 AI 已集成。
+后端默认使用本项目 `data/game.sqlite` 持久化数据，可用服务端环境变量 `SQLITE_PATH` 改到其他位置。能力令牌仅在创建会话响应中返回，不能复制到证据或日志。AI 单轮最长等待 45 秒；建议参数由服务端固定，确认和取消请求使用空对象，不接受玩家改写行动参数。启动参数显式指定 mock 时，游戏 AI 使用开发模拟 Provider。
 
 ## 构建与确定性检查
 
@@ -58,7 +58,7 @@ npm.cmd --prefix frontend run build
 
 ## 当前验证范围与限制
 
-M2 手动范围已通过独立 API（27 tests、0 skip）、浏览器（1280/768/390 完整路线、存档/恢复/重置）和综合 checker（前端构建、27 tests、115 subtests；源码运行期间未变化）。AI 游戏集成与提案、实验、CH01、干净目录交接及真人课程签署仍未完成；不能据此声明项目整体完成或发布通过。没有公开部署或 GitHub Actions。
+M2 手动范围已独立验收。M3 最终 API 46 tests、0 skip；统一 checker 前端 build0、pytest46 passed/159 subtests、源码未变。Chrome 与 Edge 各1280/768/390 验证问答、引用定位、取消、确认、过期与不确定响应；手动浏览器三宽度通关回归通过。真实验证的受控范围见上述说明。初始测试脚本失败、修正和复测记录均保留。实验、评价器、CH01、干净目录交接及真人签署仍未完成；没有公开部署或 GitHub Actions。
 
 ## 交付材料索引
 

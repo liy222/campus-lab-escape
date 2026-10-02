@@ -1,0 +1,42 @@
+[
+  {
+    "AI_turns": 1,
+    "provider_attempts": 2,
+    "tool": "get_inventory",
+    "proposal": {
+      "proposal_id": "935da1d1b5ab44dc883376da5dbd6c6a",
+      "tool": "submit_code",
+      "arguments": {
+        "target_id": "r1_cabinet",
+        "code": "382"
+      },
+      "revision": 2,
+      "generation": "0fdf6af2-3786-4503-b648-db9c6fd58a6f",
+      "expires_at": "2026-10-02T12:09:38.695197Z",
+      "status": "pending",
+      "clue_refs": [
+        "r1_note_clue",
+        "r1_cabinet_clue"
+      ],
+      "summary": "建议（尚未执行，需要玩家确认）：建议向值班柜输入由柜门顺序（三角、圆、方）和便签映射（3、8、2）推出的密码 382。"
+    },
+    "confirm_receipt": {
+      "request_id": "935da1d1b5ab44dc883376da5dbd6c6a",
+      "event_id": "0e4cfe4a9afc4ed59cb6e478d95d2475",
+      "tool": "submit_code",
+      "arguments": {
+        "target_id": "r1_cabinet",
+        "code": "382"
+      },
+      "generation": "0fdf6af2-3786-4503-b648-db9c6fd58a6f",
+      "revision_before": 2,
+      "revision_after": 3,
+      "changed": true,
+      "message": "值班柜已打开。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replays_no_new_provider": true
+  }
+]

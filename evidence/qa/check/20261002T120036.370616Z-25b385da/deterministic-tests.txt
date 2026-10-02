@@ -1,0 +1,39 @@
+....................F.........................            [100%]
+================================== FAILURES ===================================
+_______ M3Acceptance.test_A16_calls_reads_loops_and_shortened_deadlines _______
+
+self = <tests.api.test_m3.M3Acceptance testMethod=test_A16_calls_reads_loops_and_shortened_deadlines>
+
+    def test_A16_calls_reads_loops_and_shortened_deadlines(self):
+        self.assertEqual(vars(RuntimeLimits()), dict(model_calls=3, read_tool_calls=5, progress_proposals=1,
+            call_seconds=20., total_seconds=45., output_tokens=1000, format_retries=1))
+        self.stopped([reply(calls=[call('get_inventory', {}, 'loop')])], 'AI_LIMIT_REACHED', 2)
+        self.stopped([reply(calls=[call('inspect', {'object_id': f'unknown_{i}'}, f'call_{i}') for i in range(6)])], 'AI_LIMIT_REACHED', 1)
+        provider = self.install([reply(calls=[call('inspect', {'object_id': f'unknown_{i}'}, f'call_{i}')]) for i in range(3)])
+        self.assertEqual(self.ask()['stop_reason'], 'AI_LIMIT_REACHED')
+        self.assertEqual(provider.calls, 3)
+        async def slow():
+            await asyncio.sleep(.15)
+            return final()
+        data, provider = self.stopped([slow], 'MODEL_TIMEOUT', 1, RuntimeLimits(call_seconds=.03, total_seconds=.07))
+        self.assertIsNone(data['usage']['input_tokens'])
+        self.assertLessEqual(provider.limits[0].timeout_seconds, .03)
+        async def medium():
+            await asyncio.sleep(.025)
+            return reply('malformed')
+>       self.stopped([medium], 'MODEL_TIMEOUT', 2, RuntimeLimits(call_seconds=.04, total_seconds=.04))
+
+tests\api\test_m3.py:398: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\api\test_m3.py:101: in stopped
+    self.assertEqual(provider.calls, calls)
+E   AssertionError: 1 != 2
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/api/test_m3.py::M3Acceptance::test_A16_calls_reads_loops_and_shortened_deadlines
+1 failed, 45 passed, 1 warning, 159 subtests passed in 14.14s

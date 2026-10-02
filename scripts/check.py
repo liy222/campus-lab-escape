@@ -25,7 +25,7 @@ def source_hashes() -> dict[str, str]:
         for path in sorted(base.rglob("*")):
             if not path.is_file() or excluded.intersection(path.relative_to(base).parts):
                 continue
-            if path.suffix.lower() not in {".py", ".ts", ".tsx", ".css", ".html", ".json", ".txt", ".in"}:
+            if path.suffix.lower() not in {".py", ".ts", ".tsx", ".mjs", ".css", ".html", ".json", ".txt", ".in"}:
                 continue
             result[path.relative_to(ROOT).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
     return result

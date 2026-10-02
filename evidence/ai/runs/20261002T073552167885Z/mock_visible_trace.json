@@ -1,0 +1,312 @@
+[
+  {
+    "kind": "turn_started",
+    "revision": 0,
+    "generation": "dc99b15e-91b0-4c5e-81b0-4e17d87870d7",
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "1.0.0",
+      "session_id": "fixture_session",
+      "revision": 0,
+      "generation": "dc99b15e-91b0-4c5e-81b0-4e17d87870d7",
+      "status": "playing",
+      "room": {
+        "room_id": "R1",
+        "name": "公开测试房间",
+        "description": "仅公开投影"
+      },
+      "objects": [
+        {
+          "object_id": "map_note",
+          "name": "映射",
+          "kind": "clue",
+          "description": "待查看",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "map_note"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "code_box",
+          "name": "顺序",
+          "kind": "container",
+          "description": "数字锁",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "code_box"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入",
+              "arguments": {
+                "target_id": "code_box"
+              },
+              "requires_code": true
+            }
+          ]
+        }
+      ],
+      "inventory": [],
+      "clues": [],
+      "exits": [],
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "save": null
+    },
+    "visible_history": [],
+    "message_sha256": "50563a661917c7a4ba71c3e9f11d16e4fa717fe246d2e34e8a59ea3451af3888",
+    "message_length": 20,
+    "limits": {
+      "model_calls": 3,
+      "read_tool_calls": 5,
+      "progress_proposals": 1,
+      "call_seconds": 20.0,
+      "total_seconds": 45.0,
+      "output_tokens": 1000,
+      "format_retries": 1
+    },
+    "context_mode": "full_history"
+  },
+  {
+    "kind": "provider_result",
+    "attempt": 1,
+    "provider": "mock",
+    "requested_model": "deterministic-visible-v1",
+    "reported_model": "deterministic-visible-v1",
+    "usage": null,
+    "call_id": null,
+    "cost_upper_cny": null,
+    "finish_reason": "tool_calls"
+  },
+  {
+    "kind": "read_tool",
+    "ok": true,
+    "tool": "inspect",
+    "arguments": {
+      "object_id": "map_note"
+    },
+    "observation": "公开观察",
+    "new_clue_ids": [
+      "map_note_clue"
+    ],
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "1.0.0",
+      "session_id": "fixture_session",
+      "revision": 1,
+      "generation": "dc99b15e-91b0-4c5e-81b0-4e17d87870d7",
+      "status": "playing",
+      "room": {
+        "room_id": "R1",
+        "name": "公开测试房间",
+        "description": "仅公开投影"
+      },
+      "objects": [
+        {
+          "object_id": "map_note",
+          "name": "映射",
+          "kind": "clue",
+          "description": "待查看",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "map_note"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "code_box",
+          "name": "顺序",
+          "kind": "container",
+          "description": "数字锁",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "code_box"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入",
+              "arguments": {
+                "target_id": "code_box"
+              },
+              "requires_code": true
+            }
+          ]
+        }
+      ],
+      "inventory": [],
+      "clues": [
+        {
+          "clue_id": "map_note_clue",
+          "object_id": "map_note",
+          "title": "已发现测试线索",
+          "text": "三角记为6，圆记为4，方记为9。"
+        }
+      ],
+      "exits": [],
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "save": null
+    },
+    "error_code": null
+  },
+  {
+    "kind": "read_tool",
+    "ok": true,
+    "tool": "inspect",
+    "arguments": {
+      "object_id": "code_box"
+    },
+    "observation": "公开观察",
+    "new_clue_ids": [
+      "code_box_clue"
+    ],
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "1.0.0",
+      "session_id": "fixture_session",
+      "revision": 2,
+      "generation": "dc99b15e-91b0-4c5e-81b0-4e17d87870d7",
+      "status": "playing",
+      "room": {
+        "room_id": "R1",
+        "name": "公开测试房间",
+        "description": "仅公开投影"
+      },
+      "objects": [
+        {
+          "object_id": "map_note",
+          "name": "映射",
+          "kind": "clue",
+          "description": "待查看",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "map_note"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "code_box",
+          "name": "顺序",
+          "kind": "container",
+          "description": "数字锁",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "code_box"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入",
+              "arguments": {
+                "target_id": "code_box"
+              },
+              "requires_code": true
+            }
+          ]
+        }
+      ],
+      "inventory": [],
+      "clues": [
+        {
+          "clue_id": "map_note_clue",
+          "object_id": "map_note",
+          "title": "已发现测试线索",
+          "text": "三角记为6，圆记为4，方记为9。"
+        },
+        {
+          "clue_id": "code_box_clue",
+          "object_id": "code_box",
+          "title": "已发现测试线索",
+          "text": "标签从左到右是：三角、圆、方。"
+        }
+      ],
+      "exits": [],
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "save": null
+    },
+    "error_code": null
+  },
+  {
+    "kind": "provider_result",
+    "attempt": 2,
+    "provider": "mock",
+    "requested_model": "deterministic-visible-v1",
+    "reported_model": "deterministic-visible-v1",
+    "usage": null,
+    "call_id": null,
+    "cost_upper_cny": null,
+    "finish_reason": "stop"
+  },
+  {
+    "kind": "answer",
+    "answer": "建议（尚未执行，需要玩家确认）：依据已发现线索中的数字与顺序，可以提交推导的密码；请确认。",
+    "clue_refs": [
+      "map_note_clue",
+      "code_box_clue"
+    ]
+  },
+  {
+    "kind": "turn_finished",
+    "status": "completed",
+    "stop_reason": null,
+    "revision": 2,
+    "generation": "dc99b15e-91b0-4c5e-81b0-4e17d87870d7",
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 2,
+      "read_tool_calls": 2
+    },
+    "candidate": {
+      "tool": "submit_code",
+      "arguments": {
+        "target_id": "code_box",
+        "code": "649"
+      },
+      "clue_refs": [
+        "map_note_clue",
+        "code_box_clue"
+      ],
+      "summary": "建议（尚未执行，需要玩家确认）：依据已发现线索中的数字与顺序，可以提交推导的密码；请确认。"
+    }
+  }
+]

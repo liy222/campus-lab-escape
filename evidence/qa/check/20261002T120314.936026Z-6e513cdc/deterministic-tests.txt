@@ -1,0 +1,22 @@
+......................................F.......                [100%]
+================================== FAILURES ===================================
+_______________ R1Acceptance.test_A10_visibility_and_hidden_ids _______________
+
+self = <tests.api.test_r1.R1Acceptance testMethod=test_A10_visibility_and_hidden_ids>
+
+    def test_A10_visibility_and_hidden_ids(self):
+        text = json.dumps(self.state(), ensure_ascii=False)
+        for hidden in ['382', '724', '231', '三角记为3', '柜门标签从左到右', '青色7', '冷却对应2', 'access_card', 'emergency_key', 'game_fields', 'opened_containers', 'discovered_clue_ids']:
+>           self.assertNotIn(hidden, text)
+E           AssertionError: '231' unexpectedly found in '{"schema_version": "1.0.0", "level_version": "1.0.0", "session_id": "e3e70ad71bd74dbe99e62e23118b1d1b", "revision": 0, "generation": "3818ba2a-a44c-4061-a688-ae20ba4025ff", "status": "playing", "room": {"room_id": "R1", "name": "值班室", "description": "夜间断电了，先寻找通往设备间的门卡。"}, "objects": [{"object_id": "r1_note", "name": "值班便签", "kind": "clue", "description": "桌上有一张值班便签。", "actions": [{"tool": "inspect", "label": "查看", "arguments": {"object_id": "r1_note"}, "requires_code": false}]}, {"object_id": "r1_cabinet", "name": "值班柜", "kind": "container", "description": "带数字锁的值班柜，门上贴着形状标签。", "actions": [{"tool": "inspect", "label": "查看", "arguments": {"object_id": "r1_cabinet"}, "requires_code": false}, {"tool": "submit_code", "label": "输入密码", "arguments": {"target_id": "r1_cabinet"}, "requires_code": true}]}, {"object_id": "r1_door", "name": "设备间刷卡门", "kind": "door", "description": "通向设备间的刷卡门。", "actions": [{"tool": "inspect", "label": "查看", "arguments": {"object_id": "r1_door"}, "requires_code": false}]}], "inventory": [], "clues": [], "exits": [{"destination_id": "R2", "name": "设备间", "unlocked": false}], "progress": {"power_on": false, "check_done": false}, "save": null}'
+
+tests\api\test_r1.py:133: AssertionError
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/api/test_r1.py::R1Acceptance::test_A10_visibility_and_hidden_ids
+1 failed, 45 passed, 1 warning, 155 subtests passed in 15.23s

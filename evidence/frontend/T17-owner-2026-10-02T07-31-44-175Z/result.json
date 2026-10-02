@@ -1,0 +1,207 @@
+{
+  "scope": "frontend owner development, not independent QA/human playtest/real AI acceptance",
+  "provider": "mock",
+  "command": "node scripts/owner-ai-smoke.mjs",
+  "source_before": {
+    "frontend/src/App.tsx": "a8c3bcb0de3f716b7d05d41ec22f8e08e250671c988c462c0ce4d6054c6155e8",
+    "frontend/src/Assistant.tsx": "4dd8a895e88667360bd63350a96ae7bfa6afe16bbd5b4ec844ef5f6fd49662bd",
+    "frontend/src/api.ts": "1c5e2219f557504cb9d1171f64460484f3bd2e4e560116297e6dd98a31a47aa7",
+    "frontend/src/style.css": "3aab25ba2b3e34e153c4368996f2db06300dbe04317f76ec1ad793cce7167900",
+    "backend/app/api/routes.py": "a93901a5d791cb2550ecdbe2a6cdb935a5b7126637061b6172adf9ed9c422d4a",
+    "backend/app/storage/sqlite.py": "ea094fce6270f1b47dca19885b1bb40df6275c198f13b4c5c57541e653c991ff",
+    "backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "backend/app/ai/runtime.py": "f4dccfee44d89387b647b0746084d883a56ac5b70dff753adcda68ce518a61b9",
+    "backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b"
+  },
+  "source_after": {
+    "frontend/src/App.tsx": "a8c3bcb0de3f716b7d05d41ec22f8e08e250671c988c462c0ce4d6054c6155e8",
+    "frontend/src/Assistant.tsx": "4dd8a895e88667360bd63350a96ae7bfa6afe16bbd5b4ec844ef5f6fd49662bd",
+    "frontend/src/api.ts": "1c5e2219f557504cb9d1171f64460484f3bd2e4e560116297e6dd98a31a47aa7",
+    "frontend/src/style.css": "3aab25ba2b3e34e153c4368996f2db06300dbe04317f76ec1ad793cce7167900",
+    "backend/app/api/routes.py": "a93901a5d791cb2550ecdbe2a6cdb935a5b7126637061b6172adf9ed9c422d4a",
+    "backend/app/storage/sqlite.py": "ea094fce6270f1b47dca19885b1bb40df6275c198f13b4c5c57541e653c991ff",
+    "backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "backend/app/ai/runtime.py": "f4dccfee44d89387b647b0746084d883a56ac5b70dff753adcda68ce518a61b9",
+    "backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b"
+  },
+  "source_unchanged": true,
+  "checks": [
+    {
+      "name": "no horizontal overflow",
+      "result": "passed",
+      "stage": "proposed",
+      "width": 1280
+    },
+    {
+      "name": "mock discovers actual clues, readonly fixed proposal, keyboard cancel without progression",
+      "result": "passed",
+      "width": 1280
+    },
+    {
+      "name": "no horizontal overflow",
+      "result": "passed",
+      "stage": "committed",
+      "width": 1280
+    },
+    {
+      "name": "new mock proposal confirmed by keyboard; real receipt only; repeated UI confirm disabled",
+      "result": "passed",
+      "width": 1280,
+      "receipt_revision_before": 2,
+      "receipt_revision_after": 3
+    },
+    {
+      "name": "manual revision invalidates pending proposal; restore generation clears assistant and question",
+      "result": "passed"
+    },
+    {
+      "name": "another UI client changes version; server rejects stale confirmation and current state remains",
+      "result": "passed"
+    },
+    {
+      "name": "AI response delayed beyond 15s succeeds; manual inventory remains usable",
+      "result": "passed",
+      "delay_ms": 16000,
+      "fixture": "local transport delay; actual backend mock response"
+    },
+    {
+      "name": "delayed AI response from retired generation cannot overwrite reset state",
+      "result": "passed",
+      "fixture": "local transport gate around actual backend response"
+    },
+    {
+      "name": "stopped status/reason rendered and actual newly discovered clues retained",
+      "result": "passed",
+      "fixture": "local browser response injection, not provider timeout"
+    },
+    {
+      "name": "unknown clue references refused without losing game",
+      "result": "passed",
+      "fixture": "local malformed response injection"
+    },
+    {
+      "name": "rejected display never invents committed receipt",
+      "result": "passed",
+      "fixture": "local browser response injection after actual confirm; not server rejection evidence"
+    },
+    {
+      "name": "client expiry blocks confirm",
+      "result": "passed",
+      "fixture": "local browser clock acceleration; server TTL owned by QA"
+    },
+    {
+      "name": "dedicated 55s AI timer registered; locally accelerated abort reconciles without resend",
+      "result": "passed",
+      "fixture": "local timeout acceleration and network hold, not real model timeout"
+    },
+    {
+      "name": "no horizontal overflow",
+      "result": "passed",
+      "stage": "proposed",
+      "width": 768
+    },
+    {
+      "name": "mock discovers actual clues, readonly fixed proposal, keyboard cancel without progression",
+      "result": "passed",
+      "width": 768
+    },
+    {
+      "name": "no horizontal overflow",
+      "result": "passed",
+      "stage": "committed",
+      "width": 768
+    },
+    {
+      "name": "new mock proposal confirmed by keyboard; real receipt only; repeated UI confirm disabled",
+      "result": "passed",
+      "width": 768,
+      "receipt_revision_before": 2,
+      "receipt_revision_after": 3
+    },
+    {
+      "name": "no horizontal overflow",
+      "result": "passed",
+      "stage": "proposed",
+      "width": 390
+    },
+    {
+      "name": "mock discovers actual clues, readonly fixed proposal, keyboard cancel without progression",
+      "result": "passed",
+      "width": 390
+    },
+    {
+      "name": "no horizontal overflow",
+      "result": "passed",
+      "stage": "committed",
+      "width": 390
+    },
+    {
+      "name": "new mock proposal confirmed by keyboard; real receipt only; repeated UI confirm disabled",
+      "result": "passed",
+      "width": 390,
+      "receipt_revision_before": 2,
+      "receipt_revision_after": 3
+    },
+    {
+      "name": "no page runtime errors; request bodies for every confirm/cancel exactly empty object",
+      "result": "passed",
+      "confirmation_requests": 9
+    }
+  ],
+  "errors": [],
+  "confirm_cancel_requests": [
+    {
+      "operation": "cancel",
+      "body": {}
+    },
+    {
+      "operation": "confirm",
+      "body": {}
+    },
+    {
+      "operation": "confirm",
+      "body": {}
+    },
+    {
+      "operation": "cancel",
+      "body": {}
+    },
+    {
+      "operation": "confirm",
+      "body": {}
+    },
+    {
+      "operation": "cancel",
+      "body": {}
+    },
+    {
+      "operation": "confirm",
+      "body": {}
+    },
+    {
+      "operation": "cancel",
+      "body": {}
+    },
+    {
+      "operation": "confirm",
+      "body": {}
+    }
+  ],
+  "cleanup": [
+    {
+      "name": "frontend",
+      "exit_code": null,
+      "signal": "SIGTERM",
+      "stopped": true
+    },
+    {
+      "name": "backend",
+      "exit_code": null,
+      "signal": "SIGTERM",
+      "stopped": true
+    }
+  ],
+  "result": "passed"
+}

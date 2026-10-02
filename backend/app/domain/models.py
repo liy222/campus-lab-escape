@@ -25,6 +25,10 @@ class ActionRequest(VersionRequest):
     arguments: dict
 
 
+class AITurnRequest(VersionRequest):
+    message: Annotated[str, Field(min_length=1, max_length=2000)]
+
+
 class InspectArgs(StrictModel):
     object_id: Identifier
 
@@ -80,3 +84,4 @@ class RuleError(Exception):
         self.code = code
         self.message = message
         super().__init__(message)
+

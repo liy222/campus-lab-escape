@@ -49,3 +49,41 @@ async def reset_session(session_id: str, request: Request):
 async def restore_session(session_id: str, request: Request):
     raw, parsed = await body(request)
     return response(request.app.state.store.control(session_id, request.headers.get("X-Session-Token"), "restore", raw, parsed))
+
+
+@router.post("/sessions/{session_id}/ai/turns")
+async def ai_turn(session_id: str, request: Request):
+    import asyncio
+    from ..ai.types import TurnStart
+    from ..storage.sqlite import new_id
+    raw, parsed = await body(request)
+    store = request.app.state.store
+    token = request.headers.get("X-Session-Token")
+    started = store.begin_ai(session_id, token, raw, parsed)
+    if not isinstance(started[0], TurnStart):
+        return response(started)
+    start, callbacks = started
+    try:
+        result = await request.app.state.ai_runtime.run(start, callbacks)
+        return response(store.finish_ai(session_id, start.turn_id, result))
+    except asyncio.CancelledError:
+        store.abandon_ai(session_id, start.turn_id)
+        raise
+    except Exception:
+        # Unknown upstream/runtime outcome is durable and cannot be charged again.
+        store.abandon_ai(session_id, start.turn_id)
+        with store.transaction() as connection:
+            state = store.authenticate(connection, session_id, token)
+            return response(store.failure(connection, new_id(), session_id, "ai_turn", "MODEL_UNAVAILABLE", "该轮次结果未知，进度已保留；同一请求不会重新调用模型。", state, {"turn_id": start.turn_id}))
+
+
+@router.post("/sessions/{session_id}/proposals/{proposal_id}/confirm")
+async def confirm_proposal(session_id: str, proposal_id: str, request: Request):
+    raw, parsed = await body(request)
+    return response(request.app.state.store.proposal_operation(session_id, request.headers.get("X-Session-Token"), proposal_id, "confirm", raw, parsed))
+
+
+@router.post("/sessions/{session_id}/proposals/{proposal_id}/cancel")
+async def cancel_proposal(session_id: str, proposal_id: str, request: Request):
+    raw, parsed = await body(request)
+    return response(request.app.state.store.proposal_operation(session_id, request.headers.get("X-Session-Token"), proposal_id, "cancel", raw, parsed))

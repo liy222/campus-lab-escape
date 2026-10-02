@@ -1,0 +1,133 @@
+{
+  "scope": "Backend owner local mock checks; not formal T18 QA",
+  "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -m evidence.backend.t16_local",
+  "started_at": "20261002T113615933883Z",
+  "paid_model_calls": 0,
+  "explicit_local_provider": true,
+  "checks": [
+    {
+      "check": "mock own inspect advances server cursor to rev2; proposal is pending; same-ID finished replay neither calls provider nor creates second proposal",
+      "passed": true
+    },
+    {
+      "check": "confirm executes stored arguments once; repeat returns immutable receipt/current state; committed cancel rejects; turn replay reads current proposal status",
+      "passed": true
+    },
+    {
+      "check": "cancel and repeated cancel do not progress; cancelled confirmation refuses",
+      "passed": true
+    },
+    {
+      "check": "one pending proposal per session; new legal proposal invalidates previous pending",
+      "passed": true
+    },
+    {
+      "check": "fixed empty confirm body rejects client replacement; actual manual mutation invalidates pending",
+      "passed": true
+    },
+    {
+      "check": "complete three-room AI mock route via fixed proposals/confirm; fuse consumed and baseline key retained",
+      "passed": true
+    },
+    {
+      "check": "current-generation full public history exceeds 12 records; trace retains actual versions/limits/tool inputs/results/usage while excluding capability/private fields",
+      "passed": true
+    },
+    {
+      "check": "reset/restore invalidate even committed proposal generations; old turn replay denied; save metadata projects through AI and errors",
+      "passed": true
+    },
+    {
+      "check": "context spy sees public projections only; current capability never enters model or events",
+      "passed": true
+    },
+    {
+      "check": "pending duplicate gets 503 without second call; shared namespace conflict; manual action commits during network wait and stale turn stops with true usage",
+      "passed": true
+    },
+    {
+      "check": "callbacks reject progress tools and forged expected cursor; abandoned durable claim stays tombstoned after service reconstruction",
+      "passed": true
+    },
+    {
+      "check": "reset/restore during model await stop old turn, retain truthful call count/current slot/new generation and forbid old request replay",
+      "passed": true
+    },
+    {
+      "check": "synthetic factory fault preserves health/session/manual action and returns truthful AI unavailable: missing_credentials",
+      "passed": true
+    },
+    {
+      "check": "synthetic factory fault preserves health/session/manual action and returns truthful AI unavailable: invalid_model",
+      "passed": true
+    },
+    {
+      "check": "synthetic factory fault preserves health/session/manual action and returns truthful AI unavailable: invalid_base",
+      "passed": true
+    },
+    {
+      "check": "unknown provider configuration remains explicit unavailable, with manual progress intact",
+      "passed": true
+    },
+    {
+      "check": "stopped fault turn records true calls/current state and immutable replay: timeout",
+      "passed": true
+    },
+    {
+      "check": "stopped fault turn records true calls/current state and immutable replay: unavailable",
+      "passed": true
+    },
+    {
+      "check": "stopped fault turn records true calls/current state and immutable replay: bad_json",
+      "passed": true
+    },
+    {
+      "check": "stopped fault turn records true calls/current state and immutable replay: unknown_refs",
+      "passed": true
+    },
+    {
+      "check": "stopped fault turn records true calls/current state and immutable replay: bad_code",
+      "passed": true
+    },
+    {
+      "check": "backend independently refuses untrusted runtime result: bad_candidate",
+      "passed": true
+    },
+    {
+      "check": "backend independently refuses untrusted runtime result: injected_state",
+      "passed": true
+    },
+    {
+      "check": "backend independently refuses untrusted runtime result: bad_usage",
+      "passed": true
+    },
+    {
+      "check": "unexpected runtime error creates durable unknown tombstone; same ID never restarts upstream work",
+      "passed": true
+    },
+    {
+      "check": "foreign proposal is not found; expired confirm/cancel refuse; concurrent confirm has exactly one committed receipt",
+      "passed": true
+    },
+    {
+      "check": "confirm/cancel race has one terminal winner and no second progress",
+      "passed": true
+    },
+    {
+      "check": "strict AI envelope rejects missing/empty/oversize message and HTTP scenario injection",
+      "passed": true
+    },
+    {
+      "check": "actual Git-exported M2 six-column Store generated DB migrates idempotently; old action/save/failure receipts replay unchanged; new explicit-column inserts work",
+      "passed": true
+    }
+  ],
+  "exit_code": 0,
+  "source_sha256": {
+    "backend\\app\\storage\\ai.py": "8c93b995d6f19d4a3657b09058656b0e4636cd723bcad69327c116d77d733386",
+    "backend\\app\\storage\\sqlite.py": "ea094fce6270f1b47dca19885b1bb40df6275c198f13b4c5c57541e653c991ff",
+    "backend\\app\\domain\\models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend\\app\\api\\routes.py": "a93901a5d791cb2550ecdbe2a6cdb935a5b7126637061b6172adf9ed9c422d4a",
+    "backend\\app\\main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692"
+  }
+}

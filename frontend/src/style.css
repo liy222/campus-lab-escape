@@ -21,3 +21,50 @@ dialog { border:1px solid #6f866d; border-radius:14px; background:#223127; color
 .lab-scene[data-room="R3"] { background:linear-gradient(0deg,#3d3834 0,#3d3834 18%,transparent 18%),linear-gradient(110deg,#403d36,#4a5041 60%,#293a31); }
 .lab-scene[data-room="EXIT"] { background:linear-gradient(130deg,#3a5a43,#687851); }
 .lab-scene[data-room="EXIT"] .scene-table,.lab-scene[data-room="EXIT"] .scene-light { display:none; }
+.support-grid { align-items:start; }
+.ai-panel { display:block; padding:22px; }
+.ai-panel .panel-heading { flex-wrap:wrap; }
+.provider-badge { color:var(--mint); font-size:10px; border:1px solid #546e5b; padding:5px 8px; border-radius:5px; }
+.ai-question { margin-top:18px; }
+.ai-question label { font-size:12px; display:block; margin-bottom:8px; }
+.ai-question textarea { font:inherit; color:#e9efd9; background:#141f19; border:1px solid #596958; border-radius:7px; width:100%; resize:vertical; min-height:90px; padding:11px 12px; font-size:12px; line-height:1.7; }
+.ai-question textarea:focus-visible { outline:3px solid #dcebab; outline-offset:4px; }
+.ai-question textarea:disabled { opacity:.55; }
+.ai-question textarea::placeholder { color:var(--muted); }
+.ai-question-actions { display:flex; align-items:center; justify-content:space-between; margin-top:9px; gap:15px; }
+.ai-question-actions small { color:var(--muted); }
+.ai-feedback { font-size:12px; margin-top:14px; }
+.ai-feedback p { border-radius:7px; padding:9px 12px; margin-top:8px; }
+.ai-answer { margin-top:16px; border-top:1px solid var(--line); padding-top:16px; }
+.ai-answer>p { font-size:13px; color:#d5dfce; white-space:pre-wrap; overflow-wrap:anywhere; }
+.ai-answer .ai-status { color:var(--mint); font-size:11px; margin-bottom:8px; }
+.ai-answer h3 { font-size:11px; color:#bdcfb5; margin-top:14px; }
+.ai-answer .stop-reason { color:#e1c6a9; font-size:12px; margin-top:9px; }
+.ai-references { display:flex; flex-wrap:wrap; gap:8px; list-style:none; margin:10px 0 0; padding:0; }
+.ai-references a { display:inline-block; padding:6px 9px; border:1px solid #4d634e; border-radius:6px; color:#d0e4c3; font-size:11px; }
+.ai-references a:hover { background:#354c38; }
+.usage,.ai-trace { margin-top:16px; font-size:11px; color:var(--muted); }
+.usage summary,.ai-trace summary { cursor:pointer; padding:5px 0; }
+.usage p { font-size:11px; line-height:1.8; margin-top:6px; }
+.proposal-card { padding:16px; margin-top:18px; border:1px solid #647f57; background:#26372c; border-radius:9px; }
+.proposal-card h3 { font-size:13px; }
+.proposal-card>p { font-size:12px; margin-top:12px; overflow-wrap:anywhere; }
+.proposal-status { font-size:10px; color:#d5e4c3; }
+.status-committed { color:#c4eccd; }
+.status-rejected,.status-unknown { color:#f3c4ae; }
+.proposal-parameters { margin:14px 0 0; font-size:11px; padding:10px; background:#19291f; border-radius:6px; }
+.proposal-parameters>div { display:grid; grid-template-columns:minmax(80px,.5fr) minmax(0,1fr); gap:8px; padding:5px 0; }
+.proposal-parameters dt { color:var(--muted); overflow-wrap:anywhere; }
+.proposal-parameters dd { margin:0; color:#dfebd4; overflow-wrap:anywhere; }
+.proposal-card .proposal-expiry { font-size:10px; color:#bbcaae; }
+.proposal-actions { display:flex; gap:9px; flex-wrap:wrap; margin-top:14px; }
+.proposal-disclaimer { display:block; color:#c4d0b8; margin-top:10px; line-height:1.8; }
+.committed-receipt { margin-top:14px; padding:12px; border-left:2px solid var(--mint); background:#314a36; font-size:12px; }
+.committed-receipt p { margin-top:6px; white-space:pre-wrap; }
+.committed-receipt small { display:block; margin-top:8px; line-height:1.8; }
+.ai-trace ol { padding-left:18px; }
+.ai-trace li { margin-top:12px; }
+.ai-trace p { margin:5px 0; }
+.ai-trace pre { font-size:10px; white-space:pre-wrap; overflow-wrap:anywhere; background:#14251a; padding:10px; border-radius:6px; max-height:240px; overflow:auto; }
+.clue-list li:focus { outline:2px solid var(--mint); outline-offset:5px; }
+@media(max-width:760px) { .ai-panel { padding:20px 18px; } .proposal-card { padding:13px; } }

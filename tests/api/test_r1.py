@@ -15,6 +15,23 @@ SCHEMA = json.loads((ROOT / 'contracts/api.schema.json').read_text(encoding='utf
 EXCHANGES, SECRETS = [], set()
 
 
+def semantic_text(value):
+    """Scan actual public content; random IDs/hashes can coincidentally be codes.
+
+    Full unmodified exchanges are still recorded and separately schema/token
+    checked. Only unguessable tracking metadata is excluded from answer scans.
+    """
+    tracking = {'session_id', 'generation', 'source_generation', 'event_id', 'request_id',
+                'turn_id', 'proposal_id', 'message_sha256', 'expires_at', 'saved_at'}
+    def project(item):
+        if isinstance(item, dict):
+            return {k: project(v) for k, v in item.items() if k not in tracking}
+        if isinstance(item, list):
+            return [project(v) for v in item]
+        return item
+    return json.dumps(project(value), ensure_ascii=False)
+
+
 def sanitize(value):
     if isinstance(value, dict):
         return {k: '[REDACTED]' if k.lower() in {'token', 'x-session-token', 'authorization'} else sanitize(v) for k, v in value.items()}
@@ -124,11 +141,11 @@ class R1Acceptance(HTTPFixture):
 
     def test_A04_wrong_code_no_answer_leak(self):
         body = self.reject(self.request('submit_code', {'target_id': 'r1_cabinet', 'code': '000'}), 'WRONG_CODE')
-        self.assertNotIn('382', json.dumps(body, ensure_ascii=False))
+        self.assertNotIn('382', semantic_text(body))
         self.assertNotIn('access_card', json.dumps(body, ensure_ascii=False))
 
     def test_A10_visibility_and_hidden_ids(self):
-        text = json.dumps(self.state(), ensure_ascii=False)
+        text = semantic_text(self.state())
         for hidden in ['382', '724', '231', '三角记为3', '柜门标签从左到右', '青色7', '冷却对应2', 'access_card', 'emergency_key', 'game_fields', 'opened_containers', 'discovered_clue_ids']:
             self.assertNotIn(hidden, text)
         self.reject(self.request('take', {'item_id': 'access_card'}), 'NOT_VISIBLE')

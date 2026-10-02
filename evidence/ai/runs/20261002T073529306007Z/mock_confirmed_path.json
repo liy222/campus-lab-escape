@@ -1,0 +1,191 @@
+[
+  {
+    "turn": 0,
+    "tool": "submit_code",
+    "room_after_confirmation": "R1",
+    "revision": 3,
+    "clue_refs": [
+      "r1_note_clue",
+      "r1_cabinet_clue"
+    ],
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 2,
+      "read_tool_calls": 3
+    }
+  },
+  {
+    "turn": 1,
+    "tool": "take",
+    "room_after_confirmation": "R1",
+    "revision": 4,
+    "clue_refs": [],
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 1,
+      "read_tool_calls": 0
+    }
+  },
+  {
+    "turn": 2,
+    "tool": "use_item",
+    "room_after_confirmation": "R1",
+    "revision": 5,
+    "clue_refs": [],
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 1,
+      "read_tool_calls": 0
+    }
+  },
+  {
+    "turn": 3,
+    "tool": "move",
+    "room_after_confirmation": "R2",
+    "revision": 6,
+    "clue_refs": [],
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 2,
+      "read_tool_calls": 1
+    }
+  },
+  {
+    "turn": 4,
+    "tool": "take",
+    "room_after_confirmation": "R2",
+    "revision": 7,
+    "clue_refs": [],
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 1,
+      "read_tool_calls": 0
+    }
+  },
+  {
+    "turn": 5,
+    "tool": "use_item",
+    "room_after_confirmation": "R2",
+    "revision": 8,
+    "clue_refs": [],
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 1,
+      "read_tool_calls": 0
+    }
+  },
+  {
+    "turn": 6,
+    "tool": "submit_code",
+    "room_after_confirmation": "R2",
+    "revision": 11,
+    "clue_refs": [
+      "r2_monitor_clue",
+      "r2_drawer_clue"
+    ],
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 2,
+      "read_tool_calls": 4
+    }
+  },
+  {
+    "turn": 7,
+    "tool": "take",
+    "room_after_confirmation": "R2",
+    "revision": 12,
+    "clue_refs": [],
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 1,
+      "read_tool_calls": 0
+    }
+  },
+  {
+    "turn": 8,
+    "tool": "use_item",
+    "room_after_confirmation": "R2",
+    "revision": 13,
+    "clue_refs": [],
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 1,
+      "read_tool_calls": 0
+    }
+  },
+  {
+    "turn": 9,
+    "tool": "move",
+    "room_after_confirmation": "R3",
+    "revision": 14,
+    "clue_refs": [],
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 2,
+      "read_tool_calls": 2
+    }
+  },
+  {
+    "turn": 10,
+    "tool": "submit_code",
+    "room_after_confirmation": "R3",
+    "revision": 17,
+    "clue_refs": [
+      "r3_panel_clue",
+      "r3_checklist_clue"
+    ],
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 2,
+      "read_tool_calls": 3
+    }
+  },
+  {
+    "turn": 11,
+    "tool": "move",
+    "room_after_confirmation": "EXIT",
+    "revision": 18,
+    "clue_refs": [],
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 2,
+      "read_tool_calls": 1
+    }
+  }
+]

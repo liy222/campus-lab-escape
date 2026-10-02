@@ -1,0 +1,77 @@
+{
+  "kind": "owner_mock_backend_integration",
+  "real_network_calls": 0,
+  "paid_calls": 0,
+  "checks": [
+    {
+      "name": "backend_runtime_full_history",
+      "passed": true,
+      "status": "completed",
+      "model_calls": 1
+    },
+    {
+      "name": "backend_runtime_structured_summary",
+      "passed": true,
+      "status": "completed",
+      "model_calls": 1
+    },
+    {
+      "name": "two_real_backend_contexts_same_16_history_records",
+      "passed": true,
+      "history_records": 16
+    },
+    {
+      "name": "mock_three_rooms_explicit_confirmation_chain",
+      "passed": true,
+      "confirmed_proposals": 12,
+      "status": "won"
+    },
+    {
+      "name": "manual_available_unknown_provider",
+      "passed": true,
+      "ai_status": "stopped",
+      "provider": "unavailable"
+    },
+    {
+      "name": "manual_available_missing_credentials",
+      "passed": true,
+      "ai_status": "stopped",
+      "provider": "deepseek"
+    },
+    {
+      "name": "manual_available_bad_model",
+      "passed": true,
+      "ai_status": "stopped",
+      "provider": "deepseek"
+    },
+    {
+      "name": "manual_available_bad_url",
+      "passed": true,
+      "ai_status": "stopped",
+      "provider": "deepseek"
+    }
+  ],
+  "source_sha256": {
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "5a3f61ba710635e903d9e91ca6390076a489b1806c8c701c9ba1b9646665a0ee",
+    "backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "8c93b995d6f19d4a3657b09058656b0e4636cd723bcad69327c116d77d733386",
+    "backend/app/storage/sqlite.py": "ea094fce6270f1b47dca19885b1bb40df6275c198f13b4c5c57541e653c991ff",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "a93901a5d791cb2550ecdbe2a6cdb935a5b7126637061b6172adf9ed9c422d4a",
+    "backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692"
+  },
+  "limitations": [
+    "Owner checks, not independent QA.",
+    "No real provider acceptance.",
+    "Current-generation full history excludes previous reset/restore generations and rejected actions.",
+    "Player confirmations were simulated by this mock-only harness."
+  ]
+}

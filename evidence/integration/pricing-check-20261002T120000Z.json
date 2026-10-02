@@ -1,0 +1,13 @@
+{
+  "checked_at_utc": "2026-10-02T12:00:00Z",
+  "source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+  "method": "Main web open official pricing page; observed model and peak prices",
+  "requested_model": "deepseek-flash",
+  "documented_model_version": "DeepSeek-V4.1-Flash",
+  "base_url": "https://api.deepseek.com",
+  "peak_cny_per_million": {"input_miss": 2, "input_hit": 0.04, "output": 8},
+  "accounting": "Existing ledger uses peak rates conservatively regardless of actual time-of-day discount; provider bill is not independently verified.",
+  "ledger_snapshot_at_check": {"cap_cny": 10, "charged_upper_cny": 0.00230824, "remaining_cny": 9.99769176, "calls": 4, "unknown_or_pending_calls": 0, "frozen": false},
+  "paid_game_gate": {"id": "M3-real-GO-20261002T1200Z", "conditional_on": "Stable mock process-crash and final checker exit0; unchanged product source", "turns_max": 1, "provider_attempts_max": 3, "additional_upper_cap_cny": 0.5, "format_retries": 0, "first_tool_choice": "forced get_inventory for controlled real integration; subsequent auto", "unknown_timeout_model_abnormality": "Stop without blind retry"},
+  "limitations": ["The separate API reference page timed out during this browse; no new claim from that page.", "Current web facts do not retroactively prove prior model calls or provider billing."]
+}

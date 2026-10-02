@@ -16,7 +16,7 @@ import uuid
 
 import httpx
 
-from tests.api.test_r1 import HTTPFixture, EXCHANGES, ROOT, sanitize
+from tests.api.test_r1 import HTTPFixture, EXCHANGES, ROOT, sanitize, semantic_text
 
 ROUTE = [
     ('inspect', {'object_id': 'r1_note'}), ('inspect', {'object_id': 'r1_cabinet'}),
@@ -104,14 +104,14 @@ class M2Acceptance(HTTPFixture):
         self.assertNotIn('r2_monitor_clue', [c['clue_id'] for c in self.state()['clues']])
         self.assertNotIn('青色7', json.dumps(self.state(), ensure_ascii=False))
         wrong = self.reject(self.request('submit_code', {'target_id': 'r2_drawer', 'code': '000'}), 'WRONG_CODE')
-        self.assertNotIn('724', json.dumps(wrong, ensure_ascii=False))
+        self.assertNotIn('724', semantic_text(wrong))
 
     def test_R3_exit_preconditions_wrong_panel_and_won_rules(self):
         self.route(end=14)
         self.reject(self.request('move', {'destination_id': 'EXIT'}), 'PRECONDITION_FAILED')
         self.reject(self.request('move', {'destination_id': 'R1'}), 'PRECONDITION_FAILED')
         wrong = self.reject(self.request('submit_code', {'target_id': 'r3_panel', 'code': '000'}), 'WRONG_CODE')
-        self.assertNotIn('231', json.dumps(wrong, ensure_ascii=False))
+        self.assertNotIn('231', semantic_text(wrong))
         self.route(begin=14)
         for tool, args in [('take', {'item_id': 'fuse'}), ('use_item', {'item_id': 'emergency_key', 'target_id': 'r2_door'}), ('submit_code', {'target_id': 'r3_panel', 'code': '231'}), ('move', {'destination_id': 'R3'})]:
             with self.subTest(tool=tool):

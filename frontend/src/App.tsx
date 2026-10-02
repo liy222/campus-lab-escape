@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { api, ApiError, readSession, storeSession, type Args, type Session, type Tool, type VisibleState } from './api';
+import Assistant from './Assistant';
 
 const kindLabel = { clue: '可观察', container: '容器', door: '通道', device: '设备', item: '物品' };
 function Icon({ kind }: { kind: string }) {
@@ -18,6 +19,7 @@ export default function App() {
   const [session, setSession] = useState<Session | null>(readSession);
   const [state, setState] = useState<VisibleState | null>(null);
   const stateRef = useRef<VisibleState | null>(null);
+  const retiredGenerations = useRef(new Set<string>());
   const busy = useRef(false);
   const [pending, setPending] = useState(false);
   const [needsSync, setNeedsSync] = useState(false);
@@ -31,11 +33,18 @@ export default function App() {
   const [history, setHistory] = useState<{ id: string; text: string }[]>([]);
   const selected = state?.objects.find(object => object.object_id === selectedId) || state?.objects[0];
   useEffect(() => { if (confirmation) dialogRef.current?.showModal(); else dialogRef.current?.close(); }, [confirmation]);
-  function apply(next: VisibleState, replace = false): boolean {
+  function apply(next: VisibleState, replace = false, reconciled = false): boolean {
     const previous = stateRef.current;
-    if (!replace && previous && (next.session_id !== previous.session_id || next.revision < previous.revision)) return false;
+    if (!replace && previous && (next.session_id !== previous.session_id || next.revision < previous.revision || retiredGenerations.current.has(next.generation))) return false;
+    if (replace) retiredGenerations.current.clear();
+    else if (previous && previous.generation !== next.generation) retiredGenerations.current.add(previous.generation);
+    if (previous && previous.revision !== next.revision) setCodes({});
     if (!previous || replace || previous.generation !== next.generation) { setCodes({}); setObservation(''); setSelectedId(null); setHistory([]); }
-    stateRef.current = next; setState(next); setNeedsSync(false); return true;
+    stateRef.current = next; setState(next); if (replace || reconciled) setNeedsSync(false); return true;
+  }
+  function invalidateSession(sessionId: string) {
+    if (stateRef.current && stateRef.current.session_id !== sessionId) return;
+    storeSession(null); setSession(null); stateRef.current = null; setState(null); setCodes({}); setHistory([]); setObservation(''); setSelectedId(null); setNeedsSync(false); retiredGenerations.current.clear();
   }
   async function execute(work: () => Promise<void>, reconcile = false) {
     if (busy.current) return;
@@ -44,10 +53,10 @@ export default function App() {
     catch (caught) {
       const failure = caught instanceof ApiError ? caught : new ApiError('CLIENT_ERROR', '操作未完成，请稍后重试。');
       if (failure.visibleState) apply(failure.visibleState);
-      if (failure.code === 'FORBIDDEN_SESSION') { storeSession(null); setSession(null); stateRef.current = null; setState(null); setCodes({}); setHistory([]); setObservation(''); setSelectedId(null); setNeedsSync(false); }
+      if (failure.code === 'FORBIDDEN_SESSION' && session) invalidateSession(session.session_id);
       else if (reconcile && session && ['NETWORK_ERROR', 'SERVICE_UNAVAILABLE'].includes(failure.code)) {
         setNeedsSync(true);
-        try { const response = await api.state(session); apply(response.data.visible_state); setNotice('已同步服务器上的实际进度，请确认当前场景和存档后再操作。'); } catch { setNotice('尚未确认这次操作的结果。请先同步进度，确认后再继续。'); }
+        try { const response = await api.state(session); apply(response.data.visible_state, false, true); setNotice('已同步服务器上的实际进度，请确认当前场景和存档后再操作。'); } catch { setNotice('尚未确认这次操作的结果。请先同步进度，确认后再继续。'); }
       }
       setError(failure.message);
     } finally { busy.current = false; setPending(false); }
@@ -56,7 +65,7 @@ export default function App() {
     setConfirmation(null);
     void execute(async () => { const response = await api.create(); const nextSession = { session_id: response.data.session_id, token: response.data.token }; storeSession(nextSession); setSession(nextSession); apply(response.data.visible_state, true); setNotice('游戏已开始。选择场景中的物件，慢慢寻找线索。'); });
   }
-  function sync() { if (!session) return; void execute(async () => { const response = await api.state(session); apply(response.data.visible_state); setNotice('已同步当前进度。'); }); }
+  function sync() { if (!session) return; void execute(async () => { const response = await api.state(session); apply(response.data.visible_state, false, true); setNotice('已同步当前进度。'); }); }
   function action(tool: Tool, args: Args) {
     if (!session || !stateRef.current || needsSync) return;
     const current = stateRef.current;
@@ -92,9 +101,9 @@ export default function App() {
             {selected && <section className="object-details" aria-labelledby="selected-title"><div className="detail-heading"><span className="small-icon"><Icon kind={selected.kind}/></span><div><small>选中的物件</small><h3 id="selected-title">{selected.name}</h3></div></div><p>{selected.description}</p><div className="object-actions">{selected.actions.map((affordance, index) => affordance.requires_code ? <form className="code-form" key={`${selected.object_id}-${index}`} onSubmit={event => { event.preventDefault(); const code = codes[selected.object_id] || ''; if (!/^[0-9]{1,16}$/.test(code)) { setError('请输入 1–16 位数字密码。'); return; } action(affordance.tool, { ...affordance.arguments, code }); }}><label htmlFor={`code-${selected.object_id}`}>{selected.name}密码</label><div><input id={`code-${selected.object_id}`} type="text" inputMode="numeric" autoComplete="off" pattern="[0-9]{1,16}" maxLength={16} required placeholder="输入你推理出的密码" value={codes[selected.object_id] || ''} disabled={disabled} onChange={event => setCodes(current => ({ ...current, [selected.object_id]: event.target.value }))}/><button className="button primary" disabled={disabled}>{affordance.label}</button></div></form> : <button className={`button ${affordance.tool === 'take' ? 'primary' : ''}`} key={`${selected.object_id}-${index}`} disabled={pending || needsSync || (!!won && !['inspect', 'get_inventory'].includes(affordance.tool))} onClick={() => action(affordance.tool, affordance.arguments)}>{affordance.label} <span aria-hidden="true">→</span></button>)}</div>{observation && <div className="observation"><span>观察记录</span><p>{observation}</p></div>}</section>}
             <div className="exits"><h3>前往其他房间</h3>{state.exits.map(exit => <button className="exit-button" key={exit.destination_id} disabled={disabled || !exit.unlocked} onClick={() => action('move', { destination_id: exit.destination_id })}><Icon kind="door"/><span>{exit.name}<small>{exit.unlocked ? '通道已打开' : '通道尚未解锁'}</small></span><span aria-hidden="true">{exit.unlocked ? '→' : '锁定'}</span></button>)}{state.exits.length === 0 && <p className="muted">没有其他通道。</p>}</div>
           </section>
-          <aside className="clues panel" aria-labelledby="clues-title"><div className="panel-heading"><h2 id="clues-title"><Icon kind="clue"/>线索笔记</h2><span className="count">{state.clues.length}</span></div><p className="panel-caption">只记录你亲自发现的信息。</p>{state.clues.length === 0 ? <div className="empty"><span className="empty-icon"><Icon kind="clue"/></span><p>第一页，等待发现</p><small>查看物件后，新的线索会自动记入笔记。</small></div> : <ol className="clue-list">{state.clues.map((clue, index) => <li key={clue.clue_id}><div className="clue-heading"><span>{String(index + 1).padStart(2, '0')}</span><h3>{clue.title}</h3></div><p>{clue.text}</p></li>)}</ol>}<div className="notebook-tip">先观察，再尝试。<br/>答案可能就在已经发现的细节里。</div></aside>
+          <aside className="clues panel" aria-labelledby="clues-title"><div className="panel-heading"><h2 id="clues-title"><Icon kind="clue"/>线索笔记</h2><span className="count">{state.clues.length}</span></div><p className="panel-caption">只记录你亲自发现的信息。</p>{state.clues.length === 0 ? <div className="empty"><span className="empty-icon"><Icon kind="clue"/></span><p>第一页，等待发现</p><small>查看物件后，新的线索会自动记入笔记。</small></div> : <ol className="clue-list">{state.clues.map((clue, index) => <li key={clue.clue_id} id={`clue-${clue.clue_id}`} tabIndex={-1}><div className="clue-heading"><span>{String(index + 1).padStart(2, '0')}</span><h3>{clue.title}</h3></div><p>{clue.text}</p></li>)}</ol>}<div className="notebook-tip">先观察，再尝试。<br/>答案可能就在已经发现的细节里。</div></aside>
         </div>
-        <div className="support-grid"><section className="assistant panel"><span className="assistant-icon"><Icon kind="spark"/></span><div><h2>AI 探索伙伴 <span className="soon-badge">尚未开放</span></h2><p>当前版本支持手动探索。AI 建议与行动确认将在后续版本开放。</p></div></section><section className="save-panel panel" aria-labelledby="save-title"><h2 id="save-title">游戏进度</h2><p>刷新后可继续当前游戏。每次保存会覆盖本会话的单个存档。</p>{state.save ? <div className="save-summary"><span className="saved-badge">已有存档</span><p>保存时间：<time dateTime={state.save.saved_at}>{savedTime}</time></p><small>保存时进度 {state.save.source_revision} · 关卡 {state.save.level_version}</small></div> : <p className="no-save">尚无存档，保存后才能恢复。</p>}<div className="save-actions"><button className="button" disabled={pending || needsSync} onClick={() => control('save')}>保存进度</button><button className="button" disabled={pending || needsSync || !state.save} onClick={() => setConfirmation('restore')}>恢复存档</button><button className="button subtle" disabled={pending || needsSync} onClick={() => setConfirmation('reset')}>重新开始</button></div></section></div>
+        <div className="support-grid"><Assistant key={state.session_id} session={session!} state={state} manualPending={pending} needsSync={needsSync} onState={(next, reconciled = false) => apply(next, false, reconciled)} onUncertain={value => { if (stateRef.current?.session_id === state.session_id) setNeedsSync(value); }} onForbidden={invalidateSession}/><section className="save-panel panel" aria-labelledby="save-title"><h2 id="save-title">游戏进度</h2><p>刷新后可继续当前游戏。每次保存会覆盖本会话的单个存档。</p>{state.save ? <div className="save-summary"><span className="saved-badge">已有存档</span><p>保存时间：<time dateTime={state.save.saved_at}>{savedTime}</time></p><small>保存时进度 {state.save.source_revision} · 关卡 {state.save.level_version}</small></div> : <p className="no-save">尚无存档，保存后才能恢复。</p>}<div className="save-actions"><button className="button" disabled={pending || needsSync} onClick={() => control('save')}>保存进度</button><button className="button" disabled={pending || needsSync || !state.save} onClick={() => setConfirmation('restore')}>恢复存档</button><button className="button subtle" disabled={pending || needsSync} onClick={() => setConfirmation('reset')}>重新开始</button></div></section></div>
         {history.length > 0 && <details className="history"><summary>最近的行动记录 <span>{history.length}</span></summary><ol>{history.map(entry => <li key={entry.id}>{entry.text}</li>)}</ol></details>}
       </>}
       <footer><span>校园实验室 · 认真观察，大胆推理</span><span>{state ? `关卡 ${state.level_version} · 进度 ${state.revision}` : '本地探索 · 手动游玩'}</span></footer>

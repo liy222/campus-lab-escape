@@ -10,10 +10,11 @@ from uuid import uuid4
 
 from pydantic import ValidationError
 
+from .ai import AIStoreMixin
 from ..domain.models import ActionRequest, EmptyRequest, GameState, RuleError, TOOL_MODELS, VersionRequest, validate_generation
 from ..domain.rules import LEVEL_VERSION, SCHEMA_VERSION, apply_action, validate_invariants, visible_state
 
-ERROR_STATUS = {"BAD_ARGUMENT": 422, "INVALID_TOOL": 422, "FORBIDDEN_SESSION": 403, "SAVE_NOT_FOUND": 404, "INTERNAL_ERROR": 500}
+ERROR_STATUS = {"BAD_ARGUMENT": 422, "INVALID_TOOL": 422, "FORBIDDEN_SESSION": 403, "SAVE_NOT_FOUND": 404, "INTERNAL_ERROR": 500, "PROPOSAL_NOT_FOUND": 404, "MODEL_UNAVAILABLE": 503, "MODEL_TIMEOUT": 504, "MODEL_INVALID_OUTPUT": 502, "AI_LIMIT_REACHED": 429}
 GAME_FIELDS = {"room_id", "inventory", "discovered_clue_ids", "flags", "opened_containers", "status"}
 SNAPSHOT_FIELDS = {"schema_version", "level_version", "session_id", "game_fields", "saved_at", "checksum"}
 
@@ -68,8 +69,9 @@ def validate_snapshot(raw: str, session_id: str, current: GameState) -> GameStat
         raise RuleError("INVALID_SNAPSHOT", "存档损坏或不符合游戏规则。") from None
 
 
-class Store:
+class Store(AIStoreMixin):
     def __init__(self, path: str | Path):
+        self.runtime_owner = new_id()
         self.path = str(path)
         if self.path == ":memory:":
             raise ValueError("Use a file-backed SQLite path so requests share state")
@@ -98,6 +100,8 @@ class Store:
                     snapshot_json TEXT NOT NULL, summary_json TEXT NOT NULL
                 );
             """)
+
+            self.migrate_ai(connection)
 
     def connect(self):
         connection = sqlite3.connect(self.path, timeout=10, isolation_level=None)
@@ -244,8 +248,10 @@ class Store:
                 body = {"ok": True, "event_id": event_id, "data": data}
                 status = 200
                 connection.execute("UPDATE sessions SET state_json=? WHERE session_id=?", (canonical(updated.model_dump()), session_id))
+                if updated.revision != revision_before or updated.generation != state.generation:
+                    self.invalidate_pending(connection, session_id)
                 self.event(connection, event_id, session_id, operation, "committed", body, updated, normalized, revision_before)
-            connection.execute("INSERT INTO action_receipts VALUES (?,?,?,?,?,?)", (session_id, request.request_id, digest, state.generation, canonical(body), status))
+            connection.execute("INSERT INTO action_receipts (session_id,request_id,request_hash,generation,response_json,http_status) VALUES (?,?,?,?,?,?)", (session_id, request.request_id, digest, state.generation, canonical(body), status))
             return status, body
 
     def apply_control(self, connection, session_id, state, operation):
@@ -265,3 +271,4 @@ class Store:
         if row is None:
             raise RuleError("SAVE_NOT_FOUND", "尚未保存游戏进度。")
         return validate_snapshot(row["snapshot_json"], session_id, state)
+

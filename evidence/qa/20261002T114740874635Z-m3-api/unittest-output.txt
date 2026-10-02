@@ -1,0 +1,154 @@
+test_A01_new_and_independent_sessions (tests.api.test_r1.R1Acceptance.test_A01_new_and_independent_sessions) ... ok
+test_A03_missing_card_and_locked_move (tests.api.test_r1.R1Acceptance.test_A03_missing_card_and_locked_move) ... ok
+test_A04_wrong_code_no_answer_leak (tests.api.test_r1.R1Acceptance.test_A04_wrong_code_no_answer_leak) ... ok
+test_A05_failure_replay_keeps_event_and_current_state (tests.api.test_r1.R1Acceptance.test_A05_failure_replay_keeps_event_and_current_state) ... ok
+test_A05_success_replay_and_same_ID_conflict (tests.api.test_r1.R1Acceptance.test_A05_success_replay_and_same_ID_conflict) ... ok
+test_A06_stale_revision_and_generation (tests.api.test_r1.R1Acceptance.test_A06_stale_revision_and_generation) ... ok
+test_A10_visibility_and_hidden_ids (tests.api.test_r1.R1Acceptance.test_A10_visibility_and_hidden_ids) ... ok
+test_A14_foreign_missing_invalid_capabilities (tests.api.test_r1.R1Acceptance.test_A14_foreign_missing_invalid_capabilities) ... ok
+test_GET_and_inventory_have_no_knowledge_side_effect (tests.api.test_r1.R1Acceptance.test_GET_and_inventory_have_no_knowledge_side_effect) ... ok
+test_R2_boundary_missing_items_unpowered_monitor (tests.api.test_r1.R1Acceptance.test_R2_boundary_missing_items_unpowered_monitor) ... ok
+test_malformed_JSON_and_non_object_body (tests.api.test_r1.R1Acceptance.test_malformed_JSON_and_non_object_body) ... ok
+test_manual_R1_route_repeats_and_return (tests.api.test_r1.R1Acceptance.test_manual_R1_route_repeats_and_return) ... ok
+test_strict_request_envelope (tests.api.test_r1.R1Acceptance.test_strict_request_envelope) ... ok
+test_strict_tool_arguments (tests.api.test_r1.R1Acceptance.test_strict_tool_arguments) ... ok
+test_A02_exact_18_step_route_and_baseline_key (tests.api.test_m2.M2Acceptance.test_A02_exact_18_step_route_and_baseline_key) ... ok
+test_A03_A04_A10_R2_power_and_wrong_code (tests.api.test_m2.M2Acceptance.test_A03_A04_A10_R2_power_and_wrong_code) ... ok
+test_A05_control_replay_cross_operation_ID_namespace (tests.api.test_m2.M2Acceptance.test_A05_control_replay_cross_operation_ID_namespace) ... ok
+test_A06_control_stale_versions_and_reset_replay (tests.api.test_m2.M2Acceptance.test_A06_control_stale_versions_and_reset_replay) ... ok
+test_A12_real_service_stop_restart_restore_and_event_sequence (tests.api.test_m2.M2Acceptance.test_A12_real_service_stop_restart_restore_and_event_sequence) ... ok
+test_A12_single_slot_restore_reset_and_current_version (tests.api.test_m2.M2Acceptance.test_A12_single_slot_restore_reset_and_current_version) ... ok
+test_A13_snapshot_integrity_owner_versions_types_and_invariants (tests.api.test_m2.M2Acceptance.test_A13_snapshot_integrity_owner_versions_types_and_invariants) ... ok
+test_A14_all_implemented_routes_foreign_session (tests.api.test_m2.M2Acceptance.test_A14_all_implemented_routes_foreign_session) ... ok
+test_R3_exit_preconditions_wrong_panel_and_won_rules (tests.api.test_m2.M2Acceptance.test_R3_exit_preconditions_wrong_panel_and_won_rules) ... ok
+test_concurrent_identical_consumption_request_replays_one_receipt (tests.api.test_m2.M2Acceptance.test_concurrent_identical_consumption_request_replays_one_receipt) ... ok
+test_concurrent_same_version_actions_commit_only_once (tests.api.test_m2.M2Acceptance.test_concurrent_same_version_actions_commit_only_once) ... ok
+test_consumption_replays_and_reuse_never_return_fuse (tests.api.test_m2.M2Acceptance.test_consumption_replays_and_reuse_never_return_fuse) ... ok
+test_strict_control_parameters_and_no_client_snapshot (tests.api.test_m2.M2Acceptance.test_strict_control_parameters_and_no_client_snapshot) ... ok
+test_A07_A10_read_discovery_cursor_and_visible_context (tests.api.test_m3.M3Acceptance.test_A07_A10_read_discovery_cursor_and_visible_context) ... ok
+test_A07_strict_batches_hidden_objects_unknown_refs_and_wrong_codes (tests.api.test_m3.M3Acceptance.test_A07_strict_batches_hidden_objects_unknown_refs_and_wrong_codes) ... ok
+test_A08_all_four_progress_only_propose_cancel_then_confirm (tests.api.test_m3.M3Acceptance.test_A08_all_four_progress_only_propose_cancel_then_confirm) ... ok
+test_A09_A23_ttl_current_revision_and_generation_even_committed (tests.api.test_m3.M3Acceptance.test_A09_A23_ttl_current_revision_and_generation_even_committed) ... ERROR
+test_A14_all_routes_foreign_missing_wrong_and_nonexistent (tests.api.test_m3.M3Acceptance.test_A14_all_routes_foreign_missing_wrong_and_nonexistent) ... ok
+test_A15_format_correction_once_and_false_completion (tests.api.test_m3.M3Acceptance.test_A15_format_correction_once_and_false_completion) ... ok
+test_A15_provider_errors_preserve_manual_game (tests.api.test_m3.M3Acceptance.test_A15_provider_errors_preserve_manual_game) ... ok
+test_A16_calls_reads_loops_and_shortened_deadlines (tests.api.test_m3.M3Acceptance.test_A16_calls_reads_loops_and_shortened_deadlines) ... ok
+test_A19_real_turn_proposal_confirm_event_chain_sanitized (tests.api.test_m3.M3Acceptance.test_A19_real_turn_proposal_confirm_event_chain_sanitized) ... FAIL
+test_A19_real_turn_proposal_confirm_event_chain_sanitized (tests.api.test_m3.M3Acceptance.test_A19_real_turn_proposal_confirm_event_chain_sanitized) ... ERROR
+test_A21_concurrent_confirm_consumes_fuse_once (tests.api.test_m3.M3Acceptance.test_A21_concurrent_confirm_consumes_fuse_once) ... ok
+test_bad_AI_config_keeps_health_actions_and_no_silent_mock (tests.api.test_m3.M3Acceptance.test_bad_AI_config_keeps_health_actions_and_no_silent_mock) ... ok
+test_crash_rebuild_durable_reservation_never_provider_again (tests.api.test_m3.M3Acceptance.test_crash_rebuild_durable_reservation_never_provider_again) ... ok
+test_faulty_runtime_cursor_forged_finish_and_read_cap (tests.api.test_m3.M3Acceptance.test_faulty_runtime_cursor_forged_finish_and_read_cap) ... ok
+test_inflight_manual_restore_reset_stop_with_usage_and_current_state (tests.api.test_m3.M3Acceptance.test_inflight_manual_restore_reset_stop_with_usage_and_current_state) ... ok
+test_pending_reservation_concurrent_duplicate_and_no_network_write_lock (tests.api.test_m3.M3Acceptance.test_pending_reservation_concurrent_duplicate_and_no_network_write_lock) ... ERROR
+test_same_AI_id_completed_conflict_and_all_cross_operations (tests.api.test_m3.M3Acceptance.test_same_AI_id_completed_conflict_and_all_cross_operations) ... ok
+
+======================================================================
+ERROR: test_A09_A23_ttl_current_revision_and_generation_even_committed (tests.api.test_m3.M3Acceptance.test_A09_A23_ttl_current_revision_and_generation_even_committed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\liyh\.conda\envs\1\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-qa-r1-_eizdqno\\test.sqlite'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\深度能力\tests\api\test_r1.py", line 44, in tearDown
+    self.temp.cleanup()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\tempfile.py", line 976, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\tempfile.py", line 956, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\tempfile.py", line 931, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-qa-r1-_eizdqno\\test.sqlite'
+
+======================================================================
+ERROR: test_A19_real_turn_proposal_confirm_event_chain_sanitized (tests.api.test_m3.M3Acceptance.test_A19_real_turn_proposal_confirm_event_chain_sanitized)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\liyh\.conda\envs\1\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-qa-r1-el9fypkp\\test.sqlite'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\深度能力\tests\api\test_r1.py", line 44, in tearDown
+    self.temp.cleanup()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\tempfile.py", line 976, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\tempfile.py", line 956, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\tempfile.py", line 931, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-qa-r1-el9fypkp\\test.sqlite'
+
+======================================================================
+ERROR: test_pending_reservation_concurrent_duplicate_and_no_network_write_lock (tests.api.test_m3.M3Acceptance.test_pending_reservation_concurrent_duplicate_and_no_network_write_lock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\liyh\.conda\envs\1\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-qa-r1-1ctpblub\\test.sqlite'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\深度能力\tests\api\test_r1.py", line 44, in tearDown
+    self.temp.cleanup()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\tempfile.py", line 976, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\tempfile.py", line 956, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\tempfile.py", line 931, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-qa-r1-1ctpblub\\test.sqlite'
+
+======================================================================
+FAIL: test_A19_real_turn_proposal_confirm_event_chain_sanitized (tests.api.test_m3.M3Acceptance.test_A19_real_turn_proposal_confirm_event_chain_sanitized)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\深度能力\tests\api\test_m3.py", line 459, in test_A19_real_turn_proposal_confirm_event_chain_sanitized
+    self.assertNotIn(forbidden, encoded)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: '231' unexpectedly found in '[[{"call_id": null, "context_mode": "full_history", "cost_upper_cny": null, "generation": "d9fa40be-ccca-4c27-8c97-03de3ace0aee", "kind": "turn_started", "limits": {"call_seconds": 20.0, "format_retries": 1, "model_calls": 3, "output_tokens": 1000, "progress_proposals": 1, "read_tool_calls": 5, "total_seconds": 45.0}, "message_length": 13, "message_sha256": "4d72911a1d744ba3a624daf755e21de9fba2c3b10eda0de4e13b8a65231c41f0", "reported_model": null, "requested_model": null, "revision": 0, "usage": null}, {"attempt": 1, "call_id": null, "cost_upper_cny": null, "finish_reason": "tool_calls", "kind": "provider_result", "provider": "mock", "reported_model": "deterministic-visible-v1", "requested_model": "deterministic-visible-v1", "usage": null}, {"arguments": {"object_id": "r1_note"}, "call_id": null, "cost_upper_cny": null, "generation": "d9fa40be-ccca-4c27-8c97-03de3ace0aee", "kind": "read_tool", "new_clue_ids": ["r1_note_clue"], "observation": "三角记为3，圆记为8，方记为2。", "ok": true, "reported_model": null, "requested_model": null, "revision": 1, "tool": "inspect", "usage": null}, {"arguments": {"object_id": "r1_cabinet"}, "call_id": null, "cost_upper_cny": null, "generation": "d9fa40be-ccca-4c27-8c97-03de3ace0aee", "kind": "read_tool", "new_clue_ids": ["r1_cabinet_clue"], "observation": "柜门标签从左到右是：三角、圆、方。", "ok": true, "reported_model": null, "requested_model": null, "revision": 2, "tool": "inspect", "usage": null}, {"arguments": {"object_id": "r1_door"}, "call_id": null, "cost_upper_cny": null, "generation": "d9fa40be-ccca-4c27-8c97-03de3ace0aee", "kind": "read_tool", "new_clue_ids": [], "observation": "需要门卡解锁；刷卡门", "ok": true, "reported_model": null, "requested_model": null, "revision": 2, "tool": "inspect", "usage": null}, {"attempt": 2, "call_id": null, "cost_upper_cny": null, "finish_reason": "stop", "kind": "provider_result", "provider": "mock", "reported_model": "deterministic-visible-v1", "requested_model": "deterministic-visible-v1", "usage": null}, {"call_id": null, "clue_refs": ["r1_note_clue", "r1_cabinet_clue"], "cost_upper_cny": null, "kind": "answer", "reported_model": null, "requested_model": null, "usage": null}, {"call_id": null, "cost_upper_cny": null, "generation": "d9fa40be-ccca-4c27-8c97-03de3ace0aee", "kind": "turn_finished", "reported_model": null, "requested_model": null, "revision": 2, "status": "completed", "usage": {"input_tokens": null, "model": "deterministic-visible-v1", "model_calls": 2, "output_tokens": null, "provider": "mock", "read_tool_calls": 3}}], [{"operation": "create", "outcome": "committed", "revision_before": null, "revision_after": 0, "request_json": null, "result_json": "{\\"visible_state\\":{\\"clues\\":[],\\"exits\\":[{\\"destination_id\\":\\"R2\\",\\"name\\":\\"设备间\\",\\"unlocked\\":false}],\\"generation\\":\\"d9fa40be-ccca-4c27-8c97-03de3ace0aee\\",\\"inventory\\":[],\\"level_version\\":\\"1.0.0\\",\\"objects\\":[{\\"actions\\":[{\\"arguments\\":{\\"object_id\\":\\"r1_note\\"},\\"label\\":\\"查看\\",\\"requires_code\\":false,\\"tool\\":\\"inspect\\"}],\\"description\\":\\"桌上有一张值班便签。\\",\\"kind\\":\\"clue\\",\\"name\\":\\"值班便签\\",\\"object_id\\":\\"r1_note\\"},{\\"actions\\":[{\\"arguments\\":{\\"object_id\\":\\"r1_cabinet\\"},\\"label\\":\\"查看\\",\\"requires_code\\":false,\\"tool\\":\\"inspect\\"},{\\"arguments\\":{\\"target_id\\":\\"r1_cabinet\\"},\\"label\\":\\"输入密码\\",\\"requires_code\\":true,\\"tool\\":\\"submit_code\\"}],\\"description\\":\\"带数字锁的值班柜，门上贴着形状标签。\\",\\"kind\\":\\"container\\",\\"name\\":\\"值班柜\\",\\"object_id\\":\\"r1_cabinet\\"},{\\"actions\\":[{\\"arguments\\":{\\"object_id\\":\\"r1_door\\"},\\"label\\":\\"查看\\",\\"requires_code\\":false,\\"tool\\":\\"inspect\\"}],\\"description\\":\\"通向设备间的刷卡门。\\",\\"kind\\":\\"door\\",\\"name\\":\\"设备间刷卡门\\",\\"object_id\\":\\"r1_door\\"}],\\"progress\\":{\\"check_done\\":false,\\"power_on\\":false},\\"revision\\":0,\\"room\\":{\\"description\\":\\"夜间断电了，先寻找通往设备间的门卡。\\",\\"name\\":\\"值班室\\",\\"room_id\\":\\"R1\\"},\\"save\\":null,\\"schema_version\\":\\"1.0.0\\",\\"session_id\\":\\"1d0614d9094a49de9f76713ccd46818b\\",\\"status\\":\\"playing\\"}}"}, {"operation": "ai_begin", "outcome": "reserved", "revision_before": 0, "revision_after": 0, "request_json": "{\\"generation\\":\\"d9fa40be-ccca-4c27-8c97-03de3ace0aee\\",\\"message\\":\\"请根据已发现信息建议下一步\\",\\"operation\\":\\"ai_turn\\",\\"request_id\\":\\"405597068ab840f2947af7d059b0dbee\\",\\"revision\\":0}", "result_json": "{\\"generation\\":\\"d9fa40be-ccca-4c27-8c97-03de3ace0aee\\",\\"revision\\":0,\\"turn_id\\":\\"d0934d05cfbb4ff995dca44c1305221f\\"}"}, {"operation": "ai_read", "outcome": "committed", "revision_before": 0, "revision_after": 1, "request_json": "{\\"arguments\\":{\\"object_id\\":\\"r1_note\\"},\\"tool\\":\\"inspect\\",\\"turn_id\\":\\"d0934d05cfbb4ff995dca44c1305221f\\"}", "result_json": "{\\"data\\":{\\"receipt\\":{\\"arguments\\":{\\"object_id\\":\\"r1_note\\"},\\"changed\\":true,\\"consumed_item_ids\\":[],\\"event_id\\":\\"b70b3956545645cabcfb58ac0377ed97\\",\\"generation\\":\\"d9fa40be-ccca-4c27-8c97-03de3ace0aee\\",\\"message\\":\\"已查看。\\",\\"new_clue_ids\\":[\\"r1_note_clue\\"],\\"observation\\":\\"三角记为3，圆记为8，方记为2。\\",\\"request_id\\":\\"d0934d05cfbb4ff995dca44c1305221f\\",\\"revision_after\\":1,\\"revision_before\\":0,\\"tool\\":\\"inspect\\"}},\\"ok\\":true}"}, {"operation": "ai_read", "outcome": "committed", "revision_before": 1, "revision_after": 2, "request_json": "{\\"arguments\\":{\\"object_id\\":\\"r1_cabinet\\"},\\"tool\\":\\"inspect\\",\\"turn_id\\":\\"d0934d05cfbb4ff995dca44c1305221f\\"}", "result_json": "{\\"data\\":{\\"receipt\\":{\\"arguments\\":{\\"object_id\\":\\"r1_cabinet\\"},\\"changed\\":true,\\"consumed_item_ids\\":[],\\"event_id\\":\\"76997740e29847b994e0e169ab9287c7\\",\\"generation\\":\\"d9fa40be-ccca-4c27-8c97-03de3ace0aee\\",\\"message\\":\\"已查看。\\",\\"new_clue_ids\\":[\\"r1_cabinet_clue\\"],\\"observation\\":\\"柜门标签从左到右是：三角、圆、方。\\",\\"request_id\\":\\"d0934d05cfbb4ff995dca44c1305221f\\",\\"revision_after\\":2,\\"revision_before\\":1,\\"tool\\":\\"inspect\\"}},\\"ok\\":true}"}, {"operation": "ai_read", "outcome": "committed", "revision_before": 2, "revision_after": 2, "request_json": "{\\"arguments\\":{\\"object_id\\":\\"r1_door\\"},\\"tool\\":\\"inspect\\",\\"turn_id\\":\\"d0934d05cfbb4ff995dca44c1305221f\\"}", "result_json": "{\\"data\\":{\\"receipt\\":{\\"arguments\\":{\\"object_id\\":\\"r1_door\\"},\\"changed\\":false,\\"consumed_item_ids\\":[],\\"event_id\\":\\"956beaff2bfb481a87dd2a889ac1fb87\\",\\"generation\\":\\"d9fa40be-ccca-4c27-8c97-03de3ace0aee\\",\\"message\\":\\"已查看。\\",\\"new_clue_ids\\":[],\\"observation\\":\\"需要门卡解锁；刷卡门\\",\\"request_id\\":\\"d0934d05cfbb4ff995dca44c1305221f\\",\\"revision_after\\":2,\\"revision_before\\":2,\\"tool\\":\\"inspect\\"}},\\"ok\\":true}"}, {"operation": "ai_turn", "outcome": "proposed", "revision_before": 2, "revision_after": 2, "request_json": "{\\"turn_id\\":\\"d0934d05cfbb4ff995dca44c1305221f\\"}", "result_json": "{\\"data\\":{\\"answer\\":\\"建议（尚未执行，需要玩家确认）：依据已发现线索中的数字与顺序，可以提交推导的密码；请确认。\\",\\"clue_refs\\":[\\"r1_note_clue\\",\\"r1_cabinet_clue\\"],\\"proposal\\":{\\"arguments\\":{\\"code\\":\\"382\\",\\"target_id\\":\\"r1_cabinet\\"},\\"clue_refs\\":[\\"r1_note_clue\\",\\"r1_cabinet_clue\\"],\\"expires_at\\":\\"2026-10-02T11:49:52.148364Z\\",\\"generation\\":\\"d9fa40be-ccca-4c27-8c97-03de3ace0aee\\",\\"proposal_id\\":\\"80c04ee71cf348c3ad93079d2c15d8b1\\",\\"revision\\":2,\\"status\\":\\"pending\\",\\"summary\\":\\"建议（尚未执行，需要玩家确认）：依据已发现线索中的数字与顺序，可以提交推导的密码；请确认。\\",\\"tool\\":\\"submit_code\\"},\\"status\\":\\"completed\\",\\"stop_reason\\":null,\\"turn_id\\":\\"d0934d05cfbb4ff995dca44c1305221f\\",\\"usage\\":{\\"input_tokens\\":null,\\"model\\":\\"deterministic-visible-v1\\",\\"model_calls\\":2,\\"output_tokens\\":null,\\"provider\\":\\"mock\\",\\"read_tool_calls\\":3},\\"visible_state\\":{\\"clues\\":[{\\"clue_id\\":\\"r1_note_clue\\",\\"object_id\\":\\"r1_note\\",\\"text\\":\\"三角记为3，圆记为8，方记为2。\\",\\"title\\":\\"值班便签\\"},{\\"clue_id\\":\\"r1_cabinet_clue\\",\\"object_id\\":\\"r1_cabinet\\",\\"text\\":\\"柜门标签从左到右是：三角、圆、方。\\",\\"title\\":\\"柜门顺序\\"}],\\"exits\\":[{\\"destination_id\\":\\"R2\\",\\"name\\":\\"设备间\\",\\"unlocked\\":false}],\\"generation\\":\\"d9fa40be-ccca-4c27-8c97-03de3ace0aee\\",\\"inventory\\":[],\\"level_version\\":\\"1.0.0\\",\\"objects\\":[{\\"actions\\":[{\\"arguments\\":{\\"object_id\\":\\"r1_note\\"},\\"label\\":\\"查看\\",\\"requires_code\\":false,\\"tool\\":\\"inspect\\"}],\\"description\\":\\"桌上有一张值班便签。\\",\\"kind\\":\\"clue\\",\\"name\\":\\"值班便签\\",\\"object_id\\":\\"r1_note\\"},{\\"actions\\":[{\\"arguments\\":{\\"object_id\\":\\"r1_cabinet\\"},\\"label\\":\\"查看\\",\\"requires_code\\":false,\\"tool\\":\\"inspect\\"},{\\"arguments\\":{\\"target_id\\":\\"r1_cabinet\\"},\\"label\\":\\"输入密码\\",\\"requires_code\\":true,\\"tool\\":\\"submit_code\\"}],\\"description\\":\\"带数字锁的值班柜，门上贴着形状标签。\\",\\"kind\\":\\"container\\",\\"name\\":\\"值班柜\\",\\"object_id\\":\\"r1_cabinet\\"},{\\"actions\\":[{\\"arguments\\":{\\"object_id\\":\\"r1_door\\"},\\"label\\":\\"查看\\",\\"requires_code\\":false,\\"tool\\":\\"inspect\\"}],\\"description\\":\\"通向设备间的刷卡门。\\",\\"kind\\":\\"door\\",\\"name\\":\\"设备间刷卡门\\",\\"object_id\\":\\"r1_door\\"}],\\"progress\\":{\\"check_done\\":false,\\"power_on\\":false},\\"revision\\":2,\\"room\\":{\\"description\\":\\"夜间断电了，先寻找通往设备间的门卡。\\",\\"name\\":\\"值班室\\",\\"room_id\\":\\"R1\\"},\\"save\\":null,\\"schema_version\\":\\"1.0.0\\",\\"session_id\\":\\"1d0614d9094a49de9f76713ccd46818b\\",\\"status\\":\\"playing\\"}},\\"event_id\\":\\"f6ecb17423ca4db9b91ab304cc10d36a\\",\\"ok\\":true}"}, {"operation": "confirm", "outcome": "committed", "revision_before": 2, "revision_after": 3, "request_json": "{\\"proposal_id\\":\\"80c04ee71cf348c3ad93079d2c15d8b1\\"}", "result_json": "{\\"data\\":{\\"proposal\\":{\\"arguments\\":{\\"code\\":\\"382\\",\\"target_id\\":\\"r1_cabinet\\"},\\"clue_refs\\":[\\"r1_note_clue\\",\\"r1_cabinet_clue\\"],\\"expires_at\\":\\"2026-10-02T11:49:52.148364Z\\",\\"generation\\":\\"d9fa40be-ccca-4c27-8c97-03de3ace0aee\\",\\"proposal_id\\":\\"80c04ee71cf348c3ad93079d2c15d8b1\\",\\"revision\\":2,\\"status\\":\\"committed\\",\\"summary\\":\\"建议（尚未执行，需要玩家确认）：依据已发现线索中的数字与顺序，可以提交推导的密码；请确认。\\",\\"tool\\":\\"submit_code\\"},\\"receipt\\":{\\"arguments\\":{\\"code\\":\\"382\\",\\"target_id\\":\\"r1_cabinet\\"},\\"changed\\":true,\\"consumed_item_ids\\":[],\\"event_id\\":\\"28bc6271a80a4ab5b6416cf99d5e4d49\\",\\"generation\\":\\"d9fa40be-ccca-4c27-8c97-03de3ace0aee\\",\\"message\\":\\"值班柜已打开。\\",\\"new_clue_ids\\":[],\\"observation\\":null,\\"request_id\\":\\"80c04ee71cf348c3ad93079d2c15d8b1\\",\\"revision_after\\":3,\\"revision_before\\":2,\\"tool\\":\\"submit_code\\"},\\"replayed\\":false,\\"visible_state\\":{\\"clues\\":[{\\"clue_id\\":\\"r1_note_clue\\",\\"object_id\\":\\"r1_note\\",\\"text\\":\\"三角记为3，圆记为8，方记为2。\\",\\"title\\":\\"值班便签\\"},{\\"clue_id\\":\\"r1_cabinet_clue\\",\\"object_id\\":\\"r1_cabinet\\",\\"text\\":\\"柜门标签从左到右是：三角、圆、方。\\",\\"title\\":\\"柜门顺序\\"}],\\"exits\\":[{\\"destination_id\\":\\"R2\\",\\"name\\":\\"设备间\\",\\"unlocked\\":false}],\\"generation\\":\\"d9fa40be-ccca-4c27-8c97-03de3ace0aee\\",\\"inventory\\":[],\\"level_version\\":\\"1.0.0\\",\\"objects\\":[{\\"actions\\":[{\\"arguments\\":{\\"object_id\\":\\"r1_note\\"},\\"label\\":\\"查看\\",\\"requires_code\\":false,\\"tool\\":\\"inspect\\"}],\\"description\\":\\"桌上有一张值班便签。\\",\\"kind\\":\\"clue\\",\\"name\\":\\"值班便签\\",\\"object_id\\":\\"r1_note\\"},{\\"actions\\":[{\\"arguments\\":{\\"object_id\\":\\"r1_cabinet\\"},\\"label\\":\\"查看\\",\\"requires_code\\":false,\\"tool\\":\\"inspect\\"}],\\"description\\":\\"值班柜已打开。\\",\\"kind\\":\\"container\\",\\"name\\":\\"值班柜\\",\\"object_id\\":\\"r1_cabinet\\"},{\\"actions\\":[{\\"arguments\\":{\\"object_id\\":\\"r1_door\\"},\\"label\\":\\"查看\\",\\"requires_code\\":false,\\"tool\\":\\"inspect\\"}],\\"description\\":\\"通向设备间的刷卡门。\\",\\"kind\\":\\"door\\",\\"name\\":\\"设备间刷卡门\\",\\"object_id\\":\\"r1_door\\"},{\\"actions\\":[{\\"arguments\\":{\\"object_id\\":\\"access_card\\"},\\"label\\":\\"查看\\",\\"requires_code\\":false,\\"tool\\":\\"inspect\\"},{\\"arguments\\":{\\"item_id\\":\\"access_card\\"},\\"label\\":\\"拾取\\",\\"requires_code\\":false,\\"tool\\":\\"take\\"}],\\"description\\":\\"柜内有一张门卡。\\",\\"kind\\":\\"item\\",\\"name\\":\\"门卡\\",\\"object_id\\":\\"access_card\\"}],\\"progress\\":{\\"check_done\\":false,\\"power_on\\":false},\\"revision\\":3,\\"room\\":{\\"description\\":\\"夜间断电了，先寻找通往设备间的门卡。\\",\\"name\\":\\"值班室\\",\\"room_id\\":\\"R1\\"},\\"save\\":null,\\"schema_version\\":\\"1.0.0\\",\\"session_id\\":\\"1d0614d9094a49de9f76713ccd46818b\\",\\"status\\":\\"playing\\"}},\\"event_id\\":\\"28bc6271a80a4ab5b6416cf99d5e4d49\\",\\"ok\\":true}"}]]'
+
+----------------------------------------------------------------------
+Ran 43 tests in 12.117s
+
+FAILED (failures=1, errors=3)

@@ -1,0 +1,62 @@
+{
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "D:\\深度能力\\evidence\\qa\\T18-audit-20261002.py"
+  ],
+  "actual_exit_code": 0,
+  "checks": [
+    {
+      "run": "20261002T120504699455Z-m3-api",
+      "exit_code": 0,
+      "source_unchanged": true,
+      "evidence_hashes_verified": 3
+    },
+    {
+      "run": "20261002T115503579Z-m3-browser",
+      "exit_code": 0,
+      "source_unchanged": true,
+      "evidence_hashes_verified": 26
+    },
+    {
+      "run": "20261002T115601621Z-m2-browser",
+      "exit_code": 0,
+      "source_unchanged": true,
+      "evidence_hashes_verified": 20
+    },
+    {
+      "run": "20261002T120735404563Z-m3-real",
+      "exit_code": 0,
+      "source_unchanged": true,
+      "evidence_hashes_verified": 3
+    },
+    {
+      "current_all_checker_sources_match": true,
+      "source_count": 57,
+      "steps": [
+        {
+          "name": "frontend-build",
+          "exit_code": 0
+        },
+        {
+          "name": "deterministic-tests",
+          "exit_code": 0
+        }
+      ]
+    }
+  ],
+  "exact_actual_configured_key_scan": {
+    "passed": true,
+    "files_scanned": 139,
+    "roots": [
+      "frontend/dist",
+      "backend/app",
+      "frontend/src",
+      "scripts",
+      "contracts",
+      "tests",
+      "evidence/qa"
+    ]
+  },
+  "tracked_sensitive_runtime_paths": 0,
+  "limitations": "Exact configured key and known session-capability probes only; not a proof against arbitrary future secrets or covert channels. No credentials/providerbody/headers copied."
+}

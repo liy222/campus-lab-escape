@@ -10,6 +10,10 @@ M6 T28 change <- baseline v1 (engineering rehearsal unless teacher approved); T2
 M7 T31 release <- T30; T32 reproduction/human acceptance <- T31.
 All not otherwise marked are PLANNED. R/A matrix is retained in source sections 3 and 18 and will be mapped to actual evidence, never inferred from test counts.
 
+Current authoritative progression (2026-10-02): T01-T13 DONE within accepted scopes; T04 real isolated adapter DONE. T14-T17 stable owner candidates, T18 independent mock API/browser passed with process-crash/final checker/real assisted segment pending. T19 .mjs source identity correction implemented; T19/T20 independent checks active. T21 waits these actual results, then Main freezes baseline_v1. T22 experimental/evaluator read-only designs complete, implementation not started. T23-T32 remain PLANNED. Earlier BLOCKED/READY lines below are historical records, superseded by this progression and STATUS.md.
+
+2026-10-02 T18/T19/T20 actual checks completed: independent API46/build0/pytest46+159subtests/browserChrome+Edge6routes/manual3routes, actual subprocesscrash and trace boundaries. Controlled real1turn/2calls tools→proposal→confirm PASS, forcedfirstget_inventory explicitly scoped. T21 Main acceptance/commit/hash-chain freeze IN_PROGRESS; T22-T32 still unexecuted except read-only designs. Full project and human acceptance not inferred.
+
 2026-10-01 M0 accepted: T01/T02/T03 complete; T04 isolated mock complete, real provider explicitly blocked. T05/T06 IN_PROGRESS; T07 READY; T08 waits for stable R1. Main approved contract1.0.0.
 
 2026-10-02 recovery: M0 SHA24c8a02 pushed/private verified. T05/T06 stable backend candidate (29 local checks exit0), pending T08 independent acceptance; T07 in progress; T08 QA independent backend cases in progress, overall UI execution waits for stable frontend. T09/T10/T11/T12 not started until M1 gate. DeepSeek4.1 Flash selected; T04 real awaits locally configured key and approved budget. T14/T15 wait for manual baseline.
