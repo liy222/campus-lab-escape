@@ -1,0 +1,47 @@
+{
+  "run_id": "20261002T061216.169655Z-f0dc7f0c",
+  "release_id": "unreleased-working-tree",
+  "suite": "deterministic",
+  "python": "3.14.7 | packaged by Anaconda, Inc. | (main, Aug 14 2026, 10:12:46) [MSC v.1942 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "provider": "mock",
+  "steps": [
+    {
+      "name": "frontend-build",
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-c",
+        "raise SystemExit(0)"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-10-02T06:12:16.171230+00:00",
+      "completed_at": "2026-10-02T06:12:16.191363+00:00",
+      "log": "frontend-build.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "deterministic-tests",
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-10-02T06:12:16.191640+00:00",
+      "completed_at": "2026-10-02T06:12:16.519677+00:00",
+      "log": "deterministic-tests.txt",
+      "sha256": "158b23828b080f4bf962ebcb1f1f4fecf966b14a935081c8e2a51fb5bd7db12c"
+    }
+  ],
+  "source_hashes": {
+    "tests/test_probe.py": "547683c1cc257e064b72322b2fa73097d24cdc1b81964ef2565a5d3f39c90557"
+  },
+  "source_unchanged": true,
+  "exit_code": 0,
+  "status": "PASS"
+}

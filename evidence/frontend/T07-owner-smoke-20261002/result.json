@@ -1,0 +1,49 @@
+{
+  "scope": "frontend owner local development smoke; not independent QA or human playtest",
+  "checks": [
+    {
+      "name": "create: initial room, empty inventory and undiscovered clues",
+      "result": "passed"
+    },
+    {
+      "name": "responsive: no horizontal overflow",
+      "result": "passed",
+      "width": 1280
+    },
+    {
+      "name": "responsive: no horizontal overflow",
+      "result": "passed",
+      "width": 768
+    },
+    {
+      "name": "responsive: no horizontal overflow",
+      "result": "passed",
+      "width": 390
+    },
+    {
+      "name": "inspect: note and cabinet clues discovered through UI",
+      "result": "passed"
+    },
+    {
+      "name": "wrong user code: error visible and cabinet remains closed",
+      "result": "passed"
+    },
+    {
+      "name": "manual R1: code from visible clues, take card, unlock, move to R2",
+      "result": "passed"
+    },
+    {
+      "name": "reload: continue existing session from sessionStorage",
+      "result": "passed"
+    },
+    {
+      "name": "deferred controls explicitly unavailable",
+      "result": "passed"
+    },
+    {
+      "name": "no page runtime errors",
+      "result": "passed"
+    }
+  ],
+  "runtime_errors": []
+}

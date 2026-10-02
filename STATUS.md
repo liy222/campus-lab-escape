@@ -1,10 +1,15 @@
 # Status
-milestone: M0 accepted; M1 implementation started
-last_verified_release: M0 scaffold (health/frontend HTTP smoke, build, pip check, isolated mock probe)
-T01 DONE scope/requirements/course gaps registered. T02 DONE contract1.0.0 frozen by main. T03 DONE runnable scaffold; T04 DONE mock feasibility and explicit real-provider blocker.
-Active: backend_engine gpt-6.1-sol/high owns backend except ai for T05/T06. Next frontend_ui T07 after delivery/spec finish. T08 QA will run against stable R1.
-Evidence: evidence/environment/delivery-http-smoke.json, delivery-build.txt, delivery-pip-check.txt; evidence/provider/probe-20261001T130457931379Z.
-Local commit before M0: eb5a1e49a6ffb727448fd64c8ef3b12aa15d6bcb. Remote not created/synchronized; target connector lookup404 and create-repo capability absent. Connector DOES support writing an accessible existing repository; local Git auth is not necessarily required.
-Blockers: real provider/model/API credentials and approved spend; COURSE01 teacher approval; actual human playtest/signoff; browser CUA sandbox failed. Elevated shell works; local browser automated QA will be attempted separately.
-Not verified: gameplay (M1 underway), real AI, paid experiments, evaluator, CH01, UI acceptance, clean reproduction.
-Recovery: read AGENTS, PLAN, DECISIONS, docs/SPEC.md, docs/execution-plan.md, task dispatch and actual git status.
+updated_at: 2026-10-02 (Asia/Shanghai)
+milestone: M1 R1 accepted; M2 ready
+last_verified_release: m1-r1-candidate-20261002, exact working-tree source hashes in independent QA evidence
+remote: https://github.com/liy222/campus-lab-escape (PRIVATE, gh verified)
+last_pushed_sha: 24c8a024f86d9f8bc8e68b04fc09faac5a513a8f; M1 sync follows this acceptance record
+T01/T02/T03: M0 accepted. T04: isolated mock accepted; actual DeepSeek provider/budget implementation active, not game integration.
+T05/T06/T07/T08: M1 accepted. Independent API13pass+1explicit T13 deferred case; first scope failure retained. Independent browser R1 route at1280/768/390, keyboard input/cancel, current-tab continue, targeted build disclosure scan passed. Overall checker build0/pytest0/source_unchanged=true. No claim of full A03/A10/A14 across future routes.
+Evidence: evidence/qa/20261002T062147341889Z-r1-api/run.json; evidence/qa/20261002T062022883Z-r1-browser/run.json; evidence/qa/check/20261002T062338.727608Z-661b7820/summary.json. Original harness/scoping failures retained. Whole checker also hashed independent uncommitted AI probe files; M1 API/browser target excludes them, and M1 does not call AI.
+Active: ai_provider (actual explicit spawn gpt-6.1-sol/high), independent T04 provider and cross-process budget. delivery_index (explicit gpt-6-luna/medium) completed README/release index. No Astra call in this recovery. Main runtime model cannot be independently verified.
+Next: backend T09/T11/T12 (three-room baseline1.0.0, transactional controls/saves); frontend T10 manual full-game/save UI; then T13 independent stable-candidate QA. T14/T15/T16/T17 gameplay AI waits for manual baseline.
+Paid provider: DeepSeek4.1 Flash, ID deepseek-flash, official base https://api.deepseek.com. User authorized total CNY10 for all real calls. Root.env ignored, empty-key template created; user owns inserting credentials; no secret output. Shared conservative runtime budget ledger required; real paid calls not yet verified.
+Blockers: default Windows sandbox initialization fails; elevated shell works. Real credential insertion, COURSE01/teacher formal Change, actual human playtest/decision/signoff remain open.
+Not verified: R2/R3/EXIT gameplay, persistence/reset, game AI, paid E1 comparison, evaluator, CH01, clean reproduction and human coursework claims.
+Recovery: read AGENTS, PLAN, DECISIONS, SPEC, execution-plan, dispatch and actual Git status. No background continuation promised after chat stops.

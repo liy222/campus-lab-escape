@@ -12,7 +12,7 @@ import subprocess
 import sys
 import uuid
 
-from scripts.dev import ROOT, npm_command
+from scripts.dev import ROOT, make_frontend_environment, npm_command
 
 
 def source_hashes() -> dict[str, str]:
@@ -52,6 +52,8 @@ def main() -> int:
     environment = os.environ.copy()
     environment["AI_PROVIDER"] = "mock"
     environment["PYTHONUTF8"] = "1"
+    # Imports of the backend must not open the player's development database.
+    environment["SQLITE_PATH"] = str(directory / "isolated-data" / "game.sqlite")
     result = 0
     try:
         commands = [("frontend-build", npm_command("--prefix", "frontend", "run", "build")),
@@ -61,7 +63,9 @@ def main() -> int:
             started = datetime.now(timezone.utc).isoformat()
             print(f"Running {name}…", flush=True)
             with log.open("w", encoding="utf-8") as output:
-                process = subprocess.run(command, cwd=ROOT, env=environment, stdout=output,
+                child_environment = (make_frontend_environment(environment, "http://127.0.0.1:8000")
+                                     if name == "frontend-build" else environment)
+                process = subprocess.run(command, cwd=ROOT, env=child_environment, stdout=output,
                                          stderr=subprocess.STDOUT, check=False)
             summary["steps"].append({"name": name, "command": command, "exit_code": process.returncode,
                                      "started_at": started, "completed_at": datetime.now(timezone.utc).isoformat(),

@@ -6,3 +6,11 @@
 - Real provider credentials/model and paid budget OPEN. Mock first, no paid requests. Engineering CH01 rehearsal may proceed after baseline; never claim teacher approval.
 
 - M0 contract1.0.0 frozen by main after SPEC/schema review. Explicit knowledge-only inspect may add discovered clue/revision; AI progress always proposal. Control requests carry versions; reset preserves save, restore/reset new generation. Actual scaffold health/front200, build/pip check and 8 isolated mock checks accepted; no gameplay/real-AI claim.
+
+- 2026-10-02: resumed from existing M0 and uncommitted R1 candidate; no prior成果 replaced. gh verified liy222; private repository created with specified description; existing M0 pushed and remote SHA verified. Default Windows sandbox broken; elevated shell works. Per-command Git safe.directory used without global configuration changes. Real model/budget requested; no paid calls authorized or executed.
+
+- 2026-10-02: user selected DeepSeek4.1 Flash for game API (development delegate models unchanged). Official docs checked https://api-docs.deepseek.com/ and https://api-docs.deepseek.com/updates/: model ID deepseek-flash, base URL https://api.deepseek.com. Root .env is ignored; user owns credential insertion. Delivery assigned safe .env loader with environment precedence. Total paid-call budget still pending; no paid calls yet.
+
+- 2026-10-02: user explicitly approved total paid DeepSeek project spend <= CNY10 covering connectivity, game validation, E1 experiment and evaluator. All paid runners must share a persistent local budget ledger, reserve conservative per-request maximum before calling, record returned usage, and stop before exhaustion. Approved model deepseek-flash. User must place credential locally; never print it.
+
+- 2026-10-02 M1 acceptance: backend/frontend R1 stable; independent QA confirms API boundary and browser route at1280/768/390. R2 missing-fuse test is deferred toT13 (not deleted); first harness startup/reload assumption failures retained. SPEC allows homepage continue button after refresh; no requirement of automatic resume invented. No human playtest/teacher approval inferred. Begin full manual baseline with level1.0.0 and key retained before CH01.

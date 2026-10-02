@@ -1,0 +1,53 @@
+
+> campus-lab-escape@0.1.0 dev
+> vite --host 127.0.0.1 --port 7517 --strictPort
+
+INFO:     Started server process [22996]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:7516 (Press CTRL+C to quit)
+INFO:     127.0.0.1:7518 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7523 - "GET /api/health HTTP/1.1" 200 OK
+
+  VITE v7.3.6  ready in 1166 ms
+
+  ➜  Local:   http://127.0.0.1:7517/
+INFO:     127.0.0.1:7525 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7527 - "GET /api/health HTTP/1.1" 200 OK
+
+Game: http://127.0.0.1:7517/
+Backend: http://127.0.0.1:7516/api/health
+Press Ctrl+C to stop both services.
+
+Stopping both services.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\�������\evidence\delivery\20261002-entry-review\probe.py", line 187, in <module>
+    run()
+    ~~~^^
+  File "D:\�������\evidence\delivery\20261002-entry-review\probe.py", line 123, in run
+    result = dev.main()
+  File "D:\�������\scripts\dev.py", line 146, in main
+    terminate(child)
+    ~~~~~~~~~^^^^^^^
+  File "D:\�������\scripts\dev.py", line 73, in terminate
+    subprocess.run(["taskkill", "/PID", str(process.pid), "/T", "/F"],
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=False)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\subprocess.py", line 555, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\unittest\mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\unittest\mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\liyh\.conda\envs\1\Lib\unittest\mock.py", line 1247, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "D:\�������\evidence\delivery\20261002-entry-review\probe.py", line 61, in capture_child
+    child_environments.append(dict(kwargs["env"]))
+                                   ~~~~~~^^^^^^^
+KeyError: 'env'

@@ -1,0 +1,59 @@
+[
+  {
+    "name": "occupied-port",
+    "command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-m",
+      "scripts.dev",
+      "--provider",
+      "mock"
+    ],
+    "exit_code": 1,
+    "expected_exit": 1,
+    "stdout": "",
+    "stderr": "Startup failed: 127.0.0.1:8000 is occupied or unavailable; choose another port\n"
+  },
+  {
+    "name": "reset-outside-project",
+    "command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-m",
+      "scripts.reset",
+      "--data-dir",
+      "D:\\深度能力"
+    ],
+    "exit_code": 1,
+    "expected_exit": 1,
+    "stdout": "",
+    "stderr": "Reset refused: data directory must be inside D:\\�������\\data\n"
+  },
+  {
+    "name": "reset-preview",
+    "command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-m",
+      "scripts.reset",
+      "--data-dir",
+      "D:\\深度能力\\data\\t03-reset-test-fc856d21"
+    ],
+    "exit_code": 0,
+    "expected_exit": 0,
+    "stdout": "Data directory: D:\\�������\\data\\t03-reset-test-fc856d21\nWould remove: game.sqlite\nPreview only. Stop the app, then add --confirm to delete this database and its saves.\n",
+    "stderr": ""
+  },
+  {
+    "name": "reset-confirm",
+    "command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-m",
+      "scripts.reset",
+      "--data-dir",
+      "D:\\深度能力\\data\\t03-reset-test-fc856d21",
+      "--confirm"
+    ],
+    "exit_code": 0,
+    "expected_exit": 0,
+    "stdout": "Data directory: D:\\�������\\data\\t03-reset-test-fc856d21\nRemoving: game.sqlite\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "name": "env-existing-priority-and-literal-data",
+    "time_utc": "2026-10-02T06:12:11.206124+00:00",
+    "passed": true,
+    "secret_values_logged": false
+  },
+  {
+    "name": "env-invalid-format-rejected",
+    "time_utc": "2026-10-02T06:12:11.209232+00:00",
+    "passed": true,
+    "cases": 4
+  },
+  {
+    "name": "frontend-inherited-credentials-stripped",
+    "time_utc": "2026-10-02T06:12:11.209257+00:00",
+    "passed": true,
+    "credential_values_logged": false
+  },
+  {
+    "name": "provider-selection-deepseek",
+    "time_utc": "2026-10-02T06:12:11.215928+00:00",
+    "passed": true,
+    "exit_code": 1,
+    "synthetic_key_not_logged": true
+  },
+  {
+    "name": "provider-selection-mock",
+    "time_utc": "2026-10-02T06:12:11.221344+00:00",
+    "passed": true,
+    "exit_code": 1,
+    "synthetic_key_not_logged": true
+  },
+  {
+    "name": "ephemeral-real-start-stop",
+    "time_utc": "2026-10-02T06:12:15.036646+00:00",
+    "passed": true,
+    "exit_code": 0,
+    "responses": [
+      {
+        "url": "http://127.0.0.1:3302/api/health",
+        "status": 200,
+        "body": {
+          "status": "ok",
+          "service": "campus-lab-escape"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:3303/api/health",
+        "status": 200,
+        "body": {
+          "status": "ok",
+          "service": "campus-lab-escape"
+        }
+      }
+    ],
+    "ports_released": true,
+    "actual_root_env_read": false,
+    "provider_api_calls": 0
+  },
+  {
+    "name": "occupied-port-rejection",
+    "time_utc": "2026-10-02T06:12:15.036996+00:00",
+    "passed": true
+  },
+  {
+    "name": "synthetic-harness-missing",
+    "time_utc": "2026-10-02T06:12:15.455818+00:00",
+    "passed": true,
+    "observed_exit": 4,
+    "expected_exit": 4,
+    "build_is_synthetic": true,
+    "evidence": "harness-missing/20261002T061215.038269Z-5aad1d28/summary.json"
+  },
+  {
+    "name": "synthetic-harness-empty",
+    "time_utc": "2026-10-02T06:12:15.787849+00:00",
+    "passed": true,
+    "observed_exit": 5,
+    "expected_exit": 5,
+    "build_is_synthetic": true,
+    "evidence": "harness-empty/20261002T061215.457455Z-7acadcbc/summary.json"
+  },
+  {
+    "name": "synthetic-harness-failing",
+    "time_utc": "2026-10-02T06:12:16.168223+00:00",
+    "passed": true,
+    "observed_exit": 1,
+    "expected_exit": 1,
+    "build_is_synthetic": true,
+    "evidence": "harness-failing/20261002T061215.789251Z-49840eaf/summary.json"
+  },
+  {
+    "name": "synthetic-harness-passing",
+    "time_utc": "2026-10-02T06:12:16.527210+00:00",
+    "passed": true,
+    "observed_exit": 0,
+    "expected_exit": 0,
+    "build_is_synthetic": true,
+    "evidence": "harness-passing/20261002T061216.169655Z-f0dc7f0c/summary.json"
+  },
+  {
+    "name": "reset-explicit-target-preview-and-boundary",
+    "time_utc": "2026-10-02T06:12:16.530302+00:00",
+    "passed": true,
+    "exits": [
+      0,
+      1,
+      0
+    ],
+    "existing_user_data_touched": false
+  }
+]

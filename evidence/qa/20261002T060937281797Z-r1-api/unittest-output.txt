@@ -1,0 +1,34 @@
+test_A01_new_and_independent_sessions (tests.api.test_r1.R1Acceptance.test_A01_new_and_independent_sessions) ... ok
+test_A03_missing_card_and_locked_move (tests.api.test_r1.R1Acceptance.test_A03_missing_card_and_locked_move) ... ok
+test_A04_wrong_code_no_answer_leak (tests.api.test_r1.R1Acceptance.test_A04_wrong_code_no_answer_leak) ... ok
+test_A05_failure_replay_keeps_event_and_current_state (tests.api.test_r1.R1Acceptance.test_A05_failure_replay_keeps_event_and_current_state) ... ok
+test_A05_success_replay_and_same_ID_conflict (tests.api.test_r1.R1Acceptance.test_A05_success_replay_and_same_ID_conflict) ... ok
+test_A06_stale_revision_and_generation (tests.api.test_r1.R1Acceptance.test_A06_stale_revision_and_generation) ... ok
+test_A10_visibility_and_hidden_ids (tests.api.test_r1.R1Acceptance.test_A10_visibility_and_hidden_ids) ... ok
+test_A14_foreign_missing_invalid_capabilities (tests.api.test_r1.R1Acceptance.test_A14_foreign_missing_invalid_capabilities) ... ok
+test_GET_and_inventory_have_no_knowledge_side_effect (tests.api.test_r1.R1Acceptance.test_GET_and_inventory_have_no_knowledge_side_effect) ... ok
+test_R2_boundary_missing_items_unpowered_monitor (tests.api.test_r1.R1Acceptance.test_R2_boundary_missing_items_unpowered_monitor) ... FAIL
+test_malformed_JSON_and_non_object_body (tests.api.test_r1.R1Acceptance.test_malformed_JSON_and_non_object_body) ... ok
+test_manual_R1_route_repeats_and_return (tests.api.test_r1.R1Acceptance.test_manual_R1_route_repeats_and_return) ... ok
+test_strict_request_envelope (tests.api.test_r1.R1Acceptance.test_strict_request_envelope) ... ok
+test_strict_tool_arguments (tests.api.test_r1.R1Acceptance.test_strict_tool_arguments) ... ok
+
+======================================================================
+FAIL: test_R2_boundary_missing_items_unpowered_monitor (tests.api.test_r1.R1Acceptance.test_R2_boundary_missing_items_unpowered_monitor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\深度能力\tests\api\test_r1.py", line 259, in test_R2_boundary_missing_items_unpowered_monitor
+    self.reject(self.request('use_item', {'item_id': 'fuse', 'target_id': 'r2_powerbox'}), 'PRECONDITION_FAILED')
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\深度能力\tests\api\test_r1.py", line 91, in reject
+    self.assertEqual(body['error']['code'], code)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'NOT_VISIBLE' != 'PRECONDITION_FAILED'
+- NOT_VISIBLE
++ PRECONDITION_FAILED
+
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.785s
+
+FAILED (failures=1)

@@ -1,0 +1,39 @@
+{
+  "scope": "Backend owner local M1 smoke, not independent QA",
+  "checks": [
+    "health",
+    "create strict body",
+    "create status",
+    "initial visibility",
+    "initial no answer",
+    "cross-session forbidden",
+    "missing token forbidden",
+    "hidden card denied",
+    "missing card denied",
+    "wrong code no progress",
+    "failure replay immutable",
+    "extra result rejected",
+    "extra argument rejected",
+    "boolean revision rejected",
+    "integer code rejected",
+    "unknown tool rejected",
+    "first inspect revision",
+    "success replay",
+    "same id conflict",
+    "stale version denied",
+    "repeat inspect unchanged",
+    "open cabinet card visible",
+    "duplicate card denied",
+    "R1 completed intermediate R2",
+    "M1 later actions denied",
+    "second session isolated",
+    "no capability persisted in events",
+    "six state-changing commits",
+    "SQLite survives app recreation"
+  ],
+  "passed": 29,
+  "limitations": [
+    "R2 is an intermediate scene; T09 gameplay, controls, saves and AI pending",
+    "No browser acceptance or real model calls performed"
+  ]
+}

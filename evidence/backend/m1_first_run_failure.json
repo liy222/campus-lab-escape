@@ -1,0 +1,9 @@
+{
+  "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -m evidence.backend.m1_smoke",
+  "exit_code": 1,
+  "scope": "Backend owner local checks, not formal QA",
+  "actual": "All 29 local assertions completed, but temporary database cleanup raised WinError 32 because SQLite connection contexts do not close connections.",
+  "correction": "Use contextlib.closing for schema initialization and smoke inspection SQLite connections; context-manage recreated TestClient.",
+  "assertion_evidence": "evidence/backend/m1_initial_assertions.json",
+  "note": "This failed command is not recorded as a successful run. No credentials or capabilities are retained in this record."
+}

@@ -1,0 +1,62 @@
+{
+  "milestone": "M0",
+  "recorded_at": "2026-10-01T13:14:19.390741+00:00",
+  "contract_version": "1.0.0",
+  "scope": "scaffold, structural contract check and isolated offline mock probe; not gameplay or formal browser acceptance",
+  "evidence": [
+    {
+      "evidence_id": "M0-01",
+      "path": "evidence/environment/initial.json",
+      "sha256": "c34183989c6b450be4436dc8441b314373a8999d7fbe4603f8d2798d08d7b871"
+    },
+    {
+      "evidence_id": "M0-02",
+      "path": "evidence/environment/delivery-http-smoke.json",
+      "sha256": "4697b0679e75dd4a5b35a58f324c034869c6d0decfd013c5c5bcbf38f40775fb"
+    },
+    {
+      "evidence_id": "M0-03",
+      "path": "evidence/environment/delivery-build.txt",
+      "sha256": "beb83b2e866551acc4479f31748f8f600ea847fa9ec6329a8e19f40b7478929a"
+    },
+    {
+      "evidence_id": "M0-04",
+      "path": "evidence/environment/delivery-pip-check.txt",
+      "sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf"
+    },
+    {
+      "evidence_id": "M0-05",
+      "path": "evidence/environment/delivery-stop.txt",
+      "sha256": "10590ef50782b0a11c4dd56254e1f091ecf213162687da7da6c4bb5113816b48"
+    },
+    {
+      "evidence_id": "M0-06",
+      "path": "evidence/environment/delivery-script-probes.json",
+      "sha256": "32db38dc1783bda31a1d4ed97918c3d04c5d7c66457f1067119c9e46cf612f5c"
+    },
+    {
+      "evidence_id": "M0-07",
+      "path": "contracts/validation.json",
+      "sha256": "a70cbea8d2afff0ada41f99bbb834d0b02d22ba1b2955d723fecb52f0f8a8e9e"
+    },
+    {
+      "evidence_id": "M0-08",
+      "path": "evidence/provider/probe-20261001T130457931379Z/report.json",
+      "sha256": "40f6bbb4fec30e79474cb845d6af07d880fa425b369d32defd2b971cb779ede4"
+    },
+    {
+      "evidence_id": "M0-09",
+      "path": "evidence/runs/check/20261001T131144.821800Z-7ab9bc6d/summary.json",
+      "sha256": "21c99b5bc68e96da5d12d070c1a61f4a2146a43d2f091ce6147ec684464e45c7"
+    },
+    {
+      "evidence_id": "M0-10",
+      "path": "evidence/runs/check/20261001T131102.170596Z-4c2c09cb/correction.json",
+      "sha256": "16a895c94dea3cd6e8a1afdd15d516e5cd44f2ffe494c9b1bdd8ddaed80262ba"
+    }
+  ],
+  "known_failed_check": "Unified check correctly returns4 until tests exist; initial encoding issue correction is explicitly referenced.",
+  "remote_sync": "not performed",
+  "implementation_commit": "24c8a024f86d9f8bc8e68b04fc09faac5a513a8f",
+  "evidence_note": "Raw evidence captured scaffold worktree during M0; supplemental script probes/correction/index were added after implementation commit. File hashes bind exact recorded files; no claim that every evidence file existed in that commit."
+}

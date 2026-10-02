@@ -11,3 +11,7 @@ M7 T31 release <- T30; T32 reproduction/human acceptance <- T31.
 All not otherwise marked are PLANNED. R/A matrix is retained in source sections 3 and 18 and will be mapped to actual evidence, never inferred from test counts.
 
 2026-10-01 M0 accepted: T01/T02/T03 complete; T04 isolated mock complete, real provider explicitly blocked. T05/T06 IN_PROGRESS; T07 READY; T08 waits for stable R1. Main approved contract1.0.0.
+
+2026-10-02 recovery: M0 SHA24c8a02 pushed/private verified. T05/T06 stable backend candidate (29 local checks exit0), pending T08 independent acceptance; T07 in progress; T08 QA independent backend cases in progress, overall UI execution waits for stable frontend. T09/T10/T11/T12 not started until M1 gate. DeepSeek4.1 Flash selected; T04 real awaits locally configured key and approved budget. T14/T15 wait for manual baseline.
+
+2026-10-02 M1 accepted: T05/T06/T07/T08 complete within R1 scope. Independent API13passed/1T13deferred, browser3widths passed, checker0/source stable. T09/T10/T11/T12 READY; T13 waits for stable complete manual candidate. RealProvider independent T04 work continues; T14+game AI waits M2. All initial QA scope/launcher/reload-assumption failures retained and do not reduce full-level requirements.

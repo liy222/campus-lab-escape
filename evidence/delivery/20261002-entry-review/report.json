@@ -1,0 +1,71 @@
+{
+  "scope": "Delivery entry-point review, not formal product QA",
+  "files_changed": [
+    "scripts/dev.py",
+    "scripts/check.py",
+    "scripts/reset.py",
+    "README.md",
+    ".env.example"
+  ],
+  "files_reviewed_unchanged": [
+    ".gitignore",
+    "scripts/lock_dependencies.py"
+  ],
+  "sha256": {
+    "scripts/dev.py": "db5b89ee5f4cbd35727d00795681dbd197b58025cac84af95665c086a325760b",
+    "scripts/check.py": "2d428a111dbd3f6e705b7de08f694f991e094a3b1c847cfc11378b2a41fb37d1",
+    "scripts/reset.py": "ba665745d04ff4e57349b1c61c813b2f077635e2ec899b59794f3c2fd125e661",
+    "README.md": "84c1600ff8a218ea42b4b1c92560b90578f7cae9a1d26d3f9da1ad4b7337ed98",
+    ".env.example": "04d3426542e9852bca30c36e3795e800adf562ae19645efa433483ccc0126e45"
+  },
+  "commands": [
+    {
+      "command": "specified Python -m evidence.delivery.20261002-entry-review.probe (first attempt)",
+      "exit_code": 1,
+      "evidence": "run.txt",
+      "note": "Probe instrumentation raised KeyError while recording taskkill; temporary service listeners were explicitly stopped. Production dev.py was not the cause."
+    },
+    {
+      "command": "specified Python -m evidence.delivery.20261002-entry-review.probe (corrected)",
+      "exit_code": 0,
+      "evidence": "run-retry.txt",
+      "checks": 11
+    },
+    {
+      "command": "specified Python -m evidence.delivery.20261002-entry-review.probe (backend/frontend credential separation)",
+      "exit_code": 0,
+      "evidence": "run-credential-isolation.txt",
+      "checks": 12
+    },
+    {
+      "command": "specified Python stdin synthetic check build isolation probe",
+      "exit_code": 0,
+      "evidence": "run-check-build-isolation.txt",
+      "empty_pytest_exit_code": 5
+    }
+  ],
+  "verified": [
+    "strict synthetic env parsing",
+    "inherited env priority",
+    "provider file fallback and explicit mock override",
+    "backend-only env file loading",
+    "frontend model credential stripping including check build",
+    "real ephemeral-port health and proxy HTTP 200",
+    "Ctrl+C equivalent main-thread interrupt exit 0 and temporary ports released",
+    "occupied port rejection",
+    "synthetic missing/empty/failing/passing pytest exit 4/5/1/0 propagation",
+    "explicit reset preview/confirm and outside-path rejection"
+  ],
+  "real_env_read": false,
+  "real_provider_calls": 0,
+  "paid_budget_cny": 10,
+  "formal_qa_performed": false,
+  "limitations": [
+    "R1 product candidate remains subject to independent QA",
+    "real AI credentials/call validation pending",
+    "full gameplay, save/restore, experiment, evaluator, CH01 and clean reproduction not accepted by this review",
+    "course and human signoff remain pending",
+    "synthetic harness builds use a harmless zero-exit child and do not establish current product build acceptance"
+  ],
+  "ownership_ready": "scripts and delivery docs stable; no further writes until reassigned"
+}

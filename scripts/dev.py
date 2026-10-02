@@ -5,6 +5,7 @@ import argparse
 import importlib.util
 import os
 from pathlib import Path
+import re
 import shutil
 import socket
 import subprocess
@@ -14,6 +15,40 @@ import urllib.error
 import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def load_env_file(path: Path, environment: dict[str, str]) -> None:
+    """Read strict single-line KEY=VALUE data without shell expansion or logging."""
+    if not path.exists():
+        return
+    values: dict[str, str] = {}
+    for line_number, original in enumerate(path.read_text(encoding="utf-8-sig").splitlines(), 1):
+        line = original.strip()
+        if not line or line.startswith("#"):
+            continue
+        key, separator, value = line.partition("=")
+        key, value = key.strip(), value.strip()
+        if not separator or not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", key) or key in values:
+            raise RuntimeError(f"Invalid .env entry on line {line_number}; expected unique KEY=VALUE")
+        if value.startswith(("'", '"')):
+            if len(value) < 2 or value[-1] != value[0]:
+                raise RuntimeError(f"Invalid .env quoting on line {line_number}")
+            value = value[1:-1]
+        values[key] = value
+    for key, value in values.items():
+        environment.setdefault(key, value)
+
+
+def make_frontend_environment(inherited: dict[str, str], backend_url: str) -> dict[str, str]:
+    """Keep server config out of Vite, including inherited model credentials."""
+    server_prefixes = ("MODEL_", "DEEPSEEK_", "OPENAI_", "ANTHROPIC_", "AI_")
+    secret_fragments = ("API_KEY", "APIKEY", "TOKEN", "SECRET", "PASSWORD", "CREDENTIAL")
+    environment = {key: value for key, value in inherited.items()
+                   if not key.upper().startswith(server_prefixes)
+                   and key.upper() != "SQLITE_PATH"
+                   and not any(fragment in key.upper() for fragment in secret_fragments)}
+    environment["CAMPUS_BACKEND_URL"] = backend_url
+    return environment
 
 
 def port_number(value: str) -> int:
@@ -61,7 +96,7 @@ def terminate(process: subprocess.Popen[bytes]) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--provider", default="mock")
+    parser.add_argument("--provider", default=None, help="override AI_PROVIDER from environment or root .env")
     parser.add_argument("--backend-port", type=port_number, default=8000)
     parser.add_argument("--frontend-port", type=port_number, default=5173)
     parser.add_argument("--startup-timeout", type=float, default=30.0)
@@ -80,14 +115,16 @@ def main() -> int:
             ensure_port_available(port)
         frontend_command = npm_command("--prefix", "frontend", "run", "dev", "--",
                                        "--host", "127.0.0.1", "--port", str(args.frontend_port), "--strictPort")
-        environment = os.environ.copy()
-        environment.update(AI_PROVIDER=args.provider,
-                           CAMPUS_BACKEND_URL=f"http://127.0.0.1:{args.backend_port}")
+        backend_environment = os.environ.copy()
+        load_env_file(ROOT / ".env", backend_environment)
+        provider = args.provider if args.provider is not None else (backend_environment.get("AI_PROVIDER") or "mock")
+        backend_environment["AI_PROVIDER"] = provider
+        frontend_environment = make_frontend_environment(os.environ.copy(), f"http://127.0.0.1:{args.backend_port}")
         process_options = {"creationflags": subprocess.CREATE_NEW_PROCESS_GROUP} if os.name == "nt" else {"start_new_session": True}
         children.append(subprocess.Popen([sys.executable, "-m", "uvicorn", "backend.app.main:app",
                                           "--host", "127.0.0.1", "--port", str(args.backend_port)],
-                                         cwd=ROOT, env=environment, **process_options))
-        children.append(subprocess.Popen(frontend_command, cwd=ROOT, env=environment, **process_options))
+                                         cwd=ROOT, env=backend_environment, **process_options))
+        children.append(subprocess.Popen(frontend_command, cwd=ROOT, env=frontend_environment, **process_options))
         urls = [f"http://127.0.0.1:{args.backend_port}/api/health", f"http://127.0.0.1:{args.frontend_port}/"]
         pending = set(urls)
         deadline = time.monotonic() + args.startup_timeout
@@ -105,7 +142,7 @@ def main() -> int:
                 time.sleep(0.2)
         if pending:
             raise RuntimeError("startup timed out: " + ", ".join(sorted(pending)))
-        print(f"\nGame: {urls[1]}\nBackend: {urls[0]}\nProvider: {args.provider}\nPress Ctrl+C to stop both services.", flush=True)
+        print(f"\nGame: {urls[1]}\nBackend: {urls[0]}\nPress Ctrl+C to stop both services.", flush=True)
         while all(child.poll() is None for child in children):
             time.sleep(0.3)
         print("A service exited; stopping the other service.", file=sys.stderr)

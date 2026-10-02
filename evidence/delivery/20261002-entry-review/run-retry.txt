@@ -1,0 +1,23 @@
+
+> campus-lab-escape@0.1.0 dev
+> vite --host 127.0.0.1 --port 9026 --strictPort
+
+INFO:     Started server process [19368]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:9025 (Press CTRL+C to quit)
+INFO:     127.0.0.1:9027 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9028 - "GET /api/health HTTP/1.1" 200 OK
+14:09:42 [vite] (client) Re-optimizing dependencies because lockfile has changed
+
+  VITE v7.3.6  ready in 307 ms
+
+  ➜  Local:   http://127.0.0.1:9026/
+INFO:     127.0.0.1:9033 - "GET /api/health HTTP/1.1" 200 OK
+
+Game: http://127.0.0.1:9026/
+Backend: http://127.0.0.1:9025/api/health
+Press Ctrl+C to stop both services.
+
+Stopping both services.
+Delivery probes passed: 11; no paid calls or formal product QA.

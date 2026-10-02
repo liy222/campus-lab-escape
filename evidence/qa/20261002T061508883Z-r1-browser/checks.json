@@ -1,0 +1,20 @@
+{
+  "checks": [
+    {
+      "stage": "stop_QA_owned_process_tree",
+      "pid": 12712,
+      "exit_code": 0
+    },
+    {
+      "stage": "stop_QA_owned_process_tree",
+      "pid": 7132,
+      "exit_code": 0
+    }
+  ],
+  "issues": [
+    {
+      "stage": "runner",
+      "error": "Local server unavailable: http://127.0.0.1:15108"
+    }
+  ]
+}

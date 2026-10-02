@@ -32,7 +32,8 @@ def main() -> int:
             raise ValueError("data directory must be a directory")
         names = {"game.sqlite", "game.sqlite-wal", "game.sqlite-shm"}
         files = list(resolved.iterdir())
-        if any(path.name not in names or not path.is_file() for path in files):
+        if any(path.name not in names or not path.is_file() or path.is_symlink() or path.is_junction()
+               for path in files):
             raise ValueError("directory contains files other than the known game.sqlite database; refusing deletion")
         print(f"Data directory: {resolved}")
         for path in files:

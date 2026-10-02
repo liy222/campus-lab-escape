@@ -9,3 +9,13 @@ All paths are relative to D:\深度能力. Every task reads AGENTS.md and accept
 | T04 | ai_integration / gpt-6.1-sol high | T01; real config absent | backend/app/ai/, docs/provider.md, evidence/provider/ | Isolated normal and adverse mock probes actually run; real call status explicitly unverified |
 
 T03 temporary paths transfer only after explicit owner handoff. T05/T06 backend and T07 frontend wait for contract freeze and runnable scaffold. T08 independent QA waits for stable implementation. Formal UI/browser acceptance stays open while browser tool is unavailable.
+
+M0 accepted at local commit24c8a024f86d9f8bc8e68b04fc09faac5a513a8f. T03 backend/front temporary ownership relinquished.
+T05/T06 backend_engine gpt-6.1-sol/high owns backend domain/api/storage/main/dependencies, excludes ai; prerequisites T02/T03 passed; acceptance actual R1 route + no card/wrong code/hidden take/strict validation, then independent QA.
+T07 frontend_ui gpt-6.1-sol/high owns frontend/ + evidence/frontend; frozen contract1.0.0; acceptance real R1 UI, build, visible-only actions, sessionStorage, errors/accessibility/responsiveness. Tests owned by QA separately.
+
+2026-10-02 recovery: resumed existing backend_engine T05/T06, frontend_ui T07, delivery_docs consistency via followup_task. Three role threads active; no new spawn/model override succeeded on resumption (existing names reserved). Ownership and reporting conditions restated. T08 formal QA waits for stable candidate; T09 waits for M1 acceptance.
+
+T04-real/provider: new /root/ai_provider spawned with explicit gpt-6.1-sol/high, fork none. Backend AI/docs/provider/evidence/provider only; data/ai-budget.sqlite runtime allowed. Prerequisites T01/T02/T04 mock + user selected DeepSeek/CNY10; independently implement Provider and shared conservative budget, no gameplay integration before M2. Max real probe allowance0.20 CNY, credential empty -> BLOCKED not fabricated. Acceptance actual protocol/usage or blocker, mocks adverse checks, no credential output, no commit/spawn.
+Simple delivery-index: new /root/delivery_index explicit gpt-6-luna/medium, fork none; README.md and release/README.md ownership transferred from stopped delivery_docs only; scripts/config remain delivery owner. Acceptance actual existing paths and honest R1 candidate/unfinished items; no code/paid calls/secret reads/commit/spawn.
+T08 whole R1: frontend/backend/scripts source stable, QA independently browser/API/build. AI Provider independent probe is outside M1 target; M3 must include AI hashes. M1 accepted only after QA actual scope results.
