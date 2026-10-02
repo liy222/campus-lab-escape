@@ -1,0 +1,47 @@
+{
+  "task": "T04",
+  "written_at": "2026-10-02T06:40:02.442980+00:00",
+  "stable_files": [
+    "backend/app/ai/budget.py",
+    "backend/app/ai/provider.py",
+    "backend/app/ai/provider_check.py",
+    "docs/provider.md"
+  ],
+  "source_sha256": {
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/provider.py": "db68d72ac286e8cdccc11939067f33f3a708f80117af66a3f40b35eae860616b",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "docs/provider.md": "e39a185d8ade59fba638d343902670bb02a45516b00d39d57f3793f999b9db08"
+  },
+  "source_hash_before_fix": null,
+  "source_hash_before_fix_limitation": "Not captured during the first two actual runs; no retrospective verification claim.",
+  "local_checks_evidence": "evidence/provider/adapter-20261002T063537034325Z/report.json",
+  "local_checks_passed": true,
+  "real_probe_evidence": "evidence/provider/adapter-20261002T063154317917Z/report.json",
+  "real_probe_passed": true,
+  "proposal_schema_smoke_passed": true,
+  "ast_syntax_passed": true,
+  "command_exit_code": 0,
+  "ledger": {
+    "cap_cny": 10.0,
+    "charged_upper_cny": 0.00230824,
+    "remaining_cny": 9.99769176,
+    "calls": 4,
+    "unknown_or_pending_calls": 0,
+    "frozen": false
+  },
+  "billing_verified": false,
+  "not_verified": [
+    "independent QA",
+    "game AI integration",
+    "dynamic six-tool game authorization",
+    "player turn limits and confirmation",
+    "experiments and evaluation paid calls"
+  ],
+  "failure_evidence": [
+    "evidence/provider/adapter-20261002T062843343708Z/report.json",
+    "evidence/provider/adapter-20261002T063050346163Z/report.json"
+  ],
+  "shape_fix": "Observed optional integer tool_call.index validated against ordinal, omitted from normalized history; all other tool/argument/reference validation remains strict.",
+  "overall_isolated_checks_passed": true
+}

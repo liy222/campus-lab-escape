@@ -1,0 +1,333 @@
+{
+  "task": "T04",
+  "scope": "isolated provider development checks; no game integration or independent QA",
+  "executed_at": "2026-10-02T06:28:40.496866+00:00",
+  "python": "3.14.7",
+  "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+  "local_checks": [
+    {
+      "scenario": "normal",
+      "expected": "COMPLETED",
+      "actual": "COMPLETED",
+      "http_requests": 2,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0006808,
+        "remaining_cny": 9.9993192,
+        "calls": 2,
+        "unknown_or_pending_calls": 0,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "timeout",
+      "expected": "MODEL_TIMEOUT",
+      "actual": "MODEL_TIMEOUT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.020168,
+        "remaining_cny": 9.979832,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "auth",
+      "expected": "MODEL_AUTH_ERROR",
+      "actual": "MODEL_AUTH_ERROR",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.020168,
+        "remaining_cny": 9.979832,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "service",
+      "expected": "MODEL_UNAVAILABLE",
+      "actual": "MODEL_UNAVAILABLE",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.020168,
+        "remaining_cny": 9.979832,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "rate_limit",
+      "expected": "MODEL_RATE_LIMIT",
+      "actual": "MODEL_RATE_LIMIT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.020168,
+        "remaining_cny": 9.979832,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "malformed",
+      "expected": "MODEL_INVALID_OUTPUT",
+      "actual": "MODEL_INVALID_OUTPUT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.020168,
+        "remaining_cny": 9.979832,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "invalid_tool",
+      "expected": "MODEL_INVALID_OUTPUT",
+      "actual": "MODEL_INVALID_OUTPUT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0003404,
+        "remaining_cny": 9.9996596,
+        "calls": 1,
+        "unknown_or_pending_calls": 0,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "extra_arguments",
+      "expected": "MODEL_INVALID_OUTPUT",
+      "actual": "MODEL_INVALID_OUTPUT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0003404,
+        "remaining_cny": 9.9996596,
+        "calls": 1,
+        "unknown_or_pending_calls": 0,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "duplicate_arguments",
+      "expected": "MODEL_INVALID_OUTPUT",
+      "actual": "MODEL_INVALID_OUTPUT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0003404,
+        "remaining_cny": 9.9996596,
+        "calls": 1,
+        "unknown_or_pending_calls": 0,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "truncated",
+      "expected": "MODEL_INVALID_OUTPUT",
+      "actual": "MODEL_INVALID_OUTPUT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0003404,
+        "remaining_cny": 9.9996596,
+        "calls": 1,
+        "unknown_or_pending_calls": 0,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "missing_usage",
+      "expected": "COMPLETED",
+      "actual": "COMPLETED",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.020168,
+        "remaining_cny": 9.979832,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "missing_credential",
+      "expected": "MISSING_CREDENTIALS",
+      "actual": "MISSING_CREDENTIALS",
+      "http_requests": 0,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0,
+        "remaining_cny": 10.0,
+        "calls": 0,
+        "unknown_or_pending_calls": 0,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "model_mismatch",
+      "expected": "UNAPPROVED_REPORTED_MODEL",
+      "actual": "UNAPPROVED_REPORTED_MODEL",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0003404,
+        "remaining_cny": 9.9996596,
+        "calls": 1,
+        "unknown_or_pending_calls": 0,
+        "frozen": true
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "token_overrun",
+      "expected": "TOKEN_BOUND_EXCEEDED",
+      "actual": "TOKEN_BOUND_EXCEEDED",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0004444,
+        "remaining_cny": 9.9995556,
+        "calls": 1,
+        "unknown_or_pending_calls": 0,
+        "frozen": true
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "cross_process_budget",
+      "actual": [
+        "AI_BUDGET_EXHAUSTED",
+        "RESERVED"
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "ledger": {
+        "cap_cny": 1e-06,
+        "charged_upper_cny": 6e-07,
+        "remaining_cny": 4e-07,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true
+    },
+    {
+      "scenario": "settlement_and_call_id",
+      "passed": true
+    },
+    {
+      "scenario": "crash_pending_reservation",
+      "passed": true
+    },
+    {
+      "scenario": "replaceable_mock_and_final_refs",
+      "passed": true
+    }
+  ],
+  "official_sources": [
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+      "final_url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+      "http_status": 200,
+      "sha256": "5a7b1832592387340f2fc456399b34b89b05f3fa167c2e35909e2fa4afe021e3",
+      "markers_found": {
+        "deepseek-flash": true,
+        "DeepSeek-V4.1-Flash": true,
+        "2元": true,
+        "8元": true
+      },
+      "fetched_at": "2026-10-02T06:28:41.090297+00:00"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/api/create-chat-completion",
+      "final_url": "https://api-docs.deepseek.com/api/create-chat-completion/",
+      "http_status": 200,
+      "sha256": "e7133a7c2a7c2662567cca2e2392b503f97c2fb583009ff85f878744e0a36ba7",
+      "markers_found": {
+        "thinking": true,
+        "disabled": true,
+        "tool_call_id": true,
+        "prompt_cache_hit_tokens": true
+      },
+      "fetched_at": "2026-10-02T06:28:41.571123+00:00"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/tool_calls",
+      "final_url": "https://api-docs.deepseek.com/guides/tool_calls/",
+      "http_status": 200,
+      "sha256": "d77a694143b27cfff7d8d9a18be3e7426b4f340947cdabedb315dd2ef9271c09",
+      "markers_found": {
+        "https://api.deepseek.com/beta": true,
+        "minLength": true,
+        "maxLength": true
+      },
+      "fetched_at": "2026-10-02T06:28:41.879132+00:00"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/updates",
+      "final_url": "https://api-docs.deepseek.com/updates/",
+      "http_status": 200,
+      "sha256": "2922113bc4e0e970fa6d3c4065c3cff3ec661a4db03d671cc2310545c5b5bb71",
+      "markers_found": {
+        "V4.1": true,
+        "Flash": true
+      },
+      "fetched_at": "2026-10-02T06:28:42.283961+00:00"
+    }
+  ],
+  "real_probe": {
+    "status": "failed",
+    "reason": "MODEL_INVALID_OUTPUT",
+    "real_api_called": true,
+    "calls": [],
+    "ledger": {
+      "cap_cny": 10.0,
+      "charged_upper_cny": 0.000916,
+      "remaining_cny": 9.999084,
+      "calls": 1,
+      "unknown_or_pending_calls": 0,
+      "frozen": false
+    },
+    "billing_verified": false
+  },
+  "passed": true,
+  "exit_code": 1
+}

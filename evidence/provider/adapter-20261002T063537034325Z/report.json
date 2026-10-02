@@ -1,0 +1,277 @@
+{
+  "task": "T04",
+  "scope": "isolated provider development checks; no game integration or independent QA",
+  "executed_at": "2026-10-02T06:35:36.609439+00:00",
+  "python": "3.14.7",
+  "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+  "local_checks": [
+    {
+      "scenario": "normal",
+      "expected": "COMPLETED",
+      "actual": "COMPLETED",
+      "http_requests": 2,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0006808,
+        "remaining_cny": 9.9993192,
+        "calls": 2,
+        "unknown_or_pending_calls": 0,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "timeout",
+      "expected": "MODEL_TIMEOUT",
+      "actual": "MODEL_TIMEOUT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.020168,
+        "remaining_cny": 9.979832,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "auth",
+      "expected": "MODEL_AUTH_ERROR",
+      "actual": "MODEL_AUTH_ERROR",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.020168,
+        "remaining_cny": 9.979832,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "service",
+      "expected": "MODEL_UNAVAILABLE",
+      "actual": "MODEL_UNAVAILABLE",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.020168,
+        "remaining_cny": 9.979832,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "rate_limit",
+      "expected": "MODEL_RATE_LIMIT",
+      "actual": "MODEL_RATE_LIMIT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.020168,
+        "remaining_cny": 9.979832,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "malformed",
+      "expected": "MODEL_INVALID_OUTPUT",
+      "actual": "MODEL_INVALID_OUTPUT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.020168,
+        "remaining_cny": 9.979832,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "invalid_tool",
+      "expected": "MODEL_INVALID_OUTPUT",
+      "actual": "MODEL_INVALID_OUTPUT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0003404,
+        "remaining_cny": 9.9996596,
+        "calls": 1,
+        "unknown_or_pending_calls": 0,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "extra_arguments",
+      "expected": "MODEL_INVALID_OUTPUT",
+      "actual": "MODEL_INVALID_OUTPUT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0003404,
+        "remaining_cny": 9.9996596,
+        "calls": 1,
+        "unknown_or_pending_calls": 0,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "duplicate_arguments",
+      "expected": "MODEL_INVALID_OUTPUT",
+      "actual": "MODEL_INVALID_OUTPUT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0003404,
+        "remaining_cny": 9.9996596,
+        "calls": 1,
+        "unknown_or_pending_calls": 0,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "truncated",
+      "expected": "MODEL_INVALID_OUTPUT",
+      "actual": "MODEL_INVALID_OUTPUT",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0003404,
+        "remaining_cny": 9.9996596,
+        "calls": 1,
+        "unknown_or_pending_calls": 0,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "missing_usage",
+      "expected": "COMPLETED",
+      "actual": "COMPLETED",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.020168,
+        "remaining_cny": 9.979832,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "missing_credential",
+      "expected": "MISSING_CREDENTIALS",
+      "actual": "MISSING_CREDENTIALS",
+      "http_requests": 0,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0,
+        "remaining_cny": 10.0,
+        "calls": 0,
+        "unknown_or_pending_calls": 0,
+        "frozen": false
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "model_mismatch",
+      "expected": "UNAPPROVED_REPORTED_MODEL",
+      "actual": "UNAPPROVED_REPORTED_MODEL",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0003404,
+        "remaining_cny": 9.9996596,
+        "calls": 1,
+        "unknown_or_pending_calls": 0,
+        "frozen": true
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "token_overrun",
+      "expected": "TOKEN_BOUND_EXCEEDED",
+      "actual": "TOKEN_BOUND_EXCEEDED",
+      "http_requests": 1,
+      "ledger": {
+        "cap_cny": 10.0,
+        "charged_upper_cny": 0.0004444,
+        "remaining_cny": 9.9995556,
+        "calls": 1,
+        "unknown_or_pending_calls": 0,
+        "frozen": true
+      },
+      "passed": true,
+      "real_api_called": false
+    },
+    {
+      "scenario": "cross_process_budget",
+      "actual": [
+        "AI_BUDGET_EXHAUSTED",
+        "RESERVED"
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "ledger": {
+        "cap_cny": 1e-06,
+        "charged_upper_cny": 6e-07,
+        "remaining_cny": 4e-07,
+        "calls": 1,
+        "unknown_or_pending_calls": 1,
+        "frozen": false
+      },
+      "passed": true
+    },
+    {
+      "scenario": "settlement_and_call_id",
+      "passed": true
+    },
+    {
+      "scenario": "crash_pending_reservation",
+      "passed": true
+    },
+    {
+      "scenario": "probe_sub_budget",
+      "passed": true
+    },
+    {
+      "scenario": "replaceable_mock_and_final_refs",
+      "passed": true
+    }
+  ],
+  "real_probe": {
+    "status": "not_requested",
+    "real_api_called": false
+  },
+  "local_checks_passed": true,
+  "real_probe_passed": null,
+  "overall_passed": true,
+  "exit_code": 0
+}
