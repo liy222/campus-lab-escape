@@ -35,7 +35,7 @@ def validate_claim(claim):
             raise EvaluationError('INVALID_HASH')
 
 
-def deterministic_facts(reads):
+def deterministic_facts(reads, *, event_bound=False):
     failures=[];issues=[];execution=False
     for item in reads:
         try:value=strict_json(item['text'])
@@ -46,8 +46,11 @@ def deterministic_facts(reads):
             if type(value['exit_code']) is not int:issues.append('INVALID_EXIT_CODE:'+eid)
             elif value['exit_code']!=0:failures.append('NONZERO_EXIT:'+eid)
             else:execution=True
-        counts=[value.get(k) for k in ('tests_run','failures','errors','skipped')]
-        if any(x is not None for x in counts):
+        count_keys=('tests_run','failures','errors','skipped')
+        counts=[value.get(k) for k in count_keys]
+        # Registered events bind execution explicitly. A QA failures-name list
+        # alone is not the legacy four-integer test-count record shape.
+        if any(x is not None for x in counts) and (not event_bound or all(k in value for k in count_keys)):
             if not all(type(x) is int and x>=0 for x in counts):issues.append('INVALID_TEST_COUNTS:'+eid)
             else:
                 n,f,e,s=counts
@@ -97,7 +100,8 @@ class Evaluator:
             if criterion is None:raise EvaluationError('UNKNOWN_CRITERION')
             release=claim['release_id']
             self.tools.list_evidence(release)
-            if release not in self.prechecks:self.prechecks[release]=source_precheck(self.tools,release)
+            event=getattr(self.tools,'event_contexts',{}).get(release)
+            if event or release not in self.prechecks:self.prechecks[release]=source_precheck(self.tools,release)
             precheck=self.prechecks[release]
             if precheck['issues']:raise EvaluationError('RELEASE_IDENTITY_PRECHECK_FAILED')
             for ref in claim['evidence_refs']:
@@ -120,8 +124,19 @@ class Evaluator:
                 return self._output(claim,'NOT_APPLICABLE',refs,na['basis'],[],'not_required_trusted_na'),audit
             return self._output(claim,'INSUFFICIENT_EVIDENCE',refs,'No trusted approved N/A entry for this release and requirement.',
                                 ['Provide required evidence; target self-declared N/A cannot waive MUST.'],'not_run'),audit
-        facts=deterministic_facts(reads);audit['deterministic']=facts
+        facts=deterministic_facts(reads,event_bound=bool(event));audit['deterministic']=facts
         gaps=list(facts['issues'])
+        if event:
+            coverage=event.coverage.get(claim['claim_id'])
+            if coverage is None or claim not in event.claims:
+                return self._output(claim,'INSUFFICIENT_EVIDENCE',refs,'EVENT_CLAIM_NOT_FROZEN',
+                                    ['Use the exact Main-frozen event Claim.'],'not_run'),audit
+            if coverage['status']=='partial':gaps.extend(coverage['gaps'])
+            read_ids={r['evidence_id'] for r in refs}
+            for binding in precheck['runtime_source_bindings']:
+                if binding['evidence_id'] in read_ids:
+                    if binding['exit_code']!=0:facts['failures'].append('NONZERO_EVENT_RUNTIME_EXIT:'+binding['evidence_id'])
+                    else:facts['execution_evidence_found']=True
         if not reads:gaps.append('NO_EXECUTION_EVIDENCE; completion self-claims do not establish execution')
         if criterion['require_execution'] and not facts['execution_evidence_found'] and not facts['failures']:
             gaps.append('NO_REGISTERED_EXECUTION_RESULT')
@@ -141,6 +156,12 @@ class Evaluator:
             return self._output(claim,status,refs,'; '.join(facts['failures']) or 'LLM evidence interpretation not run.',missing,'not_run'),audit
         if gaps and not facts['failures']:
             return self._output(claim,'INSUFFICIENT_EVIDENCE',refs,'; '.join(gaps),gaps,'not_run'),audit
+        if event:
+            fresh=source_precheck(self.tools,release);self.prechecks[release]=fresh
+            if fresh['issues']:
+                audit['validation_errors'].append('EVENT_IDENTITY_CHANGED_BEFORE_DISPATCH')
+                return self._output(claim,'INSUFFICIENT_EVIDENCE',refs,'EVENT_IDENTITY_CHANGED_BEFORE_DISPATCH',
+                                    ['Refreeze and independently verify the changed event inputs.'],'not_run'),audit
         safe_claim={k:v for k,v in claim.items() if k not in {'known_scope_status'}}
         payload={'TRUSTED_RUBRIC':{'contract_id':contract_id,'version':contract_version,'criterion':criterion,'policy':contract['policy'],'approved_na':na},
                  'DETERMINISTIC_CHECKS':facts,'TARGET_DATA':{'claim':safe_claim,'evidence':reads}}
@@ -172,6 +193,9 @@ class Evaluator:
             if suggestion['status']=='NOT_APPLICABLE' and not na:raise EvaluationError('MODEL_UNAPPROVED_NA')
             if suggestion['status']=='INSUFFICIENT_EVIDENCE' and not suggestion['missing_check']:
                 raise EvaluationError('MODEL_MISSING_MINIMAL_FOLLOWUP')
+            if event:
+                fresh=source_precheck(self.tools,release);self.prechecks[release]=fresh
+                if fresh['issues']:raise EvaluationError('EVENT_IDENTITY_CHANGED_DURING_JUDGEMENT')
             valid=True
             # Preserve a reviewable suggestion only after schema, text and references pass.
             audit['raw_suggestion']=suggestion
@@ -181,6 +205,12 @@ class Evaluator:
             audit['validation_errors'].append(model_error)
             if audit['provider_metadata'] is None:audit['provider_metadata']=getattr(self.provider,'last_metadata',None)
         calls=self.provider.calls-before
+        if event:self.prechecks[release]=source_precheck(self.tools,release)
+        if event and self.prechecks[release]['issues']:
+            return self._output(claim,'INSUFFICIENT_EVIDENCE',[],
+                                'EVENT_IDENTITY_CHANGED_DURING_JUDGEMENT',
+                                ['Refreeze and independently verify the changed event inputs.'],
+                                'invalid_or_unavailable',actual_calls=calls),audit
         if facts['failures']:
             status='FAIL';reason='Deterministic failure remains authoritative: '+'; '.join(facts['failures']);missing=[]
         elif not valid:

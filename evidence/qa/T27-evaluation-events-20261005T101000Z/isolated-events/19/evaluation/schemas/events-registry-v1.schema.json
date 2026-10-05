@@ -1,0 +1,65 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "events": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "event_freeze_raw_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "event_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "main_registration": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "type": "string"
+              },
+              "raw_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "raw_sha256"
+            ],
+            "type": "object"
+          },
+          "product_commit": {
+            "pattern": "^[0-9a-f]{40}$",
+            "type": "string"
+          },
+          "release_id": {
+            "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "event_id",
+          "release_id",
+          "product_commit",
+          "main_registration",
+          "event_freeze_raw_sha256"
+        ],
+        "type": "object"
+      },
+      "maxItems": 30,
+      "type": "array"
+    },
+    "registry_id": {
+      "const": "events-registry-v1"
+    }
+  },
+  "required": [
+    "registry_id",
+    "events"
+  ],
+  "type": "object"
+}

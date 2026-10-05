@@ -3,7 +3,15 @@ updated_at: 2026-10-05 (Asia/Shanghai)
 milestone: T29/T30 CH01 engineering accepted; T27 independent registry QA, E1 continuation and clean reproduction active
 last_verified_release: baseline_v1 product commit7821af4efe0613c20a80ea164c1dab1c0f288bab; raw/Git binding in evidence/integration/baseline_v1-manifest.json
 remote: https://github.com/liy222/campus-lab-escape (PRIVATE, gh verified)
-last_pushed_sha: eb81b345184237a12f54a11c5d83b30ae0198c44 (T28 frozen specification and conservative accounting closure; remote exact-match verified; v2 product candidate not yet committed)
+last_pushed_sha: 242ecfc4d9f7bf1a8480508de701d9efc7822fe7 (T29/T30 CH01; remote exact-match verified; CH01_v2 tag pushed)
+
+## 2026-10-05 19:xx current checkpoint (supersedes earlier pending labels)
+- CH01_v2 product commit242ecfc4d9f7bf1a8480508de701d9efc7822fe7, tag pushed. Main manifest builder actual exit0 binds170 sources/7 artifacts and explicitly retains2 historical harness gaps; teacher/human signatures remain null.
+- T27 new event/legacy archive/Main credential relay independently ACCEPTED for structure and synthetic protocols:168/168 +114/114, actual exit0; legacy mock11, E1 mock2 remain synthetic. No real evaluation, no semantic PASS inferred. Evidence review/findings/T27-evaluation-events-20261005.md and evidence/qa/T27-evaluation-events-20261005T105300Z/result.json; stable48 source maps re-read by Main before gate creation.
+- Main finite calibration preparation actualexit0: max3 K1/K2/K4 calls, additional upper0.22CNY, unchanged original CNY10 ledger35 accounted/upper0.27760296. Automatic approval review REJECTED dispatch before execution, saying concrete evidence payload external transfer was not explicitly authorized. No child started/no calls/no fee; specific human approval pending, full nonsecret payload preview evidence/integration/calibration-payload-preview-20261005.json. Do not dispatch via alternative route.
+- Continuation Owner stable221 checks exit0, 49 eligible original not_called first attempts only; independent QA active, no paid GO. Original22 completed/1timeout untouched. New executor source is distinct from old41 frozen experiment sources.
+- T31 documents prepared by actual delivery_final_docs_oct05 spawn requestedgpt-6-luna/medium; engineering review/real final metrics pending. T32 preparation helper6 isolated checks exit0, no clean reproduction yet; sourcepack must be committed, exact Main byte pins and unique ignored directory approved first.
+- Main runtime model not independently introspectable, resumed roles do not expose runtime; no Astra used. Human gameplay/AI decision/signoff still unprovided, excluded course questions not pursued.
 
 ## Current authoritative facts
 - T23 pilot6 completed, independent638checks exit0. T24 once-stopped72terminal rows=22completed+1timeout+49not_called; no resend/replacement. T25 final1829/1829 exit0 at evidence/qa/T25-independent-20261005T055600Z/result.json; first1730/1731 exit1 and Owner corrective indexv2 preserved.

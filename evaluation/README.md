@@ -2,7 +2,7 @@
 
 入口只读已经登记的发布证据；不会重跑产品脚本、导入目标模块、加载目标 AGENTS/Hooks/插件、执行 Shell 或打开任意 URL。目标源码和文档都是待审数据。人类署名始终为 `null/pending`，没有课程总分或置信度。
 
-此实现为 Evaluator Owner 工程候选。mock 校准与 fake 协议检查不构成真实 LLM 校准、独立 QA 或人类验收。正式 E1 审查须另行登记冻结证据并获得 Main 的有限付费 GO。
+旧 T26 实现已由独立 QA 接受（193 项、34 源，见 `review/findings/T26-acceptance-20261003.md`）。新增事件登记层仍是 Evaluator Owner 工程候选，等待独立 QA。mock 校准与 fake 协议检查不构成真实 LLM 校准或人类验收。正式事件审查须另行登记冻结证据并获得 Main 的有限付费 GO。
 
 ## 已批准版本和输入
 
@@ -55,6 +55,26 @@ runtime raw SHA-256 从不重写。只有 Main 明确登记 `approved_crlf_to_lf
 
 ## 未完成
 
-独立 QA、真实 paid K1–K6 校准、E1 正式材料判读尚未完成。冻结基线 A24/A25/A27/A28 没有产品执行证据，不能因本评价器 Owner 已写代码就追溯改成 baseline PASS。A11/A17/A26 部分范围仍按原事实保留；真人签署与教师审批没有被软件推断或替代。
+新增事件层独立 QA、真实 paid K1–K6 校准、E1 独立/真实模型语义判读尚未完成。冻结基线 A24/A25/A27/A28 没有产品执行证据，不能因本评价器 Owner 已写代码就追溯改成 baseline PASS。A11/A17/A26 部分范围仍按原事实保留；真人签署与教师审批没有被软件推断或替代。
 
 Owner 检查保留两次实现检查失败：早期 source 白名单遗漏，及 Windows fake SQLite fixture 未关闭导致临时清理失败；修正后重跑结果另存，不覆盖失败事实。目标产品没有在这两个检查中执行或修改。
+
+## 独立事件登记 v1
+
+`trusted/events-registry-v1.json` 默认为空；未知 release 在构造付费 Provider 前拒绝。Main 按 `schemas/event-registration-v1.schema.json` 写入固定 `evidence/integration/event-<event_id>-registration.json` 并提供精确 raw SHA256；Evaluator 只能在 Main handoff 后填写独立事件 manifest/windows/claims/freeze，注册表最后 pin freeze。目标不能指定路径、修改标准、选择配置或授予付费许可。
+
+事件复用原 contract、六个旧 Schema 和四状态，原 freeze/cases/contract/windows/claims-baseline 字节保持。每事件 2–3 条精确冻结 Claim，statement 等于可信 criterion.must_observe，引用包含原 raw hash；Main 的 coverage 固定必须读取的窗口和未覆盖范围。partial 返回证据不足；不以自定义 statement、known_scope_status 或 N/A 降低 MUST。
+
+所有 Main 登记的 execution 记录均通过 runtime_records 明确绑定 identity 记录，检查 release/product commit/实际 exit、非空且完整相等的 source_before/source_after、每份执行材料的 raw hash，不依据 result/run/summary 文件名猜字段。identity 记录须来自 Main 核验的真实来源。本次 E1 是 Main 依据历史 admission/plan freeze/归档 postcheck 与独立 QA source STOP 派生的身份绑定，原 provenance 在预检结果保留，未声称独立即时运行快照；登记或归档不等于执行。窗口只允许原 json_fields/json_claim/lines，缺字段、空窗口、非法行界和过大片段均阻断。
+
+可选 `source_locations` 仅来自 Main 的精确 pin：原 runtime path 一对一映射至 `release/archives/<archive_release_id>/<原路径>`，固定 raw hash 与真实 Git blob 身份。manifest.sources 使用实际归档路径；运行前后 map 保留原路径并完整绑定。当前 v2 改动不会被当作历史 v1 身份，归档差异仍拒绝；不读取目标 Git 或执行目标代码。
+
+事件进入、每次 dispatch 前、判读后及报告写出前重新核验整条注册链、源码与证据；身份变化阻止后续请求，并保留已经发生的调用 metadata。新事件 paid gate 的 input_sha256 固定到整个 event freeze raw SHA256；旧 calibration/baseline gate 含义保持。空注册表不产生真实事件结论；门、账本和凭据仍需独立有限批准。
+
+Main 准确填写指南与未启用模板位于 `evaluation/runs/20261005-event-main-handoff-v2/`。局部检查入口为指定 Python `-B -X utf8 -m evaluation.check_events`；它仅使用隔离合成 Main fixture 和 mock，原失败报告保留，不代替独立 QA、正式实验或付费校准。
+
+Main 已明确登记 `e1-formal-review-v2` / `E1-formal-review-v2`，产品仍为原 v1 commit，实际102归档源码、13证据、6显式执行绑定、A24/A26两条冻结Claim。原 `e1-formal-v1` 登记缺raw refs，保留但未启用。v2只是有限材料登记，不能把22完成、1超时、49未调用说成72成功。单片段最大8346bytes、每Claim23906bytes。
+
+`source_precheck(baseline_v1)` 的最小固定归档桥接只接受 `trusted/baseline-source-archive-v1.json` 指定的 Main archive record/raw pin，精确选择原产品commit的60条，41实验条不冒作产品。逐项旧manifest Git身份、原路径和candidate/Main/实际archive raw相等；原运行map核验保持。报告明确只读archive、archive未执行、未认证当前CH01源码。旧freeze/cases/contract/windows/claims和paid-gates原字节不变。
+
+事件archive raw永远exact，不因Git CRLF provenance而允许canonical fallback。唯一公开无扩展名源码例外是Main固定alias中 `release/archives/<safeid>/experiments/.gitignore` 的source read；默认evidence/current及敏感文件规则仍拒绝。

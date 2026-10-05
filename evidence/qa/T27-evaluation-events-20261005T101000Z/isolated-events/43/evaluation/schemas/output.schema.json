@@ -1,0 +1,109 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "claim_id": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "evidence_refs": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_raw_sha256": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "binding": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "evidence_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "observed_raw_sha256": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "raw_equal": {
+            "type": "boolean"
+          },
+          "release_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "snippet": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "snippet_sha256": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "evidence_id",
+          "release_id",
+          "snippet",
+          "artifact_raw_sha256",
+          "observed_raw_sha256",
+          "snippet_sha256",
+          "binding",
+          "raw_equal"
+        ],
+        "type": "object"
+      },
+      "maxItems": 20,
+      "type": "array"
+    },
+    "execution_scope": {
+      "type": "object"
+    },
+    "human_signoff": {
+      "type": "null"
+    },
+    "human_signoff_status": {
+      "const": "pending"
+    },
+    "missing_check": {
+      "items": {
+        "maxLength": 4000,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 20,
+      "type": "array"
+    },
+    "reason": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "release_id": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "NOT_APPLICABLE"
+      ]
+    }
+  },
+  "required": [
+    "claim_id",
+    "status",
+    "release_id",
+    "evidence_refs",
+    "reason",
+    "missing_check",
+    "execution_scope",
+    "human_signoff",
+    "human_signoff_status"
+  ],
+  "type": "object"
+}

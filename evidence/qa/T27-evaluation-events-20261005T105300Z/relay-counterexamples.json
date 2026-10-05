@@ -1,0 +1,246 @@
+[
+  {
+    "case": "valid_once",
+    "child_dispatches": 1,
+    "child_stub_records": [
+      {
+        "command": [
+          "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "evaluation.cli",
+          "calibrate",
+          "--mode",
+          "paid",
+          "--approval-id",
+          "QA-relay",
+          "--fixture-set",
+          "k1-k6-v1"
+        ],
+        "cwd": "D:\\深度能力\\evidence\\qa\\T27-evaluation-events-20261005T105300Z\\owned-relay-9cat6lto\\1",
+        "env_names": [
+          "EVALUATION_MODEL_API_KEY",
+          "PYTHONUTF8",
+          "SAFE"
+        ],
+        "key_is_synthetic": true
+      }
+    ],
+    "error": null,
+    "actual_return_code": 0,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "unknown_hold",
+    "child_dispatches": 0,
+    "child_stub_records": [],
+    "error": "ValueError",
+    "actual_return_code": null,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "reserved_hold",
+    "child_dispatches": 0,
+    "child_stub_records": [],
+    "error": "ValueError",
+    "actual_return_code": null,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "used_gate",
+    "child_dispatches": 0,
+    "child_stub_records": [],
+    "error": "ValueError",
+    "actual_return_code": null,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "already_started",
+    "child_dispatches": 0,
+    "child_stub_records": [],
+    "error": "ValueError",
+    "actual_return_code": null,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "already_recorded",
+    "child_dispatches": 0,
+    "child_stub_records": [],
+    "error": "ValueError",
+    "actual_return_code": null,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "no_gate",
+    "child_dispatches": 0,
+    "child_stub_records": [],
+    "error": "ValueError",
+    "actual_return_code": null,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "wrong_purpose",
+    "child_dispatches": 0,
+    "child_stub_records": [],
+    "error": "ValueError",
+    "actual_return_code": null,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "frozen",
+    "child_dispatches": 0,
+    "child_stub_records": [],
+    "error": "ValueError",
+    "actual_return_code": null,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "wrong_cap",
+    "child_dispatches": 0,
+    "child_stub_records": [],
+    "error": "ValueError",
+    "actual_return_code": null,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "duplicate_env",
+    "child_dispatches": 0,
+    "child_stub_records": [],
+    "error": "ValueError",
+    "actual_return_code": null,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "blank_key",
+    "child_dispatches": 0,
+    "child_stub_records": [],
+    "error": "ValueError",
+    "actual_return_code": null,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "bad_quote",
+    "child_dispatches": 0,
+    "child_stub_records": [],
+    "error": "ValueError",
+    "actual_return_code": null,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "child_nonzero_no_retry",
+    "child_dispatches": 1,
+    "child_stub_records": [
+      {
+        "command": [
+          "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "evaluation.cli",
+          "calibrate",
+          "--mode",
+          "paid",
+          "--approval-id",
+          "QA-relay",
+          "--fixture-set",
+          "k1-k6-v1"
+        ],
+        "cwd": "D:\\深度能力\\evidence\\qa\\T27-evaluation-events-20261005T105300Z\\owned-relay-9cat6lto\\14",
+        "env_names": [
+          "EVALUATION_MODEL_API_KEY",
+          "PYTHONUTF8",
+          "SAFE"
+        ],
+        "key_is_synthetic": true
+      }
+    ],
+    "error": null,
+    "actual_return_code": 2,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "child_source_drift",
+    "child_dispatches": 1,
+    "child_stub_records": [
+      {
+        "command": [
+          "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "evaluation.cli",
+          "calibrate",
+          "--mode",
+          "paid",
+          "--approval-id",
+          "QA-relay",
+          "--fixture-set",
+          "k1-k6-v1"
+        ],
+        "cwd": "D:\\深度能力\\evidence\\qa\\T27-evaluation-events-20261005T105300Z\\owned-relay-9cat6lto\\15",
+        "env_names": [
+          "EVALUATION_MODEL_API_KEY",
+          "PYTHONUTF8",
+          "SAFE"
+        ],
+        "key_is_synthetic": true
+      }
+    ],
+    "error": null,
+    "actual_return_code": 2,
+    "network_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "child_interrupt_hold_marker",
+    "child_dispatches": 1,
+    "child_stub_records": [
+      {
+        "command": [
+          "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "evaluation.cli",
+          "calibrate",
+          "--mode",
+          "paid",
+          "--approval-id",
+          "QA-relay",
+          "--fixture-set",
+          "k1-k6-v1"
+        ],
+        "cwd": "D:\\深度能力\\evidence\\qa\\T27-evaluation-events-20261005T105300Z\\owned-relay-9cat6lto\\16",
+        "env_names": [
+          "EVALUATION_MODEL_API_KEY",
+          "PYTHONUTF8",
+          "SAFE"
+        ],
+        "key_is_synthetic": true
+      }
+    ],
+    "error": "RuntimeError",
+    "actual_return_code": null,
+    "network_calls": 0,
+    "synthetic_only": true
+  }
+]

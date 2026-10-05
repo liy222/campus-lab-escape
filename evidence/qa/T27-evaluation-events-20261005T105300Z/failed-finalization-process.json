@@ -1,0 +1,9 @@
+{
+  "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/qa/T27-evaluation-events-20261005T105300Z/finalize.py",
+  "actual_exit_code": 1,
+  "tool_chunk_id": "aa8efe",
+  "error": "QA finalizer count assumed 17 entries; existing frozen chain actually comprises 16 entries plus freeze.json itself (17 files). All source equality checks before count assertion succeeded.",
+  "correction": "Assert 16 frozen input entries and record 17 chain files including existing freeze; preserve independent 168/168 actual result and process records.",
+  "actual_paid_calls": 0,
+  "production_write": false
+}

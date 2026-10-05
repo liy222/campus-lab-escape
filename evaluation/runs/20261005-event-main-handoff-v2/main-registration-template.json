@@ -1,0 +1,144 @@
+{
+  "artifact_role": "Inactive Main completion template; null fields intentionally fail schema; never production approval",
+  "registration": {
+    "approved_at": null,
+    "approved_by": "Main",
+    "claims": {
+      "claims": [
+        {
+          "claim_id": "E1-formal-v1:A24-DENOMINATORS",
+          "criterion_id": "A24",
+          "declared_na": false,
+          "declared_scope": "Actual stopped formal plan; inspect all planned rows, called/completed/timeout/not-called denominators and gaps.",
+          "evidence_refs": [
+            {
+              "evidence_id": "E1-formal-v1:FORMAL001",
+              "expected_raw_sha256": null,
+              "snippet": "summary"
+            }
+          ],
+          "known_scope_status": "EVENT_REVIEW_PENDING",
+          "release_id": "E1-formal-v1",
+          "statement": "分母与缺失解释正确；地面判定资料未送模型。"
+        },
+        {
+          "claim_id": "E1-formal-v1:A24-INPUT-BOUNDARY",
+          "criterion_id": "A24",
+          "declared_na": false,
+          "declared_scope": "Same stopped formal event; inspect frozen visible inputs, offline ground truth boundary, identities and independent QA.",
+          "evidence_refs": [
+            {
+              "evidence_id": "E1-formal-v1:FORMAL001",
+              "expected_raw_sha256": null,
+              "snippet": "summary"
+            }
+          ],
+          "known_scope_status": "EVENT_REVIEW_PENDING",
+          "release_id": "E1-formal-v1",
+          "statement": "分母与缺失解释正确；地面判定资料未送模型。"
+        }
+      ],
+      "release_id": "E1-formal-v1"
+    },
+    "coverage": [
+      {
+        "claim_id": "E1-formal-v1:A24-DENOMINATORS",
+        "criterion_id": "A24",
+        "gaps": [
+          "Main must replace this design gap with actual independent QA coverage and limitations."
+        ],
+        "required_refs": [
+          {
+            "evidence_id": "E1-formal-v1:FORMAL001",
+            "snippet": "summary"
+          }
+        ],
+        "status": "partial"
+      },
+      {
+        "claim_id": "E1-formal-v1:A24-INPUT-BOUNDARY",
+        "criterion_id": "A24",
+        "gaps": [
+          "Main must replace this design gap with actual independent QA coverage and limitations."
+        ],
+        "required_refs": [
+          {
+            "evidence_id": "E1-formal-v1:FORMAL001",
+            "snippet": "summary"
+          }
+        ],
+        "status": "partial"
+      }
+    ],
+    "event_id": "e1-formal-v1",
+    "evidence_roles": {
+      "E1-formal-v1:FORMAL001": "execution",
+      "E1-formal-v1:QA-ID001": "identity"
+    },
+    "human_signoff": null,
+    "manifest": {
+      "commit": null,
+      "evidence": [
+        {
+          "artifact_binding": "raw_equal",
+          "artifact_raw_sha256": null,
+          "evidence_id": "E1-formal-v1:FORMAL001",
+          "path": null,
+          "release_id": "E1-formal-v1"
+        },
+        {
+          "artifact_binding": "raw_equal",
+          "artifact_raw_sha256": null,
+          "evidence_id": "E1-formal-v1:QA-ID001",
+          "path": null,
+          "release_id": "E1-formal-v1"
+        }
+      ],
+      "release_id": "E1-formal-v1",
+      "sources": null
+    },
+    "product_commit": null,
+    "release_id": "E1-formal-v1",
+    "runtime_records": [
+      {
+        "artifact_hashes_field": "artifact_hashes",
+        "commit_field": "product_commit",
+        "evidence_id": "E1-formal-v1:FORMAL001",
+        "exit_code_field": "exit_code",
+        "identity_evidence_id": "E1-formal-v1:QA-ID001",
+        "release_id_field": "release_id",
+        "source_after_field": "source_after",
+        "source_before_field": "source_before",
+        "source_paths": null
+      }
+    ],
+    "schema_id": "event-registration-v1",
+    "source_locations": null,
+    "teacher_approval": null,
+    "windows": {
+      "E1-formal-v1:FORMAL001": {
+        "summary": {
+          "fields": [
+            "by_variant",
+            "row_count",
+            "phase",
+            "mode",
+            "run_id",
+            "limits"
+          ],
+          "kind": "json_fields"
+        }
+      },
+      "E1-formal-v1:QA-ID001": {
+        "summary": {
+          "fields": [
+            "release_id",
+            "product_commit",
+            "exit_code"
+          ],
+          "kind": "json_fields"
+        }
+      }
+    }
+  }
+}

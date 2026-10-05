@@ -80,15 +80,34 @@ def load_tools():
     from .common import json_bytes
     if not freeze.get('case_sha256') or any(freeze['case_sha256'].get(c['case_id'])!=sha256(json_bytes(c)) for c in cases):
         raise EvaluationError('CASE_HASH_MISMATCH')
-    return freeze,files,EvidenceTools(PROJECT_ROOT,contract,manifests,windows)
+    from .events import load_registered_events
+    contexts,event_manifests,event_windows=load_registered_events(PROJECT_ROOT,EVALUATOR_ROOT,files,manifests,windows)
+    manifests.update(event_manifests);windows.update(event_windows)
+    tools=EvidenceTools(PROJECT_ROOT,contract,manifests,windows)
+    tools.event_contexts=contexts
+    return freeze,files,tools
 
 
 def source_precheck(tools, release):
     if release not in tools.manifests: raise EvaluationError('UNKNOWN_RELEASE')
+    if release in getattr(tools,'event_contexts',{}):
+        return tools.event_contexts[release].precheck(tools)
     manifest=tools.manifests[release]
     identities={};issues=[];historical=[];runtime_bindings=[]
+    archive=None
+    if release=='baseline_v1':
+        from .baseline_archive import load_baseline_archive
+        try:archive=load_baseline_archive(tools.root,tools.root/'evaluation',manifest)
+        except EvaluationError as error:issues.append({'code':error.code})
     for path,record in manifest.get('sources',{}).items():
-        try:identities[path]=verify_identity(safe_read(tools.root,path),record,source=True)
+        try:
+            if release=='baseline_v1':
+                if archive is None:raise EvaluationError('BASELINE_ARCHIVE_IDENTITY_UNAVAILABLE')
+                from .baseline_archive import read_baseline_source
+                data=read_baseline_source(tools.root,path,record,archive)
+            else:data=safe_read(tools.root,path)
+            identities[path]=verify_identity(data,record,source=True)
+            if archive:identities[path]['read_path']=archive['locations'][path]['archive_path']
         except EvaluationError as error:issues.append({'path':path,'code':error.code})
     # Preserve explicit historical exclusions; do not represent these as a match.
     for entry in manifest.get('unbound_prior_source_records',[]):
@@ -129,4 +148,5 @@ def source_precheck(tools, release):
     return {'release_id':release,'source_identities':identities,'issues':issues,
             'historical_unbound_records':historical,'generated_runtime_only':generated,
             'runtime_source_bindings':runtime_bindings,
+            'baseline_source_archive':archive,
             'scope':'Read and hash only; target tests/scripts were not executed; no Git command or target module imported.'}

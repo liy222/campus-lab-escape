@@ -1,0 +1,47 @@
+{
+  "approval_id": "QA-relay",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "evaluation.cli",
+    "calibrate",
+    "--mode",
+    "paid",
+    "--approval-id",
+    "QA-relay",
+    "--fixture-set",
+    "k1-k6-v1"
+  ],
+  "cwd": "D:\\深度能力\\evidence\\qa\\T27-evaluation-events-20261005T100600Z\\owned-relay-97t3sqlu\\15",
+  "started_at": "2026-10-05T10:45:19.084548+00:00",
+  "evaluator_source_before": {
+    "evaluation\\owned.py": "4d54d9c4cfef1972edcf7fb68d1a9ec24ba0e29448abf5e5d5b3c78f9b6eb49e"
+  },
+  "credential_mapping": "ignored MODEL_API_KEY -> child EVALUATION_MODEL_API_KEY; value omitted",
+  "gate": {
+    "approval_id": "QA-relay",
+    "purpose": "calibration",
+    "approved_by": "Main",
+    "max_calls": 11,
+    "max_cost_units": 220000000,
+    "input_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "max_tokens": 1000,
+    "timeout_seconds": 20,
+    "expires_at": "2099-01-01T00:00:00Z",
+    "credential_env": "EVALUATION_MODEL_API_KEY",
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-flash"
+  },
+  "scope": "One finite invocation; no retry; original shared CNY10 ledger.",
+  "ended_at": "2026-10-05T10:45:19.091540+00:00",
+  "actual_exit_code": 0,
+  "evaluator_source_after": {
+    "evaluation\\owned.py": "9d778106576db4d93836347d7328e7eb259f5d2be370ebaf65c75db6c3aff763"
+  },
+  "source_unchanged": false,
+  "new_run_directories": [],
+  "wrapper_raw_sha256": "a1561ac38f8756856642a1d7e991d9545d04c5afa591b71d281987f3ab6ebd41"
+}

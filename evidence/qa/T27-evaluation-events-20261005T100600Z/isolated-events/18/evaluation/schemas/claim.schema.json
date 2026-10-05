@@ -1,0 +1,77 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "claim_id": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "criterion_id": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "declared_na": {
+      "type": "boolean"
+    },
+    "declared_scope": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "evidence_refs": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_id": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "expected_raw_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "snippet": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "evidence_id",
+          "snippet"
+        ],
+        "type": "object"
+      },
+      "maxItems": 20,
+      "type": "array"
+    },
+    "known_scope_status": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "release_id": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "statement": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "claim_id",
+    "criterion_id",
+    "release_id",
+    "statement",
+    "declared_scope",
+    "declared_na",
+    "evidence_refs",
+    "known_scope_status"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,70 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "claim_id": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "evidence_refs": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_id": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "snippet": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "evidence_id",
+          "snippet"
+        ],
+        "type": "object"
+      },
+      "maxItems": 20,
+      "type": "array"
+    },
+    "missing_check": {
+      "items": {
+        "maxLength": 4000,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 20,
+      "type": "array"
+    },
+    "reason": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "release_id": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "NOT_APPLICABLE"
+      ]
+    }
+  },
+  "required": [
+    "claim_id",
+    "release_id",
+    "status",
+    "evidence_refs",
+    "reason",
+    "missing_check"
+  ],
+  "type": "object"
+}

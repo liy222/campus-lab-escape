@@ -1,0 +1,19 @@
+{
+  "actual_command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "evaluation.check_events"
+  ],
+  "actual_exit_code": 1,
+  "actual_paid_calls": 0,
+  "fix": "Owner assertion now records boolean equality, not synthetic bytes. Trust loader behavior unchanged.",
+  "kind": "Preserved actual Owner checker reporting failure; not target failure",
+  "nested_mock_cli_exit_code": 2,
+  "nested_mock_cli_report": "evaluation/runs/20261005T061713086596Z/report.json",
+  "observed_exception": "TypeError: Object of type bytes is not JSON serializable; report.results[43].actual; final json_bytes(report)",
+  "target_code_executed": false,
+  "tool_chunk_id": "cc415a"
+}

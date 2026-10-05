@@ -1,0 +1,47 @@
+{
+  "claim_ids": [
+    "E1-formal-review-v2:A24",
+    "E1-formal-review-v2:A26"
+  ],
+  "contract_raw_sha256": "4752aceb826ec5f89b7dd39e02106824167901a9c633aa9365366c30a8c79662",
+  "event_id": "e1-formal-review-v2",
+  "evidence_ids": [
+    "E1-formal-review-v2:SUMMARY",
+    "E1-formal-review-v2:RAW",
+    "E1-formal-review-v2:RUN",
+    "E1-formal-review-v2:PROCESS",
+    "E1-formal-review-v2:QA",
+    "E1-formal-review-v2:QA-PROCESS",
+    "E1-formal-review-v2:PLAN",
+    "E1-formal-review-v2:INPUT-A",
+    "E1-formal-review-v2:INPUT-B",
+    "E1-formal-review-v2:REVIEW",
+    "E1-formal-review-v2:ARCHIVE",
+    "E1-formal-review-v2:FORMAL-ID",
+    "E1-formal-review-v2:QA-ID"
+  ],
+  "freeze_id": "e1-formal-review-v2-freeze-v1",
+  "frozen_at": "2026-10-05T06:12:35.063719+00:00",
+  "frozen_before_calls": true,
+  "human_signoff": null,
+  "inputs": {
+    "trusted/events/e1-formal-review-v2/claims.json": "c71d56933869b86c2b628d7cfcf0cb823cc3919703b0ffc8f67e5943b64d3767",
+    "trusted/events/e1-formal-review-v2/manifest.json": "d427db290f9d364b31c5f5bb13010c2591681d4167ec12d4f5469d314bcf1015",
+    "trusted/events/e1-formal-review-v2/windows.json": "973fa0852b3b3e682b2b94c971edd0867db38f190eed58705187d4808dec1a81"
+  },
+  "legacy_schema_raw_sha256": {
+    "schemas/claim.schema.json": "902cbd7c2579ba0cbf68ef9864a34b8c7951f48cd99ffaedf1137b50cd85bb31",
+    "schemas/contract.schema.json": "6a584c9ba99f54315dd8b5275ffc2917deea03c58b4278214a2704b3a8161b15",
+    "schemas/evidence-index.schema.json": "1973808397cecc6f9877ab4339c3ddb32cb1409aef768793624cf3ffa0105861",
+    "schemas/manifest.schema.json": "999c7fd1e8d880db23925d7ff6fb7b82d8cd012a929f1602ef6dcc974a2e7494",
+    "schemas/output.schema.json": "19a0062cdb3a2990178bac3ebdb078e29c898691f034c9adcca3dcdd7bc9c6b8",
+    "schemas/suggestion.schema.json": "b009e075e956c5c276bc27495d13223d8c0293271b23d2184b29163fd132a05b"
+  },
+  "main_registration": {
+    "path": "evidence/integration/event-e1-formal-review-v2-registration.json",
+    "raw_sha256": "8d60abed1e4746939576e2351f9dbdac055fbbcad91e49d06cedd2b6eb04fef3"
+  },
+  "product_commit": "7821af4efe0613c20a80ea164c1dab1c0f288bab",
+  "release_id": "E1-formal-review-v2",
+  "teacher_approval": null
+}

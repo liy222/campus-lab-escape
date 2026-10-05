@@ -1,0 +1,741 @@
+{
+  "T26_EVAL_001_uncertainty_matrix": [
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "game",
+      "state": "unknown",
+      "stored_scope": "game",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "game",
+      "state": "reserved",
+      "stored_scope": "game",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "experiments",
+      "state": "unknown",
+      "stored_scope": "experiments",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "experiments",
+      "state": "reserved",
+      "stored_scope": "experiments",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "probe",
+      "state": "unknown",
+      "stored_scope": "probe",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "probe",
+      "state": "reserved",
+      "stored_scope": "probe",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "evaluation-current",
+      "state": "unknown",
+      "stored_scope": "evaluation",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "evaluation-current",
+      "state": "reserved",
+      "stored_scope": "evaluation",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "evaluation-other",
+      "state": "unknown",
+      "stored_scope": "evaluation",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "evaluation-other",
+      "state": "reserved",
+      "stored_scope": "evaluation",
+      "transport_dispatches": 0
+    }
+  ],
+  "actual_network_calls": 0,
+  "actual_paid_calls": 0,
+  "checks_count": 114,
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "evaluation.check"
+  ],
+  "evaluator_source_sha256_after": {
+    "__init__.py": "80d2830bcf95e17c0260ea5b922dbbb603c8db51657cc6f2ee1cd9e93075db01",
+    "baseline_archive.py": "9fe62e2090de072ac6f2360036660cc5bbbee6faa84bca1b27f782f13434d090",
+    "check.py": "c7bedbe312c53d4d4fb3038d0e7330c09eeb9aaa530f6deaab26f481218367f8",
+    "check_baseline_archive.py": "52daa9de4c34d9bb260c94665675429fcf45e5ad8490d40104249dd9094c5b49",
+    "check_events.py": "b46f0d6d8b9d2b7425154b9bc57eb10f07dbd2537a5b8d64de90eec238f0e955",
+    "cli.py": "bf6b3c9f70b9d3e15e0c7853dc86c672626f20d44a9f8f38ec12651d1ee4166f",
+    "common.py": "91509d55058126319117b45f7e256aec5f46d35f97cd6bda7cbe6472f8227ab8",
+    "engine.py": "6955a59976b6aac197fb222603e6795ae4588841d3eb70d477db0788b53b80e4",
+    "events.py": "047cc0581c48b379ea42d2505f15b5254a8f14035ae56a621229c750477605ef",
+    "freeze_inputs.py": "734194f9201af069e96008f0e838941b01a71ad7ad14f1f50d588e4e63ea3b67",
+    "provider.py": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd",
+    "reader.py": "050a8f6deb3e7ca209fde3362cd617274f0941cd5968662606bc2a6e282c5e7b",
+    "seal_inputs.py": "d93a3d37eb9c35e65350687b198b44e5fc146f13090f42d68c4a2633e0f70a95",
+    "trust.py": "8f8e02c1734d37263bbac3a0203f94c5b1f24fdea7f104c34ff53a0d67c38a14"
+  },
+  "evaluator_source_sha256_before": {
+    "__init__.py": "80d2830bcf95e17c0260ea5b922dbbb603c8db51657cc6f2ee1cd9e93075db01",
+    "baseline_archive.py": "9fe62e2090de072ac6f2360036660cc5bbbee6faa84bca1b27f782f13434d090",
+    "check.py": "c7bedbe312c53d4d4fb3038d0e7330c09eeb9aaa530f6deaab26f481218367f8",
+    "check_baseline_archive.py": "52daa9de4c34d9bb260c94665675429fcf45e5ad8490d40104249dd9094c5b49",
+    "check_events.py": "b46f0d6d8b9d2b7425154b9bc57eb10f07dbd2537a5b8d64de90eec238f0e955",
+    "cli.py": "bf6b3c9f70b9d3e15e0c7853dc86c672626f20d44a9f8f38ec12651d1ee4166f",
+    "common.py": "91509d55058126319117b45f7e256aec5f46d35f97cd6bda7cbe6472f8227ab8",
+    "engine.py": "6955a59976b6aac197fb222603e6795ae4588841d3eb70d477db0788b53b80e4",
+    "events.py": "047cc0581c48b379ea42d2505f15b5254a8f14035ae56a621229c750477605ef",
+    "freeze_inputs.py": "734194f9201af069e96008f0e838941b01a71ad7ad14f1f50d588e4e63ea3b67",
+    "provider.py": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd",
+    "reader.py": "050a8f6deb3e7ca209fde3362cd617274f0941cd5968662606bc2a6e282c5e7b",
+    "seal_inputs.py": "d93a3d37eb9c35e65350687b198b44e5fc146f13090f42d68c4a2633e0f70a95",
+    "trust.py": "8f8e02c1734d37263bbac3a0203f94c5b1f24fdea7f104c34ff53a0d67c38a14"
+  },
+  "executed_at": "2026-10-05T10:52:29.796216+00:00",
+  "exit_code": 0,
+  "fake_databases": "Owned temporary fixture files removed; never production ledger or committed artifacts.",
+  "fixture_set_sha256": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1",
+  "human_signoff": null,
+  "kind": "Evaluator Owner local checks; not independent QA",
+  "passed": true,
+  "production_ledger_opened": false,
+  "results": [
+    {
+      "actual": "UNKNOWN_CONTRACT_VERSION",
+      "name": "unknown contract cannot lower rubric",
+      "passed": true
+    },
+    {
+      "actual": "UNKNOWN_CONTRACT_VERSION",
+      "name": "unknown version",
+      "passed": true
+    },
+    {
+      "actual": "INVALID_ID",
+      "name": "unknown evidence path is not a tool input",
+      "passed": true
+    },
+    {
+      "actual": "UNREGISTERED_SNIPPET",
+      "name": "unregistered snippet",
+      "passed": true
+    },
+    {
+      "actual": 4,
+      "name": "four states only",
+      "passed": true
+    },
+    {
+      "actual": 28,
+      "name": "all 28 MUST retained",
+      "passed": true
+    },
+    {
+      "actual": [],
+      "name": "paid gates disabled",
+      "passed": true
+    },
+    {
+      "actual": "MAIN_FINITE_PAID_GO_REQUIRED",
+      "name": "missing Main gate stops before credentials/ledger",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "K expected frozen before calls",
+      "passed": true
+    },
+    {
+      "actual": "{\"ok\":true}",
+      "name": "handle verified safe read",
+      "passed": true
+    },
+    {
+      "actual": "UNSAFE_PATH",
+      "name": "path rejects ../outside/sentinel.json",
+      "passed": true
+    },
+    {
+      "actual": "UNSAFE_PATH",
+      "name": "path rejects /outside.json",
+      "passed": true
+    },
+    {
+      "actual": "UNSAFE_PATH",
+      "name": "path rejects C:/outside.json",
+      "passed": true
+    },
+    {
+      "actual": "UNSAFE_PATH",
+      "name": "path rejects safe.json:stream",
+      "passed": true
+    },
+    {
+      "actual": "UNSAFE_PATH",
+      "name": "path rejects CON.json",
+      "passed": true
+    },
+    {
+      "actual": "UNSAFE_PATH",
+      "name": "path rejects folder\\safe.json",
+      "passed": true
+    },
+    {
+      "actual": "UNSAFE_PATH",
+      "name": "path rejects .env",
+      "passed": true
+    },
+    {
+      "actual": "SECRET_OR_BINARY_PATH",
+      "name": "path rejects data/game.sqlite",
+      "passed": true
+    },
+    {
+      "actual": "UNSAFE_PATH",
+      "name": "path rejects node_modules/a.json",
+      "passed": true
+    },
+    {
+      "actual": "EXCESS_SIZE",
+      "name": "size limit before snippet",
+      "passed": true
+    },
+    {
+      "actual": "HASH_MISMATCH",
+      "name": "raw mismatch never ignored",
+      "passed": true
+    },
+    {
+      "actual": "HASH_MISMATCH",
+      "name": "target cannot self-authorize normalization",
+      "passed": true
+    },
+    {
+      "actual": "REPARSE_POINT",
+      "name": "Windows junction / symlink escape rejected",
+      "passed": true
+    },
+    {
+      "actual": "{\"private\":\"outside sentinel\"}",
+      "name": "outside sentinel retained",
+      "passed": true
+    },
+    {
+      "actual": "DUPLICATE_JSON_KEY",
+      "name": "strict duplicate JSON rejection",
+      "passed": true
+    },
+    {
+      "actual": "NONFINITE_JSON",
+      "name": "nonfinite JSON rejection",
+      "passed": true
+    },
+    {
+      "actual": "EXISTING_LEDGER_REQUIRED",
+      "name": "existing ledger required without initialization",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "name": "missing ledger remains absent",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "name": "fake protocol usage real network false",
+      "passed": true
+    },
+    {
+      "actual": 240800,
+      "name": "fake settled cost",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "name": "fake exact one transport attempt",
+      "passed": true
+    },
+    {
+      "actual": 240800,
+      "name": "idempotent exact settlement",
+      "passed": true
+    },
+    {
+      "actual": "SETTLEMENT_CONFLICT",
+      "name": "conflicting settlement rejected",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "name": "unknown usage retains reservation",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "unknown prior call stops blind repetition",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "no stale previous-call metadata on gate rejection",
+      "passed": true
+    },
+    {
+      "actual": "MODEL_AUTH_ERROR",
+      "name": "401 retained no raw errors",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "name": "auth failure reservation retained",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "name": "concurrent shared cap allows one reservation",
+      "passed": true
+    },
+    {
+      "actual": "COST_BOUND_EXCEEDED",
+      "name": "overrun freezes and does not reset budget",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "freeze state retained",
+      "passed": true
+    },
+    {
+      "actual": "FAKE_CANNOT_USE_PRODUCTION_LEDGER",
+      "name": "fake cannot use production ledger",
+      "passed": true
+    },
+    {
+      "actual": "UNAPPROVED_PROVIDER_CONFIG",
+      "name": "wrong paid base rejected before transport",
+      "passed": true
+    },
+    {
+      "actual": "GATE_INPUT_MISMATCH",
+      "name": "wrong gate input rejected before transport",
+      "passed": true
+    },
+    {
+      "actual": "GATE_EXPIRED",
+      "name": "expired gate rejected before transport",
+      "passed": true
+    },
+    {
+      "actual": "EVALUATION_GATE_EXHAUSTED",
+      "name": "run cost cap enforced before transport",
+      "passed": true
+    },
+    {
+      "actual": "UNAPPROVED_REPORTED_MODEL",
+      "name": "unapproved reported model stops",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reported model anomaly freezes shared client",
+      "passed": true
+    },
+    {
+      "actual": "MODEL_TIMEOUT",
+      "name": "fake timeout stops no retries",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "name": "timeout unknown reservation retained",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "name": "timeout one attempt only",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "shared preflight blocks game/unknown",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "paid entry preflight before credential game/unknown",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "shared atomic gate zero dispatch/no row game/unknown",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "shared preflight blocks game/reserved",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "paid entry preflight before credential game/reserved",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "shared atomic gate zero dispatch/no row game/reserved",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "shared preflight blocks experiments/unknown",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "paid entry preflight before credential experiments/unknown",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "shared atomic gate zero dispatch/no row experiments/unknown",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "shared preflight blocks experiments/reserved",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "paid entry preflight before credential experiments/reserved",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "shared atomic gate zero dispatch/no row experiments/reserved",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "shared preflight blocks probe/unknown",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "paid entry preflight before credential probe/unknown",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "shared atomic gate zero dispatch/no row probe/unknown",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "shared preflight blocks probe/reserved",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "paid entry preflight before credential probe/reserved",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "shared atomic gate zero dispatch/no row probe/reserved",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "shared preflight blocks evaluation-current/unknown",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "paid entry preflight before credential evaluation-current/unknown",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "shared atomic gate zero dispatch/no row evaluation-current/unknown",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "shared preflight blocks evaluation-current/reserved",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "paid entry preflight before credential evaluation-current/reserved",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "shared atomic gate zero dispatch/no row evaluation-current/reserved",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "shared preflight blocks evaluation-other/unknown",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "paid entry preflight before credential evaluation-other/unknown",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "shared atomic gate zero dispatch/no row evaluation-other/unknown",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "shared preflight blocks evaluation-other/reserved",
+      "passed": true
+    },
+    {
+      "actual": "PRIOR_CALL_UNKNOWN_STOP",
+      "name": "paid entry preflight before credential evaluation-other/reserved",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "shared atomic gate zero dispatch/no row evaluation-other/reserved",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "name": "all-scope settled preflight allowed",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "name": "all-scope settled allows one fake dispatch",
+      "passed": true
+    },
+    {
+      "actual": 5,
+      "name": "all-scope settled adds one settled evaluation row",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "name": "settled control remains no pending",
+      "passed": true
+    },
+    {
+      "actual": "INSUFFICIENT_EVIDENCE",
+      "name": "model fake citation rejected",
+      "passed": true
+    },
+    {
+      "actual": [
+        "MODEL_FAKE_OR_UNREAD_REFERENCE"
+      ],
+      "name": "fake citation validation recorded",
+      "passed": true
+    },
+    {
+      "actual": "INSUFFICIENT_EVIDENCE",
+      "name": "invalid audit rejected unknown top-level field",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "invalid audit raw absent unknown top-level field",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "invalid audit digest only unknown top-level field",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "invalid audit no value persisted unknown top-level field",
+      "passed": true
+    },
+    {
+      "actual": "INSUFFICIENT_EVIDENCE",
+      "name": "invalid audit rejected unknown nested reference field",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "invalid audit raw absent unknown nested reference field",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "invalid audit digest only unknown nested reference field",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "invalid audit no value persisted unknown nested reference field",
+      "passed": true
+    },
+    {
+      "actual": "INSUFFICIENT_EVIDENCE",
+      "name": "invalid audit rejected invalid reason shape",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "invalid audit raw absent invalid reason shape",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "invalid audit digest only invalid reason shape",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "invalid audit no value persisted invalid reason shape",
+      "passed": true
+    },
+    {
+      "actual": "INSUFFICIENT_EVIDENCE",
+      "name": "invalid audit rejected invalid reason text",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "invalid audit raw absent invalid reason text",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "invalid audit digest only invalid reason text",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "invalid audit no value persisted invalid reason text",
+      "passed": true
+    },
+    {
+      "actual": "INSUFFICIENT_EVIDENCE",
+      "name": "fake paid invalid audit returns insufficient",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "fake paid invalid audit raw absent",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "fake paid invalid audit no value persisted",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "name": "K4 traverses mock LLM path",
+      "passed": true
+    },
+    {
+      "actual": "PASS",
+      "name": "K4 raw suggestion PASS retained",
+      "passed": true
+    },
+    {
+      "actual": "FAIL",
+      "name": "K4 deterministic FAIL dominates",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "human signoff always null",
+      "passed": true
+    },
+    {
+      "actual": "FAIL",
+      "name": "fake paid adapter -> engine deterministic FAIL",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "name": "fake adapter does not certify paid judgement",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "name": "target modules absent from actual Python imports",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "evaluator source unchanged during Owner run",
+      "passed": true
+    }
+  ],
+  "target_modules_imported": false,
+  "teacher_approval": null
+}

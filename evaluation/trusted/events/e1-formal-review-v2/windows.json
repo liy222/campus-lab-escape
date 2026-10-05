@@ -1,0 +1,142 @@
+{
+  "E1-formal-review-v2:ARCHIVE": {
+    "scope": {
+      "fields": [
+        "count",
+        "product_commit",
+        "experiment_commit",
+        "scope"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "E1-formal-review-v2:FORMAL-ID": {
+    "scope": {
+      "fields": [
+        "release_id",
+        "product_commit",
+        "exit_code",
+        "provenance"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "E1-formal-review-v2:INPUT-A": {
+    "input": {
+      "fields": [
+        "messages"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "E1-formal-review-v2:INPUT-B": {
+    "input": {
+      "fields": [
+        "messages"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "E1-formal-review-v2:PLAN": {
+    "controls": {
+      "fields": [
+        "controls",
+        "phase",
+        "planned"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "E1-formal-review-v2:PROCESS": {
+    "process": {
+      "fields": [
+        "actual_command",
+        "actual_exit_code",
+        "planned",
+        "completed",
+        "timeout",
+        "not_called",
+        "retries",
+        "extra_probes",
+        "stop_reason"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "E1-formal-review-v2:QA": {
+    "verification": {
+      "fields": [
+        "task",
+        "passed",
+        "checks",
+        "failures",
+        "baseline_commit",
+        "summary_independent",
+        "limitations"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "E1-formal-review-v2:QA-ID": {
+    "scope": {
+      "fields": [
+        "release_id",
+        "product_commit",
+        "exit_code",
+        "provenance"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "E1-formal-review-v2:QA-PROCESS": {
+    "process": {
+      "count": 20,
+      "kind": "lines",
+      "start": 1
+    }
+  },
+  "E1-formal-review-v2:RAW": {
+    "completed": {
+      "count": 2,
+      "kind": "lines",
+      "start": 1
+    },
+    "stopped": {
+      "count": 2,
+      "kind": "lines",
+      "start": 23
+    }
+  },
+  "E1-formal-review-v2:REVIEW": {
+    "review": {
+      "count": 55,
+      "kind": "lines",
+      "start": 1
+    }
+  },
+  "E1-formal-review-v2:RUN": {
+    "scope": {
+      "fields": [
+        "run_id",
+        "phase",
+        "mode",
+        "planned",
+        "limitations"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "E1-formal-review-v2:SUMMARY": {
+    "summary": {
+      "fields": [
+        "by_variant",
+        "row_count",
+        "phase",
+        "mode",
+        "run_id",
+        "limits"
+      ],
+      "kind": "json_fields"
+    }
+  }
+}

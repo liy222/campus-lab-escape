@@ -1,0 +1,825 @@
+[
+  {
+    "case": "lower_must",
+    "error": "EVENT_CRITERION_OR_RELEASE_DOWNGRADE",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "declared_na",
+    "error": "EVENT_MUST_OR_NA_DOWNGRADE",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "wrong_claim_release",
+    "error": "EVENT_CRITERION_OR_RELEASE_DOWNGRADE",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "fake_execution_support",
+    "error": "EVENT_RUNTIME_RECORD_SET_MISMATCH",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "missing_runtime_mapping",
+    "error": "EVENT_MAIN_SCHEMA_INVALID",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "identity_role_missing",
+    "error": "EVENT_RUNTIME_IDENTITY_NOT_REGISTERED",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "source_map_omitted",
+    "error": "EVENT_MAIN_SCHEMA_INVALID",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "selector_alias",
+    "error": "EVENT_RUNTIME_SELECTOR_ALIAS",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "source_changed",
+    "error": null,
+    "issues": [
+      {
+        "evidence_id": "qa_synthetic_event:RUN",
+        "code": "EVENT_RUNTIME_SOURCE_CHANGED_OR_MISSING_MAP"
+      }
+    ],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "RELEASE_IDENTITY_PRECHECK_FAILED",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "empty_source_maps",
+    "error": null,
+    "issues": [
+      {
+        "evidence_id": "qa_synthetic_event:RUN",
+        "code": "EVENT_RUNTIME_SOURCE_CHANGED_OR_MISSING_MAP"
+      }
+    ],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "RELEASE_IDENTITY_PRECHECK_FAILED",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "foreign_source_map",
+    "error": null,
+    "issues": [
+      {
+        "evidence_id": "qa_synthetic_event:RUN",
+        "code": "EVENT_RUNTIME_SOURCE_CHANGED_OR_MISSING_MAP"
+      }
+    ],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "RELEASE_IDENTITY_PRECHECK_FAILED",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "bool_runtime_exit",
+    "error": null,
+    "issues": [
+      {
+        "evidence_id": "qa_synthetic_event:RUN",
+        "code": "EVENT_RUNTIME_EXIT_INVALID"
+      }
+    ],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "RELEASE_IDENTITY_PRECHECK_FAILED",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "nonzero_runtime_exit",
+    "error": null,
+    "issues": [],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "FAIL",
+      "evidence_refs": [
+        {
+          "evidence_id": "qa_synthetic_event:RUN",
+          "release_id": "qa_synthetic_event",
+          "snippet": "summary",
+          "artifact_raw_sha256": "f69a2ca22363ae0d042dd1ae13b9e89aa2612cf7ff0da25eb527639393a72370",
+          "observed_raw_sha256": "f69a2ca22363ae0d042dd1ae13b9e89aa2612cf7ff0da25eb527639393a72370",
+          "snippet_sha256": "67b7ee477ea812b52d48c0e3f6677e888897734e8d6a6ee7312168a9a85f8419",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "Deterministic failure remains authoritative: NONZERO_EVENT_RUNTIME_EXIT:qa_synthetic_event:RUN",
+      "missing_check": [],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "completed",
+        "actual_model_requests_this_claim": 1,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 1,
+    "synthetic_only": true
+  },
+  {
+    "case": "wrong_runtime_commit",
+    "error": null,
+    "issues": [
+      {
+        "evidence_id": "qa_synthetic_event:RUN",
+        "code": "EVENT_RUNTIME_VERSION_MISMATCH"
+      }
+    ],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "RELEASE_IDENTITY_PRECHECK_FAILED",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "wrong_runtime_release",
+    "error": null,
+    "issues": [
+      {
+        "evidence_id": "qa_synthetic_event:RUN",
+        "code": "EVENT_RUNTIME_VERSION_MISMATCH"
+      }
+    ],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "RELEASE_IDENTITY_PRECHECK_FAILED",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "missing_identity_field",
+    "error": null,
+    "issues": [
+      {
+        "evidence_id": "qa_synthetic_event:RUN",
+        "code": "EVENT_RUNTIME_FIELD_MISSING"
+      }
+    ],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "RELEASE_IDENTITY_PRECHECK_FAILED",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "unbound_artifact",
+    "error": null,
+    "issues": [
+      {
+        "evidence_id": "qa_synthetic_event:RUN",
+        "code": "EVENT_RUNTIME_ARTIFACT_NOT_BOUND"
+      }
+    ],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "RELEASE_IDENTITY_PRECHECK_FAILED",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "bool_execution_exit",
+    "error": null,
+    "issues": [],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "qa_synthetic_event:RUN",
+          "release_id": "qa_synthetic_event",
+          "snippet": "summary",
+          "artifact_raw_sha256": "c81e18d5b402ac9563288d072684173f612f0de532d7b03ee1f9cade5d982d41",
+          "observed_raw_sha256": "c81e18d5b402ac9563288d072684173f612f0de532d7b03ee1f9cade5d982d41",
+          "snippet_sha256": "ae718b76d97dd9c32e51f9ed444a332dee71a45e9bde9eba05503164c48ceb5d",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "INVALID_EXIT_CODE:qa_synthetic_event:RUN",
+      "missing_check": [
+        "INVALID_EXIT_CODE:qa_synthetic_event:RUN"
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "explicit_execution_fail",
+    "error": null,
+    "issues": [],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "FAIL",
+      "evidence_refs": [
+        {
+          "evidence_id": "qa_synthetic_event:RUN",
+          "release_id": "qa_synthetic_event",
+          "snippet": "summary",
+          "artifact_raw_sha256": "821a9cce223e28350ca5d36f65a641926a2ce8a17d180cb41d9de88e64a9faa4",
+          "observed_raw_sha256": "821a9cce223e28350ca5d36f65a641926a2ce8a17d180cb41d9de88e64a9faa4",
+          "snippet_sha256": "7d2f88bea6a01f0b9de1d88cfa8a48c75659833ef9b1a4bc9ab75f62edc37bd2",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "Deterministic failure remains authoritative: NONZERO_EXIT:qa_synthetic_event:RUN",
+      "missing_check": [],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "completed",
+        "actual_model_requests_this_claim": 1,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 1,
+    "synthetic_only": true
+  },
+  {
+    "case": "missing_window_field",
+    "error": null,
+    "issues": [
+      {
+        "evidence_id": "qa_synthetic_event:RUN",
+        "snippet": "summary",
+        "code": "EVENT_WINDOW_FIELDS_MISSING"
+      }
+    ],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "RELEASE_IDENTITY_PRECHECK_FAILED",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "out_of_range_lines",
+    "error": null,
+    "issues": [
+      {
+        "evidence_id": "qa_synthetic_event:RUN",
+        "snippet": "summary",
+        "code": "EVENT_WINDOW_LINES_MISSING"
+      }
+    ],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "RELEASE_IDENTITY_PRECHECK_FAILED",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "empty_window",
+    "error": "EVENT_MAIN_SCHEMA_INVALID",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "oversize_window",
+    "error": null,
+    "issues": [
+      {
+        "evidence_id": "qa_synthetic_event:RUN",
+        "snippet": "summary",
+        "code": "SNIPPET_TOO_LARGE"
+      }
+    ],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "RELEASE_IDENTITY_PRECHECK_FAILED",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "json_claim_missing",
+    "error": null,
+    "issues": [
+      {
+        "evidence_id": "qa_synthetic_event:RUN",
+        "snippet": "summary",
+        "code": "EVENT_WINDOW_CLAIM_MISSING_OR_DUPLICATE"
+      }
+    ],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "RELEASE_IDENTITY_PRECHECK_FAILED",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "fake_ref",
+    "error": "EVENT_REQUIRED_REFERENCE_MISSING",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "unread_snippet_ref",
+    "error": "EVENT_REQUIRED_REFERENCE_MISSING",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "wrong_expected_hash",
+    "error": "EVENT_REFERENCE_RAW_HASH_REQUIRED",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "missing_expected_hash",
+    "error": "EVENT_REFERENCE_RAW_HASH_REQUIRED",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "missing_required_ref",
+    "error": "EVENT_REQUIRED_REFERENCE_MISSING",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "full_scope_with_gaps",
+    "error": "EVENT_COVERAGE_INVALID",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "partial_scope",
+    "error": null,
+    "issues": [],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "qa_synthetic_event:RUN",
+          "release_id": "qa_synthetic_event",
+          "snippet": "summary",
+          "artifact_raw_sha256": "f69a2ca22363ae0d042dd1ae13b9e89aa2612cf7ff0da25eb527639393a72370",
+          "observed_raw_sha256": "f69a2ca22363ae0d042dd1ae13b9e89aa2612cf7ff0da25eb527639393a72370",
+          "snippet_sha256": "67b7ee477ea812b52d48c0e3f6677e888897734e8d6a6ee7312168a9a85f8419",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "Known missing full MUST scope",
+      "missing_check": [
+        "Known missing full MUST scope"
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "source_target_path",
+    "error": "EVENT_RUNTIME_SOURCE_NOT_REGISTERED",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "Main_byte_drift",
+    "error": "EVENT_MAIN_RAW_HASH_MISMATCH",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "freeze_byte_drift",
+    "error": "EVENT_FREEZE_RAW_HASH_MISMATCH",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "window_input_drift",
+    "error": "EVENT_FROZEN_INPUT_HASH_MISMATCH",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "wrong_Main_path",
+    "error": "EVENT_MAIN_PATH_NOT_FIXED",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "empty_registry_unknown_release",
+    "error": "UNKNOWN_RELEASE",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "arbitrary_archive_alias",
+    "error": "EVENT_ARCHIVE_PATH_NOT_FIXED_OR_DUPLICATE",
+    "issues": [],
+    "result": null,
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "claim_total_window_exceeds_65536",
+    "error": null,
+    "issues": [],
+    "result": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "CLAIM_READ_LIMIT",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "mock_calls": 0,
+    "synthetic_only": true
+  },
+  {
+    "case": "synthetic_injection",
+    "output": {
+      "claim_id": "QA-A24",
+      "release_id": "qa_synthetic_event",
+      "status": "FAIL",
+      "evidence_refs": [
+        {
+          "evidence_id": "qa_synthetic_event:RUN",
+          "release_id": "qa_synthetic_event",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bf42aedeb15a5761197bf000c8e993a331262f7e54b72783c6b545067cc00f04",
+          "observed_raw_sha256": "bf42aedeb15a5761197bf000c8e993a331262f7e54b72783c6b545067cc00f04",
+          "snippet_sha256": "fe7c94a8630ca22a63c85b68d1091e6c1e95c6d833b0aa83c07e3638fe1fe27d",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "Deterministic failure remains authoritative: NONZERO_EXIT:qa_synthetic_event:RUN",
+      "missing_check": [],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "completed",
+        "actual_model_requests_this_claim": 1,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "QA-A24",
+      "raw_suggestion": {
+        "claim_id": "QA-A24",
+        "release_id": "qa_synthetic_event",
+        "status": "PASS",
+        "evidence_refs": [
+          {
+            "evidence_id": "qa_synthetic_event:RUN",
+            "snippet": "summary"
+          }
+        ],
+        "reason": "Synthetic semantic PASS probe",
+        "missing_check": []
+      },
+      "raw_suggestion_sha256": "fc4bd36a549066be86efa5c87760b74ee859e0b65767206def788be3943e8e59",
+      "raw_suggestion_size_bytes": 224,
+      "provider_metadata": {
+        "mode": "mock",
+        "actual_network_call": false,
+        "usage": null,
+        "call_id": null,
+        "cost_upper_units": null
+      },
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [
+          "NONZERO_EXIT:qa_synthetic_event:RUN"
+        ],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    },
+    "synthetic_only": true
+  }
+]

@@ -1,0 +1,626 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "approved_at": {
+      "format": "date-time",
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "approved_by": {
+      "const": "Main"
+    },
+    "claims": {
+      "additionalProperties": false,
+      "properties": {
+        "claims": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "claim_id": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "type": "string"
+              },
+              "criterion_id": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "type": "string"
+              },
+              "declared_na": {
+                "type": "boolean"
+              },
+              "declared_scope": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "type": "string"
+              },
+              "evidence_refs": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "evidence_id": {
+                      "maxLength": 4000,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "expected_raw_sha256": {
+                      "pattern": "^[0-9a-f]{64}$",
+                      "type": "string"
+                    },
+                    "snippet": {
+                      "maxLength": 4000,
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "evidence_id",
+                    "snippet"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 20,
+                "type": "array"
+              },
+              "known_scope_status": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "type": "string"
+              },
+              "release_id": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "type": "string"
+              },
+              "statement": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "claim_id",
+              "criterion_id",
+              "release_id",
+              "statement",
+              "declared_scope",
+              "declared_na",
+              "evidence_refs",
+              "known_scope_status"
+            ],
+            "type": "object"
+          },
+          "maxItems": 3,
+          "minItems": 2,
+          "type": "array"
+        },
+        "release_id": {
+          "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "release_id",
+        "claims"
+      ],
+      "type": "object"
+    },
+    "coverage": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "claim_id": {
+            "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+            "type": "string"
+          },
+          "criterion_id": {
+            "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+            "type": "string"
+          },
+          "gaps": {
+            "items": {
+              "maxLength": 4000,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 20,
+            "type": "array"
+          },
+          "required_refs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "evidence_id": {
+                  "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+                  "type": "string"
+                },
+                "snippet": {
+                  "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "evidence_id",
+                "snippet"
+              ],
+              "type": "object"
+            },
+            "maxItems": 20,
+            "minItems": 1,
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "full",
+              "partial"
+            ]
+          }
+        },
+        "required": [
+          "claim_id",
+          "criterion_id",
+          "status",
+          "gaps",
+          "required_refs"
+        ],
+        "type": "object"
+      },
+      "maxItems": 3,
+      "minItems": 2,
+      "type": "array"
+    },
+    "event_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$",
+      "type": "string"
+    },
+    "evidence_roles": {
+      "additionalProperties": {
+        "enum": [
+          "execution",
+          "identity",
+          "support"
+        ]
+      },
+      "maxProperties": 100,
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "human_signoff": {
+      "type": "null"
+    },
+    "manifest": {
+      "additionalProperties": false,
+      "properties": {
+        "addendum_id": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "approved_at": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "approved_by": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "builder_command": {
+          "items": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "builder_raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "commit": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "artifact_binding": {
+                "enum": [
+                  "raw_equal",
+                  "approved_crlf_to_lf_only"
+                ]
+              },
+              "artifact_git_blob_oid": {
+                "pattern": "^[0-9a-f]{40}$",
+                "type": "string"
+              },
+              "artifact_git_blob_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "artifact_raw_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "artifact_source_commit": {
+                "pattern": "^[0-9a-f]{40}$",
+                "type": "string"
+              },
+              "artifact_utf8_lf_v1_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "evidence_id": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "type": "string"
+              },
+              "exit_code": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "path": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "type": "string"
+              },
+              "recorded_head": {
+                "type": [
+                  "object",
+                  "string",
+                  "null"
+                ]
+              },
+              "release_id": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "type": "string"
+              },
+              "scope": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "evidence_id",
+              "path",
+              "release_id",
+              "artifact_raw_sha256",
+              "artifact_binding"
+            ],
+            "type": "object"
+          },
+          "maxItems": 100,
+          "minItems": 1,
+          "type": "array"
+        },
+        "facts_authoritative_evidence_id": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "generated_artifacts": {
+          "type": "object"
+        },
+        "hash_policy": {
+          "type": "object"
+        },
+        "human_signoff": {
+          "type": "null"
+        },
+        "limitations": {
+          "items": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "release_id": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "sources": {
+          "additionalProperties": {
+            "additionalProperties": false,
+            "properties": {
+              "binding": {
+                "enum": [
+                  "raw_equal",
+                  "approved_crlf_to_lf_only"
+                ]
+              },
+              "candidate_runtime_raw_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "evidence": {
+                "items": {
+                  "maxLength": 4000,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "git_blob_oid": {
+                "pattern": "^[0-9a-f]{40}$",
+                "type": "string"
+              },
+              "git_blob_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "utf8_lf_v1_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "candidate_runtime_raw_sha256",
+              "git_blob_sha256",
+              "git_blob_oid",
+              "utf8_lf_v1_sha256",
+              "binding",
+              "evidence"
+            ],
+            "type": "object"
+          },
+          "type": "object"
+        },
+        "superseded_evidence_ids": {
+          "items": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "synthetic_calibration": {
+          "type": "boolean"
+        },
+        "teacher_approval": {
+          "type": "null"
+        },
+        "tree": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        },
+        "unbound_prior_source_records": {
+          "type": "array"
+        },
+        "versions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "release_id",
+        "sources",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "product_commit": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "release_id": {
+      "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+      "type": "string"
+    },
+    "runtime_records": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_hashes_field": {
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,63}$",
+            "type": "string"
+          },
+          "commit_field": {
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,63}$",
+            "type": "string"
+          },
+          "evidence_id": {
+            "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+            "type": "string"
+          },
+          "exit_code_field": {
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,63}$",
+            "type": "string"
+          },
+          "identity_evidence_id": {
+            "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+            "type": "string"
+          },
+          "release_id_field": {
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,63}$",
+            "type": "string"
+          },
+          "source_after_field": {
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,63}$",
+            "type": "string"
+          },
+          "source_before_field": {
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,63}$",
+            "type": "string"
+          },
+          "source_paths": {
+            "items": {
+              "maxLength": 4000,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 1000,
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "evidence_id",
+          "identity_evidence_id",
+          "release_id_field",
+          "commit_field",
+          "exit_code_field",
+          "source_before_field",
+          "source_after_field",
+          "artifact_hashes_field",
+          "source_paths"
+        ],
+        "type": "object"
+      },
+      "maxItems": 100,
+      "minItems": 1,
+      "type": "array"
+    },
+    "schema_id": {
+      "const": "event-registration-v1"
+    },
+    "source_locations": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "archive_path": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "archive_release_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "raw_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "archive_release_id",
+          "archive_path",
+          "raw_sha256"
+        ],
+        "type": "object"
+      },
+      "maxProperties": 1000,
+      "minProperties": 1,
+      "type": "object"
+    },
+    "teacher_approval": {
+      "type": "null"
+    },
+    "windows": {
+      "additionalProperties": {
+        "additionalProperties": {
+          "oneOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "fields": {
+                  "items": {
+                    "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 40,
+                  "minItems": 1,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "kind": {
+                  "const": "json_fields"
+                }
+              },
+              "required": [
+                "kind",
+                "fields"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "claim_id": {
+                  "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+                  "type": "string"
+                },
+                "kind": {
+                  "const": "json_claim"
+                }
+              },
+              "required": [
+                "kind",
+                "claim_id"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "maximum": 200,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "kind": {
+                  "const": "lines"
+                },
+                "start": {
+                  "maximum": 1000000,
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "kind",
+                "start",
+                "count"
+              ],
+              "type": "object"
+            }
+          ]
+        },
+        "maxProperties": 30,
+        "minProperties": 1,
+        "propertyNames": {
+          "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+          "type": "string"
+        },
+        "type": "object"
+      },
+      "maxProperties": 100,
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+        "type": "string"
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_id",
+    "event_id",
+    "release_id",
+    "product_commit",
+    "approved_by",
+    "approved_at",
+    "manifest",
+    "claims",
+    "windows",
+    "evidence_roles",
+    "runtime_records",
+    "coverage",
+    "human_signoff",
+    "teacher_approval"
+  ],
+  "type": "object"
+}

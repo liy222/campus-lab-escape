@@ -1,0 +1,469 @@
+{
+  "actual_paid_calls": 0,
+  "checks_count": 69,
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "evaluation.check_events"
+  ],
+  "credentials_read": false,
+  "executed_at": "2026-10-05T06:20:54.862041+00:00",
+  "exit_code": 0,
+  "human_signoff": null,
+  "kind": "Evaluator Owner synthetic event checks; not independent QA or E1 execution",
+  "network_calls": 0,
+  "production_event_registry_changed": false,
+  "production_ledger_opened": false,
+  "results": [
+    {
+      "actual": true,
+      "name": "synthetic Owner event never registered in production",
+      "passed": true
+    },
+    {
+      "actual": [],
+      "name": "event QA failure-name collection is not inferred integer counts",
+      "passed": true
+    },
+    {
+      "actual": [
+        "INVALID_TEST_COUNTS:SYN-QA"
+      ],
+      "name": "legacy sparse-count rejection unchanged",
+      "passed": true
+    },
+    {
+      "actual": [
+        "INVALID_TEST_COUNTS:SYN-QA"
+      ],
+      "name": "event complete malformed test-count record still rejected",
+      "passed": true
+    },
+    {
+      "actual": [
+        "ASSERTION_FAILURE:SYN-QA"
+      ],
+      "name": "event complete assertion failure remains authoritative",
+      "passed": true
+    },
+    {
+      "actual": [
+        true,
+        []
+      ],
+      "name": "actual Main E1 QA window not misread as sparse test counts",
+      "passed": true
+    },
+    {
+      "actual": [],
+      "name": "result.json explicit runtime identity accepted",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "runtime source before and after bound",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "event paid input is whole freeze raw",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject Main arbitrary path",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject Main wrong raw pin",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject freeze wrong raw pin",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject reserved baseline release",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject manifest product commit swap",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject sources empty",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject target N/A",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject criterion statement downgrade",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject unknown criterion",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject source selector alias",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject execution role without mapping",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject support-only execution claim",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject identity points to execution",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject missing fixed reference raw pin",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject cross-release evidence",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject unknown window kind",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject negative window line",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject boolean window line",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject duplicated Claim",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "runtime rejects missing before",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "runtime rejects empty before/after",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "runtime rejects changed after",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "runtime rejects wrong release",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "runtime rejects wrong commit",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "runtime rejects boolean exit",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "runtime rejects unbound equal raw map",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "runtime rejects artifact hash swap",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "post-load mutation source",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "post-load mutation Main",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "post-load mutation freeze",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "post-load mutation registry",
+      "passed": true
+    },
+    {
+      "actual": [],
+      "name": "archived v1 validates after current v2 changes",
+      "passed": true
+    },
+    {
+      "actual": "release/archives/baseline_v1/product/source.py",
+      "name": "archive original raw path binds immutable location",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject arbitrary archive path",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject archive raw hash mismatch",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "reject runtime alias missing",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "archive mutation never accepts current runtime v1 claim",
+      "passed": true
+    },
+    {
+      "actual": [],
+      "name": "Main Git CRLF provenance preserves exact archived raw",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "archive CRLF raw drift has no canonical fallback",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "public archived ignore only source read allowed",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "public archived ignore default evidence read rejected",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "archive public exception still rejects experiments/.gitignore",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "archive public exception still rejects release/archives/baseline_v1/other/.gitignore",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "archive public exception still rejects release/archives/baseline_v1/experiments/.env",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "archive public exception still rejects release/archives/baseline_v1/experiments/secret.txt",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "archive public exception still rejects release/archives/baseline_v1/experiments/data.bin",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "missing snippet field stops before judgement",
+      "passed": true
+    },
+    {
+      "actual": [
+        "INSUFFICIENT_EVIDENCE",
+        0
+      ],
+      "name": "partial coverage never model or PASS",
+      "passed": true
+    },
+    {
+      "actual": "INSUFFICIENT_EVIDENCE",
+      "name": "source change during model rejects prior PASS",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "name": "actual scripted request retained after change",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "name": "unaccepted raw suggestion absent after identity change",
+      "passed": true
+    },
+    {
+      "actual": "FAIL",
+      "name": "bound nonzero exit dominates mock PASS",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "name": "valid failure still enters judgement path",
+      "passed": true
+    },
+    {
+      "actual": "EVENT_IDENTITY_PRECHECK_FAILED",
+      "name": "registered invalid event paid preflight rejects",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "name": "invalid event never constructs paid gate",
+      "passed": true
+    },
+    {
+      "actual": [
+        2,
+        [
+          1,
+          0
+        ]
+      ],
+      "name": "CLI identity change stops all remaining requests",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "CLI changed identity cannot retain positive result",
+      "passed": true
+    },
+    {
+      "actual": [
+        2,
+        true
+      ],
+      "name": "CLI unknown event stops before paid construction",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "name": "stable evaluator source and legacy inputs throughout Owner check",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "name": "no target modules actually imported",
+      "passed": true
+    }
+  ],
+  "source_sha256_after": {
+    "evaluation/__init__.py": "80d2830bcf95e17c0260ea5b922dbbb603c8db51657cc6f2ee1cd9e93075db01",
+    "evaluation/baseline_archive.py": "9fe62e2090de072ac6f2360036660cc5bbbee6faa84bca1b27f782f13434d090",
+    "evaluation/check.py": "c7bedbe312c53d4d4fb3038d0e7330c09eeb9aaa530f6deaab26f481218367f8",
+    "evaluation/check_baseline_archive.py": "52daa9de4c34d9bb260c94665675429fcf45e5ad8490d40104249dd9094c5b49",
+    "evaluation/check_events.py": "b46f0d6d8b9d2b7425154b9bc57eb10f07dbd2537a5b8d64de90eec238f0e955",
+    "evaluation/cli.py": "bf6b3c9f70b9d3e15e0c7853dc86c672626f20d44a9f8f38ec12651d1ee4166f",
+    "evaluation/common.py": "91509d55058126319117b45f7e256aec5f46d35f97cd6bda7cbe6472f8227ab8",
+    "evaluation/engine.py": "6955a59976b6aac197fb222603e6795ae4588841d3eb70d477db0788b53b80e4",
+    "evaluation/events.py": "047cc0581c48b379ea42d2505f15b5254a8f14035ae56a621229c750477605ef",
+    "evaluation/freeze_inputs.py": "734194f9201af069e96008f0e838941b01a71ad7ad14f1f50d588e4e63ea3b67",
+    "evaluation/provider.py": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd",
+    "evaluation/reader.py": "050a8f6deb3e7ca209fde3362cd617274f0941cd5968662606bc2a6e282c5e7b",
+    "evaluation/schemas/claim.schema.json": "902cbd7c2579ba0cbf68ef9864a34b8c7951f48cd99ffaedf1137b50cd85bb31",
+    "evaluation/schemas/contract.schema.json": "6a584c9ba99f54315dd8b5275ffc2917deea03c58b4278214a2704b3a8161b15",
+    "evaluation/schemas/event-freeze-v1.schema.json": "c0ac05c02645de61acd04a7d7a626240beb774af40d570c5450204f12f4c3d41",
+    "evaluation/schemas/event-registration-v1.schema.json": "140053b2a2b884f9275a25b562c310109d22f975c871724aad1f6c54217fc8c4",
+    "evaluation/schemas/event-windows-v1.schema.json": "386ad9221526ba64251f81e354f7100b50677ce792f58f8830f98000ab09ba79",
+    "evaluation/schemas/events-registry-v1.schema.json": "ef0dd267de184d5a10298dc5673d4d00c8572dddd86832270a036f9ef58021e1",
+    "evaluation/schemas/evidence-index.schema.json": "1973808397cecc6f9877ab4339c3ddb32cb1409aef768793624cf3ffa0105861",
+    "evaluation/schemas/manifest.schema.json": "999c7fd1e8d880db23925d7ff6fb7b82d8cd012a929f1602ef6dcc974a2e7494",
+    "evaluation/schemas/output.schema.json": "19a0062cdb3a2990178bac3ebdb078e29c898691f034c9adcca3dcdd7bc9c6b8",
+    "evaluation/schemas/suggestion.schema.json": "b009e075e956c5c276bc27495d13223d8c0293271b23d2184b29163fd132a05b",
+    "evaluation/seal_inputs.py": "d93a3d37eb9c35e65350687b198b44e5fc146f13090f42d68c4a2633e0f70a95",
+    "evaluation/trust.py": "8f8e02c1734d37263bbac3a0203f94c5b1f24fdea7f104c34ff53a0d67c38a14",
+    "evaluation/trusted/baseline-source-archive-v1.json": "c125d170a153e54b608aac1b2bcf0b7dff5445a73282d4f203a8ca624affd7b4",
+    "evaluation/trusted/claims-baseline-v1.json": "7ac13817e41227d8dace9cf5ba1db96413bc80cf4939cf5927d43d2106e2cf4d",
+    "evaluation/trusted/contract.json": "4752aceb826ec5f89b7dd39e02106824167901a9c633aa9365366c30a8c79662",
+    "evaluation/trusted/events-registry-v1.json": "8def69d48132cfe4c52c558172697a1222ffd1835118bd3b6c29016cd87cf8e0",
+    "evaluation/trusted/events/e1-formal-review-v2/claims.json": "c71d56933869b86c2b628d7cfcf0cb823cc3919703b0ffc8f67e5943b64d3767",
+    "evaluation/trusted/events/e1-formal-review-v2/freeze.json": "6ac8f14b3b8f4abf38fcc1e60327062540fc1678c9feb04546c34f61fd918a84",
+    "evaluation/trusted/events/e1-formal-review-v2/manifest.json": "d427db290f9d364b31c5f5bb13010c2591681d4167ec12d4f5469d314bcf1015",
+    "evaluation/trusted/events/e1-formal-review-v2/windows.json": "973fa0852b3b3e682b2b94c971edd0867db38f190eed58705187d4808dec1a81",
+    "evaluation/trusted/freeze.json": "576b4f02755b12ecdf8234a13ab47fe14866994b5f99242a8ac0bc70c335df6a",
+    "evaluation/trusted/main-pins.json": "362e528538a19765d698c84c2b3473c9fa349eb89f5cc6c4b9f35df76b099e04",
+    "evaluation/trusted/paid-gates.json": "2e0986fe3a4bcd4fbdd0996baa8aa39d0a5a445ed0c07a010e242eb7d8981fd5",
+    "evaluation/trusted/root-config.json": "dbe8dc68c92b8829baaa80339d2d6c2f44bacecb3c1a6f6c7c2cdf43f441bdd5",
+    "evaluation/trusted/windows.json": "adbca1adfeae29423c67502a77cce46d01de6cdf4947062977794049de65fa50"
+  },
+  "source_sha256_before": {
+    "evaluation/__init__.py": "80d2830bcf95e17c0260ea5b922dbbb603c8db51657cc6f2ee1cd9e93075db01",
+    "evaluation/baseline_archive.py": "9fe62e2090de072ac6f2360036660cc5bbbee6faa84bca1b27f782f13434d090",
+    "evaluation/check.py": "c7bedbe312c53d4d4fb3038d0e7330c09eeb9aaa530f6deaab26f481218367f8",
+    "evaluation/check_baseline_archive.py": "52daa9de4c34d9bb260c94665675429fcf45e5ad8490d40104249dd9094c5b49",
+    "evaluation/check_events.py": "b46f0d6d8b9d2b7425154b9bc57eb10f07dbd2537a5b8d64de90eec238f0e955",
+    "evaluation/cli.py": "bf6b3c9f70b9d3e15e0c7853dc86c672626f20d44a9f8f38ec12651d1ee4166f",
+    "evaluation/common.py": "91509d55058126319117b45f7e256aec5f46d35f97cd6bda7cbe6472f8227ab8",
+    "evaluation/engine.py": "6955a59976b6aac197fb222603e6795ae4588841d3eb70d477db0788b53b80e4",
+    "evaluation/events.py": "047cc0581c48b379ea42d2505f15b5254a8f14035ae56a621229c750477605ef",
+    "evaluation/freeze_inputs.py": "734194f9201af069e96008f0e838941b01a71ad7ad14f1f50d588e4e63ea3b67",
+    "evaluation/provider.py": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd",
+    "evaluation/reader.py": "050a8f6deb3e7ca209fde3362cd617274f0941cd5968662606bc2a6e282c5e7b",
+    "evaluation/schemas/claim.schema.json": "902cbd7c2579ba0cbf68ef9864a34b8c7951f48cd99ffaedf1137b50cd85bb31",
+    "evaluation/schemas/contract.schema.json": "6a584c9ba99f54315dd8b5275ffc2917deea03c58b4278214a2704b3a8161b15",
+    "evaluation/schemas/event-freeze-v1.schema.json": "c0ac05c02645de61acd04a7d7a626240beb774af40d570c5450204f12f4c3d41",
+    "evaluation/schemas/event-registration-v1.schema.json": "140053b2a2b884f9275a25b562c310109d22f975c871724aad1f6c54217fc8c4",
+    "evaluation/schemas/event-windows-v1.schema.json": "386ad9221526ba64251f81e354f7100b50677ce792f58f8830f98000ab09ba79",
+    "evaluation/schemas/events-registry-v1.schema.json": "ef0dd267de184d5a10298dc5673d4d00c8572dddd86832270a036f9ef58021e1",
+    "evaluation/schemas/evidence-index.schema.json": "1973808397cecc6f9877ab4339c3ddb32cb1409aef768793624cf3ffa0105861",
+    "evaluation/schemas/manifest.schema.json": "999c7fd1e8d880db23925d7ff6fb7b82d8cd012a929f1602ef6dcc974a2e7494",
+    "evaluation/schemas/output.schema.json": "19a0062cdb3a2990178bac3ebdb078e29c898691f034c9adcca3dcdd7bc9c6b8",
+    "evaluation/schemas/suggestion.schema.json": "b009e075e956c5c276bc27495d13223d8c0293271b23d2184b29163fd132a05b",
+    "evaluation/seal_inputs.py": "d93a3d37eb9c35e65350687b198b44e5fc146f13090f42d68c4a2633e0f70a95",
+    "evaluation/trust.py": "8f8e02c1734d37263bbac3a0203f94c5b1f24fdea7f104c34ff53a0d67c38a14",
+    "evaluation/trusted/baseline-source-archive-v1.json": "c125d170a153e54b608aac1b2bcf0b7dff5445a73282d4f203a8ca624affd7b4",
+    "evaluation/trusted/claims-baseline-v1.json": "7ac13817e41227d8dace9cf5ba1db96413bc80cf4939cf5927d43d2106e2cf4d",
+    "evaluation/trusted/contract.json": "4752aceb826ec5f89b7dd39e02106824167901a9c633aa9365366c30a8c79662",
+    "evaluation/trusted/events-registry-v1.json": "8def69d48132cfe4c52c558172697a1222ffd1835118bd3b6c29016cd87cf8e0",
+    "evaluation/trusted/events/e1-formal-review-v2/claims.json": "c71d56933869b86c2b628d7cfcf0cb823cc3919703b0ffc8f67e5943b64d3767",
+    "evaluation/trusted/events/e1-formal-review-v2/freeze.json": "6ac8f14b3b8f4abf38fcc1e60327062540fc1678c9feb04546c34f61fd918a84",
+    "evaluation/trusted/events/e1-formal-review-v2/manifest.json": "d427db290f9d364b31c5f5bb13010c2591681d4167ec12d4f5469d314bcf1015",
+    "evaluation/trusted/events/e1-formal-review-v2/windows.json": "973fa0852b3b3e682b2b94c971edd0867db38f190eed58705187d4808dec1a81",
+    "evaluation/trusted/freeze.json": "576b4f02755b12ecdf8234a13ab47fe14866994b5f99242a8ac0bc70c335df6a",
+    "evaluation/trusted/main-pins.json": "362e528538a19765d698c84c2b3473c9fa349eb89f5cc6c4b9f35df76b099e04",
+    "evaluation/trusted/paid-gates.json": "2e0986fe3a4bcd4fbdd0996baa8aa39d0a5a445ed0c07a010e242eb7d8981fd5",
+    "evaluation/trusted/root-config.json": "dbe8dc68c92b8829baaa80339d2d6c2f44bacecb3c1a6f6c7c2cdf43f441bdd5",
+    "evaluation/trusted/windows.json": "adbca1adfeae29423c67502a77cce46d01de6cdf4947062977794049de65fa50"
+  },
+  "target_code_executed": false,
+  "target_modules_imported": false,
+  "teacher_approval": null
+}

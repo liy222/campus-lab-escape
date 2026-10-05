@@ -1,0 +1,61 @@
+{
+  "task": "T31-delivery-docs-current-facts",
+  "date": "2026-10-05",
+  "cwd": "D:\\深度能力",
+  "written_files": [
+    "README.md",
+    "release/README.md",
+    "docs/report.md",
+    "docs/defense.md",
+    "evidence/delivery/T31-docs-20261005/report.json"
+  ],
+  "read_sources": [
+    "AGENTS.md",
+    "docs/execution-plan.md",
+    "STATUS.md",
+    "PLAN.md",
+    "README.md",
+    "release/README.md",
+    "review/findings/T23-independent-pilot-20261005.md",
+    "review/findings/T25-independent-formal-20261005.md",
+    "review/findings/T26-acceptance-20261003.md",
+    "review/findings/T27-budget-reconciliation-20261005.md",
+    "review/findings/T27-evaluation-events-20261005.md",
+    "review/findings/T30-report-20261005.md",
+    "evidence/qa/T25-independent-20261005T055600Z/result.json",
+    "evidence/qa/T27-evaluation-events-20261005T105300Z/result.json",
+    "evidence/qa/T30-evidence-index-20261005.json",
+    "evidence/qa/T30-command-ledger-20261005.json",
+    "evidence/qa/T30-v1-rollback-20261005/result.json",
+    "evidence/delivery/T32-preparation-20261005/report.md",
+    "evidence/delivery/T32-preparation-20261005/checks.json",
+    "scripts/dev.py"
+  ],
+  "verified_facts": {
+    "T30": "limited CH01/RT01-05 independent engineering PASS, source bound by raw hashes; no RT06 verdict",
+    "E1_formal_original": "22 completed, 1 timeout, 49 not_called; T25 1829/1829 offline review; continuation pending",
+    "ledger_after_manual_accounting": "35 settled, pending/unknown 0, cumulative upper CNY 0.27760296; timeout tokens remain null; no supplier invoice",
+    "T27_evaluator": "168/168 new plus 114/114 necessary legacy regression; RT06 INSUFFICIENT_EVIDENCE, zero real paid calls",
+    "v1_rollback_probe": "T30 child run exit 0 using archived code and isolated temporary v1 database; not full clean reproduction",
+    "T32": "preparation checks exist, clean install/reproduction not yet run",
+    "human_acceptance": "no human playtest, player decision record, teacher approval or human signoff provided"
+  },
+  "actual_commands_and_exit_codes": [
+    {
+      "command": "PowerShell Get-Content/Select-String/Get-ChildItem reads over the listed allowed documentation and evidence paths",
+      "exit_code": 0,
+      "note": "Several read batches returned exit 0; one exploratory batch reported an absent guessed T25 filename but completed with overall exit 0. No secrets, .env, database, or environment contents were read."
+    },
+    {
+      "command": "PowerShell Set-Content UTF-8 writes for the four documentation files and this report.json",
+      "exit_code": 0,
+      "note": "The command completed with ErrorActionPreference=Stop; only explicitly assigned paths were written."
+    }
+  ],
+  "limitations": [
+    "This task updated documentation only; it did not run product checks or T32 reproduction.",
+    "The 49-row continuation result remains in progress and requires Main review before statements change.",
+    "Human play, decision, approval, and signature evidence remain absent.",
+    "Current v2 local startup steps are based on inspected scripts.dev options; T32 clean reproduction is pending."
+  ]
+}

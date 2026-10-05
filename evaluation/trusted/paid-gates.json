@@ -1,4 +1,19 @@
 {
-  "approvals": [],
-  "note": "No evaluator paid call approved. Main must explicitly hand off a finite pinned gate."
+  "approvals": [
+    {
+      "approval_id": "K1K6-20261005T110203Z",
+      "approved_by": "Main",
+      "purpose": "calibration",
+      "input_sha256": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1",
+      "max_calls": 3,
+      "max_cost_units": 220000000,
+      "max_tokens": 1000,
+      "timeout_seconds": 20,
+      "expires_at": "2026-10-05T23:02:03.491335+00:00",
+      "credential_env": "EVALUATION_MODEL_API_KEY",
+      "base_url": "https://api.deepseek.com",
+      "model": "deepseek-flash"
+    }
+  ],
+  "note": "Finite Main calibration GO within original user CNY10 project budget."
 }

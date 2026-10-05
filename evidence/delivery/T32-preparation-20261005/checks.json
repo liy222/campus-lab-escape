@@ -1,0 +1,20 @@
+{
+  "kind": "isolated helper preparation checks",
+  "provider": "none",
+  "actual_paid_calls": 0,
+  "checks": [
+    "source parses",
+    "synthetic inherited credentials and root import path removed",
+    "traversal/env/database/dependency members refused",
+    "nonsecret env example allowed",
+    "explicit Main-pinned CRLF materialization preserves exact expected bytes",
+    "incorrect runtime byte pin refused"
+  ],
+  "count": 6,
+  "exit_code": 0,
+  "source_sha256": "ce5aa0871a043b4839f1e13aca94ac44b0b6dadf8faa94768156035602425273",
+  "limitations": [
+    "No stable candidate reproduction yet; waiting for Main source package and GO.",
+    "Synthetic assets only; no existing database or environment changed."
+  ]
+}

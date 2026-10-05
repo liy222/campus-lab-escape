@@ -31,11 +31,15 @@ def find_gate(approval_id,input_hash,purpose):
 
 async def run(args):
     freeze,files,tools=load_tools()
+    event=getattr(tools,'event_contexts',{}).get(getattr(args,'release',None))
     folder=output_folder()
     report={'command':[sys.executable,'-m','evaluation.cli',*sys.argv[1:]],'python':sys.version,
             'started':datetime.now(timezone.utc).isoformat(),'mode':getattr(args,'mode','deterministic'),
             'fixture_set_sha256':freeze['fixture_set_sha256'],'target_code_executed':False,'actual_paid_calls':0,
             'human_signoff':None,'teacher_approval':None,'limitations':['Owner checks are not independent QA or paid LLM calibration.']}
+    if event:
+        report['event']={'event_id':event.event_id,'release_id':event.release_id,
+                         'product_commit':event.product_commit,'event_freeze_raw_sha256':event.input_sha256}
     if args.action=='precheck':
         precheck=source_precheck(tools,args.release);report['precheck']=precheck
         code=0 if not precheck['issues'] else 2
@@ -47,15 +51,20 @@ async def run(args):
             input_hash=freeze['fixture_set_sha256']
             entries=[(c['claim'],c['contract_id'],c['contract_version'],c) for c in cases]
         else:
-            if args.release!='baseline_v1':raise EvaluationError('UNKNOWN_RELEASE')
-            claims_file=files['trusted/claims-baseline-v1.json'];claims=claims_file['claims']
-            input_hash=freeze['inputs']['trusted/claims-baseline-v1.json']
+            if args.release=='baseline_v1':
+                claims=files['trusted/claims-baseline-v1.json']['claims']
+                input_hash=freeze['inputs']['trusted/claims-baseline-v1.json']
+            elif event:
+                preflight=source_precheck(tools,args.release)
+                if preflight['issues']:raise EvaluationError('EVENT_IDENTITY_PRECHECK_FAILED')
+                claims=event.claims;input_hash=event.input_sha256
+            else:raise EvaluationError('UNKNOWN_RELEASE')
             entries=[(c,'campus-lab-engineering','1.0.0',None) for c in claims]
         provider=None
         if args.mode=='paid':
             if not args.approval_id:raise EvaluationError('MAIN_FINITE_PAID_GO_REQUIRED')
             provider=find_gate(args.approval_id,input_hash,'calibration' if calibration else 'claims')
-        rows=[];audits=[]
+        rows=[];audits=[];event_stopped=False
         evaluator=Evaluator(tools,files,provider)
         for claim,contract_id,version,case in entries:
             if args.mode=='mock':
@@ -64,7 +73,14 @@ async def run(args):
                              'evidence_refs':[{'evidence_id':r['evidence_id'],'snippet':r['snippet']} for r in claim['evidence_refs']],
                              'reason':'Scripted mock does not establish a paid or independent semantic assessment.','missing_check':['Run approved real evaluator judgement.']}
                 evaluator.provider=MockProvider([script])
-            result,audit=await evaluator.evaluate(claim,contract_id,version)
+            if event_stopped:
+                result=evaluator._output(claim,'INSUFFICIENT_EVIDENCE',[],
+                    'EVENT_RUN_STOPPED_AFTER_IDENTITY_CHANGE',['Refreeze and independently verify the changed event inputs.'],'not_run')
+                audit={'claim_id':claim['claim_id'],'raw_suggestion':None,'provider_metadata':None,
+                       'validation_errors':['EVENT_RUN_STOPPED_AFTER_IDENTITY_CHANGE']}
+            else:
+                result,audit=await evaluator.evaluate(claim,contract_id,version)
+                if event and evaluator.prechecks.get(args.release,{}).get('issues'):event_stopped=True
             if case:
                 rows.append({'case_id':case['case_id'],'expected':case['expected'],'actual':result['status'],
                              'matches_expected':result['status']==case['expected'],'output':result})
@@ -72,6 +88,14 @@ async def run(args):
             else:rows.append(result)
             audits.append(audit)
         report['results']=rows;report['audits']=audits;report['prechecks']=evaluator.prechecks
+        if event:
+            final_check=source_precheck(tools,args.release);report['event_final_precheck']=final_check
+            if final_check['issues']:
+                for result in rows:
+                    result.update(status='INSUFFICIENT_EVIDENCE',evidence_refs=[],
+                        reason='EVENT_IDENTITY_CHANGED_BEFORE_REPORT',
+                        missing_check=['Refreeze and independently verify the changed event inputs.'])
+                report['event_stopped_on_identity_change']=True
         report['actual_paid_calls']=len({r['provider_metadata']['call_id'] for r in audits if isinstance(r.get('provider_metadata'),dict)
                                        and r['provider_metadata'].get('actual_network_call') and r['provider_metadata'].get('call_id')})
         if calibration:

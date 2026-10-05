@@ -1,0 +1,185 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "approved_by": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "approved_na": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "approval_evidence_id": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "basis": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "claim_id": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "release_id": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "claim_id",
+          "release_id",
+          "approval_evidence_id",
+          "basis"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "contract_id": {
+      "const": "campus-lab-engineering"
+    },
+    "criteria": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "must_observe": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "na_allowed": {
+            "type": "boolean"
+          },
+          "operation": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "require_execution": {
+            "type": "boolean"
+          },
+          "title": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "operation",
+          "must_observe",
+          "require_execution",
+          "na_allowed"
+        ],
+        "type": "object"
+      },
+      "maxProperties": 29,
+      "minProperties": 29,
+      "type": "object"
+    },
+    "human_signoff": {
+      "type": "null"
+    },
+    "policy": {
+      "additionalProperties": false,
+      "properties": {
+        "deterministic_failure_cannot_be_overridden": {
+          "const": true
+        },
+        "must_cannot_be_downgraded": {
+          "const": true
+        },
+        "no_human_signoff_inference": {
+          "const": true
+        },
+        "no_target_execution": {
+          "const": true
+        },
+        "no_teacher_grade": {
+          "const": true
+        },
+        "positive_requires_valid_evidence": {
+          "const": true
+        },
+        "states": {
+          "const": [
+            "PASS",
+            "FAIL",
+            "INSUFFICIENT_EVIDENCE",
+            "NOT_APPLICABLE"
+          ]
+        }
+      },
+      "required": [
+        "must_cannot_be_downgraded",
+        "states",
+        "no_target_execution",
+        "no_teacher_grade",
+        "no_human_signoff_inference",
+        "positive_requires_valid_evidence",
+        "deterministic_failure_cannot_be_overridden"
+      ],
+      "type": "object"
+    },
+    "requirements": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "acceptance": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "must": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "must",
+          "acceptance"
+        ],
+        "type": "object"
+      },
+      "maxProperties": 18,
+      "minProperties": 18,
+      "type": "object"
+    },
+    "source_plan": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "source_plan_raw_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "teacher_approval": {
+      "type": "null"
+    },
+    "version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "contract_id",
+    "version",
+    "approved_by",
+    "teacher_approval",
+    "human_signoff",
+    "source_plan",
+    "source_plan_raw_sha256",
+    "requirements",
+    "criteria",
+    "approved_na",
+    "policy"
+  ],
+  "type": "object"
+}

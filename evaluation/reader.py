@@ -25,7 +25,8 @@ def checked_path(root: Path, relative: str, *, source=False) -> Path:
            for p in parts):
         raise EvaluationError('UNSAFE_PATH')
     path = root.joinpath(*parts)
-    if path.suffix.lower() not in EXTENSIONS or any(s in path.name.casefold() for s in ('credential', 'secret', 'session-token', 'api-key')):
+    public_archived_ignore = source and re.fullmatch(r'release/archives/[A-Za-z0-9][A-Za-z0-9_-]{0,63}/experiments/\.gitignore', relative)
+    if (path.suffix.lower() not in EXTENSIONS and not public_archived_ignore) or any(s in path.name.casefold() for s in ('credential', 'secret', 'session-token', 'api-key')):
         raise EvaluationError('SECRET_OR_BINARY_PATH')
     try:
         # Reject all links/reparse points, even ones currently pointing inward.
@@ -81,8 +82,8 @@ def _windows_read(path: Path, root: Path, limit: int) -> bytes:
     finally: kernel.CloseHandle(handle)
 
 
-def safe_read(root: Path, relative: str, limit=MAX_FILE) -> bytes:
-    path = checked_path(root, relative)
+def safe_read(root: Path, relative: str, limit=MAX_FILE, *, source=False) -> bytes:
+    path = checked_path(root, relative, source=source)
     if os.name == 'nt': return _windows_read(path, root, limit)
     descriptor = os.open(path, os.O_RDONLY | getattr(os, 'O_NOFOLLOW', 0))
     try:

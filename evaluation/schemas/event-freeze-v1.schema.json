@@ -1,0 +1,114 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "claim_ids": {
+      "items": {
+        "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+        "type": "string"
+      },
+      "maxItems": 3,
+      "minItems": 2,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "contract_raw_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "event_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$",
+      "type": "string"
+    },
+    "evidence_ids": {
+      "items": {
+        "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+        "type": "string"
+      },
+      "maxItems": 100,
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "freeze_id": {
+      "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+      "type": "string"
+    },
+    "frozen_at": {
+      "format": "date-time",
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "frozen_before_calls": {
+      "const": true
+    },
+    "human_signoff": {
+      "type": "null"
+    },
+    "inputs": {
+      "additionalProperties": {
+        "pattern": "^[0-9a-f]{64}$",
+        "type": "string"
+      },
+      "maxProperties": 3,
+      "minProperties": 3,
+      "type": "object"
+    },
+    "legacy_schema_raw_sha256": {
+      "additionalProperties": {
+        "pattern": "^[0-9a-f]{64}$",
+        "type": "string"
+      },
+      "maxProperties": 6,
+      "minProperties": 6,
+      "type": "object"
+    },
+    "main_registration": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "raw_sha256"
+      ],
+      "type": "object"
+    },
+    "product_commit": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "release_id": {
+      "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+      "type": "string"
+    },
+    "teacher_approval": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "freeze_id",
+    "event_id",
+    "release_id",
+    "product_commit",
+    "main_registration",
+    "frozen_at",
+    "frozen_before_calls",
+    "contract_raw_sha256",
+    "legacy_schema_raw_sha256",
+    "inputs",
+    "claim_ids",
+    "evidence_ids",
+    "human_signoff",
+    "teacher_approval"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,149 @@
+{
+  "artifact_role": "Synthetic isolated Main fixture only; not production approval or execution evidence",
+  "registration": {
+    "approved_at": "2026-10-05T06:17:56.186809+00:00",
+    "approved_by": "Main",
+    "claims": {
+      "claims": [
+        {
+          "claim_id": "SYN-A24",
+          "criterion_id": "A24",
+          "declared_na": false,
+          "declared_scope": "Synthetic Owner fixture only, not actual project evidence.",
+          "evidence_refs": [
+            {
+              "evidence_id": "synthetic_event_v1:RUN001",
+              "expected_raw_sha256": "e92dd9c8c0c1bb5a68cfcd7f40b4296dbc744de8d1b925822baaf81237130598",
+              "snippet": "summary"
+            }
+          ],
+          "known_scope_status": "SYNTHETIC_OWNER_ONLY",
+          "release_id": "synthetic_event_v1",
+          "statement": "分母与缺失解释正确；地面判定资料未送模型。"
+        },
+        {
+          "claim_id": "SYN-A26",
+          "criterion_id": "A26",
+          "declared_na": false,
+          "declared_scope": "Synthetic Owner fixture only, not actual project evidence.",
+          "evidence_refs": [
+            {
+              "evidence_id": "synthetic_event_v1:RUN001",
+              "expected_raw_sha256": "e92dd9c8c0c1bb5a68cfcd7f40b4296dbc744de8d1b925822baaf81237130598",
+              "snippet": "summary"
+            }
+          ],
+          "known_scope_status": "SYNTHETIC_OWNER_ONLY",
+          "release_id": "synthetic_event_v1",
+          "statement": "引用存在且指向所称版本；缺证不能被自动补写通过。"
+        }
+      ],
+      "release_id": "synthetic_event_v1"
+    },
+    "coverage": [
+      {
+        "claim_id": "SYN-A24",
+        "criterion_id": "A24",
+        "gaps": [],
+        "required_refs": [
+          {
+            "evidence_id": "synthetic_event_v1:RUN001",
+            "snippet": "summary"
+          }
+        ],
+        "status": "full"
+      },
+      {
+        "claim_id": "SYN-A26",
+        "criterion_id": "A26",
+        "gaps": [],
+        "required_refs": [
+          {
+            "evidence_id": "synthetic_event_v1:RUN001",
+            "snippet": "summary"
+          }
+        ],
+        "status": "full"
+      }
+    ],
+    "event_id": "synthetic-event-v1",
+    "evidence_roles": {
+      "synthetic_event_v1:ID001": "identity",
+      "synthetic_event_v1:RUN001": "execution"
+    },
+    "human_signoff": null,
+    "manifest": {
+      "commit": "cc33957a329854c8f78744b6a6acd98dcdecf78e",
+      "evidence": [
+        {
+          "artifact_binding": "raw_equal",
+          "artifact_raw_sha256": "e92dd9c8c0c1bb5a68cfcd7f40b4296dbc744de8d1b925822baaf81237130598",
+          "evidence_id": "synthetic_event_v1:RUN001",
+          "path": "evidence/qa/result.json",
+          "release_id": "synthetic_event_v1"
+        },
+        {
+          "artifact_binding": "raw_equal",
+          "artifact_raw_sha256": "a8684d7aba04e5f2d4918ee63d12108ca16274dcee1122cc47e1a01e07763d78",
+          "evidence_id": "synthetic_event_v1:ID001",
+          "path": "evidence/qa/identity.json",
+          "release_id": "synthetic_event_v1"
+        }
+      ],
+      "release_id": "synthetic_event_v1",
+      "sources": {
+        "product/source.py": {
+          "binding": "raw_equal",
+          "candidate_runtime_raw_sha256": "a470df684a016f2b32c3f2ea630945a73e4cec378c9ae87785c1416e233cfce6",
+          "evidence": [
+            "evidence/qa/result.json"
+          ],
+          "git_blob_oid": "2252844f7dd508738a7e23c51a5eb5168a6b5ceb",
+          "git_blob_sha256": "a470df684a016f2b32c3f2ea630945a73e4cec378c9ae87785c1416e233cfce6",
+          "utf8_lf_v1_sha256": "a470df684a016f2b32c3f2ea630945a73e4cec378c9ae87785c1416e233cfce6"
+        }
+      }
+    },
+    "product_commit": "cc33957a329854c8f78744b6a6acd98dcdecf78e",
+    "release_id": "synthetic_event_v1",
+    "runtime_records": [
+      {
+        "artifact_hashes_field": "artifact_hashes",
+        "commit_field": "product_commit",
+        "evidence_id": "synthetic_event_v1:RUN001",
+        "exit_code_field": "exit_code",
+        "identity_evidence_id": "synthetic_event_v1:ID001",
+        "release_id_field": "release_id",
+        "source_after_field": "source_after",
+        "source_before_field": "source_before",
+        "source_paths": [
+          "product/source.py"
+        ]
+      }
+    ],
+    "schema_id": "event-registration-v1",
+    "teacher_approval": null,
+    "windows": {
+      "synthetic_event_v1:ID001": {
+        "summary": {
+          "fields": [
+            "release_id",
+            "product_commit",
+            "exit_code"
+          ],
+          "kind": "json_fields"
+        }
+      },
+      "synthetic_event_v1:RUN001": {
+        "summary": {
+          "fields": [
+            "exit_code",
+            "synthetic",
+            "observations"
+          ],
+          "kind": "json_fields"
+        }
+      }
+    }
+  }
+}

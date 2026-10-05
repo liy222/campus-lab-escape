@@ -1,0 +1,37 @@
+{
+  "claims": [
+    {
+      "claim_id": "QA-A24",
+      "criterion_id": "A24",
+      "declared_na": false,
+      "declared_scope": "ISOLATED SYNTHETIC QA ONLY",
+      "evidence_refs": [
+        {
+          "evidence_id": "foreign:unknown",
+          "expected_raw_sha256": "f69a2ca22363ae0d042dd1ae13b9e89aa2612cf7ff0da25eb527639393a72370",
+          "snippet": "summary"
+        }
+      ],
+      "known_scope_status": "SYNTHETIC_FIXTURE_ONLY",
+      "release_id": "qa_synthetic_event",
+      "statement": "分母与缺失解释正确；地面判定资料未送模型。"
+    },
+    {
+      "claim_id": "QA-A26",
+      "criterion_id": "A26",
+      "declared_na": false,
+      "declared_scope": "ISOLATED SYNTHETIC QA ONLY",
+      "evidence_refs": [
+        {
+          "evidence_id": "qa_synthetic_event:RUN",
+          "expected_raw_sha256": "f69a2ca22363ae0d042dd1ae13b9e89aa2612cf7ff0da25eb527639393a72370",
+          "snippet": "summary"
+        }
+      ],
+      "known_scope_status": "SYNTHETIC_FIXTURE_ONLY",
+      "release_id": "qa_synthetic_event",
+      "statement": "引用存在且指向所称版本；缺证不能被自动补写通过。"
+    }
+  ],
+  "release_id": "qa_synthetic_event"
+}

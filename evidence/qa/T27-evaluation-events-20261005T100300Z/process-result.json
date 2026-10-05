@@ -1,0 +1,11 @@
+{
+  "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 tests/review_evaluation_events.py --output evidence/qa/T27-evaluation-events-20261005T100300Z",
+  "working_directory": "D:\\深度能力",
+  "actual_exit_code": 1,
+  "tool_chunk_id": "848877",
+  "checks_executed": 0,
+  "error": "QA network guard blocked Windows asyncio local wakeup socketpair before event loop initialization; no evaluator check or model dispatch ran",
+  "qa_paid_calls": 0,
+  "qa_external_network_calls": 0,
+  "correction": "Install guard at first coroutine line after event loop creation and before evaluator imports; preserve failed process record"
+}
