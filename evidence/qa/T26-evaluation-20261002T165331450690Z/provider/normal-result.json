@@ -1,0 +1,37 @@
+{
+  "case": "normal",
+  "synthetic_only": true,
+  "actual_paid_calls": 0,
+  "network_calls": 0,
+  "transport_invocations": 1,
+  "errors": [],
+  "metadata": {
+    "mode": "fake",
+    "actual_network_call": false,
+    "call_id": "eval_normal_1",
+    "usage": {
+      "prompt_tokens": 10,
+      "completion_tokens": 2,
+      "total_tokens": 12,
+      "prompt_cache_hit_tokens": 3
+    },
+    "requested_model": "deepseek-flash",
+    "cost_upper_units": 30120,
+    "reported_model": "deepseek-flash",
+    "finish_reason": "stop"
+  },
+  "ledger_rows": [
+    {
+      "id": "eval_normal_1",
+      "scope": "evaluation",
+      "created_at": "2026-10-02T16:53:37.891516+00:00",
+      "reserved": 25632000,
+      "charged": 30120,
+      "state": "settled",
+      "reason": null,
+      "prompt_tokens": 10,
+      "completion_tokens": 2,
+      "cache_hit_tokens": 3
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "finding": "T26-EVAL-001",
+  "kind": "Owner narrow fix stable handoff; independent recheck pending",
+  "stable_at": "2026-10-02T13:02:39.960380+00:00",
+  "files": [
+    "evaluation/provider.py",
+    "evaluation/check.py",
+    "evaluation/README.md"
+  ],
+  "file_sha256": {
+    "evaluation/provider.py": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd",
+    "evaluation/check.py": "2df17b999c64dcbdf0e26dca88c6091f4ba9e502934ec1aeace851a855e8e0df",
+    "evaluation/README.md": "2dd93c84f8ae7c2be76961fe6e7e21ec7bcd86d2473ab1df23d7cfcf56f1b8c2"
+  },
+  "actual_command": [
+    "C:/Users/liyh/.conda/envs/1/python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "evaluation.check"
+  ],
+  "actual_exit_code": 0,
+  "owner_checks": 95,
+  "evidence": "evaluation/runs/20261002T130137542825Z/owner-check.json",
+  "evidence_raw_sha256": "b540110a8254c27c936baefabb3a49b61bafd327771c47fd12f4940480003d39",
+  "original_qa_failure": "evidence/qa/T26-evaluation-20261002T125742148749Z/result.json",
+  "original_qa_failure_retained": true,
+  "change": "ExistingLedger.reserve atomically checks every shared scope for reserved/unknown inside BEGIN IMMEDIATE before INSERT; PaidProvider entry invokes same global readiness preflight before credentials; existing cap/schema/backend ledger unchanged.",
+  "matrix": [
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "game",
+      "state": "unknown",
+      "stored_scope": "game",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "game",
+      "state": "reserved",
+      "stored_scope": "game",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "experiments",
+      "state": "unknown",
+      "stored_scope": "experiments",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "experiments",
+      "state": "reserved",
+      "stored_scope": "experiments",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "probe",
+      "state": "unknown",
+      "stored_scope": "probe",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "probe",
+      "state": "reserved",
+      "stored_scope": "probe",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "evaluation-current",
+      "state": "unknown",
+      "stored_scope": "evaluation",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "evaluation-current",
+      "state": "reserved",
+      "stored_scope": "evaluation",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "evaluation-other",
+      "state": "unknown",
+      "stored_scope": "evaluation",
+      "transport_dispatches": 0
+    },
+    {
+      "error": "PRIOR_CALL_UNKNOWN_STOP",
+      "provider_attempts": 0,
+      "rows_after": 1,
+      "rows_before": 1,
+      "rows_unchanged": true,
+      "scope": "evaluation-other",
+      "state": "reserved",
+      "stored_scope": "evaluation",
+      "transport_dispatches": 0
+    }
+  ],
+  "control": "All four scopes settled: readiness allowed, one fake dispatch and one new settled evaluation row.",
+  "frozen_inputs_unchanged": true,
+  "fixture_set_sha256": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1",
+  "trusted_freeze_sha256": "576b4f02755b12ecdf8234a13ab47fe14866994b5f99242a8ac0bc70c335df6a",
+  "actual_paid_calls": 0,
+  "network_calls": 0,
+  "production_ledger_opened": false,
+  "credentials_read": false,
+  "target_modules_imported": false,
+  "target_code_executed": false,
+  "git_changes_made": false,
+  "source_unchanged_during_check": true,
+  "limitations": [
+    "Owner fake tests are not independent QA.",
+    "Finding is budget uncertainty gating; no actual overspend or real request is claimed.",
+    "Production database/schema and backend ledger implementation not modified or opened.",
+    "Original frozen expected cases and prior failures retained.",
+    "Real paid calibration/E1 judgement remains disabled pending separate finite Main GO."
+  ],
+  "human_signoff": null,
+  "teacher_approval": null,
+  "next": "Main sends stable candidate to independent QA recheck; Owner stopped."
+}

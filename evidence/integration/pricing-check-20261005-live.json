@@ -1,0 +1,127 @@
+{
+  "checked_at_utc": "2026-10-05T05:27:18.379607+00:00",
+  "source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+  "method": "Live unauthenticated HTTPS official page; Python standard-library request and HTML table parse",
+  "http_status": 200,
+  "response_bytes": 24116,
+  "response_sha256": "5a7b1832592387340f2fc456399b34b89b05f3fa167c2e35909e2fa4afe021e3",
+  "requested_model": "deepseek-flash",
+  "documented_model_version": "DeepSeek-V4.1-Flash",
+  "base_url": "https://api.deepseek.com",
+  "peak_cny_per_million": {
+    "input_miss": 2,
+    "input_hit": 0.04,
+    "output": 8
+  },
+  "accounting": "Peak rates conservatively across all scopes; provider bill not independently verified",
+  "price_table_rows": [
+    [
+      "模型",
+      "deepseek-flash(1)",
+      "deepseek-v4-pro"
+    ],
+    [
+      "BASE URL (OpenAI 格式)",
+      "https://api.deepseek.com"
+    ],
+    [
+      "BASE URL (Anthropic 格式)",
+      "https://api.deepseek.com/anthropic"
+    ],
+    [
+      "模型版本",
+      "DeepSeek-V4.1-Flash",
+      "DeepSeek-V4-Pro-0813"
+    ],
+    [
+      "思考模式",
+      "支持非思考与思考模式（默认）切换方式详见思考模式"
+    ],
+    [
+      "上下文长度",
+      "1M"
+    ],
+    [
+      "输出长度",
+      "最大 384K"
+    ],
+    [
+      "功能",
+      "Json Output",
+      "支持",
+      "支持"
+    ],
+    [
+      "Tool Calls",
+      "支持",
+      "支持"
+    ],
+    [
+      "Responses API",
+      "支持",
+      "支持"
+    ],
+    [
+      "Anthropic API",
+      "支持",
+      "支持"
+    ],
+    [
+      "对话前缀续写（Beta）",
+      "支持",
+      "支持"
+    ],
+    [
+      "FIM 补全（Beta）",
+      "仅非思考模式支持",
+      "仅非思考模式支持"
+    ],
+    [
+      "图像理解",
+      "支持",
+      "不支持"
+    ],
+    [
+      "价格(2)",
+      "百万tokens输入（缓存命中）",
+      "空闲时段",
+      "0.02元",
+      "0.15元"
+    ],
+    [
+      "高峰时段",
+      "0.04元",
+      "0.30元"
+    ],
+    [
+      "百万tokens输入（缓存未命中）",
+      "空闲时段",
+      "1元",
+      "4.5元"
+    ],
+    [
+      "高峰时段",
+      "2元",
+      "9.0元"
+    ],
+    [
+      "百万tokens输出",
+      "空闲时段",
+      "4元",
+      "13.5元"
+    ],
+    [
+      "高峰时段",
+      "8元",
+      "27.0元"
+    ],
+    [
+      "并发限制(3)",
+      "2500",
+      "500"
+    ]
+  ],
+  "limitations": [
+    "Earlier browser page fetches timed out; one intermediate live urllib attempt failed TLS EOF before evidence saved. No model call or key used."
+  ]
+}

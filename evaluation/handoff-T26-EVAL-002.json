@@ -1,0 +1,110 @@
+{
+  "actual_paid_calls": 0,
+  "change": "Rejected model content remains local. Only SHA256/byte length/error code is audited before validation; raw_suggestion is populated only after schema/text/release/reference checks pass. Valid K4 raw PASS and authoritative final FAIL remain retained.",
+  "commands": [
+    {
+      "actual_exit_code": 0,
+      "checks": 114,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "evaluation.check"
+      ],
+      "evidence": "evaluation/runs/20261002T165048273946Z/owner-check.json"
+    },
+    {
+      "actual_exit_code": 0,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "evaluation.cli",
+        "calibrate",
+        "--fixture-set",
+        "k1-k6-v1",
+        "--mode",
+        "mock"
+      ],
+      "evidence": "evaluation/runs/20261002T165109920227Z/report.json",
+      "matches": 11
+    },
+    {
+      "actual_exit_code": 0,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "evaluation.cli",
+        "precheck",
+        "--release",
+        "baseline_v1"
+      ],
+      "evidence": "evaluation/runs/20261002T165112241177Z/report.json"
+    }
+  ],
+  "credentials_read": false,
+  "evaluator_source_sha256": {
+    "evaluation/__init__.py": "80d2830bcf95e17c0260ea5b922dbbb603c8db51657cc6f2ee1cd9e93075db01",
+    "evaluation/check.py": "c7bedbe312c53d4d4fb3038d0e7330c09eeb9aaa530f6deaab26f481218367f8",
+    "evaluation/cli.py": "c2557dfda13783dbc4ce1ce556654f150a753cfe4f27d6f0550a911ceca7c509",
+    "evaluation/common.py": "91509d55058126319117b45f7e256aec5f46d35f97cd6bda7cbe6472f8227ab8",
+    "evaluation/engine.py": "14b8b6d4db9fd0d58d3748f1a9072710e26acfbf3f39f3493caa04311195ff6e",
+    "evaluation/freeze_inputs.py": "734194f9201af069e96008f0e838941b01a71ad7ad14f1f50d588e4e63ea3b67",
+    "evaluation/provider.py": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd",
+    "evaluation/reader.py": "2efa7ff272e49d103525c4b79ec5770531338e77804e2f4cfa44571b7a6c4db8",
+    "evaluation/seal_inputs.py": "d93a3d37eb9c35e65350687b198b44e5fc146f13090f42d68c4a2633e0f70a95",
+    "evaluation/trust.py": "cabdde838573ef946806920f26f3911695e693e1a06f22daa6a94b7410dd9db8"
+  },
+  "evidence_raw_sha256": {
+    "evaluation/runs/20261002T165048273946Z/owner-check.json": "88a32fef6d904fd70e1ca038b9c439eaf2aa5dd217b1800584448c7c7e58b19b",
+    "evaluation/runs/20261002T165109920227Z/report.json": "269d4f227ab0f6eeeb8311b416beb922a05d2535157ecee225f123524da227f1",
+    "evaluation/runs/20261002T165112241177Z/report.json": "945ac75241da7586dc8140e6ccd78e512361d4612a8735df914ca28a9c373ff6"
+  },
+  "file_sha256": {
+    "evaluation/README.md": "f3e8c7a4de0ac2d2af697b6114453da7b6d367e8bf84914b506566aee69ff26c",
+    "evaluation/check.py": "c7bedbe312c53d4d4fb3038d0e7330c09eeb9aaa530f6deaab26f481218367f8",
+    "evaluation/engine.py": "14b8b6d4db9fd0d58d3748f1a9072710e26acfbf3f39f3493caa04311195ff6e"
+  },
+  "files": [
+    "evaluation/engine.py",
+    "evaluation/check.py",
+    "evaluation/README.md"
+  ],
+  "finding": "T26-EVAL-002",
+  "frozen_or_stable_hashes_unchanged": {
+    "evaluation/fixtures/cases.json": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1",
+    "evaluation/provider.py": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd",
+    "evaluation/trusted/claims-baseline-v1.json": "7ac13817e41227d8dace9cf5ba1db96413bc80cf4939cf5927d43d2106e2cf4d",
+    "evaluation/trusted/contract.json": "4752aceb826ec5f89b7dd39e02106824167901a9c633aa9365366c30a8c79662",
+    "evaluation/trusted/freeze.json": "576b4f02755b12ecdf8234a13ab47fe14866994b5f99242a8ac0bc70c335df6a",
+    "evaluation/trusted/paid-gates.json": "2e0986fe3a4bcd4fbdd0996baa8aa39d0a5a445ed0c07a010e242eb7d8981fd5",
+    "evaluation/trusted/windows.json": "adbca1adfeae29423c67502a77cce46d01de6cdf4947062977794049de65fa50"
+  },
+  "git_changes_made": false,
+  "human_signoff": null,
+  "kind": "Evaluator Owner narrow fix stable STOP; independent QA retest pending",
+  "limitations": [
+    "Owner local checks are not independent QA.",
+    "Rejected content digest does not retain malformed model values; valid model prose is still untrusted data.",
+    "No real paid calibration/E1 judgement; paid gates remain empty.",
+    "E1/E2/E3 registry expansion is design only and not part of this fix.",
+    "No human signoff or teacher approval."
+  ],
+  "network_calls": 0,
+  "next": "Main sends this stable source/evidence to independent QA retest; Evaluator Owner stops source writes.",
+  "original_qa_failure": "evidence/qa/T26-evaluation-20261002T164628071232Z/result.json",
+  "original_qa_failure_retained": true,
+  "production_ledger_opened": false,
+  "source_unchanged_during_owner_check": true,
+  "stable_at": "2026-10-02T16:52:08.269798+00:00",
+  "target_code_executed": false,
+  "target_modules_imported": false,
+  "teacher_approval": null
+}

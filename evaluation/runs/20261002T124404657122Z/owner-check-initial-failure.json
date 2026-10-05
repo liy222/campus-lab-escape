@@ -1,0 +1,11 @@
+{
+  "kind": "Preserved Owner check failure; not product or paid failure",
+  "actual_command": "specified Python -B -X utf8 -m evaluation.check",
+  "actual_exit_code": 1,
+  "reason": "Owner fake_ledger helper used sqlite connection transaction context without closing the handle; Windows temporary cleanup failed.",
+  "repair": "Explicit closing and commit in owned fake fixture helper.",
+  "actual_paid_calls": 0,
+  "real_ledger_opened": false,
+  "target_code_executed": false,
+  "owned_temp_cleanup": "Resolved parent and owned prefix verified; fixture removed after failed process exited."
+}

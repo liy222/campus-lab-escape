@@ -1,0 +1,33 @@
+{
+  "case": "http401",
+  "synthetic_only": true,
+  "actual_paid_calls": 0,
+  "network_calls": 0,
+  "transport_invocations": 1,
+  "errors": [
+    "MODEL_AUTH_ERROR",
+    "PRIOR_CALL_UNKNOWN_STOP"
+  ],
+  "metadata": {
+    "mode": "fake",
+    "actual_network_call": false,
+    "call_id": "eval_http401_1",
+    "usage": null,
+    "requested_model": "deepseek-flash",
+    "cost_upper_units": 25632000
+  },
+  "ledger_rows": [
+    {
+      "id": "eval_http401_1",
+      "scope": "evaluation",
+      "created_at": "2026-10-02T16:53:37.997567+00:00",
+      "reserved": 25632000,
+      "charged": 25632000,
+      "state": "unknown",
+      "reason": "MODEL_AUTH_ERROR",
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "cache_hit_tokens": null
+    }
+  ]
+}

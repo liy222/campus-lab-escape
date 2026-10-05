@@ -1,10 +1,10 @@
 # 逃离校园实验室
 
-三房间网页解谜游戏具备手动通关、保存恢复、AI提案确认和受限模型接入。产品基线是 `7821af4efe0613c20a80ea164c1dab1c0f288bab`；当前已同步的 T21 元数据修正提交为 `9702fe39432aa78fc7286f796aa11c616355ec84`。基线身份与校正证据见 [`evidence/index-M0.json`](evidence/index-M0.json)、[`evidence/integration/baseline_v1-manifest.json`](evidence/integration/baseline_v1-manifest.json) 和 [`review/findings/T21-identity-review-20261002.md`](review/findings/T21-identity-review-20261002.md)。
+三房间网页解谜游戏支持手动通关、保存恢复、AI 提案确认和受限模型接入。接受的产品 v1 基线仍为 `7821af4efe0613c20a80ea164c1dab1c0f288bab`；T22 工程提交为 `d20a1f17e121dcd672e4af1196699618fa5ba818`。T21 身份及元数据核对见 `evidence/index-M0.json`、`evidence/integration/baseline_v1-manifest.json` 和 `review/findings/T21-identity-review-20261002.md`。
 
 ## 本地运行
 
-在 PowerShell 中使用已配置的 Python 和 Node 环境：
+在 PowerShell 中使用现有 Python 与 Node 环境：
 
 ```powershell
 Set-Location -LiteralPath 'D:\深度能力'
@@ -14,15 +14,13 @@ npm.cmd --prefix frontend ci
 & $ProjectPython -m scripts.dev --provider mock
 ```
 
-打开 <http://127.0.0.1:5173/>。服务只监听本机。按 Ctrl+C 停止。完整安装、保存恢复和安全说明见 [`release/README.md`](release/README.md)。数据重置会删除游戏数据，只在理解其影响后按 release 文档指定的命令操作。
+打开 <http://127.0.0.1:5173/>。安装、恢复和受限重置说明见 [`release/README.md`](release/README.md)。
 
-## 已验证与进行中
+## 当前证据与状态
 
-- T21 身份元数据修正已独立复核通过；产品基线仍为 `7821af4`，修正后的已同步提交为 `9702fe3`。
-- T22 实验工程独立检查现有记录为 764 项通过、exit 0，证据在 [`evidence/qa/T22-experiments-20261002T164754631028Z/`](evidence/qa/T22-experiments-20261002T164754631028Z/)；这验证工程逻辑与模拟传输，不代表真实模型预试或正式实验已执行。
-- 评价器仍是 Owner 本地候选。独立 179 项检查发现 T26-EVAL-002：非法建议中未经校验的字段会反映进审计对象；当前由 Owner 修复，尚未独立全通过。修复前不运行付费校准。
-- 实验真实预试和 72 行正式实验未执行。实验实现入口为 `python -m experiments.runner check|plan|pilot`；任何 `--mode real` 运行需要 Main 的有限授权门。
-- 评价器入口为 `python -m evaluation.cli precheck|evaluate|calibrate`；当前可信付费 gate 为空，尚无真实校准或正式判读。
-- 真人试玩、AI 建议接受或拒绝记录、人类签署和教师批准尚未提供。课程确认已从当前阻塞项中移除。项目仍在开发，尚非最终交付；没有公开部署。
+- T22 实验工程独立 QA 通过：764 项、进程 exit 0，83 条源记录运行前后相同；证据位于 `evidence/qa/T22-experiments-20261002T164754631028Z/`，Finding 在 `review/findings/T22-acceptance-20261003.md` 关闭。这不代表真实实验已运行。
+- T26 评价器工程独立 QA 通过：193 项、0 失败、进程 exit 0，34 条源记录一致；`T26-EVAL-001` 与 `T26-EVAL-002` 均关闭。证据为 `evidence/qa/T26-evaluation-20261002T165331450690Z/{result,process-result}.json`，验收说明见 `review/findings/T26-acceptance-20261003.md`。本次未作网络或付费调用。
+- T23 旧 pilot 因 quota 未运行；旧有限 gate 已过期，不能授权新的真实运行。原预算账本仍记有 6 条历史调用。真实 E1 实验、评价器付费校准、CH01 对抗复测和最终交付尚未完成；这些都需要之后由 Main 决定的有限授权门。
+- 真人试玩、玩家对 AI 建议的实际决定和人类签署未提供，本文不作此类完成声明。没有公开部署。
 
-版本、六类材料和当前验收界限见 [`release/README.md`](release/README.md)。每份证据只支持其中明确标注的范围；Owner 检查不等于独立 QA，模拟结果不等于真实调用。
+六类材料索引、入口和证据范围见 [`release/README.md`](release/README.md)；索引核对记录见 `evidence/delivery/T26-index-20261005/`。

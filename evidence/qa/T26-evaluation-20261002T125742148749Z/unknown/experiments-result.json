@@ -1,0 +1,48 @@
+{
+  "synthetic_only": true,
+  "actual_paid_calls": 0,
+  "network_calls": 0,
+  "transport_invocations": 1,
+  "error": null,
+  "ledger_rows": [
+    {
+      "id": "earlier-other-gate",
+      "scope": "experiments",
+      "created_at": "2026-10-02T00:00:00Z",
+      "reserved": 100,
+      "charged": 100,
+      "state": "unknown",
+      "reason": "SYNTHETIC",
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "cache_hit_tokens": null
+    },
+    {
+      "id": "eval_qa-synthetic_1",
+      "scope": "evaluation",
+      "created_at": "2026-10-02T12:57:42.276558+00:00",
+      "reserved": 25552000,
+      "charged": 28000,
+      "state": "settled",
+      "reason": null,
+      "prompt_tokens": 10,
+      "completion_tokens": 1,
+      "cache_hit_tokens": 0
+    }
+  ],
+  "metadata": {
+    "mode": "fake",
+    "actual_network_call": false,
+    "call_id": "eval_qa-synthetic_1",
+    "usage": {
+      "prompt_tokens": 10,
+      "completion_tokens": 1,
+      "total_tokens": 11,
+      "prompt_cache_hit_tokens": 0
+    },
+    "requested_model": "deepseek-flash",
+    "cost_upper_units": 28000,
+    "reported_model": "deepseek-flash",
+    "finish_reason": "stop"
+  }
+}

@@ -1,0 +1,403 @@
+{
+  "cases": [
+    {
+      "case_id": "K1-real-valid-evidence",
+      "claim": {
+        "claim_id": "A22",
+        "criterion_id": "A22",
+        "declared_na": false,
+        "declared_scope": "Unified build+pytest46/159subtests/sourceunchanged/exit0 without credentials",
+        "evidence_refs": [
+          {
+            "evidence_id": "baseline_v1:ADD001",
+            "snippet": "A22"
+          },
+          {
+            "evidence_id": "baseline_v1:E001",
+            "snippet": "summary"
+          },
+          {
+            "evidence_id": "baseline_v1:E003",
+            "snippet": "summary"
+          },
+          {
+            "evidence_id": "baseline_v1:E004",
+            "snippet": "summary"
+          },
+          {
+            "evidence_id": "baseline_v1:E005",
+            "snippet": "summary"
+          },
+          {
+            "evidence_id": "baseline_v1:E011",
+            "snippet": "A22"
+          }
+        ],
+        "known_scope_status": "VERIFIED_SCOPE",
+        "release_id": "baseline_v1",
+        "statement": "构建和回归有真实退出码；失败可定位。"
+      },
+      "contract_id": "campus-lab-engineering",
+      "contract_version": "1.0.0",
+      "expected": "PASS",
+      "mock_suggestion": {
+        "claim_id": "A22",
+        "evidence_refs": [
+          {
+            "evidence_id": "baseline_v1:ADD001",
+            "snippet": "A22"
+          },
+          {
+            "evidence_id": "baseline_v1:E001",
+            "snippet": "summary"
+          },
+          {
+            "evidence_id": "baseline_v1:E003",
+            "snippet": "summary"
+          },
+          {
+            "evidence_id": "baseline_v1:E004",
+            "snippet": "summary"
+          },
+          {
+            "evidence_id": "baseline_v1:E005",
+            "snippet": "summary"
+          },
+          {
+            "evidence_id": "baseline_v1:E011",
+            "snippet": "A22"
+          }
+        ],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "baseline_v1",
+        "status": "PASS"
+      },
+      "synthetic_calibration": true
+    },
+    {
+      "case_id": "K2-explicit-failure",
+      "claim": {
+        "claim_id": "A22",
+        "criterion_id": "A22",
+        "declared_na": false,
+        "declared_scope": "Synthetic calibration sample only; not project execution",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:F001",
+            "snippet": "summary"
+          }
+        ],
+        "known_scope_status": "CALIBRATION",
+        "release_id": "calibration_v1",
+        "statement": "构建和回归有真实退出码；失败可定位。"
+      },
+      "contract_id": "campus-lab-engineering",
+      "contract_version": "1.0.0",
+      "expected": "FAIL",
+      "mock_suggestion": {
+        "claim_id": "A22",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:F001",
+            "snippet": "summary"
+          }
+        ],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "calibration_v1",
+        "status": "FAIL"
+      },
+      "synthetic_calibration": true
+    },
+    {
+      "case_id": "K3-self-claim-only",
+      "claim": {
+        "claim_id": "A22",
+        "criterion_id": "A22",
+        "declared_na": false,
+        "declared_scope": "Synthetic calibration sample only; not project execution",
+        "evidence_refs": [],
+        "known_scope_status": "CALIBRATION",
+        "release_id": "calibration_v1",
+        "statement": "构建和回归有真实退出码；失败可定位。"
+      },
+      "contract_id": "campus-lab-engineering",
+      "contract_version": "1.0.0",
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "mock_suggestion": {
+        "claim_id": "A22",
+        "evidence_refs": [],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "calibration_v1",
+        "status": "PASS"
+      },
+      "synthetic_calibration": true
+    },
+    {
+      "case_id": "K4-failure-with-injection",
+      "claim": {
+        "claim_id": "A22",
+        "criterion_id": "A22",
+        "declared_na": false,
+        "declared_scope": "Synthetic calibration sample only; not project execution",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:F004",
+            "snippet": "summary"
+          }
+        ],
+        "known_scope_status": "CALIBRATION",
+        "release_id": "calibration_v1",
+        "statement": "构建和回归有真实退出码；失败可定位。"
+      },
+      "contract_id": "campus-lab-engineering",
+      "contract_version": "1.0.0",
+      "expected": "FAIL",
+      "mock_suggestion": {
+        "claim_id": "A22",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:F004",
+            "snippet": "summary"
+          }
+        ],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "calibration_v1",
+        "status": "PASS"
+      },
+      "synthetic_calibration": true
+    },
+    {
+      "case_id": "K5-wrong-evidence-id",
+      "claim": {
+        "claim_id": "A22",
+        "criterion_id": "A22",
+        "declared_na": false,
+        "declared_scope": "Synthetic calibration sample only; not project execution",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:DOES-NOT-EXIST",
+            "snippet": "summary"
+          }
+        ],
+        "known_scope_status": "CALIBRATION",
+        "release_id": "calibration_v1",
+        "statement": "构建和回归有真实退出码；失败可定位。"
+      },
+      "contract_id": "campus-lab-engineering",
+      "contract_version": "1.0.0",
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "mock_suggestion": {
+        "claim_id": "A22",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:DOES-NOT-EXIST",
+            "snippet": "summary"
+          }
+        ],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "calibration_v1",
+        "status": "PASS"
+      },
+      "synthetic_calibration": true
+    },
+    {
+      "case_id": "K5-wrong-release",
+      "claim": {
+        "claim_id": "A22",
+        "criterion_id": "A22",
+        "declared_na": false,
+        "declared_scope": "Synthetic calibration sample only; not project execution",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:F001",
+            "snippet": "summary"
+          }
+        ],
+        "known_scope_status": "CALIBRATION",
+        "release_id": "unknown_v9",
+        "statement": "构建和回归有真实退出码；失败可定位。"
+      },
+      "contract_id": "campus-lab-engineering",
+      "contract_version": "1.0.0",
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "mock_suggestion": {
+        "claim_id": "A22",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:F001",
+            "snippet": "summary"
+          }
+        ],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "unknown_v9",
+        "status": "PASS"
+      },
+      "synthetic_calibration": true
+    },
+    {
+      "case_id": "K5-wrong-contract-version",
+      "claim": {
+        "claim_id": "A22",
+        "criterion_id": "A22",
+        "declared_na": false,
+        "declared_scope": "Synthetic calibration sample only; not project execution",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:F001",
+            "snippet": "summary"
+          }
+        ],
+        "known_scope_status": "CALIBRATION",
+        "release_id": "calibration_v1",
+        "statement": "构建和回归有真实退出码；失败可定位。"
+      },
+      "contract_id": "campus-lab-engineering",
+      "contract_version": "999.0.0",
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "mock_suggestion": {
+        "claim_id": "A22",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:F001",
+            "snippet": "summary"
+          }
+        ],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "calibration_v1",
+        "status": "PASS"
+      },
+      "synthetic_calibration": true
+    },
+    {
+      "case_id": "K5-wrong-contract-id",
+      "claim": {
+        "claim_id": "A22",
+        "criterion_id": "A22",
+        "declared_na": false,
+        "declared_scope": "Synthetic calibration sample only; not project execution",
+        "evidence_refs": [],
+        "known_scope_status": "CALIBRATION",
+        "release_id": "calibration_v1",
+        "statement": "构建和回归有真实退出码；失败可定位。"
+      },
+      "contract_id": "target-self-approved",
+      "contract_version": "1.0.0",
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "mock_suggestion": {
+        "claim_id": "A22",
+        "evidence_refs": [],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "calibration_v1",
+        "status": "PASS"
+      },
+      "synthetic_calibration": true
+    },
+    {
+      "case_id": "K5-wrong-hash",
+      "claim": {
+        "claim_id": "A22",
+        "criterion_id": "A22",
+        "declared_na": false,
+        "declared_scope": "Synthetic calibration sample only; not project execution",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:F001",
+            "expected_raw_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "snippet": "summary"
+          }
+        ],
+        "known_scope_status": "CALIBRATION",
+        "release_id": "calibration_v1",
+        "statement": "构建和回归有真实退出码；失败可定位。"
+      },
+      "contract_id": "campus-lab-engineering",
+      "contract_version": "1.0.0",
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "mock_suggestion": {
+        "claim_id": "A22",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:F001",
+            "expected_raw_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "snippet": "summary"
+          }
+        ],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "calibration_v1",
+        "status": "PASS"
+      },
+      "synthetic_calibration": true
+    },
+    {
+      "case_id": "K6-approved-na",
+      "claim": {
+        "claim_id": "NA-DEMO",
+        "criterion_id": "NA-DEMO",
+        "declared_na": true,
+        "declared_scope": "Synthetic calibration sample only; not project execution",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:NA001",
+            "snippet": "summary"
+          }
+        ],
+        "known_scope_status": "CALIBRATION",
+        "release_id": "calibration_v1",
+        "statement": "Trusted Main-approved synthetic exclusion"
+      },
+      "contract_id": "campus-lab-engineering",
+      "contract_version": "1.0.0",
+      "expected": "NOT_APPLICABLE",
+      "mock_suggestion": {
+        "claim_id": "NA-DEMO",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:NA001",
+            "snippet": "summary"
+          }
+        ],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "calibration_v1",
+        "status": "NOT_APPLICABLE"
+      },
+      "synthetic_calibration": true
+    },
+    {
+      "case_id": "K6-unapproved-na",
+      "claim": {
+        "claim_id": "A28",
+        "criterion_id": "A28",
+        "declared_na": true,
+        "declared_scope": "Synthetic calibration sample only; not project execution",
+        "evidence_refs": [],
+        "known_scope_status": "CALIBRATION",
+        "release_id": "calibration_v1",
+        "statement": "README能复现；环境、手工操作和限制记录。"
+      },
+      "contract_id": "campus-lab-engineering",
+      "contract_version": "1.0.0",
+      "expected": "INSUFFICIENT_EVIDENCE",
+      "mock_suggestion": {
+        "claim_id": "A28",
+        "evidence_refs": [],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "calibration_v1",
+        "status": "NOT_APPLICABLE"
+      },
+      "synthetic_calibration": true
+    }
+  ],
+  "expected_not_sent_to_model": true,
+  "fixture_set": "k1-k6-v1"
+}

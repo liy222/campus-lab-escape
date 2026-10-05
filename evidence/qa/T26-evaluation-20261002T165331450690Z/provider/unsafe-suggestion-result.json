@@ -1,0 +1,94 @@
+{
+  "output": {
+    "claim_id": "A22",
+    "release_id": "baseline_v1",
+    "status": "INSUFFICIENT_EVIDENCE",
+    "evidence_refs": [
+      {
+        "evidence_id": "baseline_v1:ADD001",
+        "release_id": "baseline_v1",
+        "snippet": "A22",
+        "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+        "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+        "snippet_sha256": "d0ad11cb50af3f7e46cf1802f9a3831f02705017d386efe7fa1a96fc5108a79b",
+        "binding": "approved_crlf_to_lf_only",
+        "raw_equal": true
+      },
+      {
+        "evidence_id": "baseline_v1:E001",
+        "release_id": "baseline_v1",
+        "snippet": "summary",
+        "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+        "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+        "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+        "binding": "approved_crlf_to_lf_only",
+        "raw_equal": true
+      },
+      {
+        "evidence_id": "baseline_v1:E003",
+        "release_id": "baseline_v1",
+        "snippet": "summary",
+        "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+        "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+        "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+        "binding": "raw_equal",
+        "raw_equal": true
+      },
+      {
+        "evidence_id": "baseline_v1:E004",
+        "release_id": "baseline_v1",
+        "snippet": "summary",
+        "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+        "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+        "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+        "binding": "raw_equal",
+        "raw_equal": true
+      },
+      {
+        "evidence_id": "baseline_v1:E005",
+        "release_id": "baseline_v1",
+        "snippet": "summary",
+        "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+        "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+        "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+        "binding": "approved_crlf_to_lf_only",
+        "raw_equal": true
+      },
+      {
+        "evidence_id": "baseline_v1:E011",
+        "release_id": "baseline_v1",
+        "snippet": "A22",
+        "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+        "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+        "snippet_sha256": "7db4bf6b4c2243231951a382ef35c71dc46ab686ae9b0d1b4e8789b7529c7b0c",
+        "binding": "raw_equal",
+        "raw_equal": true
+      }
+    ],
+    "reason": "MODEL_SCHEMA_OR_PROVIDER_ERROR",
+    "missing_check": [
+      "Obtain valid judgement with registered references."
+    ],
+    "execution_scope": {
+      "target_execution": "none; existing evidence read only",
+      "judgement_mode": "fake",
+      "llm_status": "invalid_or_unavailable",
+      "actual_model_requests_this_claim": 1,
+      "real_paid_judgement": false,
+      "synthetic_judgement": true,
+      "human_review_required": true
+    },
+    "human_signoff": null,
+    "human_signoff_status": "pending"
+  },
+  "validation_errors": [
+    "MODEL_SCHEMA_OR_PROVIDER_ERROR"
+  ],
+  "raw_suggestion_keys": null,
+  "raw_suggestion_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+  "rejected_content_sha256": "5bd255b697e7499c6a0c322abcf7c546f9c6ce6298eb7f5c5841b76698b5e898",
+  "rejected_content_size_bytes": 558,
+  "synthetic_secret_persisted": false,
+  "actual_paid_calls": 0,
+  "network_calls": 0
+}

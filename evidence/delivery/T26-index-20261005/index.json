@@ -1,0 +1,59 @@
+{
+  "title": "T26 delivery index verification",
+  "date": "2026-10-05",
+  "scope": [
+    "README.md",
+    "release/README.md",
+    "evidence/delivery/T26-index-20261005/"
+  ],
+  "summary": "Refreshed status and entry-point references. T26 independent engineering QA is 193 checks, zero failures, process exit 0, 34 source records unchanged; T26-EVAL-001 and T26-EVAL-002 closed.",
+  "files": {
+    "README.md": "1fdd6717ed93b0b3f70d8ca4a44ffb13c749b3b2fc2bc30932e95c40b970cac7",
+    "release/README.md": "6ffc5f0cb36ef97ad6ef312819c63c6fae08f56c71b61c3b341199b0593adac2"
+  },
+  "qa": {
+    "result": {
+      "path": "evidence/qa/T26-evaluation-20261002T165331450690Z/result.json",
+      "sha256": "1e266bf8ede64966e0c9df892d785ee305a660b83edaa18ddac11f2b6004680e"
+    },
+    "process_result": {
+      "path": "evidence/qa/T26-evaluation-20261002T165331450690Z/process-result.json",
+      "sha256": "906a5dd9e99ed3cba1d3b7aa41bb1dc199720f8618c37b4e1046fe6d1d8cb8f0"
+    },
+    "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m tests.review_evaluation",
+    "actual_exit_code": 0,
+    "checks": 193,
+    "failed_checks": 0,
+    "source_records": 34,
+    "target_source_unchanged": true,
+    "closed_findings": [
+      "T26-EVAL-001",
+      "T26-EVAL-002"
+    ],
+    "actual_paid_calls": 0,
+    "network_calls": 0
+  },
+  "verified_paths": {
+    "experiments_runner": "experiments/runner.py",
+    "evaluator_cli": "evaluation/cli.py",
+    "experiment_run_root": "experiments/runs/",
+    "evaluator_run_root": "evaluation/runs/"
+  },
+  "limitations": [
+    "T23 old pilot was not run because of quota; its old gate is expired and cannot authorize a new run.",
+    "The original budget ledger remains at 6 historical calls.",
+    "Real E1 experiment, paid evaluator calibration, CH01 adversarial review, and final delivery remain incomplete.",
+    "Human playtest and signoff were not provided; no such completion is claimed."
+  ],
+  "read_commands": [
+    {
+      "command": "Get-Content AGENTS.md, README.md, release/README.md, STATUS.md, review/findings/T26-acceptance-20261003.md and specified QA evidence",
+      "exit_code": 0
+    },
+    {
+      "command": "Read experiments/runner.py and evaluation/cli.py entry-point source; Test-Path for referenced runtime paths; Get-FileHash for updated documents and QA evidence",
+      "exit_code": 0
+    }
+  ],
+  "tests_run_for_index": false
+}

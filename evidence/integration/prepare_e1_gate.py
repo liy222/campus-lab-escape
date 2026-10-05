@@ -15,6 +15,7 @@ def main():
     parser.add_argument('--qa-result', required=True)
     parser.add_argument('--cap-units', type=int, required=True)
     parser.add_argument('--pilot-run-id')
+    parser.add_argument('--pricing-evidence', default='evidence/integration/pricing-check-20261002T120000Z.json')
     args = parser.parse_args()
     qa_path = (ROOT / args.qa_result).resolve()
     if not qa_path.is_relative_to((ROOT / 'evidence/qa').resolve()):
@@ -31,7 +32,9 @@ def main():
     plan = make_plan(args.phase)
     if not 0 < args.cap_units <= 10_000_000_000:
         raise ValueError('FINITE_CAP_REQUIRED')
-    pricing_path = ROOT / 'evidence/integration/pricing-check-20261002T120000Z.json'
+    pricing_path = (ROOT / args.pricing_evidence).resolve()
+    if not pricing_path.is_relative_to((ROOT / 'evidence/integration').resolve()):
+        raise ValueError('PRICING_OUTSIDE_MAIN_REGISTRATION')
     pricing = load(pricing_path)
     now = datetime.now(timezone.utc)
     age = (now - datetime.fromisoformat(pricing['checked_at_utc'].replace('Z', '+00:00'))).total_seconds()

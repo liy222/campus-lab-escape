@@ -1,0 +1,2541 @@
+[
+  {
+    "claim_id": "A01",
+    "output": {
+      "claim_id": "A01",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A01",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "699dcf0ed104e004bfc9e1eb039d1507e2d84856350a2ba147c33b47a1e0d26e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A01",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "ee51f124c2a671d9b7abe6fca48d5ce84a050791fa7fef9ab815a65c4a90a19b",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A01",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A02",
+    "output": {
+      "claim_id": "A02",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A02",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "0b0bfb6ce87cf5796b307b7a8457df3d8a79a808df18ac6f3f40a68f0b77c2dc",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A02",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "a5c7ee1e2b66b16f70503ef9fe82aae6e71628395b04dd4bf196032555535527",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A02",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A03",
+    "output": {
+      "claim_id": "A03",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A03",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "84efca6c75a60f2a8a5807200c878e2af479ed56e421107b1efde91a0d380ded",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A03",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "dd8452bd2d51fc8f4752bd284ac2e459f0550e106354570c648e512fe26510b9",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A03",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A04",
+    "output": {
+      "claim_id": "A04",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A04",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "2a326a49dc2f904bc9083bd3b986105ccc9daabad1b9ad6e0dd39e04649b7982",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "7ecff9e636757321746887606592550243688842373f542c7051e7eb989c1397",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A04",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A05",
+    "output": {
+      "claim_id": "A05",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A05",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "3c8449aae7ade863f9d519cfcb0bd895d19de7d9200c8231021959d779ce1a9e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A05",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "f0c4bda3eefab44fe94037e9a640976592ce804e7e95849f9e42244e73f2effd",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A05",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A06",
+    "output": {
+      "claim_id": "A06",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A06",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "ad719e199ffa96c727dc10067a47528295e3bca074c7b6d4452db28afa5f4963",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A06",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "052809439d07282c2c3e671b8f2331d771f29e48e97ec2414ba88b189fa621fc",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A06",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A07",
+    "output": {
+      "claim_id": "A07",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A07",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "8ebfad13687168152c514c61911294376138af4cc2ae3003c44e03fef4887c40",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E007",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "0159c8132493c1a109c8aaf200591af98c6c20737448a5456ef4cff6332e4a92",
+          "observed_raw_sha256": "0159c8132493c1a109c8aaf200591af98c6c20737448a5456ef4cff6332e4a92",
+          "snippet_sha256": "cc2828fff5cd4ba858aa977e74914261e696bdb516479f169f19748b8db189f0",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A07",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "cbc5615f54d760422853dcbfc1192007da755ee61c3efc53fae00a5d7f06b471",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A07",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A08",
+    "output": {
+      "claim_id": "A08",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A08",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "99c72beacac170a6e932988aa4e330c2a0afbd393efc36cf5277459cf5d46184",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E007",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "0159c8132493c1a109c8aaf200591af98c6c20737448a5456ef4cff6332e4a92",
+          "observed_raw_sha256": "0159c8132493c1a109c8aaf200591af98c6c20737448a5456ef4cff6332e4a92",
+          "snippet_sha256": "cc2828fff5cd4ba858aa977e74914261e696bdb516479f169f19748b8db189f0",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A08",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "9101b02c7defb69b87e83714f2ba1bee3d979f3cbe91f5d0cea0f7c677a2d5ab",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A08",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A09",
+    "output": {
+      "claim_id": "A09",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A09",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "2b8b5522e376944911ad9c4e49c2f3cfe202821eeb0b7ba22d4340e566b72f1a",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A09",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "d30db0f49616bed4b2f0736df0daaeebd1c4fd8e64b115cc064276ef1fdd2d59",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A09",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A10",
+    "output": {
+      "claim_id": "A10",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A10",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "cd31596ee60445d7aa49bd8a161367bae6316801133047019f706eb4d7322f51",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A10",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "4087ddc7d0d8b85382c2892f47ea4a3f08693d8134b864ae3e51a6bf005c86b9",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A10",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A11",
+    "output": {
+      "claim_id": "A11",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A11",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "7d1a16314181e6d67b291484f498aac0b891cdba66cf806ba3ca637c40232ed0",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E007",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "0159c8132493c1a109c8aaf200591af98c6c20737448a5456ef4cff6332e4a92",
+          "observed_raw_sha256": "0159c8132493c1a109c8aaf200591af98c6c20737448a5456ef4cff6332e4a92",
+          "snippet_sha256": "cc2828fff5cd4ba858aa977e74914261e696bdb516479f169f19748b8db189f0",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A11",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "1252882837f70e6418b792907dbf3803f7ecc994ea3bcc7c6775454b1e21b6c4",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "FULL_REQUIREMENT_NOT_VERIFIED_IN_FROZEN_BASELINE",
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A11",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A12",
+    "output": {
+      "claim_id": "A12",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A12",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "74a2c86e5b4047c1dae5e4e9beb57e9fac4dd4612eaf4e6dd30ed584929840c5",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A12",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "d442aa9d94ce501f4497a28cd22992796214b1de3252a5a77cf59db39e3af293",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A12",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A13",
+    "output": {
+      "claim_id": "A13",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A13",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "f86b7e55d87e6b45dfccbcb9f87800c173325d0c1ee6b5c5e5be0a65e400a609",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A13",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "d7ffa28b05ebd7d9ba3be89b607651da35522649bc69d309ac1fa8301482fbed",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A13",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A14",
+    "output": {
+      "claim_id": "A14",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A14",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "98bf4822dae0f15fa782dcedbe410aab233a6338c8896491ede3ad6517a3703f",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A14",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "4d8acb3df11904ee0a08a7666513ac727a555920e14b0a8f886725f261661b79",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A14",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A15",
+    "output": {
+      "claim_id": "A15",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A15",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "db5d6da1c9cb8f176841dea3c3b7784f80e82cd64371634df05aa15880b735a6",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A15",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "2fc286bf5c90f5e8f5998915e43119093f01009ea15e7ac79847dce94ec85b70",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A15",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A16",
+    "output": {
+      "claim_id": "A16",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A16",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "1f42f77f5ac6477bf4c5a86a2092e751740fc9f987160640c31261e7b336c35d",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A16",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "566fa188473ae27d607d55f325e8313639fad6af5f14a7fe28174df51a11935c",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A16",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A17",
+    "output": {
+      "claim_id": "A17",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A17",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "a7636f38ec5af7e998aa3c3ccf3f52a51e61f22eac26df1c43553c199da75ac8",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A17",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "f35d7fff7f6657e907c899ebb730d03cbb3d8d34238b9056b76b8fd5d5304866",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "FULL_REQUIREMENT_NOT_VERIFIED_IN_FROZEN_BASELINE",
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A17",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A18",
+    "output": {
+      "claim_id": "A18",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A18",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "5058571bcd1eba0998b08dbfe2c18db91e43c8d998bc0701e8944448017969e8",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A18",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "4ba69f0f15926e6d8aa6abb2752734294aa5f02d329860b041d1c14ab9871870",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A18",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A19",
+    "output": {
+      "claim_id": "A19",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A19",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "1ade79a96ea490b243c0a20175830c87f1deda0926e76d54c074771fa8aca35e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E007",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "0159c8132493c1a109c8aaf200591af98c6c20737448a5456ef4cff6332e4a92",
+          "observed_raw_sha256": "0159c8132493c1a109c8aaf200591af98c6c20737448a5456ef4cff6332e4a92",
+          "snippet_sha256": "cc2828fff5cd4ba858aa977e74914261e696bdb516479f169f19748b8db189f0",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A19",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "816b315be3a3f88a402ec266b28a6b7873736d83e66c0267cbca32f9c84b08dd",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A19",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A20",
+    "output": {
+      "claim_id": "A20",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A20",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "e389c191fdf48984f20ab675b4be9c8885554c5ab743cab224ab815940a09854",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A20",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "d90275baeb6fa0abc5b6db4782013f7d35ce3cba5f826f544d65f65f59463a42",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A20",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A21",
+    "output": {
+      "claim_id": "A21",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A21",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "768e24413aa2e9a304b6ffdbef1a07ded2b39923c87de6391b7083bf92928d23",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A21",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "65e82148065d07d2a13203a7272113f7acbba385b68cc9977681b2267a234d2d",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A21",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A22",
+    "output": {
+      "claim_id": "A22",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A22",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "d0ad11cb50af3f7e46cf1802f9a3831f02705017d386efe7fa1a96fc5108a79b",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A22",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "7db4bf6b4c2243231951a382ef35c71dc46ab686ae9b0d1b4e8789b7529c7b0c",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A22",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A23",
+    "output": {
+      "claim_id": "A23",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A23",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "ca137f1c6aeab149725d233ae5319bf208d33472f6a48deac3b6f21bff8db1b7",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A23",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "f9cc45863ba3b030a7a80e4888144ee1448ffe7b46c368df73a2dec4e56cc90d",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A23",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A24",
+    "output": {
+      "claim_id": "A24",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A24",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "b72b124a1f457bab021e8cdef0a4defb4de09b2fbdf1f8f09769263522c892ee",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "NO_REGISTERED_EXECUTION_RESULT",
+        "FULL_REQUIREMENT_NOT_VERIFIED_IN_FROZEN_BASELINE",
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A24",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": false
+      }
+    }
+  },
+  {
+    "claim_id": "A25",
+    "output": {
+      "claim_id": "A25",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A25",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "b921a256f7a5f226cb8ba2ccce611732f85475b96210d1d4e0946364decd2b60",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "NO_REGISTERED_EXECUTION_RESULT",
+        "FULL_REQUIREMENT_NOT_VERIFIED_IN_FROZEN_BASELINE",
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A25",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": false
+      }
+    }
+  },
+  {
+    "claim_id": "A26",
+    "output": {
+      "claim_id": "A26",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A26",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "d646b9c0c9093f97ea6eea0cced57d8235d47a8d6657f80bb6eafe4b68eaef78",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "7ecff9e636757321746887606592550243688842373f542c7051e7eb989c1397",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "FULL_REQUIREMENT_NOT_VERIFIED_IN_FROZEN_BASELINE",
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A26",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    }
+  },
+  {
+    "claim_id": "A27",
+    "output": {
+      "claim_id": "A27",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A27",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "67d1a4bcb522acf493cc93b226b4bc4967aba0fee4980d32909f77d5cda36b1f",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "NO_REGISTERED_EXECUTION_RESULT",
+        "FULL_REQUIREMENT_NOT_VERIFIED_IN_FROZEN_BASELINE",
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A27",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": false
+      }
+    }
+  },
+  {
+    "claim_id": "A28",
+    "output": {
+      "claim_id": "A28",
+      "release_id": "baseline_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A28",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "fd96913b26d82e71ac7af581e4ba19be514d72c24034e8bd526f3a610818931c",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        }
+      ],
+      "reason": "LLM evidence interpretation not run.",
+      "missing_check": [
+        "NO_REGISTERED_EXECUTION_RESULT",
+        "FULL_REQUIREMENT_NOT_VERIFIED_IN_FROZEN_BASELINE",
+        "Run approved LLM judgement; no model was called."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "deterministic_only",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": false,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A28",
+      "raw_suggestion": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": false
+      }
+    }
+  }
+]

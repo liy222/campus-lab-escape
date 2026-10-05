@@ -1,0 +1,40 @@
+{
+  "authority": "Main implementation GO; evaluator-owned calibration inputs",
+  "case_sha256": {
+    "K1-real-valid-evidence": "01b72ff328259346f8b0af0f6e340c2cce7e918bfb214d2a1171cbf1a0bc47c1",
+    "K2-explicit-failure": "e12506922ab70dfdda85ca2aa4bfe06338184250581ea60b5a7e0ebad2d012dd",
+    "K3-self-claim-only": "a6cc72a740b239edf46234abf699d0934f0fe130922d2ba944c41190036c93bb",
+    "K4-failure-with-injection": "a28ec2e290a12bf01a83a6ec728c711463e1fc56ff55f33930abe3f3fdd69ce9",
+    "K5-wrong-contract-id": "6db1d287edc964094fec47c120b07a846f34470c3bc4d2449efdf0f2aee78aab",
+    "K5-wrong-contract-version": "7969b8217efa42d5eccda838cbaed111c2b7121cc22d9452171aa5d08fce1e12",
+    "K5-wrong-evidence-id": "f44e28995c87b9046dd705e60aa0630e5e281b05b62cf78e0702bd49e0c976af",
+    "K5-wrong-hash": "959251db7689136fc32e85334d5cbbabd9a234789f471489e0bfb60c8d1fdc61",
+    "K5-wrong-release": "1906cc737da30041b8b26a08569d57afb1b01fcebdd438d0d4896713df9f9ec7",
+    "K6-approved-na": "5e0f8fa23fabcf4d5c8bc689ae738dbf3ef772ac59a5723468e4317e8f7170b6",
+    "K6-unapproved-na": "f449c82c156592d0b17b59def3bf11b205e170fc8f72bfa58e9a033037f57c1d"
+  },
+  "fixture_set_sha256": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1",
+  "freeze_id": "t22-k1-k6-v1",
+  "frozen_at": "2026-10-02T12:38:59.323577+00:00",
+  "frozen_before_calls": true,
+  "human_signoff": null,
+  "inputs": {
+    "fixtures/calibration-manifest.json": "7059f8720c171aae2425639acb2df70f8b452e42f09adb66560458c8c4beaff7",
+    "fixtures/cases.json": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1",
+    "fixtures/evidence/explicit-fail.json": "9234c6f7f0adebfea18a65c2f76a5ac7b52e5140f7a41eaeb8957852b34d2227",
+    "fixtures/evidence/injected-fail.json": "78dccd2610f6b897f6bddfb4d428aae11ca61cc33b006d4d2f6f3799eac94279",
+    "fixtures/evidence/na-approved.json": "a4a7e21697262727822eca32f444114d3c10019d34573a8992dc84ffd5de5351",
+    "schemas/claim.schema.json": "902cbd7c2579ba0cbf68ef9864a34b8c7951f48cd99ffaedf1137b50cd85bb31",
+    "schemas/contract.schema.json": "6a584c9ba99f54315dd8b5275ffc2917deea03c58b4278214a2704b3a8161b15",
+    "schemas/evidence-index.schema.json": "1973808397cecc6f9877ab4339c3ddb32cb1409aef768793624cf3ffa0105861",
+    "schemas/manifest.schema.json": "999c7fd1e8d880db23925d7ff6fb7b82d8cd012a929f1602ef6dcc974a2e7494",
+    "schemas/output.schema.json": "19a0062cdb3a2990178bac3ebdb078e29c898691f034c9adcca3dcdd7bc9c6b8",
+    "schemas/suggestion.schema.json": "b009e075e956c5c276bc27495d13223d8c0293271b23d2184b29163fd132a05b",
+    "trusted/claims-baseline-v1.json": "7ac13817e41227d8dace9cf5ba1db96413bc80cf4939cf5927d43d2106e2cf4d",
+    "trusted/contract.json": "4752aceb826ec5f89b7dd39e02106824167901a9c633aa9365366c30a8c79662",
+    "trusted/main-pins.json": "362e528538a19765d698c84c2b3473c9fa349eb89f5cc6c4b9f35df76b099e04",
+    "trusted/root-config.json": "dbe8dc68c92b8829baaa80339d2d6c2f44bacecb3c1a6f6c7c2cdf43f441bdd5",
+    "trusted/windows.json": "adbca1adfeae29423c67502a77cce46d01de6cdf4947062977794049de65fa50"
+  },
+  "teacher_approval": null
+}

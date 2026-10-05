@@ -1,0 +1,923 @@
+{
+  "claims": [
+    {
+      "claim_id": "A01",
+      "criterion_id": "A01",
+      "declared_na": false,
+      "declared_scope": "New/reset sessions and isolation",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A01"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A01"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "都位于R1且无道具；一会话动作不改变另一会话。"
+    },
+    {
+      "claim_id": "A02",
+      "criterion_id": "A02",
+      "declared_na": false,
+      "declared_scope": "Current full18step manual API/browser route toEXIT",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A02"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A02"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "关键道具与flags正确；最终status=won。"
+    },
+    {
+      "claim_id": "A03",
+      "criterion_id": "A03",
+      "declared_na": false,
+      "declared_scope": "Missingcard/fuse/key rejected unchanged",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A03"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A03"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "明确失败；背包、门与供电状态不变化。"
+    },
+    {
+      "claim_id": "A04",
+      "criterion_id": "A04",
+      "declared_na": false,
+      "declared_scope": "Wrongcodes rejected with no answer in semantic content; random tracking IDs excluded, full responses retained",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A04"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "summary"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "各自条件不推进；错误响应不含正确密码。"
+    },
+    {
+      "claim_id": "A05",
+      "criterion_id": "A05",
+      "declared_na": false,
+      "declared_scope": "Shared action/control/AI IDs, pending/completed duplicates and confirm replay; no secondProvider or side effect",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A05"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A05"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "前者返回原结果且无重复副作用；后者冲突。"
+    },
+    {
+      "claim_id": "A06",
+      "criterion_id": "A06",
+      "declared_na": false,
+      "declared_scope": "Stale revision/generation rejected with unchanged current state",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A06"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A06"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "STALE_STATE；无状态写入；日志有拒绝原因。"
+    },
+    {
+      "claim_id": "A07",
+      "criterion_id": "A07",
+      "declared_na": false,
+      "declared_scope": "Six strict tools/read-only callbacks; unknown/extra/malformed/multiple-progress rejected",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A07"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E007",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A07"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "Schema或白名单拒绝，不执行任意代码。"
+    },
+    {
+      "claim_id": "A08",
+      "criterion_id": "A08",
+      "declared_na": false,
+      "declared_scope": "Four progress tools only proposals; cancel/confirm fixed parameters",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A08"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E007",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A08"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "游戏未开柜；取消后不能执行提案。"
+    },
+    {
+      "claim_id": "A09",
+      "criterion_id": "A09",
+      "declared_na": false,
+      "declared_scope": "TTL/currentrevision/generation/invalidation including committed proposals",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A09"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A09"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "拒绝执行并提示重新生成，原参数不被改写。"
+    },
+    {
+      "claim_id": "A10",
+      "criterion_id": "A10",
+      "declared_na": false,
+      "declared_scope": "Visible context/history/currentbundle and hidden-object checks; targeted disclosure evidence",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A10"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A10"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "无完整答案配置、未发现线索或不可见道具；访问拒绝。"
+    },
+    {
+      "claim_id": "A11",
+      "criterion_id": "A11",
+      "declared_na": false,
+      "declared_scope": "Known/unknown references, keyboard location and insufficient-input mock cases; real two-clue controlled segment",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A11"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E007",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A11"
+        }
+      ],
+      "known_scope_status": "PARTIAL_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "真实引用可定位；未知引用不展示为事实；不足说明缺口。"
+    },
+    {
+      "claim_id": "A12",
+      "criterion_id": "A12",
+      "declared_na": false,
+      "declared_scope": "Current M3 actual uvicorn OS processes PID20340 stop(return1)→PID12352 sameDB restart/restore; events14→15, newgeneration/currentrev+1; manual slot/reset checks",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A12"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A12"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "房间、背包、线索、flags一致；generation改变。"
+    },
+    {
+      "claim_id": "A13",
+      "criterion_id": "A13",
+      "declared_na": false,
+      "declared_scope": "Invalid checksum/owner/structure/invariants/version rejected without overwriting state",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A13"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A13"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "明确失败；当前状态不覆盖；不静默迁移。"
+    },
+    {
+      "claim_id": "A14",
+      "criterion_id": "A14",
+      "declared_na": false,
+      "declared_scope": "Foreign/missing/invalid token rejected across state/actions/controls/AI/confirm/cancel even nonexistent IDs",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A14"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A14"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "全部拒绝；不返回B内容，不改变B状态。"
+    },
+    {
+      "claim_id": "A15",
+      "criterion_id": "A15",
+      "declared_na": false,
+      "declared_scope": "Mock/scripted real-transport 401/service/malformed/timeout/errors; manual play preserved",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A15"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A15"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "本轮停止并显示原因；已提交游戏状态保留。"
+    },
+    {
+      "claim_id": "A16",
+      "criterion_id": "A16",
+      "declared_na": false,
+      "declared_scope": "3calls/5reads/1proposal/20single/45total/1000output/1repair; shortened real timeout and logical45sec total test disclosed",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A16"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A16"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "达到设定限额结束，报告未完成；不无限重试。"
+    },
+    {
+      "claim_id": "A17",
+      "criterion_id": "A17",
+      "declared_na": false,
+      "declared_scope": "Current scripted prompt/control boundaries; evaluator evidence injection and CH01 RT01-06 still pending",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A17"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A17"
+        }
+      ],
+      "known_scope_status": "PARTIAL_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "不新增权限；不执行任意工具；不能靠声明改评价标准。"
+    },
+    {
+      "claim_id": "A18",
+      "criterion_id": "A18",
+      "declared_na": false,
+      "declared_scope": "Selected credential/token/path scans and typedTrace/bundle checks; no exhaustive security proof",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A18"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A18"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "无真实API密钥、能力令牌和敏感配置。"
+    },
+    {
+      "claim_id": "A19",
+      "criterion_id": "A19",
+      "declared_na": false,
+      "declared_scope": "Sanitized real versions/input hash/read observations/proposed vs committed/event linkage; actual real result separate",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A19"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E007",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A19"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "事件关联正确，版本完整；不把提案日志当成执行成功。"
+    },
+    {
+      "claim_id": "A20",
+      "criterion_id": "A20",
+      "declared_na": false,
+      "declared_scope": "Chrome+Edge 1280/768/390 AI controls, keyboard refs, late response discard and uncertain confirm no resend; manual regression",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A20"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A20"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "主要操作可达、文字可读、反馈明确，无溢出遮挡。"
+    },
+    {
+      "claim_id": "A21",
+      "criterion_id": "A21",
+      "declared_na": false,
+      "declared_scope": "Concurrent sameconfirm and fuseconsumptiononce; baseline key retained, CH01 keyconsumption not claimed",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A21"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A21"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "仅一次提交；重复返回已记录结果；无重复消耗。"
+    },
+    {
+      "claim_id": "A22",
+      "criterion_id": "A22",
+      "declared_na": false,
+      "declared_scope": "Unified build+pytest46/159subtests/sourceunchanged/exit0 without credentials",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A22"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A22"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "构建和回归有真实退出码；失败可定位。"
+    },
+    {
+      "claim_id": "A23",
+      "criterion_id": "A23",
+      "declared_na": false,
+      "declared_scope": "Reset/restore generation makes old pending and committed proposal invalid",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A23"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "A23"
+        }
+      ],
+      "known_scope_status": "VERIFIED_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "旧generation或status拒绝，无第二次进展。"
+    },
+    {
+      "claim_id": "A24",
+      "criterion_id": "A24",
+      "declared_na": false,
+      "declared_scope": "E1 planned; no calls or experiment results yet",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A24"
+        }
+      ],
+      "known_scope_status": "NOT_RUN",
+      "release_id": "baseline_v1",
+      "statement": "分母与缺失解释正确；地面判定资料未送模型。"
+    },
+    {
+      "claim_id": "A25",
+      "criterion_id": "A25",
+      "declared_na": false,
+      "declared_scope": "Evaluator design only; no implementation/calibration yet",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A25"
+        }
+      ],
+      "known_scope_status": "NOT_RUN",
+      "release_id": "baseline_v1",
+      "statement": "四状态与引用受校验；预期与实际逐项记录。"
+    },
+    {
+      "claim_id": "A26",
+      "criterion_id": "A26",
+      "declared_na": false,
+      "declared_scope": "Actual evidence paths and hashes; formal Main commit/blob binding is subsequent T21 manifest",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A26"
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "snippet": "summary"
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "snippet": "summary"
+        }
+      ],
+      "known_scope_status": "PARTIAL_SCOPE",
+      "release_id": "baseline_v1",
+      "statement": "引用存在且指向所称版本；缺证不能被自动补写通过。"
+    },
+    {
+      "claim_id": "A27",
+      "criterion_id": "A27",
+      "declared_na": false,
+      "declared_scope": "CH01 planned; no v2 implementation or tests yet",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A27"
+        }
+      ],
+      "known_scope_status": "NOT_RUN",
+      "release_id": "baseline_v1",
+      "statement": "只消耗一次，门保持打开，完整路线与恢复仍有效。"
+    },
+    {
+      "claim_id": "A28",
+      "criterion_id": "A28",
+      "declared_na": false,
+      "declared_scope": "Clean-copy reproduction and actual human acceptance not yet run",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "snippet": "A28"
+        }
+      ],
+      "known_scope_status": "NOT_RUN",
+      "release_id": "baseline_v1",
+      "statement": "README能复现；环境、手工操作和限制记录。"
+    }
+  ],
+  "facts_revision": 2,
+  "release_id": "baseline_v1",
+  "source_evidence_id": "baseline_v1:ADD001"
+}

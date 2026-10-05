@@ -1,0 +1,562 @@
+[
+  {
+    "case_id": "K1-real-valid-evidence",
+    "output": {
+      "claim_id": "A22",
+      "release_id": "baseline_v1",
+      "status": "PASS",
+      "evidence_refs": [
+        {
+          "evidence_id": "baseline_v1:ADD001",
+          "release_id": "baseline_v1",
+          "snippet": "A22",
+          "artifact_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "observed_raw_sha256": "8e89d4ca153de4cc210cbfc961d2db8a6402bb665fc65ade06a86c295cfc9192",
+          "snippet_sha256": "d0ad11cb50af3f7e46cf1802f9a3831f02705017d386efe7fa1a96fc5108a79b",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E001",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "observed_raw_sha256": "bb69b9616598e126fe1f8403b5db96e7eaa6d8c53cedcf80f8934a104f9577c6",
+          "snippet_sha256": "b607d703a12bb2fb095ac8c4441e339970125512929271816f29446573aa4120",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E003",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "observed_raw_sha256": "5d0d3ee2d3672b31ba43796852c30e3fc0b8d04bf993995dc3f3a2118a9f38ee",
+          "snippet_sha256": "b6e8019101b3de3cb68990084f97bab679fdcdbfdd46a6c968ed4cfe31eb3c12",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E004",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "observed_raw_sha256": "92aaf16870904c90c7f302bf240f6d0fa40f49ea0c3d6ae0723f1e5ceb6db95a",
+          "snippet_sha256": "82dec8ae7df80aa1745afaa5558c3efe391108328ab82cc4202d981b56e3554a",
+          "binding": "raw_equal",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E005",
+          "release_id": "baseline_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "observed_raw_sha256": "48440827ab93c7f58933c09b27381581f4845a2bc6659b3c36f67e3f8d0b8f4d",
+          "snippet_sha256": "80335c45e33c1f8975510a8e19a17966a060b309349ab8ae2673b52b02b61f5e",
+          "binding": "approved_crlf_to_lf_only",
+          "raw_equal": true
+        },
+        {
+          "evidence_id": "baseline_v1:E011",
+          "release_id": "baseline_v1",
+          "snippet": "A22",
+          "artifact_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "observed_raw_sha256": "3fed40eb70fb9c25e942c940d48f19063f3d9b309396dc3973b76ff7dc387cc2",
+          "snippet_sha256": "7db4bf6b4c2243231951a382ef35c71dc46ab686ae9b0d1b4e8789b7529c7b0c",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "Explicit scripted mock suggestion for frozen calibration.",
+      "missing_check": [],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "completed",
+        "actual_model_requests_this_claim": 1,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A22",
+      "raw_suggestion": {
+        "claim_id": "A22",
+        "evidence_refs": [
+          {
+            "evidence_id": "baseline_v1:ADD001",
+            "snippet": "A22"
+          },
+          {
+            "evidence_id": "baseline_v1:E001",
+            "snippet": "summary"
+          },
+          {
+            "evidence_id": "baseline_v1:E003",
+            "snippet": "summary"
+          },
+          {
+            "evidence_id": "baseline_v1:E004",
+            "snippet": "summary"
+          },
+          {
+            "evidence_id": "baseline_v1:E005",
+            "snippet": "summary"
+          },
+          {
+            "evidence_id": "baseline_v1:E011",
+            "snippet": "A22"
+          }
+        ],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "baseline_v1",
+        "status": "PASS"
+      },
+      "raw_suggestion_sha256": "b99ef9ca39b29ecdeee797fa00ed7bfd46dc3ff33106e2e37cf12919fec8d3af",
+      "raw_suggestion_size_bytes": 525,
+      "provider_metadata": {
+        "mode": "mock",
+        "actual_network_call": false,
+        "usage": null,
+        "call_id": null,
+        "cost_upper_units": null
+      },
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": true
+      }
+    },
+    "scripted_calls": 1
+  },
+  {
+    "case_id": "K2-explicit-failure",
+    "output": {
+      "claim_id": "A22",
+      "release_id": "calibration_v1",
+      "status": "FAIL",
+      "evidence_refs": [
+        {
+          "evidence_id": "calibration_v1:F001",
+          "release_id": "calibration_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "9234c6f7f0adebfea18a65c2f76a5ac7b52e5140f7a41eaeb8957852b34d2227",
+          "observed_raw_sha256": "9234c6f7f0adebfea18a65c2f76a5ac7b52e5140f7a41eaeb8957852b34d2227",
+          "snippet_sha256": "a31d84b2910dd5d4580ba9396fb5cb3ea46998383118d264617e4fbd07a1d5be",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "Deterministic failure remains authoritative: NONZERO_EXIT:calibration_v1:F001; ASSERTION_FAILURE:calibration_v1:F001",
+      "missing_check": [],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "completed",
+        "actual_model_requests_this_claim": 1,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A22",
+      "raw_suggestion": {
+        "claim_id": "A22",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:F001",
+            "snippet": "summary"
+          }
+        ],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "calibration_v1",
+        "status": "FAIL"
+      },
+      "raw_suggestion_sha256": "7f964906e31fbe0c16679500dad0b78a19679a29d63e05fb123bc22d42e581dc",
+      "raw_suggestion_size_bytes": 242,
+      "provider_metadata": {
+        "mode": "mock",
+        "actual_network_call": false,
+        "usage": null,
+        "call_id": null,
+        "cost_upper_units": null
+      },
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [
+          "NONZERO_EXIT:calibration_v1:F001",
+          "ASSERTION_FAILURE:calibration_v1:F001"
+        ],
+        "issues": [],
+        "execution_evidence_found": false
+      }
+    },
+    "scripted_calls": 1
+  },
+  {
+    "case_id": "K3-self-claim-only",
+    "output": {
+      "claim_id": "A22",
+      "release_id": "calibration_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "NO_EXECUTION_EVIDENCE; completion self-claims do not establish execution; NO_REGISTERED_EXECUTION_RESULT",
+      "missing_check": [
+        "NO_EXECUTION_EVIDENCE; completion self-claims do not establish execution",
+        "NO_REGISTERED_EXECUTION_RESULT"
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A22",
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": null,
+      "raw_suggestion_size_bytes": null,
+      "provider_metadata": null,
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [],
+        "issues": [],
+        "execution_evidence_found": false
+      }
+    },
+    "scripted_calls": 0
+  },
+  {
+    "case_id": "K4-failure-with-injection",
+    "output": {
+      "claim_id": "A22",
+      "release_id": "calibration_v1",
+      "status": "FAIL",
+      "evidence_refs": [
+        {
+          "evidence_id": "calibration_v1:F004",
+          "release_id": "calibration_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "78dccd2610f6b897f6bddfb4d428aae11ca61cc33b006d4d2f6f3799eac94279",
+          "observed_raw_sha256": "78dccd2610f6b897f6bddfb4d428aae11ca61cc33b006d4d2f6f3799eac94279",
+          "snippet_sha256": "d94b0b059ea703697650a9d79ef25f5446dc395845f459f7811fcd1840575d71",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "Deterministic failure remains authoritative: NONZERO_EXIT:calibration_v1:F004; ASSERTION_FAILURE:calibration_v1:F004",
+      "missing_check": [],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "completed",
+        "actual_model_requests_this_claim": 1,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A22",
+      "raw_suggestion": {
+        "claim_id": "A22",
+        "evidence_refs": [
+          {
+            "evidence_id": "calibration_v1:F004",
+            "snippet": "summary"
+          }
+        ],
+        "missing_check": [],
+        "reason": "Explicit scripted mock suggestion for frozen calibration.",
+        "release_id": "calibration_v1",
+        "status": "PASS"
+      },
+      "raw_suggestion_sha256": "834b272621b4c75376ae63f77262c693a307f4767b634cc282fe99c56087b697",
+      "raw_suggestion_size_bytes": 242,
+      "provider_metadata": {
+        "mode": "mock",
+        "actual_network_call": false,
+        "usage": null,
+        "call_id": null,
+        "cost_upper_units": null
+      },
+      "validation_errors": [],
+      "deterministic": {
+        "failures": [
+          "NONZERO_EXIT:calibration_v1:F004",
+          "ASSERTION_FAILURE:calibration_v1:F004"
+        ],
+        "issues": [],
+        "execution_evidence_found": false
+      }
+    },
+    "scripted_calls": 1
+  },
+  {
+    "case_id": "K5-wrong-evidence-id",
+    "output": {
+      "claim_id": "A22",
+      "release_id": "calibration_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "UNKNOWN_EVIDENCE_ID",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A22",
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": null,
+      "raw_suggestion_size_bytes": null,
+      "provider_metadata": null,
+      "validation_errors": [
+        "UNKNOWN_EVIDENCE_ID"
+      ]
+    },
+    "scripted_calls": 0
+  },
+  {
+    "case_id": "K5-wrong-release",
+    "output": {
+      "claim_id": "A22",
+      "release_id": "unknown_v9",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "UNKNOWN_RELEASE",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A22",
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": null,
+      "raw_suggestion_size_bytes": null,
+      "provider_metadata": null,
+      "validation_errors": [
+        "UNKNOWN_RELEASE"
+      ]
+    },
+    "scripted_calls": 0
+  },
+  {
+    "case_id": "K5-wrong-contract-version",
+    "output": {
+      "claim_id": "A22",
+      "release_id": "calibration_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "UNKNOWN_CONTRACT_VERSION",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A22",
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": null,
+      "raw_suggestion_size_bytes": null,
+      "provider_metadata": null,
+      "validation_errors": [
+        "UNKNOWN_CONTRACT_VERSION"
+      ]
+    },
+    "scripted_calls": 0
+  },
+  {
+    "case_id": "K5-wrong-contract-id",
+    "output": {
+      "claim_id": "A22",
+      "release_id": "calibration_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "UNKNOWN_CONTRACT_VERSION",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A22",
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": null,
+      "raw_suggestion_size_bytes": null,
+      "provider_metadata": null,
+      "validation_errors": [
+        "UNKNOWN_CONTRACT_VERSION"
+      ]
+    },
+    "scripted_calls": 0
+  },
+  {
+    "case_id": "K5-wrong-hash",
+    "output": {
+      "claim_id": "A22",
+      "release_id": "calibration_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "CLAIM_HASH_MISMATCH",
+      "missing_check": [
+        "Supply registered, correctly bound contract/release/evidence."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A22",
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": null,
+      "raw_suggestion_size_bytes": null,
+      "provider_metadata": null,
+      "validation_errors": [
+        "CLAIM_HASH_MISMATCH"
+      ]
+    },
+    "scripted_calls": 0
+  },
+  {
+    "case_id": "K6-approved-na",
+    "output": {
+      "claim_id": "NA-DEMO",
+      "release_id": "calibration_v1",
+      "status": "NOT_APPLICABLE",
+      "evidence_refs": [
+        {
+          "evidence_id": "calibration_v1:NA001",
+          "release_id": "calibration_v1",
+          "snippet": "summary",
+          "artifact_raw_sha256": "a4a7e21697262727822eca32f444114d3c10019d34573a8992dc84ffd5de5351",
+          "observed_raw_sha256": "a4a7e21697262727822eca32f444114d3c10019d34573a8992dc84ffd5de5351",
+          "snippet_sha256": "50a034f05644fd146ab09b31a9a44cae1aa11f64acf627e66a43d171823681eb",
+          "binding": "raw_equal",
+          "raw_equal": true
+        }
+      ],
+      "reason": "Main implementation GO permits this synthetic N/A calibration example; no project MUST or course obligation waived.",
+      "missing_check": [],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_required_trusted_na",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "NA-DEMO",
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": null,
+      "raw_suggestion_size_bytes": null,
+      "provider_metadata": null,
+      "validation_errors": []
+    },
+    "scripted_calls": 0
+  },
+  {
+    "case_id": "K6-unapproved-na",
+    "output": {
+      "claim_id": "A28",
+      "release_id": "calibration_v1",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "evidence_refs": [],
+      "reason": "No trusted approved N/A entry for this release and requirement.",
+      "missing_check": [
+        "Provide required evidence; target self-declared N/A cannot waive MUST."
+      ],
+      "execution_scope": {
+        "target_execution": "none; existing evidence read only",
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "actual_model_requests_this_claim": 0,
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "human_review_required": true
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending"
+    },
+    "audit": {
+      "claim_id": "A28",
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": null,
+      "raw_suggestion_size_bytes": null,
+      "provider_metadata": null,
+      "validation_errors": []
+    },
+    "scripted_calls": 0
+  }
+]
