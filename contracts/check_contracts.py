@@ -1,8 +1,12 @@
 """Dependency-free structural review; does not replace JSON Schema validation or QA."""
+import argparse
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).parent
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--output", type=Path, default=ROOT / "validation.json", help="Report path; use a new evidence path to preserve historical reports.")
+options = parser.parse_args()
 results = []
 
 def visit(value, definitions, filename):
@@ -41,6 +45,7 @@ for route in routes["routes"]:
 for filename in ["api.schema.json", "tools.schema.json", "tools.json", "routes.json"]:
     value = (ROOT / filename).read_text(encoding="utf-8")
     assert not any(secret in value for secret in ['"382"', '"724"', '"231"']), filename
-report = {"command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe contracts/check_contracts.py", "exit_code": 0, "checks": results, "tool_count": len(tools), "route_count": len(routes["routes"]), "route_refs": "PASS", "public_answer_literals": "ABSENT", "limitations": ["jsonschema is unavailable in the specified interpreter; no dependencies installed", "This is structural review, not full Draft2020-12 instance validation", "No game implementation, formal QA, real model calls, or course approvals verified"]}
-(ROOT / "validation.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+report = {"command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe contracts/check_contracts.py" + (" --output " + str(options.output) if options.output != ROOT / "validation.json" else ""), "exit_code": 0, "checks": results, "tool_count": len(tools), "route_count": len(routes["routes"]), "route_refs": "PASS", "public_answer_literals": "ABSENT", "limitations": ["This is structural review, not full Draft2020-12 instance validation", "No game implementation, formal QA, real model calls, or course approvals verified"]}
+options.output.parent.mkdir(parents=True, exist_ok=True)
+options.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(json.dumps(report, ensure_ascii=False, indent=2))

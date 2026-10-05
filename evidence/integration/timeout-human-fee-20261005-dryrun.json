@@ -1,0 +1,66 @@
+{
+  "applied": false,
+  "already_closed": false,
+  "columns": [
+    "id",
+    "scope",
+    "created_at",
+    "reserved",
+    "charged",
+    "state",
+    "reason",
+    "prompt_tokens",
+    "completion_tokens",
+    "cache_hit_tokens"
+  ],
+  "before": [
+    "520a5c50b9204960a3f9915952ed9b97",
+    "experiments",
+    "2026-10-05T05:34:18.992257+00:00",
+    162920000,
+    162920000,
+    "unknown",
+    "MODEL_TIMEOUT",
+    null,
+    null,
+    null
+  ],
+  "after": [
+    "520a5c50b9204960a3f9915952ed9b97",
+    "experiments",
+    "2026-10-05T05:34:18.992257+00:00",
+    162920000,
+    162920000,
+    "unknown",
+    "MODEL_TIMEOUT",
+    null,
+    null,
+    null
+  ],
+  "human_reported_cost_units": 50000000,
+  "retained_charge_units": 162920000,
+  "calls": 35,
+  "charged_upper_units": 277602960,
+  "cap_units": 10000000000,
+  "provider_usage_known": false,
+  "provider_invoice_independently_verified": false,
+  "accounting_basis": "Human owner explicitly identified this timeout fee as CNY0.05. Conservatively keep CNY0.16292, close accounting hold only; token NULLs, timeout and original experiment evidence remain unchanged.",
+  "created_at": "2026-10-05T05:53:02.069337+00:00",
+  "call_id": "520a5c50b9204960a3f9915952ed9b97",
+  "approved_by": "Main",
+  "human_reply_exact": "这笔超时请求费用为人民币 0.05 元",
+  "helper_raw_sha256": "9e6ceebaf1fd8cfa49e7caa411d203250839802b367d6eacbc7dff1ca64860a1",
+  "actual_command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "evidence/integration/reconcile_timeout_upper.py"
+  ],
+  "limitations": [
+    "No token reconstruction; original timeout/null response remains.",
+    "Human fee statement is not an independently obtained invoice.",
+    "Full reservation remains charged; no new allowance or experiment retry.",
+    "Future real calls still require separate finite gates and source review."
+  ]
+}

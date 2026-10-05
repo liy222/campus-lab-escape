@@ -1,0 +1,100 @@
+{
+  "task": "T27-budget-reconciliation-independent",
+  "at_utc": "2026-10-05T05:58:21.718272+00:00",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "tests/review_budget_reconciliation.py",
+    "--output",
+    "evidence/qa/T27-budget-reconcile-20261005T061300Z"
+  ],
+  "working_directory": "D:\\深度能力",
+  "checks": 124,
+  "passed": 124,
+  "failures": [],
+  "helper_raw_sha256": "e4a5981b810a71b294321b14fe2947fb2613856b80268e4ac14b3faa10b44f8b",
+  "original_ledger_before": {
+    "config": [
+      [
+        1,
+        10000000000,
+        0
+      ]
+    ],
+    "row": [
+      "520a5c50b9204960a3f9915952ed9b97",
+      "experiments",
+      "2026-10-05T05:34:18.992257+00:00",
+      162920000,
+      162920000,
+      "unknown",
+      "MODEL_TIMEOUT",
+      null,
+      null,
+      null
+    ],
+    "totals": [
+      35,
+      277602960
+    ],
+    "states": [
+      [
+        "settled",
+        34
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    "schema_triggers": []
+  },
+  "original_ledger_after": {
+    "config": [
+      [
+        1,
+        10000000000,
+        0
+      ]
+    ],
+    "row": [
+      "520a5c50b9204960a3f9915952ed9b97",
+      "experiments",
+      "2026-10-05T05:34:18.992257+00:00",
+      162920000,
+      162920000,
+      "unknown",
+      "MODEL_TIMEOUT",
+      null,
+      null,
+      null
+    ],
+    "totals": [
+      35,
+      277602960
+    ],
+    "states": [
+      [
+        "settled",
+        34
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    "schema_triggers": []
+  },
+  "preserved_historical_dryrun_helper_raw_sha256": "9e6ceebaf1fd8cfa49e7caa411d203250839802b367d6eacbc7dff1ca64860a1",
+  "historical_helper_review": "evidence\\qa\\T27-budget-reconcile-20261005T060400Z\\result.json",
+  "original_ledger_mode": "ro",
+  "original_apply_executed": false,
+  "isolated_databases": "SQLite :memory: only",
+  "paid_calls": 0,
+  "network_calls": 0,
+  "limitations": [
+    "Human CNY0.05 is an explicit owner report, not independently obtained supplier billing.",
+    "Testing may call reconcile(apply=True) only on in-memory fixtures; original main/--apply is never executed.",
+    "Known original token/response/HTTP uncertainty is not recovered or fabricated.",
+    "Synthetic fault triggers test post-update invariants; presence of actual ledger triggers is explicitly recorded."
+  ]
+}

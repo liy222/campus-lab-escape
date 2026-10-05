@@ -1,12 +1,12 @@
 # 离线关卡设计与确定性判定资料
 
-版本：基线 level `1.0.0`；契约 `1.0.0`。Main 于 2026-10-01 审查批准冻结。本文件含秘密答案与完整解法，仅供服务端规则和离线验证，禁止送入前端构建、模型上下文或公开 HTTP。内容是设计，不是通关事实。
+版本：基线 level `1.0.0`；CH01 目标 level `2.0.0`；契约/API/tool/schema `1.0.0`。Main 于 2026-10-01 审查批准冻结基线，2026-10-05 T28 派发批准工程变更，来源见 SPEC 的 CH01 冻结卡。本文件含秘密答案与完整解法，仅供服务端规则和离线验证，禁止送入前端构建、模型上下文或公开 HTTP。内容是设计，不是通关事实。
 
 ## 内部真值
 
 game_fields 为 room_id、inventory（唯一 item ID 有序数组）、discovered_clue_ids（首次发现顺序唯一数组）、flags、opened_containers（唯一 ID 数组）、status。flags 固定为 r2_unlocked、power_on、r3_unlocked、check_done 四 boolean。opened_containers 只允许 r1_cabinet/r2_drawer；room 为 R1/R2/R3/EXIT；status playing/won。新局全 false、空数组、R1/playing。revision/generation 是当前会话的版本元数据，不从快照恢复。
 
-不变量：R2/R3/EXIT 必须已有 r2_unlocked；R3/EXIT 必须已有 r3_unlocked；r3_unlocked 必须 power_on；check_done 必须 power_on；won 等价于 room=EXIT 且 power_on/check_done；access_card 需要 r1_cabinet 已开；emergency_key 需要 r2_drawer 已开；power_on 时 fuse 已安装且不在 inventory。屏幕 clue 需要 power_on。包含未开放容器的拾取记录、未知 IDs、重复 IDs、类型错误、不一致 room/status 均拒绝快照。基线 r3_unlocked 仍需持有 emergency_key；v2 可已消耗。允许已发现线索跨房间保留；线索不是通关的强制先决，玩家可自行推理/试码，后端精确校验仍是真值。
+不变量：R2/R3/EXIT 必须已有 r2_unlocked；R3/EXIT 必须已有 r3_unlocked；r3_unlocked 必须 power_on；check_done 必须 power_on；won 等价于 room=EXIT 且 power_on/check_done；access_card 需要 r1_cabinet 已开；emergency_key 需要 r2_drawer 已开；power_on 时 fuse 已安装且不在 inventory。屏幕 clue 需要 power_on。包含未开放容器的拾取记录、未知 IDs、重复 IDs、类型错误、不一致 room/status 均拒绝快照。基线 v1 的 r3_unlocked 仍需持有 emergency_key；v2 的 r3_unlocked 必须抽屉已开且 emergency_key 不在 inventory，开门事实同时表示钥匙已经领取和消耗，不能重新显露或拾取。允许已发现线索跨房间保留；线索不是通关的强制先决，玩家可自行推理/试码，后端精确校验仍是真值。
 
 ## 房间、对象与线索正文
 
@@ -26,7 +26,7 @@ game_fields 为 room_id、inventory（唯一 item ID 有序数组）、discovere
 | R3 | r3_panel | 检查面板上有设备标签和数字键。 | clue r3_panel_clue：设备标签；“冷却对应2，通风对应3，照明对应1。” |
 | R3 | exit_door | 实验室出口等待检查完成。 | “尚未完成出口检查”或“出口检查已完成”，无 clue |
 
-R2 的 r2_fuse 是对象 ID，take 参数 item_id=fuse。其他两物品的 object_id 与 item_id 相同。保险丝领取后 r2_fuse 不再可见；物品已领取后不再出现在 objects。容器、门、设备持续可见。EXIT objects/inventory 可显示已持有物品，objects/exits 均为空；inspect 无可见目标，get_inventory 仍可用。clues 跨房间保存。
+R2 的 r2_fuse 是对象 ID，take 参数 item_id=fuse。其他两物品的 object_id 与 item_id 相同。保险丝领取后 r2_fuse 不再可见；物品已领取后不再出现在 objects。v2 钥匙仅在 R2、抽屉已开、背包无钥匙且 r3_unlocked=false 时显露；消耗后 inspect 抽屉可说明道具已领取/已使用，不能说明还有可领取钥匙。容器、门、设备持续可见。EXIT objects/inventory 可显示已持有物品，objects/exits 均为空；inspect 无可见目标，get_inventory 仍可用。clues 跨房间保存。
 
 房间邻接：R1↔R2 经 r1_door，R2↔R3 经 r2_door，R3→EXIT 经 exit_door；无其他移动。r1_door 解锁 flag=r2_unlocked；r2_door 解锁 flag=r3_unlocked；出口 unlocked=power_on && check_done。R2/R3 返回前房间始终可以，门永久解锁；不需重复用钥匙或卡。
 
@@ -42,7 +42,7 @@ R2 的 r2_fuse 是对象 ID，take 参数 item_id=fuse。其他两物品的 obje
 | use_item fuse,r2_powerbox | R2，持 fuse | 移除 fuse，power_on=true | 安装保险丝消耗物品 |
 | submit_code r2_drawer | R2，power_on | opened_containers 增 r2_drawer | 精确 code="724" |
 | take emergency_key | R2，抽屉已开，未领取 | inventory 增 emergency_key | 无 |
-| use_item emergency_key,r2_door | R2，power_on，持钥匙 | r3_unlocked=true，基线保留钥匙 | CH01 修改见下 |
+| use_item emergency_key,r2_door | 首次：R2，power_on，持钥匙；已解锁重用只需合法配对及可见目标 | r3_unlocked=true；v1 保留钥匙，v2 移除钥匙并记录 consumed_item_ids=[emergency_key] | CH01 规则见下 |
 | move R3 | R2，r3_unlocked | room=R3 | 无 |
 | submit_code r3_panel | R3，power_on | check_done=true | 精确 code="231" |
 | move EXIT | R3，power_on && check_done | room=EXIT,status=won | 无 |
@@ -65,7 +65,7 @@ R2 的 r2_fuse 是对象 ID，take 参数 item_id=fuse。其他两物品的 obje
 10. inspect r2_drawer → r2_drawer_clue（rev10）。
 11. submit_code r2_drawer,"724" → 开抽屉（rev11）。
 12. take emergency_key → 钥匙（rev12）。
-13. use_item emergency_key,r2_door → R3 解锁，基线钥匙保留（rev13）。
+13. use_item emergency_key,r2_door → R3 解锁，v1 钥匙保留；v2 钥匙消耗、消费 receipt（rev13）。
 14. move R3（rev14）。
 15. inspect r3_checklist → r3_checklist_clue（rev15）。
 16. inspect r3_panel → r3_panel_clue（rev16）。
@@ -74,6 +74,8 @@ R2 的 r2_fuse 是对象 ID，take 参数 item_id=fuse。其他两物品的 obje
 
 期间保存不增 revision；额外重复查看不增；reset/restore 会改变 generation 并增加当前 revision，使此示例版本序列不再适用。AI 路径允许 inspect 自动登记线索，但进度步骤全部先 proposal、再玩家 confirm，提案不增 revision。
 
-## CH01 预留影响（尚非批准或执行事实）
+## CH01 冻结影响（T28 工程批准，尚非实现或 QA 事实）
 
-level `2.0.0` 只改变：首次成功 use_item emergency_key,r2_door 解锁时移除 emergency_key，receipt.consumed_item_ids=[emergency_key]。失败、重放、已开门重用不消耗；门永久解锁，往返无需钥匙。公共 API schema 仍为 `1.0.0`。快照 level 版本不一致拒绝。v1 基线数据独立保存；实现前 Main 登记变更理由/批准来源/验收。A27 须验证首次开门、重放、重复使用、再进入、保存恢复及旧快照拒绝。
+level `2.0.0` 只改变：首次成功 use_item emergency_key,r2_door 解锁时移除 emergency_key，receipt.consumed_item_ids=[emergency_key]，revision+1。失败、重放、已开门重用不再消费；重放的原 receipt 保留原消费列表，只有新执行的不变 receipt 的列表为空。门永久解锁，往返无需钥匙。抽屉不能重生钥匙，重复 take emergency_key 返回 ALREADY_TAKEN。可以继续用既有 r3_unlocked 标志证明已消费，不增公开字段、道具或地图。
+
+公共 API/tool/schema 仍为 `1.0.0`；visible_state、新快照和 save 摘要 level 均为 `2.0.0`。快照 level 版本不一致明确拒绝，当前状态不变；v2 同版本损坏状态拒绝 INVALID_SNAPSHOT。v1 回退只用独立 v1 数据库，不导入或静默改写 v2 数据。v2 保存开门前状态再恢复是显式回滚玩法；新 generation 可再走一次首次开门，旧请求/提案失效；开门后恢复应保持无钥匙且门已开。A27 验收范围和 RT01–RT06 对应回归冻结于 SPEC 的 CH01 卡；未执行结果不得填为通过。

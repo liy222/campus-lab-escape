@@ -1,0 +1,547 @@
+[
+  {
+    "name": "original_exact_unknown_row",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "original_exact_aggregate",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "main_dryrun_bound_to_source",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "main_dryrun_preserves_known_unknown",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "dryrun_no_write",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "dryrun_unknown_remains",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "dryrun_query_only_works",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "apply_query_only_denied",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "correct_exact_closure",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "only_intended_state_reason_changes",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "charge_reserved_tokens_cap_frozen_retained",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "human_fee_not_invoice_or_provider_usage",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "idempotent_apply",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "idempotent_dryrun",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_id:reject",
+    "passed": true,
+    "details": "ValueError: exact original timeout or exact prior closure required"
+  },
+  {
+    "name": "wrong_id:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_id:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_scope:reject",
+    "passed": true,
+    "details": "ValueError: exact original timeout or exact prior closure required"
+  },
+  {
+    "name": "wrong_scope:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_scope:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_created_at:reject",
+    "passed": true,
+    "details": "ValueError: exact original timeout or exact prior closure required"
+  },
+  {
+    "name": "wrong_created_at:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_created_at:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_reserved:reject",
+    "passed": true,
+    "details": "ValueError: exact original timeout or exact prior closure required"
+  },
+  {
+    "name": "wrong_reserved:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_reserved:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_charged:reject",
+    "passed": true,
+    "details": "ValueError: exact original timeout or exact prior closure required"
+  },
+  {
+    "name": "wrong_charged:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_charged:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_state:reject",
+    "passed": true,
+    "details": "ValueError: exact original timeout or exact prior closure required"
+  },
+  {
+    "name": "wrong_state:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_state:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_reason:reject",
+    "passed": true,
+    "details": "ValueError: exact original timeout or exact prior closure required"
+  },
+  {
+    "name": "wrong_reason:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_reason:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_prompt_tokens:reject",
+    "passed": true,
+    "details": "ValueError: exact original timeout or exact prior closure required"
+  },
+  {
+    "name": "wrong_prompt_tokens:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_prompt_tokens:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_completion_tokens:reject",
+    "passed": true,
+    "details": "ValueError: exact original timeout or exact prior closure required"
+  },
+  {
+    "name": "wrong_completion_tokens:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_completion_tokens:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_cache_hit_tokens:reject",
+    "passed": true,
+    "details": "ValueError: exact original timeout or exact prior closure required"
+  },
+  {
+    "name": "wrong_cache_hit_tokens:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_cache_hit_tokens:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "missing_target:reject",
+    "passed": true,
+    "details": "ValueError: exact original timeout or exact prior closure required"
+  },
+  {
+    "name": "missing_target:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "missing_target:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_closure_reason:reject",
+    "passed": true,
+    "details": "ValueError: exact original timeout or exact prior closure required"
+  },
+  {
+    "name": "wrong_closure_reason:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "wrong_closure_reason:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "cap_lower:reject",
+    "passed": true,
+    "details": "ValueError: unchanged unfrozen original CNY10 cap required"
+  },
+  {
+    "name": "cap_lower:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "cap_lower:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "cap_higher:reject",
+    "passed": true,
+    "details": "ValueError: unchanged unfrozen original CNY10 cap required"
+  },
+  {
+    "name": "cap_higher:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "cap_higher:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "frozen:reject",
+    "passed": true,
+    "details": "ValueError: unchanged unfrozen original CNY10 cap required"
+  },
+  {
+    "name": "frozen:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "frozen:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "missing_config:reject",
+    "passed": true,
+    "details": "ValueError: unchanged unfrozen original CNY10 cap required"
+  },
+  {
+    "name": "missing_config:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "missing_config:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "extra_config:reject",
+    "passed": true,
+    "details": "ValueError: unchanged unfrozen original CNY10 cap required"
+  },
+  {
+    "name": "extra_config:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "extra_config:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "total_over_cap:reject",
+    "passed": true,
+    "details": "ValueError: existing total exceeds cap"
+  },
+  {
+    "name": "total_over_cap:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "total_over_cap:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "other_reserved:reject",
+    "passed": true,
+    "details": "ValueError: other unresolved calls remain"
+  },
+  {
+    "name": "other_reserved:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "other_reserved:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "other_unknown:reject",
+    "passed": true,
+    "details": "ValueError: other unresolved calls remain"
+  },
+  {
+    "name": "other_unknown:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "other_unknown:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "reported_fee_exceeds_upper:reject",
+    "passed": true,
+    "details": "ValueError: human reported fee exceeds retained upper"
+  },
+  {
+    "name": "reported_fee_exceeds_upper:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "reported_fee_exceeds_upper:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "commit_exception_rollback:reject",
+    "passed": true,
+    "details": "OperationalError: isolated commit fault"
+  },
+  {
+    "name": "commit_exception_rollback:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "commit_exception_rollback:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "interrupt_after_update_rollback:reject",
+    "passed": true,
+    "details": "KeyboardInterrupt: isolated interrupt after update"
+  },
+  {
+    "name": "interrupt_after_update_rollback:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "interrupt_after_update_rollback:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "atomic_update_ignored:reject",
+    "passed": true,
+    "details": "ValueError: atomic expected row update failed"
+  },
+  {
+    "name": "atomic_update_ignored:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "atomic_update_ignored:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "update_raises:reject",
+    "passed": true,
+    "details": "IntegrityError: isolated fault"
+  },
+  {
+    "name": "update_raises:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "update_raises:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "charge_reclamation:reject",
+    "passed": true,
+    "details": "ValueError: charge/count changed"
+  },
+  {
+    "name": "charge_reclamation:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "charge_reclamation:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "row_count_change:reject",
+    "passed": true,
+    "details": "ValueError: charge/count changed"
+  },
+  {
+    "name": "row_count_change:rollback_exact",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "row_count_change:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "tokens_changed_after_update:reject",
+    "passed": false,
+    "details": null
+  },
+  {
+    "name": "tokens_changed_after_update:rollback_exact",
+    "passed": false,
+    "details": null
+  },
+  {
+    "name": "tokens_changed_after_update:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "cap_changed_after_update:reject",
+    "passed": false,
+    "details": null
+  },
+  {
+    "name": "cap_changed_after_update:rollback_exact",
+    "passed": false,
+    "details": null
+  },
+  {
+    "name": "cap_changed_after_update:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "frozen_changed_after_update:reject",
+    "passed": false,
+    "details": null
+  },
+  {
+    "name": "frozen_changed_after_update:rollback_exact",
+    "passed": false,
+    "details": null
+  },
+  {
+    "name": "frozen_changed_after_update:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "closure_reason_changed:reject",
+    "passed": false,
+    "details": null
+  },
+  {
+    "name": "closure_reason_changed:rollback_exact",
+    "passed": false,
+    "details": null
+  },
+  {
+    "name": "closure_reason_changed:transaction_released",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "original_ledger_unchanged_readonly",
+    "passed": true,
+    "details": null
+  },
+  {
+    "name": "reviewed_helper_source_unchanged",
+    "passed": true,
+    "details": null
+  }
+]

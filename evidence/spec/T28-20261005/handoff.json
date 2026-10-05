@@ -1,0 +1,27 @@
+{
+  "task": "T28",
+  "owner": "spec_ch01_oct05",
+  "accepted_by": "Main engineering scope only",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "contracts/check_contracts.py",
+    "--output",
+    "contracts/T28-contract-validation-20261005.json"
+  ],
+  "actual_exit_code": 0,
+  "completion_chunk": "901b75",
+  "reported_final_readonly_hash_check_exit_code": 0,
+  "reported_hash_check_chunk": "a96bec",
+  "source_hashes": {
+    "docs/SPEC.md": "2b99908c458ba5eda9d1baebf6a622e84a2e836fc1201a54f506de9ee61121a2",
+    "docs/level_design.md": "77bccd81afd2f796b2aa71a53a955c42ab14f461428f0a5f48ab02a4b42fd7e0",
+    "contracts/check_contracts.py": "dd0ef7b049eb961edbee55d23795dab8dd19e516eff6576e5a5487b62335f418",
+    "contracts/T28-contract-validation-20261005.json": "b2c4f235b770f881d135298b7344c6167453317f39b07284136521f41dce8a1e"
+  },
+  "teacher_approval": null,
+  "human_signoff": null,
+  "limitations": [
+    "Structure checks only; no gameplay or paid model calls.",
+    "Auto-review rejected Spec writing review/change_CH01.md for ownership; Main copied stable Spec card instead."
+  ]
+}

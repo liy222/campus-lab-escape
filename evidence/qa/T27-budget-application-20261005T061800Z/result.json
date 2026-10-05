@@ -1,0 +1,413 @@
+{
+  "task": "T27-budget-application-readonly",
+  "created_at": "2026-10-05T06:02:34.441186+00:00",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "evidence/qa/T27-budget-application-20261005T061800Z/review.py"
+  ],
+  "working_directory": "D:\\深度能力",
+  "checks": 48,
+  "passed": 48,
+  "failures": [],
+  "reviewed_artifact_hashes": {
+    "evidence/integration/reconcile_timeout_upper.py": "e4a5981b810a71b294321b14fe2947fb2613856b80268e4ac14b3faa10b44f8b",
+    "evidence/integration/timeout-human-fee-20261005-applied.json": "b6492c291a528c9b89ee23ac83be37b70a2b4ad29b76c3fd37d586afb3d040df",
+    "evidence/integration/timeout-human-fee-20261005-dryrun.json": "85ad1b9fc079557640755590448cbe79e286485b6c44bd933bc740a53d9ade62",
+    "evidence/qa/T25-independent-20261005T055600Z/result.json": "84ca0cc505476cabd8daaefb1b9dbb826e07853319bb3148d8107e9a2b3f21ea",
+    "evidence/qa/T27-budget-reconcile-20261005T061300Z/result.json": "bef67641c46f742b70d185f0f1150dfc0293382df399ee86cd44b38f06c42fc4",
+    "experiments/runs/20261005T053334004502Z-formal-real-48d972eb/run.json": "5f3042b1513bd191d241c3699e6519dafcae48b51e9727b4ff4b2e8e13689d3d",
+    "experiments/runs/20261005T053334004502Z-formal-real-48d972eb/plan.json": "c7a407bf1cb43232cf2a864d1bb26b64485a6ca788d7d32b7054adab9ee9746f",
+    "experiments/runs/20261005T053334004502Z-formal-real-48d972eb/raw.jsonl": "74c20c72ac39e236bd3e5c48062f71e2c98a92b9368269c3e67a95c841db2e28",
+    "experiments/runs/20261005T053334004502Z-formal-real-48d972eb/journal.jsonl": "f3db42fc64211c36be4420d9f3d2db4aa8e883b79ef35fc9f06413fb0fbc80d9",
+    "experiments/runs/20261005T053334004502Z-formal-real-48d972eb/completion.json": "ad2602b8aaed4c5d82b3fd6804617983f025ad5b6f31fc81932ebc49ecf09706",
+    "experiments/runs/20261005T053334004502Z-formal-real-48d972eb/summary.json": "83870be5f56b8f53a4c5be6a42fe049aee78c8159dac872f20ef04c74a4ecb11"
+  },
+  "ledger_mode": "ro",
+  "current_safe_snapshot": {
+    "config": [
+      {
+        "id": 1,
+        "cap": 10000000000,
+        "frozen": 0
+      }
+    ],
+    "totals": {
+      "calls": 35,
+      "charged": 277602960
+    },
+    "states": [
+      {
+        "state": "settled",
+        "calls": 35
+      }
+    ],
+    "experiment_calls": [
+      {
+        "id": "3c8a247db5a34f20a054bfd9075d1bf6",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:28:23.738337+00:00",
+        "reserved": 78904000,
+        "charged": 3452000,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 1118,
+        "completion_tokens": 152,
+        "cache_hit_tokens": 0
+      },
+      {
+        "id": "4622378576a04fdd8fb3a38e103b0599",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:28:26.089401+00:00",
+        "reserved": 76128000,
+        "charged": 3025120,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 1058,
+        "completion_tokens": 145,
+        "cache_hit_tokens": 128
+      },
+      {
+        "id": "69a4a265575a405c89eb53b81516c134",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:28:27.862335+00:00",
+        "reserved": 113888000,
+        "charged": 4766480,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 2349,
+        "completion_tokens": 134,
+        "cache_hit_tokens": 512
+      },
+      {
+        "id": "44736a67c0b54727aa07102d76d91e7d",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:28:29.805466+00:00",
+        "reserved": 99224000,
+        "charged": 4712240,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 1991,
+        "completion_tokens": 154,
+        "cache_hit_tokens": 256
+      },
+      {
+        "id": "8e1a3bb6602749109bd3f46bba45b98c",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:28:31.693605+00:00",
+        "reserved": 162920000,
+        "charged": 6647440,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 4141,
+        "completion_tokens": 172,
+        "cache_hit_tokens": 1536
+      },
+      {
+        "id": "39774c88dc5d43ba9c0724d8c87bea90",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:28:33.517040+00:00",
+        "reserved": 128192000,
+        "charged": 7148240,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 3281,
+        "completion_tokens": 136,
+        "cache_hit_tokens": 256
+      },
+      {
+        "id": "228423996520424e9aa47b62ee9d2a82",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:33:38.751086+00:00",
+        "reserved": 71328000,
+        "charged": 2401120,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 846,
+        "completion_tokens": 120,
+        "cache_hit_tokens": 128
+      },
+      {
+        "id": "969a32b99c3e41c790bb8611cb223352",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:33:40.346075+00:00",
+        "reserved": 71344000,
+        "charged": 2206240,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 838,
+        "completion_tokens": 129,
+        "cache_hit_tokens": 256
+      },
+      {
+        "id": "b2a792a0d071455f8b2f8da9375531b7",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:33:42.373433+00:00",
+        "reserved": 78904000,
+        "charged": 1743840,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 1118,
+        "completion_tokens": 158,
+        "cache_hit_tokens": 896
+      },
+      {
+        "id": "84fb7784845c49e48df6b080be7b282d",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:33:44.160504+00:00",
+        "reserved": 76128000,
+        "charged": 1855840,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 1058,
+        "completion_tokens": 187,
+        "cache_hit_tokens": 896
+      },
+      {
+        "id": "fe9dc3d82a2a4a199025b2b2be6c75d0",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:33:46.169565+00:00",
+        "reserved": 81176000,
+        "charged": 3760240,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 1279,
+        "completion_tokens": 213,
+        "cache_hit_tokens": 256
+      },
+      {
+        "id": "44a0a8fde0e54a379499efeee8e8686f",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:33:48.195613+00:00",
+        "reserved": 86712000,
+        "charged": 2668720,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 1407,
+        "completion_tokens": 170,
+        "cache_hit_tokens": 768
+      },
+      {
+        "id": "51a6a4e5e32c4f8fb22fb90f8d2f5753",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:33:50.026499+00:00",
+        "reserved": 94536000,
+        "charged": 2316960,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 1678,
+        "completion_tokens": 121,
+        "cache_hit_tokens": 1024
+      },
+      {
+        "id": "64dd145e6339405dae47c6267151bac8",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:33:51.977822+00:00",
+        "reserved": 86256000,
+        "charged": 3564240,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 1481,
+        "completion_tokens": 138,
+        "cache_hit_tokens": 256
+      },
+      {
+        "id": "bd4fc9ba0e254f85b91b66ac18b2709d",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:33:53.731257+00:00",
+        "reserved": 87720000,
+        "charged": 4058240,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 1588,
+        "completion_tokens": 173,
+        "cache_hit_tokens": 256
+      },
+      {
+        "id": "d8665ab9ef6045d19a1a8c94e3298234",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:33:55.451943+00:00",
+        "reserved": 98736000,
+        "charged": 2591200,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 1854,
+        "completion_tokens": 174,
+        "cache_hit_tokens": 1280
+      },
+      {
+        "id": "15c274d386aa47dd964e5bc54a5f824a",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:33:57.108010+00:00",
+        "reserved": 113888000,
+        "charged": 1617040,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 2349,
+        "completion_tokens": 148,
+        "cache_hit_tokens": 2176
+      },
+      {
+        "id": "61f79f3f59674da88b5d80f5a8669e13",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:33:58.976791+00:00",
+        "reserved": 99224000,
+        "charged": 1757680,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 1991,
+        "completion_tokens": 161,
+        "cache_hit_tokens": 1792
+      },
+      {
+        "id": "e1336c8ad4e74e0885ce433b20f1b3e6",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:34:00.625356+00:00",
+        "reserved": 100928000,
+        "charged": 5110240,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 2122,
+        "completion_tokens": 171,
+        "cache_hit_tokens": 256
+      },
+      {
+        "id": "f4a9297468044704b2397fb9e79de02e",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:34:02.344368+00:00",
+        "reserved": 119240000,
+        "charged": 2711680,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 2572,
+        "completion_tokens": 135,
+        "cache_hit_tokens": 1792
+      },
+      {
+        "id": "e9f50315f9e94bfd841dc17a8ae0e6d9",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:34:04.629049+00:00",
+        "reserved": 130536000,
+        "charged": 2879040,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 2988,
+        "completion_tokens": 146,
+        "cache_hit_tokens": 2176
+      },
+      {
+        "id": "fdb55ab42cf34863af8cfb9aac271b4d",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:34:06.358927+00:00",
+        "reserved": 108576000,
+        "charged": 6074240,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 2448,
+        "completion_tokens": 210,
+        "cache_hit_tokens": 256
+      },
+      {
+        "id": "83980b15ff954690af5993d34ac39e4a",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:34:08.278260+00:00",
+        "reserved": 113952000,
+        "charged": 6370240,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 2656,
+        "completion_tokens": 195,
+        "cache_hit_tokens": 256
+      },
+      {
+        "id": "8db3d9fb05044cb58713290e5206430f",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:34:10.403671+00:00",
+        "reserved": 138648000,
+        "charged": 2699280,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 3265,
+        "completion_tokens": 117,
+        "cache_hit_tokens": 2432
+      },
+      {
+        "id": "dfe8494e45984407bb3d67f296420a82",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:34:11.978552+00:00",
+        "reserved": 143200000,
+        "charged": 2537520,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 3447,
+        "completion_tokens": 114,
+        "cache_hit_tokens": 2688
+      },
+      {
+        "id": "cf3d2962d5314e7384ddb18c8fcb9dc5",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:34:13.859690+00:00",
+        "reserved": 115768000,
+        "charged": 5980240,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 2769,
+        "completion_tokens": 118,
+        "cache_hit_tokens": 256
+      },
+      {
+        "id": "6855e8b1255446418db7fe428cb38664",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:34:15.220604+00:00",
+        "reserved": 122920000,
+        "charged": 7020240,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 3061,
+        "completion_tokens": 175,
+        "cache_hit_tokens": 256
+      },
+      {
+        "id": "2a312e91d78d47eb9ed5218a9695969b",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:34:17.198647+00:00",
+        "reserved": 154912000,
+        "charged": 2652880,
+        "state": "settled",
+        "reason": null,
+        "prompt_tokens": 3853,
+        "completion_tokens": 121,
+        "cache_hit_tokens": 3072
+      },
+      {
+        "id": "520a5c50b9204960a3f9915952ed9b97",
+        "scope": "experiments",
+        "created_at": "2026-10-05T05:34:18.992257+00:00",
+        "reserved": 162920000,
+        "charged": 162920000,
+        "state": "settled",
+        "reason": "HUMAN_FEE_REPORTED_UPPER_RETAINED",
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cache_hit_tokens": null
+      }
+    ],
+    "other_scope_aggregate": {
+      "calls": 6,
+      "charged": 10354480
+    },
+    "triggers": []
+  },
+  "original_apply_by_qa": false,
+  "qa_network_calls": 0,
+  "qa_paid_calls": 0,
+  "main_application_exit_report": {
+    "actual_exit_code": 0,
+    "chunk": "5c5c65",
+    "provenance": "Main task handoff; QA independently observes only this read-only audit process exit"
+  },
+  "limitations": [
+    "Human fee report is not independently obtained supplier invoice; full upper charge retained and missing model response/usage not recovered.",
+    "All 29 experiment rows independently compare with actual pre-apply T25 row snapshots. Six other-scope row identities were not saved in prior public QA; their aggregate is independently unchanged, while exact all-row preservation is enforced by the pinned helper reviewed in 124 isolated checks.",
+    "Accounting closure does not rewrite original T25 timeout evidence and grants no new paid phase authorization."
+  ]
+}
