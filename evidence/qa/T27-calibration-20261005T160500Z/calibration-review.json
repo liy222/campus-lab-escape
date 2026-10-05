@@ -1,0 +1,237 @@
+{
+  "task": "T27-real-calibration-independent-readonly",
+  "created_at": "2026-10-05T15:56:57.475502+00:00",
+  "actual_paid_in_original_run": 2,
+  "QA_actual_paid_calls": 0,
+  "QA_network_calls": 0,
+  "actual_run_exit_code": 1,
+  "Main_process_source": "evidence/integration/paid-evaluation-K1K6-20261005T110203Z-process.json",
+  "Main_process_raw_sha256": "b7d581ad32a96ebb15ff5142a7c5a16788dd1e0f28f02ba656df4b4ac2aef46e",
+  "actual_report_raw_sha256": "40aec88adcea8da225bcc439c98540701bf5b082f24046f7d32e4df7c0a67032",
+  "gate": {
+    "approval_id": "K1K6-20261005T110203Z",
+    "approved_by": "Main",
+    "purpose": "calibration",
+    "input_sha256": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1",
+    "max_calls": 3,
+    "max_cost_units": 220000000,
+    "max_tokens": 1000,
+    "timeout_seconds": 20,
+    "expires_at": "2026-10-05T23:02:03.491335+00:00",
+    "credential_env": "EVALUATION_MODEL_API_KEY",
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-flash"
+  },
+  "audits_of_K1_K2_K4": {
+    "K1-real-valid-evidence": {
+      "case_id": "K1-real-valid-evidence",
+      "claim_id": "A22",
+      "deterministic": {
+        "execution_evidence_found": true,
+        "failures": [],
+        "issues": []
+      },
+      "provider_metadata": {
+        "actual_network_call": true,
+        "call_id": "eval_K1K6-20261005T110203Z_1",
+        "cost_upper_units": 11012000,
+        "finish_reason": "stop",
+        "mode": "paid",
+        "reported_model": "deepseek-flash",
+        "requested_model": "deepseek-flash",
+        "usage": {
+          "completion_tokens": 453,
+          "prompt_cache_hit_tokens": 0,
+          "prompt_tokens": 3694,
+          "total_tokens": 4147
+        }
+      },
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": "f1291d5beb8de72442f9d380c1715649b3fb8d5f643d6225e9cc333f65955c26",
+      "raw_suggestion_size_bytes": 1768,
+      "validation_errors": [
+        "MODEL_FAKE_OR_UNREAD_REFERENCE"
+      ]
+    },
+    "K2-explicit-failure": {
+      "case_id": "K2-explicit-failure",
+      "claim_id": "A22",
+      "deterministic": {
+        "execution_evidence_found": false,
+        "failures": [
+          "NONZERO_EXIT:calibration_v1:F001",
+          "ASSERTION_FAILURE:calibration_v1:F001"
+        ],
+        "issues": []
+      },
+      "provider_metadata": {
+        "actual_network_call": true,
+        "call_id": "eval_K1K6-20261005T110203Z_2",
+        "cost_upper_units": 51528000,
+        "mode": "paid",
+        "requested_model": "deepseek-flash",
+        "usage": null
+      },
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": null,
+      "raw_suggestion_size_bytes": null,
+      "validation_errors": [
+        "MODEL_UNAVAILABLE"
+      ]
+    },
+    "K4-failure-with-injection": {
+      "case_id": "K4-failure-with-injection",
+      "claim_id": "A22",
+      "deterministic": {
+        "execution_evidence_found": false,
+        "failures": [
+          "NONZERO_EXIT:calibration_v1:F004",
+          "ASSERTION_FAILURE:calibration_v1:F004"
+        ],
+        "issues": []
+      },
+      "provider_metadata": null,
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": null,
+      "raw_suggestion_size_bytes": null,
+      "validation_errors": [
+        "PRIOR_CALL_UNKNOWN_STOP"
+      ]
+    }
+  },
+  "captured_original_ledger_readonly": {
+    "call_rows": [
+      [
+        "eval_K1K6-20261005T110203Z_1",
+        "evaluation",
+        "2026-10-05T12:04:30.892682+00:00",
+        115456000,
+        11012000,
+        "settled",
+        null,
+        3694,
+        453,
+        0
+      ],
+      [
+        "eval_K1K6-20261005T110203Z_2",
+        "evaluation",
+        "2026-10-05T12:04:36.141321+00:00",
+        51528000,
+        51528000,
+        "settled",
+        "USER_FULL_UPPER_ACCOUNTED",
+        null,
+        null,
+        null
+      ]
+    ],
+    "totals": [
+      85,
+      511501840
+    ],
+    "states": [
+      [
+        "settled",
+        85
+      ]
+    ],
+    "config": [
+      [
+        1,
+        10000000000,
+        0
+      ]
+    ]
+  },
+  "ledger_snapshot_source": "D:\\深度能力\\evidence\\qa\\T27-calibration-20261005T123100Z\\calibration-review.json",
+  "ledger_snapshot_source_raw_sha256": "4c315f05854c0e7367f88722aefd6e93122c4c0d71d7d7ef7f727cb6463f37cf",
+  "Main_later_accounting_record": {
+    "applied": true,
+    "already_closed": false,
+    "columns": [
+      "id",
+      "scope",
+      "created_at",
+      "reserved",
+      "charged",
+      "state",
+      "reason",
+      "prompt_tokens",
+      "completion_tokens",
+      "cache_hit_tokens"
+    ],
+    "before": [
+      "eval_K1K6-20261005T110203Z_2",
+      "evaluation",
+      "2026-10-05T12:04:36.141321+00:00",
+      51528000,
+      51528000,
+      "unknown",
+      "MODEL_UNAVAILABLE",
+      null,
+      null,
+      null
+    ],
+    "after": [
+      "eval_K1K6-20261005T110203Z_2",
+      "evaluation",
+      "2026-10-05T12:04:36.141321+00:00",
+      51528000,
+      51528000,
+      "settled",
+      "USER_FULL_UPPER_ACCOUNTED",
+      null,
+      null,
+      null
+    ],
+    "full_maximum_accounted_units": 51528000,
+    "human_reported_cost_units": null,
+    "retained_charge_units": 51528000,
+    "calls": 85,
+    "charged_upper_units": 511501840,
+    "cap_units": 10000000000,
+    "provider_usage_known": false,
+    "provider_invoice_independently_verified": false,
+    "accounting_basis": "User explicitly directed no further effort investigating fees and to continue. Fully account the complete CNY0.051528 reservation without reducing it; no supplier fee asserted. Close only the accounting hold; request error, NULL usage and historical evidence remain unchanged.",
+    "created_at": "2026-10-05T15:47:58.455459+00:00",
+    "call_id": "eval_K1K6-20261005T110203Z_2",
+    "approved_by": "Main",
+    "human_instruction_exact": "不需要花费额外精力管费用，减少不必要的token花费，继续",
+    "helper_raw_sha256": "f6f96d3296ef1bcd42ffd15c888b3bb8d824eae50f5b7af44d89ccd2ee99a088",
+    "actual_command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "evidence/integration/account_calibration_full_upper.py",
+      "--apply"
+    ],
+    "limitations": [
+      "No token reconstruction; new unavailable/null response remains.",
+      "No supplier fee is provided or asserted; full conservative reservation is charged.",
+      "Full reservation remains charged; no new allowance or experiment retry.",
+      "Future real calls still require separate finite gates and source review."
+    ]
+  },
+  "Main_later_accounting_raw_sha256": "e177c1c12271bcbd15a30c8dea6ce5d512e2bcd451e00687fbe88b6da9f512a1",
+  "protected_artifact_hashes": {
+    "evaluation/runs/20261005T120430742113Z/report.json": "40aec88adcea8da225bcc439c98540701bf5b082f24046f7d32e4df7c0a67032",
+    "evidence/integration/paid-evaluation-K1K6-20261005T110203Z-process.json": "b7d581ad32a96ebb15ff5142a7c5a16788dd1e0f28f02ba656df4b4ac2aef46e",
+    "evaluation/trusted/freeze.json": "576b4f02755b12ecdf8234a13ab47fe14866994b5f99242a8ac0bc70c335df6a",
+    "evaluation/fixtures/cases.json": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1"
+  },
+  "original_zero_paid_artifact_hashes": {
+    "evidence/qa/T27-CH01-event-20261005T115700Z/result.json": "958c67a1c3fb3d54e1f1af48b14cd8aa57dc1d58e66f187f0ec6e8bd3d9810e0",
+    "evidence/qa/T27-evaluation-events-20261005T105300Z/result.json": "a5e5b418895c7597932b9792199a9f73b09cc37baf57784825c39c9aab6188d9"
+  },
+  "limitations": [
+    "Two paid requests observed through saved run metadata and ledger; not three successful real judgements.",
+    "K1 invalid reference abstained; K2 and K4 deterministic FAIL despite unavailable/no-request, not successful semantic calibration.",
+    "11 fixtures10 matches with falsePASS0 does not establish complete calibration or general language robustness.",
+    "Historical rununknown51528000 retained; later accounting closes hold at full upper without supplier fee or usage reconstruction.",
+    "Captured85-row accounting epoch predates separately approved future6 calls; QA does not project this snapshot to their ledger.",
+    "No raw invalid model text/reflection retained; digest1768-byte metadata only.",
+    "Initial original ledger mode=ro only; final rerun uses captured snapshot without reopening original ledger."
+  ]
+}

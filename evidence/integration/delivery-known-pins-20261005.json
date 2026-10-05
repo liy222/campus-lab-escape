@@ -1,0 +1,58 @@
+{
+  "created_at": "2026-10-05T12:00:48.790171+00:00",
+  "hash_policy": "exact raw SHA256",
+  "product_commit": "242ecfc4d9f7bf1a8480508de701d9efc7822fe7",
+  "baseline_commit": "7821af4efe0613c20a80ea164c1dab1c0f288bab",
+  "new_evaluator_source_commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+  "files": {
+    "evidence/integration/baseline_v1-manifest.json": {
+      "sha256": "9c36943cbb6e4fe08b6e176445ba91835fafa79a2077c2155bbf8d613f8b07c1",
+      "bytes": 59791
+    },
+    "evidence/integration/CH01_v2-manifest.json": {
+      "sha256": "69501e3a159d6c55755b1bef850da3b57777c1299a6304f78fbb847c11c66a58",
+      "bytes": 109078
+    },
+    "evaluation/runs/ch01-v3-identity-alias-handoff/source-sha256.json": {
+      "sha256": "60d20f3a77bfe93053acd696815199b313cc6604d28ffef0273a9a6d09a28e9d",
+      "bytes": 5799
+    },
+    "evidence/qa/T27-CH01-event-20261005T115700Z/result.json": {
+      "sha256": "958c67a1c3fb3d54e1f1af48b14cd8aa57dc1d58e66f187f0ec6e8bd3d9810e0",
+      "bytes": 34532
+    },
+    "evidence/qa/T24-continuation-20261005T113100Z/result.json": {
+      "sha256": "4d9a25587db93ec25976c4bcfeb02f244284660aa506bc598f8195faed33d534",
+      "bytes": 61721
+    },
+    "evidence/qa/T32-independent-20261005T113707029429Z/result.json": {
+      "sha256": "45881b749ec5feec6c584983896894948a831ebd837db9902ebff04b009a301b",
+      "bytes": 6449863
+    },
+    "evidence/integration/continuation-dispatch-observation-20261005.json": {
+      "sha256": "4e07751c8788ed40b988c44bcf4bb0e28e986155e2933e9dea2b28c525549b41",
+      "bytes": 1779
+    },
+    "evidence/integration/external-payload-human-approval-20261005.json": {
+      "sha256": "827643bf2681a46a1937f104a8245e7145d75743c32cd5fbec42d7718857ab03",
+      "bytes": 7397
+    },
+    "evidence/integration/reproduction-20261005T115741Z-pins.json": {
+      "sha256": "7e7013be5d40d7639f2e2d48fefacf2d24c8f7ebdf4e1a6aec3dd3b5f9b29977",
+      "bytes": 4341033
+    },
+    "experiments/runs/20261005T114740304313Z-continuation-real-b584e838/raw.jsonl": {
+      "sha256": "96ea3c46da504298e3096bb34cfa6119c6b1b2df151c14c2bb2f2f6c6a79d14d",
+      "bytes": 144022
+    },
+    "experiments/runs/20261005T114740304313Z-continuation-real-b584e838/summary.json": {
+      "sha256": "25261ed38a195f47da348a39296ee975f0dedf7251d6b3afaec74658ac627ed2",
+      "bytes": 3589
+    },
+    "experiments/runs/20261005T114740304313Z-continuation-real-b584e838/completion.json": {
+      "sha256": "a9f6cceb33631c233a372f595d8a74a9ea768584007ba5a6fe6d3f263caf0385",
+      "bytes": 250
+    }
+  },
+  "limits": "New final clean reproduction in progress. Continuation merge/QA, newfee accounting QA, and actual calibration pending. No semantic grade or human signoff."
+}

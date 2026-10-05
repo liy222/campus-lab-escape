@@ -1,6 +1,35 @@
-# E1 实验复核 — T23 已执行，T24 超时停止，T25 待独立复核
+# E1 实验复核 — 两批正式结果已合并，新增结果待独立 QA
 
-此文件由 Main 明确 handoff 给 Experiments，仅为 T25 复核框架。T22 正在完成本地候选；T23/T24 真实模型实验尚未执行，以下不是结果、通过声明或预算批准。
+Main 于 2026-10-05 再次将此单文件 handoff 给 Experiments 更新真实阶段状态。当前 T23 pilot 已执行；T24 原正式及有限续跑已执行并保存停止结果，新增合并附件由 Owner 完成结构核对，待独立 QA。所有付费操作继续停止。
+
+## 当前两批正式结果与交接
+
+新结果目录 `experiments/runs/20261005T115228Z-continuation-merged-owner/` 是追加产物，未覆盖原 run 或续 run。附件 `summary.csv`、`raw.jsonl`、`lineage.json`、`evidence-index.json`、`source-map.json`、`accounting-notes.json` 和 `result-note.md` 分别记录汇总、完整72终态、首次实际尝试来源、原始产物指纹、源依赖边界、费用快照与有限解释。`raw.jsonl` raw SHA256 `c6487f89cf828596456fe6db13a461dfed07d2e4bb1e4ee130c129ba13db756d`；`summary.csv` raw SHA256 `b785f7a8ecc8250ab0403be9bbe4a0ac4b893748122e820349986ae841d3e31c`。
+
+| 正式合并方案 | planned | 付费尝试确证 | completed/响应确证 | correct/completed | correct/planned | legal/引用有效/引用充分 | usage覆盖 | 服务失败 | not_called |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| A完整历史 | 36 | 36 | 34 | 26/34 | 26/36 | 各34/34 | 34/36 | 2 | 0 |
+| B结构摘要 | 36 | 35 | 35 | 29/35 | 29/36 | 各35/35 | 35/36 | 0 | 1 |
+
+完整终态为 **69 completed、1 timeout、1 failed、1 not_called**；两次服务失败保留各自原状态，不能称72次回复。36个计划配对取得34个双响应完整配对；缺失是 C12 repeat1 的A原超时，以及 C04 repeat3 的A续失败/B未调用。原23条实际尝试完整对象与22条回复UTF8内容逐条一致；追加仅选择原49条 not_called，按原24–72相对顺序各最多一次，没有重打22条完成或原超时，没有选择最好结果。69条回复中14条动作合法但不符合冻结正确下一步，均保留。
+
+Main 实际续跑进程 exit0，session61932、完成chunk `d2b527`；Owner不冒称亲自执行该真实进程。授权 `experiments/authorizations/E1-continuation-20261005T112739Z.json` 的完整原命令与 raw SHA 绑定见新目录 `process-result.json` 和 `evidence-index.json`。真实续目录 `experiments/runs/20261005T114740304313Z-continuation-real-b584e838/` 保存49行：48次调用、47回复、1 failed、1 not_called；A23 completed/18 correct，B24 completed/20 correct。续raw SHA256 `96ea3c46da504298e3096bb34cfa6119c6b1b2df151c14c2bb2f2f6c6a79d14d`。exit0是遵守停止协议保存终态，不是全量响应成功。
+
+原第23行 `formal-C12-full_history-1` / call `520a5c50b9204960a3f9915952ed9b97` 的 MODEL_TIMEOUT、未知HTTP/model/usage仍保留，full upper ¥0.16292000。用户向 Main 确认费用 ¥0.05 后，Main 经独立核对完成保守会计关闭，原账本转 settled 但保留全额 charged/reserved 和 NULL tokens；这不生成模型响应、token证据或供应商发票。新第71行 `formal-C04-full_history-3` / call `6dfc591c79c54544afe6d70eec6d697b` 于 UTC11:49:17.534475–11:49:22.567307 发生 MODEL_UNAVAILABLE，HTTP/model/usage/投递未知，full upper ¥0.09453600；第72行B未调用。用户向 Main 回答新失败费用 ¥0.09；本报告依据 Main 最新交接，该人工费用尚处 helper 独立核对、尚未应用，不据此改写 raw 或回收费用。
+
+正式两批已知usage费用 ¥0.15139984，未知usage保留上界 ¥0.25745600，合计保守上界 ¥0.40885584。续单批 ¥0.17135888 = 已知 ¥0.07682288 + 未知upper ¥0.09453600。Owner UTC11:58:12 原账本 mode=ro 快照为83 calls、pending1、charged448961840 units，即项目上界 ¥0.44896184；原10元 cap不变，包含独立pilot和此前项目费用。该快照保留在新 accounting-notes.json，后续 Main 会计应用是另一时间点，不能反写前快照。保守上界不是实际账单；未知用量不能当零。
+
+`latency-by-phase.csv` 和 `usage-cache-by-phase.csv` 按两批分别展示。原 latency包含进程内判定，续端到端包含隔离v1判断子进程，续 provider latency另列，测量边界不同。两批相隔约六小时，供应商负载、缓存、暂停及顺序连续性发生变化。请求值/字节身份和原相对顺序一致，不能据混合延迟或费用上界宣称B优越。正确动作与引用有效不能证明自由文本全部事实准确，也不支持总体智能、自主通关、人测、真人签署或课程批准。
+
+归档v1判定与canonical付费client使用两组显式依赖：Main101归档记录 raw SHA256 `0dab9b9e213a3631a7630eb59cd0a27d8e44c74321891463ed7d71d599d285a6`；原41冻结源与新5源实际哈希均匹配各自原记录。source-map注明原before来自原plan.freeze、新before来自真实续run记录、after为当前实际raw读取；没有补造即时前快照。v1规则在隔离判断子进程加载，当前v2未参与判定，Provider/budget及账本仍canonical根。原baseline6条旧QA未绑定/3项runtime-only局限不消除。
+
+T25原停止正式run已独立通过1829/1829检查，actual exit0/chunk `5f626a`，报告 `review/findings/T25-independent-formal-20261005.md`、证据 `evidence/qa/T25-independent-20261005T055600Z/`。该结论只覆盖原22回复/1超时/49未调用的保留结果；其历史账本状态和历史review索引是当时快照，不自动覆盖本次更新。独立续执行器候选449/449离线检查已通过，见 `review/findings/T24-continuation-20261005.md`、证据 `evidence/qa/T24-continuation-20261005T113100Z/`；候选QA的49条模拟不是此次真实观察。**新47回复、两批69回复及合并附件仍待独立结果QA**；Owner结构检查不可替代该验收。Main未来验收结果需另行明确记录。
+
+Owner实际合并命令 `C:\Users\liyh\.conda\envs\1\python.exe -B -X utf8 experiments/runs/E1-continuation-executor-v1/executor.py merge --run-dir experiments/runs/20261005T114740304313Z-continuation-real-b584e838 --output experiments/runs/20261005T115228Z-continuation-merged-owner`，exit0/chunk `936bb4`；附件整理命令同Python及flags运行新目录 `build_report.py`，exit0/chunk `4fceaa`。本次无paid、无凭据读取、无账本写入、无原始产物/冻结源修改。Owner完成当前证据整理并STOP，付费仍hold；原72回复目标未达成，不能把保存停止结果写成完整实验成功。
+
+## 以下为此前阶段记录（时间点保留）
+
+下列最初草案、T23和原T24记录保留历史过程；其中“尚未执行”“待验收”、原unknown状态及旧索引均描述当时时点，当前状态以上述交接为准，不是新预算批准。
 
 待独立 QA 核对公开输入与离线资料隔离、12点来源与版本、可逆历史事实相等、六工具 schema、72行完整性、配对顺序及6行独立pilot、错误/未知/未调用保留、分母、共享原账本、有限GO、崩溃对账无重打。Owner check 与注入 mock 不能替代独立 QA 或模型观察。
 

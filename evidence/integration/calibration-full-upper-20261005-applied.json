@@ -1,0 +1,68 @@
+{
+  "applied": true,
+  "already_closed": false,
+  "columns": [
+    "id",
+    "scope",
+    "created_at",
+    "reserved",
+    "charged",
+    "state",
+    "reason",
+    "prompt_tokens",
+    "completion_tokens",
+    "cache_hit_tokens"
+  ],
+  "before": [
+    "eval_K1K6-20261005T110203Z_2",
+    "evaluation",
+    "2026-10-05T12:04:36.141321+00:00",
+    51528000,
+    51528000,
+    "unknown",
+    "MODEL_UNAVAILABLE",
+    null,
+    null,
+    null
+  ],
+  "after": [
+    "eval_K1K6-20261005T110203Z_2",
+    "evaluation",
+    "2026-10-05T12:04:36.141321+00:00",
+    51528000,
+    51528000,
+    "settled",
+    "USER_FULL_UPPER_ACCOUNTED",
+    null,
+    null,
+    null
+  ],
+  "full_maximum_accounted_units": 51528000,
+  "human_reported_cost_units": null,
+  "retained_charge_units": 51528000,
+  "calls": 85,
+  "charged_upper_units": 511501840,
+  "cap_units": 10000000000,
+  "provider_usage_known": false,
+  "provider_invoice_independently_verified": false,
+  "accounting_basis": "User explicitly directed no further effort investigating fees and to continue. Fully account the complete CNY0.051528 reservation without reducing it; no supplier fee asserted. Close only the accounting hold; request error, NULL usage and historical evidence remain unchanged.",
+  "created_at": "2026-10-05T15:47:58.455459+00:00",
+  "call_id": "eval_K1K6-20261005T110203Z_2",
+  "approved_by": "Main",
+  "human_instruction_exact": "不需要花费额外精力管费用，减少不必要的token花费，继续",
+  "helper_raw_sha256": "f6f96d3296ef1bcd42ffd15c888b3bb8d824eae50f5b7af44d89ccd2ee99a088",
+  "actual_command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "evidence/integration/account_calibration_full_upper.py",
+    "--apply"
+  ],
+  "limitations": [
+    "No token reconstruction; new unavailable/null response remains.",
+    "No supplier fee is provided or asserted; full conservative reservation is charged.",
+    "Full reservation remains charged; no new allowance or experiment retry.",
+    "Future real calls still require separate finite gates and source review."
+  ]
+}

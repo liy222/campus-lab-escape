@@ -1,0 +1,47 @@
+{
+  "env_read": false,
+  "kind": "Owner append-only evidence packaging; real execution sourced from Main",
+  "ledger_mutated": false,
+  "original_runs_and_five_executor_sources_mutated": false,
+  "owner_merge": {
+    "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 experiments/runs/E1-continuation-executor-v1/executor.py merge --run-dir experiments/runs/20261005T114740304313Z-continuation-real-b584e838 --output experiments/runs/20261005T115228Z-continuation-merged-owner",
+    "actual_exit_code": 0,
+    "completion_chunk": "936bb4"
+  },
+  "owner_packaging": {
+    "actual_command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "experiments/runs/20261005T115228Z-continuation-merged-owner/build_report.py"
+    ],
+    "actual_exit_code": 0,
+    "completion_chunk": "4fceaa"
+  },
+  "owner_readonly_metadata": {
+    "actual_exit_code": 0,
+    "completion_chunk": "5f4643"
+  },
+  "paid_calls_added_by_owner": 0,
+  "real_continuation": {
+    "actual_command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "experiments/runs/E1-continuation-executor-v1/executor.py",
+      "real",
+      "--authorization",
+      "experiments/authorizations/E1-continuation-20261005T112739Z.json",
+      "--authorization-sha",
+      "e1eb57a2baa413065762d0c90e5139f5b4b7057a07965fb6aabb0829c6121811"
+    ],
+    "actual_exit_code": 0,
+    "completion_chunk": "d2b527",
+    "evidence_source": "Main actual execution dispatch, not an Owner replay",
+    "session_id": 61932
+  },
+  "status": "Owner stable STOP; new result QA pending; all paid work held",
+  "working_directory": "D:\\深度能力"
+}

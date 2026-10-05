@@ -46,8 +46,14 @@ def main():
     manifest=json.loads((ROOT/'evidence/integration/CH01_v2-manifest.json').read_bytes())
     for name,record in manifest['sources'].items():
         assert pins[name]['runtime_raw_sha256']==record['candidate_runtime_raw_sha256'],name
-    for name,digest in json.loads((ROOT/'evaluation/runs/20261005-event-main-handoff-v2/source-sha256.json').read_bytes()).items():
-        if name=='evaluation/trusted/paid-gates.json':continue  # Explicit Main finite-gate change.
+    qa_path=ROOT/'evidence/qa/T27-CH01-event-20261005T115700Z/result.json'
+    qa_raw=qa_path.read_bytes()
+    assert sha(qa_raw)=='958c67a1c3fb3d54e1f1af48b14cd8aa57dc1d58e66f187f0ec6e8bd3d9810e0'
+    qa=json.loads(qa_raw)
+    assert qa['checks']==qa['passed']==79 and not qa['failures']
+    assert len(qa['sources_before'])==52 and qa['sources_before']==qa['sources_after']
+    for name,digest in qa['sources_before'].items():
+        assert sha((ROOT/name).read_bytes())==digest,name
         assert pins[name]['runtime_raw_sha256']==digest,name
     fixture=git('show','165a961c9d6694ceb44c88ef86c1ea28de2eae71:backend/app/storage/sqlite.py')
     assert sha(fixture)=='21d992feb895ce5535c6b0b3d731887be9619171351a551935e1d10fc2bfae22'
@@ -55,7 +61,9 @@ def main():
     archive_hash=sha(archive.read_bytes())
     value={'commit':commit,'archive_sha256':archive_hash,'files':pins,'approved_by':'Main',
            'hash_policy':'Git blob bytes exact; only separately listed and proven LF->CRLF or Main-fixed newline indices restore runtime pins. Preserve BOM, EOF and every other byte. No target-controlled normalization.',
-           'git_used_for_newer_uncommitted_paths':fallbacks,'created_at':datetime.now(timezone.utc).isoformat()}
+           'git_used_for_newer_uncommitted_paths':fallbacks,'created_at':datetime.now(timezone.utc).isoformat(),
+           'evaluator_candidate_independent_qa':str(qa_path.relative_to(ROOT)),
+           'evaluator_candidate_qa_sha256':sha(qa_raw),'evaluator_source_count':52}
     path=ROOT/f'evidence/integration/reproduction-{stamp}-pins.json'
     path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     descriptor={'commit':commit,'archive':str(archive),'archive_sha256':archive_hash,'members':len(pins),

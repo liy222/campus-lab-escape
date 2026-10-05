@@ -13,7 +13,49 @@
       "credential_env": "EVALUATION_MODEL_API_KEY",
       "base_url": "https://api.deepseek.com",
       "model": "deepseek-flash"
+    },
+    {
+      "approval_id": "K4rem-20261005T155623Z",
+      "approved_by": "Main",
+      "purpose": "calibration",
+      "input_sha256": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1",
+      "max_calls": 1,
+      "max_cost_units": 52512000,
+      "max_tokens": 1000,
+      "timeout_seconds": 20,
+      "expires_at": "2026-10-06T03:56:23.664526+00:00",
+      "credential_env": "EVALUATION_MODEL_API_KEY",
+      "base_url": "https://api.deepseek.com",
+      "model": "deepseek-flash"
+    },
+    {
+      "approval_id": "E1eval-20261005T155623Z",
+      "approved_by": "Main",
+      "purpose": "claims",
+      "input_sha256": "6ac8f14b3b8f4abf38fcc1e60327062540fc1678c9feb04546c34f61fd918a84",
+      "max_calls": 2,
+      "max_cost_units": 643688000,
+      "max_tokens": 1000,
+      "timeout_seconds": 20,
+      "expires_at": "2026-10-06T03:56:23.664526+00:00",
+      "credential_env": "EVALUATION_MODEL_API_KEY",
+      "base_url": "https://api.deepseek.com",
+      "model": "deepseek-flash"
+    },
+    {
+      "approval_id": "CH01eval-20261005T155623Z",
+      "approved_by": "Main",
+      "purpose": "claims",
+      "input_sha256": "5eb36ad053d05a5285fd6dd22fe25983d575c5597abe5d8441fb5ed6457aee6d",
+      "max_calls": 3,
+      "max_cost_units": 1187848000,
+      "max_tokens": 1000,
+      "timeout_seconds": 20,
+      "expires_at": "2026-10-06T03:56:23.664526+00:00",
+      "credential_env": "EVALUATION_MODEL_API_KEY",
+      "base_url": "https://api.deepseek.com",
+      "model": "deepseek-flash"
     }
   ],
-  "note": "Finite Main calibration GO within original user CNY10 project budget."
+  "note": "Finite Main gates for exact explicitly approved six payloads; original used gate preserved, original CNY10 shared cap unchanged."
 }
