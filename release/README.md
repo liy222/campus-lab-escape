@@ -1,12 +1,12 @@
-# 交付索引
+﻿# 交付索引
 
-本项目是本机课程工程原型，当前文档按截至 2026-10-05 的已留存结果整理。T30 接受的产品候选是当前工作树原始源码身份（规则文件 SHA256 `73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb`），关卡 2.0.0、接口/Schema/工具 1.0.0。此值不是新提交号；T30 未独立验证其 archive 中记录的历史 v1 commit。
+本项目是本机课程工程原型，当前文档按截至 2026-10-05 的已留存结果整理。T30 产品候选已由 Main 接受并 push 为 tag `CH01_v2`，commit `242ecfc4d9f7bf1a8480508de701d9efc7822fe7`。版本绑定清单 [`evidence/integration/CH01_v2-manifest.json`](../evidence/integration/CH01_v2-manifest.json) 列出 170 个源码、7 项证据和 2 个历史 harness 绑定缺口；规则文件 SHA256 `73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb`，关卡 2.0.0、接口/Schema/工具 1.0.0。
 
 ## 源码、运行和回退
 
 - `backend/app/`、`frontend/`：本地规则服务和网页。仓库根 README 给出指定 Python、Node 安装、mock 启动、保存恢复、服务停止以及 v2 独立数据库步骤。
 - `scripts/`：本地开发和检查入口。`python -m scripts.dev --provider mock` 同时运行本地后端与前端；停止时按 Ctrl+C。
-- `release/archives/baseline_v1/`：原 v1 回退源。README 使用 `./data/game-v1.sqlite` 与 v2 的 `./data/game-v2.sqlite` 分库，使用前关闭另一版本以释放默认端口。
+- `release/archives/baseline_v1/`：原 v1 回退源。使用 v1 的 `./data/game-v1.sqlite`，与 v2 的 `./data/game-v2.sqlite` 分库。归档没有 `node_modules`；网页演示前先在归档 cwd 执行 `npm.cmd --prefix frontend ci`，只运行后端 API 时无需安装前端依赖。使用前关闭另一版本以释放默认端口。
 - `docs/execution-plan.md` 保留完整要求；不是实现或验收记录。当前实际记录见 `docs/report.md`、`docs/defense.md` 和下列原始 QA 报告。
 
 ## 按要求编号查证
@@ -30,7 +30,7 @@
 - Pilot：六条真实 provider 结果由 T23 独立复核，3/3 完成每种上下文、各 2/3 正确；C06 两条已完成但下一步不正确。总计 ¥0.02975152 是保守账面计费，不是独立供应商账单。详见 T23 报告。
 - 正式 E1：72 个计划格中实际记录为 22 完成、1 次超时、49 未调用；超时回复、送达和 token 仍未知。原 T25 检查的上界 ¥0.23749696 是当时未知状态下的保守上界。
 - Main 后续根据用户报告的超时费用 ¥0.05 关闭账目时保留全部 ¥0.16292 上界并保留 token 为 NULL。当前累计上界 ¥0.27760296、35 笔已结算、无 pending/unknown；这不是供应商账单，也没有把 T25 历史观察改写成已知响应。
-- 49 项 continuation 是独立新 run，保留原超时与错误输出、不重试 22 次完成记录；目前仍在进行，待 Main 获得并复核终态证据。不要把它和旧 49 条 not_called 混称为已完成。
+- 49 项 continuation 是独立新 run，保留原超时与错误输出、不重试 22 次完成记录；独立 QA 仍在进行，尚无终态或付费调用，待 Main 复核。校准请求在执行前被自动审批审查拒绝，具体 payload transfer 等待用户处理；没有产生校准付费调用。不要把它和旧 49 条 not_called 混称为已完成。
 
 ## 尚未完成
 
@@ -41,4 +41,4 @@
 
 未进行公开部署。没有启用 GitHub Actions。历史的 T30 自动化浏览器覆盖不是人类试玩。
 
-本次文档整理记录见 `evidence/delivery/T31-docs-20261005/report.json`。
+本次文档整理记录见 `evidence/delivery/T31-docs-20261005/report-v2.json`（原始文档整理记录为同目录 `report.json`）。

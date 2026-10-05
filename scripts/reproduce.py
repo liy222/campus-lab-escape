@@ -107,6 +107,20 @@ def materialize(archive: Path, digest: str, root: Path, pins: dict) -> dict:
             if b"\r" in raw or b"\n" not in raw:
                 raise ValueError("not a canonical LF source: " + name)
             output = raw.replace(b"\n", b"\r\n")
+        elif mode == "main_pinned_line_endings":
+            # Main records original CRLF positions after proving canonical
+            # Git/runtime equality. Keep UTF-8 BOM, lone CRs and EOF bytes.
+            canonical = raw.decode("utf-8", errors="strict").replace("\r\n", "\n").encode("utf-8")
+            indices = record.get("crlf_newline_indices")
+            count = canonical.count(b"\n")
+            if (not isinstance(indices, list)
+                    or any(type(index) is not int or index < 0 or index >= count for index in indices)
+                    or indices != sorted(set(indices))):
+                raise ValueError("invalid Main CRLF newline indices: " + name)
+            selected = set(indices)
+            parts = canonical.split(b"\n")
+            output = b"".join(part + (b"\r\n" if index in selected else b"\n")
+                              for index, part in enumerate(parts[:-1])) + parts[-1]
         else:
             raise ValueError("unknown Main materialization mode")
         if sha(output) != record["runtime_raw_sha256"]:
@@ -115,6 +129,8 @@ def materialize(archive: Path, digest: str, root: Path, pins: dict) -> dict:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(output)
         audit[name] = {"git_blob_sha256": sha(raw), "runtime_raw_sha256": sha(output), "materialization": mode}
+        if mode == "main_pinned_line_endings":
+            audit[name]["crlf_newline_indices"] = indices
     return audit
 
 

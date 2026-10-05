@@ -1,4 +1,4 @@
-# 个人答辩素材（待本人核对与补充）
+﻿# 个人答辩素材（待本人核对与补充）
 
 这份材料只整理可以从工程记录中核对的事实和答辩提示。它不是学生的个人陈述、实际游戏体验、签字或教师意见；请用你自己的话核对后再用于课程展示。
 
@@ -11,11 +11,11 @@
 
 ## 可以如实报告的工程证据
 
-- T30：CH01 / RT01–05 的独立 mock/本地工程检查范围通过。可展示 `review/findings/T30-report-20261005.md` 中的场景矩阵及 `evidence/qa/T30-evidence-index-20261005.json` 中的证据 ID。
+- T30：CH01 / RT01–05 的独立 mock/本地工程检查范围通过。已发布版本为 `CH01_v2` commit `242ecfc4d9f7bf1a8480508de701d9efc7822fe7`，绑定清单见 `evidence/integration/CH01_v2-manifest.json`。可展示 `review/findings/T30-report-20261005.md` 中的场景矩阵及 `evidence/qa/T30-evidence-index-20261005.json` 中的证据 ID。
 - T27：评价器的事件注册、冻结归档、读取边界和合成反例检查通过。真实事件结构评价为 `INSUFFICIENT_EVIDENCE`，付费校准没有运行。
 - E1 pilot 有六个完成的真实 provider 调用。正式 E1 只记录 22 条完成、一次超时和 49 条未调用；11 个配对 checkpoint 只能作描述性观察，不能声称统计优胜。
-- 49 条 continuation 属于新的运行路径，正在进行。待真实终态和 Main 独立复核后再更新任何结论。
-- T30 v1 回退探针使用临时 v1 数据库；完整新目录安装、构建、启动和恢复仍待 T32。
+- 49 条 continuation 属于新的运行路径，独立 QA 仍在进行；尚无终态和付费调用。校准请求在执行前被自动审批审查拒绝，具体 payload transfer 等待用户处理。待 Main 复核后再更新结论。
+- T30 v1 回退探针使用临时 v1 数据库；完整新目录安装、构建、启动和恢复仍待 T32。v1 归档首次网页演示前须 `npm.cmd --prefix frontend ci`，因为归档不含 `node_modules`。
 
 ## 必须由本人补充的反思
 

@@ -1,0 +1,67 @@
+{
+  "task": "T31-delivery-docs-review-corrections",
+  "date": "2026-10-05",
+  "supersedes": "report.json (preserved unchanged)",
+  "changed_files": [
+    "README.md",
+    "release/README.md",
+    "docs/report.md",
+    "docs/defense.md"
+  ],
+  "release_identity": {
+    "release_id": "CH01_v2",
+    "commit": "242ecfc4d9f7bf1a8480508de701d9efc7822fe7",
+    "tag_pushed": true,
+    "manifest": "evidence/integration/CH01_v2-manifest.json",
+    "manifest_source_count": 170,
+    "manifest_evidence_count": 7,
+    "historical_harness_gaps": 2
+  },
+  "startup_correction": "README installs locked backend dependencies and npm ci in the v1 archive before web demo; backend-only use needs no frontend dependencies. v1 and v2 SQLite paths remain distinct.",
+  "current_blockers": {
+    "calibration": "Main reports automatic approval review rejected dispatch before execution; specific payload transfer awaits user; no paid call occurred.",
+    "continuation": "Independent QA is in progress; no terminal result or paid calls yet; Main review remains pending."
+  },
+  "actual_commands_and_exit_codes": [
+    {
+      "command": "PowerShell Get-ChildItem/Get-Content over actual allowed report paths and CH01_v2-manifest.json",
+      "exit_code": 0
+    },
+    {
+      "note": "No files changed by that attempt.",
+      "command": "Initial correction call failed at PowerShell parse stage before execution",
+      "exit_code": 1
+    },
+    {
+      "note": "README release identity paragraph changed before the command stopped on an expanded-variable match; subsequent complete correction normalized the intended text.",
+      "command": "Intermediate passage replacement",
+      "exit_code": 1
+    },
+    {
+      "command": "Complete PowerShell Set-Content/WriteAllText corrections to assigned docs and report-v2.json",
+      "exit_code": 0
+    },
+    {
+      "command": "PowerShell duplicate-line cleanup and final T31 report-v2 update",
+      "exit_code": 0
+    },
+    {
+      "command": "PowerShell local-reference audit, manifest-count assertion, JSON parse, and raw SHA256 capture",
+      "exit_code": 0
+    }
+  ],
+  "source_sha256": {
+    "README.md": "82aadf0fa4abd7464e4ac2d96bb50c157c2832c4fc79df935ef3e206192c2d38",
+    "release/README.md": "feb10bb907b42da06cfaef56fa3713ceb5c72ad7c3b268e161aa6f78bc75afd4",
+    "docs/report.md": "053c43c9764dce07c5be913d5d47dfa87c0aa6c66586ac23fe402ca9406adccc",
+    "docs/defense.md": "e3c7da80e6bb9aab5ed426107cf904df8f440998c493ddab3c685882cc34b79e",
+    "evidence/integration/CH01_v2-manifest.json": "69501e3a159d6c55755b1bef850da3b57777c1299a6304f78fbb847c11c66a58",
+    "evidence/qa/T30-evidence-index-20261005.json": "e17b421291d25a8244b1b87cbf9d993897e6948e9536a24ea6e1b25d41567117",
+    "evidence/delivery/T31-docs-20261005/report.json": "6ab4d12b84cd3fd82df97053adf951d049b627b14a7ea6cbad5f9296406140f2"
+  },
+  "limitations": [
+    "T32 clean reproduction has not run.",
+    "No calibration network or paid call occurred.",
+    "No human playtest, player decision record, teacher approval, or signature is claimed."
+  ]
+}

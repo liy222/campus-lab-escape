@@ -1,0 +1,21 @@
+{
+  "kind": "Main-directed mixed-line-ending synthetic checks",
+  "count": 8,
+  "checks": [
+    "source parses",
+    "Main-pinned mixed CRLF/LF restores exact bytes including UTF8 BOM and no-newline EOF",
+    "nine invalid indices shapes/ranges/orders/types refused",
+    "incorrect runtime byte hash refused",
+    "canonical CRLF-to-LF input reconstruction preserves exact runtime bytes",
+    "invalid UTF8 Git input refused",
+    "trailing-newline EOF and zero-newline BOM preserved",
+    "raw_equal and full-CRLF existing modes retained"
+  ],
+  "exit_code": 0,
+  "actual_paid_calls": 0,
+  "source_sha256": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+  "limitations": [
+    "Source package reproduction not run; waiting for newly committed helper/package and Main GO.",
+    "Only explicit Main-pinned per-file byte restoration was tested; no target-selected trust policy."
+  ]
+}
