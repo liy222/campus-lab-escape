@@ -1,0 +1,140 @@
+[
+  {
+    "row_id": "pilot-C02-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r1_cabinet"
+        },
+        "clue_refs": [
+          "r1_note_clue"
+        ],
+        "summary": "查看带数字锁的值班柜，确认门上形状标签的顺序或组合，以便结合便签中的形状-数字对应关系推断密码。"
+      }
+    },
+    "cost_upper_units": 3452000
+  },
+  {
+    "row_id": "pilot-C02-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r1_cabinet"
+        },
+        "clue_refs": [
+          "r1_note_clue"
+        ],
+        "summary": "查看值班柜，确认门上形状标签的顺序，以便结合便签中的数字对应关系推导密码。"
+      }
+    },
+    "cost_upper_units": 3025120
+  },
+  {
+    "row_id": "pilot-C06-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": false,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": "LEGAL_BUT_NOT_USEFUL_NEXT_ACTION",
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r2_monitor"
+        },
+        "clue_refs": [],
+        "summary": "查看设备间电源箱旁的屏幕，获取恢复供电或出口控制室相关的进一步线索。"
+      }
+    },
+    "cost_upper_units": 4766480
+  },
+  {
+    "row_id": "pilot-C06-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": false,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": "LEGAL_BUT_NOT_USEFUL_NEXT_ACTION",
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r2_monitor"
+        },
+        "clue_refs": [],
+        "summary": "查看设备间里的屏幕，获取推进供电或出口控制室门锁的新信息。"
+      }
+    },
+    "cost_upper_units": 4712240
+  },
+  {
+    "row_id": "pilot-C12-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "submit_code",
+        "arguments": {
+          "code": "231",
+          "target_id": "r3_panel"
+        },
+        "clue_refs": [
+          "r3_checklist_clue",
+          "r3_panel_clue"
+        ],
+        "summary": "根据“依次确认：冷却、通风、照明”及对应数字冷却2、通风3、照明1，向 r3_panel 提交密码 231，以完成出口检查。"
+      }
+    },
+    "cost_upper_units": 6647440
+  },
+  {
+    "row_id": "pilot-C12-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "submit_code",
+        "arguments": {
+          "code": "231",
+          "target_id": "r3_panel"
+        },
+        "clue_refs": [
+          "r3_checklist_clue",
+          "r3_panel_clue"
+        ],
+        "summary": "按检查单顺序“冷却、通风、照明”及面板映射“冷却2、通风3、照明1”，向检查面板提交代码231以完成出口检查。"
+      }
+    },
+    "cost_upper_units": 7148240
+  }
+]

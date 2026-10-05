@@ -1,0 +1,2601 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://campus-lab-escape.local/contracts/api.schema.json",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/create_response"
+    },
+    {
+      "$ref": "#/$defs/state_response"
+    },
+    {
+      "$ref": "#/$defs/action_response"
+    },
+    {
+      "$ref": "#/$defs/control_response"
+    },
+    {
+      "$ref": "#/$defs/cancel_response"
+    },
+    {
+      "$ref": "#/$defs/ai_turn_response"
+    },
+    {
+      "$ref": "#/$defs/error_response"
+    }
+  ],
+  "$defs": {
+    "tool_call": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "inspect"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "object_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "object_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "get_inventory"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "take"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "use_item"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id",
+                "target_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "submit_code"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "code": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 16,
+                  "pattern": "^[0-9]+$"
+                }
+              },
+              "required": [
+                "target_id",
+                "code"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "move"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "destination_id": {
+                  "enum": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "EXIT"
+                  ]
+                }
+              },
+              "required": [
+                "destination_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "progress_call": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "take"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "use_item"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id",
+                "target_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "submit_code"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "code": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 16,
+                  "pattern": "^[0-9]+$"
+                }
+              },
+              "required": [
+                "target_id",
+                "code"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "move"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "destination_id": {
+                  "enum": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "EXIT"
+                  ]
+                }
+              },
+              "required": [
+                "destination_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "affordance": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "inspect"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "object_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "object_id"
+              ],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": false
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "get_inventory"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": false
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "take"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id"
+              ],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": false
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "use_item"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id",
+                "target_id"
+              ],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": false
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "submit_code"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "target_id"
+              ],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": true
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "move"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "destination_id": {
+                  "enum": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "EXIT"
+                  ]
+                }
+              },
+              "required": [
+                "destination_id"
+              ],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": false
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "clue": {
+      "type": "object",
+      "properties": {
+        "clue_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "object_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 4000
+        }
+      },
+      "required": [
+        "clue_id",
+        "object_id",
+        "title",
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "item": {
+      "type": "object",
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "usable_targets": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "item_id",
+        "name",
+        "description",
+        "usable_targets"
+      ],
+      "additionalProperties": false
+    },
+    "visible_object": {
+      "type": "object",
+      "properties": {
+        "object_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "kind": {
+          "enum": [
+            "clue",
+            "container",
+            "door",
+            "device",
+            "item"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/affordance"
+          }
+        }
+      },
+      "required": [
+        "object_id",
+        "name",
+        "kind",
+        "description",
+        "actions"
+      ],
+      "additionalProperties": false
+    },
+    "exit": {
+      "type": "object",
+      "properties": {
+        "destination_id": {
+          "enum": [
+            "R1",
+            "R2",
+            "R3",
+            "EXIT"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "unlocked": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "destination_id",
+        "name",
+        "unlocked"
+      ],
+      "additionalProperties": false
+    },
+    "save_metadata": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "level_version": {
+          "enum": [
+            "1.0.0",
+            "2.0.0"
+          ]
+        },
+        "saved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source_revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_generation": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "required": [
+        "schema_version",
+        "level_version",
+        "saved_at",
+        "source_revision",
+        "source_generation"
+      ],
+      "additionalProperties": false
+    },
+    "visible_state": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "level_version": {
+          "enum": [
+            "1.0.0",
+            "2.0.0"
+          ]
+        },
+        "session_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "generation": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "status": {
+          "enum": [
+            "playing",
+            "won"
+          ]
+        },
+        "room": {
+          "type": "object",
+          "properties": {
+            "room_id": {
+              "enum": [
+                "R1",
+                "R2",
+                "R3",
+                "EXIT"
+              ]
+            },
+            "name": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 4000
+            }
+          },
+          "required": [
+            "room_id",
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/visible_object"
+          }
+        },
+        "inventory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/item"
+          }
+        },
+        "clues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/clue"
+          }
+        },
+        "exits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/exit"
+          }
+        },
+        "progress": {
+          "type": "object",
+          "properties": {
+            "power_on": {
+              "type": "boolean"
+            },
+            "check_done": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "power_on",
+            "check_done"
+          ],
+          "additionalProperties": false
+        },
+        "save": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/save_metadata"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema_version",
+        "level_version",
+        "session_id",
+        "revision",
+        "generation",
+        "status",
+        "room",
+        "objects",
+        "inventory",
+        "clues",
+        "exits",
+        "progress",
+        "save"
+      ],
+      "additionalProperties": false
+    },
+    "proposal": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "proposal_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "tool": {
+              "const": "take"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id"
+              ],
+              "additionalProperties": false
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "status": {
+              "enum": [
+                "pending",
+                "committed",
+                "cancelled",
+                "expired",
+                "invalidated",
+                "rejected"
+              ]
+            },
+            "clue_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            },
+            "summary": {
+              "type": "string",
+              "maxLength": 4000
+            }
+          },
+          "required": [
+            "proposal_id",
+            "tool",
+            "arguments",
+            "revision",
+            "generation",
+            "expires_at",
+            "status",
+            "clue_refs",
+            "summary"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "proposal_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "tool": {
+              "const": "use_item"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id",
+                "target_id"
+              ],
+              "additionalProperties": false
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "status": {
+              "enum": [
+                "pending",
+                "committed",
+                "cancelled",
+                "expired",
+                "invalidated",
+                "rejected"
+              ]
+            },
+            "clue_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            },
+            "summary": {
+              "type": "string",
+              "maxLength": 4000
+            }
+          },
+          "required": [
+            "proposal_id",
+            "tool",
+            "arguments",
+            "revision",
+            "generation",
+            "expires_at",
+            "status",
+            "clue_refs",
+            "summary"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "proposal_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "tool": {
+              "const": "submit_code"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "code": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 16,
+                  "pattern": "^[0-9]+$"
+                }
+              },
+              "required": [
+                "target_id",
+                "code"
+              ],
+              "additionalProperties": false
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "status": {
+              "enum": [
+                "pending",
+                "committed",
+                "cancelled",
+                "expired",
+                "invalidated",
+                "rejected"
+              ]
+            },
+            "clue_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            },
+            "summary": {
+              "type": "string",
+              "maxLength": 4000
+            }
+          },
+          "required": [
+            "proposal_id",
+            "tool",
+            "arguments",
+            "revision",
+            "generation",
+            "expires_at",
+            "status",
+            "clue_refs",
+            "summary"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "proposal_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "tool": {
+              "const": "move"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "destination_id": {
+                  "enum": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "EXIT"
+                  ]
+                }
+              },
+              "required": [
+                "destination_id"
+              ],
+              "additionalProperties": false
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "status": {
+              "enum": [
+                "pending",
+                "committed",
+                "cancelled",
+                "expired",
+                "invalidated",
+                "rejected"
+              ]
+            },
+            "clue_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            },
+            "summary": {
+              "type": "string",
+              "maxLength": 4000
+            }
+          },
+          "required": [
+            "proposal_id",
+            "tool",
+            "arguments",
+            "revision",
+            "generation",
+            "expires_at",
+            "status",
+            "clue_refs",
+            "summary"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "receipt": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "event_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "tool": {
+              "const": "inspect"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "object_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "object_id"
+              ],
+              "additionalProperties": false
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "revision_before": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "revision_after": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "changed": {
+              "type": "boolean"
+            },
+            "message": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "observation": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 4000
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "new_clue_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            },
+            "consumed_item_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "request_id",
+            "event_id",
+            "tool",
+            "arguments",
+            "generation",
+            "revision_before",
+            "revision_after",
+            "changed",
+            "message",
+            "observation",
+            "new_clue_ids",
+            "consumed_item_ids"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "event_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "tool": {
+              "const": "get_inventory"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "revision_before": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "revision_after": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "changed": {
+              "type": "boolean"
+            },
+            "message": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "observation": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 4000
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "new_clue_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            },
+            "consumed_item_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "request_id",
+            "event_id",
+            "tool",
+            "arguments",
+            "generation",
+            "revision_before",
+            "revision_after",
+            "changed",
+            "message",
+            "observation",
+            "new_clue_ids",
+            "consumed_item_ids"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "event_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "tool": {
+              "const": "take"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id"
+              ],
+              "additionalProperties": false
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "revision_before": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "revision_after": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "changed": {
+              "type": "boolean"
+            },
+            "message": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "observation": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 4000
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "new_clue_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            },
+            "consumed_item_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "request_id",
+            "event_id",
+            "tool",
+            "arguments",
+            "generation",
+            "revision_before",
+            "revision_after",
+            "changed",
+            "message",
+            "observation",
+            "new_clue_ids",
+            "consumed_item_ids"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "event_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "tool": {
+              "const": "use_item"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id",
+                "target_id"
+              ],
+              "additionalProperties": false
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "revision_before": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "revision_after": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "changed": {
+              "type": "boolean"
+            },
+            "message": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "observation": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 4000
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "new_clue_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            },
+            "consumed_item_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "request_id",
+            "event_id",
+            "tool",
+            "arguments",
+            "generation",
+            "revision_before",
+            "revision_after",
+            "changed",
+            "message",
+            "observation",
+            "new_clue_ids",
+            "consumed_item_ids"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "event_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "tool": {
+              "const": "submit_code"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "code": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 16,
+                  "pattern": "^[0-9]+$"
+                }
+              },
+              "required": [
+                "target_id",
+                "code"
+              ],
+              "additionalProperties": false
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "revision_before": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "revision_after": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "changed": {
+              "type": "boolean"
+            },
+            "message": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "observation": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 4000
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "new_clue_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            },
+            "consumed_item_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "request_id",
+            "event_id",
+            "tool",
+            "arguments",
+            "generation",
+            "revision_before",
+            "revision_after",
+            "changed",
+            "message",
+            "observation",
+            "new_clue_ids",
+            "consumed_item_ids"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "event_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "tool": {
+              "const": "move"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "destination_id": {
+                  "enum": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "EXIT"
+                  ]
+                }
+              },
+              "required": [
+                "destination_id"
+              ],
+              "additionalProperties": false
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "revision_before": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "revision_after": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "changed": {
+              "type": "boolean"
+            },
+            "message": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "observation": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 4000
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "new_clue_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            },
+            "consumed_item_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "request_id",
+            "event_id",
+            "tool",
+            "arguments",
+            "generation",
+            "revision_before",
+            "revision_after",
+            "changed",
+            "message",
+            "observation",
+            "new_clue_ids",
+            "consumed_item_ids"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "version_request": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "generation": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "required": [
+        "request_id",
+        "revision",
+        "generation"
+      ],
+      "additionalProperties": false
+    },
+    "action_request": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "tool": {
+              "const": "inspect"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "object_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "object_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "request_id",
+            "revision",
+            "generation",
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "tool": {
+              "const": "get_inventory"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "request_id",
+            "revision",
+            "generation",
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "tool": {
+              "const": "take"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "request_id",
+            "revision",
+            "generation",
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "tool": {
+              "const": "use_item"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id",
+                "target_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "request_id",
+            "revision",
+            "generation",
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "tool": {
+              "const": "submit_code"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "code": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 16,
+                  "pattern": "^[0-9]+$"
+                }
+              },
+              "required": [
+                "target_id",
+                "code"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "request_id",
+            "revision",
+            "generation",
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "tool": {
+              "const": "move"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "destination_id": {
+                  "enum": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "EXIT"
+                  ]
+                }
+              },
+              "required": [
+                "destination_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "request_id",
+            "revision",
+            "generation",
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ai_turn_request": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "generation": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        }
+      },
+      "required": [
+        "request_id",
+        "revision",
+        "generation",
+        "message"
+      ],
+      "additionalProperties": false
+    },
+    "empty_request": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "create_data": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "token": {
+          "type": "string",
+          "minLength": 32,
+          "maxLength": 256
+        },
+        "visible_state": {
+          "$ref": "#/$defs/visible_state"
+        }
+      },
+      "required": [
+        "session_id",
+        "token",
+        "visible_state"
+      ],
+      "additionalProperties": false
+    },
+    "state_data": {
+      "type": "object",
+      "properties": {
+        "visible_state": {
+          "$ref": "#/$defs/visible_state"
+        }
+      },
+      "required": [
+        "visible_state"
+      ],
+      "additionalProperties": false
+    },
+    "action_data": {
+      "type": "object",
+      "properties": {
+        "receipt": {
+          "$ref": "#/$defs/receipt"
+        },
+        "replayed": {
+          "type": "boolean"
+        },
+        "proposal": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/proposal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "visible_state": {
+          "$ref": "#/$defs/visible_state"
+        }
+      },
+      "required": [
+        "receipt",
+        "replayed",
+        "proposal",
+        "visible_state"
+      ],
+      "additionalProperties": false
+    },
+    "control_data": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "replayed": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "visible_state": {
+          "$ref": "#/$defs/visible_state"
+        }
+      },
+      "required": [
+        "request_id",
+        "replayed",
+        "message",
+        "visible_state"
+      ],
+      "additionalProperties": false
+    },
+    "cancel_data": {
+      "type": "object",
+      "properties": {
+        "proposal": {
+          "$ref": "#/$defs/proposal"
+        },
+        "visible_state": {
+          "$ref": "#/$defs/visible_state"
+        }
+      },
+      "required": [
+        "proposal",
+        "visible_state"
+      ],
+      "additionalProperties": false
+    },
+    "ai_turn_data": {
+      "type": "object",
+      "properties": {
+        "turn_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "answer": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "clue_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "uniqueItems": true
+        },
+        "proposal": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/proposal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "completed",
+            "no_suggestion",
+            "stopped"
+          ]
+        },
+        "stop_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "MODEL_TIMEOUT",
+                "MODEL_UNAVAILABLE",
+                "MODEL_INVALID_OUTPUT",
+                "AI_LIMIT_REACHED",
+                "STALE_STATE"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "usage": {
+          "type": "object",
+          "properties": {
+            "provider": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "model": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 4000
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "input_tokens": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "output_tokens": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "model_calls": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "read_tool_calls": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "provider",
+            "model",
+            "input_tokens",
+            "output_tokens",
+            "model_calls",
+            "read_tool_calls"
+          ],
+          "additionalProperties": false
+        },
+        "visible_state": {
+          "$ref": "#/$defs/visible_state"
+        }
+      },
+      "required": [
+        "turn_id",
+        "answer",
+        "clue_refs",
+        "proposal",
+        "status",
+        "stop_reason",
+        "usage",
+        "visible_state"
+      ],
+      "additionalProperties": false
+    },
+    "error_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": false
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "error": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "enum": [
+                "BAD_ARGUMENT",
+                "INVALID_TOOL",
+                "FORBIDDEN_SESSION",
+                "NOT_VISIBLE",
+                "PRECONDITION_FAILED",
+                "WRONG_CODE",
+                "ALREADY_TAKEN",
+                "GAME_FINISHED",
+                "STALE_STATE",
+                "STALE_GENERATION",
+                "REQUEST_ID_CONFLICT",
+                "PROPOSAL_NOT_FOUND",
+                "PROPOSAL_EXPIRED",
+                "PROPOSAL_CANCELLED",
+                "PROPOSAL_INVALIDATED",
+                "PROPOSAL_REJECTED",
+                "SAVE_NOT_FOUND",
+                "INVALID_SNAPSHOT",
+                "SNAPSHOT_VERSION_MISMATCH",
+                "MODEL_UNAVAILABLE",
+                "MODEL_TIMEOUT",
+                "MODEL_INVALID_OUTPUT",
+                "AI_LIMIT_REACHED",
+                "INTERNAL_ERROR"
+              ]
+            },
+            "message": {
+              "type": "string",
+              "maxLength": 4000
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "additionalProperties": false
+        },
+        "visible_state": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/visible_state"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "error",
+        "visible_state"
+      ],
+      "additionalProperties": false
+    },
+    "create_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "data": {
+          "$ref": "#/$defs/create_data"
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "state_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "data": {
+          "$ref": "#/$defs/state_data"
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "action_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "data": {
+          "$ref": "#/$defs/action_data"
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "control_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "data": {
+          "$ref": "#/$defs/control_data"
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "cancel_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "data": {
+          "$ref": "#/$defs/cancel_data"
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "ai_turn_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "data": {
+          "$ref": "#/$defs/ai_turn_data"
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "data"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

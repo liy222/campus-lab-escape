@@ -1,0 +1,115 @@
+import { useEffect, useRef, useState } from 'react';
+import { api, ApiError, type AiTurnData, type Proposal, type Receipt, type Session, type VisibleState } from './api';
+
+const reasons: Record<string, string> = { MODEL_TIMEOUT: '模型未能在时间内完成，已停止本次问答。', MODEL_UNAVAILABLE: '模型服务暂不可用，可以继续手动探索。', MODEL_INVALID_OUTPUT: '返回的建议无法通过检查，未执行任何建议行动。', AI_LIMIT_REACHED: '本次问答达到调用上限，已停止。', STALE_STATE: '问答期间进度已改变，请依据当前场景重新询问。' };
+const proposalLabels = { pending: '待确认 · proposed', committed: '已执行 · committed', cancelled: '已取消 · cancelled', expired: '已过期', invalidated: '已失效', rejected: '已拒绝 · rejected', unknown: '结果待核对' };
+type ProposalView = { proposal: Proposal; receipt: Receipt | null; outcome: keyof typeof proposalLabels; message?: string; replayed?: boolean };
+type Trace = { id: string; eventId: string | null; outcome: string; tool: string; arguments: Record<string, string>; revision: number; generation: string; message: string; receipt?: Receipt };
+interface Props { session: Session; state: VisibleState; manualPending: boolean; needsSync: boolean; onState: (state: VisibleState, reconciled?: boolean) => boolean; onUncertain: (value: boolean) => void; onForbidden: (sessionId: string) => void }
+
+export default function Assistant({ session, state, manualPending, needsSync, onState, onUncertain, onForbidden }: Props) {
+  const [question, setQuestion] = useState('');
+  const [turn, setTurn] = useState<AiTurnData | null>(null);
+  const [view, setView] = useState<ProposalView | null>(null);
+  const [pending, setPending] = useState<'ask' | 'confirm' | 'cancel' | null>(null);
+  const [error, setError] = useState('');
+  const [notice, setNotice] = useState('');
+  const [traces, setTraces] = useState<Trace[]>([]);
+  const [now, setNow] = useState(Date.now);
+  const busy = useRef(false);
+  const current = useRef(state);
+  const pendingGeneration = useRef<string | null>(null);
+  current.current = state;
+  useEffect(() => {
+    setQuestion(''); setTurn(null); setView(null); setTraces([]); setError(''); setNotice('');
+  }, [state.generation]);
+  useEffect(() => { setQuestion(''); }, [state.revision]);
+  useEffect(() => { const timer = window.setInterval(() => setNow(Date.now()), 1000); return () => window.clearInterval(timer); }, []);
+  const currentView = view?.proposal.generation === state.generation ? view : null;
+  const outdated = !!currentView && currentView.outcome === 'pending' && currentView.proposal.revision !== state.revision;
+  const expired = !!currentView && currentView.outcome === 'pending' && Date.parse(currentView.proposal.expires_at) <= now;
+  const outcome = outdated ? 'invalidated' : expired ? 'expired' : currentView?.outcome;
+  const canConfirm = !!currentView && outcome === 'pending' && state.status === 'playing' && !pending && !manualPending && !needsSync;
+  const currentTurn = turn?.visible_state.generation === state.generation ? turn : null;
+  const answerOutdated = currentTurn && currentTurn.visible_state.revision !== state.revision;
+
+  function trace(proposal: Proposal, outcome: string, message: string, receipt?: Receipt, eventId?: string | null) {
+    setTraces(entries => [{ id: eventId || `${proposal.proposal_id}-${outcome}`, eventId: eventId || null, outcome, tool: receipt?.tool || proposal.tool, arguments: receipt?.arguments || proposal.arguments, revision: receipt?.revision_after ?? proposal.revision, generation: receipt?.generation || proposal.generation, message, ...(receipt ? { receipt } : {}) }, ...entries].slice(0, 8));
+  }
+  function knownReferences(ids: string[], projection: VisibleState) { return ids.every(id => projection.clues.some(clue => clue.clue_id === id)); }
+  async function failure(caught: unknown, proposal?: Proposal, startedGeneration?: string) {
+    const problem = caught instanceof ApiError ? caught : new ApiError('CLIENT_ERROR', '问答操作未完成，请稍后重新询问。');
+    if (problem.visibleState) onState(problem.visibleState);
+    if (problem.code === 'FORBIDDEN_SESSION') onForbidden(session.session_id);
+    else if (startedGeneration && current.current.generation !== startedGeneration) { setNotice('进度已更换，旧问答的结果已忽略。'); return; }
+    else if (['NETWORK_ERROR', 'SERVICE_UNAVAILABLE'].includes(problem.code)) {
+      if (proposal) { setView({ proposal, receipt: null, outcome: 'unknown' }); trace(proposal, 'unknown', '响应丢失，未取得执行收据。'); }
+      onUncertain(true);
+      try { const response = await api.state(session); if (onState(response.data.visible_state, true)) setNotice('已同步实际进度。未自动重发问答或确认，请依据场景继续。'); }
+      catch { setNotice('尚未确认操作结果，请先点击“同步进度”。'); }
+    } else if (proposal) {
+      const status = problem.code === 'PROPOSAL_EXPIRED' ? 'expired' : problem.code === 'PROPOSAL_INVALIDATED' || problem.code === 'STALE_STATE' || problem.code === 'STALE_GENERATION' ? 'invalidated' : problem.code === 'PROPOSAL_CANCELLED' ? 'cancelled' : 'rejected';
+      setView({ proposal, receipt: null, outcome: status, message: problem.message });
+      trace(proposal, status, problem.message, undefined, problem.eventId);
+    }
+    setError(problem.message);
+  }
+  async function ask() {
+    if (busy.current || manualPending || needsSync || state.status === 'won') return;
+    if (!question.trim() || question.length > 2000) { setError('请填写 1–2000 字的问句。'); return; }
+    const started = current.current;
+    busy.current = true; pendingGeneration.current = started.generation; setPending('ask'); setError(''); setNotice(''); setView(null);
+    try {
+      const response = await api.ai(session, started, question);
+      const data = response.data;
+      if (!onState(data.visible_state)) { setNotice('问答来自较早的进度，已忽略。请重新询问。'); return; }
+      if (current.current.generation !== started.generation || data.visible_state.generation !== started.generation) { setNotice('游戏进度已更换，旧问答已清除。请重新询问。'); return; }
+      if (!knownReferences(data.clue_refs, data.visible_state) || (data.proposal && !knownReferences(data.proposal.clue_refs, data.visible_state))) throw new ApiError('MODEL_INVALID_OUTPUT', '建议含无法核对的线索引用，未显示该建议。已发现线索仍保留。');
+      setTurn(data);
+      if (data.proposal) {
+        setView({ proposal: data.proposal, receipt: null, outcome: data.proposal.status });
+        trace(data.proposal, 'proposed', '服务器保存了建议；尚未执行。', undefined, response.event_id);
+      }
+    } catch (caught) { await failure(caught, undefined, started.generation); }
+    finally { busy.current = false; pendingGeneration.current = null; setPending(null); }
+  }
+  async function decide(operation: 'confirm' | 'cancel') {
+    if (busy.current || !currentView || !canConfirm) return;
+    const proposal = currentView.proposal;
+    if (proposal.generation !== current.current.generation || proposal.revision !== current.current.revision || Date.parse(proposal.expires_at) <= Date.now()) return;
+    busy.current = true; setPending(operation); setError(''); setNotice('');
+    try {
+      if (operation === 'confirm') {
+        const response = await api.confirm(session, proposal.proposal_id);
+        if (!onState(response.data.visible_state)) { setNotice('确认响应来自较早进度，请同步当前状态。'); return; }
+        if (response.data.visible_state.generation !== proposal.generation) return;
+        if (!response.data.proposal) throw new ApiError('SERVICE_UNAVAILABLE', '确认响应缺少行动记录，请同步进度。');
+        setView({ proposal: response.data.proposal, receipt: response.data.receipt, outcome: response.data.proposal.status, replayed: response.data.replayed });
+        trace(response.data.proposal, 'committed', response.data.receipt.message, response.data.receipt, response.data.receipt.event_id);
+      } else {
+        const response = await api.cancel(session, proposal.proposal_id);
+        if (!onState(response.data.visible_state) || response.data.visible_state.generation !== proposal.generation) return;
+        setView({ proposal: response.data.proposal, receipt: null, outcome: response.data.proposal.status, message: '建议已取消，没有执行该行动。' });
+        trace(response.data.proposal, 'cancelled', '服务器确认取消；没有执行该行动。', undefined, response.event_id);
+      }
+    } catch (caught) { await failure(caught, proposal, proposal.generation); }
+    finally { busy.current = false; setPending(null); }
+  }
+  function references(ids: string[]) {
+    return <ul className="ai-references">{ids.map(id => { const clue = state.clues.find(clue => clue.clue_id === id); return clue ? <li key={id}><a href={`#clue-${id}`}>{clue.title} ↗</a></li> : null; })}</ul>;
+  }
+  return <section className="assistant ai-panel panel" aria-labelledby="assistant-title">
+    <div className="panel-heading"><h2 id="assistant-title">AI 探索伙伴</h2>{currentTurn && <span className="provider-badge">{currentTurn.usage.provider === 'mock' ? '开发模拟 · mock' : `服务：${currentTurn.usage.provider}`}</span>}</div>
+    <p className="panel-caption">依据已发现的线索讨论下一步。建议行动经你确认后才会执行。</p>
+    <form className="ai-question" onSubmit={event => { event.preventDefault(); void ask(); }}>
+      <label htmlFor="ai-question">想问探索伙伴什么？</label>
+      <textarea id="ai-question" maxLength={2000} rows={3} value={question} disabled={!!pending || needsSync || state.status === 'won'} placeholder="例如：我应该先查看哪些物件？" onChange={event => setQuestion(event.target.value)}/>
+      <div className="ai-question-actions"><small>{question.length}/2000</small><button className="button primary" disabled={!!pending || manualPending || needsSync || state.status === 'won' || !question.trim()}>询问伙伴</button></div>
+    </form>
+    {state.status === 'won' && <p className="muted">已完成探索。可以保存、恢复或开始新游戏。</p>}
+    <div className="ai-feedback" aria-live="polite">{pending && <p className="pending"><span className="spinner"/>{pending === 'ask' ? pendingGeneration.current !== state.generation ? '进度已更换，正在结束旧问答…' : '正在查看线索并思考，最长约 45 秒。你仍可手动探索…' : pending === 'confirm' ? '正在确认行动，请稍候…' : '正在取消建议，请稍候…'}</p>}{error && <p className="error" role="alert">{error}</p>}{notice && <p className="notice">{notice}</p>}</div>
+    {currentTurn && <div className="ai-answer"><div className="ai-status">{currentTurn.status === 'completed' ? '问答已完成' : currentTurn.status === 'no_suggestion' ? '暂无行动建议' : '本次问答已停止'}{answerOutdated && <span> · 回答时的进度已改变</span>}</div><p>{currentTurn.answer || '本次没有可显示的回答。'}</p>{currentTurn.stop_reason && <p className="stop-reason">{reasons[currentTurn.stop_reason] || currentTurn.stop_reason}</p>}{currentTurn.clue_refs.length > 0 && <><h3>引用的已发现线索</h3>{references(currentTurn.clue_refs)}</>}<details className="usage"><summary>本次服务与用量</summary><p>{currentTurn.usage.provider === 'mock' ? '开发模拟输出，不是真实模型验收证据。' : `服务 ${currentTurn.usage.provider} · 模型 ${currentTurn.usage.model ?? '未提供'}`}</p><p>输入 token：{currentTurn.usage.input_tokens ?? '未提供'} · 输出 token：{currentTurn.usage.output_tokens ?? '未提供'}</p><p>服务调用尝试 {currentTurn.usage.model_calls} 次 · 查看工具 {currentTurn.usage.read_tool_calls} 次</p></details></div>}
+    {currentView && <section className="proposal-card" aria-labelledby="proposal-title"><div className="panel-heading"><h3 id="proposal-title">{outcome === 'committed' ? '已确认的行动' : '建议行动'}</h3><span className={`proposal-status status-${outcome}`}>{outcome && proposalLabels[outcome]}</span></div>{!outdated && !expired && <><p>{outcome !== 'pending' && '原建议：'}{currentView.proposal.summary}</p><dl className="proposal-parameters"><div><dt>工具</dt><dd>{currentView.proposal.tool}</dd></div>{Object.entries(currentView.proposal.arguments).map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl><p className="proposal-expiry">期限：<time dateTime={currentView.proposal.expires_at}>{new Date(currentView.proposal.expires_at).toLocaleString('zh-CN', { hour12: false })}</time> · 绑定进度 {currentView.proposal.revision}</p>{currentView.proposal.clue_refs.length > 0 && references(currentView.proposal.clue_refs)}</>}{outdated && <p>当前进度已变化，这条旧建议已在界面失效。请重新询问。</p>}{expired && <p>确认期限已过。请重新询问获取新建议。</p>}{currentView.message && <p>{currentView.message}</p>}{currentView.receipt && <div className="committed-receipt"><strong>服务器执行记录</strong><p>{currentView.receipt.message}</p><small>{currentView.receipt.changed ? '实际状态已变化' : '没有再次改变状态'} · 进度 {currentView.receipt.revision_before} → {currentView.receipt.revision_after}{currentView.replayed ? ' · 返回原执行记录' : ''}</small>{currentView.receipt.observation && <p>{currentView.receipt.observation}</p>}</div>}<div className="proposal-actions"><button className="button primary" disabled={!canConfirm} onClick={() => void decide('confirm')}>确认执行</button><button className="button" disabled={!canConfirm} onClick={() => void decide('cancel')}>取消建议</button></div>{outcome === 'pending' && <small className="proposal-disclaimer">参数由服务器固定；确认前没有执行该行动。</small>}</section>}
+    {traces.length > 0 && <details className="ai-trace"><summary>建议与执行记录</summary><ol>{traces.map((entry, index) => <li key={`${entry.id}-${index}`}><strong>{entry.outcome}</strong><p>{entry.message}</p><small>进度 {entry.revision} · {entry.tool}</small><pre>{JSON.stringify({ event_id: entry.eventId, generation: entry.generation, revision: entry.revision, tool: entry.tool, arguments: entry.arguments, ...(entry.receipt ? { receipt: entry.receipt } : {}) }, null, 2)}</pre></li>)}</ol></details>}
+  </section>;
+}

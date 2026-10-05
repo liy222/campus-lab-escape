@@ -1,0 +1,797 @@
+[
+  {
+    "row_id": "formal-C01-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r1_note"
+        },
+        "clue_refs": [],
+        "summary": "查看桌上的值班便签，尝试获取门卡位置或值班柜密码等线索。"
+      }
+    },
+    "cost_upper_units": 2401120
+  },
+  {
+    "row_id": "formal-C01-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r1_note"
+        },
+        "clue_refs": [],
+        "summary": "查看桌上的值班便签，获取可能存在的门卡或密码线索。"
+      }
+    },
+    "cost_upper_units": 2206240
+  },
+  {
+    "row_id": "formal-C02-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r1_cabinet"
+        },
+        "clue_refs": [
+          "r1_note_clue"
+        ],
+        "summary": "查看带数字锁的值班柜，获取形状标签或密码顺序等额外线索，以便判断如何组合三角3、圆8、方2。"
+      }
+    },
+    "cost_upper_units": 1743840
+  },
+  {
+    "row_id": "formal-C02-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r1_cabinet"
+        },
+        "clue_refs": [
+          "r1_note_clue"
+        ],
+        "summary": "查看值班柜，确认门上形状标签与数字锁的具体要求，以便判断是否能用已知的形状数字映射开锁。"
+      }
+    },
+    "cost_upper_units": 1855840
+  },
+  {
+    "row_id": "formal-C03-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "submit_code",
+        "arguments": {
+          "target_id": "r1_cabinet",
+          "code": "382"
+        },
+        "clue_refs": [
+          "r1_note_clue",
+          "r1_cabinet_clue"
+        ],
+        "summary": "根据值班便签中三角=3、圆=8、方=2，以及柜门标签从左到右为三角、圆、方，推断值班柜密码为382，提交以尝试打开值班柜。"
+      }
+    },
+    "cost_upper_units": 3760240
+  },
+  {
+    "row_id": "formal-C03-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "submit_code",
+        "arguments": {
+          "target_id": "r1_cabinet",
+          "code": "382"
+        },
+        "clue_refs": [
+          "r1_note_clue",
+          "r1_cabinet_clue"
+        ],
+        "summary": "根据便签形状数字与柜门从左到右顺序三角、圆、方，提交密码 382 尝试打开值班柜。"
+      }
+    },
+    "cost_upper_units": 2668720
+  },
+  {
+    "row_id": "formal-C04-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "take",
+        "arguments": {
+          "item_id": "access_card"
+        },
+        "clue_refs": [
+          "r1_note_clue",
+          "r1_cabinet_clue"
+        ],
+        "summary": "拾取值班柜内的门卡，为前往设备间做准备。"
+      }
+    },
+    "cost_upper_units": 2316960
+  },
+  {
+    "row_id": "formal-C04-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "take",
+        "arguments": {
+          "item_id": "access_card"
+        },
+        "clue_refs": [],
+        "summary": "拾取值班柜内已露出的门卡，为打开通往设备间的刷卡门做准备。"
+      }
+    },
+    "cost_upper_units": 3564240
+  },
+  {
+    "row_id": "formal-C05-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": false,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": "LEGAL_BUT_NOT_USEFUL_NEXT_ACTION",
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r1_door"
+        },
+        "clue_refs": [
+          "r1_note_clue",
+          "r1_cabinet_clue"
+        ],
+        "summary": "查看设备间刷卡门，确认如何用门卡解锁通往设备间的出口。"
+      }
+    },
+    "cost_upper_units": 4058240
+  },
+  {
+    "row_id": "formal-C05-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": false,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": "LEGAL_BUT_NOT_USEFUL_NEXT_ACTION",
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r1_door"
+        },
+        "clue_refs": [],
+        "summary": "查看设备间刷卡门 r1_door，确认门卡的使用方式与出口状态。"
+      }
+    },
+    "cost_upper_units": 2591200
+  },
+  {
+    "row_id": "formal-C06-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": false,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": "LEGAL_BUT_NOT_USEFUL_NEXT_ACTION",
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r2_monitor"
+        },
+        "clue_refs": [],
+        "summary": "查看设备间电源箱旁的屏幕，寻找关于供电恢复或数字锁抽屉密码的线索。"
+      }
+    },
+    "cost_upper_units": 1617040
+  },
+  {
+    "row_id": "formal-C06-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": false,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": "LEGAL_BUT_NOT_USEFUL_NEXT_ACTION",
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r2_monitor"
+        },
+        "clue_refs": [],
+        "summary": "查看设备间电源箱旁的屏幕，尝试获取恢复供电或抽屉数字锁的新线索。"
+      }
+    },
+    "cost_upper_units": 1757680
+  },
+  {
+    "row_id": "formal-C07-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r2_monitor"
+        },
+        "clue_refs": [],
+        "summary": "查看设备间电源箱旁的屏幕，获取通往出口控制室或抽屉密码的缺失线索。"
+      }
+    },
+    "cost_upper_units": 5110240
+  },
+  {
+    "row_id": "formal-C07-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r2_monitor"
+        },
+        "clue_refs": [],
+        "summary": "查看设备间内电源箱旁的屏幕，获取下一步解谜或开门线索。"
+      }
+    },
+    "cost_upper_units": 2711680
+  },
+  {
+    "row_id": "formal-C08-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": false,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": "LEGAL_BUT_NOT_USEFUL_NEXT_ACTION",
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r2_door"
+        },
+        "clue_refs": [
+          "r2_monitor_clue",
+          "r2_drawer_clue"
+        ],
+        "summary": "查看设备间的出口控制室钥匙门，确认上锁方式或所需物品。"
+      }
+    },
+    "cost_upper_units": 2879040
+  },
+  {
+    "row_id": "formal-C08-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "submit_code",
+        "arguments": {
+          "code": "724",
+          "target_id": "r2_drawer"
+        },
+        "clue_refs": [
+          "r2_monitor_clue",
+          "r2_drawer_clue"
+        ],
+        "summary": "根据屏幕读数“青7、橙2、紫4”和抽屉标签顺序“青、橙、紫”，按序组合得到 724，提交给设备间抽屉的数字锁。"
+      }
+    },
+    "cost_upper_units": 6074240
+  },
+  {
+    "row_id": "formal-C09-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "take",
+        "arguments": {
+          "item_id": "emergency_key"
+        },
+        "clue_refs": [],
+        "summary": "拾取已打开抽屉中的应急钥匙，以便解锁出口控制室钥匙门。"
+      }
+    },
+    "cost_upper_units": 6370240
+  },
+  {
+    "row_id": "formal-C09-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "take",
+        "arguments": {
+          "item_id": "emergency_key"
+        },
+        "clue_refs": [
+          "r2_drawer_clue"
+        ],
+        "summary": "从已打开的抽屉中拾取应急钥匙，以便解锁通往出口控制室的钥匙门。"
+      }
+    },
+    "cost_upper_units": 2699280
+  },
+  {
+    "row_id": "formal-C10-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "use_item",
+        "arguments": {
+          "item_id": "emergency_key",
+          "target_id": "r2_door"
+        },
+        "clue_refs": [],
+        "summary": "使用背包中的应急钥匙打开 r2_door，解锁通往出口控制室的道路。"
+      }
+    },
+    "cost_upper_units": 2537520
+  },
+  {
+    "row_id": "formal-C10-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "use_item",
+        "arguments": {
+          "item_id": "emergency_key",
+          "target_id": "r2_door"
+        },
+        "clue_refs": [],
+        "summary": "用应急钥匙解锁出口控制室钥匙门 r2_door，以便之后前往 R3。"
+      }
+    },
+    "cost_upper_units": 5980240
+  },
+  {
+    "row_id": "formal-C11-structured_summary-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r3_panel"
+        },
+        "clue_refs": [
+          "r3_checklist_clue"
+        ],
+        "summary": "查看出口控制室的检查面板 r3_panel，读取其设备标签或数字提示，为提交出口检查密码获取必要线索。"
+      }
+    },
+    "cost_upper_units": 7020240
+  },
+  {
+    "row_id": "formal-C11-full_history-1",
+    "judgment": {
+      "parse_valid": true,
+      "legal": true,
+      "correct": true,
+      "reference_valid": true,
+      "reference_sufficient": true,
+      "judger_version": "e1-judger-v1",
+      "reason": null,
+      "next_action": {
+        "tool": "inspect",
+        "arguments": {
+          "object_id": "r3_panel"
+        },
+        "clue_refs": [
+          "r3_checklist_clue"
+        ],
+        "summary": "查看出口控制室内的检查面板，获取其设备标签与数字键信息，以便完成出口检查。"
+      }
+    },
+    "cost_upper_units": 2652880
+  },
+  {
+    "row_id": "formal-C12-full_history-1",
+    "judgment": null,
+    "status": "timeout",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C12-structured_summary-1",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C12-structured_summary-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C12-full_history-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C11-full_history-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C11-structured_summary-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C10-structured_summary-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C10-full_history-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C09-full_history-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C09-structured_summary-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C08-structured_summary-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C08-full_history-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C07-full_history-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C07-structured_summary-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C06-structured_summary-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C06-full_history-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C05-full_history-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C05-structured_summary-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C04-structured_summary-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C04-full_history-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C03-full_history-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C03-structured_summary-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C02-structured_summary-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C02-full_history-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C01-full_history-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C01-structured_summary-2",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C05-structured_summary-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C05-full_history-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C06-full_history-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C06-structured_summary-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C07-structured_summary-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C07-full_history-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C08-full_history-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C08-structured_summary-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C09-structured_summary-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C09-full_history-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C10-full_history-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C10-structured_summary-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C11-structured_summary-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C11-full_history-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C12-full_history-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C12-structured_summary-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C01-structured_summary-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C01-full_history-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C02-full_history-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C02-structured_summary-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C03-structured_summary-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C03-full_history-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C04-full_history-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  },
+  {
+    "row_id": "formal-C04-structured_summary-3",
+    "judgment": null,
+    "status": "not_called",
+    "usage_observed": false
+  }
+]

@@ -1,0 +1,147 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "inspect",
+      "description": "Inspect a currently visible object; discover its currently available clue. This cannot advance a puzzle.",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "object_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          }
+        },
+        "required": [
+          "object_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_inventory",
+      "description": "Read the current inventory.",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "take",
+      "description": "Propose taking a currently visible item; player confirmation required.",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          }
+        },
+        "required": [
+          "item_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "use_item",
+      "description": "Propose using a held item on a visible target; player confirmation required.",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "target_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          }
+        },
+        "required": [
+          "item_id",
+          "target_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "submit_code",
+      "description": "Propose submitting a numeric code inferred from discovered clues; player confirmation required.",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "target_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "code": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16,
+            "pattern": "^[0-9]+$"
+          }
+        },
+        "required": [
+          "target_id",
+          "code"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "move",
+      "description": "Propose moving to an adjacent unlocked room or valid exit; player confirmation required.",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "destination_id": {
+            "enum": [
+              "R1",
+              "R2",
+              "R3",
+              "EXIT"
+            ]
+          }
+        },
+        "required": [
+          "destination_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+]
