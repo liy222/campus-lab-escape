@@ -1,0 +1,65 @@
+{
+  "source_stop": true,
+  "role": "Evaluator Owner after independent old-source QA SOURCESTOP, explicit Main sequential ownership GO",
+  "changed": [
+    "evaluation/engine.py",
+    "evaluation/README.md",
+    "review/calibration.md"
+  ],
+  "source_count": 52,
+  "protected_snapshot_count": 59,
+  "all_other_snapshot_bytes_unchanged": true,
+  "frozen17_chain_unchanged": true,
+  "provider_reader_events_unchanged": true,
+  "Main_preexisting_installed_delta": {
+    "evaluation/trusted/paid-gates.json": {
+      "previous_installed_pin": "82d515ec1f538ebde9d19e4f01418eebdb41fabb9b7988c7be97e9989b68b1a6",
+      "actual_owner_before": "951ae7e4ebd522437b28a358cff84e6cdd81d2038224bb8be35130e0d037c27d",
+      "actual_owner_after": "951ae7e4ebd522437b28a358cff84e6cdd81d2038224bb8be35130e0d037c27d"
+    }
+  },
+  "current_Main_gate_unmodified_sha256": "951ae7e4ebd522437b28a358cff84e6cdd81d2038224bb8be35130e0d037c27d",
+  "engine_before": "6955a59976b6aac197fb222603e6795ae4588841d3eb70d477db0788b53b80e4",
+  "engine_after": "2e9778f186c8191a475db9fa359a06dea8725cd4733872c450bf261d0cbfb74c",
+  "schema_source": "self.files[schemas/suggestion.schema.json], original frozen schema unchanged",
+  "allowed_citations_source": "refs from actual Tools read_evidence and release/hash/handle checks; exact evidence_id/snippet projection only",
+  "command_and_exit": {
+    "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evaluation/runs/prompt-reference-fix-20261006T003000Z/owner_checks.py",
+    "actual_exit_code": 0,
+    "completion_chunk": "bcd14b",
+    "checks": 34,
+    "passed": 34,
+    "prior_runs": [
+      {
+        "actual_exit_code": 1,
+        "chunk": "93c12c",
+        "reason": "Windows async event-loop socketpair blocked by strict network guard before main coroutine ran."
+      },
+      {
+        "actual_exit_code": 1,
+        "chunk": "46bf43",
+        "checks": 34,
+        "passed": 33,
+        "reason": "Harness selected shared A22 case ID K2 rather than K4; corrected capture selection only."
+      }
+    ],
+    "actual_paid_calls": 0,
+    "independent_qa": false
+  },
+  "limits": [
+    "34 checks are Owner offline scripted mock, not independent QA.",
+    "No paid/network/ledger/credential/Git/target/archive-code execution.",
+    "New prompt has no real-model validation; historical 3 cumulative calibration paid attempts and five event abstentions are old-source results.",
+    "Provider max1000 / timeout20 / wire params, strict schema/ref/reopen and failure dominance unchanged.",
+    "Main finite gates remained unchanged; no added dispatch approval.",
+    "Another QA agent must independently accept new candidate."
+  ],
+  "artifact_pins": {
+    "source-before.json": "9ebf694f99f65f332b3a84b2e849375dc1c379d2e10cc16dd1c67d30bca3baea",
+    "source-after.json": "de8d9d8ded5d6a3253af84c4f2b430385aff355f9ce0a44299fa275d66f9a45e",
+    "source-sha256.json": "0ae09a89f18c01bcc32bfff3a7f0702fb9b06bcfcac00802722f8e895e732742",
+    "owner.diff": "9f3e11d4726af81c03b8c4e1e33486f18740abcc7c1efa2cd6b60f2dfb25d4ce",
+    "result.json": "8b03dea3a174801cbfd6a4e35775309bf92c287665141435488b16cb51006bb9",
+    "process-result.json": "3fc75dae91ffd8ca6c645b999a3f6e72ef10154dfecfd7d4809b4855aa943755"
+  }
+}

@@ -1,9 +1,9 @@
 # Status
 updated_at: 2026-10-06 (Asia/Shanghai)
-milestone: CH01_v2 accepted; T32 integrity and CH01 evaluator QA passed; continuation stopped on new unknown usage; calibration approved but accounting-blocked
+milestone: CH01_v2 accepted; merged E1 and clean reproduction independently verified; real evaluation records retained; prompt repair accepted offline, revised payload approval pending
 last_verified_release: CH01_v2 product commit242ecfc4d9f7bf1a8480508de701d9efc7822fe7; raw/Git binding in evidence/integration/CH01_v2-manifest.json; baseline_v1 preserved
 remote: https://github.com/liy222/campus-lab-escape (PRIVATE, gh verified)
-last_pushed_sha: f1eaeae399e9378b26374e9461031c27fed4b24b (accepted continuation executor and clean reproduction evidence; normal push succeeded; product tagCH01_v2 remains242ecfc)
+last_pushed_sha: f80c6af075f6041aa11a4f79ba2e6cb1ea9ecd80 (independent merged experiment and release integrity reviews; normal push and remote verified)
 
 ## 2026-10-05 latest actual continuation checkpoint (supersedes older pending labels)
 - User explicitly approved the exact49 experiment payloads and3 calibration payloads. Main verified all52 current evaluator sources against new independent QA and exact3 calibration wire payloads against the approved preview, actualexit0/18c9e2; record evidence/integration/external-payload-human-approval-20261005.json. Approval does not add a budget or authorize retries.
@@ -99,3 +99,7 @@ T29/T30 Main accepted limited engineering: finalreport660fcbc6b885aaa5beaef4af4e
 - New10778source committed833aafb clean identity independently10842/10842 accepted at evidence/qa/T32-final-20261005T123100Z/result.json, 8outer/9leaf actual0 includes3strictprechecks; no actualrealAI or human-playtest inferred.
 - All remaining6 exact approved payloads called once, 1K4valid modelFAIL(expected),2E1INSUF,3CH01INSUF. OldK1/K2 never resent. Independent read audit73/73 sourceSTOP preserves digests/validrefs and actual14sourcebeforeafter. Current91settled cap10 upper0.66236008 pending0.
 - Sequential role reassignment: qa_events_oct05 finished independent oldsource QA before temporary Evaluator Owner assignment for small enginePrompt reference-ID/compactJSON fix; another Agent must independently review newcandidate. No source/input schema/checker relaxation or old outcome rewriting. T31final docs and manifest in progress; no fully complete project or human signature claimed.
+
+
+## 2026-10-06 prompt repair accepted offline
+Main re-read independent QA:223 checks/36 scenarios/30 captured mock payloads,81 raw sources unchanged,actual exit0 b1dd96. Only explicit citation IDs/output-schema guidance added; strict checkers and old records remain. Evidence: evidence/integration/prompt-repair-accepted-20261006.json. New8 concrete payload authorization remains pending; old approved6 were already dispatched once. Latest verified remote before this acceptance: f80c6af075f6041aa11a4f79ba2e6cb1ea9ecd80. T31 documentation is being corrected to bind exact hashes; T32 fresh-directory real AI and genuine human acceptance remain unverified. No repeated full regression or fee investigation.

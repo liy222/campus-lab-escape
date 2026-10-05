@@ -43,9 +43,11 @@ runtime raw SHA-256 从不重写。只有 Main 明确登记 `approved_crlf_to_lf
 
 模型建议通过 Schema、文本和引用检查后才进入 `audit.raw_suggestion`。不合法响应只保存 SHA-256、字节数和受限错误码，不保存其原始内容、未知字段或不合法字段值；合法 K4 的原 PASS 建议与最终 FAIL 均保留。
 
+提示中的 `snippet` 是登记窗口标识符，例如 `summary`，不是证据引文或行文本。`TRUSTED_OUTPUT_CONTRACT` 位于 `TARGET_DATA` 外，包含原冻结 suggestion Schema，以及 Tools 实际读取并核验 release/hash/handle 后形成的 `{evidence_id, snippet}` 白名单。模型须逐字复制合法 pair，只返回 Schema 字段和紧凑 JSON；建议 reason 不超过240字符，missing_check 必要且简短，选择足以支持完整范围的少数引用。简短输出不降低 MUST，不指定应判状态，也不改变严格引用复核、失败优先规则、1000 token 或20秒限制。2026-10-06 此提示修正仅离线验证，尚无真实模型验证，须另一个独立 QA 接受。
+
 ## 付费边界
 
-`trusted/paid-gates.json` 当前是空批准表。CLI `--mode paid --approval-id ...` 只有 Main 明确 handoff 有限可信 gate 后才可用。gate 固定用途、集合/Claim hash、最大调用数、费用上限、token/timeout、到期时间以及官方 base/model。未来 gate 由 Main 审批并维护可信评价器根配置，目标输入不能提供 gate。
+`trusted/paid-gates.json` 是 Main 维护的当前有限批准表；历史空表不代表当前配置。CLI `--mode paid --approval-id ...` 只有 Main 明确 handoff 有限可信 gate 后才可用。gate 固定用途、集合/Claim hash、最大调用数、费用上限、token/timeout、到期时间以及官方 base/model。目标输入不能提供 gate，本次提示修正不新增或清空批准，不授权任何真实调用。
 
 独立 `provider.py` 不导入 backend/main/provider/budget。正式账本固定为原有 `D:\深度能力\data\ai-budget.sqlite`；仅 `mode=rw` 打开已存在的表，校验原 schema/10 CNY cap/frozen，不创建表、目录或新额度。事务预留/结算以 `scope=evaluation` 与既有协议的 1e-9 CNY 整数单位进行，所有项目 scope 共用总额。付费入口预检任何 scope 的 unknown/reserved；每次预留在 `BEGIN IMMEDIATE` 内再次检查整个共享账本，发现任一不确定调用就拒绝，不新增预留、不 dispatch。当前 gate、其他 evaluation gate、game、experiments、probe 均适用。未知/失败/中断保留预留；超界/异常型号冻结。
 
@@ -55,7 +57,7 @@ runtime raw SHA-256 从不重写。只有 Main 明确登记 `approved_crlf_to_lf
 
 ## 未完成
 
-新增事件层独立 QA、真实 paid K1–K6 校准、E1 独立/真实模型语义判读尚未完成。冻结基线 A24/A25/A27/A28 没有产品执行证据，不能因本评价器 Owner 已写代码就追溯改成 baseline PASS。A11/A17/A26 部分范围仍按原事实保留；真人签署与教师审批没有被软件推断或替代。
+事件层及 CH01 身份映射已有对应独立 QA，真实付费有限记录见 `review/calibration.md` 与 T27 独立结果；原11案例报告10/11并非完整真实模型校准通过。E1两条、CH01三条实际模型判读均证据不足。冻结基线 A24/A25/A27/A28 没有产品执行证据，不能因本评价器 Owner 已写代码就追溯改成 baseline PASS。A11/A17/A26 部分范围仍按原事实保留；真人签署与教师审批没有被软件推断或替代。
 
 Owner 检查保留两次实现检查失败：早期 source 白名单遗漏，及 Windows fake SQLite fixture 未关闭导致临时清理失败；修正后重跑结果另存，不覆盖失败事实。目标产品没有在这两个检查中执行或修改。
 

@@ -1,0 +1,18 @@
+{
+  "checks": 34,
+  "passed": 33,
+  "failed": [
+    {
+      "name": "original trusted rubric and target unchanged",
+      "passed": false
+    }
+  ],
+  "changed": [
+    "evaluation/README.md",
+    "evaluation/engine.py",
+    "review/calibration.md"
+  ],
+  "actual_paid_calls": 0,
+  "mode": "offline scripted mock Owner verification",
+  "limits": "No provider network/ledger/credentials/target code. Not independent QA; no new real-model verification."
+}

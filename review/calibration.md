@@ -1,5 +1,15 @@
 # T27 校准审查草案
 
+## 2026-10-06 当前有限真实记录与提示修正
+
+Main 明确批准后的旧源真实校准报告 `evaluation/runs/20261005T120430742113Z/report.json` 保留11案例/10匹配、实际程序 exit1，实际仅2次付费。K1 引用未通过严格复核而证据不足；K2 模型不可用、usage未知，由确定性失败判 FAIL；K4 当时因 prior unknown 门停止且未调用。之后单独批准的剩余 K4 在 `evidence/integration/remaining-k4-20261005.json` 实际1次付费，合法模型 FAIL 引用 `calibration_v1:F004/summary`，usage已知。校准历史累计3次付费是原2次加后来的1次，不重写原10/11报告，不称完整校准通过或评分。
+
+同一旧源后续 E1 `evaluation/runs/20261005T155830386817Z/report.json` 两次、CH01 `evaluation/runs/20261005T155947272680Z/report.json` 三次实际判读均为 INSUFFICIENT_EVIDENCE，共5条事件语义弃权；错误包括未读取/假引用、schema/provider错误、1000输出token的 MODEL_INVALID_OUTPUT。原始失败、有限批准记录、实际usage/null和独立QA首轮错误均保留。既有未知调用的保守会计关闭不提供供应商账单、不恢复未知usage，也不改变判读历史。独立只读审查见 `review/findings/T27-real-calibration-20261005.md`、`review/findings/T27-remaining-evaluation-20261006.md`。
+
+本次 Main 临时单文件 handoff 后的 Evaluator Owner 修正只明确 `snippet` 是注册窗口 ID，要求引用来自 Tools 已实际核验的 pair，并提供原冻结 suggestion Schema 与简短紧凑输出提示。`TRUSTED_OUTPUT_CONTRACT` 位于 TARGET_DATA 外，rubric/target数据原内容保留。没有改 Schema、契约、fixtures、expected、reader、provider、事件冻结、paid gates 或严格校验/失败优先规则；没有新增付费调用。新提示尚无真实模型验证，将由另一 Agent 独立 QA，不用旧源实际结果证明新源有效。
+
+以下为先前草案的历史状态文字，保留其当时范围；不作为当前空gate或未发生付费的声明。
+
 此文件由 Main 明确 handoff 给 Evaluator 起草。旧 T26 候选已有独立 QA 接受（193 项、34 源，实际 exit 0，`review/findings/T26-acceptance-20261003.md`）。校准仍是显式 mock/fake Transport；新增事件层尚待独立 QA，尚无真实付费 LLM 校准或真人签署。
 
 输入冻结在 `evaluation/trusted/freeze.json`；11 个 K1–K6 子案例及预期先于判读调用保存，集合 SHA-256 为 `58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1`。expected 不送模型。K1引用实际项目 build/check 证据，K2/K4等合成材料明确标注，不是项目执行事实。

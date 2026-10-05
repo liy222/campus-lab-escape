@@ -1,0 +1,21 @@
+"""Owner handoff serializer. Writes only this new Owner evidence directory."""
+import difflib,hashlib,json
+from pathlib import Path
+OUT=Path(__file__).resolve().parent;ROOT=OUT.parents[2]
+sha=lambda b:hashlib.sha256(b).hexdigest()
+before=json.loads((OUT/'source-before.json').read_bytes());after=json.loads((OUT/'source-after.json').read_bytes())
+assert all(sha((ROOT/n).read_bytes())==h for n,h in after.items())
+files=['evaluation/engine.py','evaluation/README.md','review/calibration.md']
+diff=''.join(''.join(difflib.unified_diff((OUT/(Path(n).name+'.before')).read_text(encoding='utf-8').splitlines(keepends=True),(ROOT/n).read_text(encoding='utf-8').splitlines(keepends=True),fromfile=n+' before',tofile=n+' after')) for n in files)
+(OUT/'owner.diff').write_text(diff,encoding='utf-8')
+map52=json.loads((ROOT/'evaluation/runs/ch01-v3-identity-alias-handoff/source-sha256.json').read_bytes())
+source_map={n:after[n] for n in map52}
+(OUT/'source-sha256.json').write_text(json.dumps(source_map,indent=2)+'\n',encoding='utf-8')
+main_delta={n:{'previous_installed_pin':h,'actual_owner_before':before[n],'actual_owner_after':after[n]} for n,h in map52.items() if before[n]!=h}
+process={'actual_command':'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evaluation/runs/prompt-reference-fix-20261006T003000Z/owner_checks.py','actual_exit_code':0,'completion_chunk':'bcd14b','checks':34,'passed':34,'prior_runs':[{'actual_exit_code':1,'chunk':'93c12c','reason':'Windows async event-loop socketpair blocked by strict network guard before main coroutine ran.'},{'actual_exit_code':1,'chunk':'46bf43','checks':34,'passed':33,'reason':'Harness selected shared A22 case ID K2 rather than K4; corrected capture selection only.'}],'actual_paid_calls':0,'independent_qa':False}
+(OUT/'process-result.json').write_text(json.dumps(process,indent=2)+'\n',encoding='utf-8')
+handoff={'source_stop':True,'role':'Evaluator Owner after independent old-source QA SOURCESTOP, explicit Main sequential ownership GO','changed':files,'source_count':52,'protected_snapshot_count':len(before),'all_other_snapshot_bytes_unchanged':all(before[n]==after[n] for n in before if n not in files),'frozen17_chain_unchanged':True,'provider_reader_events_unchanged':True,'Main_preexisting_installed_delta':main_delta,'current_Main_gate_unmodified_sha256':after['evaluation/trusted/paid-gates.json'],'engine_before':before['evaluation/engine.py'],'engine_after':after['evaluation/engine.py'],'schema_source':'self.files[schemas/suggestion.schema.json], original frozen schema unchanged','allowed_citations_source':'refs from actual Tools read_evidence and release/hash/handle checks; exact evidence_id/snippet projection only','command_and_exit':process,'limits':['34 checks are Owner offline scripted mock, not independent QA.','No paid/network/ledger/credential/Git/target/archive-code execution.','New prompt has no real-model validation; historical 3 cumulative calibration paid attempts and five event abstentions are old-source results.','Provider max1000 / timeout20 / wire params, strict schema/ref/reopen and failure dominance unchanged.','Main finite gates remained unchanged; no added dispatch approval.','Another QA agent must independently accept new candidate.'],'artifact_pins':{n:sha((OUT/n).read_bytes()) for n in ['source-before.json','source-after.json','source-sha256.json','owner.diff','result.json','process-result.json']}}
+(OUT/'stable-handoff.json').write_text(json.dumps(handoff,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+index={f.name:{'sha256':sha(f.read_bytes()),'bytes':f.stat().st_size} for f in sorted(OUT.iterdir()) if f.is_file() and f.name!='artifact-sha256.json'}
+(OUT/'artifact-sha256.json').write_text(json.dumps(index,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'engine_sha256':after['evaluation/engine.py'],'README_sha256':after['evaluation/README.md'],'calibration_md_sha256':after['review/calibration.md'],'source_map_sha256':sha((OUT/'source-sha256.json').read_bytes()),'handoff_sha256':sha((OUT/'stable-handoff.json').read_bytes()),'result_sha256':sha((OUT/'result.json').read_bytes()),'diff_sha256':sha((OUT/'owner.diff').read_bytes()),'artifact_index_sha256':sha((OUT/'artifact-sha256.json').read_bytes()),'artifact_count':len(index)},ensure_ascii=False))

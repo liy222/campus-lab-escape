@@ -1,0 +1,20 @@
+{
+  "at_utc": "2026-10-05T16:40:15.256585+00:00",
+  "kind": "Main acceptance of independent prompt-reference repair",
+  "checks": 223,
+  "scenarios": 36,
+  "captured_mock_payloads": 30,
+  "raw_sources_unchanged": 81,
+  "qa": "evidence\\qa\\T27-prompt-fix-20261005T163034187429Z\\result.json",
+  "qa_sha256": "c95e839063e3c9efc773285f6181906d010fca0fbf2ea18bde71e144b58ffc5d",
+  "report": "review\\findings\\T27-prompt-fix-20261006.md",
+  "report_sha256": "a2f3e94c6214324ec04199f3ff08c7c4d292a2fdfb0c3278607de30462d0f649",
+  "engine_raw_sha256": "2e9778f186c8191a475db9fa359a06dea8725cd4733872c450bf261d0cbfb74c",
+  "actual_paid_calls": 0,
+  "new_payload_authorization": "Pending separate eight concrete payload reply; old approved six already consumed once",
+  "limitations": [
+    "New prompt has independent offline QA only; no real-model outcome inferred.",
+    "Historical product clean reproduction remains source833aafb; no new complete clean run inferred.",
+    "Human playtest and signature not provided."
+  ]
+}

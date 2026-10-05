@@ -16,7 +16,13 @@ version-bound evidence for the full requested scope. N/A needs the trusted appro
 Explicit deterministic failure cannot be overridden. Model/mock/partial/forced-tool results do not
 prove natural autonomous behavior, whole-game real AI, human acceptance, or teacher approval.
 Return only JSON with claim_id, release_id, status, evidence_refs [{evidence_id,snippet}], reason,
-missing_check (list of minimal follow-ups). Cite only supplied registered snippets. No grades or confidence.'''
+missing_check (list of minimal follow-ups). Cite only supplied registered snippets. No grades or confidence.
+TRUSTED_OUTPUT_CONTRACT supplies the exact output schema and allowed_citations verified by the tools.
+snippet is a registered window identifier (for example summary), not a quotation or line of evidence.
+Copy evidence_id and snippet verbatim from an allowed pair; never rename them or invent citations.
+Return compact JSON with only the schema fields. Keep reason brief (prefer at most 240 characters)
+and missing_check necessary and brief. Select the few references sufficient for the requested scope
+to avoid output truncation; brevity never reduces the evidence scope or changes the required state.'''
 
 
 def validate_claim(claim):
@@ -164,7 +170,10 @@ class Evaluator:
                                     ['Refreeze and independently verify the changed event inputs.'],'not_run'),audit
         safe_claim={k:v for k,v in claim.items() if k not in {'known_scope_status'}}
         payload={'TRUSTED_RUBRIC':{'contract_id':contract_id,'version':contract_version,'criterion':criterion,'policy':contract['policy'],'approved_na':na},
-                 'DETERMINISTIC_CHECKS':facts,'TARGET_DATA':{'claim':safe_claim,'evidence':reads}}
+                 'DETERMINISTIC_CHECKS':facts,
+                 'TRUSTED_OUTPUT_CONTRACT':{'schema':self.files['schemas/suggestion.schema.json'],
+                                            'allowed_citations':[{'evidence_id':r['evidence_id'],'snippet':r['snippet']} for r in refs]},
+                 'TARGET_DATA':{'claim':safe_claim,'evidence':reads}}
         messages=[{'role':'system','content':SYSTEM_PROMPT},{'role':'user','content':json.dumps(payload,ensure_ascii=False,allow_nan=False)}]
         before=self.provider.calls
         suggestion=None;valid=False;model_error=None

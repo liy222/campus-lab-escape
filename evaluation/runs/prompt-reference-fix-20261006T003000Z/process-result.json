@@ -1,0 +1,23 @@
+{
+  "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evaluation/runs/prompt-reference-fix-20261006T003000Z/owner_checks.py",
+  "actual_exit_code": 0,
+  "completion_chunk": "bcd14b",
+  "checks": 34,
+  "passed": 34,
+  "prior_runs": [
+    {
+      "actual_exit_code": 1,
+      "chunk": "93c12c",
+      "reason": "Windows async event-loop socketpair blocked by strict network guard before main coroutine ran."
+    },
+    {
+      "actual_exit_code": 1,
+      "chunk": "46bf43",
+      "checks": 34,
+      "passed": 33,
+      "reason": "Harness selected shared A22 case ID K2 rather than K4; corrected capture selection only."
+    }
+  ],
+  "actual_paid_calls": 0,
+  "independent_qa": false
+}

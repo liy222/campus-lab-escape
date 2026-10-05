@@ -1,0 +1,33 @@
+{
+  "actual_command": "& 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 tests/review_evaluation_prompt_fix.py",
+  "cwd": "D:\\深度能力",
+  "actual_exit_code": 0,
+  "completion_chunk": "b1dd96",
+  "executions": [
+    {
+      "chunk": "3c80fb",
+      "exit_code": 1,
+      "cases": 34,
+      "integrity_checks": 222,
+      "failures": [
+        "QA assumed17 inputs insidefreeze; actual16 plusfreeze=17 chain",
+        "QA uppercasedalready-uppercaseA22; actualmutationwasno-op"
+      ],
+      "evidence": "evidence/qa/T27-prompt-fix-20261005T162902448313Z/result.json"
+    },
+    {
+      "chunk": "b1dd96",
+      "exit_code": 0,
+      "cases": 36,
+      "integrity_checks": 223,
+      "captures": 30,
+      "evidence": "evidence/qa/T27-prompt-fix-20261005T163034187429Z/result.json"
+    }
+  ],
+  "mode": "independent offline scripted mock",
+  "paid_calls": 0,
+  "network_calls": 0,
+  "ledger_connections": 0,
+  "Owner_checks_executed": false,
+  "source_STOP": true
+}

@@ -1,0 +1,70 @@
+--- evaluation/engine.py before
++++ evaluation/engine.py after
+@@ -16,7 +16,13 @@
+ Explicit deterministic failure cannot be overridden. Model/mock/partial/forced-tool results do not
+ prove natural autonomous behavior, whole-game real AI, human acceptance, or teacher approval.
+ Return only JSON with claim_id, release_id, status, evidence_refs [{evidence_id,snippet}], reason,
+-missing_check (list of minimal follow-ups). Cite only supplied registered snippets. No grades or confidence.'''
++missing_check (list of minimal follow-ups). Cite only supplied registered snippets. No grades or confidence.
++TRUSTED_OUTPUT_CONTRACT supplies the exact output schema and allowed_citations verified by the tools.
++snippet is a registered window identifier (for example summary), not a quotation or line of evidence.
++Copy evidence_id and snippet verbatim from an allowed pair; never rename them or invent citations.
++Return compact JSON with only the schema fields. Keep reason brief (prefer at most 240 characters)
++and missing_check necessary and brief. Select the few references sufficient for the requested scope
++to avoid output truncation; brevity never reduces the evidence scope or changes the required state.'''
+ 
+ 
+ def validate_claim(claim):
+@@ -164,7 +170,10 @@
+                                     ['Refreeze and independently verify the changed event inputs.'],'not_run'),audit
+         safe_claim={k:v for k,v in claim.items() if k not in {'known_scope_status'}}
+         payload={'TRUSTED_RUBRIC':{'contract_id':contract_id,'version':contract_version,'criterion':criterion,'policy':contract['policy'],'approved_na':na},
+-                 'DETERMINISTIC_CHECKS':facts,'TARGET_DATA':{'claim':safe_claim,'evidence':reads}}
++                 'DETERMINISTIC_CHECKS':facts,
++                 'TRUSTED_OUTPUT_CONTRACT':{'schema':self.files['schemas/suggestion.schema.json'],
++                                            'allowed_citations':[{'evidence_id':r['evidence_id'],'snippet':r['snippet']} for r in refs]},
++                 'TARGET_DATA':{'claim':safe_claim,'evidence':reads}}
+         messages=[{'role':'system','content':SYSTEM_PROMPT},{'role':'user','content':json.dumps(payload,ensure_ascii=False,allow_nan=False)}]
+         before=self.provider.calls
+         suggestion=None;valid=False;model_error=None
+--- evaluation/README.md before
++++ evaluation/README.md after
+@@ -43,9 +43,11 @@
+ 
+ 模型建议通过 Schema、文本和引用检查后才进入 `audit.raw_suggestion`。不合法响应只保存 SHA-256、字节数和受限错误码，不保存其原始内容、未知字段或不合法字段值；合法 K4 的原 PASS 建议与最终 FAIL 均保留。
+ 
++提示中的 `snippet` 是登记窗口标识符，例如 `summary`，不是证据引文或行文本。`TRUSTED_OUTPUT_CONTRACT` 位于 `TARGET_DATA` 外，包含原冻结 suggestion Schema，以及 Tools 实际读取并核验 release/hash/handle 后形成的 `{evidence_id, snippet}` 白名单。模型须逐字复制合法 pair，只返回 Schema 字段和紧凑 JSON；建议 reason 不超过240字符，missing_check 必要且简短，选择足以支持完整范围的少数引用。简短输出不降低 MUST，不指定应判状态，也不改变严格引用复核、失败优先规则、1000 token 或20秒限制。2026-10-06 此提示修正仅离线验证，尚无真实模型验证，须另一个独立 QA 接受。
++
+ ## 付费边界
+ 
+-`trusted/paid-gates.json` 当前是空批准表。CLI `--mode paid --approval-id ...` 只有 Main 明确 handoff 有限可信 gate 后才可用。gate 固定用途、集合/Claim hash、最大调用数、费用上限、token/timeout、到期时间以及官方 base/model。未来 gate 由 Main 审批并维护可信评价器根配置，目标输入不能提供 gate。
++`trusted/paid-gates.json` 是 Main 维护的当前有限批准表；历史空表不代表当前配置。CLI `--mode paid --approval-id ...` 只有 Main 明确 handoff 有限可信 gate 后才可用。gate 固定用途、集合/Claim hash、最大调用数、费用上限、token/timeout、到期时间以及官方 base/model。目标输入不能提供 gate，本次提示修正不新增或清空批准，不授权任何真实调用。
+ 
+ 独立 `provider.py` 不导入 backend/main/provider/budget。正式账本固定为原有 `D:\深度能力\data\ai-budget.sqlite`；仅 `mode=rw` 打开已存在的表，校验原 schema/10 CNY cap/frozen，不创建表、目录或新额度。事务预留/结算以 `scope=evaluation` 与既有协议的 1e-9 CNY 整数单位进行，所有项目 scope 共用总额。付费入口预检任何 scope 的 unknown/reserved；每次预留在 `BEGIN IMMEDIATE` 内再次检查整个共享账本，发现任一不确定调用就拒绝，不新增预留、不 dispatch。当前 gate、其他 evaluation gate、game、experiments、probe 均适用。未知/失败/中断保留预留；超界/异常型号冻结。
+ 
+@@ -55,7 +57,7 @@
+ 
+ ## 未完成
+ 
+-新增事件层独立 QA、真实 paid K1–K6 校准、E1 独立/真实模型语义判读尚未完成。冻结基线 A24/A25/A27/A28 没有产品执行证据，不能因本评价器 Owner 已写代码就追溯改成 baseline PASS。A11/A17/A26 部分范围仍按原事实保留；真人签署与教师审批没有被软件推断或替代。
++事件层及 CH01 身份映射已有对应独立 QA，真实付费有限记录见 `review/calibration.md` 与 T27 独立结果；原11案例报告10/11并非完整真实模型校准通过。E1两条、CH01三条实际模型判读均证据不足。冻结基线 A24/A25/A27/A28 没有产品执行证据，不能因本评价器 Owner 已写代码就追溯改成 baseline PASS。A11/A17/A26 部分范围仍按原事实保留；真人签署与教师审批没有被软件推断或替代。
+ 
+ Owner 检查保留两次实现检查失败：早期 source 白名单遗漏，及 Windows fake SQLite fixture 未关闭导致临时清理失败；修正后重跑结果另存，不覆盖失败事实。目标产品没有在这两个检查中执行或修改。
+ 
+--- review/calibration.md before
++++ review/calibration.md after
+@@ -1,4 +1,14 @@
+ # T27 校准审查草案
++
++## 2026-10-06 当前有限真实记录与提示修正
++
++Main 明确批准后的旧源真实校准报告 `evaluation/runs/20261005T120430742113Z/report.json` 保留11案例/10匹配、实际程序 exit1，实际仅2次付费。K1 引用未通过严格复核而证据不足；K2 模型不可用、usage未知，由确定性失败判 FAIL；K4 当时因 prior unknown 门停止且未调用。之后单独批准的剩余 K4 在 `evidence/integration/remaining-k4-20261005.json` 实际1次付费，合法模型 FAIL 引用 `calibration_v1:F004/summary`，usage已知。校准历史累计3次付费是原2次加后来的1次，不重写原10/11报告，不称完整校准通过或评分。
++
++同一旧源后续 E1 `evaluation/runs/20261005T155830386817Z/report.json` 两次、CH01 `evaluation/runs/20261005T155947272680Z/report.json` 三次实际判读均为 INSUFFICIENT_EVIDENCE，共5条事件语义弃权；错误包括未读取/假引用、schema/provider错误、1000输出token的 MODEL_INVALID_OUTPUT。原始失败、有限批准记录、实际usage/null和独立QA首轮错误均保留。既有未知调用的保守会计关闭不提供供应商账单、不恢复未知usage，也不改变判读历史。独立只读审查见 `review/findings/T27-real-calibration-20261005.md`、`review/findings/T27-remaining-evaluation-20261006.md`。
++
++本次 Main 临时单文件 handoff 后的 Evaluator Owner 修正只明确 `snippet` 是注册窗口 ID，要求引用来自 Tools 已实际核验的 pair，并提供原冻结 suggestion Schema 与简短紧凑输出提示。`TRUSTED_OUTPUT_CONTRACT` 位于 TARGET_DATA 外，rubric/target数据原内容保留。没有改 Schema、契约、fixtures、expected、reader、provider、事件冻结、paid gates 或严格校验/失败优先规则；没有新增付费调用。新提示尚无真实模型验证，将由另一 Agent 独立 QA，不用旧源实际结果证明新源有效。
++
++以下为先前草案的历史状态文字，保留其当时范围；不作为当前空gate或未发生付费的声明。
+ 
+ 此文件由 Main 明确 handoff 给 Evaluator 起草。旧 T26 候选已有独立 QA 接受（193 项、34 源，实际 exit 0，`review/findings/T26-acceptance-20261003.md`）。校准仍是显式 mock/fake Transport；新增事件层尚待独立 QA，尚无真实付费 LLM 校准或真人签署。
+ 
