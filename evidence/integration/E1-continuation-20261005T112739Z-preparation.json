@@ -1,0 +1,52 @@
+{
+  "authorization": "experiments\\authorizations\\E1-continuation-20261005T112739Z.json",
+  "authorization_raw_sha256": "e1eb57a2baa413065762d0c90e5139f5b4b7057a07965fb6aabb0829c6121811",
+  "gate": {
+    "id": "E1-continuation-20261005T112739Z",
+    "approved_by": "Main",
+    "approved": true,
+    "kind": "E1-first-attempt-continuation-v1",
+    "phase": "continuation",
+    "max_calls": 49,
+    "additional_upper_cap_units": 5300000000,
+    "expires_at": "2026-10-05T23:27:39.495573+00:00",
+    "plan_hash": "791fe5976735e4378c658c1c13544e9dda92e0222f8a52f0df9f0f255184ab6e",
+    "original_freeze_hash": "f4436d0b4d9009788993092246b278e44c03021558bddb8b87337372b3eb1066",
+    "original_plan_hash": "bb9d603d75d16dcf9473e534a38687ce7a90d548035a6ad76ad682a16b459539",
+    "origin_run_id": "20261005T053334004502Z-formal-real-48d972eb",
+    "selected_identity_hash": "7e78cfa735e474f6b8d21bc8d45f44233be04bb1afdedcd8e6379c0e39954eca",
+    "execution_sources_hash": "1125299c1baa4c9324e14a0db7a759eb489d1ddecd86c2e96a1fc4895e4ecdfa",
+    "archive_index_sha256": "0dab9b9e213a3631a7630eb59cd0a27d8e44c74321891463ed7d71d599d285a6",
+    "baseline_manifest_sha256": "9c36943cbb6e4fe08b6e176445ba91835fafa79a2077c2155bbf8d613f8b07c1",
+    "dependencies_hash": "b1078eedf12230428a466c8fb54387453120c05772c693a0650c9feff3e26471",
+    "pricing_evidence": "evidence/integration/pricing-check-20261005-live.json",
+    "pricing_sha256": "c9cc7f4382a0e2eb9583b1120edb12238e7bb7038720a57cd6d3500d0c9eeb54",
+    "pilot_run_id": "20261005T052822923700Z-pilot-real-0378672e",
+    "pilot_summary_sha256": "a6ee9d903668c0285d30619c0b43d93f2ca7e231560118664ebfb2e0a38fa79a",
+    "pilot_review_accepted": true,
+    "candidate_qa_evidence": "evidence/qa/T24-continuation-20261005T113100Z/result.json",
+    "candidate_qa_sha256": "4d9a25587db93ec25976c4bcfeb02f244284660aa506bc598f8195faed33d534",
+    "candidate_qa_accepted": true,
+    "accounting_closure_evidence": "evidence/integration/timeout-human-fee-20261005-applied.json",
+    "accounting_closure_sha256": "b6492c291a528c9b89ee23ac83be37b70a2b4ad29b76c3fd37d586afb3d040df",
+    "accounting_closure_accepted": true,
+    "note": "At most one first attempt for each of the exact original49 not_called units. Never resend original22 responses/timeout. Original shared CNY10 only; another uncertainty stops. Execution still subject to normal approval review.",
+    "budget_snapshot": {
+      "calls": 35,
+      "charged_upper_units": 277602960,
+      "remaining_units": 9722397040,
+      "cap_units": 10000000000
+    }
+  },
+  "payload_preview": "evidence\\integration\\continuation-payload-preview-20261005.json",
+  "payload_preview_sha256": "56a0d0f39e7fa77cbaeea61ff7c5fc3d0f54fd7841407aba979e1d0d1201962c",
+  "actual_network_calls": 0,
+  "independent_review_checks": 449,
+  "sources_verified": {
+    "experiments/runs/E1-continuation-executor-v1/executor.py": "247414c3c03c71395540725f9017fcf7a5686df21fade12a3da73eedf82cbecd",
+    "experiments/runs/E1-continuation-executor-v1/owner_tests.py": "da0d53f2af46b73e146210848e607e7edba2f0f161a56fd6ea36e6c06364c80b",
+    "experiments/runs/E1-continuation-executor-v1/README.md": "897ea453929058d07f90aa690223ea0773330b3d4b1ca985f26577f37e64c3e6",
+    "experiments/runs/E1-continuation-executor-v1/schema.json": "49d24a59c012ca0ab32e6679b1fe7c5b0d3450bed96222ba321a09b27563028a",
+    "experiments/runs/E1-continuation-executor-v1/v1_judge_worker.py": "c9a0988ea7fc63c34300f4eaf2b77603b065af6dd6ba01ada1b1d8cd5dcb0224"
+  }
+}

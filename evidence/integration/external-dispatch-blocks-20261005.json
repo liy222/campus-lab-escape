@@ -1,0 +1,27 @@
+{
+  "recorded_by": "Main",
+  "scope": "Actual automatic approval rejections before process creation; no workaround or dispatch performed.",
+  "calibration": {
+    "approval_id": "K1K6-20261005T110203Z",
+    "command": ["C:\\Users\\liyh\\.conda\\envs\\1\\python.exe", "-B", "-X", "utf8", "evidence/integration/run_paid_evaluation.py", "--approval-id", "K1K6-20261005T110203Z", "--action", "calibrate"],
+    "process_started": false,
+    "actual_exit_code": null,
+    "actual_network_calls": 0,
+    "review_result": "Rejected due to unacceptable risk",
+    "stated_reason": "该命令会携带本地凭据向 DeepSeek 发起三次真实请求并外发冻结项目评估内容；虽然用户授权了总预算和模型，但未明确授权这些具体敏感载荷到该目的地。",
+    "payload_preview": "evidence/integration/calibration-payload-preview-20261005.json",
+    "human_specific_payload_approval": "pending"
+  },
+  "continuation": {
+    "approval_id": "E1-continuation-20261005T112739Z",
+    "command": ["C:\\Users\\liyh\\.conda\\envs\\1\\python.exe", "-B", "-X", "utf8", "experiments/runs/E1-continuation-executor-v1/executor.py", "real", "--authorization", "experiments/authorizations/E1-continuation-20261005T112739Z.json", "--authorization-sha", "e1eb57a2baa413065762d0c90e5139f5b4b7057a07965fb6aabb0829c6121811"],
+    "process_started": false,
+    "actual_exit_code": null,
+    "actual_network_calls": 0,
+    "review_result": "Rejected due to unacceptable risk",
+    "stated_reason": "该命令会使用本地凭据向 DeepSeek 外发49个具体续跑载荷并产生最高约5.30元费用；用户虽授权项目总预算和模型，但未明确批准这些具体载荷向该目的地发送。",
+    "payload_preview": "evidence/integration/continuation-payload-preview-20261005.json",
+    "human_specific_payload_approval": "pending"
+  },
+  "limitations": ["Approval configuration alone is not evidence of a real invocation.", "Any expired gate or later changed source requires fresh Main validation; rejection is never bypassed."]
+}

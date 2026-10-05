@@ -1,0 +1,54 @@
+{
+  "commit": "fc70b15b84d811aec62e2a561c468538844b6edf",
+  "checks_exit_code": 0,
+  "archive_member_count": 6014,
+  "archive_source_unchanged": true,
+  "clean_env_absent": true,
+  "helper_raw_sha256": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+  "frontend_actual_versions": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "vite": "7.3.6",
+    "typescript": "5.9.3",
+    "@vitejs/plugin-react": "5.2.0",
+    "@playwright/test": "1.63.0"
+  },
+  "locked_python_package_count": 28,
+  "evaluators": {
+    "E1-formal-review-v2": {
+      "source_path": "D:\\深度能力\\data\\reproduction\\20261005T111419Z\\clean\\evaluation\\runs\\20261005T111644217370Z\\report.json",
+      "evidence_path": "evaluator-E1-formal-review-v2-report.json",
+      "raw_sha256": "247f9ec4b5d1cadb960189c6508d1861ce6e0ce6519223e6c1ba57a353a3fd34",
+      "exit_code": 0,
+      "issues": 0,
+      "actual_paid_calls": 0
+    },
+    "baseline_v1": {
+      "source_path": "D:\\深度能力\\data\\reproduction\\20261005T111419Z\\clean\\evaluation\\runs\\20261005T111645071100Z\\report.json",
+      "evidence_path": "evaluator-baseline_v1-report.json",
+      "raw_sha256": "684608a2a03dd16f088921f987783e5f7cd6c283bd97219da68d57916c9c0375",
+      "exit_code": 0,
+      "issues": 0,
+      "actual_paid_calls": 0
+    }
+  },
+  "v2_backend_pids": [
+    15564,
+    24140
+  ],
+  "v1_backend_pids": [
+    12972,
+    2752
+  ],
+  "all_owned_service_stops": {
+    "count": 5,
+    "taskkill_exit_code": 0,
+    "process_exit_code": 1
+  },
+  "limitations": [
+    "New source directory on existing Windows and designated Conda environment; not a clean OS or newly created Python environment.",
+    "Automated mock HTTP/service coverage; no human gameplay or real model evaluation.",
+    "FastAPI/Starlette HTTPX deprecation warning remains.",
+    "Evaluator prechecks establish strict registered identity only, not a new semantic or paid assessment."
+  ]
+}
