@@ -1,0 +1,116 @@
+{
+  "task": "T31-delivery-docs-final-v4",
+  "date": "2026-10-06",
+  "status": "STOP; current facts documented, Main's future prompt/source revision remains unbound",
+  "scope": ["README.md", "release/README.md", "release/manifest.json", "docs/report.md", "docs/defense.md", "evidence/delivery/T31-docs-20261005/report-v4.json"],
+  "preserved_history": {
+    "report.json": "6ab4d12b84cd3fd82df97053adf951d049b627b14a7ea6cbad5f9296406140f2",
+    "report-v2.json": "8e97f9c741b9b8f55af09b30afd0fdc2dab8a99f10c07852ea70421abfc24871",
+    "report-v3.json": "23877dc4d5c93551b3f0c830d02c7b2d3d0d4e7aaf3b8b48b8e87f5feaa68051"
+  },
+  "release_identity": {
+    "product_tag": "CH01_v2",
+    "product_commit": "242ecfc4d9f7bf1a8480508de701d9efc7822fe7",
+    "baseline_commit": "7821af4efe0613c20a80ea164c1dab1c0f288bab",
+    "evaluator_commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+    "final_clean_source_commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+    "current_v2_database": "./data/game-v2.sqlite",
+    "v1_rollback_database": "./data/game-v1.sqlite",
+    "python": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "machine_manifest": "release/manifest.json",
+    "machine_manifest_sha256": "cf36c9faf9d5e8fb6a4580acffc563e58a3c11c4ab66352f46d820483135e3e1"
+  },
+  "final_clean": {
+    "main_report": "evidence/integration/T32-clean-final-20261005T115741Z/report.json",
+    "main_report_sha256": "52962166c15b8b07209cf83257da9f8ad74d5270007083998763ac1c72777c57",
+    "source_pins": "evidence/integration/reproduction-20261005T115741Z-pins.json",
+    "source_pins_sha256": "7e7013be5d40d7639f2e2d48fefacf2d24c8f7ebdf4e1a6aec3dd3b5f9b29977",
+    "process_record": "evidence/integration/T32-clean-final-process-20261005.json",
+    "process_record_sha256": "fd91f2d246fefb9aa74ab260269f7ffd451eb3beb98c1e1ba6032d83a7b1c91f",
+    "source_files": 10778,
+    "main_outer_checks": 8,
+    "main_identity_prechecks": 3,
+    "main_exit": 0,
+    "independent_result": "evidence/qa/T32-final-20261005T123100Z/result.json",
+    "independent_result_sha256": "f82415a8132ef8567eafb2329102983db469fa61573a6eb6d4279dca2bad7c95",
+    "independent_checks": "10842/10842",
+    "independent_exit": 0,
+    "supplemental_static_checks": 2,
+    "scope_limit": "existing Windows/Conda environment; no new OS/Python environment"
+  },
+  "evaluator": {
+    "identity_alias_report": "review/findings/T27-CH01-event-20261005.md",
+    "identity_alias_result": "evidence/qa/T27-CH01-event-20261005T115700Z/result.json",
+    "identity_alias_result_sha256": "958c67a1c3fb3d54e1f1af48b14cd8aa57dc1d58e66f187f0ec6e8bd3d9810e0",
+    "identity_alias_checks": "79/79",
+    "new_paid_judgements": {
+      "E1_report": "evaluation/runs/20261005T155830386817Z/report.json",
+      "E1_report_sha256": "c82eb77beb1e0ec790864a93b24ff92e07e69c8da219ec7bcd9cd4d874c6c902",
+      "E1_calls": 2,
+      "E1_result": "both INSUFFICIENT_EVIDENCE: invalid/fake-or-unread reference and schema/provider error",
+      "CH01_report": "evaluation/runs/20261005T155947272680Z/report.json",
+      "CH01_report_sha256": "a62449afd18924889fbeba9fa00736bd3ff3856e387c1331c080beb2af73cf7a",
+      "CH01_calls": 3,
+      "CH01_result": "all INSUFFICIENT_EVIDENCE: two fake/unread reference outputs and one invalid 1000-character output",
+      "K4_record": "evidence/integration/remaining-k4-20261005.json",
+      "K4_sha256": "1815c72147d6d632659f03bceec7cbba8707853b8e0743c1ffcecd9900e94cad",
+      "K4_calls": 1,
+      "K4_result": "valid model response, expected deterministic FAIL",
+      "old_calibration_result": "10/11 unchanged; independent calibration QA 46/46, exit 0",
+      "semantic_pass": false
+    },
+    "future_prompt_revision": "pending separate source pin and independent QA; current 833aafb does not bind future changes"
+  },
+  "continuation": {
+    "run": "experiments/runs/20261005T114740304313Z-continuation-real-b584e838",
+    "raw_sha256": "96ea3c46da504298e3096bb34cfa6119c6b1b2df151c14c2bb2f2f6c6a79d14d",
+    "summary_sha256": "25261ed38a195f47da348a39296ee975f0dedf7251d6b3afaec74658ac627ed2",
+    "invoked": 48,
+    "responses": 47,
+    "unknown_usage_failure": 1,
+    "not_called": 1,
+    "order_71_call": "6dfc591c79c54544afe6d70eec6d697b",
+    "order_72": "not_called",
+    "merged_independent_report": "review/findings/T25-merged-20261005.md",
+    "merged_independent_result": "evidence/qa/T25-merged-20261005T160549469322Z/result.json",
+    "merged_result_sha256": "86fb081727330f055ef05af51110ce5ab37649ebd9cc9151e22afe41feb2f405",
+    "merged_result_checks": "1427/1427",
+    "merged_result_exit": 0,
+    "conclusion": "STOP; 69/72 terminal, 2 failed, 1 not_called, 34 full pairs; 69 prior rows independently rejudged; incomplete three-repeat and no superiority claim",
+    "original_formal_records_replayed": false
+  },
+  "accounting": {
+    "total_calls": 91,
+    "cumulative_charged_upper_cny": 0.66236008,
+    "pending_unknown": 0,
+    "user_reported_unavailable_call_fee_cny": 0.09,
+    "full_upper_retained_and_usage_null": true,
+    "supplier_invoice_verified": false,
+    "budget_cap_cny": 10,
+    "calibration_old_result": "10/11 retained",
+    "six_new_payloads": "each invoked once; one expected FAIL and five INSUFFICIENT_EVIDENCE"
+  },
+  "source_sha256": {
+    "README.md": "6b326028e01bf068f2e0efde0dc68fecd69ef94b448c8e7cae0e1bbee3869d29",
+    "release/README.md": "8e61dc4270b4384bbddb2308edc157f82eddb38ec2bd57e7f9bcaf98ebdd0032",
+    "docs/report.md": "a002861c8bc5caac63b4e03d40bf992d3cc508363ddfa358a613e6f840e0a5c4",
+    "docs/defense.md": "dda3cd8f74a9f302e2e964a1ed1944cfaa45d353d72305cdfd8325ad7af4d0cf",
+    "release/manifest.json": "cf36c9faf9d5e8fb6a4580acffc563e58a3c11c4ab66352f46d820483135e3e1"
+  },
+  "actual_commands_and_exit_codes": [
+    {"exit_code": 0, "command": "PowerShell reads/metadata and SHA256 of Main-pinned source maps, final QA reports, evaluation summaries, and report histories; no .env, database, ledger, or raw continuation payload displayed"},
+    {"exit_code": 0, "command": "PowerShell update of README.md, release/README.md, docs/report.md, docs/defense.md, and release/manifest.json"},
+    {"exit_code": 0, "command": "PowerShell JSON parse of release/manifest.json"},
+    {"exit_code": 0, "command": "PowerShell actual T32, T27, T25, E1, CH01, and K4 evidence-path existence checks"},
+    {"exit_code": 1, "command": "Two intermediate line-replacement/sentinel attempts stopped on mismatched text before changing their target paragraphs; report reconstructed from previously read source and revalidated"},
+    {"exit_code": 0, "command": "PowerShell final Markdown-relative-link audit and manifest path audit; all referenced paths exist"}
+  ],
+  "limitations": [
+    "The 833aafb clean result uses existing Windows/Conda; independent review does not establish new OS/Python behavior.",
+    "Merged E1 continuation is STOP with incomplete three-repeat data; no statistical superiority conclusion.",
+    "K4 expected FAIL and five INSUFFICIENT_EVIDENCE results are not evaluator acceptance or semantic PASS.",
+    "Main's future prompt/source revision remains pending and requires its own bound source identity and QA.",
+    "No human gameplay, player decision record, teacher approval, or human signature is claimed.",
+    "No Git, commit, paid calls, .env, or database actions were performed by this documentation task."
+  ]
+}

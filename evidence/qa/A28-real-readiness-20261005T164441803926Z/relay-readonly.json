@@ -1,0 +1,38 @@
+{
+  "kind": "A28-Main-relay-readonly-supplement",
+  "source_pins": {
+    "evidence\\integration\\run_a28_fresh_real.py": "80305b8955f0426d87577d086fd603ed72f2d2d04fddc8ada485095177698a01",
+    "evidence\\integration\\A28-real-fresh-request-plan-20261006.json": "4a2dc205e007de7d690aecf1d9f59c285a4376453cd1772a9369171dc3caed05"
+  },
+  "source_after": {
+    "evidence\\integration\\run_a28_fresh_real.py": "80305b8955f0426d87577d086fd603ed72f2d2d04fddc8ada485095177698a01",
+    "evidence\\integration\\A28-real-fresh-request-plan-20261006.json": "4a2dc205e007de7d690aecf1d9f59c285a4376453cd1772a9369171dc3caed05"
+  },
+  "actual_read_chunks": [
+    {
+      "chunk": "540d3d",
+      "exit_code": 0
+    },
+    {
+      "chunk": "e7e49d",
+      "exit_code": 1,
+      "failure": "QA inspection syntax elseFalse, no target import or execution"
+    },
+    {
+      "chunk": "726bf5",
+      "exit_code": 0,
+      "all11_current_paths_exist_and_match_clean_materialization": true
+    },
+    {
+      "chunk": "55c93e",
+      "exit_code": 0
+    }
+  ],
+  "relay_executed": false,
+  "canonical_ledger_opened": false,
+  "env_read": false,
+  "symlink_created": false,
+  "user_requested_pause": true,
+  "unstarted_execution_cancelled": true,
+  "SOURCE_STOP": true
+}

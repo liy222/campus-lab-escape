@@ -1,0 +1,353 @@
+{
+  "schema": "local-delivery-manifest/v1",
+  "generated_date": "2026-10-06",
+  "hash_algorithm": "SHA-256 over exact raw bytes",
+  "status": "SOURCE STOP for current documented product/clean source and offline prompt-fix revision; no paid calls for the prompt-fix revision.",
+  "release_components": [
+    {
+      "name": "product-v2",
+      "role": "accepted product release",
+      "tag": "CH01_v2",
+      "commit": "242ecfc4d9f7bf1a8480508de701d9efc7822fe7",
+      "source_manifest": "evidence/integration/CH01_v2-manifest.json",
+      "source_manifest_sha256": "69501e3a159d6c55755b1bef850da3b57777c1299a6304f78fbb847c11c66a58",
+      "declared_source_files": 170,
+      "declared_artifacts": 7,
+      "historical_harness_gaps": 2,
+      "binding": "Main product manifest; does not imply other component source state"
+    },
+    {
+      "name": "baseline-v1",
+      "role": "archived rollback product",
+      "commit": "7821af4efe0613c20a80ea164c1dab1c0f288bab",
+      "source_manifest": "evidence/integration/baseline_v1-manifest.json",
+      "source_manifest_sha256": "9c36943cbb6e4fe08b6e176445ba91835fafa79a2077c2155bbf8d613f8b07c1",
+      "archive_directory": "release/archives/baseline_v1",
+      "database_path": "./data/game-v1.sqlite",
+      "binding": "Main preserved archive identity"
+    },
+    {
+      "name": "evaluator-ch01-v3",
+      "role": "evaluation event identity/alias code",
+      "commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+      "source_index": "evaluation/runs/ch01-v3-identity-alias-handoff/source-sha256.json",
+      "source_index_sha256": "60d20f3a77bfe93053acd696815199b313cc6604d28ffef0273a9a6d09a28e9d",
+      "independent_qa": "review/findings/T27-CH01-event-20261005.md",
+      "independent_qa_result": "evidence/qa/T27-CH01-event-20261005T115700Z/result.json",
+      "independent_qa_result_sha256": "958c67a1c3fb3d54e1f1af48b14cd8aa57dc1d58e66f187f0ec6e8bd3d9810e0",
+      "checks": "79/79, exit 0; identity/alias and synthetic protocol scope only; no semantic grade"
+    },
+    {
+      "name": "clean-reproduction-fc70",
+      "role": "earlier clean source package reproduction",
+      "commit": "fc70b15b84d811aec62e2a561c468538844b6edf",
+      "source_package_sha256": "bc8e8f86b0f861762e3247507688c1eb1f85ea1ac5f7e3cc86e830c04f61e40e",
+      "pins": "evidence/integration/reproduction-20261005T111419Z-pins.json",
+      "pins_sha256": "25ce6a65f8a134cdd58647275840cc8e32f6dfdd4af674d2dafcbbc62f6883d1",
+      "execution": "evidence/delivery/T32-clean-20261005T111419Z/report.json",
+      "execution_sha256": "b0d5a3575b7ed1292e7d35207c33edd0a73e19f3d463deaa44dbb7e3e65b6b70",
+      "independent_review": "review/findings/T32-independent-20261005.md",
+      "independent_result": "evidence/qa/T32-independent-20261005T113707029429Z/result.json",
+      "independent_result_sha256": "45881b749ec5feec6c584983896894948a831ebd837db9902ebff04b009a301b",
+      "scope": "6014 files; existing Windows/Conda; independent read/hash only",
+      "source_package_path": "data/reproduction/20261005T111419Z/source.zip"
+    },
+    {
+      "name": "current-full-source-clean",
+      "role": "new Main clean reproduction",
+      "commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+      "source_pin_file": "evidence/integration/reproduction-20261005T115741Z-pins.json",
+      "source_pin_file_sha256": "7e7013be5d40d7639f2e2d48fefacf2d24c8f7ebdf4e1a6aec3dd3b5f9b29977",
+      "execution_directory": "evidence/integration/T32-clean-final-20261005T115741Z",
+      "execution_report": "evidence/integration/T32-clean-final-20261005T115741Z/report.json",
+      "execution_report_sha256": "52962166c15b8b07209cf83257da9f8ad74d5270007083998763ac1c72777c57",
+      "process_record": "evidence/integration/T32-clean-final-process-20261005.json",
+      "reported_source_files": 10778,
+      "main_execution_exit": 0,
+      "new_ch01_event_precheck_exit": 0,
+      "paid_calls": 0,
+      "independent_read_hash_status": "PASS 10842/10842, exit 0; 2 separately recorded static supplements; applies only to source commit 833aafb.",
+      "process_record_sha256": "fd91f2d246fefb9aa74ab260269f7ffd451eb3beb98c1e1ba6032d83a7b1c91f",
+      "independent_qa_result": "evidence/qa/T32-final-20261005T123100Z/result.json",
+      "independent_qa_result_sha256": "f82415a8132ef8567eafb2329102983db469fa61573a6eb6d4279dca2bad7c95",
+      "note": "Main reports exact before/after source pins and full v1/v2 restart restore. Uses Main actual integration output override; descriptor proposed output path not used. Independent read/hash review passed; two static supplements are separately recorded."
+    },
+    {
+      "name": "evaluator-prompt-fix-offline",
+      "role": "offline prompt/source revision, independent QA only",
+      "commit": "c9f579209e702c957a560b1a2ad91f20fae6e8c8",
+      "handoff": "evaluation/runs/prompt-reference-fix-20261006T003000Z/stable-handoff.json",
+      "handoff_sha256": "3bc15b57b09d8acada204bfdb09075f7e2e50b28ee828eb7410b6a91d6721f9a",
+      "source_map": "evaluation/runs/prompt-reference-fix-20261006T003000Z/source-sha256.json",
+      "source_map_sha256": "0ae09a89f18c01bcc32bfff3a7f0702fb9b06bcfcac00802722f8e895e732742",
+      "QA_report": "review/findings/T27-prompt-fix-20261006.md",
+      "QA_report_sha256": "a2f3e94c6214324ec04199f3ff08c7c4d292a2fdfb0c3278607de30462d0f649",
+      "QA_result": "evidence/qa/T27-prompt-fix-20261005T163034187429Z/result.json",
+      "QA_result_sha256": "c95e839063e3c9efc773285f6181906d010fca0fbf2ea18bde71e144b58ffc5d",
+      "QA_index": "evidence/qa/T27-prompt-fix-20261005T163034187429Z/index.json",
+      "QA_index_sha256": "d9050c41139f7cb41b107f973f02d62c11c5aa0299c021030fa29b83a3d85f0b",
+      "checks": "223",
+      "scenarios": 36,
+      "captures": 30,
+      "files_unchanged": 81,
+      "exit": 0,
+      "paid_calls": 0,
+      "network_calls": 0,
+      "claims": "Main offline acceptance and independent QA bind tested source f80c6af; milestone c9f579 contains prompt sources/QA/payload preview. No new live judgement was run.",
+      "tested_source_commit": "f80c6af075f6041aa11a4f79ba2e6cb1ea9ecd80"
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "continuation-dispatch-observation",
+      "path": "evidence/integration/continuation-dispatch-observation-20261005.json",
+      "sha256": "4e07751c8788ed40b988c44bcf4bb0e28e986155e2933e9dea2b28c525549b41",
+      "run": "experiments/runs/20261005T114740304313Z-continuation-real-b584e838",
+      "summary_sha256": "25261ed38a195f47da348a39296ee975f0dedf7251d6b3afaec74658ac627ed2",
+      "completion_sha256": "a9f6cceb33631c233a372f595d8a74a9ea768584007ba5a6fe6d3f263caf0385",
+      "raw_sha256": "96ea3c46da504298e3096bb34cfa6119c6b1b2df151c14c2bb2f2f6c6a79d14d",
+      "status": "48 invoked / 47 responses / 1 MODEL_UNAVAILABLE usage unknown / 1 not called; Main stopped dispatch; merged independent QA pending"
+    },
+    {
+      "kind": "continuation-payload-authorization",
+      "path": "evidence/integration/external-payload-human-approval-20261005.json",
+      "sha256": "827643bf2681a46a1937f104a8245e7145d75743c32cd5fbec42d7718857ab03"
+    },
+    {
+      "kind": "CH01-event-qa",
+      "path": "evidence/qa/T27-CH01-event-20261005T115700Z/result.json",
+      "sha256": "958c67a1c3fb3d54e1f1af48b14cd8aa57dc1d58e66f187f0ec6e8bd3d9810e0",
+      "report": "review/findings/T27-CH01-event-20261005.md"
+    },
+    {
+      "kind": "prior-clean-independent-review",
+      "path": "evidence/qa/T32-independent-20261005T113707029429Z/result.json",
+      "sha256": "45881b749ec5feec6c584983896894948a831ebd837db9902ebff04b009a301b",
+      "scope": "Read/hash only for fc70 package and 23 evidence files; does not apply to 833aafb reproduction"
+    },
+    {
+      "kind": "known-component-pins-index",
+      "path": "evidence/integration/delivery-known-pins-20261005.json",
+      "note": "Main-provided pin index; identifies current known components and hash policy",
+      "sha256": "d901188e24be843cd4be4c8d1d01898ba2cb8b774090b579284d98c29c3e383a"
+    },
+    {
+      "kind": "current-clean-process-record",
+      "path": "evidence/integration/T32-clean-final-process-20261005.json",
+      "sha256": "fd91f2d246fefb9aa74ab260269f7ffd451eb3beb98c1e1ba6032d83a7b1c91f"
+    },
+    {
+      "kind": "final-clean-independent-review",
+      "path": "evidence/qa/T32-final-20261005T123100Z/result.json",
+      "sha256": "f82415a8132ef8567eafb2329102983db469fa61573a6eb6d4279dca2bad7c95",
+      "checks": 10842,
+      "passed": 10842,
+      "exit": 0,
+      "paid_calls": 0,
+      "network_calls": 0,
+      "scope": "read/hash of final source commit 833aafb; 2 static supplements"
+    },
+    {
+      "kind": "continuation-merged-independent-review",
+      "path": "evidence/qa/T25-merged-20261005T160549469322Z/result.json",
+      "sha256": "86fb081727330f055ef05af51110ce5ab37649ebd9cc9151e22afe41feb2f405",
+      "index": "evidence/qa/T25-merged-20261005T160549469322Z/index.json",
+      "index_sha256": "9db0327a57652ef438c610073928d377a299a886f6e7a6d91c6253eaebc9d5cf",
+      "process": "evidence/qa/T25-merged-20261005T160549469322Z/process.json",
+      "process_sha256": "beef7d62c1ea7ce6157136ea6354aceea3f902e6ca5d28ccb1dbc2da47a9406a",
+      "checks": 1427,
+      "exit": 0,
+      "status": "STOP",
+      "terminal": 69,
+      "planned": 72,
+      "failed": 2,
+      "not_called": 1,
+      "full_pairs": 34,
+      "prior_rows_independently_rejudged": 69,
+      "limitations": "Incomplete 3-repeat experiment; no statistical superiority claim"
+    },
+    {
+      "kind": "old-calibration-independent-review",
+      "path": "evidence/qa/T27-calibration-20261005T160500Z/result.json",
+      "sha256": "ccdb224d1604e478bd68a8fbe0ec6bb440dc3945e6ed03cbfb00cc36db914907",
+      "checks": 46,
+      "passed": 46,
+      "exit": 0,
+      "historical_result": "10/11 retained; does not amend prior reports"
+    },
+    {
+      "kind": "additional-e1-paid-judgements",
+      "path": "evaluation/runs/20261005T155830386817Z/report.json",
+      "sha256": "c82eb77beb1e0ec790864a93b24ff92e07e69c8da219ec7bcd9cd4d874c6c902",
+      "actual_paid_calls": 2,
+      "exit": 2,
+      "results": "A24 invalid/fake-or-unread reference; A26 schema/provider error; both INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "kind": "additional-ch01-paid-judgements",
+      "path": "evaluation/runs/20261005T155947272680Z/report.json",
+      "sha256": "a62449afd18924889fbeba9fa00736bd3ff3856e387c1331c080beb2af73cf7a",
+      "actual_paid_calls": 3,
+      "exit": 2,
+      "results": "two fake/unread reference cases and one invalid 1000-character output; all INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "kind": "remaining-k4-valid-model-judgement",
+      "path": "evidence/integration/remaining-k4-20261005.json",
+      "sha256": "1815c72147d6d632659f03bceec7cbba8707853b8e0743c1ffcecd9900e94cad",
+      "actual_paid_calls": 1,
+      "exit": 0,
+      "result": "valid model; expected deterministic FAIL"
+    },
+    {
+      "kind": "current-clean-main-process",
+      "path": "evidence/integration/T32-clean-final-process-20261005.json",
+      "sha256": "fd91f2d246fefb9aa74ab260269f7ffd451eb3beb98c1e1ba6032d83a7b1c91f",
+      "exit": 0,
+      "outer_steps": 8,
+      "prechecks": 3,
+      "scope": "Main execution record; separate independent QA bound above"
+    },
+    {
+      "kind": "known-source-pins-index",
+      "path": "evidence/integration/delivery-known-pins-20261005.json",
+      "sha256": "d901188e24be843cd4be4c8d1d01898ba2cb8b774090b579284d98c29c3e383a",
+      "note": "per-component raw SHA policy; product, baseline, evaluator and clean package identities separately pinned"
+    },
+    {
+      "kind": "prompt-fix-independent-SOURCE-STOP",
+      "path": "evidence/qa/T27-prompt-fix-20261005T163034187429Z/result.json",
+      "sha256": "c95e839063e3c9efc773285f6181906d010fca0fbf2ea18bde71e144b58ffc5d",
+      "index": "evidence/qa/T27-prompt-fix-20261005T163034187429Z/index.json",
+      "index_sha256": "d9050c41139f7cb41b107f973f02d62c11c5aa0299c021030fa29b83a3d85f0b",
+      "report": "review/findings/T27-prompt-fix-20261006.md",
+      "report_sha256": "a2f3e94c6214324ec04199f3ff08c7c4d292a2fdfb0c3278607de30462d0f649",
+      "exit": 0,
+      "checks": 223,
+      "scenarios": 36,
+      "payloads": 30,
+      "unchanged_files": 81,
+      "paid_calls": 0,
+      "network_calls": 0
+    },
+    {
+      "kind": "main-prompt-repair-offline-acceptance",
+      "path": "evidence/integration/prompt-repair-accepted-20261006.json",
+      "sha256": "4e4493ddc64fee33a8a7b6ca138492207cf2bc931b33823777c925b50688a35c",
+      "milestone_commit": "c9f579209e702c957a560b1a2ad91f20fae6e8c8",
+      "new_live_payloads": "8 pending approval, not called"
+    }
+  ],
+  "local_data": {
+    "database_or_ledger_files_included": false,
+    "continuation_run": "experiments/runs/20261005T114740304313Z-continuation-real-b584e838",
+    "v2_start_command": "$env:SQLITE_PATH='./data/game-v2.sqlite'",
+    "python": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "v2_database": "./data/game-v2.sqlite",
+    "v1_database": "./data/game-v1.sqlite"
+  },
+  "current_accounting": {
+    "calls": 91,
+    "no_new_dispatch": true,
+    "calibration": "Six newly approved payloads each invoked once: K4 valid-model expected FAIL, two E1 and three CH01 results INSUFFICIENT_EVIDENCE. Old K1/K2 outcome 10/11 unchanged.",
+    "charged_upper_cny": 0.66236008,
+    "fee_resolution": "User reported CNY 0.09 for unavailable call; Main conservatively recorded it, retained full CNY 0.094536 upper and NULL usage; no supplier invoice claim.",
+    "pending_unknown": 0
+  },
+  "outcomes": {
+    "human_acceptance": "No human playtest, player decision record, teacher approval, or signature supplied",
+    "evaluator": "79/79 CH01 identity/alias QA; six new paid judgement outcomes comprise one expected FAIL and five INSUFFICIENT_EVIDENCE; no semantic PASS or grade.",
+    "continuation": "49 planned; 48 invoked, 47 responses, one MODEL_UNAVAILABLE usage unknown, one not_called; final merged independent review 1427/1427 checks exit0 STOP; 69/72 terminal, 34 complete pairs, 2 failed and 1 not_called; 69 old rows independently rejudged; no complete three-repeat or superiority claim.",
+    "prompt_fix": "Independent offline QA SOURCE STOP: 223 checks/36 scenarios/30 captures/81 files unchanged, exit0; no model call. 8 new real payloads awaiting approval."
+  },
+  "version_separation": {
+    "clean_reproduction_commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+    "evaluator_commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+    "do_not_equate": "Product tag, archived baseline, and clean source snapshot are separate identities",
+    "product_tag": "CH01_v2",
+    "baseline_commit": "7821af4efe0613c20a80ea164c1dab1c0f288bab",
+    "product_commit": "242ecfc4d9f7bf1a8480508de701d9efc7822fe7"
+  },
+  "known_blockers": [
+    "Eight concrete payloads for real evaluation of the new prompt await user approval; none has been called.",
+    "No human playtest, player decision record, teacher approval, or human signature."
+  ],
+  "source_bindings": {
+    "product_v2": {
+      "identity": "CH01_v2",
+      "commit": "242ecfc4d9f7bf1a8480508de701d9efc7822fe7",
+      "manifest": "evidence/integration/CH01_v2-manifest.json",
+      "manifest_sha256": "69501e3a159d6c55755b1bef850da3b57777c1299a6304f78fbb847c11c66a58",
+      "source_count": 170,
+      "artifact_count": 7,
+      "known_historical_harness_gaps": 2
+    },
+    "baseline_v1": {
+      "commit": "7821af4efe0613c20a80ea164c1dab1c0f288bab",
+      "manifest": "evidence/integration/baseline_v1-manifest.json",
+      "manifest_sha256": "9c36943cbb6e4fe08b6e176445ba91835fafa79a2077c2155bbf8d613f8b07c1",
+      "archive": "release/archives/baseline_v1"
+    },
+    "evaluator_ch01_v3": {
+      "commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+      "source_map": "evaluation/runs/ch01-v3-identity-alias-handoff/source-sha256.json",
+      "source_map_sha256": "60d20f3a77bfe93053acd696815199b313cc6604d28ffef0273a9a6d09a28e9d",
+      "identity_qa": "evidence/qa/T27-CH01-event-20261005T115700Z/result.json",
+      "identity_qa_sha256": "958c67a1c3fb3d54e1f1af48b14cd8aa57dc1d58e66f187f0ec6e8bd3d9810e0"
+    },
+    "clean_current": {
+      "commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+      "pin_file": "evidence/integration/reproduction-20261005T115741Z-pins.json",
+      "pin_file_sha256": "7e7013be5d40d7639f2e2d48fefacf2d24c8f7ebdf4e1a6aec3dd3b5f9b29977",
+      "files": 10778,
+      "report": "evidence/integration/T32-clean-final-20261005T115741Z/report.json",
+      "report_sha256": "52962166c15b8b07209cf83257da9f8ad74d5270007083998763ac1c72777c57",
+      "process": "evidence/integration/T32-clean-final-process-20261005.json",
+      "process_sha256": "fd91f2d246fefb9aa74ab260269f7ffd451eb3beb98c1e1ba6032d83a7b1c91f",
+      "independent_qa": "evidence/qa/T32-final-20261005T123100Z/result.json",
+      "independent_qa_sha256": "f82415a8132ef8567eafb2329102983db469fa61573a6eb6d4279dca2bad7c95",
+      "independent_checks": "10842/10842",
+      "exit": 0,
+      "scope": "existing Windows/Conda; 2 static supplements separately"
+    },
+    "continuation_executor": {
+      "run": "experiments/runs/20261005T114740304313Z-continuation-real-b584e838",
+      "summary_sha256": "25261ed38a195f47da348a39296ee975f0dedf7251d6b3afaec74658ac627ed2",
+      "raw_sha256": "96ea3c46da504298e3096bb34cfa6119c6b1b2df151c14c2bb2f2f6c6a79d14d",
+      "rows_hash": "73488209a997d7e3f48e5e62c4a1ccbbba38586e6abde33aca33c8a2247be1ec",
+      "sources": {
+        "experiments/runs/E1-continuation-executor-v1/README.md": "897ea453929058d07f90aa690223ea0773330b3d4b1ca985f26577f37e64c3e6",
+        "experiments/runs/E1-continuation-executor-v1/v1_judge_worker.py": "c9a0988ea7fc63c34300f4eaf2b77603b065af6dd6ba01ada1b1d8cd5dcb0224",
+        "experiments/runs/E1-continuation-executor-v1/executor.py": "247414c3c03c71395540725f9017fcf7a5686df21fade12a3da73eedf82cbecd",
+        "experiments/runs/E1-continuation-executor-v1/owner_tests.py": "da0d53f2af46b73e146210848e607e7edba2f0f161a56fd6ea36e6c06364c80b",
+        "experiments/runs/E1-continuation-executor-v1/schema.json": "49d24a59c012ca0ab32e6679b1fe7c5b0d3450bed96222ba321a09b27563028a"
+      }
+    }
+  },
+  "current_prompt_revision": {
+    "status": "Main accepted offline repair; independent SOURCE STOP complete; live payload approval pending",
+    "commit": "f80c6af075f6041aa11a4f79ba2e6cb1ea9ecd80",
+    "source_handoff": "evaluation/runs/prompt-reference-fix-20261006T003000Z/stable-handoff.json",
+    "source_handoff_sha256": "3bc15b57b09d8acada204bfdb09075f7e2e50b28ee828eb7410b6a91d6721f9a",
+    "source_map": "evaluation/runs/prompt-reference-fix-20261006T003000Z/source-sha256.json",
+    "source_map_sha256": "0ae09a89f18c01bcc32bfff3a7f0702fb9b06bcfcac00802722f8e895e732742",
+    "independent_report": "review/findings/T27-prompt-fix-20261006.md",
+    "independent_report_sha256": "a2f3e94c6214324ec04199f3ff08c7c4d292a2fdfb0c3278607de30462d0f649",
+    "result": "evidence/qa/T27-prompt-fix-20261005T163034187429Z/result.json",
+    "result_sha256": "c95e839063e3c9efc773285f6181906d010fca0fbf2ea18bde71e144b58ffc5d",
+    "index": "evidence/qa/T27-prompt-fix-20261005T163034187429Z/index.json",
+    "index_sha256": "d9050c41139f7cb41b107f973f02d62c11c5aa0299c021030fa29b83a3d85f0b",
+    "captures": "evidence/qa/T27-prompt-fix-20261005T163034187429Z/captures.json",
+    "captures_sha256": "7ac3747525f3b993bb21fc9e05454a072a8b36532d2a240ed48b5b3d2f1e0481",
+    "checks": "223 checks / 36 scenarios / 30 captured payloads / 81 files unchanged",
+    "exit": 0,
+    "paid_calls": 0,
+    "network_calls": 0,
+    "new_real_payloads": "8 awaiting user approval; not called",
+    "milestone_commit": "c9f579209e702c957a560b1a2ad91f20fae6e8c8",
+    "main_acceptance": "evidence/integration/prompt-repair-accepted-20261006.json",
+    "main_acceptance_sha256": "4e4493ddc64fee33a8a7b6ca138492207cf2bc931b33823777c925b50688a35c",
+    "new_live_payload_status": "8 concrete payloads awaiting user reply; none invoked",
+    "note": "Offline QA validates prompt/identity/schema boundaries only; no real-model effectiveness inferred. Prior six approved payloads were consumed once and cannot be resent."
+  }
+}

@@ -47,3 +47,7 @@
 
 ## 2026-10-06 prompt repair accepted offline
 Main re-read independent QA:223 checks/36 scenarios/30 captured mock payloads,81 raw sources unchanged,actual exit0 b1dd96. Only explicit citation IDs/output-schema guidance added; strict checkers and old records remain. Evidence: evidence/integration/prompt-repair-accepted-20261006.json. New8 concrete payload authorization remains pending; old approved6 were already dispatched once. Latest verified remote before this acceptance: f80c6af075f6041aa11a4f79ba2e6cb1ea9ecd80. T31 documentation is being corrected to bind exact hashes; T32 fresh-directory real AI and genuine human acceptance remain unverified. No repeated full regression or fee investigation.
+
+
+## 2026-10-06 human-requested pause
+User exact: 尽快完成现有小任务后暂时停止. Current small tasks completed: T31 v5/51 Main raw hash pairs accepted; A28 read-only preparation/relay review finished SOURCE STOP without invocation. Main stops this owned mock demo only (taskkill0; supervised process intentionally ends1); saves and environments preserved. No new paid calls, symlink, credential injection or background automation. New8 evaluation authorization, A28 real segment and genuine human signoff remain pending; old6 calls never replay. Recovery entry: evidence/integration/pause-checkpoint-20261006.json and release/README.md. Resume only when the user requests it. All chronological older states remain history.

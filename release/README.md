@@ -1,6 +1,6 @@
-﻿# 交付索引
+# 交付索引
 
-本项目是本机课程工程原型，当前文档按截至 2026-10-05 的已留存结果整理。T30 产品候选已由 Main 接受并 push 为 tag `CH01_v2`，commit `242ecfc4d9f7bf1a8480508de701d9efc7822fe7`。版本绑定清单 [`evidence/integration/CH01_v2-manifest.json`](../evidence/integration/CH01_v2-manifest.json) 列出 170 个源码、7 项证据和 2 个历史 harness 绑定缺口；规则文件 SHA256 `73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb`，关卡 2.0.0、接口/Schema/工具 1.0.0。
+本项目是本机课程工程原型，交付资料按截至 2026-10-06 的已留存结果整理。机器可读总索引见 [`release/manifest.json`](manifest.json)。
 
 ## 源码、运行和回退
 
@@ -17,10 +17,10 @@
 |---|---|---|
 | R01–R13；A01–A23 中早期状态、接口、会话、建议和保存恢复项 | `review/findings/T08-report-20261002.md`、`review/findings/T13-report-20261002.md`、`review/findings/T18-report-20261002.md` 及各自所列 `evidence/qa/`；T30 追加 CH01 快照/重启覆盖见下行 | 只按各历史报告列出的版本和验收范围引用；不能从后续工程检查反推真人使用或整项目完成。 |
 | R02、R04、R08、R16；A02、A12、A14、A21、A23、A27、A28 相关 CH01/v2 结果 | `review/findings/T30-report-20261005.md`；`evidence/qa/T30-evidence-index-20261005.json` 中 `T30-CH01-*`、`T30-RT02`–`T30-RT05`、`T30-V1-ROLLBACK` | 独立 T30 在固定 CH01 / RT01–05 范围 PASS；API 54 项、构建 exit 0、pytest 73 collected（含 19 个重用项）、203 子项；Chrome/Edge 六路由与三个视口通过。该报告不提供 RT06 结论。 |
-| R14；A24 实验 | `review/findings/T23-independent-pilot-20261005.md`、`review/findings/T25-independent-formal-20261005.md`、`evidence/qa/T25-independent-20261005T055600Z/result.json` | Pilot 六次完成；正式比较停在 22 完成、1 超时、49 未调用。T25 对已停结果的 1829/1829 检查通过，完整三重复目标未达成，不作优劣结论。 |
-| R15；A25 评价器及 RT06 结构读取 | `review/findings/T26-acceptance-20261003.md`、`review/findings/T27-evaluation-events-20261005.md`、`evidence/qa/T27-evaluation-events-20261005T105300Z/result.json` | T26 工程回归 193 项通过；T27 事件注册/固定归档独立检查 168/168 加必要旧回归 114/114。当前事件 RT06 结构结果仍为 `INSUFFICIENT_EVIDENCE`；真实付费校准未执行。 |
+| R14；A24 实验 | `review/findings/T23-independent-pilot-20261005.md`、`review/findings/T25-independent-formal-20261005.md`、`review/findings/T25-merged-20261005.md`、`evidence/qa/T25-merged-20261005T160549469322Z/result.json` | Pilot六次；原正式run为22完成/1超时/49未调用；continuation合并独立复核1427/1427、exit0、STOP，69/72终态，完整三重复未达成，不作优劣结论。
+| R15；A25 评价器及 RT06 结构读取 | `review/findings/T26-acceptance-20261003.md`、`review/findings/T27-evaluation-events-20261005.md`、`review/findings/T27-CH01-event-20261005.md`、`review/findings/T27-prompt-fix-20261006.md`、`evidence/qa/T27-prompt-fix-20261005T163034187429Z/result.json` | 旧固定源码检查168/168+114/114；CH01 v3身份别名79/79；提示词修正版离线独立SOURCE STOP为36场景/223检查/30捕获/81文件unchanged，exit0。此修正无真实模型调用。旧6次付费结果保持：K4有效模型预期FAIL，E1两条及CH01三条INSUFFICIENT_EVIDENCE；8个新载荷待批准。
 | R05–R11、R16；A07–A10、A15–A19、A27 中本次覆盖的注入边界、幂等、会话、恢复和 CH01 | T30 报告及 `T30-evidence-index-20261005.json` 对应 `T30-CH01-*` / `T30-RT01`–`T30-RT05` 选择器 | RT01 是脚本化 mock 结构边界检查；不证明真实模型语言层抗注入。CH01 失败及修正记录保留在报告中。 |
-| R17；A28 干净交接 | `evidence/delivery/T32-preparation-20261005/report.md`、`checks.json` | 仅隔离 helper 准备检查完成；候选源码包的干净目录安装、pytest/build、服务恢复仍未运行。T30 v1 临时 DB 探针只证明对应窄回退行为。 |
+| R17；A28 新源码目录交接 | `evidence/integration/T32-clean-final-20261005T115741Z/report.json`、`evidence/qa/T32-final-20261005T123100Z/result.json`、`evidence/integration/reproduction-20261005T115741Z-pins.json` | 新源码commit833aafb，10,778个文件按raw pins核对；Main执行8项外层检查和3项precheck均exit0。独立只读复核10,842/10,842、exit0，另有2项静态补充说明。现有Windows/Conda，不代表新OS/新Python或真人验收。较早fc70包和其独立复核另在T32历史目录，身份分列于manifest。
 | R18；A01/A18/A26 等签署、责任、证据索引相关要求 | `review/findings/T21-identity-review-20261002.md`、T25/T27/T30 报告、`docs/defense.md` | 保存了工程责任与证据身份记录；真人试玩、玩家实际决策和人类/教师签署未提供。不能声称完成这些人类活动。 |
 
 上述表格提供已有记录的导航。没有在表格中列为 PASS 的验收项仍待对应 Owner 报告或实测补齐；不要用测试总数替代每项的原始判据。
@@ -29,16 +29,16 @@
 
 - Pilot：六条真实 provider 结果由 T23 独立复核，3/3 完成每种上下文、各 2/3 正确；C06 两条已完成但下一步不正确。总计 ¥0.02975152 是保守账面计费，不是独立供应商账单。详见 T23 报告。
 - 正式 E1：72 个计划格中实际记录为 22 完成、1 次超时、49 未调用；超时回复、送达和 token 仍未知。原 T25 检查的上界 ¥0.23749696 是当时未知状态下的保守上界。
-- Main 后续根据用户报告的超时费用 ¥0.05 关闭账目时保留全部 ¥0.16292 上界并保留 token 为 NULL。当前累计上界 ¥0.27760296、35 笔已结算、无 pending/unknown；这不是供应商账单，也没有把 T25 历史观察改写成已知响应。
-- 49 项 continuation 是独立新 run，保留原超时与错误输出、不重试 22 次完成记录；独立 QA 仍在进行，尚无终态或付费调用，待 Main 复核。校准请求在执行前被自动审批审查拒绝，具体 payload transfer 等待用户处理；没有产生校准付费调用。不要把它和旧 49 条 not_called 混称为已完成。
+- Main根据用户提供费用信息保留原超时FULL上界与NULL token。最新91 calls、保守累计上界¥0.66236008、pending 0；该数字不是供应商账单。
+- 49项continuation是独立run，离线执行器QA为449/449。实际48调用、47返回、1项MODEL_UNAVAILABLE且usage未知、1项未调用；最终独立合并QA为1427/1427、exit0、STOP（69/72终态，34个完整配对，2 failed/1 not_called）。完整三重复未达成，不作组间胜负结论。用户报告的¥0.09单次费用已保守登记，未知FULL上界保留。原22完成/1超时记录没有重放。
 
-## 尚未完成
+## 当前未完成范围
 
-- 49 项 continuation 的最终运行结果和独立复核。
-- 评价器真实语义判读/付费校准；RT06 当前仍 `INSUFFICIENT_EVIDENCE`。
-- T32 使用固定候选源码包在新目录安装、运行和保存恢复的完整干净复现。
-- 用户亲自游玩和提供真实的人类决策/签署记录（如课程需要）。这些没有任何虚构替代。
+- 新提示修正的离线身份与边界复核已SOURCE STOP（36场景/223检查/30捕获/81文件unchanged），测试源码绑定`f80c6af`，Main离线接受里程碑为远端验证提交`c9f579209e702c957a560b1a2ad91f20fae6e8c8`。没有运行真实新版本判读；8个新载荷待用户批准。旧六次判读已各调用一次，不重发。
+- 人类试玩、玩家决策、教师/人类签署仍未提供；不宣称课程或人类验收完成。
+- 所有语义判读均无有效PASS；CH01 v3结构身份QA通过不替代语义验收。
+- CH01 v3身份/别名独立QA为79/79；这只验证固定身份和合成协议，不是语义评价。
 
 未进行公开部署。没有启用 GitHub Actions。历史的 T30 自动化浏览器覆盖不是人类试玩。
 
-本次文档整理记录见 `evidence/delivery/T31-docs-20261005/report-v2.json`（原始文档整理记录为同目录 `report.json`）。
+本次文档整理记录见 `evidence/delivery/T31-docs-20261005/report-v5.json`；v1–v3 历史记录保持原样。

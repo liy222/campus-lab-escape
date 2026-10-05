@@ -1,9 +1,9 @@
 # Status
 updated_at: 2026-10-06 (Asia/Shanghai)
-milestone: CH01_v2 accepted; merged E1 and clean reproduction independently verified; real evaluation records retained; prompt repair accepted offline, revised payload approval pending
+milestone: PAUSED_BY_HUMAN after current small tasks; product CH01_v2 accepted, prompt offline QA and delivery v5 completed; no new real AI dispatch
 last_verified_release: CH01_v2 product commit242ecfc4d9f7bf1a8480508de701d9efc7822fe7; raw/Git binding in evidence/integration/CH01_v2-manifest.json; baseline_v1 preserved
 remote: https://github.com/liy222/campus-lab-escape (PRIVATE, gh verified)
-last_pushed_sha: f80c6af075f6041aa11a4f79ba2e6cb1ea9ecd80 (independent merged experiment and release integrity reviews; normal push and remote verified)
+remote_verified_before_this_pause_checkpoint: c9f579209e702c957a560b1a2ad91f20fae6e8c8 (normal push and gh verification succeeded; checkpoint commit is resolved from current Git HEAD)
 
 ## 2026-10-05 latest actual continuation checkpoint (supersedes older pending labels)
 - User explicitly approved the exact49 experiment payloads and3 calibration payloads. Main verified all52 current evaluator sources against new independent QA and exact3 calibration wire payloads against the approved preview, actualexit0/18c9e2; record evidence/integration/external-payload-human-approval-20261005.json. Approval does not add a budget or authorize retries.
@@ -103,3 +103,7 @@ T29/T30 Main accepted limited engineering: finalreport660fcbc6b885aaa5beaef4af4e
 
 ## 2026-10-06 prompt repair accepted offline
 Main re-read independent QA:223 checks/36 scenarios/30 captured mock payloads,81 raw sources unchanged,actual exit0 b1dd96. Only explicit citation IDs/output-schema guidance added; strict checkers and old records remain. Evidence: evidence/integration/prompt-repair-accepted-20261006.json. New8 concrete payload authorization remains pending; old approved6 were already dispatched once. Latest verified remote before this acceptance: f80c6af075f6041aa11a4f79ba2e6cb1ea9ecd80. T31 documentation is being corrected to bind exact hashes; T32 fresh-directory real AI and genuine human acceptance remain unverified. No repeated full regression or fee investigation.
+
+
+## 2026-10-06 human-requested pause
+User exact: 尽快完成现有小任务后暂时停止. Current small tasks completed: T31 v5/51 Main raw hash pairs accepted; A28 read-only preparation/relay review finished SOURCE STOP without invocation. Main stops this owned mock demo only (taskkill0; supervised process intentionally ends1); saves and environments preserved. No new paid calls, symlink, credential injection or background automation. New8 evaluation authorization, A28 real segment and genuine human signoff remain pending; old6 calls never replay. Recovery entry: evidence/integration/pause-checkpoint-20261006.json and release/README.md. Resume only when the user requests it. All chronological older states remain history.

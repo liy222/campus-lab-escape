@@ -1,0 +1,140 @@
+{
+  "task": "T31-delivery-docs-T32-final-facts",
+  "date": "2026-10-05",
+  "revision_chain": {
+    "report_json": "original T31 evidence, preserved",
+    "report_v2_json": "Main review corrections, preserved",
+    "this_report": "current scoped T32 and dispatch-state update"
+  },
+  "changed_files": [
+    "README.md",
+    "release/README.md",
+    "docs/report.md",
+    "docs/defense.md",
+    "evidence/delivery/T31-docs-20261005/report-v3.json"
+  ],
+  "release_identity": {
+    "product_tag": "CH01_v2",
+    "product_commit": "242ecfc4d9f7bf1a8480508de701d9efc7822fe7",
+    "clean_source_commit": "fc70b15b84d811aec62e2a561c468538844b6edf",
+    "source_zip_sha256": "bc8e8f86b0f861762e3247507688c1eb1f85ea1ac5f7e3cc86e830c04f61e40e",
+    "pins_sha256": "25ce6a65f8a134cdd58647275840cc8e32f6dfdd4af674d2dafcbbc62f6883d1"
+  },
+  "T32_delivery": {
+    "evidence_root": "evidence/delivery/T32-clean-20261005T111419Z/",
+    "source_files": 6014,
+    "source_bytes_unchanged": true,
+    "overall_exit_code": 0,
+    "python_locked_packages": 28,
+    "pip_check_exit": 0,
+    "npm_ci_exit": 0,
+    "frontend_build_exit": 0,
+    "pytest": "73 collected including 19 reused M3 methods; 203 subtests passed; exit 0",
+    "strict_evaluator_identity_prechecks": {
+      "E1-formal-review-v2": 0,
+      "baseline_v1": 0
+    },
+    "v2": "dual services; 18-action route to win; save and OS-service restart/restore succeeded",
+    "v1": "independent archived source and isolated DB; 13-action unlock retains key; save and OS-service restart/restore succeeded",
+    "intentional_process_stops": "five owned processes ended with process exit 1 and taskkill exit 0; all stopped",
+    "scope_limit": "existing Windows/Conda environment; not a new OS, new Python environment, real-model new-directory test, human gameplay or course acceptance"
+  },
+  "T32_independent_review": {
+    "report": "review/findings/T32-independent-20261005.md",
+    "result": "evidence/qa/T32-independent-20261005T113707029429Z/result.json",
+    "status": "PASS_READ_HASH_SCOPE_STOP",
+    "exit_code": 0,
+    "source_zip_files": 6014,
+    "delivery_evidence_files": 23,
+    "paid_calls": 0,
+    "scope": "read/hash identity review only; did not rerun tests, build, browser, services, evaluator, helper or Git; commit provenance follows Main-provided pins/handoff"
+  },
+  "continuation_and_calibration": {
+    "previous_rejection_record": "evidence/integration/external-dispatch-blocks-20261005.json; historical automatic-review rejections before user-specific payload approval",
+    "continuation": {
+      "user_specific_payload_authorization": "approved per Main handoff",
+      "main_execution": "49-call finite execution started",
+      "actual_call_count": null,
+      "actual_spend": null,
+      "result": "pending",
+      "offline_executor_qa": "449/449 passed"
+    },
+    "calibration": {
+      "user_specific_payload_authorization": "approved per Main handoff",
+      "actual_execution_status": "not reported",
+      "actual_call_count": null,
+      "actual_spend": null,
+      "result": "pending"
+    },
+    "historical_rejections": {
+      "continuation_process_started": false,
+      "continuation_calls": 0,
+      "calibration_process_started": false,
+      "calibration_calls": 0
+    },
+    "original_experiment": "22 completed, 1 timeout, 49 not_called remain unchanged"
+  },
+  "evaluation_and_change_events": {
+    "e2_e3": "CH01 v3 card has 162 alias entries and remains under independent QA; no acceptance or score",
+    "semantic_mock": "current E1/E2 outputs INSUFFICIENT_EVIDENCE; paid semantic evaluation result/status not reported"
+  },
+  "exact_v2_startup": [
+    "Set-Location -LiteralPath 'D:\\深度能力'",
+    "$ProjectPython = 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe'",
+    "& $ProjectPython -m pip install -r backend/requirements.lock.txt",
+    "npm.cmd --prefix frontend ci",
+    "$env:SQLITE_PATH = './data/game-v2.sqlite'",
+    "& $ProjectPython -m scripts.dev --provider mock"
+  ],
+  "actual_commands_and_exit_codes": [
+    {
+      "exit_code": 0,
+      "command": "PowerShell bounded reads of STATUS, T32 reports, external-dispatch metadata, and actual release directory contents"
+    },
+    {
+      "exit_code": 0,
+      "command": "PowerShell String.Replace/WriteAllText updates to the four assigned documents"
+    },
+    {
+      "exit_code": 1,
+      "command": "Earlier placeholder-only edit stopped on missing sentinel before writing"
+    },
+    {
+      "exit_code": 1,
+      "command": "Earlier metadata audit stopped on its own scalar property-count assertion before writing final report data"
+    },
+    {
+      "exit_code": 0,
+      "command": "Final PowerShell local-reference audit, T32/manifest assertions, JSON parse, current-state update and raw SHA256 capture"
+    }
+  ],
+  "source_sha256": {
+    "README.md": "f0c32a0e41e02cdf5c02865a2cd8fb0268f84e339b2c615306623de695ded28f",
+    "release/README.md": "149ae7d06e1a3f8cb4900aa4995a7d1a41666e712b7019d542fb1f21001a099c",
+    "docs/report.md": "ac56c9ff0e332a97b43227cd798fe38f3ada9d3bc4227f586f6f30caa9b897ff",
+    "docs/defense.md": "c865bedd4c3bf1a27555849a90c50f0b119cd91ee4a3a6acdfbc6d72a3a17886",
+    "evidence/delivery/T31-docs-20261005/report.json": "6ab4d12b84cd3fd82df97053adf951d049b627b14a7ea6cbad5f9296406140f2",
+    "evidence/delivery/T31-docs-20261005/report-v2.json": "8e97f9c741b9b8f55af09b30afd0fdc2dab8a99f10c07852ea70421abfc24871",
+    "evidence/delivery/T32-clean-20261005T111419Z/report.md": "a58f549ba59296fbbfb5b8d43b22507841d685e794ee0863f7011ce61325714a",
+    "evidence/delivery/T32-clean-20261005T111419Z/report.json": "b0d5a3575b7ed1292e7d35207c33edd0a73e19f3d463deaa44dbb7e3e65b6b70",
+    "evidence/delivery/T32-clean-20261005T111419Z/verification.json": "5842d1c93e8e4af2b902d1bcb760867201cd24a75dd86161e6f0d34412f11f7c",
+    "evidence/delivery/T32-clean-20261005T111419Z/evidence-index.json": "37a6f2ba7b5003270d61151d877a22362f778fb0d906603547f3429fb469df5c",
+    "review/findings/T32-independent-20261005.md": "7a2537e8e135e359b0fcedbd852e5c123dfc1cc9b4645cc9b2950eb1a56b3442",
+    "evidence/qa/T32-independent-20261005T113707029429Z/result.json": "45881b749ec5feec6c584983896894948a831ebd837db9902ebff04b009a301b",
+    "review/findings/T24-continuation-20261005.md": "1d1b4168f691dafbd154348bd3c391c7cd99f7ae0537b1c3ad5772db0691c1aa",
+    "evidence/integration/external-dispatch-blocks-20261005.json": "b70eaec32f629d83984d35908c024d167ca0ef32728400982548079d63534978",
+    "evidence/integration/CH01_v2-manifest.json": "69501e3a159d6c55755b1bef850da3b57777c1299a6304f78fbb847c11c66a58"
+  },
+  "limitations": [
+    "No product tests or T32 reproduction were rerun by this documentation task.",
+    "T32 identity QA independently checked the supplied source package and records, but did not query Git.",
+    "Specific external payload approval is pending; no continuation or calibration process was started and no paid/network calls occurred.",
+    "No real-model new-directory validation, full three-repeat experiment, human playtest, player decision record, teacher approval or human signature is claimed."
+  ],
+  "next_unresolved": {
+    "release_manifest": "release/manifest.json is absent; release/ currently contains only archives/ and README.md",
+    "continuation": "await Main terminal facts and candidate commit before updating",
+    "calibration": "await Main execution facts",
+    "e2_e3": "CH01 v3 independent QA in progress; no acceptance or score"
+  }
+}

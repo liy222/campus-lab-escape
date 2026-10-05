@@ -1,0 +1,178 @@
+{
+  "kind": "A28-read-only-real-readiness",
+  "at_utc": "2026-10-05T16:44:41.859790+00:00",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "tests/review_a28_real_readiness.py"
+  ],
+  "exit_code": 0,
+  "source_before": {
+    "tests/real_m3_runner.py": "401e0dbcebab85c791aa14a86f495bdc0cd18275b63041fbd425d4c87d67689d",
+    "tests/qa_runner.py": "4044bac480896276413cb737a9d5911aeb34e48de94469cec109da4137880c95",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/runtime.py": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "backend/app/domain/rules.py": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+    "contracts/api.schema.json": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "scripts/reproduce.py": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+    "data/reproduction/20261005T115741Z/clean/tests/real_m3_runner.py": "401e0dbcebab85c791aa14a86f495bdc0cd18275b63041fbd425d4c87d67689d",
+    "data/reproduction/20261005T115741Z/clean/tests/qa_runner.py": "4044bac480896276413cb737a9d5911aeb34e48de94469cec109da4137880c95",
+    "data/reproduction/20261005T115741Z/clean/backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "data/reproduction/20261005T115741Z/clean/backend/app/ai/runtime.py": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+    "data/reproduction/20261005T115741Z/clean/backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "data/reproduction/20261005T115741Z/clean/backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "data/reproduction/20261005T115741Z/clean/backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "data/reproduction/20261005T115741Z/clean/backend/app/domain/rules.py": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+    "data/reproduction/20261005T115741Z/clean/contracts/api.schema.json": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+    "data/reproduction/20261005T115741Z/clean/contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "data/reproduction/20261005T115741Z/clean/scripts/reproduce.py": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+    "docs/execution-plan.md": "7940c75c4cc9e609b369ddcce89d5fdf377a4bffc1b5da1bf08d4c8fc4452d7e",
+    "evidence/qa/20261002T120735404563Z-m3-real/run.json": "0159c8132493c1a109c8aaf200591af98c6c20737448a5456ef4cff6332e4a92",
+    "evidence/integration/T32-clean-final-20261005T115741Z/report.json": "52962166c15b8b07209cf83257da9f8ad74d5270007083998763ac1c72777c57",
+    "evidence/integration/T32-clean-final-20261005T115741Z/materialization.json": "af02218fe58476edc9b5e63e4c11a0d16602deb8916a26ac52a63124c667dd1a",
+    "tests/review_a28_real_readiness.py": "6af0b7cb2b79f64cd716f0ad7b5b38c69d9bb2570be6b25c884b2729379060c2"
+  },
+  "source_after": {
+    "tests/real_m3_runner.py": "401e0dbcebab85c791aa14a86f495bdc0cd18275b63041fbd425d4c87d67689d",
+    "tests/qa_runner.py": "4044bac480896276413cb737a9d5911aeb34e48de94469cec109da4137880c95",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/runtime.py": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "backend/app/domain/rules.py": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+    "contracts/api.schema.json": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "scripts/reproduce.py": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+    "data/reproduction/20261005T115741Z/clean/tests/real_m3_runner.py": "401e0dbcebab85c791aa14a86f495bdc0cd18275b63041fbd425d4c87d67689d",
+    "data/reproduction/20261005T115741Z/clean/tests/qa_runner.py": "4044bac480896276413cb737a9d5911aeb34e48de94469cec109da4137880c95",
+    "data/reproduction/20261005T115741Z/clean/backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "data/reproduction/20261005T115741Z/clean/backend/app/ai/runtime.py": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+    "data/reproduction/20261005T115741Z/clean/backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "data/reproduction/20261005T115741Z/clean/backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "data/reproduction/20261005T115741Z/clean/backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "data/reproduction/20261005T115741Z/clean/backend/app/domain/rules.py": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+    "data/reproduction/20261005T115741Z/clean/contracts/api.schema.json": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+    "data/reproduction/20261005T115741Z/clean/contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "data/reproduction/20261005T115741Z/clean/scripts/reproduce.py": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+    "docs/execution-plan.md": "7940c75c4cc9e609b369ddcce89d5fdf377a4bffc1b5da1bf08d4c8fc4452d7e",
+    "evidence/qa/20261002T120735404563Z-m3-real/run.json": "0159c8132493c1a109c8aaf200591af98c6c20737448a5456ef4cff6332e4a92",
+    "evidence/integration/T32-clean-final-20261005T115741Z/report.json": "52962166c15b8b07209cf83257da9f8ad74d5270007083998763ac1c72777c57",
+    "evidence/integration/T32-clean-final-20261005T115741Z/materialization.json": "af02218fe58476edc9b5e63e4c11a0d16602deb8916a26ac52a63124c667dd1a",
+    "tests/review_a28_real_readiness.py": "6af0b7cb2b79f64cd716f0ad7b5b38c69d9bb2570be6b25c884b2729379060c2"
+  },
+  "source_unchanged": true,
+  "source_pairs": {
+    "tests/real_m3_runner.py": {
+      "root_raw_sha256": "401e0dbcebab85c791aa14a86f495bdc0cd18275b63041fbd425d4c87d67689d",
+      "clean_raw_sha256": "401e0dbcebab85c791aa14a86f495bdc0cd18275b63041fbd425d4c87d67689d",
+      "materialized_expected_raw_sha256": "401e0dbcebab85c791aa14a86f495bdc0cd18275b63041fbd425d4c87d67689d"
+    },
+    "tests/qa_runner.py": {
+      "root_raw_sha256": "4044bac480896276413cb737a9d5911aeb34e48de94469cec109da4137880c95",
+      "clean_raw_sha256": "4044bac480896276413cb737a9d5911aeb34e48de94469cec109da4137880c95",
+      "materialized_expected_raw_sha256": "4044bac480896276413cb737a9d5911aeb34e48de94469cec109da4137880c95"
+    },
+    "backend/app/ai/context.py": {
+      "root_raw_sha256": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+      "clean_raw_sha256": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+      "materialized_expected_raw_sha256": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b"
+    },
+    "backend/app/ai/runtime.py": {
+      "root_raw_sha256": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+      "clean_raw_sha256": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+      "materialized_expected_raw_sha256": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064"
+    },
+    "backend/app/ai/provider.py": {
+      "root_raw_sha256": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+      "clean_raw_sha256": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+      "materialized_expected_raw_sha256": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a"
+    },
+    "backend/app/ai/budget.py": {
+      "root_raw_sha256": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+      "clean_raw_sha256": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+      "materialized_expected_raw_sha256": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20"
+    },
+    "backend/app/main.py": {
+      "root_raw_sha256": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+      "clean_raw_sha256": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+      "materialized_expected_raw_sha256": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692"
+    },
+    "backend/app/domain/rules.py": {
+      "root_raw_sha256": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+      "clean_raw_sha256": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+      "materialized_expected_raw_sha256": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb"
+    },
+    "contracts/api.schema.json": {
+      "root_raw_sha256": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+      "clean_raw_sha256": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+      "materialized_expected_raw_sha256": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc"
+    },
+    "contracts/tools.json": {
+      "root_raw_sha256": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+      "clean_raw_sha256": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+      "materialized_expected_raw_sha256": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80"
+    },
+    "scripts/reproduce.py": {
+      "root_raw_sha256": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+      "clean_raw_sha256": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+      "materialized_expected_raw_sha256": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9"
+    }
+  },
+  "all_selected_clean_bytes_match_materialization": true,
+  "all_selected_root_clean_bytes_equal": true,
+  "clean_identity": {
+    "workspace": "D:\\深度能力\\data\\reproduction\\20261005T115741Z\\clean",
+    "commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+    "archive_sha256": "2979fd06009a9ee27cc13d8e00500b234d8fbf5d5c90a03a9311ed08e163be8a",
+    "main_pins_sha256": "7e7013be5d40d7639f2e2d48fefacf2d24c8f7ebdf4e1a6aec3dd3b5f9b29977",
+    "status": "PASS",
+    "exit_code": 0,
+    "provider": "mock",
+    "actual_paid_calls": 0,
+    "completed_at": "2026-10-05T12:01:14.299914+00:00"
+  },
+  "old_real_result": {
+    "candidate": "m3-frozen-real-controlled-20261002",
+    "status": "PASS",
+    "exit_code": 0,
+    "actual_provider_attempts": 2,
+    "additional_conservative_charge_cny": 0.00804624,
+    "canonical_ledger": "D:\\深度能力\\data\\ai-budget.sqlite"
+  },
+  "exists_only": {
+    "clean_is_directory": true,
+    "Root_canonical_ledger_exists": true,
+    "clean_derived_ledger_exists": false
+  },
+  "runner_prompt_static": "请先调用 get_inventory 查看当前背包，等待工具真实结果，然后仅依据已发现的值班便签及柜门顺序提出 submit_code 值班柜建议。不要执行进度动作，等待我确认。最终只返回要求的 JSON。",
+  "hidden_numeric_answers_in_prompt_static": false,
+  "readiness": "CONDITIONAL; original runner cannot directly use clean with existing Root canonical ledger",
+  "guard_facts": [
+    "runner CANONICAL resolves from its module ROOT; missing clean ledger stops before calls",
+    "clean DeepSeekProvider rejects an explicit Root ledger unless its expected resolved path aliases same canonical file",
+    "Main may prepare an exact physical-file symlink alias after explicit authorization; never copy or initialize a clean budget",
+    "First get_inventory forced; two preceding inspect actions scripted; one AI turn, max3 calls, .50CNY segment upper, no retry",
+    "Main separate gate string is record marker, not self-validating authorization; specific payload/limits authorization still required"
+  ],
+  "actions_not_taken": [
+    "No target import/execution",
+    "No paid/network request",
+    "No credential/env read",
+    "No database content read or write",
+    "No symlink or environment creation",
+    "No full regression or service startup",
+    "No Git operation"
+  ],
+  "limits": [
+    "Read-only preparation does not complete A28 real-AI acceptance",
+    "Runtime execution still requires separately approved concrete payload and canonical ledger gate",
+    "Old controlled real result does not prove autonomous whole-game behavior or human signoff"
+  ]
+}

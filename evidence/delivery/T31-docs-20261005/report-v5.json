@@ -1,0 +1,83 @@
+{
+  "task": "T31-delivery-docs-final-v5",
+  "date": "2026-10-06",
+  "status": "SOURCE STOP; offline prompt fix independently accepted; eight new live payloads remain unapproved and uncalled",
+  "changed_files": [
+    "README.md",
+    "release/README.md",
+    "release/manifest.json",
+    "docs/report.md",
+    "docs/defense.md",
+    "evidence/delivery/T31-docs-20261005/report-v5.json"
+  ],
+  "product_identity_unchanged": {
+    "product_tag": "CH01_v2",
+    "product_commit": "242ecfc4d9f7bf1a8480508de701d9efc7822fe7",
+    "baseline_commit": "7821af4efe0613c20a80ea164c1dab1c0f288bab"
+  },
+  "prompt_revision": {
+    "tested_source_commit": "f80c6af075f6041aa11a4f79ba2e6cb1ea9ecd80",
+    "milestone_commit_main_reported_remote_verified": "c9f579209e702c957a560b1a2ad91f20fae6e8c8",
+    "main_acceptance": "evidence/integration/prompt-repair-accepted-20261006.json",
+    "main_acceptance_sha256": "4e4493ddc64fee33a8a7b6ca138492207cf2bc931b33823777c925b50688a35c",
+    "independent_report": "review/findings/T27-prompt-fix-20261006.md",
+    "independent_report_sha256": "a2f3e94c6214324ec04199f3ff08c7c4d292a2fdfb0c3278607de30462d0f649",
+    "result": "evidence/qa/T27-prompt-fix-20261005T163034187429Z/result.json",
+    "result_sha256": "c95e839063e3c9efc773285f6181906d010fca0fbf2ea18bde71e144b58ffc5d",
+    "index": "evidence/qa/T27-prompt-fix-20261005T163034187429Z/index.json",
+    "index_sha256": "d9050c41139f7cb41b107f973f02d62c11c5aa0299c021030fa29b83a3d85f0b",
+    "result_reported_facts": "SOURCE STOP; exit 0; 223 checks, 36 scenarios, 30 captured mock payloads, 81 source files unchanged",
+    "new_live_payloads": "8 awaiting user approval; none called",
+    "older_six_payloads": "already consumed once; not eligible for replay",
+    "scope_limit": "Offline prompt/identity/schema QA is not real-model effectiveness or semantic acceptance."
+  },
+  "clean_component_separation": {
+    "product_clean_commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+    "source_files": 10778,
+    "main_exit": 0,
+    "independent_read_hash": "10842/10842, exit 0; two static supplements",
+    "evidence": "evidence/integration/T32-clean-final-20261005T115741Z/report.json and evidence/qa/T32-final-20261005T123100Z/result.json",
+    "note": "Prompt fix is separately bound; the clean result does not certify later edits."
+  },
+  "continuation_and_paid_results_unchanged": {
+    "continuation_final_qa": "1427/1427 checks, exit 0, STOP; 69/72 terminal, 34 full pairs; incomplete three-repeat",
+    "ledger_snapshot": "91 calls, upper CNY 0.66236008, pending 0",
+    "old_six_judgements": "K4 valid model expected FAIL; E1 two and CH01 three INSUFFICIENT_EVIDENCE",
+    "human_signoffs": "none provided"
+  },
+  "manifest_hash_audit": {
+    "manifest": "release/manifest.json",
+    "sha256": "397eb4c8bb810a2c3a0834d7b01044c8f14ba1aae4f366dd1e65e06ea913d5cb",
+    "raw_hash_checks": 41,
+    "mismatches": 0,
+    "all_marked_sha256_values_64_hex": true,
+    "historical_fc70_zip_raw_sha256": "bc8e8f86b0f861762e3247507688c1eb1f85ea1ac5f7e3cc86e830c04f61e40e",
+    "historical_fc70_pins_raw_sha256": "25ce6a65f8a134cdd58647275840cc8e32f6dfdd4af674d2dafcbbc62f6883d1"
+  },
+  "document_sha256": {
+    "README.md": "a3a7f2159c84ad92ca8c59b93797142fbb45f2898eca5c1aedc9d374571f4292",
+    "release/README.md": "ad3ef1c993e81c648366bebb94e29f8b53a5ff0be8ec796112fc7d462a7fd8d6",
+    "docs/report.md": "d2f4f9c088e7ee71c61ae53274a09ebcf69d0c405a2fda5e7e234100b500c9f3",
+    "docs/defense.md": "8b85706c1209c59dc6510cd59fc532136a8340d3a69eb8f45df7c420fb9d4ff9"
+  },
+  "preserved_T31_reports_sha256": {
+    "report.json": "6ab4d12b84cd3fd82df97053adf951d049b627b14a7ea6cbad5f9296406140f2",
+    "report-v2.json": "8e97f9c741b9b8f55af09b30afd0fdc2dab8a99f10c07852ea70421abfc24871",
+    "report-v3.json": "23877dc4d5c93551b3f0c830d02c7b2d3d0d4e7aaf3b8b48b8e87f5feaa68051",
+    "report-v4.json": "7206721b103cb31fec3a2d4ab6a8d4b75d954fe7756b58921f304f53882ef6db"
+  },
+  "actual_commands_and_exit_codes": [
+    {"exit_code": 0, "command": "PowerShell read/hash of prompt-fix report, result, index, source handoff, source map, captures, Main acceptance, and prior T31 reports"},
+    {"exit_code": 0, "command": "PowerShell update of README, release index, report, defense, and release manifest; v1-v4 report files preserved"},
+    {"exit_code": 0, "command": "PowerShell manifest raw-hash audit: 41 mapped checks, 0 mismatches, all marked SHA256 values 64 hexadecimal characters; historical fc70 ZIP/pins included"},
+    {"exit_code": 0, "command": "PowerShell parse of manifest and source/QA evidence JSON"},
+    {"exit_code": 1, "command": "Intermediate text-match and hash-audit attempts surfaced mismatched paragraph sentinels and two short/missing manifest pins; corrections were applied and the final checks passed"},
+    {"exit_code": 0, "command": "Final relative-link, evidence-path and manifest-path audit; all referenced files exist"}
+  ],
+  "limitations": [
+    "Eight concrete live payloads await user approval; no real prompt calls were made.",
+    "Old six paid results remain as recorded and are not repeated or relabeled as successful.",
+    "No product-tag change, human playtest, player decision record, teacher approval, or human signature is claimed.",
+    "No Git operation, model call, .env read, database read, or ledger operation was performed by this documentation task."
+  ]
+}
