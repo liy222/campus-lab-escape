@@ -1,0 +1,540 @@
+{
+  "derived_by": "Main selection, not a new test execution",
+  "original_path": "evidence/qa/T30-20261005T062357488Z-CH01-browser/chrome-390-states.json",
+  "original_raw_sha256": "216a8da5fd417c32d740d9b6b4596953bf27280666bc38726e3357f7e66d38fd",
+  "observations": [
+    {
+      "source_row_0_based": 12,
+      "stage": "before-unlock-save",
+      "receipt": {},
+      "replayed": false,
+      "proposal": null,
+      "state": {
+        "level_version": "2.0.0",
+        "schema_version": "1.0.0",
+        "revision": 12,
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "status": "playing",
+        "room": {
+          "room_id": "R2",
+          "name": "设备间",
+          "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+        },
+        "inventory": [
+          {
+            "item_id": "access_card",
+            "name": "门卡",
+            "description": "设备间门卡",
+            "usable_targets": []
+          },
+          {
+            "item_id": "emergency_key",
+            "name": "应急钥匙",
+            "description": "出口控制室的应急钥匙",
+            "usable_targets": [
+              "r2_door"
+            ]
+          }
+        ],
+        "exits": [
+          {
+            "destination_id": "R1",
+            "name": "值班室",
+            "unlocked": true
+          },
+          {
+            "destination_id": "R3",
+            "name": "出口控制室",
+            "unlocked": false
+          }
+        ],
+        "progress": {
+          "power_on": true,
+          "check_done": false
+        }
+      }
+    },
+    {
+      "source_row_0_based": 13,
+      "stage": "proposed",
+      "receipt": {},
+      "replayed": null,
+      "proposal": {
+        "proposal_id": "a7140c303532448e986a2efe8c513517",
+        "tool": "use_item",
+        "arguments": {
+          "item_id": "emergency_key",
+          "target_id": "r2_door"
+        },
+        "revision": 12,
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "expires_at": "2026-10-05T06:26:04.119657Z",
+        "status": "pending",
+        "clue_refs": [],
+        "summary": "建议（尚未执行，需要玩家确认）：可以使用已持有的道具；请确认后执行。"
+      },
+      "state": {
+        "level_version": "2.0.0",
+        "schema_version": "1.0.0",
+        "revision": 12,
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "status": "playing",
+        "room": {
+          "room_id": "R2",
+          "name": "设备间",
+          "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+        },
+        "inventory": [
+          {
+            "item_id": "access_card",
+            "name": "门卡",
+            "description": "设备间门卡",
+            "usable_targets": []
+          },
+          {
+            "item_id": "emergency_key",
+            "name": "应急钥匙",
+            "description": "出口控制室的应急钥匙",
+            "usable_targets": [
+              "r2_door"
+            ]
+          }
+        ],
+        "exits": [
+          {
+            "destination_id": "R1",
+            "name": "值班室",
+            "unlocked": true
+          },
+          {
+            "destination_id": "R3",
+            "name": "出口控制室",
+            "unlocked": false
+          }
+        ],
+        "progress": {
+          "power_on": true,
+          "check_done": false
+        }
+      }
+    },
+    {
+      "source_row_0_based": 14,
+      "stage": "cancelled",
+      "receipt": {},
+      "replayed": null,
+      "proposal": {
+        "arguments": {
+          "item_id": "emergency_key",
+          "target_id": "r2_door"
+        },
+        "clue_refs": [],
+        "expires_at": "2026-10-05T06:26:04.119657Z",
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "proposal_id": "a7140c303532448e986a2efe8c513517",
+        "revision": 12,
+        "status": "cancelled",
+        "summary": "建议（尚未执行，需要玩家确认）：可以使用已持有的道具；请确认后执行。",
+        "tool": "use_item"
+      },
+      "state": {
+        "level_version": "2.0.0",
+        "schema_version": "1.0.0",
+        "revision": 12,
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "status": "playing",
+        "room": {
+          "room_id": "R2",
+          "name": "设备间",
+          "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+        },
+        "inventory": [
+          {
+            "item_id": "access_card",
+            "name": "门卡",
+            "description": "设备间门卡",
+            "usable_targets": []
+          },
+          {
+            "item_id": "emergency_key",
+            "name": "应急钥匙",
+            "description": "出口控制室的应急钥匙",
+            "usable_targets": [
+              "r2_door"
+            ]
+          }
+        ],
+        "exits": [
+          {
+            "destination_id": "R1",
+            "name": "值班室",
+            "unlocked": true
+          },
+          {
+            "destination_id": "R3",
+            "name": "出口控制室",
+            "unlocked": false
+          }
+        ],
+        "progress": {
+          "power_on": true,
+          "check_done": false
+        }
+      }
+    },
+    {
+      "source_row_0_based": 15,
+      "stage": "fresh-proposed",
+      "receipt": {},
+      "replayed": null,
+      "proposal": {
+        "proposal_id": "c948285f34ad453a91ceb0e873e9fbcc",
+        "tool": "use_item",
+        "arguments": {
+          "item_id": "emergency_key",
+          "target_id": "r2_door"
+        },
+        "revision": 12,
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "expires_at": "2026-10-05T06:26:04.339965Z",
+        "status": "pending",
+        "clue_refs": [],
+        "summary": "建议（尚未执行，需要玩家确认）：可以使用已持有的道具；请确认后执行。"
+      },
+      "state": {
+        "level_version": "2.0.0",
+        "schema_version": "1.0.0",
+        "revision": 12,
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "status": "playing",
+        "room": {
+          "room_id": "R2",
+          "name": "设备间",
+          "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+        },
+        "inventory": [
+          {
+            "item_id": "access_card",
+            "name": "门卡",
+            "description": "设备间门卡",
+            "usable_targets": []
+          },
+          {
+            "item_id": "emergency_key",
+            "name": "应急钥匙",
+            "description": "出口控制室的应急钥匙",
+            "usable_targets": [
+              "r2_door"
+            ]
+          }
+        ],
+        "exits": [
+          {
+            "destination_id": "R1",
+            "name": "值班室",
+            "unlocked": true
+          },
+          {
+            "destination_id": "R3",
+            "name": "出口控制室",
+            "unlocked": false
+          }
+        ],
+        "progress": {
+          "power_on": true,
+          "check_done": false
+        }
+      }
+    },
+    {
+      "source_row_0_based": 16,
+      "stage": "original-confirm",
+      "receipt": {
+        "request_id": "c948285f34ad453a91ceb0e873e9fbcc",
+        "event_id": "cbbbbf5ae5514299ae8ada20abb4fb3c",
+        "tool": "use_item",
+        "arguments": {
+          "item_id": "emergency_key",
+          "target_id": "r2_door"
+        },
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "revision_before": 12,
+        "revision_after": 13,
+        "changed": true,
+        "message": "出口控制室门已解锁。应急钥匙已消耗。",
+        "observation": null,
+        "new_clue_ids": [],
+        "consumed_item_ids": [
+          "emergency_key"
+        ]
+      },
+      "replayed": false,
+      "proposal": {
+        "arguments": {
+          "item_id": "emergency_key",
+          "target_id": "r2_door"
+        },
+        "clue_refs": [],
+        "expires_at": "2026-10-05T06:26:04.339965Z",
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "proposal_id": "c948285f34ad453a91ceb0e873e9fbcc",
+        "revision": 12,
+        "status": "committed",
+        "summary": "建议（尚未执行，需要玩家确认）：可以使用已持有的道具；请确认后执行。",
+        "tool": "use_item"
+      },
+      "state": {
+        "level_version": "2.0.0",
+        "schema_version": "1.0.0",
+        "revision": 13,
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "status": "playing",
+        "room": {
+          "room_id": "R2",
+          "name": "设备间",
+          "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+        },
+        "inventory": [
+          {
+            "item_id": "access_card",
+            "name": "门卡",
+            "description": "设备间门卡",
+            "usable_targets": []
+          }
+        ],
+        "exits": [
+          {
+            "destination_id": "R1",
+            "name": "值班室",
+            "unlocked": true
+          },
+          {
+            "destination_id": "R3",
+            "name": "出口控制室",
+            "unlocked": true
+          }
+        ],
+        "progress": {
+          "power_on": true,
+          "check_done": false
+        }
+      }
+    },
+    {
+      "source_row_0_based": 17,
+      "stage": "actual-HTTP-replay-confirm",
+      "receipt": {
+        "arguments": {
+          "item_id": "emergency_key",
+          "target_id": "r2_door"
+        },
+        "changed": true,
+        "consumed_item_ids": [
+          "emergency_key"
+        ],
+        "event_id": "cbbbbf5ae5514299ae8ada20abb4fb3c",
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "message": "出口控制室门已解锁。应急钥匙已消耗。",
+        "new_clue_ids": [],
+        "observation": null,
+        "request_id": "c948285f34ad453a91ceb0e873e9fbcc",
+        "revision_after": 13,
+        "revision_before": 12,
+        "tool": "use_item"
+      },
+      "replayed": true,
+      "proposal": {
+        "arguments": {
+          "item_id": "emergency_key",
+          "target_id": "r2_door"
+        },
+        "clue_refs": [],
+        "expires_at": "2026-10-05T06:26:04.339965Z",
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "proposal_id": "c948285f34ad453a91ceb0e873e9fbcc",
+        "revision": 12,
+        "status": "committed",
+        "summary": "建议（尚未执行，需要玩家确认）：可以使用已持有的道具；请确认后执行。",
+        "tool": "use_item"
+      },
+      "state": {
+        "level_version": "2.0.0",
+        "schema_version": "1.0.0",
+        "revision": 13,
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "status": "playing",
+        "room": {
+          "room_id": "R2",
+          "name": "设备间",
+          "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+        },
+        "inventory": [
+          {
+            "item_id": "access_card",
+            "name": "门卡",
+            "description": "设备间门卡",
+            "usable_targets": []
+          }
+        ],
+        "exits": [
+          {
+            "destination_id": "R1",
+            "name": "值班室",
+            "unlocked": true
+          },
+          {
+            "destination_id": "R3",
+            "name": "出口控制室",
+            "unlocked": true
+          }
+        ],
+        "progress": {
+          "power_on": true,
+          "check_done": false
+        }
+      }
+    },
+    {
+      "source_row_0_based": 18,
+      "stage": "after-unlock-save",
+      "receipt": {},
+      "replayed": false,
+      "proposal": null,
+      "state": {
+        "level_version": "2.0.0",
+        "schema_version": "1.0.0",
+        "revision": 13,
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "status": "playing",
+        "room": {
+          "room_id": "R2",
+          "name": "设备间",
+          "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+        },
+        "inventory": [
+          {
+            "item_id": "access_card",
+            "name": "门卡",
+            "description": "设备间门卡",
+            "usable_targets": []
+          }
+        ],
+        "exits": [
+          {
+            "destination_id": "R1",
+            "name": "值班室",
+            "unlocked": true
+          },
+          {
+            "destination_id": "R3",
+            "name": "出口控制室",
+            "unlocked": true
+          }
+        ],
+        "progress": {
+          "power_on": true,
+          "check_done": false
+        }
+      }
+    },
+    {
+      "source_row_0_based": 22,
+      "stage": "consumed-bag",
+      "receipt": {
+        "request_id": "453dad65-54b4-486b-ba59-d6386f90f0c2",
+        "event_id": "457dbd8a540644aab61c07dca0816ab4",
+        "tool": "get_inventory",
+        "arguments": {},
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "revision_before": 15,
+        "revision_after": 15,
+        "changed": false,
+        "message": "已读取背包。",
+        "observation": "背包：门卡",
+        "new_clue_ids": [],
+        "consumed_item_ids": []
+      },
+      "replayed": false,
+      "proposal": null,
+      "state": {
+        "level_version": "2.0.0",
+        "schema_version": "1.0.0",
+        "revision": 15,
+        "generation": "0ac8d2cb-0dc6-4be1-a315-11ec9fe84932",
+        "status": "playing",
+        "room": {
+          "room_id": "R2",
+          "name": "设备间",
+          "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+        },
+        "inventory": [
+          {
+            "item_id": "access_card",
+            "name": "门卡",
+            "description": "设备间门卡",
+            "usable_targets": []
+          }
+        ],
+        "exits": [
+          {
+            "destination_id": "R1",
+            "name": "值班室",
+            "unlocked": true
+          },
+          {
+            "destination_id": "R3",
+            "name": "出口控制室",
+            "unlocked": true
+          }
+        ],
+        "progress": {
+          "power_on": true,
+          "check_done": false
+        }
+      }
+    },
+    {
+      "source_row_0_based": 23,
+      "stage": "after-unlock-restored",
+      "receipt": {},
+      "replayed": false,
+      "proposal": null,
+      "state": {
+        "level_version": "2.0.0",
+        "schema_version": "1.0.0",
+        "revision": 16,
+        "generation": "169ded5e-da87-4111-98c9-54dee34c6374",
+        "status": "playing",
+        "room": {
+          "room_id": "R2",
+          "name": "设备间",
+          "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+        },
+        "inventory": [
+          {
+            "item_id": "access_card",
+            "name": "门卡",
+            "description": "设备间门卡",
+            "usable_targets": []
+          }
+        ],
+        "exits": [
+          {
+            "destination_id": "R1",
+            "name": "值班室",
+            "unlocked": true
+          },
+          {
+            "destination_id": "R3",
+            "name": "出口控制室",
+            "unlocked": true
+          }
+        ],
+        "progress": {
+          "power_on": true,
+          "check_done": false
+        }
+      }
+    }
+  ]
+}

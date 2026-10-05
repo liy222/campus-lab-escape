@@ -1,0 +1,50 @@
+{
+  "independent_reproduced_assertion": {
+    "name": "paid gates disabled",
+    "passed": false,
+    "error": "AssertionError",
+    "actual_approval_count": 1
+  },
+  "Owner_report": {
+    "actual_command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "evaluation.check"
+    ],
+    "actual_program_exit_code": 1,
+    "actual_tool_exit_code": 1,
+    "checks": 114,
+    "failed": [
+      {
+        "error_code": "AssertionError",
+        "name": "paid gates disabled",
+        "passed": false
+      }
+    ],
+    "kind": "legacy_owner",
+    "limitation": "Legacy checker expects Main gate approvals=[]; Main-installed finite calibration gate pending external approval is no longer empty. Gate and checker unchanged; no paid call. This is actual113/114, not114PASS.",
+    "passed": 113,
+    "path": "evaluation/runs/20261005T113154752135Z/owner-check.json",
+    "raw_sha256": "f6f33e5ce84f36cac630d50900eb59d70d330819e51793bf6ccf299ad359325d",
+    "source_hash_snapshots": [
+      {
+        "all_match_final_source": true,
+        "count": 14,
+        "key": "evaluator_source_sha256_before"
+      },
+      {
+        "all_match_final_source": true,
+        "count": 14,
+        "key": "evaluator_source_sha256_after"
+      }
+    ],
+    "tool_chunk_id": "750dc2"
+  },
+  "gate_raw_sha256": "82d515ec1f538ebde9d19e4f01418eebdb41fabb9b7988c7be97e9989b68b1a6",
+  "gate_unchanged": true,
+  "no_independent_legacy114_rerun": true,
+  "actual_paid_calls": 0
+}

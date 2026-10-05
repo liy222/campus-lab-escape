@@ -1,0 +1,86 @@
+{
+  "additionalProperties": {
+    "additionalProperties": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "fields": {
+              "items": {
+                "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,63}$",
+                "type": "string"
+              },
+              "maxItems": 40,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "kind": {
+              "const": "json_fields"
+            }
+          },
+          "required": [
+            "kind",
+            "fields"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "claim_id": {
+              "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+              "type": "string"
+            },
+            "kind": {
+              "const": "json_claim"
+            }
+          },
+          "required": [
+            "kind",
+            "claim_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "maximum": 200,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "kind": {
+              "const": "lines"
+            },
+            "start": {
+              "maximum": 1000000,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "kind",
+            "start",
+            "count"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "maxProperties": 30,
+    "minProperties": 1,
+    "propertyNames": {
+      "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+      "type": "string"
+    },
+    "type": "object"
+  },
+  "maxProperties": 100,
+  "minProperties": 1,
+  "propertyNames": {
+    "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+    "type": "string"
+  },
+  "type": "object"
+}

@@ -1,0 +1,1 @@
+raise RuntimeError('CURRENT_VERSION_NEVER_EXECUTE')

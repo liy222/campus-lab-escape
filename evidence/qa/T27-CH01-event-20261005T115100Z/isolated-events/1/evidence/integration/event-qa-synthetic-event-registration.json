@@ -1,0 +1,153 @@
+{
+  "approved_at": "2026-10-05T11:43:20.175253+00:00",
+  "approved_by": "Main",
+  "claims": {
+    "claims": [
+      {
+        "claim_id": "QA-A24",
+        "criterion_id": "A24",
+        "declared_na": false,
+        "declared_scope": "ISOLATED SYNTHETIC QA ONLY",
+        "evidence_refs": [
+          {
+            "evidence_id": "qa_synthetic_event:RUN",
+            "expected_raw_sha256": "f69a2ca22363ae0d042dd1ae13b9e89aa2612cf7ff0da25eb527639393a72370",
+            "snippet": "summary"
+          }
+        ],
+        "known_scope_status": "SYNTHETIC_FIXTURE_ONLY",
+        "release_id": "qa_synthetic_event",
+        "statement": "分母与缺失解释正确；地面判定资料未送模型。"
+      },
+      {
+        "claim_id": "QA-A26",
+        "criterion_id": "A26",
+        "declared_na": false,
+        "declared_scope": "ISOLATED SYNTHETIC QA ONLY",
+        "evidence_refs": [
+          {
+            "evidence_id": "qa_synthetic_event:RUN",
+            "expected_raw_sha256": "f69a2ca22363ae0d042dd1ae13b9e89aa2612cf7ff0da25eb527639393a72370",
+            "snippet": "summary"
+          }
+        ],
+        "known_scope_status": "SYNTHETIC_FIXTURE_ONLY",
+        "release_id": "qa_synthetic_event",
+        "statement": "引用存在且指向所称版本；缺证不能被自动补写通过。"
+      }
+    ],
+    "release_id": "qa_synthetic_event"
+  },
+  "coverage": [
+    {
+      "claim_id": "QA-A24",
+      "criterion_id": "A24",
+      "gaps": [],
+      "required_refs": [
+        {
+          "evidence_id": "qa_synthetic_event:RUN",
+          "snippet": "summary"
+        }
+      ],
+      "status": "full"
+    },
+    {
+      "claim_id": "QA-A26",
+      "criterion_id": "A26",
+      "gaps": [],
+      "required_refs": [
+        {
+          "evidence_id": "qa_synthetic_event:RUN",
+          "snippet": "summary"
+        }
+      ],
+      "status": "full"
+    }
+  ],
+  "event_id": "qa-synthetic-event",
+  "evidence_roles": {
+    "qa_synthetic_event:IDENTITY": "identity",
+    "qa_synthetic_event:RUN": "execution"
+  },
+  "human_signoff": null,
+  "manifest": {
+    "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "evidence": [
+      {
+        "artifact_binding": "raw_equal",
+        "artifact_raw_sha256": "f69a2ca22363ae0d042dd1ae13b9e89aa2612cf7ff0da25eb527639393a72370",
+        "evidence_id": "qa_synthetic_event:RUN",
+        "path": "evidence/qa/result.json",
+        "release_id": "qa_synthetic_event"
+      },
+      {
+        "artifact_binding": "raw_equal",
+        "artifact_raw_sha256": "aff5cc4cc23cb0bbf8ea94aea973cd8e2651c500ab70cc437cb8318ac4560278",
+        "evidence_id": "qa_synthetic_event:IDENTITY",
+        "path": "evidence/qa/identity.json",
+        "release_id": "qa_synthetic_event"
+      }
+    ],
+    "release_id": "qa_synthetic_event",
+    "sources": {
+      "release/archives/qa_v1/product/source.py": {
+        "binding": "approved_crlf_to_lf_only",
+        "candidate_runtime_raw_sha256": "e0c87d845977c854168a47a04f3ce25702d4f48655711d338228f1a3318e8b10",
+        "evidence": [
+          "evidence/qa/result.json"
+        ],
+        "git_blob_oid": "e91217c4dcb80c6dfa305558998c2761029d3005",
+        "git_blob_sha256": "e0c87d845977c854168a47a04f3ce25702d4f48655711d338228f1a3318e8b10",
+        "utf8_lf_v1_sha256": "8b751ed55e61d7ba7921ca33bf593a9c210349352b2f76a383c2533f895fd270"
+      }
+    }
+  },
+  "product_commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "release_id": "qa_synthetic_event",
+  "runtime_records": [
+    {
+      "artifact_hashes_field": "artifact_hashes",
+      "commit_field": "product_commit",
+      "evidence_id": "qa_synthetic_event:RUN",
+      "exit_code_field": "exit_code",
+      "identity_evidence_id": "qa_synthetic_event:IDENTITY",
+      "release_id_field": "release_id",
+      "source_after_field": "source_after",
+      "source_before_field": "source_before",
+      "source_paths": [
+        "release/archives/qa_v1/product/source.py"
+      ]
+    }
+  ],
+  "schema_id": "event-registration-v1",
+  "source_locations": {
+    "release/archives/qa_v1/product/source.py": {
+      "archive_path": "release/archives/qa_v1/product/source.py",
+      "archive_release_id": "qa_v1",
+      "raw_sha256": "e0c87d845977c854168a47a04f3ce25702d4f48655711d338228f1a3318e8b10"
+    }
+  },
+  "teacher_approval": null,
+  "windows": {
+    "qa_synthetic_event:IDENTITY": {
+      "summary": {
+        "fields": [
+          "release_id",
+          "product_commit",
+          "exit_code"
+        ],
+        "kind": "json_fields"
+      }
+    },
+    "qa_synthetic_event:RUN": {
+      "summary": {
+        "fields": [
+          "exit_code",
+          "synthetic",
+          "observations"
+        ],
+        "kind": "json_fields"
+      }
+    }
+  }
+}

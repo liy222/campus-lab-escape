@@ -1,0 +1,218 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "addendum_id": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "approved_at": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "approved_by": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "builder_command": {
+      "items": {
+        "maxLength": 4000,
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "builder_raw_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "commit": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "evidence": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_binding": {
+            "enum": [
+              "raw_equal",
+              "approved_crlf_to_lf_only"
+            ]
+          },
+          "artifact_git_blob_oid": {
+            "pattern": "^[0-9a-f]{40}$",
+            "type": "string"
+          },
+          "artifact_git_blob_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "artifact_raw_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "artifact_source_commit": {
+            "pattern": "^[0-9a-f]{40}$",
+            "type": "string"
+          },
+          "artifact_utf8_lf_v1_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "evidence_id": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "exit_code": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "path": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "recorded_head": {
+            "type": [
+              "object",
+              "string",
+              "null"
+            ]
+          },
+          "release_id": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "scope": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "evidence_id",
+          "path",
+          "release_id",
+          "artifact_raw_sha256",
+          "artifact_binding"
+        ],
+        "type": "object"
+      },
+      "maxItems": 100,
+      "minItems": 1,
+      "type": "array"
+    },
+    "facts_authoritative_evidence_id": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "generated_artifacts": {
+      "type": "object"
+    },
+    "hash_policy": {
+      "type": "object"
+    },
+    "human_signoff": {
+      "type": "null"
+    },
+    "limitations": {
+      "items": {
+        "maxLength": 4000,
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "release_id": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "sources": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "binding": {
+            "enum": [
+              "raw_equal",
+              "approved_crlf_to_lf_only"
+            ]
+          },
+          "candidate_runtime_raw_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "evidence": {
+            "items": {
+              "maxLength": 4000,
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "git_blob_oid": {
+            "pattern": "^[0-9a-f]{40}$",
+            "type": "string"
+          },
+          "git_blob_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "utf8_lf_v1_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "candidate_runtime_raw_sha256",
+          "git_blob_sha256",
+          "git_blob_oid",
+          "utf8_lf_v1_sha256",
+          "binding",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "type": "object"
+    },
+    "superseded_evidence_ids": {
+      "items": {
+        "maxLength": 4000,
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "synthetic_calibration": {
+      "type": "boolean"
+    },
+    "teacher_approval": {
+      "type": "null"
+    },
+    "tree": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "unbound_prior_source_records": {
+      "type": "array"
+    },
+    "versions": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "release_id",
+    "sources",
+    "evidence"
+  ],
+  "type": "object"
+}

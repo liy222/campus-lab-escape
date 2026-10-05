@@ -1,0 +1,32 @@
+{
+  "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "evidence": [
+    {
+      "artifact_binding": "raw_equal",
+      "artifact_raw_sha256": "f69a2ca22363ae0d042dd1ae13b9e89aa2612cf7ff0da25eb527639393a72370",
+      "evidence_id": "qa_synthetic_event:RUN",
+      "path": "evidence/qa/result.json",
+      "release_id": "qa_synthetic_event"
+    },
+    {
+      "artifact_binding": "raw_equal",
+      "artifact_raw_sha256": "ff862604a6cb8f8e70fa2f3c16ea9264a29e937b9a04d4ab33aaa431199315ff",
+      "evidence_id": "qa_synthetic_event:IDENTITY",
+      "path": "evidence/qa/identity.json",
+      "release_id": "qa_synthetic_event"
+    }
+  ],
+  "release_id": "qa_synthetic_event",
+  "sources": {
+    "release/archives/qa_v1/product/source.py": {
+      "binding": "approved_crlf_to_lf_only",
+      "candidate_runtime_raw_sha256": "e0c87d845977c854168a47a04f3ce25702d4f48655711d338228f1a3318e8b10",
+      "evidence": [
+        "evidence/qa/result.json"
+      ],
+      "git_blob_oid": "e91217c4dcb80c6dfa305558998c2761029d3005",
+      "git_blob_sha256": "e0c87d845977c854168a47a04f3ce25702d4f48655711d338228f1a3318e8b10",
+      "utf8_lf_v1_sha256": "8b751ed55e61d7ba7921ca33bf593a9c210349352b2f76a383c2533f895fd270"
+    }
+  }
+}

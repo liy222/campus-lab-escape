@@ -1,0 +1,23 @@
+{
+  "recorded_by": "Main",
+  "source_pack_first_attempt": {
+    "command": ["C:\\Users\\liyh\\.conda\\envs\\1\\python.exe", "-B", "-X", "utf8", "evidence/integration/make_reproduction_pack.py"],
+    "actual_exit_code": 1,
+    "tool_chunk": "c1d389",
+    "reason": "Mixed runtime line endings require an explicit stronger Main policy: .env.example",
+    "resolution": "Main explicitly pinned each original CRLF position; Delivery helper independently restores exact bytes and validates final raw hash; successful committed pack at fc70b15. Earlier ignored package directory retained."
+  },
+  "ch01_event_v1": {
+    "command": ["C:\\Users\\liyh\\.conda\\envs\\1\\python.exe", "-B", "-X", "utf8", "evidence/integration/register_ch01_event.py", "--api-run", "evidence/qa/T30-20261005T111355675003Z-api/run.json", "--process", "evidence/qa/T30-final-identity-20261005T111355675003Z/process.json"],
+    "actual_exit_code": 1,
+    "tool_chunk": "234dbe",
+    "reason": "Main proposed a 260-line source window; schema maximum is 200. Registration not created; partial derived selection/identities retained unregistered.",
+    "resolution": "New v2 uses 200-line bounded window; old artifacts retained."
+  },
+  "ch01_event_v2": {
+    "main_card_creation_exit_code": 0,
+    "main_tool_chunk": "f0258f",
+    "reason": "Owner correctly rejected mixed archive/current aliases and immutable identity aliases under prior loader. Main v2 remains unregistered.",
+    "resolution": "Main v3 archives all 162 source locations and explicitly authorizes minimal fixed identity-alias handling. No reader or rubric relaxation; independent review required before acceptance."
+  }
+}

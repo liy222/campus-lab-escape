@@ -1,0 +1,110 @@
+{
+  "CH01-adversarial-review-v3:API": {
+    "result": {
+      "fields": [
+        "candidate",
+        "schema_version",
+        "level_version",
+        "started",
+        "ended",
+        "provider",
+        "tests_run",
+        "failures",
+        "errors",
+        "source_unchanged",
+        "exit_code",
+        "limits"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "CH01-adversarial-review-v3:API-IDENTITY": {
+    "scope": {
+      "fields": [
+        "release_id",
+        "product_commit",
+        "exit_code",
+        "provenance"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "CH01-adversarial-review-v3:BROWSER": {
+    "result": {
+      "fields": [
+        "candidate",
+        "provider",
+        "started",
+        "ended",
+        "browsers",
+        "widths",
+        "exit_code",
+        "privacy"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "CH01-adversarial-review-v3:BROWSER-IDENTITY": {
+    "scope": {
+      "fields": [
+        "release_id",
+        "product_commit",
+        "exit_code",
+        "provenance"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "CH01-adversarial-review-v3:FINAL-PROCESS": {
+    "process": {
+      "count": 50,
+      "kind": "lines",
+      "start": 1
+    }
+  },
+  "CH01-adversarial-review-v3:FREEZE": {
+    "version": {
+      "fields": [
+        "release_id",
+        "commit",
+        "tree",
+        "versions",
+        "unbound_prior_source_records",
+        "limitations"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "CH01-adversarial-review-v3:PUBLIC-SELECTION": {
+    "state": {
+      "fields": [
+        "derived_by",
+        "original_path",
+        "original_raw_sha256",
+        "observations"
+      ],
+      "kind": "json_fields"
+    }
+  },
+  "CH01-adversarial-review-v3:REPORT": {
+    "results": {
+      "count": 29,
+      "kind": "lines",
+      "start": 20
+    }
+  },
+  "CH01-adversarial-review-v3:TEST-OUTPUT": {
+    "tests": {
+      "count": 40,
+      "kind": "lines",
+      "start": 20
+    }
+  },
+  "CH01-adversarial-review-v3:TEST-SOURCE": {
+    "assertions": {
+      "count": 200,
+      "kind": "lines",
+      "start": 1
+    }
+  }
+}

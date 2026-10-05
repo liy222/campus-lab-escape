@@ -1,0 +1,36 @@
+{
+  "claim_ids": [
+    "QA-A24",
+    "QA-A26"
+  ],
+  "contract_raw_sha256": "4752aceb826ec5f89b7dd39e02106824167901a9c633aa9365366c30a8c79662",
+  "event_id": "qa-synthetic-event",
+  "evidence_ids": [
+    "qa_synthetic_event:RUN",
+    "qa_synthetic_event:IDENTITY"
+  ],
+  "freeze_id": "qa-synthetic-freeze",
+  "frozen_at": "2026-10-05T11:43:21.826043+00:00",
+  "frozen_before_calls": true,
+  "human_signoff": null,
+  "inputs": {
+    "trusted/events/qa-synthetic-event/claims.json": "8751a92d77dc57e5eaea5b7c6b1b1fe523e0bb42c6adef806ace56eb4456bcd6",
+    "trusted/events/qa-synthetic-event/manifest.json": "a6429892e5466f9cd5d45b5e0af1ccb270ee495495bc0d7dfbc3d39adb4ff564",
+    "trusted/events/qa-synthetic-event/windows.json": "ca7a469cd82bc1242006e8fca26450223025405873dafa396b2285e5a37dffa0"
+  },
+  "legacy_schema_raw_sha256": {
+    "schemas/claim.schema.json": "902cbd7c2579ba0cbf68ef9864a34b8c7951f48cd99ffaedf1137b50cd85bb31",
+    "schemas/contract.schema.json": "6a584c9ba99f54315dd8b5275ffc2917deea03c58b4278214a2704b3a8161b15",
+    "schemas/evidence-index.schema.json": "1973808397cecc6f9877ab4339c3ddb32cb1409aef768793624cf3ffa0105861",
+    "schemas/manifest.schema.json": "999c7fd1e8d880db23925d7ff6fb7b82d8cd012a929f1602ef6dcc974a2e7494",
+    "schemas/output.schema.json": "19a0062cdb3a2990178bac3ebdb078e29c898691f034c9adcca3dcdd7bc9c6b8",
+    "schemas/suggestion.schema.json": "b009e075e956c5c276bc27495d13223d8c0293271b23d2184b29163fd132a05b"
+  },
+  "main_registration": {
+    "path": "evidence/integration/event-qa-synthetic-event-registration.json",
+    "raw_sha256": "69ba7dbe96bc43d60194aa92250ec12d35e65379cdd9440fadaa78a265d414ec"
+  },
+  "product_commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "release_id": "qa_synthetic_event",
+  "teacher_approval": null
+}

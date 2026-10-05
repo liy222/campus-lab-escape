@@ -8,7 +8,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 from jsonschema.exceptions import ValidationError
 
 from .common import EvaluationError, identifier, json_bytes, sha256, strict_json
-from .reader import safe_read, verify_identity
+from .reader import checked_path, safe_read, verify_identity
 
 REGISTRY_PATH = 'trusted/events-registry-v1.json'
 EVENT_SCHEMA = 'schemas/event-registration-v1.schema.json'
@@ -239,8 +239,15 @@ def load_registered_events(project_root, evaluator_root, legacy_files, existing_
         if source_locations:
             archived = set()
             for runtime_path, location in source_locations.items():
+                identifier(location['archive_release_id'])
+                archive_prefix = 'release/archives/' + location['archive_release_id'] + '/'
                 expected_path = 'release/archives/' + location['archive_release_id'] + '/' + runtime_path
-                if location['archive_path'] != expected_path or location['archive_path'] in archived:
+                identity_archive = (location['archive_path'] == runtime_path and
+                                    runtime_path.startswith(archive_prefix) and
+                                    bool(runtime_path[len(archive_prefix):]))
+                if identity_archive:
+                    checked_path(project_root, runtime_path, source=True)
+                if (not identity_archive and location['archive_path'] != expected_path) or location['archive_path'] in archived:
                     raise EvaluationError('EVENT_ARCHIVE_PATH_NOT_FIXED_OR_DUPLICATE')
                 archived.add(location['archive_path'])
                 record = manifest['sources'].get(location['archive_path'])

@@ -1,0 +1,312 @@
+"""Main-pinned event inputs. No target imports, execution, credentials or ledger access."""
+from __future__ import annotations
+
+from dataclasses import dataclass
+import re
+
+from jsonschema import Draft202012Validator, FormatChecker
+from jsonschema.exceptions import ValidationError
+
+from .common import EvaluationError, identifier, json_bytes, sha256, strict_json
+from .reader import safe_read, verify_identity
+
+REGISTRY_PATH = 'trusted/events-registry-v1.json'
+EVENT_SCHEMA = 'schemas/event-registration-v1.schema.json'
+REGISTRY_SCHEMA = 'schemas/events-registry-v1.schema.json'
+FREEZE_SCHEMA = 'schemas/event-freeze-v1.schema.json'
+WINDOW_SCHEMA = 'schemas/event-windows-v1.schema.json'
+NEW_SCHEMAS = (EVENT_SCHEMA, REGISTRY_SCHEMA, FREEZE_SCHEMA, WINDOW_SCHEMA)
+LEGACY_SCHEMAS = ('claim', 'manifest', 'output', 'suggestion', 'contract', 'evidence-index')
+
+
+def schema_validate(schema, value, code):
+    try:
+        Draft202012Validator(schema, format_checker=FormatChecker()).validate(value)
+    except (ValidationError, TypeError, RecursionError):
+        raise EvaluationError(code) from None
+
+
+def field(value, name):
+    # Only exact registered top-level names; no target JSON pointers or evaluation.
+    if not isinstance(value, dict) or name not in value:
+        raise EvaluationError('EVENT_RUNTIME_FIELD_MISSING')
+    return value[name]
+
+
+@dataclass
+class EventContext:
+    project_root: object
+    evaluator_root: object
+    event_id: str
+    release_id: str
+    product_commit: str
+    input_sha256: str
+    claims: list
+    coverage: dict
+    runtime_records: list
+    evidence_roles: dict
+    source_locations: dict
+    pins: dict
+    installation_pins: dict
+
+    def recheck(self):
+        for path, digest in self.installation_pins.items():
+            if sha256(safe_read(self.evaluator_root, path)) != digest:
+                raise EvaluationError('EVENT_INSTALLATION_CHANGED')
+        for path, digest in self.pins.items():
+            if sha256(safe_read(self.project_root, path)) != digest:
+                raise EvaluationError('EVENT_INPUT_CHANGED')
+
+    def precheck(self, tools):
+        issues = []
+        bindings = []
+        identities = {}
+        try:
+            self.recheck()
+        except EvaluationError as error:
+            issues.append({'code': error.code})
+        manifest = tools.manifests[self.release_id]
+        evidence = {r['evidence_id']: r for r in manifest['evidence']}
+        archive_raws = {v['archive_path']: v['raw_sha256'] for v in self.source_locations.values()}
+        for path, record in manifest['sources'].items():
+            try:
+                data = safe_read(self.project_root, path, source=path in archive_raws)
+                if path in archive_raws and sha256(data) != archive_raws[path]:
+                    raise EvaluationError('EVENT_ARCHIVE_RUNTIME_RAW_MISMATCH')
+                identities[path] = verify_identity(data, record, source=True)
+            except (EvaluationError, UnicodeError) as error:
+                issues.append({'path': path, 'code': error.code if isinstance(error, EvaluationError) else 'NON_UTF8_SOURCE'})
+        raw_records = {}
+        for eid, record in evidence.items():
+            try:
+                data = safe_read(self.project_root, record['path'])
+                verify_identity(data, record)
+                raw_records[eid] = data
+            except (EvaluationError, UnicodeError) as error:
+                issues.append({'evidence_id': eid, 'code': error.code if isinstance(error, EvaluationError) else 'NON_UTF8_EVIDENCE'})
+        for eid, snippets in tools.windows.items():
+            if eid not in evidence or eid not in raw_records:
+                continue
+            for snippet, window in snippets.items():
+                try:
+                    data = raw_records[eid]
+                    if window['kind'] == 'json_fields':
+                        value = strict_json(data)
+                        if not isinstance(value, dict) or not set(window['fields']) <= set(value):
+                            raise EvaluationError('EVENT_WINDOW_FIELDS_MISSING')
+                    elif window['kind'] == 'json_claim':
+                        value = strict_json(data)
+                        entries = value.get('acceptance') if isinstance(value, dict) else None
+                        if not isinstance(entries, list) or any(not isinstance(v, dict) for v in entries) or sum(v.get('acceptance_id') == window['claim_id'] for v in entries) != 1:
+                            raise EvaluationError('EVENT_WINDOW_CLAIM_MISSING_OR_DUPLICATE')
+                    else:
+                        lines = data.decode('utf-8', errors='strict').splitlines()
+                        if window['start'] + window['count'] - 1 > len(lines):
+                            raise EvaluationError('EVENT_WINDOW_LINES_MISSING')
+                    tools.read_evidence(eid, snippet)
+                except (EvaluationError, UnicodeError) as error:
+                    issues.append({'evidence_id': eid, 'snippet': snippet,
+                                   'code': error.code if isinstance(error, EvaluationError) else 'NON_UTF8_EVIDENCE'})
+        for runtime in self.runtime_records:
+            eid = runtime['evidence_id']
+            try:
+                identity_id = runtime['identity_evidence_id']
+                if eid not in raw_records or identity_id not in raw_records:
+                    raise EvaluationError('EVENT_RUNTIME_IDENTITY_UNAVAILABLE')
+                value = strict_json(raw_records[identity_id])
+                if field(value, runtime['release_id_field']) != self.release_id or field(value, runtime['commit_field']) != self.product_commit:
+                    raise EvaluationError('EVENT_RUNTIME_VERSION_MISMATCH')
+                exit_code = field(value, runtime['exit_code_field'])
+                if type(exit_code) is not int:
+                    raise EvaluationError('EVENT_RUNTIME_EXIT_INVALID')
+                before = field(value, runtime['source_before_field'])
+                after = field(value, runtime['source_after_field'])
+                if not isinstance(before, dict) or not before or not isinstance(after, dict) or before != after:
+                    raise EvaluationError('EVENT_RUNTIME_SOURCE_CHANGED_OR_MISSING_MAP')
+                if set(before) != set(runtime['source_paths']):
+                    raise EvaluationError('EVENT_RUNTIME_SOURCE_SET_MISMATCH')
+                for path, digest in before.items():
+                    if not isinstance(digest, str) or not re.fullmatch(r'[0-9a-f]{64}', digest):
+                        raise EvaluationError('EVENT_RUNTIME_HASH_INVALID')
+                    location = self.source_locations.get(path)
+                    bound_path = location['archive_path'] if location else path
+                    record = manifest['sources'].get(bound_path)
+                    if record is None or record['candidate_runtime_raw_sha256'] != digest:
+                        raise EvaluationError('EVENT_RUNTIME_HASH_NOT_BOUND')
+                    if location and location['raw_sha256'] != digest:
+                        raise EvaluationError('EVENT_ARCHIVE_RUNTIME_HASH_MISMATCH')
+                artifacts = field(value, runtime['artifact_hashes_field'])
+                if not isinstance(artifacts, dict) or artifacts.get(eid) != evidence[eid]['artifact_raw_sha256']:
+                    raise EvaluationError('EVENT_RUNTIME_ARTIFACT_NOT_BOUND')
+                bindings.append({'evidence_id': eid, 'identity_evidence_id': identity_id,
+                                 'release_id': self.release_id, 'product_commit': self.product_commit,
+                                 'exit_code': exit_code, 'source_count': len(before), 'source_before': before,
+                                 'source_after': after, 'artifact_raw_sha256': artifacts[eid],
+                                 'identity_provenance': value.get('provenance'),
+                                 'identity_derived_by': value.get('derived_by'),
+                                 'source_locations': {p: self.source_locations[p] for p in before if p in self.source_locations}})
+            except (EvaluationError, UnicodeError) as error:
+                issues.append({'evidence_id': eid, 'code': error.code if isinstance(error, EvaluationError) else 'NON_UTF8_EVIDENCE'})
+        return {'release_id': self.release_id, 'event_id': self.event_id, 'product_commit': self.product_commit,
+                'event_freeze_raw_sha256': self.input_sha256, 'issues': issues,
+                'source_identities': identities, 'runtime_source_bindings': bindings,
+                'historical_unbound_records': [], 'generated_runtime_only': [],
+                'scope': 'Main-pinned event read/hash only; no target execution or Git; all execution records mapped explicitly.'}
+
+
+def load_registered_events(project_root, evaluator_root, legacy_files, existing_manifests, existing_windows):
+    """Internal root arguments allow owned isolated fixtures; CLI cannot supply roots."""
+    if evaluator_root.resolve() != (project_root / 'evaluation').resolve():
+        raise EvaluationError('EVENT_INSTALLATION_ROOT_MISMATCH')
+    schema_data = {path: safe_read(evaluator_root, path) for path in NEW_SCHEMAS}
+    schemas = {path: strict_json(raw) for path, raw in schema_data.items()}
+    registry_raw = safe_read(evaluator_root, REGISTRY_PATH)
+    registry = strict_json(registry_raw)
+    schema_validate(schemas[REGISTRY_SCHEMA], registry, 'EVENT_REGISTRY_SCHEMA_INVALID')
+    contexts = {}
+    manifests = {}
+    windows = {}
+    seen_events = set()
+    seen_releases = {'baseline_v1', 'calibration_v1', *existing_manifests}
+    seen_evidence = {r['evidence_id'] for m in existing_manifests.values() for r in m['evidence']}
+    installation_pins = {path: sha256(raw) for path, raw in schema_data.items()}
+    installation_pins[REGISTRY_PATH] = sha256(registry_raw)
+    installation_pins['trusted/contract.json'] = sha256(safe_read(evaluator_root, 'trusted/contract.json'))
+    for path in evaluator_root.glob('*.py'):
+        installation_pins[path.name] = sha256(safe_read(evaluator_root, path.name))
+    for name in LEGACY_SCHEMAS:
+        path = 'schemas/' + name + '.schema.json'
+        installation_pins[path] = sha256(safe_read(evaluator_root, path))
+    for entry in registry['events']:
+        event_id, release, commit = entry['event_id'], entry['release_id'], entry['product_commit']
+        identifier(release)
+        if event_id in seen_events or release in seen_releases:
+            raise EvaluationError('EVENT_DUPLICATE_OR_RESERVED_RELEASE')
+        seen_events.add(event_id)
+        seen_releases.add(release)
+        main_path = 'evidence/integration/event-' + event_id + '-registration.json'
+        freeze_path = 'trusted/events/' + event_id + '/freeze.json'
+        if entry['main_registration']['path'] != main_path:
+            raise EvaluationError('EVENT_MAIN_PATH_NOT_FIXED')
+        main_raw = safe_read(project_root, main_path)
+        if sha256(main_raw) != entry['main_registration']['raw_sha256']:
+            raise EvaluationError('EVENT_MAIN_RAW_HASH_MISMATCH')
+        main = strict_json(main_raw)
+        # The new schema embeds old manifest/claim shapes when built; validation
+        # also uses the original frozen schemas below, without modifying them.
+        schema_validate(schemas[EVENT_SCHEMA], main, 'EVENT_MAIN_SCHEMA_INVALID')
+        freeze_raw = safe_read(evaluator_root, freeze_path)
+        if sha256(freeze_raw) != entry['event_freeze_raw_sha256']:
+            raise EvaluationError('EVENT_FREEZE_RAW_HASH_MISMATCH')
+        freeze = strict_json(freeze_raw)
+        schema_validate(schemas[FREEZE_SCHEMA], freeze, 'EVENT_FREEZE_SCHEMA_INVALID')
+        for value in (main, freeze):
+            if (value['event_id'], value['release_id'], value['product_commit']) != (event_id, release, commit):
+                raise EvaluationError('EVENT_IDENTITY_CHAIN_MISMATCH')
+        if freeze['main_registration'] != entry['main_registration']:
+            raise EvaluationError('EVENT_MAIN_PIN_CHAIN_MISMATCH')
+        if freeze['contract_raw_sha256'] != installation_pins['trusted/contract.json']:
+            raise EvaluationError('EVENT_CONTRACT_PIN_MISMATCH')
+        legacy_hashes = {p: installation_pins[p] for p in installation_pins if p.startswith('schemas/') and p not in NEW_SCHEMAS}
+        if freeze['legacy_schema_raw_sha256'] != legacy_hashes:
+            raise EvaluationError('EVENT_LEGACY_SCHEMA_PIN_MISMATCH')
+        prefix = 'trusted/events/' + event_id + '/'
+        input_paths = {prefix + name + '.json' for name in ('manifest', 'windows', 'claims')}
+        if set(freeze['inputs']) != input_paths:
+            raise EvaluationError('EVENT_INPUT_SET_MISMATCH')
+        values = {}
+        pins = {'evaluation/' + freeze_path: sha256(freeze_raw), main_path: sha256(main_raw)}
+        for name in ('manifest', 'windows', 'claims'):
+            path = prefix + name + '.json'
+            raw = safe_read(evaluator_root, path)
+            if sha256(raw) != freeze['inputs'][path]:
+                raise EvaluationError('EVENT_FROZEN_INPUT_HASH_MISMATCH')
+            values[name] = strict_json(raw)
+            if json_bytes(values[name]) != json_bytes(main[name]):
+                raise EvaluationError('EVENT_MAIN_INPUT_PROJECTION_MISMATCH')
+            pins['evaluation/' + path] = sha256(raw)
+        manifest, claim_file, event_windows = values['manifest'], values['claims'], values['windows']
+        schema_validate(legacy_files['schemas/manifest.schema.json'], manifest, 'EVENT_MANIFEST_SCHEMA_INVALID')
+        schema_validate(schemas[WINDOW_SCHEMA], event_windows, 'EVENT_WINDOWS_SCHEMA_INVALID')
+        if manifest.get('commit') != commit or manifest['release_id'] != release or not manifest['sources']:
+            raise EvaluationError('EVENT_MANIFEST_IDENTITY_MISSING')
+        if manifest.get('synthetic_calibration') or manifest.get('unbound_prior_source_records') or manifest.get('generated_artifacts'):
+            raise EvaluationError('EVENT_UNBOUND_OR_SYNTHETIC_MANIFEST')
+        if claim_file['release_id'] != release:
+            raise EvaluationError('EVENT_CLAIM_RELEASE_MISMATCH')
+        source_locations = main.get('source_locations', {})
+        runtime_source_paths = set(source_locations) if source_locations else set(manifest['sources'])
+        if source_locations:
+            archived = set()
+            for runtime_path, location in source_locations.items():
+                expected_path = 'release/archives/' + location['archive_release_id'] + '/' + runtime_path
+                if location['archive_path'] != expected_path or location['archive_path'] in archived:
+                    raise EvaluationError('EVENT_ARCHIVE_PATH_NOT_FIXED_OR_DUPLICATE')
+                archived.add(location['archive_path'])
+                record = manifest['sources'].get(location['archive_path'])
+                if record is None or record['candidate_runtime_raw_sha256'] != location['raw_sha256']:
+                    raise EvaluationError('EVENT_ARCHIVE_SOURCE_HASH_MISMATCH')
+            if archived != set(manifest['sources']):
+                raise EvaluationError('EVENT_ARCHIVE_SOURCE_COVERAGE_MISSING')
+        evidence = {r['evidence_id']: r for r in manifest['evidence']}
+        if len(evidence) != len(manifest['evidence']):
+            raise EvaluationError('EVENT_DUPLICATE_EVIDENCE')
+        for eid, record in evidence.items():
+            identifier(eid)
+            if eid in seen_evidence or record['release_id'] != release or not eid.startswith(release + ':'):
+                raise EvaluationError('EVENT_DUPLICATE_OR_FOREIGN_EVIDENCE')
+            seen_evidence.add(eid)
+        if set(event_windows) != set(evidence) or set(main['evidence_roles']) != set(evidence):
+            raise EvaluationError('EVENT_WINDOWS_OR_ROLE_SET_MISMATCH')
+        runtime_ids = [r['evidence_id'] for r in main['runtime_records']]
+        execution_ids = {eid for eid, role in main['evidence_roles'].items() if role == 'execution'}
+        if not execution_ids or len(runtime_ids) != len(set(runtime_ids)) or set(runtime_ids) != execution_ids:
+            raise EvaluationError('EVENT_RUNTIME_RECORD_SET_MISMATCH')
+        for runtime in main['runtime_records']:
+            if main['evidence_roles'].get(runtime['identity_evidence_id']) != 'identity':
+                raise EvaluationError('EVENT_RUNTIME_IDENTITY_NOT_REGISTERED')
+            if not set(runtime['source_paths']) <= runtime_source_paths:
+                raise EvaluationError('EVENT_RUNTIME_SOURCE_NOT_REGISTERED')
+            selectors = [v for k, v in runtime.items() if k.endswith('_field')]
+            if len(set(selectors)) != len(selectors):
+                raise EvaluationError('EVENT_RUNTIME_SELECTOR_ALIAS')
+        if {p for r in main['runtime_records'] for p in r['source_paths']} != runtime_source_paths:
+            raise EvaluationError('EVENT_RUNTIME_SOURCE_COVERAGE_MISSING')
+        claims = claim_file['claims']
+        coverage = {c['claim_id']: c for c in main['coverage']}
+        claim_ids = [c['claim_id'] for c in claims]
+        if len(set(claim_ids)) != len(claim_ids) or set(coverage) != set(claim_ids) or len(coverage) != len(main['coverage']):
+            raise EvaluationError('EVENT_CLAIM_OR_COVERAGE_SET_MISMATCH')
+        if freeze['claim_ids'] != claim_ids or set(freeze['evidence_ids']) != set(evidence) or len(freeze['evidence_ids']) != len(evidence):
+            raise EvaluationError('EVENT_FROZEN_ID_SET_MISMATCH')
+        for claim in claims:
+            schema_validate(legacy_files['schemas/claim.schema.json'], claim, 'EVENT_CLAIM_SCHEMA_INVALID')
+            identifier(claim['claim_id'])
+            criterion = legacy_files['trusted/contract.json']['criteria'].get(claim['criterion_id'])
+            if criterion is None or claim['criterion_id'] == 'NA-DEMO' or claim['declared_na']:
+                raise EvaluationError('EVENT_MUST_OR_NA_DOWNGRADE')
+            if claim['release_id'] != release or claim['statement'] != criterion['must_observe']:
+                raise EvaluationError('EVENT_CRITERION_OR_RELEASE_DOWNGRADE')
+            covered = coverage[claim['claim_id']]
+            if covered['criterion_id'] != claim['criterion_id'] or (covered['status'] == 'partial' and not covered['gaps']) or (covered['status'] == 'full' and covered['gaps']):
+                raise EvaluationError('EVENT_COVERAGE_INVALID')
+            refs = {(r['evidence_id'], r['snippet']) for r in claim['evidence_refs']}
+            required = {(r['evidence_id'], r['snippet']) for r in covered['required_refs']}
+            if len(refs) != len(claim['evidence_refs']) or len(required) != len(covered['required_refs']) or not required <= refs:
+                raise EvaluationError('EVENT_REQUIRED_REFERENCE_MISSING')
+            if criterion['require_execution'] and not any(eid in execution_ids for eid, _ in required):
+                raise EvaluationError('EVENT_EXECUTION_REFERENCE_REQUIRED')
+            for ref in claim['evidence_refs']:
+                record = evidence.get(ref['evidence_id'])
+                if record is None or ref['snippet'] not in event_windows.get(ref['evidence_id'], {}):
+                    raise EvaluationError('EVENT_UNREGISTERED_REFERENCE')
+                if ref.get('expected_raw_sha256') != record['artifact_raw_sha256']:
+                    raise EvaluationError('EVENT_REFERENCE_RAW_HASH_REQUIRED')
+        if set(existing_windows) & set(event_windows) or set(windows) & set(event_windows):
+            raise EvaluationError('EVENT_WINDOW_COLLISION')
+        context = EventContext(project_root, evaluator_root, event_id, release, commit, sha256(freeze_raw),
+                               claims, coverage, main['runtime_records'], main['evidence_roles'], source_locations, pins, dict(installation_pins))
+        contexts[release] = context
+        manifests[release] = manifest
+        windows.update(event_windows)
+    return contexts, manifests, windows

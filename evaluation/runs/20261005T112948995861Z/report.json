@@ -1,0 +1,192 @@
+{
+  "actual_paid_calls": 0,
+  "audits": [
+    {
+      "claim_id": "SYN-A24",
+      "deterministic": {
+        "execution_evidence_found": true,
+        "failures": [],
+        "issues": []
+      },
+      "provider_metadata": {
+        "actual_network_call": false,
+        "call_id": null,
+        "cost_upper_units": null,
+        "mode": "mock",
+        "usage": null
+      },
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": "d432abeb5b9d2857401361405a3668b1c56cbf9655e209797ea12971ee85213c",
+      "raw_suggestion_size_bytes": 331,
+      "validation_errors": [
+        "EVENT_IDENTITY_CHANGED_DURING_JUDGEMENT"
+      ]
+    },
+    {
+      "claim_id": "SYN-A26",
+      "provider_metadata": null,
+      "raw_suggestion": null,
+      "validation_errors": [
+        "EVENT_RUN_STOPPED_AFTER_IDENTITY_CHANGE"
+      ]
+    }
+  ],
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-m",
+    "evaluation.cli"
+  ],
+  "ended": "2026-10-05T11:29:49.126793+00:00",
+  "evaluator_source_sha256": {
+    "__init__.py": "80d2830bcf95e17c0260ea5b922dbbb603c8db51657cc6f2ee1cd9e93075db01",
+    "baseline_archive.py": "9fe62e2090de072ac6f2360036660cc5bbbee6faa84bca1b27f782f13434d090",
+    "check.py": "c7bedbe312c53d4d4fb3038d0e7330c09eeb9aaa530f6deaab26f481218367f8",
+    "check_baseline_archive.py": "52daa9de4c34d9bb260c94665675429fcf45e5ad8490d40104249dd9094c5b49",
+    "check_events.py": "483b49f6a55ce5f450d6cd7ce3a4908e314a04f5518b8e5662610473b0dc2a16",
+    "cli.py": "bf6b3c9f70b9d3e15e0c7853dc86c672626f20d44a9f8f38ec12651d1ee4166f",
+    "common.py": "91509d55058126319117b45f7e256aec5f46d35f97cd6bda7cbe6472f8227ab8",
+    "engine.py": "6955a59976b6aac197fb222603e6795ae4588841d3eb70d477db0788b53b80e4",
+    "events.py": "61bbe3631502aee4b1557af19cb020ef01465204fa1b1a4145b876a17590c66a",
+    "freeze_inputs.py": "734194f9201af069e96008f0e838941b01a71ad7ad14f1f50d588e4e63ea3b67",
+    "provider.py": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd",
+    "reader.py": "050a8f6deb3e7ca209fde3362cd617274f0941cd5968662606bc2a6e282c5e7b",
+    "seal_inputs.py": "d93a3d37eb9c35e65350687b198b44e5fc146f13090f42d68c4a2633e0f70a95",
+    "trust.py": "8f8e02c1734d37263bbac3a0203f94c5b1f24fdea7f104c34ff53a0d67c38a14"
+  },
+  "event": {
+    "event_freeze_raw_sha256": "64250d1ec5470298745b638b29720f498472938db0011d555bb01f2898a323f7",
+    "event_id": "synthetic-event-v1",
+    "product_commit": "cc33957a329854c8f78744b6a6acd98dcdecf78e",
+    "release_id": "synthetic_event_v1"
+  },
+  "event_final_precheck": {
+    "event_freeze_raw_sha256": "64250d1ec5470298745b638b29720f498472938db0011d555bb01f2898a323f7",
+    "event_id": "synthetic-event-v1",
+    "generated_runtime_only": [],
+    "historical_unbound_records": [],
+    "issues": [
+      {
+        "code": "HASH_MISMATCH",
+        "path": "product/source.py"
+      }
+    ],
+    "product_commit": "cc33957a329854c8f78744b6a6acd98dcdecf78e",
+    "release_id": "synthetic_event_v1",
+    "runtime_source_bindings": [
+      {
+        "artifact_raw_sha256": "e92dd9c8c0c1bb5a68cfcd7f40b4296dbc744de8d1b925822baaf81237130598",
+        "evidence_id": "synthetic_event_v1:RUN001",
+        "exit_code": 0,
+        "identity_derived_by": null,
+        "identity_evidence_id": "synthetic_event_v1:ID001",
+        "identity_provenance": null,
+        "product_commit": "cc33957a329854c8f78744b6a6acd98dcdecf78e",
+        "release_id": "synthetic_event_v1",
+        "source_after": {
+          "product/source.py": "a470df684a016f2b32c3f2ea630945a73e4cec378c9ae87785c1416e233cfce6"
+        },
+        "source_before": {
+          "product/source.py": "a470df684a016f2b32c3f2ea630945a73e4cec378c9ae87785c1416e233cfce6"
+        },
+        "source_count": 1,
+        "source_locations": {}
+      }
+    ],
+    "scope": "Main-pinned event read/hash only; no target execution or Git; all execution records mapped explicitly.",
+    "source_identities": {}
+  },
+  "event_stopped_on_identity_change": true,
+  "exit_code": 2,
+  "fixture_set_sha256": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1",
+  "human_signoff": null,
+  "limitations": [
+    "Owner checks are not independent QA or paid LLM calibration."
+  ],
+  "mode": "mock",
+  "prechecks": {
+    "synthetic_event_v1": {
+      "event_freeze_raw_sha256": "64250d1ec5470298745b638b29720f498472938db0011d555bb01f2898a323f7",
+      "event_id": "synthetic-event-v1",
+      "generated_runtime_only": [],
+      "historical_unbound_records": [],
+      "issues": [
+        {
+          "code": "HASH_MISMATCH",
+          "path": "product/source.py"
+        }
+      ],
+      "product_commit": "cc33957a329854c8f78744b6a6acd98dcdecf78e",
+      "release_id": "synthetic_event_v1",
+      "runtime_source_bindings": [
+        {
+          "artifact_raw_sha256": "e92dd9c8c0c1bb5a68cfcd7f40b4296dbc744de8d1b925822baaf81237130598",
+          "evidence_id": "synthetic_event_v1:RUN001",
+          "exit_code": 0,
+          "identity_derived_by": null,
+          "identity_evidence_id": "synthetic_event_v1:ID001",
+          "identity_provenance": null,
+          "product_commit": "cc33957a329854c8f78744b6a6acd98dcdecf78e",
+          "release_id": "synthetic_event_v1",
+          "source_after": {
+            "product/source.py": "a470df684a016f2b32c3f2ea630945a73e4cec378c9ae87785c1416e233cfce6"
+          },
+          "source_before": {
+            "product/source.py": "a470df684a016f2b32c3f2ea630945a73e4cec378c9ae87785c1416e233cfce6"
+          },
+          "source_count": 1,
+          "source_locations": {}
+        }
+      ],
+      "scope": "Main-pinned event read/hash only; no target execution or Git; all execution records mapped explicitly.",
+      "source_identities": {}
+    }
+  },
+  "python": "3.14.7 | packaged by Anaconda, Inc. | (main, Aug 14 2026, 10:12:46) [MSC v.1942 64 bit (AMD64)]",
+  "results": [
+    {
+      "claim_id": "SYN-A24",
+      "evidence_refs": [],
+      "execution_scope": {
+        "actual_model_requests_this_claim": 1,
+        "human_review_required": true,
+        "judgement_mode": "mock",
+        "llm_status": "invalid_or_unavailable",
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "target_execution": "none; existing evidence read only"
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending",
+      "missing_check": [
+        "Refreeze and independently verify the changed event inputs."
+      ],
+      "reason": "EVENT_IDENTITY_CHANGED_BEFORE_REPORT",
+      "release_id": "synthetic_event_v1",
+      "status": "INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "claim_id": "SYN-A26",
+      "evidence_refs": [],
+      "execution_scope": {
+        "actual_model_requests_this_claim": 0,
+        "human_review_required": true,
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "target_execution": "none; existing evidence read only"
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending",
+      "missing_check": [
+        "Refreeze and independently verify the changed event inputs."
+      ],
+      "reason": "EVENT_IDENTITY_CHANGED_BEFORE_REPORT",
+      "release_id": "synthetic_event_v1",
+      "status": "INSUFFICIENT_EVIDENCE"
+    }
+  ],
+  "started": "2026-10-05T11:29:48.996039+00:00",
+  "target_code_executed": false,
+  "teacher_approval": null
+}

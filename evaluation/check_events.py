@@ -16,6 +16,7 @@ from . import cli
 from .cli import output_folder
 from .common import EVALUATOR_ROOT, PROJECT_ROOT, EvaluationError, json_bytes, sha256, strict_json
 from .engine import Evaluator, deterministic_facts
+from .check import junction
 from .events import NEW_SCHEMAS, load_registered_events
 from .provider import MockProvider
 from .reader import EvidenceTools, safe_read
@@ -131,6 +132,14 @@ class SyntheticFixture:
         self.main['manifest']['sources'][archive_path] = source
         self.seal()
 
+    def identity_archive(self):
+        self.archive()
+        location=self.main['source_locations'].pop(self.source)
+        self.source=location['archive_path']
+        self.main['source_locations']={self.source:location}
+        self.main['runtime_records'][0]['source_paths']=[self.source]
+        self.change_identity(lambda v:v.update(source_before={self.source:location['raw_sha256']},source_after={self.source:location['raw_sha256']}))
+
 
 async def run():
     folder = output_folder()
@@ -236,6 +245,32 @@ async def run():
         f=fixture();f.archive();t=f.tools()
         (f.root/'release/archives/baseline_v1/product/source.py').write_bytes(b'# archive mutated\n')
         record('archive mutation never accepts current runtime v1 claim',lambda: bool(source_precheck(t,f.release)['issues']),True)
+        f=fixture();f.identity_archive();t=f.tools()
+        record('already archived identity alias binds original map key',lambda:source_precheck(t,f.release)['issues'],[])
+        record('identity alias preserves exact registered runtime key',lambda:source_precheck(t,f.release)['runtime_source_bindings'][0]['source_locations'][f.source]['archive_path'],f.source)
+        for name,change,code in [
+            ('wrong archive safeid',lambda f:f.main['source_locations'][f.source].update(archive_release_id='different_release'),'EVENT_ARCHIVE_PATH_NOT_FIXED_OR_DUPLICATE'),
+            ('different archive path',lambda f:f.main['source_locations'][f.source].update(archive_path=f.source+'.other.py'),'EVENT_ARCHIVE_PATH_NOT_FIXED_OR_DUPLICATE'),
+            ('identity alias raw mismatch',lambda f:f.main['source_locations'][f.source].update(raw_sha256='0'*64),'EVENT_ARCHIVE_SOURCE_HASH_MISMATCH')]:
+            f=fixture();f.identity_archive();change(f);f.seal()
+            record('identity alias rejects '+name,lambda f=f,code=code:rejects(f.tools,code),True)
+        for name,key,code in [('prefix only','release/archives/baseline_v1/','EVENT_ARCHIVE_PATH_NOT_FIXED_OR_DUPLICATE'),('prefix lookalike','release/archives/baseline_v10/product/source.py','EVENT_ARCHIVE_PATH_NOT_FIXED_OR_DUPLICATE'),('traversal','release/archives/baseline_v1/../product/source.py','UNSAFE_PATH')]:
+            f=fixture();f.identity_archive();loc=f.main['source_locations'].pop(f.source);loc['archive_path']=key
+            source=f.main['manifest']['sources'].pop(f.source);f.source=key;f.main['source_locations']={key:loc};f.main['manifest']['sources']={key:source};f.main['runtime_records'][0]['source_paths']=[key]
+            f.change_identity(lambda v:v.update(source_before={key:loc['raw_sha256']},source_after={key:loc['raw_sha256']}))
+            record('identity alias rejects '+name,lambda f=f,code=code:rejects(f.tools,code),True)
+        f=fixture();f.identity_archive();f.main['source_locations']['product/source.py']=deepcopy(f.main['source_locations'][f.source]);f.seal()
+        record('identity alias rejects duplicated archive value',lambda:rejects(f.tools,'EVENT_ARCHIVE_PATH_NOT_FIXED_OR_DUPLICATE'),True)
+        f=fixture();f.identity_archive();parent=(f.root/f.source).parent;destination=f.root/'owned-reparse-target'
+        assert parent.resolve().is_relative_to(f.root.resolve()) and destination.resolve().is_relative_to(f.root.resolve())
+        parent.rename(destination)
+        try:
+            junction(parent,destination)
+            record('identity alias rejects actual reparse archive',lambda:rejects(f.tools,'REPARSE_POINT'),True)
+        except OSError as error:
+            results.append({'name':'identity alias rejects actual reparse archive','passed':False,'limitation':'OS reparse fixture creation unavailable','os_code':error.errno})
+        f=fixture();f.identity_archive();t=f.tools();(f.root/f.source).write_bytes(b'# identity archive raw mutation\n')
+        record('identity archive raw mutation rejected before model',lambda:'EVENT_ARCHIVE_RUNTIME_RAW_MISMATCH' in [r['code'] for r in source_precheck(t,f.release)['issues']],True)
         f=fixture();raw=b'# synthetic CRLF archive\r\n';canonical=raw.replace(b'\r\n',b'\n')
         (f.root/f.source).write_bytes(raw)
         f.main['manifest']['sources'][f.source].update(candidate_runtime_raw_sha256=sha256(raw),git_blob_sha256=sha256(canonical),git_blob_oid=hashlib.sha1(b'blob '+str(len(canonical)).encode()+b'\0'+canonical).hexdigest(),utf8_lf_v1_sha256=sha256(canonical),binding='approved_crlf_to_lf_only')
