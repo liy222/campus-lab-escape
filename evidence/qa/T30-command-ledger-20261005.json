@@ -1,0 +1,193 @@
+{
+  "task": "T30",
+  "cwd": "D:\\深度能力",
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "tests.qa_ch01_runner"
+      ],
+      "exit_code": 0,
+      "evidence": "evidence/qa/T30-20261005T062008898733Z-api/run.json"
+    },
+    {
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "scripts.check",
+        "--output",
+        "evidence/qa/T30-check",
+        "--release-id",
+        "CH01-v2-73a77e8b"
+      ],
+      "exit_code": 0,
+      "child_commands": [
+        {
+          "name": "frontend-build",
+          "command": [
+            "C:\\Windows\\system32\\cmd.exe",
+            "/d",
+            "/c",
+            "C:\\Program Files\\nodejs\\npm.cmd",
+            "--prefix",
+            "frontend",
+            "run",
+            "build"
+          ],
+          "exit_code": 0,
+          "started_at": "2026-10-05T06:20:11.342422+00:00",
+          "completed_at": "2026-10-05T06:20:15.618130+00:00",
+          "log": "frontend-build.txt",
+          "sha256": "d3857bfead0bc4ecde7433db3ff265b14eef11aa2f8b5e271cf43265a2d6dfbf"
+        },
+        {
+          "name": "deterministic-tests",
+          "command": [
+            "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+            "-m",
+            "pytest",
+            "tests",
+            "-q",
+            "-p",
+            "no:cacheprovider"
+          ],
+          "exit_code": 0,
+          "started_at": "2026-10-05T06:20:15.623883+00:00",
+          "completed_at": "2026-10-05T06:20:43.113676+00:00",
+          "log": "deterministic-tests.txt",
+          "sha256": "8aa67335f51e27080ecc231b4a5b84e79468ca5bc5fa333f6ba56f17f6b8daf6"
+        }
+      ],
+      "evidence": "evidence/qa/T30-check/20261005T062010.536599Z-75ed6721/summary.json"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "D:\\深度能力\\tests\\e2e\\run_ch01.mjs",
+        "CH01-v2-73a77e8b"
+      ],
+      "exit_code": 0,
+      "evidence": "evidence/qa/T30-20261005T062357488Z-CH01-browser/run.json"
+    },
+    {
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "tests.qa_ch01_runner"
+      ],
+      "exit_code": 1,
+      "evidence": "evidence/qa/T30-20261005T061701796282Z-api/run.json",
+      "reason": "QA assertion overstrictly rejected wording that says key was used"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "D:\\深度能力\\tests\\e2e\\run_ch01.mjs",
+        "CH01-v2-73a77e8b"
+      ],
+      "exit_code": 1,
+      "evidence": "evidence/qa/T30-20261005T062009795Z-CH01-browser/run.json",
+      "reason": "QA trace lookup after restore correctly cleared prior generation trace"
+    },
+    {
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-c",
+        "\nfrom pathlib import Path\nimport json,os,tempfile\nfrom fastapi.testclient import TestClient\nfrom tests.api.test_m2 import ROUTE\nwith tempfile.TemporaryDirectory(prefix='campus-qa-T30-v1-') as folder:\n    os.environ['SQLITE_PATH']=str(Path(folder)/'default.sqlite');os.environ['AI_PROVIDER']='mock'\n    from backend.app.main import create_app\n    with TestClient(create_app(sqlite_path=Path(folder)/'v1.sqlite')) as client:\n        created=client.post('/api/sessions',json={}).json()['data']\n        headers={'X-Session-Token':created['token']};state=created['visible_state'];receipts=[]\n        for index,(tool,arguments) in enumerate(ROUTE[:13]):\n            response=client.post(f\"/api/sessions/{created['session_id']}/actions\",headers=headers,json={'request_id':f'T30-v1-{index}','generation':state['generation'],'revision':state['revision'],'tool':tool,'arguments':arguments})\n            assert response.status_code==200\n            data=response.json()['data'];state=data['visible_state'];receipts.append(data['receipt'])\n        assert state['level_version']=='1.0.0'\n        assert 'emergency_key' in [i['item_id'] for i in state['inventory']]\n        assert receipts[-1]['consumed_item_ids']==[]\n        print(json.dumps({'provider':'mock','state':state,'unlock_receipt':receipts[-1],'isolated_v1_database':True},ensure_ascii=False))\n"
+      ],
+      "cwd": "D:\\深度能力\\release\\archives\\baseline_v1",
+      "environment": {
+        "AI_PROVIDER": "mock",
+        "PYTHONUTF8": "1",
+        "PYTHONPATH": "D:\\深度能力\\release\\archives\\baseline_v1"
+      },
+      "exit_code": 0,
+      "evidence": "evidence/qa/T30-v1-rollback-20261005/result.json",
+      "provenance": "Exact child script body recorded from the actual T30 tool invocation; metadata recording is not a new execution"
+    },
+    {
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "14329",
+        "--no-access-log"
+      ],
+      "operation": "start actual OS service",
+      "pid": 26608,
+      "ready_health_http_status": 200,
+      "evidence": "evidence/qa/T30-20261005T062008898733Z-api/http-exchanges.json"
+    },
+    {
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "14329",
+        "--no-access-log"
+      ],
+      "operation": "start actual OS service",
+      "pid": 2300,
+      "ready_health_http_status": 200,
+      "evidence": "evidence/qa/T30-20261005T062008898733Z-api/http-exchanges.json"
+    },
+    {
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "14329",
+        "--no-access-log"
+      ],
+      "operation": "start actual OS service",
+      "pid": 7736,
+      "ready_health_http_status": 200,
+      "evidence": "evidence/qa/T30-20261005T062008898733Z-api/http-exchanges.json"
+    },
+    {
+      "operation": "terminate QA-owned process / communicate / verify poll non-null",
+      "pid": 26608,
+      "exit_code": 1,
+      "expected_termination": true,
+      "evidence": "evidence/qa/T30-20261005T062008898733Z-api/http-exchanges.json"
+    },
+    {
+      "operation": "terminate QA-owned process / communicate / verify poll non-null",
+      "pid": 2300,
+      "exit_code": 1,
+      "expected_termination": true,
+      "evidence": "evidence/qa/T30-20261005T062008898733Z-api/http-exchanges.json"
+    },
+    {
+      "operation": "terminate QA-owned process / communicate / verify poll non-null",
+      "pid": 7736,
+      "exit_code": 1,
+      "expected_termination": true,
+      "evidence": "evidence/qa/T30-20261005T062008898733Z-api/http-exchanges.json"
+    }
+  ],
+  "read_and_write_audits": {
+    "initial_default_shell": "helper_unknown_error before process creation; no exit code; require_escalated project reads subsequently succeeded",
+    "inspection_nonzero": "One combined read exited1 because tests/e2e/test_browser.py did not exist; actual e2e mjs paths were inspected afterward",
+    "nonterminating_read_error": "Requested evidence/backend/owner-check.json alias did not exist; actual T29-owner-check-20261005.json and handoff read; no owner evidence adopted as formal result",
+    "source_byte_audit": "PowerShell here-string piped to exact Python, exit0, evidence/qa/T30-source-identity-20261005.json; original 101 files all match expected raw hashes",
+    "resume_integrity_audits": "PowerShell here-string Python read-only audits exit0; saved evidence hashes all match; backend/frontend/contracts/scripts/docs unchanged; no test rerun",
+    "qa_edits": "apply_patch calls and QA-only Python writes completed; no product changes"
+  },
+  "paid_calls": 0,
+  "teacher_approval": null,
+  "human_signoff": null
+}

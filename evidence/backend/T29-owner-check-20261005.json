@@ -1,0 +1,148 @@
+{
+  "task": "T29",
+  "scope": "backend local owner checks, not independent formal QA",
+  "recorded_at_utc": "2026-10-05T06:07:50.411470+00:00",
+  "python_executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+  "level_version": "2.0.0",
+  "schema_version": "1.0.0",
+  "exit_code": 0,
+  "assertion_count": 422,
+  "scenarios": [
+    {
+      "check": "normal_18_route",
+      "result": "passed",
+      "revision": 18,
+      "status": "won",
+      "key_consumption_events": 1,
+      "final_inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "failures_replay_reuse_visibility_roundtrip",
+      "result": "passed",
+      "key_consumption_events": 1,
+      "replay_receipt_equal": true,
+      "retake_error": "ALREADY_TAKEN"
+    },
+    {
+      "check": "AI_public_read_projection_no_provider",
+      "result": "passed",
+      "actual_model_calls": 0,
+      "drawer_key_absent": true,
+      "inventory_key_absent": true
+    },
+    {
+      "check": "v2_before_after_save_restore_store_restart",
+      "result": "passed",
+      "explicit_restore_consumptions": 2,
+      "snapshot_level": "2.0.0",
+      "old_action_error": "STALE_GENERATION"
+    },
+    {
+      "check": "snapshot_v1_level",
+      "result": "passed",
+      "error": "SNAPSHOT_VERSION_MISMATCH",
+      "current_state_unchanged": true
+    },
+    {
+      "check": "snapshot_retained_key_after_unlock",
+      "result": "passed",
+      "error": "INVALID_SNAPSHOT",
+      "current_state_unchanged": true
+    },
+    {
+      "check": "snapshot_unlocked_without_drawer",
+      "result": "passed",
+      "error": "INVALID_SNAPSHOT",
+      "current_state_unchanged": true
+    },
+    {
+      "check": "snapshot_unlocked_without_power",
+      "result": "passed",
+      "error": "INVALID_SNAPSHOT",
+      "current_state_unchanged": true
+    },
+    {
+      "check": "snapshot_bad_checksum",
+      "result": "passed",
+      "error": "INVALID_SNAPSHOT",
+      "current_state_unchanged": true
+    },
+    {
+      "check": "invariant_retained_key",
+      "result": "passed",
+      "rejected": true
+    },
+    {
+      "check": "invariant_missing_drawer",
+      "result": "passed",
+      "rejected": true
+    },
+    {
+      "check": "invariant_missing_power",
+      "result": "passed",
+      "rejected": true
+    },
+    {
+      "check": "valid_before_and_after_unlock_invariants",
+      "result": "passed",
+      "before_key_held": true,
+      "after_key_absent": true
+    },
+    {
+      "check": "proposal_precheck_cancel_concurrent_confirm_restore",
+      "result": "passed",
+      "actual_model_calls": 0,
+      "key_consumption_events": 1,
+      "concurrent_replayed": [
+        false,
+        true
+      ],
+      "old_confirm_error": "PROPOSAL_INVALIDATED"
+    },
+    {
+      "check": "different_request_concurrent_first_unlock",
+      "result": "passed",
+      "statuses": [
+        200,
+        409
+      ],
+      "error": "STALE_STATE",
+      "key_consumption_events": 1
+    },
+    {
+      "check": "identical_request_concurrent_first_unlock",
+      "result": "passed",
+      "statuses": [
+        200,
+        200
+      ],
+      "replayed": [
+        false,
+        true
+      ],
+      "key_consumption_events": 1
+    },
+    {
+      "check": "manual_change_invalidates_pending_key_proposal",
+      "result": "passed",
+      "error": "PROPOSAL_INVALIDATED",
+      "key_consumption_events": 0
+    }
+  ],
+  "actual_model_calls": 0,
+  "network_calls": 0,
+  "persisted_raw_sensitive_logs": false,
+  "source_sha256": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+  "frozen_archive_rules_sha256": "34a3ec19ec4ba8bf764e737b2bcbaf8a72601972190de6c772614abc532cf750",
+  "frozen_archive_index_sha256": "0dab9b9e213a3631a7630eb59cd0a27d8e44c74321891463ed7d71d599d285a6",
+  "limits": [
+    "No formal QA acceptance assigned.",
+    "No actual HTTP server/browser checks in this owner run.",
+    "Store replacement checks SQLite persistence; real process stop/restart left to QA/Delivery.",
+    "v1 independent data-dir rollback remains Main/Delivery work.",
+    "No actual AI Provider or paid calls; proposals use explicit backend TurnResult injection.",
+    "QA-owned baseline tests unchanged; known v1 expectations require v2 adaptation."
+  ]
+}

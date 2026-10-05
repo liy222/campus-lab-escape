@@ -1,0 +1,71 @@
+--- baseline_v1/backend/app/domain/rules.py
++++ v2/backend/app/domain/rules.py
+@@ -1,9 +1,10 @@
+-"""Trusted baseline level rules; secret answers stay on the server."""
++"""Trusted CH01 level rules; secret answers stay on the server."""
+ from copy import deepcopy
+ 
+ from .models import GameState, RuleError
+ 
+-SCHEMA_VERSION = LEVEL_VERSION = "1.0.0"
++SCHEMA_VERSION = "1.0.0"
++LEVEL_VERSION = "2.0.0"
+ CLUES = {
+     "r1_note_clue": {"clue_id": "r1_note_clue", "object_id": "r1_note", "title": "值班便签", "text": "三角记为3，圆记为8，方记为2。"},
+     "r1_cabinet_clue": {"clue_id": "r1_cabinet_clue", "object_id": "r1_cabinet", "title": "柜门顺序", "text": "柜门标签从左到右是：三角、圆、方。"},
+@@ -62,7 +63,7 @@
+             obj("r2_drawer", "抽屉", "container", "抽屉已打开。" if opened else "带数字锁的抽屉上有颜色标签。", not opened),
+             obj("r2_door", "出口控制室钥匙门", "door", "门已解锁。" if state.flags["r3_unlocked"] else "通向出口控制室的钥匙门。"),
+         ])
+-        if opened and "emergency_key" not in state.inventory:
++        if opened and "emergency_key" not in state.inventory and not state.flags["r3_unlocked"]:
+             objects.append(obj("emergency_key", "应急钥匙", "item", "抽屉内有一把应急钥匙。", item_id="emergency_key"))
+         return objects
+     if state.room_id == "R3":
+@@ -114,8 +115,8 @@
+         raise ValueError("Room requires unlock")
+     if state.room_id in {"R3", "EXIT"} and not flags["r3_unlocked"]:
+         raise ValueError("Room requires second unlock")
+-    if flags["r3_unlocked"] and (not flags["power_on"] or "emergency_key" not in state.inventory):
+-        raise ValueError("Baseline door requires power and retained key")
++    if flags["r3_unlocked"] and (not flags["power_on"] or "r2_drawer" not in state.opened_containers or "emergency_key" in state.inventory):
++        raise ValueError("Unlocked door requires power, open drawer and consumed key")
+     if flags["r2_unlocked"] and "access_card" not in state.inventory:
+         raise ValueError("Baseline door requires retained card")
+     if (flags["power_on"] or "fuse" in state.inventory or any(clue.startswith("r2_") for clue in state.discovered_clue_ids)) and not flags["r2_unlocked"]:
+@@ -153,7 +154,11 @@
+                 new_clues.append(clue_id)
+             container_item = {"r1_cabinet": "access_card", "r2_drawer": "emergency_key"}.get(object_id)
+             if container_item and object_id in state.opened_containers:
+-                observed += " 容器已打开。" + ("道具已领取。" if container_item in state.inventory else "内有" + ITEMS[container_item]["name"] + "。")
++                if container_item == "emergency_key" and state.flags["r3_unlocked"]:
++                    contents = "应急钥匙已使用。"
++                else:
++                    contents = "道具已领取。" if container_item in state.inventory else "内有" + ITEMS[container_item]["name"] + "。"
++                observed += " 容器已打开。" + contents
+         elif observed is None:
+             observed = {
+                 "r1_door": "刷卡门已解锁" if state.flags["r2_unlocked"] else "需要门卡解锁；刷卡门",
+@@ -168,7 +173,7 @@
+         message = "已读取背包。"
+     elif tool == "take":
+         item_id = arguments["item_id"]
+-        if item_id in state.inventory or (item_id == "fuse" and state.flags["power_on"]):
++        if item_id in state.inventory or (item_id == "fuse" and state.flags["power_on"]) or (item_id == "emergency_key" and state.flags["r3_unlocked"]):
+             raise RuleError("ALREADY_TAKEN", "该道具已领取。")
+         if ITEM_OBJECTS.get(item_id) not in objects:
+             raise RuleError("NOT_VISIBLE", "当前无法拾取该道具。")
+@@ -185,10 +190,12 @@
+             if item_id not in state.inventory or (target_id == "r2_door" and not state.flags["power_on"]):
+                 raise RuleError("PRECONDITION_FAILED", "需要先取得相应道具并满足设备条件。")
+             state.flags[flag] = True
+-            if item_id == "fuse":
++            if item_id in {"fuse", "emergency_key"}:
+                 state.inventory.remove(item_id)
+                 consumed.append(item_id)
+         message = {"r1_door": "设备间刷卡门已解锁。", "r2_powerbox": "电源已恢复。", "r2_door": "出口控制室门已解锁。"}[target_id]
++        if "emergency_key" in consumed:
++            message += "应急钥匙已消耗。"
+     elif tool == "submit_code":
+         target_id = arguments["target_id"]
+         if target_id not in objects:

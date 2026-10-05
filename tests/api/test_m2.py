@@ -68,7 +68,7 @@ class M2Acceptance(HTTPFixture):
         self.assertEqual(self.state(), before)
         return body
 
-    def test_A02_exact_18_step_route_and_baseline_key(self):
+    def test_A02_exact_18_step_route_and_CH01_consumed_key(self):
         results = self.route()
         for step, result in enumerate(results, 1):
             with self.subTest(step=step):
@@ -77,12 +77,12 @@ class M2Acceptance(HTTPFixture):
                 self.assertEqual(result['receipt']['revision_after'], step)
                 self.assertTrue(result['receipt']['changed'])
                 self.assertIsNone(result['proposal'])
-                self.assertEqual(result['receipt']['consumed_item_ids'], ['fuse'] if step == 8 else [])
+                self.assertEqual(result['receipt']['consumed_item_ids'], ['fuse'] if step == 8 else ['emergency_key'] if step == 13 else [])
         won = results[-1]['visible_state']
         self.assertEqual(won['room']['room_id'], 'EXIT')
         self.assertEqual(won['status'], 'won')
         self.assertEqual(won['progress'], {'power_on': True, 'check_done': True})
-        self.assertEqual([i['item_id'] for i in won['inventory']], ['access_card', 'emergency_key'])
+        self.assertEqual([i['item_id'] for i in won['inventory']], ['access_card'])
         self.assertEqual(won['objects'], [])
         self.assertEqual(won['exits'], [])
         self.assertEqual([c['clue_id'] for c in won['clues']], ['r1_note_clue', 'r1_cabinet_clue', 'r2_monitor_clue', 'r2_drawer_clue', 'r3_checklist_clue', 'r3_panel_clue'])
@@ -143,7 +143,7 @@ class M2Acceptance(HTTPFixture):
         noop = self.action(*ROUTE[12])
         self.assertFalse(noop['receipt']['changed'])
         self.assertEqual(noop['receipt']['consumed_item_ids'], [])
-        self.assertIn('emergency_key', [i['item_id'] for i in noop['visible_state']['inventory']])
+        self.assertNotIn('emergency_key', [i['item_id'] for i in noop['visible_state']['inventory']])
         self.action('move', {'destination_id': 'R3'})
         self.action('move', {'destination_id': 'R2'})
         self.action('move', {'destination_id': 'R3'})
@@ -288,7 +288,7 @@ class M2Acceptance(HTTPFixture):
             ('other-owner', lambda s: s.update(session_id='another-session'), 'INVALID_SNAPSHOT'),
             ('bad-checksum', lambda s: s.update(checksum='0' * 64), 'INVALID_SNAPSHOT'),
             ('schema-mismatch', lambda s: s.update(schema_version='9.0.0'), 'SNAPSHOT_VERSION_MISMATCH'),
-            ('level-mismatch', lambda s: s.update(level_version='2.0.0'), 'SNAPSHOT_VERSION_MISMATCH'),
+            ('level-mismatch', lambda s: s.update(level_version='1.0.0'), 'SNAPSHOT_VERSION_MISMATCH'),
             ('version-type', lambda s: s.update(level_version=1), 'INVALID_SNAPSHOT'),
             ('timestamp', lambda s: s.update(saved_at='not-a-date'), 'INVALID_SNAPSHOT'),
             ('unknown-top-field', lambda s: s.update(extra=True), 'INVALID_SNAPSHOT'),

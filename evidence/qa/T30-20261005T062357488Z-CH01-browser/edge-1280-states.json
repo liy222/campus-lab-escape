@@ -1,0 +1,4363 @@
+[
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "94be237e-e170-4dd6-a720-27bbab2247c1",
+      "event_id": "42617399b7144639a6269ddbb3b86172",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_note"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 0,
+      "revision_after": 1,
+      "changed": true,
+      "message": "已查看。",
+      "observation": "三角记为3，圆记为8，方记为2。",
+      "new_clue_ids": [
+        "r1_note_clue"
+      ],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 1,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R1",
+        "name": "值班室",
+        "description": "夜间断电了，先寻找通往设备间的门卡。"
+      },
+      "objects": [
+        {
+          "object_id": "r1_note",
+          "name": "值班便签",
+          "kind": "clue",
+          "description": "桌上有一张值班便签。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_note"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r1_cabinet",
+          "name": "值班柜",
+          "kind": "container",
+          "description": "带数字锁的值班柜，门上贴着形状标签。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_cabinet"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入密码",
+              "arguments": {
+                "target_id": "r1_cabinet"
+              },
+              "requires_code": true
+            }
+          ]
+        },
+        {
+          "object_id": "r1_door",
+          "name": "设备间刷卡门",
+          "kind": "door",
+          "description": "通向设备间的刷卡门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R2",
+          "name": "设备间",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "save": null
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "b6882184-c671-4b32-a333-6cf3d3fbbd70",
+      "event_id": "c77539da6d3844a2ac643db0563a92f8",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_cabinet"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 1,
+      "revision_after": 2,
+      "changed": true,
+      "message": "已查看。",
+      "observation": "柜门标签从左到右是：三角、圆、方。",
+      "new_clue_ids": [
+        "r1_cabinet_clue"
+      ],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 2,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R1",
+        "name": "值班室",
+        "description": "夜间断电了，先寻找通往设备间的门卡。"
+      },
+      "objects": [
+        {
+          "object_id": "r1_note",
+          "name": "值班便签",
+          "kind": "clue",
+          "description": "桌上有一张值班便签。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_note"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r1_cabinet",
+          "name": "值班柜",
+          "kind": "container",
+          "description": "带数字锁的值班柜，门上贴着形状标签。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_cabinet"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入密码",
+              "arguments": {
+                "target_id": "r1_cabinet"
+              },
+              "requires_code": true
+            }
+          ]
+        },
+        {
+          "object_id": "r1_door",
+          "name": "设备间刷卡门",
+          "kind": "door",
+          "description": "通向设备间的刷卡门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R2",
+          "name": "设备间",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "save": null
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "e8aeabb4-de22-46b0-9711-b624c86c7267",
+      "event_id": "10cb4d8b3e1f40be90b059b085693594",
+      "tool": "submit_code",
+      "arguments": {
+        "target_id": "r1_cabinet",
+        "code": "382"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 2,
+      "revision_after": 3,
+      "changed": true,
+      "message": "值班柜已打开。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 3,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R1",
+        "name": "值班室",
+        "description": "夜间断电了，先寻找通往设备间的门卡。"
+      },
+      "objects": [
+        {
+          "object_id": "r1_note",
+          "name": "值班便签",
+          "kind": "clue",
+          "description": "桌上有一张值班便签。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_note"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r1_cabinet",
+          "name": "值班柜",
+          "kind": "container",
+          "description": "值班柜已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_cabinet"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r1_door",
+          "name": "设备间刷卡门",
+          "kind": "door",
+          "description": "通向设备间的刷卡门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_door"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "access_card",
+          "name": "门卡",
+          "kind": "item",
+          "description": "柜内有一张门卡。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "access_card"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "take",
+              "label": "拾取",
+              "arguments": {
+                "item_id": "access_card"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R2",
+          "name": "设备间",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "save": null
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "d76e99f1-9308-4f7e-b7fd-0ea0ef93532a",
+      "event_id": "7c1e3fd25b644a1aa8403d3059ec3206",
+      "tool": "take",
+      "arguments": {
+        "item_id": "access_card"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 3,
+      "revision_after": 4,
+      "changed": true,
+      "message": "已拾取门卡。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 4,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R1",
+        "name": "值班室",
+        "description": "夜间断电了，先寻找通往设备间的门卡。"
+      },
+      "objects": [
+        {
+          "object_id": "r1_note",
+          "name": "值班便签",
+          "kind": "clue",
+          "description": "桌上有一张值班便签。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_note"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r1_cabinet",
+          "name": "值班柜",
+          "kind": "container",
+          "description": "值班柜已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_cabinet"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r1_door",
+          "name": "设备间刷卡门",
+          "kind": "door",
+          "description": "通向设备间的刷卡门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": [
+            "r1_door"
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R2",
+          "name": "设备间",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "save": null
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "3fd1e508-f33b-4242-9bf5-5e35cdfe6314",
+      "event_id": "9dace902ac054e5eafe0a2d5aa198ed8",
+      "tool": "use_item",
+      "arguments": {
+        "item_id": "access_card",
+        "target_id": "r1_door"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 4,
+      "revision_after": 5,
+      "changed": true,
+      "message": "设备间刷卡门已解锁。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 5,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R1",
+        "name": "值班室",
+        "description": "夜间断电了，先寻找通往设备间的门卡。"
+      },
+      "objects": [
+        {
+          "object_id": "r1_note",
+          "name": "值班便签",
+          "kind": "clue",
+          "description": "桌上有一张值班便签。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_note"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r1_cabinet",
+          "name": "值班柜",
+          "kind": "container",
+          "description": "值班柜已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_cabinet"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r1_door",
+          "name": "设备间刷卡门",
+          "kind": "door",
+          "description": "刷卡门已解锁。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r1_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R2",
+          "name": "设备间",
+          "unlocked": true
+        }
+      ],
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "save": null
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "5abc946b-e690-49ed-8642-5b717e6e0bb7",
+      "event_id": "5dc0b0afea9d467ca37419b62466bf8a",
+      "tool": "move",
+      "arguments": {
+        "destination_id": "R2"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 5,
+      "revision_after": 6,
+      "changed": true,
+      "message": "已进入设备间。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 6,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_fuse",
+          "name": "备用保险丝",
+          "kind": "item",
+          "description": "桌上放着备用保险丝。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_fuse"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "take",
+              "label": "拾取",
+              "arguments": {
+                "item_id": "fuse"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源箱有空置保险丝槽。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "带数字锁的抽屉上有颜色标签。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入密码",
+              "arguments": {
+                "target_id": "r2_drawer"
+              },
+              "requires_code": true
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "通向出口控制室的钥匙门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "save": null
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "11a658a3-0331-4dc6-8bd5-47c5e886914c",
+      "event_id": "59b2252d41b24ce9a4a332cb33a035ca",
+      "tool": "take",
+      "arguments": {
+        "item_id": "fuse"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 6,
+      "revision_after": 7,
+      "changed": true,
+      "message": "已拾取保险丝。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 7,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源箱有空置保险丝槽。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "带数字锁的抽屉上有颜色标签。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入密码",
+              "arguments": {
+                "target_id": "r2_drawer"
+              },
+              "requires_code": true
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "通向出口控制室的钥匙门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        },
+        {
+          "item_id": "fuse",
+          "name": "保险丝",
+          "description": "可装入电源箱的保险丝",
+          "usable_targets": [
+            "r2_powerbox"
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "save": null
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "664330e2-dcb4-4ef4-a6bd-07910b4d96d0",
+      "event_id": "cdca09a021914b5c9133e54ec978da15",
+      "tool": "use_item",
+      "arguments": {
+        "item_id": "fuse",
+        "target_id": "r2_powerbox"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 7,
+      "revision_after": 8,
+      "changed": true,
+      "message": "电源已恢复。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": [
+        "fuse"
+      ]
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 8,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "带数字锁的抽屉上有颜色标签。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入密码",
+              "arguments": {
+                "target_id": "r2_drawer"
+              },
+              "requires_code": true
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "通向出口控制室的钥匙门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": null
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "4e6f5d50-8005-46a1-9e13-a2a9cec387e7",
+      "event_id": "8bb1a74deb1446d2ba4cd06e8dec1d50",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r2_monitor"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 8,
+      "revision_after": 9,
+      "changed": true,
+      "message": "已查看。",
+      "observation": "青色7、橙色2、紫色4。",
+      "new_clue_ids": [
+        "r2_monitor_clue"
+      ],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 9,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "带数字锁的抽屉上有颜色标签。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入密码",
+              "arguments": {
+                "target_id": "r2_drawer"
+              },
+              "requires_code": true
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "通向出口控制室的钥匙门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": null
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "1c1c92f2-7f3c-4742-a2f2-e957f4810174",
+      "event_id": "54ace39005974c438727d26cc8d5bd50",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r2_drawer"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 9,
+      "revision_after": 10,
+      "changed": true,
+      "message": "已查看。",
+      "observation": "抽屉标签从左到右是：青、橙、紫。",
+      "new_clue_ids": [
+        "r2_drawer_clue"
+      ],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 10,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "带数字锁的抽屉上有颜色标签。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入密码",
+              "arguments": {
+                "target_id": "r2_drawer"
+              },
+              "requires_code": true
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "通向出口控制室的钥匙门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": null
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "5a3c1188-9e63-46c8-add7-76aa23e80134",
+      "event_id": "6ab2cd5d7b4b44abbef88a314cfe9c8e",
+      "tool": "submit_code",
+      "arguments": {
+        "target_id": "r2_drawer",
+        "code": "724"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 10,
+      "revision_after": 11,
+      "changed": true,
+      "message": "抽屉已打开。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 11,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "抽屉已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "通向出口控制室的钥匙门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "emergency_key",
+          "name": "应急钥匙",
+          "kind": "item",
+          "description": "抽屉内有一把应急钥匙。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "emergency_key"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "take",
+              "label": "拾取",
+              "arguments": {
+                "item_id": "emergency_key"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": null
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "ab0ceb54-0abf-405f-abfa-47196c2e3dc5",
+      "event_id": "84953a54751d4f19aa84b672f39f3e9c",
+      "tool": "take",
+      "arguments": {
+        "item_id": "emergency_key"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 11,
+      "revision_after": 12,
+      "changed": true,
+      "message": "已拾取应急钥匙。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 12,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "抽屉已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "通向出口控制室的钥匙门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        },
+        {
+          "item_id": "emergency_key",
+          "name": "应急钥匙",
+          "description": "出口控制室的应急钥匙",
+          "usable_targets": [
+            "r2_door"
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": null
+    }
+  },
+  {
+    "stage": "before-unlock-save",
+    "request_id": "5a370f5e-3661-4e40-917c-ab8939a17855",
+    "replayed": false,
+    "message": "已保存当前进度。",
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 12,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "抽屉已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "通向出口控制室的钥匙门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        },
+        {
+          "item_id": "emergency_key",
+          "name": "应急钥匙",
+          "description": "出口控制室的应急钥匙",
+          "usable_targets": [
+            "r2_door"
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:06.651581Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 12
+      }
+    }
+  },
+  {
+    "stage": "proposed",
+    "answer": "建议（尚未执行，需要玩家确认）：可以使用已持有的道具；请确认后执行。",
+    "clue_refs": [],
+    "status": "completed",
+    "stop_reason": null,
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 1,
+      "read_tool_calls": 0
+    },
+    "turn_id": "2d867a00f88e4d169f8397e83ed8859b",
+    "proposal": {
+      "proposal_id": "8fcabfb3f2d54313a194c8803cd477de",
+      "tool": "use_item",
+      "arguments": {
+        "item_id": "emergency_key",
+        "target_id": "r2_door"
+      },
+      "revision": 12,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "expires_at": "2026-10-05T06:26:06.713297Z",
+      "status": "pending",
+      "clue_refs": [],
+      "summary": "建议（尚未执行，需要玩家确认）：可以使用已持有的道具；请确认后执行。"
+    },
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 12,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "抽屉已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "通向出口控制室的钥匙门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        },
+        {
+          "item_id": "emergency_key",
+          "name": "应急钥匙",
+          "description": "出口控制室的应急钥匙",
+          "usable_targets": [
+            "r2_door"
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:06.651581Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 12
+      }
+    }
+  },
+  {
+    "stage": "cancelled",
+    "proposal": {
+      "arguments": {
+        "item_id": "emergency_key",
+        "target_id": "r2_door"
+      },
+      "clue_refs": [],
+      "expires_at": "2026-10-05T06:26:06.713297Z",
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "proposal_id": "8fcabfb3f2d54313a194c8803cd477de",
+      "revision": 12,
+      "status": "cancelled",
+      "summary": "建议（尚未执行，需要玩家确认）：可以使用已持有的道具；请确认后执行。",
+      "tool": "use_item"
+    },
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 12,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "抽屉已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "通向出口控制室的钥匙门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        },
+        {
+          "item_id": "emergency_key",
+          "name": "应急钥匙",
+          "description": "出口控制室的应急钥匙",
+          "usable_targets": [
+            "r2_door"
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:06.651581Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 12
+      }
+    }
+  },
+  {
+    "stage": "fresh-proposed",
+    "answer": "建议（尚未执行，需要玩家确认）：可以使用已持有的道具；请确认后执行。",
+    "clue_refs": [],
+    "status": "completed",
+    "stop_reason": null,
+    "usage": {
+      "provider": "mock",
+      "model": "deterministic-visible-v1",
+      "input_tokens": null,
+      "output_tokens": null,
+      "model_calls": 1,
+      "read_tool_calls": 0
+    },
+    "turn_id": "c52dc9f51dc44d0f89265b87aa8bf1e8",
+    "proposal": {
+      "proposal_id": "ff340fb10c074f1caec258435580cbbb",
+      "tool": "use_item",
+      "arguments": {
+        "item_id": "emergency_key",
+        "target_id": "r2_door"
+      },
+      "revision": 12,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "expires_at": "2026-10-05T06:26:07.077522Z",
+      "status": "pending",
+      "clue_refs": [],
+      "summary": "建议（尚未执行，需要玩家确认）：可以使用已持有的道具；请确认后执行。"
+    },
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 12,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "抽屉已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "通向出口控制室的钥匙门。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        },
+        {
+          "item_id": "emergency_key",
+          "name": "应急钥匙",
+          "description": "出口控制室的应急钥匙",
+          "usable_targets": [
+            "r2_door"
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:06.651581Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 12
+      }
+    }
+  },
+  {
+    "stage": "original-confirm",
+    "receipt": {
+      "request_id": "ff340fb10c074f1caec258435580cbbb",
+      "event_id": "5c36c8c695e143adabce8d6a51dd6726",
+      "tool": "use_item",
+      "arguments": {
+        "item_id": "emergency_key",
+        "target_id": "r2_door"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 12,
+      "revision_after": 13,
+      "changed": true,
+      "message": "出口控制室门已解锁。应急钥匙已消耗。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": [
+        "emergency_key"
+      ]
+    },
+    "replayed": false,
+    "proposal": {
+      "arguments": {
+        "item_id": "emergency_key",
+        "target_id": "r2_door"
+      },
+      "clue_refs": [],
+      "expires_at": "2026-10-05T06:26:07.077522Z",
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "proposal_id": "ff340fb10c074f1caec258435580cbbb",
+      "revision": 12,
+      "status": "committed",
+      "summary": "建议（尚未执行，需要玩家确认）：可以使用已持有的道具；请确认后执行。",
+      "tool": "use_item"
+    },
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 13,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "抽屉已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "门已解锁。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": true
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:06.651581Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 12
+      }
+    }
+  },
+  {
+    "stage": "actual-HTTP-replay-confirm",
+    "receipt": {
+      "arguments": {
+        "item_id": "emergency_key",
+        "target_id": "r2_door"
+      },
+      "changed": true,
+      "consumed_item_ids": [
+        "emergency_key"
+      ],
+      "event_id": "5c36c8c695e143adabce8d6a51dd6726",
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "message": "出口控制室门已解锁。应急钥匙已消耗。",
+      "new_clue_ids": [],
+      "observation": null,
+      "request_id": "ff340fb10c074f1caec258435580cbbb",
+      "revision_after": 13,
+      "revision_before": 12,
+      "tool": "use_item"
+    },
+    "replayed": true,
+    "proposal": {
+      "arguments": {
+        "item_id": "emergency_key",
+        "target_id": "r2_door"
+      },
+      "clue_refs": [],
+      "expires_at": "2026-10-05T06:26:07.077522Z",
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "proposal_id": "ff340fb10c074f1caec258435580cbbb",
+      "revision": 12,
+      "status": "committed",
+      "summary": "建议（尚未执行，需要玩家确认）：可以使用已持有的道具；请确认后执行。",
+      "tool": "use_item"
+    },
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 13,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "抽屉已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "门已解锁。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": true
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:06.651581Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 12
+      }
+    }
+  },
+  {
+    "stage": "after-unlock-save",
+    "request_id": "0db9c638-5b4c-4c6a-b01c-fc7283f0fef2",
+    "replayed": false,
+    "message": "已保存当前进度。",
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 13,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "抽屉已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "门已解锁。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": true
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:07.282478Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 13
+      }
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "eedecadf-9275-47a4-9bf5-2bca7d4d63b3",
+      "event_id": "4f325f79c10741cfbdb5bb5389f53328",
+      "tool": "move",
+      "arguments": {
+        "destination_id": "R3"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 13,
+      "revision_after": 14,
+      "changed": true,
+      "message": "已进入出口控制室。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 14,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R3",
+        "name": "出口控制室",
+        "description": "完成出口检查后即可离开实验室。"
+      },
+      "objects": [
+        {
+          "object_id": "r3_checklist",
+          "name": "出口检查单",
+          "kind": "clue",
+          "description": "出口旁贴着一张检查单。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r3_checklist"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r3_panel",
+          "name": "检查面板",
+          "kind": "device",
+          "description": "检查面板上有设备标签和数字键。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r3_panel"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入密码",
+              "arguments": {
+                "target_id": "r3_panel"
+              },
+              "requires_code": true
+            }
+          ]
+        },
+        {
+          "object_id": "exit_door",
+          "name": "实验室出口",
+          "kind": "door",
+          "description": "实验室出口等待检查完成。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "exit_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R2",
+          "name": "设备间",
+          "unlocked": true
+        },
+        {
+          "destination_id": "EXIT",
+          "name": "实验室出口",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:07.282478Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 13
+      }
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "08ec3f76-0fde-495c-9a52-dff180880955",
+      "event_id": "ca5dcb4888e042fea40e3927e3477bb9",
+      "tool": "move",
+      "arguments": {
+        "destination_id": "R2"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 14,
+      "revision_after": 15,
+      "changed": true,
+      "message": "已进入设备间。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 15,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "抽屉已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "门已解锁。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": true
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:07.282478Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 13
+      }
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "83838525-ac9e-4184-b824-82d15aae5ca1",
+      "event_id": "bd202bb23c674a238bf46e66d5476093",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r2_drawer"
+      },
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 15,
+      "revision_after": 15,
+      "changed": false,
+      "message": "已查看。",
+      "observation": "抽屉标签从左到右是：青、橙、紫。 容器已打开。应急钥匙已使用。",
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 15,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "抽屉已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "门已解锁。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": true
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:07.282478Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 13
+      }
+    }
+  },
+  {
+    "stage": "consumed-bag",
+    "receipt": {
+      "request_id": "94f8a62a-2c36-4f6d-a1e3-fe3e3db46be1",
+      "event_id": "95e1b84b78724f678d24b39b9fbcd7aa",
+      "tool": "get_inventory",
+      "arguments": {},
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "revision_before": 15,
+      "revision_after": 15,
+      "changed": false,
+      "message": "已读取背包。",
+      "observation": "背包：门卡",
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 15,
+      "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "抽屉已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "门已解锁。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": true
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:07.282478Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 13
+      }
+    }
+  },
+  {
+    "stage": "after-unlock-restored",
+    "request_id": "92ac137c-8ec8-4c29-b6d5-d8b21d3d0747",
+    "replayed": false,
+    "message": "已恢复存档。",
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 16,
+      "generation": "f4688612-daaa-4e21-a34c-7d258d79b416",
+      "status": "playing",
+      "room": {
+        "room_id": "R2",
+        "name": "设备间",
+        "description": "设备间尚待恢复供电，寻找通往出口控制室的办法。"
+      },
+      "objects": [
+        {
+          "object_id": "r2_powerbox",
+          "name": "电源箱",
+          "kind": "device",
+          "description": "电源已恢复。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_powerbox"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_monitor",
+          "name": "屏幕",
+          "kind": "clue",
+          "description": "电源箱旁有一块屏幕。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_monitor"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_drawer",
+          "name": "抽屉",
+          "kind": "container",
+          "description": "抽屉已打开。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_drawer"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r2_door",
+          "name": "出口控制室钥匙门",
+          "kind": "door",
+          "description": "门已解锁。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r2_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R1",
+          "name": "值班室",
+          "unlocked": true
+        },
+        {
+          "destination_id": "R3",
+          "name": "出口控制室",
+          "unlocked": true
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:07.282478Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 13
+      }
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "02df0a3b-1cd5-4ca9-b6eb-47c8fdc71d22",
+      "event_id": "e2cbef50248f4636adbb562ad455225d",
+      "tool": "move",
+      "arguments": {
+        "destination_id": "R3"
+      },
+      "generation": "f4688612-daaa-4e21-a34c-7d258d79b416",
+      "revision_before": 16,
+      "revision_after": 17,
+      "changed": true,
+      "message": "已进入出口控制室。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 17,
+      "generation": "f4688612-daaa-4e21-a34c-7d258d79b416",
+      "status": "playing",
+      "room": {
+        "room_id": "R3",
+        "name": "出口控制室",
+        "description": "完成出口检查后即可离开实验室。"
+      },
+      "objects": [
+        {
+          "object_id": "r3_checklist",
+          "name": "出口检查单",
+          "kind": "clue",
+          "description": "出口旁贴着一张检查单。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r3_checklist"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r3_panel",
+          "name": "检查面板",
+          "kind": "device",
+          "description": "检查面板上有设备标签和数字键。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r3_panel"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入密码",
+              "arguments": {
+                "target_id": "r3_panel"
+              },
+              "requires_code": true
+            }
+          ]
+        },
+        {
+          "object_id": "exit_door",
+          "name": "实验室出口",
+          "kind": "door",
+          "description": "实验室出口等待检查完成。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "exit_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R2",
+          "name": "设备间",
+          "unlocked": true
+        },
+        {
+          "destination_id": "EXIT",
+          "name": "实验室出口",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:07.282478Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 13
+      }
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "fab018a5-7fd9-435f-a03b-130a98dbeca6",
+      "event_id": "086ef02f091944f1a33037656d341dad",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r3_checklist"
+      },
+      "generation": "f4688612-daaa-4e21-a34c-7d258d79b416",
+      "revision_before": 17,
+      "revision_after": 18,
+      "changed": true,
+      "message": "已查看。",
+      "observation": "依次确认：冷却、通风、照明。",
+      "new_clue_ids": [
+        "r3_checklist_clue"
+      ],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 18,
+      "generation": "f4688612-daaa-4e21-a34c-7d258d79b416",
+      "status": "playing",
+      "room": {
+        "room_id": "R3",
+        "name": "出口控制室",
+        "description": "完成出口检查后即可离开实验室。"
+      },
+      "objects": [
+        {
+          "object_id": "r3_checklist",
+          "name": "出口检查单",
+          "kind": "clue",
+          "description": "出口旁贴着一张检查单。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r3_checklist"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r3_panel",
+          "name": "检查面板",
+          "kind": "device",
+          "description": "检查面板上有设备标签和数字键。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r3_panel"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入密码",
+              "arguments": {
+                "target_id": "r3_panel"
+              },
+              "requires_code": true
+            }
+          ]
+        },
+        {
+          "object_id": "exit_door",
+          "name": "实验室出口",
+          "kind": "door",
+          "description": "实验室出口等待检查完成。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "exit_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        },
+        {
+          "clue_id": "r3_checklist_clue",
+          "object_id": "r3_checklist",
+          "title": "出口检查顺序",
+          "text": "依次确认：冷却、通风、照明。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R2",
+          "name": "设备间",
+          "unlocked": true
+        },
+        {
+          "destination_id": "EXIT",
+          "name": "实验室出口",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:07.282478Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 13
+      }
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "78df6430-a8b3-4280-bd13-5f7a880ad3fc",
+      "event_id": "3457a3d9ce134630bdf3cbd4869f01c4",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r3_panel"
+      },
+      "generation": "f4688612-daaa-4e21-a34c-7d258d79b416",
+      "revision_before": 18,
+      "revision_after": 19,
+      "changed": true,
+      "message": "已查看。",
+      "observation": "冷却对应2，通风对应3，照明对应1。",
+      "new_clue_ids": [
+        "r3_panel_clue"
+      ],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 19,
+      "generation": "f4688612-daaa-4e21-a34c-7d258d79b416",
+      "status": "playing",
+      "room": {
+        "room_id": "R3",
+        "name": "出口控制室",
+        "description": "完成出口检查后即可离开实验室。"
+      },
+      "objects": [
+        {
+          "object_id": "r3_checklist",
+          "name": "出口检查单",
+          "kind": "clue",
+          "description": "出口旁贴着一张检查单。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r3_checklist"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r3_panel",
+          "name": "检查面板",
+          "kind": "device",
+          "description": "检查面板上有设备标签和数字键。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r3_panel"
+              },
+              "requires_code": false
+            },
+            {
+              "tool": "submit_code",
+              "label": "输入密码",
+              "arguments": {
+                "target_id": "r3_panel"
+              },
+              "requires_code": true
+            }
+          ]
+        },
+        {
+          "object_id": "exit_door",
+          "name": "实验室出口",
+          "kind": "door",
+          "description": "实验室出口等待检查完成。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "exit_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        },
+        {
+          "clue_id": "r3_checklist_clue",
+          "object_id": "r3_checklist",
+          "title": "出口检查顺序",
+          "text": "依次确认：冷却、通风、照明。"
+        },
+        {
+          "clue_id": "r3_panel_clue",
+          "object_id": "r3_panel",
+          "title": "设备标签",
+          "text": "冷却对应2，通风对应3，照明对应1。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R2",
+          "name": "设备间",
+          "unlocked": true
+        },
+        {
+          "destination_id": "EXIT",
+          "name": "实验室出口",
+          "unlocked": false
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:07.282478Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 13
+      }
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "147f13c5-5608-4805-a58f-ed5e01a2d269",
+      "event_id": "3e7ec8ab22dd43b3a5efdffb568d6d29",
+      "tool": "submit_code",
+      "arguments": {
+        "target_id": "r3_panel",
+        "code": "231"
+      },
+      "generation": "f4688612-daaa-4e21-a34c-7d258d79b416",
+      "revision_before": 19,
+      "revision_after": 20,
+      "changed": true,
+      "message": "出口检查已完成。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 20,
+      "generation": "f4688612-daaa-4e21-a34c-7d258d79b416",
+      "status": "playing",
+      "room": {
+        "room_id": "R3",
+        "name": "出口控制室",
+        "description": "完成出口检查后即可离开实验室。"
+      },
+      "objects": [
+        {
+          "object_id": "r3_checklist",
+          "name": "出口检查单",
+          "kind": "clue",
+          "description": "出口旁贴着一张检查单。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r3_checklist"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "r3_panel",
+          "name": "检查面板",
+          "kind": "device",
+          "description": "检查面板上有设备标签和数字键。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "r3_panel"
+              },
+              "requires_code": false
+            }
+          ]
+        },
+        {
+          "object_id": "exit_door",
+          "name": "实验室出口",
+          "kind": "door",
+          "description": "出口检查已完成。",
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "exit_door"
+              },
+              "requires_code": false
+            }
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        },
+        {
+          "clue_id": "r3_checklist_clue",
+          "object_id": "r3_checklist",
+          "title": "出口检查顺序",
+          "text": "依次确认：冷却、通风、照明。"
+        },
+        {
+          "clue_id": "r3_panel_clue",
+          "object_id": "r3_panel",
+          "title": "设备标签",
+          "text": "冷却对应2，通风对应3，照明对应1。"
+        }
+      ],
+      "exits": [
+        {
+          "destination_id": "R2",
+          "name": "设备间",
+          "unlocked": true
+        },
+        {
+          "destination_id": "EXIT",
+          "name": "实验室出口",
+          "unlocked": true
+        }
+      ],
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:07.282478Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 13
+      }
+    }
+  },
+  {
+    "stage": "manual-action",
+    "receipt": {
+      "request_id": "c639f36d-7a1f-418e-807b-592b35e230b7",
+      "event_id": "f07577f294db46a589e06c625df58b42",
+      "tool": "move",
+      "arguments": {
+        "destination_id": "EXIT"
+      },
+      "generation": "f4688612-daaa-4e21-a34c-7d258d79b416",
+      "revision_before": 20,
+      "revision_after": 21,
+      "changed": true,
+      "message": "已进入实验室出口。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replayed": false,
+    "proposal": null,
+    "visible_state": {
+      "schema_version": "1.0.0",
+      "level_version": "2.0.0",
+      "session_id": "ed3bb70158364792b4adea9b20bef185",
+      "revision": 21,
+      "generation": "f4688612-daaa-4e21-a34c-7d258d79b416",
+      "status": "won",
+      "room": {
+        "room_id": "EXIT",
+        "name": "实验室出口",
+        "description": "已离开实验室。"
+      },
+      "objects": [],
+      "inventory": [
+        {
+          "item_id": "access_card",
+          "name": "门卡",
+          "description": "设备间门卡",
+          "usable_targets": []
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "r1_note_clue",
+          "object_id": "r1_note",
+          "title": "值班便签",
+          "text": "三角记为3，圆记为8，方记为2。"
+        },
+        {
+          "clue_id": "r1_cabinet_clue",
+          "object_id": "r1_cabinet",
+          "title": "柜门顺序",
+          "text": "柜门标签从左到右是：三角、圆、方。"
+        },
+        {
+          "clue_id": "r2_monitor_clue",
+          "object_id": "r2_monitor",
+          "title": "屏幕读数",
+          "text": "青色7、橙色2、紫色4。"
+        },
+        {
+          "clue_id": "r2_drawer_clue",
+          "object_id": "r2_drawer",
+          "title": "抽屉顺序",
+          "text": "抽屉标签从左到右是：青、橙、紫。"
+        },
+        {
+          "clue_id": "r3_checklist_clue",
+          "object_id": "r3_checklist",
+          "title": "出口检查顺序",
+          "text": "依次确认：冷却、通风、照明。"
+        },
+        {
+          "clue_id": "r3_panel_clue",
+          "object_id": "r3_panel",
+          "title": "设备标签",
+          "text": "冷却对应2，通风对应3，照明对应1。"
+        }
+      ],
+      "exits": [],
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      },
+      "save": {
+        "level_version": "2.0.0",
+        "saved_at": "2026-10-05T06:24:07.282478Z",
+        "schema_version": "1.0.0",
+        "source_generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+        "source_revision": 13
+      }
+    }
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "task": "T30",
+  "accepted_by": "Main",
+  "scope": "CH01 and RT01-05 deterministic/mock local engineering only",
+  "evidence_ids_actual_hashes_rechecked": 68,
+  "rules_raw_sha256": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+  "report_raw_sha256": "660fcbc6b885aaa5beaef4af4e2563d71988d96e87cc95251a60b0c6ac2f7073",
+  "qa_api_tests": 54,
+  "pytest_collected": 73,
+  "pytest_subtests": 203,
+  "pytest_reused_m3_methods": 19,
+  "browser_routes": 6,
+  "screenshots": 30,
+  "human_signoff": null,
+  "teacher_approval": null,
+  "limitations": [
+    "RT01 scripted mock structure-boundary checks only",
+    "RT06 external Evaluator QA scope",
+    "One dependency deprecation warning",
+    "Ignored archive Python caches may have been generated; no original101 source modifications or QA cache deletion"
+  ],
+  "source_policy": "Exact current runtime raw bound to committed Git blobs; only explicit CRLF-to-LF canonical fallback, old evidence immutable."
+}

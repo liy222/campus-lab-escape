@@ -1,0 +1,80 @@
+建议与执行记录
+committed
+
+出口控制室门已解锁。应急钥匙已消耗。
+
+进度 13 · use_item
+{
+  "event_id": "5c36c8c695e143adabce8d6a51dd6726",
+  "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+  "revision": 13,
+  "tool": "use_item",
+  "arguments": {
+    "item_id": "emergency_key",
+    "target_id": "r2_door"
+  },
+  "receipt": {
+    "arguments": {
+      "item_id": "emergency_key",
+      "target_id": "r2_door"
+    },
+    "changed": true,
+    "consumed_item_ids": [
+      "emergency_key"
+    ],
+    "event_id": "5c36c8c695e143adabce8d6a51dd6726",
+    "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+    "message": "出口控制室门已解锁。应急钥匙已消耗。",
+    "new_clue_ids": [],
+    "observation": null,
+    "request_id": "ff340fb10c074f1caec258435580cbbb",
+    "revision_after": 13,
+    "revision_before": 12,
+    "tool": "use_item"
+  }
+}
+proposed
+
+服务器保存了建议；尚未执行。
+
+进度 12 · use_item
+{
+  "event_id": "258c28024fe64b85927d5ee1adc7ff70",
+  "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+  "revision": 12,
+  "tool": "use_item",
+  "arguments": {
+    "item_id": "emergency_key",
+    "target_id": "r2_door"
+  }
+}
+cancelled
+
+服务器确认取消；没有执行该行动。
+
+进度 12 · use_item
+{
+  "event_id": "4b2e4979e4f14ccca1bcd96853a1583d",
+  "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+  "revision": 12,
+  "tool": "use_item",
+  "arguments": {
+    "item_id": "emergency_key",
+    "target_id": "r2_door"
+  }
+}
+proposed
+
+服务器保存了建议；尚未执行。
+
+进度 12 · use_item
+{
+  "event_id": "b9d9727ffb89428b96fe26a972ab461e",
+  "generation": "bf1ec53a-7391-49b7-b2f7-0916403f531f",
+  "revision": 12,
+  "tool": "use_item",
+  "arguments": {
+    "item_id": "emergency_key",
+    "target_id": "r2_door"
+  }
+}
