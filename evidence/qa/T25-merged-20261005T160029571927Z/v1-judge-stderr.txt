@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\深度能力\tests\review_e1_merged_result.py", line 237, in <module>
+    child()
+    ~~~~~^^
+  File "D:\深度能力\tests\review_e1_merged_result.py", line 62, in child
+    state, _ = apply_action(GameState.model_validate(truths['C10']['state']), 'use_item', {'item_id': 'key', 'target_id': 'r2_door'})
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\深度能力\release\archives\baseline_v1\backend\app\domain\rules.py", line 183, in apply_action
+    raise RuleError("PRECONDITION_FAILED", "该道具不能用于此目标。")
+backend.app.domain.models.RuleError: 该道具不能用于此目标。

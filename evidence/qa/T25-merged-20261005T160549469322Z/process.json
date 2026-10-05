@@ -1,0 +1,54 @@
+{
+  "kind": "T25-actual-QA-command-record",
+  "record_method": "Actual tool-return records transcribed after execution; historical failed helper versions were not independently source-snapshotted. Final helper identity is bound by result.json before/after maps.",
+  "actual_command": "& 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 tests/review_e1_merged_result.py",
+  "cwd": "D:\\深度能力",
+  "final_exit_code": 0,
+  "final_chunk_id": "70dcc5",
+  "executions": [
+    {
+      "chunk_id": "a3c4de",
+      "exit_code": 1,
+      "stage": "Initial harness",
+      "failure": "KeyError sha256: actual Owner field raw_sha256; no target failure."
+    },
+    {
+      "chunk_id": "d84513",
+      "exit_code": 1,
+      "evidence": "evidence/qa/T25-merged-20261005T160029571927Z/result.json",
+      "failure": "72 wire ordering checks plus child archived-key identifier probe; persisted input tool object keys were sorted, archive contract preserves original serialization order; key is emergency_key."
+    },
+    {
+      "chunk_id": "bfc20b",
+      "exit_code": 0,
+      "checks": 1290,
+      "evidence": "evidence/qa/T25-merged-20261005T160208329713Z/result.json",
+      "stage": "Core checks and actual69 v1 rejudgments"
+    },
+    {
+      "chunk_id": "70dcc5",
+      "exit_code": 0,
+      "checks": 1427,
+      "evidence": "evidence/qa/T25-merged-20261005T160549469322Z/result.json",
+      "stage": "Completed JSON/CSV/visible-facts/journal checks plus separate current ledger RO observation"
+    }
+  ],
+  "diagnostic_read_failures": [
+    {
+      "chunk_id": "9ed4da",
+      "exit_code": 1,
+      "cause": "rg named nonexistent experiments/request_builder.py while printing existing read-only provider/executor references; target code not executed."
+    },
+    {
+      "chunk_id": null,
+      "exit_code": 1,
+      "cause": "Earlier exploratory schema read treated historical pending_or_unknown integer as iterable; exact old command body not independently persisted."
+    }
+  ],
+  "paid_calls": 0,
+  "target_owner_commands_executed": 0,
+  "ledger_write": false,
+  "environment_reads": false,
+  "network": false,
+  "status": "STOP"
+}

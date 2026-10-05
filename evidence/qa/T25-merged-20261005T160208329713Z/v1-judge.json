@@ -1,0 +1,1180 @@
+{
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "D:\\深度能力\\tests\\review_e1_merged_result.py",
+    "--v1-judge-child"
+  ],
+  "cwd": "D:\\深度能力\\release\\archives\\baseline_v1",
+  "exit_code": 0,
+  "result": {
+    "results": [
+      {
+        "row_id": "formal-C01-structured_summary-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_note"
+          },
+          "clue_refs": [],
+          "summary": "查看桌上的值班便签，尝试获取门卡位置或值班柜密码等线索。"
+        }
+      },
+      {
+        "row_id": "formal-C01-full_history-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_note"
+          },
+          "clue_refs": [],
+          "summary": "查看桌上的值班便签，获取可能存在的门卡或密码线索。"
+        }
+      },
+      {
+        "row_id": "formal-C02-full_history-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_cabinet"
+          },
+          "clue_refs": [
+            "r1_note_clue"
+          ],
+          "summary": "查看带数字锁的值班柜，获取形状标签或密码顺序等额外线索，以便判断如何组合三角3、圆8、方2。"
+        }
+      },
+      {
+        "row_id": "formal-C02-structured_summary-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_cabinet"
+          },
+          "clue_refs": [
+            "r1_note_clue"
+          ],
+          "summary": "查看值班柜，确认门上形状标签与数字锁的具体要求，以便判断是否能用已知的形状数字映射开锁。"
+        }
+      },
+      {
+        "row_id": "formal-C03-structured_summary-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "target_id": "r1_cabinet",
+            "code": "382"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "summary": "根据值班便签中三角=3、圆=8、方=2，以及柜门标签从左到右为三角、圆、方，推断值班柜密码为382，提交以尝试打开值班柜。"
+        }
+      },
+      {
+        "row_id": "formal-C03-full_history-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "target_id": "r1_cabinet",
+            "code": "382"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "summary": "根据便签形状数字与柜门从左到右顺序三角、圆、方，提交密码 382 尝试打开值班柜。"
+        }
+      },
+      {
+        "row_id": "formal-C04-full_history-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "take",
+          "arguments": {
+            "item_id": "access_card"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "summary": "拾取值班柜内的门卡，为前往设备间做准备。"
+        }
+      },
+      {
+        "row_id": "formal-C04-structured_summary-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "take",
+          "arguments": {
+            "item_id": "access_card"
+          },
+          "clue_refs": [],
+          "summary": "拾取值班柜内已露出的门卡，为打开通往设备间的刷卡门做准备。"
+        }
+      },
+      {
+        "row_id": "formal-C05-structured_summary-1",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_door"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "summary": "查看设备间刷卡门，确认如何用门卡解锁通往设备间的出口。"
+        }
+      },
+      {
+        "row_id": "formal-C05-full_history-1",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_door"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间刷卡门 r1_door，确认门卡的使用方式与出口状态。"
+        }
+      },
+      {
+        "row_id": "formal-C06-full_history-1",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_monitor"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间电源箱旁的屏幕，寻找关于供电恢复或数字锁抽屉密码的线索。"
+        }
+      },
+      {
+        "row_id": "formal-C06-structured_summary-1",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_monitor"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间电源箱旁的屏幕，尝试获取恢复供电或抽屉数字锁的新线索。"
+        }
+      },
+      {
+        "row_id": "formal-C07-structured_summary-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_monitor"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间电源箱旁的屏幕，获取通往出口控制室或抽屉密码的缺失线索。"
+        }
+      },
+      {
+        "row_id": "formal-C07-full_history-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_monitor"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间内电源箱旁的屏幕，获取下一步解谜或开门线索。"
+        }
+      },
+      {
+        "row_id": "formal-C08-full_history-1",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_door"
+          },
+          "clue_refs": [
+            "r2_monitor_clue",
+            "r2_drawer_clue"
+          ],
+          "summary": "查看设备间的出口控制室钥匙门，确认上锁方式或所需物品。"
+        }
+      },
+      {
+        "row_id": "formal-C08-structured_summary-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "code": "724",
+            "target_id": "r2_drawer"
+          },
+          "clue_refs": [
+            "r2_monitor_clue",
+            "r2_drawer_clue"
+          ],
+          "summary": "根据屏幕读数“青7、橙2、紫4”和抽屉标签顺序“青、橙、紫”，按序组合得到 724，提交给设备间抽屉的数字锁。"
+        }
+      },
+      {
+        "row_id": "formal-C09-structured_summary-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "take",
+          "arguments": {
+            "item_id": "emergency_key"
+          },
+          "clue_refs": [],
+          "summary": "拾取已打开抽屉中的应急钥匙，以便解锁出口控制室钥匙门。"
+        }
+      },
+      {
+        "row_id": "formal-C09-full_history-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "take",
+          "arguments": {
+            "item_id": "emergency_key"
+          },
+          "clue_refs": [
+            "r2_drawer_clue"
+          ],
+          "summary": "从已打开的抽屉中拾取应急钥匙，以便解锁通往出口控制室的钥匙门。"
+        }
+      },
+      {
+        "row_id": "formal-C10-full_history-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "use_item",
+          "arguments": {
+            "item_id": "emergency_key",
+            "target_id": "r2_door"
+          },
+          "clue_refs": [],
+          "summary": "使用背包中的应急钥匙打开 r2_door，解锁通往出口控制室的道路。"
+        }
+      },
+      {
+        "row_id": "formal-C10-structured_summary-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "use_item",
+          "arguments": {
+            "item_id": "emergency_key",
+            "target_id": "r2_door"
+          },
+          "clue_refs": [],
+          "summary": "用应急钥匙解锁出口控制室钥匙门 r2_door，以便之后前往 R3。"
+        }
+      },
+      {
+        "row_id": "formal-C11-structured_summary-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r3_panel"
+          },
+          "clue_refs": [
+            "r3_checklist_clue"
+          ],
+          "summary": "查看出口控制室的检查面板 r3_panel，读取其设备标签或数字提示，为提交出口检查密码获取必要线索。"
+        }
+      },
+      {
+        "row_id": "formal-C11-full_history-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r3_panel"
+          },
+          "clue_refs": [
+            "r3_checklist_clue"
+          ],
+          "summary": "查看出口控制室内的检查面板，获取其设备标签与数字键信息，以便完成出口检查。"
+        }
+      },
+      {
+        "row_id": "formal-C12-structured_summary-1",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "code": "231",
+            "target_id": "r3_panel"
+          },
+          "clue_refs": [
+            "r3_checklist_clue",
+            "r3_panel_clue"
+          ],
+          "summary": "按出口检查单顺序“冷却、通风、照明”结合面板对应数字2、3、1，提交密码231到检查面板。"
+        }
+      },
+      {
+        "row_id": "formal-C12-structured_summary-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "code": "231",
+            "target_id": "r3_panel"
+          },
+          "clue_refs": [
+            "r3_checklist_clue",
+            "r3_panel_clue"
+          ],
+          "summary": "按检查单顺序“冷却、通风、照明”，结合面板标签“冷却对应2，通风对应3，照明对应1”，向检查面板提交代码231。"
+        }
+      },
+      {
+        "row_id": "formal-C12-full_history-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "code": "231",
+            "target_id": "r3_panel"
+          },
+          "clue_refs": [
+            "r3_checklist_clue",
+            "r3_panel_clue"
+          ],
+          "summary": "按检查单顺序“冷却、通风、照明”读取设备标签数字（冷却2、通风3、照明1），拼成 231 并提交到检查面板。"
+        }
+      },
+      {
+        "row_id": "formal-C11-full_history-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r3_panel"
+          },
+          "clue_refs": [
+            "r3_checklist_clue"
+          ],
+          "summary": "查看出口控制室的检查面板，获取冷却、通风、照明对应标签或数字，以便完成出口检查。"
+        }
+      },
+      {
+        "row_id": "formal-C11-structured_summary-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r3_panel"
+          },
+          "clue_refs": [
+            "r3_checklist_clue"
+          ],
+          "summary": "查看出口控制室中的检查面板，获取其设备标签或数字线索，以补全“冷却、通风、照明”检查顺序所需的密码信息。"
+        }
+      },
+      {
+        "row_id": "formal-C10-structured_summary-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "use_item",
+          "arguments": {
+            "item_id": "emergency_key",
+            "target_id": "r2_door"
+          },
+          "clue_refs": [],
+          "summary": "使用应急钥匙解锁通往出口控制室的 r2_door，为进入 R3 做准备。"
+        }
+      },
+      {
+        "row_id": "formal-C10-full_history-2",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_door"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间内通往出口控制室的钥匙门，确认是否可用应急钥匙开启。"
+        }
+      },
+      {
+        "row_id": "formal-C09-full_history-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "take",
+          "arguments": {
+            "item_id": "emergency_key"
+          },
+          "clue_refs": [
+            "r2_drawer_clue"
+          ],
+          "summary": "拾取已打开抽屉内的应急钥匙，为解锁通往出口控制室的钥匙门做准备。"
+        }
+      },
+      {
+        "row_id": "formal-C09-structured_summary-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "take",
+          "arguments": {
+            "item_id": "emergency_key"
+          },
+          "clue_refs": [
+            "r2_drawer_clue"
+          ],
+          "summary": "抽屉已打开且可见应急钥匙，先拾取应急钥匙，以便随后尝试解锁通往出口控制室的钥匙门。"
+        }
+      },
+      {
+        "row_id": "formal-C08-structured_summary-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "code": "724",
+            "target_id": "r2_drawer"
+          },
+          "clue_refs": [
+            "r2_monitor_clue",
+            "r2_drawer_clue"
+          ],
+          "summary": "根据屏幕读数与抽屉标签顺序，输入密码724打开设备间抽屉。"
+        }
+      },
+      {
+        "row_id": "formal-C08-full_history-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "target_id": "r2_drawer",
+            "code": "724"
+          },
+          "clue_refs": [
+            "r2_monitor_clue",
+            "r2_drawer_clue"
+          ],
+          "summary": "根据屏幕读数与抽屉颜色顺序，提交密码724打开带数字锁的抽屉。"
+        }
+      },
+      {
+        "row_id": "formal-C07-full_history-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_monitor"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间电源箱旁的屏幕，获取可能用于抽屉数字锁的新线索。"
+        }
+      },
+      {
+        "row_id": "formal-C07-structured_summary-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_monitor"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间电源箱旁的屏幕，尝试获取与出口控制室钥匙门或抽屉密码相关的信息。"
+        }
+      },
+      {
+        "row_id": "formal-C06-structured_summary-2",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_monitor"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间内的屏幕，获取可能与电源箱、抽屉密码或出口控制室钥匙门相关的下一步线索。"
+        }
+      },
+      {
+        "row_id": "formal-C06-full_history-2",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_monitor"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间电源箱旁的屏幕，获取恢复供电或出口控制室钥匙门的相关线索。"
+        }
+      },
+      {
+        "row_id": "formal-C05-full_history-2",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_door"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间刷卡门，确认使用门卡开门的操作入口。"
+        }
+      },
+      {
+        "row_id": "formal-C05-structured_summary-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "use_item",
+          "arguments": {
+            "item_id": "access_card",
+            "target_id": "r1_door"
+          },
+          "clue_refs": [],
+          "summary": "使用背包中的门卡尝试打开设备间刷卡门，推进到下一个房间。"
+        }
+      },
+      {
+        "row_id": "formal-C04-structured_summary-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "take",
+          "arguments": {
+            "item_id": "access_card"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "summary": "拾取值班柜内已出现的门卡，以便后续解锁通向设备间的刷卡门。"
+        }
+      },
+      {
+        "row_id": "formal-C04-full_history-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "take",
+          "arguments": {
+            "item_id": "access_card"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "summary": "从已打开的值班柜中拾取门卡，为打开通往设备间的刷卡门做准备。"
+        }
+      },
+      {
+        "row_id": "formal-C03-full_history-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "target_id": "r1_cabinet",
+            "code": "382"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "summary": "根据便签形状数值与柜门标签顺序，向值班柜提交密码382以尝试解锁。"
+        }
+      },
+      {
+        "row_id": "formal-C03-structured_summary-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "target_id": "r1_cabinet",
+            "code": "382"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "summary": "根据便签的形状数字映射与柜门从左到右的三角、圆、方顺序，推导出密码 382，提交给值班柜尝试解锁。"
+        }
+      },
+      {
+        "row_id": "formal-C02-structured_summary-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_cabinet"
+          },
+          "clue_refs": [
+            "r1_note_clue"
+          ],
+          "summary": "查看值班柜，确认其形状标签顺序或密码提示；当前线索只给出三角=3、圆=8、方=2，尚缺少可直接提交的数字顺序。"
+        }
+      },
+      {
+        "row_id": "formal-C02-full_history-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_cabinet"
+          },
+          "clue_refs": [
+            "r1_note_clue"
+          ],
+          "summary": "查看带数字锁的值班柜，确认其形状标签或密码输入线索，以便结合便签中的三角=3、圆=8、方=2继续推进。"
+        }
+      },
+      {
+        "row_id": "formal-C01-full_history-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_note"
+          },
+          "clue_refs": [],
+          "summary": "查看桌上的值班便签，尝试获取关于值班柜密码或设备间门卡的线索。"
+        }
+      },
+      {
+        "row_id": "formal-C01-structured_summary-2",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_note"
+          },
+          "clue_refs": [],
+          "summary": "查看桌上的值班便签，获取可能指向门卡或值班柜密码的线索。"
+        }
+      },
+      {
+        "row_id": "formal-C05-structured_summary-3",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_door"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "summary": "查看设备间刷卡门，确认门卡的使用方式与门是否仍被锁住，为进入 R2 做准备。"
+        }
+      },
+      {
+        "row_id": "formal-C05-full_history-3",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_door"
+          },
+          "clue_refs": [],
+          "summary": "检查设备间刷卡门，获取用门卡解锁的具体操作信息。"
+        }
+      },
+      {
+        "row_id": "formal-C06-full_history-3",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_monitor"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间电源箱旁的屏幕，获取颜色/数字线索，以推进供电恢复或抽屉密码。"
+        }
+      },
+      {
+        "row_id": "formal-C06-structured_summary-3",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_monitor"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间电源箱旁的屏幕，获取可能用于抽屉密码或恢复供电的新线索。"
+        }
+      },
+      {
+        "row_id": "formal-C07-structured_summary-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_monitor"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间电源箱旁的屏幕，获取下一步关于抽屉密码或钥匙门的信息。"
+        }
+      },
+      {
+        "row_id": "formal-C07-full_history-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_monitor"
+          },
+          "clue_refs": [],
+          "summary": "查看设备间电源箱旁的屏幕，以获取后续抽屉密码或出口控制室钥匙门线索。"
+        }
+      },
+      {
+        "row_id": "formal-C08-full_history-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "code": "724",
+            "target_id": "r2_drawer"
+          },
+          "clue_refs": [
+            "r2_monitor_clue",
+            "r2_drawer_clue"
+          ],
+          "summary": "根据屏幕读数青色7、橙色2、紫色4，结合抽屉标签顺序青、橙、紫，密码应为724，提交以解锁抽屉。"
+        }
+      },
+      {
+        "row_id": "formal-C08-structured_summary-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "code": "724",
+            "target_id": "r2_drawer"
+          },
+          "clue_refs": [
+            "r2_monitor_clue",
+            "r2_drawer_clue"
+          ],
+          "summary": "根据屏幕读数“青色7、橙色2、紫色4”与抽屉标签顺序“青、橙、紫”，可推出抽屉密码为724，建议尝试对设备间抽屉提交该密码。"
+        }
+      },
+      {
+        "row_id": "formal-C09-structured_summary-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "take",
+          "arguments": {
+            "item_id": "emergency_key"
+          },
+          "clue_refs": [],
+          "summary": "拾取抽屉内的应急钥匙，用于后续解锁通往出口控制室的钥匙门。"
+        }
+      },
+      {
+        "row_id": "formal-C09-full_history-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "take",
+          "arguments": {
+            "item_id": "emergency_key"
+          },
+          "clue_refs": [],
+          "summary": "拾取抽屉内的应急钥匙，为解锁出口控制室钥匙门做准备。"
+        }
+      },
+      {
+        "row_id": "formal-C10-full_history-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "use_item",
+          "arguments": {
+            "item_id": "emergency_key",
+            "target_id": "r2_door"
+          },
+          "clue_refs": [],
+          "summary": "用应急钥匙打开通向出口控制室的 r2_door，以便继续推进。"
+        }
+      },
+      {
+        "row_id": "formal-C10-structured_summary-3",
+        "legal": true,
+        "correct": false,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r2_door"
+          },
+          "clue_refs": [],
+          "summary": "查看出口控制室钥匙门（r2_door），确认是否可以用应急钥匙解锁并前往出口控制室。"
+        }
+      },
+      {
+        "row_id": "formal-C11-structured_summary-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r3_panel"
+          },
+          "clue_refs": [
+            "r3_checklist_clue"
+          ],
+          "summary": "查看出口控制室的检查面板，获取设备标签或密码输入所需信息。"
+        }
+      },
+      {
+        "row_id": "formal-C11-full_history-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r3_panel"
+          },
+          "clue_refs": [
+            "r3_checklist_clue"
+          ],
+          "summary": "查看出口控制室中的检查面板 r3_panel，获取与“冷却、通风、照明”检查顺序相关的密码或操作信息。"
+        }
+      },
+      {
+        "row_id": "formal-C12-full_history-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "code": "231",
+            "target_id": "r3_panel"
+          },
+          "clue_refs": [
+            "r3_checklist_clue",
+            "r3_panel_clue"
+          ],
+          "summary": "根据检查顺序“冷却、通风、照明”与对应数字“2、3、1”，向检查面板提交密码231以完成出口检查。"
+        }
+      },
+      {
+        "row_id": "formal-C12-structured_summary-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "code": "231",
+            "target_id": "r3_panel"
+          },
+          "clue_refs": [
+            "r3_checklist_clue",
+            "r3_panel_clue"
+          ],
+          "summary": "根据检查单顺序与设备标签映射，向检查面板提交密码231，推动完成出口检查。"
+        }
+      },
+      {
+        "row_id": "formal-C01-structured_summary-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_note"
+          },
+          "clue_refs": [],
+          "summary": "查看值班室桌上的值班便签，以获取关于门卡或值班柜密码的线索。"
+        }
+      },
+      {
+        "row_id": "formal-C01-full_history-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_note"
+          },
+          "clue_refs": [],
+          "summary": "查看桌上的值班便签，寻找门卡或值班柜密码的线索。"
+        }
+      },
+      {
+        "row_id": "formal-C02-full_history-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_cabinet"
+          },
+          "clue_refs": [
+            "r1_note_clue"
+          ],
+          "summary": "查看带数字锁的值班柜，确认门上形状标签的具体组合，以便结合便签中三角=3、圆=8、方=2推得密码。"
+        }
+      },
+      {
+        "row_id": "formal-C02-structured_summary-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_cabinet"
+          },
+          "clue_refs": [
+            "r1_note_clue"
+          ],
+          "summary": "查看值班柜，确认门上形状标签的排列，以便结合便签映射推导数字密码。"
+        }
+      },
+      {
+        "row_id": "formal-C03-structured_summary-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "target_id": "r1_cabinet",
+            "code": "382"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "summary": "根据形状对应数字与柜门标签顺序，尝试向值班柜输入密码 382。"
+        }
+      },
+      {
+        "row_id": "formal-C03-full_history-3",
+        "legal": true,
+        "correct": true,
+        "reference_valid": true,
+        "reference_sufficient": true,
+        "tool_proposal": {
+          "tool": "submit_code",
+          "arguments": {
+            "target_id": "r1_cabinet",
+            "code": "382"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "summary": "根据便签形状取值和柜门标签顺序，尝试向值班柜提交密码382。"
+        }
+      }
+    ],
+    "modules": {
+      "backend.app.domain.models": {
+        "path": "D:\\深度能力\\release\\archives\\baseline_v1\\backend\\app\\domain\\models.py",
+        "raw_sha256": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1"
+      },
+      "backend.app.domain.rules": {
+        "path": "D:\\深度能力\\release\\archives\\baseline_v1\\backend\\app\\domain\\rules.py",
+        "raw_sha256": "34a3ec19ec4ba8bf764e737b2bcbaf8a72601972190de6c772614abc532cf750"
+      }
+    },
+    "v1_key_retained": true,
+    "gold_actions_legally_checked": 15
+  }
+}

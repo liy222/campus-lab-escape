@@ -1,0 +1,34 @@
+{
+  "hash_policy": "exact raw SHA256",
+  "client_date": "2026-10-06",
+  "actual_remaining_paid_calls": 6,
+  "paid_statuses": {
+    "K4": [
+      "FAIL"
+    ],
+    "E1": [
+      "INSUFFICIENT_EVIDENCE",
+      "INSUFFICIENT_EVIDENCE"
+    ],
+    "CH01": [
+      "INSUFFICIENT_EVIDENCE",
+      "INSUFFICIENT_EVIDENCE",
+      "INSUFFICIENT_EVIDENCE"
+    ]
+  },
+  "all_remaining_usage_known": true,
+  "total_budget_calls": 91,
+  "charged_upper_units": 662360080,
+  "original_cap_units": 10000000000,
+  "pending": 0,
+  "no_model_retry": true,
+  "files": {
+    "evidence/integration/remaining-k4-20261005.json": "1815c72147d6d632659f03bceec7cbba8707853b8e0743c1ffcecd9900e94cad",
+    "evaluation/runs/20261005T155830386817Z/report.json": "c82eb77beb1e0ec790864a93b24ff92e07e69c8da219ec7bcd9cd4d874c6c902",
+    "evaluation/runs/20261005T155947272680Z/report.json": "a62449afd18924889fbeba9fa00736bd3ff3856e387c1331c080beb2af73cf7a",
+    "evidence/qa/T25-merged-20261005T160549469322Z/result.json": "86fb081727330f055ef05af51110ce5ab37649ebd9cc9151e22afe41feb2f405",
+    "evidence/qa/T32-final-20261005T123100Z/result.json": "f82415a8132ef8567eafb2329102983db469fa61573a6eb6d4279dca2bad7c95",
+    "evidence/qa/T27-remaining-20261006T002000Z/result.json": "6d93e28b33ed28aadd33f0d85e94f04ad43c3b2258e79419cc2c4e26b0b17838"
+  },
+  "limits": "Original11 calibration expected matches10/11 preserved. Later K4 adds valid model failure judgement, not oldK1 recovery. No semantic PASS or human signoff. Small reference/output prompt revision pending separate validation."
+}

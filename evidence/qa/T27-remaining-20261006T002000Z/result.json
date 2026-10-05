@@ -1,0 +1,58 @@
+{
+  "checks": 73,
+  "passed": 73,
+  "failed": [],
+  "actual_paid_calls_observed": 6,
+  "statuses": [
+    "FAIL",
+    "INSUFFICIENT_EVIDENCE",
+    "INSUFFICIENT_EVIDENCE",
+    "INSUFFICIENT_EVIDENCE",
+    "INSUFFICIENT_EVIDENCE",
+    "INSUFFICIENT_EVIDENCE"
+  ],
+  "call_ids": [
+    "eval_K4rem-20261005T155623Z_1",
+    "eval_E1eval-20261005T155623Z_1",
+    "eval_E1eval-20261005T155623Z_2",
+    "eval_CH01eval-20261005T155623Z_1",
+    "eval_CH01eval-20261005T155623Z_2",
+    "eval_CH01eval-20261005T155623Z_3"
+  ],
+  "known_usage_cost_units": 150858240,
+  "input_sha256_before_after": {
+    "evidence/integration/remaining-evaluation-payload-preview-20261005.json": "20f0780535cbcca1316735a86e307824455e0860d94f1dfc96dcf0aa4ac0790c",
+    "evidence/integration/remaining-evaluation-human-authorized-20261005.json": "f5fb8a907f4f5fb9f4a38edd83dc84b3ad5d204ca26d3ddfe16e8ad531cb1db4",
+    "evidence/integration/remaining-k4-20261005.json": "1815c72147d6d632659f03bceec7cbba8707853b8e0743c1ffcecd9900e94cad",
+    "evidence/integration/remaining-k4-20261005-started.json": "b1af7b12ac646e6802f0cf64bcea92163382843c059d65d4a8c5a44976d0308e",
+    "evaluation/runs/20261005T120430742113Z/report.json": "40aec88adcea8da225bcc439c98540701bf5b082f24046f7d32e4df7c0a67032",
+    "evidence/integration/remaining-preparation-correction-20261006.json": "54f67135289f0ad68ed5b1009a5b4f913a0ebed27fa6cf3c27385fb3a14e0679",
+    "evaluation/runs/20261005T155830386817Z/report.json": "c82eb77beb1e0ec790864a93b24ff92e07e69c8da219ec7bcd9cd4d874c6c902",
+    "evidence/integration/paid-evaluation-E1eval-20261005T155623Z-process.json": "5f5d5cf047cdae8add27861cb8a6da0f99b50dbcb061a2bf1ae0570e83254224",
+    "evaluation/runs/20261005T155947272680Z/report.json": "a62449afd18924889fbeba9fa00736bd3ff3856e387c1331c080beb2af73cf7a",
+    "evidence/integration/paid-evaluation-CH01eval-20261005T155623Z-process.json": "a9d25091c116b2e3a6bb0af4a242df3837f8099746e1652ef5f9f1c1c33e38fe"
+  },
+  "source14_before_after": {
+    "baseline_archive.py": "9fe62e2090de072ac6f2360036660cc5bbbee6faa84bca1b27f782f13434d090",
+    "check.py": "c7bedbe312c53d4d4fb3038d0e7330c09eeb9aaa530f6deaab26f481218367f8",
+    "check_baseline_archive.py": "52daa9de4c34d9bb260c94665675429fcf45e5ad8490d40104249dd9094c5b49",
+    "check_events.py": "483b49f6a55ce5f450d6cd7ce3a4908e314a04f5518b8e5662610473b0dc2a16",
+    "cli.py": "bf6b3c9f70b9d3e15e0c7853dc86c672626f20d44a9f8f38ec12651d1ee4166f",
+    "common.py": "91509d55058126319117b45f7e256aec5f46d35f97cd6bda7cbe6472f8227ab8",
+    "engine.py": "6955a59976b6aac197fb222603e6795ae4588841d3eb70d477db0788b53b80e4",
+    "events.py": "61bbe3631502aee4b1557af19cb020ef01465204fa1b1a4145b876a17590c66a",
+    "freeze_inputs.py": "734194f9201af069e96008f0e838941b01a71ad7ad14f1f50d588e4e63ea3b67",
+    "provider.py": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd",
+    "reader.py": "050a8f6deb3e7ca209fde3362cd617274f0941cd5968662606bc2a6e282c5e7b",
+    "seal_inputs.py": "d93a3d37eb9c35e65350687b198b44e5fc146f13090f42d68c4a2633e0f70a95",
+    "trust.py": "8f8e02c1734d37263bbac3a0203f94c5b1f24fdea7f104c34ff53a0d67c38a14",
+    "__init__.py": "80d2830bcf95e17c0260ea5b922dbbb603c8db51657cc6f2ee1cd9e93075db01"
+  },
+  "limits": [
+    "No ledger opened; 91-settled accounting is Main reported, not newly independently queried.",
+    "Generic E1/CH01 reports omit actual HTTP wire digests; preview semantics and source version are bound, but no independent packet capture is claimed. K4 exact wire assertion is recorded.",
+    "Four invalid content replies retain digest/size only. CH01 A23 provider-invalid output has neither digest nor size. No invalid body is independently rejudged.",
+    "No target/evaluator/provider code imported/executed, no paid calls, credentials, Git, network, or service.",
+    "No human signoff or general-language/full-game calibration; future prompt changes excluded."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_stop": true,
+  "role": "independent QA",
+  "result_sha256": "6d93e28b33ed28aadd33f0d85e94f04ad43c3b2258e79419cc2c4e26b0b17838",
+  "report_sha256": "b1f81faf893120a93979078b5680d04f1f4724d7c5702d999764943716e3a5eb",
+  "reviewer_sha256": "e264f6692609887081ea74461f21f643f83982302635636f729c991e51e328e2",
+  "evaluator_source14": {
+    "baseline_archive.py": "9fe62e2090de072ac6f2360036660cc5bbbee6faa84bca1b27f782f13434d090",
+    "check.py": "c7bedbe312c53d4d4fb3038d0e7330c09eeb9aaa530f6deaab26f481218367f8",
+    "check_baseline_archive.py": "52daa9de4c34d9bb260c94665675429fcf45e5ad8490d40104249dd9094c5b49",
+    "check_events.py": "483b49f6a55ce5f450d6cd7ce3a4908e314a04f5518b8e5662610473b0dc2a16",
+    "cli.py": "bf6b3c9f70b9d3e15e0c7853dc86c672626f20d44a9f8f38ec12651d1ee4166f",
+    "common.py": "91509d55058126319117b45f7e256aec5f46d35f97cd6bda7cbe6472f8227ab8",
+    "engine.py": "6955a59976b6aac197fb222603e6795ae4588841d3eb70d477db0788b53b80e4",
+    "events.py": "61bbe3631502aee4b1557af19cb020ef01465204fa1b1a4145b876a17590c66a",
+    "freeze_inputs.py": "734194f9201af069e96008f0e838941b01a71ad7ad14f1f50d588e4e63ea3b67",
+    "provider.py": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd",
+    "reader.py": "050a8f6deb3e7ca209fde3362cd617274f0941cd5968662606bc2a6e282c5e7b",
+    "seal_inputs.py": "d93a3d37eb9c35e65350687b198b44e5fc146f13090f42d68c4a2633e0f70a95",
+    "trust.py": "8f8e02c1734d37263bbac3a0203f94c5b1f24fdea7f104c34ff53a0d67c38a14",
+    "__init__.py": "80d2830bcf95e17c0260ea5b922dbbb603c8db51657cc6f2ee1cd9e93075db01"
+  },
+  "actual_paid_calls_by_QA": 0,
+  "live_ledger_opened": false,
+  "remaining_limits": [
+    "No ledger opened; 91-settled accounting is Main reported, not newly independently queried.",
+    "Generic E1/CH01 reports omit actual HTTP wire digests; preview semantics and source version are bound, but no independent packet capture is claimed. K4 exact wire assertion is recorded.",
+    "Four invalid content replies retain digest/size only. CH01 A23 provider-invalid output has neither digest nor size. No invalid body is independently rejudged.",
+    "No target/evaluator/provider code imported/executed, no paid calls, credentials, Git, network, or service.",
+    "No human signoff or general-language/full-game calibration; future prompt changes excluded."
+  ]
+}

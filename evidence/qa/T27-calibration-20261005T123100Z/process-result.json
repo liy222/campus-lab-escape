@@ -1,0 +1,37 @@
+{
+  "actual_command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "tests/review_final_delivery.py",
+    "--mode",
+    "calibration",
+    "--output",
+    "evidence/qa/T27-calibration-20261005T123100Z"
+  ],
+  "working_directory": "D:\\深度能力",
+  "actual_exit_code": 1,
+  "tool_chunks": [
+    "b05e62"
+  ],
+  "result_raw_sha256": "f762d5042973ef69dafc105bc66bee67e5f4ec2f702fe2c0a235fc2aeef00a34",
+  "checks": 45,
+  "passed": 42,
+  "failures": [
+    {
+      "name": "K1_invalid_ref_abstains",
+      "passed": false
+    },
+    {
+      "name": "K2_ledger_unknown_NULL_fullupper",
+      "passed": false
+    },
+    {
+      "name": "pending_hold85_511501840",
+      "passed": false
+    }
+  ],
+  "QA_paid_calls": 0,
+  "QA_network_calls": 0
+}

@@ -1,0 +1,9 @@
+{
+  "actual_tool_exit_code": 1,
+  "tool_chunk_id": "c7d5d4",
+  "error": "Read-only static discovery guessed tests/api/test_m3_public_api.py, which does not exist; the prior rg output identified actual test_m3.py.",
+  "correction": "Used actual test_m3.py and statically parsed AST only:19 directly declared M3 test methods. No target/test import or execution.",
+  "correction_actual_exit_code": 0,
+  "correction_tool_chunk_id": "cbcb92",
+  "complete_clean_QA_result_unchanged": true
+}

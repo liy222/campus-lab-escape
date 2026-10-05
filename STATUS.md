@@ -1,5 +1,5 @@
 # Status
-updated_at: 2026-10-05 (Asia/Shanghai)
+updated_at: 2026-10-06 (Asia/Shanghai)
 milestone: CH01_v2 accepted; T32 integrity and CH01 evaluator QA passed; continuation stopped on new unknown usage; calibration approved but accounting-blocked
 last_verified_release: CH01_v2 product commit242ecfc4d9f7bf1a8480508de701d9efc7822fe7; raw/Git binding in evidence/integration/CH01_v2-manifest.json; baseline_v1 preserved
 remote: https://github.com/liy222/campus-lab-escape (PRIVATE, gh verified)
@@ -92,3 +92,10 @@ T29/T30 Main accepted limited engineering: finalreport660fcbc6b885aaa5beaef4af4e
 - Latest committed-source clean10778 files actualexit0/ada9cd,8outerchecks0 incl3identityprechecks, complete v2/v1 save/actualrestartrestore; sourcecommit833aafb. Mainactualoutput evidence/integration/T32-clean-final-20261005T115741Z, old descriptor proposedDeliveryoutput was not used. Independent final read/hash ongoing.
 - New merged Owner STOP72terminal=69completed+1originaltimeout+1newfailed+1not_called; A34completed26correct/B35completed29correct,34fullpairs/36planned. Owner last turn subsequently reported usage-limit error; Main and QA must verify actual files instead of relying on the completion message. Independentmerged result review running.
 - Auto-review refused6 remaining evaluation payload gate preparation before any execution, gate currenthash82d515...1a6 unchanged. Pure no-key/no-gate/no-ledger preview generatedactualexit0/8568d2. Human combinedpayloadapproval pending. No fees investigation or extra allowance.
+
+## 2026-10-06 actual accepted checkpoint
+- Private remote verified53ed6620ad46f037ad6ec85926daa82dcfd515bd by gh API after normal push. Original stalled push was stopped only after exact ownPID/command verification; retry with per-command connected gh credentials succeeded0/079bf2, no reset/global configuration.
+- Merged dataset independent1427/1427 actual0 at evidence/qa/T25-merged-20261005T160549469322Z/result.json (not earlier160029 failure).69completed response judgements independently re-run on fixed v1 archive,323rawsources stable;72terminal retains2failed/1notcalled,34pairs/36planned. Source STOP accepted, no dataFinding.
+- New10778source committed833aafb clean identity independently10842/10842 accepted at evidence/qa/T32-final-20261005T123100Z/result.json, 8outer/9leaf actual0 includes3strictprechecks; no actualrealAI or human-playtest inferred.
+- All remaining6 exact approved payloads called once, 1K4valid modelFAIL(expected),2E1INSUF,3CH01INSUF. OldK1/K2 never resent. Independent read audit73/73 sourceSTOP preserves digests/validrefs and actual14sourcebeforeafter. Current91settled cap10 upper0.66236008 pending0.
+- Sequential role reassignment: qa_events_oct05 finished independent oldsource QA before temporary Evaluator Owner assignment for small enginePrompt reference-ID/compactJSON fix; another Agent must independently review newcandidate. No source/input schema/checker relaxation or old outcome rewriting. T31final docs and manifest in progress; no fully complete project or human signature claimed.

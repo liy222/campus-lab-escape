@@ -1,0 +1,38 @@
+{
+  "task": "independent-calibration",
+  "actual_command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "tests/review_final_delivery.py",
+    "--mode",
+    "calibration",
+    "--output",
+    "evidence/qa/T27-calibration-20261005T123100Z"
+  ],
+  "working_directory": "D:\\深度能力",
+  "created_at": "2026-10-05T15:52:14.038028+00:00",
+  "checks": 45,
+  "passed": 42,
+  "failures": [
+    {
+      "name": "K1_invalid_ref_abstains",
+      "passed": false
+    },
+    {
+      "name": "K2_ledger_unknown_NULL_fullupper",
+      "passed": false
+    },
+    {
+      "name": "pending_hold85_511501840",
+      "passed": false
+    }
+  ],
+  "error": null,
+  "exit_code": 1,
+  "QA_reviewer_raw_sha256": "008d15823f03dc1b20e46572dfd637a56b5c95518bdf778881d44000784b0053",
+  "QA_paid_calls": 0,
+  "QA_network_calls": 0,
+  "scope": "read/hash only, no target import/execution or installation; calibration original ledger mode=ro only"
+}
