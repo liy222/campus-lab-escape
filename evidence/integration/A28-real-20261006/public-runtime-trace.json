@@ -1,0 +1,101 @@
+[
+  {
+    "call_id": null,
+    "context_mode": "full_history",
+    "cost_upper_cny": null,
+    "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+    "kind": "turn_started",
+    "limits": {
+      "call_seconds": 20.0,
+      "format_retries": 0,
+      "model_calls": 3,
+      "output_tokens": 1000,
+      "progress_proposals": 1,
+      "read_tool_calls": 5,
+      "total_seconds": 45.0
+    },
+    "message_length": 103,
+    "message_sha256": "10faa4efca95ac83f80a0a7913b634724396ca2d139afb9d8a8502cebab52db6",
+    "reported_model": null,
+    "requested_model": null,
+    "revision": 2,
+    "usage": null
+  },
+  {
+    "attempt": 1,
+    "call_id": "988df9ccc45f439a8c7a42db551a8b42",
+    "cost_upper_cny": 0.00180336,
+    "finish_reason": "tool_calls",
+    "kind": "provider_result",
+    "provider": "deepseek",
+    "reported_model": "deepseek-flash",
+    "requested_model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 17,
+      "prompt_cache_hit_tokens": 384,
+      "prompt_tokens": 1210,
+      "total_tokens": 1227
+    }
+  },
+  {
+    "arguments": {},
+    "call_id": null,
+    "cost_upper_cny": null,
+    "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+    "kind": "read_tool",
+    "new_clue_ids": [],
+    "observation": "背包：空",
+    "ok": true,
+    "reported_model": null,
+    "requested_model": null,
+    "revision": 2,
+    "tool": "get_inventory",
+    "usage": null
+  },
+  {
+    "attempt": 2,
+    "call_id": "8b090df495df444c85ebcd59a0560e0e",
+    "cost_upper_cny": 0.00425984,
+    "finish_reason": "stop",
+    "kind": "provider_result",
+    "provider": "deepseek",
+    "reported_model": "deepseek-flash",
+    "requested_model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 190,
+      "prompt_cache_hit_tokens": 896,
+      "prompt_tokens": 2248,
+      "total_tokens": 2438
+    }
+  },
+  {
+    "call_id": null,
+    "clue_refs": [
+      "r1_note_clue",
+      "r1_cabinet_clue"
+    ],
+    "cost_upper_cny": null,
+    "kind": "answer",
+    "reported_model": null,
+    "requested_model": null,
+    "usage": null
+  },
+  {
+    "call_id": null,
+    "cost_upper_cny": null,
+    "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+    "kind": "turn_finished",
+    "reported_model": null,
+    "requested_model": null,
+    "revision": 2,
+    "status": "completed",
+    "usage": {
+      "input_tokens": 3458,
+      "model": "deepseek-flash",
+      "model_calls": 2,
+      "output_tokens": 207,
+      "provider": "deepseek",
+      "read_tool_calls": 1
+    }
+  }
+]

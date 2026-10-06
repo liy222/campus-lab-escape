@@ -1,0 +1,47 @@
+{
+  "at_utc": "2026-10-06T04:44:35.465753+00:00",
+  "kind": "Main accepts final scoped independent actual-result reviews",
+  "accepted": [
+    {
+      "kind": "A28",
+      "report": "review/findings/A28-real-result-20261006.md",
+      "report_sha256": "354da2a451c2167d4e5420322fc7c264039132b25fa868c8240a1904465a4f24",
+      "result": "evidence/qa/A28-real-result-20261006T043600767538Z/result.json",
+      "result_sha256": "b357fdfc17eaf26b942e821dc20382c4a0de55e5766e59f04d74af38a932ded9",
+      "independent_checks": 105,
+      "actual_exit_code": 0
+    },
+    {
+      "kind": "T27",
+      "report": "review/findings/T27-revised-real-result-20261006.md",
+      "report_sha256": "53ced73526128e359db1baf7a259b1c5e05c745aa9dbfd6b6e5b7603b22bb63b",
+      "result": "evidence/qa/T27-revised-real-result-20261006T045000Z/result.json",
+      "result_sha256": "6f412f5b177bb653fbf488c8ac7586425b302bb9ffea6caacee2cc1a342c5a67",
+      "independent_checks": 75,
+      "actual_exit_code": 0,
+      "actual_exit_evidence": "evidence\\qa\\T27-revised-real-result-20261006T045000Z\\process-result.json",
+      "actual_exit_evidence_sha256": "8f04a9f5038ca35814571a88360a3a5bb75eca37e80c53dbbcd51dd30e2f7644",
+      "passed": 75,
+      "failed": 0
+    }
+  ],
+  "paid_game_calls": 2,
+  "paid_new_evaluation_calls": 8,
+  "source_validation": "Prompt implementation already independently223checks accepted; actual A28 and new evaluator reviews do not replace that source review. 14py source hashes unchanged each evaluation run; later README/calibration documentation update is a separate metadata phase.",
+  "known_limitations": [
+    "A28 controlled R1 segment only, not autonomous full-game or human acceptance.",
+    "E1 model reads original stopped registered material, not merged69; planned72 includes failures/uninvoked.",
+    "Genuine human explanation/signoff unprovided, course confirmation excluded by user."
+  ],
+  "integration_read_corrections": [
+    {
+      "chunk": "4a1ac0",
+      "issue": "Main initially guessed process.json; actual file is process-result.json. No independent check rerun or result changes."
+    },
+    {
+      "chunk": "aaaad5",
+      "exit_code": 1,
+      "issue": "Main assumed failed was scalar0; actual failed is an empty list; checks/passed are scalar75. Corrected only Main acceptance reader; QA result unchanged."
+    }
+  ]
+}

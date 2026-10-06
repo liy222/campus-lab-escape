@@ -1,0 +1,884 @@
+[
+  {
+    "path": "actions",
+    "request": {
+      "request_id": "05f87e80f13f4a4487eb8dc2df138520",
+      "revision": 0,
+      "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_note"
+      }
+    },
+    "http_status": 200,
+    "response": {
+      "ok": true,
+      "event_id": "9c702d3651204441a9398c26e28b8175",
+      "data": {
+        "receipt": {
+          "request_id": "05f87e80f13f4a4487eb8dc2df138520",
+          "event_id": "9c702d3651204441a9398c26e28b8175",
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_note"
+          },
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "revision_before": 0,
+          "revision_after": 1,
+          "changed": true,
+          "message": "已查看。",
+          "observation": "三角记为3，圆记为8，方记为2。",
+          "new_clue_ids": [
+            "r1_note_clue"
+          ],
+          "consumed_item_ids": []
+        },
+        "replayed": false,
+        "proposal": null,
+        "visible_state": {
+          "schema_version": "1.0.0",
+          "level_version": "2.0.0",
+          "session_id": "7fc411b65b1341ebbd0de2e4defbcf05",
+          "revision": 1,
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "status": "playing",
+          "room": {
+            "room_id": "R1",
+            "name": "值班室",
+            "description": "夜间断电了，先寻找通往设备间的门卡。"
+          },
+          "objects": [
+            {
+              "object_id": "r1_note",
+              "name": "值班便签",
+              "kind": "clue",
+              "description": "桌上有一张值班便签。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_note"
+                  },
+                  "requires_code": false
+                }
+              ]
+            },
+            {
+              "object_id": "r1_cabinet",
+              "name": "值班柜",
+              "kind": "container",
+              "description": "带数字锁的值班柜，门上贴着形状标签。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_cabinet"
+                  },
+                  "requires_code": false
+                },
+                {
+                  "tool": "submit_code",
+                  "label": "输入密码",
+                  "arguments": {
+                    "target_id": "r1_cabinet"
+                  },
+                  "requires_code": true
+                }
+              ]
+            },
+            {
+              "object_id": "r1_door",
+              "name": "设备间刷卡门",
+              "kind": "door",
+              "description": "通向设备间的刷卡门。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_door"
+                  },
+                  "requires_code": false
+                }
+              ]
+            }
+          ],
+          "inventory": [],
+          "clues": [
+            {
+              "clue_id": "r1_note_clue",
+              "object_id": "r1_note",
+              "title": "值班便签",
+              "text": "三角记为3，圆记为8，方记为2。"
+            }
+          ],
+          "exits": [
+            {
+              "destination_id": "R2",
+              "name": "设备间",
+              "unlocked": false
+            }
+          ],
+          "progress": {
+            "power_on": false,
+            "check_done": false
+          },
+          "save": null
+        }
+      }
+    }
+  },
+  {
+    "path": "actions",
+    "request": {
+      "request_id": "ecd705374b7f436698ec390413233740",
+      "revision": 1,
+      "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_cabinet"
+      }
+    },
+    "http_status": 200,
+    "response": {
+      "ok": true,
+      "event_id": "a7c1f343ed26407c9f8a60bcaa090010",
+      "data": {
+        "receipt": {
+          "request_id": "ecd705374b7f436698ec390413233740",
+          "event_id": "a7c1f343ed26407c9f8a60bcaa090010",
+          "tool": "inspect",
+          "arguments": {
+            "object_id": "r1_cabinet"
+          },
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "revision_before": 1,
+          "revision_after": 2,
+          "changed": true,
+          "message": "已查看。",
+          "observation": "柜门标签从左到右是：三角、圆、方。",
+          "new_clue_ids": [
+            "r1_cabinet_clue"
+          ],
+          "consumed_item_ids": []
+        },
+        "replayed": false,
+        "proposal": null,
+        "visible_state": {
+          "schema_version": "1.0.0",
+          "level_version": "2.0.0",
+          "session_id": "7fc411b65b1341ebbd0de2e4defbcf05",
+          "revision": 2,
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "status": "playing",
+          "room": {
+            "room_id": "R1",
+            "name": "值班室",
+            "description": "夜间断电了，先寻找通往设备间的门卡。"
+          },
+          "objects": [
+            {
+              "object_id": "r1_note",
+              "name": "值班便签",
+              "kind": "clue",
+              "description": "桌上有一张值班便签。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_note"
+                  },
+                  "requires_code": false
+                }
+              ]
+            },
+            {
+              "object_id": "r1_cabinet",
+              "name": "值班柜",
+              "kind": "container",
+              "description": "带数字锁的值班柜，门上贴着形状标签。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_cabinet"
+                  },
+                  "requires_code": false
+                },
+                {
+                  "tool": "submit_code",
+                  "label": "输入密码",
+                  "arguments": {
+                    "target_id": "r1_cabinet"
+                  },
+                  "requires_code": true
+                }
+              ]
+            },
+            {
+              "object_id": "r1_door",
+              "name": "设备间刷卡门",
+              "kind": "door",
+              "description": "通向设备间的刷卡门。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_door"
+                  },
+                  "requires_code": false
+                }
+              ]
+            }
+          ],
+          "inventory": [],
+          "clues": [
+            {
+              "clue_id": "r1_note_clue",
+              "object_id": "r1_note",
+              "title": "值班便签",
+              "text": "三角记为3，圆记为8，方记为2。"
+            },
+            {
+              "clue_id": "r1_cabinet_clue",
+              "object_id": "r1_cabinet",
+              "title": "柜门顺序",
+              "text": "柜门标签从左到右是：三角、圆、方。"
+            }
+          ],
+          "exits": [
+            {
+              "destination_id": "R2",
+              "name": "设备间",
+              "unlocked": false
+            }
+          ],
+          "progress": {
+            "power_on": false,
+            "check_done": false
+          },
+          "save": null
+        }
+      }
+    }
+  },
+  {
+    "path": "ai/turns",
+    "request": {
+      "request_id": "d6e39ae91bd84708911ea9c56c10155a",
+      "revision": 2,
+      "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+      "message": "请先调用 get_inventory 查看当前背包，等待工具真实结果，然后仅依据已发现的值班便签及柜门顺序提出 submit_code 值班柜建议。不要执行进度动作，等待我确认。最终只返回要求的 JSON。"
+    },
+    "http_status": 200,
+    "response": {
+      "ok": true,
+      "event_id": "8672fc963a2a4c4b8f3d3ab82b04c5ad",
+      "data": {
+        "answer": "建议（尚未执行，需要玩家确认）：背包当前为空，没有可使用的道具。已发现的线索为：值班便签记载“三角记为3，圆记为8，方记为2”；柜门顺序为“三角、圆、方”。按柜门标签从左到右对应数字，应得密码 382。这是依据已发现线索推断出的值班柜数字密码，尚未提交，需玩家确认。",
+        "clue_refs": [
+          "r1_note_clue",
+          "r1_cabinet_clue"
+        ],
+        "status": "completed",
+        "stop_reason": null,
+        "usage": {
+          "provider": "deepseek",
+          "model": "deepseek-flash",
+          "input_tokens": 3458,
+          "output_tokens": 207,
+          "model_calls": 2,
+          "read_tool_calls": 1
+        },
+        "turn_id": "513da38294bc4d04969649e7c9a9e4df",
+        "proposal": {
+          "proposal_id": "202b871faac047c999e151fe174cdcc6",
+          "tool": "submit_code",
+          "arguments": {
+            "target_id": "r1_cabinet",
+            "code": "382"
+          },
+          "revision": 2,
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "expires_at": "2026-10-06T04:34:39.219409Z",
+          "status": "pending",
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "summary": "建议（尚未执行，需要玩家确认）：向值班柜提交数字密码 382（三角=3、圆=8、方=2，按柜门从左到右的顺序）。此操作需玩家确认后才会执行。"
+        },
+        "visible_state": {
+          "schema_version": "1.0.0",
+          "level_version": "2.0.0",
+          "session_id": "7fc411b65b1341ebbd0de2e4defbcf05",
+          "revision": 2,
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "status": "playing",
+          "room": {
+            "room_id": "R1",
+            "name": "值班室",
+            "description": "夜间断电了，先寻找通往设备间的门卡。"
+          },
+          "objects": [
+            {
+              "object_id": "r1_note",
+              "name": "值班便签",
+              "kind": "clue",
+              "description": "桌上有一张值班便签。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_note"
+                  },
+                  "requires_code": false
+                }
+              ]
+            },
+            {
+              "object_id": "r1_cabinet",
+              "name": "值班柜",
+              "kind": "container",
+              "description": "带数字锁的值班柜，门上贴着形状标签。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_cabinet"
+                  },
+                  "requires_code": false
+                },
+                {
+                  "tool": "submit_code",
+                  "label": "输入密码",
+                  "arguments": {
+                    "target_id": "r1_cabinet"
+                  },
+                  "requires_code": true
+                }
+              ]
+            },
+            {
+              "object_id": "r1_door",
+              "name": "设备间刷卡门",
+              "kind": "door",
+              "description": "通向设备间的刷卡门。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_door"
+                  },
+                  "requires_code": false
+                }
+              ]
+            }
+          ],
+          "inventory": [],
+          "clues": [
+            {
+              "clue_id": "r1_note_clue",
+              "object_id": "r1_note",
+              "title": "值班便签",
+              "text": "三角记为3，圆记为8，方记为2。"
+            },
+            {
+              "clue_id": "r1_cabinet_clue",
+              "object_id": "r1_cabinet",
+              "title": "柜门顺序",
+              "text": "柜门标签从左到右是：三角、圆、方。"
+            }
+          ],
+          "exits": [
+            {
+              "destination_id": "R2",
+              "name": "设备间",
+              "unlocked": false
+            }
+          ],
+          "progress": {
+            "power_on": false,
+            "check_done": false
+          },
+          "save": null
+        }
+      }
+    }
+  },
+  {
+    "path": "ai/turns",
+    "request": {
+      "request_id": "d6e39ae91bd84708911ea9c56c10155a",
+      "revision": 2,
+      "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+      "message": "请先调用 get_inventory 查看当前背包，等待工具真实结果，然后仅依据已发现的值班便签及柜门顺序提出 submit_code 值班柜建议。不要执行进度动作，等待我确认。最终只返回要求的 JSON。"
+    },
+    "http_status": 200,
+    "response": {
+      "data": {
+        "answer": "建议（尚未执行，需要玩家确认）：背包当前为空，没有可使用的道具。已发现的线索为：值班便签记载“三角记为3，圆记为8，方记为2”；柜门顺序为“三角、圆、方”。按柜门标签从左到右对应数字，应得密码 382。这是依据已发现线索推断出的值班柜数字密码，尚未提交，需玩家确认。",
+        "clue_refs": [
+          "r1_note_clue",
+          "r1_cabinet_clue"
+        ],
+        "proposal": {
+          "arguments": {
+            "code": "382",
+            "target_id": "r1_cabinet"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "expires_at": "2026-10-06T04:34:39.219409Z",
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "proposal_id": "202b871faac047c999e151fe174cdcc6",
+          "revision": 2,
+          "status": "pending",
+          "summary": "建议（尚未执行，需要玩家确认）：向值班柜提交数字密码 382（三角=3、圆=8、方=2，按柜门从左到右的顺序）。此操作需玩家确认后才会执行。",
+          "tool": "submit_code"
+        },
+        "status": "completed",
+        "stop_reason": null,
+        "turn_id": "513da38294bc4d04969649e7c9a9e4df",
+        "usage": {
+          "input_tokens": 3458,
+          "model": "deepseek-flash",
+          "model_calls": 2,
+          "output_tokens": 207,
+          "provider": "deepseek",
+          "read_tool_calls": 1
+        },
+        "visible_state": {
+          "schema_version": "1.0.0",
+          "level_version": "2.0.0",
+          "session_id": "7fc411b65b1341ebbd0de2e4defbcf05",
+          "revision": 2,
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "status": "playing",
+          "room": {
+            "room_id": "R1",
+            "name": "值班室",
+            "description": "夜间断电了，先寻找通往设备间的门卡。"
+          },
+          "objects": [
+            {
+              "object_id": "r1_note",
+              "name": "值班便签",
+              "kind": "clue",
+              "description": "桌上有一张值班便签。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_note"
+                  },
+                  "requires_code": false
+                }
+              ]
+            },
+            {
+              "object_id": "r1_cabinet",
+              "name": "值班柜",
+              "kind": "container",
+              "description": "带数字锁的值班柜，门上贴着形状标签。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_cabinet"
+                  },
+                  "requires_code": false
+                },
+                {
+                  "tool": "submit_code",
+                  "label": "输入密码",
+                  "arguments": {
+                    "target_id": "r1_cabinet"
+                  },
+                  "requires_code": true
+                }
+              ]
+            },
+            {
+              "object_id": "r1_door",
+              "name": "设备间刷卡门",
+              "kind": "door",
+              "description": "通向设备间的刷卡门。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_door"
+                  },
+                  "requires_code": false
+                }
+              ]
+            }
+          ],
+          "inventory": [],
+          "clues": [
+            {
+              "clue_id": "r1_note_clue",
+              "object_id": "r1_note",
+              "title": "值班便签",
+              "text": "三角记为3，圆记为8，方记为2。"
+            },
+            {
+              "clue_id": "r1_cabinet_clue",
+              "object_id": "r1_cabinet",
+              "title": "柜门顺序",
+              "text": "柜门标签从左到右是：三角、圆、方。"
+            }
+          ],
+          "exits": [
+            {
+              "destination_id": "R2",
+              "name": "设备间",
+              "unlocked": false
+            }
+          ],
+          "progress": {
+            "power_on": false,
+            "check_done": false
+          },
+          "save": null
+        }
+      },
+      "event_id": "8672fc963a2a4c4b8f3d3ab82b04c5ad",
+      "ok": true
+    }
+  },
+  {
+    "path": "proposals/202b871faac047c999e151fe174cdcc6/confirm",
+    "request": {},
+    "http_status": 200,
+    "response": {
+      "ok": true,
+      "event_id": "1f31b5e789654275bc2a75e5cf0a3eb8",
+      "data": {
+        "receipt": {
+          "request_id": "202b871faac047c999e151fe174cdcc6",
+          "event_id": "1f31b5e789654275bc2a75e5cf0a3eb8",
+          "tool": "submit_code",
+          "arguments": {
+            "target_id": "r1_cabinet",
+            "code": "382"
+          },
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "revision_before": 2,
+          "revision_after": 3,
+          "changed": true,
+          "message": "值班柜已打开。",
+          "observation": null,
+          "new_clue_ids": [],
+          "consumed_item_ids": []
+        },
+        "replayed": false,
+        "proposal": {
+          "arguments": {
+            "code": "382",
+            "target_id": "r1_cabinet"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "expires_at": "2026-10-06T04:34:39.219409Z",
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "proposal_id": "202b871faac047c999e151fe174cdcc6",
+          "revision": 2,
+          "status": "committed",
+          "summary": "建议（尚未执行，需要玩家确认）：向值班柜提交数字密码 382（三角=3、圆=8、方=2，按柜门从左到右的顺序）。此操作需玩家确认后才会执行。",
+          "tool": "submit_code"
+        },
+        "visible_state": {
+          "schema_version": "1.0.0",
+          "level_version": "2.0.0",
+          "session_id": "7fc411b65b1341ebbd0de2e4defbcf05",
+          "revision": 3,
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "status": "playing",
+          "room": {
+            "room_id": "R1",
+            "name": "值班室",
+            "description": "夜间断电了，先寻找通往设备间的门卡。"
+          },
+          "objects": [
+            {
+              "object_id": "r1_note",
+              "name": "值班便签",
+              "kind": "clue",
+              "description": "桌上有一张值班便签。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_note"
+                  },
+                  "requires_code": false
+                }
+              ]
+            },
+            {
+              "object_id": "r1_cabinet",
+              "name": "值班柜",
+              "kind": "container",
+              "description": "值班柜已打开。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_cabinet"
+                  },
+                  "requires_code": false
+                }
+              ]
+            },
+            {
+              "object_id": "r1_door",
+              "name": "设备间刷卡门",
+              "kind": "door",
+              "description": "通向设备间的刷卡门。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_door"
+                  },
+                  "requires_code": false
+                }
+              ]
+            },
+            {
+              "object_id": "access_card",
+              "name": "门卡",
+              "kind": "item",
+              "description": "柜内有一张门卡。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "access_card"
+                  },
+                  "requires_code": false
+                },
+                {
+                  "tool": "take",
+                  "label": "拾取",
+                  "arguments": {
+                    "item_id": "access_card"
+                  },
+                  "requires_code": false
+                }
+              ]
+            }
+          ],
+          "inventory": [],
+          "clues": [
+            {
+              "clue_id": "r1_note_clue",
+              "object_id": "r1_note",
+              "title": "值班便签",
+              "text": "三角记为3，圆记为8，方记为2。"
+            },
+            {
+              "clue_id": "r1_cabinet_clue",
+              "object_id": "r1_cabinet",
+              "title": "柜门顺序",
+              "text": "柜门标签从左到右是：三角、圆、方。"
+            }
+          ],
+          "exits": [
+            {
+              "destination_id": "R2",
+              "name": "设备间",
+              "unlocked": false
+            }
+          ],
+          "progress": {
+            "power_on": false,
+            "check_done": false
+          },
+          "save": null
+        }
+      }
+    }
+  },
+  {
+    "path": "proposals/202b871faac047c999e151fe174cdcc6/confirm",
+    "request": {},
+    "http_status": 200,
+    "response": {
+      "ok": true,
+      "event_id": "1f31b5e789654275bc2a75e5cf0a3eb8",
+      "data": {
+        "receipt": {
+          "arguments": {
+            "code": "382",
+            "target_id": "r1_cabinet"
+          },
+          "changed": true,
+          "consumed_item_ids": [],
+          "event_id": "1f31b5e789654275bc2a75e5cf0a3eb8",
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "message": "值班柜已打开。",
+          "new_clue_ids": [],
+          "observation": null,
+          "request_id": "202b871faac047c999e151fe174cdcc6",
+          "revision_after": 3,
+          "revision_before": 2,
+          "tool": "submit_code"
+        },
+        "replayed": true,
+        "proposal": {
+          "arguments": {
+            "code": "382",
+            "target_id": "r1_cabinet"
+          },
+          "clue_refs": [
+            "r1_note_clue",
+            "r1_cabinet_clue"
+          ],
+          "expires_at": "2026-10-06T04:34:39.219409Z",
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "proposal_id": "202b871faac047c999e151fe174cdcc6",
+          "revision": 2,
+          "status": "committed",
+          "summary": "建议（尚未执行，需要玩家确认）：向值班柜提交数字密码 382（三角=3、圆=8、方=2，按柜门从左到右的顺序）。此操作需玩家确认后才会执行。",
+          "tool": "submit_code"
+        },
+        "visible_state": {
+          "schema_version": "1.0.0",
+          "level_version": "2.0.0",
+          "session_id": "7fc411b65b1341ebbd0de2e4defbcf05",
+          "revision": 3,
+          "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+          "status": "playing",
+          "room": {
+            "room_id": "R1",
+            "name": "值班室",
+            "description": "夜间断电了，先寻找通往设备间的门卡。"
+          },
+          "objects": [
+            {
+              "object_id": "r1_note",
+              "name": "值班便签",
+              "kind": "clue",
+              "description": "桌上有一张值班便签。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_note"
+                  },
+                  "requires_code": false
+                }
+              ]
+            },
+            {
+              "object_id": "r1_cabinet",
+              "name": "值班柜",
+              "kind": "container",
+              "description": "值班柜已打开。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_cabinet"
+                  },
+                  "requires_code": false
+                }
+              ]
+            },
+            {
+              "object_id": "r1_door",
+              "name": "设备间刷卡门",
+              "kind": "door",
+              "description": "通向设备间的刷卡门。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "r1_door"
+                  },
+                  "requires_code": false
+                }
+              ]
+            },
+            {
+              "object_id": "access_card",
+              "name": "门卡",
+              "kind": "item",
+              "description": "柜内有一张门卡。",
+              "actions": [
+                {
+                  "tool": "inspect",
+                  "label": "查看",
+                  "arguments": {
+                    "object_id": "access_card"
+                  },
+                  "requires_code": false
+                },
+                {
+                  "tool": "take",
+                  "label": "拾取",
+                  "arguments": {
+                    "item_id": "access_card"
+                  },
+                  "requires_code": false
+                }
+              ]
+            }
+          ],
+          "inventory": [],
+          "clues": [
+            {
+              "clue_id": "r1_note_clue",
+              "object_id": "r1_note",
+              "title": "值班便签",
+              "text": "三角记为3，圆记为8，方记为2。"
+            },
+            {
+              "clue_id": "r1_cabinet_clue",
+              "object_id": "r1_cabinet",
+              "title": "柜门顺序",
+              "text": "柜门标签从左到右是：三角、圆、方。"
+            }
+          ],
+          "exits": [
+            {
+              "destination_id": "R2",
+              "name": "设备间",
+              "unlocked": false
+            }
+          ],
+          "progress": {
+            "power_on": false,
+            "check_done": false
+          },
+          "save": null
+        }
+      }
+    }
+  }
+]

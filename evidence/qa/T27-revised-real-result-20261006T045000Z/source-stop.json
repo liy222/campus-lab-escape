@@ -1,0 +1,51 @@
+{
+  "source_stop": true,
+  "role": "result-only independent QA; no self-certification of engine source",
+  "report_sha256": "53ced73526128e359db1baf7a259b1c5e05c745aa9dbfd6b6e5b7603b22bb63b",
+  "reviewer_sha256": "56d975b6e50442a4e8dc3dbbc839ca9573c6b27dfd28bc382ba9c846e23965b0",
+  "result_sha256": "6f412f5b177bb653fbf488c8ac7586425b302bb9ffea6caacee2cc1a342c5a67",
+  "input_sources_before_after": {
+    "evidence/integration/revised-evaluation-payload-preview-20261006.json": "43c4a515c4570a2f5fdb3e383c44b09d2a3ef6f60d1be2877953d386cb15d30f",
+    "evidence/integration/revised-evaluation-human-approved-20261006.json": "0487fc6b2599a7fc9734867e4739c6069214d920cf1342ef0ae9d0d53b4beb50",
+    "evidence/integration/revised-evaluation-gates-20261006.json": "d16f9cea9ef73fbad87ce7cb2eacaa0f47bdf260db149850837164b4305a1329",
+    "evaluation/trusted/paid-gates.json": "2cacc75fd39abbb04accbf38371e19167df1d024d2c0e237d7aecd7c264763f6",
+    "evaluation/fixtures/cases.json": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1",
+    "evaluation/schemas/suggestion.schema.json": "b009e075e956c5c276bc27495d13223d8c0293271b23d2184b29163fd132a05b",
+    "evaluation/schemas/output.schema.json": "19a0062cdb3a2990178bac3ebdb078e29c898691f034c9adcca3dcdd7bc9c6b8",
+    "evidence/qa/T27-remaining-20261006T002000Z/result.json": "6d93e28b33ed28aadd33f0d85e94f04ad43c3b2258e79419cc2c4e26b0b17838",
+    "evaluation/runs/20261005T120430742113Z/report.json": "40aec88adcea8da225bcc439c98540701bf5b082f24046f7d32e4df7c0a67032",
+    "evidence/integration/remaining-evaluation-human-authorized-20261005.json": "f5fb8a907f4f5fb9f4a38edd83dc84b3ad5d204ca26d3ddfe16e8ad531cb1db4",
+    "evidence/integration/paid-evaluation-K1K6-20261005T110203Z-process.json": "b7d581ad32a96ebb15ff5142a7c5a16788dd1e0f28f02ba656df4b4ac2aef46e",
+    "evaluation/runs/20261006T043749352975Z/report.json": "69f4d9acf53a359dd5b9a34d44b99d9eed59a34c9823edfef65ca8a1f441fe9f",
+    "evidence/integration/paid-evaluation-Kfix-20261006T043737Z-process.json": "7ee76f28a2b0b97956a111d773474639c88dcc18f88ad0cd9af842c94b20b9a6",
+    "evaluation/runs/20261006T043806611760Z/report.json": "317812ea10dee387351e66449489c8d7171761b4460a3cf6f2e2cda99a97e0c6",
+    "evidence/integration/paid-evaluation-E1fix-20261006T043737Z-process.json": "f7b2308284364e08356ca5d48e16041dc199b2f97c9a45ff8d1e3f62bac6596a",
+    "evaluation/runs/20261006T043822902164Z/report.json": "aa3e9d906660ba56a3e65d388669d0ea4d29b1d5ce3c00671f2b69262e24facb",
+    "evidence/integration/paid-evaluation-CHfix-20261006T043737Z-process.json": "794d5bda225921d658a157e7e5f91b5573a94d0d13debc526b9d7ce8a2a9f72b"
+  },
+  "actual_run_source14": {
+    "__init__.py": "80d2830bcf95e17c0260ea5b922dbbb603c8db51657cc6f2ee1cd9e93075db01",
+    "baseline_archive.py": "9fe62e2090de072ac6f2360036660cc5bbbee6faa84bca1b27f782f13434d090",
+    "check.py": "c7bedbe312c53d4d4fb3038d0e7330c09eeb9aaa530f6deaab26f481218367f8",
+    "check_baseline_archive.py": "52daa9de4c34d9bb260c94665675429fcf45e5ad8490d40104249dd9094c5b49",
+    "check_events.py": "483b49f6a55ce5f450d6cd7ce3a4908e314a04f5518b8e5662610473b0dc2a16",
+    "cli.py": "bf6b3c9f70b9d3e15e0c7853dc86c672626f20d44a9f8f38ec12651d1ee4166f",
+    "common.py": "91509d55058126319117b45f7e256aec5f46d35f97cd6bda7cbe6472f8227ab8",
+    "engine.py": "2e9778f186c8191a475db9fa359a06dea8725cd4733872c450bf261d0cbfb74c",
+    "events.py": "61bbe3631502aee4b1557af19cb020ef01465204fa1b1a4145b876a17590c66a",
+    "freeze_inputs.py": "734194f9201af069e96008f0e838941b01a71ad7ad14f1f50d588e4e63ea3b67",
+    "provider.py": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd",
+    "reader.py": "050a8f6deb3e7ca209fde3362cd617274f0941cd5968662606bc2a6e282c5e7b",
+    "seal_inputs.py": "d93a3d37eb9c35e65350687b198b44e5fc146f13090f42d68c4a2633e0f70a95",
+    "trust.py": "8f8e02c1734d37263bbac3a0203f94c5b1f24fdea7f104c34ff53a0d67c38a14"
+  },
+  "limits": [
+    "Result-only independent read/hash audit; engine source independent acceptance belongs to qa_ch01, not this agent.",
+    "No live ledger/env/model/network/Git/target code import or execution; totals do not independently establish current ledger state.",
+    "Generic reports preserve approved preview and pinned source semantics, not an actual HTTP packet capture/wire digest.",
+    "11/11 calibration matches include3 paid model calls and8 deterministic fixtures; not11 paid completions or general-language calibration.",
+    "E1 PASS concerns registered original stopped22complete/1timeout/49notcalled materials, not merged69 outcomes or72successful model requests.",
+    "CH01 PASS concerns scripted engineering evidence, not natural autonomy/fullgame/teacher grade/human signoff.",
+    "Newversion calls are explicitly separately approved; old failure/privacy metadata and outcome hashes remain immutable."
+  ]
+}

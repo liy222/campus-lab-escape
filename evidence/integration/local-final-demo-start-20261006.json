@@ -1,0 +1,31 @@
+{
+  "at_utc": "2026-10-06T04:53:35.001932+00:00",
+  "kind": "Final local delivery demonstration startup",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "scripts.dev",
+    "--provider",
+    "mock"
+  ],
+  "cwd": "D:\\深度能力",
+  "environment_override": {
+    "SQLITE_PATH": "./data/game-v2.sqlite"
+  },
+  "provider": "mock",
+  "exec_session_id": 28174,
+  "backend_process_id": 4640,
+  "startup_chunk": "a7d1f4",
+  "frontend_url": "http://127.0.0.1:5173/",
+  "frontend_http_status": 200,
+  "backend_health": {
+    "status": "ok",
+    "service": "campus-lab-escape"
+  },
+  "actual_paid_calls": 0,
+  "human_signoff": null,
+  "scope": "Startup/read health for delivered local game; not human playtest or another regression. No agent or paid job continues in background."
+}

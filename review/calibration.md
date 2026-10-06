@@ -1,3 +1,7 @@
+## 2026-10-06 新提示版本补充（不覆盖旧报告）
+
+提示版本 `2e9778f186c8191a475db9fa359a06dea8725cd4733872c450bf261d0cbfb74c` 的有限结果：校准报告 `evaluation/runs/20261006T043749352975Z/report.json` 实际3次付费调用；11个校准检查为3条真实模型结果加8项确定性对照，11/11匹配，不是11次付费校准。E1 `evaluation/runs/20261006T043806611760Z/report.json` 实际2条PASS，绑定原冻结计划状态行：22 completed、1 timeout、49 not_called，不代表72次均完成或对merged69新run重新判读。CH01 `evaluation/runs/20261006T043822902164Z/report.json` 实际3条PASS，仅为登记工程Claim判读。三份结果经 `review/findings/T27-revised-real-result-20261006.md` / `evidence/qa/T27-revised-real-result-20261006T045000Z/result.json` 独立 QA 75/75、exit 0、SOURCE STOP；原始旧6次判读及旧校准10/11报告保持原样，不重发。人工签署与教师批准仍为null。
+
 # T27 校准审查草案
 
 ## 2026-10-06 当前有限真实记录与提示修正
@@ -6,7 +10,7 @@ Main 明确批准后的旧源真实校准报告 `evaluation/runs/20261005T120430
 
 同一旧源后续 E1 `evaluation/runs/20261005T155830386817Z/report.json` 两次、CH01 `evaluation/runs/20261005T155947272680Z/report.json` 三次实际判读均为 INSUFFICIENT_EVIDENCE，共5条事件语义弃权；错误包括未读取/假引用、schema/provider错误、1000输出token的 MODEL_INVALID_OUTPUT。原始失败、有限批准记录、实际usage/null和独立QA首轮错误均保留。既有未知调用的保守会计关闭不提供供应商账单、不恢复未知usage，也不改变判读历史。独立只读审查见 `review/findings/T27-real-calibration-20261005.md`、`review/findings/T27-remaining-evaluation-20261006.md`。
 
-本次 Main 临时单文件 handoff 后的 Evaluator Owner 修正只明确 `snippet` 是注册窗口 ID，要求引用来自 Tools 已实际核验的 pair，并提供原冻结 suggestion Schema 与简短紧凑输出提示。`TRUSTED_OUTPUT_CONTRACT` 位于 TARGET_DATA 外，rubric/target数据原内容保留。没有改 Schema、契约、fixtures、expected、reader、provider、事件冻结、paid gates 或严格校验/失败优先规则；没有新增付费调用。新提示尚无真实模型验证，将由另一 Agent 独立 QA，不用旧源实际结果证明新源有效。
+本次 Main 临时单文件 handoff 后的 Evaluator Owner 修正只明确 `snippet` 是注册窗口 ID，要求引用来自 Tools 已实际核验的 pair，并提供原冻结 suggestion Schema 与简短紧凑输出提示。`TRUSTED_OUTPUT_CONTRACT` 位于 TARGET_DATA 外，rubric/target数据原内容保留。没有改 Schema、契约、fixtures、expected、reader、provider、事件冻结、paid gates 或严格校验/失败优先规则；没有新增付费调用。当时这段文字描述的是离线修正刚完成时的历史状态；后续有限真实判读和独立QA另见本文开头补充，不能把离线QA本身当作真实模型验证。
 
 以下为先前草案的历史状态文字，保留其当时范围；不作为当前空gate或未发生付费的声明。
 
@@ -20,7 +24,7 @@ K4要求保存模型原始结构建议与最终判定，并证明已进入判读
 
 2026-10-05 的事件扩展保持旧冻结输入与预期原字节，新增默认空、仅 Main exact pin 可登记的 `events-registry-v1`、每事件完整 freeze 和 Main 固定 runtime 身份映射。可选 archive 映射保留真实原路径 before/after 与精确 raw/Git 身份；归档本身不证明执行。2–3 条事件 Claim 保留可信 MUST，部分范围返回不足。事件 paid gate 绑定整个 freeze raw hash，旧校准 gate 语义不变。
 
-Main 已告知正式 E1 因不确定调用停止，实际调用、完成、超时和未调用行须原样保留；本评价器现仅登记 Main exact pin 的 E1-formal-review-v2，尚无真实付费语义判读，不能将停止数据称为 72 次成功。Main 已告知原不确定调用完成手工保守关闭；此处未读取原账本，未来任何 paid 仍须独立有限 gate，此次不授予paid。本次只执行 offline Owner 检查，synthetic fixture 与其 Main 字段明确为隔离合成材料，真实v2登记仅来自Main固定路径/rawSHA，不写假生产批准。准确登记字段与模板在 `evaluation/runs/20261005-event-main-handoff-v2/`。
+Main 已告知正式 E1 因不确定调用停止，实际调用、完成、超时和未调用行须原样保留；该段登记与停止状态描述的是当时阶段；后续E1两条有限判读见本文2026-10-06补充。原计划仍为22 completed、1 timeout、49 not_called，不能称为72次成功。Main 已告知原不确定调用完成手工保守关闭；此处未读取原账本，未来任何 paid 仍须独立有限 gate，此次不授予paid。本次只执行 offline Owner 检查，synthetic fixture 与其 Main 字段明确为隔离合成材料，真实v2登记仅来自Main固定路径/rawSHA，不写假生产批准。准确登记字段与模板在 `evaluation/runs/20261005-event-main-handoff-v2/`。
 
 `human_signoff: null`；`teacher_approval: null`。本草案无真实模型校准结论或替人签署。
 

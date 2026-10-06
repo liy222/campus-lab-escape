@@ -2,7 +2,7 @@
 
 入口只读已经登记的发布证据；不会重跑产品脚本、导入目标模块、加载目标 AGENTS/Hooks/插件、执行 Shell 或打开任意 URL。目标源码和文档都是待审数据。人类署名始终为 `null/pending`，没有课程总分或置信度。
 
-旧 T26 实现已由独立 QA 接受（193 项、34 源，见 `review/findings/T26-acceptance-20261003.md`）。新增事件登记层仍是 Evaluator Owner 工程候选，等待独立 QA。mock 校准与 fake 协议检查不构成真实 LLM 校准或人类验收。正式事件审查须另行登记冻结证据并获得 Main 的有限付费 GO。
+旧 T26 实现已由独立 QA 接受（193 项、34 源，见 `review/findings/T26-acceptance-20261003.md`）。新增事件登记层已由独立 QA 检查；2026-10-06 的 2e977 提示版本8次有限真实判读另有75/75独立QA。校准11/11含3次真实判读及8项确定性对照；E1两条PASS只覆盖冻结登记Claim与原72状态行；CH01三条PASS只覆盖冻结工程Claim。它们不构成人类验收或完整真实LLM校准。
 
 ## 已批准版本和输入
 
@@ -43,7 +43,7 @@ runtime raw SHA-256 从不重写。只有 Main 明确登记 `approved_crlf_to_lf
 
 模型建议通过 Schema、文本和引用检查后才进入 `audit.raw_suggestion`。不合法响应只保存 SHA-256、字节数和受限错误码，不保存其原始内容、未知字段或不合法字段值；合法 K4 的原 PASS 建议与最终 FAIL 均保留。
 
-提示中的 `snippet` 是登记窗口标识符，例如 `summary`，不是证据引文或行文本。`TRUSTED_OUTPUT_CONTRACT` 位于 `TARGET_DATA` 外，包含原冻结 suggestion Schema，以及 Tools 实际读取并核验 release/hash/handle 后形成的 `{evidence_id, snippet}` 白名单。模型须逐字复制合法 pair，只返回 Schema 字段和紧凑 JSON；建议 reason 不超过240字符，missing_check 必要且简短，选择足以支持完整范围的少数引用。简短输出不降低 MUST，不指定应判状态，也不改变严格引用复核、失败优先规则、1000 token 或20秒限制。2026-10-06 此提示修正仅离线验证，尚无真实模型验证，须另一个独立 QA 接受。
+提示中的 `snippet` 是登记窗口标识符，例如 `summary`，不是证据引文或行文本。`TRUSTED_OUTPUT_CONTRACT` 位于 `TARGET_DATA` 外，包含原冻结 suggestion Schema，以及 Tools 实际读取并核验 release/hash/handle 后形成的 `{evidence_id, snippet}` 白名单。模型须逐字复制合法 pair，只返回 Schema 字段和紧凑 JSON；建议 reason 不超过240字符，missing_check 必要且简短，选择足以支持完整范围的少数引用。简短输出不降低 MUST，不指定应判状态，也不改变严格引用复核、失败优先规则、1000 token 或20秒限制。2026-10-06 提示修正的离线SOURCE STOP与随后2e977版有限真实判读分开登记。新真实结果见 `review/findings/T27-revised-real-result-20261006.md` 和 `evidence/qa/T27-revised-real-result-20261006T045000Z/result.json`；75/75 SOURCE STOP。旧6条输出原样保留，不能重发。
 
 ## 付费边界
 
@@ -57,7 +57,7 @@ runtime raw SHA-256 从不重写。只有 Main 明确登记 `approved_crlf_to_lf
 
 ## 未完成
 
-事件层及 CH01 身份映射已有对应独立 QA，真实付费有限记录见 `review/calibration.md` 与 T27 独立结果；原11案例报告10/11并非完整真实模型校准通过。E1两条、CH01三条实际模型判读均证据不足。冻结基线 A24/A25/A27/A28 没有产品执行证据，不能因本评价器 Owner 已写代码就追溯改成 baseline PASS。A11/A17/A26 部分范围仍按原事实保留；真人签署与教师审批没有被软件推断或替代。
+事件层及 CH01 身份映射已有对应独立 QA，真实付费有限记录见 `review/calibration.md` 与 T27 独立结果；新校准11/11含3次真实调用与8项确定性对照，原10/11报告仍保留。E1两条、CH01三条实际模型判读均证据不足。冻结基线 A24/A25/A27/A28 没有产品执行证据，不能因本评价器 Owner 已写代码就追溯改成 baseline PASS。A11/A17/A26 部分范围仍按原事实保留；真人签署与教师审批没有被软件推断或替代。
 
 Owner 检查保留两次实现检查失败：早期 source 白名单遗漏，及 Windows fake SQLite fixture 未关闭导致临时清理失败；修正后重跑结果另存，不覆盖失败事实。目标产品没有在这两个检查中执行或修改。
 
@@ -80,3 +80,8 @@ Main 已明确登记 `e1-formal-review-v2` / `E1-formal-review-v2`，产品仍�
 `source_precheck(baseline_v1)` 的最小固定归档桥接只接受 `trusted/baseline-source-archive-v1.json` 指定的 Main archive record/raw pin，精确选择原产品commit的60条，41实验条不冒作产品。逐项旧manifest Git身份、原路径和candidate/Main/实际archive raw相等；原运行map核验保持。报告明确只读archive、archive未执行、未认证当前CH01源码。旧freeze/cases/contract/windows/claims和paid-gates原字节不变。
 
 事件archive raw永远exact，不因Git CRLF provenance而允许canonical fallback。唯一公开无扩展名源码例外是Main固定alias中 `release/archives/<safeid>/experiments/.gitignore` 的source read；默认evidence/current及敏感文件规则仍拒绝。
+
+
+## 2026-10-06 新提示版本有限结果
+
+提示版本 raw SHA `2e9778f186c8191a475db9fa359a06dea8725cd4733872c450bf261d0cbfb74c` 的校准、E1、CH01报告分别为 `evaluation/runs/20261006T043749352975Z/report.json`（3次付费；11/11含8个确定性对照）、`evaluation/runs/20261006T043806611760Z/report.json`（2条 PASS，绑定原登记E1计划状态22/1/49）和 `evaluation/runs/20261006T043822902164Z/report.json`（3条工程Claim PASS）。全部以 `review/findings/T27-revised-real-result-20261006.md` / `evidence/qa/T27-revised-real-result-20261006T045000Z/result.json` 的75/75独立SOURCE STOP为准。原6次旧源结果、旧校准10/11与所有历史证据均保留。

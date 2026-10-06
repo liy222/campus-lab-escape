@@ -1,0 +1,42 @@
+[
+  {
+    "AI_turns": 1,
+    "provider_attempts": 2,
+    "tool": "get_inventory",
+    "proposal": {
+      "proposal_id": "202b871faac047c999e151fe174cdcc6",
+      "tool": "submit_code",
+      "arguments": {
+        "target_id": "r1_cabinet",
+        "code": "382"
+      },
+      "revision": 2,
+      "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+      "expires_at": "2026-10-06T04:34:39.219409Z",
+      "status": "pending",
+      "clue_refs": [
+        "r1_note_clue",
+        "r1_cabinet_clue"
+      ],
+      "summary": "建议（尚未执行，需要玩家确认）：向值班柜提交数字密码 382（三角=3、圆=8、方=2，按柜门从左到右的顺序）。此操作需玩家确认后才会执行。"
+    },
+    "confirm_receipt": {
+      "request_id": "202b871faac047c999e151fe174cdcc6",
+      "event_id": "1f31b5e789654275bc2a75e5cf0a3eb8",
+      "tool": "submit_code",
+      "arguments": {
+        "target_id": "r1_cabinet",
+        "code": "382"
+      },
+      "generation": "17b004b6-7998-484e-93f9-e8d9f9cbd144",
+      "revision_before": 2,
+      "revision_after": 3,
+      "changed": true,
+      "message": "值班柜已打开。",
+      "observation": null,
+      "new_clue_ids": [],
+      "consumed_item_ids": []
+    },
+    "replays_no_new_provider": true
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "created_at": "2026-10-06T04:37:37.208248+00:00",
+  "human_reply_exact": "批准这 8 项新版评价载荷外发",
+  "human_approval_record": "evidence\\integration\\revised-evaluation-human-approved-20261006.json",
+  "preview": "evidence\\integration\\revised-evaluation-payload-preview-20261006.json",
+  "preview_raw_sha256": "43c4a515c4570a2f5fdb3e383c44b09d2a3ef6f60d1be2877953d386cb15d30f",
+  "jobs": [
+    {
+      "job": "revised-calibration",
+      "gate": {
+        "approval_id": "Kfix-20261006T043737Z",
+        "approved_by": "Main",
+        "purpose": "calibration",
+        "input_sha256": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1",
+        "max_calls": 3,
+        "max_cost_units": 263744000,
+        "max_tokens": 1000,
+        "timeout_seconds": 20,
+        "expires_at": "2026-10-06T16:37:37.208248+00:00",
+        "credential_env": "EVALUATION_MODEL_API_KEY",
+        "base_url": "https://api.deepseek.com",
+        "model": "deepseek-flash"
+      }
+    },
+    {
+      "job": "E1-formal-review-v2",
+      "gate": {
+        "approval_id": "E1fix-20261006T043737Z",
+        "approved_by": "Main",
+        "purpose": "claims",
+        "input_sha256": "6ac8f14b3b8f4abf38fcc1e60327062540fc1678c9feb04546c34f61fd918a84",
+        "max_calls": 2,
+        "max_cost_units": 677656000,
+        "max_tokens": 1000,
+        "timeout_seconds": 20,
+        "expires_at": "2026-10-06T16:37:37.208248+00:00",
+        "credential_env": "EVALUATION_MODEL_API_KEY",
+        "base_url": "https://api.deepseek.com",
+        "model": "deepseek-flash"
+      }
+    },
+    {
+      "job": "CH01-adversarial-review-v3",
+      "gate": {
+        "approval_id": "CHfix-20261006T043737Z",
+        "approved_by": "Main",
+        "purpose": "claims",
+        "input_sha256": "5eb36ad053d05a5285fd6dd22fe25983d575c5597abe5d8441fb5ed6457aee6d",
+        "max_calls": 3,
+        "max_cost_units": 1240264000,
+        "max_tokens": 1000,
+        "timeout_seconds": 20,
+        "expires_at": "2026-10-06T16:37:37.208248+00:00",
+        "credential_env": "EVALUATION_MODEL_API_KEY",
+        "base_url": "https://api.deepseek.com",
+        "model": "deepseek-flash"
+      }
+    }
+  ],
+  "budget_before": {
+    "calls": 93,
+    "charged_upper_units": 668423280,
+    "original_cap_units": 10000000000
+  },
+  "gate_before_raw_sha256": "951ae7e4ebd522437b28a358cff84e6cdd81d2038224bb8be35130e0d037c27d",
+  "maximum_new_requests": 8,
+  "reservation_sum_units": 2181664000,
+  "limits": "One attempt per exact payload. Old-version evaluation and experiment failure records retained without replay. These are explicitly approved new prompt versions. No supplier fees asserted; full maximum retained for failures. A new uncertainty stops the current job. No score or human signoff."
+}

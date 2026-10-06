@@ -1,9 +1,9 @@
 # Status
 updated_at: 2026-10-06 (Asia/Shanghai)
-milestone: PAUSED_BY_HUMAN after current small tasks; product CH01_v2 accepted, prompt offline QA and delivery v5 completed; no new real AI dispatch
+milestone: ENGINEERING_DELIVERY_COMPLETE_WITH_DISCLOSED_LIMITS; Deliveryv6/source/actual-result scopes accepted; local free mock demo running; resolve final synced commit from Git HEAD
 last_verified_release: CH01_v2 product commit242ecfc4d9f7bf1a8480508de701d9efc7822fe7; raw/Git binding in evidence/integration/CH01_v2-manifest.json; baseline_v1 preserved
 remote: https://github.com/liy222/campus-lab-escape (PRIVATE, gh verified)
-remote_verified_before_this_pause_checkpoint: c9f579209e702c957a560b1a2ad91f20fae6e8c8 (normal push and gh verification succeeded; checkpoint commit is resolved from current Git HEAD)
+remote_verified_before_final_delivery_checkpoint: bc390fbd62e6b32ab81d2cdc2454e7aa42cb96f7 (previous pause commit; final accepted delivery commit is resolved from current Git HEAD after sync)
 
 ## 2026-10-05 latest actual continuation checkpoint (supersedes older pending labels)
 - User explicitly approved the exact49 experiment payloads and3 calibration payloads. Main verified all52 current evaluator sources against new independent QA and exact3 calibration wire payloads against the approved preview, actualexit0/18c9e2; record evidence/integration/external-payload-human-approval-20261005.json. Approval does not add a budget or authorize retries.
@@ -107,3 +107,15 @@ Main re-read independent QA:223 checks/36 scenarios/30 captured mock payloads,81
 
 ## 2026-10-06 human-requested pause
 User exact: 尽快完成现有小任务后暂时停止. Current small tasks completed: T31 v5/51 Main raw hash pairs accepted; A28 read-only preparation/relay review finished SOURCE STOP without invocation. Main stops this owned mock demo only (taskkill0; supervised process intentionally ends1); saves and environments preserved. No new paid calls, symlink, credential injection or background automation. New8 evaluation authorization, A28 real segment and genuine human signoff remain pending; old6 calls never replay. Recovery entry: evidence/integration/pause-checkpoint-20261006.json and release/README.md. Resume only when the user requests it. All chronological older states remain history.
+
+
+## 2026-10-06 human-requested resume
+User: 继续，尽快完成. Pause revoked; Main resumes only remaining finite acceptance and delivery. A28 initial file symlink attempt exited1/c4f09f before provider dispatch (0calls); preserve record. New source-identical10778 directory and Root canonical ledger directoryjunction prepared0/c986b6; no data/budget copy or source guard relaxation. Independent fast review before paid segment. New8 revised evaluation approval still pending; old6 payloads not resent. No full regression or fees investigation repeated.
+
+
+## 2026-10-06 final actual engineering acceptance
+A28 new fixed-source directory controlled true-provider check actualexit0/6c6318,2calls/1turn,independent105/105 exit0/e56e64; original0-call symlink privilege failure retained and avoided via new directoryjunction using same original ledger. New approved8 evaluation calls actual3/2/3 eachprocess0 (b12baf/36d62b/e00085),source14 unchanged; calibration11/11 (3paid+8deterministic),E1registered stopped-materialPASS2,CH01scripted-engineeringPASS3. Independent75/75 actual0/02f6ff. No old outcome/call replay, no new budget/invoice claim. Full source/mock clean and controlled true segment are separate accepted scopes. E1frozen72 terminal still69complete/2fail/1notcalled and34completepairs/36planned; no fabricated full success. Human explanation/signoff remains unprovided; excluded course questions not pursued. Deliveryv6 is final document epoch, then normal commit/push.
+
+
+## Final delivery handoff, 2026-10-06
+Deliveryv6 stable SOURCE STOP; Main81 current path/SHA pairs passed with no mismatch, source14 unchanged and7document hashes match Owner report. Existing failed/unknown/notcalled/olderINSUF records preserved. Local free mock demo started at http://127.0.0.1:5173/ with explicit v2 database; no background Agent/paid work. Engineering/source/scoped actual acceptance completed; genuine human gameplay explanation/signature is still unprovided and the experiment retains its statedpartial terminal outcomes. No pending new8 authorization or uncalled new8 jobs remains. Normal final commit/push follows; exact synced SHA is current Git HEAD after verification.

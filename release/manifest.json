@@ -2,7 +2,7 @@
   "schema": "local-delivery-manifest/v1",
   "generated_date": "2026-10-06",
   "hash_algorithm": "SHA-256 over exact raw bytes",
-  "status": "SOURCE STOP for current documented product/clean source and offline prompt-fix revision; no paid calls for the prompt-fix revision.",
+  "status": "SOURCE STOP for product clean source, A28 limited real segment, and the 2e977 finite evaluation results; documented limits remain.",
   "release_components": [
     {
       "name": "product-v2",
@@ -95,6 +95,51 @@
       "network_calls": 0,
       "claims": "Main offline acceptance and independent QA bind tested source f80c6af; milestone c9f579 contains prompt sources/QA/payload preview. No new live judgement was run.",
       "tested_source_commit": "f80c6af075f6041aa11a4f79ba2e6cb1ea9ecd80"
+    },
+    {
+      "name": "A28-real-limited-segment",
+      "role": "limited real-provider R1 interaction on pinned clean source",
+      "source_commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+      "preparation": "evidence/integration/A28-junction-preparation-20261006.json",
+      "preparation_sha256": "ff254786a4b78c41c78bcc7b5edbc166a64e06e7b70bd53eeacd3f35bbf1f590",
+      "main_process": "evidence/integration/A28-junction-real-process-20261006.json",
+      "main_process_sha256": "20521672539fc799b3a02749b345601fb01fc68d392e9ced5c8a65462eada186",
+      "archive_index": "evidence/integration/A28-real-20261006/index.json",
+      "archive_index_sha256": "5fb3a2479082dc6ec537d055045f50868c29fee26812eb46388d90150d3175a5",
+      "qa_report": "review/findings/A28-real-result-20261006.md",
+      "qa_report_sha256": "354da2a451c2167d4e5420322fc7c264039132b25fa868c8240a1904465a4f24",
+      "qa_result": "evidence/qa/A28-real-result-20261006T043600767538Z/result.json",
+      "qa_result_sha256": "b357fdfc17eaf26b942e821dc20382c4a0de55e5766e59f04d74af38a932ded9",
+      "qa_index": "evidence/qa/A28-real-result-20261006T043600767538Z/index.json",
+      "qa_index_sha256": "5d4a02a6154d8bbc0844dcc8c30fe77f7b99de1d9fed1338dc18a60ecbdd678b",
+      "calls": 2,
+      "ai_turns": 1,
+      "qa": "105/105 exit0 SOURCE STOP; 85 read files unchanged, 63 pinned source files exact; controlled R1 segment only, not full game or human playtest."
+    },
+    {
+      "name": "evaluator-prompt-2e977-live-limited-results",
+      "role": "finite live evaluation results on repaired prompt revision",
+      "prompt_source_sha256": "2e9778f186c8191a475db9fa359a06dea8725cd4733872c450bf261d0cbfb74c",
+      "calibration_report": "evaluation/runs/20261006T043749352975Z/report.json",
+      "calibration_report_sha256": "69f4d9acf53a359dd5b9a34d44b99d9eed59a34c9823edfef65ca8a1f441fe9f",
+      "e1_report": "evaluation/runs/20261006T043806611760Z/report.json",
+      "e1_report_sha256": "317812ea10dee387351e66449489c8d7171761b4460a3cf6f2e2cda99a97e0c6",
+      "ch01_report": "evaluation/runs/20261006T043822902164Z/report.json",
+      "ch01_report_sha256": "aa3e9d906660ba56a3e65d388669d0ea4d29b1d5ce3c00671f2b69262e24facb",
+      "qa_report": "review/findings/T27-revised-real-result-20261006.md",
+      "qa_report_sha256": "53ced73526128e359db1baf7a259b1c5e05c745aa9dbfd6b6e5b7603b22bb63b",
+      "qa_result": "evidence/qa/T27-revised-real-result-20261006T045000Z/result.json",
+      "qa_result_sha256": "6f412f5b177bb653fbf488c8ac7586425b302bb9ffea6caacee2cc1a342c5a67",
+      "actual_paid_calls": 8,
+      "actual_exit_codes": [
+        0,
+        0,
+        0
+      ],
+      "qa": "75/75 exit0 SOURCE STOP; report/result hashes bound; calibration 11 checks = 3 paid + 8 deterministic; E1 2 PASS applies to registered frozen status rows 22/1/49; CH01 3 PASS applies to registered engineering claims; old six results unchanged.",
+      "final_main_acceptance": "evidence/integration/final-independent-reviews-accepted-20261006.json",
+      "final_main_acceptance_sha256": "c02b097ed92d3c289a8566981bc92e173b393fe988929e7df95675a747dcb36d",
+      "qa_index": ""
     }
   ],
   "evidence": [
@@ -236,6 +281,93 @@
       "sha256": "4e4493ddc64fee33a8a7b6ca138492207cf2bc931b33823777c925b50688a35c",
       "milestone_commit": "c9f579209e702c957a560b1a2ad91f20fae6e8c8",
       "new_live_payloads": "8 pending approval, not called"
+    },
+    {
+      "kind": "A28-main-process",
+      "path": "evidence/integration/A28-junction-real-process-20261006.json",
+      "sha256": "20521672539fc799b3a02749b345601fb01fc68d392e9ced5c8a65462eada186"
+    },
+    {
+      "kind": "A28-preparation",
+      "path": "evidence/integration/A28-junction-preparation-20261006.json",
+      "sha256": "ff254786a4b78c41c78bcc7b5edbc166a64e06e7b70bd53eeacd3f35bbf1f590"
+    },
+    {
+      "kind": "A28-archive-index",
+      "path": "evidence/integration/A28-real-20261006/index.json",
+      "sha256": "5fb3a2479082dc6ec537d055045f50868c29fee26812eb46388d90150d3175a5"
+    },
+    {
+      "kind": "A28-run",
+      "path": "evidence/integration/A28-real-20261006/run.json",
+      "sha256": "ef90c1d8404a6ee609850045d9343ba2cd6c0ac8603600ae21c0ee63e97dfdf2"
+    },
+    {
+      "kind": "A28-checks",
+      "path": "evidence/integration/A28-real-20261006/checks.json",
+      "sha256": "019008a082b9f48629bfd7a6f4e193b2be7033fd345d9712f7110ae02326422c"
+    },
+    {
+      "kind": "A28-http-exchanges",
+      "path": "evidence/integration/A28-real-20261006/http-exchanges.json",
+      "sha256": "83437b3faf7c9af799d19bb5eab89239b81b47d3bf8abe1ed32a1dbe99b547d7"
+    },
+    {
+      "kind": "A28-public-runtime-trace",
+      "path": "evidence/integration/A28-real-20261006/public-runtime-trace.json",
+      "sha256": "e326dab6551bd91301ca5b9afd09313dd9c6153ab787edc65abeab73f999c078"
+    },
+    {
+      "kind": "A28-independent-QA-report",
+      "path": "review/findings/A28-real-result-20261006.md",
+      "sha256": "354da2a451c2167d4e5420322fc7c264039132b25fa868c8240a1904465a4f24"
+    },
+    {
+      "kind": "A28-independent-QA-result",
+      "path": "evidence/qa/A28-real-result-20261006T043600767538Z/result.json",
+      "sha256": "b357fdfc17eaf26b942e821dc20382c4a0de55e5766e59f04d74af38a932ded9"
+    },
+    {
+      "kind": "A28-independent-QA-index",
+      "path": "evidence/qa/A28-real-result-20261006T043600767538Z/index.json",
+      "sha256": "5d4a02a6154d8bbc0844dcc8c30fe77f7b99de1d9fed1338dc18a60ecbdd678b"
+    },
+    {
+      "kind": "calibration-2e977",
+      "path": "evaluation/runs/20261006T043749352975Z/report.json",
+      "sha256": "69f4d9acf53a359dd5b9a34d44b99d9eed59a34c9823edfef65ca8a1f441fe9f"
+    },
+    {
+      "kind": "E1-2e977",
+      "path": "evaluation/runs/20261006T043806611760Z/report.json",
+      "sha256": "317812ea10dee387351e66449489c8d7171761b4460a3cf6f2e2cda99a97e0c6"
+    },
+    {
+      "kind": "CH01-2e977",
+      "path": "evaluation/runs/20261006T043822902164Z/report.json",
+      "sha256": "aa3e9d906660ba56a3e65d388669d0ea4d29b1d5ce3c00671f2b69262e24facb"
+    },
+    {
+      "kind": "new-live-result-QA-report",
+      "path": "review/findings/T27-revised-real-result-20261006.md",
+      "sha256": "53ced73526128e359db1baf7a259b1c5e05c745aa9dbfd6b6e5b7603b22bb63b"
+    },
+    {
+      "kind": "new-live-result-QA-result",
+      "path": "evidence/qa/T27-revised-real-result-20261006T045000Z/result.json",
+      "sha256": "6f412f5b177bb653fbf488c8ac7586425b302bb9ffea6caacee2cc1a342c5a67"
+    },
+    {
+      "kind": "final-validation-checkpoint",
+      "path": "evidence/integration/final-validation-checkpoint-20261006.json",
+      "sha256": "fec9470cc6a417c04fe59046e1a286bf942a7744bc903afac487dd08353cbc33"
+    },
+    {
+      "kind": "main-acceptance-of-final-independent-reviews",
+      "path": "evidence/integration/final-independent-reviews-accepted-20261006.json",
+      "sha256": "c02b097ed92d3c289a8566981bc92e173b393fe988929e7df95675a747dcb36d",
+      "actual_exit_code": 0,
+      "accepted_reviews": "A28 105 checks; T27 revised actual-result QA 75 checks"
     }
   ],
   "local_data": {
@@ -247,18 +379,22 @@
     "v1_database": "./data/game-v1.sqlite"
   },
   "current_accounting": {
-    "calls": 91,
+    "calls": 101,
     "no_new_dispatch": true,
-    "calibration": "Six newly approved payloads each invoked once: K4 valid-model expected FAIL, two E1 and three CH01 results INSUFFICIENT_EVIDENCE. Old K1/K2 outcome 10/11 unchanged.",
-    "charged_upper_cny": 0.66236008,
-    "fee_resolution": "User reported CNY 0.09 for unavailable call; Main conservatively recorded it, retained full CNY 0.094536 upper and NULL usage; no supplier invoice claim.",
-    "pending_unknown": 0
+    "charged_upper_cny": 0.81685848,
+    "cap_cny": 10,
+    "pending_unknown": 0,
+    "frozen": 0,
+    "calibration": "Prompt 2e977: 8 calls total (3 calibration, 2 E1, 3 CH01), independently QA SOURCE STOP 75/75. Calibration 11/11 comprises 3 paid judgments plus 8 deterministic checks. Previous six results remain unchanged: one expected K4 FAIL and five INSUFFICIENT_EVIDENCE.",
+    "known_usage_metadata_cny": 0.1484352,
+    "fee_resolution": "Main snapshot only; known usage is call metadata, not supplier invoice."
   },
   "outcomes": {
-    "human_acceptance": "No human playtest, player decision record, teacher approval, or signature supplied",
-    "evaluator": "79/79 CH01 identity/alias QA; six new paid judgement outcomes comprise one expected FAIL and five INSUFFICIENT_EVIDENCE; no semantic PASS or grade.",
+    "human_acceptance": "No human playtest, player decision record, teacher approval, or signature supplied; course confirmation excluded.",
+    "evaluator": "Prompt 2e977 finite result QA 75/75 SOURCE STOP: calibration 11 checks (3 paid + 8 deterministic), E1 two registered-claim PASS over the original 22 completed/1 timeout/49 not_called plan rows, CH01 three registered engineering-claim PASS. Earlier six outputs and old 10/11 calibration remain unchanged.",
     "continuation": "49 planned; 48 invoked, 47 responses, one MODEL_UNAVAILABLE usage unknown, one not_called; final merged independent review 1427/1427 checks exit0 STOP; 69/72 terminal, 34 complete pairs, 2 failed and 1 not_called; 69 old rows independently rejudged; no complete three-repeat or superiority claim.",
-    "prompt_fix": "Independent offline QA SOURCE STOP: 223 checks/36 scenarios/30 captures/81 files unchanged, exit0; no model call. 8 new real payloads awaiting approval."
+    "prompt_fix": "Independent offline QA SOURCE STOP: 223 checks/36 scenarios/30 captures/81 files unchanged, exit0; no model call. 8 new real payloads awaiting approval.",
+    "A28": "Separate real-provider R1 segment on exact 833aafb pinned clean: 2 calls, 1 AI turn; independent QA 105/105; bounded scenario only, not full autonomous play or human acceptance."
   },
   "version_separation": {
     "clean_reproduction_commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
@@ -269,8 +405,8 @@
     "product_commit": "242ecfc4d9f7bf1a8480508de701d9efc7822fe7"
   },
   "known_blockers": [
-    "Eight concrete payloads for real evaluation of the new prompt await user approval; none has been called.",
-    "No human playtest, player decision record, teacher approval, or human signature."
+    "No human playtest, player decision record, teacher approval, or human signature supplied.",
+    "E1 registered plan remains partial: 22 completed, 1 timeout, 49 not_called; no complete 72-call completion claim."
   ],
   "source_bindings": {
     "product_v2": {
@@ -325,7 +461,7 @@
     }
   },
   "current_prompt_revision": {
-    "status": "Main accepted offline repair; independent SOURCE STOP complete; live payload approval pending",
+    "status": "offline prompt/source revision independently accepted; later live 2e977 results separately QA SOURCE STOP",
     "commit": "f80c6af075f6041aa11a4f79ba2e6cb1ea9ecd80",
     "source_handoff": "evaluation/runs/prompt-reference-fix-20261006T003000Z/stable-handoff.json",
     "source_handoff_sha256": "3bc15b57b09d8acada204bfdb09075f7e2e50b28ee828eb7410b6a91d6721f9a",
@@ -343,11 +479,13 @@
     "exit": 0,
     "paid_calls": 0,
     "network_calls": 0,
-    "new_real_payloads": "8 awaiting user approval; not called",
-    "milestone_commit": "c9f579209e702c957a560b1a2ad91f20fae6e8c8",
-    "main_acceptance": "evidence/integration/prompt-repair-accepted-20261006.json",
-    "main_acceptance_sha256": "4e4493ddc64fee33a8a7b6ca138492207cf2bc931b33823777c925b50688a35c",
-    "new_live_payload_status": "8 concrete payloads awaiting user reply; none invoked",
-    "note": "Offline QA validates prompt/identity/schema boundaries only; no real-model effectiveness inferred. Prior six approved payloads were consumed once and cannot be resent."
+    "new_real_payloads": "8 invoked once; 3 calibration + 2 E1 + 3 CH01; QA 75/75 SOURCE STOP",
+    "milestone_commit": "c9f579209e702c957a560b1a2ad91f20fae6e8c8 (historical milestone; not asserted as current remote tip)",
+    "main_acceptance": "evidence/integration/final-independent-reviews-accepted-20261006.json",
+    "main_acceptance_sha256": "c02b097ed92d3c289a8566981bc92e173b393fe988929e7df95675a747dcb36d",
+    "new_live_payload_status": "8 approved payloads invoked once and independently SOURCE STOP accepted; no retries",
+    "note": "Offline QA validates prompt/identity/schema boundaries only. Live finite results are bound separately to prompt raw SHA 2e977; prior six old-source results remain immutable and cannot be resent.",
+    "real_results_qa": "review/findings/T27-revised-real-result-20261006.md",
+    "real_results_qa_sha256": "53ced73526128e359db1baf7a259b1c5e05c745aa9dbfd6b6e5b7603b22bb63b"
   }
 }

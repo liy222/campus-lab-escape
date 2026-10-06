@@ -1,0 +1,710 @@
+{
+  "kind": "A28-independent-actual-real-review",
+  "at_utc": "2026-10-06T04:36:00.793469+00:00",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "tests/review_a28_real_result.py"
+  ],
+  "exit_code": 0,
+  "checks": [
+    {
+      "name": "exact-copy:run.json",
+      "passed": true
+    },
+    {
+      "name": "exact-copy:checks.json",
+      "passed": true
+    },
+    {
+      "name": "exact-copy:http-exchanges.json",
+      "passed": true
+    },
+    {
+      "name": "exact-copy:public-runtime-trace.json",
+      "passed": true
+    },
+    {
+      "name": "actual-Main-command-exit",
+      "passed": true
+    },
+    {
+      "name": "candidate-source-cwd",
+      "passed": true
+    },
+    {
+      "name": "run-hash-and-started",
+      "passed": true
+    },
+    {
+      "name": "63-collected-source-before-after",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:AGENTS.md",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/ai/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/ai/budget.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/ai/context.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/ai/mock.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/ai/provider.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/ai/provider_check.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/ai/provider_probe.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/ai/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/ai/types.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/api/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/api/routes.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/domain/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/domain/models.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/domain/rules.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/main.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/storage/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/storage/ai.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/app/storage/sqlite.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:backend/requirements.lock.txt",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:contracts/api.schema.json",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:contracts/build_contracts.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:contracts/check_contracts.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:contracts/routes.json",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:contracts/T28-contract-validation-20261005.json",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:contracts/tools.json",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:contracts/tools.schema.json",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:contracts/validation.json",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:docs/level_design.md",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:docs/SPEC.md",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:frontend/src/api.ts",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:frontend/src/App.tsx",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:frontend/src/Assistant.tsx",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:frontend/src/main.tsx",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:frontend/src/style.css",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:scripts/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:scripts/check.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:scripts/dev.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:scripts/lock_dependencies.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:scripts/reproduce.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:scripts/reset.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/api/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/api/test_ch01.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/api/test_m2.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/api/test_m3.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/api/test_r1.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/e2e/run_ch01.mjs",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/e2e/run_m2.mjs",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/e2e/run_m3.mjs",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/e2e/run_r1.mjs",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/qa_ch01_runner.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/qa_runner.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/real_m3_runner.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/review_budget_reconciliation.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/review_ch01_evaluation.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/review_clean_release.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/review_e1.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/review_e1_continuation.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/review_e1_results.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/review_evaluation.py",
+      "passed": true
+    },
+    {
+      "name": "actual-clean-current-source:tests/review_evaluation_events.py",
+      "passed": true
+    },
+    {
+      "name": "11-Root-clean-source:tests/real_m3_runner.py",
+      "passed": true
+    },
+    {
+      "name": "11-Root-clean-source:tests/qa_runner.py",
+      "passed": true
+    },
+    {
+      "name": "11-Root-clean-source:backend/app/ai/provider.py",
+      "passed": true
+    },
+    {
+      "name": "11-Root-clean-source:backend/app/ai/budget.py",
+      "passed": true
+    },
+    {
+      "name": "11-Root-clean-source:backend/app/ai/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "11-Root-clean-source:backend/app/ai/context.py",
+      "passed": true
+    },
+    {
+      "name": "11-Root-clean-source:contracts/tools.json",
+      "passed": true
+    },
+    {
+      "name": "11-Root-clean-source:backend/app/domain/rules.py",
+      "passed": true
+    },
+    {
+      "name": "11-Root-clean-source:scripts/reproduce.py",
+      "passed": true
+    },
+    {
+      "name": "11-Root-clean-source:backend/app/main.py",
+      "passed": true
+    },
+    {
+      "name": "11-Root-clean-source:contracts/api.schema.json",
+      "passed": true
+    },
+    {
+      "name": "11-actual-identity-bindings",
+      "passed": true
+    },
+    {
+      "name": "physical-canonical-ledger-metadata",
+      "passed": true
+    },
+    {
+      "name": "original-zero-call-blocker-preserved",
+      "passed": true
+    },
+    {
+      "name": "two-real-call-bindings",
+      "passed": true
+    },
+    {
+      "name": "canonical-snapshot-scope-and-cap",
+      "passed": true
+    },
+    {
+      "name": "finite-limit-records",
+      "passed": true
+    },
+    {
+      "name": "recognized-real-model-and-usage",
+      "passed": true
+    },
+    {
+      "name": "trace-real-tool-order",
+      "passed": true
+    },
+    {
+      "name": "inventory-tool-return",
+      "passed": true
+    },
+    {
+      "name": "actual1000-20-no-retry-limits",
+      "passed": true
+    },
+    {
+      "name": "six-successful-http-exchanges",
+      "passed": true
+    },
+    {
+      "name": "two-public-inspections",
+      "passed": true
+    },
+    {
+      "name": "one-AI-turn-replayed",
+      "passed": true
+    },
+    {
+      "name": "tool-usage-agrees",
+      "passed": true
+    },
+    {
+      "name": "progress-pending-only",
+      "passed": true
+    },
+    {
+      "name": "proposal-public-clue-binding",
+      "passed": true
+    },
+    {
+      "name": "no-hidden-answer-in-input-request",
+      "passed": true
+    },
+    {
+      "name": "confirmation-once",
+      "passed": true
+    },
+    {
+      "name": "confirmation-replay-same-receipt-state",
+      "passed": true
+    },
+    {
+      "name": "checks-and-global-no-new-replay-call",
+      "passed": true
+    },
+    {
+      "name": "no-secret-fields-in-sanitized-artifacts",
+      "passed": true
+    },
+    {
+      "name": "human-and-teacher-unapproved",
+      "passed": true
+    },
+    {
+      "name": "independent-all-read-source-STOP",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "source_before": {
+    "evidence/integration/A28-real-20261006/index.json": "5fb3a2479082dc6ec537d055045f50868c29fee26812eb46388d90150d3175a5",
+    "evidence/integration/A28-junction-real-process-20261006.json": "20521672539fc799b3a02749b345601fb01fc68d392e9ced5c8a65462eada186",
+    "evidence/integration/A28-real-20261006/run.json": "ef90c1d8404a6ee609850045d9343ba2cd6c0ac8603600ae21c0ee63e97dfdf2",
+    "data/reproduction/A28-junction-20261006/clean/evidence/qa/20261006T043235515205Z-m3-real/run.json": "ef90c1d8404a6ee609850045d9343ba2cd6c0ac8603600ae21c0ee63e97dfdf2",
+    "evidence/integration/A28-real-20261006/checks.json": "019008a082b9f48629bfd7a6f4e193b2be7033fd345d9712f7110ae02326422c",
+    "data/reproduction/A28-junction-20261006/clean/evidence/qa/20261006T043235515205Z-m3-real/checks.json": "019008a082b9f48629bfd7a6f4e193b2be7033fd345d9712f7110ae02326422c",
+    "evidence/integration/A28-real-20261006/http-exchanges.json": "83437b3faf7c9af799d19bb5eab89239b81b47d3bf8abe1ed32a1dbe99b547d7",
+    "data/reproduction/A28-junction-20261006/clean/evidence/qa/20261006T043235515205Z-m3-real/http-exchanges.json": "83437b3faf7c9af799d19bb5eab89239b81b47d3bf8abe1ed32a1dbe99b547d7",
+    "evidence/integration/A28-real-20261006/public-runtime-trace.json": "e326dab6551bd91301ca5b9afd09313dd9c6153ab787edc65abeab73f999c078",
+    "data/reproduction/A28-junction-20261006/clean/evidence/qa/20261006T043235515205Z-m3-real/public-runtime-trace.json": "e326dab6551bd91301ca5b9afd09313dd9c6153ab787edc65abeab73f999c078",
+    "data/reproduction/A28-junction-20261006/clean/AGENTS.md": "060f3b564a6273ceb851439489f715d36710ed9627dfe4ee3f701c69a8a3f5d6",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/runtime.py": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/api/routes.py": "a93901a5d791cb2550ecdbe2a6cdb935a5b7126637061b6172adf9ed9c422d4a",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/domain/rules.py": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/storage/ai.py": "8c93b995d6f19d4a3657b09058656b0e4636cd723bcad69327c116d77d733386",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/storage/sqlite.py": "ea094fce6270f1b47dca19885b1bb40df6275c198f13b4c5c57541e653c991ff",
+    "data/reproduction/A28-junction-20261006/clean/backend/requirements.lock.txt": "926bd0476c6671a4783700631dc61380d08e66fdac8ae289b874cd797eb235ea",
+    "data/reproduction/A28-junction-20261006/clean/contracts/api.schema.json": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+    "data/reproduction/A28-junction-20261006/clean/contracts/build_contracts.py": "66189eeff96706f5fd38ca17a8c6761399dcaf59bf4b5c0b17db5251aca844f2",
+    "data/reproduction/A28-junction-20261006/clean/contracts/check_contracts.py": "dd0ef7b049eb961edbee55d23795dab8dd19e516eff6576e5a5487b62335f418",
+    "data/reproduction/A28-junction-20261006/clean/contracts/routes.json": "5f196d17db47d99180e5df729dc682982a3868e6ed34cea36d8f03bdb2c0c5ca",
+    "data/reproduction/A28-junction-20261006/clean/contracts/T28-contract-validation-20261005.json": "b2c4f235b770f881d135298b7344c6167453317f39b07284136521f41dce8a1e",
+    "data/reproduction/A28-junction-20261006/clean/contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "data/reproduction/A28-junction-20261006/clean/contracts/tools.schema.json": "f88d79a4d8e53c04f531e159fb47bb0d99439cd37d9409635bfef25238edb691",
+    "data/reproduction/A28-junction-20261006/clean/contracts/validation.json": "a70cbea8d2afff0ada41f99bbb834d0b02d22ba1b2955d723fecb52f0f8a8e9e",
+    "data/reproduction/A28-junction-20261006/clean/docs/level_design.md": "77bccd81afd2f796b2aa71a53a955c42ab14f461428f0a5f48ab02a4b42fd7e0",
+    "data/reproduction/A28-junction-20261006/clean/docs/SPEC.md": "2b99908c458ba5eda9d1baebf6a622e84a2e836fc1201a54f506de9ee61121a2",
+    "data/reproduction/A28-junction-20261006/clean/frontend/src/api.ts": "1c5e2219f557504cb9d1171f64460484f3bd2e4e560116297e6dd98a31a47aa7",
+    "data/reproduction/A28-junction-20261006/clean/frontend/src/App.tsx": "a8c3bcb0de3f716b7d05d41ec22f8e08e250671c988c462c0ce4d6054c6155e8",
+    "data/reproduction/A28-junction-20261006/clean/frontend/src/Assistant.tsx": "67a65d63730223d0bc33f78726f4e3d27a3a293a8c550462be805a6b919541c9",
+    "data/reproduction/A28-junction-20261006/clean/frontend/src/main.tsx": "7254a29d506487188f48b2a7f33912401fe8510fcdc3306f0efad67ff25df159",
+    "data/reproduction/A28-junction-20261006/clean/frontend/src/style.css": "3aab25ba2b3e34e153c4368996f2db06300dbe04317f76ec1ad793cce7167900",
+    "data/reproduction/A28-junction-20261006/clean/scripts/__init__.py": "d300f03ba477086b372899726efa12f89fe9e99cf2f67e07116db2712514e41f",
+    "data/reproduction/A28-junction-20261006/clean/scripts/check.py": "c3bd234bb080d124235f43489422ee890244b972744c96eea41f274b700b9801",
+    "data/reproduction/A28-junction-20261006/clean/scripts/dev.py": "db5b89ee5f4cbd35727d00795681dbd197b58025cac84af95665c086a325760b",
+    "data/reproduction/A28-junction-20261006/clean/scripts/lock_dependencies.py": "2de5fffee18904faf3d28018b4381d5d1caa0828127301ae279144c284817064",
+    "data/reproduction/A28-junction-20261006/clean/scripts/reproduce.py": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+    "data/reproduction/A28-junction-20261006/clean/scripts/reset.py": "ba665745d04ff4e57349b1c61c813b2f077635e2ec899b59794f3c2fd125e661",
+    "data/reproduction/A28-junction-20261006/clean/tests/__init__.py": "7175f9011fe76b304f9c7cfec7066599204664e2210ad204d75be9b5ce57da34",
+    "data/reproduction/A28-junction-20261006/clean/tests/api/__init__.py": "12e8f3ba5a5fa7433bc098de3f053abd605a71874782fcef11c4272b0a6b02d6",
+    "data/reproduction/A28-junction-20261006/clean/tests/api/test_ch01.py": "e042a4804e5285baad374db6f244ac38c5bdd5ce6943cbf18ab01cc9998946f1",
+    "data/reproduction/A28-junction-20261006/clean/tests/api/test_m2.py": "5678b439ac3318f24232a3f5777e3778197c2acf6b05fce3235efa7dcc9a95db",
+    "data/reproduction/A28-junction-20261006/clean/tests/api/test_m3.py": "78a4715d1db5c90921be7daf0f45dd16b1e211ffcd06142d81edde343f652aa4",
+    "data/reproduction/A28-junction-20261006/clean/tests/api/test_r1.py": "f53f44649f9e7e85d5ab21f185c9300960b91173009fb83e7cbe167a22425343",
+    "data/reproduction/A28-junction-20261006/clean/tests/e2e/run_ch01.mjs": "c09f6d74b532caccf3f2b73678cf737d272fe38852fa128e3e890df8470fc855",
+    "data/reproduction/A28-junction-20261006/clean/tests/e2e/run_m2.mjs": "324c16d79cf2fa5c155efa054c789e80f798c1fc876ce92d1d8b20fddbc3fcf8",
+    "data/reproduction/A28-junction-20261006/clean/tests/e2e/run_m3.mjs": "a6827a38daba012650ab38dec637c0ebb0dabbd83c9ca1771fb77321d6321295",
+    "data/reproduction/A28-junction-20261006/clean/tests/e2e/run_r1.mjs": "e6a45d34e65da2061b58a9a491cd613bfcfa774c376c2fbad2b9a499c1cd8684",
+    "data/reproduction/A28-junction-20261006/clean/tests/qa_ch01_runner.py": "c9679ba1932ca49c8f007f28bdc639d61c78d8074ccdea751586835f86edf37c",
+    "data/reproduction/A28-junction-20261006/clean/tests/qa_runner.py": "4044bac480896276413cb737a9d5911aeb34e48de94469cec109da4137880c95",
+    "data/reproduction/A28-junction-20261006/clean/tests/real_m3_runner.py": "401e0dbcebab85c791aa14a86f495bdc0cd18275b63041fbd425d4c87d67689d",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_budget_reconciliation.py": "e5b4cd0b8d7f137ea13b200ae2bb382d776ccdceb31159914c32e1f7291a21a5",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_ch01_evaluation.py": "98fb758a448324bf4d557c6733e73eb04230831ecf9447485cf949ed722b1627",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_clean_release.py": "2fba749d8f66daa392f6a79c3968607245853357ce51593a28e631f9f171dee7",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_e1.py": "b98c23b80313c21232d3ae5c1435bbd5d08b550714d055df3f9b1b771e56fbc2",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_e1_continuation.py": "a55cfab2c97a74b3f1cb4ac346d0fe6b182f16a41319386ee51c68920f6144b0",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_e1_results.py": "a6432a28143a859f3b01f0eca329a3489b7bba1941112bcea3a634ade02b33ee",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_evaluation.py": "3b7abdc78fa35c3956c546891a8169971f244e703898839e0473705269bea616",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_evaluation_events.py": "2e48d442a463557f59ba6cce4bd177b6b1064b473b2f1fa8986754afe1acc329",
+    "tests/real_m3_runner.py": "401e0dbcebab85c791aa14a86f495bdc0cd18275b63041fbd425d4c87d67689d",
+    "tests/qa_runner.py": "4044bac480896276413cb737a9d5911aeb34e48de94469cec109da4137880c95",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/runtime.py": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "backend/app/domain/rules.py": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+    "scripts/reproduce.py": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+    "backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "contracts/api.schema.json": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+    "evidence/integration/A28-real-fresh-process-20261006.json": "d0963248437b1ebb9d5c46377be8498c3c61c487d1f947644c9b76bffd8d5a85"
+  },
+  "source_after": {
+    "evidence/integration/A28-real-20261006/index.json": "5fb3a2479082dc6ec537d055045f50868c29fee26812eb46388d90150d3175a5",
+    "evidence/integration/A28-junction-real-process-20261006.json": "20521672539fc799b3a02749b345601fb01fc68d392e9ced5c8a65462eada186",
+    "evidence/integration/A28-real-20261006/run.json": "ef90c1d8404a6ee609850045d9343ba2cd6c0ac8603600ae21c0ee63e97dfdf2",
+    "data/reproduction/A28-junction-20261006/clean/evidence/qa/20261006T043235515205Z-m3-real/run.json": "ef90c1d8404a6ee609850045d9343ba2cd6c0ac8603600ae21c0ee63e97dfdf2",
+    "evidence/integration/A28-real-20261006/checks.json": "019008a082b9f48629bfd7a6f4e193b2be7033fd345d9712f7110ae02326422c",
+    "data/reproduction/A28-junction-20261006/clean/evidence/qa/20261006T043235515205Z-m3-real/checks.json": "019008a082b9f48629bfd7a6f4e193b2be7033fd345d9712f7110ae02326422c",
+    "evidence/integration/A28-real-20261006/http-exchanges.json": "83437b3faf7c9af799d19bb5eab89239b81b47d3bf8abe1ed32a1dbe99b547d7",
+    "data/reproduction/A28-junction-20261006/clean/evidence/qa/20261006T043235515205Z-m3-real/http-exchanges.json": "83437b3faf7c9af799d19bb5eab89239b81b47d3bf8abe1ed32a1dbe99b547d7",
+    "evidence/integration/A28-real-20261006/public-runtime-trace.json": "e326dab6551bd91301ca5b9afd09313dd9c6153ab787edc65abeab73f999c078",
+    "data/reproduction/A28-junction-20261006/clean/evidence/qa/20261006T043235515205Z-m3-real/public-runtime-trace.json": "e326dab6551bd91301ca5b9afd09313dd9c6153ab787edc65abeab73f999c078",
+    "data/reproduction/A28-junction-20261006/clean/AGENTS.md": "060f3b564a6273ceb851439489f715d36710ed9627dfe4ee3f701c69a8a3f5d6",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/runtime.py": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/api/routes.py": "a93901a5d791cb2550ecdbe2a6cdb935a5b7126637061b6172adf9ed9c422d4a",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/domain/rules.py": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/storage/ai.py": "8c93b995d6f19d4a3657b09058656b0e4636cd723bcad69327c116d77d733386",
+    "data/reproduction/A28-junction-20261006/clean/backend/app/storage/sqlite.py": "ea094fce6270f1b47dca19885b1bb40df6275c198f13b4c5c57541e653c991ff",
+    "data/reproduction/A28-junction-20261006/clean/backend/requirements.lock.txt": "926bd0476c6671a4783700631dc61380d08e66fdac8ae289b874cd797eb235ea",
+    "data/reproduction/A28-junction-20261006/clean/contracts/api.schema.json": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+    "data/reproduction/A28-junction-20261006/clean/contracts/build_contracts.py": "66189eeff96706f5fd38ca17a8c6761399dcaf59bf4b5c0b17db5251aca844f2",
+    "data/reproduction/A28-junction-20261006/clean/contracts/check_contracts.py": "dd0ef7b049eb961edbee55d23795dab8dd19e516eff6576e5a5487b62335f418",
+    "data/reproduction/A28-junction-20261006/clean/contracts/routes.json": "5f196d17db47d99180e5df729dc682982a3868e6ed34cea36d8f03bdb2c0c5ca",
+    "data/reproduction/A28-junction-20261006/clean/contracts/T28-contract-validation-20261005.json": "b2c4f235b770f881d135298b7344c6167453317f39b07284136521f41dce8a1e",
+    "data/reproduction/A28-junction-20261006/clean/contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "data/reproduction/A28-junction-20261006/clean/contracts/tools.schema.json": "f88d79a4d8e53c04f531e159fb47bb0d99439cd37d9409635bfef25238edb691",
+    "data/reproduction/A28-junction-20261006/clean/contracts/validation.json": "a70cbea8d2afff0ada41f99bbb834d0b02d22ba1b2955d723fecb52f0f8a8e9e",
+    "data/reproduction/A28-junction-20261006/clean/docs/level_design.md": "77bccd81afd2f796b2aa71a53a955c42ab14f461428f0a5f48ab02a4b42fd7e0",
+    "data/reproduction/A28-junction-20261006/clean/docs/SPEC.md": "2b99908c458ba5eda9d1baebf6a622e84a2e836fc1201a54f506de9ee61121a2",
+    "data/reproduction/A28-junction-20261006/clean/frontend/src/api.ts": "1c5e2219f557504cb9d1171f64460484f3bd2e4e560116297e6dd98a31a47aa7",
+    "data/reproduction/A28-junction-20261006/clean/frontend/src/App.tsx": "a8c3bcb0de3f716b7d05d41ec22f8e08e250671c988c462c0ce4d6054c6155e8",
+    "data/reproduction/A28-junction-20261006/clean/frontend/src/Assistant.tsx": "67a65d63730223d0bc33f78726f4e3d27a3a293a8c550462be805a6b919541c9",
+    "data/reproduction/A28-junction-20261006/clean/frontend/src/main.tsx": "7254a29d506487188f48b2a7f33912401fe8510fcdc3306f0efad67ff25df159",
+    "data/reproduction/A28-junction-20261006/clean/frontend/src/style.css": "3aab25ba2b3e34e153c4368996f2db06300dbe04317f76ec1ad793cce7167900",
+    "data/reproduction/A28-junction-20261006/clean/scripts/__init__.py": "d300f03ba477086b372899726efa12f89fe9e99cf2f67e07116db2712514e41f",
+    "data/reproduction/A28-junction-20261006/clean/scripts/check.py": "c3bd234bb080d124235f43489422ee890244b972744c96eea41f274b700b9801",
+    "data/reproduction/A28-junction-20261006/clean/scripts/dev.py": "db5b89ee5f4cbd35727d00795681dbd197b58025cac84af95665c086a325760b",
+    "data/reproduction/A28-junction-20261006/clean/scripts/lock_dependencies.py": "2de5fffee18904faf3d28018b4381d5d1caa0828127301ae279144c284817064",
+    "data/reproduction/A28-junction-20261006/clean/scripts/reproduce.py": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+    "data/reproduction/A28-junction-20261006/clean/scripts/reset.py": "ba665745d04ff4e57349b1c61c813b2f077635e2ec899b59794f3c2fd125e661",
+    "data/reproduction/A28-junction-20261006/clean/tests/__init__.py": "7175f9011fe76b304f9c7cfec7066599204664e2210ad204d75be9b5ce57da34",
+    "data/reproduction/A28-junction-20261006/clean/tests/api/__init__.py": "12e8f3ba5a5fa7433bc098de3f053abd605a71874782fcef11c4272b0a6b02d6",
+    "data/reproduction/A28-junction-20261006/clean/tests/api/test_ch01.py": "e042a4804e5285baad374db6f244ac38c5bdd5ce6943cbf18ab01cc9998946f1",
+    "data/reproduction/A28-junction-20261006/clean/tests/api/test_m2.py": "5678b439ac3318f24232a3f5777e3778197c2acf6b05fce3235efa7dcc9a95db",
+    "data/reproduction/A28-junction-20261006/clean/tests/api/test_m3.py": "78a4715d1db5c90921be7daf0f45dd16b1e211ffcd06142d81edde343f652aa4",
+    "data/reproduction/A28-junction-20261006/clean/tests/api/test_r1.py": "f53f44649f9e7e85d5ab21f185c9300960b91173009fb83e7cbe167a22425343",
+    "data/reproduction/A28-junction-20261006/clean/tests/e2e/run_ch01.mjs": "c09f6d74b532caccf3f2b73678cf737d272fe38852fa128e3e890df8470fc855",
+    "data/reproduction/A28-junction-20261006/clean/tests/e2e/run_m2.mjs": "324c16d79cf2fa5c155efa054c789e80f798c1fc876ce92d1d8b20fddbc3fcf8",
+    "data/reproduction/A28-junction-20261006/clean/tests/e2e/run_m3.mjs": "a6827a38daba012650ab38dec637c0ebb0dabbd83c9ca1771fb77321d6321295",
+    "data/reproduction/A28-junction-20261006/clean/tests/e2e/run_r1.mjs": "e6a45d34e65da2061b58a9a491cd613bfcfa774c376c2fbad2b9a499c1cd8684",
+    "data/reproduction/A28-junction-20261006/clean/tests/qa_ch01_runner.py": "c9679ba1932ca49c8f007f28bdc639d61c78d8074ccdea751586835f86edf37c",
+    "data/reproduction/A28-junction-20261006/clean/tests/qa_runner.py": "4044bac480896276413cb737a9d5911aeb34e48de94469cec109da4137880c95",
+    "data/reproduction/A28-junction-20261006/clean/tests/real_m3_runner.py": "401e0dbcebab85c791aa14a86f495bdc0cd18275b63041fbd425d4c87d67689d",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_budget_reconciliation.py": "e5b4cd0b8d7f137ea13b200ae2bb382d776ccdceb31159914c32e1f7291a21a5",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_ch01_evaluation.py": "98fb758a448324bf4d557c6733e73eb04230831ecf9447485cf949ed722b1627",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_clean_release.py": "2fba749d8f66daa392f6a79c3968607245853357ce51593a28e631f9f171dee7",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_e1.py": "b98c23b80313c21232d3ae5c1435bbd5d08b550714d055df3f9b1b771e56fbc2",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_e1_continuation.py": "a55cfab2c97a74b3f1cb4ac346d0fe6b182f16a41319386ee51c68920f6144b0",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_e1_results.py": "a6432a28143a859f3b01f0eca329a3489b7bba1941112bcea3a634ade02b33ee",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_evaluation.py": "3b7abdc78fa35c3956c546891a8169971f244e703898839e0473705269bea616",
+    "data/reproduction/A28-junction-20261006/clean/tests/review_evaluation_events.py": "2e48d442a463557f59ba6cce4bd177b6b1064b473b2f1fa8986754afe1acc329",
+    "tests/real_m3_runner.py": "401e0dbcebab85c791aa14a86f495bdc0cd18275b63041fbd425d4c87d67689d",
+    "tests/qa_runner.py": "4044bac480896276413cb737a9d5911aeb34e48de94469cec109da4137880c95",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/runtime.py": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "backend/app/domain/rules.py": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+    "scripts/reproduce.py": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+    "backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "contracts/api.schema.json": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+    "evidence/integration/A28-real-fresh-process-20261006.json": "d0963248437b1ebb9d5c46377be8498c3c61c487d1f947644c9b76bffd8d5a85"
+  },
+  "current63_clean_sources": {
+    "AGENTS.md": "060f3b564a6273ceb851439489f715d36710ed9627dfe4ee3f701c69a8a3f5d6",
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+    "backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "a93901a5d791cb2550ecdbe2a6cdb935a5b7126637061b6172adf9ed9c422d4a",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/rules.py": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+    "backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "8c93b995d6f19d4a3657b09058656b0e4636cd723bcad69327c116d77d733386",
+    "backend/app/storage/sqlite.py": "ea094fce6270f1b47dca19885b1bb40df6275c198f13b4c5c57541e653c991ff",
+    "backend/requirements.lock.txt": "926bd0476c6671a4783700631dc61380d08e66fdac8ae289b874cd797eb235ea",
+    "contracts/api.schema.json": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc",
+    "contracts/build_contracts.py": "66189eeff96706f5fd38ca17a8c6761399dcaf59bf4b5c0b17db5251aca844f2",
+    "contracts/check_contracts.py": "dd0ef7b049eb961edbee55d23795dab8dd19e516eff6576e5a5487b62335f418",
+    "contracts/routes.json": "5f196d17db47d99180e5df729dc682982a3868e6ed34cea36d8f03bdb2c0c5ca",
+    "contracts/T28-contract-validation-20261005.json": "b2c4f235b770f881d135298b7344c6167453317f39b07284136521f41dce8a1e",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "contracts/tools.schema.json": "f88d79a4d8e53c04f531e159fb47bb0d99439cd37d9409635bfef25238edb691",
+    "contracts/validation.json": "a70cbea8d2afff0ada41f99bbb834d0b02d22ba1b2955d723fecb52f0f8a8e9e",
+    "docs/level_design.md": "77bccd81afd2f796b2aa71a53a955c42ab14f461428f0a5f48ab02a4b42fd7e0",
+    "docs/SPEC.md": "2b99908c458ba5eda9d1baebf6a622e84a2e836fc1201a54f506de9ee61121a2",
+    "frontend/src/api.ts": "1c5e2219f557504cb9d1171f64460484f3bd2e4e560116297e6dd98a31a47aa7",
+    "frontend/src/App.tsx": "a8c3bcb0de3f716b7d05d41ec22f8e08e250671c988c462c0ce4d6054c6155e8",
+    "frontend/src/Assistant.tsx": "67a65d63730223d0bc33f78726f4e3d27a3a293a8c550462be805a6b919541c9",
+    "frontend/src/main.tsx": "7254a29d506487188f48b2a7f33912401fe8510fcdc3306f0efad67ff25df159",
+    "frontend/src/style.css": "3aab25ba2b3e34e153c4368996f2db06300dbe04317f76ec1ad793cce7167900",
+    "scripts/__init__.py": "d300f03ba477086b372899726efa12f89fe9e99cf2f67e07116db2712514e41f",
+    "scripts/check.py": "c3bd234bb080d124235f43489422ee890244b972744c96eea41f274b700b9801",
+    "scripts/dev.py": "db5b89ee5f4cbd35727d00795681dbd197b58025cac84af95665c086a325760b",
+    "scripts/lock_dependencies.py": "2de5fffee18904faf3d28018b4381d5d1caa0828127301ae279144c284817064",
+    "scripts/reproduce.py": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+    "scripts/reset.py": "ba665745d04ff4e57349b1c61c813b2f077635e2ec899b59794f3c2fd125e661",
+    "tests/__init__.py": "7175f9011fe76b304f9c7cfec7066599204664e2210ad204d75be9b5ce57da34",
+    "tests/api/__init__.py": "12e8f3ba5a5fa7433bc098de3f053abd605a71874782fcef11c4272b0a6b02d6",
+    "tests/api/test_ch01.py": "e042a4804e5285baad374db6f244ac38c5bdd5ce6943cbf18ab01cc9998946f1",
+    "tests/api/test_m2.py": "5678b439ac3318f24232a3f5777e3778197c2acf6b05fce3235efa7dcc9a95db",
+    "tests/api/test_m3.py": "78a4715d1db5c90921be7daf0f45dd16b1e211ffcd06142d81edde343f652aa4",
+    "tests/api/test_r1.py": "f53f44649f9e7e85d5ab21f185c9300960b91173009fb83e7cbe167a22425343",
+    "tests/e2e/run_ch01.mjs": "c09f6d74b532caccf3f2b73678cf737d272fe38852fa128e3e890df8470fc855",
+    "tests/e2e/run_m2.mjs": "324c16d79cf2fa5c155efa054c789e80f798c1fc876ce92d1d8b20fddbc3fcf8",
+    "tests/e2e/run_m3.mjs": "a6827a38daba012650ab38dec637c0ebb0dabbd83c9ca1771fb77321d6321295",
+    "tests/e2e/run_r1.mjs": "e6a45d34e65da2061b58a9a491cd613bfcfa774c376c2fbad2b9a499c1cd8684",
+    "tests/qa_ch01_runner.py": "c9679ba1932ca49c8f007f28bdc639d61c78d8074ccdea751586835f86edf37c",
+    "tests/qa_runner.py": "4044bac480896276413cb737a9d5911aeb34e48de94469cec109da4137880c95",
+    "tests/real_m3_runner.py": "401e0dbcebab85c791aa14a86f495bdc0cd18275b63041fbd425d4c87d67689d",
+    "tests/review_budget_reconciliation.py": "e5b4cd0b8d7f137ea13b200ae2bb382d776ccdceb31159914c32e1f7291a21a5",
+    "tests/review_ch01_evaluation.py": "98fb758a448324bf4d557c6733e73eb04230831ecf9447485cf949ed722b1627",
+    "tests/review_clean_release.py": "2fba749d8f66daa392f6a79c3968607245853357ce51593a28e631f9f171dee7",
+    "tests/review_e1.py": "b98c23b80313c21232d3ae5c1435bbd5d08b550714d055df3f9b1b771e56fbc2",
+    "tests/review_e1_continuation.py": "a55cfab2c97a74b3f1cb4ac346d0fe6b182f16a41319386ee51c68920f6144b0",
+    "tests/review_e1_results.py": "a6432a28143a859f3b01f0eca329a3489b7bba1941112bcea3a634ade02b33ee",
+    "tests/review_evaluation.py": "3b7abdc78fa35c3956c546891a8169971f244e703898839e0473705269bea616",
+    "tests/review_evaluation_events.py": "2e48d442a463557f59ba6cce4bd177b6b1064b473b2f1fa8986754afe1acc329"
+  },
+  "current11_Root_sources": {
+    "tests/real_m3_runner.py": "401e0dbcebab85c791aa14a86f495bdc0cd18275b63041fbd425d4c87d67689d",
+    "tests/qa_runner.py": "4044bac480896276413cb737a9d5911aeb34e48de94469cec109da4137880c95",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/runtime.py": "96bb5d7143ac28a3afe46a5daccc7c5012aa213672c01ac6a11036b6179cf064",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "backend/app/domain/rules.py": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+    "scripts/reproduce.py": "7dc71165e3d42479884f8c821093c6561e98c240766b03e4a0e69454ea9ec0e9",
+    "backend/app/main.py": "473fa5162e82302a5ffcee6c072f6465639c1b0f868c3a669376bdcfcdb38692",
+    "contracts/api.schema.json": "6b870f5304175b529709a5fc8353870f3d19ba8ef7324722e156b525479270bc"
+  },
+  "actual_Main_command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "evidence/integration/run_a28_junction_real.py"
+  ],
+  "actual_Main_chunk": "6c6318",
+  "actual_Main_exit_code": 0,
+  "candidate_commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+  "real_AI_turns": 1,
+  "actual_paid_calls_by_Main": 2,
+  "paid_calls_by_QA": 0,
+  "recorded_segment_upper_cny": 0.0060632,
+  "human_signoff": null,
+  "teacher_approval": null,
+  "source_STOP": true,
+  "limits": [
+    "Controlled known-R1 segment, first inventory call forced; not autonomous whole-game or human gameplay.",
+    "Actual module paths inferred from clean cwd, cleared PYTHONPATH/PYTHONHOME and fresh -m startup plus sourcecollector; no separate runtime __file__ inventory was recorded.",
+    "Sanitized artifacts omit full outbound prompt/raw provider envelope; public request/clues and server trace are verified, not fresh packet capture.",
+    "No live database or env read, model request, regression, paid evaluation or original evidence modification by QA."
+  ]
+}

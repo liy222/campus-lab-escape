@@ -1,0 +1,50 @@
+{
+  "actual_QA_command": "& 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 tests/review_a28_real_result.py",
+  "cwd": "D:\\深度能力",
+  "actual_exit_code": 0,
+  "completion_chunk": "e56e64",
+  "checks": 105,
+  "paid_calls_by_QA": 0,
+  "actual_Main_command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "evidence/integration/run_a28_junction_real.py"
+  ],
+  "actual_Main_completion_chunk": "6c6318",
+  "actual_Main_exit": 0,
+  "Main_exact_copy_chunk": "0482fa",
+  "Main_exact_copy_exit": 0,
+  "prior_zero_call_Main_command": "Python -B -X utf8 evidence/integration/run_a28_fresh_real.py",
+  "prior_zero_call_chunk": "c4f09f",
+  "prior_zero_call_exit": 1,
+  "actual_result_read_chunks": [
+    {
+      "chunk": "219b3a",
+      "exit": 0
+    },
+    {
+      "chunk": "2b2aa8",
+      "exit": 0
+    }
+  ],
+  "junction_preflight_chunks": [
+    {
+      "chunk": "be4293",
+      "exit": 0
+    },
+    {
+      "chunk": "bebf94",
+      "exit": 0,
+      "note": "Inline collector emitted SyntaxWarning invalid decimal literal but completed0; no target execution or effect"
+    }
+  ],
+  "report_history": {
+    "original_report_path": "review/findings/A28-real-result-20261006.md",
+    "original_report_sha256": "42c2a9d09d757f9d278b9f5cbbbfda3008a397f8e4b7a6b5a1cc22b3a5c48c50",
+    "preserved_exact_bytes": "evidence\\qa\\A28-real-result-20261006T043600767538Z\\initial-zero-call-report.md",
+    "reason": "Active task continued from first0-call blocker through replacement preflight and actual run; this final report includes all stages. Original machine failure evidence/marker unchanged."
+  },
+  "SOURCE_STOP": true
+}

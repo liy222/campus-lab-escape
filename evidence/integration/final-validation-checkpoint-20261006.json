@@ -1,0 +1,54 @@
+{
+  "at_utc": "2026-10-06T04:41:38.246728+00:00",
+  "kind": "Main final actual paid-validation snapshot",
+  "new_evaluation_reports": {
+    "evaluation/runs/20261006T043749352975Z/report.json": "69f4d9acf53a359dd5b9a34d44b99d9eed59a34c9823edfef65ca8a1f441fe9f",
+    "evaluation/runs/20261006T043806611760Z/report.json": "317812ea10dee387351e66449489c8d7171761b4460a3cf6f2e2cda99a97e0c6",
+    "evaluation/runs/20261006T043822902164Z/report.json": "aa3e9d906660ba56a3e65d388669d0ea4d29b1d5ce3c00671f2b69262e24facb"
+  },
+  "actual_paid_evaluation_calls": 8,
+  "all_three_process_exit_codes": 0,
+  "evaluator_raw_sources_unchanged_each_run": 14,
+  "engine_raw_sha256": "2e9778f186c8191a475db9fa359a06dea8725cd4733872c450bf261d0cbfb74c",
+  "calibration": {
+    "case_count": 11,
+    "false_pass": [],
+    "matches": 11,
+    "real_paid_calibration": true,
+    "synthetic_inputs": true,
+    "unnecessary_abstention": [],
+    "valid_reference_outputs": 4,
+    "wrong_failure": []
+  },
+  "E1_registered_original_batch_verdicts": [
+    "PASS",
+    "PASS"
+  ],
+  "CH01_engineering_verdicts": [
+    "PASS",
+    "PASS",
+    "PASS"
+  ],
+  "canonical_budget_observation": {
+    "calls": 101,
+    "states": {
+      "settled": 101
+    },
+    "charged_upper_units": 816858480,
+    "original_cap_units": 10000000000,
+    "frozen": 0,
+    "new_gate_counts": {
+      "Kfix": 3,
+      "E1fix": 2,
+      "CHfix": 3
+    }
+  },
+  "paid_game": "A28 controlled true-provider1turn2calls independently105checks passed; separate from evaluation",
+  "old_results": "Old10/11calibration/5INSUF/validK4FAIL and all original failure/partial experiment records retained without replay",
+  "limits": [
+    "E1 model judgement reads registered original22completed/1timeout/49not_called material, not merged69 record package. It accepts integrity/declared evidence scope; does not mean72completed.",
+    "CH01 verdicts refer to scripted/mock engineering evidence, not a teacher grade or human acceptance.",
+    "Full-window charged upper is conservative accounting, not a verified invoice; original unknown usage remainsNULL.",
+    "Human gameplay explanation/signoff not provided; no autonomous full-game claim."
+  ]
+}

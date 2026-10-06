@@ -1,0 +1,41 @@
+{
+  "at_utc": "2026-10-06T04:47:54.262476+00:00",
+  "state": "ENGINEERING_DELIVERY_COMPLETE_WITH_DISCLOSED_LIMITS",
+  "product_tag": "CH01_v2",
+  "product_commit": "242ecfc4d9f7bf1a8480508de701d9efc7822fe7",
+  "baseline_tag": "baseline_v1",
+  "source_prompt_engine_sha256": "2e9778f186c8191a475db9fa359a06dea8725cd4733872c450bf261d0cbfb74c",
+  "accepted_checks": {
+    "prompt_source": 223,
+    "A28_actual_result": 105,
+    "new_evaluation_actual_result": 75,
+    "merged_experiment_integrity": 1427,
+    "historical_complete_clean_integrity": 10842
+  },
+  "scopes": "Separate engineering/source/data integrity scopes, not an additive unique test count. Historical full clean73pytest+203subtests was on its recorded stable source and not repeated in this final phase.",
+  "actual_new_paid_game_calls": 2,
+  "actual_new_paid_evaluation_calls": 8,
+  "new_calibration": "11/11 fixtures,3realpaid+8deterministic",
+  "registered_E1_verdicts": "2PASS scoped original stopped materials",
+  "CH01_verdicts": "3PASS scripted engineering",
+  "experiment_terminal_rows": {
+    "planned": 72,
+    "completed": 69,
+    "failed": 2,
+    "not_called": 1,
+    "full_pairs": 34,
+    "planned_pairs": 36
+  },
+  "human_signoff": null,
+  "teacher_approval": null,
+  "course_confirmation": "Excluded by explicit human instruction; no fabricated approvals",
+  "delivery_entry": "README.md",
+  "delivery_manifest": "release/manifest.json",
+  "final_source_commit": "Resolve current Git HEAD after final normal push; this record does not self-reference a not-yet-created commit.",
+  "delivery_v6_owner_report": "evidence/delivery/T31-docs-20261005/report-v6.json",
+  "delivery_v6_owner_report_sha256": "920878ffe9ebe3f62363fa767d4a285e19d77b9b846c7634aa4bd8cd5b4195aa",
+  "current_manifest_sha256": "60ca86632eda8b2439841055cbc51c80daae7a9a79e18f09560be67b32c9e5df",
+  "local_demo": "evidence/integration/local-final-demo-start-20261006.json",
+  "all_new_evaluation_approvals_consumed_once": true,
+  "no_background_agent_or_paid_work": true
+}

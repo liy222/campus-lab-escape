@@ -51,3 +51,15 @@ Main re-read independent QA:223 checks/36 scenarios/30 captured mock payloads,81
 
 ## 2026-10-06 human-requested pause
 User exact: 尽快完成现有小任务后暂时停止. Current small tasks completed: T31 v5/51 Main raw hash pairs accepted; A28 read-only preparation/relay review finished SOURCE STOP without invocation. Main stops this owned mock demo only (taskkill0; supervised process intentionally ends1); saves and environments preserved. No new paid calls, symlink, credential injection or background automation. New8 evaluation authorization, A28 real segment and genuine human signoff remain pending; old6 calls never replay. Recovery entry: evidence/integration/pause-checkpoint-20261006.json and release/README.md. Resume only when the user requests it. All chronological older states remain history.
+
+
+## 2026-10-06 human-requested resume
+User: 继续，尽快完成. Pause revoked; Main resumes only remaining finite acceptance and delivery. A28 initial file symlink attempt exited1/c4f09f before provider dispatch (0calls); preserve record. New source-identical10778 directory and Root canonical ledger directoryjunction prepared0/c986b6; no data/budget copy or source guard relaxation. Independent fast review before paid segment. New8 revised evaluation approval still pending; old6 payloads not resent. No full regression or fees investigation repeated.
+
+
+## 2026-10-06 final actual engineering acceptance
+A28 new fixed-source directory controlled true-provider check actualexit0/6c6318,2calls/1turn,independent105/105 exit0/e56e64; original0-call symlink privilege failure retained and avoided via new directoryjunction using same original ledger. New approved8 evaluation calls actual3/2/3 eachprocess0 (b12baf/36d62b/e00085),source14 unchanged; calibration11/11 (3paid+8deterministic),E1registered stopped-materialPASS2,CH01scripted-engineeringPASS3. Independent75/75 actual0/02f6ff. No old outcome/call replay, no new budget/invoice claim. Full source/mock clean and controlled true segment are separate accepted scopes. E1frozen72 terminal still69complete/2fail/1notcalled and34completepairs/36planned; no fabricated full success. Human explanation/signoff remains unprovided; excluded course questions not pursued. Deliveryv6 is final document epoch, then normal commit/push.
+
+
+## Final delivery handoff, 2026-10-06
+Deliveryv6 stable SOURCE STOP; Main81 current path/SHA pairs passed with no mismatch, source14 unchanged and7document hashes match Owner report. Existing failed/unknown/notcalled/olderINSUF records preserved. Local free mock demo started at http://127.0.0.1:5173/ with explicit v2 database; no background Agent/paid work. Engineering/source/scoped actual acceptance completed; genuine human gameplay explanation/signature is still unprovided and the experiment retains its statedpartial terminal outcomes. No pending new8 authorization or uncalled new8 jobs remains. Normal final commit/push follows; exact synced SHA is current Git HEAD after verification.

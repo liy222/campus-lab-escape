@@ -1,0 +1,104 @@
+{
+  "record": "T31 delivery documentation final v6",
+  "date": "2026-10-06",
+  "scope": "Documentation and evidence-index metadata only; no product/evaluator implementation changes and no new validation/model runs by Delivery.",
+  "files_written": [
+    "README.md",
+    "release/README.md",
+    "release/manifest.json",
+    "docs/report.md",
+    "docs/defense.md",
+    "evaluation/README.md",
+    "review/calibration.md",
+    "evidence/delivery/T31-docs-20261005/report-v6.json"
+  ],
+  "raw_sha256": {
+    "README.md": "9fcc5f57cf387be13d7852e46f0e0d999b6800ac3e3433e835036cc997e7b477",
+    "release/README.md": "b7f1352ba2efe82f6984e5f6cbc1d17a87c9ed8b040e3cef9927ba59f245671b",
+    "release/manifest.json": "60ca86632eda8b2439841055cbc51c80daae7a9a79e18f09560be67b32c9e5df",
+    "docs/report.md": "8526aa1f9aa9929eadb7401ce7344f1f48831761a9bb847da1e0ce6aaf07c2e3",
+    "docs/defense.md": "1bae62674241c4bfa9fd657a7239092ac4949444743c7d7c64b4a45846d568a6",
+    "evaluation/README.md": "3829ac7ed990c4ef978cc05f0f55d07c9c53874867fce85b07aeffbf99d53821",
+    "review/calibration.md": "13a1aa8ba0292753747c45572be85bee7c146388d1da8ce98a136760bcc4d5dc"
+  },
+  "source_facts": {
+    "product_tag": "CH01_v2",
+    "product_commit": "242ecfc4d9f7bf1a8480508de701d9efc7822fe7",
+    "baseline_commit": "7821af4efe0613c20a80ea164c1dab1c0f288bab",
+    "clean_source_commit": "833aafb09ad20dc1ba82cfed198485ce13300067",
+    "clean_files": 10778,
+    "A28": {
+      "main_process": "evidence/integration/A28-junction-real-process-20261006.json",
+      "sha256": "20521672539fc799b3a02749b345601fb01fc68d392e9ced5c8a65462eada186",
+      "actual_exit": 0,
+      "paid_calls": 2,
+      "ai_turns": 1,
+      "independent_qa": "review/findings/A28-real-result-20261006.md",
+      "qa_sha256": "354da2a451c2167d4e5420322fc7c264039132b25fa868c8240a1904465a4f24",
+      "qa_checks": 105,
+      "qa_exit": 0
+    },
+    "new_evaluator": {
+      "prompt_sha256": "2e9778f186c8191a475db9fa359a06dea8725cd4733872c450bf261d0cbfb74c",
+      "reports": [
+        "evaluation/runs/20261006T043749352975Z/report.json",
+        "evaluation/runs/20261006T043806611760Z/report.json",
+        "evaluation/runs/20261006T043822902164Z/report.json"
+      ],
+      "paid_calls": [
+        3,
+        2,
+        3
+      ],
+      "actual_exits": [
+        0,
+        0,
+        0
+      ],
+      "qa_report": "review/findings/T27-revised-real-result-20261006.md",
+      "qa_sha256": "53ced73526128e359db1baf7a259b1c5e05c745aa9dbfd6b6e5b7603b22bb63b",
+      "qa_result": "evidence/qa/T27-revised-real-result-20261006T045000Z/result.json",
+      "qa_result_sha256": "6f412f5b177bb653fbf488c8ac7586425b302bb9ffea6caacee2cc1a342c5a67",
+      "qa_checks": 75,
+      "qa_actual_exit": 0
+    },
+    "calibration": "11/11 = 3 paid model judgments + 8 deterministic checks; not 11 paid calls",
+    "E1": "2 registered-claim PASS judgments; source plan remains 22 completed / 1 timeout / 49 not_called",
+    "CH01": "3 PASS judgments limited to registered engineering claims",
+    "accounting_snapshot": "101 settled calls; conservative upper CNY 0.81685848; cap CNY 10; pending 0; frozen 0; call usage metadata CNY 0.1484352 is not invoice",
+    "main_acceptance": "evidence/integration/final-independent-reviews-accepted-20261006.json",
+    "main_acceptance_sha256": "c02b097ed92d3c289a8566981bc92e173b393fe988929e7df95675a747dcb36d"
+  },
+  "preserved_history": [
+    "report.json",
+    "report-v2.json",
+    "report-v3.json",
+    "report-v4.json",
+    "report-v5.json",
+    "old six paid judgments",
+    "old 10/11 calibration"
+  ],
+  "limitations": [
+    "No human playtest, player decision record, teacher approval, or signature supplied.",
+    "A28 covers one bounded R1 segment, not autonomous full-game completion.",
+    "E1 judged the frozen registered material, not the later merged69 rows; 72 planned rows remain 22/1/49.",
+    "No new calls or repeat validation were performed by Delivery."
+  ],
+  "commands": [
+    {
+      "command": "PowerShell using C:\\Users\\liyh\\.conda\\envs\\1\\python.exe - (authorized documentation edits)",
+      "exit_code": 0
+    },
+    {
+      "command": "PowerShell using C:\\Users\\liyh\\.conda\\envs\\1\\python.exe - (manifest SHA/path and Markdown-link audit)",
+      "exit_code": 0,
+      "result": "33 evidence entries; 32 paired hashes verified; no mismatches, missing evidence paths, or broken links."
+    }
+  ],
+  "actions_not_taken": [
+    "No Git commands or commits.",
+    "No paid/model calls.",
+    "No environment, .env, secrets, database, or budget ledger read.",
+    "No product or evaluator code changes."
+  ]
+}
