@@ -1,0 +1,25 @@
+{
+  "task": "one-click launcher localized prompt byte/syntax verification",
+  "date": "2026-10-06",
+  "scope": "Read-only check of launcher and dev.py; no source change in this pass.",
+  "launcher": "启动游戏.cmd",
+  "launcher_sha256": "f40925c66c1fbba172d25518359d147799308a4b3e79d50173aaf2365de0bd13",
+  "dev_py": "scripts/dev.py",
+  "dev_py_sha256": "1ad14b79173b3af8d59de397ba140251493e0240d3542f7237d8f5367599fc35",
+  "checks": {
+    "launcher_utf8_no_bom": true,
+    "launcher_crlf": true,
+    "utf8_codepage_set_first": true,
+    "localized_prompts_present": true,
+    "syntax_dev_py": true
+  },
+  "actual_exit_code": 0,
+  "commands": [
+    "Python UTF-8 byte checks for launcher; verify first chcp 65001, localized messages, no BOM and CRLF",
+    "ast.parse scripts/dev.py"
+  ],
+  "not_run": [
+    "No game services or browser launch.",
+    "No paid calls, Git, environment/database access, or other file changes."
+  ]
+}

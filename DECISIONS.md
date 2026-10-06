@@ -63,3 +63,7 @@ A28 new fixed-source directory controlled true-provider check actualexit0/6c6318
 
 ## Final delivery handoff, 2026-10-06
 Deliveryv6 stable SOURCE STOP; Main81 current path/SHA pairs passed with no mismatch, source14 unchanged and7document hashes match Owner report. Existing failed/unknown/notcalled/olderINSUF records preserved. Local free mock demo started at http://127.0.0.1:5173/ with explicit v2 database; no background Agent/paid work. Engineering/source/scoped actual acceptance completed; genuine human gameplay explanation/signature is still unprovided and the experiment retains its statedpartial terminal outcomes. No pending new8 authorization or uncalled new8 jobs remains. Normal final commit/push follows; exact synced SHA is current Git HEAD after verification.
+
+
+## 2026-10-06 one-click startup addon
+User requested Windows double-click startup. Added 启动游戏.cmd with specified Python, v2 database and free mock provider; scripts.dev opens the browser only after both services are healthy. Actual launcher from scripts directory passed frontend/backend HTTP 200; Ctrl+C stopped both services with no remaining listeners. Interrupted Windows CMD wrapper exited1, preserved without claiming exit0. Evidence: evidence/integration/one-click-startup-20261006.json. Earlier product tags/source and document hashes remain historical; this is a separate addon epoch. No dependency install, environment reset or paid call.

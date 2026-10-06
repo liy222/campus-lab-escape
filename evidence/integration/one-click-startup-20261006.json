@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-06",
+  "scope": "Windows one-click free mock startup addon; prior product and QA snapshots remain historical",
+  "source_sha256": {
+    "启动游戏.cmd": "f40925c66c1fbba172d25518359d147799308a4b3e79d50173aaf2365de0bd13",
+    "scripts/dev.py": "1ad14b79173b3af8d59de397ba140251493e0240d3542f7237d8f5367599fc35",
+    "README.md": "66fbe1fbf3cbbe93e9fad108d3e8bd1c96d9db3afcf753ca267f5cb5ce4b45e5",
+    "evidence/delivery/one-click-20261006/report.json": "d393cf39e9a4720449ba0ad58995b82dbefec438c7d9ac16dbefd7168f6d92d5",
+    "evidence/delivery/one-click-20261006/report-localized.json": "87f3dc20bf51e21855f214d92f64addba53b14b6566203be665170a3b0aff177"
+  },
+  "actual_validation": [
+    {
+      "command": "cmd.exe /d /c D:\\深度能力\\启动游戏.cmd",
+      "cwd": "D:\\深度能力\\scripts",
+      "tool_chunk": "556482",
+      "result": "Both services ready; launcher printed game URL and invoked webbrowser.open after health checks",
+      "exit_code": null
+    },
+    {
+      "command": "HTTP GET frontend and backend health",
+      "tool_chunk": "abc489",
+      "exit_code": 0,
+      "frontend_status": 200,
+      "frontend_html": true,
+      "backend_status": 200,
+      "backend_health": {
+        "status": "ok",
+        "service": "campus-lab-escape"
+      }
+    },
+    {
+      "command": "Ctrl+C then answer N to CMD batch termination prompt",
+      "tool_chunks": [
+        "5ef66c",
+        "9c21c1"
+      ],
+      "exit_code": 1,
+      "result": "Python printed Stopping both services; Windows interrupted CMD wrapper exited 1; not claimed as normal exit 0"
+    },
+    {
+      "command": "Inspect listening TCP ports 8000/5173 after stop",
+      "tool_chunk": "0292ef",
+      "exit_code": 0,
+      "remaining_listeners": []
+    }
+  ],
+  "limitations": [
+    "OS browser open request exercised; visible browser contents were not independently inspected",
+    "No paid API calls or gameplay regression claimed for this launcher check"
+  ]
+}

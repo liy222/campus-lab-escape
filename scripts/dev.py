@@ -13,6 +13,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+import webbrowser
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -100,6 +101,8 @@ def main() -> int:
     parser.add_argument("--backend-port", type=port_number, default=8000)
     parser.add_argument("--frontend-port", type=port_number, default=5173)
     parser.add_argument("--startup-timeout", type=float, default=30.0)
+    parser.add_argument("--open-browser", action="store_true",
+                        help="open the game page after both services pass their health checks")
     args = parser.parse_args()
     children: list[subprocess.Popen[bytes]] = []
     try:
@@ -143,6 +146,12 @@ def main() -> int:
         if pending:
             raise RuntimeError("startup timed out: " + ", ".join(sorted(pending)))
         print(f"\nGame: {urls[1]}\nBackend: {urls[0]}\nPress Ctrl+C to stop both services.", flush=True)
+        if args.open_browser:
+            try:
+                if not webbrowser.open(urls[1]):
+                    print(f"Browser did not open automatically; visit {urls[1]}.", flush=True)
+            except Exception as error:
+                print(f"Could not open a browser ({error}); visit {urls[1]} manually.", flush=True)
         while all(child.poll() is None for child in children):
             time.sleep(0.3)
         print("A service exited; stopping the other service.", file=sys.stderr)

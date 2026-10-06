@@ -140,6 +140,22 @@
       "final_main_acceptance": "evidence/integration/final-independent-reviews-accepted-20261006.json",
       "final_main_acceptance_sha256": "c02b097ed92d3c289a8566981bc92e173b393fe988929e7df95675a747dcb36d",
       "qa_index": ""
+    },
+    {
+      "name": "one-click-startup-addon",
+      "role": "Windows local one-click startup add-on; mock provider only",
+      "launcher": "启动游戏.cmd",
+      "launcher_sha256": "f40925c66c1fbba172d25518359d147799308a4b3e79d50173aaf2365de0bd13",
+      "dev_supervisor": "scripts/dev.py",
+      "dev_supervisor_sha256": "1ad14b79173b3af8d59de397ba140251493e0240d3542f7237d8f5367599fc35",
+      "documentation_epoch": "README.md contains this later startup-instructions epoch; its SHA is recorded below and is not covered by older product-v2/T31 snapshots.",
+      "readme": "README.md",
+      "readme_sha256": "66fbe1fbf3cbbe93e9fad108d3e8bd1c96d9db3afcf753ca267f5cb5ce4b45e5",
+      "main_validation": "evidence/integration/one-click-startup-20261006.json",
+      "main_validation_sha256": "823f318ee1cce149063bb5beb8a18b1abaac777e2b7ace48c86cd04b1644acdb",
+      "result": "CMD entry started both services; frontend and backend health returned HTTP 200. Browser open request was issued after health checks, but visible browser contents were not inspected. Ctrl+C reached Python cleanup; Windows CMD wrapper ended with exit 1 after answering its termination prompt, so this is not described as normal exit 0. Ports 8000/5173 were confirmed free afterward.",
+      "historical_separation": "Existing product-v2 and T31 v6 entries/hashes describe their earlier snapshots and are unchanged; this component binds the later launcher/source/docs state.",
+      "paid_calls": 0
     }
   ],
   "evidence": [

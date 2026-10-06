@@ -1,0 +1,63 @@
+{
+  "task": "Windows one-click local startup entry",
+  "date": "2026-10-06",
+  "scope": "Small implementation; no live game startup or browser interaction in this agent validation. Main will validate the stable candidate via the actual CMD entry.",
+  "files_changed": [
+    "启动游戏.cmd",
+    "scripts/dev.py",
+    "README.md",
+    "evidence/delivery/one-click-20261006/report.json"
+  ],
+  "raw_sha256": {
+    "启动游戏.cmd": "f40925c66c1fbba172d25518359d147799308a4b3e79d50173aaf2365de0bd13",
+    "scripts/dev.py": "1ad14b79173b3af8d59de397ba140251493e0240d3542f7237d8f5367599fc35",
+    "README.md": "66fbe1fbf3cbbe93e9fad108d3e8bd1c96d9db3afcf753ca267f5cb5ce4b45e5"
+  },
+  "launcher": {
+    "path": "启动游戏.cmd",
+    "encoding": "UTF-8 without BOM; ASCII-compatible command syntax",
+    "line_endings": "CRLF",
+    "cwd": "%~dp0",
+    "python": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "environment": [
+      "PYTHONUTF8=1",
+      "SQLITE_PATH=./data/game-v2.sqlite"
+    ],
+    "provider": "mock",
+    "args": [
+      "-m",
+      "scripts.dev",
+      "--provider",
+      "mock",
+      "--open-browser"
+    ],
+    "failure": "preserves Python exit code and pauses on nonzero exit; does not install dependencies or kill port occupants"
+  },
+  "dev_option": "--open-browser opens only after both backend and frontend health checks return HTTP 200; open failure prints manual URL and leaves supervised services running.",
+  "checks": [
+    {
+      "command": "AST parse scripts/dev.py; verify launcher UTF-8/no-BOM/CRLF",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -m scripts.dev --help",
+      "exit_code": 0,
+      "result": "--open-browser shown"
+    },
+    {
+      "command": "Bind one ephemeral localhost port, invoke scripts.dev using that port as backend, then release socket",
+      "outer_exit_code": 0,
+      "child_exit_code": 1,
+      "result": "expected occupied/unavailable message; no service launched"
+    }
+  ],
+  "not_run": [
+    "No actual game services started; Main will exercise CMD entry and HTTP readiness.",
+    "No browser opened.",
+    "No dependency installation, environment/database access, paid calls, or Git commands."
+  ],
+  "limitations": [
+    "This local smoke does not validate Windows Explorer double-click behavior or actual browser opening; awaiting Main’s stable-candidate check."
+  ]
+}
