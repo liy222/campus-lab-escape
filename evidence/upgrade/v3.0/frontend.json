@@ -1,0 +1,23 @@
+{
+  "version": "v3.0",
+  "scope": "Frontend interaction and information exposure",
+  "files": [
+    "frontend/src/App.tsx",
+    "frontend/src/style.css"
+  ],
+  "source_sha256": {
+    "frontend/src/App.tsx": "57755a96af8768315b1e66fd2392783995ac24e8fb8f31ed4be55624f6e23cb7",
+    "frontend/src/style.css": "3e5b6653484ec159d947d035215cc573538031b6bae3d7220f8f0fe221e99632"
+  },
+  "commands": [
+    {
+      "command": "npm.cmd --prefix frontend run build",
+      "exit_code": 0
+    }
+  ],
+  "limitations": [
+    "Frontend production build only; no tests or human playthrough run in this task.",
+    "No paid or real AI calls.",
+    "Graybox remains in the current React scene; no Phaser or final art was added."
+  ]
+}

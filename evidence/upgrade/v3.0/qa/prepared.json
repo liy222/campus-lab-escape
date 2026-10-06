@@ -1,0 +1,29 @@
+{
+  "candidate": "v3.0",
+  "status": "PREPARED_WAITING_FOR_MAIN_SOURCE_STOP",
+  "formal_run_performed": false,
+  "prepared_files": [
+    "tests/api/test_upgrade_v30.py",
+    "tests/e2e/run_upgrade.mjs",
+    "review/findings/upgrade-v30.md"
+  ],
+  "planned_checks": {
+    "api_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m pytest tests/api -q -p no:cacheprovider",
+    "browser_command_template": "node tests/e2e/run_upgrade.mjs <frozen-candidate-id>",
+    "frontend_build_command": "npm.cmd --prefix frontend run build",
+    "provider": "AI_PROVIDER=mock; no paid model calls",
+    "browser": "installed Google Chrome, isolated headless context",
+    "viewport_widths": [1280, 375],
+    "browser_database": "new runner-owned temporary SQLite file; existing ignored database is not read or copied",
+  "source_freeze_paths": [
+      "backend/app/domain/rules.py",
+      "frontend/src/App.tsx",
+      "frontend/src/api.ts",
+      "frontend/src/style.css"
+    ]
+  },
+  "limitations": [
+    "No tests or build have been run for this prepared v3.0 QA candidate.",
+    "The scripted route cannot claim real-player timing or human acceptance."
+  ]
+}

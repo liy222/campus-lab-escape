@@ -1,0 +1,27 @@
+{
+  "version": "v3.0-gameplay-information",
+  "status": "independent QA accepted; normal commit/push closing",
+  "source_sha256": {
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "frontend/src/App.tsx": "57755a96af8768315b1e66fd2392783995ac24e8fb8f31ed4be55624f6e23cb7",
+    "frontend/src/style.css": "3e5b6653484ec159d947d035215cc573538031b6bae3d7220f8f0fe221e99632"
+  },
+  "api_and_build_record": "evidence/upgrade/v3.0/qa/20261006T093937475Z-formal/run-summary.json",
+  "api_passed": 82,
+  "api_subtests_passed": 220,
+  "build_exit_code": 0,
+  "browser_record": "evidence/upgrade/v3.0/qa/20261006T094303859Z-browser/run.json",
+  "browser_record_sha256": "766d3f65f65e6adb5227cf9cb0685b0c45d99ed10a97cb0c84c7eb5297a2a5cc",
+  "browser_exit_code": 0,
+  "main_route": "R1-R2-R3-EXIT using exploratory controls",
+  "save_restore_reload": "R2 single slot save/restore and refresh/continue passed",
+  "wrong_target_checks": 8,
+  "save_policy": "unchanged level2.0.0/schema1.0.0; no migration, old data preserved",
+  "paid_calls": 0,
+  "phaser_added": false,
+  "limitations": [
+    "Scripted engineering route; no genuine human 20-30 minute playtime claim",
+    "Earlier QA helper/selector failures preserved; no product fix inferred from those failures"
+  ],
+  "next_version": "v3.1 after this version commit/push verified"
+}

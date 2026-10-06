@@ -1,0 +1,405 @@
+{
+  "version": "v3.0",
+  "scope": "Backend owner development checks, not independent QA",
+  "executed_at": "2026-10-06T09:34:50.514883+00:00",
+  "files_changed": [
+    "backend/app/domain/rules.py"
+  ],
+  "source_sha256": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+  "baseline_source_sha256": "73a77e8bbc9a26d59a9519315af99f8c640c5447e8e41cff303229278d850bbb",
+  "level_version": "2.0.0",
+  "schema_version": "1.0.0",
+  "commands": [
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 -m pytest tests/api/test_r1.py tests/api/test_m2.py::M2Acceptance::test_A02_exact_18_step_route_and_CH01_consumed_key tests/api/test_m2.py::M2Acceptance::test_A12_single_slot_restore_reset_and_current_version -q -p no:cacheprovider",
+      "exit_code": 0,
+      "result": "16 passed, 63 subtests passed, 1 existing StarletteDeprecationWarning in 3.35s"
+    },
+    {
+      "command": "PowerShell here-string piped to C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 - (domain wrong-target and neutral-metadata assertions)",
+      "exit_code": 0,
+      "checks": 39
+    },
+    {
+      "command": "rg metadata expectations in tests/test_m2.py and tests/**/*.py",
+      "exit_code": 1,
+      "reason": "First explicit path did not exist; actual tests/api paths subsequently read"
+    },
+    {
+      "command": "rg test methods; git diff -- backend/app/domain/rules.py",
+      "exit_code": 1,
+      "reason": "Method search succeeded; read-only git diff reported not a git repository in this execution context; no git mutation"
+    },
+    {
+      "command": "First owner-check Python stdin attempt",
+      "exit_code": 1,
+      "reason": "SyntaxError from a Windows path in evidence command string; no code ran, corrected command strings use forward slashes"
+    }
+  ],
+  "wrong_target_checks": [
+    {
+      "room_id": "R1",
+      "item_id": "access_card",
+      "target_id": "r1_note",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R1",
+      "item_id": "access_card",
+      "target_id": "r1_cabinet",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R1",
+      "item_id": "access_card",
+      "target_id": "r1_note",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R1",
+      "item_id": "access_card",
+      "target_id": "r1_cabinet",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_fuse",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_powerbox",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_monitor",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_drawer",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_door",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_powerbox",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_monitor",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_drawer",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_door",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "fuse",
+      "target_id": "r2_monitor",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "fuse",
+      "target_id": "r2_drawer",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "fuse",
+      "target_id": "r2_door",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_powerbox",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_monitor",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_drawer",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_door",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_powerbox",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_monitor",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_drawer",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_door",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "emergency_key",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_powerbox",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_monitor",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_drawer",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_door",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "emergency_key",
+      "target_id": "r2_powerbox",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "emergency_key",
+      "target_id": "r2_monitor",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "emergency_key",
+      "target_id": "r2_drawer",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_powerbox",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_monitor",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_drawer",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R2",
+      "item_id": "access_card",
+      "target_id": "r2_door",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R3",
+      "item_id": "access_card",
+      "target_id": "r3_checklist",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R3",
+      "item_id": "access_card",
+      "target_id": "r3_panel",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "room_id": "R3",
+      "item_id": "access_card",
+      "target_id": "exit_door",
+      "error_code": "PRECONDITION_FAILED",
+      "state_unchanged": true,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    }
+  ],
+  "metadata_checks": {
+    "neutral_item_descriptions": true,
+    "generic_action_labels": true,
+    "existing_level_and_schema": true
+  },
+  "real_api_called": false,
+  "limitations": [
+    "Independent QA and full suite reserved for QA owner",
+    "No frontend build or UI walkthrough performed by Backend owner",
+    "usable_targets is retained as required legacy contract metadata; frontend must hide it",
+    "No new gameplay, state model, schema or snapshot migration introduced",
+    "No existing database or secrets read"
+  ]
+}

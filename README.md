@@ -2,6 +2,12 @@
 
 这是一个本地运行的三房间网页解谜游戏：规则由后端执行，AI队友提供受限建议，推进游戏的建议需要玩家确认。当前工作版本为 v2（关卡 2.0.0；接口、Schema 与工具契约 1.0.0），已提交并推送为 `CH01_v2`（`242ecfc4d9f7bf1a8480508de701d9efc7822fe7`）。版本源码与证据绑定见 [`evidence/integration/CH01_v2-manifest.json`](evidence/integration/CH01_v2-manifest.json)。T30独立检查通过指定CH01/RT01–05工程范围。新源码目录复现绑定至833aafb（10,778文件，Main执行与10842项独立只读检查通过），详见[`交付总manifest`](release/manifest.json)；复用现有Windows/Conda，不代表新OS/新Python、真人试玩或人类签署。
 
+## 当前升级路线
+
+已发布产品仍为 `CH01_v2`。v3.0“信息交互升级”已完成本阶段独立工程 QA：82项pytest、220个子项与前端build通过；Chrome三房间 EXIT 流程、8种错误目标尝试不改变状态/修订号/背包、R2存档恢复与刷新继续、1280/375视口无溢出均有记录，4个源码文件前后哈希一致。证据见 [v3.0测试摘要](evidence/upgrade/v3.0/qa/20261006T093937475Z-formal/run-summary.json) 与 [浏览器运行记录](evidence/upgrade/v3.0/qa/20261006T094303859Z-browser/run.json)。后端关卡级别2.0与Schema 1.0保持兼容，旧存档恢复已检查。这里的自动化浏览器流程不代表真人试玩，也不验证真实玩家20–30分钟通关体验。`CH01_v2`、旧实验和评价器记录仍只证明各自历史范围。完整v3.0至v4.2路线与逐阶段验收门槛见 [`release/UPGRADES.md`](release/UPGRADES.md)，设计基线为 [`docs/upgrade-plan.md`](docs/upgrade-plan.md)。
+
+v3 阶段完成灰盒验收前不引入 Phaser 或最终美术。现有双击启动、命令行启动及游戏内 AI 模式说明继续适用。
+
 ## 双击启动 v2
 
 在 Windows 文件资源管理器中双击仓库根目录的 `启动游戏.cmd`，它会定位到项目目录、使用指定 Conda Python，以 `mock` Provider 和独立的 `./data/game-v2.sqlite` 启动前后端；两项服务健康后尝试打开浏览器。服务运行期间不要关闭窗口，按 Ctrl+C 停止。若启动失败，窗口会保留错误信息和退出码；缺少 Python 或依赖、8000/5173 端口已占用时按提示处理。启动器不会自动安装或升级依赖，也不会结束已占用端口的进程。可右键该文件创建 Windows 快捷方式。

@@ -17,3 +17,7 @@ User requested an in-game mock/real AI selector and manually entered API Key. Ma
 
 # Future commit identity, 2026-10-06
 User explicitly requests all future project commits use their GitHub account. Verified gh user: liy222, id 177762329. Repository-local Git user.name is liy222; user.email is 177762329+liy222@users.noreply.github.com. Use this configured identity for both author and committer; never override with Codex/codex@local.invalid. Do not rewrite historical commits or tags under this authorization.
+
+
+## Upgrade epoch 2026-10-06
+Primary accepted upgrade design baseline: docs/upgrade-plan.md, copied byte-identically from the user attachment. The old execution-plan remains historical scope/evidence. Execute v3.0 -> v3.1 -> v3.2 -> v3.3 -> v3.4 -> v4.0 -> v4.1 -> v4.2; no Phaser/final art before full v3.4 graybox passes. Reuse current backend/API/AI/storage/sync; retain three rooms and stated small puzzle scope. Baseline HEAD502a383 first full reads and existing pytest/build, then v3.0. Each version requires actual main route/save/restore/reload tests, old-save policy, documents and own normal commit/push using liy222 identity. Keep reports concise, simple tasks Luna, implementation/complex independent review Sol as needed; no Astra unless necessary. Prior ignored runtime artifacts remain untouched. Actual dispatch configurations are recorded in evidence/upgrade/baseline-plan-20261006.json; Main runtime not independently verified.

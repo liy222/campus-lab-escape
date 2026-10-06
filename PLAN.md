@@ -77,3 +77,15 @@ User requested an in-game mock/real AI selector and manually entered API Key. Ma
 
 ## 2026-10-06 gameplay AI settings accepted
 Stable five-file implementation accepted after independent API7+9 and actual Chrome375/1280 exit0. Existing backend regression46+88 passed; frontend build0. Key is password input in React memory, only passed to local AI-turn request headers; request-specific provider and original canonical budget retained. Refresh/mode/session/reset/restore clears key, no save/database/model-message credential leakage; mock proposals and manual actions verified. Main reread report, checked candidate hashes and viewed mobile screenshot. Initial browser-script assumption failure retained. No paid calls or real-key validity claims. Evidence: evidence/integration/play-ai-settings-accepted-20261006.json. Normal private GitHub synchronization follows.
+
+
+## Upgrade epoch 2026-10-06
+Primary accepted upgrade design baseline: docs/upgrade-plan.md, copied byte-identically from the user attachment. The old execution-plan remains historical scope/evidence. Execute v3.0 -> v3.1 -> v3.2 -> v3.3 -> v3.4 -> v4.0 -> v4.1 -> v4.2; no Phaser/final art before full v3.4 graybox passes. Reuse current backend/API/AI/storage/sync; retain three rooms and stated small puzzle scope. Baseline HEAD502a383 first full reads and existing pytest/build, then v3.0. Each version requires actual main route/save/restore/reload tests, old-save policy, documents and own normal commit/push using liy222 identity. Keep reports concise, simple tasks Luna, implementation/complex independent review Sol as needed; no Astra unless necessary. Prior ignored runtime artifacts remain untouched. Actual dispatch configurations are recorded in evidence/upgrade/baseline-plan-20261006.json; Main runtime not independently verified.
+
+
+### Upgrade baseline accepted / v3.0 active
+Actual baseline pytest80+212subtests and frontendbuild exit0; team full reads completed after re-reading truncated output. Evidence: evidence/upgrade/baseline-accepted-20261006.json. v3.0 limited to information/interactions/neutral feedback, same level2/save schema. Backend owns rules.py; frontend Luna owns App.tsx/style.css; QA Luna prepares independent new tests and full browser main route/save/restore/reload after stable candidate. Every stage commit/push remains required. v3.1+ will inject rule/state models into original Store, with legacy entry and separate production upgrade database; no new stack or silent old-save reinterpretation.
+
+
+### v3.0 accepted, synchronization closing
+Independent actual82pytest/220subtests/build0; ChromeR1-R2-R3-EXIT,8wrongtarget attempts preserve state/revision/inventory, R2 save/restore/refreshcontinue and desktop1280/mobile375 layouts passed0. Main checked source RAW against stable candidate and browser before/after. Earlier QA helper/selector failures preserved. Backend level2.0/schema1.0 unchanged; old saves remain compatible, no data migration. Evidence: evidence/upgrade/v3.0/accepted.json. No Phaser/final art/paid calls or human playtime claims. Independent v3.0 commit/push before v3.1GO.

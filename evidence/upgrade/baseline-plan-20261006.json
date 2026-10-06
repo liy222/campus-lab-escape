@@ -1,0 +1,43 @@
+{
+  "base_commit": "502a383683e4fcbc375e4bf4f3caaac48c254521",
+  "design_baseline": "docs/upgrade-plan.md",
+  "sha256": "102ded3ec3368086ab8ec0977d0ae71c324a7d1ca1c8d7555c7574704447c46d",
+  "sequence": [
+    "v3.0",
+    "v3.1",
+    "v3.2",
+    "v3.3",
+    "v3.4",
+    "v4.0",
+    "v4.1",
+    "v4.2"
+  ],
+  "status": "baseline reading/testing; no upgrade implementation begun",
+  "constraints": [
+    "reuse current API/storage/AI/sync",
+    "v3 graybox only; Phaser after accepted v3.4",
+    "independent commit/push and runnable/manual/save/reload validation each version",
+    "no paid calls required for initial upgrade development",
+    "existing ignored data/env preserved"
+  ],
+  "dispatch": [
+    {
+      "agent": "upgrade_backend_read",
+      "requested_model": "gpt-6.1-sol",
+      "effort": "high",
+      "role": "backend/contracts full read before implementation"
+    },
+    {
+      "agent": "upgrade_frontend_read",
+      "requested_model": "gpt-6-luna",
+      "effort": "medium",
+      "role": "frontend/scripts full read"
+    },
+    {
+      "agent": "upgrade_qa_baseline",
+      "requested_model": "gpt-6-luna",
+      "effort": "medium",
+      "role": "tests/root records full read; baseline pytest/build/browser"
+    }
+  ]
+}

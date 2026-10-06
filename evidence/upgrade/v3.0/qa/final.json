@@ -1,0 +1,44 @@
+{
+  "candidate": "v3.0-rules-e0331d35-app-57755a96-css-3e5b6653",
+  "status": "PASS_SCOPED_DETERMINISTIC_QA",
+  "api": {
+    "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m pytest tests/api -q -p no:cacheprovider",
+    "exit_code": 0,
+    "passed": 82,
+    "subtests_passed": 220,
+    "warnings": ["StarletteDeprecationWarning: httpx with starlette.testclient is deprecated"],
+    "evidence_directory": "evidence/upgrade/v3.0/qa/20261006T093937475Z-formal"
+  },
+  "frontend_build": {
+    "command": "npm.cmd --prefix frontend run build",
+    "exit_code": 0,
+    "evidence_directory": "evidence/upgrade/v3.0/qa/20261006T093937475Z-formal"
+  },
+  "browser": {
+    "command": "node tests/e2e/run_upgrade.mjs v3.0-rules-e0331d35-app-57755a96-css-3e5b6653",
+    "exit_code": 0,
+    "browser": "Google Chrome, isolated headless context",
+    "provider": "AI_PROVIDER=mock; no paid calls",
+    "main_route": "R1 -> R2 -> R3 -> EXIT; won",
+    "wrong_visible_item_targets": 8,
+    "save_restore_refresh": "saved and restored in R2, refreshed, resumed, then won",
+    "viewport_widths": [1280, 375],
+    "source_sha256_before_after_match": {
+      "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+      "frontend/src/App.tsx": "57755a96af8768315b1e66fd2392783995ac24e8fb8f31ed4be55624f6e23cb7",
+      "frontend/src/api.ts": "b48c343b905d76ae3c0d9b026333a77599feb09cf060dd3d2786fbc7be9655db",
+      "frontend/src/style.css": "3e5b6653484ec159d947d035215cc573538031b6bae3d7220f8f0fe221e99632"
+    },
+    "evidence_directory": "evidence/upgrade/v3.0/qa/20261006T094303859Z-browser"
+  },
+  "retained_qa_runner_failures": [
+    "20261006T093846347Z-formal: two new tests failed because the QA helper omitted action_response schema selection; no product assertion was reached.",
+    "20261006T094115534Z-browser: pre-interaction global input count included unrelated assistant inputs.",
+    "20261006T094217732Z-browser: wrong-target inventory assertion omitted retained access_card.",
+    "20261006T094240091Z-browser: refresh-resume selector matched both header and welcome buttons."
+  ],
+  "limitations": [
+    "Scripted deterministic QA does not establish real-model behavior, human acceptance, or real-player completion time.",
+    "Existing ignored database was not opened, copied, or modified."
+  ]
+}

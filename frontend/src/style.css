@@ -85,3 +85,11 @@ dialog { border:1px solid #6f866d; border-radius:14px; background:#223127; color
 .ai-trace pre { font-size:10px; white-space:pre-wrap; overflow-wrap:anywhere; background:#14251a; padding:10px; border-radius:6px; max-height:240px; overflow:auto; }
 .clue-list li:focus { outline:2px solid var(--mint); outline-offset:5px; }
 @media(max-width:760px) { .ai-panel { padding:20px 18px; } .proposal-card { padding:13px; } .ai-settings { padding:12px; } .ai-mode-options { grid-template-columns:1fr; } .ai-key-row { flex-wrap:wrap; } .ai-key-row input { flex:1 1 180px; } }
+.inventory-item.item-selected { border-color:var(--mint); box-shadow:0 0 0 2px #b9d29f25; }
+.item-select-button { width:100%; margin-top:13px; }
+.item-select-button[aria-pressed="true"] { background:#314b38; border-color:var(--mint); color:#e3f3e7; }
+.object-actions .use-button { flex:1 1 100%; min-width:0; }
+.code-form { width:100%; min-width:0; margin-top:14px; }
+.code-form>div { min-width:0; }
+.interaction-prompt { width:100%; color:#bdcfb5; font-size:12px; padding:10px 12px; background:#25382e; border-radius:6px; }
+.exit-button>span:nth-child(2) { min-width:0; overflow-wrap:anywhere; }

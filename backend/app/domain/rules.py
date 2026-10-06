@@ -14,14 +14,14 @@ CLUES = {
     "r3_panel_clue": {"clue_id": "r3_panel_clue", "object_id": "r3_panel", "title": "设备标签", "text": "冷却对应2，通风对应3，照明对应1。"},
 }
 ITEMS = {
-    "access_card": {"item_id": "access_card", "name": "门卡", "description": "设备间门卡"},
-    "fuse": {"item_id": "fuse", "name": "保险丝", "description": "可装入电源箱的保险丝"},
-    "emergency_key": {"item_id": "emergency_key", "name": "应急钥匙", "description": "出口控制室的应急钥匙"},
+    "access_card": {"item_id": "access_card", "name": "门卡", "description": "一张边角磨损的塑料卡片，印字已经模糊。"},
+    "fuse": {"item_id": "fuse", "name": "保险丝", "description": "细长的玻璃管里有一根完好的金属丝，两端包着金属帽。"},
+    "emergency_key": {"item_id": "emergency_key", "name": "应急钥匙", "description": "一把老旧的黄铜钥匙，标签已经脱落，齿槽有使用痕迹。"},
 }
 ROOMS = {
-    "R1": ("值班室", "夜间断电了，先寻找通往设备间的门卡。"),
-    "R2": ("设备间", "设备间尚待恢复供电，寻找通往出口控制室的办法。"),
-    "R3": ("出口控制室", "完成出口检查后即可离开实验室。"),
+    "R1": ("值班室", "夜色透过窗户，桌面与柜门隐在昏暗的光线里。"),
+    "R2": ("设备间", "室内安静得只剩脚步声，几台设备的指示灯都没有亮。"),
+    "R3": ("出口控制室", "控制台旁贴着旧纸张，厚重的出口门立在房间尽头。"),
     "EXIT": ("实验室出口", "已离开实验室。"),
 }
 ITEM_OBJECTS = {"access_card": "access_card", "fuse": "r2_fuse", "emergency_key": "emergency_key"}
@@ -35,11 +35,11 @@ def action(tool: str, label: str, **arguments) -> dict:
 
 def visible_objects(state: GameState) -> list[dict]:
     def obj(object_id, name, kind, description, locked=False, item_id=None):
-        actions = [action("inspect", "查看", object_id=object_id)]
+        actions = [action("inspect", "观察", object_id=object_id)]
         if locked:
-            actions.append(action("submit_code", "输入密码", target_id=object_id))
+            actions.append(action("submit_code", "互动", target_id=object_id))
         if item_id:
-            actions.append(action("take", "拾取", item_id=item_id))
+            actions.append(action("take", "互动", item_id=item_id))
         return {"object_id": object_id, "name": name, "kind": kind, "description": description, "actions": actions}
 
     if state.room_id == "R1":
@@ -161,10 +161,10 @@ def apply_action(original: GameState, tool: str, arguments: dict) -> tuple[GameS
                 observed += " 容器已打开。" + contents
         elif observed is None:
             observed = {
-                "r1_door": "刷卡门已解锁" if state.flags["r2_unlocked"] else "需要门卡解锁；刷卡门",
-                "r2_door": "门已解锁" if state.flags["r3_unlocked"] else "需要应急钥匙解锁",
-                "r2_powerbox": "电源已恢复" if state.flags["power_on"] else "尚未安装保险丝",
-                "exit_door": "出口检查已完成" if state.flags["check_done"] else "尚未完成出口检查",
+                "r1_door": "刷卡门已解锁" if state.flags["r2_unlocked"] else "门侧有一条磨损的读卡槽，门锁没有松动。",
+                "r2_door": "门已解锁" if state.flags["r3_unlocked"] else "门把手下有一个窄锁孔，转动把手时门仍紧闭。",
+                "r2_powerbox": "电源已恢复" if state.flags["power_on"] else "箱内两枚金属触点之间空着，指示灯没有亮。",
+                "exit_door": "出口检查已完成" if state.flags["check_done"] else "出口门紧闭，旁边的状态灯仍亮着。",
                 **{object_id: ITEMS[item_id]["description"] for item_id, object_id in ITEM_OBJECTS.items()},
             }[object_id]
         message = "已查看。"
@@ -185,7 +185,16 @@ def apply_action(original: GameState, tool: str, arguments: dict) -> tuple[GameS
             raise RuleError("NOT_VISIBLE", "当前无法操作该目标。")
         flag = PAIRS.get((item_id, target_id))
         if flag is None:
-            raise RuleError("PRECONDITION_FAILED", "该道具不能用于此目标。")
+            feedback = {
+                "r1_door": "门侧的装置没有反应，物品与槽口似乎不相合。",
+                "r2_door": "物品无法与锁孔嵌合，门锁没有松动。",
+                "r2_powerbox": "物品与箱内触点无法接合，指示灯没有亮。",
+                "r1_cabinet": "物品碰到柜门，锁上的数字没有变化。",
+                "r2_drawer": "抽屉仍停在原处，物品没有使锁产生反应。",
+                "r3_panel": "面板没有响应，显示仍与刚才相同。",
+                "exit_door": "出口装置没有响应，门仍保持原来的状态。",
+            }.get(target_id, "物品轻触表面，没有出现任何变化。")
+            raise RuleError("PRECONDITION_FAILED", feedback)
         if not state.flags[flag]:
             if item_id not in state.inventory or (target_id == "r2_door" and not state.flags["power_on"]):
                 raise RuleError("PRECONDITION_FAILED", "需要先取得相应道具并满足设备条件。")

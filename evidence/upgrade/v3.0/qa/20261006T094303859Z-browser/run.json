@@ -1,0 +1,34 @@
+{
+  "candidate": "v3.0-rules-e0331d35-app-57755a96-css-3e5b6653",
+  "started": "2026-10-06T09:43:03.860Z",
+  "ended": "2026-10-06T09:43:07.897Z",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "D:\\深度能力\\tests\\e2e\\run_upgrade.mjs",
+    "v3.0-rules-e0331d35-app-57755a96-css-3e5b6653"
+  ],
+  "provider": "AI_PROVIDER=mock; no paid model call",
+  "browser": "Google Chrome, headless isolated context",
+  "viewport_widths": [
+    1280,
+    375
+  ],
+  "backend_port": 9242,
+  "frontend_port": 9243,
+  "source_sha256_before": {
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "frontend/src/App.tsx": "57755a96af8768315b1e66fd2392783995ac24e8fb8f31ed4be55624f6e23cb7",
+    "frontend/src/api.ts": "b48c343b905d76ae3c0d9b026333a77599feb09cf060dd3d2786fbc7be9655db",
+    "frontend/src/style.css": "3e5b6653484ec159d947d035215cc573538031b6bae3d7220f8f0fe221e99632"
+  },
+  "source_sha256_after": {
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "frontend/src/App.tsx": "57755a96af8768315b1e66fd2392783995ac24e8fb8f31ed4be55624f6e23cb7",
+    "frontend/src/api.ts": "b48c343b905d76ae3c0d9b026333a77599feb09cf060dd3d2786fbc7be9655db",
+    "frontend/src/style.css": "3e5b6653484ec159d947d035215cc573538031b6bae3d7220f8f0fe221e99632"
+  },
+  "exit_code": 0,
+  "limitations": [
+    "This scripted browser route does not measure real-player completion time or human acceptance."
+  ]
+}

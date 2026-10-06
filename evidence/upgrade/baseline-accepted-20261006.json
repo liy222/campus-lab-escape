@@ -1,0 +1,27 @@
+{
+  "design_baseline": "docs/upgrade-plan.md",
+  "design_sha256": "102ded3ec3368086ab8ec0977d0ae71c324a7d1ca1c8d7555c7574704447c46d",
+  "base_commit": "502a383683e4fcbc375e4bf4f3caaac48c254521",
+  "baseline": {
+    "pytest": 80,
+    "subtests": 212,
+    "build_exit": 0,
+    "record_path": "evidence/upgrade/baseline-20261006/summary.json",
+    "sha256": "d3e0f732e4fe0eb7783d1994872e10cd0c933347b4b5ec6fa4580a761211d130"
+  },
+  "full_reads": {
+    "backend_and_contracts": "upgrade_backend_read:33files/7010lines; schema paged",
+    "frontend_and_scripts": "upgrade_frontend_read:frontend11+scripts3mjs+scripts6py; truncated reads re-read",
+    "tests_and_project_records": "upgrade_qa_baseline:30py/mjs; PLAN/DECISIONS/STATUS full reads",
+    "main": "attachment797lines, README, code integration reads; team full reads complete"
+  },
+  "version": "v3.0",
+  "status": "implementation authorized after baseline pass",
+  "scope": [
+    "remove displayed usable_targets",
+    "generic inspect/interact/use-item entry",
+    "neutral descriptions and wrong-target feedback",
+    "unchanged level2.0/save contracts and solver"
+  ],
+  "future_compatibility_decision": "v3.1+ injectable rules/state model into existing Store; legacy create_app path preserved, production upgrade explicit and isolated database. No new stack."
+}

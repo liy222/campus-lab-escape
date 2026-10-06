@@ -1,0 +1,164 @@
+{
+  "checks": [
+    {
+      "stage": "R1-start",
+      "width": 1280,
+      "dimensions": {
+        "viewport": 1280,
+        "documentWidth": 1280,
+        "controls": [
+          {
+            "left": 1086,
+            "right": 1152,
+            "width": 66
+          },
+          {
+            "left": 1162,
+            "right": 1240,
+            "width": 78
+          },
+          {
+            "left": 61,
+            "right": 262.484375,
+            "width": 201.484375
+          },
+          {
+            "left": 341.484375,
+            "right": 514,
+            "width": 172.515625
+          },
+          {
+            "left": 527,
+            "right": 699.515625,
+            "width": 172.515625
+          },
+          {
+            "left": 712.515625,
+            "right": 885.03125,
+            "width": 172.515625
+          },
+          {
+            "left": 326.484375,
+            "right": 900.046875,
+            "width": 573.5625
+          },
+          {
+            "left": 88,
+            "right": 104,
+            "width": 16
+          },
+          {
+            "left": 350,
+            "right": 366,
+            "width": 16
+          },
+          {
+            "left": 63,
+            "right": 608,
+            "width": 545
+          },
+          {
+            "left": 530,
+            "right": 608,
+            "width": 78
+          },
+          {
+            "left": 672,
+            "right": 750,
+            "width": 78
+          },
+          {
+            "left": 759,
+            "right": 837,
+            "width": 78
+          },
+          {
+            "left": 846,
+            "right": 924,
+            "width": 78
+          }
+        ]
+      }
+    },
+    {
+      "stage": "wrong-item-target",
+      "item": "门卡",
+      "target": "值班便签",
+      "status": 409,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "stage": "wrong-item-target",
+      "item": "门卡",
+      "target": "值班柜",
+      "status": 409,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "stage": "wrong-item-target",
+      "item": "保险丝",
+      "target": "屏幕",
+      "status": 409,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "stage": "wrong-item-target",
+      "item": "保险丝",
+      "target": "抽屉",
+      "status": 409,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "stage": "wrong-item-target",
+      "item": "保险丝",
+      "target": "出口控制室钥匙门",
+      "status": 409,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "stage": "wrong-item-target",
+      "item": "应急钥匙",
+      "target": "电源箱",
+      "status": 409,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "stage": "wrong-item-target",
+      "item": "应急钥匙",
+      "target": "屏幕",
+      "status": 409,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "stage": "wrong-item-target",
+      "item": "应急钥匙",
+      "target": "抽屉",
+      "status": 409,
+      "revision_unchanged": true,
+      "inventory_unchanged": true
+    },
+    {
+      "stage": "stop-owned-process-tree",
+      "pid": 29520,
+      "exit_code": 0
+    },
+    {
+      "stage": "stop-owned-process-tree",
+      "pid": 29740,
+      "exit_code": 0
+    }
+  ],
+  "issues": [
+    {
+      "stage": "runner",
+      "error": "locator.press: Error: strict mode violation: getByRole('button', { name: '继续当前游戏', exact: true }) resolved to 2 elements:\n    1) <button class=\"button subtle\">继续当前游戏</button> aka getByRole('banner').getByRole('button', { name: '继续当前游戏' })\n    2) <button class=\"button\">继续当前游戏</button> aka locator('#game').getByRole('button', { name: '继续当前游戏' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '继续当前游戏', exact: true })\u001b[22m\n"
+    }
+  ]
+}
