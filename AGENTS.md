@@ -13,3 +13,7 @@ Final documentation handoff on 2026-10-06: after Evaluator code and actual-resul
 
 ## 2026-10-06 gameplay AI settings task
 User requested an in-game mock/real AI selector and manually entered API Key. Main dispatched play_ai_backend and play_ai_frontend with requested gpt-6.1-sol/high, as returned by spawn task creation; Main runtime is not independently verified. Backend owns routes.py and ai/runtime.py for this epoch; Frontend owns Assistant.tsx/api.ts/style.css. Credentials are ephemeral request headers to the local backend, never persisted or sent as model content. Explicit mock is free; explicit deepseek requires entered key and fixed existing official provider/model, retains canonical budget. Independent QA follows stable SOURCE STOP; no paid call is needed to implement or verify this task.
+
+
+# Future commit identity, 2026-10-06
+User explicitly requests all future project commits use their GitHub account. Verified gh user: liy222, id 177762329. Repository-local Git user.name is liy222; user.email is 177762329+liy222@users.noreply.github.com. Use this configured identity for both author and committer; never override with Codex/codex@local.invalid. Do not rewrite historical commits or tags under this authorization.
