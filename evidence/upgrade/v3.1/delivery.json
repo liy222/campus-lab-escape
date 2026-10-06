@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-06",
+  "status": "candidate for independent QA; no QA pass claimed",
+  "scope": [
+    "scripts/dev.py",
+    "启动游戏.cmd"
+  ],
+  "source_sha256": {
+    "scripts/dev.py": "4cb8a7d6df8a3a703151a8123711f4c69f3351a34b550190885cf025d68858c2",
+    "启动游戏.cmd": "61862cd62751fd1a98ed87b25e82e3cbb48183d13ae032b13979f1ff8b6d829b"
+  },
+  "checks": [
+    {
+      "command": "Python -B AST parse and make_frontend_environment in-memory checks (legacy/upgrade/default/invalid; VITE and AI-secret filtering)",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -m scripts.dev --help",
+      "exit_code": 0,
+      "result": "--open-browser CLI preserved"
+    },
+    {
+      "command": "Python UTF-8/no-BOM/CRLF and CMD upgrade mode/database assignments check",
+      "exit_code": 0,
+      "result": "PASS"
+    }
+  ],
+  "mode_projection": {
+    "backend_values": [
+      "legacy",
+      "upgrade"
+    ],
+    "frontend_public_values": [
+      "legacy",
+      "v3.1"
+    ],
+    "legacy_storage": "campus-lab-session-v1",
+    "upgrade_storage": "campus-lab-session-upgrade-v3.1"
+  },
+  "launcher_defaults": {
+    "GAMEPLAY_VERSION": "upgrade",
+    "SQLITE_PATH": "./data/game-v3.1.sqlite",
+    "provider": "mock"
+  },
+  "safety": "Frontend receives CAMPUS_BACKEND_URL and one explicit VITE_GAMEPLAY_VERSION only; inherited VITE_, AI/provider, secret and SQLite variables are filtered. Backend retains its own environment.",
+  "limitations": [
+    "No live service startup in Delivery check; awaiting independent QA/Main validation.",
+    "No .env, key, database, paid call or Git access."
+  ]
+}

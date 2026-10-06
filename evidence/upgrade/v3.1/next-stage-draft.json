@@ -1,0 +1,22 @@
+{
+  "status": "design preparation only; v3.2 implementation awaits v3.1 accepted commit/push",
+  "next": "v3.2",
+  "baseline": "docs/upgrade-plan.md",
+  "design": {
+    "rooms": 3,
+    "devices": 4,
+    "key_items": [
+      "sample_slide",
+      "fuse",
+      "research_strip",
+      "access_card"
+    ],
+    "room1": "clock21:17 + record minute suffix + microscope sample42 -> cabinet4217; plaqueLAB-42 and early symbol order; slide must be placed to reveal sample",
+    "room2": "manual electric chain remains until3.3 circuit; terminal USER from LAB-42, PASS from experiment start HHMM; DATA_READ reveals research strip and card",
+    "room3": "card activates check only; combine R1 symbol source order, R2 position permutation, R3 symbol/device rule for final input",
+    "nonlinear": "allow exploring other room facts before solving all available puzzles; no arbitrary code-generated door sequence",
+    "future": "3.3 only circuit rotation and sequence games;3.4 discovery-bound hints/score;Phaser only after3.4"
+  },
+  "reuse": "same Store/API/AI receipt/save dispatcher; preserve legacy and v3.1 entry, select strict level data/model, isolate new saves; no full backend copy",
+  "note": "Exact state/config implementation delegated after stage gate; no live playtime claim or paid call"
+}

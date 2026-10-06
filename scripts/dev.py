@@ -40,15 +40,22 @@ def load_env_file(path: Path, environment: dict[str, str]) -> None:
         environment.setdefault(key, value)
 
 
-def make_frontend_environment(inherited: dict[str, str], backend_url: str) -> dict[str, str]:
-    """Keep server config out of Vite, including inherited model credentials."""
-    server_prefixes = ("MODEL_", "DEEPSEEK_", "OPENAI_", "ANTHROPIC_", "AI_")
+def make_frontend_environment(inherited: dict[str, str], backend_url: str,
+                              gameplay_version: str = "upgrade") -> dict[str, str]:
+    """Pass only explicit public settings to Vite, never inherited VITE secrets."""
+    if gameplay_version not in {"legacy", "upgrade"}:
+        raise ValueError("gameplay_version must be 'legacy' or 'upgrade'")
+    server_prefixes = ("MODEL_", "DEEPSEEK_", "OPENAI_", "ANTHROPIC_", "AI_",
+                       "GOOGLE_", "GEMINI_", "MISTRAL_", "COHERE_", "OLLAMA_",
+                       "HUGGINGFACE_", "HF_", "AZURE_OPENAI_")
     secret_fragments = ("API_KEY", "APIKEY", "TOKEN", "SECRET", "PASSWORD", "CREDENTIAL")
     environment = {key: value for key, value in inherited.items()
                    if not key.upper().startswith(server_prefixes)
+                   and not key.upper().startswith("VITE_")
                    and key.upper() != "SQLITE_PATH"
                    and not any(fragment in key.upper() for fragment in secret_fragments)}
     environment["CAMPUS_BACKEND_URL"] = backend_url
+    environment["VITE_GAMEPLAY_VERSION"] = "legacy" if gameplay_version == "legacy" else "v3.1"
     return environment
 
 
@@ -120,9 +127,14 @@ def main() -> int:
                                        "--host", "127.0.0.1", "--port", str(args.frontend_port), "--strictPort")
         backend_environment = os.environ.copy()
         load_env_file(ROOT / ".env", backend_environment)
+        gameplay_version = (backend_environment.get("GAMEPLAY_VERSION") or "upgrade").strip().lower()
+        if gameplay_version not in {"legacy", "upgrade"}:
+            raise RuntimeError("GAMEPLAY_VERSION must be 'legacy' or 'upgrade'")
+        backend_environment["GAMEPLAY_VERSION"] = gameplay_version
         provider = args.provider if args.provider is not None else (backend_environment.get("AI_PROVIDER") or "mock")
         backend_environment["AI_PROVIDER"] = provider
-        frontend_environment = make_frontend_environment(os.environ.copy(), f"http://127.0.0.1:{args.backend_port}")
+        frontend_environment = make_frontend_environment(
+            os.environ.copy(), f"http://127.0.0.1:{args.backend_port}", gameplay_version)
         process_options = {"creationflags": subprocess.CREATE_NEW_PROCESS_GROUP} if os.name == "nt" else {"start_new_session": True}
         children.append(subprocess.Popen([sys.executable, "-m", "uvicorn", "backend.app.main:app",
                                           "--host", "127.0.0.1", "--port", str(args.backend_port)],

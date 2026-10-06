@@ -18,8 +18,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 from pydantic import ValidationError
 
 from ..ai.types import CheckResult, ProposalCandidate, ReadResult, RuntimeBoundaryError, Snapshot, TurnResult, TurnStart, Version
-from ..domain.models import AITurnRequest, EmptyRequest, GameState, RuleError, TOOL_MODELS, validate_generation
-from ..domain.rules import apply_action, validate_invariants
+from ..domain.models import AITurnRequest, EmptyRequest, RuleError, TOOL_MODELS, validate_generation
 
 SCHEMA = json.loads((Path(__file__).resolve().parents[3] / 'contracts' / 'api.schema.json').read_text(encoding='utf-8'))
 PROGRESS_TOOLS = {'take', 'use_item', 'submit_code', 'move'}
@@ -152,8 +151,7 @@ class AIStoreMixin:
         if not turn or turn['phase'] != 'reserved' or turn['owner'] != self.runtime_owner:
             raise RuntimeBoundaryError('STALE_STATE')
         row = connection.execute('SELECT state_json FROM sessions WHERE session_id=?', (session_id,)).fetchone()
-        state = GameState.model_validate(json.loads(row['state_json']))
-        validate_invariants(state)
+        state = self.parse_state(row['state_json'])
         if not isinstance(expected, Version) or expected.generation != turn['generation'] or expected.revision != turn['cursor_revision'] or state.generation != turn['generation'] or state.revision != turn['cursor_revision']:
             raise RuntimeBoundaryError('STALE_STATE')
         return turn, state
@@ -170,7 +168,7 @@ class AIStoreMixin:
             if tool not in {'inspect', 'get_inventory'}:
                 return ReadResult(False, self.projection(connection, session_id, state), error_code='INVALID_TOOL')
             try:
-                args = TOOL_MODELS[tool].model_validate(arguments).model_dump()
+                args = self.rules.tool_models[tool].model_validate(arguments).model_dump()
             except (ValidationError, TypeError, ValueError):
                 return ReadResult(False, self.projection(connection, session_id, state), error_code='BAD_ARGUMENT')
             # A second, server-side cap prevents a faulty runtime bypassing limits.
@@ -179,7 +177,7 @@ class AIStoreMixin:
             connection.execute('UPDATE ai_turns SET read_calls=read_calls+1 WHERE turn_id=?', (turn_id,))
             event_id = new_id()
             try:
-                updated, result = apply_action(state, tool, args)
+                updated, result = self.rules.apply_action(state, tool, args)
             except RuleError as error:
                 self.failure(connection, event_id, session_id, 'ai_read', error.code, error.message, state, {'turn_id': turn_id, 'tool': tool, 'arguments': args})
                 return ReadResult(False, self.projection(connection, session_id, state), error_code=error.code)
@@ -196,7 +194,7 @@ class AIStoreMixin:
         if not isinstance(candidate, ProposalCandidate) or candidate.tool not in PROGRESS_TOOLS:
             raise RuleError('PROPOSAL_REJECTED', '提案工具不符合允许范围。')
         try:
-            args = TOOL_MODELS[candidate.tool].model_validate(candidate.arguments).model_dump()
+            args = self.rules.tool_models[candidate.tool].model_validate(candidate.arguments).model_dump()
             known = set(state.discovered_clue_ids)
             refs = candidate.clue_refs
             if not isinstance(refs, tuple) or any(not isinstance(ref, str) or ref not in known for ref in refs) or len(refs) != len(set(refs)):
@@ -205,7 +203,7 @@ class AIStoreMixin:
                 raise ValueError()
         except (ValidationError, ValueError, TypeError):
             raise RuleError('PROPOSAL_REJECTED', '提案参数或线索引用不符合契约。') from None
-        apply_action(state, candidate.tool, args)  # Copy-only dynamic precheck.
+        self.rules.apply_action(state, candidate.tool, args)  # Copy-only dynamic precheck.
         return args
 
     def ai_precheck(self, session_id, turn_id, expected, candidate):
@@ -313,7 +311,7 @@ class AIStoreMixin:
             if not turn or turn['owner'] != self.runtime_owner or turn['phase'] != 'reserved':
                 raise RuntimeBoundaryError('STALE_STATE')
             row = connection.execute('SELECT state_json FROM sessions WHERE session_id=?', (session_id,)).fetchone()
-            state = GameState.model_validate(json.loads(row['state_json']))
+            state = self.parse_state(row['state_json'])
             projection = self.projection(connection, session_id, state)
             expected = Version(turn['cursor_revision'], turn['generation'])
             valid_result = isinstance(result, TurnResult)
@@ -426,7 +424,7 @@ class AIStoreMixin:
             try:
                 candidate = ProposalCandidate(proposal['tool'], proposal['arguments'], tuple(proposal['clue_refs']), proposal['summary'])
                 args = self.candidate_arguments(state, candidate)
-                updated, result = apply_action(state, proposal['tool'], args)
+                updated, result = self.rules.apply_action(state, proposal['tool'], args)
             except RuleError:
                 return reject('PROPOSAL_REJECTED', '当前条件不允许执行该提案。', 'rejected')
             proposal['status'] = 'committed'

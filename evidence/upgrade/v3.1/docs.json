@@ -1,0 +1,28 @@
+{
+  "version": "v3.1",
+  "status": "STOP",
+  "files": [
+    "README.md",
+    "release/UPGRADES.md"
+  ],
+  "source_sha256": {
+    "README.md": "2e634a911fcb6231f26e1a87550ff0fbf8f62526782f5cb6ef8bb6c815b8bc93",
+    "release/UPGRADES.md": "d774d2dfc73a2f95e096e2bdb0696a9d8f0790948d75be05619c6cc3ed712d14"
+  },
+  "commands": [
+    {
+      "command": "Mechanical README edits; update documentation hashes",
+      "exit_code": 0
+    }
+  ],
+  "evidence": [
+    "evidence/upgrade/v3.1/qa/result.json",
+    "review/findings/upgrade-v31.md",
+    "evidence/upgrade/v3.1/frontend.json"
+  ],
+  "limitations": [
+    "Documentation reflects Main-provided final QA results; this task did not rerun QA.",
+    "v3.1 commit SHA and tag creation are not claimed; Main is completing normal synchronization.",
+    "Historical evidence details remain unchanged and are explicitly labeled as historical."
+  ]
+}

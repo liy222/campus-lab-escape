@@ -1,0 +1,79 @@
+....................................................................................F..F.                                     [100%]
+================================== FAILURES ===================================
+_ UpgradeV31Acceptance.test_checksum_valid_final_check_without_panel_observation_is_rejected _
+
+self = <tests.api.test_upgrade_v31.UpgradeV31Acceptance testMethod=test_checksum_valid_final_check_without_panel_observation_is_rejected>
+
+    def test_checksum_valid_final_check_without_panel_observation_is_rejected(self):
+        self.route(end=36)
+        self.control('save')
+        with closing(sqlite3.connect(self.db)) as db:
+            raw = db.execute('SELECT snapshot_json FROM saves WHERE session_id=?', (self.session['session_id'],)).fetchone()[0]
+            state_before = db.execute('SELECT state_json FROM sessions WHERE session_id=?', (self.session['session_id'],)).fetchone()[0]
+        broken = json.loads(raw)
+        fields = broken['game_fields']
+        self.assertTrue(fields['flags']['check_done'])
+        fields['observed_object_ids'].remove('r3_panel')
+        fields['discovered_clue_ids'] = [clue for clue in fields['discovered_clue_ids'] if clue not in {'r3_panel_clue', 'r3_panel_observation'}]
+        broken['checksum'] = digest(broken)
+        tampered = json.dumps(broken, ensure_ascii=False)
+        with closing(sqlite3.connect(self.db)) as db:
+            db.execute('UPDATE saves SET snapshot_json=? WHERE session_id=?', (tampered, self.session['session_id']))
+            db.commit()
+        before = self.state()
+>       self.control('restore', 409, 'INVALID_SNAPSHOT')
+
+tests\api\test_upgrade_v31.py:326: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\api\test_upgrade_v31.py:78: in control
+    self.assertEqual(status, expected, sanitize(body))
+E   AssertionError: 200 != 409 : {'ok': True, 'event_id': 'a800c608ec0e4f00844002b7a197ab08', 'data': {'request_id': '602f1628f8e4448b9d31419514b115b8', 'replayed': False, 'message': '已恢复存档。', 'visible_state': {'schema_version': '1.1.0', 'level_version': '3.1.0', 'session_id': '3f5517deb3544bf9ad9f358e5d1f230c', 'revision': 37, 'generation': '2dc33cc8-4226-4ba7-aef3-f39c744f470b', 'status': 'playing', 'room': {'room_id': 'R3', 'name': '出口控制室', 'description': '控制台旁贴着旧纸张，厚重的出口门立在房间尽头。'}, 'objects': [{'object_id': 'r3_checklist', 'name': '出口检查单', 'kind': 'clue', 'description': '出口旁贴着一张检查单。', 'actions': [{'tool': 'inspect', 'label': '观察', 'arguments': {'object_id': 'r3_checklist'}, 'requires_code': False}]}, {'object_id': 'r3_panel', 'name': '检查面板', 'kind': 'device', 'description': '检查完成，确认灯亮着。', 'actions': [{'tool': 'inspect', 'label': '观察', 'arguments': {'object_id': 'r3_panel'}, 'requires_code': False}]}, {'object_id': 'exit_door', 'name': '实验室出口', 'kind': 'door', 'description': '终检灯亮起，出口仍锁着。', 'actions': [{'tool': 'inspect', 'label': '观察', 'arguments': {'object_id': 'exit_door'}, 'requires_code': False}, {'tool': 'interact', 'label': '释放门锁', 'arguments': {'target_id': 'exit_door'}, 'requires_code': False}]}], 'inventory': [{'item_id': 'access_card', 'name': '门卡', 'description': '一张边角磨损的塑料卡片，印字已经模糊。', 'usable_targets': []}], 'clues': [{'clue_id': 'r1_note_clue', 'object_id': 'r1_note', 'title': '值班便签', 'text': '三角记为3，圆记为8，方记为2。'}, {'clue_id': 'r1_cabinet_clue', 'object_id': 'r1_cabinet', 'title': '柜门顺序', 'text': '柜门标签从左到右是：三角、圆、方。'}, {'clue_id': 'access_card_observation', 'object_id': 'access_card', 'title': '现场观察', 'text': '一张边角磨损的塑料卡片，印字已经模糊。'}, {'clue_id': 'r1_door_observation', 'object_id': 'r1_door', 'title': '现场观察', 'text': '门侧有一道磨损的读卡槽。'}, {'clue_id': 'r2_fuse_observation', 'object_id': 'r2_fuse', 'title': '现场观察', 'text': '细长的玻璃管里有一根完好的金属丝，两端包着金属帽。'}, {'clue_id': 'r2_powerbox_observation', 'object_id': 'r2_powerbox', 'title': '现场观察', 'text': '箱盖带搭扣，里面有金属触点和总闸。'}, {'clue_id': 'r2_monitor_observation', 'object_id': 'r2_monitor', 'title': '现场观察', 'text': '机身上有启动按钮，显示器旁有颜色标记。'}, {'clue_id': 'r2_monitor_clue', 'object_id': 'r2_monitor', 'title': '屏幕读数', 'text': '青色7、橙色2、紫色4。 登录数字键旁的标签是：青、橙、紫。'}, {'clue_id': 'r2_drawer_clue', 'object_id': 'r2_drawer', 'title': '抽屉顺序', 'text': '抽屉标签从左到右是：青、橙、紫。'}, {'clue_id': 'emergency_key_observation', 'object_id': 'emergency_key', 'title': '现场观察', 'text': '一把老旧的黄铜钥匙，标签已经脱落，齿槽有使用痕迹。'}, {'clue_id': 'r2_door_observation', 'object_id': 'r2_door', 'title': '现场观察', 'text': '门把手下有一个窄锁孔。'}, {'clue_id': 'r3_checklist_clue', 'object_id': 'r3_checklist', 'title': '出口检查顺序', 'text': '依次确认：冷却、通风、照明。'}, {'clue_id': 'exit_door_observation', 'object_id': 'exit_door', 'title': '现场观察', 'text': '出口门旁有一道读卡槽和终检装置。'}], 'exits': [{'destination_id': 'R2', 'name': '设备间', 'unlocked': True}, {'destination_id': 'EXIT', 'name': '实验室出口', 'unlocked': False}], 'progress': {'power_on': True, 'check_done': True}, 'save': {'level_version': '3.1.0', 'saved_at': '2026-10-06T10:01:10.839141Z', 'schema_version': '1.1.0', 'source_generation': '8645e55d-1c15-4d7b-9049-f21a8f92182b', 'source_revision': 36}, 'device_states': {'cabinet': 'ITEM_TAKEN', 'powerbox': 'POWER_ON', 'computer': 'DATA_READ', 'exit': 'FINAL_CHECK'}, 'observed_object_ids': ['r1_note', 'r1_cabinet', 'access_card', 'r1_door', 'r2_fuse', 'r2_powerbox', 'r2_monitor', 'r2_drawer', 'emergency_key', 'r2_door', 'r3_checklist', 'exit_door']}}}
+__ UpgradeV31Acceptance.test_strict_interact_auth_replay_and_stale_versions ___
+
+self = <tests.api.test_upgrade_v31.UpgradeV31Acceptance testMethod=test_strict_interact_auth_replay_and_stale_versions>
+
+    def test_strict_interact_auth_replay_and_stale_versions(self):
+        self.route(end=3)
+        for arguments in [{}, {'object_id': 'r1_cabinet'}, {'target_id': 'r1_cabinet', 'state': 'OPEN'}, {'target_id': 1}, {'target_id': None}]:
+            self.reject(self.request('interact', arguments), 'BAD_ARGUMENT', 422)
+        request = self.request('interact', {'target_id': 'r1_cabinet'})
+        before = self.state()
+        foreign = self.create()
+        for headers in [{}, self.headers(foreign), {'X-Session-Token': 'not-valid'}]:
+            status, body = self.exchange('POST', f"/api/sessions/{self.session['session_id']}/actions", headers=headers,
+                json=request, definition='action_response')
+            self.assertEqual(status, 403)
+            self.assertIsNone(body['visible_state'])
+            self.assertEqual(self.state(), before)
+        status, first = self.post(request)
+        self.assertEqual(status, 200)
+        self.action('inspect', {'object_id': 'access_card'})
+        status, replay = self.post(request)
+        self.assertEqual(status, 200)
+        self.assertTrue(replay['data']['replayed'])
+        self.assertEqual(first['data']['receipt'], replay['data']['receipt'])
+        self.assertEqual(replay['data']['visible_state'], self.state())
+        self.reject({**request, 'arguments': {'target_id': 'r1_note'}}, 'REQUEST_ID_CONFLICT')
+        self.reject(self.request('interact', {'target_id': 'r1_cabinet'}, state=before), 'STALE_STATE')
+        self.control('save')
+        stale = self.request('take', {'item_id': 'access_card'})
+        self.control('restore')
+>       self.reject(stale, 'STALE_STATE')
+
+tests\api\test_upgrade_v31.py:201: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\api\test_r1.py:111: in reject
+    self.assertEqual(body['error']['code'], code)
+E   AssertionError: 'STALE_GENERATION' != 'STALE_STATE'
+E   - STALE_GENERATION
+E   + STALE_STATE
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/api/test_upgrade_v31.py::UpgradeV31Acceptance::test_checksum_valid_final_check_without_panel_observation_is_rejected
+FAILED tests/api/test_upgrade_v31.py::UpgradeV31Acceptance::test_strict_interact_auth_replay_and_stale_versions
+2 failed, 87 passed, 1 warning, 235 subtests passed in 39.06s

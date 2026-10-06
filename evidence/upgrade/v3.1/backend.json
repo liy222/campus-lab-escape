@@ -1,0 +1,613 @@
+{
+  "version": "v3.1",
+  "scope": "Backend owner development verification; independent QA pending",
+  "executed_at": "2026-10-06T09:56:02.290782+00:00",
+  "files": [
+    {
+      "path": "backend/app/domain/upgrade_models.py",
+      "sha256": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb"
+    },
+    {
+      "path": "backend/app/domain/upgrade_rules.py",
+      "sha256": "f29b7178efb884ac160081a3992aa48b1b423ff24571c2758b7edcb3a82a07f8"
+    },
+    {
+      "path": "backend/app/storage/sqlite.py",
+      "sha256": "61cbb9774ae100741c0d4a707ea8f9033e6f3f9c9e663a1d7aa493a5b0a662c3"
+    },
+    {
+      "path": "backend/app/storage/ai.py",
+      "sha256": "1f50248afec17dca561a9b7e40feb9211d66da58b01d8c198bf1f0fbd1ad5400"
+    },
+    {
+      "path": "backend/app/main.py",
+      "sha256": "b40541c47cc9f4ff8b50360f3107813b81a0965daf9e9e9f44491e0d3f3f7166"
+    },
+    {
+      "path": "contracts/build_contracts.py",
+      "sha256": "b688d46ac9335dd5847ca58ac309f4d665fa8f4e240b77d46759599b209a0003"
+    },
+    {
+      "path": "contracts/api.schema.json",
+      "sha256": "0878ab95308913b2ffef1ddc0c3cfde4635bfec4975ae6e93f9cd154a96de29b"
+    },
+    {
+      "path": "contracts/routes.json",
+      "sha256": "d6858b4ffc00fa69efb0adb32ad6a57df6764f9216e85b1b4fdb702394db8ad4"
+    }
+  ],
+  "commands": [
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 contracts/build_contracts.py",
+      "exit_code": 0
+    },
+    {
+      "command": "AI_PROVIDER=mock GAMEPLAY_VERSION=legacy C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 -m pytest tests/api/test_r1.py tests/api/test_m2.py::M2Acceptance::test_A02_exact_18_step_route_and_CH01_consumed_key tests/api/test_m2.py::M2Acceptance::test_A12_single_slot_restore_reset_and_current_version tests/api/test_m3.py -q -p no:cacheprovider",
+      "exit_code": 0,
+      "result": "35 passed, 107 subtests passed in 9.03s; existing StarletteDeprecationWarning"
+    },
+    {
+      "command": "Python stdin owner isolated HTTP route, every-stage save/reopen/restore, typed rejection, replay, strict schema, version mismatch and mock AI callback assertions",
+      "exit_code": 0
+    },
+    {
+      "command": "Python stdin final strict-model HTTP 39-action route with every-stage save/reopen/restore, 8 corrupted snapshots and mock AI proposed/confirm/replay assertions",
+      "exit_code": 0
+    },
+    {
+      "command": "Python stdin required UpgradeState and snapshot root-field removal assertions (device_states and observation/taken/consumed lists)",
+      "exit_code": 0,
+      "cases": 8
+    }
+  ],
+  "route_actions": 39,
+  "checks": [
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "CODE_ACCEPTED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "OPEN",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "MISSING_FUSE",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CIRCUIT_READY",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "BOOTING",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "UNLOCKED",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "CARD_ACCEPTED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "UNLOCKED"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "OPEN"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "save_reopen_restore",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "OPEN"
+      },
+      "revision_advanced_once": true,
+      "fresh_generation": true
+    },
+    {
+      "kind": "upgrade_AI_read_callback",
+      "revision_advanced_once": true,
+      "proposal": null,
+      "paid_call": false
+    },
+    {
+      "kind": "legacy_factory_default",
+      "level_version": "2.0.0"
+    }
+  ],
+  "real_api_called": false,
+  "old_save_policy": "No migration. Legacy factory/env uses legacy rules/database; module defaults upgrade independent game-v3.1.sqlite. Snapshot level/schema mismatches reject without replacing current state. Upgrade rows require level marker.",
+  "limitations": [
+    "Independent QA and full regression not performed by Backend owner",
+    "Reopen means fresh app/Store in process, not a service subprocess restart",
+    "No frontend build or browser walkthrough by Backend owner",
+    "Current old clue network retained; v3.2 redesign not begun",
+    "No circuit game, tiered hints or scoring yet",
+    "Existing six-tool mock cannot automate manual-only interact stages; it cannot bypass their server prerequisites"
+  ],
+  "initial_owner_source_hashes": [
+    {
+      "path": "backend/app/domain/upgrade_models.py",
+      "sha256": "dac261f0392c429234a23715032f29284e1227a84586341055c8102b6bb6b9e1"
+    },
+    {
+      "path": "backend/app/domain/upgrade_rules.py",
+      "sha256": "980a8c30aaa7b7e8c1ce2b6e3b9c864aa26b90085b2df32da80b91b59a047af6"
+    },
+    {
+      "path": "backend/app/storage/sqlite.py",
+      "sha256": "61cbb9774ae100741c0d4a707ea8f9033e6f3f9c9e663a1d7aa493a5b0a662c3"
+    },
+    {
+      "path": "backend/app/storage/ai.py",
+      "sha256": "1f50248afec17dca561a9b7e40feb9211d66da58b01d8c198bf1f0fbd1ad5400"
+    },
+    {
+      "path": "backend/app/main.py",
+      "sha256": "b40541c47cc9f4ff8b50360f3107813b81a0965daf9e9e9f44491e0d3f3f7166"
+    },
+    {
+      "path": "contracts/build_contracts.py",
+      "sha256": "b688d46ac9335dd5847ca58ac309f4d665fa8f4e240b77d46759599b209a0003"
+    },
+    {
+      "path": "contracts/api.schema.json",
+      "sha256": "0878ab95308913b2ffef1ddc0c3cfde4635bfec4975ae6e93f9cd154a96de29b"
+    },
+    {
+      "path": "contracts/routes.json",
+      "sha256": "d6858b4ffc00fa69efb0adb32ad6a57df6764f9216e85b1b4fdb702394db8ad4"
+    }
+  ],
+  "final_owner_reverification": {
+    "route_actions": 39,
+    "save_reopen_restore_checkpoints": 39,
+    "all_device_phases_seen": {
+      "cabinet": [
+        "CODE_ACCEPTED",
+        "ITEM_TAKEN",
+        "LOCKED",
+        "OPEN"
+      ],
+      "powerbox": [
+        "CIRCUIT_READY",
+        "CLOSED",
+        "FUSE_INSTALLED",
+        "MISSING_FUSE",
+        "OPEN",
+        "POWER_ON"
+      ],
+      "computer": [
+        "BOOTING",
+        "DATA_READ",
+        "LOGIN_LOCKED",
+        "OFF",
+        "UNLOCKED"
+      ],
+      "exit": [
+        "CARD_ACCEPTED",
+        "FINAL_CHECK",
+        "LOCKED",
+        "OPEN",
+        "UNLOCKED"
+      ]
+    },
+    "invalid_snapshot_cases": [
+      "missing_computer",
+      "extra_device",
+      "unknown_stage",
+      "missing_lifecycle",
+      "wrong_level_marker",
+      "unobserved_device_progress",
+      "invented_item",
+      "unobserved_clue"
+    ],
+    "AI_confirm_stages_only": true,
+    "AI_confirm_replay": true,
+    "required_state_and_snapshot_fields_checked": [
+      "device_states",
+      "observed_object_ids",
+      "taken_item_ids",
+      "consumed_item_ids"
+    ]
+  },
+  "source_stop_at": "2026-10-06T09:58:52.267868+00:00"
+}

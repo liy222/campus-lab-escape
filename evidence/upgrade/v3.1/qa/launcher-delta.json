@@ -1,0 +1,53 @@
+{
+  "scope": "Independent one-file byte/text delta check; not actual CMD startup",
+  "command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 -c <exact HEAD replacement and launcher byte checker>",
+  "git_read_command": [
+    "C:\\Program Files\\Git\\cmd\\git.EXE",
+    "-c",
+    "safe.directory=D:/深度能力",
+    "-C",
+    "D:\\深度能力",
+    "show",
+    "HEAD:启动游戏.cmd"
+  ],
+  "file": "启动游戏.cmd",
+  "recorded_at": "2026-10-06T10:14:03.530294+00:00",
+  "exit_code": 0,
+  "source_sha256_before": "64e31b7b9afc5f909aec4c1092df624b584af27f119d457c11680f92ad02a128",
+  "source_sha256_after": "64e31b7b9afc5f909aec4c1092df624b584af27f119d457c11680f92ad02a128",
+  "baseline_git_HEAD_sha256": "f40925c66c1fbba172d25518359d147799308a4b3e79d50173aaf2365de0bd13",
+  "checks": {
+    "git_HEAD_read_exit": 0,
+    "no_CRCRLF": true,
+    "no_BOM": true,
+    "all_newlines_CRLF": true,
+    "sha256_matches_final_candidate": true,
+    "only_GAMEPLAY_VERSION_addition_and_SQLITE_PATH_v2_to_v31_replacement_vs_HEAD": true,
+    "source_bytes_unchanged_during_check": true
+  },
+  "text_diff": [
+    "--- git HEAD launcher",
+    "+++ current launcher",
+    "@@ -11,7 +11,8 @@",
+    "   goto :failed",
+    " )",
+    " set \"PYTHONUTF8=1\"",
+    "-set \"SQLITE_PATH=./data/game-v2.sqlite\"",
+    "+set \"GAMEPLAY_VERSION=upgrade\"",
+    "+set \"SQLITE_PATH=./data/game-v3.1.sqlite\"",
+    " echo 正在启动免费演示模式。",
+    " echo 首次使用请按 README.md 安装依赖。",
+    " \"%PROJECT_PYTHON%\" -m scripts.dev --provider mock --open-browser"
+  ],
+  "issues": [],
+  "first_check": {
+    "exit_code": 1,
+    "evidence": "evidence/upgrade/v3.1/qa/launcher-delta-first.json",
+    "cause": "QA comparator first assumed both configuration lines were additions; HEAD already has SQLITE_PATH=./data/game-v2.sqlite. Corrected to the exact requested old-v2 path replacement plus GAMEPLAY_VERSION addition; no product change."
+  },
+  "limitations": [
+    "No actual CMD launch in this delta check",
+    "No API/build/browser rerun; prior independent evidence remains in its recorded source epoch",
+    "No .env/credentials/historical databases/archives read"
+  ]
+}

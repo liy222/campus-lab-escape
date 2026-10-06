@@ -1,0 +1,56 @@
+{
+  "build": {
+    "exit_code": 0,
+    "source_epoch": "original candidate, before backend invariant fix",
+    "evidence": "evidence/upgrade/v3.1/qa/formal-build-20261006"
+  },
+  "first_api": {
+    "passed": 87,
+    "product_failures": 1,
+    "failed": 2,
+    "exit_code": 1,
+    "evidence": "evidence/upgrade/v3.1/qa/formal-api-20261006",
+    "qa_assertion_failures": 1
+  },
+  "browser": {
+    "exit_code": 0,
+    "source_epoch": "original candidate, before backend invariant fix",
+    "checked": [
+      "four chains",
+      "three-room victory",
+      "save/restore",
+      "reload",
+      "actual OS backend restart",
+      "375px layout",
+      "legacy entry/slot/storage isolation",
+      "synthetic key clearing"
+    ],
+    "evidence": "evidence/upgrade/v3.1/qa/20261006T100054304Z-browser"
+  },
+  "qa_test_final_sha256": {
+    "tests/api/test_m2.py": "dca8f190e494f4868ac997a70c55cd4cbdc959c7db16a1ca31c8fa611feb9bcc",
+    "tests/e2e/run_upgrade_v31.mjs": "b64f756195865ffe8cbea0eba0c92a33484491a9b99db6df4963591294a7ad23",
+    "tests/api/test_upgrade_v31.py": "226a8bef50a192a02760fefa94df051e31f19bd91c9419fc3aa8f97b214cbd21",
+    "tests/api/test_ch01.py": "5068ae010f44a9796694639f3f2e96378f0e39605d253f1d784d716652c7e377"
+  },
+  "api": {
+    "passed": 89,
+    "source_files": 13,
+    "legacy_cases": 82,
+    "passed_subtests": 235,
+    "candidate": "evidence/upgrade/v3.1/candidate-fixed.json",
+    "warning": "Existing Starlette TestClient httpx deprecation",
+    "evidence": "evidence/upgrade/v3.1/qa/formal-api-fixed-20261006",
+    "new_cases": 7,
+    "candidate_source_mismatches": [],
+    "exit_code": 0
+  },
+  "limitations": [
+    "No real provider/network calls; synthetic provider fixtures only",
+    "No real-player timing acceptance",
+    "Legacy browser test used owned level-2 slot, not historical sensitive DB",
+    "No post-fix browser/build rerun: invariant-only change; post-fix API reran full route and every device-stage reset/restore/reopen"
+  ],
+  "paid_calls": 0,
+  "status": "PASS after invariant fix"
+}

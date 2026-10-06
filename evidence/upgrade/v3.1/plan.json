@@ -1,0 +1,23 @@
+{
+  "version": "v3.1",
+  "predecessor_commit": "1499610f0d9a6ae411d05b81b2cc5d8dc11cc4c2",
+  "predecessor_tag": "v3.0-gameplay-information",
+  "remote_verified": true,
+  "scope": "four authoritative multistate devices; original puzzles maintained until v3.2",
+  "save_policy": "upgrade3.1 isolated database and browser storage; legacy same-code entry preserves v2 database and original storage key; no silent migration",
+  "production_selection": "GAMEPLAY_VERSION=upgrade; legacy opt-in",
+  "frontend_public_selection": "VITE_GAMEPLAY_VERSION legacy or v3.1 mapped by dev launcher; no keys or AI configuration exposed",
+  "dispatch": {
+    "backend": "upgrade_backend_read (historical requested Sol/high resumed; runtime not independently revealed)",
+    "frontend": "upgrade_frontend_read (historical requested Luna/medium resumed)",
+    "delivery": "delivery_final_docs_oct05 (historical Luna configuration resumed)",
+    "independent_qa": "upgrade_qa_states: actual new spawn requested gpt-6.1-sol/high; Main runtime not independently verified",
+    "document_handoff": "upgrade_frontend_read temporary README/release UPGRADES owner after source stop; historical Luna spawn fact, resume not runtime verification"
+  },
+  "status": "implementation and independent QA accepted; normal milestone synchronization closing",
+  "notes": [
+    "v3.0 staged privacy audit45 files passed; first all-bytes whitespace check exited2 due unchanged raw test output whitespace, source/docs-only check passed0 without evidence alteration",
+    "v3.0 normal commit/push/tag succeeded0; author verified liy222",
+    "Phaser/art/minigames/hint levels await proper future phases"
+  ]
+}

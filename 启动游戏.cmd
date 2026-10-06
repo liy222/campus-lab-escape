@@ -11,7 +11,8 @@ if not exist "%PROJECT_PYTHON%" (
   goto :failed
 )
 set "PYTHONUTF8=1"
-set "SQLITE_PATH=./data/game-v2.sqlite"
+set "GAMEPLAY_VERSION=upgrade"
+set "SQLITE_PATH=./data/game-v3.1.sqlite"
 echo 正在启动免费演示模式。
 echo 首次使用请按 README.md 安装依赖。
 "%PROJECT_PYTHON%" -m scripts.dev --provider mock --open-browser

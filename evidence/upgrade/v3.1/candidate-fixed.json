@@ -1,0 +1,25 @@
+{
+  "version": "v3.1",
+  "design_baseline": "docs/upgrade-plan.md",
+  "source_sha256": {
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/storage/sqlite.py": "61cbb9774ae100741c0d4a707ea8f9033e6f3f9c9e663a1d7aa493a5b0a662c3",
+    "backend/app/storage/ai.py": "1f50248afec17dca561a9b7e40feb9211d66da58b01d8c198bf1f0fbd1ad5400",
+    "backend/app/main.py": "b40541c47cc9f4ff8b50360f3107813b81a0965daf9e9e9f44491e0d3f3f7166",
+    "contracts/build_contracts.py": "b688d46ac9335dd5847ca58ac309f4d665fa8f4e240b77d46759599b209a0003",
+    "contracts/api.schema.json": "0878ab95308913b2ffef1ddc0c3cfde4635bfec4975ae6e93f9cd154a96de29b",
+    "contracts/routes.json": "d6858b4ffc00fa69efb0adb32ad6a57df6764f9216e85b1b4fdb702394db8ad4",
+    "frontend/src/App.tsx": "d6eff1224f4f43b3210f9fc19ddf0acc445abf4fd44c74f40174fba85a523cd0",
+    "frontend/src/api.ts": "ec7ec974707992234ccae4a43bda8161d80b762e97427ada72ad08890e3801c7",
+    "frontend/src/style.css": "3e5b6653484ec159d947d035215cc573538031b6bae3d7220f8f0fe221e99632",
+    "scripts/dev.py": "4cb8a7d6df8a3a703151a8123711f4c69f3351a34b550190885cf025d68858c2",
+    "启动游戏.cmd": "61862cd62751fd1a98ed87b25e82e3cbb48183d13ae032b13979f1ff8b6d829b"
+  },
+  "level_version": "3.1.0",
+  "schema_version": "1.1.0",
+  "save_policy": "isolated upgrade DB/session storage; legacy entry preserved; crosslevel reject",
+  "status": "fix SOURCE STOP; independent full API revalidation GO; pre-fix build/browser evidence retained separately",
+  "paid_calls": 0,
+  "fix": "server invariant rejection of committed progress without target observation; original candidate preserved"
+}

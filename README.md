@@ -1,16 +1,16 @@
 # 逃离校园实验室
 
-这是一个本地运行的三房间网页解谜游戏：规则由后端执行，AI队友提供受限建议，推进游戏的建议需要玩家确认。当前工作版本为 v2（关卡 2.0.0；接口、Schema 与工具契约 1.0.0），已提交并推送为 `CH01_v2`（`242ecfc4d9f7bf1a8480508de701d9efc7822fe7`）。版本源码与证据绑定见 [`evidence/integration/CH01_v2-manifest.json`](evidence/integration/CH01_v2-manifest.json)。T30独立检查通过指定CH01/RT01–05工程范围。新源码目录复现绑定至833aafb（10,778文件，Main执行与10842项独立只读检查通过），详见[`交付总manifest`](release/manifest.json)；复用现有Windows/Conda，不代表新OS/新Python、真人试玩或人类签署。
+这是一个本地运行的三房间网页解谜游戏：规则由后端执行，AI队友提供受限建议，推进游戏的建议需要玩家确认。本地当前工作版本为 v3.1（关卡 3.1.0；接口与 Schema 1.1.0），独立 QA 已通过；当前候选进入 Main 正常同步收尾，版本提交与 tag 尚未登记。最终 API QA 摘要见 [`v3.1 QA 结果`](evidence/upgrade/v3.1/qa/result.json)，独立报告见 [`v3.1 独立 QA`](review/findings/upgrade-v31.md)。已发布并冻结的历史基线为 `CH01_v2`（commit `242ecfc4d9f7bf1a8480508de701d9efc7822fe7`）；它的源码绑定见 [`CH01_v2 manifest`](evidence/integration/CH01_v2-manifest.json)。v3.0 已提交推送为 `1499610`，tag 为 `v3.0-gameplay-information`。升级设计基线和逐阶段门槛见 [`docs/upgrade-plan.md`](docs/upgrade-plan.md) 与 [`release/UPGRADES.md`](release/UPGRADES.md)。
 
 ## 当前升级路线
 
-已发布产品仍为 `CH01_v2`。v3.0“信息交互升级”已完成本阶段独立工程 QA：82项pytest、220个子项与前端build通过；Chrome三房间 EXIT 流程、8种错误目标尝试不改变状态/修订号/背包、R2存档恢复与刷新继续、1280/375视口无溢出均有记录，4个源码文件前后哈希一致。证据见 [v3.0测试摘要](evidence/upgrade/v3.0/qa/20261006T093937475Z-formal/run-summary.json) 与 [浏览器运行记录](evidence/upgrade/v3.0/qa/20261006T094303859Z-browser/run.json)。后端关卡级别2.0与Schema 1.0保持兼容，旧存档恢复已检查。这里的自动化浏览器流程不代表真人试玩，也不验证真实玩家20–30分钟通关体验。`CH01_v2`、旧实验和评价器记录仍只证明各自历史范围。完整v3.0至v4.2路线与逐阶段验收门槛见 [`release/UPGRADES.md`](release/UPGRADES.md)，设计基线为 [`docs/upgrade-plan.md`](docs/upgrade-plan.md)。
+v3.1 独立 API QA 在修复存档不变量后全套复验通过：89 passed（既有82项与新增7项），235个子项通过，exit 0；覆盖39步三房间路线、各设备阶段的存档保存/重置/恢复/Store 重开、严格参数校验和损坏快照拒绝。前端 owner build exit 0，记录在 [`v3.1 前端构建与源码哈希`](evidence/upgrade/v3.1/frontend.json)。Chrome 三房间胜利、保存/恢复/刷新/服务重启、legacy 隔离和窄屏布局记录来自修复前候选，不能当作修复后源码的浏览器复验；对应范围与限制见 [`最终 QA 摘要`](evidence/upgrade/v3.1/qa/result.json) 和 [`独立报告`](review/findings/upgrade-v31.md)。QA 使用合成 AI fixture，没有真实 provider/网络调用；不代表真人试玩或20–30分钟游玩时长验收。
 
-v3 阶段完成灰盒验收前不引入 Phaser 或最终美术。现有双击启动、命令行启动及游戏内 AI 模式说明继续适用。
+v3.0 已完成并标记为 `v3.0-gameplay-information`。v3.1 之后的路线见 [`release/UPGRADES.md`](release/UPGRADES.md)。v3 灰盒完整验收前不引入 Phaser 或最终美术；v3.2 尚未开始。
 
-## 双击启动 v2
+## 双击启动当前版本 v3.1
 
-在 Windows 文件资源管理器中双击仓库根目录的 `启动游戏.cmd`，它会定位到项目目录、使用指定 Conda Python，以 `mock` Provider 和独立的 `./data/game-v2.sqlite` 启动前后端；两项服务健康后尝试打开浏览器。服务运行期间不要关闭窗口，按 Ctrl+C 停止。若启动失败，窗口会保留错误信息和退出码；缺少 Python 或依赖、8000/5173 端口已占用时按提示处理。启动器不会自动安装或升级依赖，也不会结束已占用端口的进程。可右键该文件创建 Windows 快捷方式。
+在 Windows 文件资源管理器中双击仓库根目录的 `启动游戏.cmd`，默认以免费 `mock` Provider 和独立的 `./data/game-v3.1.sqlite` 启动当前 v3.1 前后端。服务运行期间不要关闭窗口，按 Ctrl+C 停止。若启动失败，窗口会保留错误信息和退出码；缺少 Python 或依赖、端口已占用时按提示处理。启动器不会自动安装或升级依赖，也不会结束已占用端口的进程。可右键该文件创建 Windows 快捷方式。
 
 首次运行前按下方首次安装依赖步骤安装依赖；此后可直接双击启动。
 
@@ -20,7 +20,7 @@ v3 阶段完成灰盒验收前不引入 Phaser 或最终美术。现有双击启
 
 手动输入的 Key 只保留在当前页面的 React 内存中，不写入存档；刷新页面、切回免费模拟、切换游戏会话或重新开始都会清除它。日常游玩无需编辑 `启动游戏.cmd` 或 `.env`。通过命令行启动的原有 `--provider` 与 `.env` 配置仍供本地开发使用，README 中的双击启动示例继续使用免费模拟模式。
 
-## 本地启动 v2
+## 本地启动当前版本 v3.1
 
 首次安装依赖或修复缺失依赖时，在 Windows PowerShell 中从仓库根目录执行。使用指定 Conda Python，不创建或重置环境；平时可直接双击上方启动器：
 
@@ -29,16 +29,31 @@ Set-Location -LiteralPath 'D:\深度能力'
 $ProjectPython = 'C:\Users\liyh\.conda\envs\1\python.exe'
 & $ProjectPython -m pip install -r backend/requirements.lock.txt
 npm.cmd --prefix frontend ci
+$env:GAMEPLAY_VERSION = 'upgrade'
+$env:SQLITE_PATH = './data/game-v3.1.sqlite'
+& $ProjectPython -m scripts.dev --provider mock
+```
+
+默认工作版本使用独立的 `game-v3.1.sqlite` 与 v3.1 会话存储命名空间。首次安装依赖后，日常启动可从设置 `GAMEPLAY_VERSION` 和 `SQLITE_PATH` 的两行开始。服务启动后打开 <http://127.0.0.1:5173/>；开发启动器会同时启动前后端并检查本地健康页。按 Ctrl+C 停止两项服务。
+
+## 使用同代码运行历史 v2 基线
+
+如需继续 v2 进度，在新的 PowerShell 窗口显式选择 legacy，并使用 v2 数据库：
+
+```powershell
+Set-Location -LiteralPath 'D:\深度能力'
+$ProjectPython = 'C:\Users\liyh\.conda\envs\1\python.exe'
+$env:GAMEPLAY_VERSION = 'legacy'
 $env:SQLITE_PATH = './data/game-v2.sqlite'
 & $ProjectPython -m scripts.dev --provider mock
 ```
 
-命令行开发仍可通过 `--provider deepseek` 选择真实 provider，原有 `.env` 配置读取方式继续保留；玩家日常选择真实模式时使用游戏内密码框输入 Key。首次安装依赖后，日常启动可从设定 `SQLITE_PATH` 的命令开始。该路径明确为 v2 新库；不要把 v1 路径填入此变量。服务启动后打开 <http://127.0.0.1:5173/>。开发启动器会同时启动前后端并检查本地健康页。按 Ctrl+C 停止两项服务。
+legacy 使用原 `campus-lab-session-v1` 浏览器存储；v3.1 使用独立的 `campus-lab-session-upgrade-v3.1`。两种模式不会删除或迁移对方的 session token、存档或数据库。不要在同一服务进程中混用版本与数据库路径。
 
 如需在本 PowerShell 窗口中清除变量，停止服务后执行：
 
 ```powershell
-Remove-Item Env:SQLITE_PATH -ErrorAction SilentlyContinue
+Remove-Item Env:GAMEPLAY_VERSION,Env:SQLITE_PATH -ErrorAction SilentlyContinue
 ```
 
 游戏界面的“保存”和“恢复”用于当前会话的单槽进度。服务重启后可用恢复操作继续；T30 已验证该行为及 v2 与归档 v1 快照的版本隔离。数据库属于本地运行数据，不是发布材料。
@@ -67,4 +82,8 @@ $env:SQLITE_PATH = './data/game-v1.sqlite'
 - T27 评价器结构与事件检查：[`review/findings/T27-evaluation-events-20261005.md`](review/findings/T27-evaluation-events-20261005.md)。提示词修正版离线QA：[`review/findings/T27-prompt-fix-20261006.md`](review/findings/T27-prompt-fix-20261006.md)，223检查、36场景、30载荷、81文件不变；其后2e977版本8项实际判读另经 [`T27 revised result QA`](review/findings/T27-revised-real-result-20261006.md) 独立75/75 SOURCE STOP。A28另有受限真实R1片段和105/105独立QA，见 [`A28结果`](review/findings/A28-real-result-20261006.md)。
 - 交付文档本次整理记录：[`evidence/delivery/T31-docs-20261005/report-v6.json`](evidence/delivery/T31-docs-20261005/report-v6.json)（前次修订在 `report-v2.json`，原始记录在 `report.json`，均保留）。
 
-截至 2026-10-06 的证据仍有明确边界。产品版本为 `CH01_v2`（commit `242ecfc4d9f7bf1a8480508de701d9efc7822fe7`），v1回退commit `7821af4efe0613c20a80ea164c1dab1c0f288bab`，两者有独立源清单和本地数据库。Main 对 commit `833aafb09ad20dc1ba82cfed198485ce13300067` 的新源码目录复现 exit 0，10,778 文件逐字节匹配，8项外层检查及3项评价器precheck均通过；独立只读复核 10,842/10,842、exit 0，另有2项静态补充说明。范围仍是现有 Windows/Conda，不是新OS/新Python环境。E1 continuation 命令 exit 0，49计划项中48调用、47返回、1项 `MODEL_UNAVAILABLE` 用量未知、1项未调用；原22完成和1超时没有重放。新数据独立合并复核最终路径 `evidence/qa/T25-merged-20261005T160549469322Z/result.json` 为1427/1427、exit 0、STOP：69/72有终态、34个完整配对，另外2 failed、1 not_called；结论不支持完整三重复或统计优胜。最新Main快照为101 settled calls、保守上界¥0.81685848、cap ¥10、pending 0、frozen 0；新8次评价器调用的已知用量¥0.1484352为调用元数据，不是供应商发票。原K1/K2记录维持10/11。之后旧6项批准载荷各调用一次：K4模型有效且按预期判FAIL；E1两条与CH01三条为 `INSUFFICIENT_EVIDENCE`，保留原结论且不可重发。提示版本2e977的8项新载荷（校准3、E1 2、CH01 3）各调用一次，独立 QA 75/75 SOURCE STOP。校准11/11由3条付费判读与8项确定性对照构成；E1原登记批次判读2条PASS，但对应的72计划状态仍为22 completed、1 timeout、49 not_called，不能写成72完成；CH01三条PASS限于当前冻结工程Claim。CH01 v3身份/别名检查79/79通过，但不等于真实语义验收。没有真人试玩、玩家决策或人类/教师签署；没有公开部署。
+<details>
+<summary>历史交付证据（不代表当前 v3.1 升级版本）</summary>
+
+截至 2026-10-06 的历史证据仍有明确边界。`CH01_v2`（commit `242ecfc4d9f7bf1a8480508de701d9efc7822fe7`）与 v1 回退 commit `7821af4efe0613c20a80ea164c1dab1c0f288bab` 有独立源清单和本地数据库。Main 对 commit `833aafb09ad20dc1ba82cfed198485ce13300067` 的新源码目录复现 exit 0，10,778 文件逐字节匹配，8项外层检查及3项评价器precheck均通过；独立只读复核 10,842/10,842、exit 0，另有2项静态补充说明。范围仍是当时的 Windows/Conda，不是新OS/新Python环境。E1 continuation 命令 exit 0，49计划项中48调用、47返回、1项 `MODEL_UNAVAILABLE` 用量未知、1项未调用；原22完成和1超时没有重放。新数据独立合并复核最终路径 `evidence/qa/T25-merged-20261005T160549469322Z/result.json` 为1427/1427、exit 0、STOP：69/72有终态、34个完整配对，另外2 failed、1 not_called；结论不支持完整三重复或统计优胜。最新Main快照为101 settled calls、保守上界¥0.81685848、cap ¥10、pending 0、frozen 0；新8次评价器调用的已知用量¥0.1484352为调用元数据，不是供应商发票。原K1/K2记录维持10/11。之后旧6项批准载荷各调用一次：K4模型有效且按预期判FAIL；E1两条与CH01三条为 `INSUFFICIENT_EVIDENCE`，保留原结论且不可重发。提示版本2e977的8项新载荷（校准3、E1 2、CH01 3）各调用一次，独立 QA 75/75 SOURCE STOP。校准11/11由3条付费判读与8项确定性对照构成；E1原登记批次判读2条PASS，但对应的72计划状态仍为22 completed、1 timeout、49 not_called，不能写成72完成；CH01三条PASS限于当时冻结工程 Claim。CH01 v3身份/别名检查79/79通过，但不等于真实语义验收。没有真人试玩、玩家决策或人类/教师签署；没有公开部署。
+</details>

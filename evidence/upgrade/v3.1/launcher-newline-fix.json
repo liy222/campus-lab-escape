@@ -1,0 +1,18 @@
+{
+  "scope": "Main integration limited CRCRLF -> CRLF byte repair; no command content change",
+  "reason": "staged source whitespace check exit2 exposed30 doubledCR lines; prior Owner byte check incomplete",
+  "file": "启动游戏.cmd",
+  "old_sha256": "61862cd62751fd1a98ed87b25e82e3cbb48183d13ae032b13979f1ff8b6d829b",
+  "new_sha256": "64e31b7b9afc5f909aec4c1092df624b584af27f119d457c11680f92ad02a128",
+  "extra_cr_lines_fixed": 30,
+  "command_content_unchanged": true,
+  "checks": {
+    "no_extraCR": true,
+    "noBOM": true,
+    "all_lines_CRLF": true
+  },
+  "exit_code": 0,
+  "limitations": [
+    "No actual root CMD startup rerun for newline-only delta; original module/launch projection and full UI route remain separately evidenced"
+  ]
+}

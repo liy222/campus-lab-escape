@@ -1,0 +1,30 @@
+{
+  "version": "v3.1",
+  "scope": "Frontend state-aware interactions and session namespace routing",
+  "files": [
+    "frontend/src/App.tsx",
+    "frontend/src/api.ts",
+    "frontend/src/style.css"
+  ],
+  "source_sha256": {
+    "frontend/src/App.tsx": "d6eff1224f4f43b3210f9fc19ddf0acc445abf4fd44c74f40174fba85a523cd0",
+    "frontend/src/api.ts": "ec7ec974707992234ccae4a43bda8161d80b762e97427ada72ad08890e3801c7",
+    "frontend/src/style.css": "3e5b6653484ec159d947d035215cc573538031b6bae3d7220f8f0fe221e99632"
+  },
+  "commands": [
+    {
+      "command": "npm.cmd --prefix frontend run build",
+      "exit_code": 0
+    }
+  ],
+  "storage_namespaces": {
+    "legacy": "campus-lab-session-v1",
+    "v3.1": "campus-lab-session-upgrade-v3.1"
+  },
+  "limitations": [
+    "Production frontend build only; no tests or human playthrough run in this task.",
+    "No paid or real AI calls.",
+    "Device state display is derived from server descriptions/actions; no Phaser or final art was added.",
+    "Formal independent QA remains pending."
+  ]
+}

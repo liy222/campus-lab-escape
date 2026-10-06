@@ -1,5 +1,6 @@
 """Rebuild the public v1 schemas. Contains no puzzle answers or private state."""
 import json
+from copy import deepcopy
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -80,6 +81,41 @@ ERRORS = {"BAD_ARGUMENT": 422, "INVALID_TOOL": 422, "FORBIDDEN_SESSION": 403, "N
 D["error_response"] = obj({"ok": {"const": False}, "event_id": ID, "error": obj({"code": enum(*ERRORS), "message": TEXT}), "visible_state": nullable(ref("visible_state"))})
 for name in ["create", "state", "action", "control", "cancel", "ai_turn"]:
     D[name + "_response"] = obj({"ok": {"const": True}, "event_id": ID, "data": ref(name + "_data")})
+
+# Keep the legacy projection strict and describe upgrade as a separate branch.
+# Provider tools remain the original six; interact is a manual-only operation.
+INTERACT_ARGS = obj({"target_id": ID})
+D["upgrade_affordance"] = deepcopy(D["affordance"])
+D["upgrade_affordance"]["oneOf"].append(obj({"tool": {"const": "interact"}, "label": TEXT, "arguments": INTERACT_ARGS, "requires_code": {"const": False}}))
+D["upgrade_visible_object"] = deepcopy(D["visible_object"])
+D["upgrade_visible_object"]["properties"]["actions"] = arr(ref("upgrade_affordance"))
+D["legacy_save_metadata"] = deepcopy(D["save_metadata"])
+D["upgrade_save_metadata"] = deepcopy(D["save_metadata"])
+D["upgrade_save_metadata"]["properties"]["schema_version"] = {"const": "1.1.0"}
+D["upgrade_save_metadata"]["properties"]["level_version"] = {"const": "3.1.0"}
+D["save_metadata"] = {"oneOf": [ref("legacy_save_metadata"), ref("upgrade_save_metadata")]}
+D["legacy_visible_state"] = deepcopy(D["visible_state"])
+D["legacy_visible_state"]["properties"]["save"] = nullable(ref("legacy_save_metadata"))
+D["upgrade_visible_state"] = deepcopy(D["visible_state"])
+upgrade_properties = D["upgrade_visible_state"]["properties"]
+upgrade_properties["schema_version"] = {"const": "1.1.0"}
+upgrade_properties["level_version"] = {"const": "3.1.0"}
+upgrade_properties["objects"] = arr(ref("upgrade_visible_object"))
+upgrade_properties["save"] = nullable(ref("upgrade_save_metadata"))
+upgrade_properties["device_states"] = obj({
+    "cabinet": enum("LOCKED", "CODE_ACCEPTED", "OPEN", "ITEM_TAKEN"),
+    "powerbox": enum("CLOSED", "OPEN", "MISSING_FUSE", "FUSE_INSTALLED", "CIRCUIT_READY", "POWER_ON"),
+    "computer": enum("OFF", "BOOTING", "LOGIN_LOCKED", "UNLOCKED", "DATA_READ"),
+    "exit": enum("LOCKED", "CARD_ACCEPTED", "FINAL_CHECK", "UNLOCKED", "OPEN"),
+})
+upgrade_properties["observed_object_ids"] = arr(ID, uniqueItems=True)
+D["upgrade_visible_state"]["required"] = list(upgrade_properties)
+D["visible_state"] = {"oneOf": [ref("legacy_visible_state"), ref("upgrade_visible_state")]}
+D["action_request"]["oneOf"].append(obj({**CONTROL["properties"], "tool": {"const": "interact"}, "arguments": INTERACT_ARGS}))
+manual_receipt = deepcopy(D["receipt"]["oneOf"][0])
+manual_receipt["properties"]["tool"] = {"const": "interact"}
+manual_receipt["properties"]["arguments"] = INTERACT_ARGS
+D["receipt"]["oneOf"].append(manual_receipt)
 document("api.schema.json", D, {"oneOf": [ref(name + "_response") for name in ["create", "state", "action", "control", "cancel", "ai_turn"]] + [ref("error_response")]})
 ROUTES = [
     ("POST", "/api/sessions", "empty_request", "create_response", 201, False),
@@ -92,4 +128,4 @@ ROUTES = [
     ("POST", "/api/sessions/{id}/proposals/{pid}/confirm", "empty_request", "action_response", 200, True),
     ("POST", "/api/sessions/{id}/proposals/{pid}/cancel", "empty_request", "cancel_response", 200, True),
 ]
-(ROOT / "routes.json").write_text(json.dumps({"contract_version": "1.0.0", "schema": "api.schema.json", "routes": [{"method": m, "path": p, "request": r, "response": s, "success_status": h, "requires_session_token": a} for m,p,r,s,h,a in ROUTES], "error_statuses": ERRORS}, indent=2) + "\n", encoding="utf-8")
+(ROOT / "routes.json").write_text(json.dumps({"contract_version": "1.1.0", "schema": "api.schema.json", "routes": [{"method": m, "path": p, "request": r, "response": s, "success_status": h, "requires_session_token": a} for m,p,r,s,h,a in ROUTES], "error_statuses": ERRORS}, indent=2) + "\n", encoding="utf-8")

@@ -6,6 +6,7 @@ import sqlite3
 from contextlib import closing, contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
+from types import SimpleNamespace
 from uuid import uuid4
 
 from pydantic import ValidationError
@@ -17,6 +18,19 @@ from ..domain.rules import LEVEL_VERSION, SCHEMA_VERSION, apply_action, validate
 ERROR_STATUS = {"BAD_ARGUMENT": 422, "INVALID_TOOL": 422, "FORBIDDEN_SESSION": 403, "SAVE_NOT_FOUND": 404, "INTERNAL_ERROR": 500, "PROPOSAL_NOT_FOUND": 404, "MODEL_UNAVAILABLE": 503, "MODEL_TIMEOUT": 504, "MODEL_INVALID_OUTPUT": 502, "AI_LIMIT_REACHED": 429}
 GAME_FIELDS = {"room_id", "inventory", "discovered_clue_ids", "flags", "opened_containers", "status"}
 SNAPSHOT_FIELDS = {"schema_version", "level_version", "session_id", "game_fields", "saved_at", "checksum"}
+LEGACY_RULES = SimpleNamespace(state_model=GameState, initial_state=GameState,
+                              SCHEMA_VERSION=SCHEMA_VERSION, LEVEL_VERSION=LEVEL_VERSION,
+                              apply_action=apply_action, validate_invariants=validate_invariants,
+                              visible_state=visible_state, tool_models=TOOL_MODELS, game_fields=GAME_FIELDS)
+
+
+def select_rules(gameplay_version="legacy"):
+    if gameplay_version == "legacy":
+        return LEGACY_RULES
+    if gameplay_version in {"upgrade", "3.1", "3.1.0", "v3.1"}:
+        from ..domain import upgrade_rules
+        return upgrade_rules
+    raise ValueError("Unsupported gameplay version")
 
 
 def canonical(value) -> str:
@@ -39,7 +53,7 @@ def error_body(event_id: str, code: str, message: str, state=None) -> dict:
     return {"ok": False, "event_id": event_id, "error": {"code": code, "message": message}, "visible_state": state}
 
 
-def validate_snapshot(raw: str, session_id: str, current: GameState) -> GameState:
+def validate_snapshot(raw: str, session_id: str, current: GameState, rules=LEGACY_RULES) -> GameState:
     """Validate the entire private snapshot before constructing replacement state."""
     try:
         snapshot = json.loads(raw)
@@ -48,7 +62,7 @@ def validate_snapshot(raw: str, session_id: str, current: GameState) -> GameStat
         if not isinstance(snapshot["schema_version"], str) or not isinstance(snapshot["level_version"], str):
             raise ValueError("Invalid snapshot version")
         # Version mismatches are explicit, never silently migrated.
-        if snapshot["schema_version"] != SCHEMA_VERSION or snapshot["level_version"] != LEVEL_VERSION:
+        if snapshot["schema_version"] != rules.SCHEMA_VERSION or snapshot["level_version"] != rules.LEVEL_VERSION:
             raise RuleError("SNAPSHOT_VERSION_MISMATCH", "存档版本与当前游戏不一致。")
         if snapshot["session_id"] != session_id:
             raise ValueError("Invalid snapshot owner")
@@ -58,10 +72,10 @@ def validate_snapshot(raw: str, session_id: str, current: GameState) -> GameStat
         if not isinstance(saved_at, str) or not saved_at.endswith("Z") or datetime.fromisoformat(saved_at.replace("Z", "+00:00")).utcoffset().total_seconds() != 0:
             raise ValueError("Invalid snapshot timestamp")
         fields = snapshot["game_fields"]
-        if not isinstance(fields, dict) or set(fields) != GAME_FIELDS:
+        if not isinstance(fields, dict) or set(fields) != rules.game_fields:
             raise ValueError("Invalid gameplay fields")
-        restored = GameState.model_validate({**fields, "revision": current.revision + 1, "generation": str(uuid4())})
-        validate_invariants(restored)
+        restored = rules.state_model.model_validate({**fields, "revision": current.revision + 1, "generation": str(uuid4())})
+        rules.validate_invariants(restored)
         return restored
     except RuleError:
         raise
@@ -70,7 +84,8 @@ def validate_snapshot(raw: str, session_id: str, current: GameState) -> GameStat
 
 
 class Store(AIStoreMixin):
-    def __init__(self, path: str | Path):
+    def __init__(self, path: str | Path, *, rules=LEGACY_RULES):
+        self.rules = rules
         self.runtime_owner = new_id()
         self.path = str(path)
         if self.path == ":memory:":
@@ -103,6 +118,11 @@ class Store(AIStoreMixin):
 
             self.migrate_ai(connection)
 
+    def parse_state(self, raw):
+        state = self.rules.state_model.model_validate(json.loads(raw))
+        self.rules.validate_invariants(state)
+        return state
+
     def connect(self):
         connection = sqlite3.connect(self.path, timeout=10, isolation_level=None)
         connection.row_factory = sqlite3.Row
@@ -125,7 +145,7 @@ class Store(AIStoreMixin):
 
     def projection(self, connection, session_id, state):
         row = connection.execute("SELECT summary_json FROM saves WHERE session_id=?", (session_id,)).fetchone()
-        return visible_state(session_id, state, json.loads(row["summary_json"]) if row else None)
+        return self.rules.visible_state(session_id, state, json.loads(row["summary_json"]) if row else None)
 
     def event(self, connection, event_id, session_id, operation, outcome, result, state=None, request=None, revision_before=None):
         connection.execute("""INSERT INTO events
@@ -148,9 +168,7 @@ class Store(AIStoreMixin):
         matches = hmac.compare_digest(expected_hash, supplied_hash)
         if not row or not token or not matches:
             return None
-        state = GameState.model_validate(json.loads(row["state_json"]))
-        validate_invariants(state)
-        return state
+        return self.parse_state(row["state_json"])
 
     def create(self, raw, parsed=True):
         event_id = new_id()
@@ -161,7 +179,7 @@ class Store(AIStoreMixin):
                 EmptyRequest.model_validate(raw)
             except (ValidationError, ValueError, TypeError):
                 return self.failure(connection, event_id, None, "create", "BAD_ARGUMENT", "请求必须是空 JSON 对象。", expose=False)
-            session_id, token, state = new_id(), secrets.token_urlsafe(32), GameState()
+            session_id, token, state = new_id(), secrets.token_urlsafe(32), self.rules.initial_state()
             connection.execute("INSERT INTO sessions VALUES (?,?,?,?)", (session_id, hashlib.sha256(token.encode()).hexdigest(), canonical(state.model_dump()), utc_now()))
             projection = self.projection(connection, session_id, state)
             body = {"ok": True, "event_id": event_id, "data": {"session_id": session_id, "token": token, "visible_state": projection}}
@@ -205,9 +223,9 @@ class Store(AIStoreMixin):
                 validate_generation(request.generation)
                 arguments = None
                 if operation == "action":
-                    if request.tool not in TOOL_MODELS:
+                    if request.tool not in self.rules.tool_models:
                         return self.failure(connection, event_id, session_id, operation, "INVALID_TOOL", "工具不在允许列表中。", state)
-                    arguments = TOOL_MODELS[request.tool].model_validate(request.arguments).model_dump()
+                    arguments = self.rules.tool_models[request.tool].model_validate(request.arguments).model_dump()
             except (ValidationError, ValueError, TypeError):
                 return self.failure(connection, event_id, session_id, operation, "BAD_ARGUMENT", "请求字段或工具参数不符合契约。", state, expose=False)
             normalized = {"operation": operation, **request.model_dump()}
@@ -232,7 +250,7 @@ class Store(AIStoreMixin):
                 if request.revision != state.revision:
                     raise RuleError("STALE_STATE", "状态已变化，请刷新后重新操作。")
                 if operation == "action":
-                    updated, result = apply_action(state, request.tool, arguments)
+                    updated, result = self.rules.apply_action(state, request.tool, arguments)
                     receipt = {"request_id": request.request_id, "event_id": event_id, "tool": request.tool,
                                "arguments": arguments, "generation": state.generation, "revision_before": revision_before,
                                "revision_after": updated.revision, **result}
@@ -256,19 +274,19 @@ class Store(AIStoreMixin):
 
     def apply_control(self, connection, session_id, state, operation):
         if operation == "save":
-            validate_invariants(state)
+            self.rules.validate_invariants(state)
             saved_at = utc_now()
-            snapshot = {"schema_version": SCHEMA_VERSION, "level_version": LEVEL_VERSION,
-                        "session_id": session_id, "game_fields": {key: value for key, value in state.model_dump().items() if key in GAME_FIELDS}, "saved_at": saved_at}
+            snapshot = {"schema_version": self.rules.SCHEMA_VERSION, "level_version": self.rules.LEVEL_VERSION,
+                        "session_id": session_id, "game_fields": {key: value for key, value in state.model_dump().items() if key in self.rules.game_fields}, "saved_at": saved_at}
             snapshot["checksum"] = checksum(snapshot)
-            summary = {"schema_version": SCHEMA_VERSION, "level_version": LEVEL_VERSION, "saved_at": saved_at,
+            summary = {"schema_version": self.rules.SCHEMA_VERSION, "level_version": self.rules.LEVEL_VERSION, "saved_at": saved_at,
                        "source_revision": state.revision, "source_generation": state.generation}
             connection.execute("INSERT INTO saves VALUES (?,?,?) ON CONFLICT(session_id) DO UPDATE SET snapshot_json=excluded.snapshot_json,summary_json=excluded.summary_json", (session_id, canonical(snapshot), canonical(summary)))
             return state
         if operation == "reset":
-            return GameState(revision=state.revision + 1)
+            return self.rules.initial_state(revision=state.revision + 1)
         row = connection.execute("SELECT snapshot_json FROM saves WHERE session_id=?", (session_id,)).fetchone()
         if row is None:
             raise RuleError("SAVE_NOT_FOUND", "尚未保存游戏进度。")
-        return validate_snapshot(row["snapshot_json"], session_id, state)
+        return validate_snapshot(row["snapshot_json"], session_id, state, self.rules)
 

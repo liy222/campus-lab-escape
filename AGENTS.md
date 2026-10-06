@@ -21,3 +21,12 @@ User explicitly requests all future project commits use their GitHub account. Ve
 
 ## Upgrade epoch 2026-10-06
 Primary accepted upgrade design baseline: docs/upgrade-plan.md, copied byte-identically from the user attachment. The old execution-plan remains historical scope/evidence. Execute v3.0 -> v3.1 -> v3.2 -> v3.3 -> v3.4 -> v4.0 -> v4.1 -> v4.2; no Phaser/final art before full v3.4 graybox passes. Reuse current backend/API/AI/storage/sync; retain three rooms and stated small puzzle scope. Baseline HEAD502a383 first full reads and existing pytest/build, then v3.0. Each version requires actual main route/save/restore/reload tests, old-save policy, documents and own normal commit/push using liy222 identity. Keep reports concise, simple tasks Luna, implementation/complex independent review Sol as needed; no Astra unless necessary. Prior ignored runtime artifacts remain untouched. Actual dispatch configurations are recorded in evidence/upgrade/baseline-plan-20261006.json; Main runtime not independently verified.
+
+
+### v3.1 multistate implementation GO
+v3.0 commit1499610 and tagv3.0-gameplay-information verified on private remote, authorliy222. Backend Owner now owns newupgrade state/rules, Store and AIStore shared rule dispatch, main and contract generator/schema/routes for this epoch; Frontend Luna owns current3UI/API plus optional vite-env declaration; Delivery Luna owns dev launcher/CMD and README/UPGRADES. Legacy create_app remains original rules, production upgraded; use separate game-v3.1 DB/storage namespace and same-code legacy opt-in to preserve oldsave access. Newmanualinteract strict, four serverdevice state chains, old clue network until3.2. Formal independent QA waits stable source. No minigames/hints/art/Phaser yet. Plan: evidence/upgrade/v3.1/plan.json. Main runtime and resumed agent runtime not independently introspected.
+
+### v3.1 final document handoff
+After Frontend source stop, Main assigns upgrade_frontend_read temporary mechanical Delivery document ownership of README.md and release/UPGRADES.md only. Existing Delivery scripts/CMD remain frozen. Restoring the historical delivery thread hit agent thread limit; no model identity inferred or extra agent created. Final docs wait actual independent QA result; original source evidence and historical reports remain untouched.
+
+Main integration owns only the v3.1 root CMD CRCRLF-to-CRLF normalization after staged whitespace check; command content unchanged, prior Owner/QA epochs preserved. Independent QA byte delta check precedes final commit.

@@ -331,7 +331,7 @@ class M2Acceptance(HTTPFixture):
             port = port_socket.getsockname()[1]
         url = f'http://127.0.0.1:{port}'
         environment = os.environ.copy()
-        environment.update(AI_PROVIDER='mock', SQLITE_PATH=str(Path(self.temp.name) / 'test.sqlite'))
+        environment.update(AI_PROVIDER='mock', GAMEPLAY_VERSION='legacy', SQLITE_PATH=str(Path(self.temp.name) / 'test.sqlite'))
         command = [sys.executable, '-m', 'uvicorn', 'backend.app.main:app', '--host', '127.0.0.1', '--port', str(port), '--no-access-log']
         direct_client, process = self.client, None
         def start():

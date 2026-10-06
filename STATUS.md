@@ -143,3 +143,10 @@ Actual baseline pytest80+212subtests and frontendbuild exit0; team full reads co
 
 ### v3.0 accepted, synchronization closing
 Independent actual82pytest/220subtests/build0; ChromeR1-R2-R3-EXIT,8wrongtarget attempts preserve state/revision/inventory, R2 save/restore/refreshcontinue and desktop1280/mobile375 layouts passed0. Main checked source RAW against stable candidate and browser before/after. Earlier QA helper/selector failures preserved. Backend level2.0/schema1.0 unchanged; old saves remain compatible, no data migration. Evidence: evidence/upgrade/v3.0/accepted.json. No Phaser/final art/paid calls or human playtime claims. Independent v3.0 commit/push before v3.1GO.
+
+
+### v3.1 multistate implementation GO
+v3.0 commit1499610 and tagv3.0-gameplay-information verified on private remote, authorliy222. Backend Owner now owns newupgrade state/rules, Store and AIStore shared rule dispatch, main and contract generator/schema/routes for this epoch; Frontend Luna owns current3UI/API plus optional vite-env declaration; Delivery Luna owns dev launcher/CMD and README/UPGRADES. Legacy create_app remains original rules, production upgraded; use separate game-v3.1 DB/storage namespace and same-code legacy opt-in to preserve oldsave access. Newmanualinteract strict, four serverdevice state chains, old clue network until3.2. Formal independent QA waits stable source. No minigames/hints/art/Phaser yet. Plan: evidence/upgrade/v3.1/plan.json. Main runtime and resumed agent runtime not independently introspected.
+
+### Current upgrade state: v3.1 accepted, synchronization closing
+Final89pytest/235subtests passed; actual Chrome mainroute/save/restore/reload/OSrestart/legacy namespace passed on pre-fix candidate. Limited snapshot invariant fix recertified by full API suite, no unconditional browser rebuild repeated. Data/session isolated, original data untouched; no paid calls/Phaser/player timing claim. v3.2 not started. Evidence: evidence/upgrade/v3.1/accepted.json.

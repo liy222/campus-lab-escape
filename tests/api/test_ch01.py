@@ -211,7 +211,7 @@ class CH01Acceptance(M3Acceptance):
         with socket.socket() as sock:
             sock.bind(('127.0.0.1',0));port=sock.getsockname()[1]
         url=f'http://127.0.0.1:{port}'
-        env=os.environ.copy();env.update(AI_PROVIDER='mock',PYTHONUTF8='1',SQLITE_PATH=str(Path(self.temp.name)/'test.sqlite'))
+        env=os.environ.copy();env.update(AI_PROVIDER='mock',GAMEPLAY_VERSION='legacy',PYTHONUTF8='1',SQLITE_PATH=str(Path(self.temp.name)/'test.sqlite'))
         command=[sys.executable,'-m','uvicorn','backend.app.main:app','--host','127.0.0.1','--port',str(port),'--no-access-log']
         original=self.client;process=None
         def start():

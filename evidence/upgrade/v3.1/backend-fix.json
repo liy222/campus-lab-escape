@@ -1,0 +1,74 @@
+{
+  "version": "v3.1",
+  "scope": "Limited owner invariant fix after independent QA finding; not independent recertification",
+  "executed_at": "2026-10-06T10:04:35.221746+00:00",
+  "files_changed": [
+    "backend/app/domain/upgrade_rules.py"
+  ],
+  "old_source_sha256": "f29b7178efb884ac160081a3992aa48b1b423ff24571c2758b7edcb3a82a07f8",
+  "new_source_sha256": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+  "finding_evidence": [
+    "evidence/upgrade/v3.1/qa/formal-api-20261006/stdout.txt",
+    "evidence/upgrade/v3.1/qa/formal-api-20261006/http-exchanges.json"
+  ],
+  "commands": [
+    {
+      "command": "AI_PROVIDER=mock GAMEPLAY_VERSION=legacy C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 -m pytest tests/api/test_upgrade_v31.py::UpgradeV31Acceptance::test_checksum_valid_final_check_without_panel_observation_is_rejected -q -p no:cacheprovider",
+      "exit_code": 0,
+      "result": "1 passed in 1.17s; existing StarletteDeprecationWarning"
+    },
+    {
+      "command": "First Python stdin owned temporary Store targeted check",
+      "exit_code": 1,
+      "reason": "Owner check compared save-before projection with save-after projection; save metadata changed, so expected state incorrectly had null save. Corrected below; no implementation change required."
+    },
+    {
+      "command": "Corrected Python stdin owned temporary Store: 39 route actions, four checksum-valid removed target observations, canonical panel clue substitution and valid final-save restore assertions",
+      "exit_code": 0
+    }
+  ],
+  "checks": [
+    {
+      "removed_target": "r1_door",
+      "http_status": 409,
+      "code": "INVALID_SNAPSHOT",
+      "session_state_unchanged": true,
+      "invalid_slot_not_overwritten": true
+    },
+    {
+      "removed_target": "r2_door",
+      "http_status": 409,
+      "code": "INVALID_SNAPSHOT",
+      "session_state_unchanged": true,
+      "invalid_slot_not_overwritten": true
+    },
+    {
+      "removed_target": "r3_panel",
+      "http_status": 409,
+      "code": "INVALID_SNAPSHOT",
+      "session_state_unchanged": true,
+      "invalid_slot_not_overwritten": true
+    },
+    {
+      "removed_target": "exit_door",
+      "http_status": 409,
+      "code": "INVALID_SNAPSHOT",
+      "session_state_unchanged": true,
+      "invalid_slot_not_overwritten": true
+    },
+    {
+      "case": "panel_canonical_clue_substitution",
+      "http_status": 409,
+      "code": "INVALID_SNAPSHOT",
+      "session_state_unchanged": true
+    }
+  ],
+  "normal_route_actions": 39,
+  "valid_final_restore": true,
+  "real_api_called": false,
+  "limitations": [
+    "Independent QA must recertify the new source hash",
+    "Original backend.json and old formal QA evidence preserved unchanged",
+    "No UI/build/full regression repeated in this limited fix"
+  ]
+}
