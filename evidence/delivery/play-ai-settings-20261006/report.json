@@ -1,0 +1,22 @@
+{
+  "task": "in-game AI mode and manual API key usage documentation",
+  "date": "2026-10-06",
+  "scope": "README usage guidance only; no code, manifest, or historical report changes.",
+  "files": [
+    "README.md",
+    "evidence/delivery/play-ai-settings-20261006/report.json"
+  ],
+  "README_sha256": "e4cd8ea5fc777b04d92dd79fa3939e5e6eb5c7d56dced0f0ed4385831c179167",
+  "notes": [
+    "Documents free mock as default and player-selectable DeepSeek mode.",
+    "Documents manual password-field key entry; only Ask Partner sends the question, discovered clues, and public history to DeepSeek official endpoint.",
+    "Documents ephemeral React-memory key clearing on refresh, mock switch, session switch, and restart; key excluded from save data.",
+    "Documents provider account billing and that selection does not reset the existing shared project budget/ledger.",
+    "Preserves command-line --provider and .env developer path.",
+    "No QA acceptance claim."
+  ],
+  "checks": [],
+  "limitations": [
+    "No paid API call, runtime test, or .env read was performed in this documentation task."
+  ]
+}

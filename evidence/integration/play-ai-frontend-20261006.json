@@ -1,0 +1,48 @@
+{
+  "task": "In-game mock / DeepSeek selection and ephemeral manually entered API Key",
+  "date": "2026-10-06",
+  "owner": "play_ai_frontend",
+  "source_status": "SOURCE STOP",
+  "files": [
+    "frontend/src/Assistant.tsx",
+    "frontend/src/api.ts",
+    "frontend/src/style.css"
+  ],
+  "source_sha256": {
+    "frontend/src/Assistant.tsx": "17D5008BE7079755AC892C3E284672D9C6B3E8021300C01061B143FFE62A99EA",
+    "frontend/src/api.ts": "B48C343B905D76AE3C0D9B026333A77599FEB09CF060DD3D2786FBC7BE9655DB",
+    "frontend/src/style.css": "C953755184CFA1FD52989611BB80341E53D136ADDDE48053DE2D7506696AF761"
+  },
+  "implementation": [
+    "Default free mock selector; selection and key entry do not initiate an AI turn.",
+    "Explicit X-AI-Provider on AI turns; X-AI-Api-Key only on DeepSeek AI turns. Request body remains unchanged.",
+    "Optional typed AI settings retain compatibility with existing api.ai callers.",
+    "Extra request headers cannot replace X-Session-Token or Authorization.",
+    "Password input with autocomplete off; key is React state only, never passed to persistence or question body.",
+    "Mock selection clears key immediately; session id, token, or generation change clears key and resets mode to mock, including restart and restore.",
+    "Pending operations disable the settings; missing or malformed key blocks DeepSeek asks with Chinese feedback.",
+    "Disclosure describes DeepSeek question/clue transfer, API account usage, and fixed deepseek-flash model.",
+    "Existing answer badge uses response usage.provider, independently of the selected next-turn mode.",
+    "Confirmation/cancellation flow preserved; settings have narrow-screen layout rules."
+  ],
+  "commands": [
+    { "command": "Get-Content -LiteralPath AGENTS.md", "exit_code": 0 },
+    { "command": "Get-Content -LiteralPath frontend/src/Assistant.tsx", "exit_code": 0 },
+    { "command": "Get-Content -LiteralPath frontend/src/api.ts", "exit_code": 0, "successful_runs": 2 },
+    { "command": "Get-Content -LiteralPath frontend/src/style.css", "exit_code": 0 },
+    { "command": "rg -n \"Assistant|session_id|setSession\" frontend/src/App.tsx frontend/src/api.ts", "exit_code": 0 },
+    { "command": "npm.cmd --prefix frontend run build", "exit_code": 0, "successful_runs": 2, "result": "tsc --noEmit and Vite build passed before and after generation-reset cleanup; 31 modules transformed." },
+    { "command": "Get-FileHash -Algorithm SHA256 -LiteralPath frontend/src/Assistant.tsx,frontend/src/api.ts,frontend/src/style.css | Select-Object Path,Hash | ConvertTo-Json", "exit_code": 0, "successful_runs": 2 },
+    { "command": "git diff --check -- frontend/src/Assistant.tsx frontend/src/api.ts frontend/src/style.css", "exit_code": 1, "result": "Git returned no-index usage; no successful diff check established." }
+  ],
+  "environment_failures": [
+    "Four initial default-sandbox Get-Content calls could not create a process: helper_unknown_error setup refresh. No exit codes were returned. The same reads succeeded with approved escalation.",
+    "Fallback node_repl attempt exited during sandbox startup with kernel exit code 1; file-reading JavaScript did not run."
+  ],
+  "limitations": [
+    "This is implementation/build evidence, not independent QA or browser interaction evidence.",
+    "No actual DeepSeek request, paid call, or real API key was used or read.",
+    "Browser refresh/session-change and mobile interactions remain for independent QA.",
+    "git diff --check could not be established in this workspace invocation."
+  ]
+}

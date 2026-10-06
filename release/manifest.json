@@ -156,6 +156,53 @@
       "result": "CMD entry started both services; frontend and backend health returned HTTP 200. Browser open request was issued after health checks, but visible browser contents were not inspected. Ctrl+C reached Python cleanup; Windows CMD wrapper ended with exit 1 after answering its termination prompt, so this is not described as normal exit 0. Ports 8000/5173 were confirmed free afterward.",
       "historical_separation": "Existing product-v2 and T31 v6 entries/hashes describe their earlier snapshots and are unchanged; this component binds the later launcher/source/docs state.",
       "paid_calls": 0
+    },
+    {
+      "name": "gameplay-ai-settings-addon",
+      "role": "player-selectable free mock / real DeepSeek option with request-local manual API key",
+      "base_commit": "88ccd43f4139342b03e6c05e9a264339133e0088",
+      "source_index": "evidence/integration/play-ai-candidate-20261006.json",
+      "source_index_sha256": "fa01c89f59a449c88efb4a1e4a51c354b8bc1bf89ccefc26a6b90b41c264514b",
+      "source_sha256": {
+        "backend/app/api/routes.py": "891acc107ab6f43b915397b41bcbf79bb9c5538de83f6499e4e91b948cccf2ce",
+        "backend/app/ai/runtime.py": "c7a2fc82c600e11f886507cbf331ec9c8a0d322a0de78505188adf364405594f",
+        "frontend/src/Assistant.tsx": "17d5008be7079755ac892c3e284672d9c6b3e8021300c01061b143ffe62a99ea",
+        "frontend/src/api.ts": "b48c343b905d76ae3c0d9b026333a77599feb09cf060dd3d2786fbc7be9655db",
+        "frontend/src/style.css": "c953755184cfa1fd52989611bb80341e53d136addde48053de2d7506696af761"
+      },
+      "readme": "README.md",
+      "readme_sha256": "e4cd8ea5fc777b04d92dd79fa3939e5e6eb5c7d56dced0f0ed4385831c179167",
+      "api_offline_check": "evidence/qa/play-ai-settings-20261006/api-run.json",
+      "api_offline_check_sha256": "ab2d6c3458645549609dee7bc1a586e2921795ab19aeb170895bfe362de7e565",
+      "api_check_scope": "pytest API coverage using a synthetic key; DeepSeekProvider.complete intercepted and httpx.AsyncClient.send forbidden; no real network or paid call; command exit 0.",
+      "status": "independent QA accepted for UI/API and credential-boundary behavior; not a live DeepSeek/model-quality test",
+      "historical_separation": "The older product-v2, one-click-startup-addon and T31 v6 component hashes remain historical snapshots. This is a later gameplay-settings source and README documentation epoch; older source maps do not cover it.",
+      "paid_calls_for_implementation_or_check": 0,
+      "independent_api": {
+        "path": "evidence/qa/play-ai-settings-20261006/api-run.json",
+        "sha256": "ab2d6c3458645549609dee7bc1a586e2921795ab19aeb170895bfe362de7e565",
+        "exit_code": 0,
+        "passed": 7,
+        "subtests_passed": 9,
+        "method": "synthetic key; provider complete intercepted; network send forbidden"
+      },
+      "independent_browser": {
+        "path": "evidence/qa/play-ai-settings-20261006/browser-20261006T064846183Z/run.json",
+        "sha256": "b7f4bd12411d054b3d43894a58e6f0bc6f2de5323ea1f70176879bc50215971e",
+        "exit_code": 0,
+        "browser": "Chrome",
+        "viewport_widths": [
+          375,
+          1280
+        ],
+        "issues": 0
+      },
+      "qa_report": "review/findings/play-ai-settings-20261006.md",
+      "qa_report_sha256": "43d5e10d235a1f2a661ae8e19997bcfc8546dff923e0d4ffbcb29c9c95f0b9b2",
+      "main_acceptance": "evidence/integration/play-ai-settings-accepted-20261006.json",
+      "main_acceptance_sha256": "7d1beb936c2c95cb18b106d3e3aa79382d4048e95a321e7f68394354871ac5b4",
+      "real_deepseek_validation": "none; API QA used intercepted synthetic provider and browser QA used offline interception; no paid calls or model-quality claim",
+      "status_note": "Do not interpret mock/stub/intercepted browser/API checks as a live DeepSeek service acceptance."
     }
   ],
   "evidence": [

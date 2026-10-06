@@ -1,0 +1,58 @@
+{
+  "scope": "Main explicitly assigned temporary cross-role ownership of backend/app/api/routes.py and backend/app/ai/runtime.py plus this evidence report.",
+  "status": "SOURCE STOP; candidate ready for independent QA; implementer checks are not independent QA.",
+  "files": [
+    {
+      "path": "backend/app/api/routes.py",
+      "sha256": "891acc107ab6f43b915397b41bcbf79bb9c5538de83f6499e4e91b948cccf2ce"
+    },
+    {
+      "path": "backend/app/ai/runtime.py",
+      "sha256": "c7a2fc82c600e11f886507cbf331ec9c8a0d322a0de78505188adf364405594f"
+    }
+  ],
+  "commands": [
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe -c \"import ast,pathlib; parse backend/app/api/routes.py and backend/app/ai/runtime.py\"",
+      "exit_code": 0,
+      "result": "AST parsed both actual source files."
+    },
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe -m pytest tests/api/test_m3.py tests/api/test_ch01.py -q -p no:cacheprovider",
+      "exit_code": 0,
+      "result": "46 passed, 88 subtests passed in 18.81s; one StarletteDeprecationWarning."
+    },
+    {
+      "command": "PowerShell here-string | C:/Users/liyh/.conda/envs/1/python.exe - (first inline request selection probe)",
+      "exit_code": 1,
+      "result": "Behavior assertions completed, but owned temp cleanup failed because validation script sqlite3 connection context did not close connection on Windows."
+    },
+    {
+      "command": "PowerShell here-string | C:/Users/liyh/.conda/envs/1/python.exe - (corrected inline request selection probe with contextlib.closing)",
+      "exit_code": 0,
+      "result": "11 behavior checks passed using synthetic credential and fake real provider; temporary resources closed."
+    }
+  ],
+  "new_behavior_checks": [
+    "ASCII visible-only and bounded header validation",
+    "authentication preserved",
+    "invalid headers reject without AI/receipt reservations",
+    "no-header legacy runtime preserved",
+    "explicit mock uses independent deterministic provider",
+    "explicit deepseek fixed official config and no environment loader",
+    "existing canonical ledger object reused",
+    "replay creates no new provider or call",
+    "fresh requests isolate provider and preserve application runtime",
+    "credential redacted from question, persistence, messages and response",
+    "context mode preserved"
+  ],
+  "network_calls": 0,
+  "paid_calls": 0,
+  "limitations": [
+    "No real credential or upstream request was used; manual browser flow is outside assigned backend scope.",
+    "Ledger reuse check used a fake canonical ledger object; real-mode fake transport/ledger behavior remains for independent QA.",
+    "Existing Starlette/httpx deprecation warning remains.",
+    "Initial default exec and node tool attempts failed infrastructure startup; escalated local execution succeeded.",
+    "A read-only git diff command compared two files outside expected git context and returned exit 1; Main owns git inspection."
+  ]
+}

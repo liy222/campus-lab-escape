@@ -1,0 +1,331 @@
+{
+  "candidate": "gameplay-ai-settings-source-stop-20261006",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "D:\\深度能力\\tests\\e2e\\run_play_ai_settings.mjs",
+    "gameplay-ai-settings-source-stop-20261006"
+  ],
+  "checks": [
+    {
+      "stage": "mobile-real-missing-key",
+      "viewport": 375,
+      "width": 375,
+      "controls": [
+        {
+          "left": 60,
+          "right": 76,
+          "width": 16
+        },
+        {
+          "left": 60,
+          "right": 76,
+          "width": 16
+        },
+        {
+          "left": 50,
+          "right": 238,
+          "width": 188
+        },
+        {
+          "left": 247,
+          "right": 325,
+          "width": 78
+        },
+        {
+          "left": 37,
+          "right": 338,
+          "width": 301
+        },
+        {
+          "left": 260,
+          "right": 338,
+          "width": 78
+        }
+      ]
+    },
+    {
+      "stage": "mobile-real-synthetic-password",
+      "viewport": 375,
+      "width": 375,
+      "controls": [
+        {
+          "left": 60,
+          "right": 76,
+          "width": 16
+        },
+        {
+          "left": 60,
+          "right": 76,
+          "width": 16
+        },
+        {
+          "left": 50,
+          "right": 238,
+          "width": 188
+        },
+        {
+          "left": 247,
+          "right": 325,
+          "width": 78
+        },
+        {
+          "left": 37,
+          "right": 338,
+          "width": 301
+        },
+        {
+          "left": 260,
+          "right": 338,
+          "width": 78
+        }
+      ]
+    },
+    {
+      "stage": "mobile-mock-proposal-and-manual",
+      "viewport": 375,
+      "width": 375,
+      "controls": [
+        {
+          "left": 60,
+          "right": 76,
+          "width": 16
+        },
+        {
+          "left": 60,
+          "right": 76,
+          "width": 16
+        },
+        {
+          "left": 37,
+          "right": 338,
+          "width": 301
+        },
+        {
+          "left": 260,
+          "right": 338,
+          "width": 78
+        },
+        {
+          "left": 51,
+          "right": 129,
+          "width": 78
+        },
+        {
+          "left": 138,
+          "right": 216,
+          "width": 78
+        }
+      ]
+    },
+    {
+      "stage": "desktop-real-synthetic-password",
+      "viewport": 1280,
+      "width": 1280,
+      "controls": [
+        {
+          "left": 88,
+          "right": 104,
+          "width": 16
+        },
+        {
+          "left": 350,
+          "right": 366,
+          "width": 16
+        },
+        {
+          "left": 78,
+          "right": 506,
+          "width": 428
+        },
+        {
+          "left": 515,
+          "right": 593,
+          "width": 78
+        },
+        {
+          "left": 63,
+          "right": 608,
+          "width": 545
+        },
+        {
+          "left": 530,
+          "right": 608,
+          "width": 78
+        },
+        {
+          "left": 80,
+          "right": 158,
+          "width": 78
+        },
+        {
+          "left": 167,
+          "right": 245,
+          "width": 78
+        }
+      ]
+    },
+    {
+      "stage": "functional",
+      "passed": true,
+      "realIntercepts": 1,
+      "paidCalls": 0,
+      "realProviderEvidence": false,
+      "assertions": [
+        "default mock",
+        "missing-key blocked",
+        "password",
+        "clear",
+        "mock clears key",
+        "refresh clears key",
+        "new session clears key",
+        "reset clears key",
+        "restore clears key",
+        "storage clean",
+        "owned DB/save clean",
+        "AI-only headers",
+        "only ask calls",
+        "historical badge stable",
+        "body unchanged",
+        "mock proposal cancel and confirm",
+        "manual action preserved"
+      ]
+    }
+  ],
+  "issues": [],
+  "requests": [
+    {
+      "path": "/api/sessions",
+      "method": "POST",
+      "provider": null,
+      "keyPresent": false,
+      "syntheticKeyMatches": false,
+      "bodyHasKey": false,
+      "isAi": false
+    },
+    {
+      "path": "/api/sessions/<redacted-session>/save",
+      "method": "POST",
+      "provider": null,
+      "keyPresent": false,
+      "syntheticKeyMatches": false,
+      "bodyHasKey": false,
+      "isAi": false
+    },
+    {
+      "path": "/api/sessions/<redacted-session>/actions",
+      "method": "POST",
+      "provider": null,
+      "keyPresent": false,
+      "syntheticKeyMatches": false,
+      "bodyHasKey": false,
+      "isAi": false
+    },
+    {
+      "path": "/api/sessions/<redacted-session>/reset",
+      "method": "POST",
+      "provider": null,
+      "keyPresent": false,
+      "syntheticKeyMatches": false,
+      "bodyHasKey": false,
+      "isAi": false
+    },
+    {
+      "path": "/api/sessions/<redacted-session>/restore",
+      "method": "POST",
+      "provider": null,
+      "keyPresent": false,
+      "syntheticKeyMatches": false,
+      "bodyHasKey": false,
+      "isAi": false
+    },
+    {
+      "path": "/api/sessions/<redacted-session>/ai/turns",
+      "method": "POST",
+      "provider": "deepseek",
+      "keyPresent": true,
+      "syntheticKeyMatches": true,
+      "bodyHasKey": false,
+      "isAi": true
+    },
+    {
+      "path": "/api/sessions/<redacted-session>/state",
+      "method": "GET",
+      "provider": null,
+      "keyPresent": false,
+      "syntheticKeyMatches": false,
+      "bodyHasKey": false,
+      "isAi": false
+    },
+    {
+      "path": "/api/sessions",
+      "method": "POST",
+      "provider": null,
+      "keyPresent": false,
+      "syntheticKeyMatches": false,
+      "bodyHasKey": false,
+      "isAi": false
+    },
+    {
+      "path": "/api/sessions/<redacted-session>/ai/turns",
+      "method": "POST",
+      "provider": "mock",
+      "keyPresent": false,
+      "syntheticKeyMatches": false,
+      "bodyHasKey": false,
+      "isAi": true
+    },
+    {
+      "path": "/api/sessions/<redacted-session>/proposals/7434f59e733443ca9f4729a7780d8057/cancel",
+      "method": "POST",
+      "provider": null,
+      "keyPresent": false,
+      "syntheticKeyMatches": false,
+      "bodyHasKey": false,
+      "isAi": false
+    },
+    {
+      "path": "/api/sessions/<redacted-session>/ai/turns",
+      "method": "POST",
+      "provider": "mock",
+      "keyPresent": false,
+      "syntheticKeyMatches": false,
+      "bodyHasKey": false,
+      "isAi": true
+    },
+    {
+      "path": "/api/sessions/<redacted-session>/proposals/80d608c6ee1e466ab4186c091ee52a34/confirm",
+      "method": "POST",
+      "provider": null,
+      "keyPresent": false,
+      "syntheticKeyMatches": false,
+      "bodyHasKey": false,
+      "isAi": false
+    },
+    {
+      "path": "/api/sessions/<redacted-session>/actions",
+      "method": "POST",
+      "provider": null,
+      "keyPresent": false,
+      "syntheticKeyMatches": false,
+      "bodyHasKey": false,
+      "isAi": false
+    }
+  ],
+  "source_sha256_before": {
+    "backend/app/api/routes.py": "891acc107ab6f43b915397b41bcbf79bb9c5538de83f6499e4e91b948cccf2ce",
+    "backend/app/ai/runtime.py": "c7a2fc82c600e11f886507cbf331ec9c8a0d322a0de78505188adf364405594f",
+    "frontend/src/Assistant.tsx": "17d5008be7079755ac892c3e284672d9c6b3e8021300c01061b143ffe62a99ea",
+    "frontend/src/api.ts": "b48c343b905d76ae3c0d9b026333a77599feb09cf060dd3d2786fbc7be9655db",
+    "frontend/src/style.css": "c953755184cfa1fd52989611bb80341e53d136addde48053de2d7506696af761"
+  },
+  "source_sha256_after": {
+    "backend/app/api/routes.py": "891acc107ab6f43b915397b41bcbf79bb9c5538de83f6499e4e91b948cccf2ce",
+    "backend/app/ai/runtime.py": "c7a2fc82c600e11f886507cbf331ec9c8a0d322a0de78505188adf364405594f",
+    "frontend/src/Assistant.tsx": "17d5008be7079755ac892c3e284672d9c6b3e8021300c01061b143ffe62a99ea",
+    "frontend/src/api.ts": "b48c343b905d76ae3c0d9b026333a77599feb09cf060dd3d2786fbc7be9655db",
+    "frontend/src/style.css": "c953755184cfa1fd52989611bb80341e53d136addde48053de2d7506696af761"
+  },
+  "exit_code": 0,
+  "limitation": "DeepSeek branch is browser interception plus separate Python offline adapter tests; no real provider response or paid network call.",
+  "privacy": "No session tokens, full request headers, raw server logs, HAR, or databases retained. Screenshots use password input with synthetic sentinel only."
+}

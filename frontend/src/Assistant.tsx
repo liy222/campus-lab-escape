@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { api, ApiError, type AiTurnData, type Proposal, type Receipt, type Session, type VisibleState } from './api';
+import { api, ApiError, type AiSettings, type AiTurnData, type Proposal, type Receipt, type Session, type VisibleState } from './api';
 
 const reasons: Record<string, string> = { MODEL_TIMEOUT: '模型未能在时间内完成，已停止本次问答。', MODEL_UNAVAILABLE: '模型服务暂不可用，可以继续手动探索。', MODEL_INVALID_OUTPUT: '返回的建议无法通过检查，未执行任何建议行动。', AI_LIMIT_REACHED: '本次问答达到调用上限，已停止。', STALE_STATE: '问答期间进度已改变，请依据当前场景重新询问。' };
 const proposalLabels = { pending: '待确认 · proposed', committed: '已执行 · committed', cancelled: '已取消 · cancelled', expired: '已过期', invalidated: '已失效', rejected: '已拒绝 · rejected', unknown: '结果待核对' };
@@ -9,6 +9,8 @@ interface Props { session: Session; state: VisibleState; manualPending: boolean;
 
 export default function Assistant({ session, state, manualPending, needsSync, onState, onUncertain, onForbidden }: Props) {
   const [question, setQuestion] = useState('');
+  const [provider, setProvider] = useState<AiSettings['provider']>('mock');
+  const [apiKey, setApiKey] = useState('');
   const [turn, setTurn] = useState<AiTurnData | null>(null);
   const [view, setView] = useState<ProposalView | null>(null);
   const [pending, setPending] = useState<'ask' | 'confirm' | 'cancel' | null>(null);
@@ -20,7 +22,9 @@ export default function Assistant({ session, state, manualPending, needsSync, on
   const current = useRef(state);
   const pendingGeneration = useRef<string | null>(null);
   current.current = state;
+  useEffect(() => { setApiKey(''); setProvider('mock'); }, [session.session_id, session.token]);
   useEffect(() => {
+    setApiKey(''); setProvider('mock');
     setQuestion(''); setTurn(null); setView(null); setTraces([]); setError(''); setNotice('');
   }, [state.generation]);
   useEffect(() => { setQuestion(''); }, [state.revision]);
@@ -32,6 +36,14 @@ export default function Assistant({ session, state, manualPending, needsSync, on
   const canConfirm = !!currentView && outcome === 'pending' && state.status === 'playing' && !pending && !manualPending && !needsSync;
   const currentTurn = turn?.visible_state.generation === state.generation ? turn : null;
   const answerOutdated = currentTurn && currentTurn.visible_state.revision !== state.revision;
+  const missingApiKey = provider === 'deepseek' && !apiKey.trim();
+  const invalidApiKey = provider === 'deepseek' && /[^\x21-\x7E]/.test(apiKey.trim());
+
+  function chooseProvider(next: AiSettings['provider']) {
+    if (busy.current) return;
+    if (next === 'mock') setApiKey('');
+    setProvider(next); setError('');
+  }
 
   function trace(proposal: Proposal, outcome: string, message: string, receipt?: Receipt, eventId?: string | null) {
     setTraces(entries => [{ id: eventId || `${proposal.proposal_id}-${outcome}`, eventId: eventId || null, outcome, tool: receipt?.tool || proposal.tool, arguments: receipt?.arguments || proposal.arguments, revision: receipt?.revision_after ?? proposal.revision, generation: receipt?.generation || proposal.generation, message, ...(receipt ? { receipt } : {}) }, ...entries].slice(0, 8));
@@ -56,11 +68,14 @@ export default function Assistant({ session, state, manualPending, needsSync, on
   }
   async function ask() {
     if (busy.current || manualPending || needsSync || state.status === 'won') return;
+    if (missingApiKey) { setError('请先填写 DeepSeek API Key，再询问伙伴。'); return; }
+    if (invalidApiKey) { setError('API Key 格式不正确，请重新输入，避免空格、中文或换行。'); return; }
     if (!question.trim() || question.length > 2000) { setError('请填写 1–2000 字的问句。'); return; }
     const started = current.current;
     busy.current = true; pendingGeneration.current = started.generation; setPending('ask'); setError(''); setNotice(''); setView(null);
     try {
-      const response = await api.ai(session, started, question);
+      const settings: AiSettings = provider === 'deepseek' ? { provider, apiKey } : { provider };
+      const response = await api.ai(session, started, question, settings);
       const data = response.data;
       if (!onState(data.visible_state)) { setNotice('问答来自较早的进度，已忽略。请重新询问。'); return; }
       if (current.current.generation !== started.generation || data.visible_state.generation !== started.generation) { setNotice('游戏进度已更换，旧问答已清除。请重新询问。'); return; }
@@ -99,12 +114,27 @@ export default function Assistant({ session, state, manualPending, needsSync, on
     return <ul className="ai-references">{ids.map(id => { const clue = state.clues.find(clue => clue.clue_id === id); return clue ? <li key={id}><a href={`#clue-${id}`}>{clue.title} ↗</a></li> : null; })}</ul>;
   }
   return <section className="assistant ai-panel panel" aria-labelledby="assistant-title">
-    <div className="panel-heading"><h2 id="assistant-title">AI 探索伙伴</h2>{currentTurn && <span className="provider-badge">{currentTurn.usage.provider === 'mock' ? '开发模拟 · mock' : `服务：${currentTurn.usage.provider}`}</span>}</div>
+    <div className="panel-heading"><h2 id="assistant-title">AI 探索伙伴</h2>{currentTurn && <span className="provider-badge">{currentTurn.usage.provider === 'mock' ? '本次回答：免费模拟' : currentTurn.usage.provider === 'deepseek' ? '本次回答：真实 DeepSeek' : `本次回答服务：${currentTurn.usage.provider}`}</span>}</div>
     <p className="panel-caption">依据已发现的线索讨论下一步。建议行动经你确认后才会执行。</p>
+    <fieldset className="ai-settings" disabled={!!pending}>
+      <legend>选择伙伴模式</legend>
+      <div className="ai-mode-options">
+        <label className={provider === 'mock' ? 'ai-mode selected' : 'ai-mode'}><input type="radio" name="ai-provider" value="mock" checked={provider === 'mock'} onChange={() => chooseProvider('mock')}/><span><strong>免费模拟</strong><small>使用预设建议，无 API 费用</small></span></label>
+        <label className={provider === 'deepseek' ? 'ai-mode selected' : 'ai-mode'}><input type="radio" name="ai-provider" value="deepseek" checked={provider === 'deepseek'} onChange={() => chooseProvider('deepseek')}/><span><strong>真实 DeepSeek</strong><small>使用你自己的 API 账户</small></span></label>
+      </div>
+      {provider === 'deepseek' && <div className="ai-key-settings">
+        <label htmlFor="ai-api-key">DeepSeek API Key</label>
+        <div className="ai-key-row"><input id="ai-api-key" type="password" autoComplete="off" autoCapitalize="none" spellCheck={false} value={apiKey} placeholder="在这里输入你的 API Key" aria-describedby={`ai-key-note${missingApiKey || invalidApiKey ? ' ai-key-required' : ''}`} onChange={event => setApiKey(event.target.value)}/><button type="button" className="button subtle" disabled={!apiKey || !!pending} onClick={() => setApiKey('')}>清除密钥</button></div>
+        <p id="ai-key-note">密钥仅在当前页面内存中保留；刷新、切换游戏或回到免费模拟时会清除，不随进度保存。</p>
+        {(missingApiKey || invalidApiKey) && <p id="ai-key-required" className="ai-key-required">{missingApiKey ? '请先填写 API Key，才能询问真实伙伴。' : 'API Key 格式不正确，请重新输入，避免空格、中文或换行。'}</p>}
+        <p className="ai-real-note">点击“询问伙伴”会把你的问题与已发现的线索发送给 DeepSeek，并扣除你的 API 账户用量。使用模型：deepseek-flash。</p>
+      </div>}
+      <p className="ai-settings-note">选择模式、填写或清除密钥不会发起问答；只有点击“询问伙伴”才会调用所选伙伴。</p>
+    </fieldset>
     <form className="ai-question" onSubmit={event => { event.preventDefault(); void ask(); }}>
       <label htmlFor="ai-question">想问探索伙伴什么？</label>
       <textarea id="ai-question" maxLength={2000} rows={3} value={question} disabled={!!pending || needsSync || state.status === 'won'} placeholder="例如：我应该先查看哪些物件？" onChange={event => setQuestion(event.target.value)}/>
-      <div className="ai-question-actions"><small>{question.length}/2000</small><button className="button primary" disabled={!!pending || manualPending || needsSync || state.status === 'won' || !question.trim()}>询问伙伴</button></div>
+      <div className="ai-question-actions"><small>{question.length}/2000</small><button className="button primary" disabled={!!pending || manualPending || needsSync || state.status === 'won' || !question.trim() || missingApiKey || invalidApiKey}>询问伙伴</button></div>
     </form>
     {state.status === 'won' && <p className="muted">已完成探索。可以保存、恢复或开始新游戏。</p>}
     <div className="ai-feedback" aria-live="polite">{pending && <p className="pending"><span className="spinner"/>{pending === 'ask' ? pendingGeneration.current !== state.generation ? '进度已更换，正在结束旧问答…' : '正在查看线索并思考，最长约 45 秒。你仍可手动探索…' : pending === 'confirm' ? '正在确认行动，请稍候…' : '正在取消建议，请稍候…'}</p>}{error && <p className="error" role="alert">{error}</p>}{notice && <p className="notice">{notice}</p>}</div>

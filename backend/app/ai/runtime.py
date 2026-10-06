@@ -60,7 +60,7 @@ class RuntimeLimits:
 
 
 def create_provider():
-    """Server-side explicit provider selection; never accepts HTTP parameters."""
+    """Legacy server-side selection for callers without a request override."""
     kind = os.environ.get("AI_PROVIDER", "mock").lower()
     if kind == "mock":
         from .mock import DeterministicMockProvider
@@ -76,6 +76,40 @@ def create_provider():
         except Exception:
             return UnavailableProvider("MODEL_UNAVAILABLE", provider_name="deepseek")
     return UnavailableProvider("UNAPPROVED_PROVIDER_CONFIG")
+
+
+def validate_request_selection(provider_name: str | None, api_key: str | None) -> str | None:
+    """Return a fixed public error; never echo credentials or header values."""
+    if provider_name is None:
+        return "请选择 AI 模式后再提供 API Key。" if api_key is not None else None
+    if (not 1 <= len(provider_name) <= 16
+            or any(not 33 <= ord(char) <= 126 for char in provider_name)
+            or provider_name not in {"mock", "deepseek"}):
+        return "AI 模式不正确，请选择模拟或真实 AI。"
+    if provider_name == "deepseek" and not api_key:
+        return "真实 AI 需要手动输入 API Key。"
+    if api_key is not None and (not 1 <= len(api_key) <= 512
+                                or any(not 33 <= ord(char) <= 126 for char in api_key)):
+        return "API Key 格式不正确，请重新输入。"
+    return None
+
+
+def create_request_runtime(base_runtime, provider_name: str, api_key: str | None):
+    """Isolate credentials/provider state while preserving limits and budget."""
+    if validate_request_selection(provider_name, api_key) is not None:
+        raise ValueError("Invalid request AI settings")
+    if provider_name == "mock":
+        from .mock import DeterministicMockProvider
+        provider = DeterministicMockProvider()
+    else:
+        # Request credentials never fall back to environment/file configuration.
+        # Reuse an existing canonical ledger, including a stricter approved cap.
+        existing = getattr(base_runtime, "provider", None)
+        ledger = getattr(existing, "ledger", None)
+        if ledger is not None and ledger.path != (PROJECT_ROOT / "data" / "ai-budget.sqlite").resolve():
+            ledger = None
+        provider = DeepSeekProvider(DeepSeekConfig(api_key=api_key), ledger=ledger)
+    return Runtime(provider, base_runtime.limits, context_mode=base_runtime.context_mode)
 
 
 class UnavailableProvider:

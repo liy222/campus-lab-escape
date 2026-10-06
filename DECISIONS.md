@@ -67,3 +67,11 @@ Deliveryv6 stable SOURCE STOP; Main81 current path/SHA pairs passed with no mism
 
 ## 2026-10-06 one-click startup addon
 User requested Windows double-click startup. Added 启动游戏.cmd with specified Python, v2 database and free mock provider; scripts.dev opens the browser only after both services are healthy. Actual launcher from scripts directory passed frontend/backend HTTP 200; Ctrl+C stopped both services with no remaining listeners. Interrupted Windows CMD wrapper exited1, preserved without claiming exit0. Evidence: evidence/integration/one-click-startup-20261006.json. Earlier product tags/source and document hashes remain historical; this is a separate addon epoch. No dependency install, environment reset or paid call.
+
+
+## 2026-10-06 gameplay AI settings task
+User requested an in-game mock/real AI selector and manually entered API Key. Main dispatched play_ai_backend and play_ai_frontend with requested gpt-6.1-sol/high, as returned by spawn task creation; Main runtime is not independently verified. Backend owns routes.py and ai/runtime.py for this epoch; Frontend owns Assistant.tsx/api.ts/style.css. Credentials are ephemeral request headers to the local backend, never persisted or sent as model content. Explicit mock is free; explicit deepseek requires entered key and fixed existing official provider/model, retains canonical budget. Independent QA follows stable SOURCE STOP; no paid call is needed to implement or verify this task.
+
+
+## 2026-10-06 gameplay AI settings accepted
+Stable five-file implementation accepted after independent API7+9 and actual Chrome375/1280 exit0. Existing backend regression46+88 passed; frontend build0. Key is password input in React memory, only passed to local AI-turn request headers; request-specific provider and original canonical budget retained. Refresh/mode/session/reset/restore clears key, no save/database/model-message credential leakage; mock proposals and manual actions verified. Main reread report, checked candidate hashes and viewed mobile screenshot. Initial browser-script assumption failure retained. No paid calls or real-key validity claims. Evidence: evidence/integration/play-ai-settings-accepted-20261006.json. Normal private GitHub synchronization follows.

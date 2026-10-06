@@ -54,17 +54,40 @@ async def restore_session(session_id: str, request: Request):
 @router.post("/sessions/{session_id}/ai/turns")
 async def ai_turn(session_id: str, request: Request):
     import asyncio
+    from ..ai.runtime import create_request_runtime, validate_request_selection
     from ..ai.types import TurnStart
     from ..storage.sqlite import new_id
     raw, parsed = await body(request)
     store = request.app.state.store
     token = request.headers.get("X-Session-Token")
+    providers = request.headers.getlist("X-AI-Provider")
+    keys = request.headers.getlist("X-AI-Api-Key")
+    provider_name = providers[0] if providers else None
+    api_key = keys[0] if keys else None
+    selection_error = ("AI 设置格式不正确，请重新输入。" if len(providers) > 1 or len(keys) > 1
+                       else validate_request_selection(provider_name, api_key))
+    if selection_error is not None:
+        # Authenticate normally, but reject settings before reserving an AI turn.
+        # Headers and the request body never enter this rejection event.
+        with store.transaction() as connection:
+            state = store.authenticate(connection, session_id, token)
+            if state is None:
+                return response(store.failure(connection, new_id(), None, "ai_turn", "FORBIDDEN_SESSION", "无权访问该会话。", expose=False))
+            return response(store.failure(connection, new_id(), session_id, "ai_turn", "BAD_ARGUMENT", selection_error, state, expose=False))
+    if api_key and isinstance(raw, dict) and isinstance(raw.get("message"), str):
+        # A credential accidentally pasted into chat must not reach persistence,
+        # history, trace, responses or model messages. Do not mutate the body.
+        raw = {**raw, "message": raw["message"].replace(api_key, "[REDACTED]")}
     started = store.begin_ai(session_id, token, raw, parsed)
     if not isinstance(started[0], TurnStart):
         return response(started)
     start, callbacks = started
     try:
-        result = await request.app.state.ai_runtime.run(start, callbacks)
+        runtime = request.app.state.ai_runtime
+        if provider_name is not None:
+            # Construct only for a new reservation: replays never call providers.
+            runtime = create_request_runtime(runtime, provider_name, api_key)
+        result = await runtime.run(start, callbacks)
         return response(store.finish_ai(session_id, start.turn_id, result))
     except asyncio.CancelledError:
         store.abandon_ai(session_id, start.turn_id)

@@ -13,6 +13,7 @@ export interface VisibleState {
   save: null | { schema_version: string; level_version: string; saved_at: string; source_revision: number; source_generation: string };
 }
 export interface Session { session_id: string; token: string }
+export type AiSettings = { provider: 'mock' } | { provider: 'deepseek'; apiKey: string };
 export type ProgressTool = Exclude<Tool, 'inspect' | 'get_inventory'>;
 export interface Proposal { proposal_id: string; tool: ProgressTool; arguments: Args; revision: number; generation: string; expires_at: string; status: 'pending' | 'committed' | 'cancelled' | 'expired' | 'invalidated' | 'rejected'; clue_refs: string[]; summary: string }
 export interface Receipt { request_id: string; event_id: string; tool: Tool; arguments: Args; generation: string; revision_before: number; revision_after: number; changed: boolean; message: string; observation: string | null; new_clue_ids: string[]; consumed_item_ids: string[] }
@@ -29,11 +30,16 @@ export function readSession(): Session | null {
 export function storeSession(session: Session | null) {
   if (session) sessionStorage.setItem(STORAGE_KEY, JSON.stringify(session)); else sessionStorage.removeItem(STORAGE_KEY);
 }
-async function request<T>(path: string, session: Session | null, body?: object, timeoutMs = 15000): Promise<{ ok: true; event_id: string; data: T }> {
+async function request<T>(path: string, session: Session | null, body?: object, timeoutMs = 15000, extraHeaders: Record<string, string> = {}): Promise<{ ok: true; event_id: string; data: T }> {
   const controller = new AbortController();
   const timeout = window.setTimeout(() => controller.abort(), timeoutMs);
   try {
-    const response = await fetch(path, { method: body === undefined ? 'GET' : 'POST', headers: { ...(body === undefined ? {} : { 'Content-Type': 'application/json' }), ...(session ? { 'X-Session-Token': session.token } : {}) }, body: body === undefined ? undefined : JSON.stringify(body), signal: controller.signal });
+    const headers = new Headers(extraHeaders);
+    headers.delete('Authorization');
+    headers.delete('X-Session-Token');
+    if (body !== undefined) headers.set('Content-Type', 'application/json');
+    if (session) headers.set('X-Session-Token', session.token);
+    const response = await fetch(path, { method: body === undefined ? 'GET' : 'POST', headers, body: body === undefined ? undefined : JSON.stringify(body), signal: controller.signal });
     let value;
     try { value = await response.json(); } catch { throw new ApiError('SERVICE_UNAVAILABLE', '服务暂不可用，请检查本地服务后再试。'); }
     if (value?.ok === false && value.error && typeof value.error.message === 'string') throw new ApiError(value.error.code, value.error.message, value.visible_state ?? null, value.event_id ?? null);
@@ -49,7 +55,16 @@ export const api = {
   state: (session: Session) => request<{ visible_state: VisibleState }>(`${path(session)}/state`, session),
   action: (session: Session, state: VisibleState, tool: Tool, args: Args) => request<ActionData>(`${path(session)}/actions`, session, { ...version(state), tool, arguments: args }),
   control: (session: Session, state: VisibleState, operation: 'reset' | 'save' | 'restore') => request<ControlData>(`${path(session)}/${operation}`, session, version(state)),
-  ai: (session: Session, state: VisibleState, message: string) => request<AiTurnData>(`${path(session)}/ai/turns`, session, { ...version(state), message }, 55000),
+  ai: (session: Session, state: VisibleState, message: string, settings: AiSettings = { provider: 'mock' }) => {
+    const headers: Record<string, string> = { 'X-AI-Provider': settings.provider };
+    if (settings.provider === 'deepseek') {
+      const apiKey = settings.apiKey.trim();
+      if (!apiKey) return Promise.reject(new ApiError('AI_KEY_REQUIRED', '请先填写 DeepSeek API Key，再询问伙伴。'));
+      if (/[^\x21-\x7E]/.test(apiKey)) return Promise.reject(new ApiError('AI_KEY_INVALID', 'API Key 格式不正确，请重新输入，避免空格、中文或换行。'));
+      headers['X-AI-Api-Key'] = apiKey;
+    }
+    return request<AiTurnData>(`${path(session)}/ai/turns`, session, { ...version(state), message }, 55000, headers);
+  },
   confirm: (session: Session, proposalId: string) => request<ActionData>(`${path(session)}/proposals/${encodeURIComponent(proposalId)}/confirm`, session, {}),
   cancel: (session: Session, proposalId: string) => request<{ proposal: Proposal; visible_state: VisibleState }>(`${path(session)}/proposals/${encodeURIComponent(proposalId)}/cancel`, session, {}),
 };
