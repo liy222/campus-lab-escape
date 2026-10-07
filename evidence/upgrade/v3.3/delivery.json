@@ -1,0 +1,54 @@
+{
+  "version": "v3.3",
+  "owner": "delivery",
+  "status": "SOURCE STOP",
+  "files": [
+    "scripts/dev.py",
+    "启动游戏.cmd",
+    "README.md",
+    "release/UPGRADES.md"
+  ],
+  "source_sha256": {
+    "scripts/dev.py": "25946cc14d2da866d4e253b9e4223de555bdc7b79bc801053962e8f6faad0dc6",
+    "启动游戏.cmd": "6e6d52312a2aef94841658ea91f42cd0300cc5960f34a902800e7bcd625575b6",
+    "README.md": "2023255a6c36108d224cb34a243797a7a5e27644d6127deb14ad7ae63e3d8ccd",
+    "release/UPGRADES.md": "b264e149d15a0072007d40709cfbad776b4893b13b16af1de80ac255d4d59abe"
+  },
+  "checks": [
+    {
+      "command": "$py = 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe'; & $py -B -X utf8 -c \"from scripts.dev import make_frontend_environment; versions=('legacy','v3.1','v3.2','v3.3','upgrade'); out={v:make_frontend_environment({'VITE_PRIVATE':'dummy','SQLITE_PATH':'dummy','SAFE':'ok'},'http://127.0.0.1:8000',v)['VITE_GAMEPLAY_VERSION'] for v in versions}; assert out=={'legacy':'legacy','v3.1':'v3.1','v3.2':'v3.2','v3.3':'v3.3','upgrade':'v3.3'},out; env=make_frontend_environment({'VITE_PRIVATE':'dummy','SQLITE_PATH':'dummy','SAFE':'ok'},'http://127.0.0.1:8000','upgrade'); assert 'VITE_PRIVATE' not in env and 'SQLITE_PATH' not in env and env['SAFE']=='ok'; print(out)\"",
+      "exit_code": 0,
+      "result": {
+        "legacy": "legacy",
+        "v3.1": "v3.1",
+        "v3.2": "v3.2",
+        "v3.3": "v3.3",
+        "upgrade": "v3.3",
+        "filtered_inherited_vite_and_sqlite": true
+      }
+    },
+    {
+      "command": "$py = 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe'; & $py -B -X utf8 -c \"from pathlib import Path; p=Path('启动游戏.cmd'); b=p.read_bytes(); crlf=bytes([13,10]); assert not b.startswith(bytes([239,187,191])); assert crlf in b; normalized=b.replace(crlf,b''); assert bytes([10]) not in normalized and bytes([13]) not in normalized; assert b'game-v3.3.sqlite' in b and b'GAMEPLAY_VERSION=upgrade' in b and b'--provider mock' in b; print({'bytes':len(b),'crlf':b.count(crlf),'v33_database':True,'upgrade_mode':True,'mock':True})\"",
+      "exit_code": 0,
+      "result": {
+        "bytes": 939,
+        "crlf_lines": 31,
+        "bom": false,
+        "strict_crlf": true,
+        "database": "./data/game-v3.3.sqlite",
+        "gameplay_version": "upgrade",
+        "provider": "mock"
+      }
+    },
+    {
+      "command": "git -c safe.directory='D:/深度能力' -c core.whitespace=cr-at-eol diff --check -- frontend/src/api.ts frontend/src/App.tsx frontend/src/Assistant.tsx frontend/src/style.css scripts/dev.py 启动游戏.cmd README.md release/UPGRADES.md",
+      "exit_code": 0
+    }
+  ],
+  "limitations": [
+    "The root launcher was checked but not started; backend/frontend service startup is not claimed.",
+    "Independent API and browser QA remain pending and are assigned to QA after all owners stop.",
+    "No tests, dependency installation, paid provider calls, or public deployment were performed in this Delivery task.",
+    "An initial byte-check invocation had an escaping error (exit 1); the corrected numeric-byte check above passed."
+  ]
+}

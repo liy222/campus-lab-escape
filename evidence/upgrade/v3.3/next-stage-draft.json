@@ -1,0 +1,12 @@
+{
+  "status": "v3.4 design planning only; no implementation before accepted3.3 commit/push",
+  "primary_design": "docs/upgrade-plan.md sections8-11",
+  "scope": "existing two crossroom relations retained; 3hint levels, 2optional hidden discoveries, server authoritative statistics/settlement; no added puzzle family/device/room",
+  "ai_suggestion": "Bounded server-rendered hint catalog based only on discovered facts, provider selects known references/topic. Never expose private answers, future facts or freely generated fullsolution. Keep existing mock/real manual key and canonical budget. No auto-discovery/AI progression for new mode; legacy entries keep behavior. Level1 direction, Level2 known evidence focus, Level3 partial relation not fullassembledsolution.",
+  "stats_suggestion": "Only completed accepted hint increments once in original AI receipt transaction; failures/stale/replay do not double-count. Only meaningful wrong puzzle attempts count, not rotation/observation/auth/schema/network errors. Public counter state and finished settlement saved/restored with explicit policy.",
+  "time_suggestion": "Persist server started/finished timestamps; reality elapsed includes offlinetime, frozen after win; disclose this is engineering elapsed rather than measured human playtime.",
+  "hidden_suggestion": "Two optional physical/story clues, one cabinet inner recess afterfuse taken and one powered box label. No new required puzzle/device or solution revealed. Add to discoveredcount/hidden total2.",
+  "settlement_suggestion": "elapsed, clue count/total, hints, mistakes, hidden count/2, S/A/B/C; rating never gates exit. Publish rating thresholds and save/reset policy.",
+  "qa": "Crossroom combination unavoidable in publicly derived main route; alllevels request captures show no unknownclue/answers; prompt injection and repeated/stale/network requests statistics; win/failure/saved/restored/reloaded/serverrestarted counters/timing; fullAPI/build/browser graybox gate before Phaser",
+  "visual_boundary": "Only after v3.4 accepted/pushed browse official Phaser4 API/version and implementv4.0; visual4.x can preserve3.4 gameplaylevel/DB to avoid needless migration"
+}

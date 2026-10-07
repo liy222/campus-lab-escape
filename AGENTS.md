@@ -39,3 +39,7 @@ Main grants Backend v3.2 only AI runtime read-guard cross-role edit for neutral 
 
 ### 2026-10-07 upgrade recovery ownership
 Prior upgrade agents are no longer live. Main created upgrade_qa_oct07 (requested gpt-6.1-sol/high), upgrade_frontend_oct07 (requested gpt-6-luna/medium), upgrade_backend_oct07 (requested gpt-6.1-sol/high), as returned by actual spawn calls. QA owns tests/review/v3.2 QA evidence and runs only the final fullAPI on SOURCE STOP candidate-fixed. Frontend temporarily owns mechanical README/releaseUPGRADES only until v3.2 closes. Backend reads/plans only until v3.2 commit/push gate. Main retains integration/Git/root documents; no Astra or paid calls. Main runtime remains unverified. Earlier usage-limit interruption is retained, not a completed QA/document claim.
+
+
+### v3.3 mini-games GO, 2026-10-07
+v3.2 commit519c8d0/tagv3.2-puzzle-redesign verified on remote, author/committerliy222; stage60 privacy0 and source/docwhitespace0. Current Oct07 agents own exact plan paths in evidence/upgrade/v3.3/plan.json. Backend cross-AI limited to protecting minigames from reads; cross-Spec docs/contracts owned by Backend. FrontendLuna also owns launchers and mechanical docs. QA may change old3.2 fixture selectors to explicitv3.2 only, no weakened assertions. Only circuit+sequence now; noPhaser/hints/score until3.4.

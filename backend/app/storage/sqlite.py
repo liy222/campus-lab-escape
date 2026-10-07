@@ -30,9 +30,12 @@ def select_rules(gameplay_version="legacy"):
     if gameplay_version in {"3.1", "3.1.0", "v3.1"}:
         from ..domain import upgrade_rules
         return upgrade_rules
-    if gameplay_version in {"upgrade", "3.2", "3.2.0", "v3.2"}:
+    if gameplay_version in {"3.2", "3.2.0", "v3.2"}:
         from ..domain import puzzle_rules
         return puzzle_rules
+    if gameplay_version in {"upgrade", "3.3", "3.3.0", "v3.3"}:
+        from ..domain import mini_rules
+        return mini_rules
     raise ValueError("Unsupported gameplay version")
 
 

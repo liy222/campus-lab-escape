@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { api, ApiError, type AiSettings, type AiTurnData, type Proposal, type Receipt, type Session, type VisibleState } from './api';
+import { api, ApiError, type ActionArguments, type AiSettings, type AiTurnData, type Proposal, type Receipt, type Session, type VisibleState } from './api';
 
 const reasons: Record<string, string> = { MODEL_TIMEOUT: '模型未能在时间内完成，已停止本次问答。', MODEL_UNAVAILABLE: '模型服务暂不可用，可以继续手动探索。', MODEL_INVALID_OUTPUT: '返回的建议无法通过检查，未执行任何建议行动。', AI_LIMIT_REACHED: '本次问答达到调用上限，已停止。', STALE_STATE: '问答期间进度已改变，请依据当前场景重新询问。' };
 const proposalLabels = { pending: '待确认 · proposed', committed: '已执行 · committed', cancelled: '已取消 · cancelled', expired: '已过期', invalidated: '已失效', rejected: '已拒绝 · rejected', unknown: '结果待核对' };
 type ProposalView = { proposal: Proposal; receipt: Receipt | null; outcome: keyof typeof proposalLabels; message?: string; replayed?: boolean };
-type Trace = { id: string; eventId: string | null; outcome: string; tool: string; arguments: Record<string, string>; revision: number; generation: string; message: string; receipt?: Receipt };
+type Trace = { id: string; eventId: string | null; outcome: string; tool: string; arguments: ActionArguments; revision: number; generation: string; message: string; receipt?: Receipt };
 interface Props { session: Session; state: VisibleState; manualPending: boolean; needsSync: boolean; onState: (state: VisibleState, reconciled?: boolean) => boolean; onUncertain: (value: boolean) => void; onForbidden: (sessionId: string) => void }
 
 export default function Assistant({ session, state, manualPending, needsSync, onState, onUncertain, onForbidden }: Props) {

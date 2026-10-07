@@ -1,0 +1,461 @@
+{
+  "owner": "Backend",
+  "status": "targeted self-check passed; SOURCE STOP, independent QA pending",
+  "files": [
+    "backend/app/domain/mini_models.py",
+    "backend/app/domain/circuit.py",
+    "backend/app/domain/mini_rules.py",
+    "backend/app/storage/sqlite.py",
+    "backend/app/main.py",
+    "backend/app/ai/runtime.py",
+    "contracts/build_contracts.py",
+    "contracts/api.schema.json",
+    "contracts/routes.json",
+    "docs/SPEC.md",
+    "docs/level_design.md",
+    "evidence/upgrade/v3.3/backend-selfcheck.py"
+  ],
+  "raw_sha256": {
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/mini_rules.py": "a8c42558ceea9456514afa43221617f6f7d735089dfb6935c7ad5e982176baa8",
+    "backend/app/storage/sqlite.py": "775f26e65d5f7d59fef16faff8facd46fa03c769c9e07182573b7a0752cacbbb",
+    "backend/app/main.py": "f7bff2f06b1bd04fa45d78278854f74a8423dfe29f436bdf3e1ba9489b72aa76",
+    "backend/app/ai/runtime.py": "321b5fb2b926be844bfb9d9c4763d2e079318bc1761491838ff8934fd7673563",
+    "contracts/build_contracts.py": "fbceafdd805cf4bf6740824d32438eff6360414861a85d09f89ba239490d74d4",
+    "contracts/api.schema.json": "cd3e73749ba37608f1768e0ccd4d3d698ff3b8d6c241d54202d4b8ed1d7d093d",
+    "contracts/routes.json": "49b05c8f53385eeb7364951539508ab5898f7dc65d2d8dc574435fd701ca00c4",
+    "docs/SPEC.md": "0b70ed7d85402a35f62b728461ccdc9dfed2d3dd11783b745f25165920f88dc6",
+    "docs/level_design.md": "7836bd138c1f2f2a287341d669de2b594264973ced17e6c8c6a29d9612b3c10f",
+    "evidence/upgrade/v3.3/backend-selfcheck.py": "f84fc19a8772453050cb956887c4a008c17ba8590ceedababab6057b350d2329"
+  },
+  "commands": [
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe contracts/build_contracts.py",
+      "exit": 0
+    },
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe evidence/upgrade/v3.3/backend-selfcheck.py",
+      "exit": 0
+    },
+    {
+      "command": "git diff --check -- <Backend owned paths>; git diff --stat -- <old rule/provider paths>",
+      "exit": 1,
+      "result": "Git treated this invocation as --no-index; no repository diff obtained. Main owns final Git validation."
+    }
+  ],
+  "evidence": "evidence/upgrade/v3.3/backend.json",
+  "checks": [
+    {
+      "tool": "rotate_circuit",
+      "http": 409,
+      "error": "NOT_VISIBLE"
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "take",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "use_item",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "submit_code",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "take",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "move",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "use_item",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "interact",
+      "http": 409,
+      "error": "PRECONDITION_FAILED"
+    },
+    {
+      "tool": "submit_circuit",
+      "http": 409,
+      "error": "WRONG_CODE"
+    },
+    {
+      "tool": "submit_circuit",
+      "http": 422,
+      "error": "BAD_ARGUMENT"
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 422,
+      "error": "BAD_ARGUMENT"
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "save",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "restore",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "submit_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "rotate_circuit",
+      "http": 409,
+      "error": "PRECONDITION_FAILED"
+    },
+    {
+      "tool": "submit_circuit",
+      "http": 409,
+      "error": "PRECONDITION_FAILED"
+    },
+    {
+      "tool": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "submit_login",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "take",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "take",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "move",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "use_item",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "submit_sequence",
+      "http": 409,
+      "error": "PRECONDITION_FAILED"
+    },
+    {
+      "tool": "use_item",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "submit_code",
+      "http": 409,
+      "error": "PRECONDITION_FAILED"
+    },
+    {
+      "tool": "submit_sequence",
+      "http": 409,
+      "error": "WRONG_CODE"
+    },
+    {
+      "tool": "submit_sequence",
+      "http": 422,
+      "error": "BAD_ARGUMENT"
+    },
+    {
+      "tool": "submit_sequence",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "submit_sequence",
+      "http": 409,
+      "error": "PRECONDITION_FAILED"
+    },
+    {
+      "tool": "save",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "reset",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "restore",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "move",
+      "http": 200,
+      "error": null
+    },
+    {
+      "tool": "save",
+      "http": 200,
+      "error": null
+    }
+  ],
+  "summary": [
+    "full manual API route won",
+    "strict public schema validates every response",
+    "partial circuit save/restore/reopen",
+    "completed sequence save/reset/restore and won-state reopen",
+    "alternate valid port-connectivity layouts, explicitly c00 I rotated 180 degrees accepted via API",
+    "manual bypass/wrong/extra-field/frozen-board rejection",
+    "explicit old-version selectors retained"
+  ],
+  "limits": [
+    "Owner self-check, not independent formal QA",
+    "no browser/build/full regression run",
+    "application reopen in same process; OS restart reserved for QA",
+    "temporary databases only, no paid calls",
+    "no commit or further agents"
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "status": "PREPARATION SOURCE STOP; awaiting all-owner SOURCE STOP and Main frozen candidate/GO",
+  "recorded_at": "2026-10-07T05:55:02.175193+00:00",
+  "formal_runs": 0,
+  "paid_calls": 0,
+  "old_regression_raw_byte_checks": [
+    {
+      "path": "tests/api/test_upgrade_v32.py",
+      "baseline": "519c8d0",
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "519c8d0:tests/api/test_upgrade_v32.py"
+      ],
+      "exit_code": 0,
+      "raw_byte_identical": true,
+      "selector": "v3.2",
+      "selector_changes_needed": 0,
+      "sha256": "624feb4241f3b5c2010fd78c485817c779bb273faea7ac61cb7105ac7a0c7825"
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v32.mjs",
+      "baseline": "519c8d0",
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "519c8d0:tests/e2e/run_upgrade_v32.mjs"
+      ],
+      "exit_code": 0,
+      "raw_byte_identical": true,
+      "selector": "v3.2",
+      "selector_changes_needed": 0,
+      "sha256": "9a8e9bb583b6ee9751ae150cd71959b6426bd178705c53b85ff89b571b545bfb"
+    },
+    {
+      "path": "tests/api/test_upgrade_v31.py",
+      "baseline": "519c8d0",
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "519c8d0:tests/api/test_upgrade_v31.py"
+      ],
+      "exit_code": 0,
+      "raw_byte_identical": true,
+      "selector": "v3.1",
+      "selector_changes_needed": 0,
+      "sha256": "1c306a414922085fbb7ada915c39b69e5d6985be31d06bcd342752622eed7f45"
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v31.mjs",
+      "baseline": "519c8d0",
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "519c8d0:tests/e2e/run_upgrade_v31.mjs"
+      ],
+      "exit_code": 0,
+      "raw_byte_identical": true,
+      "selector": "v3.1",
+      "selector_changes_needed": 0,
+      "sha256": "740e78ee0f9512c22bd75759b1b8f8fb4ca740521f2c294ac9da8fc4931c9631"
+    }
+  ],
+  "static_checks": [
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 - (stdin preparation script: ast.parse, raw-byte old selectors, node --check)",
+      "exit_code": 0
+    },
+    {
+      "command": "C:/Program Files/nodejs/node.exe --check tests/e2e/run_upgrade_v33.mjs",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "new_api_methods": [
+    "test_unknown_boards_stay_null_and_wrong_room_manual_actions_reject",
+    "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "test_strict_rotate_and_submit_shapes_reject_invalid_modules_angles_and_extras",
+    "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "test_ai_legitimate_read_preserves_partial_board_and_manual_only_tools"
+  ],
+  "prepared_files": [
+    {
+      "path": "tests/api/test_upgrade_v33.py",
+      "sha256": "e21c482537ceef59b8b9d81f1e0345733bdb567c3946eaf0df9c901e8b8bb1fa"
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v33.mjs",
+      "sha256": "5850c8acf02a2256516f4d0bb8f87e667263163c756ca5dd019edceb62f5f79b"
+    }
+  ],
+  "first_static_attempt": {
+    "exit_code": 1,
+    "nested_git_exit_code": 128,
+    "reason": "Read-only git show rejected repository ownership; subsequent commands use per-command safe.directory for this named project, no Git config changed. No formal test attempted."
+  },
+  "limitations": [
+    "No API/build/browser execution in preparation",
+    "Public graph solver and public-clue device derivation require formal runtime verification",
+    "DOM integration awaits Frontend SOURCE STOP; preparation adaptations before formal GO must be recorded"
+  ]
+}

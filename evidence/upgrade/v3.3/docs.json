@@ -1,0 +1,80 @@
+{
+  "version": "v3.3",
+  "status": "SOURCE STOP",
+  "files": [
+    "README.md",
+    "release/UPGRADES.md"
+  ],
+  "source_sha256": {
+    "README.md": "b599796e7878601e0e0613ad5fd5562e89438c44a8ad9c8f8bf6acbc41ba56d1",
+    "release/UPGRADES.md": "c3c0662d8b49d397cdd8cebd8e3769001ae47eb3a6e950ce6de6a0205784998b"
+  },
+  "qa": {
+    "result": "evidence/upgrade/v3.3/qa/result.json",
+    "report": "review/findings/upgrade-v33.md",
+    "candidate_product_files": 27,
+    "candidate_before_after_match": true,
+    "api_evidence_epochs": [
+      {
+        "run": "evidence/upgrade/v3.3/qa/formal-api-20261007/run.json",
+        "exit_code": 1,
+        "passed": 105,
+        "passed_subtests": 291,
+        "failed": 1,
+        "failure_classification": "QA tail assertion expected generic interact on r3_panel to return 200; the server correctly returned 409 PRECONDITION_FAILED to block bypass."
+      },
+      {
+        "run": "evidence/upgrade/v3.3/qa/formal-api-directed-20261007/run.json",
+        "exit_code": 0,
+        "passed": 1,
+        "passed_subtests": 3,
+        "scope": "The single corrected QA expectation was rerun directionally; product source remained byte-identical."
+      }
+    ],
+    "combined_api_scope": "The 97 existing cases and all 9 new methods are covered across the full run and directed rerun. No second full-suite exit-0 run occurred; do not describe this as 106 passed.",
+    "build": {
+      "exit_code": 0,
+      "evidence": "evidence/upgrade/v3.3/qa/formal-build-20261007",
+      "repeated": false,
+      "candidate_before_after_match": true
+    },
+    "browser": {
+      "exit_code": 0,
+      "checks": 102,
+      "issues": [],
+      "screenshots_visually_inspected": 6,
+      "evidence": "evidence/upgrade/v3.3/qa/20261007T060045594Z-browser",
+      "repeated": false,
+      "candidate_before_after_match": true
+    },
+    "launcher": {
+      "first_check_exit_code": 1,
+      "first_check_issue": "QA expected nonexistent command-line flags.",
+      "corrected_config_check_exit_code": 0,
+      "expected_set_variables": [
+        "GAMEPLAY_VERSION=upgrade",
+        "SQLITE_PATH=./data/game-v3.3.sqlite"
+      ],
+      "provider_argument": "--provider mock",
+      "root_cmd_started": false
+    },
+    "paid_calls": 0
+  },
+  "commands": [
+    {
+      "command": "git -c safe.directory='D:/深度能力' -c core.whitespace=cr-at-eol diff --check -- README.md release/UPGRADES.md",
+      "exit_code": 0
+    },
+    {
+      "command": "Get-FileHash -Algorithm SHA256 README.md,release/UPGRADES.md",
+      "exit_code": 0
+    }
+  ],
+  "limitations": [
+    "The API result is joint evidence across separate full and directed runs, not a full-suite exit-0 run.",
+    "The root launcher was not actually started.",
+    "No real model-quality or real-player completion-time acceptance; legacy smoke used fresh slots rather than historical sensitive databases.",
+    "The existing Starlette/httpx TestClient deprecation warning remains.",
+    "The v3.3 tag is pending Main synchronization; no commit SHA is claimed."
+  ]
+}

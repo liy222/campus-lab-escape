@@ -1,0 +1,1308 @@
+[
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "inspect",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "submit_code",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "CODE_ACCEPTED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "take",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "OPEN",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "MISSING_FUSE",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "submit_circuit",
+    "http_status": 409,
+    "error": "WRONG_CODE",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          2
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "submit_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "submit_circuit",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "BOOTING",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "LOGIN_LOCKED",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "submit_login",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "UNLOCKED",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "CARD_ACCEPTED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "editing"
+      }
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "submit_code",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "editing"
+      }
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "editing"
+      }
+    }
+  }
+]

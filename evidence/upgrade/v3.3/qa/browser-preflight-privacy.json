@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-10-07T06:00:35.816895+00:00",
+  "scope": "QA browser failure evidence privacy before first formal browser run",
+  "file": "tests/e2e/run_upgrade_v33.mjs",
+  "before_sha256": "5850c8acf02a2256516f4d0bb8f87e667263163c756ca5dd019edceb62f5f79b",
+  "after_sha256": "b963d3d0502be8db7f0c484fb01301cc3327e0d9400abfa3089748d5f2383928",
+  "change": "Failure records retain only first error line, max240 chars, preventing deep-state assertion diffs from exporting full state. No actions/assertions/product change.",
+  "exit_code": 0
+}

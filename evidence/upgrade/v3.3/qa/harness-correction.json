@@ -1,0 +1,19 @@
+{
+  "status": "QA harness correction only; no product change",
+  "recorded_at": "2026-10-07T06:02:26.915135+00:00",
+  "first_api_exit_code": 1,
+  "first_api_result": "105 passed,291 subtests passed,1 failed QA expectation",
+  "file": "tests/api/test_upgrade_v33.py",
+  "before_sha256": "e21c482537ceef59b8b9d81f1e0345733bdb567c3946eaf0df9c901e8b8bb1fa",
+  "after_sha256": "6e25d8f64db6cd9c35b8382c13f9efb80dfe318de048e92fd137ef2577f99f67",
+  "change": "Require generic r3_panel interact to reject PRECONDITION_FAILED and preserve full visible state, replacing wrong success-200 expectation. Strictness increased, no existing97 regression/assertion changed.",
+  "failed_evidence_preserved": [
+    "formal-api-20261007/run.json",
+    "formal-api-20261007/checks.json",
+    "formal-api-20261007/stdout-compact.txt"
+  ],
+  "raw_stdout_retained_outside_repository": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-v33-qa-raw-64_0pcrr\\first-api-stdout.local.txt",
+  "raw_stdout_sha256": "c4d1bf01ede17a684584fbd2ccbab71eb1945f98d2bb3ece274bc0ab3500898b",
+  "raw_stdout_policy": "Full public-state failure diff retained local only, never commit/export. Run/checks original evidence unchanged; compact stdout preserves traceback,scalar failure and actual suite summary.",
+  "next_scope": "Directed rerun of corrected test only; no unnecessary full-suite repeat"
+}

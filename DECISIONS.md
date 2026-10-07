@@ -101,3 +101,11 @@ Clock/sample combine for cabinet; LAB-42 and starttime become terminal credentia
 
 ### v3.2 accepted, 2026-10-07
 Three-room/four-item clue redesign accepted: fixed fullAPI97/257 exit0, all23source/tests before-after identical. First runtime existing-clue text forgery failure retained; narrow complete-record/duplicateID guard independently closed. Originalcandidate build0/Chrome61checks0 (main route/save/restore/reload/OS restart/mobile/oldentries) retained honestly; no UI delta so not rerun afterguard. Evidence evidence/upgrade/v3.2/accepted.json. No paid/Phaser/human timing claim; own commit/push precedes3.3.
+
+
+### v3.3 mini-games GO, 2026-10-07
+v3.2 commit519c8d0/tagv3.2-puzzle-redesign verified on remote, author/committerliy222; stage60 privacy0 and source/docwhitespace0. Current Oct07 agents own exact plan paths in evidence/upgrade/v3.3/plan.json. Backend cross-AI limited to protecting minigames from reads; cross-Spec docs/contracts owned by Backend. FrontendLuna also owns launchers and mechanical docs. QA may change old3.2 fixture selectors to explicitv3.2 only, no weakened assertions. Only circuit+sequence now; noPhaser/hints/score until3.4.
+
+
+### v3.3 accepted, 2026-10-07
+Circuit graph/partial rotation persistence and device sequence accepted on frozen27sources. Independent fullAPI first105pass/291subtests plus1QAwrongexpectedpanelinteract; correct reject expectation directed1pass/3subtests0 provides jointcoverage, not a later full106exit0. Chrome102checks/build0 with save/restore/reload/OSrestart and oldnamespaces; Main viewed partial circuit/sequence screenshots. First QA launcherflag mistake retained then byte/config0. ActualrootCMD/humanplaytime/realmodelquality unverified; paid0/Phaser0. Evidence evidence/upgrade/v3.3/accepted.json; owncommit/push before3.4GO.

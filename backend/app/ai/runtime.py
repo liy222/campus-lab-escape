@@ -300,7 +300,7 @@ class Runtime:
                             target = arguments.get("object_id")
                             knowledge_targets = observed_added | {clue["object_id"] for clue in read.visible_state["clues"] if clue["clue_id"] in added}
                             valid_revision = expected.revision + (1 if added or observed_added else 0)
-                            protected_fields = ("inventory", "room", "status", "device_states", "puzzle_states", "progress", "exits", "save", "session_id", "schema_version", "level_version")
+                            protected_fields = ("inventory", "room", "status", "device_states", "puzzle_states", "minigames", "progress", "exits", "save", "session_id", "schema_version", "level_version")
                             old_objects = sorted((obj["object_id"], obj["name"], obj["kind"]) for obj in state["objects"])
                             new_objects = sorted((obj["object_id"], obj["name"], obj["kind"]) for obj in read.visible_state["objects"])
                             if (new_version.generation != expected.generation

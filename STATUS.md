@@ -7,8 +7,9 @@
 |---|---|---|
 | v3.0 | 已验收、提交并推送 | 1499610 / v3.0-gameplay-information |
 | v3.1 | 已验收、提交并推送 | cfab661 / v3.1-object-state |
-| v3.2 | 独立验收通过，正常提交与推送收尾 | v3.2-puzzle-redesign 待同步 |
-| v3.3 → v4.2 | 待前置阶段同步 | v3.4完整灰盒通过后才引入Phaser |
+| v3.2 | 已验收、提交并推送 | 519c8d0 / v3.2-puzzle-redesign |
+| v3.3 | 独立联合验收通过，正在提交同步收尾 | v3.3-mini-games 待同步 |
+| v3.4 → v4.2 | 待前置阶段通过 | v3.4完整灰盒通过后才引入Phaser |
 
 唯一主要设计基线：[docs/upgrade-plan.md](docs/upgrade-plan.md)。最终v3.2全API97项/257子项通过；原候选构建与浏览器61项通过，有限AI读取修复后全API复验，源码时期见[验收记录](evidence/upgrade/v3.2/accepted.json)。保持旧版独立存档入口。零付费调用；未验证真人游玩时长。下文为历史记录。
 <!-- upgrade-current-end -->

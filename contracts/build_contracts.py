@@ -141,6 +141,48 @@ login_receipt = deepcopy(manual_receipt)
 login_receipt["properties"]["tool"] = {"const": "submit_login"}
 login_receipt["properties"]["arguments"] = LOGIN_ARGS
 D["receipt"]["oneOf"].append(login_receipt)
+
+# v3.3 exposes manual minigames only in the current physically prepared room.
+MODULE = enum(*[f"c{row}{column}" for row in range(3) for column in range(3)])
+DEVICE = enum("cooling", "lighting", "safety", "ventilation")
+ROTATE_ARGS = obj({"target_id": {"const": "r2_powerbox"}, "module_id": MODULE})
+CIRCUIT_ARGS = obj({"target_id": {"const": "r2_powerbox"}})
+SEQUENCE_ARGS = obj({"target_id": {"const": "r3_panel"}, "device_ids": arr(DEVICE, minItems=4, maxItems=4, uniqueItems=True)})
+MINI_ARGS = {"rotate_circuit": ROTATE_ARGS, "submit_circuit": CIRCUIT_ARGS, "submit_sequence": SEQUENCE_ARGS}
+D["mini_affordance"] = deepcopy(D["puzzle_affordance"])
+for name, parameters in MINI_ARGS.items():
+    template = obj({"target_id": parameters["properties"]["target_id"]}) if name == "submit_sequence" else parameters
+    D["mini_affordance"]["oneOf"].append(obj({"tool": {"const": name}, "label": TEXT, "arguments": template, "requires_code": {"const": False}}))
+    D["action_request"]["oneOf"].append(obj({**CONTROL["properties"], "tool": {"const": name}, "arguments": parameters}))
+    receipt = deepcopy(manual_receipt)
+    receipt["properties"]["tool"] = {"const": name}
+    receipt["properties"]["arguments"] = parameters
+    D["receipt"]["oneOf"].append(receipt)
+D["mini_visible_object"] = deepcopy(D["puzzle_visible_object"])
+D["mini_visible_object"]["properties"]["actions"] = arr(ref("mini_affordance"))
+D["mini_save_metadata"] = deepcopy(D["puzzle_save_metadata"])
+D["mini_save_metadata"]["properties"]["schema_version"] = {"const": "1.3.0"}
+D["mini_save_metadata"]["properties"]["level_version"] = {"const": "3.3.0"}
+D["save_metadata"]["oneOf"].append(ref("mini_save_metadata"))
+D["mini_visible_state"] = deepcopy(D["puzzle_visible_state"])
+mini_properties = D["mini_visible_state"]["properties"]
+mini_properties["schema_version"] = {"const": "1.3.0"}
+mini_properties["level_version"] = {"const": "3.3.0"}
+mini_properties["objects"] = arr(ref("mini_visible_object"))
+mini_properties["save"] = nullable(ref("mini_save_metadata"))
+ENDPOINT = obj({"module_id": MODULE, "side": enum("N", "E", "S", "W")})
+COORDINATE = {"type": "integer", "minimum": 0, "maximum": 2}
+MODULE_STATE = obj({"module_id": MODULE, "row": COORDINATE, "column": COORDINATE,
+                    "shape": enum("I", "L"), "rotation": {"type": "integer", "minimum": 0, "maximum": 3}})
+CIRCUIT = obj({"target_id": {"const": "r2_powerbox"}, "rows": {"const": 3}, "columns": {"const": 3},
+               "source": ENDPOINT, "sink": ENDPOINT, "modules": arr(MODULE_STATE, minItems=9, maxItems=9),
+               "status": enum("editing", "completed")})
+SEQUENCE = obj({"target_id": {"const": "r3_panel"},
+                "devices": arr(obj({"device_id": DEVICE, "label": TEXT, "symbol": enum("▲", "★", "●", "■")}), minItems=4, maxItems=4),
+                "length": {"const": 4}, "status": enum("editing", "completed")})
+mini_properties["minigames"] = obj({"circuit": nullable(CIRCUIT), "sequence": nullable(SEQUENCE)})
+D["mini_visible_state"]["required"] = list(mini_properties)
+D["visible_state"]["oneOf"].append(ref("mini_visible_state"))
 document("api.schema.json", D, {"oneOf": [ref(name + "_response") for name in ["create", "state", "action", "control", "cancel", "ai_turn"]] + [ref("error_response")]})
 ROUTES = [
     ("POST", "/api/sessions", "empty_request", "create_response", 201, False),
@@ -153,4 +195,4 @@ ROUTES = [
     ("POST", "/api/sessions/{id}/proposals/{pid}/confirm", "empty_request", "action_response", 200, True),
     ("POST", "/api/sessions/{id}/proposals/{pid}/cancel", "empty_request", "cancel_response", 200, True),
 ]
-(ROOT / "routes.json").write_text(json.dumps({"contract_version": "1.2.0", "schema": "api.schema.json", "routes": [{"method": m, "path": p, "request": r, "response": s, "success_status": h, "requires_session_token": a} for m,p,r,s,h,a in ROUTES], "error_statuses": ERRORS}, indent=2) + "\n", encoding="utf-8")
+(ROOT / "routes.json").write_text(json.dumps({"contract_version": "1.3.0", "schema": "api.schema.json", "routes": [{"method": m, "path": p, "request": r, "response": s, "success_status": h, "requires_session_token": a} for m,p,r,s,h,a in ROUTES], "error_statuses": ERRORS}, indent=2) + "\n", encoding="utf-8")

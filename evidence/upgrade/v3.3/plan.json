@@ -1,0 +1,40 @@
+{
+  "version": "v3.3",
+  "status": "GO after v3.2 remote verified",
+  "date": "2026-10-07",
+  "predecessor_commit": "519c8d0d542fcfedd4bfaaaf8b81e68b00d05925",
+  "predecessor_tag": "v3.2-puzzle-redesign",
+  "sync_exit": 0,
+  "staged_privacy_audit_files": 60,
+  "staged_privacy_findings": [],
+  "primary_design": "docs/upgrade-plan.md",
+  "scope": "exactly rotatable circuit and final device sequence; graybox only",
+  "schema_version": "1.3.0",
+  "level_version": "3.3.0",
+  "save_policy": "isolated3.3DB/session; keep explicit3.2/3.1/legacy, no automatic migration",
+  "circuit": "3x3 with public shaped modules/rotations/source/sink. rotate90 action persists server state. explicit submit verifies reciprocal port source-to-sink connectivity, not one orientation array/clientsolved. Partial state survives save/restore/reload/reopen. Completion freezes board; CIRCUIT_READY before original main switch POWER_ON. No bypass via interact.",
+  "sequence": "server validates exactly four device_ids; derived from R1 source +R2 index +R3 legend. UI order different from original source. draft frontend only clears on room/session/restore/reload; failed submit keeps real progress/inventory. Oldr3 numeric submit cannot bypass.",
+  "projection": "nullable minigames.circuit/sequence, only current observed and exposed physical target; protect from AI read mutation",
+  "public_actions": [
+    "rotate_circuit",
+    "submit_circuit",
+    "submit_sequence"
+  ],
+  "provider_tools": "original six unchanged; all new actions manual only",
+  "reuse": "compact adapter/helper over existing puzzle rules/Store/API/save/AI; do not duplicate whole backend",
+  "ownership": {
+    "backend": "upgrade_backend_oct07: new mini state/rules/helper, Store/main selection, narrow runtime protected minigames; cross-Spec contracts/SPEC/leveldesign",
+    "frontend_delivery": "upgrade_frontend_oct07: frontend/, scripts/dev.py/rootCMD/README/UPGRADES",
+    "qa": "upgrade_qa_oct07: new3.3tests/browser/report/evidence, old3.2selector explicitv3.2 only; retain assertions",
+    "main": "root docs/integration/Git"
+  },
+  "models": "recorded actual Oct07 spawn Backend+QA Sol/high, Frontend Luna/medium; Main runtime unverified",
+  "qa_gate": "all owners SOURCESTOP then full API/build actual browser route/save/restore/reload/OSrestart/partialboards, malformed/alternatevalid circuit and wrongsequence, compactevidence",
+  "paid_calls": 0,
+  "phaser_added": false,
+  "limits": [
+    "No real-player timing claim",
+    "No oldarchives/secret/database commit",
+    "No additional puzzle families"
+  ]
+}

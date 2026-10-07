@@ -1,0 +1,3032 @@
+{
+  "candidate": "evidence/upgrade/v3.3/candidate.json",
+  "candidate_sha256": "f5036954b90cb23c996fafe40ee2cc4f7ff77182ea3664e8a46ad803a7aba35a",
+  "started": "2026-10-07T06:00:45.595Z",
+  "ended": "2026-10-07T06:01:05.319Z",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "D:\\深度能力\\tests\\e2e\\run_upgrade_v33.mjs",
+    "evidence/upgrade/v3.3/candidate.json"
+  ],
+  "commands": [
+    {
+      "label": "v3.3-backend",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "11669",
+        "--no-access-log"
+      ],
+      "public_environment": {
+        "AI_PROVIDER": "mock",
+        "PYTHONUTF8": "1",
+        "GAMEPLAY_VERSION": "v3.3",
+        "SQLITE_PATH": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-v33-browser-SMqOgT\\v3.3.sqlite"
+      },
+      "cwd": "D:\\深度能力"
+    },
+    {
+      "label": "v3.3-frontend",
+      "executable": "C:\\Program Files\\nodejs\\node.exe",
+      "arguments": [
+        "D:\\深度能力\\frontend\\node_modules\\vite\\bin\\vite.js",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "11670",
+        "--strictPort"
+      ],
+      "public_environment": {
+        "AI_PROVIDER": "mock",
+        "PYTHONUTF8": "1",
+        "CAMPUS_BACKEND_URL": "http://127.0.0.1:11669",
+        "VITE_GAMEPLAY_VERSION": "v3.3"
+      },
+      "cwd": "D:\\深度能力\\frontend"
+    },
+    {
+      "label": "v3.3-backend-partial-board-restarted",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "11669",
+        "--no-access-log"
+      ],
+      "public_environment": {
+        "AI_PROVIDER": "mock",
+        "PYTHONUTF8": "1",
+        "GAMEPLAY_VERSION": "v3.3",
+        "SQLITE_PATH": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-v33-browser-SMqOgT\\v3.3.sqlite"
+      },
+      "cwd": "D:\\深度能力"
+    },
+    {
+      "label": "v3.3-backend-restarted",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "11669",
+        "--no-access-log"
+      ],
+      "public_environment": {
+        "AI_PROVIDER": "mock",
+        "PYTHONUTF8": "1",
+        "GAMEPLAY_VERSION": "v3.3",
+        "SQLITE_PATH": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-v33-browser-SMqOgT\\v3.3.sqlite"
+      },
+      "cwd": "D:\\深度能力"
+    },
+    {
+      "label": "legacy-backend",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "14535",
+        "--no-access-log"
+      ],
+      "public_environment": {
+        "AI_PROVIDER": "mock",
+        "PYTHONUTF8": "1",
+        "GAMEPLAY_VERSION": "legacy",
+        "SQLITE_PATH": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-v33-browser-SMqOgT\\legacy.sqlite"
+      },
+      "cwd": "D:\\深度能力"
+    },
+    {
+      "label": "legacy-frontend",
+      "executable": "C:\\Program Files\\nodejs\\node.exe",
+      "arguments": [
+        "D:\\深度能力\\frontend\\node_modules\\vite\\bin\\vite.js",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "14536",
+        "--strictPort"
+      ],
+      "public_environment": {
+        "AI_PROVIDER": "mock",
+        "PYTHONUTF8": "1",
+        "CAMPUS_BACKEND_URL": "http://127.0.0.1:14535",
+        "VITE_GAMEPLAY_VERSION": "legacy"
+      },
+      "cwd": "D:\\深度能力\\frontend"
+    },
+    {
+      "label": "v3.1-backend",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "2257",
+        "--no-access-log"
+      ],
+      "public_environment": {
+        "AI_PROVIDER": "mock",
+        "PYTHONUTF8": "1",
+        "GAMEPLAY_VERSION": "v3.1",
+        "SQLITE_PATH": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-v33-browser-SMqOgT\\v3.1.sqlite"
+      },
+      "cwd": "D:\\深度能力"
+    },
+    {
+      "label": "v3.1-frontend",
+      "executable": "C:\\Program Files\\nodejs\\node.exe",
+      "arguments": [
+        "D:\\深度能力\\frontend\\node_modules\\vite\\bin\\vite.js",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "2258",
+        "--strictPort"
+      ],
+      "public_environment": {
+        "AI_PROVIDER": "mock",
+        "PYTHONUTF8": "1",
+        "CAMPUS_BACKEND_URL": "http://127.0.0.1:2257",
+        "VITE_GAMEPLAY_VERSION": "v3.1"
+      },
+      "cwd": "D:\\深度能力\\frontend"
+    },
+    {
+      "label": "v3.2-backend",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "11067",
+        "--no-access-log"
+      ],
+      "public_environment": {
+        "AI_PROVIDER": "mock",
+        "PYTHONUTF8": "1",
+        "GAMEPLAY_VERSION": "v3.2",
+        "SQLITE_PATH": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-v33-browser-SMqOgT\\v3.2.sqlite"
+      },
+      "cwd": "D:\\深度能力"
+    },
+    {
+      "label": "v3.2-frontend",
+      "executable": "C:\\Program Files\\nodejs\\node.exe",
+      "arguments": [
+        "D:\\深度能力\\frontend\\node_modules\\vite\\bin\\vite.js",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "11068",
+        "--strictPort"
+      ],
+      "public_environment": {
+        "AI_PROVIDER": "mock",
+        "PYTHONUTF8": "1",
+        "CAMPUS_BACKEND_URL": "http://127.0.0.1:11067",
+        "VITE_GAMEPLAY_VERSION": "v3.2"
+      },
+      "cwd": "D:\\深度能力\\frontend"
+    }
+  ],
+  "exit_code": 0,
+  "provider": "mock only; no paid model calls",
+  "browser": "Google Chrome headless, isolated contexts",
+  "source_sha256_before": {
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/mini_rules.py": "a8c42558ceea9456514afa43221617f6f7d735089dfb6935c7ad5e982176baa8",
+    "backend/app/storage/sqlite.py": "775f26e65d5f7d59fef16faff8facd46fa03c769c9e07182573b7a0752cacbbb",
+    "backend/app/main.py": "f7bff2f06b1bd04fa45d78278854f74a8423dfe29f436bdf3e1ba9489b72aa76",
+    "backend/app/ai/runtime.py": "321b5fb2b926be844bfb9d9c4763d2e079318bc1761491838ff8934fd7673563",
+    "contracts/build_contracts.py": "fbceafdd805cf4bf6740824d32438eff6360414861a85d09f89ba239490d74d4",
+    "contracts/api.schema.json": "cd3e73749ba37608f1768e0ccd4d3d698ff3b8d6c241d54202d4b8ed1d7d093d",
+    "contracts/routes.json": "49b05c8f53385eeb7364951539508ab5898f7dc65d2d8dc574435fd701ca00c4",
+    "docs/SPEC.md": "0b70ed7d85402a35f62b728461ccdc9dfed2d3dd11783b745f25165920f88dc6",
+    "docs/level_design.md": "7836bd138c1f2f2a287341d669de2b594264973ced17e6c8c6a29d9612b3c10f",
+    "frontend/src/api.ts": "39e1efe85e25982a809d4f173a81f78eb46b09ee92de2d8abad020bf99ce7a80",
+    "frontend/src/App.tsx": "8b7832ff843e2e9e97c3888187760a7de9301353c86f120392aeacb5873c4c5a",
+    "frontend/src/Assistant.tsx": "03a79a201f66b3a2d98b1ca163509484d612c694f9ab8f0588588153667e664e",
+    "frontend/src/style.css": "e3650c3847e513d220a3b9879418fad9202ff32e4fd89b6832810e551349e9ed",
+    "scripts/dev.py": "25946cc14d2da866d4e253b9e4223de555bdc7b79bc801053962e8f6faad0dc6",
+    "启动游戏.cmd": "6e6d52312a2aef94841658ea91f42cd0300cc5960f34a902800e7bcd625575b6",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/storage/ai.py": "1f50248afec17dca561a9b7e40feb9211d66da58b01d8c198bf1f0fbd1ad5400",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "contracts/tools.schema.json": "f88d79a4d8e53c04f531e159fb47bb0d99439cd37d9409635bfef25238edb691"
+  },
+  "source_sha256_after": {
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/mini_rules.py": "a8c42558ceea9456514afa43221617f6f7d735089dfb6935c7ad5e982176baa8",
+    "backend/app/storage/sqlite.py": "775f26e65d5f7d59fef16faff8facd46fa03c769c9e07182573b7a0752cacbbb",
+    "backend/app/main.py": "f7bff2f06b1bd04fa45d78278854f74a8423dfe29f436bdf3e1ba9489b72aa76",
+    "backend/app/ai/runtime.py": "321b5fb2b926be844bfb9d9c4763d2e079318bc1761491838ff8934fd7673563",
+    "contracts/build_contracts.py": "fbceafdd805cf4bf6740824d32438eff6360414861a85d09f89ba239490d74d4",
+    "contracts/api.schema.json": "cd3e73749ba37608f1768e0ccd4d3d698ff3b8d6c241d54202d4b8ed1d7d093d",
+    "contracts/routes.json": "49b05c8f53385eeb7364951539508ab5898f7dc65d2d8dc574435fd701ca00c4",
+    "docs/SPEC.md": "0b70ed7d85402a35f62b728461ccdc9dfed2d3dd11783b745f25165920f88dc6",
+    "docs/level_design.md": "7836bd138c1f2f2a287341d669de2b594264973ced17e6c8c6a29d9612b3c10f",
+    "frontend/src/api.ts": "39e1efe85e25982a809d4f173a81f78eb46b09ee92de2d8abad020bf99ce7a80",
+    "frontend/src/App.tsx": "8b7832ff843e2e9e97c3888187760a7de9301353c86f120392aeacb5873c4c5a",
+    "frontend/src/Assistant.tsx": "03a79a201f66b3a2d98b1ca163509484d612c694f9ab8f0588588153667e664e",
+    "frontend/src/style.css": "e3650c3847e513d220a3b9879418fad9202ff32e4fd89b6832810e551349e9ed",
+    "scripts/dev.py": "25946cc14d2da866d4e253b9e4223de555bdc7b79bc801053962e8f6faad0dc6",
+    "启动游戏.cmd": "6e6d52312a2aef94841658ea91f42cd0300cc5960f34a902800e7bcd625575b6",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/storage/ai.py": "1f50248afec17dca561a9b7e40feb9211d66da58b01d8c198bf1f0fbd1ad5400",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "contracts/tools.schema.json": "f88d79a4d8e53c04f531e159fb47bb0d99439cd37d9409635bfef25238edb691"
+  },
+  "checks": [
+    {
+      "check": "create",
+      "http_status": 201,
+      "error": null,
+      "revision": 0,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "R1-graybox",
+      "viewport_width": 1280,
+      "document_width": 1280,
+      "controls": 18,
+      "outside_viewport": 0,
+      "visible_object_ids": [
+        "r1_clock",
+        "r1_record",
+        "r1_plaque",
+        "r1_microscope",
+        "sample_slide",
+        "r1_cabinet",
+        "r1_door"
+      ]
+    },
+    {
+      "check": "R1-mobile",
+      "viewport_width": 375,
+      "document_width": 375,
+      "controls": 18,
+      "outside_viewport": 0,
+      "visible_object_ids": [
+        "r1_clock",
+        "r1_record",
+        "r1_plaque",
+        "r1_microscope",
+        "sample_slide",
+        "r1_cabinet",
+        "r1_door"
+      ]
+    },
+    {
+      "check": "move:R2",
+      "http_status": 200,
+      "error": null,
+      "revision": 3,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "move:R3",
+      "http_status": 200,
+      "error": null,
+      "revision": 6,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "R3-early-graybox",
+      "viewport_width": 1280,
+      "document_width": 1280,
+      "controls": 17,
+      "outside_viewport": 0,
+      "visible_object_ids": [
+        "r3_legend",
+        "r3_panel",
+        "exit_door"
+      ]
+    },
+    {
+      "check": "R3-mobile",
+      "viewport_width": 375,
+      "document_width": 375,
+      "controls": 17,
+      "outside_viewport": 0,
+      "visible_object_ids": [
+        "r3_legend",
+        "r3_panel",
+        "exit_door"
+      ]
+    },
+    {
+      "check": "move:R2",
+      "http_status": 200,
+      "error": null,
+      "revision": 8,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 1,
+      "inventory": []
+    },
+    {
+      "check": "move:R1",
+      "http_status": 200,
+      "error": null,
+      "revision": 9,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 1,
+      "inventory": []
+    },
+    {
+      "check": "use:sample_slide:r1_microscope",
+      "http_status": 200,
+      "error": null,
+      "revision": 16,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 4,
+      "inventory": []
+    },
+    {
+      "check": "code:r1_cabinet",
+      "http_status": 200,
+      "error": null,
+      "revision": 19,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "CODE_ACCEPTED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 5,
+      "inventory": []
+    },
+    {
+      "check": "interact:r1_cabinet",
+      "http_status": 200,
+      "error": null,
+      "revision": 20,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 5,
+      "inventory": []
+    },
+    {
+      "check": "interact:r1_fuse",
+      "http_status": 200,
+      "error": null,
+      "revision": 23,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 6,
+      "inventory": [
+        "fuse"
+      ]
+    },
+    {
+      "check": "move:R2",
+      "http_status": 200,
+      "error": null,
+      "revision": 24,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 6,
+      "inventory": [
+        "fuse"
+      ]
+    },
+    {
+      "check": "interact:r2_powerbox",
+      "http_status": 200,
+      "error": null,
+      "revision": 27,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "OPEN",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": [
+        "fuse"
+      ]
+    },
+    {
+      "check": "interact:r2_powerbox",
+      "http_status": 200,
+      "error": null,
+      "revision": 28,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "MISSING_FUSE",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": [
+        "fuse"
+      ]
+    },
+    {
+      "check": "use:fuse:r2_powerbox",
+      "http_status": 200,
+      "error": null,
+      "revision": 29,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "submit_circuit",
+      "http_status": 409,
+      "error": "WRONG_CODE",
+      "revision": 29,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "rotate:c00",
+      "http_status": 200,
+      "error": null,
+      "revision": 30,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "save",
+      "http_status": 200,
+      "error": null,
+      "revision": 30,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "reset",
+      "http_status": 200,
+      "error": null,
+      "revision": 31,
+      "generation_changed": true,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "restore",
+      "http_status": 200,
+      "error": null,
+      "revision": 32,
+      "generation_changed": true,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "state",
+      "http_status": 200,
+      "error": null,
+      "revision": 32,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "stop-owned-process-tree",
+      "pid": 10776,
+      "exit_code": 0
+    },
+    {
+      "check": "state",
+      "http_status": 200,
+      "error": null,
+      "revision": 32,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "R2-partial-circuit",
+      "viewport_width": 1280,
+      "document_width": 1280,
+      "controls": 28,
+      "outside_viewport": 0,
+      "visible_object_ids": [
+        "r2_powerbox",
+        "r2_monitor",
+        "r2_maintenance",
+        "r2_door"
+      ]
+    },
+    {
+      "check": "R2-mobile-circuit",
+      "viewport_width": 375,
+      "document_width": 375,
+      "controls": 28,
+      "outside_viewport": 0,
+      "visible_object_ids": [
+        "r2_powerbox",
+        "r2_monitor",
+        "r2_maintenance",
+        "r2_door"
+      ]
+    },
+    {
+      "check": "rotate:c00",
+      "http_status": 200,
+      "error": null,
+      "revision": 33,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "rotate:c00",
+      "http_status": 200,
+      "error": null,
+      "revision": 34,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "rotate:c01",
+      "http_status": 200,
+      "error": null,
+      "revision": 35,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "rotate:c02",
+      "http_status": 200,
+      "error": null,
+      "revision": 36,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            3,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "rotate:c02",
+      "http_status": 200,
+      "error": null,
+      "revision": 37,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            3,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "rotate:c10",
+      "http_status": 200,
+      "error": null,
+      "revision": 38,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            3,
+            1,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "rotate:c10",
+      "http_status": 200,
+      "error": null,
+      "revision": 39,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "rotate:c21",
+      "http_status": 200,
+      "error": null,
+      "revision": 40,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "rotate:c22",
+      "http_status": 200,
+      "error": null,
+      "revision": 41,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "rotate:c22",
+      "http_status": 200,
+      "error": null,
+      "revision": 42,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            2
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "rotate:c22",
+      "http_status": 200,
+      "error": null,
+      "revision": 43,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "editing",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "submit_circuit",
+      "http_status": 200,
+      "error": null,
+      "revision": 44,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CIRCUIT_READY",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "completed",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "partial-circuit-save-restore-refresh-OSrestart-and-alternate-public-connection",
+      "passed": true,
+      "public_derived_solution": {
+        "c00": 1,
+        "c01": 1,
+        "c02": 2,
+        "c10": 2,
+        "c11": 0,
+        "c12": 0,
+        "c20": 0,
+        "c21": 1,
+        "c22": 3
+      },
+      "alternate": {
+        "c00": 3,
+        "c01": 1,
+        "c02": 2,
+        "c10": 2,
+        "c11": 0,
+        "c12": 0,
+        "c20": 0,
+        "c21": 1,
+        "c22": 3
+      }
+    },
+    {
+      "check": "interact:r2_powerbox",
+      "http_status": 200,
+      "error": null,
+      "revision": 45,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "completed",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "interact:r2_monitor",
+      "http_status": 200,
+      "error": null,
+      "revision": 47,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "BOOTING",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "completed",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "interact:r2_monitor",
+      "http_status": 200,
+      "error": null,
+      "revision": 48,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "completed",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "save",
+      "http_status": 200,
+      "error": null,
+      "revision": 48,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "completed",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "submit_login",
+      "http_status": 409,
+      "error": "WRONG_CODE",
+      "revision": 48,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "completed",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "submit_login",
+      "http_status": 200,
+      "error": null,
+      "revision": 49,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "UNLOCKED",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "completed",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "restore",
+      "http_status": 200,
+      "error": null,
+      "revision": 50,
+      "generation_changed": true,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "completed",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "state",
+      "http_status": 200,
+      "error": null,
+      "revision": 50,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "completed",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "state",
+      "http_status": 200,
+      "error": null,
+      "revision": 50,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "completed",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "R2-login-graybox",
+      "viewport_width": 1280,
+      "document_width": 1280,
+      "controls": 21,
+      "outside_viewport": 0,
+      "visible_object_ids": [
+        "r2_powerbox",
+        "r2_monitor",
+        "r2_maintenance",
+        "r2_door"
+      ]
+    },
+    {
+      "check": "R2-mobile-login",
+      "viewport_width": 375,
+      "document_width": 375,
+      "controls": 21,
+      "outside_viewport": 0,
+      "visible_object_ids": [
+        "r2_powerbox",
+        "r2_monitor",
+        "r2_maintenance",
+        "r2_door"
+      ]
+    },
+    {
+      "check": "submit_login",
+      "http_status": 200,
+      "error": null,
+      "revision": 51,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "UNLOCKED",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "completed",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "interact:r2_monitor",
+      "http_status": 200,
+      "error": null,
+      "revision": 52,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "completed",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 7,
+      "inventory": []
+    },
+    {
+      "check": "move:R3",
+      "http_status": 200,
+      "error": null,
+      "revision": 57,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 8,
+      "inventory": [
+        "research_strip",
+        "access_card"
+      ]
+    },
+    {
+      "check": "use:research_strip:r3_panel",
+      "http_status": 200,
+      "error": null,
+      "revision": 60,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "use:access_card:exit_door",
+      "http_status": 200,
+      "error": null,
+      "revision": 61,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "CARD_ACCEPTED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "move:EXIT",
+      "http_status": 409,
+      "error": "PRECONDITION_FAILED",
+      "revision": 61,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "CARD_ACCEPTED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "interact:exit_door",
+      "http_status": 200,
+      "error": null,
+      "revision": 62,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "editing"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "submit_sequence",
+      "http_status": 409,
+      "error": "WRONG_CODE",
+      "revision": 62,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "editing"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "submit_sequence",
+      "http_status": 422,
+      "error": "BAD_ARGUMENT",
+      "revision": 62,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "editing"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "save",
+      "http_status": 200,
+      "error": null,
+      "revision": 62,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "editing"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "restore",
+      "http_status": 200,
+      "error": null,
+      "revision": 63,
+      "generation_changed": true,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "editing"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "state",
+      "http_status": 200,
+      "error": null,
+      "revision": 63,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "editing"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "move:R2",
+      "http_status": 200,
+      "error": null,
+      "revision": 64,
+      "generation_changed": false,
+      "room": "R2",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": {
+          "status": "completed",
+          "rotations": [
+            3,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            3
+          ]
+        },
+        "sequence": null
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "move:R3",
+      "http_status": 200,
+      "error": null,
+      "revision": 65,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "editing"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "R3-sequence-panel",
+      "viewport_width": 1280,
+      "document_width": 1280,
+      "controls": 24,
+      "outside_viewport": 0,
+      "visible_object_ids": [
+        "r3_legend",
+        "r3_panel",
+        "exit_door"
+      ]
+    },
+    {
+      "check": "R3-mobile-sequence",
+      "viewport_width": 375,
+      "document_width": 375,
+      "controls": 24,
+      "outside_viewport": 0,
+      "visible_object_ids": [
+        "r3_legend",
+        "r3_panel",
+        "exit_door"
+      ]
+    },
+    {
+      "check": "submit_sequence",
+      "http_status": 200,
+      "error": null,
+      "revision": 66,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "completed"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "save",
+      "http_status": 200,
+      "error": null,
+      "revision": 66,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "completed"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "reset",
+      "http_status": 200,
+      "error": null,
+      "revision": 67,
+      "generation_changed": true,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "restore",
+      "http_status": 200,
+      "error": null,
+      "revision": 68,
+      "generation_changed": true,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "completed"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "state",
+      "http_status": 200,
+      "error": null,
+      "revision": 68,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "completed"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "cross-room-public-sequence-wrong-duplicates-draft-clears-restore-reload-room-and-completed-save",
+      "passed": true,
+      "derived_sequence": [
+        "ventilation",
+        "cooling",
+        "lighting",
+        "safety"
+      ]
+    },
+    {
+      "check": "move:EXIT",
+      "http_status": 409,
+      "error": "PRECONDITION_FAILED",
+      "revision": 68,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "completed"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "interact:exit_door",
+      "http_status": 200,
+      "error": null,
+      "revision": 69,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "UNLOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "completed"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "interact:exit_door",
+      "http_status": 200,
+      "error": null,
+      "revision": 70,
+      "generation_changed": false,
+      "room": "R3",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "OPEN"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": {
+          "status": "completed"
+        }
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "move:EXIT",
+      "http_status": 200,
+      "error": null,
+      "revision": 71,
+      "generation_changed": false,
+      "room": "EXIT",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "OPEN"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      },
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 8,
+      "inventory": [
+        "access_card"
+      ]
+    },
+    {
+      "check": "mobile-victory",
+      "viewport_width": 375,
+      "document_width": 375,
+      "controls": 11,
+      "outside_viewport": 0,
+      "visible_object_ids": []
+    },
+    {
+      "check": "three-room-route-slots-items-save-restore-reload-actual-server-restart-win",
+      "passed": true,
+      "final_room": "EXIT"
+    },
+    {
+      "check": "create",
+      "http_status": 201,
+      "error": null,
+      "revision": 0,
+      "generation_changed": false,
+      "room": "R1",
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "save",
+      "http_status": 200,
+      "error": null,
+      "revision": 1,
+      "generation_changed": false,
+      "room": "R1",
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "clues": 1,
+      "inventory": []
+    },
+    {
+      "check": "reset",
+      "http_status": 200,
+      "error": null,
+      "revision": 2,
+      "generation_changed": true,
+      "room": "R1",
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "restore",
+      "http_status": 200,
+      "error": null,
+      "revision": 3,
+      "generation_changed": true,
+      "room": "R1",
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "clues": 1,
+      "inventory": []
+    },
+    {
+      "check": "light-old-mode-selection-save-slot-and-namespace",
+      "mode": "legacy",
+      "level": "2.0.0",
+      "passed": true
+    },
+    {
+      "check": "create",
+      "http_status": 201,
+      "error": null,
+      "revision": 0,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "save",
+      "http_status": 200,
+      "error": null,
+      "revision": 1,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "clues": 1,
+      "inventory": []
+    },
+    {
+      "check": "reset",
+      "http_status": 200,
+      "error": null,
+      "revision": 2,
+      "generation_changed": true,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "restore",
+      "http_status": 200,
+      "error": null,
+      "revision": 3,
+      "generation_changed": true,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "clues": 1,
+      "inventory": []
+    },
+    {
+      "check": "light-old-mode-selection-save-slot-and-namespace",
+      "mode": "v3.1",
+      "level": "3.1.0",
+      "passed": true
+    },
+    {
+      "check": "create",
+      "http_status": 201,
+      "error": null,
+      "revision": 0,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "save",
+      "http_status": 200,
+      "error": null,
+      "revision": 1,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "reset",
+      "http_status": 200,
+      "error": null,
+      "revision": 2,
+      "generation_changed": true,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "restore",
+      "http_status": 200,
+      "error": null,
+      "revision": 3,
+      "generation_changed": true,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "light-old-mode-selection-save-slot-and-namespace",
+      "mode": "v3.2",
+      "level": "3.2.0",
+      "passed": true
+    },
+    {
+      "check": "stop-owned-process-tree",
+      "pid": 14740,
+      "exit_code": 0
+    },
+    {
+      "check": "stop-owned-process-tree",
+      "pid": 15380,
+      "exit_code": 0
+    },
+    {
+      "check": "stop-owned-process-tree",
+      "pid": 19940,
+      "exit_code": 0
+    },
+    {
+      "check": "stop-owned-process-tree",
+      "pid": 11468,
+      "exit_code": 0
+    },
+    {
+      "check": "stop-owned-process-tree",
+      "pid": 2616,
+      "exit_code": 0
+    },
+    {
+      "check": "stop-owned-process-tree",
+      "pid": 19920,
+      "exit_code": 0
+    },
+    {
+      "check": "stop-owned-process-tree",
+      "pid": 7032,
+      "exit_code": 0
+    },
+    {
+      "check": "stop-owned-process-tree",
+      "pid": 8920,
+      "exit_code": 0
+    }
+  ],
+  "issues": [],
+  "limitations": [
+    "No actual root CMD startup; direct loopback module launches only; partial circuit OS restart exercised",
+    "No real model quality or human completion-time claim",
+    "Old-version light smoke uses owned public-created slots, no historical sensitive DB access"
+  ]
+}

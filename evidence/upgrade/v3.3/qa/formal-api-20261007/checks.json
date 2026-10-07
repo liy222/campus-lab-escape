@@ -1,0 +1,6598 @@
+[
+  {
+    "test": "test_ai_legitimate_read_preserves_partial_board_and_manual_only_tools",
+    "operation": "inspect",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_legitimate_read_preserves_partial_board_and_manual_only_tools",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_legitimate_read_preserves_partial_board_and_manual_only_tools",
+    "operation": "submit_code",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "CODE_ACCEPTED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_legitimate_read_preserves_partial_board_and_manual_only_tools",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_legitimate_read_preserves_partial_board_and_manual_only_tools",
+    "operation": "take",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_legitimate_read_preserves_partial_board_and_manual_only_tools",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_legitimate_read_preserves_partial_board_and_manual_only_tools",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "OPEN",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_legitimate_read_preserves_partial_board_and_manual_only_tools",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "MISSING_FUSE",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_legitimate_read_preserves_partial_board_and_manual_only_tools",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_legitimate_read_preserves_partial_board_and_manual_only_tools",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "inspect",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "submit_code",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "CODE_ACCEPTED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "take",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "OPEN",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "MISSING_FUSE",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          2
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "submit_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "BOOTING",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "LOGIN_LOCKED",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "submit_login",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "UNLOCKED",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "CARD_ACCEPTED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "editing"
+      }
+    }
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "forged_callback_case": "unknown-circuit",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "forged_callback_case": "unknown-sequence",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "forged_callback_case": "rotate-read",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "forged_callback_case": "solved-read",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_ai_read_guard_cannot_mutate_circuit_sequence_or_reveal_unknown_board",
+    "forged_callback_case": "sequence-device-read",
+    "stopped": "MODEL_INVALID_OUTPUT",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "inspect",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "submit_code",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "CODE_ACCEPTED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "take",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "OPEN",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "MISSING_FUSE",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          3,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          3,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          3,
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          3,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          3,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          3,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          3,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          2
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          3,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "operation": "submit_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          3,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_alternate_valid_connection_accepted_without_exact_orientation_array",
+    "alternate_public_port_equivalent": true,
+    "base": {
+      "c00": 1,
+      "c01": 1,
+      "c02": 2,
+      "c10": 2,
+      "c11": 0,
+      "c12": 0,
+      "c20": 0,
+      "c21": 1,
+      "c22": 3
+    },
+    "alternate": {
+      "c00": 3,
+      "c01": 1,
+      "c02": 2,
+      "c10": 2,
+      "c11": 0,
+      "c12": 0,
+      "c20": 0,
+      "c21": 1,
+      "c22": 3
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "inspect",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "submit_code",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "CODE_ACCEPTED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "take",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "OPEN",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "MISSING_FUSE",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "save",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "restore",
+    "http_status": 409,
+    "error": "SNAPSHOT_VERSION_MISMATCH",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "restore",
+    "http_status": 409,
+    "error": "SNAPSHOT_VERSION_MISMATCH",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "restore",
+    "http_status": 409,
+    "error": "SNAPSHOT_VERSION_MISMATCH",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_cross_version_snapshots_rejected_without_overwriting_current_progress",
+    "operation": "restore",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "inspect",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "submit_code",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "CODE_ACCEPTED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "take",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "OPEN",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "MISSING_FUSE",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "save",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "reset",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "restore",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          2
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "submit_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "save",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "reset",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "restore",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "BOOTING",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "LOGIN_LOCKED",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "submit_login",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "UNLOCKED",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "CARD_ACCEPTED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "editing"
+      }
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "submit_sequence",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": true
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "completed"
+      }
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "save",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": true
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "completed"
+      }
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "reset",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "restore",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": true
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "completed"
+      }
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "UNLOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": true
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "completed"
+      }
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "OPEN"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": true
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "completed"
+      }
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "EXIT",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "OPEN"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": true
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_partial_rotations_save_restore_reopen_and_full_route_independent_derivation",
+    "public_derived_rotations": {
+      "c00": 1,
+      "c01": 1,
+      "c02": 2,
+      "c10": 2,
+      "c11": 0,
+      "c12": 0,
+      "c20": 0,
+      "c21": 1,
+      "c22": 3
+    },
+    "public_derived_sequence": [
+      "ventilation",
+      "cooling",
+      "lighting",
+      "safety"
+    ],
+    "partial_and_completed_stages_saved_restored_reopened": true,
+    "final_room": "EXIT"
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "inspect",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "submit_code",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "CODE_ACCEPTED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "take",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "OPEN",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "MISSING_FUSE",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          2
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "submit_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "BOOTING",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "LOGIN_LOCKED",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "submit_login",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "UNLOCKED",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "CARD_ACCEPTED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "editing"
+      }
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "submit_sequence",
+    "http_status": 409,
+    "error": "WRONG_CODE",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "editing"
+      }
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "submit_sequence",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": true
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "completed"
+      }
+    }
+  },
+  {
+    "test": "test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze",
+    "operation": "submit_sequence",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": true
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "completed"
+      }
+    }
+  },
+  {
+    "test": "test_strict_rotate_and_submit_shapes_reject_invalid_modules_angles_and_extras",
+    "operation": "inspect",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_strict_rotate_and_submit_shapes_reject_invalid_modules_angles_and_extras",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_strict_rotate_and_submit_shapes_reject_invalid_modules_angles_and_extras",
+    "operation": "submit_code",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "CODE_ACCEPTED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_strict_rotate_and_submit_shapes_reject_invalid_modules_angles_and_extras",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_strict_rotate_and_submit_shapes_reject_invalid_modules_angles_and_extras",
+    "operation": "take",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_strict_rotate_and_submit_shapes_reject_invalid_modules_angles_and_extras",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_strict_rotate_and_submit_shapes_reject_invalid_modules_angles_and_extras",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "OPEN",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_strict_rotate_and_submit_shapes_reject_invalid_modules_angles_and_extras",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "MISSING_FUSE",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_strict_rotate_and_submit_shapes_reject_invalid_modules_angles_and_extras",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_strict_rotate_and_submit_shapes_reject_invalid_modules_angles_and_extras",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "inspect",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "submit_code",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "CODE_ACCEPTED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "take",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "OPEN",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "MISSING_FUSE",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "submit_circuit",
+    "http_status": 409,
+    "error": "WRONG_CODE",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          2
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "editing",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "submit_circuit",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "rotate_circuit",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "submit_circuit",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "BOOTING",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "LOGIN_LOCKED",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "submit_login",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "UNLOCKED",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": {
+        "status": "completed",
+        "rotations": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "use_item",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "CARD_ACCEPTED"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "editing"
+      }
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "submit_code",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "editing"
+      }
+    }
+  },
+  {
+    "test": "test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass",
+    "operation": "interact",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "slots": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "progress": {
+      "power_on": true,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": {
+        "status": "editing"
+      }
+    }
+  },
+  {
+    "test": "test_unknown_boards_stay_null_and_wrong_room_manual_actions_reject",
+    "operation": "rotate_circuit",
+    "http_status": 409,
+    "error": "NOT_VISIBLE",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unknown_boards_stay_null_and_wrong_room_manual_actions_reject",
+    "operation": "submit_circuit",
+    "http_status": 409,
+    "error": "NOT_VISIBLE",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unknown_boards_stay_null_and_wrong_room_manual_actions_reject",
+    "operation": "submit_sequence",
+    "http_status": 409,
+    "error": "NOT_VISIBLE",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unknown_boards_stay_null_and_wrong_room_manual_actions_reject",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unknown_boards_stay_null_and_wrong_room_manual_actions_reject",
+    "operation": "submit_circuit",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R2",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  },
+  {
+    "test": "test_unknown_boards_stay_null_and_wrong_room_manual_actions_reject",
+    "operation": "move",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "slots": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "progress": {
+      "power_on": false,
+      "check_done": false
+    },
+    "mini": {
+      "circuit": null,
+      "sequence": null
+    }
+  }
+]

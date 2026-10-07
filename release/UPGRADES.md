@@ -1,13 +1,13 @@
 # 游戏升级路线与交付门槛
 
-本文跟踪 `docs/upgrade-plan.md` 中已接受的 v3.0–v4.2 范围。计划是设计基线，不是执行或验收证据。本地当前工作版本为 v3.2（关卡3.2.0、Schema 1.2.0），独立 API QA 已通过；Main 正常同步收尾，v3.2 tag 待登记。`CH01_v2` 是历史冻结基线。旧版工程检查、实验与评价器结论不会自动扩展到本升级路线。
+本文跟踪 `docs/upgrade-plan.md` 中已接受的 v3.0–v4.2 范围。计划是设计基线，不是执行或验收证据。本地当前候选为 v3.3（关卡3.3.0、Schema 1.3.0），独立 QA 已按联合证据接受并 SOURCE STOP；`v3.3-mini-games` tag 待 Main 同步登记。`CH01_v2` 是历史冻结基线。旧版工程检查、实验与评价器结论不会自动扩展到本升级路线。
 
 | 版本 | 主要范围 | 当前状态 |
 |---|---|---|
 | v3.0 | 降低信息暴露；统一观察、互动、使用物品入口 | 独立 QA 通过；已推送 commit `1499610`，tag `v3.0-gameplay-information` |
 | v3.1 | 多状态物体及对应视觉状态要求 | 独立 QA 通过；commit `cfab6616c288fc1d5a3b41ae118911a13e9ad321` 与 tag `v3.1-object-state` 已推送 |
-| v3.2 | 重设计三房间谜题网络并完成房间灰盒布局 | 独立 API QA 通过（97 passed、257 子项、exit 0）；Main 正常同步收尾，tag 待登记 |
-| v3.3 | 线路连接、顺序操作两类小游戏及可操作灰盒 | 未开始 |
+| v3.2 | 重设计三房间谜题网络并完成房间灰盒布局 | 独立 API QA 通过（97 passed、257 子项、exit 0）；commit `519c8d0d542fcfedd4bfaaaf8b81e68b00d05925` 与 tag `v3.2-puzzle-redesign` 已推送 |
+| v3.3 | 线路连接、顺序操作两类小游戏及可操作灰盒 | 独立 QA 按联合 API 运行与定向复验、同候选 build/browser 结果接受；SOURCE STOP；tag 待 Main 同步登记 |
 | v3.4 | 跨房间线索、AI 三级提示、结算与完整灰盒通关 | 未开始 |
 | v4.0 | 引入 Phaser，完成 Room 1 正式画面 | 未开始；须等 v3.4 灰盒通过 |
 | v4.1 | 完成 Room 2 正式画面 | 未开始 |
@@ -37,7 +37,19 @@ v3.1 使用关卡级别 3.1、Schema 1.1 与独立数据库/浏览器 session na
 
 v3.2 使用关卡级别 3.2、Schema 1.2，默认独立 `game-v3.2.sqlite` 与 v3.2 浏览器 session namespace；显式 legacy 与 v3.1 模式及各自数据空间保留，不自动迁移。正式独立 API 复验在修复后候选上 exit 0：97 passed、257 个子项通过、1 个弃用警告，覆盖原有89项和新增8个测试方法。覆盖46步三房间路线与46次阶段保存/Store重开/恢复、错误目标无副作用、跨版本快照拒绝、AI读取边界等；首轮发现的既有线索内容伪造问题及另11类伪造读取均由完整 API 复验检查，全部通过。结果及证据见 [`v3.2 QA 摘要`](../evidence/upgrade/v3.2/qa/result.json) 与 [`独立报告`](../review/findings/upgrade-v32.md)。
 
-Chrome 61项检查和前端 build exit 0来自原候选，来源与结果被保留复用；修复仅涉及 AI runtime，修复后没有重复运行浏览器或 build。根目录启动 CMD 做了字节/配置检查，但没有实际启动。测试使用合成 AI callback/provider，没有付费或真实模型调用；没有真人试玩或20–30分钟通关时长验收。现有 Starlette TestClient/httpx 弃用警告仍存在。v3.2 tag 由 Main 按正常同步流程登记；本文件不预填 commit SHA。
+Chrome 61项检查和前端 build exit 0来自原候选，来源与结果被保留复用；修复仅涉及 AI runtime，修复后没有重复运行浏览器或 build。根目录启动 CMD 做了字节/配置检查，但没有实际启动。测试使用合成 AI callback/provider，没有付费或真实模型调用；没有真人试玩或20–30分钟通关时长验收。现有 Starlette TestClient/httpx 弃用警告仍存在。v3.2 commit `519c8d0d542fcfedd4bfaaaf8b81e68b00d05925` 与 tag `v3.2-puzzle-redesign` 已推送。
+
+## v3.3 独立 QA：联合证据接受
+
+v3.3 使用关卡3.3.0、Schema 1.3.0，默认独立 `game-v3.3.sqlite` 与 `campus-lab-session-upgrade-v3.3` 浏览器 session namespace；显式 v3.2、v3.1 与 legacy 模式及各自数据库/session 保留，不自动迁移。三种新手动操作是旋转线路模块、提交线路和提交四设备顺序；AI 原有工具保持不变。
+
+线路灰盒根据服务器公开的3×3模块形状和旋转状态绘制。玩家点击模块顺时针旋转90°，方向端口、电源和主系统标识帮助阅读布局；只有点击“提交线路”才由服务器验证连通性。前端不计算解法；局部线路状态由服务端持久化。顺序面板以不同于 Room 1 源符号顺序的设备列表呈现，玩家可逐项加入草稿、重复选择、清空或提交；只有服务器确认后才推进进度。草稿仅留在当前页面，刷新、重置、恢复存档、切换房间或 generation 时清空。
+
+API 证据是两个 epoch：首轮全套运行 exit 1，105 passed、291 个子项通过、1 个 QA 尾部预期错误；唯一失败断言误以为普通 `interact r3_panel` 应返回 200，服务器按设计返回 409 并阻止小游戏旁路。随后只修正该新方法的 QA 预期并定向复验，exit 0，1 passed、3 个子项通过。旧 97 项和新增 9 个 API 方法由首轮全套与定向复验联合覆盖；没有重跑全套 exit 0，也没有宣称 106 passed。两次运行均有既有 TestClient/httpx 弃用警告。
+
+全程 27 个产品候选文件 before/after 匹配。Build exit 0，Chrome exit 0、102 项摘要检查、issues 为空，6 张截图已目视检查；Chrome 与 build 均绑定该候选且未重跑。浏览器覆盖手动线路旋转/服务器提交、线路局部存档保存恢复与进程重启、四设备顺序及错误草稿、恢复/刷新/换房间清除草稿、主电闸交互、终检胜利、375px 布局与旧版本 session 隔离。线路和顺序截图来自桌面；375px 小游戏布局由 DOM 几何检查覆盖。
+
+根目录 launcher 首轮检查因 QA 错误期待不存在的命令行 flag 而 exit 1；按实际 `GAMEPLAY_VERSION=upgrade`、v3.3 数据库与 `--provider mock` 配置重新检查 exit 0。没有实际启动根目录 CMD。QA 使用合成 provider，没有真实模型质量或真人20–30分钟通关时长验收；旧版本仅用新建 session/save slot 检查，没有读取历史敏感数据库。详细计数、命令、候选绑定与限制见 [`v3.3 QA 结果`](../evidence/upgrade/v3.3/qa/result.json) 和 [`独立报告`](../review/findings/upgrade-v33.md)。owner build、launcher 和文档记录分别见 [`前端记录`](../evidence/upgrade/v3.3/frontend.json)、[`Delivery 记录`](../evidence/upgrade/v3.3/delivery.json) 与 [`文档记录`](../evidence/upgrade/v3.3/docs.json)。本阶段没有加入 Phaser、最终美术或付费 provider 调用。v3.3 tag 待 Main 同步登记；本文不预填 commit SHA。
 
 ## 阶段边界
 

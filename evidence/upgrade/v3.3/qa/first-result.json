@@ -1,0 +1,21 @@
+{
+  "status": "First full API failed one QA expectation; product-source unchanged",
+  "api": {
+    "exit_code": 1,
+    "passed": 105,
+    "failed": 1,
+    "passed_subtests": 291,
+    "warnings": 1,
+    "failure": "New test incorrectly expected generic r3_panel interact200; actual409 PRECONDITION_FAILED correctly blocks bypass",
+    "evidence": "evidence/upgrade/v3.3/qa/formal-api-20261007",
+    "stdout": "evidence/upgrade/v3.3/qa/formal-api-20261007/stdout-compact.txt"
+  },
+  "build_exit_code": 0,
+  "browser_exit_code": 0,
+  "browser_checks": 102,
+  "launcher_exit_code": 1,
+  "launcher_failure": "QA assumed flags --gameplay-version/--mock instead of actual GAMEPLAY_VERSION environment and --provider mock",
+  "raw_stdout_local_path": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-v33-qa-raw-64_0pcrr\\first-api-stdout.local.txt",
+  "raw_stdout_sha256": "c4d1bf01ede17a684584fbd2ccbab71eb1945f98d2bb3ece274bc0ab3500898b",
+  "paid_calls": 0
+}

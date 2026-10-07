@@ -1,0 +1,43 @@
+.uuuuuuuuuuuu...uuuuuuuuuuuuuuuuuuuuuuuu...........uuu...uuuuu.........u [ 26%]
+uuuuuuuuuuuuuuuuu......uuuuuuuuuuuuuuuuuuuuu.uuuuuuuuuuuuuuu.uuuu....uuu [ 37%]
+uuuuuuuuu..uuuuuuuuuuuu...uuuuuuuuuuuuuuuuuuuuuuuu...........uuu...uuuuu [ 55%]
+...uuuuuuuuu...........uuuu.uuuuuu.....uuuuuuuuuuuuuuu.uuuuuuuuuuuuuuuuu [ 75%]
+uuu..uuuuuuuu....uuuuuuuuuuuuuuu......uuuuuuuuuuuu.uuuuuuuuuu......uuuuu [ 93%]
+..uuu..uuuuuuuuu.uuuuuuuuuuu.uuuFuuu.                                    [100%]
+================================== FAILURES ===================================
+_ UpgradeV33Acceptance.test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass _
+
+self = <tests.api.test_upgrade_v33.UpgradeV33Acceptance testMethod=test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass>
+
+    def test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass(self):
+        board=self.circuit_ready_to_edit()
+        self.assertFalse(connected_public(board))
+        self.reject(self.request('submit_circuit',{'target_id':'r2_powerbox'}),'WRONG_CODE')
+        self.reject(self.request('interact',{'target_id':'r2_powerbox'}),'PRECONDITION_FAILED')
+        for extra in [{'solved':True},{'rotations':[0]*9},{'state':'CIRCUIT_READY'}]:
+            with self.subTest(extra=extra): self.reject(self.request('submit_circuit',{'target_id':'r2_powerbox',**extra}),'BAD_ARGUMENT',422)
+        before=self.state()
+        for _ in range(4): self.action('rotate_circuit',{'target_id':'r2_powerbox','module_id':board['modules'][0]['module_id']})
+        self.assertEqual(self.state()['minigames'],before['minigames']); self.assert_real_progress(before)
+        self.finish_circuit()
+        self.reject(self.request('rotate_circuit',{'target_id':'r2_powerbox','module_id':board['modules'][0]['module_id']}),'PRECONDITION_FAILED')
+        self.reject(self.request('submit_circuit',{'target_id':'r2_powerbox'}),'PRECONDITION_FAILED')
+        self.route32(23,42)
+        self.reject(self.request('submit_code',{'target_id':'r3_panel','code':'4792'}),'PRECONDITION_FAILED')
+>       before=self.state(); self.action('interact',{'target_id':'r3_panel'}); self.assertEqual(self.state()['progress'],before['progress'])
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\api\test_upgrade_v33.py:218: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\api\test_r1.py:104: in action
+    self.assertEqual(status, 200, sanitize(body))
+E   AssertionError: 409 != 200; error.code=PRECONDITION_FAILED; full public-state assertion dump omitted from exported evidence
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/api/test_upgrade_v33.py::UpgradeV33Acceptance::test_unconnected_submit_interact_numeric_and_client_solved_cannot_bypass
+1 failed, 105 passed, 1 warning, 291 subtests passed in 69.04s (0:01:09)

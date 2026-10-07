@@ -200,3 +200,15 @@ T28 的 `contracts/check_contracts.py --output <new-path>` 只新增可指定报
 inspect 仅登记本次可见对象的观察及当前可得谜题线索；中性外观不创建虚构 observation clue。样本读数只能在玻片已安装时取得，纸条只有 DATA_READ 后可见。AI read callback 校验知识单调、声明一致、版本增量一致、新知识属于本次调用前可见目标，禁止读取改变背包/房间/状态/设备/物品槽/进度/出口/存档/会话/版本；get_inventory 不能新增知识。猜中正确输入允许，但真实物品、电源及设备阶段前置不能绕过。
 
 本节是接口与行为规格，不代表 QA 已执行；实际命令与结果另存各版 evidence。
+
+## 当前升级接口 v3.3
+
+`upgrade`/`v3.3` 选择 level3.3.0/schema1.3.0，默认 game-v3.3.sqlite。显式 v3.2、v3.1、legacy 保持原规则、独立数据库及严格投影；create_app() 的默认 legacy 不变。旧存档无自动迁移，跨版本拒绝 SNAPSHOT_VERSION_MISMATCH；已存在数据库不删除或重置。
+
+沿用四设备链、显微镜和纸条两个物理槽，新增服务器 required circuit_rotations（九项整数0–3）。公开 minigames 必有 circuit/sequence 两个 nullable 字段。电路只在当前R2、电箱已观察且 FUSE_INSTALLED/CIRCUIT_READY/POWER_ON 暴露；顺序只在当前R3、控制台已观察、纸条已插且出口处于 FINAL_CHECK/UNLOCKED/OPEN 暴露。初始及其他房间投影为空，不把未来盘信息送到模型。AI read guard 将 minigames 视为受保护游戏字段。
+
+线路盘3×3，module_id=c00到c22行主序，shape=I|L，rotation=0|1|2|3。零旋转I端口N/S、L端口N/E，每次顺时针90度；side=N|E|S|W。公开source/sink为module_id和side，modules含row/column/shape/rotation，status=editing|completed。rotate_circuit {target_id:r2_powerbox,module_id} 将部分旋转持久化；submit_circuit {target_id:r2_powerbox} 遍历相邻模块互惠端口，必须连接公开source到sink。无固定期望角度数组、无客户端solved字段；等效180度直线及无关模块旋转也可通过。通过才到 CIRCUIT_READY，之后普通 interact 合总闸到 POWER_ON。通过盘冻结；FUSE_INSTALLED 的普通 interact 不能旁路。保存、恢复、读状态和重启均复用原Store事务，部分旋转属于存档game_fields。
+
+submit_sequence {target_id:r3_panel,device_ids} 要求恰四个唯一合法标识 cooling/lighting/safety/ventilation；控制台已观察并插纸，出口 FINAL_CHECK 且尚未完成。按钮公开设备名和符号，布局 cooling▲、lighting★、safety●、ventilation■，与源序不同；完整答案由R1源序、R2读取位置和R3对应规则推导。旧 r3_panel submit_code 一律无法完成新版终检。成功保存 check_done，但出口仍需释放门锁、推门和移动。未提交顺序草稿仅前端，reload/restore/房间切换时清空，不纳入存档。
+
+三个新动作仅手动接口，不加入原六provider tools。额外字段、非法module/device、重复device、错误长度拒绝 BAD_ARGUMENT；目标不可见 NOT_VISIBLE；未观察、物理阶段未到或已冻结 PRECONDITION_FAILED；合法格式但线路未通/顺序错误 WRONG_CODE，无正确答案回显、无道具/真实进度破坏。所有修改仍受revision/generation/request_id约束。本节为行为规格；自验和独立QA事实另见v3.3证据。

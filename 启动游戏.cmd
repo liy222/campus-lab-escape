@@ -12,7 +12,7 @@ if not exist "%PROJECT_PYTHON%" (
 )
 set "PYTHONUTF8=1"
 set "GAMEPLAY_VERSION=upgrade"
-set "SQLITE_PATH=./data/game-v3.2.sqlite"
+set "SQLITE_PATH=./data/game-v3.3.sqlite"
 echo 正在启动免费演示模式。
 echo 首次使用请按 README.md 安装依赖。
 "%PROJECT_PYTHON%" -m scripts.dev --provider mock --open-browser

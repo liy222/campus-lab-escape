@@ -1,0 +1,30 @@
+{
+  "command": [
+    "C:/Users/liyh/.conda/envs/1/python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-",
+    "<read-only launcher byte/config directed recheck>"
+  ],
+  "exit_code": 0,
+  "recorded_at": "2026-10-07T06:03:17.610983+00:00",
+  "candidate": "evidence/upgrade/v3.3/candidate.json",
+  "file": "启动游戏.cmd",
+  "sha256": "6e6d52312a2aef94841658ea91f42cd0300cc5960f34a902800e7bcd625575b6",
+  "checks": {
+    "no_CRCRLF": true,
+    "no_BOM": true,
+    "all_newlines_CRLF": true,
+    "selects_v33_database": true,
+    "selects_upgrade_environment": true,
+    "mock_provider_argument": true,
+    "dev_supports_v32_legacy_v31": true,
+    "candidate_launcher_hash_match": true,
+    "candidate_dev_hash_match": true
+  },
+  "first_attempt_preserved": "evidence/upgrade/v3.3/qa/launcher-byte-first.json",
+  "qa_correction": "Original check assumed nonexistent --gameplay-version and --mock flags; actual CMD sets GAMEPLAY_VERSION=upgrade and passes --provider mock. No product change.",
+  "actual_root_CMD_started": false,
+  "limitation": "Byte/config inspection only; not actual root CMD startup"
+}
