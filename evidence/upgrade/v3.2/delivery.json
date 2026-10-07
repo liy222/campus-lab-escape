@@ -1,0 +1,35 @@
+{
+  "milestone": "v3.2",
+  "owner": "delivery-engineering",
+  "status": "SOURCE STOP",
+  "source_files": {
+    "scripts/dev.py": "a73331a9d42e6b15309e11bbaf6b2bfdfc511a6e28dbe261c38ab60c60d961a0",
+    "启动游戏.cmd": "d33b8d577e7f7d2d0c8c3c8821409b27beae9d549b0d159d30284ba9dadf9db8"
+  },
+  "checks": [
+    {
+      "command": "python inline: make_frontend_environment mode matrix + inherited VITE/AI/API_KEY/SQLITE_PATH filtering",
+      "exit_code": 0,
+      "result": "legacy->legacy; v3.1->v3.1; v3.2->v3.2; upgrade/default->v3.2; invalid mode rejected"
+    },
+    {
+      "command": "python -m scripts.dev --help",
+      "exit_code": 0,
+      "result": "CLI help rendered successfully"
+    },
+    {
+      "command": "python inline: startup game CMD byte validation",
+      "exit_code": 0,
+      "result": "UTF-8 no BOM, strict CRLF, no CRCRLF, exactly one game-v3.2.sqlite; Python/mock/browser options preserved"
+    },
+    {
+      "command": "git diff --check -- scripts/dev.py 启动游戏.cmd (process-local core.whitespace=cr-at-eol)",
+      "exit_code": 0,
+      "result": "no whitespace errors"
+    }
+  ],
+  "limitations": [
+    "No backend/services launched and no paid provider call made",
+    "No tests, backend, README, or contract files changed"
+  ]
+}

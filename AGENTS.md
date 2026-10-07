@@ -30,3 +30,12 @@ v3.0 commit1499610 and tagv3.0-gameplay-information verified on private remote, 
 After Frontend source stop, Main assigns upgrade_frontend_read temporary mechanical Delivery document ownership of README.md and release/UPGRADES.md only. Existing Delivery scripts/CMD remain frozen. Restoring the historical delivery thread hit agent thread limit; no model identity inferred or extra agent created. Final docs wait actual independent QA result; original source evidence and historical reports remain untouched.
 
 Main integration owns only the v3.1 root CMD CRCRLF-to-CRLF normalization after staged whitespace check; command content unchanged, prior Owner/QA epochs preserved. Independent QA byte delta check precedes final commit.
+
+### v3.2 puzzle redesign GO
+After cfab661/tagv3.1-object-state push verified, Backend owns newpuzzle state/rules and narrow shareddevice helper plus Store selection/main and cross-Spec contracts/docsSPEC/leveldesign; Frontend Luna owns frontend plus temporary Delivery scripts/dev.py/rootCMD/README/UPGRADES. QA owns new3.2 tests/runner/report/evidence; old3.1 fixture selectors may explicitly choosev3.1, assertions retained. Keep old3.1/legacy entries and isolated3.2 data/session. FormalQA only after allstable; no Phaser/art/minigames. evidence/upgrade/v3.2/plan.json records design and dispatch.
+
+Main grants Backend v3.2 only AI runtime read-guard cross-role edit for neutral observed-ID revision increments, with target-only additions/no knowledge deletion and legacy compatibility. Provider/payment/auth remain unchanged; independent QA covers guard and existing AI regression.
+
+
+### 2026-10-07 upgrade recovery ownership
+Prior upgrade agents are no longer live. Main created upgrade_qa_oct07 (requested gpt-6.1-sol/high), upgrade_frontend_oct07 (requested gpt-6-luna/medium), upgrade_backend_oct07 (requested gpt-6.1-sol/high), as returned by actual spawn calls. QA owns tests/review/v3.2 QA evidence and runs only the final fullAPI on SOURCE STOP candidate-fixed. Frontend temporarily owns mechanical README/releaseUPGRADES only until v3.2 closes. Backend reads/plans only until v3.2 commit/push gate. Main retains integration/Git/root documents; no Astra or paid calls. Main runtime remains unverified. Earlier usage-limit interruption is retained, not a completed QA/document claim.

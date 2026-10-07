@@ -1,0 +1,169 @@
+{
+  "version": "v3.2",
+  "status": "SOURCE STOP",
+  "executed_at": "2026-10-06T10:33:31.713600+00:00",
+  "scope": "Backend owner directed verification; independent formal QA pending",
+  "files": [
+    {
+      "path": "backend/app/domain/device_flow.py",
+      "sha256": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557"
+    },
+    {
+      "path": "backend/app/domain/puzzle_models.py",
+      "sha256": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2"
+    },
+    {
+      "path": "backend/app/domain/puzzle_rules.py",
+      "sha256": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150"
+    },
+    {
+      "path": "backend/app/storage/sqlite.py",
+      "sha256": "f905bec75359ce7ffcddc1aacce7287fa88fdd007b114ee9d2da7b29cfc2d7f0"
+    },
+    {
+      "path": "backend/app/main.py",
+      "sha256": "8eff7171d35dd601fef8a937fdae25820ac5532c05b4997871a0b6cd9c0133f8"
+    },
+    {
+      "path": "backend/app/ai/runtime.py",
+      "sha256": "58d5d3d69ba3eb25d6a842d4ab9363eea90dacc26d5cc6f1ceeaa5b36d773707"
+    },
+    {
+      "path": "contracts/build_contracts.py",
+      "sha256": "1e2dc1d4f323d3f0ef35cf31b11d32dd082e81bd4c2ca164794bebee40eeffc0"
+    },
+    {
+      "path": "contracts/api.schema.json",
+      "sha256": "27146ba3450a3babe0a9ffa531ff3c4d3f0758b82e041e82c594400f413c2d39"
+    },
+    {
+      "path": "contracts/routes.json",
+      "sha256": "0b49d1846e56529213b5d12e0f06861828d9b7f6c81bb3e4fe43b5f290e64f8d"
+    },
+    {
+      "path": "docs/SPEC.md",
+      "sha256": "dd01ab5dececdf72abbf61ba1014bb644d916c7c6e94eb78b3372e2b0d79fea8"
+    },
+    {
+      "path": "docs/level_design.md",
+      "sha256": "bd4050769e6228089bfc62a526e679e99e162d48e61b5c9419d046c05c4ceb15"
+    },
+    {
+      "path": "evidence/upgrade/v3.2/owner_check.py",
+      "sha256": "8fbbf56dd192e0b1bfa01b0cf265d771917e7cc9e10681cdb86f45cc01f1a5a0"
+    }
+  ],
+  "compatibility_reference_hashes": [
+    {
+      "path": "backend/app/domain/rules.py",
+      "sha256": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e"
+    },
+    {
+      "path": "backend/app/domain/models.py",
+      "sha256": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1"
+    },
+    {
+      "path": "backend/app/domain/upgrade_rules.py",
+      "sha256": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83"
+    },
+    {
+      "path": "backend/app/domain/upgrade_models.py",
+      "sha256": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb"
+    },
+    {
+      "path": "backend/app/storage/ai.py",
+      "sha256": "1f50248afec17dca561a9b7e40feb9211d66da58b01d8c198bf1f0fbd1ad5400"
+    },
+    {
+      "path": "contracts/tools.json",
+      "sha256": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80"
+    },
+    {
+      "path": "contracts/tools.schema.json",
+      "sha256": "f88d79a4d8e53c04f531e159fb47bb0d99439cd37d9409635bfef25238edb691"
+    }
+  ],
+  "commands": [
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 contracts/build_contracts.py",
+      "exit_code": 0
+    },
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 evidence/upgrade/v3.2/owner_check.py",
+      "attempt": 1,
+      "exit_code": 1,
+      "finding": "Owner harness incorrectly required BAD_ARGUMENT error projection; implementation intentionally returns null. Harness corrected to read authoritative state."
+    },
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 evidence/upgrade/v3.2/owner_check.py",
+      "attempt": 2,
+      "exit_code": 1,
+      "finding": "All assertions passed but owner temporary DB connection remained open during cleanup; harness corrected with contextlib.closing."
+    },
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 evidence/upgrade/v3.2/owner_check.py",
+      "attempt": 3,
+      "exit_code": 0,
+      "result": "46 actions/46 save-reopen-restore/14 rejection cases/20 device stages/8 clues/9 early exploration actions/6 mock callback cases"
+    },
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 evidence/upgrade/v3.2/owner_check.py",
+      "attempt": 4,
+      "exit_code": 0,
+      "result": "Final source: same route/restore/rejection checks plus 7 mock callback cases and successful neutral inspection via actual HTTP AI Store callback"
+    }
+  ],
+  "result": {
+    "scope": "owner-directed, not formal QA",
+    "counts": {
+      "actions": 46,
+      "save_reopen_restore": 46,
+      "rejects": 14
+    },
+    "device_stages": {
+      "cabinet": [
+        "CODE_ACCEPTED",
+        "ITEM_TAKEN",
+        "LOCKED",
+        "OPEN"
+      ],
+      "powerbox": [
+        "CIRCUIT_READY",
+        "CLOSED",
+        "FUSE_INSTALLED",
+        "MISSING_FUSE",
+        "OPEN",
+        "POWER_ON"
+      ],
+      "computer": [
+        "BOOTING",
+        "DATA_READ",
+        "LOGIN_LOCKED",
+        "OFF",
+        "UNLOCKED"
+      ],
+      "exit": [
+        "CARD_ACCEPTED",
+        "FINAL_CHECK",
+        "LOCKED",
+        "OPEN",
+        "UNLOCKED"
+      ]
+    },
+    "clues_at_finish": 8,
+    "early_exploration_actions": 9,
+    "mock_callback_cases": 7,
+    "neutral_inspect_http_ai": true,
+    "paid_calls": 0,
+    "result": "pass"
+  },
+  "state_snapshot_policy": "Required strict nested fields, lifecycle/observation consistency; same-version malformed snapshots reject without current state or slot replacement; cross-version mismatch rejects. Legacy and v3.1 explicit factories remain. upgrade default chooses3.2 separate DB.",
+  "runtime_guard_scope": "Only read boundary: knowledge monotonic/target currently visible/declared clue IDs/revision increment, protected real progress and object identity; no provider/auth/budget changes.",
+  "paid_calls": 0,
+  "limitations": [
+    "Owner checks are not formal QA; no full legacy regression or frontend build performed in this owner epoch.",
+    "Existing StarletteDeprecationWarning appears; no dependency change.",
+    "No playtime measurement, art, minigames, score/hints or paid-provider validation.",
+    "No existing user DBs, environments or credentials read/reset; only isolated temporary DBs used."
+  ]
+}

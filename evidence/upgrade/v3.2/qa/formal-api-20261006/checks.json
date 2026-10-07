@@ -1,0 +1,4763 @@
+[
+  {
+    "test": "test_ai_installed_microscope_read_is_legitimate_knowledge_discovery",
+    "operation": "inspect",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_installed_microscope_read_is_legitimate_knowledge_discovery",
+    "operation": "use_item",
+    "target": "r1_microscope",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_installed_microscope_read_is_legitimate_knowledge_discovery",
+    "legitimate_knowledge_discovery": "sample clue acquired with installed slide; slots unchanged",
+    "read_calls": 1,
+    "inventory_room_devices_unchanged": true
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "turns",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "use_item",
+    "target": "r1_microscope",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "confirm",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "CODE_ACCEPTED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "interact",
+    "target": "r1_cabinet",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "take",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "OPEN",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "MISSING_FUSE",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "confirm",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CIRCUIT_READY",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "BOOTING",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "UNLOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "use_item",
+    "target": "r3_panel",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "use_item",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "CARD_ACCEPTED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "interact",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_neutral_inspect_receipts_and_confirm_share_current_rules",
+    "operation": "confirm",
+    "target": null,
+    "http_status": 409,
+    "error": "PROPOSAL_INVALIDATED",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory",
+    "operation": "inspect",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory",
+    "forged_callback_case": "unrelated-observation",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory",
+    "forged_callback_case": "future-observation",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory",
+    "forged_callback_case": "removed-observation",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory",
+    "forged_callback_case": "future-clue",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory",
+    "forged_callback_case": "future-object",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory",
+    "forged_callback_case": "object-identity",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory",
+    "forged_callback_case": "room-injection",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory",
+    "forged_callback_case": "device-progress",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory",
+    "forged_callback_case": "panel-progress",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory",
+    "forged_callback_case": "read-adds-item",
+    "stopped": "STALE_STATE",
+    "no_second_provider_call_or_store_mutation": true
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "inspect",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "use_item",
+    "target": "r1_microscope",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "submit_code",
+    "target": "r1_cabinet",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "CODE_ACCEPTED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "interact",
+    "target": "r1_cabinet",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "take",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "OPEN",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "MISSING_FUSE",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "use_item",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CIRCUIT_READY",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "BOOTING",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "UNLOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "use_item",
+    "target": "r3_panel",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "use_item",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "CARD_ACCEPTED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "interact",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "submit_code",
+    "target": "r3_panel",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "restore",
+    "target": null,
+    "http_status": 409,
+    "error": "SNAPSHOT_VERSION_MISMATCH",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "snapshot_case": "legacy",
+    "code": "SNAPSHOT_VERSION_MISMATCH",
+    "session_and_slot_unchanged": true
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "restore",
+    "target": null,
+    "http_status": 409,
+    "error": "SNAPSHOT_VERSION_MISMATCH",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "snapshot_case": "v31",
+    "code": "SNAPSHOT_VERSION_MISMATCH",
+    "session_and_slot_unchanged": true
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "restore",
+    "target": null,
+    "http_status": 409,
+    "error": "INVALID_SNAPSHOT",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "snapshot_case": "bad-checksum",
+    "code": "INVALID_SNAPSHOT",
+    "session_and_slot_unchanged": true
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "restore",
+    "target": null,
+    "http_status": 409,
+    "error": "INVALID_SNAPSHOT",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "snapshot_case": "unknown-puzzle",
+    "code": "INVALID_SNAPSHOT",
+    "session_and_slot_unchanged": true
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "restore",
+    "target": null,
+    "http_status": 409,
+    "error": "INVALID_SNAPSHOT",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "snapshot_case": "verified-without-strip",
+    "code": "INVALID_SNAPSHOT",
+    "session_and_slot_unchanged": true
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "restore",
+    "target": null,
+    "http_status": 409,
+    "error": "INVALID_SNAPSHOT",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "snapshot_case": "installed-slide-missing",
+    "code": "INVALID_SNAPSHOT",
+    "session_and_slot_unchanged": true
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "restore",
+    "target": null,
+    "http_status": 409,
+    "error": "INVALID_SNAPSHOT",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "snapshot_case": "missing-puzzle-field",
+    "code": "INVALID_SNAPSHOT",
+    "session_and_slot_unchanged": true
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "restore",
+    "target": null,
+    "http_status": 409,
+    "error": "INVALID_SNAPSHOT",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "snapshot_case": "wrong-internal-version",
+    "code": "INVALID_SNAPSHOT",
+    "session_and_slot_unchanged": true
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "restore",
+    "target": null,
+    "http_status": 409,
+    "error": "INVALID_SNAPSHOT",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "snapshot_case": "missing-panel-observation",
+    "code": "INVALID_SNAPSHOT",
+    "session_and_slot_unchanged": true
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "restore",
+    "target": null,
+    "http_status": 409,
+    "error": "INVALID_SNAPSHOT",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "snapshot_case": "duplicate-observation",
+    "code": "INVALID_SNAPSHOT",
+    "session_and_slot_unchanged": true
+  },
+  {
+    "test": "test_cross_version_and_checksum_valid_corruption_no_session_or_slot_overwrite",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "inspect",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "use_item",
+    "target": "r1_clock",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "use_item",
+    "target": "r1_microscope",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "submit_code",
+    "target": "r1_cabinet",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "CODE_ACCEPTED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "CODE_ACCEPTED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "CODE_ACCEPTED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "interact",
+    "target": "r1_cabinet",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "take",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "OPEN",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "OPEN",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "OPEN",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "MISSING_FUSE",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "MISSING_FUSE",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "MISSING_FUSE",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "use_item",
+    "target": "r2_maintenance",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "MISSING_FUSE",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "use_item",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CIRCUIT_READY",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CIRCUIT_READY",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CIRCUIT_READY",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "BOOTING",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "BOOTING",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "BOOTING",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "UNLOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "UNLOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "UNLOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "use_item",
+    "target": "r3_legend",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "use_item",
+    "target": "r3_panel",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "use_item",
+    "target": "r3_legend",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "use_item",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "CARD_ACCEPTED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "CARD_ACCEPTED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "CARD_ACCEPTED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "interact",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "submit_code",
+    "target": "r3_panel",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "interact",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "UNLOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "UNLOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "UNLOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "interact",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "OPEN"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "save",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "OPEN"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "reset",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "operation": "restore",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "OPEN"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_main_route_every_puzzle_and_device_stage_save_restore_reopen",
+    "route_actions": 46,
+    "items_used": [
+      "access_card",
+      "fuse",
+      "research_strip",
+      "sample_slide"
+    ],
+    "all_stages_saved_restored_reopened": true
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "inspect",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "use_item",
+    "target": "r1_microscope",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "submit_code",
+    "target": "r1_cabinet",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "CODE_ACCEPTED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "interact",
+    "target": "r1_cabinet",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "take",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "OPEN",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "MISSING_FUSE",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "use_item",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CIRCUIT_READY",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "BOOTING",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "UNLOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "use_item",
+    "target": "r3_panel",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "use_item",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "CARD_ACCEPTED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "interact",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "submit_code",
+    "target": "r3_panel",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "interact",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "UNLOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "operation": "interact",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "OPEN"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_public_clues_independently_derive_all_three_answers",
+    "derived": {
+      "cabinet": "4217",
+      "username": "LAB-42",
+      "password": "2117",
+      "final": "4792"
+    },
+    "facts": "public discovered clues only"
+  },
+  {
+    "test": "test_three_rooms_are_explorable_before_items_power_or_login",
+    "operation": "inspect",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_three_rooms_are_explorable_before_items_power_or_login",
+    "operation": "submit_code",
+    "target": "r3_panel",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_three_rooms_are_explorable_before_items_power_or_login",
+    "operation": "move",
+    "target": null,
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "inspect",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "use_item",
+    "target": "r1_microscope",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_code",
+    "target": "r1_cabinet",
+    "http_status": 409,
+    "error": "WRONG_CODE",
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_code",
+    "target": "r1_cabinet",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "CODE_ACCEPTED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "interact",
+    "target": "r1_cabinet",
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "take",
+    "target": null,
+    "http_status": 200,
+    "error": null,
+    "room": "R1",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "use_item",
+    "target": "r2_powerbox",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "OPEN",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "MISSING_FUSE",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "use_item",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CIRCUIT_READY",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "interact",
+    "target": "r2_powerbox",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "BOOTING",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_login",
+    "target": null,
+    "http_status": 422,
+    "error": "BAD_ARGUMENT",
+    "room": null,
+    "stages": null
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 422,
+    "error": "BAD_ARGUMENT",
+    "room": null,
+    "stages": null
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 422,
+    "error": "BAD_ARGUMENT",
+    "room": null,
+    "stages": null
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 422,
+    "error": "BAD_ARGUMENT",
+    "room": null,
+    "stages": null
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 422,
+    "error": "BAD_ARGUMENT",
+    "room": null,
+    "stages": null
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 422,
+    "error": "BAD_ARGUMENT",
+    "room": null,
+    "stages": null
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 409,
+    "error": "WRONG_CODE",
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 409,
+    "error": "WRONG_CODE",
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 409,
+    "error": "WRONG_CODE",
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_code",
+    "target": "r2_monitor",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_login",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "UNLOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "interact",
+    "target": "r2_monitor",
+    "http_status": 200,
+    "error": null,
+    "room": "R2",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_code",
+    "target": "r3_panel",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "use_item",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "CARD_ACCEPTED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "move",
+    "target": null,
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "CARD_ACCEPTED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "interact",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_code",
+    "target": "r3_panel",
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "use_item",
+    "target": "r3_panel",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_code",
+    "target": "r3_panel",
+    "http_status": 409,
+    "error": "WRONG_CODE",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": false
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "submit_code",
+    "target": "r3_panel",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "move",
+    "target": null,
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "interact",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "UNLOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "move",
+    "target": null,
+    "http_status": 409,
+    "error": "PRECONDITION_FAILED",
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "UNLOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  },
+  {
+    "test": "test_wrong_inputs_no_stage_bypass_and_strict_manual_login",
+    "operation": "interact",
+    "target": "exit_door",
+    "http_status": 200,
+    "error": null,
+    "room": "R3",
+    "stages": {
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "OPEN"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "progress": {
+        "power_on": true,
+        "check_done": true
+      }
+    }
+  }
+]

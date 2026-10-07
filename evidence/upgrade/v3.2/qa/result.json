@@ -1,0 +1,90 @@
+{
+  "status": "Independent QA passed within recorded scope; SOURCE STOP",
+  "recorded_at": "2026-10-07T05:40:43.007119+00:00",
+  "candidate": "evidence/upgrade/v3.2/candidate-fixed.json",
+  "first_result_preserved": "evidence/upgrade/v3.2/qa/first-result.json",
+  "candidate_delta_paths": [
+    "backend/app/ai/runtime.py"
+  ],
+  "api": {
+    "exit_code": 0,
+    "passed": 97,
+    "passed_subtests": 257,
+    "failed": 0,
+    "warnings": 1,
+    "old_regression_cases": 89,
+    "new_test_methods": 8,
+    "forged_read_cases": [
+      "unrelated-observation",
+      "future-observation",
+      "removed-observation",
+      "future-clue",
+      "future-object",
+      "object-identity",
+      "duplicate-existing-clue",
+      "existing-clue-future-fact",
+      "room-injection",
+      "device-progress",
+      "panel-progress",
+      "read-adds-item"
+    ],
+    "compact_check_records": 221,
+    "evidence": "evidence/upgrade/v3.2/qa/formal-api-fixed-20261007",
+    "candidate_before_after_match": true,
+    "tests_before_after_match": true,
+    "command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "evidence/upgrade/v3.2/qa/formal-api-fixed-20261007/runner.py"
+    ],
+    "pytest_arguments": [
+      "tests/api",
+      "-q",
+      "-p",
+      "no:cacheprovider"
+    ]
+  },
+  "finding": {
+    "priority": 2,
+    "case": "existing-clue-future-fact",
+    "status": "Closed by independent full API revalidation",
+    "checks": "stopped before second provider call; sentinel absent from model contexts; Store unchanged"
+  },
+  "browser": {
+    "exit_code": 0,
+    "checks": 61,
+    "issues": [],
+    "evidence": "evidence/upgrade/v3.2/qa/20261006T103711980Z-browser",
+    "candidate_before_after_match": true,
+    "screenshots_visually_inspected": 4,
+    "actual_root_CMD_started": false,
+    "evidence_reused": true,
+    "tested_candidate": "evidence/upgrade/v3.2/candidate.json",
+    "repeated_after_runtime_fix": false,
+    "scope_note": "Prior actual Chrome pass retained; only AI runtime changed, now independently covered by full API."
+  },
+  "build": {
+    "exit_code": 0,
+    "evidence": "evidence/upgrade/v3.2/qa/formal-build-20261006",
+    "evidence_reused": true,
+    "repeated_after_runtime_fix": false
+  },
+  "launcher_byte_check": {
+    "exit_code": 0,
+    "evidence": "evidence/upgrade/v3.2/qa/launcher-byte-check.json",
+    "actual_root_CMD_started": false
+  },
+  "frozen_source_files": 23,
+  "paid_calls": 0,
+  "full_state_dumps_exported": false,
+  "limitations": [
+    "Synthetic callback/providers only; not real model quality acceptance",
+    "No real-player completion-time acceptance",
+    "Old-mode light smoke uses owned public-created slots, no historical sensitive DB",
+    "Actual root CMD was not launched; byte/config check only.",
+    "No repeat build/browser after narrow runtime fix; original candidate evidence retained.",
+    "Existing Starlette TestClient/httpx deprecation warning persists."
+  ]
+}

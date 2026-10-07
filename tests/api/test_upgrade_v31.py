@@ -55,7 +55,7 @@ class UpgradeV31Acceptance(HTTPFixture):
         self.client.__exit__(None, None, None)
         from backend.app.main import create_app
         self.db = Path(self.temp.name) / 'upgrade.sqlite'
-        self.client = TestClient(create_app(self.db, gameplay_version='upgrade'), raise_server_exceptions=False)
+        self.client = TestClient(create_app(self.db, gameplay_version='v3.1'), raise_server_exceptions=False)
         self.client.__enter__()
         self.session = self.create()
         self.network = patch('httpx.AsyncClient.send', side_effect=AssertionError('Paid/network calls forbidden'))
@@ -83,7 +83,7 @@ class UpgradeV31Acceptance(HTTPFixture):
     def reopen(self):
         self.client.__exit__(None, None, None)
         from backend.app.main import create_app
-        self.client = TestClient(create_app(self.db, gameplay_version='upgrade'), raise_server_exceptions=False)
+        self.client = TestClient(create_app(self.db, gameplay_version='v3.1'), raise_server_exceptions=False)
         self.client.__enter__()
 
     def ai(self, steps):

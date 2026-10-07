@@ -1,0 +1,46 @@
+{
+  "status": "One required runtime boundary subtest failed; waiting Main repair decision",
+  "recorded_at": "2026-10-06T10:40:06.754250+00:00",
+  "api": {
+    "exit_code": 1,
+    "passed": 97,
+    "failed_subtests": 1,
+    "passed_subtests": 255,
+    "old_regression_cases": 89,
+    "new_test_methods": 8,
+    "evidence": "evidence/upgrade/v3.2/qa/formal-api-20261006",
+    "candidate_before_after_match": true
+  },
+  "browser": {
+    "exit_code": 0,
+    "checks": 61,
+    "issues": [],
+    "evidence": "evidence/upgrade/v3.2/qa/20261006T103711980Z-browser",
+    "candidate_before_after_match": true,
+    "screenshots_visually_inspected": 4,
+    "actual_root_CMD_started": false
+  },
+  "build": {
+    "exit_code": 0,
+    "evidence": "evidence/upgrade/v3.2/qa/formal-build-20261006"
+  },
+  "frozen_source_files": 23,
+  "launcher_byte_check": {
+    "exit_code": 0,
+    "evidence": "evidence/upgrade/v3.2/qa/launcher-byte-check.json",
+    "actual_root_CMD_started": false
+  },
+  "finding": {
+    "priority": 2,
+    "case": "existing-clue-future-fact",
+    "description": "A read of the current door can replace previously discovered clock clue text without changing clue IDs; the runtime admits the forged prior fact into the next provider context.",
+    "source": "backend/app/ai/runtime.py read guard compares clue IDs without preserving existing clue object content"
+  },
+  "paid_calls": 0,
+  "full_state_dumps_exported": false,
+  "limitations": [
+    "Synthetic callback/providers only; not real model quality acceptance",
+    "No real-player completion-time acceptance",
+    "Old-mode light smoke uses owned public-created slots, no historical sensitive DB"
+  ]
+}

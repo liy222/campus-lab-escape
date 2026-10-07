@@ -186,3 +186,17 @@ v2 开门前/后同版本保存恢复均可用；恢复新 generation，旧提�
 Frontend/AI：各 Owner 核对确认前/后背包与真实消费反馈、重放原 receipt 和当前 state 的含义、上下文投影/工具结果一致；通用展示若已满足则可不改代码，但报告实际检查范围。Delivery：后续交接用独立 v1 DB 验证回退，不覆盖基线 archive。QA：Main 稳定候选 GO 后执行矩阵/RT/必要回归，保留旧失败、修复和复测证据。
 
 T28 的 `contracts/check_contracts.py --output <new-path>` 只新增可指定报告路径，默认兼容；新报告保留 `contracts/validation.json` 历史内容。该检查仅验证公开契约结构，不能代表游戏运行、模型调用、正式 QA、课程批准或完整 Draft2020-12 实例校验。准确命令、exit 与哈希另交 Main 证据索引。
+
+## 当前升级接口 v3.2
+
+升级设计以 `docs/upgrade-plan.md` 为主基线；以上 v1/v2 工程卡保留历史语义。`create_app()` 默认 legacy（level2.0/schema1.0）；显式 `gameplay_version="v3.1"` 保留上一升级规则（level3.1/schema1.1）；`upgrade`/`v3.2` 选择本版（level3.2.0/schema1.2.0）。生产 module app 默认 upgrade；默认数据库分别为 game.sqlite、game-v3.1.sqlite、game-v3.2.sqlite。旧数据库不迁移、不删除。跨版本恢复拒绝 SNAPSHOT_VERSION_MISMATCH，不覆盖当前会话和原槽；同版本缺失字段、额外字段、非法生命周期或矛盾观察事实拒绝 INVALID_SNAPSHOT。恢复沿用既有原子事务和新 generation。
+
+公开 visible_state 使用三个独立严格分支，保留旧字段/enums/additionalProperties=false。新版必有四个 device_states、observed_object_ids，以及 puzzle_states：microscope=EMPTY|SLIDE_PLACED、panel=EMPTY|STRIP_INSERTED。槽状态只表示物品安装；样本读数由发现的线索表示，终检完成沿用 progress.check_done。服务端另保存 required taken_item_ids/consumed_item_ids，不公开答案。物品 usable_targets 保持字段但为空。
+
+手动工具仍支持原六个动作及 `interact {target_id}`，新增 `submit_login {target_id,username,password}`。登录仅 r2_monitor 的 LOGIN_LOCKED 阶段；用户名 1–64 字符 [A-Za-z0-9_-]，密码 1–16 位数字，原样精确匹配，不去空格、不接受额外参数。格式错误 BAD_ARGUMENT，错误凭据 WRONG_CODE，失败不改变状态或版本。登录 affordance 的 arguments 只有 target_id，requires_code=false；界面据 tool 展示两个输入框。每对象最多一个推进 affordance，inspect 可并列。provider tools 仍为原六个，AI 不提供 interact/submit_login。
+
+观察后才能操作当前可见对象。普通 r1_door/r2_door 观察后 interact 拉开门闩即可跨房探索；无需电源或登录。设备仍有完整柜门、电箱、电脑、出口阶段，每阶段由明确动作推进。保险丝安装不能直接供电，电脑读取必须经过启动和登录，出口刷卡不能直接开门，纸条安装与终检通过后仍需释放门锁、推门、move EXIT。
+
+inspect 仅登记本次可见对象的观察及当前可得谜题线索；中性外观不创建虚构 observation clue。样本读数只能在玻片已安装时取得，纸条只有 DATA_READ 后可见。AI read callback 校验知识单调、声明一致、版本增量一致、新知识属于本次调用前可见目标，禁止读取改变背包/房间/状态/设备/物品槽/进度/出口/存档/会话/版本；get_inventory 不能新增知识。猜中正确输入允许，但真实物品、电源及设备阶段前置不能绕过。
+
+本节是接口与行为规格，不代表 QA 已执行；实际命令与结果另存各版 evidence。

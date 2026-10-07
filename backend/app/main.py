@@ -11,7 +11,8 @@ from .storage.sqlite import Store, error_body, new_id, select_rules
 def create_app(sqlite_path: str | Path | None = None, *, db_path: str | Path | None = None, provider=None, runtime=None, gameplay_version="legacy") -> FastAPI:
     application = FastAPI(title="逃离校园实验室", version="0.1.0")
     rules = select_rules(gameplay_version)
-    default_path = Path(__file__).resolve().parents[2] / "data" / ("game.sqlite" if rules.LEVEL_VERSION == "2.0.0" else "game-v3.1.sqlite")
+    database_name = {"2.0.0": "game.sqlite", "3.1.0": "game-v3.1.sqlite", "3.2.0": "game-v3.2.sqlite"}[rules.LEVEL_VERSION]
+    default_path = Path(__file__).resolve().parents[2] / "data" / database_name
     if sqlite_path is not None and db_path is not None:
         raise ValueError("Choose one SQLite path argument")
     application.state.store = Store(sqlite_path or db_path or os.environ.get("SQLITE_PATH") or default_path, rules=rules)

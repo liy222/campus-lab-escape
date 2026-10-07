@@ -116,6 +116,31 @@ manual_receipt = deepcopy(D["receipt"]["oneOf"][0])
 manual_receipt["properties"]["tool"] = {"const": "interact"}
 manual_receipt["properties"]["arguments"] = INTERACT_ARGS
 D["receipt"]["oneOf"].append(manual_receipt)
+
+# v3.2 is another strict projection. Login is manual-only, never a provider tool.
+LOGIN_ARGS = obj({"target_id": ID, "username": {"type": "string", "minLength": 1, "maxLength": 64, "pattern": "^[A-Za-z0-9_-]+$"}, "password": {"type": "string", "minLength": 1, "maxLength": 16, "pattern": "^[0-9]+$"}})
+D["puzzle_affordance"] = deepcopy(D["upgrade_affordance"])
+D["puzzle_affordance"]["oneOf"].append(obj({"tool": {"const": "submit_login"}, "label": TEXT, "arguments": obj({"target_id": ID}), "requires_code": {"const": False}}))
+D["puzzle_visible_object"] = deepcopy(D["upgrade_visible_object"])
+D["puzzle_visible_object"]["properties"]["actions"] = arr(ref("puzzle_affordance"))
+D["puzzle_save_metadata"] = deepcopy(D["upgrade_save_metadata"])
+D["puzzle_save_metadata"]["properties"]["schema_version"] = {"const": "1.2.0"}
+D["puzzle_save_metadata"]["properties"]["level_version"] = {"const": "3.2.0"}
+D["save_metadata"]["oneOf"].append(ref("puzzle_save_metadata"))
+D["puzzle_visible_state"] = deepcopy(D["upgrade_visible_state"])
+puzzle_properties = D["puzzle_visible_state"]["properties"]
+puzzle_properties["schema_version"] = {"const": "1.2.0"}
+puzzle_properties["level_version"] = {"const": "3.2.0"}
+puzzle_properties["objects"] = arr(ref("puzzle_visible_object"))
+puzzle_properties["save"] = nullable(ref("puzzle_save_metadata"))
+puzzle_properties["puzzle_states"] = obj({"microscope": enum("EMPTY", "SLIDE_PLACED"), "panel": enum("EMPTY", "STRIP_INSERTED")})
+D["puzzle_visible_state"]["required"] = list(puzzle_properties)
+D["visible_state"]["oneOf"].append(ref("puzzle_visible_state"))
+D["action_request"]["oneOf"].append(obj({**CONTROL["properties"], "tool": {"const": "submit_login"}, "arguments": LOGIN_ARGS}))
+login_receipt = deepcopy(manual_receipt)
+login_receipt["properties"]["tool"] = {"const": "submit_login"}
+login_receipt["properties"]["arguments"] = LOGIN_ARGS
+D["receipt"]["oneOf"].append(login_receipt)
 document("api.schema.json", D, {"oneOf": [ref(name + "_response") for name in ["create", "state", "action", "control", "cancel", "ai_turn"]] + [ref("error_response")]})
 ROUTES = [
     ("POST", "/api/sessions", "empty_request", "create_response", 201, False),
@@ -128,4 +153,4 @@ ROUTES = [
     ("POST", "/api/sessions/{id}/proposals/{pid}/confirm", "empty_request", "action_response", 200, True),
     ("POST", "/api/sessions/{id}/proposals/{pid}/cancel", "empty_request", "cancel_response", 200, True),
 ]
-(ROOT / "routes.json").write_text(json.dumps({"contract_version": "1.1.0", "schema": "api.schema.json", "routes": [{"method": m, "path": p, "request": r, "response": s, "success_status": h, "requires_session_token": a} for m,p,r,s,h,a in ROUTES], "error_statuses": ERRORS}, indent=2) + "\n", encoding="utf-8")
+(ROOT / "routes.json").write_text(json.dumps({"contract_version": "1.2.0", "schema": "api.schema.json", "routes": [{"method": m, "path": p, "request": r, "response": s, "success_status": h, "requires_session_token": a} for m,p,r,s,h,a in ROUTES], "error_statuses": ERRORS}, indent=2) + "\n", encoding="utf-8")

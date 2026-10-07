@@ -1,0 +1,16 @@
+{
+  "command": "Python -B -X utf8 -c read-only launcher byte/config check",
+  "exit_code": 0,
+  "recorded_at": "2026-10-06T10:38:02.385699+00:00",
+  "file": "启动游戏.cmd",
+  "sha256": "d33b8d577e7f7d2d0c8c3c8821409b27beae9d549b0d159d30284ba9dadf9db8",
+  "checks": {
+    "no_CRCRLF": true,
+    "no_BOM": true,
+    "all_newlines_CRLF": true,
+    "selects_v32_database": true,
+    "selects_upgrade": true,
+    "mock_launcher": true
+  },
+  "limitation": "Byte/config inspection only, not actual root CMD startup"
+}

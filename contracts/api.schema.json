@@ -705,6 +705,9 @@
         },
         {
           "$ref": "#/$defs/upgrade_save_metadata"
+        },
+        {
+          "$ref": "#/$defs/puzzle_save_metadata"
         }
       ]
     },
@@ -715,6 +718,9 @@
         },
         {
           "$ref": "#/$defs/upgrade_visible_state"
+        },
+        {
+          "$ref": "#/$defs/puzzle_visible_state"
         }
       ]
     },
@@ -1754,6 +1760,120 @@
             "consumed_item_ids"
           ],
           "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "event_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "tool": {
+              "const": "submit_login"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "username": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "password": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 16,
+                  "pattern": "^[0-9]+$"
+                }
+              },
+              "required": [
+                "target_id",
+                "username",
+                "password"
+              ],
+              "additionalProperties": false
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "revision_before": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "revision_after": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "changed": {
+              "type": "boolean"
+            },
+            "message": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "observation": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 4000
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "new_clue_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            },
+            "consumed_item_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "request_id",
+            "event_id",
+            "tool",
+            "arguments",
+            "generation",
+            "revision_before",
+            "revision_after",
+            "changed",
+            "message",
+            "observation",
+            "new_clue_ids",
+            "consumed_item_ids"
+          ],
+          "additionalProperties": false
         }
       ]
     },
@@ -2093,6 +2213,65 @@
               },
               "required": [
                 "target_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "request_id",
+            "revision",
+            "generation",
+            "tool",
+            "arguments"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "tool": {
+              "const": "submit_login"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "username": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "password": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 16,
+                  "pattern": "^[0-9]+$"
+                }
+              },
+              "required": [
+                "target_id",
+                "username",
+                "password"
               ],
               "additionalProperties": false
             }
@@ -3279,6 +3458,586 @@
         "save",
         "device_states",
         "observed_object_ids"
+      ],
+      "additionalProperties": false
+    },
+    "puzzle_affordance": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "inspect"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "object_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "object_id"
+              ],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": false
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "get_inventory"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": false
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "take"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id"
+              ],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": false
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "use_item"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                },
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "item_id",
+                "target_id"
+              ],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": false
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "submit_code"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "target_id"
+              ],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": true
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "move"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "destination_id": {
+                  "enum": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "EXIT"
+                  ]
+                }
+              },
+              "required": [
+                "destination_id"
+              ],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": false
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "interact"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "target_id"
+              ],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": false
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "const": "submit_login"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              },
+              "required": [
+                "target_id"
+              ],
+              "additionalProperties": false
+            },
+            "requires_code": {
+              "const": false
+            }
+          },
+          "required": [
+            "tool",
+            "label",
+            "arguments",
+            "requires_code"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "puzzle_visible_object": {
+      "type": "object",
+      "properties": {
+        "object_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "kind": {
+          "enum": [
+            "clue",
+            "container",
+            "door",
+            "device",
+            "item"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/puzzle_affordance"
+          }
+        }
+      },
+      "required": [
+        "object_id",
+        "name",
+        "kind",
+        "description",
+        "actions"
+      ],
+      "additionalProperties": false
+    },
+    "puzzle_save_metadata": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "1.2.0"
+        },
+        "level_version": {
+          "const": "3.2.0"
+        },
+        "saved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source_revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_generation": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "required": [
+        "schema_version",
+        "level_version",
+        "saved_at",
+        "source_revision",
+        "source_generation"
+      ],
+      "additionalProperties": false
+    },
+    "puzzle_visible_state": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "1.2.0"
+        },
+        "level_version": {
+          "const": "3.2.0"
+        },
+        "session_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "generation": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "status": {
+          "enum": [
+            "playing",
+            "won"
+          ]
+        },
+        "room": {
+          "type": "object",
+          "properties": {
+            "room_id": {
+              "enum": [
+                "R1",
+                "R2",
+                "R3",
+                "EXIT"
+              ]
+            },
+            "name": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 4000
+            }
+          },
+          "required": [
+            "room_id",
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/puzzle_visible_object"
+          }
+        },
+        "inventory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/item"
+          }
+        },
+        "clues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/clue"
+          }
+        },
+        "exits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/exit"
+          }
+        },
+        "progress": {
+          "type": "object",
+          "properties": {
+            "power_on": {
+              "type": "boolean"
+            },
+            "check_done": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "power_on",
+            "check_done"
+          ],
+          "additionalProperties": false
+        },
+        "save": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/puzzle_save_metadata"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "device_states": {
+          "type": "object",
+          "properties": {
+            "cabinet": {
+              "enum": [
+                "LOCKED",
+                "CODE_ACCEPTED",
+                "OPEN",
+                "ITEM_TAKEN"
+              ]
+            },
+            "powerbox": {
+              "enum": [
+                "CLOSED",
+                "OPEN",
+                "MISSING_FUSE",
+                "FUSE_INSTALLED",
+                "CIRCUIT_READY",
+                "POWER_ON"
+              ]
+            },
+            "computer": {
+              "enum": [
+                "OFF",
+                "BOOTING",
+                "LOGIN_LOCKED",
+                "UNLOCKED",
+                "DATA_READ"
+              ]
+            },
+            "exit": {
+              "enum": [
+                "LOCKED",
+                "CARD_ACCEPTED",
+                "FINAL_CHECK",
+                "UNLOCKED",
+                "OPEN"
+              ]
+            }
+          },
+          "required": [
+            "cabinet",
+            "powerbox",
+            "computer",
+            "exit"
+          ],
+          "additionalProperties": false
+        },
+        "observed_object_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "uniqueItems": true
+        },
+        "puzzle_states": {
+          "type": "object",
+          "properties": {
+            "microscope": {
+              "enum": [
+                "EMPTY",
+                "SLIDE_PLACED"
+              ]
+            },
+            "panel": {
+              "enum": [
+                "EMPTY",
+                "STRIP_INSERTED"
+              ]
+            }
+          },
+          "required": [
+            "microscope",
+            "panel"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema_version",
+        "level_version",
+        "session_id",
+        "revision",
+        "generation",
+        "status",
+        "room",
+        "objects",
+        "inventory",
+        "clues",
+        "exits",
+        "progress",
+        "save",
+        "device_states",
+        "observed_object_ids",
+        "puzzle_states"
       ],
       "additionalProperties": false
     }

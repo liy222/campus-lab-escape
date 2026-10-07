@@ -79,3 +79,24 @@ R2 的 r2_fuse 是对象 ID，take 参数 item_id=fuse。其他两物品的 obje
 level `2.0.0` 只改变：首次成功 use_item emergency_key,r2_door 解锁时移除 emergency_key，receipt.consumed_item_ids=[emergency_key]，revision+1。失败、重放、已开门重用不再消费；重放的原 receipt 保留原消费列表，只有新执行的不变 receipt 的列表为空。门永久解锁，往返无需钥匙。抽屉不能重生钥匙，重复 take emergency_key 返回 ALREADY_TAKEN。可以继续用既有 r3_unlocked 标志证明已消费，不增公开字段、道具或地图。
 
 公共 API/tool/schema 仍为 `1.0.0`；visible_state、新快照和 save 摘要 level 均为 `2.0.0`。快照 level 版本不一致明确拒绝，当前状态不变；v2 同版本损坏状态拒绝 INVALID_SNAPSHOT。v1 回退只用独立 v1 数据库，不导入或静默改写 v2 数据。v2 保存开门前状态再恢复是显式回滚玩法；新 generation 可再走一次首次开门，旧请求/提案失效；开门后恢复应保持无钥匙且门已开。A27 验收范围和 RT01–RT06 对应回归冻结于 SPEC 的 CH01 卡；未执行结果不得填为通过。
+
+## v3.2 三房间线索网络
+
+本版入口 upgrade/v3.2，level3.2.0/schema1.2.0；v3.1 和 legacy 保留独立入口、规则和存档版本。房间仍为 R1/R2/R3。四物品为 sample_slide、fuse、research_strip、access_card；前三者安装后消费，门卡保留。数字答案只在服务端校验，不加入公开投影或 affordance。
+
+| 房间 | 对象 ID | 观察可得信息或阶段作用 |
+|---|---|---|
+| R1 | r1_clock、r1_record、r1_plaque | 实验开始21:17；索引前两位样本编号、后两位分钟；铭牌LAB-42 |
+| R1 | sample_slide、r1_microscope | 观察/取玻片，在显微镜安装后再观察才能读到 LAB SAMPLE 42 |
+| R1 | r1_cabinet、r1_fuse、r1_symbols | 4217 数字锁先接受输入，再手动开柜；柜内保险丝和源序 ▲●■★；取保险丝后 ITEM_TAKEN |
+| R1 | r1_door | 观察、手动拉闩后可去 R2 |
+| R2 | r2_powerbox | CLOSED→OPEN→MISSING_FUSE→安装 fuse→FUSE_INSTALLED→CIRCUIT_READY→POWER_ON |
+| R2 | r2_monitor、r2_maintenance | OFF→BOOTING→LOGIN_LOCKED；维护说明 USER 完整实验室编号、PASS 实验开始HHMM；登录 LAB-42/2117→UNLOCKED→手动读取 DATA_READ |
+| R2 | research_strip、access_card | DATA_READ 后托盘显露；纸条给读取位置3,1,4,2、定位孔与空白方格；分别观察后领取 |
+| R2 | r2_door | 观察、手动拉闩后可去 R3，无强制电脑完成门控 |
+| R3 | r3_legend | ■通风4、▲冷却7、★照明9、●安全2 |
+| R3 | r3_panel、exit_door | 插入纸条；门卡使出口 CARD_ACCEPTED，再启动 FINAL_CHECK；按源序位置3,1,4,2得■▲★●，数字4792通过终检；手动释放 UNLOCKED、推门 OPEN、move EXIT |
+
+八条真实线索分别对应时间、样本索引规则、铭牌、样本读数、源序、维护说明、纸条索引、设备对应表。普通外观观察只登记 observed_object_ids。可先打开普通房门探索跨房间信息；真实电源、登录、物品安装和终检阶段始终约束推进。v3.3 才引入线路旋转和顺序按钮；本版不增加小游戏、房间、评分或提示系统。
+
+完整参考路线为先观察 R1 三信息和玻片、取玻片、观察显微镜/安装/再观察、观察柜/输入4217/开柜、观察取保险丝及源序、观察开门进入R2；完成电箱六阶段、观察电脑并两次启动、观察维护说明、登录、读取、观察领取纸条和门卡、观察开门进入R3；观察对应表/控制台/出口、刷卡、启动终检、插纸、输入4792、释放锁/推门/离开。具体动作计数以实际运行证据为准，保存恢复等控制请求不混作谜题步骤。

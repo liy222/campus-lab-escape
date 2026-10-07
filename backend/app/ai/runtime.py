@@ -290,9 +290,31 @@ class Runtime:
                             new_version = Version.from_state(read.visible_state)
                             old_clues = {c["clue_id"] for c in state["clues"]}
                             new_clues = {c["clue_id"] for c in read.visible_state["clues"]}
+                            old_clue_records = {c["clue_id"]: c for c in state["clues"]}
+                            new_clue_records = {c["clue_id"]: c for c in read.visible_state["clues"]}
                             added = new_clues - old_clues
-                            valid_revision = expected.revision + (1 if added else 0)
-                            if new_version.generation != expected.generation or new_version.revision != valid_revision or added != set(read.new_clue_ids) or not old_clues <= new_clues or tool == "get_inventory" and added:
+                            old_observed = set(state.get("observed_object_ids", []))
+                            new_observed = set(read.visible_state.get("observed_object_ids", []))
+                            observed_added = new_observed - old_observed
+                            visible_ids = {obj["object_id"] for obj in state["objects"]}
+                            target = arguments.get("object_id")
+                            knowledge_targets = observed_added | {clue["object_id"] for clue in read.visible_state["clues"] if clue["clue_id"] in added}
+                            valid_revision = expected.revision + (1 if added or observed_added else 0)
+                            protected_fields = ("inventory", "room", "status", "device_states", "puzzle_states", "progress", "exits", "save", "session_id", "schema_version", "level_version")
+                            old_objects = sorted((obj["object_id"], obj["name"], obj["kind"]) for obj in state["objects"])
+                            new_objects = sorted((obj["object_id"], obj["name"], obj["kind"]) for obj in read.visible_state["objects"])
+                            if (new_version.generation != expected.generation
+                                    or new_version.revision != valid_revision
+                                    or added != set(read.new_clue_ids)
+                                    or not old_clues <= new_clues
+                                    or len(old_clue_records) != len(state["clues"])
+                                    or len(new_clue_records) != len(read.visible_state["clues"])
+                                    or any(new_clue_records.get(cid) != clue for cid, clue in old_clue_records.items())
+                                    or not old_observed <= new_observed
+                                    or old_objects != new_objects
+                                    or any(state.get(field) != read.visible_state.get(field) for field in protected_fields)
+                                    or tool == "get_inventory" and (added or observed_added)
+                                    or knowledge_targets and (tool != "inspect" or target not in visible_ids or knowledge_targets != {target})):
                                 return stopped("STALE_STATE")
                             expected, state = new_version, copy.deepcopy(read.visible_state)
                             tool_result = {"ok": read.ok, "tool": tool, "arguments": arguments, "observation": read.observation,

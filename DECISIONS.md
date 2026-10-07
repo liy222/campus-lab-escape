@@ -94,3 +94,10 @@ v3.0 commit1499610 and tagv3.0-gameplay-information verified on private remote, 
 
 ### v3.1 save integrity and evidence epochs
 Retain explicit legacy and injected upgrade rules in same Store/API/AI transaction stack. Separate upgrade DB/session prevents silent snapshot reinterpretation; malformed/crosslevel snapshot rejects without overwriting live session or save slot. Independent QA found missing final-panel observation invariant; fixed then fullAPI89/235 rerun0. Earlier build/browser source epoch preserved honestly, not rewritten as final-source browser.
+
+### v3.2 clue dependencies
+Clock/sample combine for cabinet; LAB-42 and starttime become terminal credentials; earlysource symbols plus terminal index permutation and finalconsole legend combine for finalcheck. Fouritem roles slide/fuse/paper/card, manual doors allow exploring facts before corresponding use. NewlevelDB/session preserves priorlevels; no automatic state reinterpretation. Actual rotating circuit/sequence input introducedonly3.3.
+
+
+### v3.2 accepted, 2026-10-07
+Three-room/four-item clue redesign accepted: fixed fullAPI97/257 exit0, all23source/tests before-after identical. First runtime existing-clue text forgery failure retained; narrow complete-record/duplicateID guard independently closed. Originalcandidate build0/Chrome61checks0 (main route/save/restore/reload/OS restart/mobile/oldentries) retained honestly; no UI delta so not rerun afterguard. Evidence evidence/upgrade/v3.2/accepted.json. No paid/Phaser/human timing claim; own commit/push precedes3.3.

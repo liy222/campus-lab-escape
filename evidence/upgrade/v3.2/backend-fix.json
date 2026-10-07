@@ -1,0 +1,33 @@
+{
+  "version": "v3.2",
+  "status": "SOURCE STOP",
+  "scope": "Limited runtime read guard fix only; independent QA revalidation pending",
+  "executed_at": "2026-10-06T10:40:34.286315+00:00",
+  "files": [
+    {
+      "path": "backend/app/ai/runtime.py",
+      "sha256": "e4b815c51064e9689e4bd7a931e0fc2f1a4df7faded79f69d1af4250ba9a1b5f"
+    }
+  ],
+  "original_report_preserved": "evidence/upgrade/v3.2/backend.json",
+  "finding": "Checksum/schema-valid callback changed an already discovered clue text under the same clue_id while adding a legitimate door observation; old text could enter later model context.",
+  "fix": "Read boundary now compares every old clue full record by clue_id for deep equality. Removed or modified old records reject before model context update. Duplicate clue IDs in either old/new lists reject. Existing new-clue target visibility and all progress guards remain.",
+  "commands": [
+    {
+      "command": "AI_PROVIDER=mock GAMEPLAY_VERSION=legacy SQLITE_PATH=<isolated temporary import DB> C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 -m pytest tests/api/test_upgrade_v32.py::UpgradeV32Acceptance::test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory tests/api/test_upgrade_v32.py::UpgradeV32Acceptance::test_ai_neutral_inspect_receipts_and_confirm_share_current_rules tests/api/test_upgrade_v32.py::UpgradeV32Acceptance::test_ai_installed_microscope_read_is_legitimate_knowledge_discovery -q -p no:cacheprovider",
+      "exit_code": 0,
+      "result": "3 passed, 11 subtests passed in 2.89s; existing StarletteDeprecationWarning only"
+    }
+  ],
+  "coverage": [
+    "11 existing forged read cases including existing-clue-future-fact; require stop after first provider call, no sentinel in model contexts, unchanged Store state",
+    "Legal neutral inspect and inventory read; proposal/confirm uses current device stage",
+    "Installed microscope inspect discovers clue while real puzzle slots/inventory/room/devices remain unchanged"
+  ],
+  "paid_calls": 0,
+  "limitations": [
+    "Owner directed verification only; not formal QA sign-off",
+    "No repeat full46 owner route, frontend build or broad legacy regression; subsequent independent fullAPI QA pending",
+    "Only runtime.py implementation changed; provider, budget, authentication, mock implementation and contracts untouched"
+  ]
+}

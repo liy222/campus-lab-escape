@@ -1,0 +1,28 @@
+{
+  "scope": "Static QA preparation only; no formal test/build/browser run",
+  "command": "Python -B -X utf8 -c raw-byte Git HEAD compare of two assigned v3.1 test/runner selector replacements",
+  "exit_code": 0,
+  "recorded_at": "2026-10-06T10:20:26.844499+00:00",
+  "checks": [
+    {
+      "file": "tests/api/test_upgrade_v31.py",
+      "selector_replacements": 2,
+      "baseline_count": 2,
+      "only_selector_replacement": true,
+      "sha256": "1c306a414922085fbb7ada915c39b69e5d6985be31d06bcd342752622eed7f45"
+    },
+    {
+      "file": "tests/e2e/run_upgrade_v31.mjs",
+      "selector_replacements": 1,
+      "baseline_count": 1,
+      "only_selector_replacement": true,
+      "sha256": "740e78ee0f9512c22bd75759b1b8f8fb4ca740521f2c294ac9da8fc4931c9631"
+    }
+  ],
+  "first_attempt": {
+    "exit_code": 1,
+    "reason": "Preparation comparator used read_text universal newline normalization against unnormalized Git bytes; switched to read_bytes decoding. No test assertion or product change."
+  },
+  "formal_status": "Backend interface confirmed; implementation remains in progress. Main SOURCE STOP/GO required before formal runs.",
+  "paid_calls": 0
+}

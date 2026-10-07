@@ -3,6 +3,13 @@ import { api, ApiError, readSession, storeSession, type Args, type Session, type
 import Assistant from './Assistant';
 
 const kindLabel = { clue: '可观察', container: '容器', door: '通道', device: '设备', item: '物品' };
+const hotspotPosition: Record<string, string> = {
+  r1_plaque: 'r1-plaque', r1_clock: 'r1-clock', r1_record: 'r1-record', r1_microscope: 'r1-microscope',
+  sample_slide: 'r1-slide', r1_cabinet: 'r1-cabinet', r1_symbols: 'r1-symbols', r1_fuse: 'r1-fuse', r1_door: 'r1-door',
+  r2_maintenance: 'r2-maintenance', r2_monitor: 'r2-monitor', r2_powerbox: 'r2-powerbox',
+  research_strip: 'r2-strip', access_card: 'r2-card', r2_door: 'r2-door',
+  r3_legend: 'r3-legend', r3_panel: 'r3-panel', exit_door: 'r3-exit',
+};
 function Icon({ kind }: { kind: string }) {
   const paths: Record<string, React.ReactNode> = {
     clue: <><path d="M5 3h10l4 4v14H5V3ZM14 3v5h5M8 12h8M8 16h6"/></>,
@@ -26,7 +33,9 @@ export default function App() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
   const [interactionId, setInteractionId] = useState<string | null>(null);
+  const [loginOpenId, setLoginOpenId] = useState<string | null>(null);
   const [codes, setCodes] = useState<Record<string, string>>({});
+  const [loginCredentials, setLoginCredentials] = useState({ username: '', password: '' });
   const [notice, setNotice] = useState('');
   const [error, setError] = useState('');
   const [observation, setObservation] = useState('');
@@ -44,7 +53,7 @@ export default function App() {
     const roomChanged = !!previous && previous.room.room_id !== next.room.room_id;
     if (previous && previous.revision !== next.revision) setCodes({});
     if (generationChanged || roomChanged) {
-      setCodes({}); setObservation(''); setSelectedId(null); setSelectedItemId(null); setInteractionId(null);
+      setCodes({}); setLoginCredentials({ username: '', password: '' }); setObservation(''); setSelectedId(null); setSelectedItemId(null); setInteractionId(null); setLoginOpenId(null);
       if (generationChanged) setHistory([]);
     }
     if (selectedItemId && !next.inventory.some(item => item.item_id === selectedItemId)) setSelectedItemId(null);
@@ -52,7 +61,7 @@ export default function App() {
   }
   function invalidateSession(sessionId: string) {
     if (stateRef.current && stateRef.current.session_id !== sessionId) return;
-    storeSession(null); setSession(null); stateRef.current = null; setState(null); setCodes({}); setHistory([]); setObservation(''); setSelectedId(null); setSelectedItemId(null); setInteractionId(null); setNeedsSync(false); retiredGenerations.current.clear();
+    storeSession(null); setSession(null); stateRef.current = null; setState(null); setCodes({}); setLoginCredentials({ username: '', password: '' }); setHistory([]); setObservation(''); setSelectedId(null); setSelectedItemId(null); setInteractionId(null); setLoginOpenId(null); setNeedsSync(false); retiredGenerations.current.clear();
   }
   async function execute(work: () => Promise<void>, reconcile = false) {
     if (busy.current) return;
@@ -84,10 +93,11 @@ export default function App() {
       const receipt = response.data.receipt; setNotice(receipt.message); setObservation(receipt.observation || '');
       setHistory(entries => [{ id: receipt.event_id, text: receipt.message }, ...entries.filter(entry => entry.id !== receipt.event_id)].slice(0, 5));
       if (tool === 'submit_code') { setCodes({}); setInteractionId(null); }
+      if (tool === 'submit_login') { setLoginCredentials({ username: '', password: '' }); setLoginOpenId(null); }
     }, true);
   }
   function selectObject(objectId: string) {
-    setSelectedId(objectId); setInteractionId(null); setCodes({}); setObservation('');
+    setSelectedId(objectId); setInteractionId(null); setLoginOpenId(null); setCodes({}); setLoginCredentials({ username: '', password: '' }); setObservation('');
   }
   function interact(objectId: string) {
     const object = stateRef.current?.objects.find(value => value.object_id === objectId);
@@ -95,10 +105,12 @@ export default function App() {
     const serverInteraction = object.actions.find(affordance => affordance.tool === 'interact');
     const takeAction = object.actions.find(affordance => affordance.tool === 'take');
     const codeAction = object.actions.find(affordance => affordance.tool === 'submit_code');
+    const loginAction = object.actions.find(affordance => affordance.tool === 'submit_login' && affordance.arguments.target_id === 'r2_monitor');
     const inspectAction = object.actions.find(affordance => affordance.tool === 'inspect');
     if (serverInteraction) { setInteractionId(null); action('interact', serverInteraction.arguments); }
     else if (takeAction) { setInteractionId(null); action('take', takeAction.arguments); }
     else if (codeAction) { setInteractionId(objectId); setCodes(current => ({ ...current, [objectId]: '' })); }
+    else if (loginAction) { setInteractionId(null); setLoginOpenId(objectId); }
     else if (inspectAction) { setInteractionId(null); action('inspect', inspectAction.arguments); }
     else { setInteractionId(null); action('inspect', { object_id: objectId }); }
   }
@@ -110,6 +122,9 @@ export default function App() {
   }
   const won = state?.status === 'won';
   const disabled = pending || needsSync || !!won;
+  const loginAffordance = selected?.object_id === 'r2_monitor'
+    ? selected.actions.find(affordance => affordance.tool === 'submit_login' && affordance.arguments.target_id === 'r2_monitor')
+    : undefined;
   const savedAt = state?.save ? new Date(state.save.saved_at) : null;
   const savedTime = savedAt && !Number.isNaN(savedAt.getTime()) ? savedAt.toLocaleString('zh-CN', { hour12: false }) : state?.save?.saved_at;
   return <div className="app-shell">
@@ -121,8 +136,8 @@ export default function App() {
         {won && <section className="victory" role="status"><Icon kind="spark"/><div><h2>成功逃离实验室</h2><p>所有已发现的线索，仍保留在笔记中。</p></div></section>}
         <div className="game-grid">
           <aside className="inventory panel" aria-labelledby="inventory-title"><div className="panel-heading"><h2 id="inventory-title"><Icon kind="bag"/>我的背包</h2><span className="count">{state.inventory.length}</span></div><p className="panel-caption">收集的道具，会留在这里。</p>{state.inventory.length === 0 ? <div className="empty"><span className="empty-icon"><Icon kind="bag"/></span><p>背包还是空的</p><small>探索场景，寻找可以带走的物品。</small></div> : <div className="item-list">{state.inventory.map(item => <article className={`inventory-item ${selectedItemId === item.item_id ? 'item-selected' : ''}`} key={item.item_id}><h3><Icon kind="item"/>{item.name}</h3><p>{item.description}</p><button className="button item-select-button" aria-pressed={selectedItemId === item.item_id} disabled={disabled} onClick={() => setSelectedItemId(current => current === item.item_id ? null : item.item_id)}>{selectedItemId === item.item_id ? '取消选择' : '选择物品'}</button></article>)}</div>}<button className="button subtle inventory-refresh" disabled={pending || needsSync} onClick={() => action('get_inventory', {})}>查看背包</button></aside>
-          <section className="scene panel" aria-labelledby="room-title"><div className="panel-heading"><div><p className="eyebrow">当前场景 / {state.room.room_id}</p><h2 id="room-title">{state.room.name}</h2></div><span className="scene-tag">{won ? '探索完成' : '探索中'}</span></div><p className="room-description">{state.room.description}</p><div className="lab-scene" data-room={state.room.room_id} data-powered={state.progress.power_on} aria-label="当前可见物件"><div className="scene-window" aria-hidden="true"><span/><span/><span/><span/></div><div className="scene-light" aria-hidden="true"/><div className="scene-table" aria-hidden="true"/><div className="object-grid">{state.objects.map((object, index) => <button className={`object-tile ${selected?.object_id === object.object_id ? 'selected' : ''}`} key={object.object_id} disabled={pending} onClick={() => selectObject(object.object_id)} aria-pressed={selected?.object_id === object.object_id}><span className={`object-illustration kind-${object.kind}`}><Icon kind={object.kind}/></span><span className="object-number">{String(index + 1).padStart(2, '0')}</span><strong>{object.name}</strong><small>{kindLabel[object.kind]}{state.observed_object_ids?.includes(object.object_id) ? ' · 已观察' : ''}</small></button>)}</div>{state.objects.length === 0 && <p className="scene-empty">{won ? '实验室的门已在身后。' : '这里暂时没有可观察的物件。'}</p>}</div>
-            {selected && <section className="object-details" aria-labelledby="selected-title"><div className="detail-heading"><span className="small-icon"><Icon kind={selected.kind}/></span><div><small>选中的物件</small><h3 id="selected-title">{selected.name}</h3></div></div><p>{selected.description}</p><div className="object-actions">{selected.actions.some(affordance => affordance.tool === 'inspect') && <button className="button" disabled={pending || needsSync} onClick={() => action('inspect', selected.actions.find(affordance => affordance.tool === 'inspect')!.arguments)}>观察 <span aria-hidden="true">→</span></button>}<button className="button primary" disabled={pending || needsSync || !!won} onClick={() => interact(selected.object_id)}>互动 <span aria-hidden="true">→</span></button>{selectedItemId && <button className="button use-button" disabled={disabled} onClick={() => action('use_item', { item_id: selectedItemId, target_id: selected.object_id })}>使用物品 ↗</button>}</div>{interactionId === selected.object_id && selected.actions.some(affordance => affordance.tool === 'submit_code') && <form className="code-form" onSubmit={event => { event.preventDefault(); const affordance = selected.actions.find(item => item.tool === 'submit_code'); if (!affordance) return; const code = codes[selected.object_id] || ''; if (!/^[0-9]{1,16}$/.test(code)) { setError('请输入 1–16 位数字。'); return; } action(affordance.tool, { ...affordance.arguments, code }); }}><label htmlFor={`code-${selected.object_id}`}>输入你推理出的数字</label><div><input id={`code-${selected.object_id}`} type="text" inputMode="numeric" autoComplete="off" pattern="[0-9]{1,16}" maxLength={16} required placeholder="1–16 位数字" value={codes[selected.object_id] || ''} disabled={disabled} onChange={event => setCodes(current => ({ ...current, [selected.object_id]: event.target.value }))}/><button className="button primary" disabled={disabled}>提交</button></div></form>}{interactionId === selected.object_id && !selected.actions.some(affordance => affordance.tool === 'submit_code') && <p className="interaction-prompt">选择已发现的道具，或继续观察这个物件。</p>}{observation && <div className="observation"><span>观察记录</span><p>{observation}</p></div>}</section>}
+          <section className="scene panel" aria-labelledby="room-title"><div className="panel-heading"><div><p className="eyebrow">当前场景 / {state.room.room_id}</p><h2 id="room-title">{state.room.name}</h2></div><span className="scene-tag">{won ? '探索完成' : '探索中'}</span></div><p className="room-description">{state.room.description}</p><div className="lab-scene" data-room={state.room.room_id} data-powered={state.progress.power_on} aria-label="当前可见物件"><div className="scene-window" aria-hidden="true"><span/><span/><span/><span/></div><div className="scene-light" aria-hidden="true"/><div className="scene-table" aria-hidden="true"/><div className={`graybox-props props-${state.room.room_id}`} aria-hidden="true"><span className="prop-clock"/><span className="prop-workbench"/><span className="prop-cabinet"/><span className="prop-computer"/><span className="prop-panel"/><span className="prop-exit"/></div><div className={`object-grid object-grid-${state.room.room_id.toLowerCase()}`}>{state.objects.map((object, index) => <button className={`object-tile room-hotspot hotspot-${hotspotPosition[object.object_id] || 'fallback'} ${selected?.object_id === object.object_id ? 'selected' : ''}`} key={object.object_id} disabled={pending} onClick={() => selectObject(object.object_id)} aria-pressed={selected?.object_id === object.object_id}><span className={`object-illustration kind-${object.kind}`}><Icon kind={object.kind}/></span><span className="object-number">{String(index + 1).padStart(2, '0')}</span><strong>{object.name}</strong><small>{kindLabel[object.kind]}{state.observed_object_ids?.includes(object.object_id) ? ' · 已观察' : ''}</small></button>)}</div>{state.objects.length === 0 && <p className="scene-empty">{won ? '实验室的门已在身后。' : '这里暂时没有可观察的物件。'}</p>}</div>
+            {selected && <section className="object-details" aria-labelledby="selected-title"><div className="detail-heading"><span className="small-icon"><Icon kind={selected.kind}/></span><div><small>选中的物件</small><h3 id="selected-title">{selected.name}</h3></div></div><p>{selected.description}</p><div className="object-actions">{selected.actions.some(affordance => affordance.tool === 'inspect') && <button className="button" disabled={pending || needsSync} onClick={() => action('inspect', selected.actions.find(affordance => affordance.tool === 'inspect')!.arguments)}>观察 <span aria-hidden="true">→</span></button>}<button className="button primary" disabled={pending || needsSync || !!won} onClick={() => interact(selected.object_id)}>互动 <span aria-hidden="true">→</span></button>{selectedItemId && <button className="button use-button" disabled={disabled} onClick={() => action('use_item', { item_id: selectedItemId, target_id: selected.object_id })}>使用物品 ↗</button>}</div>{interactionId === selected.object_id && selected.actions.some(affordance => affordance.tool === 'submit_code') && <form className="code-form" onSubmit={event => { event.preventDefault(); const affordance = selected.actions.find(item => item.tool === 'submit_code'); if (!affordance) return; const code = codes[selected.object_id] || ''; if (!/^[0-9]{1,16}$/.test(code)) { setError('请输入 1–16 位数字。'); return; } action(affordance.tool, { ...affordance.arguments, code }); }}><label htmlFor={`code-${selected.object_id}`}>输入你推理出的数字</label><div><input id={`code-${selected.object_id}`} type="text" inputMode="numeric" autoComplete="off" pattern="[0-9]{1,16}" maxLength={16} required placeholder="1–16 位数字" value={codes[selected.object_id] || ''} disabled={disabled} onChange={event => setCodes(current => ({ ...current, [selected.object_id]: event.target.value }))}/><button className="button primary" disabled={disabled}>提交</button></div></form>}{loginOpenId === selected.object_id && loginAffordance && <form className="login-form" onSubmit={event => { event.preventDefault(); action('submit_login', { target_id: loginAffordance.arguments.target_id, username: loginCredentials.username, password: loginCredentials.password }); }}><h4>登录终端</h4><label htmlFor="terminal-username">用户名</label><input id="terminal-username" name="username" autoComplete="username" value={loginCredentials.username} disabled={disabled} onChange={event => setLoginCredentials(current => ({ ...current, username: event.target.value }))}/><label htmlFor="terminal-password">密码</label><input id="terminal-password" name="password" type="password" autoComplete="current-password" value={loginCredentials.password} disabled={disabled} onChange={event => setLoginCredentials(current => ({ ...current, password: event.target.value }))}/><button className="button primary" disabled={disabled}>提交登录</button></form>}{interactionId === selected.object_id && !selected.actions.some(affordance => affordance.tool === 'submit_code' || affordance.tool === 'submit_login') && <p className="interaction-prompt">选择已发现的道具，或继续观察这个物件。</p>}{observation && <div className="observation"><span>观察记录</span><p>{observation}</p></div>}</section>}
             <div className="exits"><h3>可见通道</h3>{state.exits.map(exit => <button className="exit-button" key={exit.destination_id} disabled={disabled} onClick={() => action('move', { destination_id: exit.destination_id })}><Icon kind="door"/><span>{exit.name}<small>尝试前往</small></span><span aria-hidden="true">→</span></button>)}{state.exits.length === 0 && <p className="muted">暂时没有可见通道。</p>}</div>
           </section>
           <aside className="clues panel" aria-labelledby="clues-title"><div className="panel-heading"><h2 id="clues-title"><Icon kind="clue"/>线索笔记</h2><span className="count">{state.clues.length}</span></div><p className="panel-caption">只记录你亲自发现的信息。</p>{state.clues.length === 0 ? <div className="empty"><span className="empty-icon"><Icon kind="clue"/></span><p>第一页，等待发现</p><small>查看物件后，新的线索会自动记入笔记。</small></div> : <ol className="clue-list">{state.clues.map((clue, index) => <li key={clue.clue_id} id={`clue-${clue.clue_id}`} tabIndex={-1}><div className="clue-heading"><span>{String(index + 1).padStart(2, '0')}</span><h3>{clue.title}</h3></div><p>{clue.text}</p></li>)}</ol>}<div className="notebook-tip">先观察，再尝试。<br/>答案可能就在已经发现的细节里。</div></aside>

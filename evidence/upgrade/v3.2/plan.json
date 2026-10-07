@@ -1,0 +1,44 @@
+{
+  "version": "v3.2",
+  "predecessor_commit": "cfab6616c288fc1d5a3b41ae118911a13e9ad321",
+  "predecessor_tag": "v3.1-object-state",
+  "remote_verified": true,
+  "primary_design": "docs/upgrade-plan.md",
+  "scope": "three-room graybox puzzle redesign; no circuit/sequence minigame until3.3; no art/Phaser until3.4 acceptance",
+  "design": {
+    "devices": 4,
+    "items": [
+      "sample_slide",
+      "fuse",
+      "research_strip",
+      "access_card"
+    ],
+    "R1": "experiment startclock21:17 + record minute suffix + sample42 through microscope ->4217 cabinet; early LAB-42 plaque/symbol batch order",
+    "R2": "manual multistage power chain; USER LAB-42/PASS2117 derived from early room facts; DATA_READ exposes research strip/index order and card",
+    "R3": "card activates check not exit; paper strip fits console; source symbolsR1, indicesR2, device-symbol legendR3 determine final input",
+    "nonlinear": "doors permit manual exploration including R3 rules before login; required item/power gates retained, no arbitrary doorcodes",
+    "final_derivation": "R1 ▲●■★; R2 positions3,1,4,2 ->■▲★●; R3 ■通风4/▲冷却7/★照明9/●安全2 ->4792; private answer never included in public projection"
+  },
+  "save_policy": "new3.2 DB/session; preserve explicitlegacy/v3.1 same code with strict previous model; no silent migration",
+  "architecture": "same Store/API/AI/save/receipt stack, compact configurable shareddevice helper as useful; do not duplicate whole backend",
+  "dispatch": {
+    "backend": "upgrade_backend_read historicalSol/high resumed; cross-Spec contracts/SPEC/leveldesign for this epoch",
+    "frontend_delivery": "upgrade_frontend_read historicalLuna/medium resumed, ownsfrontend+devlauncher/CMD+README/UPGRADES",
+    "independentQA": "upgrade_qa_states historical actualSol/high spawn; prepare now runafterSOURCESTOP"
+  },
+  "status": "GO implementation after3.1 verified push",
+  "synchronization_checks": {
+    "v3.1_staged_audit_files": 53,
+    "findings": [],
+    "commit_push_tag_exit": 0,
+    "source_docs_whitespace_exit": 0
+  },
+  "limits": [
+    "No paid calls or historical archive copies",
+    "No human playtime claim",
+    "Main runtime/resumed agent runtime not independently introspected"
+  ],
+  "narrow_cross_role": "Backend may edit only AI runtime read guard to account for neutral observed IDs without fabricated clues; preserve generation/newclue agreement, observed/clue monotonic and inspect target-only additions; provider/budget/auth unchanged; reads cannot change real game progression/inventory/room/item-slots, addedclues must belong to current visible inspect target; allowed knowledge-driven affordance recomputation.",
+  "route_length": "actual new route count will be recorded; no hardcoded old39 claim",
+  "simplification": "Four main device chains only; puzzle_states are binary physical item slots (microscope EMPTY/SLIDE_PLACED, panel EMPTY/STRIP_INSERTED). Sample read/verification use existing clue/check_done, no extra device machine or read guard exception."
+}

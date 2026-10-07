@@ -1,0 +1,56 @@
+.................................................................................................        [100%]
+================================== FAILURES ===================================
+_ UpgradeV32Acceptance.test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory (case='existing-clue-future-fact') _
+
+self = <tests.api.test_upgrade_v32.UpgradeV32Acceptance testMethod=test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory>
+
+    def test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory(self):
+        from backend.app.ai.runtime import Runtime
+        from backend.app.ai.types import TurnStart, Snapshot, ReadResult
+        self.action('inspect', {'object_id': 'r1_clock'})
+        initial = self.state()
+        sentinel = 'UNSEEN_FUTURE_FACT_SENTINEL'
+        cases = {
+            'unrelated-observation': lambda s: s['observed_object_ids'].extend(['r1_door', 'r1_record']),
+            'future-observation': lambda s: s['observed_object_ids'].extend(['r1_door', 'r3_legend']),
+            'removed-observation': lambda s: s.update(observed_object_ids=['r1_door']),
+            'future-clue': lambda s: (s['observed_object_ids'].append('r1_door'), s['clues'].append({'clue_id': 'qa_future_clue', 'object_id': 'r3_legend', 'title': '伪造未来线索', 'text': sentinel})),
+            'future-object': lambda s: (s['observed_object_ids'].append('r1_door'), s['objects'].append({'object_id': 'r3_legend', 'name': '设备对应表', 'kind': 'clue', 'description': sentinel, 'actions': [{'tool': 'inspect', 'label': '观察', 'arguments': {'object_id': 'r3_legend'}, 'requires_code': False}]})),
+            'object-identity': lambda s: (s['observed_object_ids'].append('r1_door'), s['objects'][0].update(name='伪造墙钟')),
+            'existing-clue-future-fact': lambda s: (s['observed_object_ids'].append('r1_door'), s['clues'][0].update(text=sentinel)),
+            'room-injection': lambda s: (s['observed_object_ids'].append('r1_door'), s['room'].update(room_id='R2')),
+            'device-progress': lambda s: (s['observed_object_ids'].append('r1_door'), s['device_states'].update(computer='BOOTING')),
+            'panel-progress': lambda s: (s['observed_object_ids'].append('r1_door'), s['puzzle_states'].update(panel='STRIP_INSERTED')),
+            'read-adds-item': lambda s: (s['observed_object_ids'].append('r1_door'), s['inventory'].append({'item_id': 'sample_slide', 'name': '合成样本', 'description': '伪造只读获得', 'usable_targets': []})),
+        }
+        for name, mutate in cases.items():
+            with self.subTest(case=name):
+                forged = copy.deepcopy(initial); forged['revision'] += 1; mutate(forged)
+                class ForgedCallbacks:
+                    read_happened = False
+                    async def snapshot(self, expected):
+                        return Snapshot(copy.deepcopy(forged if self.read_happened else initial))
+                    async def read_tool(self, expected, tool, arguments):
+                        self.read_happened = True
+                        old_ids = {clue['clue_id'] for clue in initial['clues']}
+                        added_ids = tuple(clue['clue_id'] for clue in forged['clues'] if clue['clue_id'] not in old_ids)
+                        return ReadResult(True, copy.deepcopy(forged), '中性观察。', added_ids)
+                    async def precheck_proposal(self, expected, candidate):
+                        raise AssertionError('Forged read must stop before proposal precheck')
+                provider = Scripted([reply(calls=[call('inspect', {'object_id': 'r1_door'})]), final()])
+                result = asyncio.run(Runtime(provider).run(TurnStart('qa-read-boundary', '仅观察当前门', copy.deepcopy(initial)), ForgedCallbacks()))
+>               self.assertEqual(result.data['status'], 'stopped')
+E               AssertionError: 'no_suggestion' != 'stopped'
+E               - no_suggestion
+E               + stopped
+
+tests\api\test_upgrade_v32.py:367: AssertionError
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SUBFAILED(case='existing-clue-future-fact') tests/api/test_upgrade_v32.py::UpgradeV32Acceptance::test_ai_read_callback_cannot_forge_observations_future_clues_or_inventory
+1 failed, 97 passed, 1 warning, 255 subtests passed in 53.48s

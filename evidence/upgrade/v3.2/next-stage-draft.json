@@ -1,0 +1,32 @@
+{
+  "status": "Planning only; v3.2 final fullAPI/doc closure and own commit/push pending",
+  "scope": "exactly rotatable circuit + final device sequence; existing clue network and four-device chains retained",
+  "circuit": "3x3 visible shaped modules with rotations; server proves reciprocal port connectivity from public source to sink, never accepts client solved flag or only an expected orientation array",
+  "circuit_state_policy": "server persists partial rotations; complete proof required before CIRCUIT_READY, then original main-switch stage; freeze completed board to avoid accidental undo of progress",
+  "visibility": "public board metadata only at currently exposed/observed R2 powerbox, no future room information in initial state or AI context",
+  "sequence": "submit explicit device identifiers in player-derived order; different button layout from R1 source order so early source fact remains necessary; server revalidates all physical stages, direct old numeric panel input cannot bypass",
+  "sequence_state_policy": "unsubmitted local sequence draft resets on reload/restore; accepted completion is server saved; wrong submit preserves real puzzle progress/inventory",
+  "reuse": "same Store/save/AI dispatcher, strict3.3 state/schema, explicit3.2/3.1/legacy entries and separate3.3 DB/session; no Phaser/art/score/hints yet",
+  "qa": "existing regression plus actual main route/save/restore/refresh/server restart and partial circuit persistence; test alternate valid connectivity, false solved/invalid module/sequence/bypass rejection; compact evidence",
+  "limits": [
+    "No paid calls",
+    "No human playtime claim"
+  ],
+  "planned_public_interface": {
+    "actions": {
+      "rotate_circuit": {
+        "target_id": "r2_powerbox",
+        "module_id": "c00"
+      },
+      "submit_circuit": {
+        "target_id": "r2_powerbox"
+      },
+      "submit_sequence": {
+        "target_id": "r3_panel",
+        "device_ids": "four device identifiers"
+      }
+    },
+    "projection": "minigames.circuit and minigames.sequence nullable and conditionally visible",
+    "ai_boundary": "manual actions absent from original provider six tools; minigames protected from AI read callbacks"
+  }
+}

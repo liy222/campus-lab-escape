@@ -96,3 +96,10 @@ v3.0 commit1499610 and tagv3.0-gameplay-information verified on private remote, 
 
 ### v3.1 accepted
 Four authoritative device chains accepted after invariant fix. Final full89pytest/235subtests0; pre-fixbuild/Chrome0 retained separately, final39stepAPI/save-reopen-restore recertifies delta. Normal own commit/push/tag v3.1-object-state before3.2. Evidence: evidence/upgrade/v3.1/accepted.json.
+
+### v3.2 active
+v3.1 cfab661/tagv3.1-object-state pushed and remoteauthor verifiedliy222. Rebuild three-room puzzle dependencies and graybox placement, preserving old version entry/data and same Store/API/AI. Scope/ownership/dependency design: evidence/upgrade/v3.2/plan.json. QA afterstable, owncommit/push before3.3.
+
+
+### v3.2 accepted, 2026-10-07
+Three-room/four-item clue redesign accepted: fixed fullAPI97/257 exit0, all23source/tests before-after identical. First runtime existing-clue text forgery failure retained; narrow complete-record/duplicateID guard independently closed. Originalcandidate build0/Chrome61checks0 (main route/save/restore/reload/OS restart/mobile/oldentries) retained honestly; no UI delta so not rerun afterguard. Evidence evidence/upgrade/v3.2/accepted.json. No paid/Phaser/human timing claim; own commit/push precedes3.3.

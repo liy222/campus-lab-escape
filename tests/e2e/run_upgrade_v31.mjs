@@ -172,7 +172,7 @@ try {
   while (frontendPort === backendPort) frontendPort = await freePort();
   const backendURL = `http://127.0.0.1:${backendPort}`, frontendURL = `http://127.0.0.1:${frontendPort}`;
   const backendArgs = ['-m', 'uvicorn', 'backend.app.main:app', '--host', '127.0.0.1', '--port', String(backendPort), '--no-access-log'];
-  const backendEnv = { GAMEPLAY_VERSION: 'upgrade', SQLITE_PATH: path.join(temp, 'game-v3.1.sqlite') };
+  const backendEnv = { GAMEPLAY_VERSION: 'v3.1', SQLITE_PATH: path.join(temp, 'game-v3.1.sqlite') };
   const backend = start('backend', python, backendArgs, backendEnv);
   start('frontend', process.execPath, [path.join(root, 'frontend/node_modules/vite/bin/vite.js'), '--host', '127.0.0.1', '--port', String(frontendPort), '--strictPort'], { CAMPUS_BACKEND_URL: backendURL, VITE_GAMEPLAY_VERSION: 'v3.1' }, path.join(root, 'frontend'));
   await Promise.all([ready(`${backendURL}/api/health`), ready(frontendURL)]);

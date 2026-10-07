@@ -43,8 +43,8 @@ def load_env_file(path: Path, environment: dict[str, str]) -> None:
 def make_frontend_environment(inherited: dict[str, str], backend_url: str,
                               gameplay_version: str = "upgrade") -> dict[str, str]:
     """Pass only explicit public settings to Vite, never inherited VITE secrets."""
-    if gameplay_version not in {"legacy", "upgrade"}:
-        raise ValueError("gameplay_version must be 'legacy' or 'upgrade'")
+    if gameplay_version not in {"legacy", "v3.1", "v3.2", "upgrade"}:
+        raise ValueError("gameplay_version must be 'legacy', 'v3.1', 'v3.2' or 'upgrade'")
     server_prefixes = ("MODEL_", "DEEPSEEK_", "OPENAI_", "ANTHROPIC_", "AI_",
                        "GOOGLE_", "GEMINI_", "MISTRAL_", "COHERE_", "OLLAMA_",
                        "HUGGINGFACE_", "HF_", "AZURE_OPENAI_")
@@ -55,7 +55,7 @@ def make_frontend_environment(inherited: dict[str, str], backend_url: str,
                    and key.upper() != "SQLITE_PATH"
                    and not any(fragment in key.upper() for fragment in secret_fragments)}
     environment["CAMPUS_BACKEND_URL"] = backend_url
-    environment["VITE_GAMEPLAY_VERSION"] = "legacy" if gameplay_version == "legacy" else "v3.1"
+    environment["VITE_GAMEPLAY_VERSION"] = "v3.2" if gameplay_version == "upgrade" else gameplay_version
     return environment
 
 
@@ -128,8 +128,8 @@ def main() -> int:
         backend_environment = os.environ.copy()
         load_env_file(ROOT / ".env", backend_environment)
         gameplay_version = (backend_environment.get("GAMEPLAY_VERSION") or "upgrade").strip().lower()
-        if gameplay_version not in {"legacy", "upgrade"}:
-            raise RuntimeError("GAMEPLAY_VERSION must be 'legacy' or 'upgrade'")
+        if gameplay_version not in {"legacy", "v3.1", "v3.2", "upgrade"}:
+            raise RuntimeError("GAMEPLAY_VERSION must be 'legacy', 'v3.1', 'v3.2' or 'upgrade'")
         backend_environment["GAMEPLAY_VERSION"] = gameplay_version
         provider = args.provider if args.provider is not None else (backend_environment.get("AI_PROVIDER") or "mock")
         backend_environment["AI_PROVIDER"] = provider

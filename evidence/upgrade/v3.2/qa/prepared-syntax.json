@@ -1,0 +1,14 @@
+{
+  "scope": "Preparation syntax checks only, no imports/runtime/model/test/browser executed",
+  "formal_status": "Waiting Main SOURCE STOP/GO",
+  "commands": [
+    {
+      "exit_code": 0,
+      "command": "Python -B -X utf8 -c ast.parse(test_upgrade_v32.py)"
+    },
+    {
+      "exit_code": 0,
+      "command": "node --check tests/e2e/run_upgrade_v32.mjs"
+    }
+  ]
+}

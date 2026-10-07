@@ -1,0 +1,33 @@
+{
+  "milestone": "v3.2",
+  "owner": "frontend",
+  "status": "SOURCE STOP",
+  "source_files": {
+    "frontend/src/App.tsx": "c014f7f26b2f5e2e66c63a1054ab01926e7fe61c9d389dbe9c3bb75d0ec937d1",
+    "frontend/src/api.ts": "14095567ddc9ef78406d4825fcf4833d2dc2665cd9e96537be92455f9c9b08f1",
+    "frontend/src/style.css": "85e0ce1f9bdd3eee8834bb933f3c6dd4576577476a2d3faef6dfa2b06868fd49"
+  },
+  "checks": [
+    {
+      "exit_code": 0,
+      "result": "tsc --noEmit and Vite production build passed; 31 modules transformed",
+      "command": "npm.cmd --prefix frontend run build"
+    },
+    {
+      "exit_code": 0,
+      "result": "no whitespace errors",
+      "command": "git diff --check -- frontend/src/App.tsx frontend/src/api.ts frontend/src/style.css (process-local core.whitespace=cr-at-eol)"
+    }
+  ],
+  "scope": [
+    "v3.2 manual submit_login form wired to server affordance for r2_monitor",
+    "three responsive CSS graybox room layouts with server-provided objects as hotspots",
+    "typed schema 1.2 puzzle_states item-slot enums",
+    "legacy, v3.1 and v3.2 session storage namespaces retained with v3.2 default"
+  ],
+  "limitations": [
+    "No browser interaction QA performed by frontend owner; assigned independent QA remains separate",
+    "No backend route, API contract, tests, launcher, or documentation edits",
+    "No Phaser or final art"
+  ]
+}

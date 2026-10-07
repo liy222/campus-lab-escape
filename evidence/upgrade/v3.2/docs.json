@@ -1,0 +1,44 @@
+{
+  "version": "v3.2",
+  "status": "STOP",
+  "files": [
+    "README.md",
+    "release/UPGRADES.md",
+    "evidence/upgrade/v3.2/docs.json"
+  ],
+  "source_sha256": {
+    "README.md": "5e267bafe958396fd86b8587f490a86746efe14533285b24fdcc6bb976348e17",
+    "release/UPGRADES.md": "2962e3bf20496303e271e6ebfca5f8edaae479b56ee8c73552b8b9f3d7df6f1f"
+  },
+  "commands": [
+    {
+      "command": "git -c safe.directory='D:/深度能力' diff --check -- README.md release/UPGRADES.md",
+      "exit_code": 0
+    },
+    {
+      "command": "Get-FileHash -Algorithm SHA256 README.md,release/UPGRADES.md",
+      "exit_code": 0
+    }
+  ],
+  "qa": {
+    "result": "evidence/upgrade/v3.2/qa/result.json",
+    "report": "review/findings/upgrade-v32.md",
+    "api_exit_code": 0,
+    "api_passed": 97,
+    "api_subtests_passed": 257,
+    "api_warnings": 1,
+    "fixed_candidate": "evidence/upgrade/v3.2/candidate-fixed.json",
+    "browser_build_reused_from_original_candidate": true,
+    "browser_checks": 61,
+    "browser_exit_code": 0,
+    "build_exit_code": 0,
+    "paid_calls": 0
+  },
+  "limitations": [
+    "API QA used synthetic callbacks/providers; it does not establish real model quality or real-player completion time.",
+    "Browser and build evidence belongs to the original candidate and was not rerun after the narrow runtime fix.",
+    "The root launcher was checked for bytes/configuration but was not actually started.",
+    "The v3.2 tag is pending Main synchronization; no commit SHA is claimed here.",
+    "One existing Starlette TestClient/httpx deprecation warning remains."
+  ]
+}

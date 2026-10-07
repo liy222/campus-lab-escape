@@ -1,0 +1,44 @@
+{
+  "scope": "owner-directed, not formal QA",
+  "counts": {
+    "actions": 46,
+    "save_reopen_restore": 46,
+    "rejects": 14
+  },
+  "device_stages": {
+    "cabinet": [
+      "CODE_ACCEPTED",
+      "ITEM_TAKEN",
+      "LOCKED",
+      "OPEN"
+    ],
+    "powerbox": [
+      "CIRCUIT_READY",
+      "CLOSED",
+      "FUSE_INSTALLED",
+      "MISSING_FUSE",
+      "OPEN",
+      "POWER_ON"
+    ],
+    "computer": [
+      "BOOTING",
+      "DATA_READ",
+      "LOGIN_LOCKED",
+      "OFF",
+      "UNLOCKED"
+    ],
+    "exit": [
+      "CARD_ACCEPTED",
+      "FINAL_CHECK",
+      "LOCKED",
+      "OPEN",
+      "UNLOCKED"
+    ]
+  },
+  "clues_at_finish": 8,
+  "early_exploration_actions": 9,
+  "mock_callback_cases": 7,
+  "neutral_inspect_http_ai": true,
+  "paid_calls": 0,
+  "result": "pass"
+}
