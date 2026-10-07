@@ -51,6 +51,23 @@ async def restore_session(session_id: str, request: Request):
     return response(request.app.state.store.control(session_id, request.headers.get("X-Session-Token"), "restore", raw, parsed))
 
 
+@router.get("/sessions/{session_id}/saves")
+def list_session_saves(session_id: str, request: Request):
+    return response(request.app.state.store.list_saves(session_id, request.headers.get("X-Session-Token")))
+
+
+@router.post("/sessions/{session_id}/saves")
+async def create_session_save(session_id: str, request: Request):
+    raw, parsed = await body(request)
+    return response(request.app.state.store.create_save(session_id, request.headers.get("X-Session-Token"), raw, parsed))
+
+
+@router.post("/sessions/{session_id}/saves/{save_id}/restore")
+async def restore_selected_save(session_id: str, save_id: str, request: Request):
+    raw, parsed = await body(request)
+    return response(request.app.state.store.restore_save(session_id, request.headers.get("X-Session-Token"), save_id, raw, parsed))
+
+
 @router.post("/sessions/{session_id}/ai/turns")
 async def ai_turn(session_id: str, request: Request):
     import asyncio

@@ -51,6 +51,30 @@
       "requires_session_token": true
     },
     {
+      "method": "GET",
+      "path": "/api/sessions/{id}/saves",
+      "request": null,
+      "response": "list_saves_response",
+      "success_status": 200,
+      "requires_session_token": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sessions/{id}/saves",
+      "request": "create_save_request",
+      "response": "save_slot_response",
+      "success_status": 201,
+      "requires_session_token": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sessions/{id}/saves/{save_id}/restore",
+      "request": "version_request",
+      "response": "save_slot_response",
+      "success_status": 200,
+      "requires_session_token": true
+    },
+    {
       "method": "POST",
       "path": "/api/sessions/{id}/ai/turns",
       "request": "ai_turn_request",

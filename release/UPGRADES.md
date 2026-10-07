@@ -1,6 +1,6 @@
 # 游戏升级路线与交付门槛
 
-本文跟踪 `docs/upgrade-plan.md` 中已接受的 v3.0–v4.2 范围。计划是设计基线，不是执行或验收证据。v3.4（关卡3.4.0、Schema 1.4.0）独立 QA 已在记录的联合运行范围内接受并 SOURCE STOP；`v3.4-graybox-complete` tag 等待 Main 同步登记。前一版本 v3.3 的 commit `58587cf9458920fef435e8cb5d7638b1e318c19b` 与 tag `v3.3-mini-games` 已推送并核实。`CH01_v2` 是历史冻结基线。旧版工程检查、实验与评价器结论不会自动扩展到本升级路线。
+本文跟踪 `docs/upgrade-plan.md` 中已接受的 v3.0–v4.2 范围。计划是设计基线，不是执行或验收证据。v3.4（关卡3.4.0、Schema 1.4.0）灰盒独立 QA 已在记录的联合运行范围内接受并 SOURCE STOP；commit `49a2f925a78055552781685e79ee96496bb9bdd6` 与 tag `v3.4-graybox-complete` 已推送并核实。当前工作树另含多时刻存档增量，尚待独立 QA。前一版本 v3.3 的 commit `58587cf9458920fef435e8cb5d7638b1e318c19b` 与 tag `v3.3-mini-games` 已推送并核实。`CH01_v2` 是历史冻结基线。旧版工程检查、实验与评价器结论不会自动扩展到本升级路线。
 
 | 版本 | 主要范围 | 当前状态 |
 |---|---|---|
@@ -8,7 +8,7 @@
 | v3.1 | 多状态物体及对应视觉状态要求 | 独立 QA 通过；commit `cfab6616c288fc1d5a3b41ae118911a13e9ad321` 与 tag `v3.1-object-state` 已推送 |
 | v3.2 | 重设计三房间谜题网络并完成房间灰盒布局 | 独立 API QA 通过（97 passed、257 子项、exit 0）；commit `519c8d0d542fcfedd4bfaaaf8b81e68b00d05925` 与 tag `v3.2-puzzle-redesign` 已推送 |
 | v3.3 | 线路连接、顺序操作两类小游戏及可操作灰盒 | 独立 QA 按联合 API 运行与定向复验、同候选 build/browser 结果接受；SOURCE STOP；commit/tag 已推送 |
-| v3.4 | 跨房间线索、AI 三级提示、结算与完整灰盒通关 | 联合 API/build/Chrome/launcher 证据接受；SOURCE STOP；tag `v3.4-graybox-complete` 等待 Main 同步登记 |
+| v3.4 | 跨房间线索、AI 三级提示、结算与完整灰盒通关 | 灰盒联合 QA 接受并已推送；多时刻存档增量已实现，等待独立 QA |
 | v4.0 | 引入 Phaser，完成 Room 1 正式画面 | 按用户指示暂停，等待详细画面升级计划；未开始 |
 | v4.1 | 完成 Room 2 正式画面 | 未开始；等待后续计划 |
 | v4.2 | 完成 Room 3、统一 UI、音效、动画与最终优化 | 未开始；等待后续计划 |
@@ -54,6 +54,10 @@ API 证据是两个 epoch：首轮全套运行 exit 1，105 passed、291 个子�
 ## v3.4 独立 QA：联合证据接受
 
 v3.4 使用关卡3.4.0、Schema 1.4.0、独立 `game-v3.4.sqlite` 与 `campus-lab-session-upgrade-v3.4`；v3.3/v3.2/v3.1/legacy 各自数据空间保留且不自动迁移。三级提示选择仅本地生效，点击“获取提示”才请求；真实模式只向模型服务发符合条件的提示主题名称与已发现线索 ID，不发玩家问句、对话历史或线索全文，旧版助手和 API Key 内存清除行为保持不变。服务器统计/结算涵盖10条线索、最多2条隐藏发现、提示、失误、用时与 S/A/B/C；用时包括离线并在胜利冻结，存档恢复回滚统计，重置新计时但保留存档槽；评级不影响通关，S/A/B 阈值分别为线索≥9且提示≤1/失误≤2、线索≥7且提示≤3/失误≤5、提示≤8，其余为 C。正式 API 联合覆盖为：首轮全套 exit 1，118个方法通过、315个子项通过、1个子项失败（新并发用例误期望 reservation 中相同请求返回409，实际返回503 `MODEL_UNAVAILABLE`）；仅该新方法修正预期后的定向复验 exit 0，1个方法、3个子项通过。没有第二次全套 exit 0，也不重复相加子项。冻结候选38条产品/合同/规格/launcher路径哈希一致；build exit 0，Chrome exit 0、132项、issues为空，6张截图已查看；launcher 字节/配置检查 exit 0，但根目录 CMD 未实际启动。结果、命令与边界见 [`v3.4 QA 结果`](../evidence/upgrade/v3.4/qa/result.json) 和 [`独立报告`](../review/findings/upgrade-v34.md)。本次使用 mock/stub、付费调用0；没有真实模型质量/密钥验证、真人20–30分钟时长证明或历史敏感存档迁移验收，仍有既有 Starlette/httpx 弃用警告。灰盒 QA 已接受；按用户指示画面升级暂停、等待详细计划，未引入 Phaser 或最终美术。v3.4 commit `49a2f925a78055552781685e79ee96496bb9bdd6` 与 tag `v3.4-graybox-complete` 已推送并核实，GitHub 作者与提交者均为 `liy222`。
+
+## v3.4 多时刻存档增量：联合验收通过
+
+在同一已认证本地游戏中，每次“保存新存档”都会新增一个独立记录；名称可选、最多40字，留空由服务端按时间命名。列表按保存时间倒序显示名称、时间、房间、进行/通关状态与线索数；“读取”经确认后替换当前进度，服务端验证存档并切换 generation。reset 保留全部存档，restore/reset/save/同步后重新读取列表；异步列表响应按当前游戏、generation 和 revision 检查，避免过期结果覆盖界面。新表追加保存，不删除、不覆盖既有新存档；旧版单槽以“旧版单槽”条目出现，房间/状态/线索数量显示为未知，不解析旧私有快照；旧单槽控件和旧 API 保留，单槽保存只替换那一份旧记录。多存档接口为 `GET /api/sessions/{id}/saves`、`POST /api/sessions/{id}/saves` 与 `POST /api/sessions/{id}/saves/{save_id}/restore`；游戏仍使用现有 sessionStorage 会话和本地 DB，不提供账号、云端或跨浏览器同步，新游戏会创建另一份游戏存档列表。冻结41个产品/兼容路径不变。正式全套 API 首轮 exit 1：126方法与336子项通过，1方法和1子项因新增 QA 预期错误失败（恢复后旧提案应失效；已完成失败请求应重放原错误）。只修正这两处新测试预期，定向复验 exit 0：2方法、9子项通过，含另用新请求标识验证旧 generation 被拒绝；这是联合覆盖，没有第二次完整全绿运行，重叠子项不相加。最终 build exit 0，真实 Chrome exit 0、149检查、issues为空，覆盖早期/线路中期/通关三份命名存档、指定恢复与取消、刷新、进程重启、旧槽、375px、转义名称及旧版本入口；11张截图经 QA 查看，Main另查看存档列表和确认图。测试仅 mock/stub，付费0；本次自有服务已退出，保留用户既有环境；仍有既有 Starlette/httpx 弃用警告。根CMD未交互启动，不证明真人游玩时长。证据见 [`Main验收`](../evidence/integration/multiple-saves/accepted.json)、[`独立报告`](../review/findings/multiple-saves.md) 和 [`Backend owner记录`](../evidence/integration/multiple-saves/backend.json)。
 
 ## 阶段边界
 

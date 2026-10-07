@@ -12,6 +12,7 @@ from uuid import uuid4
 from pydantic import ValidationError
 
 from .ai import AIStoreMixin
+from .saves import SaveStoreMixin
 from ..domain.models import ActionRequest, EmptyRequest, GameState, RuleError, TOOL_MODELS, VersionRequest, validate_generation
 from ..domain.rules import LEVEL_VERSION, SCHEMA_VERSION, apply_action, validate_invariants, visible_state
 
@@ -92,7 +93,7 @@ def validate_snapshot(raw: str, session_id: str, current: GameState, rules=LEGAC
         raise RuleError("INVALID_SNAPSHOT", "存档损坏或不符合游戏规则。") from None
 
 
-class Store(AIStoreMixin):
+class Store(AIStoreMixin, SaveStoreMixin):
     def __init__(self, path: str | Path, *, rules=LEGACY_RULES):
         self.rules = rules
         self.runtime_owner = new_id()
@@ -126,6 +127,7 @@ class Store(AIStoreMixin):
             """)
 
             self.migrate_ai(connection)
+            self.migrate_saves(connection)
 
     def parse_state(self, raw):
         state = self.rules.state_model.model_validate(json.loads(raw))

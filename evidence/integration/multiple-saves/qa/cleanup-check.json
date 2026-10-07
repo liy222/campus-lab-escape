@@ -1,0 +1,48 @@
+{
+  "recorded_at": "2026-10-07T12:20:48.904438+00:00",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "evidence/integration/multiple-saves/qa/cleanup_check.py"
+  ],
+  "nested_command": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    "$qaOwnedPids=@(1620,5260,5272,7644,11960,14028,18468,19284,20724,23172,23320); $qaOwnedPorts=@(1515,1516,3170,3171,7105,7106,8150,8151,10907,10908);  $qaActivePids=@(Get-Process -Id $qaOwnedPids -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Id);  $qaListeners=@(Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $qaOwnedPorts -contains $_.LocalPort } | Select-Object LocalAddress,LocalPort,OwningProcess);  [pscustomobject]@{ active_owned_pids=$qaActivePids; owned_port_listeners=$qaListeners } | ConvertTo-Json -Compress -Depth 4"
+  ],
+  "exit_code": 0,
+  "stdout": {
+    "active_owned_pids": [],
+    "owned_port_listeners": []
+  },
+  "checked_pids": [
+    1620,
+    5260,
+    5272,
+    7644,
+    11960,
+    14028,
+    18468,
+    19284,
+    20724,
+    23172,
+    23320
+  ],
+  "checked_ports": [
+    1515,
+    1516,
+    3170,
+    3171,
+    7105,
+    7106,
+    8150,
+    8151,
+    10907,
+    10908
+  ],
+  "owned_cleanup_complete": true,
+  "policy": "Only read exact PID/port list from successful QA Chrome cleanup; no process killed and existing user services untouched"
+}

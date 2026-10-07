@@ -1,6 +1,6 @@
 # 逃离校园实验室
 
-这是一个本地运行的三房间网页解谜游戏：规则由后端执行，AI队友提供受限帮助；旧版本中的推进建议须由玩家确认。本地当前版本为 v3.4（关卡3.4.0；接口与Schema 1.4.0），独立 QA 已在记录的联合运行范围内接受并 SOURCE STOP。v3.4 增加三级服务器提示、本局统计和通关结算，没有引入 Phaser 或最终美术。QA 结果及限制见 [`v3.4 QA 结果`](evidence/upgrade/v3.4/qa/result.json)、[`v3.4 独立报告`](review/findings/upgrade-v34.md) 和 [`升级交付门槛`](release/UPGRADES.md)。v3.4 commit `49a2f925a78055552781685e79ee96496bb9bdd6` 和 tag `v3.4-graybox-complete` 已推送并由 GitHub API 核实，作者与提交者均关联到 `liy222`。前一版本 v3.3 的 commit `58587cf9458920fef435e8cb5d7638b1e318c19b`、tag `v3.3-mini-games` 已推送并核实。设计基线见 [`docs/upgrade-plan.md`](docs/upgrade-plan.md)；更早版本的交付信息见 [`升级交付门槛`](release/UPGRADES.md)。
+这是一个本地运行的三房间网页解谜游戏：规则由后端执行，AI队友提供受限帮助；旧版本中的推进建议须由玩家确认。本地 v3.4（关卡3.4.0；接口与Schema 1.4.0）灰盒已按独立 QA 联合证据接受并 SOURCE STOP。v3.4 增加三级服务器提示、本局统计和通关结算，没有引入 Phaser 或最终美术。QA 结果及限制见 [`v3.4 QA 结果`](evidence/upgrade/v3.4/qa/result.json)、[`v3.4 独立报告`](review/findings/upgrade-v34.md) 和 [`升级交付门槛`](release/UPGRADES.md)。v3.4 commit `49a2f925a78055552781685e79ee96496bb9bdd6` 和 tag `v3.4-graybox-complete` 已推送并由 GitHub API 核实，作者与提交者均关联到 `liy222`。多时刻存档增量已按独立 QA 联合证据验收：可为不同进度分别命名并选择读取，重新开始保留存档。验收与限制见 [`多存档验收`](evidence/integration/multiple-saves/accepted.json) 和 [`独立报告`](review/findings/multiple-saves.md)。前一版本 v3.3 的 commit `58587cf9458920fef435e8cb5d7638b1e318c19b`、tag `v3.3-mini-games` 已推送并核实。设计基线见 [`docs/upgrade-plan.md`](docs/upgrade-plan.md)；更早版本的交付信息见 [`升级交付门槛`](release/UPGRADES.md)。
 
 ## 当前升级路线
 
@@ -60,7 +60,7 @@ legacy 使用原 `campus-lab-session-v1` 浏览器存储；v3.1 使用独立的 
 Remove-Item Env:GAMEPLAY_VERSION,Env:SQLITE_PATH -ErrorAction SilentlyContinue
 ```
 
-游戏界面的“保存”和“恢复”用于当前会话的单槽进度。服务重启后可用恢复操作继续；T30 已验证该行为及 v2 与归档 v1 快照的版本隔离。数据库属于本地运行数据，不是发布材料。
+游戏界面可以在当前游戏中创建多个存档，每次创建都增加一份，列表显示名称、时间、房间、线索数和进度状态；选择“读取”并确认后，当前进度会替换为所选时刻。名称可选，留空时由系统命名。存档列表保留旧版单槽记录；“旧版单槽兼容操作”中的保存会替换那一份旧存档，不会替换上方独立存档。重新开始会清空当前进度但保留存档。存档属于本机当前游戏，不提供账号或云端同步；同一标签页刷新或本地服务重启后可继续读取。T30 曾验证旧单槽的恢复及 v2 与归档 v1 快照的版本隔离。数据库属于本地运行数据，不是发布材料。
 
 ## 独立运行 v1 回退基线
 

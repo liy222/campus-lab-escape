@@ -37,8 +37,8 @@ for tool in tools:
     visit(tool["function"]["parameters"], {}, "tools.json")
 routes = json.loads((ROOT / "routes.json").read_text(encoding="utf-8"))
 api = json.loads((ROOT / "api.schema.json").read_text(encoding="utf-8"))
-assert len(routes["routes"]) == 9
-assert len({(r["method"], r["path"]) for r in routes["routes"]}) == 9
+assert len(routes["routes"]) == 12
+assert len({(r["method"], r["path"]) for r in routes["routes"]}) == 12
 for route in routes["routes"]:
     assert route["request"] is None or route["request"] in api["$defs"]
     assert route["response"] in api["$defs"]

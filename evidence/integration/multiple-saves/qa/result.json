@@ -1,0 +1,321 @@
+{
+  "status": "Independent multiple-saves QA accepted within joint recorded scope; SOURCE STOP",
+  "sealed_at": "2026-10-07T12:22:54.531664+00:00",
+  "candidate": "evidence/integration/multiple-saves/candidate.json",
+  "candidate_sha256": "c4461441e48b0cff9b64421daa3acaa1e29568bf66cba95b157b1a0b49a6d4df",
+  "source_count": 41,
+  "source_sha256_final": {
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/hints.py": "7d769e7720ed7af899359fcbaa98f4aa7ac7c1032a52196610c4accdaeb8a849",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/runtime.py": "3d73ceb972eac6a67dda1acb7e889fc1d372f8a1dc5f4531cda62f0023c6b797",
+    "backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e",
+    "backend/app/api/routes.py": "0414bde85185ea647c0a04d74c71b022e4f3f7ab33780bafe2492074aa64b2bf",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/graybox_models.py": "ea21b1d81f09a4178fb3ec40cf32ae98960b8607b3589b247eb956bc72cb1b5a",
+    "backend/app/domain/graybox_rules.py": "fb618cb3c5a6f1a941ad3cf58c996fa2dd200c963ae8ae347412af62d9b11872",
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/mini_rules.py": "a8c42558ceea9456514afa43221617f6f7d735089dfb6935c7ad5e982176baa8",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/domain/save_models.py": "2dc073a8f8e94721d04ff39157c5e1c4b51ed8bc6f5e092e6ba2fa839cd03d8b",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/main.py": "3e8491371ec4e6613ed4ec7c89e23d600bcb40a97572c952f042fcc9395e2d11",
+    "backend/app/storage/ai.py": "e4437468129c5b70a7dad37f6eab1d2e7017204ccde23259aa8fd38b6c151e5b",
+    "backend/app/storage/saves.py": "e307c613091519ddef12e44afac0299b70fb87dbb0eebf0a9527717ea8728ac1",
+    "backend/app/storage/sqlite.py": "cb1f946f6377cb92a6776ec00513b4470be262ad59a907e3f17c1972c027994a",
+    "contracts/api.schema.json": "2f49a0d104c002e54088c5685c06d0b6183355e0841ebbf04cbad128acb9c1ef",
+    "contracts/build_contracts.py": "80c2ff986b9051762615aa945199c3731c806e6b6d9fc4e8b35ea9dae8ac52f8",
+    "contracts/check_contracts.py": "11ba895c39233e85e7b1729d231b071bb1c50e0e096e9a7d560d70b63c8d3f3d",
+    "contracts/routes.json": "a51e8e34b90f1f7391013407ea003420ac1b7c090ca262560084400a7c7339cf",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "contracts/tools.schema.json": "f88d79a4d8e53c04f531e159fb47bb0d99439cd37d9409635bfef25238edb691",
+    "docs/SPEC.md": "8d93003177fff41a5e27985d0747439b3814dbed910fb7cd8a7cd3362412fc6a",
+    "docs/level_design.md": "3031a11c2202078c89922b8717292452af64053bacba4982b7fbbcedfb758b71",
+    "frontend/package-lock.json": "7172b8263043ff6370b42f310e5e3b9fe6bdb17a14880f1d17558ff500177e84",
+    "frontend/package.json": "23b85643b3baef03b7280cf618d736dcc03c2e80502e5141c1029f8d43667353",
+    "frontend/src/App.tsx": "50274b7b32aa16dd18d5bac8307f6c9977132faef1298393fbf609c662741120",
+    "frontend/src/Assistant.tsx": "bbc76db1bd3695c60fb4c29e1b30ad0d8683af1496a0e8bb1c17d4c310651220",
+    "frontend/src/api.ts": "605733d3dbbeee625e0e9d1050dcdac1fd325b7a2e71bb04233358ed49abacb2",
+    "frontend/src/style.css": "48d65bf364c1fef06414e7d719c6c5500e1490a9fb8360afefe44a33cef6dec1",
+    "scripts/dev.py": "2b0b568fd209052fee446976534b5bb921c4f19031214503438b09c09b6a0331",
+    "启动游戏.cmd": "235999c0b4cfbf0153942eb06552cd9a0cf159b1475c9685f56ece0ba909b1ad"
+  },
+  "all_stages_source_match": true,
+  "files_sha256_final": [
+    {
+      "path": "tests/api/test_multiple_saves.py",
+      "sha256": "e0a154004431fc8be0098b0277c1cd8a8456edcd7f1a4ff21f968241946f7ff2"
+    },
+    {
+      "path": "tests/e2e/run_multiple_saves.mjs",
+      "sha256": "bed78881b88a46b9e26de5dd17a73adacc875b0a682eec4f35b40b53be6d58b5"
+    },
+    {
+      "path": "evidence/integration/multiple-saves/qa/formal-api/runner.py",
+      "sha256": "17a1412e7dc71743d23f009b788a7ae02bdb6dc9e971077c62e4071ff2ef4bd9"
+    },
+    {
+      "path": "evidence/integration/multiple-saves/qa/formal-api-directed/runner.py",
+      "sha256": "6e51477f4b9587125ec151601bff295f010ab3f1fd7c55cb66fd27b77633e470"
+    },
+    {
+      "path": "evidence/integration/multiple-saves/qa/build_check.py",
+      "sha256": "889c753235b6e228f6746bbeb78179cc233aafda3a67d8eb8eec90992b8d5ee6"
+    },
+    {
+      "path": "evidence/integration/multiple-saves/qa/cleanup_check.py",
+      "sha256": "db69d44f52db6529307e3598453cb5562de3576b6a279440c7281c96137b6c3e"
+    }
+  ],
+  "old_files": [
+    {
+      "path": "tests/api/__init__.py",
+      "sha256": "12e8f3ba5a5fa7433bc098de3f053abd605a71874782fcef11c4272b0a6b02d6",
+      "unchanged": true
+    },
+    {
+      "path": "tests/api/test_ch01.py",
+      "sha256": "5068ae010f44a9796694639f3f2e96378f0e39605d253f1d784d716652c7e377",
+      "unchanged": true
+    },
+    {
+      "path": "tests/api/test_m2.py",
+      "sha256": "dca8f190e494f4868ac997a70c55cd4cbdc959c7db16a1ca31c8fa611feb9bcc",
+      "unchanged": true
+    },
+    {
+      "path": "tests/api/test_m3.py",
+      "sha256": "78a4715d1db5c90921be7daf0f45dd16b1e211ffcd06142d81edde343f652aa4",
+      "unchanged": true
+    },
+    {
+      "path": "tests/api/test_play_ai_settings.py",
+      "sha256": "d24bbc2012f3448f4cc9366e9bfaf38d6f49d39f947c05ed33fc4ace8b48343e",
+      "unchanged": true
+    },
+    {
+      "path": "tests/api/test_r1.py",
+      "sha256": "f53f44649f9e7e85d5ab21f185c9300960b91173009fb83e7cbe167a22425343",
+      "unchanged": true
+    },
+    {
+      "path": "tests/api/test_upgrade_v30.py",
+      "sha256": "7833c92fa2b1fcdf849400020c8e445d937962906640cd488a9126a5598ac457",
+      "unchanged": true
+    },
+    {
+      "path": "tests/api/test_upgrade_v31.py",
+      "sha256": "1c306a414922085fbb7ada915c39b69e5d6985be31d06bcd342752622eed7f45",
+      "unchanged": true
+    },
+    {
+      "path": "tests/api/test_upgrade_v32.py",
+      "sha256": "624feb4241f3b5c2010fd78c485817c779bb273faea7ac61cb7105ac7a0c7825",
+      "unchanged": true
+    },
+    {
+      "path": "tests/api/test_upgrade_v33.py",
+      "sha256": "6e25d8f64db6cd9c35b8382c13f9efb80dfe318de048e92fd137ef2577f99f67",
+      "unchanged": true
+    },
+    {
+      "path": "tests/api/test_upgrade_v34.py",
+      "sha256": "7580e792ddbc66776fef0a83d577af74efb889889b980638fcb0f37596a33141",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v31.mjs",
+      "sha256": "740e78ee0f9512c22bd75759b1b8f8fb4ca740521f2c294ac9da8fc4931c9631",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v32.mjs",
+      "sha256": "9a8e9bb583b6ee9751ae150cd71959b6426bd178705c53b85ff89b571b545bfb",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v33.mjs",
+      "sha256": "b963d3d0502be8db7f0c484fb01301cc3327e0d9400abfa3089748d5f2383928",
+      "unchanged": true
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v34.mjs",
+      "sha256": "6317c927e7dfbb7ff9ddf5625b589b77149fde1e7b5b480b6bac65832939de88",
+      "unchanged": true
+    }
+  ],
+  "stages": {
+    "first_full_api": {
+      "run": "evidence/integration/multiple-saves/qa/formal-api/run.json",
+      "run_sha256": "cdea470571ac3b9c51011e5d89042fa2b2e63ba732320b2f53f84b5c45ce7b36",
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "evidence/integration/multiple-saves/qa/formal-api/runner.py",
+        "evidence/integration/multiple-saves/candidate.json"
+      ],
+      "exit_code": 1,
+      "source_count": 41,
+      "source_before_after_candidate_match": true,
+      "pytest_arguments": [
+        "tests/api",
+        "-q",
+        "--tb=short",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "tests_before_after_match": true
+    },
+    "directed_api": {
+      "run": "evidence/integration/multiple-saves/qa/formal-api-directed/run.json",
+      "run_sha256": "63b3917dfdf77c137f9a56fa86e2133348bd33e8715fab89c9bf67fa78fa743d",
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "evidence/integration/multiple-saves/qa/formal-api-directed/runner.py",
+        "evidence/integration/multiple-saves/candidate.json"
+      ],
+      "exit_code": 0,
+      "source_count": 41,
+      "source_before_after_candidate_match": true,
+      "pytest_arguments": [
+        "tests/api/test_multiple_saves.py::MultipleSavesAcceptance::test_additive_archive_routes_preserve_explicit_old_mode_entries",
+        "tests/api/test_multiple_saves.py::MultipleSavesAcceptance::test_missing_foreign_auth_bad_fields_stale_requests_do_not_change_archives",
+        "-q",
+        "--tb=short",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "tests_before_after_match": true
+    },
+    "final_build": {
+      "run": "evidence/integration/multiple-saves/qa/formal-build/run.json",
+      "run_sha256": "1569f4f2e9090f9c8c55c39d4876e4f8e34d67719717b9ba2f73725161d35fd6",
+      "command": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "run",
+        "build",
+        "--prefix",
+        "frontend"
+      ],
+      "exit_code": 0,
+      "source_count": 41,
+      "source_before_after_candidate_match": true
+    },
+    "Chrome": {
+      "run": "evidence/integration/multiple-saves/qa/20261007T121307604Z-browser/run.json",
+      "run_sha256": "a27a4875d4cf0269c88782304d0ecf933e40769ce05d59127a65772a56b96d2e",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "D:\\深度能力\\tests\\e2e\\run_multiple_saves.mjs",
+        "evidence/integration/multiple-saves/candidate.json"
+      ],
+      "exit_code": 0,
+      "source_count": 41,
+      "source_before_after_candidate_match": true
+    }
+  },
+  "first_full_api": {
+    "exit_code": 1,
+    "passed_methods": 126,
+    "failed_methods": 1,
+    "passed_subtests": 336,
+    "failed_subtests": 1,
+    "pytest_failed_items": 2,
+    "existing_methods": 118,
+    "new_methods": 9,
+    "warnings": 1,
+    "duration_seconds": 291.52,
+    "compact_check_records": 76,
+    "failures": [
+      "New QA legacy subtest expected STALE_STATE; preserved invalidation actually PROPOSAL_INVALIDATED.",
+      "New QA method expected STALE_GENERATION for completed failed request; new receipt-first semantics correctly replayed STALE_STATE."
+    ]
+  },
+  "directed_api": {
+    "exit_code": 0,
+    "passed_methods": 2,
+    "passed_subtests": 9,
+    "warnings": 1,
+    "duration_seconds": 5.19,
+    "compact_check_records": 31,
+    "scope": "Only the two original new-QA failing methods",
+    "new_actual_request_check": "One additional fresh request_id carrying old generation rejects STALE_GENERATION",
+    "new_receipt_assertion": "Existing completed failure after reset returns same original event_id and STALE_STATE"
+  },
+  "correction": {
+    "recorded_at": "2026-10-07T12:18:54.045337+00:00",
+    "changed_file": "tests/api/test_multiple_saves.py",
+    "sha256_before": "454605d016949000b5e51fe3196b02b2e7881696c5701338a03653ad6243ed85",
+    "sha256_after": "e0a154004431fc8be0098b0277c1cd8a8456edcd7f1a4ff21f968241946f7ff2",
+    "product_changes": 0,
+    "old_test_changes": 0,
+    "cause": "Two new QA expectations conflicted with preserved proposal invalidation and new completed-receipt-first semantics",
+    "corrections": [
+      "Legacy proposal confirmation after selected restore expects PROPOSAL_INVALIDATED; still409 and exact unchanged current state.",
+      "Reusing already completed STALE_STATE error receipt across reset replays STALE_STATE and same event_id; separately fresh request_id with old generation expects STALE_GENERATION."
+    ],
+    "first_result_retained": "formal-api/run.json + stdout.txt + checks.json; no rewrite",
+    "directed_scope": "Only two originally failing methods; no full API/build/browser rerun"
+  },
+  "acceptance_basis": "Unchanged41 product paths; preserved first full suite plus two corrected directed methods, independent final build,149 Chrome checks,11 viewed screenshots and exact owned process/port cleanup. Repeated methods/subtests/compact records are not summed.",
+  "Chrome": {
+    "exit_code": 0,
+    "checks": 149,
+    "issues": [],
+    "screenshots_viewed": 11,
+    "focused_archive_list_dialog_screenshots": 5,
+    "visual_record": "evidence/integration/multiple-saves/qa/visual-check.json",
+    "browser": "Installed Google Chrome headless, isolated contexts",
+    "actual_UI_archives": 3,
+    "legacy_slot": 1,
+    "selected_moments": [
+      "early",
+      "partial circuit",
+      "won"
+    ]
+  },
+  "cleanup": {
+    "record": "evidence/integration/multiple-saves/qa/cleanup-check.json",
+    "exit_code": 0,
+    "owned_pids_checked": 11,
+    "owned_ports_checked": 10,
+    "active_owned_pids": [],
+    "owned_port_listeners": [],
+    "existing_user_services_touched": false
+  },
+  "coverage": [
+    "Append immutable named/default snapshots, strict11 metadata keys, same time/name/revision distinct IDs and stable ordering, completed concurrent/replay exactly one archive",
+    "Selected early/partial/won restores exact gameplay/statistics; new revision/generation, frozen score,reset retains archives,refresh/reopen and actual backend process restart",
+    "New completed receipt before generation; digest conflicts onoperation/name/save_id; stale schema/auth/missing/foreign session do not change live or archives",
+    "Legacy single-slot schema reopen/list without rewriting old row; old save/restore overwrite compatibility retained; oldlegacy/v3.1/v3.2/v3.3 selectors and isolation",
+    "Owned checksum/owner/version/extra field/statistics invariant corruption rejected atomically while other good archives remain readable",
+    "Selected restore invalidates legacy proposal and in-flight mock hint; no late hint count/real progress mutation",
+    "Complete three-room public circuit/sequence route,partial rotations save/restore,reload,375px geometry/name HTML text and explicit cancel/confirm,settlement and optional stories preserved"
+  ],
+  "product_changes": 0,
+  "old_test_changes": 0,
+  "paid_calls": 0,
+  "full_state_or_token_exports": false,
+  "unresolved_product_failures": [],
+  "limitations": [
+    "Combined first-full and directed API acceptance; first full exit1 is retained, no second full127-green run or summed repeated subtests claimed.",
+    "Mock/stub and owned synthetic SQLite only; no real paid AI/provider quality or actual user historical DB access.",
+    "Old-DB compatibility tested by reopening QA-created previous single-slot schema; not a migration of real sensitive saves.",
+    "UTC125seconds controlled clock and fast Chrome route are not human play-duration measurements.",
+    "Root CMD not interactively started; Chrome directly starts owned local services.",
+    "One existing Starlette/httpx deprecation warning remains.",
+    "Graybox functional/readability acceptance only; Phaser/v4 and visual development remain held."
+  ]
+}

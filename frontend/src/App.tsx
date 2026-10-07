@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { api, ApiError, readSession, storeSession, type ActionArguments, type CircuitPuzzle, type Session, type Tool, type VisibleState } from './api';
+import { api, ApiError, readSession, storeSession, type ActionArguments, type CircuitPuzzle, type SaveSlot, type Session, type Tool, type VisibleState } from './api';
 import Assistant from './Assistant';
 
 const kindLabel = { clue: '可观察', container: '容器', door: '通道', device: '设备', item: '物品' };
@@ -30,6 +30,11 @@ function circuitPorts(shape: 'I' | 'L', rotation: number): string[] {
 function durationLabel(totalSeconds: number): string {
   const seconds = Math.max(0, Math.floor(totalSeconds));
   return `${Math.floor(seconds / 3600)}:${String(Math.floor(seconds / 60) % 60).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
+}
+const saveRoomLabel: Record<string, string> = { R1: '第一房间', R2: '第二房间', R3: '第三房间', EXIT: '出口' };
+function saveTimeLabel(value: string): string {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? value : date.toLocaleString('zh-CN', { hour12: false });
 }
 function CircuitBoard({ circuit, disabled, onRotate }: { circuit: CircuitPuzzle; disabled: boolean; onRotate: (moduleId: string) => void }) {
   const sourceId = circuit.source.module_id;
@@ -69,7 +74,12 @@ export default function App() {
   const [notice, setNotice] = useState('');
   const [error, setError] = useState('');
   const [observation, setObservation] = useState('');
-  const [confirmation, setConfirmation] = useState<'new' | 'reset' | 'restore' | null>(null);
+  const [confirmation, setConfirmation] = useState<'new' | 'reset' | 'restore' | 'slot-restore' | null>(null);
+  const [saveSlots, setSaveSlots] = useState<SaveSlot[]>([]);
+  const [saveName, setSaveName] = useState('');
+  const [saveListError, setSaveListError] = useState('');
+  const [restoreSaveId, setRestoreSaveId] = useState<string | null>(null);
+  const saveListRequest = useRef(0);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [history, setHistory] = useState<{ id: string; text: string }[]>([]);
   const [sequenceDraft, setSequenceDraft] = useState<string[]>([]);
@@ -93,8 +103,28 @@ export default function App() {
     if (selectedItemId && !next.inventory.some(item => item.item_id === selectedItemId)) setSelectedItemId(null);
     stateRef.current = next; setState(next); if (replace || reconciled) setNeedsSync(false); return true;
   }
+  async function refreshSaveSlots(activeSession: Session, expected: VisibleState): Promise<void> {
+    const requestId = ++saveListRequest.current;
+    setSaveListError('');
+    try {
+      const response = await api.saveSlots(activeSession);
+      const live = stateRef.current;
+      const projection = response.data.visible_state;
+      if (requestId !== saveListRequest.current || !live
+        || live.session_id !== activeSession.session_id || live.session_id !== expected.session_id
+        || live.generation !== expected.generation || live.revision !== expected.revision
+        || projection.session_id !== expected.session_id || projection.generation !== expected.generation
+        || projection.revision !== expected.revision) return;
+      setSaveSlots(response.data.slots);
+    } catch (caught) {
+      if (requestId !== saveListRequest.current) return;
+      if (caught instanceof ApiError && caught.code === 'FORBIDDEN_SESSION') { invalidateSession(activeSession.session_id); return; }
+      setSaveListError(caught instanceof ApiError ? caught.message : '存档列表暂时无法读取，请同步进度后重试。');
+    }
+  }
   function invalidateSession(sessionId: string) {
     if (stateRef.current && stateRef.current.session_id !== sessionId) return;
+    saveListRequest.current += 1; setSaveSlots([]); setSaveListError(''); setRestoreSaveId(null);
     storeSession(null); setSession(null); stateRef.current = null; setState(null); setCodes({}); setLoginCredentials({ username: '', password: '' }); setHistory([]); setObservation(''); setSequenceDraft([]); setSelectedId(null); setSelectedItemId(null); setInteractionId(null); setLoginOpenId(null); setNeedsSync(false); retiredGenerations.current.clear();
   }
   async function execute(work: () => Promise<void>, reconcile = false) {
@@ -107,16 +137,16 @@ export default function App() {
       if (failure.code === 'FORBIDDEN_SESSION' && session) invalidateSession(session.session_id);
       else if (reconcile && session && ['NETWORK_ERROR', 'SERVICE_UNAVAILABLE'].includes(failure.code)) {
         setNeedsSync(true);
-        try { const response = await api.state(session); apply(response.data.visible_state, false, true); setNotice('已同步服务器上的实际进度，请确认当前场景和存档后再操作。'); } catch { setNotice('尚未确认这次操作的结果。请先同步进度，确认后再继续。'); }
+        try { const response = await api.state(session); if (apply(response.data.visible_state, false, true)) await refreshSaveSlots(session, response.data.visible_state); setNotice('已同步服务器上的实际进度与存档列表，请确认当前场景后再操作。'); } catch { setNotice('尚未确认这次操作的结果。请先同步进度，确认后再继续。'); }
       }
       setError(failure.message);
     } finally { busy.current = false; setPending(false); }
   }
   function create() {
     setConfirmation(null);
-    void execute(async () => { const response = await api.create(); const nextSession = { session_id: response.data.session_id, token: response.data.token }; storeSession(nextSession); setSession(nextSession); apply(response.data.visible_state, true); setNotice('游戏已开始。选择场景中的物件，慢慢寻找线索。'); });
+    void execute(async () => { const response = await api.create(); const nextSession = { session_id: response.data.session_id, token: response.data.token }; saveListRequest.current += 1; setSaveSlots([]); setSaveListError(''); storeSession(nextSession); setSession(nextSession); apply(response.data.visible_state, true); await refreshSaveSlots(nextSession, response.data.visible_state); setNotice('游戏已开始。选择场景中的物件，慢慢寻找线索。'); });
   }
-  function sync() { if (!session) return; void execute(async () => { const response = await api.state(session); apply(response.data.visible_state, false, true); setNotice('已同步当前进度。'); }); }
+  function sync() { if (!session) return; void execute(async () => { const response = await api.state(session); if (apply(response.data.visible_state, false, true)) await refreshSaveSlots(session, response.data.visible_state); setNotice('已同步当前进度和存档列表。'); }); }
   function action(tool: Tool, args: ActionArguments) {
     if (!session || !stateRef.current || needsSync) return;
     const current = stateRef.current;
@@ -154,7 +184,39 @@ export default function App() {
     setConfirmation(null);
     if (!session || !stateRef.current || needsSync) return;
     const current = stateRef.current;
-    void execute(async () => { const response = await api.control(session, current, operation); if (apply(response.data.visible_state)) { if (operation === 'reset' || operation === 'restore') setSequenceDraft([]); setNotice(response.data.message); } }, true);
+    void execute(async () => { const response = await api.control(session, current, operation); if (apply(response.data.visible_state)) { if (operation === 'reset' || operation === 'restore') setSequenceDraft([]); await refreshSaveSlots(session, response.data.visible_state); setNotice(response.data.message); } }, true);
+  }
+  function saveNewSlot() {
+    if (!session || !stateRef.current || needsSync) return;
+    const current = stateRef.current;
+    const activeSession = session;
+    const name = saveName.trim();
+    void execute(async () => {
+      const response = await api.createSaveSlot(activeSession, current, name || undefined);
+      if (!apply(response.data.visible_state)) return;
+      setSaveName('');
+      await refreshSaveSlots(activeSession, response.data.visible_state);
+      setNotice(response.data.message);
+    }, true);
+  }
+  function restoreSelectedSlot() {
+    setConfirmation(null);
+    if (!session || !stateRef.current || needsSync || !restoreSaveId) return;
+    const activeSession = session;
+    const current = stateRef.current;
+    const saveId = restoreSaveId;
+    setRestoreSaveId(null);
+    void execute(async () => {
+      const response = await api.restoreSaveSlot(activeSession, current, saveId);
+      if (!apply(response.data.visible_state)) return;
+      await refreshSaveSlots(activeSession, response.data.visible_state);
+      setNotice(response.data.message);
+    }, true);
+  }
+  function requestSlotRestore(slot: SaveSlot) {
+    if (pending || needsSync) return;
+    setRestoreSaveId(slot.save_id);
+    setConfirmation('slot-restore');
   }
   const won = state?.status === 'won';
   const disabled = pending || needsSync || !!won;
@@ -182,12 +244,38 @@ export default function App() {
           </section>
           <aside className="clues panel" aria-labelledby="clues-title"><div className="panel-heading"><h2 id="clues-title"><Icon kind="clue"/>线索笔记</h2><span className="count">{state.clues.length}</span></div><p className="panel-caption">只记录你亲自发现的信息。</p>{state.clues.length === 0 ? <div className="empty"><span className="empty-icon"><Icon kind="clue"/></span><p>第一页，等待发现</p><small>查看物件后，新的线索会自动记入笔记。</small></div> : <ol className="clue-list">{state.clues.map((clue, index) => <li key={clue.clue_id} id={`clue-${clue.clue_id}`} tabIndex={-1}><div className="clue-heading"><span>{String(index + 1).padStart(2, '0')}</span><h3>{clue.title}</h3></div><p>{clue.text}</p></li>)}</ol>}<div className="notebook-tip">先观察，再尝试。<br/>答案可能就在已经发现的细节里。</div></aside>
         </div>
-        <div className="support-grid"><Assistant key={state.session_id} session={session!} state={state} manualPending={pending} needsSync={needsSync} onState={(next, reconciled = false) => apply(next, false, reconciled)} onUncertain={value => { if (stateRef.current?.session_id === state.session_id) setNeedsSync(value); }} onForbidden={invalidateSession}/><section className="save-panel panel" aria-labelledby="save-title"><h2 id="save-title">游戏进度</h2><p>刷新后可继续当前游戏。每次保存会覆盖本会话的单个存档。</p>{state.save ? <div className="save-summary"><span className="saved-badge">已有存档</span><p>保存时间：<time dateTime={state.save.saved_at}>{savedTime}</time></p><small>保存时进度 {state.save.source_revision} · 关卡 {state.save.level_version}</small></div> : <p className="no-save">尚无存档，保存后才能恢复。</p>}<div className="save-actions"><button className="button" disabled={pending || needsSync} onClick={() => control('save')}>保存进度</button><button className="button" disabled={pending || needsSync || !state.save} onClick={() => setConfirmation('restore')}>恢复存档</button><button className="button subtle" disabled={pending || needsSync} onClick={() => setConfirmation('reset')}>重新开始</button></div></section></div>
+        <div className="support-grid">
+          <Assistant key={state.session_id} session={session!} state={state} manualPending={pending} needsSync={needsSync} onState={(next, reconciled = false) => apply(next, false, reconciled)} onUncertain={value => { if (stateRef.current?.session_id === state.session_id) setNeedsSync(value); }} onForbidden={invalidateSession}/>
+          <section className="save-panel panel" aria-labelledby="save-title">
+            <h2 id="save-title">游戏进度</h2>
+            <p>存档保存在本机并跟随当前游戏。每次保存都会新增一份，不覆盖已有记录；新游戏会使用另一份存档列表。</p>
+            <form className="save-slot-create" onSubmit={event => { event.preventDefault(); saveNewSlot(); }}>
+              <label htmlFor="save-slot-name">存档名称（可选，最多40字）</label>
+              <div className="save-slot-create-row"><input id="save-slot-name" className="save-slot-name" maxLength={40} value={saveName} disabled={pending || needsSync} placeholder="留空由系统命名" onChange={event => setSaveName(event.target.value)}/><button type="submit" className="button primary save-slot-create-button" disabled={pending || needsSync}>保存新存档</button></div>
+            </form>
+            <div className="save-slot-list" role="list" aria-label="当前游戏的存档列表">
+              {saveSlots.map(slot => <article className={`save-slot ${slot.kind === 'legacy' ? 'save-slot-legacy' : ''}`} role="listitem" key={slot.save_id} data-save-id={slot.save_id}>
+                <div className="save-slot-heading"><h3>{slot.name}</h3><span className="save-slot-kind">{slot.kind === 'legacy' ? '旧版单槽' : '独立存档'}</span></div>
+                <p className="save-slot-meta"><time dateTime={slot.saved_at}>{saveTimeLabel(slot.saved_at)}</time><span>{slot.room_id ? saveRoomLabel[slot.room_id] : '房间未知'}</span><span>{slot.status === 'won' ? '已通关' : slot.status === 'playing' ? '进行中' : '状态未记录'}</span><span>{slot.clues_found === null ? '线索数未记录' : `${slot.clues_found} 条线索`}</span></p>
+                <small>关卡 {slot.level_version}</small>
+                <button type="button" className="button save-slot-restore" aria-label={`读取存档：${slot.name}`} disabled={pending || needsSync} onClick={() => requestSlotRestore(slot)}>读取</button>
+              </article>)}
+              {!saveSlots.length && !saveListError && <p className="no-save">还没有存档。保存后可在这里选择任一时刻读取。</p>}
+            </div>
+            {saveListError && <p className="error save-list-error" role="alert">{saveListError}</p>}
+            <details className="legacy-save-controls" open>
+              <summary>旧版单槽兼容操作</summary>
+              <p>每次保存会替换这份旧版存档；上方新建的存档会各自保留。旧版存档也会出现在上方列表。</p>
+              {state.save ? <div className="save-summary"><span className="saved-badge">已有旧版单槽</span><p>保存时间：<time dateTime={state.save.saved_at}>{savedTime}</time></p><small>保存时进度 {state.save.source_revision} · 关卡 {state.save.level_version}</small></div> : <p className="no-save">尚无旧版单槽存档。</p>}
+              <div className="save-actions"><button className="button" disabled={pending || needsSync} onClick={() => control('save')}>保存进度</button><button className="button" disabled={pending || needsSync || !state.save} onClick={() => setConfirmation('restore')}>恢复存档</button><button className="button subtle" disabled={pending || needsSync} onClick={() => setConfirmation('reset')}>重新开始</button></div>
+            </details>
+          </section>
+        </div>
         {history.length > 0 && <details className="history"><summary>最近的行动记录 <span>{history.length}</span></summary><ol>{history.map(entry => <li key={entry.id}>{entry.text}</li>)}</ol></details>}
       </>}
       <footer><span>校园实验室 · 认真观察，大胆推理</span><span>{state ? `关卡 ${state.level_version} · 进度 ${state.revision}` : '本地探索 · 手动游玩'}</span></footer>
     </main>
-    <dialog ref={dialogRef} onCancel={() => setConfirmation(null)} onClose={() => setConfirmation(null)} aria-labelledby="confirmation-title"><h2 id="confirmation-title">{confirmation === 'new' ? '开始新的游戏？' : confirmation === 'restore' ? '恢复已保存的进度？' : '重新开始当前游戏？'}</h2><p>{confirmation === 'new' ? '当前标签页将切换到新游戏，旧会话将无法从这里继续。' : confirmation === 'restore' ? '当前进度将替换为单槽存档中的场景、道具和已发现线索。存档会保留。' : '这会清空当前探索进度和线索；已有存档仍可恢复。'}</p><div className="dialog-actions"><button className="button" autoFocus onClick={() => setConfirmation(null)}>取消</button><button className="button primary" disabled={pending} onClick={() => confirmation === 'new' ? create() : control(confirmation === 'restore' ? 'restore' : 'reset')}>{confirmation === 'restore' ? '确认恢复' : '确认开始'}</button></div></dialog>
+    <dialog ref={dialogRef} onCancel={() => setConfirmation(null)} onClose={() => { setConfirmation(null); if (confirmation === 'slot-restore') setRestoreSaveId(null); }} aria-labelledby="confirmation-title"><h2 id="confirmation-title">{confirmation === 'new' ? '开始新的游戏？' : confirmation === 'slot-restore' ? '读取指定存档？' : confirmation === 'restore' ? '恢复已保存的进度？' : '重新开始当前游戏？'}</h2><p>{confirmation === 'new' ? '当前标签页将切换到新游戏，旧会话将无法从这里继续。' : confirmation === 'slot-restore' ? `当前进度将替换为“${saveSlots.find(slot => slot.save_id === restoreSaveId)?.name || '所选存档'}”保存的状态。读取后会清除当前临时输入和顺序草稿。` : confirmation === 'restore' ? '当前进度将替换为旧版单槽存档中的场景、道具和已发现线索。单槽存档会保留。' : '这会清空当前探索进度和线索；已有存档仍可读取。'} </p><div className="dialog-actions"><button className="button" autoFocus onClick={() => { setConfirmation(null); setRestoreSaveId(null); }}>取消</button><button className="button primary" disabled={pending} onClick={() => confirmation === 'new' ? create() : confirmation === 'slot-restore' ? restoreSelectedSlot() : control(confirmation === 'restore' ? 'restore' : 'reset')}>{confirmation === 'slot-restore' ? '读取此存档' : confirmation === 'restore' ? '确认恢复' : '确认开始'}</button></div></dialog>
   </div>;
 }
 

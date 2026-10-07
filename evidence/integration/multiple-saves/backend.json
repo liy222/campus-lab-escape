@@ -1,0 +1,431 @@
+{
+  "owner": "Backend",
+  "status": "SOURCE STOP; targeted Owner self-check passed; independent QA pending",
+  "files": [
+    "backend/app/domain/save_models.py",
+    "backend/app/storage/saves.py",
+    "backend/app/storage/sqlite.py",
+    "backend/app/api/routes.py",
+    "contracts/build_contracts.py",
+    "contracts/check_contracts.py",
+    "contracts/api.schema.json",
+    "contracts/routes.json",
+    "docs/SPEC.md",
+    "evidence/integration/multiple-saves/backend-selfcheck.py"
+  ],
+  "raw_sha256": {
+    "backend/app/domain/save_models.py": "2dc073a8f8e94721d04ff39157c5e1c4b51ed8bc6f5e092e6ba2fa839cd03d8b",
+    "backend/app/storage/saves.py": "e307c613091519ddef12e44afac0299b70fb87dbb0eebf0a9527717ea8728ac1",
+    "backend/app/storage/sqlite.py": "cb1f946f6377cb92a6776ec00513b4470be262ad59a907e3f17c1972c027994a",
+    "backend/app/api/routes.py": "0414bde85185ea647c0a04d74c71b022e4f3f7ab33780bafe2492074aa64b2bf",
+    "contracts/build_contracts.py": "80c2ff986b9051762615aa945199c3731c806e6b6d9fc4e8b35ea9dae8ac52f8",
+    "contracts/check_contracts.py": "11ba895c39233e85e7b1729d231b071bb1c50e0e096e9a7d560d70b63c8d3f3d",
+    "contracts/api.schema.json": "2f49a0d104c002e54088c5685c06d0b6183355e0841ebbf04cbad128acb9c1ef",
+    "contracts/routes.json": "a51e8e34b90f1f7391013407ea003420ac1b7c090ca262560084400a7c7339cf",
+    "docs/SPEC.md": "8d93003177fff41a5e27985d0747439b3814dbed910fb7cd8a7cd3362412fc6a",
+    "evidence/integration/multiple-saves/backend-selfcheck.py": "5f4e4a9ff76d5ec03d8e3847982e116759f3130c0b38eb875001240a0d01e8c3"
+  },
+  "commands": [
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe contracts/build_contracts.py",
+      "exit": 0
+    },
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe contracts/check_contracts.py --output evidence/integration/multiple-saves/contracts-owner.json",
+      "exit": 0
+    },
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe evidence/integration/multiple-saves/backend-selfcheck.py",
+      "exit": 1,
+      "result": "Initial self-check assertions completed, temporary cleanup failed WinError32: self-check sqlite context managers committed but did not close handles. Owner harness repaired with explicit closing; product APIs did not fail."
+    },
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe evidence/integration/multiple-saves/backend-selfcheck.py",
+      "exit": 0
+    }
+  ],
+  "evidence": [
+    "evidence/integration/multiple-saves/backend.json",
+    "evidence/integration/multiple-saves/contracts-owner.json"
+  ],
+  "checks": [
+    {
+      "route": "saves",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 201,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 201,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 409,
+      "error": "REQUEST_ID_CONFLICT"
+    },
+    {
+      "route": "saves",
+      "http": 422,
+      "error": "BAD_ARGUMENT"
+    },
+    {
+      "route": "saves",
+      "http": 422,
+      "error": "BAD_ARGUMENT"
+    },
+    {
+      "route": "saves",
+      "http": 422,
+      "error": "BAD_ARGUMENT"
+    },
+    {
+      "route": "saves",
+      "http": 422,
+      "error": "BAD_ARGUMENT"
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 409,
+      "error": "WRONG_CODE"
+    },
+    {
+      "route": "saves",
+      "http": 201,
+      "error": null
+    },
+    {
+      "route": "save",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 201,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 201,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "reset",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 201,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 409,
+      "error": "REQUEST_ID_CONFLICT"
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 409,
+      "error": "STALE_GENERATION"
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 201,
+      "error": null
+    },
+    {
+      "route": "actions",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 404,
+      "error": "SAVE_NOT_FOUND"
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 404,
+      "error": "SAVE_NOT_FOUND"
+    },
+    {
+      "route": "saves",
+      "http": 403,
+      "error": "FORBIDDEN_SESSION"
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 409,
+      "error": "INVALID_SNAPSHOT"
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 409,
+      "error": "SNAPSHOT_VERSION_MISMATCH"
+    },
+    {
+      "route": "saves",
+      "http": 201,
+      "error": null
+    },
+    {
+      "route": "reset",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "save",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 201,
+      "error": null
+    },
+    {
+      "route": "reset",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "save",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 201,
+      "error": null
+    },
+    {
+      "route": "reset",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "save",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 201,
+      "error": null
+    },
+    {
+      "route": "reset",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves/{id}/restore",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "save",
+      "http": 200,
+      "error": null
+    },
+    {
+      "route": "saves",
+      "http": 200,
+      "error": null
+    }
+  ],
+  "summary": [
+    "strict JSON Schema validates all API responses",
+    "distinct immutable time slots with same-name/time persistence",
+    "new save does not alter old slot/state",
+    "selected restore recovers exact stats/partial rotations with rev+1/new generation",
+    "completed save/restore receipt replay after generation change has no duplicate/reapply",
+    "old slot listing/restore compatible",
+    "reset/reopen retain archives",
+    "unknown/foreign/corrupt/cross-version/stale/conflict/invalid-name inputs preserve live state",
+    "same routes work for explicit legacy/3.1/3.2/3.3 entries"
+  ],
+  "limitations": [
+    "Owner targeted self-check, not independent formal QA",
+    "no whole gameplay regression/browser/build/OS process restart",
+    "AI/proposal invalidation reuses existing generation and invalidate_pending, independent QA follows",
+    "temporary databases only; no historical user database access",
+    "no paid calls/commit/spawn/visual work"
+  ]
+}

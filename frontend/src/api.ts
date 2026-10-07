@@ -39,6 +39,13 @@ export interface VisibleState {
   save: null | { schema_version: string; level_version: string; saved_at: string; source_revision: number; source_generation: string };
 }
 export interface Session { session_id: string; token: string }
+export interface SaveSlot {
+  save_id: string; name: string; saved_at: string; schema_version: string; level_version: string;
+  source_revision: number; source_generation: string; room_id: 'R1' | 'R2' | 'R3' | 'EXIT' | null;
+  status: 'playing' | 'won' | null; clues_found: number | null; kind: 'archive' | 'legacy';
+}
+interface SaveSlotListData { slots: SaveSlot[]; visible_state: VisibleState }
+interface SaveSlotMutationData { request_id: string; replayed: boolean; slot: SaveSlot; visible_state: VisibleState; message: string }
 export type AiSettings = { provider: 'mock' } | { provider: 'deepseek'; apiKey: string };
 export type ProgressTool = Exclude<Tool, 'inspect' | 'get_inventory' | 'interact' | 'submit_login' | 'rotate_circuit' | 'submit_circuit' | 'submit_sequence'>;
 export interface Proposal { proposal_id: string; tool: ProgressTool; arguments: Args; revision: number; generation: string; expires_at: string; status: 'pending' | 'committed' | 'cancelled' | 'expired' | 'invalidated' | 'rejected'; clue_refs: string[]; summary: string }
@@ -89,6 +96,9 @@ const version = (state: VisibleState) => ({ request_id: crypto.randomUUID(), rev
 export const api = {
   create: () => request<Session & { visible_state: VisibleState }>('/api/sessions', null, {}),
   state: (session: Session) => request<{ visible_state: VisibleState }>(`${path(session)}/state`, session),
+  saveSlots: (session: Session) => request<SaveSlotListData>(`${path(session)}/saves`, session),
+  createSaveSlot: (session: Session, state: VisibleState, name?: string) => request<SaveSlotMutationData>(`${path(session)}/saves`, session, { ...version(state), ...(name ? { name } : {}) }),
+  restoreSaveSlot: (session: Session, state: VisibleState, saveId: string) => request<SaveSlotMutationData>(`${path(session)}/saves/${encodeURIComponent(saveId)}/restore`, session, version(state)),
   action: (session: Session, state: VisibleState, tool: Tool, args: ActionArguments) => request<ActionData>(`${path(session)}/actions`, session, { ...version(state), tool, arguments: args }),
   control: (session: Session, state: VisibleState, operation: 'reset' | 'save' | 'restore') => request<ControlData>(`${path(session)}/${operation}`, session, version(state)),
   ai: (session: Session, state: VisibleState, message: string, settings: AiSettings = { provider: 'mock' }, hintLevel?: 1 | 2 | 3) => {

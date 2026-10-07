@@ -1,0 +1,21 @@
+{
+  "owner": "Delivery documentation (temporary assigned paths)",
+  "status": "SOURCE STOP; documentation reflects multi-save candidate pending independent QA",
+  "files": ["README.md", "release/UPGRADES.md"],
+  "sha256": {
+    "README.md": "5af79f8fc46b976f6c53614080d350563643adcc404f704d16146148960001a1",
+    "release/UPGRADES.md": "34449293bbff964dafd6a61db30a71e465da674e864b2435bd928c954996cb8f"
+  },
+  "commands": [
+    {"command": "Get-FileHash -LiteralPath frontend/src/App.tsx,frontend/src/api.ts,frontend/src/style.css,README.md,release/UPGRADES.md -Algorithm SHA256", "exit": 0},
+    {"command": "git -c safe.directory=D:/深度能力 -c core.whitespace=cr-at-eol diff --check -- frontend/src/App.tsx frontend/src/api.ts frontend/src/style.css README.md release/UPGRADES.md", "exit": 0}
+  ],
+  "documentation": [
+    "README explains named multi-time saves, selected restore confirmation, reset retention, local session scope, and legacy single-slot behavior.",
+    "Upgrade notes distinguish v3.4 accepted graybox from the new multi-save candidate awaiting formal QA; no QA outcome is claimed."
+  ],
+  "limitations": [
+    "The project build command was run by Frontend and is recorded in frontend.json; it preceded the final display-only source_revision removal.",
+    "Formal QA and its final browser/API/build results are pending."
+  ]
+}

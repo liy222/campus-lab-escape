@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-07",
+  "status": "User resumed; frozen candidate unchanged, formal execution resumes",
+  "prior_interrupt": "Prior QA agent turn returned usage-limit error before any formal run.json was produced; no test pass inferred",
+  "live_inventory": "Only root listed by collaboration.list_agents; no new agent created",
+  "candidate": "evidence/integration/multiple-saves/candidate.json",
+  "candidate_sha256": "c4461441e48b0cff9b64421daa3acaa1e29568bf66cba95b157b1a0b49a6d4df",
+  "stable_sources_checked": 41,
+  "execution_owner": "Main integration operates already prepared independent QA scripts and records actual results. Prior QA test authorship/preparation remains historical; no restored runtime or model identity claimed.",
+  "ownership": "QA-authored tests and review preparation remain untouched. Main temporarily owns formal execution output artifacts under evidence/integration/multiple-saves/qa and Main acceptance/recovery metadata. Source fixes, if needed, require explicitly recorded owner epoch.",
+  "no_new_agents": true,
+  "paid_calls": 0,
+  "visual_hold": true,
+  "recovered_qa": {
+    "agent": "upgrade_qa_oct07",
+    "observed": "Previously requested existing QA agent resumed and reported running its original formal API/build/browser work; no new agent created or runtime identity inferred.",
+    "actual_formal_execution_owner": "upgrade_qa_oct07",
+    "main_duplicate_formal_runs": 0,
+    "main_helper": "verify_stage.py prepared and syntax-checked only; not executed"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "recorded_at": "2026-10-07T12:18:54.045337+00:00",
+  "changed_file": "tests/api/test_multiple_saves.py",
+  "sha256_before": "454605d016949000b5e51fe3196b02b2e7881696c5701338a03653ad6243ed85",
+  "sha256_after": "e0a154004431fc8be0098b0277c1cd8a8456edcd7f1a4ff21f968241946f7ff2",
+  "product_changes": 0,
+  "old_test_changes": 0,
+  "cause": "Two new QA expectations conflicted with preserved proposal invalidation and new completed-receipt-first semantics",
+  "corrections": [
+    "Legacy proposal confirmation after selected restore expects PROPOSAL_INVALIDATED; still409 and exact unchanged current state.",
+    "Reusing already completed STALE_STATE error receipt across reset replays STALE_STATE and same event_id; separately fresh request_id with old generation expects STALE_GENERATION."
+  ],
+  "first_result_retained": "formal-api/run.json + stdout.txt + checks.json; no rewrite",
+  "directed_scope": "Only two originally failing methods; no full API/build/browser rerun"
+}

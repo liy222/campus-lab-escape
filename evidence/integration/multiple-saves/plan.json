@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-07",
+  "user_request": "还有存档功能，我想可以自由选择各个时刻存档并读取",
+  "baseline_head": "50bc9b35fe570d8c4c5f638ae42d65a350876912",
+  "baseline_product": "v3.4-graybox-complete/49a2f925a78055552781685e79ee96496bb9bdd6",
+  "baseline_38_source_match": true,
+  "baseline_tests": "Prior independent v3.4 joint API118methods+315passedsubtests/1correctednewQAexpected503; directed1+3passed; finalbuild0/Chrome1320. Same accepted product bytes, no redundant pre-change rerun.",
+  "scope": "Manual multi-time save creation/list/selected restore within the existing authenticated game session, not automatic save/export/cloud account or visual upgrade.",
+  "storage": "Add save_slots append-only table to existing database; no reset/destructive migration. Original saves table and old endpoints preserved. reset retains both.",
+  "routes": {
+    "list": "GET /api/sessions/{id}/saves: data{slots,visible_state}",
+    "create": "POST /api/sessions/{id}/saves: VersionRequest + optional name<=40, response201 data{request_id,replayed,slot,visible_state,message}",
+    "restore": "POST /api/sessions/{id}/saves/{save_id}/restore: VersionRequest, response200 same data"
+  },
+  "metadata_fields": [
+    "save_id",
+    "name",
+    "saved_at",
+    "schema_version",
+    "level_version",
+    "source_revision",
+    "source_generation",
+    "room_id",
+    "status",
+    "clues_found",
+    "kind"
+  ],
+  "legacy": "save_id=legacy,kind=legacy,name=旧版单槽存档; room/status/clues may be null. No parsing private snapshot for listing, no silent data rewrite.",
+  "rules": "New creates never overwrite slots or old save, even same timestamp/name/revision. New request after current version check; exact receipt completed replay before generation guard in new archive routes only, old execute unchanged. Restores validate original snapshot completely then rev+1/newgeneration/invalidateAI. Corrupt/missing/crossversion/foreign slot never overwrite live or archive.",
+  "ui": "Optional name/default server name, descending stable slots with room/time/status/clue count, selected restore confirmation; frontend initial/session/refresh/save/reset/restore list sync; same-code oldmode entries retained",
+  "version_policy": "Additive routes only; level/schema/snapshot/DB namespace stays3.4/1.4; original gameplay and AI unchanged",
+  "ownership": {
+    "backend": "upgrade_backend_oct07 backend/app/storage/saves.py if useful, sqlite.py minimaltable/method hook, domain/save request model, api/routes.py plus contracts/build/schema/routes and docs/SPEC.md; may keep helper in same storage module; contracts/check_contracts.py mechanical route-count9to12 only, existing assertions preserved",
+    "frontend_delivery": "upgrade_frontend_oct07 frontend/src/{App.tsx,api.ts,style.css}, README.md/releaseUPGRADES; no Assistant/provider change",
+    "qa": "upgrade_qa_oct07 tests/, review/findings/multiple-saves.md and evidence/integration/multiple-saves/qa",
+    "main": "AGENTS/PLAN/STATUS/DECISIONS/integration/git"
+  },
+  "model_facts": "Agents reused Oct07 prior requestedBackend/QA Sol/high, Frontend Luna/medium; resumed runtime not independently introspected; Main unverified; noAstra",
+  "formal_QA_gate": "All implementation SOURCE STOP then frozen candidate MainGO; prepare tests now but formal runs wait. Full existingAPI+meaningful newcases/build/Chrome public route/multi-save/time selection/reload/processrestart/partialboard/won stats/oldslot and isolation.",
+  "visuals": "Explicit user hold remains: noPhaser/v4 implementation/research",
+  "paid_calls": 0,
+  "historical_artifacts": "Do not touch old untracked runtime/fee artifacts or databases/keys."
+}

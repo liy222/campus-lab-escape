@@ -1,0 +1,224 @@
+{
+  "status": "QA PREPARATION SOURCE STOP; protocol implemented in tests, formal waits frozen candidate/Main GO",
+  "recorded_at": "2026-10-07T08:01:41.012698+00:00",
+  "formal_runs": 0,
+  "paid_calls": 0,
+  "product_changes": 0,
+  "read_only_sources": [
+    {
+      "path": "backend/app/storage/sqlite.py",
+      "sha256": "7c33ed56abcbbaea23f6736ff7aaf09a64f756b74349da2febd7074353d93854"
+    },
+    {
+      "path": "backend/app/api/routes.py",
+      "sha256": "891acc107ab6f43b915397b41bcbf79bb9c5538de83f6499e4e91b948cccf2ce"
+    },
+    {
+      "path": "backend/app/domain/models.py",
+      "sha256": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1"
+    },
+    {
+      "path": "tests/api/test_upgrade_v34.py",
+      "sha256": "7580e792ddbc66776fef0a83d577af74efb889889b980638fcb0f37596a33141"
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v34.mjs",
+      "sha256": "6317c927e7dfbb7ff9ddf5625b589b77149fde1e7b5b480b6bac65832939de88"
+    },
+    {
+      "path": "tests/api/test_ch01.py",
+      "sha256": "5068ae010f44a9796694639f3f2e96378f0e39605d253f1d784d716652c7e377"
+    }
+  ],
+  "cases": [
+    {
+      "id": "MS01",
+      "case": "Append named immutable snapshots at R1 early, R2 partial rotations, R3 draft-independent progress and won; list identifiers, labels, server timestamp and public summary; earlier records unchanged."
+    },
+    {
+      "id": "MS02",
+      "case": "Choose earliest, middle partial-board and last won snapshot; restore exact game fields/statistics/settlement, current revision advances and generation renews; list entries unchanged."
+    },
+    {
+      "id": "MS03",
+      "case": "Snapshot duplicate/replay/concurrent same request creates exactly one record; altered payload or operation same request_id conflicts; invalid/stale request creates none; separate authorized requests may append at same source revision."
+    },
+    {
+      "id": "MS04",
+      "case": "Reset new clock/counters but retains all snapshots and legacy slot; selected restore returns saved start/counters/frozen settlement; winning clock stays frozen."
+    },
+    {
+      "id": "MS05",
+      "case": "In-flight mock hint and existing bound proposal become stale across selected restore/reset generation; no old AI mutation/hint count can change restored state."
+    },
+    {
+      "id": "MS06",
+      "case": "Foreign session token, another session save_id and guessed/unknown IDs cannot list/read/restore other snapshots; failure leaves both sessions and all saves unchanged."
+    },
+    {
+      "id": "MS07",
+      "case": "Owned synthetic corrupt checksum/schema/invariants/cross-version/foreign-owner snapshot rejected before replacement; current state, original valid slot and other named archives unchanged."
+    },
+    {
+      "id": "MS08",
+      "case": "Create legacy single-slot synthetic fixture with previous schema, reopen upgraded Store, list/restore it; old save/restore endpoints retain documented overwrite-slot behavior while named archives append separately."
+    },
+    {
+      "id": "MS09",
+      "case": "Backend process restart and browser refresh retain multi-save list and selected recovery; restore two user-selected moments through actual UI and continue main route/minis to win."
+    },
+    {
+      "id": "MS10",
+      "case": "Malformed label/ID/extra args/bool revision/missing auth malformed JSON validated; user labels escaped in DOM, no scripts execute; list returns compact public metadata without private snapshot/token."
+    },
+    {
+      "id": "MS11",
+      "case": "All existing API regressions unchanged; final frontend build; Chrome375px snapshot chooser plus legacy/v3.1/v3.2/v3.3 isolation smoke as applicable to protocol."
+    },
+    {
+      "id": "MS12",
+      "case": "Network loss/unknown response then same-request retry returns existing appended save; selected restore network failure does not falsely claim UI success; use controlled mock/server requests only."
+    }
+  ],
+  "protocol_pending": [
+    "Final candidate raw hashes and overall SOURCE STOP/Main GO; frontend final stable DOM notification"
+  ],
+  "existing_risks": [
+    "Old projection only exposes single-slot summary; list must not project private game_fields.",
+    "Old saves table is overwrite per session; multi archives need independent append identity and old DB migration.",
+    "Old generation is checked before action_receipts; post-restore original request replay may be STALE_GENERATION under retained rules.",
+    "Snapshot validation must stay all-or-nothing, including checksum, owner, versions and rule invariants."
+  ],
+  "evidence_policy": "QA-owned temporary SQLite, mock/stub providers, compact counts/errors/source hashes/screenshots; no credentials/session tokens/full private snapshots in evidence",
+  "scope_limits": [
+    "No formal API/build/browser executed during this preparation.",
+    "Mock/stub and owned synthetic SQLite only.",
+    "No product changes, old test edits, spawn, paid call, commit or Phaser/v4 work."
+  ],
+  "prepared_files": [
+    {
+      "path": "tests/api/test_multiple_saves.py",
+      "sha256": "dd4f39a0c22ca098895155e3be51a2ed015392d8ccc01798bd273cd0d84f261f"
+    },
+    {
+      "path": "tests/e2e/run_multiple_saves.mjs",
+      "sha256": "b14848a5eb7fc3720eb7eb0bbcb71e4459c3a49332317745317c1def9ece65e3"
+    },
+    {
+      "path": "evidence/integration/multiple-saves/qa/formal-api/runner.py",
+      "sha256": "17a1412e7dc71743d23f009b788a7ae02bdb6dc9e971077c62e4071ff2ef4bd9"
+    }
+  ],
+  "new_api_methods": [
+    "test_append_immutable_three_moments_restore_stats_reset_and_reopen",
+    "test_same_timestamp_name_revision_append_is_distinct_but_concurrent_request_once",
+    "test_names_default_unicode_boundary_no_private_metadata_and_error_receipt_replay",
+    "test_completed_new_restore_replay_before_generation_but_old_control_generation_first",
+    "test_missing_foreign_auth_bad_fields_stale_requests_do_not_change_archives",
+    "test_legacy_slot_list_restore_old_database_without_rewriting_snapshot",
+    "test_owned_corrupt_crossversion_snapshot_rejection_preserves_live_and_other_archives",
+    "test_selected_restore_expires_pending_mock_hint_without_stats_mutation",
+    "test_additive_archive_routes_preserve_explicit_old_mode_entries"
+  ],
+  "old_file_checks": [
+    {
+      "path": "tests/api/__init__.py",
+      "sha256": "12e8f3ba5a5fa7433bc098de3f053abd605a71874782fcef11c4272b0a6b02d6",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/api/test_ch01.py",
+      "sha256": "5068ae010f44a9796694639f3f2e96378f0e39605d253f1d784d716652c7e377",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/api/test_m2.py",
+      "sha256": "dca8f190e494f4868ac997a70c55cd4cbdc959c7db16a1ca31c8fa611feb9bcc",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/api/test_m3.py",
+      "sha256": "78a4715d1db5c90921be7daf0f45dd16b1e211ffcd06142d81edde343f652aa4",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/api/test_play_ai_settings.py",
+      "sha256": "d24bbc2012f3448f4cc9366e9bfaf38d6f49d39f947c05ed33fc4ace8b48343e",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/api/test_r1.py",
+      "sha256": "f53f44649f9e7e85d5ab21f185c9300960b91173009fb83e7cbe167a22425343",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/api/test_upgrade_v30.py",
+      "sha256": "7833c92fa2b1fcdf849400020c8e445d937962906640cd488a9126a5598ac457",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/api/test_upgrade_v31.py",
+      "sha256": "1c306a414922085fbb7ada915c39b69e5d6985be31d06bcd342752622eed7f45",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/api/test_upgrade_v32.py",
+      "sha256": "624feb4241f3b5c2010fd78c485817c779bb273faea7ac61cb7105ac7a0c7825",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/api/test_upgrade_v33.py",
+      "sha256": "6e25d8f64db6cd9c35b8382c13f9efb80dfe318de048e92fd137ef2577f99f67",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/api/test_upgrade_v34.py",
+      "sha256": "7580e792ddbc66776fef0a83d577af74efb889889b980638fcb0f37596a33141",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v31.mjs",
+      "sha256": "740e78ee0f9512c22bd75759b1b8f8fb4ca740521f2c294ac9da8fc4931c9631",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v32.mjs",
+      "sha256": "9a8e9bb583b6ee9751ae150cd71959b6426bd178705c53b85ff89b571b545bfb",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v33.mjs",
+      "sha256": "b963d3d0502be8db7f0c484fb01301cc3327e0d9400abfa3089748d5f2383928",
+      "matches_v34_sealed_raw_hash": true
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v34.mjs",
+      "sha256": "6317c927e7dfbb7ff9ddf5625b589b77149fde1e7b5b480b6bac65832939de88",
+      "matches_v34_sealed_raw_hash": true
+    }
+  ],
+  "static_commands": [
+    {
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "evidence/integration/multiple-saves/qa/prepare_check.py"
+      ],
+      "script_sha256": "7e708831cf92bfc51b7424320d3b46b4bf6ce9cbae92959f5e2a351d36030dc7",
+      "exit_code": 0,
+      "scope": "AST parse new API/wrapper and exact raw-byte hashes of old API/runner only"
+    },
+    {
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--check",
+        "tests/e2e/run_multiple_saves.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

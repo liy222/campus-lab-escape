@@ -21,6 +21,12 @@
       "$ref": "#/$defs/ai_turn_response"
     },
     {
+      "$ref": "#/$defs/list_saves_response"
+    },
+    {
+      "$ref": "#/$defs/save_slot_response"
+    },
+    {
       "$ref": "#/$defs/error_response"
     }
   ],
@@ -6086,6 +6092,787 @@
         "minigames",
         "statistics",
         "settlement"
+      ],
+      "additionalProperties": false
+    },
+    "create_save_request": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "required": [
+            "request_id",
+            "revision",
+            "generation"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "name": {
+              "type": "string",
+              "maxLength": 40
+            }
+          },
+          "required": [
+            "request_id",
+            "revision",
+            "generation",
+            "name"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "save_slot": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "1.0.0"
+            },
+            "level_version": {
+              "enum": [
+                "1.0.0",
+                "2.0.0"
+              ]
+            },
+            "saved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "source_revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "save_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "name": {
+              "type": "string",
+              "maxLength": 40
+            },
+            "room_id": {
+              "enum": [
+                "R1",
+                "R2",
+                "R3",
+                "EXIT"
+              ]
+            },
+            "status": {
+              "enum": [
+                "playing",
+                "won"
+              ]
+            },
+            "clues_found": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "kind": {
+              "const": "archive"
+            }
+          },
+          "required": [
+            "schema_version",
+            "level_version",
+            "saved_at",
+            "source_revision",
+            "source_generation",
+            "save_id",
+            "name",
+            "room_id",
+            "status",
+            "clues_found",
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "1.0.0"
+            },
+            "level_version": {
+              "enum": [
+                "1.0.0",
+                "2.0.0"
+              ]
+            },
+            "saved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "source_revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "save_id": {
+              "const": "legacy"
+            },
+            "name": {
+              "const": "旧版单槽存档"
+            },
+            "room_id": {
+              "type": "null"
+            },
+            "status": {
+              "type": "null"
+            },
+            "clues_found": {
+              "type": "null"
+            },
+            "kind": {
+              "const": "legacy"
+            }
+          },
+          "required": [
+            "schema_version",
+            "level_version",
+            "saved_at",
+            "source_revision",
+            "source_generation",
+            "save_id",
+            "name",
+            "room_id",
+            "status",
+            "clues_found",
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "1.1.0"
+            },
+            "level_version": {
+              "const": "3.1.0"
+            },
+            "saved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "source_revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "save_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "name": {
+              "type": "string",
+              "maxLength": 40
+            },
+            "room_id": {
+              "enum": [
+                "R1",
+                "R2",
+                "R3",
+                "EXIT"
+              ]
+            },
+            "status": {
+              "enum": [
+                "playing",
+                "won"
+              ]
+            },
+            "clues_found": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "kind": {
+              "const": "archive"
+            }
+          },
+          "required": [
+            "schema_version",
+            "level_version",
+            "saved_at",
+            "source_revision",
+            "source_generation",
+            "save_id",
+            "name",
+            "room_id",
+            "status",
+            "clues_found",
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "1.1.0"
+            },
+            "level_version": {
+              "const": "3.1.0"
+            },
+            "saved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "source_revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "save_id": {
+              "const": "legacy"
+            },
+            "name": {
+              "const": "旧版单槽存档"
+            },
+            "room_id": {
+              "type": "null"
+            },
+            "status": {
+              "type": "null"
+            },
+            "clues_found": {
+              "type": "null"
+            },
+            "kind": {
+              "const": "legacy"
+            }
+          },
+          "required": [
+            "schema_version",
+            "level_version",
+            "saved_at",
+            "source_revision",
+            "source_generation",
+            "save_id",
+            "name",
+            "room_id",
+            "status",
+            "clues_found",
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "1.2.0"
+            },
+            "level_version": {
+              "const": "3.2.0"
+            },
+            "saved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "source_revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "save_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "name": {
+              "type": "string",
+              "maxLength": 40
+            },
+            "room_id": {
+              "enum": [
+                "R1",
+                "R2",
+                "R3",
+                "EXIT"
+              ]
+            },
+            "status": {
+              "enum": [
+                "playing",
+                "won"
+              ]
+            },
+            "clues_found": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "kind": {
+              "const": "archive"
+            }
+          },
+          "required": [
+            "schema_version",
+            "level_version",
+            "saved_at",
+            "source_revision",
+            "source_generation",
+            "save_id",
+            "name",
+            "room_id",
+            "status",
+            "clues_found",
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "1.2.0"
+            },
+            "level_version": {
+              "const": "3.2.0"
+            },
+            "saved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "source_revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "save_id": {
+              "const": "legacy"
+            },
+            "name": {
+              "const": "旧版单槽存档"
+            },
+            "room_id": {
+              "type": "null"
+            },
+            "status": {
+              "type": "null"
+            },
+            "clues_found": {
+              "type": "null"
+            },
+            "kind": {
+              "const": "legacy"
+            }
+          },
+          "required": [
+            "schema_version",
+            "level_version",
+            "saved_at",
+            "source_revision",
+            "source_generation",
+            "save_id",
+            "name",
+            "room_id",
+            "status",
+            "clues_found",
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "1.3.0"
+            },
+            "level_version": {
+              "const": "3.3.0"
+            },
+            "saved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "source_revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "save_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "name": {
+              "type": "string",
+              "maxLength": 40
+            },
+            "room_id": {
+              "enum": [
+                "R1",
+                "R2",
+                "R3",
+                "EXIT"
+              ]
+            },
+            "status": {
+              "enum": [
+                "playing",
+                "won"
+              ]
+            },
+            "clues_found": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "kind": {
+              "const": "archive"
+            }
+          },
+          "required": [
+            "schema_version",
+            "level_version",
+            "saved_at",
+            "source_revision",
+            "source_generation",
+            "save_id",
+            "name",
+            "room_id",
+            "status",
+            "clues_found",
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "1.3.0"
+            },
+            "level_version": {
+              "const": "3.3.0"
+            },
+            "saved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "source_revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "save_id": {
+              "const": "legacy"
+            },
+            "name": {
+              "const": "旧版单槽存档"
+            },
+            "room_id": {
+              "type": "null"
+            },
+            "status": {
+              "type": "null"
+            },
+            "clues_found": {
+              "type": "null"
+            },
+            "kind": {
+              "const": "legacy"
+            }
+          },
+          "required": [
+            "schema_version",
+            "level_version",
+            "saved_at",
+            "source_revision",
+            "source_generation",
+            "save_id",
+            "name",
+            "room_id",
+            "status",
+            "clues_found",
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "1.4.0"
+            },
+            "level_version": {
+              "const": "3.4.0"
+            },
+            "saved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "source_revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "save_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "name": {
+              "type": "string",
+              "maxLength": 40
+            },
+            "room_id": {
+              "enum": [
+                "R1",
+                "R2",
+                "R3",
+                "EXIT"
+              ]
+            },
+            "status": {
+              "enum": [
+                "playing",
+                "won"
+              ]
+            },
+            "clues_found": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "kind": {
+              "const": "archive"
+            }
+          },
+          "required": [
+            "schema_version",
+            "level_version",
+            "saved_at",
+            "source_revision",
+            "source_generation",
+            "save_id",
+            "name",
+            "room_id",
+            "status",
+            "clues_found",
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "1.4.0"
+            },
+            "level_version": {
+              "const": "3.4.0"
+            },
+            "saved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "source_revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "save_id": {
+              "const": "legacy"
+            },
+            "name": {
+              "const": "旧版单槽存档"
+            },
+            "room_id": {
+              "type": "null"
+            },
+            "status": {
+              "type": "null"
+            },
+            "clues_found": {
+              "type": "null"
+            },
+            "kind": {
+              "const": "legacy"
+            }
+          },
+          "required": [
+            "schema_version",
+            "level_version",
+            "saved_at",
+            "source_revision",
+            "source_generation",
+            "save_id",
+            "name",
+            "room_id",
+            "status",
+            "clues_found",
+            "kind"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "list_saves_data": {
+      "type": "object",
+      "properties": {
+        "slots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/save_slot"
+          }
+        },
+        "visible_state": {
+          "$ref": "#/$defs/visible_state"
+        }
+      },
+      "required": [
+        "slots",
+        "visible_state"
+      ],
+      "additionalProperties": false
+    },
+    "save_slot_data": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "replayed": {
+          "type": "boolean"
+        },
+        "slot": {
+          "$ref": "#/$defs/save_slot"
+        },
+        "visible_state": {
+          "$ref": "#/$defs/visible_state"
+        },
+        "message": {
+          "type": "string",
+          "maxLength": 4000
+        }
+      },
+      "required": [
+        "request_id",
+        "replayed",
+        "slot",
+        "visible_state",
+        "message"
+      ],
+      "additionalProperties": false
+    },
+    "list_saves_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "data": {
+          "$ref": "#/$defs/list_saves_data"
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "save_slot_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "data": {
+          "$ref": "#/$defs/save_slot_data"
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "data"
       ],
       "additionalProperties": false
     }

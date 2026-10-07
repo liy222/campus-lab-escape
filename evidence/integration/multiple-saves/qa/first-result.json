@@ -1,0 +1,23 @@
+{
+  "status": "First full API preserved before narrow new-QA correction",
+  "exit_code": 1,
+  "passed_methods": 126,
+  "failed_methods": 1,
+  "passed_subtests": 336,
+  "failed_subtests": 1,
+  "pytest_failed_items": 2,
+  "warnings": 1,
+  "duration_seconds": 291.52,
+  "candidate": "evidence/integration/multiple-saves/candidate.json",
+  "source_count": 41,
+  "source_before_after_match": true,
+  "product_changes": 0,
+  "build_exit_code": 0,
+  "browser_exit_code": 0,
+  "browser_checks": 149,
+  "failures": [
+    "Legacy proposal confirmation after selected restore expects PROPOSAL_INVALIDATED; still409 and exact unchanged current state.",
+    "Reusing already completed STALE_STATE error receipt across reset replays STALE_STATE and same event_id; separately fresh request_id with old generation expects STALE_GENERATION."
+  ],
+  "paid_calls": 0
+}

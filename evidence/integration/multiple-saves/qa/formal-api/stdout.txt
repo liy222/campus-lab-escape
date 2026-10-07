@@ -1,0 +1,38 @@
+.uuuuuuuuuuuu...uuuuuuuuuuuuuuuuuuuuuuuu...........uuu...uuuuu.........u [ 22%]
+uuuuuuuuuuuuuuuuu......uuuuuuuuuuuuuuuuuuuuu.uuuuuuuuuuuuuuu.uuuu....uuu [ 31%]
+uuuuuuuuu..uuuuuuuuuuuu...uuuuuuuuuuuuuuuuuuuuuuuu...........uuu...uuuuu [ 46%]
+.uuuu.uuu...uuuuuFuuuu.uuuuu.....uuuuuuuuu...........uuuu.uuuuuu.....uuu [ 69%]
+uuuuuuuuuuuu.uuuuuuuuuuuuuuuuuuuu..uuuuuuuu....uuuuuuuuuuuuuuu......uuuu [ 79%]
+uuuuuuuu.uuuuuuuuuu......uuuuu..uuu..uuuuuuuuu.uuuuuuuuuuu.uuu.uuu.uuuu. [ 91%]
+uuu.uuuu...uuuu...uuuu..uuuuuu..                                         [100%]
+================================== FAILURES ===================================
+_ MultipleSavesAcceptance.test_additive_archive_routes_preserve_explicit_old_mode_entries (mode='legacy') _
+tests\api\test_multiple_saves.py:265: in test_additive_archive_routes_preserve_explicit_old_mode_entries
+    self.assertEqual(status,409);self.assertEqual(body['error']['code'],'STALE_STATE');self.assertEqual(self.state(),current)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 'PROPOSAL_INVALIDATED' != 'STALE_STATE'
+E   - PROPOSAL_INVALIDATED
+E   + STALE_STATE
+_ MultipleSavesAcceptance.test_missing_foreign_auth_bad_fields_stale_requests_do_not_change_archives _
+tests\api\test_multiple_saves.py:183: in test_missing_foreign_auth_bad_fields_stale_requests_do_not_change_archives
+    self.control('reset');new=self.state();self.append(request=stale,expected=409,code='STALE_GENERATION')
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\api\test_multiple_saves.py:95: in append
+    return self.archive_http('POST',payload=payload,expected=expected,code=code)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\api\test_multiple_saves.py:73: in archive_http
+    if code:self.assertEqual(body['error']['code'],code)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 'STALE_STATE' != 'STALE_GENERATION'
+E   - STALE_STATE
+E   + STALE_GENERATION
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SUBFAILED(mode='legacy') tests/api/test_multiple_saves.py::MultipleSavesAcceptance::test_additive_archive_routes_preserve_explicit_old_mode_entries
+FAILED tests/api/test_multiple_saves.py::MultipleSavesAcceptance::test_missing_foreign_auth_bad_fields_stale_requests_do_not_change_archives
+2 failed, 126 passed, 1 warning, 336 subtests passed in 291.52s (0:04:51)

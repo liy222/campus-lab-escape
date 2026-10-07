@@ -1,0 +1,26 @@
+{
+  "owner": "Frontend",
+  "status": "SOURCE STOP; owner build passed before final display-only wording adjustment; independent QA pending",
+  "files": ["frontend/src/App.tsx", "frontend/src/api.ts", "frontend/src/style.css"],
+  "sha256": {
+    "frontend/src/App.tsx": "50274b7b32aa16dd18d5bac8307f6c9977132faef1298393fbf609c662741120",
+    "frontend/src/api.ts": "605733d3dbbeee625e0e9d1050dcdac1fd325b7a2e71bb04233358ed49abacb2",
+    "frontend/src/style.css": "48d65bf364c1fef06414e7d719c6c5500e1490a9fb8360afefe44a33cef6dec1"
+  },
+  "commands": [
+    {"command": "npm.cmd --prefix frontend run build", "exit": 0, "note": "Owner build completed before the final removal of the internal source_revision display; that display-only edit was not rebuilt per Main instruction. Independent QA build is pending."},
+    {"command": "git -c safe.directory=D:/深度能力 -c core.whitespace=cr-at-eol diff --check -- frontend/src/App.tsx frontend/src/api.ts frontend/src/style.css README.md release/UPGRADES.md", "exit": 0}
+  ],
+  "implementation": [
+    "Added typed list/create/selected-restore calls for the multi-save routes while preserving existing single-slot calls.",
+    "Added append-only named save creation, archive metadata list, selected restore confirmation, and legacy single-slot section.",
+    "Refreshes the list after session start, sync, reset, save, and restore; rejects stale list responses unless session, generation, and revision still match.",
+    "Selected restore applies the server projection and existing generation-change cleanup; archive cards omit internal source_revision.",
+    "Kept AI behavior, existing runner controls, sessionStorage binding, and old save compatibility; no delete/rename, account/cloud, Phaser, or dependency work."
+  ],
+  "limitations": [
+    "No formal browser/API QA was run by this owner; independent QA pending.",
+    "No final owner build after the small source_revision display removal; independent QA build should validate final candidate.",
+    "Existing same-tab sessionStorage scope does not promise cross-tab or cross-browser continuity."
+  ]
+}

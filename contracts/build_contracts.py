@@ -208,7 +208,22 @@ D["visible_state"]["oneOf"].append(ref("graybox_visible_state"))
 old_ai_request = deepcopy(D["ai_turn_request"])
 hint_ai_request = obj({**old_ai_request["properties"], "hint_level": HINT_LEVEL})
 D["ai_turn_request"] = {"oneOf": [old_ai_request, hint_ai_request]}
-document("api.schema.json", D, {"oneOf": [ref(name + "_response") for name in ["create", "state", "action", "control", "cancel", "ai_turn"]] + [ref("error_response")]})
+# Additive manual archives retain every prior game/snapshot version and route.
+SAVE_NAME = {"type": "string", "maxLength": 40}
+D["create_save_request"] = {"oneOf": [deepcopy(CONTROL), obj({**CONTROL["properties"], "name": SAVE_NAME})]}
+slot_variants = []
+for metadata_name in ("legacy_save_metadata", "upgrade_save_metadata", "puzzle_save_metadata", "mini_save_metadata", "graybox_save_metadata"):
+    metadata = D[metadata_name]["properties"]
+    slot_variants.append(obj({**metadata, "save_id": ID, "name": SAVE_NAME,
+                              "room_id": ROOM, "status": enum("playing", "won"), "clues_found": REV, "kind": {"const": "archive"}}))
+    slot_variants.append(obj({**metadata, "save_id": {"const": "legacy"}, "name": {"const": "旧版单槽存档"},
+                              "room_id": {"type": "null"}, "status": {"type": "null"}, "clues_found": {"type": "null"}, "kind": {"const": "legacy"}}))
+D["save_slot"] = {"oneOf": slot_variants}
+D["list_saves_data"] = obj({"slots": arr(ref("save_slot")), "visible_state": ref("visible_state")})
+D["save_slot_data"] = obj({"request_id": ID, "replayed": {"type": "boolean"}, "slot": ref("save_slot"), "visible_state": ref("visible_state"), "message": TEXT})
+D["list_saves_response"] = obj({"ok": {"const": True}, "event_id": ID, "data": ref("list_saves_data")})
+D["save_slot_response"] = obj({"ok": {"const": True}, "event_id": ID, "data": ref("save_slot_data")})
+document("api.schema.json", D, {"oneOf": [ref(name + "_response") for name in ["create", "state", "action", "control", "cancel", "ai_turn"]] + [ref("list_saves_response"), ref("save_slot_response"), ref("error_response")]})
 ROUTES = [
     ("POST", "/api/sessions", "empty_request", "create_response", 201, False),
     ("GET", "/api/sessions/{id}/state", None, "state_response", 200, True),
@@ -216,6 +231,9 @@ ROUTES = [
     ("POST", "/api/sessions/{id}/reset", "version_request", "control_response", 200, True),
     ("POST", "/api/sessions/{id}/save", "version_request", "control_response", 200, True),
     ("POST", "/api/sessions/{id}/restore", "version_request", "control_response", 200, True),
+    ("GET", "/api/sessions/{id}/saves", None, "list_saves_response", 200, True),
+    ("POST", "/api/sessions/{id}/saves", "create_save_request", "save_slot_response", 201, True),
+    ("POST", "/api/sessions/{id}/saves/{save_id}/restore", "version_request", "save_slot_response", 200, True),
     ("POST", "/api/sessions/{id}/ai/turns", "ai_turn_request", "ai_turn_response", 200, True),
     ("POST", "/api/sessions/{id}/proposals/{pid}/confirm", "empty_request", "action_response", 200, True),
     ("POST", "/api/sessions/{id}/proposals/{pid}/cancel", "empty_request", "cancel_response", 200, True),

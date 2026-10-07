@@ -230,3 +230,17 @@ finish_ai在原receipt事务再次按当前knownrefs和接受等级重渲染，�
 meaningful错误只包括实际手动动作的WRONG_CODE（柜/登录/线路/顺序）或手持物品对当前可见且已观察对象的错误配对。原409错误码仍返回，mistake_count与revision各+1，谜题/背包不变；schema/auth/stale/未看见/未观察/正确配对但阶段不足不计，旋转或普通观察也不计。失败同request_id重放不再计。提案precheck只读副本，从不计错误。
 
 评级规则公开：S需发现至少9线索、提示最多1、错误最多2；否则A需至少7线索、提示最多3、错误最多5；否则B为提示最多8；其余C。时间不参与评分，等级不影响胜利。本节为行为规格，不替代实际自验、独立QA或真人反馈。
+
+## 手动多时刻存档（v3.4增量功能）
+
+用户授权在当前认证游戏会话中自由保存多个时刻并选择恢复。游戏level3.4/schema1.4、快照版本、原单槽save/restore、各旧版入口/数据库隔离、谜题和AI行为均保持原语义。没有云账户、导出、自动保存、删除或重命名功能。启动只CREATE TABLE IF NOT EXISTS添加save_slots及其session索引，不迁移、覆盖或删除原saves数据。前端保持当前session capability绑定。
+
+新增三路由，均要求原X-Session-Token：GET /api/sessions/{id}/saves→200 data{slots,visible_state}；POST同/saves→201，body原request_id/revision/generation加可选name（字符串最多40字符；省略、空或仅空白由服务器自动命名）；POST /saves/{save_id}/restore→200，body原VersionRequest。两个修改响应都为data{request_id,replayed,slot,visible_state,message}，create_save_request契约用两个严格对象分支表达可选name。命名按普通文本展示，不接受额外字段或非字符串。
+
+slot公开元数据严格包含save_id、name、saved_at、schema_version、level_version、source_revision、source_generation、room_id、status、clues_found、kind。新archive的房间、playing/won和已发现线索数均来自该保存时刻的真实状态，不公开快照、物品私有记录或秘密答案。archive按created_at DESC,rowid DESC稳定排序，同一时间戳也新记录在前。旧单槽若存在则最后追加save_id=legacy/name=旧版单槽存档/kind=legacy，room/status/clues_found为null，因为只读取原公开summary、不解析或重写原私有snapshot用于列表。
+
+每次创建独立save_id，append-only；同一名字、状态、revision或时间仍可另存新记录，只有原request_id的完全相同重放返回原ID，不能生成重复存档。新save不改变状态revision/generation、不触及原单槽和visible_state.save。reset新游戏但保留所有历史archive及旧单槽，重新打开同一会话后仍可列表和选择。
+
+选读archive及legacy均复用原validate_snapshot的完整版本、归属、校验和、时间、字段及规则不变量验证；成功才原子替换游戏状态，以当前revision+1及新generation恢复，保存时刻的设备、背包、旋转、统计和run起止事实同步恢复，失效旧AI轮次/提案。原存档记录不变。未知或其他会话的save_id一律SAVE_NOT_FOUND404，不泄露归属；token越权FORBIDDEN_SESSION403。损坏INVALID_SNAPSHOT409，跨版本SNAPSHOT_VERSION_MISMATCH409，失败不覆盖当前状态或存档。
+
+新archive路由在认证及参数验证后，先检查共享action_receipts的完成请求：完全相同请求重放原不可变event/slot结果并提供当前visible_state，replayed=true；即选读已经换generation，也不会再次恢复或回滚后来的动作。请求ID替换operation/save_id/name等内容REQUEST_ID_CONFLICT409。没有完成receipt的新请求仍必须匹配当前generation/revision，否则STALE_GENERATION/STALE_STATE409。旧execute的generation优先策略不改。本节是规格，实际自验和独立QA结果存于evidence/integration/multiple-saves/。
