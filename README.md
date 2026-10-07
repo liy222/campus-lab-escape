@@ -1,6 +1,6 @@
 # 逃离校园实验室
 
-这是一个本地运行的三房间网页解谜游戏：规则由后端执行，AI队友提供受限帮助；旧版本中的推进建议须由玩家确认。本地当前版本为 v3.4（关卡3.4.0；接口与Schema 1.4.0），独立 QA 已在记录的联合运行范围内接受并 SOURCE STOP。v3.4 增加三级服务器提示、本局统计和通关结算，没有引入 Phaser 或最终美术。QA 结果及限制见 [`v3.4 QA 结果`](evidence/upgrade/v3.4/qa/result.json)、[`v3.4 独立报告`](review/findings/upgrade-v34.md) 和 [`升级交付门槛`](release/UPGRADES.md)。`v3.4-graybox-complete` tag 等待 Main 同步登记。前一版本 v3.3 的 commit `58587cf9458920fef435e8cb5d7638b1e318c19b`、tag `v3.3-mini-games` 已推送并核实。设计基线见 [`docs/upgrade-plan.md`](docs/upgrade-plan.md)；更早版本的交付信息见 [`升级交付门槛`](release/UPGRADES.md)。
+这是一个本地运行的三房间网页解谜游戏：规则由后端执行，AI队友提供受限帮助；旧版本中的推进建议须由玩家确认。本地当前版本为 v3.4（关卡3.4.0；接口与Schema 1.4.0），独立 QA 已在记录的联合运行范围内接受并 SOURCE STOP。v3.4 增加三级服务器提示、本局统计和通关结算，没有引入 Phaser 或最终美术。QA 结果及限制见 [`v3.4 QA 结果`](evidence/upgrade/v3.4/qa/result.json)、[`v3.4 独立报告`](review/findings/upgrade-v34.md) 和 [`升级交付门槛`](release/UPGRADES.md)。v3.4 commit `49a2f925a78055552781685e79ee96496bb9bdd6` 和 tag `v3.4-graybox-complete` 已推送并由 GitHub API 核实，作者与提交者均关联到 `liy222`。前一版本 v3.3 的 commit `58587cf9458920fef435e8cb5d7638b1e318c19b`、tag `v3.3-mini-games` 已推送并核实。设计基线见 [`docs/upgrade-plan.md`](docs/upgrade-plan.md)；更早版本的交付信息见 [`升级交付门槛`](release/UPGRADES.md)。
 
 ## 当前升级路线
 
