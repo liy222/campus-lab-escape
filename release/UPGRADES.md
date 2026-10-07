@@ -59,6 +59,8 @@ v3.4 使用关卡3.4.0、Schema 1.4.0、独立 `game-v3.4.sqlite` 与 `campus-la
 
 在同一已认证本地游戏中，每次“保存新存档”都会新增一个独立记录；名称可选、最多40字，留空由服务端按时间命名。列表按保存时间倒序显示名称、时间、房间、进行/通关状态与线索数；“读取”经确认后替换当前进度，服务端验证存档并切换 generation。reset 保留全部存档，restore/reset/save/同步后重新读取列表；异步列表响应按当前游戏、generation 和 revision 检查，避免过期结果覆盖界面。新表追加保存，不删除、不覆盖既有新存档；旧版单槽以“旧版单槽”条目出现，房间/状态/线索数量显示为未知，不解析旧私有快照；旧单槽控件和旧 API 保留，单槽保存只替换那一份旧记录。多存档接口为 `GET /api/sessions/{id}/saves`、`POST /api/sessions/{id}/saves` 与 `POST /api/sessions/{id}/saves/{save_id}/restore`；游戏仍使用现有 sessionStorage 会话和本地 DB，不提供账号、云端或跨浏览器同步，新游戏会创建另一份游戏存档列表。冻结41个产品/兼容路径不变。正式全套 API 首轮 exit 1：126方法与336子项通过，1方法和1子项因新增 QA 预期错误失败（恢复后旧提案应失效；已完成失败请求应重放原错误）。只修正这两处新测试预期，定向复验 exit 0：2方法、9子项通过，含另用新请求标识验证旧 generation 被拒绝；这是联合覆盖，没有第二次完整全绿运行，重叠子项不相加。最终 build exit 0，真实 Chrome exit 0、149检查、issues为空，覆盖早期/线路中期/通关三份命名存档、指定恢复与取消、刷新、进程重启、旧槽、375px、转义名称及旧版本入口；11张截图经 QA 查看，Main另查看存档列表和确认图。测试仅 mock/stub，付费0；本次自有服务已退出，保留用户既有环境；仍有既有 Starlette/httpx 弃用警告。根CMD未交互启动，不证明真人游玩时长。证据见 [`Main验收`](../evidence/integration/multiple-saves/accepted.json)、[`独立报告`](../review/findings/multiple-saves.md) 和 [`Backend owner记录`](../evidence/integration/multiple-saves/backend.json)。
 
+增量 commit `8e491d7c4b4972cb4a3972627fde3a5fc98c28ee` 与 tag `v3.4-multiple-saves` 已推送并核实；GitHub 作者与提交者均为 `liy222`。关卡/Schema 仍为3.4.0/1.4.0，未进入画面阶段。
+
 ## 阶段边界
 
 v3.4 灰盒 QA 已按联合证据接受。按用户指示，画面升级阶段暂停，等待详细计划；在此之前不引入 Phaser，也不制作最终美术。每阶段只交付计划内所需变更；不为升级路线发起付费实验。既有双击启动、手动 AI 模式与 API Key 说明继续有效，但不构成新版玩法验收。
