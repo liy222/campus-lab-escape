@@ -106,7 +106,7 @@ class AIStoreMixin:
             try:
                 if not parsed:
                     raise ValueError()
-                request = AITurnRequest.model_validate(raw)
+                request = getattr(self.rules, 'ai_request_model', AITurnRequest).model_validate(raw)
                 validate_generation(request.generation)
             except (ValidationError, ValueError, TypeError):
                 return self.failure(connection, event_id, session_id, 'ai_turn', 'BAD_ARGUMENT', 'AI 请求字段不符合契约。', state, expose=False)
@@ -139,12 +139,38 @@ class AIStoreMixin:
                 status, body = self.failure(connection, event_id, session_id, 'ai_turn', 'STALE_STATE', '状态已变化，请刷新后重新提问。', state, safe_request)
                 connection.execute('INSERT INTO action_receipts (session_id,request_id,request_hash,generation,response_json,http_status) VALUES (?,?,?,?,?,?)', (session_id, request.request_id, digest, state.generation, encoded(body), status))
                 return status, body
+            hint_mode = self.rules.LEVEL_VERSION == '3.4.0'
+            hint_topics = []
+            if hint_mode:
+                from ..ai.hints import available_topics
+                hint_topics = available_topics(self.projection(connection, session_id, state))
+                if hint_topics and state.statistics.current_hint_level != request.hint_level:
+                    state.statistics.current_hint_level = request.hint_level
+                    state.revision += 1
+                    self.rules.validate_invariants(state)
+                    connection.execute('UPDATE sessions SET state_json=? WHERE session_id=?', (encoded(state.model_dump()), session_id))
+                    self.invalidate_pending(connection, session_id)
             turn_id = new_id()
             connection.execute("INSERT INTO action_receipts (session_id,request_id,request_hash,generation,response_json,http_status,phase) VALUES (?,?,?,?,?,0,'reserved')", (session_id, request.request_id, digest, state.generation, '{}'))
             connection.execute("INSERT INTO ai_turns (turn_id,session_id,request_id,event_id,generation,cursor_revision,owner,phase,created_at) VALUES (?,?,?,?,?,?,?,'reserved',?)", (turn_id, session_id, request.request_id, event_id, state.generation, state.revision, self.runtime_owner, utc_now()))
+            if hint_mode and not hint_topics:
+                from ..ai.hints import NO_HINT
+                data = {'turn_id': turn_id, 'answer': NO_HINT, 'clue_refs': [], 'proposal': None, 'status': 'no_suggestion', 'stop_reason': None,
+                        'usage': {'provider': 'unavailable', 'model': None, 'input_tokens': None, 'output_tokens': None, 'model_calls': 0, 'read_tool_calls': 0},
+                        'visible_state': self.projection(connection, session_id, state)}
+                public_validator('ai_turn_data').validate(data)
+                body = {'ok': True, 'event_id': event_id, 'data': data}
+                connection.execute("UPDATE ai_turns SET phase='completed' WHERE turn_id=?", (turn_id,))
+                connection.execute("UPDATE action_receipts SET phase='completed',response_json=?,http_status=200 WHERE session_id=? AND request_id=?", (encoded(body), session_id, request.request_id))
+                self.event(connection, event_id, session_id, 'ai_turn', 'no_suggestion', body, state, {'turn_id': turn_id}, state.revision)
+                return 200, body
             start = TurnStart(turn_id, safe_request['message'], self.projection(connection, session_id, state), self.safe_history(connection, session_id, state))
             self.event(connection, new_id(), session_id, 'ai_begin', 'reserved', {'turn_id': turn_id, 'revision': state.revision, 'generation': state.generation}, state, safe_request, state.revision)
-            return start, BoundCallbacks(self, session_id, turn_id)
+            callbacks = BoundCallbacks(self, session_id, turn_id)
+            if hint_mode:
+                from ..ai.hints import HintCallbacks
+                callbacks = HintCallbacks(callbacks)
+            return start, callbacks
 
     def ai_cursor(self, connection, session_id, turn_id, expected):
         turn = connection.execute('SELECT * FROM ai_turns WHERE session_id=? AND turn_id=?', (session_id, turn_id)).fetchone()
@@ -313,6 +339,7 @@ class AIStoreMixin:
             row = connection.execute('SELECT state_json FROM sessions WHERE session_id=?', (session_id,)).fetchone()
             state = self.parse_state(row['state_json'])
             projection = self.projection(connection, session_id, state)
+            revision_before_finish = state.revision
             expected = Version(turn['cursor_revision'], turn['generation'])
             valid_result = isinstance(result, TurnResult)
             data = deepcopy(result.data) if valid_result and isinstance(result.data, dict) else {}
@@ -339,6 +366,28 @@ class AIStoreMixin:
                 candidate = None
             else:
                 data['usage'] = usage
+            if self.rules.LEVEL_VERSION == '3.4.0':
+                from ..ai.hints import bounded_render
+                if data['status'] == 'stopped':
+                    # Even failure text from an injected runtime is untrusted.
+                    data.update(answer='本轮提示没有完成，已发现线索与游戏进度仍保留。', clue_refs=[])
+                if data['status'] != 'stopped':
+                    try:
+                        if candidate is not None or turn['read_calls'] != 0:
+                            raise ValueError('Progress is forbidden in hint mode')
+                        answer, refs = bounded_render(projection, data['clue_refs'])
+                    except (ValueError, KeyError, TypeError):
+                        data.update(answer='提示选择不符合已发现信息，本轮已停止。', clue_refs=[], status='stopped', stop_reason='MODEL_INVALID_OUTPUT')
+                    else:
+                        # The final authority renders again and ignores runtime prose.
+                        data.update(answer=answer, clue_refs=refs, status='no_suggestion', stop_reason=None)
+                        state.statistics.hint_count += 1
+                        state.revision += 1
+                        self.rules.validate_invariants(state)
+                        connection.execute('UPDATE sessions SET state_json=? WHERE session_id=?', (encoded(state.model_dump()), session_id))
+                        self.invalidate_pending(connection, session_id)
+                        projection = self.projection(connection, session_id, state)
+                candidate = None
             proposal = None
             if data['status'] == 'stopped':
                 candidate = None
@@ -359,7 +408,7 @@ class AIStoreMixin:
             trace = self.sanitize_trace(result.trace, state) if valid_result else []
             connection.execute("UPDATE ai_turns SET phase='completed',trace_json=? WHERE turn_id=? AND phase='reserved'", (encoded(trace), turn_id))
             connection.execute("UPDATE action_receipts SET phase='completed',response_json=?,http_status=200 WHERE session_id=? AND request_id=? AND phase='reserved'", (encoded(body), session_id, turn['request_id']))
-            self.event(connection, turn['event_id'], session_id, 'ai_turn', 'proposed' if proposal else data['status'], body, state, {'turn_id': turn_id}, state.revision)
+            self.event(connection, turn['event_id'], session_id, 'ai_turn', 'proposed' if proposal else data['status'], body, state, {'turn_id': turn_id}, revision_before_finish)
             return 200, body
 
     def abandon_ai(self, session_id, turn_id):

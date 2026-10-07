@@ -1,28 +1,30 @@
 # 逃离校园实验室
 
-这是一个本地运行的三房间网页解谜游戏：规则由后端执行，AI队友提供受限建议，推进游戏的建议需要玩家确认。本地当前候选为 v3.3（关卡 3.3.0；接口与 Schema 1.3.0）。独立 QA 按联合证据接受并 SOURCE STOP；`v3.3-mini-games` tag 仍待 Main 同步登记。最终范围和限制见 [`v3.3 QA 结果`](evidence/upgrade/v3.3/qa/result.json)、[`v3.3 独立报告`](review/findings/upgrade-v33.md) 和 [`升级交付门槛`](release/UPGRADES.md)。v3.2 已推送 commit `519c8d0d542fcfedd4bfaaaf8b81e68b00d05925`、tag `v3.2-puzzle-redesign`；其独立 QA 摘要见 [`v3.2 QA 结果`](evidence/upgrade/v3.2/qa/result.json)。已发布并冻结的历史基线为 `CH01_v2`（commit `242ecfc4d9f7bf1a8480508de701d9efc7822fe7`）；它的源码绑定见 [`CH01_v2 manifest`](evidence/integration/CH01_v2-manifest.json)。v3.0 已提交推送为 `1499610`，tag 为 `v3.0-gameplay-information`；v3.1 独立 QA 已通过，完整路线见 [`升级交付门槛`](release/UPGRADES.md)。升级设计基线和逐阶段门槛见 [`docs/upgrade-plan.md`](docs/upgrade-plan.md) 与 [`release/UPGRADES.md`](release/UPGRADES.md)。
+这是一个本地运行的三房间网页解谜游戏：规则由后端执行，AI队友提供受限帮助；旧版本中的推进建议须由玩家确认。本地当前版本为 v3.4（关卡3.4.0；接口与Schema 1.4.0），独立 QA 已在记录的联合运行范围内接受并 SOURCE STOP。v3.4 增加三级服务器提示、本局统计和通关结算，没有引入 Phaser 或最终美术。QA 结果及限制见 [`v3.4 QA 结果`](evidence/upgrade/v3.4/qa/result.json)、[`v3.4 独立报告`](review/findings/upgrade-v34.md) 和 [`升级交付门槛`](release/UPGRADES.md)。`v3.4-graybox-complete` tag 等待 Main 同步登记。前一版本 v3.3 的 commit `58587cf9458920fef435e8cb5d7638b1e318c19b`、tag `v3.3-mini-games` 已推送并核实。设计基线见 [`docs/upgrade-plan.md`](docs/upgrade-plan.md)；更早版本的交付信息见 [`升级交付门槛`](release/UPGRADES.md)。
 
 ## 当前升级路线
 
-v3.3 API 联合验收包括首轮全套 105 passed、291 个子项通过，及 1 个 QA 尾部断言错误（期待普通互动返回 200，服务器正确以 409 阻止旁路）；该方法按 Main 指示修正 QA 预期后定向复验为 1 passed、3 个子项通过。旧 97 项与新增 9 个方法均由这两个运行覆盖；没有第二次全套 exit 0，也不表述成 106 passed。修复前后 27 个产品候选文件匹配。Chrome exit 0、102 项、issues 为空，6 张截图已目视检查；build exit 0，均绑定同一候选。根目录 CMD 只做字节/配置检查，没有实际启动。完整证据与边界见 [`v3.3 QA 结果`](evidence/upgrade/v3.3/qa/result.json) 和 [`v3.3 独立报告`](review/findings/upgrade-v33.md)。
+v3.3 API 联合验收包括首轮全套105 passed、291个子项通过，及1个 QA 尾部断言错误；该方法按 Main 指示修正预期后定向复验为1 passed、3个子项通过。旧97项与新增9个方法由两个运行联合覆盖；没有第二次全套 exit 0，也不表述成106 passed。修复前后27个产品候选文件匹配。Chrome exit 0、102项、issues为空、6张截图已目视检查；build exit 0，均绑定同一候选。根目录 CMD 仅作字节/配置检查，没有实际启动。详情见 [`v3.3 QA 结果`](evidence/upgrade/v3.3/qa/result.json) 与 [`v3.3 独立报告`](review/findings/upgrade-v33.md)。
+
+v3.4 API 联合验收保留首轮全套 exit 1：118个测试方法通过、315个子项通过，1个子项因 QA 预期错误失败；问题是并发期间相同提示请求实际按既有 reservation 规则返回503 `MODEL_UNAVAILABLE`，QA 原预期为409。仅该新方法修正预期后定向复验 exit 0，1个方法、3个子项通过；这不等于第二次全套118项通过。首轮完整运行与定向复验联合覆盖，不相加重复子项。候选38个源码/合同/规格/launcher路径执行阶段及最终哈希均一致。独立 build exit 0；Chrome exit 0、132项检查、issues为空，6张截图已检查；launcher 字节/配置检查 exit 0，但未实际启动根目录 CMD。完整边界见 [`v3.4 QA 结果`](evidence/upgrade/v3.4/qa/result.json) 与 [`v3.4 独立报告`](review/findings/upgrade-v34.md)。
 
 v3.2 独立 API QA exit 0：97 passed、257 个子项通过、1 个弃用警告；旧89项和新增8个测试方法通过。覆盖46步三房间路线、各设备与物品槽阶段的保存/重置/恢复/Store 重开、错误尝试、跨版本快照拒绝，以及 AI 读取边界（12类伪造读取均被拒绝）。修复前候选的 Chrome 检查 exit 0（61项）和前端构建 exit 0被保留复用；它们不是修复后源码的重复运行。实际根目录启动 CMD 未运行，仅做字节与配置检查。具体范围、来源和限制见 [`v3.2 QA 结果`](evidence/upgrade/v3.2/qa/result.json) 与 [`独立报告`](review/findings/upgrade-v32.md)。QA 使用合成 AI fixture，没有真实 provider/网络调用；不代表真人试玩或20–30分钟游玩时长验收。
 
-v3.0 已完成并标记为 `v3.0-gameplay-information`。v3.3 线路连接与顺序操作灰盒已按联合证据完成独立 QA；后续路线见 [`release/UPGRADES.md`](release/UPGRADES.md)。v3.4 完整灰盒验收前不引入 Phaser 或最终美术。
+v3.0 已完成并标记为 `v3.0-gameplay-information`。v3.4 三级提示、统计、结算与完整路线灰盒已按联合证据完成独立 QA。按用户指示，进入画面升级前暂停，等待详细计划；目前没有 Phaser 或最终美术。
 
-## 双击启动当前版本 v3.3
+## 双击启动当前版本 v3.4
 
-在 Windows 文件资源管理器中双击仓库根目录的 `启动游戏.cmd`，默认以免费 `mock` Provider 和独立的 `./data/game-v3.3.sqlite` 启动当前 v3.3 前后端。服务运行期间不要关闭窗口，按 Ctrl+C 停止。若启动失败，窗口会保留错误信息和退出码；缺少 Python 或依赖、端口已占用时按提示处理。启动器不会自动安装或升级依赖，也不会结束已占用端口的进程。可右键该文件创建 Windows 快捷方式。
+在 Windows 文件资源管理器中双击仓库根目录的 `启动游戏.cmd`，默认以免费 `mock` Provider 和独立的 `./data/game-v3.4.sqlite` 启动当前 v3.4 候选。服务运行期间不要关闭窗口，按 Ctrl+C 停止。若启动失败，窗口会保留错误信息和退出码；缺少 Python 或依赖、端口已占用时按提示处理。启动器不会自动安装或升级依赖，也不会结束已占用端口的进程。可右键该文件创建 Windows 快捷方式。
 
 首次运行前按下方首次安装依赖步骤安装依赖；此后可直接双击启动。
 
 ## 游戏内选择 AI 探索伙伴
 
-启动游戏后，可在“AI 探索伙伴”中选择免费模拟或真实 DeepSeek。免费模拟是默认选项，不会调用真实模型。选择真实 DeepSeek 后，在密码输入框中手动填写 API Key；填写本身不会发起请求，只有点击“询问伙伴”时才会调用。此时，问题、已发现线索和已公开历史会发送到 DeepSeek 官方接口，并按该 API 账户规则计费；选择真实模式不会重置项目现有的共享预算或账本。
+启动游戏后，可在“AI 探索伙伴”中选择免费模拟或真实 DeepSeek。免费模拟是默认选项，不会调用真实模型。v3.4 的提示级别选择只在本地生效；只有点击“获取提示”才会发起请求，也不会代替玩家执行行动。真实模式下，v3.4 只向 DeepSeek 发送符合条件的提示主题名称和已发现线索 ID，不发送玩家问句、对话历史或线索全文；旧版本助手仍按各自原有行为处理。选择真实 DeepSeek 后，在密码输入框中手动填写 API Key；填写本身不会发起请求。真实请求按该 API 账户规则计费；QA 没有进行付费调用，选择真实模式也不会重置项目现有共享预算或账本。
 
 手动输入的 Key 只保留在当前页面的 React 内存中，不写入存档；刷新页面、切回免费模拟、切换游戏会话或重新开始都会清除它。日常游玩无需编辑 `启动游戏.cmd` 或 `.env`。通过命令行启动的原有 `--provider` 与 `.env` 配置仍供本地开发使用，README 中的双击启动示例继续使用免费模拟模式。
 
-## 本地启动当前版本 v3.3
+## 本地启动当前版本 v3.4
 
 首次安装依赖或修复缺失依赖时，在 Windows PowerShell 中从仓库根目录执行。使用指定 Conda Python，不创建或重置环境；平时可直接双击上方启动器：
 
@@ -32,11 +34,11 @@ $ProjectPython = 'C:\Users\liyh\.conda\envs\1\python.exe'
 & $ProjectPython -m pip install -r backend/requirements.lock.txt
 npm.cmd --prefix frontend ci
 $env:GAMEPLAY_VERSION = 'upgrade'
-$env:SQLITE_PATH = './data/game-v3.3.sqlite'
+$env:SQLITE_PATH = './data/game-v3.4.sqlite'
 & $ProjectPython -m scripts.dev --provider mock
 ```
 
-默认工作版本使用独立的 `game-v3.3.sqlite` 与 v3.3 会话存储命名空间。显式设置 `GAMEPLAY_VERSION = 'v3.2'`、`'v3.1'` 或 `'legacy'`，并分别选择 `game-v3.2.sqlite`、`game-v3.1.sqlite` 或 `game-v2.sqlite`，可运行保留版本；各模式使用独立浏览器会话空间，不自动迁移。首次安装依赖后，日常启动可从设置 `GAMEPLAY_VERSION` 和 `SQLITE_PATH` 的两行开始。服务启动后打开 <http://127.0.0.1:5173/>；开发启动器会同时启动前后端并检查本地健康页。按 Ctrl+C 停止两项服务。
+默认工作版本使用独立的 `game-v3.4.sqlite` 与 v3.4 会话存储命名空间。显式设置 `GAMEPLAY_VERSION` 为 `v3.3`、`v3.2`、`v3.1` 或 `legacy`，并分别选择对应的 `game-v3.3.sqlite`、`game-v3.2.sqlite`、`game-v3.1.sqlite` 或 `game-v2.sqlite`，可运行保留版本；各模式使用独立浏览器会话空间，不自动迁移。首次安装依赖后，日常启动可从设置 `GAMEPLAY_VERSION` 和 `SQLITE_PATH` 的两行开始。服务启动后打开 <http://127.0.0.1:5173/>；开发启动器会同时启动前后端并检查本地健康页。按 Ctrl+C 停止两项服务。
 
 ## 使用同代码运行历史 v2 基线
 

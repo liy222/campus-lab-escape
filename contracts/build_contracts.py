@@ -183,6 +183,31 @@ SEQUENCE = obj({"target_id": {"const": "r3_panel"},
 mini_properties["minigames"] = obj({"circuit": nullable(CIRCUIT), "sequence": nullable(SEQUENCE)})
 D["mini_visible_state"]["required"] = list(mini_properties)
 D["visible_state"]["oneOf"].append(ref("mini_visible_state"))
+
+# v3.4 statistics are stable public facts; only the won settlement has elapsed.
+D["graybox_save_metadata"] = deepcopy(D["mini_save_metadata"])
+D["graybox_save_metadata"]["properties"]["schema_version"] = {"const": "1.4.0"}
+D["graybox_save_metadata"]["properties"]["level_version"] = {"const": "3.4.0"}
+D["save_metadata"]["oneOf"].append(ref("graybox_save_metadata"))
+CLUE_COUNT = {"type": "integer", "minimum": 0, "maximum": 10}
+HIDDEN_COUNT = {"type": "integer", "minimum": 0, "maximum": 2}
+HINT_LEVEL = {"type": "integer", "enum": [1, 2, 3]}
+COUNTS = {"clues_found": CLUE_COUNT, "clues_total": {"const": 10}, "hint_count": REV,
+          "mistake_count": REV, "hidden_found": HIDDEN_COUNT, "hidden_total": {"const": 2}}
+STATISTICS = obj({"started_at": TIME, "finished_at": nullable(TIME), "current_hint_level": HINT_LEVEL, **COUNTS})
+SETTLEMENT = obj({"elapsed_seconds": REV, **COUNTS, "rating": enum("S", "A", "B", "C")})
+D["graybox_visible_state"] = deepcopy(D["mini_visible_state"])
+graybox_properties = D["graybox_visible_state"]["properties"]
+graybox_properties["schema_version"] = {"const": "1.4.0"}
+graybox_properties["level_version"] = {"const": "3.4.0"}
+graybox_properties["save"] = nullable(ref("graybox_save_metadata"))
+graybox_properties["statistics"] = STATISTICS
+graybox_properties["settlement"] = nullable(SETTLEMENT)
+D["graybox_visible_state"]["required"] = list(graybox_properties)
+D["visible_state"]["oneOf"].append(ref("graybox_visible_state"))
+old_ai_request = deepcopy(D["ai_turn_request"])
+hint_ai_request = obj({**old_ai_request["properties"], "hint_level": HINT_LEVEL})
+D["ai_turn_request"] = {"oneOf": [old_ai_request, hint_ai_request]}
 document("api.schema.json", D, {"oneOf": [ref(name + "_response") for name in ["create", "state", "action", "control", "cancel", "ai_turn"]] + [ref("error_response")]})
 ROUTES = [
     ("POST", "/api/sessions", "empty_request", "create_response", 201, False),
@@ -195,4 +220,4 @@ ROUTES = [
     ("POST", "/api/sessions/{id}/proposals/{pid}/confirm", "empty_request", "action_response", 200, True),
     ("POST", "/api/sessions/{id}/proposals/{pid}/cancel", "empty_request", "cancel_response", 200, True),
 ]
-(ROOT / "routes.json").write_text(json.dumps({"contract_version": "1.3.0", "schema": "api.schema.json", "routes": [{"method": m, "path": p, "request": r, "response": s, "success_status": h, "requires_session_token": a} for m,p,r,s,h,a in ROUTES], "error_statuses": ERRORS}, indent=2) + "\n", encoding="utf-8")
+(ROOT / "routes.json").write_text(json.dumps({"contract_version": "1.4.0", "schema": "api.schema.json", "routes": [{"method": m, "path": p, "request": r, "response": s, "success_status": h, "requires_session_token": a} for m,p,r,s,h,a in ROUTES], "error_statuses": ERRORS}, indent=2) + "\n", encoding="utf-8")

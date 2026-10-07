@@ -1,0 +1,159 @@
+{
+  "status": "QA PREPARATION SOURCE STOP; awaiting all-owner STOP and Main frozen candidate/GO",
+  "recorded_at": "2026-10-07T06:23:55.487303+00:00",
+  "formal_runs": 0,
+  "paid_calls": 0,
+  "prepared_files": [
+    {
+      "path": "tests/api/test_upgrade_v34.py",
+      "sha256": "240f9d0fbfe24c415e186cf3082934ebfb3a72cb71e0da8ff97d0be0bb419c09"
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v34.mjs",
+      "sha256": "6317c927e7dfbb7ff9ddf5625b589b77149fde1e7b5b480b6bac65832939de88"
+    }
+  ],
+  "new_api_methods": [
+    "test_initial_fixed_statistics_no_future_boards_and_no_hint_paid_request",
+    "test_three_levels_only_known_context_no_auto_inspect_no_private_full_solution",
+    "test_hint_replay_stale_invalid_level_settings_failures_do_not_increment",
+    "test_runtime_selection_injection_unknown_refs_free_answer_and_autoread_stop",
+    "test_store_finalizer_rechecks_fake_runtime_answer_refs_proposal_and_stale",
+    "test_meaningful_numeric_login_circuit_sequence_wrong_item_count_once_only",
+    "test_rotations_reads_bad_schema_auth_stale_unseen_targets_do_not_count",
+    "test_optional_story_objects_visibility_discoveries_total_ten_and_win_score",
+    "test_server_UTC_offline_elapsed_reset_saved_run_restore_and_win_freeze",
+    "test_all_S_A_B_C_ratings_are_settlement_only_without_exit_gate",
+    "test_new_statistics_survive_save_restore_reset_slot_and_cross_version_rejection",
+    "test_hint_concurrent_duplicate_inflight_stale_generation_and_timeout_never_double_count"
+  ],
+  "old_regression_methods_required": 106,
+  "old_file_checks": [
+    {
+      "path": "tests/api/test_upgrade_v31.py",
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "58587cf:tests/api/test_upgrade_v31.py"
+      ],
+      "exit_code": 0,
+      "raw_byte_identical": true,
+      "explicit_selector": "v3.1",
+      "changes_needed": 0,
+      "sha256": "1c306a414922085fbb7ada915c39b69e5d6985be31d06bcd342752622eed7f45"
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v31.mjs",
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "58587cf:tests/e2e/run_upgrade_v31.mjs"
+      ],
+      "exit_code": 0,
+      "raw_byte_identical": true,
+      "explicit_selector": "v3.1",
+      "changes_needed": 0,
+      "sha256": "740e78ee0f9512c22bd75759b1b8f8fb4ca740521f2c294ac9da8fc4931c9631"
+    },
+    {
+      "path": "tests/api/test_upgrade_v32.py",
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "58587cf:tests/api/test_upgrade_v32.py"
+      ],
+      "exit_code": 0,
+      "raw_byte_identical": true,
+      "explicit_selector": "v3.2",
+      "changes_needed": 0,
+      "sha256": "624feb4241f3b5c2010fd78c485817c779bb273faea7ac61cb7105ac7a0c7825"
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v32.mjs",
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "58587cf:tests/e2e/run_upgrade_v32.mjs"
+      ],
+      "exit_code": 0,
+      "raw_byte_identical": true,
+      "explicit_selector": "v3.2",
+      "changes_needed": 0,
+      "sha256": "9a8e9bb583b6ee9751ae150cd71959b6426bd178705c53b85ff89b571b545bfb"
+    },
+    {
+      "path": "tests/api/test_upgrade_v33.py",
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "58587cf:tests/api/test_upgrade_v33.py"
+      ],
+      "exit_code": 0,
+      "raw_byte_identical": true,
+      "explicit_selector": "v3.3",
+      "changes_needed": 0,
+      "sha256": "6e25d8f64db6cd9c35b8382c13f9efb80dfe318de048e92fd137ef2577f99f67"
+    },
+    {
+      "path": "tests/e2e/run_upgrade_v33.mjs",
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=D:/深度能力",
+        "show",
+        "58587cf:tests/e2e/run_upgrade_v33.mjs"
+      ],
+      "exit_code": 0,
+      "raw_byte_identical": true,
+      "explicit_selector": "v3.3",
+      "changes_needed": 0,
+      "sha256": "b963d3d0502be8db7f0c484fb01301cc3327e0d9400abfa3089748d5f2383928"
+    }
+  ],
+  "static_commands": [
+    {
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "exit_code": 0,
+      "stdin_source": {
+        "path": "evidence/upgrade/v3.4/qa/preparation-stdin-source.txt",
+        "sha256": "cb1362bbba6513009f1c3ac93f65c10b486f03c63ffdd084121ba18d7ba3ffb8",
+        "provenance": "Original first preparation stdin source copied to this file after execution for traceability; saved path itself was not executed. Later concurrency preparation addendum is separately recorded in this preparation JSON."
+      }
+    },
+    {
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--check",
+        "tests\\e2e\\run_upgrade_v34.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "interface": "Provider topic/ref-only JSON; eligible known pair/current physical board; no user/history/fullstate upstream; server renders and finish re-renders. Stable playing statistics: persisted UTC start/finish/counters, elapsed only terminal settlement.",
+  "limitations": [
+    "No API/build/browser executed in preparation; behavior coverage is intended, not proven.",
+    "Public contract currently being finalized; final source STOP/candidate required before formal execution.",
+    "UTC elapsed test uses controlled server clock125seconds, not measured human playtime.",
+    "Browser DOM geometry375px + isolated new-session old-mode smoke; no historical sensitive DB."
+  ],
+  "preparation_addendum": "Main requested explicit new-mode concurrent reservation/replay, in-flight manual-state race, restore-generation expiry and shortened synthetic timeout count checks; prepared before formal GO, no execution.",
+  "historical_scope_note": "This is pre-GO preparation evidence; formal outcomes and corrected concurrent HTTP expectation are in qa/result.json and harness-correction.json."
+}

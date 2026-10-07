@@ -1,17 +1,17 @@
 # 游戏升级路线与交付门槛
 
-本文跟踪 `docs/upgrade-plan.md` 中已接受的 v3.0–v4.2 范围。计划是设计基线，不是执行或验收证据。本地当前候选为 v3.3（关卡3.3.0、Schema 1.3.0），独立 QA 已按联合证据接受并 SOURCE STOP；`v3.3-mini-games` tag 待 Main 同步登记。`CH01_v2` 是历史冻结基线。旧版工程检查、实验与评价器结论不会自动扩展到本升级路线。
+本文跟踪 `docs/upgrade-plan.md` 中已接受的 v3.0–v4.2 范围。计划是设计基线，不是执行或验收证据。v3.4（关卡3.4.0、Schema 1.4.0）独立 QA 已在记录的联合运行范围内接受并 SOURCE STOP；`v3.4-graybox-complete` tag 等待 Main 同步登记。前一版本 v3.3 的 commit `58587cf9458920fef435e8cb5d7638b1e318c19b` 与 tag `v3.3-mini-games` 已推送并核实。`CH01_v2` 是历史冻结基线。旧版工程检查、实验与评价器结论不会自动扩展到本升级路线。
 
 | 版本 | 主要范围 | 当前状态 |
 |---|---|---|
 | v3.0 | 降低信息暴露；统一观察、互动、使用物品入口 | 独立 QA 通过；已推送 commit `1499610`，tag `v3.0-gameplay-information` |
 | v3.1 | 多状态物体及对应视觉状态要求 | 独立 QA 通过；commit `cfab6616c288fc1d5a3b41ae118911a13e9ad321` 与 tag `v3.1-object-state` 已推送 |
 | v3.2 | 重设计三房间谜题网络并完成房间灰盒布局 | 独立 API QA 通过（97 passed、257 子项、exit 0）；commit `519c8d0d542fcfedd4bfaaaf8b81e68b00d05925` 与 tag `v3.2-puzzle-redesign` 已推送 |
-| v3.3 | 线路连接、顺序操作两类小游戏及可操作灰盒 | 独立 QA 按联合 API 运行与定向复验、同候选 build/browser 结果接受；SOURCE STOP；tag 待 Main 同步登记 |
-| v3.4 | 跨房间线索、AI 三级提示、结算与完整灰盒通关 | 未开始 |
-| v4.0 | 引入 Phaser，完成 Room 1 正式画面 | 未开始；须等 v3.4 灰盒通过 |
-| v4.1 | 完成 Room 2 正式画面 | 未开始 |
-| v4.2 | 完成 Room 3、统一 UI、音效、动画与最终优化 | 未开始 |
+| v3.3 | 线路连接、顺序操作两类小游戏及可操作灰盒 | 独立 QA 按联合 API 运行与定向复验、同候选 build/browser 结果接受；SOURCE STOP；commit/tag 已推送 |
+| v3.4 | 跨房间线索、AI 三级提示、结算与完整灰盒通关 | 联合 API/build/Chrome/launcher 证据接受；SOURCE STOP；tag `v3.4-graybox-complete` 等待 Main 同步登记 |
+| v4.0 | 引入 Phaser，完成 Room 1 正式画面 | 按用户指示暂停，等待详细画面升级计划；未开始 |
+| v4.1 | 完成 Room 2 正式画面 | 未开始；等待后续计划 |
+| v4.2 | 完成 Room 3、统一 UI、音效、动画与最终优化 | 未开始；等待后续计划 |
 
 ## v3.0 已完成范围
 
@@ -49,8 +49,12 @@ API 证据是两个 epoch：首轮全套运行 exit 1，105 passed、291 个子�
 
 全程 27 个产品候选文件 before/after 匹配。Build exit 0，Chrome exit 0、102 项摘要检查、issues 为空，6 张截图已目视检查；Chrome 与 build 均绑定该候选且未重跑。浏览器覆盖手动线路旋转/服务器提交、线路局部存档保存恢复与进程重启、四设备顺序及错误草稿、恢复/刷新/换房间清除草稿、主电闸交互、终检胜利、375px 布局与旧版本 session 隔离。线路和顺序截图来自桌面；375px 小游戏布局由 DOM 几何检查覆盖。
 
-根目录 launcher 首轮检查因 QA 错误期待不存在的命令行 flag 而 exit 1；按实际 `GAMEPLAY_VERSION=upgrade`、v3.3 数据库与 `--provider mock` 配置重新检查 exit 0。没有实际启动根目录 CMD。QA 使用合成 provider，没有真实模型质量或真人20–30分钟通关时长验收；旧版本仅用新建 session/save slot 检查，没有读取历史敏感数据库。详细计数、命令、候选绑定与限制见 [`v3.3 QA 结果`](../evidence/upgrade/v3.3/qa/result.json) 和 [`独立报告`](../review/findings/upgrade-v33.md)。owner build、launcher 和文档记录分别见 [`前端记录`](../evidence/upgrade/v3.3/frontend.json)、[`Delivery 记录`](../evidence/upgrade/v3.3/delivery.json) 与 [`文档记录`](../evidence/upgrade/v3.3/docs.json)。本阶段没有加入 Phaser、最终美术或付费 provider 调用。v3.3 tag 待 Main 同步登记；本文不预填 commit SHA。
+根目录 launcher 首轮检查因 QA 错误期待不存在的命令行 flag 而 exit 1；按实际 `GAMEPLAY_VERSION=upgrade`、v3.3 数据库与 `--provider mock` 配置重新检查 exit 0。没有实际启动根目录 CMD。QA 使用合成 provider，没有真实模型质量或真人20–30分钟通关时长验收；旧版本仅用新建 session/save slot 检查，没有读取历史敏感数据库。详细计数、命令、候选绑定与限制见 [`v3.3 QA 结果`](../evidence/upgrade/v3.3/qa/result.json) 和 [`独立报告`](../review/findings/upgrade-v33.md)。owner build、launcher 和文档记录分别见 [`前端记录`](../evidence/upgrade/v3.3/frontend.json)、[`Delivery 记录`](../evidence/upgrade/v3.3/delivery.json) 与 [`文档记录`](../evidence/upgrade/v3.3/docs.json)。本阶段没有加入 Phaser、最终美术或付费 provider 调用。v3.3 commit `58587cf9458920fef435e8cb5d7638b1e318c19b` 和 tag `v3.3-mini-games` 已推送。
+
+## v3.4 独立 QA：联合证据接受
+
+v3.4 使用关卡3.4.0、Schema 1.4.0、独立 `game-v3.4.sqlite` 与 `campus-lab-session-upgrade-v3.4`；v3.3/v3.2/v3.1/legacy 各自数据空间保留且不自动迁移。三级提示选择仅本地生效，点击“获取提示”才请求；真实模式只向模型服务发符合条件的提示主题名称与已发现线索 ID，不发玩家问句、对话历史或线索全文，旧版助手和 API Key 内存清除行为保持不变。服务器统计/结算涵盖10条线索、最多2条隐藏发现、提示、失误、用时与 S/A/B/C；用时包括离线并在胜利冻结，存档恢复回滚统计，重置新计时但保留存档槽；评级不影响通关，S/A/B 阈值分别为线索≥9且提示≤1/失误≤2、线索≥7且提示≤3/失误≤5、提示≤8，其余为 C。正式 API 联合覆盖为：首轮全套 exit 1，118个方法通过、315个子项通过、1个子项失败（新并发用例误期望 reservation 中相同请求返回409，实际返回503 `MODEL_UNAVAILABLE`）；仅该新方法修正预期后的定向复验 exit 0，1个方法、3个子项通过。没有第二次全套 exit 0，也不重复相加子项。冻结候选38条产品/合同/规格/launcher路径哈希一致；build exit 0，Chrome exit 0、132项、issues为空，6张截图已查看；launcher 字节/配置检查 exit 0，但根目录 CMD 未实际启动。结果、命令与边界见 [`v3.4 QA 结果`](../evidence/upgrade/v3.4/qa/result.json) 和 [`独立报告`](../review/findings/upgrade-v34.md)。本次使用 mock/stub、付费调用0；没有真实模型质量/密钥验证、真人20–30分钟时长证明或历史敏感存档迁移验收，仍有既有 Starlette/httpx 弃用警告。灰盒 QA 已接受；按用户指示画面升级暂停、等待详细计划，未引入 Phaser 或最终美术。`v3.4-graybox-complete` tag 等待 Main 同步登记，本文不预填 commit SHA。
 
 ## 阶段边界
 
-v3.0–v3.4 完成灰盒并通过完整路线前，不引入 Phaser，也不制作最终美术。每阶段只交付计划内所需变更，避免把大量历史快照复制进归档；不为升级路线发起付费实验。既有双击启动、手动 AI 模式与 API Key 说明继续有效，但不构成新版玩法验收。
+v3.4 灰盒 QA 已按联合证据接受。按用户指示，画面升级阶段暂停，等待详细计划；在此之前不引入 Phaser，也不制作最终美术。每阶段只交付计划内所需变更；不为升级路线发起付费实验。既有双击启动、手动 AI 模式与 API Key 说明继续有效，但不构成新版玩法验收。

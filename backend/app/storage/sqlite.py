@@ -33,9 +33,12 @@ def select_rules(gameplay_version="legacy"):
     if gameplay_version in {"3.2", "3.2.0", "v3.2"}:
         from ..domain import puzzle_rules
         return puzzle_rules
-    if gameplay_version in {"upgrade", "3.3", "3.3.0", "v3.3"}:
+    if gameplay_version in {"3.3", "3.3.0", "v3.3"}:
         from ..domain import mini_rules
         return mini_rules
+    if gameplay_version in {"upgrade", "3.4", "3.4.0", "v3.4"}:
+        from ..domain import graybox_rules
+        return graybox_rules
     raise ValueError("Unsupported gameplay version")
 
 
@@ -162,9 +165,9 @@ class Store(AIStoreMixin):
                 revision_before, state.revision if state else None, state.generation if state else None,
             ))
 
-    def failure(self, connection, event_id, session_id, operation, code, message, state=None, request=None, expose=True):
+    def failure(self, connection, event_id, session_id, operation, code, message, state=None, request=None, expose=True, revision_before=None):
         body = error_body(event_id, code, message, self.projection(connection, session_id, state) if state and expose else None)
-        self.event(connection, event_id, session_id, operation, "rejected", body, state, request, state.revision if state else None)
+        self.event(connection, event_id, session_id, operation, "rejected", body, state, request, revision_before if revision_before is not None else state.revision if state else None)
         return ERROR_STATUS.get(code, 409), body
 
     def authenticate(self, connection, session_id, token):
@@ -266,7 +269,13 @@ class Store(AIStoreMixin):
                     data = {"request_id": request.request_id, "replayed": False,
                             "message": {"save": "已保存当前进度。", "reset": "已重新开始，原存档仍可恢复。", "restore": "已恢复存档。"}[operation]}
             except RuleError as error:
-                status, body = self.failure(connection, event_id, session_id, operation, error.code, error.message, state, normalized)
+                if operation == 'action' and hasattr(self.rules, 'record_mistake'):
+                    failed = self.rules.record_mistake(state, request.tool, arguments, error)
+                    if failed.revision != state.revision:
+                        connection.execute('UPDATE sessions SET state_json=? WHERE session_id=?', (canonical(failed.model_dump()), session_id))
+                        self.invalidate_pending(connection, session_id)
+                        state = failed
+                status, body = self.failure(connection, event_id, session_id, operation, error.code, error.message, state, normalized, revision_before=revision_before)
             else:
                 data["visible_state"] = self.projection(connection, session_id, updated)
                 body = {"ok": True, "event_id": event_id, "data": data}

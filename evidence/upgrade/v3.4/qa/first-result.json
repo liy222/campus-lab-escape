@@ -1,0 +1,23 @@
+{
+  "status": "Preserved first full API result; one failed concurrent accepted subtest caused by new QA HTTP assumption",
+  "candidate": "evidence/upgrade/v3.4/candidate.json",
+  "candidate_sha256": "3a01f0e8678a538be115d9624af892cdc63ff07269d8aa3cedb669791413eb6e",
+  "api": {
+    "exit_code": 1,
+    "passed_methods": 118,
+    "passed_subtests": 315,
+    "failed_subtests": 1,
+    "warnings": 1,
+    "duration_seconds": 98.01,
+    "failure": "SUBFAILED scenario=accepted: expected409, actual503 MODEL_UNAVAILABLE for same pending AI request",
+    "run": "evidence/upgrade/v3.4/qa/formal-api-20261007/run.json",
+    "stdout": "evidence/upgrade/v3.4/qa/formal-api-20261007/stdout.txt"
+  },
+  "build_exit_code": 0,
+  "browser_exit_code": 0,
+  "browser_checks": 132,
+  "launcher_exit_code": 0,
+  "product_source_changed": false,
+  "source_count": 38,
+  "paid_calls": 0
+}

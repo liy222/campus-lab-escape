@@ -1,0 +1,89 @@
+{
+  "version": "v3.4",
+  "owner": "delivery documentation handoff",
+  "status": "SOURCE STOP",
+  "files": [
+    "README.md",
+    "release/UPGRADES.md"
+  ],
+  "source_sha256": {
+    "README.md": "d25b42e9fb30c6110dd2e94ab38ce444d9b57c937187b805cd2b205f1c4c2008",
+    "release/UPGRADES.md": "ae8ed59220ef983c154f6d147d19c2f4de0164e587e74e277ab1b4b803e71dd3"
+  },
+  "qa": {
+    "result": "evidence/upgrade/v3.4/qa/result.json",
+    "result_sha256": "a382bfaf9cac48814de0cd3b975c913ba0a4217b5e32babb800292f45bc5d27f",
+    "report": "review/findings/upgrade-v34.md",
+    "report_sha256": "41d2df888c90d34459b318c914667ebb0aad8bdf81920e7ead46789ec83c7cee",
+    "candidate": "evidence/upgrade/v3.4/candidate.json",
+    "candidate_sha256": "3a01f0e8678a538be115d9624af892cdc63ff07269d8aa3cedb669791413eb6e",
+    "candidate_files": 38,
+    "candidate_hashes_match_all_recorded_stages": true,
+    "api_evidence_epochs": [
+      {
+        "run": "evidence/upgrade/v3.4/qa/formal-api-20261007/run.json",
+        "exit_code": 1,
+        "passed_methods": 118,
+        "passed_subtests": 315,
+        "failed_subtests": 1,
+        "failure": "The new concurrent identical-request case expected 409 while a hint was reserved; the established response is 503 MODEL_UNAVAILABLE."
+      },
+      {
+        "run": "evidence/upgrade/v3.4/qa/formal-api-directed-20261007/run.json",
+        "exit_code": 0,
+        "passed_methods": 1,
+        "passed_subtests": 3,
+        "scope": "Only the corrected new QA method was rerun; product source remained unchanged."
+      }
+    ],
+    "combined_api_scope": "The full run and directed rerun jointly cover 106 existing and 12 new API methods. No second full-suite exit-0 run occurred; subtests are not added across epochs.",
+    "build": {
+      "command": "C:/Program Files/nodejs/npm.cmd run build --prefix frontend",
+      "exit_code": 0,
+      "evidence": "evidence/upgrade/v3.4/qa/formal-build-20261007"
+    },
+    "browser": {
+      "command": "C:/Program Files/nodejs/node.exe tests/e2e/run_upgrade_v34.mjs evidence/upgrade/v3.4/candidate.json",
+      "exit_code": 0,
+      "checks": 132,
+      "issues": [],
+      "screenshots_visually_inspected": 6,
+      "evidence": "evidence/upgrade/v3.4/qa/20261007T062627587Z-browser"
+    },
+    "launcher": {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 evidence/upgrade/v3.4/qa/launcher_check.py",
+      "exit_code": 0,
+      "checks": "UTF-8 BOM/CRCRLF/CRLF, v3.4 database, upgrade mode, mock provider, old modes preserved",
+      "root_cmd_started": false
+    },
+    "ai_privacy": "Real v3.4 hint requests send only eligible topic names and discovered clue IDs to the provider; they omit the player question, conversation history and full clue text. Older assistant modes remain unchanged.",
+    "statistics_and_save": "Elapsed includes offline time and freezes at win; settlement records 10 clues, up to 2 hidden discoveries, hints, mistakes and S/A/B/C. Save/restore rolls statistics back; reset starts new statistics while retaining the save slot. Rating thresholds are documented and do not gate winning.",
+    "paid_calls": 0,
+    "tag": "v3.4-graybox-complete pending Main synchronization; no commit SHA claimed"
+  },
+  "commands": [
+    {
+      "command": "Get-Content review/findings/upgrade-v34.md",
+      "exit_code": 0
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -c \"import json; from pathlib import Path; d=json.loads(Path('evidence/upgrade/v3.4/qa/result.json').read_text(encoding='utf-8')); assert 'accepted' in d['status'].lower() and d['browser']['exit_code']==0 and d['browser']['checks']==132 and d['browser']['issues']==[]; print({'qa_result_read':'valid','status':d['status'],'candidate_sha256':d['candidate_sha256'],'browser_exit':d['browser']['exit_code'],'browser_checks':d['browser']['checks'],'issues':d['browser']['issues']})\"",
+      "exit_code": 0
+    },
+    {
+      "command": "git -c safe.directory=D:/深度能力 -c core.whitespace=cr-at-eol diff --check -- README.md release/UPGRADES.md",
+      "exit_code": 0
+    },
+    {
+      "command": "Get-FileHash README.md,release/UPGRADES.md,evidence/upgrade/v3.4/qa/result.json,review/findings/upgrade-v34.md,evidence/upgrade/v3.4/candidate.json -Algorithm SHA256",
+      "exit_code": 0
+    }
+  ],
+  "limitations": [
+    "API acceptance is joint evidence across the retained full run and one directed rerun, not a full-suite exit-0 rerun.",
+    "No paid-provider quality/key validation, human 20–30 minute timing proof, historical sensitive-save migration test, or interactive root CMD launch was performed.",
+    "One existing Starlette/httpx deprecation warning remains.",
+    "Graybox was accepted; per user direction, screen/Phaser work is paused pending a detailed plan. No Phaser or final art was introduced.",
+    "No product build or tests were rerun in this documentation-only handoff."
+  ]
+}

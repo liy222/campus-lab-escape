@@ -1,0 +1,60 @@
+{
+  "version": "v3.4",
+  "owner": "delivery",
+  "status": "SOURCE STOP",
+  "files": [
+    "scripts/dev.py",
+    "启动游戏.cmd",
+    "README.md",
+    "release/UPGRADES.md"
+  ],
+  "source_sha256": {
+    "scripts/dev.py": "2b0b568fd209052fee446976534b5bb921c4f19031214503438b09c09b6a0331",
+    "启动游戏.cmd": "235999c0b4cfbf0153942eb06552cd9a0cf159b1475c9685f56ece0ba909b1ad",
+    "README.md": "f994ee929587260683e806d64cc585e4f7841adb310811345fdbcb1e74914723",
+    "release/UPGRADES.md": "c58d5a141f76e3cb4661830241ee531b66995595070860fcfc3e7d5a24b06a06"
+  },
+  "checks": [
+    {
+      "command": "& 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 -c \"from pathlib import Path; import scripts.dev as d; versions=['legacy','v3.1','v3.2','v3.3','v3.4','upgrade']; rows=[(v,d.make_frontend_environment({'VITE_LEAK':'x','SQLITE_PATH':'bad'},'http://127.0.0.1:8000',v)['VITE_GAMEPLAY_VERSION']) for v in versions]; assert rows==[('legacy','legacy'),('v3.1','v3.1'),('v3.2','v3.2'),('v3.3','v3.3'),('v3.4','v3.4'),('upgrade','v3.4')], rows; env=d.make_frontend_environment({'VITE_SECRET':'x','SQLITE_PATH':'secret','API_KEY':'secret'},'http://127.0.0.1:8000','upgrade'); assert 'VITE_SECRET' not in env and 'SQLITE_PATH' not in env and 'API_KEY' not in env and env['VITE_GAMEPLAY_VERSION']=='v3.4'; print({'versions':rows,'secret_filter':'pass','cmd_crlf_no_bom':'pass','mock_default':'pass'})\"",
+      "exit_code": 0,
+      "result": {
+        "versions": {
+          "legacy": "legacy",
+          "v3.1": "v3.1",
+          "v3.2": "v3.2",
+          "v3.3": "v3.3",
+          "v3.4": "v3.4",
+          "upgrade": "v3.4"
+        },
+        "filtered_inherited_vite_sqlite_and_key": true
+      }
+    },
+    {
+      "command": "& 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 -c \"from pathlib import Path; p=Path('启动游戏.cmd').read_bytes(); t=p.decode('utf-8'); q=chr(34); assert not p.startswith(bytes([239,187,191])); normalized=p.replace(bytes([13,10]),b''); assert bytes([10]) not in normalized and bytes([13]) not in normalized; assert 'set '+q+'GAMEPLAY_VERSION=upgrade'+q in t and 'set '+q+'SQLITE_PATH=./data/game-v3.4.sqlite'+q in t and '--provider mock' in t; print({'bom':False,'strict_crlf':True,'database':'./data/game-v3.4.sqlite','gameplay_version':'upgrade','provider':'mock'})\"",
+      "exit_code": 0,
+      "result": {
+        "bom": false,
+        "strict_crlf": true,
+        "database": "./data/game-v3.4.sqlite",
+        "gameplay_version": "upgrade",
+        "provider": "mock"
+      }
+    },
+    {
+      "command": "git -c safe.directory=D:/深度能力 -c core.whitespace=cr-at-eol diff --check",
+      "exit_code": 0
+    }
+  ],
+  "documentation": {
+    "current_candidate": "v3.4; independent QA pending",
+    "predecessor": "v3.3 commit 58587cf9458920fef435e8cb5d7638b1e318c19b and tag v3.3-mini-games, reported as verified by Main",
+    "compatibility": "README lists isolated v3.4 default and retained v3.3/v3.2/v3.1/legacy options; no automatic migration is claimed"
+  },
+  "limitations": [
+    "The root launcher was checked but not started; service startup is not claimed.",
+    "Independent API/browser QA remains pending; these owner checks do not certify the complete route.",
+    "No tests, dependency installation, paid provider calls, or public deployment were performed in this Delivery task.",
+    "The first inline config-check invocation had a PowerShell quoting error (exit 1); the corrected equivalent assertions passed (exit 0)."
+  ]
+}

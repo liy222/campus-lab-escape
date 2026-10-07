@@ -109,3 +109,13 @@ v3.2 commit519c8d0/tagv3.2-puzzle-redesign verified on remote, author/committerl
 
 ### v3.3 accepted, 2026-10-07
 Circuit graph/partial rotation persistence and device sequence accepted on frozen27sources. Independent fullAPI first105pass/291subtests plus1QAwrongexpectedpanelinteract; correct reject expectation directed1pass/3subtests0 provides jointcoverage, not a later full106exit0. Chrome102checks/build0 with save/restore/reload/OSrestart and oldnamespaces; Main viewed partial circuit/sequence screenshots. First QA launcherflag mistake retained then byte/config0. ActualrootCMD/humanplaytime/realmodelquality unverified; paid0/Phaser0. Evidence evidence/upgrade/v3.3/accepted.json; owncommit/push before3.4GO.
+
+
+### v3.4 complete graybox GO, 2026-10-07
+v3.3 commit58587cf/tagv3.3-mini-games pushed/remoteverified0, author+committerliy222; stage61 privacy0 and source/docwhitespace0. Ownership and exact constraints: evidence/upgrade/v3.4/plan.json. Backend may temporarily edit AIruntime/newhints helper and storageAI hint request/finalization alongside normalrules/Store/main/contracts/SPEC/leveldesign. Provider/auth/budget code remains frozen. FrontendLuna owns hint selector/settlement/launcher/doc updates, noPhaser. QA owns independent newtests/evidence, runs afterstable. Statistics restore with savedrun; server realelapsed includes offline time; no fabricated human timing. Nextvisual gate waits accepted/pushed3.4.
+
+### User visual-stage hold, 2026-10-07
+User explicitly requests stopping before the visual upgrade to supply a detailed plan. Complete only current v3.4 frozen-candidate independent QA, necessary fixes, documentation and normal commit/push. Do not begin v4.0, install Phaser, or perform visual implementation/research until a new user instruction. Existing v3.4 source ownership remains; no paid calls.
+
+### v3.4 accepted / visual stage held, 2026-10-07
+Main accepts frozen38-source v3.4 graybox from independent joint QA: first full118methods/315subtests+1newQA erroneous503-mapping expectation (exit1), corrected new method1+3subtests exit0, finalbuild0/Chrome132checks0/issues[]/launcherbyte0. No product fix or second full-green claim; repeated subtests not summed. Three hint levels, two optional stories, statistics/time/score, route/save/restore/reload/OSrestart tested. Evidence: evidence/upgrade/v3.4/accepted.json and qa/result.json. Root CMD not interactively launched; no paid-provider quality/human20-30minute claim. Final version tag v3.4-graybox-complete resolves accepted commit after authorized normal synchronization. Explicit user hold: stop before visuals; no Phaser/v4 work until user provides detailed plan.

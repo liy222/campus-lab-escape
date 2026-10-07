@@ -1,0 +1,13 @@
+{
+  "recorded_at": "2026-10-07T06:28:55.892313+00:00",
+  "scope": "Single new QA HTTP expectation correction; existing MODEL_UNAVAILABLE maps503, no product change",
+  "file": "tests/api/test_upgrade_v34.py",
+  "before_sha256": "240f9d0fbfe24c415e186cf3082934ebfb3a72cb71e0da8ff97d0be0bb419c09",
+  "after_sha256": "7580e792ddbc66776fef0a83d577af74efb889889b980638fcb0f37596a33141",
+  "change": "Pending duplicate same-request receipt remains MODEL_UNAVAILABLE; expected HTTP409 corrected to existing503. Count/model-call/progress assertions unchanged.",
+  "first_full_api_exit_code": 1,
+  "first_full_api_result": "118 passed,315 subtests passed,1 accepted concurrency subtest failed",
+  "first_evidence": "evidence/upgrade/v3.4/qa/formal-api-20261007",
+  "raw_full_state_exported": false,
+  "next_scope": "Directed corrected concurrency method only; no repeat fullAPI/build/browser"
+}

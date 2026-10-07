@@ -3,15 +3,16 @@
 <!-- upgrade-current-start -->
 ## 当前升级进度（2026-10-07）
 
-| 阶段 | 状态 | 远程里程碑 |
+| 阶段 | 状态 | 版本定位 |
 |---|---|---|
 | v3.0 | 已验收、提交并推送 | 1499610 / v3.0-gameplay-information |
 | v3.1 | 已验收、提交并推送 | cfab661 / v3.1-object-state |
 | v3.2 | 已验收、提交并推送 | 519c8d0 / v3.2-puzzle-redesign |
-| v3.3 | 独立联合验收通过，正在提交同步收尾 | v3.3-mini-games 待同步 |
-| v3.4 → v4.2 | 待前置阶段通过 | v3.4完整灰盒通过后才引入Phaser |
+| v3.3 | 已验收、提交并推送 | 58587cf / v3.3-mini-games |
+| v3.4 | 完整灰盒验收完成；本版正常同步收尾 | v3.4-graybox-complete（提交由标签解析） |
+| v4.0 → v4.2 | 按用户要求暂停，等待详细画面计划 | 尚未引入Phaser或最终美术 |
 
-唯一主要设计基线：[docs/upgrade-plan.md](docs/upgrade-plan.md)。最终v3.2全API97项/257子项通过；原候选构建与浏览器61项通过，有限AI读取修复后全API复验，源码时期见[验收记录](evidence/upgrade/v3.2/accepted.json)。保持旧版独立存档入口。零付费调用；未验证真人游玩时长。下文为历史记录。
+唯一主要设计基线：[docs/upgrade-plan.md](docs/upgrade-plan.md)。当前v3.4独立联合验收：首轮118方法与315子项通过、1个新QA子项错误预期；仅该方法修正已有503返回码预期后定向1方法/3子项通过。没有第二次完整全绿运行，重复子项不累加。最终构建0、真实Chrome132项/问题为空、存档恢复/刷新/后端重启通过，38个候选源码前后一致。三档提示、10条线索中2条可选故事发现、服务端统计与结算已验收。证据：[Main验收](evidence/upgrade/v3.4/accepted.json)与[独立QA](evidence/upgrade/v3.4/qa/result.json)。保持旧版独立存档入口；计时含离线，胜利冻结，恢复存档恢复该局统计。零付费调用；未实际交互启动根CMD、未验证真人20–30分钟游玩时长。完成本版本GitHub同步后停止，等待用户画面计划。下文为历史记录。
 <!-- upgrade-current-end -->
 
 updated_at: 2026-10-06 (Asia/Shanghai)

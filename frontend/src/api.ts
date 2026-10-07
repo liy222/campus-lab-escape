@@ -34,6 +34,8 @@ export interface VisibleState {
   clues: { clue_id: string; object_id: string; title: string; text: string }[];
   exits: { destination_id: string; name: string; unlocked: boolean }[];
   progress: { power_on: boolean; check_done: boolean };
+  statistics?: { started_at: string; finished_at: string | null; current_hint_level: 1 | 2 | 3; hint_count: number; mistake_count: number; clues_found: number; clues_total: 10; hidden_found: number; hidden_total: 2 };
+  settlement?: null | { elapsed_seconds: number; clues_found: number; clues_total: 10; hint_count: number; mistake_count: number; hidden_found: number; hidden_total: 2; rating: 'S' | 'A' | 'B' | 'C' };
   save: null | { schema_version: string; level_version: string; saved_at: string; source_revision: number; source_generation: string };
 }
 export interface Session { session_id: string; token: string }
@@ -47,14 +49,15 @@ interface ControlData { request_id: string; replayed: boolean; message: string; 
 export class ApiError extends Error {
   constructor(public code: string, message: string, public visibleState: VisibleState | null = null, public eventId: string | null = null) { super(message); }
 }
-type GameplayVersion = 'legacy' | 'v3.1' | 'v3.2' | 'v3.3';
+type GameplayVersion = 'legacy' | 'v3.1' | 'v3.2' | 'v3.3' | 'v3.4';
 const configuredVersion = (import.meta as ImportMeta & { env?: Record<string, string | undefined> }).env?.VITE_GAMEPLAY_VERSION;
-const gameplayVersion: GameplayVersion = configuredVersion === 'legacy' || configuredVersion === 'v3.1' || configuredVersion === 'v3.2' || configuredVersion === 'v3.3' ? configuredVersion : 'v3.3';
+const gameplayVersion: GameplayVersion = configuredVersion === 'legacy' || configuredVersion === 'v3.1' || configuredVersion === 'v3.2' || configuredVersion === 'v3.3' || configuredVersion === 'v3.4' ? configuredVersion : 'v3.4';
 const STORAGE_KEYS: Record<GameplayVersion, string> = {
   legacy: 'campus-lab-session-v1',
   'v3.1': 'campus-lab-session-upgrade-v3.1',
   'v3.2': 'campus-lab-session-upgrade-v3.2',
   'v3.3': 'campus-lab-session-upgrade-v3.3',
+  'v3.4': 'campus-lab-session-upgrade-v3.4',
 };
 const STORAGE_KEY = STORAGE_KEYS[gameplayVersion];
 export function readSession(): Session | null {
@@ -88,7 +91,7 @@ export const api = {
   state: (session: Session) => request<{ visible_state: VisibleState }>(`${path(session)}/state`, session),
   action: (session: Session, state: VisibleState, tool: Tool, args: ActionArguments) => request<ActionData>(`${path(session)}/actions`, session, { ...version(state), tool, arguments: args }),
   control: (session: Session, state: VisibleState, operation: 'reset' | 'save' | 'restore') => request<ControlData>(`${path(session)}/${operation}`, session, version(state)),
-  ai: (session: Session, state: VisibleState, message: string, settings: AiSettings = { provider: 'mock' }) => {
+  ai: (session: Session, state: VisibleState, message: string, settings: AiSettings = { provider: 'mock' }, hintLevel?: 1 | 2 | 3) => {
     const headers: Record<string, string> = { 'X-AI-Provider': settings.provider };
     if (settings.provider === 'deepseek') {
       const apiKey = settings.apiKey.trim();
@@ -96,7 +99,7 @@ export const api = {
       if (/[^\x21-\x7E]/.test(apiKey)) return Promise.reject(new ApiError('AI_KEY_INVALID', 'API Key 格式不正确，请重新输入，避免空格、中文或换行。'));
       headers['X-AI-Api-Key'] = apiKey;
     }
-    return request<AiTurnData>(`${path(session)}/ai/turns`, session, { ...version(state), message }, 55000, headers);
+    return request<AiTurnData>(`${path(session)}/ai/turns`, session, { ...version(state), message, ...(hintLevel === undefined ? {} : { hint_level: hintLevel }) }, 55000, headers);
   },
   confirm: (session: Session, proposalId: string) => request<ActionData>(`${path(session)}/proposals/${encodeURIComponent(proposalId)}/confirm`, session, {}),
   cancel: (session: Session, proposalId: string) => request<{ proposal: Proposal; visible_state: VisibleState }>(`${path(session)}/proposals/${encodeURIComponent(proposalId)}/cancel`, session, {}),

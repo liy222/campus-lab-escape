@@ -1,0 +1,42 @@
+import ast
+from datetime import datetime,timezone
+import hashlib,json
+from pathlib import Path
+import subprocess
+
+api=Path('tests/api/test_upgrade_v34.py');text=api.read_text(encoding='utf-8')
+text=text.replace("mutations=['freeanswer','future-ref','proposal','stale']", "mutations=['freeanswer','future-ref','proposal','stale','stopped-prose','autoread']")
+text=text.replace("                        if case=='future-ref':payload['clue_refs']=['r3_legend_clue']", "                        if case=='future-ref':payload['clue_refs']=['r3_legend_clue']\n                        if case=='stopped-prose':payload.update(status='stopped',stop_reason='MODEL_INVALID_OUTPUT')\n                        if case=='autoread':\n                            blocked=await callbacks.read_tool(version,'inspect',{'object_id':'r1_plaque'})\n                            self.assertFalse(blocked.ok);self.assertEqual(blocked.error_code,'INVALID_TOOL')")
+api.write_text(text,encoding='utf-8');tree=ast.parse(text,filename=str(api))
+methods=[n.name for n in ast.walk(tree) if isinstance(n,ast.FunctionDef) and n.name.startswith('test_')]
+browser=Path('tests/e2e/run_upgrade_v34.mjs');nodecmd=['C:/Program Files/nodejs/node.exe','--check',str(browser)]
+node=subprocess.run(nodecmd,capture_output=True,text=True);assert node.returncode==0,node.stderr
+old=[]
+for version in ('31','32','33'):
+    for kind,file in [('api',f'tests/api/test_upgrade_v{version}.py'),('browser',f'tests/e2e/run_upgrade_v{version}.mjs')]:
+        command=['git','-c','safe.directory=D:/深度能力','show','58587cf:'+file]
+        result=subprocess.run(command,capture_output=True,check=True);actual=Path(file).read_bytes();assert actual==result.stdout
+        mode='v3.'+version[-1]
+        if kind=='api':assert actual.count(("gameplay_version='"+mode+"'").encode())==2
+        elif version=='31':assert b"GAMEPLAY_VERSION: 'v3.1'" in actual
+        else:assert ("pair('"+mode+"')").encode() in actual
+        old.append({'path':file,'command':command,'exit_code':result.returncode,'raw_byte_identical':True,'explicit_selector':mode,'changes_needed':0,'sha256':hashlib.sha256(actual).hexdigest()})
+folder=Path('evidence/upgrade/v3.4/qa');folder.mkdir(parents=True,exist_ok=True)
+record={'status':'QA PREPARATION SOURCE STOP; awaiting all-owner STOP and Main frozen candidate/GO','recorded_at':datetime.now(timezone.utc).isoformat(),'formal_runs':0,'paid_calls':0,'prepared_files':[{'path':p.as_posix(),'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in (api,browser)],'new_api_methods':methods,'old_regression_methods_required':106,'old_file_checks':old,'static_commands':[{'command':['C:/Users/liyh/.conda/envs/1/python.exe','-B','-X','utf8','-','<AST/raw-byte/node syntax preparation script>'],'exit_code':0},{'command':nodecmd,'exit_code':node.returncode,'stdout':node.stdout,'stderr':node.stderr}],'interface':'Provider topic/ref-only JSON; eligible known pair/current physical board; no user/history/fullstate upstream; server renders and finish re-renders. Stable playing statistics: persisted UTC start/finish/counters, elapsed only terminal settlement.','limitations':['No API/build/browser executed in preparation; behavior coverage is intended, not proven.','Public contract currently being finalized; final source STOP/candidate required before formal execution.','UTC elapsed test uses controlled server clock125seconds, not measured human playtime.','Browser DOM geometry375px + isolated new-session old-mode smoke; no historical sensitive DB.']}
+(folder/'preparation.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+report=f'''# v3.4 独立 QA：准备完成，等待正式 GO
+
+以 `evidence/upgrade/v3.4/plan.json` 及Owner确认的公开接口准备；QA PREPARATION SOURCE STOP。没有正式API/build/Chrome运行，formal_runs=0，不能宣称任何v3.4功能验收通过。须等全部Owner SOURCE STOP和Main candidate/GO。
+
+文件 `tests/api/test_upgrade_v34.py` 共{len(methods)}方法：known topic/ref-only捕获provider请求（tools=[]、tool_choice=none、只传已知topic/ref，不传message/history/fullstate）；R1两已知事实后3level不完整解题、不自动观察/提案；原始玩家输入4217请求可正常接受、provider不需要接收这段用户文本、不做提交密码全字符串私有泄漏误判；未知topic/ref、freeanswer/tools注入Runtime拒绝；fake runtime自由answer、未来refs、proposal、stale、stopped文本和直接read_tool在Store.finish/HintCallbacks再次防泄漏；accepted hint一次，cached/stale/invalidlevel/settings/unavailable不重复计数；meaningful数码/login/circuit/sequence/held-item错误计数+revision而realflags/inventory不变，errorreceipt retry仅一次；旋转/读/schema/auth/stale/unseen不计。
+
+复用公开端口/跨房间推导helper，不继承或重复收集旧9测试。两optional对象r1_photo与r2_service_label总clue10/hidden2；SABC四评级全部可胜利；start/finishUTC、elapsed含离线、胜利冻结、reset新clock但保留slot、saved stats恢复/reopen及旧schema拒绝。使用controlled server utc_now增加125s，再增加600s验证win freeze；不是实际真人用时。playing statistics采用最新稳定snapshot接口，不含动态elapsed，终局settlement才含server elapsed。
+
+`tests/e2e/run_upgrade_v34.mjs` 复用旧受控Chrome主线/partialboard保存恢复刷新/OSrestart/375px/真实mini UI；初始noeligible请求0modelcalls不计hint，selector仅本地切换不发送请求；已知clock+record3levels接受且reply不同；统计/optional两发现、错误计数不推进、score与公开阈值/UTC时间一致；won save/reload/OSrestart后freeze、reset空统计保留slot、restore终局；legacy/v3.1/v3.2/v3.3新建save/session namespace轻量隔离。错误日志仅首行摘要，不导出fullstate/session/key/raw服务日志。尚未启动浏览器。
+
+旧v3.1/v3.2/v3.3 fixture+runner共6文件与58587cf基线raw-byte一致，全部原有显式selector，无需修改且没有弱化旧106回归。实际只读Git参数、hash在 `evidence/upgrade/v3.4/qa/preparation.json`。实际静态命令Python stdin脚本（ASTparse/rawbyte/nodecheck）exit0；`C:/Program Files/nodejs/node.exe --check tests/e2e/run_upgrade_v34.mjs` exit0。静态结果仅证明语法和旧字节一致，不算正式功能测试。
+
+正式gate待GO：完整106旧+新API、构建、真实Chrome主路线/3等级hint/score/statssave恢复刷新/OSrestart/mobile/oldnamespace及launcherbytes，each真实命令/exit/stdout/candidatebefore-afterhash；必要截图目视核验，compact摘要。零paid、无真实key/.env/敏感历史DB访问、无产品改动、spawn或提交。
+'''
+Path('review/findings/upgrade-v34.md').write_text(report,encoding='utf-8')
+print(json.dumps({'status':record['status'],'new_api_methods':len(methods),'old_files_raw_identical':len(old),'static_exit':0,'formal_runs':0,'evidence':(folder/'preparation.json').as_posix()},ensure_ascii=False))

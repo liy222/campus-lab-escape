@@ -1,0 +1,25 @@
+.uuuuuuuuuuuu...uuuuuuuuuuuuuuuuuuuuuuuu...........uuu...uuuuu.........u [ 23%]
+uuuuuuuuuuuuuuuuu......uuuuuuuuuuuuuuuuuuuuu.uuuuuuuuuuuuuuu.uuuu....uuu [ 33%]
+uuuuuuuuu..uuuuuuuuuuuu...uuuuuuuuuuuuuuuuuuuuuuuu...........uuu...uuuuu [ 50%]
+...uuuuuuuuu...........uuuu.uuuuuu.....uuuuuuuuuuuuuuu.uuuuuuuuuuuuuuuuu [ 67%]
+uuu..uuuuuuuu....uuuuuuuuuuuuuuu......uuuuuuuuuuuu.uuuuuuuuuu......uuuuu [ 83%]
+..uuu..uuuuuuuuu.uuuuuuuuuuu.uuu.uuu.uuuu.uuu.uuuu...uuuu...uuuu..uuuuuu [ 99%]
+..                                                                       [100%]
+================================== FAILURES ===================================
+_ UpgradeV34Acceptance.test_hint_concurrent_duplicate_inflight_stale_generation_and_timeout_never_double_count (scenario='accepted') _
+tests\api\test_upgrade_v34.py:291: in test_hint_concurrent_duplicate_inflight_stale_generation_and_timeout_never_double_count
+    duplicate,_=self.ask(request=request,expected=409)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\api\test_upgrade_v34.py:118: in ask
+    self.assertEqual(status,expected,sanitize(body.get('error',{})));return body.get('data',body),payload
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 503 != 409 : {'code': 'MODEL_UNAVAILABLE', 'message': '该轮次正在处理或结果未知；使用相同请求标识查询，不会重复调用模型。'}
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SUBFAILED(scenario='accepted') tests/api/test_upgrade_v34.py::UpgradeV34Acceptance::test_hint_concurrent_duplicate_inflight_stale_generation_and_timeout_never_double_count
+1 failed, 118 passed, 1 warning, 315 subtests passed in 98.01s (0:01:38)

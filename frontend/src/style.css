@@ -174,4 +174,16 @@ dialog { border:1px solid #6f866d; border-radius:14px; background:#223127; color
 .sequence-device span { font-size:20px; line-height:1.1; }
 .sequence-device:not(:disabled):hover { border-color:var(--mint); }
 .sequence-clear { margin-right:auto; }
+.hint-level-label { display:block; margin-top:14px; color:#d7e3ce; font-size:12px; }
+.hint-level { width:100%; margin-top:7px; padding:10px 12px; border:1px solid #596d59; border-radius:7px; background:#202d24; color:#edf2e7; font:inherit; }
+.hint-level-help { margin-top:7px; color:#b9c7b2; font-size:11px; line-height:1.6; }
+.hint-count { color:#d7edbd; font-size:15px; }
+.run-statistics,.settlement-panel { padding:20px 22px; margin-bottom:18px; }
+.run-statistics h2,.settlement-panel h2 { font-size:14px; }
+.statistics-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(100px,1fr)); gap:12px; margin:14px 0 0; }
+.statistics-grid div { padding:10px 12px; border:1px solid #435442; border-radius:7px; background:#26352a; }
+.statistics-grid dt { color:#b9c7b2; font-size:10px; }
+.statistics-grid dd { margin:6px 0 0; color:#edf2e7; font-size:16px; font-weight:600; font-variant-numeric:tabular-nums; }
+.settlement-panel>p { color:var(--muted); font-size:11px; margin-top:7px; }
+.settlement-rating { display:grid; place-items:center; width:44px; height:44px; border:1px solid #a8c18c; border-radius:50%; background:#314b37; color:#e7f4ce; font-size:20px; font-weight:700; }
 @media(max-width:480px) { .minigame-panel { padding:12px; } .circuit-board { gap:5px; } .circuit-cell { padding:3px; } .circuit-module-id,.circuit-terminal-label { font-size:7px; } .sequence-devices { grid-template-columns:repeat(2,minmax(0,1fr)); } .sequence-device { min-height:52px; } .sequence-draft li { min-width:calc(50% - 4px); flex:1 1 calc(50% - 4px); } .minigame-actions { flex-wrap:wrap; } .minigame-actions .button { flex:1 1 130px; } .sequence-clear { margin-right:0; } }

@@ -212,3 +212,21 @@ inspect 仅登记本次可见对象的观察及当前可得谜题线索；中性
 submit_sequence {target_id:r3_panel,device_ids} 要求恰四个唯一合法标识 cooling/lighting/safety/ventilation；控制台已观察并插纸，出口 FINAL_CHECK 且尚未完成。按钮公开设备名和符号，布局 cooling▲、lighting★、safety●、ventilation■，与源序不同；完整答案由R1源序、R2读取位置和R3对应规则推导。旧 r3_panel submit_code 一律无法完成新版终检。成功保存 check_done，但出口仍需释放门锁、推门和移动。未提交顺序草稿仅前端，reload/restore/房间切换时清空，不纳入存档。
 
 三个新动作仅手动接口，不加入原六provider tools。额外字段、非法module/device、重复device、错误长度拒绝 BAD_ARGUMENT；目标不可见 NOT_VISIBLE；未观察、物理阶段未到或已冻结 PRECONDITION_FAILED；合法格式但线路未通/顺序错误 WRONG_CODE，无正确答案回显、无道具/真实进度破坏。所有修改仍受revision/generation/request_id约束。本节为行为规格；自验和独立QA事实另见v3.3证据。
+
+## 当前完整灰盒接口 v3.4
+
+`upgrade`/`v3.4` 为 level3.4.0/schema1.4.0，默认 game-v3.4.sqlite；显式 v3.3/v3.2/v3.1/legacy 保留旧玩法和独立数据库。create_app() 默认 legacy 不变；跨版本快照明确拒绝、不自动迁移。四设备链、两个安装槽、三个房间、四物品和两个小游戏全部沿用；未引入Phaser、美术、额外强制谜题。
+
+服务器required statistics保存 started_at、finished_at（未赢为null）、current_hint_level（1/2/3）、hint_count、mistake_count。公开 statistics另含clues_found/clues_total=10及hidden_found/hidden_total=2；没有随时间自发变化的字段，同revision投影保持稳定。前端可按started_at显示当前计时；只有won的nullable settlement返回服务器固定elapsed_seconds、线索/提示/错误/隐藏计数和rating=S/A/B/C。elapsed取服务端持久起止UTC差，包含离线时间、赢后冻结，不代表真人实测游玩时间。统计随slot保存恢复；reset新起止/统计、新generation，保留旧slot，restore返回保存的同一run。恢复后的提示和错误计数也回到slot事实。
+
+两条可选故事线索：R1柜ITEM_TAKEN后r1_photo→r1_photo_clue；R2电箱POWER_ON后r2_service_label→r2_service_clue。都是当前房间中实际暴露对象的inspect，未暴露访问NOT_VISIBLE；不增物品、设备或通关门槛。已有八线索加二故事线索，总数10，hidden总数2。
+
+旧版AI协议和行为保留。仅3.4 AI请求接受hint_level整数1–3（省略默认1），额外字段/布尔或非法等级BAD_ARGUMENT；响应仍为原answer/clue_refs/status/proposal/usage。3.4没有进度提案、没有自动inspect，proposal固定null；HintCallbacks拒绝读工具/提案。必要已发现关系或当前暴露线路不足时begin_ai直接缓存no_suggestion，model_calls=0，不调用运行时/provider、不计提示。提示等级只在有可提示主题的reservation接受并保存，改变等级同步增加revision并以新cursor绑定轮次。
+
+等级1给方向，等级2指向已经发现的焦点，等级3仅给部分关系。提示主题仅来自已发现record+clock/sample、plaque/clock+maintenance、symbols+indices+legend，或当前暴露editing线路的公开接口。新helper不导入任何私有答案；provider仅收到可用topic/ref IDs，不收到历史动作、玩家问题、完整私有状态或解法。真实provider只选择严格{topic,clue_refs}且匹配已知允许项，tools为空；默认mock在本地选择固定主题，真实model_calls=0，不虚构token用量。保留既有provider、请求header、凭据、固定模型和canonical budget。最高提示也不显示完整柜码、完整登录值、完整线路路径或四设备答案。
+
+finish_ai在原receipt事务再次按当前knownrefs和接受等级重渲染，运行时自由文本无权进入提示，包括stopped文案；候选提案和未知引用拒绝。合法提示完成才hint_count+1且revision+1；failed/stale/unknown/replay不加提示。请求重放使用原receipt并返回当前投影，不能再次运行模型或统计。统计增加后先保存会话再完成AI receipt，避免拆分计数提交。
+
+meaningful错误只包括实际手动动作的WRONG_CODE（柜/登录/线路/顺序）或手持物品对当前可见且已观察对象的错误配对。原409错误码仍返回，mistake_count与revision各+1，谜题/背包不变；schema/auth/stale/未看见/未观察/正确配对但阶段不足不计，旋转或普通观察也不计。失败同request_id重放不再计。提案precheck只读副本，从不计错误。
+
+评级规则公开：S需发现至少9线索、提示最多1、错误最多2；否则A需至少7线索、提示最多3、错误最多5；否则B为提示最多8；其余C。时间不参与评分，等级不影响胜利。本节为行为规格，不替代实际自验、独立QA或真人反馈。

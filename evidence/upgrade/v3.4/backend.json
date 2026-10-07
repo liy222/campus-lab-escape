@@ -1,0 +1,609 @@
+{
+  "owner": "Backend",
+  "status": "SOURCE STOP; targeted Owner self-check passed; independent QA pending",
+  "files": [
+    "backend/app/domain/graybox_models.py",
+    "backend/app/domain/graybox_rules.py",
+    "backend/app/storage/sqlite.py",
+    "backend/app/main.py",
+    "backend/app/ai/runtime.py",
+    "backend/app/ai/hints.py",
+    "backend/app/storage/ai.py",
+    "contracts/build_contracts.py",
+    "contracts/api.schema.json",
+    "contracts/routes.json",
+    "docs/SPEC.md",
+    "docs/level_design.md",
+    "evidence/upgrade/v3.4/backend-selfcheck.py",
+    "evidence/upgrade/v3.4/backend-stale-selfcheck.py"
+  ],
+  "raw_sha256": {
+    "backend/app/domain/graybox_models.py": "ea21b1d81f09a4178fb3ec40cf32ae98960b8607b3589b247eb956bc72cb1b5a",
+    "backend/app/domain/graybox_rules.py": "fb618cb3c5a6f1a941ad3cf58c996fa2dd200c963ae8ae347412af62d9b11872",
+    "backend/app/storage/sqlite.py": "7c33ed56abcbbaea23f6736ff7aaf09a64f756b74349da2febd7074353d93854",
+    "backend/app/main.py": "3e8491371ec4e6613ed4ec7c89e23d600bcb40a97572c952f042fcc9395e2d11",
+    "backend/app/ai/runtime.py": "3d73ceb972eac6a67dda1acb7e889fc1d372f8a1dc5f4531cda62f0023c6b797",
+    "backend/app/ai/hints.py": "7d769e7720ed7af899359fcbaa98f4aa7ac7c1032a52196610c4accdaeb8a849",
+    "backend/app/storage/ai.py": "e4437468129c5b70a7dad37f6eab1d2e7017204ccde23259aa8fd38b6c151e5b",
+    "contracts/build_contracts.py": "e22f5cf5fe0ccd5b83e0b29c45f43d1a283de246f1b37012fe7f0d3beba9d708",
+    "contracts/api.schema.json": "c40f29a38a8db4ec07b4e1e84a6839465e96d19cba4d9817bda37cd8a2716279",
+    "contracts/routes.json": "64ca8755c64b5aa46a1cd600cf4d4d63549ee82d4759cb19e6b913ac0853cb87",
+    "docs/SPEC.md": "91744055a30a6164258468a7f11b29e7123837e528f9a3d48f21b993a42c3f89",
+    "docs/level_design.md": "3031a11c2202078c89922b8717292452af64053bacba4982b7fbbcedfb758b71",
+    "evidence/upgrade/v3.4/backend-selfcheck.py": "b9077c3b1a99626910fc839d567d1d484b6329bf961867991e09d948beee520a",
+    "evidence/upgrade/v3.4/backend-stale-selfcheck.py": "59cc338c11aa5fb1ca10e178f6366fba6df26a926dc981d757bbc7864f8ec0c6"
+  },
+  "commands": [
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe contracts/build_contracts.py",
+      "exit": 0
+    },
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe evidence/upgrade/v3.4/backend-selfcheck.py",
+      "exit": 0
+    },
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe evidence/upgrade/v3.4/backend-stale-selfcheck.py",
+      "exit": 0
+    }
+  ],
+  "checks": [
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 422,
+      "error": "BAD_ARGUMENT"
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "take",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "use_item",
+      "http": 409,
+      "error": "PRECONDITION_FAILED"
+    },
+    {
+      "operation": "use_item",
+      "http": 409,
+      "error": "PRECONDITION_FAILED"
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "use_item",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "submit_code",
+      "http": 409,
+      "error": "WRONG_CODE"
+    },
+    {
+      "operation": "submit_code",
+      "http": 409,
+      "error": "WRONG_CODE"
+    },
+    {
+      "operation": "submit_code",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 409,
+      "error": "NOT_VISIBLE"
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "take",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "save",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "reset",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "restore",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "move",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "use_item",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "submit_circuit",
+      "http": 409,
+      "error": "WRONG_CODE"
+    },
+    {
+      "operation": "submit_circuit",
+      "http": 409,
+      "error": "WRONG_CODE"
+    },
+    {
+      "operation": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "rotate_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "submit_circuit",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "submit_login",
+      "http": 409,
+      "error": "WRONG_CODE"
+    },
+    {
+      "operation": "submit_login",
+      "http": 409,
+      "error": "WRONG_CODE"
+    },
+    {
+      "operation": "submit_login",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "take",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "take",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "move",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "use_item",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "use_item",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "submit_sequence",
+      "http": 409,
+      "error": "WRONG_CODE"
+    },
+    {
+      "operation": "submit_sequence",
+      "http": 409,
+      "error": "WRONG_CODE"
+    },
+    {
+      "operation": "submit_sequence",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "interact",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "move",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "save",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "inspect",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 200,
+      "error": null
+    },
+    {
+      "operation": "hint",
+      "http": 422,
+      "error": "BAD_ARGUMENT"
+    },
+    {
+      "operation": "hint",
+      "http": 422,
+      "error": "BAD_ARGUMENT"
+    },
+    {
+      "operation": "hint",
+      "http": 422,
+      "error": "BAD_ARGUMENT"
+    },
+    {
+      "operation": "hint",
+      "http": 422,
+      "error": "BAD_ARGUMENT"
+    },
+    {
+      "operation": "hint-race-and-replay",
+      "http": 200,
+      "stop_reason": "STALE_STATE",
+      "hint_count": 0
+    }
+  ],
+  "evidence": "evidence/upgrade/v3.4/backend.json",
+  "summary": [
+    "full manual route with 10 clues and 2 optional stories won",
+    "stable strict-schema projections",
+    "three bounded hint levels and hint/mistake receipt replay once-only",
+    "wrong puzzle and held-item counters preserve gameplay",
+    "saved run statistics restore after reset/reopen",
+    "controlled UTC elapsed includes offline and freezes on win",
+    "injected runtime free/stopped prose re-rendered, unknown refs/candidates rejected and auto-inspect denied",
+    "captured provider only topic/ref options; unknown topic/free prose rejected",
+    "default mock uses no actual provider call",
+    "old modes reject hint_level, rating thresholds exercised",
+    "manual state change during hint invalidates reply; stale completion/replay never count hints"
+  ],
+  "limitations": [
+    "Owner targeted checks, not independent formal QA",
+    "scripted ProviderResult usage is harness data, not a real model call",
+    "controlled clock is not human playtime measurement",
+    "reopen in same process, no OS restart/browser/full suite/build",
+    "temporary DBs only; paid calls=0; no commit or new agents"
+  ]
+}

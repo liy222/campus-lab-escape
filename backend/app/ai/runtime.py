@@ -181,6 +181,9 @@ class Runtime:
         return clean
 
     async def run(self, start: TurnStart, callbacks: RuntimeCallbacks) -> TurnResult:
+        if start.visible_state.get('level_version') == '3.4.0':
+            from .hints import run_hint
+            return await run_hint(self, start, callbacks)
         state = copy.deepcopy(start.visible_state)
         self._validate_state(state)
         expected = Version.from_state(state)

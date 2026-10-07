@@ -711,6 +711,9 @@
         },
         {
           "$ref": "#/$defs/mini_save_metadata"
+        },
+        {
+          "$ref": "#/$defs/graybox_save_metadata"
         }
       ]
     },
@@ -727,6 +730,9 @@
         },
         {
           "$ref": "#/$defs/mini_visible_state"
+        },
+        {
+          "$ref": "#/$defs/graybox_visible_state"
         }
       ]
     },
@@ -2769,35 +2775,79 @@
       ]
     },
     "ai_turn_request": {
-      "type": "object",
-      "properties": {
-        "request_id": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 100,
-          "pattern": "^[A-Za-z0-9_-]+$"
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            }
+          },
+          "required": [
+            "request_id",
+            "revision",
+            "generation",
+            "message"
+          ],
+          "additionalProperties": false
         },
-        "revision": {
-          "type": "integer",
-          "minimum": 0
-        },
-        "generation": {
-          "type": "string",
-          "format": "uuid"
-        },
-        "message": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 2000
+        {
+          "type": "object",
+          "properties": {
+            "request_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            "hint_level": {
+              "type": "integer",
+              "enum": [
+                1,
+                2,
+                3
+              ]
+            }
+          },
+          "required": [
+            "request_id",
+            "revision",
+            "generation",
+            "message",
+            "hint_level"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "request_id",
-        "revision",
-        "generation",
-        "message"
-      ],
-      "additionalProperties": false
+      ]
     },
     "empty_request": {
       "type": "object",
@@ -5444,6 +5494,598 @@
         "observed_object_ids",
         "puzzle_states",
         "minigames"
+      ],
+      "additionalProperties": false
+    },
+    "graybox_save_metadata": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "1.4.0"
+        },
+        "level_version": {
+          "const": "3.4.0"
+        },
+        "saved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source_revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_generation": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "required": [
+        "schema_version",
+        "level_version",
+        "saved_at",
+        "source_revision",
+        "source_generation"
+      ],
+      "additionalProperties": false
+    },
+    "graybox_visible_state": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "1.4.0"
+        },
+        "level_version": {
+          "const": "3.4.0"
+        },
+        "session_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "generation": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "status": {
+          "enum": [
+            "playing",
+            "won"
+          ]
+        },
+        "room": {
+          "type": "object",
+          "properties": {
+            "room_id": {
+              "enum": [
+                "R1",
+                "R2",
+                "R3",
+                "EXIT"
+              ]
+            },
+            "name": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 4000
+            }
+          },
+          "required": [
+            "room_id",
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/mini_visible_object"
+          }
+        },
+        "inventory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/item"
+          }
+        },
+        "clues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/clue"
+          }
+        },
+        "exits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/exit"
+          }
+        },
+        "progress": {
+          "type": "object",
+          "properties": {
+            "power_on": {
+              "type": "boolean"
+            },
+            "check_done": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "power_on",
+            "check_done"
+          ],
+          "additionalProperties": false
+        },
+        "save": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/graybox_save_metadata"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "device_states": {
+          "type": "object",
+          "properties": {
+            "cabinet": {
+              "enum": [
+                "LOCKED",
+                "CODE_ACCEPTED",
+                "OPEN",
+                "ITEM_TAKEN"
+              ]
+            },
+            "powerbox": {
+              "enum": [
+                "CLOSED",
+                "OPEN",
+                "MISSING_FUSE",
+                "FUSE_INSTALLED",
+                "CIRCUIT_READY",
+                "POWER_ON"
+              ]
+            },
+            "computer": {
+              "enum": [
+                "OFF",
+                "BOOTING",
+                "LOGIN_LOCKED",
+                "UNLOCKED",
+                "DATA_READ"
+              ]
+            },
+            "exit": {
+              "enum": [
+                "LOCKED",
+                "CARD_ACCEPTED",
+                "FINAL_CHECK",
+                "UNLOCKED",
+                "OPEN"
+              ]
+            }
+          },
+          "required": [
+            "cabinet",
+            "powerbox",
+            "computer",
+            "exit"
+          ],
+          "additionalProperties": false
+        },
+        "observed_object_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "uniqueItems": true
+        },
+        "puzzle_states": {
+          "type": "object",
+          "properties": {
+            "microscope": {
+              "enum": [
+                "EMPTY",
+                "SLIDE_PLACED"
+              ]
+            },
+            "panel": {
+              "enum": [
+                "EMPTY",
+                "STRIP_INSERTED"
+              ]
+            }
+          },
+          "required": [
+            "microscope",
+            "panel"
+          ],
+          "additionalProperties": false
+        },
+        "minigames": {
+          "type": "object",
+          "properties": {
+            "circuit": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "target_id": {
+                      "const": "r2_powerbox"
+                    },
+                    "rows": {
+                      "const": 3
+                    },
+                    "columns": {
+                      "const": 3
+                    },
+                    "source": {
+                      "type": "object",
+                      "properties": {
+                        "module_id": {
+                          "enum": [
+                            "c00",
+                            "c01",
+                            "c02",
+                            "c10",
+                            "c11",
+                            "c12",
+                            "c20",
+                            "c21",
+                            "c22"
+                          ]
+                        },
+                        "side": {
+                          "enum": [
+                            "N",
+                            "E",
+                            "S",
+                            "W"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "module_id",
+                        "side"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "sink": {
+                      "type": "object",
+                      "properties": {
+                        "module_id": {
+                          "enum": [
+                            "c00",
+                            "c01",
+                            "c02",
+                            "c10",
+                            "c11",
+                            "c12",
+                            "c20",
+                            "c21",
+                            "c22"
+                          ]
+                        },
+                        "side": {
+                          "enum": [
+                            "N",
+                            "E",
+                            "S",
+                            "W"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "module_id",
+                        "side"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "modules": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "module_id": {
+                            "enum": [
+                              "c00",
+                              "c01",
+                              "c02",
+                              "c10",
+                              "c11",
+                              "c12",
+                              "c20",
+                              "c21",
+                              "c22"
+                            ]
+                          },
+                          "row": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 2
+                          },
+                          "column": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 2
+                          },
+                          "shape": {
+                            "enum": [
+                              "I",
+                              "L"
+                            ]
+                          },
+                          "rotation": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 3
+                          }
+                        },
+                        "required": [
+                          "module_id",
+                          "row",
+                          "column",
+                          "shape",
+                          "rotation"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 9,
+                      "maxItems": 9
+                    },
+                    "status": {
+                      "enum": [
+                        "editing",
+                        "completed"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "target_id",
+                    "rows",
+                    "columns",
+                    "source",
+                    "sink",
+                    "modules",
+                    "status"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "sequence": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "target_id": {
+                      "const": "r3_panel"
+                    },
+                    "devices": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "device_id": {
+                            "enum": [
+                              "cooling",
+                              "lighting",
+                              "safety",
+                              "ventilation"
+                            ]
+                          },
+                          "label": {
+                            "type": "string",
+                            "maxLength": 4000
+                          },
+                          "symbol": {
+                            "enum": [
+                              "▲",
+                              "★",
+                              "●",
+                              "■"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "device_id",
+                          "label",
+                          "symbol"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 4,
+                      "maxItems": 4
+                    },
+                    "length": {
+                      "const": 4
+                    },
+                    "status": {
+                      "enum": [
+                        "editing",
+                        "completed"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "target_id",
+                    "devices",
+                    "length",
+                    "status"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "circuit",
+            "sequence"
+          ],
+          "additionalProperties": false
+        },
+        "statistics": {
+          "type": "object",
+          "properties": {
+            "started_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "finished_at": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "current_hint_level": {
+              "type": "integer",
+              "enum": [
+                1,
+                2,
+                3
+              ]
+            },
+            "clues_found": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "clues_total": {
+              "const": 10
+            },
+            "hint_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "mistake_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "hidden_found": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "hidden_total": {
+              "const": 2
+            }
+          },
+          "required": [
+            "started_at",
+            "finished_at",
+            "current_hint_level",
+            "clues_found",
+            "clues_total",
+            "hint_count",
+            "mistake_count",
+            "hidden_found",
+            "hidden_total"
+          ],
+          "additionalProperties": false
+        },
+        "settlement": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "elapsed_seconds": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "clues_found": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                "clues_total": {
+                  "const": 10
+                },
+                "hint_count": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "mistake_count": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "hidden_found": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 2
+                },
+                "hidden_total": {
+                  "const": 2
+                },
+                "rating": {
+                  "enum": [
+                    "S",
+                    "A",
+                    "B",
+                    "C"
+                  ]
+                }
+              },
+              "required": [
+                "elapsed_seconds",
+                "clues_found",
+                "clues_total",
+                "hint_count",
+                "mistake_count",
+                "hidden_found",
+                "hidden_total",
+                "rating"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema_version",
+        "level_version",
+        "session_id",
+        "revision",
+        "generation",
+        "status",
+        "room",
+        "objects",
+        "inventory",
+        "clues",
+        "exits",
+        "progress",
+        "save",
+        "device_states",
+        "observed_object_ids",
+        "puzzle_states",
+        "minigames",
+        "statistics",
+        "settlement"
       ],
       "additionalProperties": false
     }
