@@ -12,13 +12,13 @@
 | v3.4 | 灰盒及多时刻存档已验收、推送 | 49a2f92 / 8e491d7 |
 | v4.0 | R1 已验收、提交并推送 | 1047e29 / v4.0-room1-rusty-visual |
 | v4.1 | R2 已验收、提交并推送 | 161d3e6 / v4.1-room2-rusty-visual |
-| v4.2 | 三房画面与最终交互已验收，正常提交推送中 | v4.2-final-rusty-visual |
+| v4.2 | 三房画面与最终交互已验收、提交并推送 | 74f6272 / v4.2-final-rusty-visual |
 
 主要视觉基线是 [docs/visual-plan.md](docs/visual-plan.md)，与用户附件逐字节一致。三房固定视角2D、物件特写、玩家终检顺序、出口动画、服务器结算、静音/减少动画、缺图重试及延迟加载已按联合证据接受。原后端/API/AI、多时刻存档、关卡3.4.0/Schema1.4.0保留。
 
 v4.2 实际完整API一次127方法/337子项、295.14秒、exit0；build一次exit0。浏览器联合覆盖：第二轮290记录的R1/R2前段、第五轮195记录的R2后段、第六轮245记录的R3/通关，以及最终finish283记录exit0/issues[]的存档、手机结算、触摸/键盘、生产首屏与历史入口。六次新QA adapter失败完整保留；不相加重复记录，不宣称单轮全路线全绿。Main匹配152源码与238证据hash并目视关键实际PNG。见 [Main验收](evidence/upgrade/v4.2/accepted.json)、[独立结果](evidence/upgrade/v4.2/qa/result.json) 与 [简明报告](review/findings/visual-v42.md)。
 
-限制：缺图已实测，模块import失败注入未测；根CMD未交互启动；没有真人游玩时长、音质评价或真实provider质量宣称。旧弃用/引擎包大小警告仍保留，无付费调用。更早阶段的运行范围与失败记录见各自accepted/result；下文保留历史事实。
+限制：缺图已实测，模块import失败注入未测；根CMD未交互启动；没有真人游玩时长、音质评价或真实provider质量宣称。旧弃用/引擎包大小警告仍保留，无付费调用。v4.2 源码提交74f6272与标签已远端核实，作者/提交者liy222、仓库私有，见 [同步证据](evidence/upgrade/v4.2/sync.json)。更早阶段的运行范围与失败记录见各自accepted/result；下文保留历史事实。
 <!-- upgrade-current-end -->
 
 updated_at: 2026-10-06 (Asia/Shanghai)

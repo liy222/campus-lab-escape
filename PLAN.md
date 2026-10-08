@@ -157,3 +157,6 @@ R2commit161d3e6f25406d44eb55c48c295b86c7289d8f2c/tagv4.1-room2-rusty-visual norm
 
 ### v4.2 accepted, 2026-10-08
 Final visual scope accepted on frozen152 from one fullAPI127/3370/build0 and independent jointbrowser coverage with finish2830. SixnewQAadapter failures preserved; no productfix/fullgreen singlebrowser claim. See evidence/upgrade/v4.2/accepted.json. Remaining authorized work: final documentation, normal liy222 commit/tagv4.2-final-rusty-visual/push and remote identity verification. No further implementation/test expansion.
+
+### v4.2 remote sealed / visual delivery complete, 2026-10-08
+Sourcecommit74f6272b9204f352a6b598d3bd4273452f8184be andtagv4.2-final-rusty-visual verified on private remote; GitHubauthor/committerliy222. Selected325-stage audit0 and42source/docs rawmatch; normalcommit/push0. Main owns only post-sync mechanical README/UPGRADES/rootmetadata/sync evidence now; prior Owner docs.json hashes remain historical. Accepted152product/oldtests/238QA artifacts unchanged, no retest/paidcall/newagent. Sequentialv4.0/v4.1/v4.2 visual delivery complete within recorded limitations.
