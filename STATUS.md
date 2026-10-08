@@ -22,7 +22,7 @@ v4.2 实际完整API一次127方法/337子项、295.14秒、exit0；build一次e
 
 2026-10-08 用户界面融合修正已按独立联合证据验收：桌面HUD/背包/表单融入真实图形画面，移动端采用同舞台内紧凑面板；未复现两套游戏同时显示。三处按钮/横屏提示细节已修复。Main核对152源码、65件新QA产物与238件旧证据，四次不同候选build均0，最终end87/feedback63局部运行均0，七次失败保留且不累加计数。后端规则/API/AI/档案与84SVG未变；修正提交68693a5与tag v4.2-stage-ui已推送核实，GitHub作者/提交者liy222、仓库私有，见 [同步记录](evidence/integration/stage-ui/sync.json)。见 [修正验收](evidence/integration/stage-ui/accepted.json)。
 2026-10-08 新反馈修复：特写旧热点残留已按当前Phaser实际销毁接口修正；v3.4研究纸条插入后提前显示四设备，终检提交仍受门禁前置限制。154源码/规格候选已通过独立定向联合验收，修复提交c76e77e及v4.2-closeup-panel已推送核实。见 evidence/integration/closeup-panel/plan.json。
-2026-10-09 手绘素材包已补齐 84 个对应素材（含 32 个特写），另有 5 张净背景；PNG/源文件/提示词核对通过，尚未替换游戏画面。可双击 [离线预览](output/art-concepts/asset-pack/index.html)，详见 [素材验收](output/art-concepts/asset-pack/accepted.json)。正常同步待完成。
+2026-10-09 手绘素材包已补齐 84 个对应素材（含 32 个特写），另有 5 张净背景；PNG/源文件/提示词核对通过，尚未替换游戏画面。可双击 [离线预览](output/art-concepts/asset-pack/index.html)，详见 [素材验收](output/art-concepts/asset-pack/accepted.json)。素材包提交587dedb及标签art-pack-handpainted-v1已在私有远端核实，作者/提交者liy222。
 <!-- upgrade-current-end -->
 
 updated_at: 2026-10-06 (Asia/Shanghai)
@@ -194,3 +194,6 @@ Sourcecommit c76e77ec9129f32606bb5dee225621cae154427d andnewtag v4.2-closeup-pan
 
 ### Hand-painted art package accepted, 2026-10-09
 Standalone84mapped assets including32closeups plus5clean backgrounds are complete; 85new+4reused canonical PNGs. Source-copy/hash/PNG/decode/prompt/alpha validation passed; original154game sources unchanged. Main viewed25representative canonical PNGs, Owners report final selected-image inspections. Static gallery syntax0; no integrated-game or browser QA claim. Normal private sync next; preview: output/art-concepts/asset-pack/index.html. Game continues using the accepted existing SVG version.
+
+### Hand-painted package remote sealed, 2026-10-09
+Artcommit 587dedbffbdd41a32e738a5c1d65ff34b5dd4e1c andnewtag art-pack-handpainted-v1 verified onprivate remote; GitHubauthor/committerliy222. Normal202-file commit/push0; stage audit201 before one Main proof metadata addition, whitespace0,188Owner staged rawmatches/89canonicalPNG matches,154game sources unchanged. All84mapped plus5clean backgrounds delivered,32closeups/47transparent objects; selective25Mainviews and Ownerreported review limits retained. Main post-sync metadata only; Owner reports/PNGs/prompts and pre-sync acceptance remain sealed. No game integration/newQA/paidDeepSeek/Astra claim. Preview output/art-concepts/asset-pack/index.html; sync output/art-concepts/asset-pack/sync.json.

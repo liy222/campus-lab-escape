@@ -1,0 +1,43 @@
+{
+  "recorded_at": "2026-10-08T17:17:00.578009+00:00",
+  "operator": "Main",
+  "source_commit": "587dedbffbdd41a32e738a5c1d65ff34b5dd4e1c",
+  "tag": "art-pack-handpainted-v1",
+  "tag_object": "81e8dc598ae6fa894eeb7a2559ee0c2888a81996",
+  "remote": "https://github.com/liy222/campus-lab-escape",
+  "private": true,
+  "branch": "main",
+  "github_author": "liy222",
+  "github_committer": "liy222",
+  "actual_commands": [
+    {
+      "command": "git commit -m Add complete hand-painted closeups and device state art package; git tag -a art-pack-handpainted-v1",
+      "exit_code": 0,
+      "selected_files": 202
+    },
+    {
+      "command": "git push origin main art-pack-handpainted-v1",
+      "exit_code": 0
+    },
+    {
+      "command": "gh api repos/liy222/campus-lab-escape/commits/main",
+      "exit_code": 0,
+      "sha": "587dedbffbdd41a32e738a5c1d65ff34b5dd4e1c",
+      "author": "liy222",
+      "committer": "liy222"
+    },
+    {
+      "command": "gh api repos/liy222/campus-lab-escape; git ls-remote origin refs/heads/main refs/tags/art-pack-handpainted-v1 refs/tags/art-pack-handpainted-v1^{} refs/tags/v4.2-closeup-panel^{}",
+      "exit_code": 0
+    }
+  ],
+  "old_game_tag": {
+    "name": "v4.2-closeup-panel",
+    "peeled_sha": "c76e77ec9129f32606bb5dee225621cae154427d",
+    "unchanged": true
+  },
+  "acceptance": "accepted.json and validation.json remain the preceding historical pre-sync acceptance epoch",
+  "stage_audit_scope": "201 files audited exit0 before adding stage-proof.json; pure proof metadata written/reviewed by Main as the 202nd file, whitespace recheck exit0. Not an exhaustive security proof.",
+  "scope": "Standalone art package; existing154 game/spec source bytes unchanged; no game integration/new gameplay QA",
+  "metadata_handoff": "Main now owns only root progress, asset-pack README and this sync record; Owner PNGs/prompts/reports and accepted evidence remain sealed."
+}
