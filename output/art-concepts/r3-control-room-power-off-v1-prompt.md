@@ -1,0 +1,12 @@
+# R3 power-off sample
+
+Built-in image_gen edit, 2026-10-08. Reference: r3-control-room-v1.png (powered room, inactive console). Output: r3-control-room-power-off-v1.png. Preview only; no game code or rules changed. Current global power is state.progress.power_on from R2 powerbox. R3 currently has no independent power switch, and the current Room3Scene does not render a power-dependent environmental backdrop. Future art integration can use this existing state for lighting; console activation remains a distinct state. Chart artwork remains a placeholder for exact gameplay clue content.
+
+## Final prompt
+
+Use case: lighting-weather.
+Edit target: the supplied hand-painted Room3 control-room sample. Create a POWER-OFF environmental lighting counterpart. Keep the exact16:9 composition and every object shape, position, size, perspective, joint, outline and drawn detail unchanged: left closed wooden return door, framed correspondence chart, center industrial inspection console, right closed metal exit with card reader, overhead pendant lamp and conduit. Preserve the soft matte gouache/pencil look, finely drawn useful device detail, and restrained texture. This must be recognizably the SAME room, not a redesign.
+
+Change only lighting: overhead lamp OFF with an unlit gray bulb, no warm light pool on wall or floor. Room falls into subdued cool dusty blue-gray ambient shadow, with faint diffuse emergency spill sufficient for the player to distinguish doors, chart, paper slot, equipment edges and hardware. Do not add a new lamp/window/emergency sign or any source object. Ambient indirect light can arrive off-frame. No crushed black silhouettes and no dramatic neon. The main floor remains matte, gently and evenly shaded without reflections. The chart becomes a muted creamgray in cool shade, while preserving all its marks.
+
+The console dark status display remains black, paper slot remains empty, operating area remains inactive and blank. Door/card reader indicators remain OFF and both doors remain CLOSED. Do not add lit LEDs, device symbols, paperstrip, card, visible passwords, readable lettering, clue changes or new props. No UI, watermark, characters, photographic lighting, glossy3D/PBR, HDR, bloom, sharpening or noisy microtexture. Preserve accepted human hand-painted style. Purpose: matching power-off art-direction sample only; runtime exact clue content and state layering are separate.

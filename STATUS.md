@@ -187,3 +187,6 @@ Two requested fixes passed focused API8/build and joint Canvas interaction/save/
 
 ### Closeup / panel remote sealed, 2026-10-08
 Sourcecommit c76e77ec9129f32606bb5dee225621cae154427d andnewtag v4.2-closeup-panel verified onprivate remote; GitHubauthor+committerliy222. Selected60files audit0 and stagedrawmatch/source-docwhitespace0. Main owns only mechanicalpost-sync README/UPGRADES/rootmetadata/sync evidence; Deliverydocs.json previoushashes historical. Frozen154/25newQA artifacts unchanged; no retest/productedit/paid/newagent. Both user-requested fixes complete; sameversion saves compatible.
+
+### Hand-painted art package in progress, 2026-10-08
+84 actual SVG assets inventoried. Three room Owners generate independent closeup/state PNGs in additive output/art-concepts/asset-pack directories. Existing accepted game remains unchanged. Completion and normal synchronization await actual outputs and Main review; no integrated-game acceptance claimed.
