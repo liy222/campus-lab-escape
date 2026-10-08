@@ -91,6 +91,12 @@ Room 1、Room 2 与 Room 3 均使用 Phaser 4.2.1 Canvas、原创 SVG、固定�
 
 联合 QA 接受最终152个源码候选；四个发生产品变更的候选各有一次 build exit 0。浏览器证据保留7个失败 epoch，另有最终 `end` 87项 exit 0 与 `feedback` 63项 exit 0/issues为空；跨候选结果不累加，也不是单轮完整全绿。已关闭三个发现：恢复确认对话框按钮高度、移动背包按钮尺寸、横屏反馈提示与 HUD 重叠。没有新跑完整 API 套件，付费调用0。范围、截图、失败尝试与限制见 [`stage-ui 验收记录`](../evidence/integration/stage-ui/accepted.json)、[`stage-ui QA 结果`](../evidence/integration/stage-ui/qa/result.json) 和 [`独立报告`](../review/findings/stage-ui.md)。修正 commit `68693a5fc36b16e21b9323e89145ca3195294499` 与 tag `v4.2-stage-ui` 已推送核实，作者与提交者均为 `liy222`；已推送的 `v4.2-final-rusty-visual` 历史标签不改写。
 
+## Closeup 输入隔离与 Room 3 早期面板：联合 QA 接受
+
+特写切换现在销毁旧交互区域，并校验输入仍属于当前热点；特写背景本身不可点击，柜体和托盘中的合法子物品仍可点选。Room 3 在 research_strip 插入后即显示四台设备图形并允许编辑本地草稿，最终提交仍要求服务端处于 `FINAL_CHECK`。v3.3 的旧投影与现有存档行为保持兼容。重启服务并刷新页面即可使用，现有存档无需重开。
+
+定向 API 8项 exit 0，前端 build exit 0。浏览器联合覆盖了首轮 R1 项和最终 R2/R3 remaining 68项 exit 0；两次新 adapter 失败保留在记录中。结果跨范围联合，不表示单次完整全绿路线；没有重复全套 API，也没有付费调用。EXIT 截图恰逢房间到达过渡而偏暗，功能结算 DOM 通过，先前验收的清晰胜利画面未变。详细命令、截图与限制见 [`closeup-panel 验收记录`](../evidence/integration/closeup-panel/accepted.json)、[`QA 结果`](../evidence/integration/closeup-panel/qa/result.json) 和 [`独立报告`](../review/findings/closeup-panel.md)。计划标签 `v4.2-closeup-panel` 待 Main 正常提交和推送；stage-ui 的既有 commit/tag 历史保持不变。
+
 ## 阶段边界
 
 v4.2 三房间视觉交付已按联合证据接受并 SOURCE STOP，commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实。其后的 stage-ui 版式修正已验收，修正 commit `68693a5fc36b16e21b9323e89145ca3195294499` 与 tag `v4.2-stage-ui` 已推送核实。每阶段只交付计划内所需变更，不为升级路线发起付费实验。既有双击启动、手动 AI 模式与 API Key 说明继续有效；QA 未进行付费模型调用、真人音效质量或真人通关时长验收。

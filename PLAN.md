@@ -169,3 +169,15 @@ Main accepts final152 candidate-fixed3 from independent jointQA d66c5b06: fourch
 
 ### Stage UI remote sealed / delivery complete, 2026-10-08
 Accepted sourcecommit68693a5fc36b16e21b9323e89145ca3195294499 andnewtagv4.2-stage-ui verified private remote; GitHubauthor/committerliy222. Selected121fileaudit0/76stagedrawmatches/CRLF-awarewhitespace0; normalcommit/push0. Originalvisualtag unchanged. Main now owns onlymechanical README/UPGRADES/root/syncmetadata; precedingDeliverydocs hashes remain historical. Accepted152sources/QAartifacts/oldtests unchanged; no retests/paidcalls/newagents. See evidence/integration/stage-ui/sync.json.
+
+### Closeup input / early panel reveal investigation GO, 2026-10-08
+New user feedback authorizes fixing closeup background-click leakage and showing R3fourdevice graphics after research_strip insertion rather than doorcard/finalcheck. BaselineHEAD00a60f934b9b69b8d259cdf1abd3f036f06d5659 accepted152source rawsame. ExistingFrontend/Backend roles read/plan exact implementation; QA newtargettest prep only, formalafterstable Mainfreeze. Main root/integration/Git. Preserve oldv3.3/defaultschema/archive/AI/assets/serverfinalcheck authority; no paid/newspawn/modelruntime claim. EarlierstageUI STOP restriction belongs to finished epoch. Plan evidence/integration/closeup-panel/plan.json.
+
+### Closeup / panel implementation GO, 2026-10-08
+Main verified installedPhaser List.removeAll(true)=skipCallback, leavingold zones alive. ExistingFrontend owns only threeScene destroy/currenthotspot guards, bridge sameintent helper andRoom3.tsx earlypublicsequence submission-affordance gate; noCSS/App/GameCanvas/assets/API edits. ExistingBackend owns mini_rules.py opt-inFalsepolicy andgraybox_rules.pyTruecall, with submitFINAL_CHECK retained, plus narrowSpec/level_design timing note. Oldv3.3/schema/state/storage/AI answers preserved. Exactpaths/policy evidence/integration/closeup-panel/plan.json. Ownerdevelopment STOP then Mainfreeze and independent newtargetQA only; normalGit later.
+
+### Closeup / panel frozen candidate QA GO, 2026-10-08
+BothOwner SOURCE STOP: Frontend5paths build0/narrowtrueCanvas0, Backend2py+2Spec development5methods0. Main verifies exactly7productpathdelta against precedingaccepted152; freezes154including2Spec notes. Owner evidence is developmentonly. ExistingQA formalgo on evidence/integration/closeup-panel/candidate.json: onebuild/targetAPI compatibility guards/truecloseup background noactions+legalchildren/stripearlyfourdevices and gatedsubmit/save/restore/reload/finalroute. Oldassets/api/AI/schema/Store/oldtests sealed, no fullAPIunless provenneed/no paid/newspawn. Main integration/root/Git.
+
+### Closeup / panel accepted, 2026-10-08
+Focused independent joint QA accepted; 154-source candidate unchanged. Complete mechanical Delivery notes, selected audit, normal liy222 sourcecommit/newtagv4.2-closeup-panel/push and remote verification. No additional test/product work required. Evidence: evidence/integration/closeup-panel/accepted.json.

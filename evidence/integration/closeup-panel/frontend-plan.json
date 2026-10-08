@@ -1,0 +1,92 @@
+{
+  "status": "READ/PLAN ONLY; product source unchanged; implementation awaits Main GO",
+  "baseline_head": "00a60f934b9b69b8d259cdf1abd3f036f06d5659",
+  "files_read": {
+    "frontend/src/App.tsx": "297e17a35ff992b3531dce2774baf531c8e6d04db32f0ef21420eaf369b9f2b3",
+    "frontend/src/game/bridge.ts": "88ca4a69f839df6b66d86d149c9864df89464695957f1d669ba71d82afa31d93",
+    "frontend/src/game/GameCanvas.tsx": "ae64db75175cb782843d1733be22d37dda2767255ccdb0be7ead6800c0c33c93",
+    "frontend/src/components/RoomLoader.tsx": "4524ba6b842a7bb22a5021f4f7bc37f6b5eb37a33da86def74755e6076dc2718",
+    "frontend/src/components/Room1.tsx": "a8c744c518a68fb112579ca71a71fe28df1ce47bdb3f4ac69d0856efd77510fe",
+    "frontend/src/components/Room2.tsx": "2006745fac1248ffd353f48bbb105927295ff60d43d13174898dae924165ef1b",
+    "frontend/src/components/Room3.tsx": "5a86238561501e8085334c5ff525ae54d558a53b9cffcdb154a906bbbd0852d0",
+    "frontend/src/game/Room1Scene.ts": "f191068708c524cd4a9ed02a4958f0c6522845c6068a083ca40a4a708b7f8a61",
+    "frontend/src/game/Room2Scene.ts": "7efe0d9375959ee87c7de8fdb8c59a830ca53b261c634c0fc5d7c517bc021cd0",
+    "frontend/src/game/Room3Scene.ts": "78c51684b7dbc2cbd0a55d12ce49bec4bf17de986365adecf571f05d45f6c5ca"
+  },
+  "confirmed_source_findings": [
+    {
+      "issue": "Background remains clickable in closeup",
+      "root_cause": "All three Scene.sync methods call this.children.removeAll(true). Installed Phaser4.2.1 DisplayList inherits Structs.List.removeAll(skipCallback); true skips removal callback and does not destroy game objects. Old Zones retain input registration and pointerdown listeners. GameBridge.emit checks disabled only, so stale background intents reach App.visualObject which accepts any currently visible state object. CSS backdrop is not the root cause.",
+      "local_library_proof": [
+        "frontend/node_modules/phaser/src/structs/List.js:484",
+        "frontend/node_modules/phaser/src/gameobjects/DisplayList.js:78",
+        "frontend/node_modules/phaser/src/gameobjects/GameObject.js:1006",
+        "frontend/node_modules/phaser/src/input/InputPlugin.js:809"
+      ],
+      "existing_scope": "Current hotspot factories already produce only the active view, cabinet children, monitor tray children, service label and public current circuit/sequence devices. DOM mirror refreshes from the same current factory; actual Phaser zones are the stale path."
+    },
+    {
+      "issue": "Four shapes appear only after final-check",
+      "root_cause": "Room3Scene render and room3Hotspots branch on state.minigames.sequence. Without that server object, STRIP_INSERTED shows only the fixed-strip text/slot. React Room3 drafts also depend on sequence. Current frontend public type has no independent early sequence metadata field."
+    }
+  ],
+  "minimum_frontend_plan": [
+    {
+      "paths": [
+        "frontend/src/game/Room1Scene.ts",
+        "frontend/src/game/Room2Scene.ts",
+        "frontend/src/game/Room3Scene.ts"
+      ],
+      "change": "Replace removeAll(true) with explicit destruction of a copied children list. Destroy unregisters input synchronously, removes listeners/display/update objects and permits fresh zones. Preserve existing child hotspot filters and server state/receipt animation logic."
+    },
+    {
+      "paths": [
+        "frontend/src/game/bridge.ts",
+        "frontend/src/game/Room1Scene.ts",
+        "frontend/src/game/Room2Scene.ts",
+        "frontend/src/game/Room3Scene.ts"
+      ],
+      "optional_defense": "If included, add a tiny typed intent identity comparator and validate Scene.activate against the current hotspot factory including disabled state before bridge emission. Reject old background intents equally for actual Canvas and keyboard; preserve current view and child items. No new CSS mask."
+    },
+    {
+      "paths": [
+        "frontend/src/game/Room3Scene.ts"
+      ],
+      "early_shape_display": "Render the four neutral public glyphs when panel===STRIP_INSERTED even if sequence is null. Use existing button geometry/material; no answer order. Before server sequence/submit affordance exists, glyphs remain presentation-only/read-only. Once public sequence exists, render actual devices and retain current editable draft/server submit logic. No server success/door-state fabrication."
+    }
+  ],
+  "required_boundary_decision": "If user expects editable draft before card/final-check rather than only visible shapes, Main must explicitly authorize an early public device metadata/availability contract or confirm a presentation-only local draft source. Current minigames.sequence is null in that phase, so Frontend must not silently invent a server affordance. Display-only glyphs satisfy the literal appearance request with backend frozen.",
+  "expected_edit_set": "Three Scene files for cleanup + early display; bridge.ts only if the optional current-intent guard is included. App/GameCanvas/Rooms/RoomLoader/style/assets/api.ts do not need changes for the minimal route.",
+  "proposed_reproduction_after_GO": [
+    "R1 overview→cabinet closeup. Repeated actual Canvas taps on old clock/plaque/door coordinates that do not coincide with current closeup hotspots; assert no outgoing action, no view/receipt/observed changes. Cabinet children symbols/fuse/photo and current cabinet controls must still work; repeat open/back transitions to catch accumulated zones.",
+    "R2 DATA_READ monitor closeup. Tap old powerbox/maintenance/return coordinates; assert no actions. Actual tray strip/card clicks remain allowed. Powerbox closeup must retain public modules/service label/current switch. Also check keyboard Tab contains only current scoped mirror, HUD/backpack/back remain usable.",
+    "R3 panel EMPTY→use research_strip while exit LOCKED/no card acceptance. Capture public state then screenshot: four shapes visible immediately, no sequence affordance forged, no exit/check_done mutation. Follow existing card/final-check public API path and verify actual public devices/draft/server submit/door chain unchanged.",
+    "Use1280desktop and375portrait for focused old-background/child clicks; no repeated full API or whole route suite. IndependentQA runs after stable Main freeze."
+  ],
+  "actual_commands": [
+    {
+      "command": "Get-Content App/GameCanvas/bridge/Rooms/Scene sources; rg source dispatch/public state gates",
+      "exit_code": 0,
+      "note": "Initial wrong GameBridge.ts and game/RoomLoader.tsx reads were nonterminating path errors; corrected actual bridge.ts and components/RoomLoader.tsx read."
+    },
+    {
+      "command": "Read actual installed Phaser List.removeAll, DisplayList inheritance, GameObject.destroy and InputPlugin.clear",
+      "exit_code": 0
+    },
+    {
+      "command": "rg asset wildcard command",
+      "exit_code": 1,
+      "note": "Windows invalid r3* path; no source mutation or product test."
+    },
+    {
+      "command": "git status --short -- frontend; git rev-parse HEAD",
+      "exit_code": 0,
+      "result": "Frontend status empty; HEAD00a60f934b9b69b8d259cdf1abd3f036f06d5659"
+    }
+  ],
+  "limitations": [
+    "Static source mechanism confirmed; no browser reproduction or action-count experiment was executed in this read/plan stage.",
+    "No build/tests/product edits/backend/assets/API/oldtests changes, commit, paid calls or new agents.",
+    "Runtime model identity not inferred from resume."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "task": "Closeup input isolation and research-strip device reveal",
+  "baseline_head": "00a60f934b9b69b8d259cdf1abd3f036f06d5659",
+  "baseline152_raw_matches_stageUI": true,
+  "existing_untracked_preserved": [
+    "?? evidence/qa/T27-unavailable-accounting-preparation-20261005/",
+    "?? experiments/runs/E1-continuation-executor-v1/runtime/"
+  ],
+  "scope": [
+    "Reject background object activation while a closeup is current; preserve current-closeup and legitimate contained items",
+    "v3.4 R3 device symbols visible after observedpanel STRIP_INSERTED without waiting for card/final-check",
+    "Preserve server door/finalcheck correctness, oldv3.3 behavior, schema/storage/AI/answers/assets"
+  ],
+  "baseline_validation": "Reuse accepted unchanged152 final-stageUI build/browser evidence; no duplicate baseline suite",
+  "owners": {
+    "Main": "root docs/integration/Git",
+    "Frontend": "readplan then exact authorisedfrontend paths",
+    "Backend": "readplan then narrow v3.4 publicprojection/rule affordance compatibility",
+    "QA": "new targetedtests/runner/review, formal only after stable Mainfreeze"
+  },
+  "requested_models": "Historical successful requestedSolHigh implementations/QA, LunaMedium mechanicaldocs; resumedruntime/Mainnotintrospected, no newspawn",
+  "paid_calls": 0,
+  "initial_go": "Owners read/plan only, Main implementationGO after exactdesign",
+  "implementation_go": {
+    "Frontend": [
+      "frontend/src/game/Room1Scene.ts",
+      "frontend/src/game/Room2Scene.ts",
+      "frontend/src/game/Room3Scene.ts",
+      "frontend/src/game/bridge.ts",
+      "frontend/src/components/Room3.tsx"
+    ],
+    "Backend": [
+      "backend/app/domain/mini_rules.py",
+      "backend/app/domain/graybox_rules.py"
+    ],
+    "Backend_cross_Spec": [
+      "docs/SPEC.md",
+      "docs/level_design.md"
+    ],
+    "input_policy": "destroy true Phaser children/interactive registration and reject intents outside currentcloseup hotspots; preserve contained items",
+    "projection_policy": "opt-in v3.4 observed STRIP_INSERTED exposes actualdevices/localdraft; affordance and server submit remain FINAL_CHECK; oldv3.3 defaultFalse"
+  }
+}

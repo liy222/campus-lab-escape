@@ -1,13 +1,13 @@
 import Phaser from 'phaser';
 import { room3Assets, room3Layout } from '../assets/manifest';
-import { GameBridge, type SceneInput, type SceneProjection } from './bridge';
+import { GameBridge, sameSceneInput, type SceneInput, type SceneProjection } from './bridge';
 import type { Room2Hotspot } from './Room2Scene';
 
 const exitSuffix = { LOCKED: 'locked', CARD_ACCEPTED: 'card_accepted', FINAL_CHECK: 'final_check', UNLOCKED: 'unlocked', OPEN: 'open' };
 const buttonBox = (index: number): [number, number, number, number] => [440 + (index % 2) * 380, 220 + Math.floor(index / 2) * 220, 340, 200];
 function panelSuffix(projection: SceneProjection) {
   if (projection.state.progress.check_done) return 'passed';
-  if (projection.state.minigames?.sequence) return 'final_check';
+  if (projection.state.device_states?.exit === 'FINAL_CHECK') return 'final_check';
   return projection.state.puzzle_states?.panel === 'STRIP_INSERTED' ? 'strip_inserted' : 'empty';
 }
 export function room3Hotspots(projection: SceneProjection): Room2Hotspot[] {
@@ -56,7 +56,7 @@ export default class Room3Scene extends Phaser.Scene {
     this.sync(this.bridge.projection);
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => { this.ready = false; this.tweens.killAll(); this.time.removeAllEvents(); this.lamps.clear(); });
   }
-  activate(input: SceneInput) { if (!this.opening) this.bridge.emit(input); }
+  activate(input: SceneInput) { if (!this.opening && room3Hotspots(this.bridge.projection).some(spot => !spot.disabled && sameSceneInput(spot.input, input))) this.bridge.emit(input); }
   private image(key: string, box: [number, number, number, number]) {
     if (!this.textures.exists(key)) return null;
     return this.add.image(box[0], box[1], key).setOrigin(0).setDisplaySize(box[2], box[3]);
@@ -69,7 +69,7 @@ export default class Room3Scene extends Phaser.Scene {
     this.input.enabled = !projection.disabled;
     const old = this.previous;
     if (old && old.state === projection.state && old.view === projection.view && old.sequenceDraft === projection.sequenceDraft && old.reducedMotion === projection.reducedMotion && old.minHitArea === projection.minHitArea) { this.previous = projection; return; }
-    this.opening = false; this.tweens.killAll(); this.time.removeAllEvents(); this.children.removeAll(true); this.lamps.clear(); this.onAnimation('idle');
+    this.opening = false; this.tweens.killAll(); this.time.removeAllEvents(); for (const child of [...this.children.list]) child.destroy(); this.lamps.clear(); this.onAnimation('idle');
     const { state, view } = projection, exit = state.device_states?.exit || 'LOCKED', panel = panelSuffix(projection);
     this.image('r3_background', [0, 0, 1600, 900]);
     if (!view) {

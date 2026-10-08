@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import { room2Assets, room2Layout } from '../assets/manifest';
-import { GameBridge, type SceneInput, type SceneProjection } from './bridge';
+import { GameBridge, sameSceneInput, type SceneInput, type SceneProjection } from './bridge';
 import type { CircuitPuzzle } from '../api';
 
 export interface Room2Hotspot {
@@ -70,7 +70,7 @@ export default class Room2Scene extends Phaser.Scene {
     this.sync(this.bridge.projection);
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => { this.ready = false; this.tweens.killAll(); this.objects.clear(); this.modules.clear(); });
   }
-  activate(input: SceneInput) { this.bridge.emit(input); }
+  activate(input: SceneInput) { if (room2Hotspots(this.bridge.projection).some(spot => !spot.disabled && sameSceneInput(spot.input, input))) this.bridge.emit(input); }
   private image(key: string, box: [number, number, number, number], id?: string) {
     if (!this.textures.exists(key)) return null;
     const [x, y, width, height] = box;
@@ -103,7 +103,7 @@ export default class Room2Scene extends Phaser.Scene {
   sync(projection: SceneProjection) {
     if (!this.ready) return;
     const old = this.previous;
-    this.tweens.killAll(); this.children.removeAll(true); this.objects.clear(); this.modules.clear();
+    this.tweens.killAll(); for (const child of [...this.children.list]) child.destroy(); this.objects.clear(); this.modules.clear();
     const { state, view } = projection;
     const powered = state.progress.power_on;
     const power = state.device_states?.powerbox || 'CLOSED', computer = state.device_states?.computer || 'OFF';

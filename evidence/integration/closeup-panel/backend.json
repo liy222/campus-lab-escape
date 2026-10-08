@@ -1,0 +1,138 @@
+{
+  "task": "closeup-panel Backend",
+  "status": "SOURCE STOP; ready for Main candidate freeze and independent QA",
+  "recorded_at_utc": "2026-10-08T13:53:26.112030+00:00",
+  "baseline_head_supplied_by_main": "00a60f934b9b69b8d259cdf1abd3f036f06d5659",
+  "head_independently_verified": false,
+  "files": [
+    {
+      "path": "backend/app/domain/mini_rules.py",
+      "before_sha256": "a8c42558ceea9456514afa43221617f6f7d735089dfb6935c7ad5e982176baa8",
+      "after_sha256": "9104576bbb47c20d6f230c66a66d83c5e7835fd056dfc735e8a1f00876f1b49b"
+    },
+    {
+      "path": "backend/app/domain/graybox_rules.py",
+      "before_sha256": "fb618cb3c5a6f1a941ad3cf58c996fa2dd200c963ae8ae347412af62d9b11872",
+      "after_sha256": "2d6598034c30b8d50d01008ae8d0ed0843e42c2e4a84d46d80d737d0b97e655b"
+    },
+    {
+      "path": "docs/SPEC.md",
+      "before_sha256": "8d93003177fff41a5e27985d0747439b3814dbed910fb7cd8a7cd3362412fc6a",
+      "after_sha256": "6de72d32b2a65e93dab0b06eb59b444aa964b97b6a9da3ac976c365a15651706"
+    },
+    {
+      "path": "docs/level_design.md",
+      "before_sha256": "3031a11c2202078c89922b8717292452af64053bacba4982b7fbbcedfb758b71",
+      "after_sha256": "0e5c563b84268c6eab019743112b07f10d88cb21facdd9ab3135779002996b15"
+    }
+  ],
+  "implementation": {
+    "mini_rules": "visible_state has keyword-only expose_sequence_after_strip=False; v3.3 remains default. Board exposure still needs current R3, observed r3_panel and STRIP_INSERTED. Only opt-in can expose before FINAL_CHECK.",
+    "graybox_rules": "visible_state enables expose_sequence_after_strip=True for v3.4 only.",
+    "submit_affordance": "requires exposed board AND exit FINAL_CHECK AND !check_done AND playing.",
+    "action_guard": "mini_rules.apply_action untouched: submit_sequence requires observed current target, STRIP_INSERTED, FINAL_CHECK, !check_done.",
+    "documentation": "One v3.4 timing paragraph added in each doc, leaving historical v3.3 descriptions unchanged.",
+    "unchanged": [
+      "schema1.4.0/level3.4.0",
+      "stored model/game_fields/invariants",
+      "legacy v3.3 default exposure",
+      "Store/snapshot/checksum/routes/contracts",
+      "AI guard/hints/auth/provider/payment/budget",
+      "answers/device array ordering/symbol mapping",
+      "all old test source"
+    ]
+  },
+  "actual_commands": [
+    {
+      "command": "Project-targeted read-only rg/Get-Content/Get-FileHash inspections and standard-library ROUTE32 AST index extraction",
+      "exit_code": 0,
+      "scope": "read only; no backend imports or execution in planning stage"
+    },
+    {
+      "command": "Python stdin guarded plan/source/doc replacement operation",
+      "exit_code": 1,
+      "detail": "Plan written and both product files successfully edited; documentation replacement stopped on nonmatching SPEC heading before either doc write. No test execution or tool-approval failure."
+    },
+    {
+      "command": "Python stdin exact v3.4 heading extraction",
+      "exit_code": 0
+    },
+    {
+      "command": "Python stdin corrected two documentation insertions",
+      "exit_code": 0
+    },
+    {
+      "command": "& 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' evidence/integration/closeup-panel/backend-check.py",
+      "exit_code": 0,
+      "scope": "five development methods only",
+      "elapsed_seconds": 8.632
+    }
+  ],
+  "development_result": {
+    "scope": "Backend development only, not independent formal QA",
+    "methods_run": 5,
+    "failures": 0,
+    "errors": 0,
+    "exit_code": 0,
+    "elapsed_seconds": 8.632,
+    "records": [
+      {
+        "check": "v3.4 strips expose graphics at LOCKED and CARD_ACCEPTED; only FINAL_CHECK submits; full route won",
+        "result": "passed"
+      },
+      {
+        "check": "v3.4 legacy slot and manual archive restores/reopen at pre-card stage; immutable raw snapshots; receipt replay current projection; other room/reset hidden",
+        "result": "passed"
+      },
+      {
+        "check": "explicit v3.3 continues null sequence at LOCKED/CARD_ACCEPTED, exposed at FINAL_CHECK",
+        "result": "passed"
+      }
+    ],
+    "failed_method_ids": [],
+    "actual_paid_calls": 0,
+    "actual_provider_calls": 0,
+    "limits": [
+      "No browser rendering/draft tests.",
+      "In-process TestClient reopening; no actual process restart.",
+      "Production databases untouched; fixture-only temporary stores."
+    ]
+  },
+  "test_selection": [
+    "Owner: v3.4 earlier graphic gate/early rejection/FINAL_CHECK/completed/full route win",
+    "Owner: v3.4 single slot+manual archive unchanged raw snapshots/restore/reopen/current-state receipt replay/other-room/reset visibility",
+    "Owner: v3.3 original LOCKED/CARD_ACCEPTED/FINAL_CHECK projection gate",
+    "Existing: tests.api.test_upgrade_v33.UpgradeV33Acceptance.test_unknown_boards_stay_null_and_wrong_room_manual_actions_reject",
+    "Existing: tests.api.test_upgrade_v33.UpgradeV33Acceptance.test_sequence_derivation_wrong_order_length_duplicate_unknown_and_freeze"
+  ],
+  "qa_handoff": [
+    "Independently verify current v3.4 board after research_strip insertion before exit card acceptance, no submit affordance/working submit before FINAL_CHECK.",
+    "Independently verify modern frontend derives submit availability from object affordance/stage rather than only nonnull sequence/status editing; local draft does not grant server authority.",
+    "Keep unknown/empty/other-room sequence hidden and v3.3 old projection unchanged.",
+    "Verify selected restore/reload and draft clearing across early board, FINAL_CHECK and completion using existing UI/API, same-version old saved facts preserved.",
+    "Preserve full route final lock release/open/move and mistakes/replay statistics semantics."
+  ],
+  "evidence": [
+    {
+      "path": "evidence\\integration\\closeup-panel\\backend-plan.json",
+      "sha256": "307cf64d415cd6148c813c57e58f252c4501e87dc4eacf26d714c3236565b9ab"
+    },
+    {
+      "path": "evidence\\integration\\closeup-panel\\backend-check.py",
+      "sha256": "d0637d35064d8395db87473d926162ba4f9a6835b3661775f69ee8312271d839"
+    },
+    {
+      "path": "evidence\\integration\\closeup-panel\\backend-development.json",
+      "sha256": "c81927194ae4c75c350e153bcf1726717a0bdbe49fdcc8aa446cef89a5879482"
+    }
+  ],
+  "limits": [
+    "Owner development checks are not independent QA or acceptance.",
+    "No actual browser/draft rendering checks or process stop/restart; TestClient reopen only.",
+    "No new solver or answer-array export; development completion reuses existing public-clue derivation helper.",
+    "No actual Provider/paid/network calls; existing fixture network patch rejects network.",
+    "Existing fixture process-local mock/temp-DB environment only; no persistent environment/database reset or deletion.",
+    "Observed Starlette TestClient/httpx deprecation warning retained; dependency changes not made.",
+    "No Git/commit/push/subagent operations; no runtime/model identity inference."
+  ]
+}

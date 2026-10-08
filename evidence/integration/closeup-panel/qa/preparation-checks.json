@@ -1,0 +1,36 @@
+{
+  "status": "PREPARATION SOURCE STOP; formal_runs=0 awaiting Main freeze GO",
+  "recorded_at": "2026-10-08T14:00:51.437945+00:00",
+  "operator": "visual_qa_oct08",
+  "actual_static_commands": [
+    {
+      "command": "C:/Program Files/nodejs/node.exe --check tests/e2e/run_closeup_panel.mjs",
+      "exit_code": 0,
+      "tool_chunk": "1b6224"
+    },
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 - (standard-library ast.parse and immutable hash comparison)",
+      "exit_code": 0,
+      "tool_chunk": "457387"
+    }
+  ],
+  "final_AST_parsed": [
+    "tests/api/test_closeup_panel.py",
+    "tests/e2e/run_closeup_panel_api.py"
+  ],
+  "immutable_count": 115,
+  "immutable_mismatches": [],
+  "files_sha256": {
+    "tests/api/test_closeup_panel.py": "1d779f59d2ac126d790b8cb1e28f3f3b818ab0944b42f1542f1629e0b52fb043",
+    "tests/e2e/run_closeup_panel_api.py": "089b44f5af9efcc7ee69b5e3891701c2a8a3e30e2a9d5dd42323f402c0ab68f6",
+    "tests/e2e/run_closeup_panel.mjs": "572760d62d747200fac0ba9e7cbe57d13577a661ce7ed7c8ccf8c6bf1e73952b",
+    "review/findings/closeup-panel.md": "5de8d927815dc9d0fdeb6338be25279e80d326e9385ab0d58059cc2d576ffa0a",
+    "evidence/integration/closeup-panel/qa/preparation.json": "97cbaa2d154291e1ec38441f7353d276aef96a92de518a093acb4f927debc67e"
+  },
+  "formal_runs": 0,
+  "paid_calls": 0,
+  "limits": [
+    "No application import, server, build or browser execution during preparation.",
+    "Earlier read-only wrong nonexistent manifest/hints path lookups are not test failures; no behavioral reproduction claimed."
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "epoch": "closeup-panel delivery documentation",
+  "status": "SOURCE STOP",
+  "files": {
+    "README.md": "9da016e0f32e1f14f824302a5d837516d88d50630f90f2dc17d9251a0f467a54",
+    "release/UPGRADES.md": "cb60d6dbddc557779a1499d5307c1ef86ff91c177961ff3fae68cfafa4d82acb"
+  },
+  "acceptance": {
+    "accepted_record": "evidence/integration/closeup-panel/accepted.json",
+    "accepted_sha256": "f2455ac95b091648c125a08e24af6cbc8d0502e4875c08188356f4a6d80cc710",
+    "qa_result": "evidence/integration/closeup-panel/qa/result.json",
+    "qa_result_sha256": "f2e8ef2b432102a310c022ee6a297f85ae602474afe83af48263cd2d64f56c5d",
+    "candidate_map_sha256": "124e241ba73fbe30e9d57958266343a5a7780f935a6cc50721604fa0cd62a004",
+    "verified_maps": {
+      "candidate": 154,
+      "qa_sources": 154,
+      "qa_artifacts": 25,
+      "old_files": 115,
+      "evidence/upgrade/v4.2/qa/result.json": 238,
+      "evidence/integration/stage-ui/qa/result.json": 65
+    },
+    "actual_commands": [
+      {
+        "path": "evidence/integration/closeup-panel/qa/20261008T140154956215Z-api/run.json",
+        "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 tests/e2e/run_closeup_panel_api.py evidence/integration/closeup-panel/candidate.json",
+        "exit_code": 0,
+        "scope": "targeted API 8 tests"
+      },
+      {
+        "path": "evidence/integration/closeup-panel/qa/formal-build/20261008T140208345428Z-build/run.json",
+        "command": "C:/Program Files/nodejs/npm.cmd run build --prefix frontend",
+        "exit_code": 0,
+        "scope": "frontend build"
+      },
+      {
+        "path": "evidence/integration/closeup-panel/qa/20261008T140229635Z-browser/run.json",
+        "command": "C:\\Program Files\\nodejs\\node.exe D:\\深度能力\\tests\\e2e\\run_closeup_panel.mjs evidence/integration/closeup-panel/candidate.json",
+        "exit_code": 1,
+        "scope": "first browser epoch, retained"
+      },
+      {
+        "path": "evidence/integration/closeup-panel/qa/20261008T140537464Z-browser/run.json",
+        "command": "C:\\Program Files\\nodejs\\node.exe D:\\深度能力\\tests\\e2e\\run_closeup_panel.mjs evidence/integration/closeup-panel/candidate.json --only=remaining",
+        "exit_code": 1,
+        "scope": "second adapter epoch, retained"
+      },
+      {
+        "path": "evidence/integration/closeup-panel/qa/20261008T140800023Z-browser/run.json",
+        "command": "C:\\Program Files\\nodejs\\node.exe D:\\深度能力\\tests\\e2e\\run_closeup_panel.mjs evidence/integration/closeup-panel/candidate.json --only=remaining",
+        "exit_code": 0,
+        "scope": "initial R1 scopes plus final R2/R3 remaining; 68 records"
+      }
+    ],
+    "full_api_rerun": false,
+    "paid_calls": 0,
+    "planned_tag": "v4.2-closeup-panel"
+  },
+  "diff_check": {
+    "command": "git -c core.autocrlf=false -c core.whitespace=cr-at-eol diff --check",
+    "exit_code": 0
+  },
+  "line_endings": "UTF-8 without BOM; LF only",
+  "source_tests_assets_modified": false,
+  "limitations": [
+    "EXIT screenshot was captured during existing room-arrive transition and is dark; functional won/Victory DOM passed. Prior accepted clear Victory visual remains unchanged.",
+    "Headless emulated touch; fixtures are not complete UI route coverage; no full API repetition, paid-provider, physical-device, human-time, process-restart, launcher or audio-audition claim."
+  ],
+  "sync": "Documentation only; normal source commit/tag/push not performed. Existing stage-ui commit/tag unchanged."
+}

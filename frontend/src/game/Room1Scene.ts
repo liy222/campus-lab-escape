@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import { room1Assets, room1Layout } from '../assets/manifest';
-import { GameBridge, type SceneInput, type SceneProjection } from './bridge';
+import { GameBridge, sameSceneInput, type SceneInput, type SceneProjection } from './bridge';
 
 export interface SceneHotspot { id: string; label: string; box: [number, number, number, number]; input: SceneInput }
 const children = new Set(['r1_symbols', 'r1_fuse', 'r1_photo']);
@@ -60,7 +60,7 @@ export default class Room1Scene extends Phaser.Scene {
     this.sync(this.bridge.projection);
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => { this.ready = false; this.tweens.killAll(); this.objects.clear(); });
   }
-  activate(input: SceneInput) { this.bridge.emit(input); }
+  activate(input: SceneInput) { if (sceneHotspots(this.bridge.projection).some(spot => sameSceneInput(spot.input, input))) this.bridge.emit(input); }
   private image(key: string, box: [number, number, number, number], id?: string) {
     if (!this.textures.exists(key)) return null;
     const [x, y, width, height] = box;
@@ -71,7 +71,7 @@ export default class Room1Scene extends Phaser.Scene {
   sync(projection: SceneProjection) {
     if (!this.ready) return;
     const old = this.previous;
-    this.tweens.killAll(); this.children.removeAll(true); this.objects.clear();
+    this.tweens.killAll(); for (const child of [...this.children.list]) child.destroy(); this.objects.clear();
     const { state, view } = projection;
     const cabinet = state.device_states?.cabinet;
     const microscope = state.puzzle_states?.microscope;

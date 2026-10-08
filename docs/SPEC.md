@@ -215,6 +215,8 @@ submit_sequence {target_id:r3_panel,device_ids} 要求恰四个唯一合法标�
 
 ## 当前完整灰盒接口 v3.4
 
+2026-10-08 控制台显露调整：仅 v3.4 在当前 R3、控制台已观察且研究纸条已插入时公开四设备的名称与图形，不再等待出口刷卡和 FINAL_CHECK。前端可保留本地顺序草稿，但 submit_sequence 操作提示与服务端提交仍要求 FINAL_CHECK、纸条已插且终检未完成；提前提交为 PRECONDITION_FAILED，不计错误或推进状态。旧 v3.3 显露时机不改，level3.4.0/schema1.4.0、存档字段与校验不改，同版本旧存档按保存的事实重新投影，无迁移或记录重写。
+
 `upgrade`/`v3.4` 为 level3.4.0/schema1.4.0，默认 game-v3.4.sqlite；显式 v3.3/v3.2/v3.1/legacy 保留旧玩法和独立数据库。create_app() 默认 legacy 不变；跨版本快照明确拒绝、不自动迁移。四设备链、两个安装槽、三个房间、四物品和两个小游戏全部沿用；未引入Phaser、美术、额外强制谜题。
 
 服务器required statistics保存 started_at、finished_at（未赢为null）、current_hint_level（1/2/3）、hint_count、mistake_count。公开 statistics另含clues_found/clues_total=10及hidden_found/hidden_total=2；没有随时间自发变化的字段，同revision投影保持稳定。前端可按started_at显示当前计时；只有won的nullable settlement返回服务器固定elapsed_seconds、线索/提示/错误/隐藏计数和rating=S/A/B/C。elapsed取服务端持久起止UTC差，包含离线时间、赢后冻结，不代表真人实测游玩时间。统计随slot保存恢复；reset新起止/统计、新generation，保留旧slot，restore返回保存的同一run。恢复后的提示和错误计数也回到slot事实。

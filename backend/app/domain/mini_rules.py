@@ -34,7 +34,7 @@ def initial_state(revision=0):
                                      'circuit_rotations': list(circuit.INITIAL_ROTATIONS)})
 
 
-def visible_state(session_id, state, save=None):
+def visible_state(session_id, state, save=None, *, expose_sequence_after_strip=False):
     result = base.visible_state(session_id, legacy_state(state), save)
     result.update(schema_version=SCHEMA_VERSION, level_version=LEVEL_VERSION)
     result['minigames'] = {'circuit': None, 'sequence': None}
@@ -43,7 +43,7 @@ def visible_state(session_id, state, save=None):
                        and d.powerbox in {'FUSE_INSTALLED', 'CIRCUIT_READY', 'POWER_ON'})
     exposed_sequence = (state.room_id == 'R3' and 'r3_panel' in state.observed_object_ids
                         and state.puzzle_states.panel == 'STRIP_INSERTED'
-                        and d.exit in {'FINAL_CHECK', 'UNLOCKED', 'OPEN'})
+                        and (expose_sequence_after_strip or d.exit in {'FINAL_CHECK', 'UNLOCKED', 'OPEN'}))
     if exposed_circuit:
         result['minigames']['circuit'] = circuit.board(state.circuit_rotations, d.powerbox != 'FUSE_INSTALLED')
     if exposed_sequence:
@@ -63,7 +63,7 @@ def visible_state(session_id, state, save=None):
                 obj['description'] = ('窄纸已经插好，四个设备操作钮等待读取顺序。' if state.puzzle_states.panel == 'STRIP_INSERTED'
                                       else '控制台旁有一条带定位齿的窄纸槽，设备操作钮仍暗着。')
             obj['actions'] = [action for action in obj['actions'] if action['tool'] != 'submit_code']
-            if exposed_sequence and not state.flags['check_done'] and state.status == 'playing':
+            if exposed_sequence and d.exit == 'FINAL_CHECK' and not state.flags['check_done'] and state.status == 'playing':
                 obj['actions'].append(base.affordance('submit_sequence', '确认设备顺序', target_id='r3_panel'))
     return result
 

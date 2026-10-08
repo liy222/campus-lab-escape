@@ -1,0 +1,49 @@
+{
+  "task": "closeup-panel backend",
+  "phase": "approved minimal plan before source edit",
+  "baseline_head_supplied_by_main": "00a60f934b9b69b8d259cdf1abd3f036f06d5659",
+  "head_independently_verified": false,
+  "product_targets": [
+    "backend/app/domain/mini_rules.py",
+    "backend/app/domain/graybox_rules.py",
+    "docs/SPEC.md",
+    "docs/level_design.md"
+  ],
+  "pre_source_sha256": {
+    "backend/app/domain/mini_rules.py": "a8c42558ceea9456514afa43221617f6f7d735089dfb6935c7ad5e982176baa8",
+    "backend/app/domain/graybox_rules.py": "fb618cb3c5a6f1a941ad3cf58c996fa2dd200c963ae8ae347412af62d9b11872",
+    "docs/SPEC.md": "8d93003177fff41a5e27985d0747439b3814dbed910fb7cd8a7cd3362412fc6a",
+    "docs/level_design.md": "3031a11c2202078c89922b8717292452af64053bacba4982b7fbbcedfb758b71"
+  },
+  "policy": "Internal keyword flag defaults False; only Graybox visible_state opts into exposure after observed R3 panel and STRIP_INSERTED. submit affordance still requires FINAL_CHECK. apply_action unchanged.",
+  "persistent_schema_or_rule_change": false,
+  "old_v33_unchanged": true,
+  "validation_planned": [
+    "v3.4 EMPTY vs STRIP_INSERTED at LOCKED/CARD_ACCEPTED/FINAL_CHECK",
+    "early submit rejects and leaves gameplay/revision/statistics unchanged",
+    "v3.3 board stays null until FINAL_CHECK",
+    "v3.4 save/archive restore/reopen keeps raw snapshot immutable and recomputes visibility",
+    "same request replay retains receipt and uses current projection",
+    "full route terminal outcome and completed no resubmission",
+    "existing v3.3 narrow unknown-board and sequence-guard cases"
+  ],
+  "formal_qa_executed": false,
+  "actual_read_commands_exit_codes": [
+    {
+      "command": "rg targeted rules/tests/SPEC; Get-Content mini_rules.py and graybox_rules.py",
+      "exit_code": 0
+    },
+    {
+      "command": "Get-Content v3.3/v3.4 fixtures and SPEC excerpts; rg puzzle rules and schema/models; Get-FileHash sources",
+      "exit_code": 0
+    },
+    {
+      "command": "Python standard-library AST extraction of ROUTE32 indices; no application import",
+      "exit_code": 0
+    }
+  ],
+  "limits": [
+    "Read assessment only before GO; no behavioral test claim.",
+    "No new solution derivation, Provider/network or paid call."
+  ]
+}

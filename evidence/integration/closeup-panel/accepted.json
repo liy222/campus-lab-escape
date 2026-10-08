@@ -1,0 +1,60 @@
+{
+  "status": "Main ACCEPTED focused joint QA; documentation and normal sync pending",
+  "recorded_at": "2026-10-08T14:16:00.318822+00:00",
+  "operator": "Main integration",
+  "candidate_file_sha256": "124e241ba73fbe30e9d57958266343a5a7780f935a6cc50721604fa0cd62a004",
+  "qa_result_sha256": "f2e8ef2b432102a310c022ee6a297f85ae602474afe83af48263cd2d64f56c5d",
+  "verified_maps": {
+    "candidate": 154,
+    "qa_sources": 154,
+    "qa_artifacts": 25,
+    "old_files": 115,
+    "evidence/upgrade/v4.2/qa/result.json": 238,
+    "evidence/integration/stage-ui/qa/result.json": 65
+  },
+  "actual_runs": [
+    {
+      "path": "evidence/integration/closeup-panel/qa/20261008T140154956215Z-api/run.json",
+      "exit_code": 0,
+      "tests_run": 8,
+      "record_count": null
+    },
+    {
+      "path": "evidence/integration/closeup-panel/qa/20261008T140229635Z-browser/run.json",
+      "exit_code": 1,
+      "tests_run": null,
+      "record_count": 27
+    },
+    {
+      "path": "evidence/integration/closeup-panel/qa/20261008T140537464Z-browser/run.json",
+      "exit_code": 1,
+      "tests_run": null,
+      "record_count": 27
+    },
+    {
+      "path": "evidence/integration/closeup-panel/qa/20261008T140800023Z-browser/run.json",
+      "exit_code": 0,
+      "tests_run": null,
+      "record_count": 68
+    },
+    {
+      "path": "evidence/integration/closeup-panel/qa/formal-build/20261008T140208345428Z-build/run.json",
+      "exit_code": 0,
+      "tests_run": null,
+      "record_count": null
+    }
+  ],
+  "joint_boundary": "First browser R1 passed scopes plus final remaining R2/R3. Two failed new-adapter epochs preserved; no record sum or single full-green claim.",
+  "main_viewed_png_sha256": {
+    "evidence/integration/closeup-panel/qa/20261008T140229635Z-browser/R1-cabinet-375.png": "9355a010b968cfa36a32aa2b221f2559ce763d90e3302d3e000a54c27e163fe2",
+    "evidence/integration/closeup-panel/qa/20261008T140800023Z-browser/R2-tray-375.png": "35427336a6afa717bb5d4807b786543ad78a2a195d7d79b1eb73b3207d98895d",
+    "evidence/integration/closeup-panel/qa/20261008T140800023Z-browser/R3-early-devices-1280.png": "ad2418334731f69066d23c462ac0c597f68297992c2ff5dd51df873b6503175d",
+    "evidence/integration/closeup-panel/qa/20261008T140800023Z-browser/R3-early-devices-375.png": "b5fa976e779f1033560ebbb08959ff8baaf187135642c5944c799bf056c8e5e6"
+  },
+  "limitations": [
+    "EXIT screenshot was captured during existing room-arrive transition and is dark; functional won/Victory DOM passed. Prior accepted clear Victory visual remains unchanged.",
+    "Headless emulated touch; fixtures are not complete UI route coverage; no full API repetition, paid-provider, physical-device, human-time, process-restart, launcher or audio-audition claim."
+  ],
+  "paid_calls": 0,
+  "planned_new_tag": "v4.2-closeup-panel"
+}

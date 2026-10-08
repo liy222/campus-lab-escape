@@ -64,7 +64,7 @@ def rating(clues, hints, mistakes):
 
 
 def visible_state(session_id, state, save=None):
-    result = base.visible_state(session_id, mini_state(state), save)
+    result = base.visible_state(session_id, mini_state(state), save, expose_sequence_after_strip=True)
     result.update(schema_version=SCHEMA_VERSION, level_version=LEVEL_VERSION,
                   observed_object_ids=list(state.observed_object_ids))
     by_id = {clue['clue_id']: clue for clue in result['clues']}

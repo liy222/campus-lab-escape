@@ -1,0 +1,30 @@
+{
+  "scope": "Backend development only, not independent formal QA",
+  "methods_run": 5,
+  "failures": 0,
+  "errors": 0,
+  "exit_code": 0,
+  "elapsed_seconds": 8.632,
+  "records": [
+    {
+      "check": "v3.4 strips expose graphics at LOCKED and CARD_ACCEPTED; only FINAL_CHECK submits; full route won",
+      "result": "passed"
+    },
+    {
+      "check": "v3.4 legacy slot and manual archive restores/reopen at pre-card stage; immutable raw snapshots; receipt replay current projection; other room/reset hidden",
+      "result": "passed"
+    },
+    {
+      "check": "explicit v3.3 continues null sequence at LOCKED/CARD_ACCEPTED, exposed at FINAL_CHECK",
+      "result": "passed"
+    }
+  ],
+  "failed_method_ids": [],
+  "actual_paid_calls": 0,
+  "actual_provider_calls": 0,
+  "limits": [
+    "No browser rendering/draft tests.",
+    "In-process TestClient reopening; no actual process restart.",
+    "Production databases untouched; fixture-only temporary stores."
+  ]
+}
