@@ -1,0 +1,91 @@
+{
+  "recorded_at": "2026-10-08T17:10:46.962398+00:00",
+  "user_local_date": "2026-10-09",
+  "operator": "Main",
+  "acceptance_scope": "Complete standalone generated art inventory, not game integration",
+  "status": "accepted art package; normal commit/push pending",
+  "canonical_images": 89,
+  "mapped_assets": 84,
+  "closeup_views": 32,
+  "clean_backgrounds": 5,
+  "new_images": 85,
+  "reused_scene_images": 4,
+  "transparent_objects": 47,
+  "source_game_unchanged_count": 154,
+  "evidence": {
+    "catalog_sha256": "1ac4bbdd8379ef7b21b8becc9a9515b327b08739b60b5483c767cbe44ac0fb36",
+    "validation_sha256": "8b01537abf4363ec80a3040258aeeec43600a582e1a511097f03338574db53e8",
+    "owner_report_sha256": {
+      "room1": "e79ad4da5f4f14df849018da28132880ef2eeb3acd16957c7ee6ed03e2f277af",
+      "room2": "7d610667837952df348a0839d0fcdafba053880e0361f7395e2d3266874407fe",
+      "room3": "d95ef8a7a6350805a2af2b1ca6df2b55e00ebb22e14a91836c123310a0d3219f"
+    }
+  },
+  "main_visual_checks": {
+    "backgrounds/r1-room-shell.png": "20a499c7a0905b97b964a30b6ebe74cd63b8e566f4d83b60b2e493387d87d0cc",
+    "backgrounds/r2-room-shell-off.png": "bacc4908cf9d54b088b5a9d123067d8678349bacb8391ef0abf3f6265e66dde4",
+    "backgrounds/r2-room-shell-on.png": "56725cdae6953247298b6f0d8b3b305163d2da815e6425be8121c798faeb6836",
+    "backgrounds/r3-room-shell-off.png": "1c40131b1b0fdb97cf3357e5a42e62b3f446873e594b761ac3db8c1968eaf259",
+    "backgrounds/r3-room-shell-on.png": "8a6e0bcaf0e1008c2ee65398407a82e2386b5fccc241abca86fc7d000f642ad9",
+    "room1/r1_workbench.png": "e9159159e528172bb4bf55a1af2d56003681e256b881817b9d6f2fcccaf47266",
+    "room1/closeup_plaque.png": "d76cd67dbaef5ffb308a2dda2890801dfd83b6c8f0dc3fc3711526ffab883d8d",
+    "room1/closeup_record.png": "b627f3a49cab0f1e04e1f6c9eba37cb01dec24a3ad0b2aaf527a11a3b9e6d3f9",
+    "room1/r1_cabinet_open.png": "d9f6327d30d3faf722a83a3f41fd3c9d91669ed92d7fcf487d46f55f60e6448f",
+    "room1/r1_cabinet_empty.png": "9bb8c3d8fe1588ba72bd36446939bbd69368f02d2fa42b5ab05db917571ff936",
+    "room3/r3_panel_strip_inserted.png": "608959cd29cb7e35f640a3f8db29519ad1af0029157644ee08506d4b81139a99",
+    "room3/r3_panel_passed.png": "b04dde66806e7be76c7d2553d016b3e835b018242b5fcb6354f46f6848995f31",
+    "room1/r1_microscope_empty.png": "faf7b92df014a7e97e565e7aa5d63c325a67c574858be1f10f71b984dc2cbfe5",
+    "room1/r1_microscope_slide.png": "735742c82cdf61e83f9b8b853f69ad983a950f66fe7dceed5a0b55f28b30faac",
+    "room2/r2_closeup_monitor_login_locked.png": "a167ac420cfaa500b16e710cd4ffa00d99a7855a9d4928eab1adb9c5dafe7f16",
+    "room2/r2_closeup_monitor_data_read.png": "ec041aeb53dab436950708046458a42adb279916a2cd30cfb36a972981079d70",
+    "room3/r3_exit_door_unlocked.png": "063dfbafa15b3f54cedd4a4ee16a0562853a55666b6bd07db95b068ce3578d76",
+    "room3/r3_exit_door_open.png": "ae342632d05637e1d7cb31e61cbffc08b79ef996ab5cbf3fe75ac2daafb3a432",
+    "room2/r2_closeup_powerbox_missing_fuse.png": "079cd45682bfb231fb7538d7f78bbfaf44dd5adf0c17333a5713ed9b1136aaa2",
+    "room2/r2_closeup_powerbox_fuse_installed.png": "bbf54810eb3e11099a079fcc1e04c09d9f2cccf8516ab9d69a48be4201c81af9",
+    "room2/r2_closeup_powerbox_circuit_ready.png": "4581ffa69ae9cf6cf1bedce7c8dec0a1b627a2f02392fa882eefe1a71a257c31",
+    "room2/r2_closeup_powerbox_power_on.png": "0dfeccca3bceb551b7f3f8cef4020ca637f77d7479912fb31b95b240b40c114f",
+    "room1/photo_closeup.png": "e5ec852f58c0038cca6d327487ae9a1df336c977dcda4163469eb5a9363efefb",
+    "room1/r1_symbols.png": "39346f2d8a6cc7c92812b8c3b30abfa63dca7a07b81870a4b2efc782473489b2",
+    "room1/r1_door_unlatched.png": "f913b47bb2b6cfd7c5ee677da75205bf93e55c4ea8d01e2445b21175fe2ced25"
+  },
+  "owner_visual_checks": "Owners record their final selected-image inspections in each room report; Main selectively viewed 25 canonical images, does not claim all89.",
+  "actual_commands": [
+    {
+      "command": "python -B -X utf8 output/art-concepts/asset-pack/build_catalog.py --final",
+      "exit_code": 0,
+      "result": "84/84 plus5; PNG signatures/chunk CRC/Pillow verify/hash/alpha checked"
+    },
+    {
+      "command": "python -B -X utf8 output/art-concepts/asset-pack/validate_pack.py",
+      "exit_code": 1,
+      "result": "Initial audit adapter only expected full background source path; four background prompts held actual exec filenames. No image/source change."
+    },
+    {
+      "command": "python -B -X utf8 output/art-concepts/asset-pack/validate_pack.py",
+      "exit_code": 0,
+      "result": "89 original/copy SHA matches, all prompt references exist, 154 game source hashes unchanged, 47 object alpha ranges checked"
+    },
+    {
+      "command": "node --check output/art-concepts/asset-pack/gallery-script-check.js",
+      "exit_code": 0,
+      "result": "Static syntax only, no interactive browser claim"
+    }
+  ],
+  "extra_read_only_check": "All89 canonical PNG decoded fully using Pillow Image.load before acceptance file written. No pixel edits.",
+  "provider_calls": {
+    "DeepSeek": 0,
+    "external_paid_CLI_or_SDK": 0,
+    "images": "built-in image_gen; actual calls and unused revisions are in Owner reports, not inferred from image count"
+  },
+  "limitations": [
+    "Art package only; not installed in the game.",
+    "Precise gameplay text, diagrams and device symbols need controlled runtime layers.",
+    "Generated geometry is not certified pixel-perfect across states.",
+    "R3 wood-and-metal door cutouts differ from the metal door in the earlier full-scene study.",
+    "r2_light_overlay_on is a reused full-scene study, not a transparent lighting overlay.",
+    "Cabinet contents are separate state-dependent item layers.",
+    "PNG geometry/shadows/hotspots and exact text/circuits require calibration and game QA when installed.",
+    "The gallery has static syntax validation; no browser interaction test claimed."
+  ],
+  "remote_sync": "Main will verify actual commit/tag/private remote and author after normal synchronization."
+}

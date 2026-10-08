@@ -1,0 +1,10 @@
+# r2-equipment-power-on-v1
+
+Generated using the built-in image_gen tool, 2026-10-08. Scene art sample only; not integrated into the game. Style baseline: r1-night-lab-v3-details.png, accepted by the user for continued scene generation. Composition uses the existing room layout. Exact interactive coordinates, layered device states, clue lettering and correspondence chart content require controlled production preparation. Generated details are not puzzle authority. R2 power-on is an environmental lighting study with a closed powerbox and black CRT; it is not an exact complete POWER_ON gameplay snapshot.
+
+## Final prompt
+
+Use case: lighting-weather.
+Edit target: the supplied Room2 equipment laboratory power-OFF sample. Create its power-ON environmental lighting counterpart, not a new room. Preserve the exact image composition, camera, geometry, every silhouette and object position, proportions, thin hand-drawn contours, matte gouache/pencil style, softly painted detail, wall/floor/wood texture and sparse uncluttered layout. Both doors and powerbox housing remain closed for this environmental study.
+Change only lighting: ceiling fluorescent tube is now gently illuminated neutral pale warm ivory, evenly raising interior ambient light; walls shift from deep slate-blue to readable muted grayblue/sage. Soft downward light on desk, small contact shadows under CRT and paper, subdued cabinet edges. Keep window nighttime blue and distant campus warm lights. Floor remains matte with NO mirror reflection. No glare, no blooming tube, no sharp rim highlights or cinematic light rays.
+The computer receives electrical power: its small front power LED is softly muted green, but screen stays BLACK because machine startup/login is a separate gameplay action. Do not show terminal/login text, research_strip, access_card, hidden maintenance tag, fuse, open circuits, extra furniture or props. Keep existing paper markings nonlegible. No text, codes, UI, watermark, glossy3D, photorealism, procedural microdetail or sharpening. Purpose: paired consistent room lighting samples; actual electrical box states and readable clue layers will be produced separately.

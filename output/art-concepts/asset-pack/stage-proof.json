@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-10-08T17:13:58.353638+00:00",
+  "operator": "Main",
+  "scope": "201 selected staged files before adding this metadata proof",
+  "staged_audit": {
+    "command": "python -B -X utf8 evidence/integration/audit_staged.py",
+    "exit_code": 0,
+    "files": 201,
+    "findings": [],
+    "limits": "Selected credential patterns and forbidden runtime paths only, not exhaustive security proof."
+  },
+  "whitespace_check": {
+    "command": "git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --cached --check -- . :(exclude)evidence/**",
+    "exit_code": 0
+  },
+  "staged_byte_check": {
+    "exit_code": 0,
+    "sealed_owner_files": 188,
+    "canonical_pngs": 89,
+    "changed_game_paths": 0
+  },
+  "tag_name_collision_check": {
+    "command": "git tag --list art-pack-handpainted-v1",
+    "exit_code": 0,
+    "matching_tags": []
+  },
+  "identity": {
+    "user_name": "liy222",
+    "user_email": "177762329+liy222@users.noreply.github.com",
+    "runtime_model_verified": false
+  },
+  "next": "Normal commit/tag/push; Main records actual remote result separately."
+}

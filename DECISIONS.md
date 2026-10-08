@@ -160,3 +160,9 @@ The user requests the four panel graphics immediately after research-strip inser
 
 ### Closeup / panel verification boundary, 2026-10-08
 Focused QA verifies hidden background mouse/touch/keyboard isolation while valid cabinet/tray interactions continue, earlier public devices/draft with submit gated, save/reload/restore and existing final sequence/EXIT. One targetAPI8 and one build passed; firstR1 scopes and finalremaining68 are joint coverage, not a singlefullgreen browser run. Two newadapter failures preserved with unchanged product. NewEXIT screenshot is dark during existing transition; won/Victory DOM passed. No fullAPI repetition, physical-device/human timing/processrestart/launcher/paid-provider claim.
+
+### Hand-painted package ownership / layering, 2026-10-09
+User accepts soft hand-painted style with detailed objects. New asset package is additive under output/art-concepts/asset-pack and is not installed in frontend. State shells and items remain separate: cabinet content uses separate fuse/tag/photo layers, circuitry/terminal/legend text stays controlled to avoid generated answers. Clean R1 plus R2/R3off/on backgrounds remove baked props. Exact registration and readable overlays require a subsequent integration epoch; art-file completeness does not imply game QA.
+
+### Hand-painted art acceptance boundary, 2026-10-09
+Accept complete standalone84asset+5background package with per-image provenance and preserved revision originals. 32closeups and47transparent objects are actual file counts; new-image count does not equal all builtin calls because repairs/unused drafts exist. Game sources unchanged154 and no duplicate game suite. R3 wood-door cutouts differ from old metal-door panorama; clean room shells plus independent objects and deterministic overlays must be calibrated during later integration. Gallery static validation and selective25-image Main review are explicitly limited.

@@ -1,0 +1,1 @@
+Reused existing sample without regeneration: output/art-concepts/r3-control-room-v1.png (powered-on room sample). Copied to r3_background.png as requested by Main. The separate existing r3-control-room-power-off-v1.png remains the off-lighting reference.

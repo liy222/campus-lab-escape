@@ -1,0 +1,5 @@
+Use case: precise-object-edit
+Input images: Image 1 is the exact painterly style reference. Image 2 is the target terminal design and composition.
+Primary request: repaint Image 2 as a visibly soft hand-painted concept illustration matching Image 1. Preserve the terminal's overall tall silhouette, front view, paper slot, blank screen, center panel, and bottom vents. Change only the rendering style and surface treatment: use broad soft brush strokes, matte gouache-like painted metal, simplified softly shaded planes, quieter edge wear, warm muted olive and brass colors. Retain enough carefully painted seams, screws and slot contours to read as a game prop.
+Composition: same centered complete isolated machine, unchanged proportions.
+Constraints: real transparent background. Keep the slot empty, screen dark, all lights off. No environment, ground shadow to canvas edge, text, numbers, symbols, answers, extra objects or watermark. Avoid photorealism, metallic 3D/PBR highlights, razor-sharp outlines, excessive rust and microtexture.
