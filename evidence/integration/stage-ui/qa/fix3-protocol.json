@@ -1,0 +1,31 @@
+{
+  "fixed3_candidate": "evidence/integration/stage-ui/candidate-fixed3.json",
+  "delta": [
+    "frontend/src/style.css"
+  ],
+  "other151_byte_identical": true,
+  "remove_single_landscape_feedback_declaration_matches_fixed2": true,
+  "equivalent_CRLF_deletion_intervals": [
+    [
+      54139,
+      54179
+    ],
+    [
+      54140,
+      54180
+    ],
+    [
+      54141,
+      54181
+    ]
+  ],
+  "runner_sha256": "d86eafa373e4c4d9237dbf52977d05a005b27b58d7c7ee9efff6f62ad8e6efc1",
+  "syntax_command": [
+    "C:/Program Files/nodejs/node.exe",
+    "--check",
+    "tests/e2e/run_stage_ui.mjs"
+  ],
+  "syntax_exit_code": 0,
+  "static_proof_first_attempt": "Incorrect demand for unique deletion interval; CRLF permits three intervals with identical reverted bytes. Static assertion failed, no browser execution; build still independently exit0.",
+  "necessary_scope": "feedback:812x375 feedback/HUD zero intersection; real HUD mouse/Canvas touch only"
+}

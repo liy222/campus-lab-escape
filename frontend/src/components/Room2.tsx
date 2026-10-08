@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import GameCanvas from '../game/GameCanvas';
 import type { SceneInput } from '../game/bridge';
-import { InventoryBar, RoomHud } from './RoomChrome';
+import { InventoryBar, RoomBackdrop, RoomHud, useCompactStage } from './RoomChrome';
 import type { ActionArguments, Receipt, Tool, VisibleState } from '../api';
 
 interface Props {
@@ -17,6 +17,7 @@ export default function Room2(props: Props) {
   const object = state.objects.find(value => value.object_id === view);
   const clue = object ? state.clues.find(value => value.object_id === object.object_id) : null;
   const login = object?.actions.find(action => action.tool === 'submit_login');
+  const compact = useCompactStage();
   const circuit = view === 'r2_powerbox' ? state.minigames?.circuit : null;
   const onInput = (input: SceneInput) => {
     if (input.kind === 'sequence-device') return;
@@ -34,15 +35,15 @@ export default function Room2(props: Props) {
       if (affordance) onAction(affordance.tool, affordance.arguments);
     }
   };
-  return <section className="visual-room room2-room" aria-label="设备实验室游戏">
-    <RoomHud state={state} onNotebook={props.onNotebook} onAssistant={props.onAssistant} onMenu={props.onMenu}/>
-    <GameCanvas projection={{ state, view: object?.object_id || null, disabled: props.disabled, animation: props.animation, reducedMotion: props.reducedMotion }} onInput={onInput} onAvailability={setAvailable}>
-      {login && <form className="login-form crt-login" onSubmit={event => { event.preventDefault(); onAction('submit_login', { ...login.arguments, username: props.loginCredentials.username, password: props.loginCredentials.password }); }}>
+  const loginForm = login ? <form className="login-form crt-login" onSubmit={event => { event.preventDefault(); onAction('submit_login', { ...login.arguments, username: props.loginCredentials.username, password: props.loginCredentials.password }); }}>
         <h3>LAB TERMINAL</h3><label htmlFor="terminal-username">USER</label><input id="terminal-username" name="username" autoComplete="off" spellCheck={false} value={props.loginCredentials.username} disabled={disabled} onChange={event => props.onLogin('username', event.target.value)}/>
         <label htmlFor="terminal-password">PASS</label><input id="terminal-password" name="password" type="password" autoComplete="off" value={props.loginCredentials.password} disabled={disabled} onChange={event => props.onLogin('password', event.target.value)}/>
         <button className="button" data-scene-action="submit_login" data-target-id="r2_monitor" disabled={disabled}>[ AUTHENTICATE ]</button>
-      </form>}
-    </GameCanvas>
+      </form> : null;
+  return <section className="visual-room room2-room" data-closeup={object?.object_id || 'room'} aria-label="设备实验室游戏">
+    <RoomBackdrop state={state}/>
+    <RoomHud state={state} onNotebook={props.onNotebook} onAssistant={props.onAssistant} onMenu={props.onMenu}/>
+    <GameCanvas projection={{ state, view: object?.object_id || null, disabled: props.disabled, animation: props.animation, reducedMotion: props.reducedMotion }} onInput={onInput} onAvailability={setAvailable}>{!compact && loginForm}</GameCanvas>
     {object && <div className="closeup-controls room2-controls">
       <button className="button closeup-back" disabled={disabled} onClick={() => props.onView(null)}>← 返回房间</button><span className="closeup-title">{object.name}</span>
       <div className="closeup-actions">{object.actions.filter(action => ['inspect', 'take', 'interact'].includes(action.tool)).map(action => <button key={action.tool} className="button" data-scene-action={action.tool} data-target-id={object.object_id} disabled={disabled} onClick={() => onAction(action.tool, action.arguments)}>{action.label}</button>)}
@@ -50,6 +51,7 @@ export default function Room2(props: Props) {
         {selectedItemId && <button className="button use-button" disabled={disabled} onClick={() => onAction('use_item', { item_id: selectedItemId, target_id: object.object_id })}>使用物品 ↗</button>}
         {circuit && <button className="button circuit-submit" data-scene-action="submit_circuit" data-target-id={circuit.target_id} disabled={disabled || circuit.status === 'completed'} onClick={() => { const submit = object.actions.find(action => action.tool === 'submit_circuit'); if (submit) onAction(submit.tool, submit.arguments); }}>提交线路</button>}
       </div>
+      {compact && loginForm}
       {clue && <article className="closeup-reading"><small>{clue.title}</small><p>{clue.text}</p></article>}
       {!clue && !login && <p className="closeup-description">{object.description}</p>}
       {circuit && <p className="circuit-instruction">{circuit.status === 'completed' ? '线路已通过检查。' : '点击线路模块，顺时针旋转90°；调整完成后提交检查。'}</p>}

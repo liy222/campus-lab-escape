@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import GameCanvas from '../game/GameCanvas';
-import { InventoryBar, RoomHud } from './RoomChrome';
+import { InventoryBar, RoomBackdrop, RoomHud } from './RoomChrome';
 import type { SceneInput } from '../game/bridge';
 import type { ActionArguments, Receipt, Tool, VisibleState } from '../api';
 
@@ -29,7 +29,8 @@ export default function Room1(props: Props) {
       if (affordance) onAction(affordance.tool, affordance.arguments);
     }
   };
-  return <section className="visual-room" aria-label="实验准备室游戏">
+  return <section className="visual-room" data-closeup={object?.object_id || 'room'} aria-label="实验准备室游戏">
+    <RoomBackdrop state={state}/>
     <RoomHud state={state} onNotebook={props.onNotebook} onAssistant={props.onAssistant} onMenu={props.onMenu}/>
     <GameCanvas projection={{ state, view: object?.object_id || null, disabled: props.disabled, animation: props.animation, reducedMotion: props.reducedMotion }} onInput={onInput} onAvailability={setAvailable}/>
     {object && <div className="closeup-controls">

@@ -1,0 +1,21 @@
+{
+  "previous_candidate": "evidence/integration/stage-ui/candidate.json",
+  "fixed_candidate": "evidence/integration/stage-ui/candidate-fixed.json",
+  "source_count": 152,
+  "delta": [
+    "frontend/src/App.tsx",
+    "frontend/src/style.css"
+  ],
+  "other150_byte_identical": true,
+  "app_remove_single_conditional_class_matches_original": true,
+  "CSS_prefix_bytes": 54308,
+  "CSS_append_only_original_prefix_hash_matches": true,
+  "runner_sha256": "c92b248a87d986165b171b773699b225afb04d06d1f5f4f14b8168b2f843789c",
+  "syntax_command": [
+    "C:/Program Files/nodejs/node.exe",
+    "--check",
+    "tests/e2e/run_stage_ui.mjs"
+  ],
+  "syntax_exit_code": 0,
+  "necessary_scope": "final: confirm44/selected restore/post-restore key empty/R3 sequence/EXIT; prior passed matrices and mock UI reused"
+}

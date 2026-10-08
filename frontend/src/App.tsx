@@ -95,6 +95,17 @@ export default function App() {
   const visual = state?.level_version === '3.4.0';
   const visualEntry = !state && !['legacy', 'v3.1', 'v3.2', 'v3.3'].includes((import.meta as ImportMeta & { env?: Record<string, string> }).env?.VITE_GAMEPLAY_VERSION || 'v3.4');
   const presentation = useGamePresentation(visualReceipt, state);
+  useEffect(() => {
+    if (!visual && !visualEntry) return;
+    const viewport = window.visualViewport;
+    const update = () => {
+      const stage = document.getElementById('game');
+      stage?.style.setProperty('--stage-height', `${viewport?.height || window.innerHeight}px`);
+      stage?.style.setProperty('--stage-width', `${viewport?.width || window.innerWidth}px`);
+    };
+    update(); viewport?.addEventListener('resize', update); window.addEventListener('resize', update);
+    return () => { viewport?.removeEventListener('resize', update); window.removeEventListener('resize', update); };
+  }, [visual, visualEntry]);
   useEffect(() => { if (!visual) setDrawer(null); }, [visual]);
   useEffect(() => { const close = (event: KeyboardEvent) => { if (event.key === 'Escape' && !dialogRef.current?.open) { if (drawer) setDrawer(null); else setSelectedId(null); } }; window.addEventListener('keydown', close); return () => window.removeEventListener('keydown', close); }, [drawer]);
   useEffect(() => { if (drawer === 'assistant' || drawer === 'menu') document.querySelector<HTMLElement>('.visual-support [role="dialog"] .drawer-close')?.focus(); }, [drawer]);
@@ -256,8 +267,8 @@ export default function App() {
   return <div className={`app-shell ${visual || visualEntry ? 'visual-shell' : ''} ${presentation.reducedMotion ? 'reduce-motion' : ''}`}>
     <span className="presentation-observer" hidden data-audio-state={presentation.audioState} data-audio-cues={presentation.cueCount} data-audio-last-cue={presentation.lastCue} data-reduced-motion={presentation.reducedMotion}/>
     <a className="skip-link" href="#game">跳到游戏内容</a>
-    <header className="topbar"><a className="brand" href="#game"><span className="brand-mark"><Icon kind="device"/></span><span>逃离校园实验室<small>CAMPUS LAB · ESCAPE</small></span></a><div className="top-actions"><span className="local-badge">● 本地游戏</span><button className="button subtle" disabled={pending} onClick={() => session ? setConfirmation('new') : create()}>新游戏</button>{session && <button className="button subtle" disabled={pending} onClick={sync}>{state ? '同步进度' : '继续当前游戏'}</button>}</div></header>
-    <main id="game"><div className="page-heading"><div><p className="eyebrow">一次校园里的小小冒险</p><h1>{won ? '你找到出口了。' : '观察。发现。离开。'}</h1><p className="intro">每个不起眼的物件，都可能藏着下一步。</p></div><div className="chapter-badge"><span>{state?.room.room_id || 'START'}</span><small>{state ? '当前所在' : '准备探索'}</small></div></div>
+    {!visual && !visualEntry && <header className="topbar"><a className="brand" href="#game"><span className="brand-mark"><Icon kind="device"/></span><span>逃离校园实验室<small>CAMPUS LAB · ESCAPE</small></span></a><div className="top-actions"><span className="local-badge">● 本地游戏</span><button className="button subtle" disabled={pending} onClick={() => session ? setConfirmation('new') : create()}>新游戏</button>{session && <button className="button subtle" disabled={pending} onClick={sync}>{state ? '同步进度' : '继续当前游戏'}</button>}</div></header>}
+    <main id="game" className={visual || visualEntry ? 'game-stage' : undefined}>{!visual && !visualEntry && <div className="page-heading"><div><p className="eyebrow">一次校园里的小小冒险</p><h1>{won ? '你找到出口了。' : '观察。发现。离开。'}</h1><p className="intro">每个不起眼的物件，都可能藏着下一步。</p></div><div className="chapter-badge"><span>{state?.room.room_id || 'START'}</span><small>{state ? '当前所在' : '准备探索'}</small></div></div>}
       <div className="feedback" aria-live="polite" aria-atomic="true">{pending && <p className="pending"><span className="spinner"/>正在处理，请稍候…</p>}{error && <p className="error" role="alert">{error}</p>}{notice && <p className="notice">{notice}</p>}</div>
       {!state ? visualEntry ? <Entry hasSession={!!session} disabled={pending} onStart={() => session ? setConfirmation('new') : create()} onContinue={sync}/> : <section className="welcome panel"><div className="welcome-art" aria-hidden="true"><div className="art-window"><span/><span/><span/><span/></div><div className="art-desk"/><div className="art-note"/><div className="art-lamp"/><div className="art-plant"/></div><div className="welcome-copy"><p className="eyebrow">实验室的灯，还亮着</p><h2>从这里开始探索</h2><p>查看房间里的物件，记录发现的线索。收集道具、尝试你的推理，打开通往下一个房间的门。</p><div className="welcome-buttons"><button className="button primary" disabled={pending} onClick={() => session ? setConfirmation('new') : create()}>开始新游戏 →</button>{session && <button className="button" disabled={pending} onClick={sync}>继续当前游戏</button>}</div><small>进度与当前浏览器标签页关联，刷新后可以继续。</small></div></section> : <>
         {won && !visual && <section className="victory" role="status"><Icon kind="spark"/><div><h2>成功逃离实验室</h2><p>所有已发现的线索，仍保留在笔记中。</p></div></section>}
@@ -311,12 +322,12 @@ export default function App() {
             </details>
           </section>
         </div>
-        {history.length > 0 && <details className="history"><summary>最近的行动记录 <span>{history.length}</span></summary><ol>{history.map(entry => <li key={entry.id}>{entry.text}</li>)}</ol></details>}
+        {!visual && history.length > 0 && <details className="history"><summary>最近的行动记录 <span>{history.length}</span></summary><ol>{history.map(entry => <li key={entry.id}>{entry.text}</li>)}</ol></details>}
       </>}
-      <footer><span>校园实验室 · 认真观察，大胆推理</span><span>{state ? `关卡 ${state.level_version} · 进度 ${state.revision}` : '本地探索 · 手动游玩'}</span></footer>
+      {!visual && !visualEntry && <footer><span>校园实验室 · 认真观察，大胆推理</span><span>{state ? `关卡 ${state.level_version} · 进度 ${state.revision}` : '本地探索 · 手动游玩'}</span></footer>}
     </main>
     {visualReceipt?.tool === 'move' && visualReceipt.changed && <div className="room-transition" key={visualReceipt.event_id} aria-hidden="true"/>}
-    <dialog ref={dialogRef} onCancel={() => setConfirmation(null)} onClose={() => { setConfirmation(null); if (confirmation === 'slot-restore') setRestoreSaveId(null); }} aria-labelledby="confirmation-title"><h2 id="confirmation-title">{confirmation === 'new' ? '开始新的游戏？' : confirmation === 'slot-restore' ? '读取指定存档？' : confirmation === 'restore' ? '恢复已保存的进度？' : '重新开始当前游戏？'}</h2><p>{confirmation === 'new' ? '当前标签页将切换到新游戏，旧会话将无法从这里继续。' : confirmation === 'slot-restore' ? `当前进度将替换为“${saveSlots.find(slot => slot.save_id === restoreSaveId)?.name || '所选存档'}”保存的状态。读取后会清除当前临时输入和顺序草稿。` : confirmation === 'restore' ? '当前进度将替换为旧版单槽存档中的场景、道具和已发现线索。单槽存档会保留。' : '这会清空当前探索进度和线索；已有存档仍可读取。'} </p><div className="dialog-actions"><button className="button" autoFocus onClick={() => { setConfirmation(null); setRestoreSaveId(null); }}>取消</button><button className="button primary" disabled={pending} onClick={() => confirmation === 'new' ? create() : confirmation === 'slot-restore' ? restoreSelectedSlot() : control(confirmation === 'restore' ? 'restore' : 'reset')}>{confirmation === 'slot-restore' ? '读取此存档' : confirmation === 'restore' ? '确认恢复' : '确认开始'}</button></div></dialog>
+    <dialog ref={dialogRef} className={visual || visualEntry ? 'stage-confirmation' : undefined} onCancel={() => setConfirmation(null)} onClose={() => { setConfirmation(null); if (confirmation === 'slot-restore') setRestoreSaveId(null); }} aria-labelledby="confirmation-title"><h2 id="confirmation-title">{confirmation === 'new' ? '开始新的游戏？' : confirmation === 'slot-restore' ? '读取指定存档？' : confirmation === 'restore' ? '恢复已保存的进度？' : '重新开始当前游戏？'}</h2><p>{confirmation === 'new' ? '当前标签页将切换到新游戏，旧会话将无法从这里继续。' : confirmation === 'slot-restore' ? `当前进度将替换为“${saveSlots.find(slot => slot.save_id === restoreSaveId)?.name || '所选存档'}”保存的状态。读取后会清除当前临时输入和顺序草稿。` : confirmation === 'restore' ? '当前进度将替换为旧版单槽存档中的场景、道具和已发现线索。单槽存档会保留。' : '这会清空当前探索进度和线索；已有存档仍可读取。'} </p><div className="dialog-actions"><button className="button" autoFocus onClick={() => { setConfirmation(null); setRestoreSaveId(null); }}>取消</button><button className="button primary" disabled={pending} onClick={() => confirmation === 'new' ? create() : confirmation === 'slot-restore' ? restoreSelectedSlot() : control(confirmation === 'restore' ? 'restore' : 'reset')}>{confirmation === 'slot-restore' ? '读取此存档' : confirmation === 'restore' ? '确认恢复' : '确认开始'}</button></div></dialog>
   </div>;
 }
 

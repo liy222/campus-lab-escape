@@ -1,0 +1,26 @@
+{
+  "stage": "candidate/evidence pre-document audit",
+  "privacy_check": {
+    "chunk": "433acd",
+    "exit_code": 0,
+    "staged_files": 116,
+    "findings": [],
+    "scope": "selected credential patterns/runtime paths, not exhaustive"
+  },
+  "whitespace_check": {
+    "chunk": "90a286",
+    "exit_code": 0,
+    "CRLF_allowed": true,
+    "evidence_excluded_from_whitespace": true
+  },
+  "staged_candidate_matches": {
+    "frontend/src/App.tsx": true,
+    "frontend/src/components/Room1.tsx": true,
+    "frontend/src/components/Room2.tsx": true,
+    "frontend/src/components/Room3.tsx": true,
+    "frontend/src/components/RoomChrome.tsx": true,
+    "frontend/src/style.css": true
+  },
+  "new_run_count": 0,
+  "unrelated_untracked_not_staged": true
+}

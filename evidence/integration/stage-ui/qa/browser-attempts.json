@@ -1,0 +1,147 @@
+{
+  "attempts": [
+    {
+      "run": "evidence/integration/stage-ui/qa/20261008T075104741Z-browser/run.json",
+      "exit_code": 1,
+      "records": 7,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "D:\\深度能力\\tests\\e2e\\run_stage_ui.mjs",
+        "evidence/integration/stage-ui/candidate.json"
+      ],
+      "issues": [
+        {
+          "check": "runner",
+          "error": "Public fixture use_item: PRECONDITION_FAILED",
+          "stack": [
+            "    at api (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:40:3)",
+            "    at async run (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:110:109)",
+            "    at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:131:193"
+          ]
+        }
+      ],
+      "source_before_after_match": true
+    },
+    {
+      "run": "evidence/integration/stage-ui/qa/20261008T075147443Z-browser/run.json",
+      "exit_code": 1,
+      "records": 52,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "D:\\深度能力\\tests\\e2e\\run_stage_ui.mjs",
+        "evidence/integration/stage-ui/candidate.json"
+      ],
+      "issues": [
+        {
+          "check": "runner",
+          "error": "Expected values to be strictly equal:\n\n422 !== 200\n",
+          "stack": [
+            "    at response (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:31:283)",
+            "    at runNextTicks (node:internal/process/task_queues:65:5)",
+            "    at process.processImmediate (node:internal/timers:472:9)",
+            "    at async run (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:116:90)",
+            "    at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:131:193"
+          ]
+        }
+      ],
+      "source_before_after_match": true
+    },
+    {
+      "run": "evidence/integration/stage-ui/qa/20261008T075537944Z-browser/run.json",
+      "exit_code": 1,
+      "records": 45,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "D:\\深度能力\\tests\\e2e\\run_stage_ui.mjs",
+        "evidence/integration/stage-ui/candidate.json",
+        "--only=remaining"
+      ],
+      "issues": [
+        {
+          "check": "runner",
+          "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '游戏菜单', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button aria-label=\"游戏菜单\" class=\"hud-button\">☰</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button aria-label=\"关闭面板\" class=\"drawer-backdrop\"></button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button aria-label=\"关闭面板\" class=\"drawer-backdrop\"></button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    54 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button aria-label=\"关闭面板\" class=\"drawer-backdrop\"></button> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+          "stack": [
+            "    at menu (D:\\深度能力\\tests\\e2e\\run_stage_ui.mjs:45:199)",
+            "    at async panels (D:\\深度能力\\tests\\e2e\\run_stage_ui.mjs:96:3)",
+            "    at async run (D:\\深度能力\\tests\\e2e\\run_stage_ui.mjs:118:50)",
+            "    at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:131:193"
+          ]
+        }
+      ],
+      "source_before_after_match": true
+    },
+    {
+      "run": "evidence/integration/stage-ui/qa/20261008T075756709Z-browser/run.json",
+      "exit_code": 1,
+      "records": 46,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "D:\\深度能力\\tests\\e2e\\run_stage_ui.mjs",
+        "evidence/integration/stage-ui/candidate.json",
+        "--only=tail"
+      ],
+      "issues": [
+        {
+          "check": "runner",
+          "error": "Expected values to be strictly equal:\n\n409 !== 201\n",
+          "stack": [
+            "    at response (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:31:624)",
+            "    at async panels (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:96:144)",
+            "    at async run (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:118:57)",
+            "    at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:131:193"
+          ]
+        }
+      ],
+      "source_before_after_match": true
+    },
+    {
+      "run": "evidence/integration/stage-ui/qa/20261008T125448770Z-browser/run.json",
+      "exit_code": 1,
+      "records": 46,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "D:\\深度能力\\tests\\e2e\\run_stage_ui.mjs",
+        "evidence/integration/stage-ui/candidate.json",
+        "--only=tail"
+      ],
+      "issues": [
+        {
+          "check": "runner",
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'unavailable'\n- 'mock'\n",
+          "stack": [
+            "    at panels (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:100:87)",
+            "    at async run (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:118:57)",
+            "    at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:131:193"
+          ]
+        }
+      ],
+      "source_before_after_match": true
+    },
+    {
+      "run": "evidence/integration/stage-ui/qa/20261008T125703494Z-browser/run.json",
+      "exit_code": 1,
+      "records": 63,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "D:\\深度能力\\tests\\e2e\\run_stage_ui.mjs",
+        "evidence/integration/stage-ui/candidate.json",
+        "--only=finish"
+      ],
+      "issues": [
+        {
+          "check": "runner",
+          "error": "Controls smaller than 44px\n+ actual - expected\n\n+ [\n+   {\n+     class: 'button',\n+     size: {\n+       bottom: 524.75,\n+       height: 40,\n+       right: 731,\n+       width: 54,\n+       x: 677,\n+       y: 484.75\n+     }\n+   },\n+   {\n+     class: 'button primary',\n+     size: {\n+       bottom: 524.75,\n+       height: 40,\n+       right: 831,\n+       width: 90,\n+       x: 741,\n+       y: 484.75\n+     }\n+   }\n+ ]\n- []\n",
+          "stack": [
+            "    at geometry (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:83:10)",
+            "    at async panels (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:105:117)",
+            "    at async run (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:122:66)",
+            "    at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_stage_ui.mjs:134:193"
+          ]
+        }
+      ],
+      "source_before_after_match": true
+    }
+  ],
+  "unexecuted_quota_action": "2026-10-08 after fourth adapter sync fix: automatic approval review usage-limit failure; action was not executed, not a test exit or unsafe determination",
+  "finding": "Sixth actual run active restore dialog has two 40px buttons; product finding, no original failure PNG; Main finding-dialog.json owns integration finding"
+}

@@ -19,6 +19,8 @@
 v4.2 实际完整API一次127方法/337子项、295.14秒、exit0；build一次exit0。浏览器联合覆盖：第二轮290记录的R1/R2前段、第五轮195记录的R2后段、第六轮245记录的R3/通关，以及最终finish283记录exit0/issues[]的存档、手机结算、触摸/键盘、生产首屏与历史入口。六次新QA adapter失败完整保留；不相加重复记录，不宣称单轮全路线全绿。Main匹配152源码与238证据hash并目视关键实际PNG。见 [Main验收](evidence/upgrade/v4.2/accepted.json)、[独立结果](evidence/upgrade/v4.2/qa/result.json) 与 [简明报告](review/findings/visual-v42.md)。
 
 限制：缺图已实测，模块import失败注入未测；根CMD未交互启动；没有真人游玩时长、音质评价或真实provider质量宣称。旧弃用/引擎包大小警告仍保留，无付费调用。v4.2 源码提交74f6272与标签已远端核实，作者/提交者liy222、仓库私有，见 [同步证据](evidence/upgrade/v4.2/sync.json)。更早阶段的运行范围与失败记录见各自accepted/result；下文保留历史事实。
+
+2026-10-08 用户界面融合修正已按独立联合证据验收：桌面HUD/背包/表单融入真实图形画面，移动端采用同舞台内紧凑面板；未复现两套游戏同时显示。三处按钮/横屏提示细节已修复。Main核对152源码、65件新QA产物与238件旧证据，四次不同候选build均0，最终end87/feedback63局部运行均0，七次失败保留且不累加计数。后端规则/API/AI/档案与84SVG未变；正常提交/新tag v4.2-stage-ui/push待完成。见 [修正验收](evidence/integration/stage-ui/accepted.json)。
 <!-- upgrade-current-end -->
 
 updated_at: 2026-10-06 (Asia/Shanghai)

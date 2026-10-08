@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import GameCanvas from '../game/GameCanvas';
 import type { SceneInput } from '../game/bridge';
-import { InventoryBar, RoomHud } from './RoomChrome';
+import { InventoryBar, RoomBackdrop, RoomHud } from './RoomChrome';
 import type { ActionArguments, Receipt, Tool, VisibleState } from '../api';
 
 interface Props {
@@ -29,7 +29,8 @@ export default function Room3(props: Props) {
     else if (input.tool === 'inspect') onAction('inspect', { object_id: input.targetId });
     else { const action = state.objects.find(object => object.object_id === input.targetId)?.actions.find(action => action.tool === input.tool); if (action) onAction(action.tool, action.arguments); }
   };
-  return <section className="visual-room room3-room" aria-label="出口控制室游戏">
+  return <section className="visual-room room3-room" data-closeup={object?.object_id || 'room'} aria-label="出口控制室游戏">
+    <RoomBackdrop state={state}/>
     <RoomHud state={state} onNotebook={props.onNotebook} onAssistant={props.onAssistant} onMenu={props.onMenu}/>
     <GameCanvas projection={{ state, view: object?.object_id || null, disabled: props.disabled, animation: props.animation, sequenceDraft: props.sequenceDraft, reducedMotion: props.reducedMotion }} onInput={onInput} onAvailability={setAvailable} onAnimation={setMarker}/>
     {object && <div className="closeup-controls room3-controls">

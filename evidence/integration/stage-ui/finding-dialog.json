@@ -1,0 +1,20 @@
+{
+  "finding": "Active selected-restore-confirm buttons are 40px high, below planned44px touch target",
+  "source_candidate": "46239d32ef7d07aba4cc94211cfb7021feb16506e7c6a08ded003f7e81ba602b",
+  "formal_run": "qa/20261008T125703494Z-browser/run.json",
+  "actual_rects": [
+    {
+      "button": "cancel",
+      "width": 54,
+      "height": 40
+    },
+    {
+      "button": "restore",
+      "width": 90,
+      "height": 40
+    }
+  ],
+  "screenshot_limitation": "Failed geometry assertion precedes screenshot; no failed-confirm PNG exists",
+  "authorization": "Existing Frontend owner narrow App.tsx/style.css visual-only conditional dialog class/sizes; preserve legacy behavior",
+  "qa_gate": "QA stopped source-dependent runs; Main fixed candidate freeze after OwnerSTOP, narrow affected build/remaining checks only; retain previous evidence"
+}

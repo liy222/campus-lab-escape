@@ -1,0 +1,41 @@
+{
+  "epoch": "stage-ui delivery documentation",
+  "status": "SOURCE STOP",
+  "files": {
+    "README.md": "0ea23182e2efd142bcf01ab876a0e1a4b69aed4e278c969052d5cae2e23560fb",
+    "release/UPGRADES.md": "b962e40450dcc75047d7d993e85da96485b93564697560752f25165e12af4d1d"
+  },
+  "acceptance": {
+    "accepted_record": "evidence/integration/stage-ui/accepted.json",
+    "accepted_sha256": "d3852a501ceabe70d5aaa7b994bc8f26240f59c32ef2c93b56f8e0cea1a95bd4",
+    "qa_result": "evidence/integration/stage-ui/qa/result.json",
+    "qa_result_sha256": "d66c5b06cce7e03daa280dc1d24391d18e36c3872482f7c43dff8e51dd521f38",
+    "candidate": "candidate-fixed3.json",
+    "candidate_sha256": "d026164d5a96787255c3394a93a03d2fc2e14f78301a66f7e1a225de1098f203",
+    "verified_counts": {
+      "sources": 152,
+      "QA_artifacts": 65,
+      "immutable": 153,
+      "old_v42_artifacts": 238
+    },
+    "builds": "Four changed-product candidate builds exited 0.",
+    "browser": "Seven failed epochs retained; final end 87 exit 0 and feedback 63 exit 0/issues []; no summing and no single full-green claim.",
+    "closed_findings": [
+      "visible restore dialog button40px",
+      "native mobile inventory button42px",
+      "landscape feedback/HUD visual overlap"
+    ],
+    "full_api_runs": 0,
+    "paid_calls": 0
+  },
+  "documentation_diff_check": {
+    "command": "git -c core.autocrlf=false -c core.whitespace=cr-at-eol diff --check",
+    "exit_code": 0
+  },
+  "line_endings": "UTF-8 without BOM; LF only",
+  "source_tests_assets_modified": false,
+  "limitations": [
+    "No suite rerun, commit, or push in this documentation epoch.",
+    "Tag v4.2-stage-ui remains pending Main normal commit/push; existing v4.2-final-rusty-visual tag remains verified at commit 74f6272b9204f352a6b598d3bd4273452f8184be."
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "finding": "812x375 transientfeedback visually overlaps part of notebook HUD text, although pointer-events:none keeps clicks reachable",
+  "observed_png": "qa/20261008T130822346Z-browser/R3-sequence-812x375.png",
+  "functional_run": "87records exit0/issues[]; visual overlap is separate actual finding",
+  "root_cause": "later generic feedbacktop overrides earlier landscape62px top",
+  "authorization": "Existing Frontend style.css only final landscape62px positioning declaration, legacy unaffected",
+  "validation": "newMainfixed3 freeze; affectedbuild and one812x375 feedback/HUD no visual intersection and reachability only; allpriorroutes/archives/Win preserved"
+}

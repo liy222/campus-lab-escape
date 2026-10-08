@@ -11,7 +11,7 @@
 | v3.4 | 跨房间线索、AI 三级提示、结算与完整灰盒通关 | 联合 QA 接受并已推送；多时刻存档增量也已联合 QA 接受并推送 |
 | v4.0 | 引入 Phaser，完成 Room 1 固定视角画面 | 联合 QA 接受并 SOURCE STOP；commit `1047e293ade70e446c9c76be0a0d751f3e3ad81a` 与 tag `v4.0-room1-rusty-visual` 已推送核实 |
 | v4.1 | 完成 Room 2 正式画面 | 联合 QA 接受并 SOURCE STOP；commit `161d3e6f25406d44eb55c48c295b86c7289d8f2c` 与 tag `v4.1-room2-rusty-visual` 已推送核实 |
-| v4.2 | 完成 Room 3、统一 UI、音效、动画与最终优化 | 联合 QA 接受并 SOURCE STOP；计划标签 `v4.2-final-rusty-visual` 待 Main 正常提交与推送 |
+| v4.2 | 完成 Room 3、统一 UI、音效、动画与最终优化 | 联合 QA 接受并 SOURCE STOP；commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实 |
 
 ## v3.0 已完成范围
 
@@ -84,6 +84,13 @@ Room 1、Room 2 与 Room 3 均使用 Phaser 4.2.1 Canvas、原创 SVG、固定�
 完整 API 套件一次通过：127个方法、337个子项、295.14秒、exit 0，含1项既有 Starlette/httpx 弃用警告。前端 build exit 0；主 bundle 294.66 kB（gzip 91.24 kB），Phaser bundle 1,388.18 kB（gzip 368.11 kB），Vite 的大 chunk 警告仍存在。Chrome 覆盖由多个保留 epoch 和必要定向补完联合组成：R1/R2前段290项、R2后段195项、R3到胜利245项，最终 finish epoch 283项 exit 0/issues为空；六个失败的 runner adapter epoch 均留档，最终证据不是单轮完整全绿运行，重复检查不相加。Main 接受时152个源码与238件 QA 证据均与冻结候选哈希匹配，正式 QA 没有产品修复，付费调用0。
 
 联合覆盖包括三房间Canvas路线、R3公开顺序草稿与服务端验证、五种出口状态与阻断状态、服务器胜利统计、存档/恢复/重载/重启、移动触屏与键盘、静音/减少动画、缺失素材阻断重试和生产环境按需加载。限制包括：模块导入故障注入未覆盖；根目录 CMD 未交互启动；没有真人音效质量或通关时长、真实 provider 质量或历史敏感数据库访问验证。完整命令、失败 epoch、范围与限制见 [`v4.2 验收记录`](../evidence/upgrade/v4.2/accepted.json) 与 [`独立 QA 报告`](../evidence/upgrade/v4.2/qa/result.json)。v4.2 commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实；当前阶段 SOURCE STOP。
+
+## Stage UI 版式修正：联合 QA 接受
+
+用户希望游戏图形画面周围的界面融入画面。修正后，桌面 HUD、背包和操作控件叠在实际 Canvas 画框内，登录表单位于终端的物理屏幕区域；窄屏的阅读/表单可作为场景内面板展开。默认视觉入口不渲染旧网页外壳，legacy 入口仍保留且与视觉入口互斥。此处记录的是版式调整，不代表曾复现旧灰盒与新场景重复显示。关卡规则、API、AI、多时刻存档和84项原创 SVG 资产未变。
+
+联合 QA 接受最终152个源码候选；四个发生产品变更的候选各有一次 build exit 0。浏览器证据保留7个失败 epoch，另有最终 `end` 87项 exit 0 与 `feedback` 63项 exit 0/issues为空；跨候选结果不累加，也不是单轮完整全绿。已关闭三个发现：恢复确认对话框按钮高度、移动背包按钮尺寸、横屏反馈提示与 HUD 重叠。没有新跑完整 API 套件，付费调用0。范围、截图、失败尝试与限制见 [`stage-ui 验收记录`](../evidence/integration/stage-ui/accepted.json)、[`stage-ui QA 结果`](../evidence/integration/stage-ui/qa/result.json) 和 [`独立报告`](../review/findings/stage-ui.md)。`v4.2-stage-ui` 标签待 Main 正常提交和推送；已推送的 `v4.2-final-rusty-visual` 历史标签不改写。
+
 ## 阶段边界
 
-当前 v4.2 三房间视觉阶段已按联合证据接受并 SOURCE STOP。该标签已完成正常同步；每阶段只交付计划内所需变更，不为升级路线发起付费实验。既有双击启动、手动 AI 模式与 API Key 说明继续有效；v4.2 QA 未进行付费模型调用、真人音效质量或真人通关时长验收。
+v4.2 三房间视觉交付已按联合证据接受并 SOURCE STOP，commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实。其后的 stage-ui 版式修正已验收，`v4.2-stage-ui` 标签待 Main 正常同步。每阶段只交付计划内所需变更，不为升级路线发起付费实验。既有双击启动、手动 AI 模式与 API Key 说明继续有效；QA 未进行付费模型调用、真人音效质量或真人通关时长验收。
