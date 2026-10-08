@@ -181,3 +181,6 @@ BothOwner SOURCE STOP: Frontend5paths build0/narrowtrueCanvas0, Backend2py+2Spec
 
 ### Closeup / panel accepted, 2026-10-08
 Focused independent joint QA accepted; 154-source candidate unchanged. Complete mechanical Delivery notes, selected audit, normal liy222 sourcecommit/newtagv4.2-closeup-panel/push and remote verification. No additional test/product work required. Evidence: evidence/integration/closeup-panel/accepted.json.
+
+### Closeup / panel remote sealed, 2026-10-08
+Sourcecommit c76e77ec9129f32606bb5dee225621cae154427d andnewtag v4.2-closeup-panel verified onprivate remote; GitHubauthor+committerliy222. Selected60files audit0 and stagedrawmatch/source-docwhitespace0. Main owns only mechanicalpost-sync README/UPGRADES/rootmetadata/sync evidence; Deliverydocs.json previoushashes historical. Frozen154/25newQA artifacts unchanged; no retest/productedit/paid/newagent. Both user-requested fixes complete; sameversion saves compatible.

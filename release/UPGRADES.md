@@ -95,7 +95,7 @@ Room 1、Room 2 与 Room 3 均使用 Phaser 4.2.1 Canvas、原创 SVG、固定�
 
 特写切换现在销毁旧交互区域，并校验输入仍属于当前热点；特写背景本身不可点击，柜体和托盘中的合法子物品仍可点选。Room 3 在 research_strip 插入后即显示四台设备图形并允许编辑本地草稿，最终提交仍要求服务端处于 `FINAL_CHECK`。v3.3 的旧投影与现有存档行为保持兼容。重启服务并刷新页面即可使用，现有存档无需重开。
 
-定向 API 8项 exit 0，前端 build exit 0。浏览器联合覆盖了首轮 R1 项和最终 R2/R3 remaining 68项 exit 0；两次新 adapter 失败保留在记录中。结果跨范围联合，不表示单次完整全绿路线；没有重复全套 API，也没有付费调用。EXIT 截图恰逢房间到达过渡而偏暗，功能结算 DOM 通过，先前验收的清晰胜利画面未变。详细命令、截图与限制见 [`closeup-panel 验收记录`](../evidence/integration/closeup-panel/accepted.json)、[`QA 结果`](../evidence/integration/closeup-panel/qa/result.json) 和 [`独立报告`](../review/findings/closeup-panel.md)。计划标签 `v4.2-closeup-panel` 待 Main 正常提交和推送；stage-ui 的既有 commit/tag 历史保持不变。
+定向 API 8项 exit 0，前端 build exit 0。浏览器联合覆盖了首轮 R1 项和最终 R2/R3 remaining 68项 exit 0；两次新 adapter 失败保留在记录中。结果跨范围联合，不表示单次完整全绿路线；没有重复全套 API，也没有付费调用。EXIT 截图恰逢房间到达过渡而偏暗，功能结算 DOM 通过，先前验收的清晰胜利画面未变。详细命令、截图与限制见 [`closeup-panel 验收记录`](../evidence/integration/closeup-panel/accepted.json)、[`QA 结果`](../evidence/integration/closeup-panel/qa/result.json) 和 [`独立报告`](../review/findings/closeup-panel.md)。修正 commit `c76e77ec9129f32606bb5dee225621cae154427d` 与标签 `v4.2-closeup-panel` 已推送核实，GitHub 作者与提交者均为 `liy222`；stage-ui 的既有 commit/tag 历史保持不变。
 
 ## 阶段边界
 
