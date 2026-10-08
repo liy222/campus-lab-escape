@@ -1,0 +1,150 @@
+{
+  "stage": "v4.0 narrow feedback presentation fix",
+  "status": "SOURCE STOP",
+  "changed_source_files": [
+    "frontend/src/style.css"
+  ],
+  "source_files": [
+    {
+      "path": "frontend/package.json",
+      "bytes": 522,
+      "sha256": "43add5f3f63f714e3964ade9d84b22db62f0c04de9666062134ca002e3e5c4a5"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "bytes": 63930,
+      "sha256": "eb6789fb44bacb5d8d7f7386155d76d916bef886f95dc152fb002f6c1d44d491"
+    },
+    {
+      "path": "frontend/src/App.tsx",
+      "bytes": 44017,
+      "sha256": "a4f6221acf0949f2a3bbcb1b9c252414dd60f960c6cbecb93ea33c0707e096fb"
+    },
+    {
+      "path": "frontend/src/Assistant.tsx",
+      "bytes": 20105,
+      "sha256": "31759a20695dd614ea1abbef4c928180cdc9e83c85f2a7b9e3ef040e596998d5"
+    },
+    {
+      "path": "frontend/src/style.css",
+      "bytes": 44399,
+      "sha256": "f977d6ca7c6b7fa17ea157d586ffe8c6d7c8031bce277dd165e9181bd157c51e"
+    },
+    {
+      "path": "frontend/src/components/Notebook.tsx",
+      "bytes": 1505,
+      "sha256": "83f2c9cccd4df9debf52cc6ab25dc27dc67609b497ed9f8b0ccddfd789826ef6"
+    },
+    {
+      "path": "frontend/src/components/Room1.tsx",
+      "bytes": 5492,
+      "sha256": "9f2d57c9a50f3bbdd33313d6016a0f321c2a3af99f3b5ba2ea502525328e0a93"
+    },
+    {
+      "path": "frontend/src/components/panelFocus.ts",
+      "bytes": 662,
+      "sha256": "423d03a704b3193a02599932ce44781b8cd5dfac4f4393a1947c0297e590220c"
+    },
+    {
+      "path": "frontend/src/game/GameCanvas.tsx",
+      "bytes": 3683,
+      "sha256": "dc17837f85ccdb9fd20850426775ac13bd423d289ed4911aac9b1d1ffc26fadd"
+    },
+    {
+      "path": "frontend/src/game/Room1Scene.ts",
+      "bytes": 10045,
+      "sha256": "b227025109cf3b3632e24d4d7b9143788c831a4762e2e4aea3f0f77add67252e"
+    },
+    {
+      "path": "frontend/src/game/bridge.ts",
+      "bytes": 783,
+      "sha256": "b72cd9c2db8f7ffb117a5777088d5141ab4de7bb2293023884dcffead99f408b"
+    }
+  ],
+  "source_set_sha256": "1693974309a89c13f59550689d469e4a18aabec4df5549035a538ca473562605",
+  "exact_delta_proof": "Reversing5 explicit CSS replacements reproduces the prior frontend.json raw style SHA256; other10 owned source raw hashes remain identical.",
+  "before_style": {
+    "path": "frontend/src/style.css",
+    "bytes": 44373,
+    "sha256": "b137365fee862c9253a95654c0da571f7037547ab48912d1922475f4f3f20d84"
+  },
+  "after_style": {
+    "path": "frontend/src/style.css",
+    "bytes": 44399,
+    "sha256": "f977d6ca7c6b7fa17ea157d586ffe8c6d7c8031bce277dd165e9181bd157c51e"
+  },
+  "behavior": "Status/error feedback occupies an independent48px normal-flow band above HUD. Room and desktop canvas reserve its height. No fixed feedback overlays clue paper, eyepiece, return buttons or code input. Existing aria-live and errors unchanged.",
+  "actual_commands": [
+    {
+      "command": "node.exe evidence/upgrade/v4.0/frontend-feedback-fix4/runner.cjs",
+      "cwd": "D:/深度能力",
+      "exit_code": 0,
+      "tool_chunk": "c524fe"
+    },
+    {
+      "command": "Python raw SHA256 comparison and inverse5 CSS-replacement proof",
+      "exit_code": 0
+    }
+  ],
+  "owner_checks": {
+    "scope": "owner development smoke; not independent QA/human playtest",
+    "checks": [
+      "actual Canvas assets loaded canvas",
+      "1920px: clock/record/plaque original text, return and cabinet lock input unobscured; error visible",
+      "1280px: clock/record/plaque original text, return and cabinet lock input unobscured; error visible",
+      "375px: clock/record/plaque original text, return and cabinet lock input unobscured; error visible"
+    ],
+    "errors": []
+  },
+  "images": [
+    "evidence/upgrade/v4.0/frontend-feedback-fix4/clock-1920.png",
+    "evidence/upgrade/v4.0/frontend-feedback-fix4/error-1920.png",
+    "evidence/upgrade/v4.0/frontend-feedback-fix4/clock-1280.png",
+    "evidence/upgrade/v4.0/frontend-feedback-fix4/error-1280.png",
+    "evidence/upgrade/v4.0/frontend-feedback-fix4/clock-375.png",
+    "evidence/upgrade/v4.0/frontend-feedback-fix4/error-375.png"
+  ],
+  "viewed_images": [
+    "frontend-feedback-fix3/clock-1920.png",
+    "frontend-feedback-fix3/clock-375.png",
+    "frontend-feedback-fix3/error-1280.png",
+    "frontend-feedback-fix4/clock-1920.png"
+  ],
+  "retained_attempts": [
+    {
+      "tool_chunk": "d9ae9c",
+      "exit_code": 1,
+      "reason": "Harness preparation read defaultGBK rather thanUTF8; runner not created."
+    },
+    {
+      "path": "frontend-feedback-fix",
+      "tool_chunk": "cbf503",
+      "exit_code": 1,
+      "reason": "Harness clicked during viewport resize before Phaser scale update; corrected harness by waiting for matching canvas/host width."
+    },
+    {
+      "path": "frontend-feedback-fix2",
+      "tool_chunk": "510a9a",
+      "exit_code": 1,
+      "reason": "Unrelated harness expectation wrongly demanded code input remain after wrong server action; existing App clears code state. Removed extra expectation, no product logic changed."
+    },
+    {
+      "path": "frontend-feedback-fix3",
+      "tool_chunk": "8452a8",
+      "exit_code": 0,
+      "reason": "Feedback overlap checks passed; image review showed added status height should be reserved by desktop Canvas to keep bag in viewport."
+    },
+    {
+      "path": "frontend-feedback-fix4",
+      "tool_chunk": "c524fe",
+      "exit_code": 0,
+      "reason": "Final bounded screenshot smoke passed at1920/1280/375; errors[]"
+    }
+  ],
+  "limitations": [
+    "This is Frontend Owner development screenshot smoke, not independentQA.",
+    "No full route/API rerun or build performed during this narrow owner epoch; Main will freeze candidate-fixed and independentQA will run related images plus build.",
+    "No backend/API/session/save/AI logic changed; no real provider request or paid call.",
+    "Concurrent asset corrections remain separate Assets Owner evidence and must be included in candidate-fixed formal image/build epoch."
+  ]
+}

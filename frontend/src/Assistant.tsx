@@ -5,9 +5,9 @@ const reasons: Record<string, string> = { MODEL_TIMEOUT: '模型未能在时间�
 const proposalLabels = { pending: '待确认 · proposed', committed: '已执行 · committed', cancelled: '已取消 · cancelled', expired: '已过期', invalidated: '已失效', rejected: '已拒绝 · rejected', unknown: '结果待核对' };
 type ProposalView = { proposal: Proposal; receipt: Receipt | null; outcome: keyof typeof proposalLabels; message?: string; replayed?: boolean };
 type Trace = { id: string; eventId: string | null; outcome: string; tool: string; arguments: ActionArguments; revision: number; generation: string; message: string; receipt?: Receipt };
-interface Props { session: Session; state: VisibleState; manualPending: boolean; needsSync: boolean; onState: (state: VisibleState, reconciled?: boolean) => boolean; onUncertain: (value: boolean) => void; onForbidden: (sessionId: string) => void }
+interface Props { session: Session; state: VisibleState; manualPending: boolean; needsSync: boolean; onState: (state: VisibleState, reconciled?: boolean) => boolean; onUncertain: (value: boolean) => void; onForbidden: (sessionId: string) => void; onReference?: (clueId: string) => void }
 
-export default function Assistant({ session, state, manualPending, needsSync, onState, onUncertain, onForbidden }: Props) {
+export default function Assistant({ session, state, manualPending, needsSync, onState, onUncertain, onForbidden, onReference }: Props) {
   const [question, setQuestion] = useState('');
   const [provider, setProvider] = useState<AiSettings['provider']>('mock');
   const [apiKey, setApiKey] = useState('');
@@ -114,7 +114,7 @@ export default function Assistant({ session, state, manualPending, needsSync, on
     finally { busy.current = false; setPending(null); }
   }
   function references(ids: string[]) {
-    return <ul className="ai-references">{ids.map(id => { const clue = state.clues.find(clue => clue.clue_id === id); return clue ? <li key={id}><a href={`#clue-${id}`}>{clue.title} ↗</a></li> : null; })}</ul>;
+    return <ul className="ai-references">{ids.map(id => { const clue = state.clues.find(clue => clue.clue_id === id); return clue ? <li key={id}><a href={`#clue-${id}`} onClick={event => { if (onReference) { event.preventDefault(); onReference(id); } }}>{clue.title} ↗</a></li> : null; })}</ul>;
   }
   return <section className={`assistant ai-panel panel ${hintMode ? 'hint-mode' : ''}`} aria-labelledby="assistant-title">
     <div className="panel-heading"><h2 id="assistant-title">AI 探索伙伴</h2>{currentTurn && <span className="provider-badge">{currentTurn.usage.provider === 'mock' ? '本次回答：免费模拟' : currentTurn.usage.provider === 'deepseek' ? '本次回答：真实 DeepSeek' : `本次回答服务：${currentTurn.usage.provider}`}</span>}</div>

@@ -1,0 +1,144 @@
+{
+  "stage": "v4.0",
+  "baseline": "baseline-candidate.json",
+  "design": "docs/visual-plan.md",
+  "status": "v4.0 implementation GO after actual independent baseline API/build passed",
+  "ownership": {
+    "Main": [
+      "AGENTS.md",
+      "PLAN.md",
+      "STATUS.md",
+      "DECISIONS.md",
+      "docs/visual-plan.md (accepted-input copy only)",
+      "evidence/upgrade/v4.0 Main integration",
+      "git"
+    ],
+    "visual_frontend": [
+      "frontend/src/App.tsx",
+      "frontend/src/Assistant.tsx (presentation only)",
+      "frontend/src/style.css",
+      "frontend/src/game/",
+      "frontend/src/components/",
+      "frontend/package.json",
+      "frontend/package-lock.json",
+      "frontend/tsconfig.json (only if required)",
+      "evidence/upgrade/v4.0/frontend.json"
+    ],
+    "visual_assets": [
+      "frontend/src/assets/ (only R1 now)",
+      "README.md/release/UPGRADES.md mechanical stage docs after actual QA",
+      "evidence/upgrade/v4.0/assets.json",
+      "evidence/upgrade/v4.0/delivery.json"
+    ],
+    "upgrade_qa_oct07": [
+      "new tests/e2e visual runner",
+      "review/findings/visual-v4*.md",
+      "evidence/upgrade/v4.0/baselineQA",
+      "evidence/upgrade/v4.0/qa"
+    ]
+  },
+  "actual_spawn_requests": [
+    {
+      "tool_result_task": "/root/visual_frontend",
+      "requested_model": "gpt-6.1-sol",
+      "requested_effort": "high",
+      "fork_turns": "none"
+    },
+    {
+      "tool_result_task": "/root/visual_assets",
+      "requested_model": "gpt-6-luna",
+      "requested_effort": "medium",
+      "fork_turns": "none"
+    }
+  ],
+  "QA": "Existing upgrade_qa_oct07 resumed; prior requestedSol/high is historical, no independently inferred runtime",
+  "Main_runtime": "not independently introspectable",
+  "dependency_probe": {
+    "command": "C:/Program Files/nodejs/npm.cmd view phaser version --json",
+    "exit_code": 0,
+    "stdout_version": "4.2.1",
+    "planned_pin": "4.2.1",
+    "primary_sources": [
+      "https://github.com/phaserjs/phaser",
+      "https://docs.phaser.io/phaser/getting-started/installation"
+    ]
+  },
+  "backend_contract_sha256": {
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/hints.py": "7d769e7720ed7af899359fcbaa98f4aa7ac7c1032a52196610c4accdaeb8a849",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "3d73ceb972eac6a67dda1acb7e889fc1d372f8a1dc5f4531cda62f0023c6b797",
+    "backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "0414bde85185ea647c0a04d74c71b022e4f3f7ab33780bafe2492074aa64b2bf",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/graybox_models.py": "ea21b1d81f09a4178fb3ec40cf32ae98960b8607b3589b247eb956bc72cb1b5a",
+    "backend/app/domain/graybox_rules.py": "fb618cb3c5a6f1a941ad3cf58c996fa2dd200c963ae8ae347412af62d9b11872",
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/mini_rules.py": "a8c42558ceea9456514afa43221617f6f7d735089dfb6935c7ad5e982176baa8",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/domain/save_models.py": "2dc073a8f8e94721d04ff39157c5e1c4b51ed8bc6f5e092e6ba2fa839cd03d8b",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/main.py": "3e8491371ec4e6613ed4ec7c89e23d600bcb40a97572c952f042fcc9395e2d11",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "e4437468129c5b70a7dad37f6eab1d2e7017204ccde23259aa8fd38b6c151e5b",
+    "backend/app/storage/saves.py": "e307c613091519ddef12e44afac0299b70fb87dbb0eebf0a9527717ea8728ac1",
+    "backend/app/storage/sqlite.py": "cb1f946f6377cb92a6776ec00513b4470be262ad59a907e3f17c1972c027994a",
+    "contracts/api.schema.json": "2f49a0d104c002e54088c5685c06d0b6183355e0841ebbf04cbad128acb9c1ef",
+    "contracts/routes.json": "a51e8e34b90f1f7391013407ea003420ac1b7c090ca262560084400a7c7339cf",
+    "contracts/T28-contract-validation-20261005.json": "b2c4f235b770f881d135298b7344c6167453317f39b07284136521f41dce8a1e",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "contracts/tools.schema.json": "f88d79a4d8e53c04f531e159fb47bb0d99439cd37d9409635bfef25238edb691",
+    "contracts/validation.json": "a70cbea8d2afff0ada41f99bbb834d0b02d22ba1b2955d723fecb52f0f8a8e9e",
+    "contracts/build_contracts.py": "80c2ff986b9051762615aa945199c3731c806e6b6d9fc4e8b35ea9dae8ac52f8",
+    "contracts/check_contracts.py": "11ba895c39233e85e7b1729d231b071bb1c50e0e096e9a7d560d70b63c8d3f3d"
+  },
+  "gate": "Full existing baseline/tests+build before sourceGO; stable candidate then formal QA; R1 actual route+save/restore/reload/hidden gate/modeAI+multiarchive+R2transition+futuregraybox playable; owncommit/push before R2",
+  "asset_approach": "NativeSVG art preserves recommended per-state decomposition without requiringpng, original license; read-only untilbaselineGO",
+  "no_paid_calls": true,
+  "no_Astra": true,
+  "no_public_deployment": true,
+  "no_early_R2_R3_visuals": true,
+  "baseline_actual": {
+    "API": "127 methods/337 subtests passed,1existingwarning,274.87s",
+    "build_exit": 0,
+    "source41_match": true,
+    "records": [
+      {
+        "stage": "baseline-api",
+        "exit_code": 0,
+        "command": [
+          "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "evidence/upgrade/v4.0/qa/baseline-api/runner.py",
+          "evidence/upgrade/v4.0/baseline-candidate.json"
+        ]
+      },
+      {
+        "stage": "baseline-build",
+        "exit_code": 0,
+        "command": [
+          "C:/Program Files/nodejs/npm.cmd",
+          "run",
+          "build",
+          "--prefix",
+          "frontend"
+        ]
+      }
+    ]
+  }
+}

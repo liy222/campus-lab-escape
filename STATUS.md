@@ -1,7 +1,7 @@
 # Status
 
 <!-- upgrade-current-start -->
-## 当前升级进度（2026-10-07）
+## 当前升级进度（2026-10-08）
 
 | 阶段 | 状态 | 版本定位 |
 |---|---|---|
@@ -9,10 +9,12 @@
 | v3.1 | 已验收、提交并推送 | cfab661 / v3.1-object-state |
 | v3.2 | 已验收、提交并推送 | 519c8d0 / v3.2-puzzle-redesign |
 | v3.3 | 已验收、提交并推送 | 58587cf / v3.3-mini-games |
-| v3.4 | 完整灰盒已验收、提交并推送 | 49a2f92 / v3.4-graybox-complete |
-| v4.0 → v4.2 | 按用户要求暂停，等待详细画面计划 | 尚未引入Phaser或最终美术 |
+| v3.4 | 灰盒及多时刻存档已验收、推送 | 49a2f92 / 8e491d7 |
+| v4.0 | R1 联合验收通过，文档及同步收尾 | v4.0-room1-rusty-visual（待提交标签） |
+| v4.1 | 等待 v4.0 正常提交推送后实施 | R2 暗亮场景、电箱、电路与终端 |
+| v4.2 | 后续阶段 | R3、结算和最终 polish |
 
-唯一主要设计基线：[docs/upgrade-plan.md](docs/upgrade-plan.md)。当前v3.4独立联合验收：首轮118方法与315子项通过、1个新QA子项错误预期；仅该方法修正已有503返回码预期后定向1方法/3子项通过。没有第二次完整全绿运行，重复子项不累加。最终构建0、真实Chrome132项/问题为空、存档恢复/刷新/后端重启通过，38个候选源码前后一致。三档提示、10条线索中2条可选故事发现、服务端统计与结算已验收。证据：[Main验收](evidence/upgrade/v3.4/accepted.json)与[独立QA](evidence/upgrade/v3.4/qa/result.json)。保持旧版独立存档入口；计时含离线，胜利冻结，恢复存档恢复该局统计。零付费调用；未实际交互启动根CMD、未验证真人20–30分钟游玩时长。v3.4版本GitHub主分支与标签同步已核实，作者和提交者均为liy222。多时刻存档增量已联合验收：首轮126方法/336子项通过、2个新QA预期错误；仅修正测试后定向2方法/9子项通过，build0、Chrome149项/问题为空。41个产品源码不变，无付费调用；独立命名档与选择读取、刷新/重启和重新开始保留均已验证。见 [存档验收](evidence/integration/multiple-saves/accepted.json)。增量 commit `8e491d7` 与 tag `v3.4-multiple-saves` 已推送并核实，作者和提交者均为 liy222；画面仍暂停，等待详细计划。下文为历史记录。
+唯一主要画面基线：[docs/visual-plan.md](docs/visual-plan.md)，与用户附件逐字节一致。玩法沿用 v3.4，后端规则/API/AI及多时刻存档保持不变，关卡3.4.0/Schema1.4.0。R1 使用 Phaser4.2.1 Canvas 与原创SVG，真实物件点击、特写、物品组合、笔记/AI/保存抽屉已验收；R2/R3 当前仍是可玩灰盒。v4.0 为联合证据：历史完整API127方法/337子项通过；初始定向API6方法/3子项、build、完整Chrome206项通过；仅CSS与3张SVG修正后build及窄Chrome112项通过，不重复相加、不宣称修后再跑全路线。85源码和旧12API/11e2e测试字节核对通过。见 [Main验收](evidence/upgrade/v4.0/accepted.json) 与 [独立QA](evidence/upgrade/v4.0/qa/result.json)。无付费调用；没有根CMD交互启动、受控缺图、音频或真人时长验收。下文均保留历史记录。
 <!-- upgrade-current-end -->
 
 updated_at: 2026-10-06 (Asia/Shanghai)
@@ -169,3 +171,6 @@ Final89pytest/235subtests passed; actual Chrome mainroute/save/restore/reload/OS
 
 ### Current upgrade state: v3.2 implementation
 v3.1 cfab661/tagv3.1-object-state verifiedremote; staged53selectedfiles secret-pattern audit0, final source/docs whitespace0. v3.2 graybox puzzle redesign GO; next3.3/3.4/visuals remain unimplemented. Necessary independentQA followsstable implementation.
+
+### v4.0 R1 candidate frozen
+Source85 frozen after Frontend/Assets SOURCE STOP. Independent targeted API/build/Chrome route/save/reload/restore QA GO uses evidence/upgrade/v4.0/candidate.json SHA664b3474a5429d65ee455845d794df20d5aec741d9f7c4a67e09dee5e7088fb8. Earlier full baseline127methods/337subtests exit0 remains the unchanged backend baseline; no formal visual acceptance claimed yet.

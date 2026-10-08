@@ -1,0 +1,20 @@
+import type { Receipt, VisibleState } from '../api';
+
+export type SceneInput = { kind: 'object'; objectId: string } | { kind: 'action'; tool: 'inspect' | 'take' | 'interact' | 'move'; targetId: string };
+export interface SceneProjection {
+  state: VisibleState;
+  view: string | null;
+  disabled: boolean;
+  animation: Receipt | null;
+  minHitArea?: number;
+}
+// The bridge carries public snapshots and intents. It never owns game rules or credentials.
+export class GameBridge {
+  projection: SceneProjection;
+  onInput: (input: SceneInput) => void;
+  constructor(projection: SceneProjection, onInput: (input: SceneInput) => void) {
+    this.projection = projection;
+    this.onInput = onInput;
+  }
+  emit(input: SceneInput) { if (!this.projection.disabled) this.onInput(input); }
+}

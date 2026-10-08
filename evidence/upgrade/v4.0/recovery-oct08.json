@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-08",
+  "reason": "User resumed after automatic approval review could not complete because of usage limit; failed command was not executed. New resumed read calls succeeded.",
+  "prior_live_inventory": [
+    "/root"
+  ],
+  "new_actual_spawn_requests": [
+    {
+      "task": "/root/visual_qa_oct08",
+      "model": "gpt-6.1-sol",
+      "effort": "high"
+    },
+    {
+      "task": "/root/visual_frontend_oct08",
+      "model": "gpt-6.1-sol",
+      "effort": "high"
+    },
+    {
+      "task": "/root/visual_assets_oct08",
+      "model": "gpt-6-luna",
+      "effort": "medium"
+    }
+  ],
+  "main_runtime": "Not independently verified",
+  "candidate_fixed85_current_match": true,
+  "existing_final_narrow_run": "qa/20261007T140546920Z-browser-fix/run.json",
+  "existing_narrow_exit_code": 0,
+  "existing_narrow_checks": 112,
+  "existing_fixed_build_exit_code": 0,
+  "scope": "Read-only independent evidence review and final docs, then normal v4.0 commit/push before R2 GO",
+  "paid_calls": 0
+}

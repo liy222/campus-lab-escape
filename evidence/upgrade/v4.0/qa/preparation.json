@@ -1,0 +1,119 @@
+{
+  "status": "STATIC PREPARATION STOP; formal visual acceptance awaits frozen Main candidate GO",
+  "recorded_at": "2026-10-07T13:17:55.835778+00:00",
+  "primary_design": "docs/visual-plan.md",
+  "visual_plan_lines": 2227,
+  "read_files": [
+    {
+      "path": "docs/visual-plan.md",
+      "sha256": "488d14ee490ba43bbb91186001ba7847fbf153554a235ae0a2ce7ae35944929e"
+    },
+    {
+      "path": "frontend/src/App.tsx",
+      "sha256": "50274b7b32aa16dd18d5bac8307f6c9977132faef1298393fbf609c662741120"
+    },
+    {
+      "path": "frontend/src/Assistant.tsx",
+      "sha256": "bbc76db1bd3695c60fb4c29e1b30ad0d8683af1496a0e8bb1c17d4c310651220"
+    },
+    {
+      "path": "frontend/src/api.ts",
+      "sha256": "605733d3dbbeee625e0e9d1050dcdac1fd325b7a2e71bb04233358ed49abacb2"
+    },
+    {
+      "path": "frontend/src/main.tsx",
+      "sha256": "7254a29d506487188f48b2a7f33912401fe8510fcdc3306f0efad67ff25df159"
+    },
+    {
+      "path": "frontend/src/style.css",
+      "sha256": "48d65bf364c1fef06414e7d719c6c5500e1490a9fb8360afefe44a33cef6dec1"
+    },
+    {
+      "path": "frontend/package.json",
+      "sha256": "23b85643b3baef03b7280cf618d736dcc03c2e80502e5141c1029f8d43667353"
+    },
+    {
+      "path": "tests/api/test_upgrade_v34.py",
+      "sha256": "7580e792ddbc66776fef0a83d577af74efb889889b980638fcb0f37596a33141"
+    },
+    {
+      "path": "tests/api/test_multiple_saves.py",
+      "sha256": "3a591b297bd01762754558efc90faa8c27ba83b943f69e60e35550c016fd62f0"
+    },
+    {
+      "path": "tests/e2e/run_multiple_saves.mjs",
+      "sha256": "bed78881b88a46b9e26de5dd17a73adacc875b0a682eec4f35b40b53be6d58b5"
+    }
+  ],
+  "cases": [
+    {
+      "id": "V40-01",
+      "case": "1920x1080 fixed-view R1 scene, actual Canvas and server-visible hotspots; desktop and375px screenshots of overview/closeup/HUD/drawers, controls within viewport; no permanent dashboard panels/hotspot glow."
+    },
+    {
+      "id": "V40-02",
+      "case": "Real canvas pointer coordinates plus independent keyboard object activation inspect exactly once through App; clock/record/plaque closeups use actual acquired facts; return/close changes local view without extra progression."
+    },
+    {
+      "id": "V40-03",
+      "case": "Initial cabinet/microscope/hidden/public metadata do not auto-discover or expose4217; r1_photo not rendered or clickable beforeITEM_TAKEN, fuse/symbols only afterOPEN; correct conditions reflected after restore/reset."
+    },
+    {
+      "id": "V40-04",
+      "case": "Observe/take sample, inventory select, wrong visible observed target409 counts once but keeps selected item and real state; valid microscope placement consumes item after success, eye observation acquires known sample clue."
+    },
+    {
+      "id": "V40-05",
+      "case": "Cabinet empty code input; wrongcode409 does not open or animate progression; acceptedcodeCODE_ACCEPTED still closed until explicit handleinteract; OPEN reveals known objects, fuse takeITEM_TAKEN reveals hidden photo."
+    },
+    {
+      "id": "V40-06",
+      "case": "Notebook drawer pages1-2 acquired clues, original texts without composed fullanswer; three mock hint levels require explicitrequest and localchooser-only; no auto-read/proposal or undiscovered refs."
+    },
+    {
+      "id": "V40-07",
+      "case": "AI drawer retains live request/controller while hidden; provider/key remain ephemeral, close/reopen local only and never a paid request; session/generation/reload keyclear policy preserved using synthetic entry only."
+    },
+    {
+      "id": "V40-08",
+      "case": "Menu multi-time early/slide/cabinet archives + oldslot, selection/cancel/confirm/reset preservation; refresh/backend process restart recovery exact stats/game state and canvas snapshot; no restore progression animations."
+    },
+    {
+      "id": "V40-09",
+      "case": "Ordinary R1 latch explicitserverinteract thenR2 move; R2/R3 current graybox fallback continue public-derived circuit/sequence route to win, no legacy emergency-key regression."
+    },
+    {
+      "id": "V40-10",
+      "case": "Legacy/v3.1/v3.2/v3.3 explicit entry remains graybox; newer multi-save namespaces/auth/session unchanged; all127 oldAPI methods and originaltestbytes retained."
+    },
+    {
+      "id": "V40-11",
+      "case": "Repeated room/closeup/drawer/reload/reset switching maintains one canvas/listener set, no pageerror/load failure, detached scene input inert; request count verifies no double action, animations only current success receipts."
+    },
+    {
+      "id": "V40-12",
+      "case": "Owned service cleanup exactPIDs/ports; captured actual commands/exits/candidatebefore-afterhash/compactchecks and viewed PNGs; no fullstate/sessiontoken/key or fabricated paid/human-playtime evidence."
+    }
+  ],
+  "selector_protocol": "Frontend preliminary public data-object-id/data-view/state attrs and same App authority; actual Canvas versus transparent keyboard overlay dispatch needs final confirmation",
+  "old_assertion_policy": "Never edit existing tests/runners; new visual adapter retains original route/counter/archive/guard assertions. No repeated old-class collection.",
+  "baseline_candidate": "evidence/upgrade/v4.0/baseline-candidate.json",
+  "baseline_runs": {
+    "API": "baseline-api/run.json: exit 0, 127 methods/337 subtests",
+    "build": "baseline-build/run.json: exit 0"
+  },
+  "formal_visual_runs": 0,
+  "product_changes": 0,
+  "paid_calls": 0,
+  "limitations": [
+    "Prepared browser checks are not execution proof.",
+    "Only R1 visuals in4.0; R2/R3 remain playable graybox fallback until their sequential stages.",
+    "Owned synthetic DB/mock only; no real credentials or human completion-time claim."
+  ],
+  "new_runner": {
+    "path": "tests/e2e/run_visual_v40.mjs",
+    "sha256": "2bf6b6fddb510fead24b58c4b0ca01bf34df56926e3019ed30e6899fedc407fb",
+    "static_evidence": "preparation-runner-renderer.json",
+    "prior_static_epoch": "preparation-runner.json"
+  }
+}

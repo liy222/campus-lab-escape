@@ -1,0 +1,64 @@
+{
+  "recorded_at": "2026-10-07T13:40:00.683791+00:00",
+  "scope": "Synthetic QA detector fixtures only; no product/browser run or screenshot",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_fixture_check.py"
+  ],
+  "exit_code": 0,
+  "checks": [
+    {
+      "fixture": "black",
+      "fixture_sha256": "a42f3b581eb6c012910bf226fa28ffe13bbfc88221e3844a55d0db4f06cc926a",
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-qa-pixel-waczqa9q\\black.png"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "{\"width\": 160, \"height\": 90, \"sample_pixels\": 14400, \"nonblack_fraction\": 0.0, \"distinct_colors\": 1, \"channel_span\": 0, \"passed\": false}",
+      "stderr": ""
+    },
+    {
+      "fixture": "uniform-dark",
+      "fixture_sha256": "c1778fe8abe3072ce029450b2b7538eca107594d091ea6cbec072e71a7c6854a",
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-qa-pixel-waczqa9q\\uniform-dark.png"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "{\"width\": 160, \"height\": 90, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 1, \"channel_span\": 16, \"passed\": false}",
+      "stderr": ""
+    },
+    {
+      "fixture": "varied-visible",
+      "fixture_sha256": "0eab2b6a73beaa712629d3dedc24a3446e217c119ccd9800cb623ca48e5190c8",
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-qa-pixel-waczqa9q\\varied-visible.png"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"width\": 160, \"height\": 90, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 14400, \"channel_span\": 248, \"passed\": true}",
+      "stderr": ""
+    }
+  ],
+  "pixel_check_sha256": "621b0c9c4255f0018a93d6929dc2aa9afea2e4d8f98cab9922c160a2159c4aac",
+  "formal_visual_runs": 0
+}

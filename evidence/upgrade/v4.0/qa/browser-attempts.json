@@ -1,0 +1,61 @@
+{
+  "runner_epochs": [
+    {
+      "path": "evidence/upgrade/v4.0/qa/runner-epochs/first.mjs",
+      "sha256": "6267beb77f29bf8d3bb97167a7c9c4a8d9994b1750a6ad1c8b8c2b6f95589114",
+      "purpose": "QA source archival copy only, not a runnable entry point"
+    },
+    {
+      "path": "evidence/upgrade/v4.0/qa/runner-epochs/second.mjs",
+      "sha256": "c7e899062405bc97c423c85dc66bfce95c39cf9c820ca1b3e8530e75b78caeb3",
+      "purpose": "QA source archival copy only, not a runnable entry point"
+    },
+    {
+      "path": "evidence/upgrade/v4.0/qa/runner-epochs/third.mjs",
+      "sha256": "246b1ef37c438e84850b88be0b9c9e50a417486149555f9635419c79bf7885b3",
+      "purpose": "QA source archival copy only, not a runnable entry point"
+    }
+  ],
+  "first_attempts": [
+    {
+      "run": "evidence/upgrade/v4.0/qa/20261007T135059759Z-browser/run.json",
+      "sha256": "45344afc1d2732f9475d421c8cba0ceee3a4880ac3188ba49ace52d738a704db",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "D:\\深度能力\\tests\\e2e\\run_visual_v40.mjs",
+        "evidence/upgrade/v4.0/candidate.json"
+      ],
+      "exit_code": 1,
+      "checks_count": 35,
+      "source_85_before_after_same": true,
+      "diagnosis": "New QA selector run-statistics absent in visual R1; actual menu-statistics has server hint count. Exact3 assertion retained with container adaptation.",
+      "issues": [
+        {
+          "check": "runner",
+          "error": "expect(locator).toHaveText(expected) failed"
+        }
+      ]
+    },
+    {
+      "run": "evidence/upgrade/v4.0/qa/20261007T135341093Z-browser/run.json",
+      "sha256": "a93942e977a0c25b4e0fece1e3b5a701e569e5d09d37c751bb264847edf051d3",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "D:\\深度能力\\tests\\e2e\\run_visual_v40.mjs",
+        "evidence/upgrade/v4.0/candidate.json"
+      ],
+      "exit_code": 1,
+      "checks_count": 45,
+      "source_85_before_after_same": true,
+      "diagnosis": "New QA assumes archive row visible after generation-changing restore. Product closes menu on restore; reopen menu before retained row-visibility assertion.",
+      "issues": [
+        {
+          "check": "runner",
+          "error": "expect(locator).toBeVisible() failed"
+        }
+      ]
+    }
+  ],
+  "scope": "Historical failures preserved; repeated checks are not added to final coverage",
+  "product_edits": 0
+}

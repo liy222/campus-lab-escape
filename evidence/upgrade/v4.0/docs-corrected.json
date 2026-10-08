@@ -1,0 +1,31 @@
+{
+  "stage": "v4.0 final documentation wording correction",
+  "status": "SOURCE_STOP",
+  "scope": "Only two approved mechanical sentence corrections in README.md and release/UPGRADES.md; no product source, QA evidence, or prior delivery record changed.",
+  "supersedes_as_current_document_epoch": "evidence/upgrade/v4.0/docs.json",
+  "prior_docs_json_sha256_raw": "272a400398ccdd8d7d2556e58609482415644705f6cfbbaa238dbdfb0052e918",
+  "corrections": [
+    "README.md identifies docs/visual-plan.md as the primary visual baseline and docs/upgrade-plan.md as historical gameplay upgrade planning.",
+    "release/UPGRADES.md clarifies that the 85-path fixed candidate matches; relative to the initial v4.0 candidate, only CSS and three SVGs changed."
+  ],
+  "documents": {
+    "README.md": {
+      "sha256_raw": "b3662b41aeb14724346deeecec881ac6bd29a45f76e9eeaa145b6903810e46cc",
+      "line_endings": "LF"
+    },
+    "release/UPGRADES.md": {
+      "sha256_raw": "a05eac5f38beb7b5172b045e09ade22bf4a68169f4fed16138993b2ffa5334d6",
+      "line_endings": "LF"
+    }
+  },
+  "checks": [
+    {
+      "command": "git diff --check -- README.md release/UPGRADES.md",
+      "exit_code": 0
+    }
+  ],
+  "verification_limits": [
+    "Documentation-only correction; no build or product QA was rerun.",
+    "No commit was made."
+  ]
+}

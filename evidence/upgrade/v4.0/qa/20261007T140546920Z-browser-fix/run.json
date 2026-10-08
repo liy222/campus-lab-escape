@@ -1,0 +1,2208 @@
+{
+  "candidate": "evidence/upgrade/v4.0/candidate-fixed.json",
+  "candidate_sha256": "524ab24a54f39405430f2a53446dc221702aa671e090e2858cda3ee02e63a9e3",
+  "started": "2026-10-07T14:05:46.921Z",
+  "ended": "2026-10-07T14:06:02.952Z",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "D:\\深度能力\\tests\\e2e\\run_visual_v40_fix.mjs",
+    "evidence/upgrade/v4.0/candidate-fixed.json"
+  ],
+  "commands": [
+    {
+      "label": "v3.4-backend",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "2133",
+        "--no-access-log"
+      ],
+      "public_environment": {
+        "AI_PROVIDER": "mock",
+        "PYTHONUTF8": "1",
+        "GAMEPLAY_VERSION": "v3.4",
+        "SQLITE_PATH": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-visual-v40-browser-b0oXOj\\v3.4.sqlite"
+      },
+      "cwd": "D:\\深度能力"
+    },
+    {
+      "label": "v3.4-frontend",
+      "executable": "C:\\Program Files\\nodejs\\node.exe",
+      "arguments": [
+        "D:\\深度能力\\frontend\\node_modules\\vite\\bin\\vite.js",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "2134",
+        "--strictPort"
+      ],
+      "public_environment": {
+        "AI_PROVIDER": "mock",
+        "PYTHONUTF8": "1",
+        "CAMPUS_BACKEND_URL": "http://127.0.0.1:2133",
+        "VITE_GAMEPLAY_VERSION": "v3.4"
+      },
+      "cwd": "D:\\深度能力\\frontend"
+    },
+    {
+      "label": "fixed-public-SVG-clock-lock-geometry",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\svg_check.py"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"clock_geometry\": [{\"asset\": \"r1_clock.svg\", \"hour_degrees\": 278.5, \"minute_degrees\": 102.724}, {\"asset\": \"closeup_clock.svg\", \"hour_degrees\": 278.5, \"minute_degrees\": 102.002}], \"lock_wheels\": 4, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-clock-reading-1920",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-clock-reading-1920-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1544, \"height\": 868, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 607, \"channel_span\": 197, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-clock-reading-1280",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-clock-reading-1280-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1224, \"height\": 688, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 685, \"channel_span\": 202, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-clock-reading-375",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-clock-reading-375-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 359, \"height\": 202, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 421, \"channel_span\": 170, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:r1_record-reading",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\r1_record-reading-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1544, \"height\": 868, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 457, \"channel_span\": 197, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-record-reading-1920",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-record-reading-1920-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1544, \"height\": 868, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 457, \"channel_span\": 197, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-record-reading-1280",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-record-reading-1280-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1224, \"height\": 688, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 527, \"channel_span\": 202, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-record-reading-375",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-record-reading-375-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 359, \"height\": 202, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 215, \"channel_span\": 177, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:r1_plaque-reading",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\r1_plaque-reading-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1544, \"height\": 868, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 686, \"channel_span\": 197, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-plaque-reading-1920",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-plaque-reading-1920-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1544, \"height\": 868, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 686, \"channel_span\": 197, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-plaque-reading-1280",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-plaque-reading-1280-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1224, \"height\": 688, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 762, \"channel_span\": 202, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-plaque-reading-375",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-plaque-reading-375-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 359, \"height\": 202, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 576, \"channel_span\": 135, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:r1_microscope-EMPTY",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\r1_microscope-EMPTY-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 359, \"height\": 202, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 514, \"channel_span\": 175, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:r1_microscope-SLIDE_PLACED-eyepiece",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\r1_microscope-SLIDE_PLACED-eyepiece-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1544, \"height\": 868, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 934, \"channel_span\": 199, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-eyepiece-reading-1920",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-eyepiece-reading-1920-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1544, \"height\": 868, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 934, \"channel_span\": 199, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-eyepiece-reading-1280",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-eyepiece-reading-1280-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1224, \"height\": 688, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 1010, \"channel_span\": 201, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-eyepiece-reading-375",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-eyepiece-reading-375-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 359, \"height\": 202, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 753, \"channel_span\": 191, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-four-wheel-lock-1920",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-four-wheel-lock-1920-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1544, \"height\": 868, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 540, \"channel_span\": 184, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-four-wheel-lock-1280",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-four-wheel-lock-1280-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1224, \"height\": 688, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 637, \"channel_span\": 185, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-four-wheel-lock-375",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-four-wheel-lock-375-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 359, \"height\": 202, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 348, \"channel_span\": 172, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-wrong-code-1920",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-wrong-code-1920-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1544, \"height\": 868, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 548, \"channel_span\": 184, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-wrong-code-1280",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-wrong-code-1280-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1224, \"height\": 688, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 645, \"channel_span\": 185, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-wrong-code-375",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-wrong-code-375-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 359, \"height\": 202, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 348, \"channel_span\": 172, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-accepted-closed",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-accepted-closed-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1224, \"height\": 688, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 533, \"channel_span\": 139, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-cabinet-open",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-cabinet-open-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1224, \"height\": 688, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 748, \"channel_span\": 184, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:r1_photo-reading",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\r1_photo-reading-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1544, \"height\": 868, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 507, \"channel_span\": 197, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-photo-reading-1920",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-photo-reading-1920-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1544, \"height\": 868, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 507, \"channel_span\": 197, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-photo-reading-1280",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-photo-reading-1280-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1224, \"height\": 688, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 617, \"channel_span\": 202, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-photo-reading-375",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-photo-reading-375-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 359, \"height\": 202, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 322, \"channel_span\": 177, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-restored-photo-reading-1920",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-restored-photo-reading-1920-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1544, \"height\": 868, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 507, \"channel_span\": 197, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-restored-photo-reading-1280",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-restored-photo-reading-1280-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 1224, \"height\": 688, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 617, \"channel_span\": 202, \"passed\": true}",
+      "stderr": ""
+    },
+    {
+      "label": "canvas-pixel-check:fixed-restored-photo-reading-375",
+      "executable": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "arguments": [
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\pixel_check.py",
+        "D:\\深度能力\\evidence\\upgrade\\v4.0\\qa\\20261007T140546920Z-browser-fix\\fixed-restored-photo-reading-375-canvas-pixels.png"
+      ],
+      "cwd": "D:\\深度能力",
+      "exit_code": 0,
+      "stdout": "{\"width\": 359, \"height\": 202, \"sample_pixels\": 14400, \"nonblack_fraction\": 1.0, \"distinct_colors\": 322, \"channel_span\": 177, \"passed\": true}",
+      "stderr": ""
+    }
+  ],
+  "exit_code": 0,
+  "provider": "mock only; no paid model calls",
+  "browser": "Google Chrome headless, isolated contexts",
+  "source_sha256_before": {
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/hints.py": "7d769e7720ed7af899359fcbaa98f4aa7ac7c1032a52196610c4accdaeb8a849",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "3d73ceb972eac6a67dda1acb7e889fc1d372f8a1dc5f4531cda62f0023c6b797",
+    "backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "0414bde85185ea647c0a04d74c71b022e4f3f7ab33780bafe2492074aa64b2bf",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/graybox_models.py": "ea21b1d81f09a4178fb3ec40cf32ae98960b8607b3589b247eb956bc72cb1b5a",
+    "backend/app/domain/graybox_rules.py": "fb618cb3c5a6f1a941ad3cf58c996fa2dd200c963ae8ae347412af62d9b11872",
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/mini_rules.py": "a8c42558ceea9456514afa43221617f6f7d735089dfb6935c7ad5e982176baa8",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/domain/save_models.py": "2dc073a8f8e94721d04ff39157c5e1c4b51ed8bc6f5e092e6ba2fa839cd03d8b",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/main.py": "3e8491371ec4e6613ed4ec7c89e23d600bcb40a97572c952f042fcc9395e2d11",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "e4437468129c5b70a7dad37f6eab1d2e7017204ccde23259aa8fd38b6c151e5b",
+    "backend/app/storage/saves.py": "e307c613091519ddef12e44afac0299b70fb87dbb0eebf0a9527717ea8728ac1",
+    "backend/app/storage/sqlite.py": "cb1f946f6377cb92a6776ec00513b4470be262ad59a907e3f17c1972c027994a",
+    "contracts/T28-contract-validation-20261005.json": "b2c4f235b770f881d135298b7344c6167453317f39b07284136521f41dce8a1e",
+    "contracts/api.schema.json": "2f49a0d104c002e54088c5685c06d0b6183355e0841ebbf04cbad128acb9c1ef",
+    "contracts/build_contracts.py": "80c2ff986b9051762615aa945199c3731c806e6b6d9fc4e8b35ea9dae8ac52f8",
+    "contracts/check_contracts.py": "11ba895c39233e85e7b1729d231b071bb1c50e0e096e9a7d560d70b63c8d3f3d",
+    "contracts/routes.json": "a51e8e34b90f1f7391013407ea003420ac1b7c090ca262560084400a7c7339cf",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "contracts/tools.schema.json": "f88d79a4d8e53c04f531e159fb47bb0d99439cd37d9409635bfef25238edb691",
+    "contracts/validation.json": "a70cbea8d2afff0ada41f99bbb834d0b02d22ba1b2955d723fecb52f0f8a8e9e",
+    "frontend/index.html": "4386eb2ac1270f1931d50352771cef46826b48025ac966e9aa38492196c252bb",
+    "frontend/package-lock.json": "eb6789fb44bacb5d8d7f7386155d76d916bef886f95dc152fb002f6c1d44d491",
+    "frontend/package.json": "43add5f3f63f714e3964ade9d84b22db62f0c04de9666062134ca002e3e5c4a5",
+    "frontend/src/App.tsx": "a4f6221acf0949f2a3bbcb1b9c252414dd60f960c6cbecb93ea33c0707e096fb",
+    "frontend/src/Assistant.tsx": "31759a20695dd614ea1abbef4c928180cdc9e83c85f2a7b9e3ef040e596998d5",
+    "frontend/src/api.ts": "605733d3dbbeee625e0e9d1050dcdac1fd325b7a2e71bb04233358ed49abacb2",
+    "frontend/src/assets/closeup_cabinet_locked.svg": "d81b8c52fbc5ab8d2cad8d61e8dd8fb738e7f722f73db590cff21d058d89c13b",
+    "frontend/src/assets/closeup_cabinet_open.svg": "da60a2fdef22bfde9a315aec14fdaad1c4737bd5c2442afe36fa5f86f0541af4",
+    "frontend/src/assets/closeup_clock.svg": "fc83f76397da0eb193bba72c5d2f3cefad6d4b0a9077bf95a847db1f4c70d94d",
+    "frontend/src/assets/closeup_microscope_empty.svg": "9d4c5608d2910fefde8c1d65682d36958fdbb3d5c20da9b61ff4eebcf252205e",
+    "frontend/src/assets/closeup_microscope_slide.svg": "905b2ca35e2ce03d53ff960df7820fe46270e190de1d7bf5bbe8db66ebc03554",
+    "frontend/src/assets/closeup_plaque.svg": "23f53b453195f7eb1410eb481f6839cdeefe1c9d0f5b1383a1675b29c4e65f17",
+    "frontend/src/assets/closeup_record.svg": "11ded00699d577122751e8fd8c8584776f5178ede1a5118cd03e79ed62338c10",
+    "frontend/src/assets/manifest.ts": "43b4ed61e39e6a7d81dce22c947482f3bdb3d011f1d603ce15ed0d09e0d43bbc",
+    "frontend/src/assets/microscope_view.svg": "559d6a0f56c734bfc1874c07baf99ee8dd372ad318632753b1da04b69e486f4a",
+    "frontend/src/assets/photo_closeup.svg": "1fa3bae284b2c510428c770db88624599d06c0ce73cb4ac005ae037df2594f20",
+    "frontend/src/assets/r1_background.svg": "cb45989f4a223e9d78684748eb9174d34c3e24db3cb0178d94ebb67071a18fec",
+    "frontend/src/assets/r1_cabinet_accepted.svg": "fb0e3b1a4f575ff4af29318548b294114d0324d4b855275e768cbd701ab3de57",
+    "frontend/src/assets/r1_cabinet_empty.svg": "b8bc5cfe5804020c2dfa6407e1a543b3a4d7f64a32086d869493525b880e17ca",
+    "frontend/src/assets/r1_cabinet_locked.svg": "bab7ecdd7f4de476e2b8fa360b4eb393c513f8f0f9af98eccd2a9a70b91cb8d8",
+    "frontend/src/assets/r1_cabinet_open.svg": "2b63d13e54795c0b6372219ed2b69ce414c6494cc21fa1950f9ec652f8c00740",
+    "frontend/src/assets/r1_clock.svg": "5a89edcafdbbbc94c78682c8e563897f63950ccd7a9df12cef699c2e8e802f42",
+    "frontend/src/assets/r1_door_closed.svg": "07fb1d5efbaec25a14ec0d46fd639fd8d979fdc5488ffb1378832007d3385a44",
+    "frontend/src/assets/r1_door_unlatched.svg": "93eef61365b574b8a7048ffe045c4802c6abbe8f1fcd6a9844706c51a151e5b9",
+    "frontend/src/assets/r1_fuse.svg": "417912c671d3d1f725d1345921c08af29b562ca56ba10cf51c0b760567f86096",
+    "frontend/src/assets/r1_microscope_empty.svg": "7221a2bf91497b31530d870cf65bd7505d7a63649bf005fa44f33fa9b1543a7f",
+    "frontend/src/assets/r1_microscope_slide.svg": "8154e7ff5176e402e145b9593e69d2e39007759debe499bab6095f5bec7d0c22",
+    "frontend/src/assets/r1_photo.svg": "4886183191e08df9a94add3c9f8b03d44f0efd42838e44e37567b69828ee3091",
+    "frontend/src/assets/r1_plaque.svg": "224e7a2d0bcaec1798667c6f79512692059eb158a2b1bf90db35e10417ed8089",
+    "frontend/src/assets/r1_record.svg": "badf1e456bf796300aafa5c7e936ef4e5efd9ada0510a23bafb844e615f5568b",
+    "frontend/src/assets/r1_symbols.svg": "81fde5d77fa08e62da04acdbec431d6687ac19646ab7e3cec332461327288a98",
+    "frontend/src/assets/r1_workbench.svg": "4275fb25dcfe8d1a7c73639c9f436eefcd15c2d52919df241484ddd865c86630",
+    "frontend/src/assets/sample_slide.svg": "f91c4b7f0d6b41d915bf8394943f9e289784cddb8fb198c7cd4a65dc7666bf99",
+    "frontend/src/components/Notebook.tsx": "83f2c9cccd4df9debf52cc6ab25dc27dc67609b497ed9f8b0ccddfd789826ef6",
+    "frontend/src/components/Room1.tsx": "9f2d57c9a50f3bbdd33313d6016a0f321c2a3af99f3b5ba2ea502525328e0a93",
+    "frontend/src/components/panelFocus.ts": "423d03a704b3193a02599932ce44781b8cd5dfac4f4393a1947c0297e590220c",
+    "frontend/src/game/GameCanvas.tsx": "dc17837f85ccdb9fd20850426775ac13bd423d289ed4911aac9b1d1ffc26fadd",
+    "frontend/src/game/Room1Scene.ts": "b227025109cf3b3632e24d4d7b9143788c831a4762e2e4aea3f0f77add67252e",
+    "frontend/src/game/bridge.ts": "b72cd9c2db8f7ffb117a5777088d5141ab4de7bb2293023884dcffead99f408b",
+    "frontend/src/main.tsx": "7254a29d506487188f48b2a7f33912401fe8510fcdc3306f0efad67ff25df159",
+    "frontend/src/style.css": "f977d6ca7c6b7fa17ea157d586ffe8c6d7c8031bce277dd165e9181bd157c51e",
+    "frontend/tsconfig.json": "cd0639f19a39ce6ff3d972d43666df37c86d9f36f45ee58d2b1098c805ceec28",
+    "frontend/vite.config.ts": "c901ba5b1af403af9f63e55713dd1c0b73080691b89dcce7fcccf1152559f3f7",
+    "scripts/dev.py": "2b0b568fd209052fee446976534b5bb921c4f19031214503438b09c09b6a0331",
+    "启动游戏.cmd": "235999c0b4cfbf0153942eb06552cd9a0cf159b1475c9685f56ece0ba909b1ad"
+  },
+  "source_sha256_after": {
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/hints.py": "7d769e7720ed7af899359fcbaa98f4aa7ac7c1032a52196610c4accdaeb8a849",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "3d73ceb972eac6a67dda1acb7e889fc1d372f8a1dc5f4531cda62f0023c6b797",
+    "backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "0414bde85185ea647c0a04d74c71b022e4f3f7ab33780bafe2492074aa64b2bf",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/graybox_models.py": "ea21b1d81f09a4178fb3ec40cf32ae98960b8607b3589b247eb956bc72cb1b5a",
+    "backend/app/domain/graybox_rules.py": "fb618cb3c5a6f1a941ad3cf58c996fa2dd200c963ae8ae347412af62d9b11872",
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/mini_rules.py": "a8c42558ceea9456514afa43221617f6f7d735089dfb6935c7ad5e982176baa8",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/domain/save_models.py": "2dc073a8f8e94721d04ff39157c5e1c4b51ed8bc6f5e092e6ba2fa839cd03d8b",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/main.py": "3e8491371ec4e6613ed4ec7c89e23d600bcb40a97572c952f042fcc9395e2d11",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "e4437468129c5b70a7dad37f6eab1d2e7017204ccde23259aa8fd38b6c151e5b",
+    "backend/app/storage/saves.py": "e307c613091519ddef12e44afac0299b70fb87dbb0eebf0a9527717ea8728ac1",
+    "backend/app/storage/sqlite.py": "cb1f946f6377cb92a6776ec00513b4470be262ad59a907e3f17c1972c027994a",
+    "contracts/T28-contract-validation-20261005.json": "b2c4f235b770f881d135298b7344c6167453317f39b07284136521f41dce8a1e",
+    "contracts/api.schema.json": "2f49a0d104c002e54088c5685c06d0b6183355e0841ebbf04cbad128acb9c1ef",
+    "contracts/build_contracts.py": "80c2ff986b9051762615aa945199c3731c806e6b6d9fc4e8b35ea9dae8ac52f8",
+    "contracts/check_contracts.py": "11ba895c39233e85e7b1729d231b071bb1c50e0e096e9a7d560d70b63c8d3f3d",
+    "contracts/routes.json": "a51e8e34b90f1f7391013407ea003420ac1b7c090ca262560084400a7c7339cf",
+    "contracts/tools.json": "ce9c33c735a349a7686a848e2dc7ca373aa8343dd3ec5a9b4f93bd0d6efa5f80",
+    "contracts/tools.schema.json": "f88d79a4d8e53c04f531e159fb47bb0d99439cd37d9409635bfef25238edb691",
+    "contracts/validation.json": "a70cbea8d2afff0ada41f99bbb834d0b02d22ba1b2955d723fecb52f0f8a8e9e",
+    "frontend/index.html": "4386eb2ac1270f1931d50352771cef46826b48025ac966e9aa38492196c252bb",
+    "frontend/package-lock.json": "eb6789fb44bacb5d8d7f7386155d76d916bef886f95dc152fb002f6c1d44d491",
+    "frontend/package.json": "43add5f3f63f714e3964ade9d84b22db62f0c04de9666062134ca002e3e5c4a5",
+    "frontend/src/App.tsx": "a4f6221acf0949f2a3bbcb1b9c252414dd60f960c6cbecb93ea33c0707e096fb",
+    "frontend/src/Assistant.tsx": "31759a20695dd614ea1abbef4c928180cdc9e83c85f2a7b9e3ef040e596998d5",
+    "frontend/src/api.ts": "605733d3dbbeee625e0e9d1050dcdac1fd325b7a2e71bb04233358ed49abacb2",
+    "frontend/src/assets/closeup_cabinet_locked.svg": "d81b8c52fbc5ab8d2cad8d61e8dd8fb738e7f722f73db590cff21d058d89c13b",
+    "frontend/src/assets/closeup_cabinet_open.svg": "da60a2fdef22bfde9a315aec14fdaad1c4737bd5c2442afe36fa5f86f0541af4",
+    "frontend/src/assets/closeup_clock.svg": "fc83f76397da0eb193bba72c5d2f3cefad6d4b0a9077bf95a847db1f4c70d94d",
+    "frontend/src/assets/closeup_microscope_empty.svg": "9d4c5608d2910fefde8c1d65682d36958fdbb3d5c20da9b61ff4eebcf252205e",
+    "frontend/src/assets/closeup_microscope_slide.svg": "905b2ca35e2ce03d53ff960df7820fe46270e190de1d7bf5bbe8db66ebc03554",
+    "frontend/src/assets/closeup_plaque.svg": "23f53b453195f7eb1410eb481f6839cdeefe1c9d0f5b1383a1675b29c4e65f17",
+    "frontend/src/assets/closeup_record.svg": "11ded00699d577122751e8fd8c8584776f5178ede1a5118cd03e79ed62338c10",
+    "frontend/src/assets/manifest.ts": "43b4ed61e39e6a7d81dce22c947482f3bdb3d011f1d603ce15ed0d09e0d43bbc",
+    "frontend/src/assets/microscope_view.svg": "559d6a0f56c734bfc1874c07baf99ee8dd372ad318632753b1da04b69e486f4a",
+    "frontend/src/assets/photo_closeup.svg": "1fa3bae284b2c510428c770db88624599d06c0ce73cb4ac005ae037df2594f20",
+    "frontend/src/assets/r1_background.svg": "cb45989f4a223e9d78684748eb9174d34c3e24db3cb0178d94ebb67071a18fec",
+    "frontend/src/assets/r1_cabinet_accepted.svg": "fb0e3b1a4f575ff4af29318548b294114d0324d4b855275e768cbd701ab3de57",
+    "frontend/src/assets/r1_cabinet_empty.svg": "b8bc5cfe5804020c2dfa6407e1a543b3a4d7f64a32086d869493525b880e17ca",
+    "frontend/src/assets/r1_cabinet_locked.svg": "bab7ecdd7f4de476e2b8fa360b4eb393c513f8f0f9af98eccd2a9a70b91cb8d8",
+    "frontend/src/assets/r1_cabinet_open.svg": "2b63d13e54795c0b6372219ed2b69ce414c6494cc21fa1950f9ec652f8c00740",
+    "frontend/src/assets/r1_clock.svg": "5a89edcafdbbbc94c78682c8e563897f63950ccd7a9df12cef699c2e8e802f42",
+    "frontend/src/assets/r1_door_closed.svg": "07fb1d5efbaec25a14ec0d46fd639fd8d979fdc5488ffb1378832007d3385a44",
+    "frontend/src/assets/r1_door_unlatched.svg": "93eef61365b574b8a7048ffe045c4802c6abbe8f1fcd6a9844706c51a151e5b9",
+    "frontend/src/assets/r1_fuse.svg": "417912c671d3d1f725d1345921c08af29b562ca56ba10cf51c0b760567f86096",
+    "frontend/src/assets/r1_microscope_empty.svg": "7221a2bf91497b31530d870cf65bd7505d7a63649bf005fa44f33fa9b1543a7f",
+    "frontend/src/assets/r1_microscope_slide.svg": "8154e7ff5176e402e145b9593e69d2e39007759debe499bab6095f5bec7d0c22",
+    "frontend/src/assets/r1_photo.svg": "4886183191e08df9a94add3c9f8b03d44f0efd42838e44e37567b69828ee3091",
+    "frontend/src/assets/r1_plaque.svg": "224e7a2d0bcaec1798667c6f79512692059eb158a2b1bf90db35e10417ed8089",
+    "frontend/src/assets/r1_record.svg": "badf1e456bf796300aafa5c7e936ef4e5efd9ada0510a23bafb844e615f5568b",
+    "frontend/src/assets/r1_symbols.svg": "81fde5d77fa08e62da04acdbec431d6687ac19646ab7e3cec332461327288a98",
+    "frontend/src/assets/r1_workbench.svg": "4275fb25dcfe8d1a7c73639c9f436eefcd15c2d52919df241484ddd865c86630",
+    "frontend/src/assets/sample_slide.svg": "f91c4b7f0d6b41d915bf8394943f9e289784cddb8fb198c7cd4a65dc7666bf99",
+    "frontend/src/components/Notebook.tsx": "83f2c9cccd4df9debf52cc6ab25dc27dc67609b497ed9f8b0ccddfd789826ef6",
+    "frontend/src/components/Room1.tsx": "9f2d57c9a50f3bbdd33313d6016a0f321c2a3af99f3b5ba2ea502525328e0a93",
+    "frontend/src/components/panelFocus.ts": "423d03a704b3193a02599932ce44781b8cd5dfac4f4393a1947c0297e590220c",
+    "frontend/src/game/GameCanvas.tsx": "dc17837f85ccdb9fd20850426775ac13bd423d289ed4911aac9b1d1ffc26fadd",
+    "frontend/src/game/Room1Scene.ts": "b227025109cf3b3632e24d4d7b9143788c831a4762e2e4aea3f0f77add67252e",
+    "frontend/src/game/bridge.ts": "b72cd9c2db8f7ffb117a5777088d5141ab4de7bb2293023884dcffead99f408b",
+    "frontend/src/main.tsx": "7254a29d506487188f48b2a7f33912401fe8510fcdc3306f0efad67ff25df159",
+    "frontend/src/style.css": "f977d6ca7c6b7fa17ea157d586ffe8c6d7c8031bce277dd165e9181bd157c51e",
+    "frontend/tsconfig.json": "cd0639f19a39ce6ff3d972d43666df37c86d9f36f45ee58d2b1098c805ceec28",
+    "frontend/vite.config.ts": "c901ba5b1af403af9f63e55713dd1c0b73080691b89dcce7fcccf1152559f3f7",
+    "scripts/dev.py": "2b0b568fd209052fee446976534b5bb921c4f19031214503438b09c09b6a0331",
+    "启动游戏.cmd": "235999c0b4cfbf0153942eb06552cd9a0cf159b1475c9685f56ece0ba909b1ad"
+  },
+  "checks": [
+    {
+      "check": "create",
+      "http_status": 201,
+      "error": null,
+      "revision": 0,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 0,
+        "clues_found": 0,
+        "clues_total": 10,
+        "hidden_found": 0,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "public-SVG-clock-21-17-four-lock-wheels",
+      "clock_geometry": [
+        {
+          "asset": "r1_clock.svg",
+          "hour_degrees": 278.5,
+          "minute_degrees": 102.724
+        },
+        {
+          "asset": "closeup_clock.svg",
+          "hour_degrees": 278.5,
+          "minute_degrees": 102.002
+        }
+      ],
+      "lock_wheels": 4,
+      "passed": true
+    },
+    {
+      "check": "canvas-inspect:r1_clock",
+      "http_status": 200,
+      "error": null,
+      "revision": 1,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 0,
+        "clues_found": 1,
+        "clues_total": 10,
+        "hidden_found": 0,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 1,
+      "inventory": []
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_clock",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-clock-reading-1920",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-clock-reading-1920",
+      "renderer": "canvas",
+      "width": 1544,
+      "height": 868,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 607,
+      "channel_span": 197,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_clock",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-clock-reading-1280",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-clock-reading-1280",
+      "renderer": "canvas",
+      "width": 1224,
+      "height": 688,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 685,
+      "channel_span": 202,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_clock",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-clock-reading-375",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-clock-reading-375",
+      "renderer": "canvas",
+      "width": 359,
+      "height": 202,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 421,
+      "channel_span": 170,
+      "passed": true
+    },
+    {
+      "check": "canvas-inspect:r1_record",
+      "http_status": 200,
+      "error": null,
+      "revision": 2,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 0,
+        "clues_found": 2,
+        "clues_total": 10,
+        "hidden_found": 0,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 2,
+      "inventory": []
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_record",
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "r1_record-reading",
+      "renderer": "canvas",
+      "width": 1544,
+      "height": 868,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 457,
+      "channel_span": 197,
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-record-reading-1920",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-record-reading-1920",
+      "renderer": "canvas",
+      "width": 1544,
+      "height": 868,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 457,
+      "channel_span": 197,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_record",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-record-reading-1280",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-record-reading-1280",
+      "renderer": "canvas",
+      "width": 1224,
+      "height": 688,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 527,
+      "channel_span": 202,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_record",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-record-reading-375",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-record-reading-375",
+      "renderer": "canvas",
+      "width": 359,
+      "height": 202,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 215,
+      "channel_span": 177,
+      "passed": true
+    },
+    {
+      "check": "canvas-inspect:r1_plaque",
+      "http_status": 200,
+      "error": null,
+      "revision": 3,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 0,
+        "clues_found": 3,
+        "clues_total": 10,
+        "hidden_found": 0,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 3,
+      "inventory": []
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_plaque",
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "r1_plaque-reading",
+      "renderer": "canvas",
+      "width": 1544,
+      "height": 868,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 686,
+      "channel_span": 197,
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-plaque-reading-1920",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-plaque-reading-1920",
+      "renderer": "canvas",
+      "width": 1544,
+      "height": 868,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 686,
+      "channel_span": 197,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_plaque",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-plaque-reading-1280",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-plaque-reading-1280",
+      "renderer": "canvas",
+      "width": 1224,
+      "height": 688,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 762,
+      "channel_span": 202,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_plaque",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-plaque-reading-375",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-plaque-reading-375",
+      "renderer": "canvas",
+      "width": 359,
+      "height": 202,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 576,
+      "channel_span": 135,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "sample_slide",
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "sample_slide",
+      "passed": true
+    },
+    {
+      "check": "receipt-animation-frames-for-independent-visual-review",
+      "object_id": "sample_slide",
+      "tool": "take",
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_microscope",
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "r1_microscope-EMPTY",
+      "renderer": "canvas",
+      "width": 359,
+      "height": 202,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 514,
+      "channel_span": 175,
+      "passed": true
+    },
+    {
+      "check": "use:sample_slide:r1_microscope",
+      "http_status": 200,
+      "error": null,
+      "revision": 7,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 0,
+        "clues_found": 3,
+        "clues_total": 10,
+        "hidden_found": 0,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 3,
+      "inventory": []
+    },
+    {
+      "check": "actual-canvas-held-item-server-authority",
+      "item_id": "sample_slide",
+      "target_id": "r1_microscope",
+      "http_status": 200,
+      "passed": true
+    },
+    {
+      "check": "canvas-inspect:r1_microscope",
+      "http_status": 200,
+      "error": null,
+      "revision": 8,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 0,
+        "clues_found": 4,
+        "clues_total": 10,
+        "hidden_found": 0,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 4,
+      "inventory": []
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_microscope",
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "r1_microscope-SLIDE_PLACED-eyepiece",
+      "renderer": "canvas",
+      "width": 1544,
+      "height": 868,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 934,
+      "channel_span": 199,
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-eyepiece-reading-1920",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-eyepiece-reading-1920",
+      "renderer": "canvas",
+      "width": 1544,
+      "height": 868,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 934,
+      "channel_span": 199,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_microscope",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-eyepiece-reading-1280",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-eyepiece-reading-1280",
+      "renderer": "canvas",
+      "width": 1224,
+      "height": 688,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 1010,
+      "channel_span": 201,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_microscope",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-eyepiece-reading-375",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-eyepiece-reading-375",
+      "renderer": "canvas",
+      "width": 359,
+      "height": 202,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 753,
+      "channel_span": 191,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_cabinet",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-four-wheel-lock-1920",
+      "feedback_count": 1,
+      "content_count": 9,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-four-wheel-lock-1920",
+      "renderer": "canvas",
+      "width": 1544,
+      "height": 868,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 540,
+      "channel_span": 184,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_cabinet",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-four-wheel-lock-1280",
+      "feedback_count": 1,
+      "content_count": 9,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-four-wheel-lock-1280",
+      "renderer": "canvas",
+      "width": 1224,
+      "height": 688,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 637,
+      "channel_span": 185,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_cabinet",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-four-wheel-lock-375",
+      "feedback_count": 1,
+      "content_count": 9,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-four-wheel-lock-375",
+      "renderer": "canvas",
+      "width": 359,
+      "height": 202,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 348,
+      "channel_span": 172,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_cabinet",
+      "passed": true
+    },
+    {
+      "check": "fixed-visible-wrong-code-1920",
+      "http_status": 409,
+      "error": "WRONG_CODE",
+      "revision": 10,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 1,
+        "clues_found": 4,
+        "clues_total": 10,
+        "hidden_found": 0,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 4,
+      "inventory": []
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-wrong-code-1920",
+      "feedback_count": 1,
+      "content_count": 9,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-wrong-code-1920",
+      "renderer": "canvas",
+      "width": 1544,
+      "height": 868,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 548,
+      "channel_span": 184,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_cabinet",
+      "passed": true
+    },
+    {
+      "check": "fixed-visible-wrong-code-1280",
+      "http_status": 409,
+      "error": "WRONG_CODE",
+      "revision": 11,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 2,
+        "clues_found": 4,
+        "clues_total": 10,
+        "hidden_found": 0,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 4,
+      "inventory": []
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-wrong-code-1280",
+      "feedback_count": 1,
+      "content_count": 9,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-wrong-code-1280",
+      "renderer": "canvas",
+      "width": 1224,
+      "height": 688,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 645,
+      "channel_span": 185,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_cabinet",
+      "passed": true
+    },
+    {
+      "check": "fixed-visible-wrong-code-375",
+      "http_status": 409,
+      "error": "WRONG_CODE",
+      "revision": 12,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 3,
+        "clues_found": 4,
+        "clues_total": 10,
+        "hidden_found": 0,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 4,
+      "inventory": []
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-wrong-code-375",
+      "feedback_count": 1,
+      "content_count": 9,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-wrong-code-375",
+      "renderer": "canvas",
+      "width": 359,
+      "height": 202,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 348,
+      "channel_span": 172,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_cabinet",
+      "passed": true
+    },
+    {
+      "check": "code:r1_cabinet",
+      "http_status": 200,
+      "error": null,
+      "revision": 13,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "CODE_ACCEPTED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 3,
+        "clues_found": 4,
+        "clues_total": 10,
+        "hidden_found": 0,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 4,
+      "inventory": []
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-accepted-closed",
+      "feedback_count": 1,
+      "content_count": 7,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-accepted-closed",
+      "renderer": "canvas",
+      "width": 1224,
+      "height": 688,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 533,
+      "channel_span": 139,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_cabinet",
+      "passed": true
+    },
+    {
+      "check": "interact:r1_cabinet",
+      "http_status": 200,
+      "error": null,
+      "revision": 14,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 3,
+        "clues_found": 4,
+        "clues_total": 10,
+        "hidden_found": 0,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 4,
+      "inventory": []
+    },
+    {
+      "check": "receipt-animation-frames-for-independent-visual-review",
+      "object_id": "r1_cabinet",
+      "tool": "interact",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-cabinet-open",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-cabinet-open",
+      "renderer": "canvas",
+      "width": 1224,
+      "height": 688,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 748,
+      "channel_span": 184,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_fuse",
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_fuse",
+      "passed": true
+    },
+    {
+      "check": "take:r1_fuse",
+      "http_status": 200,
+      "error": null,
+      "revision": 16,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 3,
+        "clues_found": 4,
+        "clues_total": 10,
+        "hidden_found": 0,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 4,
+      "inventory": [
+        "fuse"
+      ]
+    },
+    {
+      "check": "receipt-animation-frames-for-independent-visual-review",
+      "object_id": "r1_fuse",
+      "tool": "take",
+      "passed": true
+    },
+    {
+      "check": "canvas-inspect:r1_photo",
+      "http_status": 200,
+      "error": null,
+      "revision": 17,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 3,
+        "clues_found": 5,
+        "clues_total": 10,
+        "hidden_found": 1,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 5,
+      "inventory": [
+        "fuse"
+      ]
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_photo",
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "r1_photo-reading",
+      "renderer": "canvas",
+      "width": 1544,
+      "height": 868,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 507,
+      "channel_span": 197,
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-photo-reading-1920",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-photo-reading-1920",
+      "renderer": "canvas",
+      "width": 1544,
+      "height": 868,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 507,
+      "channel_span": 197,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_photo",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-photo-reading-1280",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-photo-reading-1280",
+      "renderer": "canvas",
+      "width": 1224,
+      "height": 688,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 617,
+      "channel_span": 202,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_photo",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-photo-reading-375",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-photo-reading-375",
+      "renderer": "canvas",
+      "width": 359,
+      "height": 202,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 322,
+      "channel_span": 177,
+      "passed": true
+    },
+    {
+      "check": "save",
+      "http_status": 200,
+      "error": null,
+      "revision": 17,
+      "generation_changed": false,
+      "room": "R1",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 3,
+        "clues_found": 5,
+        "clues_total": 10,
+        "hidden_found": 1,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 5,
+      "inventory": [
+        "fuse"
+      ]
+    },
+    {
+      "check": "reset",
+      "http_status": 200,
+      "error": null,
+      "revision": 18,
+      "generation_changed": true,
+      "room": "R1",
+      "devices": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:06:01.173622Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 0,
+        "clues_found": 0,
+        "clues_total": 10,
+        "hidden_found": 0,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 0,
+      "inventory": []
+    },
+    {
+      "check": "restore",
+      "http_status": 200,
+      "error": null,
+      "revision": 19,
+      "generation_changed": true,
+      "room": "R1",
+      "devices": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "slots": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "progress": {
+        "power_on": false,
+        "check_done": false
+      },
+      "statistics": {
+        "started_at": "2026-10-07T14:05:48.831074Z",
+        "finished_at": null,
+        "current_hint_level": 1,
+        "hint_count": 0,
+        "mistake_count": 3,
+        "clues_found": 5,
+        "clues_total": 10,
+        "hidden_found": 1,
+        "hidden_total": 2
+      },
+      "settlement": null,
+      "minigames": {
+        "circuit": null,
+        "sequence": null
+      },
+      "clues": 5,
+      "inventory": [
+        "fuse"
+      ]
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_photo",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-restored-photo-reading-1920",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-restored-photo-reading-1920",
+      "renderer": "canvas",
+      "width": 1544,
+      "height": 868,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 507,
+      "channel_span": 197,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_photo",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-restored-photo-reading-1280",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-restored-photo-reading-1280",
+      "renderer": "canvas",
+      "width": 1224,
+      "height": 688,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 617,
+      "channel_span": 202,
+      "passed": true
+    },
+    {
+      "check": "real-canvas-one-inspect-closeup",
+      "object_id": "r1_photo",
+      "passed": true
+    },
+    {
+      "check": "fixed-feedback-does-not-cover-reading-return-input",
+      "label": "fixed-restored-photo-reading-375",
+      "feedback_count": 1,
+      "content_count": 6,
+      "feedback_overlaps": 0,
+      "outside_horizontal": 0,
+      "controls_below_viewport": 0,
+      "passed": true
+    },
+    {
+      "check": "real-rendered-canvas-nonblack-nonuniform",
+      "label": "fixed-restored-photo-reading-375",
+      "renderer": "canvas",
+      "width": 359,
+      "height": 202,
+      "sample_pixels": 14400,
+      "nonblack_fraction": 1,
+      "distinct_colors": 322,
+      "channel_span": 177,
+      "passed": true
+    },
+    {
+      "check": "narrow-fixed-R1-css-clock-lock-and-restored-snapshot",
+      "passed": true
+    },
+    {
+      "check": "stop-owned-process-tree",
+      "pid": 25956,
+      "exit_code": 0
+    },
+    {
+      "check": "stop-owned-process-tree",
+      "pid": 23716,
+      "exit_code": 0
+    }
+  ],
+  "issues": [],
+  "limitations": [
+    "Narrow R1 CSS/clock/four-wheel-lock and restored snapshot recheck; complete route/API/restart reused from prior frozen-candidate epoch",
+    "No real model quality or human completion-time claim",
+    "Old-version light smoke uses owned public-created slots, no historical sensitive DB access"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "scope": "owner development smoke; not independent QA/human playtest",
+  "checks": [
+    "actual Canvas assets loaded canvas"
+  ],
+  "errors": [
+    "Error: expect(locator).toHaveValue(expected) failed\n\nLocator:  locator('#code-r1_cabinet')\nExpected: \"0000\"\nReceived: \"\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveValue\" locator('#code-r1_cabinet') with timeout 5000ms\n  - waiting for locator('#code-r1_cabinet')\n    14 × locator resolved to <input value=\"\" maxlength=\"16\" autocomplete=\"off\" placeholder=\"••••\" inputmode=\"numeric\" id=\"code-r1_cabinet\" pattern=\"[0-9]{1,16}\"/>\n       - unexpected value \"\"\n\n    at captureRawStack (D:\\深度能力\\frontend\\node_modules\\playwright-core\\lib\\coreBundle.js:8588:17)\n    at callMatcherAsStep (D:\\深度能力\\frontend\\node_modules\\playwright\\lib\\matchers\\expect.js:13310:57)\n    at Object.toHaveValue (D:\\深度能力\\frontend\\node_modules\\playwright\\lib\\matchers\\expect.js:13302:23)\n    at D:\\深度能力\\evidence\\upgrade\\v4.0\\frontend-feedback-fix2\\runner.cjs:24:49",
+    "r1_cabinet",
+    "装置没有接受这组数字，请核对已发现资料。"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "scope": "owner development smoke, not independent QA",
+  "checks": [],
+  "errors": [
+    "Failed to execute 'atob' on 'Window': The string to be decoded is not correctly encoded.",
+    "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('.game-canvas-host')\nExpected: \"true\"\nReceived: \"false\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('.game-canvas-host') with timeout 5000ms\n  - waiting for locator('.game-canvas-host')\n    13 × locator resolved to <div data-room=\"R1\" data-view=\"room\" aria-label=\"实验准备室画面\" data-animation=\"idle\" data-renderer=\"loading\" class=\"game-canvas-host\" data-assets-ready=\"false\" data-cabinet-state=\"LOCKED\" data-microscope-state=\"EMPTY\">…</div>\n       - unexpected value \"false\"\n\n    at captureRawStack (D:\\深度能力\\frontend\\node_modules\\playwright-core\\lib\\coreBundle.js:8588:17)\n    at callMatcherAsStep (D:\\深度能力\\frontend\\node_modules\\playwright\\lib\\matchers\\expect.js:13310:57)\n    at Object.toHaveAttribute (D:\\深度能力\\frontend\\node_modules\\playwright\\lib\\matchers\\expect.js:13302:23)\n    at [stdin]:15:158"
+  ]
+}

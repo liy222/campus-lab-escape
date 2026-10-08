@@ -1,0 +1,185 @@
+{
+  "stage": "v4.0 Room 1 only",
+  "status": "SOURCE STOP",
+  "role": "Frontend Owner",
+  "baseline_head": "9762fae",
+  "paid_calls": 0,
+  "scope": "Phaser 4.2.1 fixed-view 2D Room1 plus shared presentation; existing API/session/save/AI behavior retained; Room2/Room3 and older modes retain graybox",
+  "source_files": [
+    {
+      "path": "frontend/package.json",
+      "bytes": 522,
+      "sha256": "43add5f3f63f714e3964ade9d84b22db62f0c04de9666062134ca002e3e5c4a5"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "bytes": 63930,
+      "sha256": "eb6789fb44bacb5d8d7f7386155d76d916bef886f95dc152fb002f6c1d44d491"
+    },
+    {
+      "path": "frontend/src/App.tsx",
+      "bytes": 44017,
+      "sha256": "a4f6221acf0949f2a3bbcb1b9c252414dd60f960c6cbecb93ea33c0707e096fb"
+    },
+    {
+      "path": "frontend/src/Assistant.tsx",
+      "bytes": 20105,
+      "sha256": "31759a20695dd614ea1abbef4c928180cdc9e83c85f2a7b9e3ef040e596998d5"
+    },
+    {
+      "path": "frontend/src/style.css",
+      "bytes": 44373,
+      "sha256": "b137365fee862c9253a95654c0da571f7037547ab48912d1922475f4f3f20d84"
+    },
+    {
+      "path": "frontend/src/components/Notebook.tsx",
+      "bytes": 1505,
+      "sha256": "83f2c9cccd4df9debf52cc6ab25dc27dc67609b497ed9f8b0ccddfd789826ef6"
+    },
+    {
+      "path": "frontend/src/components/Room1.tsx",
+      "bytes": 5492,
+      "sha256": "9f2d57c9a50f3bbdd33313d6016a0f321c2a3af99f3b5ba2ea502525328e0a93"
+    },
+    {
+      "path": "frontend/src/components/panelFocus.ts",
+      "bytes": 662,
+      "sha256": "423d03a704b3193a02599932ce44781b8cd5dfac4f4393a1947c0297e590220c"
+    },
+    {
+      "path": "frontend/src/game/GameCanvas.tsx",
+      "bytes": 3683,
+      "sha256": "dc17837f85ccdb9fd20850426775ac13bd423d289ed4911aac9b1d1ffc26fadd"
+    },
+    {
+      "path": "frontend/src/game/Room1Scene.ts",
+      "bytes": 10045,
+      "sha256": "b227025109cf3b3632e24d4d7b9143788c831a4762e2e4aea3f0f77add67252e"
+    },
+    {
+      "path": "frontend/src/game/bridge.ts",
+      "bytes": 783,
+      "sha256": "b72cd9c2db8f7ffb117a5777088d5141ab4de7bb2293023884dcffead99f408b"
+    }
+  ],
+  "source_set_sha256": "ceab7b2792d5cddf1cd81d6815689863a92a1744bb77ba2f91d6e65a6e0b5ca1",
+  "hash_method": "SHA256 of raw file bytes; aggregate SHA256 of newline-joined sorted-listed path + space + raw SHA256 records",
+  "renderer_decision": {
+    "type": "Phaser.CANVAS",
+    "reason": "Stable rasterized authored SVG layers for the fixed 2D scene; prior WebGL black-frame owner attempt is not a visual pass. Explicit SVG scale1 is required for assets with viewBox only. windowEvents=false prevents React overlay clicks from triggering scene input."
+  },
+  "actual_commands": [
+    {
+      "command": "npm.cmd install --save-exact phaser@4.2.1",
+      "cwd": "D:/深度能力/frontend",
+      "exit_code": 0,
+      "tool_chunk": "56cb45",
+      "result": "2 packages added; 0 vulnerabilities"
+    },
+    {
+      "command": "npm.cmd run build",
+      "cwd": "D:/深度能力/frontend",
+      "exit_code": 0,
+      "tool_chunk": "b3ad19",
+      "result": "TypeScript and Vite build succeeded; 39 modules; JavaScript 1795.96 kB (gzip477.43 kB); warning chunk exceeds500 kB"
+    },
+    {
+      "command": "node C:/Users/liyh/AppData/Local/Temp/campus-v40-owner-smoke.cjs",
+      "cwd": "D:/深度能力",
+      "exit_code": 0,
+      "tool_chunk": "b6f7c5",
+      "result": "7 owner development check groups; errors[]",
+      "executed_script_copy": "evidence/upgrade/v4.0/frontend-owner8/executed-runner.cjs",
+      "script_sha256": "807907a9851a26a96be80bae1ce9ef0a53d633af92f3528fc4f44d50490cd622",
+      "notice": "Historical executed copy; do not rerun against sealed output paths."
+    }
+  ],
+  "owner_validation": {
+    "result": "evidence/upgrade/v4.0/frontend-owner8/result.json",
+    "images": [
+      "evidence/upgrade/v4.0/frontend-owner8/initial.png",
+      "evidence/upgrade/v4.0/frontend-owner8/mobile.png",
+      "evidence/upgrade/v4.0/frontend-owner8/cabinet.png"
+    ],
+    "operator": "Frontend Owner, not independent QA",
+    "checks": [
+      "actual Canvas assets loaded canvas",
+      "actual closeup Canvas item use and microscope clue",
+      "cabinet code from public clues/staged opening/hidden photo",
+      "mounted assistant preserves synthetic memory key while hidden; mock hint request only",
+      "selected archive restore and reload draw server snapshot without action animation",
+      "archive menu/two clues notebook/mobile reading",
+      "R1 to existing R2 graybox"
+    ],
+    "actual_browser": "Installed Chrome headless with --enable-unsafe-swiftshader; renderer is explicitly Canvas",
+    "actual_mobile_input": "375px viewport with real page.mouse Canvas coordinates; touchscreen and keyboard independent checks remain QA scope",
+    "cabinet_image": "Screenshot taken during420ms opening animation, not asserted as settled open image",
+    "post_smoke_asset_epoch": "Only clock hands in r1_clock/closeup_clock were subsequently corrected by Assets Owner; refer assets-clock-final.json; formal build must cover final assets"
+  },
+  "retained_attempts": [
+    {
+      "path": "frontend-owner",
+      "exit": 1,
+      "finding": "SVG percent-encoded data URI atob failure; product fixed by safe base64 conversion"
+    },
+    {
+      "path": "frontend-owner2",
+      "exit": 1,
+      "finding": "Unexpected closeup switch while interacting with React lock; diagnosis continued"
+    },
+    {
+      "path": "frontend-owner3",
+      "exit": 1,
+      "finding": "Phaser global input forwarded React lock clicks to scene; fixed windowEvents=false"
+    },
+    {
+      "path": "frontend-owner4",
+      "exit": 0,
+      "finding": "Functional checks passed but WebGL screenshot black; explicitly rejected as visual pass"
+    },
+    {
+      "path": "frontend-owner5",
+      "exit": 1,
+      "finding": "Canvas visible but oversized viewBox-only SVG raster; fixed explicit loader scale1; harness incorrectly counted expected HTTP errors"
+    },
+    {
+      "path": "frontend-owner6",
+      "exit": 0,
+      "finding": "Canvas actual image and five development check groups passed"
+    },
+    {
+      "path": "frontend-owner7",
+      "exit": 1,
+      "finding": "Owner harness ambiguous reload button and catch timeout; harness selector narrowed, no product change"
+    },
+    {
+      "path": "frontend-owner8",
+      "exit": 0,
+      "finding": "Final owner smoke7 groups and errors[]"
+    }
+  ],
+  "selectors": {
+    "canvas": ".game-canvas-host canvas",
+    "public_canvas_state": ".game-canvas-host[data-view][data-assets-ready][data-renderer][data-animation]",
+    "keyboard": ".scene-keyboard-hotspot[data-object-id][data-bounds][data-scene-action] (pointer-events:none; keyboard Enter/Space activates; actual mouse/touch should hit Canvas coordinates)",
+    "menu_open": "button aria 游戏菜单",
+    "menu_close": "button aria 继续游戏",
+    "assistant_open": "button aria AI 探索伙伴",
+    "assistant_close": "button aria 关闭伙伴",
+    "notebook_open": "button aria 线索笔记",
+    "notebook_close": "button aria 合上笔记",
+    "back": "button aria ← 返回房间",
+    "lock": "#code-r1_cabinet; .mechanical-lock button aria 提交",
+    "inventory": ".inventory-item[data-item-id] button",
+    "success_animation": "data-animation transient take/use_item/interact/submit_code then idle; no advance animation on wrong action/replay/restore/reload",
+    "native_confirmation": "dialog (native element), while menu role hidden from accessibility during confirmation"
+  },
+  "limitations": [
+    "Independent formal QA pending, including touch/keyboard separation, repeated mount teardown, context/pixel checks and all retained backend/old-mode tests.",
+    "No paid provider call, human gameplay timing, subjective acceptance or runtime-model verification claimed.",
+    "Room2/Room3 retain previous graybox until sequential next-stage GO.",
+    "Current bundle exceeds Vite500kB warning threshold; performance polish remains later stage.",
+    "Audio disabled for this room stage; no audio acceptance claimed.",
+    "Latest clock SVG correction happened after owner8 screenshots; Assets Owner raw hashes and XML evidence are separate final epoch."
+  ]
+}

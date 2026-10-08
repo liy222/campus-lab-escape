@@ -1,6 +1,6 @@
 # 逃离校园实验室
 
-这是一个本地运行的三房间网页解谜游戏：规则由后端执行，AI队友提供受限帮助；旧版本中的推进建议须由玩家确认。本地 v3.4（关卡3.4.0；接口与Schema 1.4.0）灰盒已按独立 QA 联合证据接受并 SOURCE STOP。v3.4 增加三级服务器提示、本局统计和通关结算，没有引入 Phaser 或最终美术。QA 结果及限制见 [`v3.4 QA 结果`](evidence/upgrade/v3.4/qa/result.json)、[`v3.4 独立报告`](review/findings/upgrade-v34.md) 和 [`升级交付门槛`](release/UPGRADES.md)。v3.4 commit `49a2f925a78055552781685e79ee96496bb9bdd6` 和 tag `v3.4-graybox-complete` 已推送并由 GitHub API 核实，作者与提交者均关联到 `liy222`。多时刻存档增量 commit `8e491d7` 和 tag `v3.4-multiple-saves` 已推送，GitHub 作者与提交者均为 `liy222`。该增量已按独立 QA 联合证据验收：可为不同进度分别命名并选择读取，重新开始保留存档。验收与限制见 [`多存档验收`](evidence/integration/multiple-saves/accepted.json) 和 [`独立报告`](review/findings/multiple-saves.md)。前一版本 v3.3 的 commit `58587cf9458920fef435e8cb5d7638b1e318c19b`、tag `v3.3-mini-games` 已推送并核实。设计基线见 [`docs/upgrade-plan.md`](docs/upgrade-plan.md)；更早版本的交付信息见 [`升级交付门槛`](release/UPGRADES.md)。
+这是一个本地运行的三房间解谜游戏：规则由后端执行，AI队友提供受限帮助；旧版本中的推进建议须由玩家确认。当前画面版本为 v4.0：Room 1 使用 Phaser 4.2.1 Canvas、原创 SVG 和固定视角点选/局部特写；Room 2、Room 3 仍是可玩的灰盒。游戏规则关卡仍为3.4.0，接口与 Schema 仍为1.4.0，原有启动器、AI 和多时刻本地存档继续使用。v4.0 联合 QA 的覆盖范围与限制见 [`v4.0 验收记录`](evidence/upgrade/v4.0/accepted.json)、[`v4.0 独立 QA 报告`](evidence/upgrade/v4.0/qa/result.json) 和 [`升级交付门槛`](release/UPGRADES.md)。计划标签 `v4.0-room1-rusty-visual` 尚待正常提交和推送。v3.4 commit `49a2f925a78055552781685e79ee96496bb9bdd6`、tag `v3.4-graybox-complete` 与多时刻存档增量 commit `8e491d7c4b4972cb4a3972627fde3a5fc98c28ee`、tag `v3.4-multiple-saves` 已推送并核实，作者与提交者均为 `liy222`。多时刻存档可分别命名并选择读取，重新开始会保留存档；验收见 [`多存档验收`](evidence/integration/multiple-saves/accepted.json) 和 [`独立报告`](review/findings/multiple-saves.md)。主要画面基线见 [`docs/visual-plan.md`](docs/visual-plan.md)，历史玩法升级规划见 [`docs/upgrade-plan.md`](docs/upgrade-plan.md)；更早版本的交付信息见 [`升级交付门槛`](release/UPGRADES.md)。
 
 ## 当前升级路线
 
@@ -10,9 +10,9 @@ v3.4 API 联合验收保留首轮全套 exit 1：118个测试方法通过、315�
 
 v3.2 独立 API QA exit 0：97 passed、257 个子项通过、1 个弃用警告；旧89项和新增8个测试方法通过。覆盖46步三房间路线、各设备与物品槽阶段的保存/重置/恢复/Store 重开、错误尝试、跨版本快照拒绝，以及 AI 读取边界（12类伪造读取均被拒绝）。修复前候选的 Chrome 检查 exit 0（61项）和前端构建 exit 0被保留复用；它们不是修复后源码的重复运行。实际根目录启动 CMD 未运行，仅做字节与配置检查。具体范围、来源和限制见 [`v3.2 QA 结果`](evidence/upgrade/v3.2/qa/result.json) 与 [`独立报告`](review/findings/upgrade-v32.md)。QA 使用合成 AI fixture，没有真实 provider/网络调用；不代表真人试玩或20–30分钟游玩时长验收。
 
-v3.0 已完成并标记为 `v3.0-gameplay-information`。v3.4 三级提示、统计、结算与完整路线灰盒已按联合证据完成独立 QA。按用户指示，进入画面升级前暂停，等待详细计划；目前没有 Phaser 或最终美术。
+v3.0 已完成并标记为 `v3.0-gameplay-information`。v3.4 三级提示、统计、结算、完整路线灰盒及多时刻存档均已按联合证据接受。用户随后提供画面升级计划，v4.0 已完成 Room 1 视觉阶段；当前状态和 QA 边界见上方记录。
 
-## 双击启动当前版本 v3.4
+## 双击启动当前游戏规则版本 v3.4
 
 在 Windows 文件资源管理器中双击仓库根目录的 `启动游戏.cmd`，默认以免费 `mock` Provider 和独立的 `./data/game-v3.4.sqlite` 启动当前 v3.4 候选。服务运行期间不要关闭窗口，按 Ctrl+C 停止。若启动失败，窗口会保留错误信息和退出码；缺少 Python 或依赖、端口已占用时按提示处理。启动器不会自动安装或升级依赖，也不会结束已占用端口的进程。可右键该文件创建 Windows 快捷方式。
 
@@ -24,7 +24,7 @@ v3.0 已完成并标记为 `v3.0-gameplay-information`。v3.4 三级提示、统
 
 手动输入的 Key 只保留在当前页面的 React 内存中，不写入存档；刷新页面、切回免费模拟、切换游戏会话或重新开始都会清除它。日常游玩无需编辑 `启动游戏.cmd` 或 `.env`。通过命令行启动的原有 `--provider` 与 `.env` 配置仍供本地开发使用，README 中的双击启动示例继续使用免费模拟模式。
 
-## 本地启动当前版本 v3.4
+## 本地启动当前游戏规则版本 v3.4
 
 首次安装依赖或修复缺失依赖时，在 Windows PowerShell 中从仓库根目录执行。使用指定 Conda Python，不创建或重置环境；平时可直接双击上方启动器：
 

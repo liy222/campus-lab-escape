@@ -1,0 +1,28 @@
+{
+  "stage": "v4.0 final documentation handoff",
+  "status": "SOURCE_STOP",
+  "scope": "Mechanical current-state update to README.md and release/UPGRADES.md only; no product source, tests, QA evidence, or old run records changed.",
+  "accepted_record": "evidence/upgrade/v4.0/accepted.json",
+  "qa_result": "evidence/upgrade/v4.0/qa/result.json",
+  "qa_result_sha256": "de9af0ad46a5b447d47aa2eac2f22f747ea3a18deb2ec8b31f62d241f15aef3a",
+  "documents": {
+    "README.md": {
+      "sha256_raw": "b9b63f6401194db9af82572777437c1cad0b19ff36725bc035c3c462173658ec",
+      "line_endings": "LF"
+    },
+    "release/UPGRADES.md": {
+      "sha256_raw": "58d596c096c39a81ca13da4e0578611b65afc3ba379e8b79cf69875e722362ef",
+      "line_endings": "LF"
+    }
+  },
+  "checks": [
+    {
+      "command": "git diff --check -- README.md release/UPGRADES.md",
+      "exit_code": 0
+    }
+  ],
+  "verification_limits": [
+    "No build, API suite, or browser QA was rerun for this documentation-only change.",
+    "R2/R3 visual stage has not received GO; the v4.0 tag remains planned pending Main integration commit and push."
+  ]
+}

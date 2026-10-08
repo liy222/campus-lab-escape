@@ -1,0 +1,114 @@
+{
+  "status": "First frozen-candidate complete functional scope passed; visual acceptance pending three narrow fixes",
+  "recorded_at": "2026-10-07T14:03:03.952690+00:00",
+  "candidate": "evidence/upgrade/v4.0/candidate.json",
+  "candidate_sha256": "664b3474a5429d65ee455845d794df20d5aec741d9f7c4a67e09dee5e7088fb8",
+  "source_count": 85,
+  "baseline_reuse": {
+    "result": "evidence/upgrade/v4.0/qa/baseline-result.json",
+    "methods_passed": 127,
+    "subtests_passed": 337,
+    "scope": "Historical previsual full API baseline; no new complete127-green claim"
+  },
+  "targeted_API": {
+    "run": "formal-api/run.json",
+    "command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "evidence/upgrade/v4.0/qa/formal-api/runner.py",
+      "evidence/upgrade/v4.0/candidate.json"
+    ],
+    "exit_code": 0,
+    "methods_passed": 6,
+    "subtests_passed": 3,
+    "duration_seconds": 12.95,
+    "warnings": 1
+  },
+  "build": {
+    "run": "formal-build/run.json",
+    "command": [
+      "C:/Program Files/nodejs/npm.cmd",
+      "run",
+      "build",
+      "--prefix",
+      "frontend"
+    ],
+    "exit_code": 0
+  },
+  "browser": {
+    "run": "20261007T135541642Z-browser/run.json",
+    "command": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\深度能力\\tests\\e2e\\run_visual_v40.mjs",
+      "evidence/upgrade/v4.0/candidate.json"
+    ],
+    "exit_code": 0,
+    "checks": 206,
+    "issues": [],
+    "pixel_checks": 10,
+    "actual_touch_and_keyboard": true
+  },
+  "earlier_failed_attempts": "browser-attempts.json (35/45 checks, each exit1; preserved, duplicate checks not added)",
+  "source_85_before_after_bound_all_passed_stages": true,
+  "old_API_12_byte_identical": true,
+  "old_e2e_11_byte_identical_to_preparation": true,
+  "screens_personally_viewed": {
+    "R1-visual-desktop.png": "18c20edda77884d13f6e8af141114b65a8b062624ddfbf3e32bd9e7a154abd7b",
+    "R1-visual-mobile.png": "f8f63b6ccd9fe64b666ea1d222f8d70cfc15521898563377d0c4e9a63684096b",
+    "R1-clock-closeup.png": "9579aaa3a78157c25b8e53dd0b446fa8e120ac497ec54529fa06c55dbadd889a",
+    "R1-touch-clock-closeup.png": "b23945e7058f9795c89661e6b10a36fb88237d7f0a2fea295a56d0b31f8295fe",
+    "r1_record-reading.png": "d5ae9f3512c993a1460482333ca929bc95c11714da38d0901be70b721ec1d05a",
+    "r1_plaque-reading.png": "12595951e994b8b1271eed9543f72d29083ba2647b4614ad231a73331efef0bb",
+    "r1_microscope-SLIDE_PLACED-eyepiece.png": "58716a6c50c1267e47e88b876d1d53531bc5981636f66de65bf4a09385236f90",
+    "R1-code-accepted-still-closed.png": "7fc9a15d2d506f885adb9f46800a2ca53706eb1885bc09b17a05ccdc8d5cf199",
+    "R1-cabinet-open.png": "064b21c1fedd3d1c70d2a8a644c219a799e6e78abafd81d17b1df3236470d2f1",
+    "sample_slide-before-take.png": "db94cebda2e33477e77db9c8ef694f0d62dec004c6712703dacce86ce20da839",
+    "sample_slide-receipt-frame-take.png": "0392241ba52d086ff47f07413055a19f2f0344a0e697eff21ed414e835239f13",
+    "sample_slide-settled-take.png": "01f24bd083e6592118c95e0255bd5144bb96839e76e4f98039cd0173c6cd0f55",
+    "r1_cabinet-receipt-frame-interact.png": "bc08257af8a04db43c382b315ef10c4e111e3c0b571bae8e6015ef18f834af27",
+    "r1_cabinet-settled-interact.png": "26e83c16d6fdb08bc55932e1b4a021030946943bf4463fb2b89a883645c72131",
+    "r1_photo-reading.png": "0fb2f45de75a95319958750bcab8c3c192b3972a7be8507161f899ccf23dea64",
+    "desktop-selected-restore-confirmation.png": "d82a6c44354073e3d48f1bb70c2ae626de34a14cfc330195028523dd720adf1f",
+    "mobile-three-archive-list.png": "0c7ccc717729792e32fe414045072400c0bb5ead968347917f100e69e62b73b3",
+    "mobile-selected-restore-confirmation.png": "f3b90041c093146d39389030ac10df749ea3f91df79fe0d84333e0935f10a52d",
+    "mobile-victory.png": "f9ab41382ec062df589247aad8551afa54a7add59cad3de34c0215803c0bfc4c"
+  },
+  "visual_findings": [
+    {
+      "id": "V40-READING",
+      "status": "product fix pending",
+      "fact": "Desktop feedback overlaps original clock, microscope, record and photo clue text. Mobile touch clock text was readable.",
+      "evidence": [
+        "R1-clock-closeup.png",
+        "r1_microscope-SLIDE_PLACED-eyepiece.png"
+      ]
+    },
+    {
+      "id": "V40-CLOCK",
+      "status": "product fix pending",
+      "fact": "Initial hour-hand points left/down; 21:17 requires hour clockwise 278.5 degrees from12 (left/up).",
+      "evidence": [
+        "R1-clock-closeup.png"
+      ]
+    },
+    {
+      "id": "V40-LOCK",
+      "status": "product fix pending",
+      "fact": "Locked closeup draws3 wheels while primary visual plan line574 requires four-digit mechanical/digital lock.",
+      "evidence": [
+        "R1-code-accepted-still-closed.png"
+      ]
+    }
+  ],
+  "paid_calls": 0,
+  "product_edits_by_QA": 0,
+  "limitations": [
+    "Stylized originalSVG R1 only; R2/R3 use existing graybox fallback and are not visual acceptance.",
+    "Synthetic-key UI memory test never submitted a real-provider request.",
+    "No audio quality/human completion-time/paid-provider quality claim.",
+    "RootCMD not launched interactively; owned direct loopback process restart only.",
+    "Controlled missing-asset failure not exercised; successful assets-ready, realCanvas pixels, scene recreation, no pageerror checked."
+  ]
+}

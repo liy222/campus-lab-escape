@@ -1,0 +1,12 @@
+{
+  "scope": "owner development smoke; not independent QA/human playtest",
+  "checks": [
+    "actual Canvas assets loaded canvas",
+    "actual closeup Canvas item use and microscope clue",
+    "cabinet code from public clues/staged opening/hidden photo",
+    "mounted assistant preserves synthetic memory key while hidden; mock hint request only"
+  ],
+  "errors": [
+    "locator.click: Error: strict mode violation: getByRole('button', { name: '继续当前游戏', exact: true }) resolved to 2 elements:\n    1) <button class=\"button subtle\">继续当前游戏</button> aka getByRole('banner').getByRole('button', { name: '继续当前游戏' })\n    2) <button class=\"button\">继续当前游戏</button> aka locator('#game').getByRole('button', { name: '继续当前游戏' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '继续当前游戏', exact: true })\u001b[22m\n\n    at C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-v40-owner-smoke.cjs:13:1842"
+  ]
+}

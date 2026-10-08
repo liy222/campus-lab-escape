@@ -1,0 +1,198 @@
+{
+  "stage": "v4.0 R1 original visual assets",
+  "status": "SOURCE_STOP",
+  "owner": "visual_assets",
+  "source_plan": "docs/visual-plan.md",
+  "design": "Original repository-native SVG artwork, authored for this project; no copied Rusty Lake/Cube Escape assets.",
+  "license": "Project-owned original artwork; no third-party asset sources or external image/model calls.",
+  "coordinate_contract": {
+    "viewport": [
+      1600,
+      900
+    ],
+    "origin": "top-left",
+    "layout_shape": "Record<objectID, [x,y,width,height]>",
+    "manifest": "frontend/src/assets/manifest.ts"
+  },
+  "reveal_policy": "The overview contains only static room/background geometry and the permitted small 21:17 clock. LAB-42, clue prose, sample identifier, answers, and hidden photo story are not baked into unobserved assets. Frontend overlays server-provided clue text only after observation; cabinet contents and photo are mounted only when server state exposes them.",
+  "files": [
+    {
+      "path": "frontend/src/assets/closeup_cabinet_locked.svg",
+      "bytes": 2592,
+      "sha256": "4387e553e6e3d27f0205d3a3b212e96f04c41980adbc26df6fc4f55a9ddafd74",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/closeup_cabinet_open.svg",
+      "bytes": 2393,
+      "sha256": "da60a2fdef22bfde9a315aec14fdaad1c4737bd5c2442afe36fa5f86f0541af4",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/closeup_clock.svg",
+      "bytes": 2468,
+      "sha256": "c0fa38597e89f3bcd73e210d11d73e03e88ebe25afd08b370f27a8a1e1f5e868",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/closeup_microscope_empty.svg",
+      "bytes": 2485,
+      "sha256": "9d4c5608d2910fefde8c1d65682d36958fdbb3d5c20da9b61ff4eebcf252205e",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/closeup_microscope_slide.svg",
+      "bytes": 2581,
+      "sha256": "905b2ca35e2ce03d53ff960df7820fe46270e190de1d7bf5bbe8db66ebc03554",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/closeup_plaque.svg",
+      "bytes": 2401,
+      "sha256": "23f53b453195f7eb1410eb481f6839cdeefe1c9d0f5b1383a1675b29c4e65f17",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/closeup_record.svg",
+      "bytes": 2325,
+      "sha256": "11ded00699d577122751e8fd8c8584776f5178ede1a5118cd03e79ed62338c10",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/microscope_view.svg",
+      "bytes": 2725,
+      "sha256": "559d6a0f56c734bfc1874c07baf99ee8dd372ad318632753b1da04b69e486f4a",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/photo_closeup.svg",
+      "bytes": 2361,
+      "sha256": "1fa3bae284b2c510428c770db88624599d06c0ce73cb4ac005ae037df2594f20",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_background.svg",
+      "bytes": 2769,
+      "sha256": "7b2871d2902a5527a78ac42bc27cc67fddd4c5b9d80814178abbc3c710b43eb1",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_cabinet_accepted.svg",
+      "bytes": 2131,
+      "sha256": "fb0e3b1a4f575ff4af29318548b294114d0324d4b855275e768cbd701ab3de57",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_cabinet_empty.svg",
+      "bytes": 2180,
+      "sha256": "b8bc5cfe5804020c2dfa6407e1a543b3a4d7f64a32086d869493525b880e17ca",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_cabinet_locked.svg",
+      "bytes": 2097,
+      "sha256": "bab7ecdd7f4de476e2b8fa360b4eb393c513f8f0f9af98eccd2a9a70b91cb8d8",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_cabinet_open.svg",
+      "bytes": 2177,
+      "sha256": "2b63d13e54795c0b6372219ed2b69ce414c6494cc21fa1950f9ec652f8c00740",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_clock.svg",
+      "bytes": 2086,
+      "sha256": "35f8488e3964fc6100bb216b686e5b2e207598828129f89697ffd788df1ea2da",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_door_closed.svg",
+      "bytes": 2025,
+      "sha256": "07fb1d5efbaec25a14ec0d46fd639fd8d979fdc5488ffb1378832007d3385a44",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_door_unlatched.svg",
+      "bytes": 1974,
+      "sha256": "93eef61365b574b8a7048ffe045c4802c6abbe8f1fcd6a9844706c51a151e5b9",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_fuse.svg",
+      "bytes": 1778,
+      "sha256": "417912c671d3d1f725d1345921c08af29b562ca56ba10cf51c0b760567f86096",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_microscope_empty.svg",
+      "bytes": 2204,
+      "sha256": "7221a2bf91497b31530d870cf65bd7505d7a63649bf005fa44f33fa9b1543a7f",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_microscope_slide.svg",
+      "bytes": 2332,
+      "sha256": "8154e7ff5176e402e145b9593e69d2e39007759debe499bab6095f5bec7d0c22",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_photo.svg",
+      "bytes": 1946,
+      "sha256": "4886183191e08df9a94add3c9f8b03d44f0efd42838e44e37567b69828ee3091",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_plaque.svg",
+      "bytes": 2047,
+      "sha256": "224e7a2d0bcaec1798667c6f79512692059eb158a2b1bf90db35e10417ed8089",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_record.svg",
+      "bytes": 1939,
+      "sha256": "badf1e456bf796300aafa5c7e936ef4e5efd9ada0510a23bafb844e615f5568b",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_symbols.svg",
+      "bytes": 1862,
+      "sha256": "81fde5d77fa08e62da04acdbec431d6687ac19646ab7e3cec332461327288a98",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/r1_workbench.svg",
+      "bytes": 2032,
+      "sha256": "4275fb25dcfe8d1a7c73639c9f436eefcd15c2d52919df241484ddd865c86630",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/sample_slide.svg",
+      "bytes": 1815,
+      "sha256": "f91c4b7f0d6b41d915bf8394943f9e289784cddb8fb198c7cd4a65dc7666bf99",
+      "xml_parse": "PASS"
+    },
+    {
+      "path": "frontend/src/assets/manifest.ts",
+      "bytes": 4585,
+      "sha256": "652994ce0a131f42b6e41be574a9aabdb626f7efd0984e05b627d6ec7a6beadb",
+      "xml_parse": "N/A"
+    }
+  ],
+  "checks": {
+    "svg_xml_files": 26,
+    "all_svg_xml_parsed": true,
+    "forbidden_clue_strings_absent": true,
+    "manifest_exports": [
+      "room1Assets",
+      "room1Layout",
+      "room1Viewport"
+    ],
+    "commands": "See report from owner; generation and XML/hash checks performed by this invocation.",
+    "semantic_aliases": true
+  },
+  "limitations": [
+    "No browser rendering or independent visual QA performed by asset owner.",
+    "R1 only; no R2/R3 assets."
+  ]
+}

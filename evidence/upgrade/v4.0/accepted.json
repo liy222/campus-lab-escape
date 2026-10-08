@@ -1,0 +1,41 @@
+{
+  "stage": "v4.0",
+  "status": "Main accepts R1 visual joint coverage; normal commit/push next; no R2 GO yet",
+  "date": "2026-10-08",
+  "candidate": "evidence/upgrade/v4.0/candidate-fixed.json",
+  "candidate_sha256": "524ab24a54f39405430f2a53446dc221702aa671e090e2858cda3ee02e63a9e3",
+  "source_count": 85,
+  "qa_result": "evidence/upgrade/v4.0/qa/result.json",
+  "qa_result_sha256": "de9af0ad46a5b447d47aa2eac2f22f747ea3a18deb2ec8b31f62d241f15aef3a",
+  "all_qa_evidence_hashes_match": true,
+  "current85_match": true,
+  "coverage": {
+    "baseline_API": "historical127methods/337subtests exit0; immutable engine reused",
+    "initial_targeted_API": "6methods/3subtests exit0",
+    "initial_build_exit": 0,
+    "initial_complete_Chrome": "206 checks exit0; route/multiple archives/reload/restart/hasTouch/keyboard",
+    "fixed_build_exit": 0,
+    "fixed_narrow_Chrome": "112 checks exit0; CSS+3SVG, 26 layout/31 pixel records; not repeated full route"
+  },
+  "findings_closed": [
+    "feedback text obstruction",
+    "clock hour geometry",
+    "four-wheel lock"
+  ],
+  "preserved": "Backend40+rules/API/schema1.4/level3.4/AI/current session archives unchanged",
+  "main_viewed_fixed_pngs": [
+    "qa/20261007T140546920Z-browser-fix/fixed-clock-reading-1920.png",
+    "qa/20261007T140546920Z-browser-fix/fixed-four-wheel-lock-375.png"
+  ],
+  "limitations": [
+    "One existing Starlette/httpx deprecation warning remains.",
+    "R1 original SVG visuals only; R2/R3 are tested playable graybox fallback, not later visual acceptance.",
+    "RootCMD was not interactively launched; owned direct loopback backend process restart was covered in initial browser epoch.",
+    "Controlled missing-asset failure was not exercised; normal assets-ready, rendered pixels, scene recreation and no-pageerror checks were exercised.",
+    "No paid-provider quality, real credentials, sensitive historical database, audio-quality or human manual playtest/completion-time claim.",
+    "Fix browser used ordinary375 viewport; real hasTouch touchscreen and independent keyboard were covered by the initial browser epoch.",
+    "Corrected CSS/three SVG scope uses joint evidence; fixed candidate did not rerun complete three-room route or full API suite."
+  ],
+  "paid_calls": 0,
+  "planned_tag": "v4.0-room1-rusty-visual"
+}
