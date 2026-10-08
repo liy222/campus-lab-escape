@@ -1,6 +1,6 @@
 # 游戏升级路线与交付门槛
 
-本文跟踪 `docs/upgrade-plan.md` 中已接受的 v3.0–v4.2 范围。计划是设计基线，不是执行或验收证据。当前视觉阶段 v4.1 Room 2 已按联合 QA 证据接受并 SOURCE STOP；Room 1 与 Room 2 为正式画面，Room 3 仍是可玩的灰盒。规则关卡仍为3.4.0、Schema 1.4.0，原有 AI、启动器和多时刻本地存档保持。v3.4 多时刻存档与前序 v3.4、v3.3、v4.0 提交和标签均已推送核实；v4.1 正常提交与推送待 Main 集成。v4.2/R3 尚未 GO。`CH01_v2` 是历史冻结基线。旧版工程检查、实验与评价器结论不会自动扩展到本升级路线。
+本文跟踪 `docs/upgrade-plan.md` 中已接受的 v3.0–v4.2 范围。计划是设计基线，不是执行或验收证据。v4.2 三房间视觉与最终界面已按联合 QA 证据接受并 SOURCE STOP；规则关卡仍为3.4.0、Schema 1.4.0，原有 AI、启动器和多时刻本地存档保持。此前 v3.4、v3.3、v4.0、v4.1 提交和标签均已推送核实；v4.2 计划标签待 Main 正常集成提交和推送。`CH01_v2` 是历史冻结基线。旧版工程检查、实验与评价器结论不会自动扩展到本升级路线。
 
 | 版本 | 主要范围 | 当前状态 |
 |---|---|---|
@@ -10,8 +10,8 @@
 | v3.3 | 线路连接、顺序操作两类小游戏及可操作灰盒 | 独立 QA 按联合 API 运行与定向复验、同候选 build/browser 结果接受；SOURCE STOP；commit/tag 已推送 |
 | v3.4 | 跨房间线索、AI 三级提示、结算与完整灰盒通关 | 联合 QA 接受并已推送；多时刻存档增量也已联合 QA 接受并推送 |
 | v4.0 | 引入 Phaser，完成 Room 1 固定视角画面 | 联合 QA 接受并 SOURCE STOP；commit `1047e293ade70e446c9c76be0a0d751f3e3ad81a` 与 tag `v4.0-room1-rusty-visual` 已推送核实 |
-| v4.1 | 完成 Room 2 正式画面 | 联合 QA 接受并 SOURCE STOP；commit 与计划标签 `v4.1-room2-rusty-visual` 待 Main 集成提交和推送 |
-| v4.2 | 完成 Room 3、统一 UI、音效、动画与最终优化 | 尚未 GO；Room 3 保持可玩的灰盒 |
+| v4.1 | 完成 Room 2 正式画面 | 联合 QA 接受并 SOURCE STOP；commit `161d3e6f25406d44eb55c48c295b86c7289d8f2c` 与 tag `v4.1-room2-rusty-visual` 已推送核实 |
+| v4.2 | 完成 Room 3、统一 UI、音效、动画与最终优化 | 联合 QA 接受并 SOURCE STOP；计划标签 `v4.2-final-rusty-visual` 待 Main 正常提交与推送 |
 
 ## v3.0 已完成范围
 
@@ -75,7 +75,15 @@ Room 1 与 Room 2 现使用 Phaser 4.2.1 Canvas、原创 SVG、固定视角点�
 
 正式 API 定向覆盖6个方法、3个子项，exit 0（11.72秒，1项既有弃用警告）；前端 build exit 0。Chrome exit 0、339项检查、issues为空，包含完整三房间路线、5份存档与旧单槽、刷新/进程重启、R1/R2触屏与键盘、35项像素记录和21项 R2 状态/布局记录。初始两次 Chrome 运行分别为204与278项、exit 1，原因是新 QA 状态观察器在刷新/新触屏上下文中丢失；只修正新 QA runner 的观察器注册，123项产品候选没有修改，最终覆盖不把重复计数相加。候选及272件 QA 产物哈希一致，付费调用0。
 
-仍有 Vite chunk 大小警告；加载拆分、缺失素材故障处理和音效 polish 留待 v4.2。根目录启动 CMD 未交互启动；未验证真人通关时长、音效质量或付费模型质量。完整命令、失败尝试和限制见 [`v4.1 验收记录`](../evidence/upgrade/v4.1/accepted.json) 与 [`独立 QA 报告`](../evidence/upgrade/v4.1/qa/result.json)。v4.1 计划标签 `v4.1-room2-rusty-visual` 待 Main 正常集成提交和推送；当前阶段 SOURCE STOP。
+仍有 Vite chunk 大小警告；加载拆分、缺失素材故障处理和音效 polish 留待 v4.2。根目录启动 CMD 未交互启动；未验证真人通关时长、音效质量或付费模型质量。完整命令、失败尝试和限制见 [`v4.1 验收记录`](../evidence/upgrade/v4.1/accepted.json) 与 [`独立 QA 报告`](../evidence/upgrade/v4.1/qa/result.json)。v4.1 commit `161d3e6f25406d44eb55c48c295b86c7289d8f2c` 与 tag `v4.1-room2-rusty-visual` 已推送核实；该阶段 SOURCE STOP。
+
+## v4.2 三房间视觉与最终界面：联合 QA 接受
+
+Room 1、Room 2 与 Room 3 均使用 Phaser 4.2.1 Canvas、原创 SVG、固定视角点选和局部特写。Room 3 呈现设备对应表、研究纸条插入、终检顺序面板和五态出口；设备文本与玩家草稿由公开状态实时绘制，服务端负责验证。通关页显示服务器结算统计与 S/A/B/C 评级。设置提供静音与减少动画；初始画面优先加载当前场景，游戏输入会在场景加载或缺失素材时被阻断，重试从当前服务器快照恢复。关卡仍为3.4.0、Schema/API仍为1.4.0；AI、启动器和多时刻存档行为保持。
+
+完整 API 套件一次通过：127个方法、337个子项、295.14秒、exit 0，含1项既有 Starlette/httpx 弃用警告。前端 build exit 0；主 bundle 294.66 kB（gzip 91.24 kB），Phaser bundle 1,388.18 kB（gzip 368.11 kB），Vite 的大 chunk 警告仍存在。Chrome 覆盖由多个保留 epoch 和必要定向补完联合组成：R1/R2前段290项、R2后段195项、R3到胜利245项，最终 finish epoch 283项 exit 0/issues为空；六个失败的 runner adapter epoch 均留档，最终证据不是单轮完整全绿运行，重复检查不相加。Main 接受时152个源码与238件 QA 证据均与冻结候选哈希匹配，正式 QA 没有产品修复，付费调用0。
+
+联合覆盖包括三房间Canvas路线、R3公开顺序草稿与服务端验证、五种出口状态与阻断状态、服务器胜利统计、存档/恢复/重载/重启、移动触屏与键盘、静音/减少动画、缺失素材阻断重试和生产环境按需加载。限制包括：模块导入故障注入未覆盖；根目录 CMD 未交互启动；没有真人音效质量或通关时长、真实 provider 质量或历史敏感数据库访问验证。完整命令、失败 epoch、范围与限制见 [`v4.2 验收记录`](../evidence/upgrade/v4.2/accepted.json) 与 [`独立 QA 报告`](../evidence/upgrade/v4.2/qa/result.json)。v4.2 计划标签 `v4.2-final-rusty-visual` 待 Main 正常提交和推送；当前阶段 SOURCE STOP。
 ## 阶段边界
 
-当前 v4.1 Room 2 画面阶段已按联合证据接受并 SOURCE STOP。Room 3/R3 的 v4.2 阶段尚未 GO，仍为灰盒；每阶段只交付计划内所需变更，不为升级路线发起付费实验。既有双击启动、手动 AI 模式与 API Key 说明继续有效；v4.1 QA 未进行真实模型调用或真人试玩验收。
+当前 v4.2 三房间视觉阶段已按联合证据接受并 SOURCE STOP。该标签仍待 Main 正常同步；每阶段只交付计划内所需变更，不为升级路线发起付费实验。既有双击启动、手动 AI 模式与 API Key 说明继续有效；v4.2 QA 未进行付费模型调用、真人音效质量或真人通关时长验收。

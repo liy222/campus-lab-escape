@@ -1,0 +1,42 @@
+{
+  "stage": "v4.2",
+  "date": "2026-10-08",
+  "status": "Main accepts final three-room visual upgrade from independent joint evidence; normal commit/push next",
+  "candidate": "evidence/upgrade/v4.2/candidate.json",
+  "candidate_sha256": "387725b128af9e5d815ab5f9398de937503887b3b1a196b99dc679201b2d5bf7",
+  "source_count": 152,
+  "qa_result": "evidence/upgrade/v4.2/qa/result.json",
+  "qa_result_sha256": "37c07e3a9d3ad5ff2a06815c1d9184789e13dd6f386255f79dc1059e7c04d8c9",
+  "current152_and238_artifact_hashes_match": true,
+  "Main_verification_command_exit": 0,
+  "Main_verification_chunk": "e991c8",
+  "actual_coverage": {
+    "API": "one full suite:127methods/337subtests/295.14s/exit0;1existingwarning",
+    "build_exit_code": 0,
+    "browser": "Joint:second290 R1/R2early, fifth195 R2late, sixth245 R3/Win, finalfinish283exit0/issues[] archives/mobile/touch/production/legacy; counts not summed"
+  },
+  "failed_epochs_preserved": 6,
+  "product_fixes_in_formal_QA": 0,
+  "preserved": "backend/contracts40,API/AI,level3.4/schema1.4,multiplearchives,old61SVG,old12API+14e2e rawbytes unchanged",
+  "main_viewed_pngs": [
+    "qa/20261008T060516018Z-browser/development-quiet-first-launch.png",
+    "qa/20261008T061905431Z-browser/R2-DATA_READ-tray-mobile.png",
+    "qa/20261008T062418881Z-browser/R3-real-touch-keyboard-public-draft-375.png",
+    "qa/20261008T062418881Z-browser/victory-server-fields.png",
+    "qa/20261008T062911957Z-browser/mobile-victory.png"
+  ],
+  "limitations": [
+    "Joint browser coverage across retained failed adapter epochs and necessary narrow completions; not a single full-green browser run. Repeated checks are not summed.",
+    "First browser exited 1 before run.json persisted; only actual stdout and four PNGs exist. Original immediate assertion/check count cannot be reconstructed.",
+    "Late final/finish preparation uses QA-owned authenticated public API fixtures for already-covered prerequisites and moments; actual R3 successful route was Canvas in final, while finish fixture prepares already-covered Win for remaining archive/UI tests.",
+    "Two blocked EXIT negative requests use original public API plus UI control-absence assertions. No hidden state injection or fabricated receipt.",
+    "Native AudioContext trusted gesture and one-shot oscillator starts were observed separately from ambient BufferSource rebuilding. No human audition or sound-quality claim.",
+    "Controlled missing SVG faults cover all three room gates/retry; module-import failure injection is not formally exercised.",
+    "S/A/B/C are server API cases; browser compares six fields and rating of actual earned settlement, not fabricated four UI ratings.",
+    "Old-version namespace/no-engine request smoke uses development server and owned new slots; compiled production request verification covers current first launch and started R1.",
+    "Root CMD was not interactively launched; loopback owned backend process restart only. No historical sensitive DB access, paid model calls, human completion-time or real-provider quality claim.",
+    "Existing Starlette/httpx deprecation and Vite engine chunk-size warnings retained; no smaller-engine claim."
+  ],
+  "paid_calls": 0,
+  "planned_tag": "v4.2-final-rusty-visual"
+}

@@ -1,0 +1,38 @@
+{
+  "stage": "v4.2",
+  "date": "2026-10-08",
+  "reason": "Prior Frontend turn failed with usage limit; prior QA tool preparation was not executed due approval-service quota failure",
+  "initial_live_inventory": [
+    "Main"
+  ],
+  "existing_roles_resumed": [
+    "visual_frontend_oct08",
+    "visual_assets_oct08",
+    "visual_qa_oct08"
+  ],
+  "new_agents_created": 0,
+  "runtime_models_independently_verified": false,
+  "preserved_owner_failures": [
+    {
+      "path": "evidence/upgrade/v4.2/frontend-owner/result.json",
+      "sha256": "b23eb95e4c4af04a423699f4f8f9a8d647b61c545a91ae79fb49cce3db137319",
+      "source_unchanged": true,
+      "errors": 1
+    },
+    {
+      "path": "evidence/upgrade/v4.2/frontend-owner-final/result.json",
+      "sha256": "9333b0d9f7444218b46235e041c5b35b5a07e3698c9f0e0b77375f1d397235b8",
+      "source_unchanged": true,
+      "errors": 1
+    },
+    {
+      "path": "evidence/upgrade/v4.2/frontend-owner-fixed/result.json",
+      "sha256": "8de656a6e13e84f06c3cd62074d428b62810017752217aa330325daac01e1930",
+      "source_unchanged": true,
+      "errors": 1
+    }
+  ],
+  "current_status": "Existing owners resumed; remaining narrow smoke and QA static protocol binding pending. No final product acceptance or formalQA claimed.",
+  "unchanged_policy": "Backend40/API/AI/archives/old61art/oldtests; old evidence not overwritten",
+  "paid_calls": 0
+}

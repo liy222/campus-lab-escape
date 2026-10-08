@@ -166,3 +166,38 @@ export const room2Layout: Record<string, [number, number, number, number]> = {
   r2_service_label: [429, 480, 108, 58],
   r2_workbench: [376, 402, 775, 300],
 };
+
+
+// Additive R3 SVG assets. The accepted R1/R2 exports and assets remain unchanged.
+export const room3Assets: Record<string, string> = {
+  r3_background: new URL('r3_background.svg', import.meta.url).href,
+  r3_legend: new URL('r3_legend.svg', import.meta.url).href,
+  r3_panel_empty: new URL('r3_panel_empty.svg', import.meta.url).href,
+  r3_panel_strip_inserted: new URL('r3_panel_strip_inserted.svg', import.meta.url).href,
+  r3_panel_final_check: new URL('r3_panel_final_check.svg', import.meta.url).href,
+  r3_panel_passed: new URL('r3_panel_passed.svg', import.meta.url).href,
+  r3_exit_door_locked: new URL('r3_exit_door_locked.svg', import.meta.url).href,
+  r3_exit_door_card_accepted: new URL('r3_exit_door_card_accepted.svg', import.meta.url).href,
+  r3_exit_door_final_check: new URL('r3_exit_door_final_check.svg', import.meta.url).href,
+  r3_exit_door_unlocked: new URL('r3_exit_door_unlocked.svg', import.meta.url).href,
+  r3_exit_door_open: new URL('r3_exit_door_open.svg', import.meta.url).href,
+  r3_return_door: new URL('r3_return_door.svg', import.meta.url).href,
+  r3_closeup_legend: new URL('r3_closeup_legend.svg', import.meta.url).href,
+  r3_closeup_panel_empty: new URL('r3_closeup_panel_empty.svg', import.meta.url).href,
+  r3_closeup_panel_strip_inserted: new URL('r3_closeup_panel_strip_inserted.svg', import.meta.url).href,
+  r3_closeup_panel_final_check: new URL('r3_closeup_panel_final_check.svg', import.meta.url).href,
+  r3_closeup_panel_passed: new URL('r3_closeup_panel_passed.svg', import.meta.url).href,
+  r3_closeup_exit_door_locked: new URL('r3_closeup_exit_door_locked.svg', import.meta.url).href,
+  r3_closeup_exit_door_card_accepted: new URL('r3_closeup_exit_door_card_accepted.svg', import.meta.url).href,
+  r3_closeup_exit_door_final_check: new URL('r3_closeup_exit_door_final_check.svg', import.meta.url).href,
+  r3_closeup_exit_door_unlocked: new URL('r3_closeup_exit_door_unlocked.svg', import.meta.url).href,
+  r3_closeup_exit_door_open: new URL('r3_closeup_exit_door_open.svg', import.meta.url).href,
+  r3_victory_background: new URL('r3_victory_background.svg', import.meta.url).href,
+};
+
+export const room3Layout: Record<string, [number, number, number, number]> = {
+  r3_legend: [280, 200, 330, 245],
+  r3_panel: [690, 285, 335, 390],
+  exit_door: [1195, 280, 270, 525],
+  r3_return_door: [35, 330, 145, 390],
+};

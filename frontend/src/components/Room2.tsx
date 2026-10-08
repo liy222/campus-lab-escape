@@ -1,21 +1,25 @@
+import { useState } from 'react';
 import GameCanvas from '../game/GameCanvas';
 import type { SceneInput } from '../game/bridge';
 import { InventoryBar, RoomHud } from './RoomChrome';
 import type { ActionArguments, Receipt, Tool, VisibleState } from '../api';
 
 interface Props {
-  state: VisibleState; view: string | null; selectedItemId: string | null; disabled: boolean; animation: Receipt | null;
+  state: VisibleState; view: string | null; selectedItemId: string | null; disabled: boolean; animation: Receipt | null; reducedMotion?: boolean;
   loginCredentials: { username: string; password: string }; onLogin: (field: 'username' | 'password', value: string) => void;
   onView: (id: string | null) => void; onObject: (id: string) => void; onAction: (tool: Tool, args: ActionArguments) => void;
   onItem: (id: string) => void; onNotebook: () => void; onAssistant: () => void; onMenu: () => void;
 }
 export default function Room2(props: Props) {
-  const { state, view, disabled, selectedItemId, onAction } = props;
+  const { state, view, selectedItemId, onAction } = props;
+  const [available, setAvailable] = useState(false);
+  const disabled = props.disabled || !available;
   const object = state.objects.find(value => value.object_id === view);
   const clue = object ? state.clues.find(value => value.object_id === object.object_id) : null;
   const login = object?.actions.find(action => action.tool === 'submit_login');
   const circuit = view === 'r2_powerbox' ? state.minigames?.circuit : null;
   const onInput = (input: SceneInput) => {
+    if (input.kind === 'sequence-device') return;
     if (input.kind === 'object') { props.onObject(input.objectId); return; }
     if (input.kind === 'circuit-module') {
       if (selectedItemId) onAction('use_item', { item_id: selectedItemId, target_id: input.targetId });
@@ -32,7 +36,7 @@ export default function Room2(props: Props) {
   };
   return <section className="visual-room room2-room" aria-label="设备实验室游戏">
     <RoomHud state={state} onNotebook={props.onNotebook} onAssistant={props.onAssistant} onMenu={props.onMenu}/>
-    <GameCanvas projection={{ state, view: object?.object_id || null, disabled, animation: props.animation }} onInput={onInput}>
+    <GameCanvas projection={{ state, view: object?.object_id || null, disabled: props.disabled, animation: props.animation, reducedMotion: props.reducedMotion }} onInput={onInput} onAvailability={setAvailable}>
       {login && <form className="login-form crt-login" onSubmit={event => { event.preventDefault(); onAction('submit_login', { ...login.arguments, username: props.loginCredentials.username, password: props.loginCredentials.password }); }}>
         <h3>LAB TERMINAL</h3><label htmlFor="terminal-username">USER</label><input id="terminal-username" name="username" autoComplete="off" spellCheck={false} value={props.loginCredentials.username} disabled={disabled} onChange={event => props.onLogin('username', event.target.value)}/>
         <label htmlFor="terminal-password">PASS</label><input id="terminal-password" name="password" type="password" autoComplete="off" value={props.loginCredentials.password} disabled={disabled} onChange={event => props.onLogin('password', event.target.value)}/>
@@ -40,7 +44,7 @@ export default function Room2(props: Props) {
       </form>}
     </GameCanvas>
     {object && <div className="closeup-controls room2-controls">
-      <button className="button closeup-back" onClick={() => props.onView(null)}>← 返回房间</button><span className="closeup-title">{object.name}</span>
+      <button className="button closeup-back" disabled={disabled} onClick={() => props.onView(null)}>← 返回房间</button><span className="closeup-title">{object.name}</span>
       <div className="closeup-actions">{object.actions.filter(action => ['inspect', 'take', 'interact'].includes(action.tool)).map(action => <button key={action.tool} className="button" data-scene-action={action.tool} data-target-id={object.object_id} disabled={disabled} onClick={() => onAction(action.tool, action.arguments)}>{action.label}</button>)}
         {object.object_id === 'r2_door' && state.exits.some(exit => exit.destination_id === 'R3' && exit.unlocked) && <button className="button exit-button" data-scene-action="move" data-target-id="R3" disabled={disabled} onClick={() => onAction('move', { destination_id: 'R3' })}>进入出口控制室 →</button>}
         {selectedItemId && <button className="button use-button" disabled={disabled} onClick={() => onAction('use_item', { item_id: selectedItemId, target_id: object.object_id })}>使用物品 ↗</button>}

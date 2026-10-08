@@ -113,7 +113,7 @@ export default class Room1Scene extends Phaser.Scene {
     const animate = receipt && receipt.event_id !== this.lastReceipt && old && receipt.generation === state.generation
       && old.state.generation === state.generation && receipt.revision_after === state.revision && receipt.changed;
     if (receipt) this.lastReceipt = receipt.event_id;
-    if (animate && ['take', 'use_item', 'interact', 'submit_code'].includes(receipt.tool) && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (animate && ['take', 'use_item', 'interact', 'submit_code'].includes(receipt.tool) && !projection.reducedMotion) {
       const target = String(receipt.arguments.target_id || receipt.arguments.item_id || '');
       const image = this.objects.get(target) || (view ? this.objects.get(view) : undefined);
       this.onAnimation(receipt.tool);

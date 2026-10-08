@@ -1,0 +1,19 @@
+{
+  "issues": [
+    {
+      "check": "runner",
+      "error": "locator.click: Error: strict mode violation: getByRole('button', { name: '重新开始', exact: true }) resolved to 2 elements:",
+      "stack_frames": [
+        "at D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:262:134",
+        "at http (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:103:9)",
+        "at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_visual_v42.mjs:261:85",
+        "at async assertSilentOperation (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:547:3)",
+        "at async control (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:261:14)",
+        "at async finalRun (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:892:3)",
+        "at async runNecessaryScope (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:912:23)",
+        "at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_visual_v42.mjs:934:20"
+      ]
+    }
+  ],
+  "service_message_count": 11
+}

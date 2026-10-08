@@ -1,0 +1,134 @@
+{
+  "recorded_at": "2026-10-08T06:02:16.973573+00:00",
+  "operator": "visual_qa_oct08",
+  "status": "QA PREPARATION SOURCE STOP; formal execution remains WAIT for Main frozen candidate and explicit GO",
+  "ready_for_Main_formal_GO": true,
+  "owner_report": "evidence/upgrade/v4.2/frontend.json",
+  "actual_source_read_sha256": {
+    "frontend/src/App.tsx": "a69a641bccae71ad52bf0cae865366aba1953199cc8a116abb73bc9fc54d24c7",
+    "frontend/src/game/GameCanvas.tsx": "ae64db75175cb782843d1733be22d37dda2767255ccdb0be7ead6800c0c33c93",
+    "frontend/src/game/Room3Scene.ts": "78c51684b7dbc2cbd0a55d12ce49bec4bf17de986365adecf571f05d45f6c5ca",
+    "frontend/src/game/preferences.ts": "a901e9c369d9019e28c62149a94880548f5cd2995cea0dcb8483025351e04458",
+    "frontend/src/components/Room3.tsx": "9066fd5e825a688acd4ddf3775b4847516e07259f17b55fbc3aef1aa51cfdccc",
+    "frontend/src/components/RoomLoader.tsx": "4524ba6b842a7bb22a5021f4f7bc37f6b5eb37a33da86def74755e6076dc2718",
+    "frontend/src/components/Settlement.tsx": "8da0fa00055e91edc5e1e86f6721434772adbd0f4ee5fd7c134ba13e95ec8bd9",
+    "frontend/src/components/Entry.tsx": "5cde804e755d92b77f516cbb9ed1930bfa6858bed59bde45401f35ea3e1db258",
+    "frontend/vite.config.ts": "f20e978396942b790e1a182c9972e2391878ea0e4a529aed899c8ef2a046cf9c",
+    "frontend/src/assets/manifest.ts": "fb62b8c4e2e0ed98ac8d1608e868048f9f3c5fc6a5af3790dd80ea5cd8a6a0ab"
+  },
+  "room3": {
+    "host": ".game-canvas-host[data-room=\"R3\"]",
+    "state_attributes": [
+      "data-panel-state",
+      "data-exit-state",
+      "data-sequence-status",
+      "data-assets-ready",
+      "data-animation"
+    ],
+    "real_objects": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door",
+      "return_R2"
+    ],
+    "sequence_device": ".scene-keyboard-hotspot[data-device-id][data-scene-action=\"sequence_device\"]",
+    "public_draft": ".sequence-draft li[data-draft-index][data-device-id]",
+    "submit": ".sequence-submit[data-scene-action=\"submit_sequence\"]",
+    "draft_only_local": true,
+    "door_open_marker": "door_open",
+    "locked_EXIT_boundary": "Original two negative public authenticated API requests + absent move UI; successful route remains actual Canvas"
+  },
+  "gates": {
+    "failure": ".canvas-error",
+    "retry": ".canvas-retry",
+    "external_abort_only": [
+      "r1_background.svg",
+      "r2_background.svg",
+      "r3_background.svg"
+    ],
+    "module_loading": ".room-loading",
+    "module_retry": ".room-retry",
+    "snapshot_revision_unchanged": true,
+    "forms_boundary": "Failed reload has no selected closeup or form; disabled keyboard/real Canvas cannot open it; after successful retry actual code/CRT/sequence controls return"
+  },
+  "audio": {
+    "native_authority": "AudioContext creation/resume and oscillator.start after real trusted gesture; native ambient buffer.start measured separately",
+    "auxiliary_only": ".presentation-observer",
+    "mute": ".sound-toggle[aria-pressed]",
+    "motion": ".motion-toggle",
+    "replay": "Actual backend replay of captured owned public request through browser response, no fabricated receipt/state",
+    "snapshots": "No one-shot progression sound; ambient may rebuild when room/status changes",
+    "quality_limit": "No human ear/audio-quality claim"
+  },
+  "victory": {
+    "root": ".victory-screen",
+    "fields": [
+      "elapsed_seconds",
+      "clues_found",
+      "hidden_found",
+      "hint_count",
+      "mistake_count",
+      "rating"
+    ],
+    "reset": ".victory-reset",
+    "records": ".victory-records",
+    "transition": "Wait actual .room-transition opacity=0 for screenshot",
+    "ratings_boundary": "All S/A/B/C authoritative server cases from final existing full API; UI exact rendering of actual route settlement only, no fake ratings"
+  },
+  "lazy": {
+    "first_launch": ".welcome.quiet-entry",
+    "actual_production_requests": true,
+    "separate_engine_pattern": "/phaser-*.js",
+    "legacy_actual_no_engine_requests": true,
+    "measurement": "Native performance resource transfer/encoded/decoded bytes + final build raw/gzip bytes; no fabricated speed target"
+  },
+  "necessary_scope_modes": [
+    "full",
+    "audio",
+    "gates",
+    "touch-r3",
+    "production",
+    "legacy",
+    "victory"
+  ],
+  "runner_sha256": "e9885e989304e7780250cfbcd897a41450cee91dec40f4a7daad873bfd22ebdf",
+  "old_tests_byte_same": true,
+  "baseline_runs": 0,
+  "formal_runs": 0,
+  "paid_calls": 0,
+  "static_checks": [
+    {
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--check",
+        "tests/e2e/run_visual_v42.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "check": "Python AST without executing",
+      "path": "evidence/upgrade/v4.2/qa/formal-api/runner.py",
+      "exit_code": 0
+    },
+    {
+      "check": "Python AST without executing",
+      "path": "evidence/upgrade/v4.2/qa/formal_build.py",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "tests/e2e/run_visual_v42.mjs",
+        "review/findings/visual-v42.md"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

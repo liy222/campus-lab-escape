@@ -146,7 +146,7 @@ export default class Room2Scene extends Phaser.Scene {
     const receipt = projection.animation;
     const animate = receipt && receipt.event_id !== this.lastReceipt && old && receipt.generation === state.generation && old.state.generation === state.generation && receipt.revision_after === state.revision && receipt.changed;
     if (receipt) this.lastReceipt = receipt.event_id;
-    if (animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (animate && !projection.reducedMotion) {
       const target = String(receipt.arguments.target_id || receipt.arguments.item_id || '');
       this.onAnimation(receipt.tool);
       if (receipt.tool === 'rotate_circuit') {

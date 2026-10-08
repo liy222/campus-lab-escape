@@ -151,3 +151,9 @@ v4.0 commit1047e293ade70e446c9c76be0a0d751f3e3ad81a/tagv4.0-room1-rusty-visual p
 
 ### v4.1 Main acceptance, 2026-10-08
 v4.1 R2 accepted after frozen123-source actual independentAPI6/3/build0/Chrome3390. Main verified272evidencehashes andviewedbright+mobiletray. Normalliy222 commit/tagv4.1-room2-rusty-visual/push next; thencompactbaseline+R3/finalpolish v4.2. No morev4.1suite runs; first204/278 QAobserverfailures preserved, no repeatedcount or productfix.
+
+### v4.1 remote sealed / v4.2 implementation GO, 2026-10-08
+R2commit161d3e6f25406d44eb55c48c295b86c7289d8f2c/tagv4.1-room2-rusty-visual normal privatepush verified, GitHubauthor+committerliy222;370selectedfiles audit0,staged44candidate/docsbytesmatch,whitespace0. OnlynewQA oneASCIIspace cleanup hasseparatebyteproof; oldsealedresults unchanged. v4.2 exactownership/scope in evidence/upgrade/v4.2/plan.json. Baseline123raw matches acceptedR2; reuse lastactualAPI6/3/build0 rather than duplicatebaseline, newrun0. FrontendSol owns R3/finalUI/audio/loading/lazy andviteconfig; AssetsLuna owns onlynewR3/manifestappend andfinaldocs; QASol owns newrunner/fullAPI127once andformal afterstable. Backend40/API/AI/archives/old61SVG/oldtests frozen. No newagents/Astra/paidcall, Main/resumedruntime unverified.
+
+### v4.2 accepted, 2026-10-08
+Final visual scope accepted on frozen152 from one fullAPI127/3370/build0 and independent jointbrowser coverage with finish2830. SixnewQAadapter failures preserved; no productfix/fullgreen singlebrowser claim. See evidence/upgrade/v4.2/accepted.json. Remaining authorized work: final documentation, normal liy222 commit/tagv4.2-final-rusty-visual/push and remote identity verification. No further implementation/test expansion.

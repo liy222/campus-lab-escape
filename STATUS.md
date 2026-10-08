@@ -11,10 +11,14 @@
 | v3.3 | 已验收、提交并推送 | 58587cf / v3.3-mini-games |
 | v3.4 | 灰盒及多时刻存档已验收、推送 | 49a2f92 / 8e491d7 |
 | v4.0 | R1 已验收、提交并推送 | 1047e29 / v4.0-room1-rusty-visual |
-| v4.1 | R2 独立验收通过，待正常提交推送 | v4.1-room2-rusty-visual |
-| v4.2 | 后续阶段 | R3、结算和最终 polish |
+| v4.1 | R2 已验收、提交并推送 | 161d3e6 / v4.1-room2-rusty-visual |
+| v4.2 | 三房画面与最终交互已验收，正常提交推送中 | v4.2-final-rusty-visual |
 
-唯一主要画面基线：[docs/visual-plan.md](docs/visual-plan.md)，与用户附件逐字节一致。玩法沿用 v3.4，后端规则/API/AI及多时刻存档保持不变，关卡3.4.0/Schema1.4.0。R1 使用 Phaser4.2.1 Canvas 与原创SVG，真实物件点击、特写、物品组合、笔记/AI/保存抽屉已验收；R2暗亮场景/六态电箱/公开电路/五态终端/托盘/隐藏签已独立验收：API6方法+3子项0、build0、Chrome339项0/issues[]、123源码及272证据hash一致；首两Chrome204/278退出1（新QA观察器遗漏）保留，仅新adapter修正、源码不变，重复数不相加。见 [v4.1验收](evidence/upgrade/v4.1/accepted.json)。R3仍是可玩灰盒，音频/受控缺图/延迟加载和最终结算留v4.2，待R2提交推送后GO。v4.0 为联合证据：历史完整API127方法/337子项通过；初始定向API6方法/3子项、build、完整Chrome206项通过；仅CSS与3张SVG修正后build及窄Chrome112项通过，不重复相加、不宣称修后再跑全路线。85源码和旧12API/11e2e测试字节核对通过。见 [Main验收](evidence/upgrade/v4.0/accepted.json) 与 [独立QA](evidence/upgrade/v4.0/qa/result.json)。无付费调用；没有根CMD交互启动、受控缺图、音频或真人时长验收。下文均保留历史记录。
+主要视觉基线是 [docs/visual-plan.md](docs/visual-plan.md)，与用户附件逐字节一致。三房固定视角2D、物件特写、玩家终检顺序、出口动画、服务器结算、静音/减少动画、缺图重试及延迟加载已按联合证据接受。原后端/API/AI、多时刻存档、关卡3.4.0/Schema1.4.0保留。
+
+v4.2 实际完整API一次127方法/337子项、295.14秒、exit0；build一次exit0。浏览器联合覆盖：第二轮290记录的R1/R2前段、第五轮195记录的R2后段、第六轮245记录的R3/通关，以及最终finish283记录exit0/issues[]的存档、手机结算、触摸/键盘、生产首屏与历史入口。六次新QA adapter失败完整保留；不相加重复记录，不宣称单轮全路线全绿。Main匹配152源码与238证据hash并目视关键实际PNG。见 [Main验收](evidence/upgrade/v4.2/accepted.json)、[独立结果](evidence/upgrade/v4.2/qa/result.json) 与 [简明报告](review/findings/visual-v42.md)。
+
+限制：缺图已实测，模块import失败注入未测；根CMD未交互启动；没有真人游玩时长、音质评价或真实provider质量宣称。旧弃用/引擎包大小警告仍保留，无付费调用。更早阶段的运行范围与失败记录见各自accepted/result；下文保留历史事实。
 <!-- upgrade-current-end -->
 
 updated_at: 2026-10-06 (Asia/Shanghai)

@@ -1,0 +1,210 @@
+{
+  "recorded_at": "2026-10-08T06:08:34.680798+00:00",
+  "attempts": [
+    {
+      "directory": "evidence/upgrade/v4.2/qa/20261008T060516018Z-browser",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "tests/e2e/run_visual_v42.mjs",
+        "evidence/upgrade/v4.2/candidate.json"
+      ],
+      "actual_process_exit_code": 1,
+      "run_json_exists": false,
+      "check_count": null,
+      "actual_stdout": "evidence/upgrade/v4.2/qa/first-browser-actual-stdout.txt",
+      "runner_epoch": "evidence/upgrade/v4.2/qa/runner-epochs/first.mjs",
+      "runner_sha256": "e9885e989304e7780250cfbcd897a41450cee91dec40f4a7daad873bfd22ebdf",
+      "finding": "New QA replay click attempted overview object hotspot while still in clock closeup; rejected wait promise surfaced during browser close. Original immediate expect stack/check array not persisted; no reconstructed run.json/count claim.",
+      "partial_actual_png_count": 4,
+      "product_fix": false
+    },
+    {
+      "directory": "evidence/upgrade/v4.2/qa/20261008T060849492Z-browser",
+      "actual_process_exit_code": 1,
+      "run_json": "evidence/upgrade/v4.2/qa/20261008T060849492Z-browser/run.json",
+      "run_sha256": "8353f2759156b6d4452b50d7aad898b70f14b9d029bbf351a8fa113088588efe",
+      "check_count": 290,
+      "PNG_count": 74,
+      "runner_epoch": "evidence/upgrade/v4.2/qa/runner-epochs/second.mjs",
+      "runner_sha256": "8712869baf05146f2752f8d75e341d716c77ba9ab4c1d54e0e58d78771b86ac2",
+      "finding": "QA abort pattern r2_background.svg does not exist; manifest actual URL r2_background_dark.svg. Error overlay expectation failed; no product fix.",
+      "actual_issues": [
+        {
+          "check": "runner",
+          "error": "expect(locator).toBeVisible() failed",
+          "stack_frames": [
+            "at captureRawStack (D:\\深度能力\\frontend\\node_modules\\playwright-core\\lib\\coreBundle.js:8588:17)",
+            "at callMatcherAsStep (D:\\深度能力\\frontend\\node_modules\\playwright\\lib\\matchers\\expect.js:13310:57)",
+            "at Object.toBeVisible (D:\\深度能力\\frontend\\node_modules\\playwright\\lib\\matchers\\expect.js:13302:23)",
+            "at assetGateSnapshot (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:765:67)",
+            "at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_visual_v42.mjs:1619:88"
+          ]
+        }
+      ],
+      "scope": "Passed complete R1 and R2 pre-login steps retained; later route not yet covered."
+    },
+    {
+      "directory": "evidence/upgrade/v4.2/qa/20261008T061412340Z-browser",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs",
+        "evidence/upgrade/v4.2/candidate.json",
+        "--only=remaining"
+      ],
+      "actual_process_exit_code": 1,
+      "run_json": "evidence/upgrade/v4.2/qa/20261008T061412340Z-browser/run.json",
+      "run_sha256": "6edb19ba9552d4c40db1d565e5204a9adbfbaff7adaef5fbc2ba772604640bfc",
+      "check_count": 71,
+      "runner_epoch": "evidence/upgrade/v4.2/qa/runner-epochs/third.mjs",
+      "runner_sha256": "2831bf61a77802cf370802359a1bfc7841990b6465277e3bf0c9cf69fe11ac95",
+      "actual_issues": [
+        {
+          "check": "runner",
+          "error": "Expected visible R2 canvas hotspot: r2_maintenance",
+          "stack_frames": [
+            "at select (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_visual_v42.mjs:168:7)",
+            "at runNextTicks (node:internal/process/task_queues:65:5)",
+            "at process.processImmediate (node:internal/timers:472:9)",
+            "at async remainingRun (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_visual_v42.mjs:719:86)",
+            "at async runNecessaryScope (file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_visual_v42.mjs:809:27)",
+            "at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_visual_v42.mjs:830:20"
+          ]
+        }
+      ],
+      "finding": "Necessary preparation enters R2 before lazy scene has finished loading. New roomView/select adapter queried hotspot count too early. Previous R2 coverage passed with checkpoint wait; no product fix."
+    },
+    {
+      "directory": "evidence/upgrade/v4.2/qa/20261008T061609697Z-browser",
+      "actual_process_exit_code": 1,
+      "run_json": "evidence/upgrade/v4.2/qa/20261008T061609697Z-browser/run.json",
+      "run_sha256": "8ebb7ecdfca7fdc616e0dc15acb52d6c9ab93f9b53e45321b804c6fc29e9478e",
+      "check_count": 94,
+      "runner_epoch": "evidence/upgrade/v4.2/qa/runner-epochs/fourth.mjs",
+      "runner_sha256": "fbd8194ec7459eee6d1f069917114b549e50b1e23b8503a0de5d4c1b26f12f3f",
+      "actual_issues": [
+        {
+          "check": "runner",
+          "error": "expect(locator).toBeEnabled() failed",
+          "stack_frames": [
+            "at captureRawStack (D:\\深度能力\\frontend\\node_modules\\playwright-core\\lib\\coreBundle.js:8588:17)",
+            "at callMatcherAsStep (D:\\深度能力\\frontend\\node_modules\\playwright\\lib\\matchers\\expect.js:13310:57)",
+            "at Object.toBeEnabled (D:\\深度能力\\frontend\\node_modules\\playwright\\lib\\matchers\\expect.js:13302:23)",
+            "at moduleInput (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:651:131)",
+            "at async http (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:103:3)",
+            "at async rotate (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:358:14)",
+            "at async remainingRun (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:723:190)",
+            "at async runNecessaryScope (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:811:27)",
+            "at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_visual_v42.mjs:832:20"
+          ]
+        }
+      ],
+      "finding": "New minimal remaining preparation omitted openCircuit after appendMoment left menu open; product correctly disabled circuit input while drawer open. QA adapter only."
+    },
+    {
+      "directory": "evidence/upgrade/v4.2/qa/20261008T061905431Z-browser",
+      "actual_process_exit_code": 1,
+      "run_json": "evidence/upgrade/v4.2/qa/20261008T061905431Z-browser/run.json",
+      "run_sha256": "b6ffc564017b98457ffeea2e34d101266500de8d296396062c5befcda06ad307",
+      "check_count": 195,
+      "runner_epoch": "evidence/upgrade/v4.2/qa/runner-epochs/fifth.mjs",
+      "runner_sha256": "24a56a5f25e1963c7d50858a9ccfdbc046626cb70b5dd67a07b6500e08745460",
+      "actual_issues": [
+        {
+          "check": "runner",
+          "error": "expect(locator).toHaveCount(expected) failed",
+          "stack_frames": [
+            "at captureRawStack (D:\\深度能力\\frontend\\node_modules\\playwright-core\\lib\\coreBundle.js:8588:17)",
+            "at callMatcherAsStep (D:\\深度能力\\frontend\\node_modules\\playwright\\lib\\matchers\\expect.js:13310:57)",
+            "at Object.toHaveCount (D:\\深度能力\\frontend\\node_modules\\playwright\\lib\\matchers\\expect.js:13302:23)",
+            "at canvasInput (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:151:25)",
+            "at async http (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:103:3)",
+            "at async remainingRun (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:746:3)",
+            "at async runNecessaryScope (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:811:27)",
+            "at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_visual_v42.mjs:832:20"
+          ],
+          "actual": 0,
+          "expected": 1
+        }
+      ],
+      "finding": "Remaining minimal fixture did not unlock r2_door as the original early full exploration had done; product correctly omitted move hotspot. R2 correct SVG/retry/login/restore/restart/375/tray passed."
+    },
+    {
+      "directory": "evidence/upgrade/v4.2/qa/20261008T062418881Z-browser",
+      "actual_process_exit_code": 1,
+      "run_json": "evidence/upgrade/v4.2/qa/20261008T062418881Z-browser/run.json",
+      "run_sha256": "adf8f8a30bdf598115961c5d06da1f00260dfd3eb77f987673b928187c0cb19a",
+      "check_count": 245,
+      "runner_epoch": "evidence/upgrade/v4.2/qa/runner-epochs/sixth.mjs",
+      "runner_sha256": "4340cdd01cb0f4d086dab858799917decc497adc3471579a2c68b65c9d51aad9",
+      "actual_issues": [
+        {
+          "check": "runner",
+          "error": "locator.click: Error: strict mode violation: getByRole('button', { name: '重新开始', exact: true }) resolved to 2 elements:",
+          "stack_frames": [
+            "at D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:262:134",
+            "at http (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:103:9)",
+            "at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_visual_v42.mjs:261:85",
+            "at async assertSilentOperation (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:547:3)",
+            "at async control (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:261:14)",
+            "at async finalRun (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:892:3)",
+            "at async runNecessaryScope (D:\\深度能力\\tests\\e2e\\run_visual_v42.mjs:912:23)",
+            "at async file:///D:/%E6%B7%B1%E5%BA%A6%E8%83%BD%E5%8A%9B/tests/e2e/run_visual_v42.mjs:934:20"
+          ]
+        }
+      ],
+      "finding": "Full-page reset button name matches Victory reset and menu reset. QA selector must scope menu controls. Actual R3 Canvas/touch/sequence/five exit states/Victory-six-fields/win-save/reload/restart/reset-restore passed."
+    }
+  ],
+  "adapter_fix": {
+    "paths": [
+      "tests/e2e/run_visual_v42.mjs"
+    ],
+    "change": "Return overview before replay click; catch response wait rejection immediately to preserve subsequent final diagnostics/cleanup",
+    "after_sha256": "8712869baf05146f2752f8d75e341d716c77ba9ab4c1d54e0e58d78771b86ac2",
+    "static_command": [
+      "C:/Program Files/nodejs/node.exe",
+      "--check",
+      "tests/e2e/run_visual_v42.mjs"
+    ],
+    "static_exit_code": 0,
+    "Main_authorization": "Necessary remaining full route permitted; no repeated full API or build"
+  },
+  "adapter_fix_remaining": {
+    "recorded_at": "2026-10-08T06:13:54.647063+00:00",
+    "change": "Use exact actual manifest R2 SVG URL; new --only=remaining rebuilds necessary normal public state and moments and reuses all unpassed tail assertions. New-runner CRCRLF normalized; prior epochs exact bytes preserved.",
+    "after_sha256": "2831bf61a77802cf370802359a1bfc7841990b6465277e3bf0c9cf69fe11ac95",
+    "static_command": [
+      "C:/Program Files/nodejs/node.exe",
+      "--check",
+      "tests/e2e/run_visual_v42.mjs"
+    ],
+    "static_exit_code": 0,
+    "Main_authorized": true,
+    "no_API_build_repeat": true
+  },
+  "readiness_fix": {
+    "change": "Wait authoritative room attribute and assets-ready before selecting/counting current-room hotspots",
+    "after_sha256": "fbd8194ec7459eee6d1f069917114b549e50b1e23b8503a0de5d4c1b26f12f3f",
+    "node_check_exit_code": 0,
+    "scope": "remaining only; no repeated API/build/full early regression"
+  },
+  "drawer_fix": {
+    "change": "Reopen circuit closeup via existing select/roomView helper after partial moment before direct module rotation",
+    "after_sha256": "24a56a5f25e1963c7d50858a9ccfdbc046626cb70b5dd67a07b6500e08745460",
+    "static_node_exit_code": 0
+  },
+  "final_scope": {
+    "Main_authorized": true,
+    "change": "Public API actual owned fixture prepares R1/R2, door latch, mock hint3/hidden2 and real four moments+legacy; sync actual UI; reuse all still-unpassed R3/Win/archives/touch/production/legacy tail assertions",
+    "after_sha256": "4340cdd01cb0f4d086dab858799917decc497adc3471579a2c68b65c9d51aad9",
+    "static_node_exit_code": 0,
+    "no_repeated_API_build_R1R2_full_UI": true
+  },
+  "finish_scope": {
+    "Main_authorized": true,
+    "change": "Scope control buttons to .save-panel; prepare already-covered R3 via actual public API fixture; execute only unpassed archive-reset/mobileVictory/R1R2touch/production/legacy tail",
+    "after_sha256": "c6708c64536e8941e5ce50acb095bf44ccd9577c935fc07d0369fb6c20d86aef",
+    "static_node_exit_code": 0,
+    "no_API_build_or_passed_R3_UI_repeat": true
+  }
+}
