@@ -1,6 +1,6 @@
 # 逃离校园实验室
 
-这是一个本地运行的三房间解谜游戏：规则由后端执行，AI队友提供受限帮助；旧版本中的推进建议须由玩家确认。当前画面版本为 v4.0：Room 1 使用 Phaser 4.2.1 Canvas、原创 SVG 和固定视角点选/局部特写；Room 2、Room 3 仍是可玩的灰盒。游戏规则关卡仍为3.4.0，接口与 Schema 仍为1.4.0，原有启动器、AI 和多时刻本地存档继续使用。v4.0 联合 QA 的覆盖范围与限制见 [`v4.0 验收记录`](evidence/upgrade/v4.0/accepted.json)、[`v4.0 独立 QA 报告`](evidence/upgrade/v4.0/qa/result.json) 和 [`升级交付门槛`](release/UPGRADES.md)。计划标签 `v4.0-room1-rusty-visual` 尚待正常提交和推送。v3.4 commit `49a2f925a78055552781685e79ee96496bb9bdd6`、tag `v3.4-graybox-complete` 与多时刻存档增量 commit `8e491d7c4b4972cb4a3972627fde3a5fc98c28ee`、tag `v3.4-multiple-saves` 已推送并核实，作者与提交者均为 `liy222`。多时刻存档可分别命名并选择读取，重新开始会保留存档；验收见 [`多存档验收`](evidence/integration/multiple-saves/accepted.json) 和 [`独立报告`](review/findings/multiple-saves.md)。主要画面基线见 [`docs/visual-plan.md`](docs/visual-plan.md)，历史玩法升级规划见 [`docs/upgrade-plan.md`](docs/upgrade-plan.md)；更早版本的交付信息见 [`升级交付门槛`](release/UPGRADES.md)。
+这是一个本地运行的三房间解谜游戏：规则由后端执行，AI队友提供受限帮助；旧版本中的推进建议须由玩家确认。当前画面版本为 v4.1：Room 1 与 Room 2 使用 Phaser 4.2.1 Canvas、原创 SVG、固定视角点选和局部特写；Room 3 仍为可玩的灰盒。游戏规则关卡仍为3.4.0，接口与 Schema 仍为1.4.0，原有启动器、AI 和多时刻本地存档继续使用。v4.1 联合 QA 的覆盖范围与限制见 [`v4.1 验收记录`](evidence/upgrade/v4.1/accepted.json)、[`v4.1 独立 QA 报告`](evidence/upgrade/v4.1/qa/result.json) 和 [`升级交付门槛`](release/UPGRADES.md)。v4.1 commit 与计划标签 `v4.1-room2-rusty-visual` 尚待 Main 正常提交和推送。v4.0 commit `1047e293ade70e446c9c76be0a0d751f3e3ad81a` 与 tag `v4.0-room1-rusty-visual` 已推送并核实，GitHub 作者与提交者均为 `liy222`。v3.4 commit `49a2f925a78055552781685e79ee96496bb9bdd6`、tag `v3.4-graybox-complete` 与多时刻存档增量 commit `8e491d7c4b4972cb4a3972627fde3a5fc98c28ee`、tag `v3.4-multiple-saves` 已推送并核实，作者与提交者均为 `liy222`。多时刻存档可分别命名并选择读取，重新开始会保留存档；验收见 [`多存档验收`](evidence/integration/multiple-saves/accepted.json) 和 [`独立报告`](review/findings/multiple-saves.md)。主要画面基线见 [`docs/visual-plan.md`](docs/visual-plan.md)，历史玩法升级规划见 [`docs/upgrade-plan.md`](docs/upgrade-plan.md)；更早版本的交付信息见 [`升级交付门槛`](release/UPGRADES.md)。
 
 ## 当前升级路线
 
@@ -10,7 +10,7 @@ v3.4 API 联合验收保留首轮全套 exit 1：118个测试方法通过、315�
 
 v3.2 独立 API QA exit 0：97 passed、257 个子项通过、1 个弃用警告；旧89项和新增8个测试方法通过。覆盖46步三房间路线、各设备与物品槽阶段的保存/重置/恢复/Store 重开、错误尝试、跨版本快照拒绝，以及 AI 读取边界（12类伪造读取均被拒绝）。修复前候选的 Chrome 检查 exit 0（61项）和前端构建 exit 0被保留复用；它们不是修复后源码的重复运行。实际根目录启动 CMD 未运行，仅做字节与配置检查。具体范围、来源和限制见 [`v3.2 QA 结果`](evidence/upgrade/v3.2/qa/result.json) 与 [`独立报告`](review/findings/upgrade-v32.md)。QA 使用合成 AI fixture，没有真实 provider/网络调用；不代表真人试玩或20–30分钟游玩时长验收。
 
-v3.0 已完成并标记为 `v3.0-gameplay-information`。v3.4 三级提示、统计、结算、完整路线灰盒及多时刻存档均已按联合证据接受。用户随后提供画面升级计划，v4.0 已完成 Room 1 视觉阶段；当前状态和 QA 边界见上方记录。
+v3.0 已完成并标记为 `v3.0-gameplay-information`。v3.4 三级提示、统计、结算、完整路线灰盒及多时刻存档均已按联合证据接受。用户随后提供画面升级计划，v4.0 Room 1 与 v4.1 Room 2 视觉阶段现已按联合证据接受；Room 3 仍待后续阶段授权，当前状态和 QA 边界见上方记录。
 
 ## 双击启动当前游戏规则版本 v3.4
 

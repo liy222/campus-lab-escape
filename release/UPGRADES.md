@@ -1,6 +1,6 @@
 # 游戏升级路线与交付门槛
 
-本文跟踪 `docs/upgrade-plan.md` 中已接受的 v3.0–v4.2 范围。计划是设计基线，不是执行或验收证据。当前视觉阶段 v4.0 Room 1 已按联合 QA 证据接受并 SOURCE STOP；规则关卡仍为3.4.0、Schema 1.4.0，Room 2/Room 3 保持可玩的灰盒。v3.4 多时刻存档与前序 v3.4、v3.3 提交和标签均已推送核实。下一阶段 v4.1 尚未 GO。`CH01_v2` 是历史冻结基线。旧版工程检查、实验与评价器结论不会自动扩展到本升级路线。
+本文跟踪 `docs/upgrade-plan.md` 中已接受的 v3.0–v4.2 范围。计划是设计基线，不是执行或验收证据。当前视觉阶段 v4.1 Room 2 已按联合 QA 证据接受并 SOURCE STOP；Room 1 与 Room 2 为正式画面，Room 3 仍是可玩的灰盒。规则关卡仍为3.4.0、Schema 1.4.0，原有 AI、启动器和多时刻本地存档保持。v3.4 多时刻存档与前序 v3.4、v3.3、v4.0 提交和标签均已推送核实；v4.1 正常提交与推送待 Main 集成。v4.2/R3 尚未 GO。`CH01_v2` 是历史冻结基线。旧版工程检查、实验与评价器结论不会自动扩展到本升级路线。
 
 | 版本 | 主要范围 | 当前状态 |
 |---|---|---|
@@ -9,9 +9,9 @@
 | v3.2 | 重设计三房间谜题网络并完成房间灰盒布局 | 独立 API QA 通过（97 passed、257 子项、exit 0）；commit `519c8d0d542fcfedd4bfaaaf8b81e68b00d05925` 与 tag `v3.2-puzzle-redesign` 已推送 |
 | v3.3 | 线路连接、顺序操作两类小游戏及可操作灰盒 | 独立 QA 按联合 API 运行与定向复验、同候选 build/browser 结果接受；SOURCE STOP；commit/tag 已推送 |
 | v3.4 | 跨房间线索、AI 三级提示、结算与完整灰盒通关 | 联合 QA 接受并已推送；多时刻存档增量也已联合 QA 接受并推送 |
-| v4.0 | 引入 Phaser，完成 Room 1 固定视角画面 | 联合 QA 接受并 SOURCE STOP；计划标签 `v4.0-room1-rusty-visual` 待提交与推送 |
-| v4.1 | 完成 Room 2 正式画面 | 未开始；等待后续计划 |
-| v4.2 | 完成 Room 3、统一 UI、音效、动画与最终优化 | 未开始；等待后续计划 |
+| v4.0 | 引入 Phaser，完成 Room 1 固定视角画面 | 联合 QA 接受并 SOURCE STOP；commit `1047e293ade70e446c9c76be0a0d751f3e3ad81a` 与 tag `v4.0-room1-rusty-visual` 已推送核实 |
+| v4.1 | 完成 Room 2 正式画面 | 联合 QA 接受并 SOURCE STOP；commit 与计划标签 `v4.1-room2-rusty-visual` 待 Main 集成提交和推送 |
+| v4.2 | 完成 Room 3、统一 UI、音效、动画与最终优化 | 尚未 GO；Room 3 保持可玩的灰盒 |
 
 ## v3.0 已完成范围
 
@@ -63,11 +63,19 @@ v3.4 使用关卡3.4.0、Schema 1.4.0、独立 `game-v3.4.sqlite` 与 `campus-la
 
 ## v4.0 Room 1 视觉阶段：联合 QA 接受
 
-Room 1 现使用 Phaser 4.2.1 Canvas 与原创 SVG，采用固定视角房间点选和局部特写；四槽背包、线索笔记、AI 助手与存档菜单以抽屉/游戏内面板呈现。v4.0 只更新 Room 1 画面，规则与 API 仍使用关卡3.4.0、Schema 1.4.0；原有启动器、AI 与多时刻本地存档保留。Room 2、Room 3 仍是可玩的灰盒回退画面，尚未获得 v4.1/v4.2 视觉验收。
+在 v4.0 阶段，Room 1 首次使用 Phaser 4.2.1 Canvas 与原创 SVG，采用固定视角点选和局部特写；四槽背包、线索笔记、AI 助手与存档菜单以抽屉/游戏内面板呈现。当时只更新 Room 1，Room 2、Room 3 仍为可玩的灰盒回退画面。其联合 QA 范围与限制见 [`v4.0 验收记录`](../evidence/upgrade/v4.0/accepted.json) 和 [`独立 QA 报告`](../evidence/upgrade/v4.0/qa/result.json)。v4.0 commit `1047e293ade70e446c9c76be0a0d751f3e3ad81a` 与 tag `v4.0-room1-rusty-visual` 已推送并核实。
 
 联合 QA 复用了历史完整 API 基线127个方法/337个子项 exit 0；初始候选定向 API 6个方法/3个子项 exit 0、build exit 0、完整 Chrome 206项 exit 0。修正候选的 build exit 0 与窄范围 Chrome 112项 exit 0，检查 CSS 和3个 SVG、26项布局记录及31项像素记录。修正候选没有重跑完整三房间路线或完整 API 套件，故运行计数不相加，也不代表修后完整路线再次通过。85项修正候选哈希匹配；相对初始 v4.0 候选仅 CSS 与3个 SVG 发生变化；付费调用0。
 
-仍有既有 Starlette/httpx 弃用警告；根目录启动 CMD 未交互启动；受控缺失素材失败未覆盖；没有真实密钥、付费模型质量或真人试玩验收。详细范围、命令来源与限制见 [`v4.0 验收记录`](../evidence/upgrade/v4.0/accepted.json) 和 [`独立 QA 报告`](../evidence/upgrade/v4.0/qa/result.json)。标签 `v4.0-room1-rusty-visual` 仍待正常提交和推送，当前不记作已发布。
+仍有既有 Starlette/httpx 弃用警告；根目录启动 CMD 未交互启动；受控缺失素材失败未覆盖；没有真实密钥、付费模型质量或真人试玩验收。具体 v4.0 限制见对应验收记录。
+
+## v4.1 Room 2 视觉阶段：联合 QA 接受
+
+Room 1 与 Room 2 现使用 Phaser 4.2.1 Canvas、原创 SVG、固定视角点选和局部特写；Room 2 加入暗/亮场景、电源箱多状态与3×3线路面板、终端状态、维护说明、数据托盘物品及普通门闩。服务器状态仍驱动画面，不改变关卡规则。规则关卡、API/Schema、AI、多时刻本地存档、启动器和 Room 1 原有26个 SVG 保持不变；R3/出口仍为可玩的灰盒。
+
+正式 API 定向覆盖6个方法、3个子项，exit 0（11.72秒，1项既有弃用警告）；前端 build exit 0。Chrome exit 0、339项检查、issues为空，包含完整三房间路线、5份存档与旧单槽、刷新/进程重启、R1/R2触屏与键盘、35项像素记录和21项 R2 状态/布局记录。初始两次 Chrome 运行分别为204与278项、exit 1，原因是新 QA 状态观察器在刷新/新触屏上下文中丢失；只修正新 QA runner 的观察器注册，123项产品候选没有修改，最终覆盖不把重复计数相加。候选及272件 QA 产物哈希一致，付费调用0。
+
+仍有 Vite chunk 大小警告；加载拆分、缺失素材故障处理和音效 polish 留待 v4.2。根目录启动 CMD 未交互启动；未验证真人通关时长、音效质量或付费模型质量。完整命令、失败尝试和限制见 [`v4.1 验收记录`](../evidence/upgrade/v4.1/accepted.json) 与 [`独立 QA 报告`](../evidence/upgrade/v4.1/qa/result.json)。v4.1 计划标签 `v4.1-room2-rusty-visual` 待 Main 正常集成提交和推送；当前阶段 SOURCE STOP。
 ## 阶段边界
 
-当前 v4.0 Room 1 画面阶段已按联合证据接受并 SOURCE STOP。下一阶段 v4.1 尚未 GO；Room 2 和 Room 3 仍是灰盒。每阶段只交付计划内所需变更；不为升级路线发起付费实验。既有双击启动、手动 AI 模式与 API Key 说明继续有效；v4.0 QA 没有进行真实模型调用或真人试玩验收。
+当前 v4.1 Room 2 画面阶段已按联合证据接受并 SOURCE STOP。Room 3/R3 的 v4.2 阶段尚未 GO，仍为灰盒；每阶段只交付计划内所需变更，不为升级路线发起付费实验。既有双击启动、手动 AI 模式与 API Key 说明继续有效；v4.1 QA 未进行真实模型调用或真人试玩验收。

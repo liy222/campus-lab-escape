@@ -280,3 +280,19 @@ dialog { border:1px solid #6f866d; border-radius:14px; background:#223127; color
 .room-transition { position:fixed; inset:0; z-index:48; background:#0c171d; pointer-events:none; animation:room-arrive .45s both; }
 @keyframes room-arrive { from { opacity:1; } to { opacity:0; } }
 @media(prefers-reduced-motion:reduce) { .room-transition { display:none; } }
+
+/* v4.1 Room 2 uses the same scene controls, with a terminal inside its screen. */
+.crt-login { position:absolute; left:28%; top:22%; width:43%; display:grid; grid-template-columns:75px minmax(0,1fr); gap:12px; margin:0; padding:18px; border:0; border-radius:0; background:#0c1b18e8; font-family:Consolas,"Microsoft YaHei",monospace; color:#b2c5ac; }
+.crt-login h3 { grid-column:1/-1; margin:0 0 6px; color:#a9c7a6; letter-spacing:3px; font-size:20px; }
+.crt-login label { font-size:15px; color:#a4bba4; }
+.crt-login input { border:0; border-bottom:1px solid #547c60; border-radius:0; min-height:44px; background:#11221b; color:#c4d9b9; font-family:inherit; font-size:17px; }
+.crt-login .button { grid-column:1/-1; border-radius:0; min-height:44px; background:#173423; color:#bdcdb2; border-color:#53785d; font-family:inherit; }
+.room2-controls .circuit-instruction { width:100%; padding:7px 12px; font-size:12px; line-height:1.5; color:#d0d5c4; background:#15272ee8; }
+.room2-controls .closeup-description { max-width:620px; font-size:13px; }
+@media(max-width:760px) {
+  .game-canvas-host:has(.crt-login) { overflow:visible; margin-bottom:270px; }
+  .crt-login { left:0; top:calc(100% + 16px); width:100%; padding:18px; grid-template-columns:60px minmax(0,1fr); gap:12px; border:1px solid #54715e; }
+  .crt-login h3 { font-size:17px; }
+  .crt-login label { font-size:13px; }
+  .crt-login input { font-size:16px; }
+}

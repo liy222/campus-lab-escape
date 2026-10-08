@@ -1,0 +1,17 @@
+{
+  "copies": [
+    {
+      "origin": "evidence/upgrade/v4.0/qa/formal-api/runner.py",
+      "origin_sha256": "05f494789a9a5e60c8e965d2979cb2c0c774b6d2e317eba3a57e8f80ae0d56ab",
+      "copy": "evidence/upgrade/v4.1/qa/baseline-api/runner.py",
+      "copy_sha256": "110d7a0da8dd68e1367af02224c5b24204b9b868f8337b7442191c86464ffda0"
+    },
+    {
+      "origin": "evidence/upgrade/v4.0/qa/formal_build.py",
+      "origin_sha256": "c22eeb0b089a27e620bf32d6b77cf27182b4229490cb1af98bcffe9349a8eef0",
+      "copy": "evidence/upgrade/v4.1/qa/baseline_build.py",
+      "copy_sha256": "b1810ff3d371f49d6478d9b0a9dd55e614b3992ddfda01136ba32f822059be5d"
+    }
+  ],
+  "policy": "Only descriptive epoch/temp prefix/build output path adapted. Same selected6 test methods and assertions unchanged; original wrappers untouched."
+}

@@ -1,0 +1,100 @@
+{
+  "status": "v4.1 actual compact baseline accepted; baseline SOURCE STOP; R2 implementation may start",
+  "operator": "visual_qa_oct08 actual execution",
+  "recorded_at": "2026-10-08T00:46:50.294534+00:00",
+  "candidate": "evidence/upgrade/v4.1/baseline-candidate.json",
+  "candidate_sha256": "3f803251ed225c147bc59e4be6e9e7d97cff7c4c85919de0a580393e4a90e587",
+  "source_count": 85,
+  "source_85_before_after_bound_both_stages": true,
+  "parent_commit": "1047e293ade70e446c9c76be0a0d751f3e3ad81a",
+  "API": {
+    "run": "evidence/upgrade/v4.1/qa/baseline-api/run.json",
+    "command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "evidence/upgrade/v4.1/qa/baseline-api/runner.py",
+      "evidence/upgrade/v4.1/baseline-candidate.json"
+    ],
+    "pytest_arguments": [
+      "tests/api/test_upgrade_v34.py::UpgradeV34Acceptance::test_three_levels_only_known_context_no_auto_inspect_no_private_full_solution",
+      "tests/api/test_upgrade_v34.py::UpgradeV34Acceptance::test_meaningful_numeric_login_circuit_sequence_wrong_item_count_once_only",
+      "tests/api/test_upgrade_v34.py::UpgradeV34Acceptance::test_optional_story_objects_visibility_discoveries_total_ten_and_win_score",
+      "tests/api/test_upgrade_v34.py::UpgradeV34Acceptance::test_server_UTC_offline_elapsed_reset_saved_run_restore_and_win_freeze",
+      "tests/api/test_multiple_saves.py::MultipleSavesAcceptance::test_append_immutable_three_moments_restore_stats_reset_and_reopen",
+      "tests/api/test_multiple_saves.py::MultipleSavesAcceptance::test_selected_restore_expires_pending_mock_hint_without_stats_mutation",
+      "-q",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider"
+    ],
+    "exit_code": 0,
+    "passed_methods": 6,
+    "passed_subtests": 3,
+    "warnings": 1,
+    "duration_seconds": 11.4,
+    "compact_check_records": 10,
+    "old_API_12_before_after_identical": true
+  },
+  "build": {
+    "run": "evidence/upgrade/v4.1/qa/baseline-build/run.json",
+    "wrapper_command": [
+      "C:/Users/liyh/.conda/envs/1/python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "evidence/upgrade/v4.1/qa/baseline_build.py",
+      "evidence/upgrade/v4.1/baseline-candidate.json"
+    ],
+    "command": [
+      "C:/Program Files/nodejs/npm.cmd",
+      "run",
+      "build",
+      "--prefix",
+      "frontend"
+    ],
+    "exit_code": 0
+  },
+  "copy_policy": {
+    "copies": [
+      {
+        "origin": "evidence/upgrade/v4.0/qa/formal-api/runner.py",
+        "origin_sha256": "05f494789a9a5e60c8e965d2979cb2c0c774b6d2e317eba3a57e8f80ae0d56ab",
+        "copy": "evidence/upgrade/v4.1/qa/baseline-api/runner.py",
+        "copy_sha256": "110d7a0da8dd68e1367af02224c5b24204b9b868f8337b7442191c86464ffda0"
+      },
+      {
+        "origin": "evidence/upgrade/v4.0/qa/formal_build.py",
+        "origin_sha256": "c22eeb0b089a27e620bf32d6b77cf27182b4229490cb1af98bcffe9349a8eef0",
+        "copy": "evidence/upgrade/v4.1/qa/baseline_build.py",
+        "copy_sha256": "b1810ff3d371f49d6478d9b0a9dd55e614b3992ddfda01136ba32f822059be5d"
+      }
+    ],
+    "policy": "Only descriptive epoch/temp prefix/build output path adapted. Same selected6 test methods and assertions unchanged; original wrappers untouched."
+  },
+  "full_API_baseline_reuse": {
+    "result": "evidence/upgrade/v4.0/qa/baseline-result.json",
+    "methods_passed": 127,
+    "subtests_passed": 337,
+    "scope": "Historical same backend full baseline. Not rerun or recounted in v4.1."
+  },
+  "evidence_sha256": {
+    "evidence/upgrade/v4.1/qa/baseline-api/run.json": "e37a484b491f48b3681ba33ea7ce17ca9f5bf994863b405fd4ef1e175629edaf",
+    "evidence/upgrade/v4.1/qa/baseline-build/run.json": "1d3a8e7f7b6eb4122adccf12ae811d7085ce390498ecbbb555f9fbdf068ea049",
+    "evidence/upgrade/v4.1/qa/baseline-api/stdout.txt": "88d31462b946e04a68f16c827eb5d0a5f3ec763b1179c1c820114edb20f5c429",
+    "evidence/upgrade/v4.1/qa/baseline-api/checks.json": "99810db0750a63b8277230c599d97ab51561368e315af39f9bb1f900960d0514",
+    "evidence/upgrade/v4.1/qa/baseline-build/stdout.txt": "c379346c33b496853461de40844040e05ec2a141365b52377758b893efad728e",
+    "evidence/upgrade/v4.1/qa/baseline-copy.json": "bcd09c9395e7594c4e5c80e190f413ddd8bfdef65d5a09cce0e387e68eac753b"
+  },
+  "formal_new_R2_visual_runs": 0,
+  "product_edits": 0,
+  "old_test_edits": 0,
+  "paid_calls": 0,
+  "limitations": [
+    "One existing Starlette/httpx deprecation warning remains.",
+    "Baseline API/build only; no new R2 scene or asset acceptance.",
+    "Mock/stub and owned temporary SQLite only; no real provider or human playtest claim.",
+    "New R2 browser formal run waits owner SOURCE STOP and frozen Main candidate GO."
+  ]
+}

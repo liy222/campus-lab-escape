@@ -1,0 +1,319 @@
+{
+  "stage": "v4.1 Room 2 original SVG assets",
+  "status": "SOURCE_STOP",
+  "owner": "visual_assets_oct08",
+  "scope": "Additive Room 2 SVG assets and independent manifest exports/layout only. The accepted R1 assets and R1 manifest prefix are byte-identical to the v4.0 fixed candidate.",
+  "baseline": {
+    "candidate": "evidence/upgrade/v4.0/candidate-fixed.json",
+    "r1_svg_count": 26,
+    "r1_svg_byte_matches": 26,
+    "r1_manifest_prefix_sha256": "43b4ed61e39e6a7d81dce22c947482f3bdb3d011f1d603ce15ed0d09e0d43bbc"
+  },
+  "manifest": {
+    "path": "frontend/src/assets/manifest.ts",
+    "sha256_raw": "b525888ab59b0a34f32962e12d70139d9246620370c3e316047eacc9d73b7315",
+    "r1_asset_keys": 41,
+    "r2_asset_keys": 35,
+    "r2_layout_keys": 10,
+    "duplicate_keys": 0
+  },
+  "layout_1600x900_top_left": {
+    "r2_return_door": [
+      28,
+      365,
+      165,
+      375
+    ],
+    "r2_powerbox": [
+      218,
+      382,
+      232,
+      250
+    ],
+    "r2_maintenance": [
+      478,
+      422,
+      150,
+      100
+    ],
+    "r2_monitor": [
+      868,
+      319,
+      272,
+      232
+    ],
+    "r2_door": [
+      1288,
+      350,
+      238,
+      410
+    ],
+    "r2_tray": [
+      850,
+      536,
+      318,
+      112
+    ],
+    "research_strip": [
+      887,
+      566,
+      145,
+      68
+    ],
+    "access_card": [
+      1041,
+      565,
+      110,
+      72
+    ],
+    "r2_service_label": [
+      429,
+      480,
+      108,
+      58
+    ],
+    "r2_workbench": [
+      376,
+      402,
+      775,
+      300
+    ]
+  },
+  "closeup_regions": {
+    "circuit_board_blank": [
+      520,
+      200,
+      600,
+      540
+    ],
+    "circuit_cell": [
+      200,
+      180
+    ],
+    "powerbox_switch": [
+      1200,
+      280,
+      150,
+      320
+    ],
+    "monitor_screen": [
+      420,
+      160,
+      760,
+      430
+    ],
+    "monitor_tray": [
+      475,
+      600,
+      610,
+      155
+    ],
+    "research_strip": [
+      545,
+      635,
+      250,
+      95
+    ],
+    "access_card": [
+      860,
+      625,
+      175,
+      105
+    ],
+    "service_label_hitbox": [
+      135,
+      230,
+      180,
+      250
+    ],
+    "service_label_image": [
+      135,
+      300,
+      180,
+      96
+    ]
+  },
+  "r2_svg_count": 35,
+  "r2_svg_files": [
+    {
+      "path": "frontend/src/assets/r2_access_card.svg",
+      "sha256_raw": "20fffa550ffa190b2509e2356084ba96ad480d6164aa3f89e2542866e029083d"
+    },
+    {
+      "path": "frontend/src/assets/r2_background_dark.svg",
+      "sha256_raw": "c0d24ea7bc702ac76303197173e88208a58c08d2ce33b7629da920b82e327c60"
+    },
+    {
+      "path": "frontend/src/assets/r2_closeup_maintenance.svg",
+      "sha256_raw": "f64e1994e241d644d619276276f271429da878c6a20601d4194c5e65791bbf3c"
+    },
+    {
+      "path": "frontend/src/assets/r2_closeup_monitor_booting.svg",
+      "sha256_raw": "a3e4bf66227e863700fdabcd4861aeaff631e095b22f067028c7c912c8a1dfa1"
+    },
+    {
+      "path": "frontend/src/assets/r2_closeup_monitor_data_read.svg",
+      "sha256_raw": "a942c72d7668c3e9c55f773c1ad121c92dc36923d9a165f871190a7d60dd904e"
+    },
+    {
+      "path": "frontend/src/assets/r2_closeup_monitor_login_locked.svg",
+      "sha256_raw": "b3d8b543a4a0d8df10bb9123d7dc45bd1ec38c2451a2ee183a8963f0e8ba0d0a"
+    },
+    {
+      "path": "frontend/src/assets/r2_closeup_monitor_off.svg",
+      "sha256_raw": "bc7e197ff5b104b11da68e9a1f5902bf589381fcb21d911d8069da6ebfc83486"
+    },
+    {
+      "path": "frontend/src/assets/r2_closeup_monitor_unlocked.svg",
+      "sha256_raw": "ffae9c2b9ad6810f539f4de7323a3a38b60565cc41c940e09741216a3dbfcc04"
+    },
+    {
+      "path": "frontend/src/assets/r2_closeup_powerbox_circuit_ready.svg",
+      "sha256_raw": "c4fb36d63d9126ee46a715abe2fb91966f18191b658cba680ccc3854a5d07312"
+    },
+    {
+      "path": "frontend/src/assets/r2_closeup_powerbox_closed.svg",
+      "sha256_raw": "97c55855ea8581d49f4b4786505a358e1b42e973119a208a467422944606a986"
+    },
+    {
+      "path": "frontend/src/assets/r2_closeup_powerbox_fuse_installed.svg",
+      "sha256_raw": "388712197b60babd3d508787c83d8e9f9aaf050ecd3a900abdb2d4baef2d2142"
+    },
+    {
+      "path": "frontend/src/assets/r2_closeup_powerbox_missing_fuse.svg",
+      "sha256_raw": "88bb8971d2fab7ce56c4342a062ffbdef63878a6d560c0257763c306466f50cd"
+    },
+    {
+      "path": "frontend/src/assets/r2_closeup_powerbox_open.svg",
+      "sha256_raw": "e8a87d4f566f20509e3521a82509adc459c7438adb75b12cd2ea3731f4e38569"
+    },
+    {
+      "path": "frontend/src/assets/r2_closeup_powerbox_power_on.svg",
+      "sha256_raw": "043133aa2064e4f586c3b190f9f7b753570ca3c0be4af2806d573e710761e0f2"
+    },
+    {
+      "path": "frontend/src/assets/r2_closeup_service_label.svg",
+      "sha256_raw": "333e9e850bbc94103c6161bbd77ba04945ee26bc17c5312b96eae489916c1a3a"
+    },
+    {
+      "path": "frontend/src/assets/r2_door_closed.svg",
+      "sha256_raw": "85c39bd7da59c32089215f8f654196bbacf3a6c0a250e96bb27f4f054863c7e5"
+    },
+    {
+      "path": "frontend/src/assets/r2_door_unlatched.svg",
+      "sha256_raw": "eca2eaa8ae8b51724ccf141c4a23b922a77234afb347e4475e0809df29d20a99"
+    },
+    {
+      "path": "frontend/src/assets/r2_light_overlay_on.svg",
+      "sha256_raw": "11025cc28b6a7d280dde7aa859aad8551423d3e6f81b6d8355fb3f629fa521d4"
+    },
+    {
+      "path": "frontend/src/assets/r2_maintenance.svg",
+      "sha256_raw": "e708a843e11cc9f8bacab019e75c801a10268235f8bf6177eff6ba7e44a2a301"
+    },
+    {
+      "path": "frontend/src/assets/r2_monitor_booting.svg",
+      "sha256_raw": "121bde1a02216bf04c04c5fec8faf05b11a41f15998b133deab0446de126f93a"
+    },
+    {
+      "path": "frontend/src/assets/r2_monitor_data_read.svg",
+      "sha256_raw": "30a76f5445ec6a54fbb0484fc8790182dcfacc1bcd5a4bf8f2df63c6bedb0b16"
+    },
+    {
+      "path": "frontend/src/assets/r2_monitor_login_locked.svg",
+      "sha256_raw": "6e01e0a49d3169024b126312391a1f1152e87906a15fe3c2abe7ff9c395f4546"
+    },
+    {
+      "path": "frontend/src/assets/r2_monitor_off.svg",
+      "sha256_raw": "0d1617c98d13037cadc6902b4f6e1f57b916743ab83b814e5ec7af382108f1a5"
+    },
+    {
+      "path": "frontend/src/assets/r2_monitor_unlocked.svg",
+      "sha256_raw": "906c42baf5e1560315d5e80a9cf1e8509cb5247a2de0254ccddb3a182917d58c"
+    },
+    {
+      "path": "frontend/src/assets/r2_powerbox_circuit_ready.svg",
+      "sha256_raw": "4fb75b036b1803f8773cb09c1aac295008471ab515f6da8e043c008817f3d5f4"
+    },
+    {
+      "path": "frontend/src/assets/r2_powerbox_closed.svg",
+      "sha256_raw": "d7116ce558a1bd91e608d17281fd8cde97fb6b2668c4f75504f85096c9936953"
+    },
+    {
+      "path": "frontend/src/assets/r2_powerbox_fuse_installed.svg",
+      "sha256_raw": "38c6409a56872ef948c7d07ca3c5d7e1fb95a8239a0045f392776193aa980e85"
+    },
+    {
+      "path": "frontend/src/assets/r2_powerbox_missing_fuse.svg",
+      "sha256_raw": "16ea54a35f4589c0ec4dfd31c368785d52cac2cc0402b41153ee6a43b251e481"
+    },
+    {
+      "path": "frontend/src/assets/r2_powerbox_open.svg",
+      "sha256_raw": "ad474c4ac77cf2a6eee8821b10bc1b50ec27ed9da6d27733d57b42cad5fd016b"
+    },
+    {
+      "path": "frontend/src/assets/r2_powerbox_power_on.svg",
+      "sha256_raw": "d5833b1eb5a5e1aa1d40ba234eb4552a029fc982ba68e00c9c62b70d2b47bacb"
+    },
+    {
+      "path": "frontend/src/assets/r2_research_strip.svg",
+      "sha256_raw": "cb41f2a0268254ca099161d63c34c6569959b2c496c550a22db5f9d190f56268"
+    },
+    {
+      "path": "frontend/src/assets/r2_return_door.svg",
+      "sha256_raw": "cc3efc31744e6ee1c3da8f2d9ce4c78bbcf92fe7336abb27e2f2ee0b53daa91a"
+    },
+    {
+      "path": "frontend/src/assets/r2_service_label.svg",
+      "sha256_raw": "9442f369aa9290343ff1de6d20e2133d46d423e35ebdd1c2651fad277ab624b6"
+    },
+    {
+      "path": "frontend/src/assets/r2_tray.svg",
+      "sha256_raw": "349d85f5e85888448ecbfb6a5eec17adf02160837a2e521f729f52ef78efd4f2"
+    },
+    {
+      "path": "frontend/src/assets/r2_workbench.svg",
+      "sha256_raw": "eb67ad14dfed82952a0b7f821cbac6017ff65931ff93768bdaa2d30661402d45"
+    }
+  ],
+  "content_policy": {
+    "fixed_answer_or_symbol_leaks": 0,
+    "clue_prose_embedded": false,
+    "hidden_label_text_embedded": false,
+    "service_label_loaded_only_from_visible_server_state": true,
+    "paid_calls": 0,
+    "copied_third_party_art": false
+  },
+  "checks": [
+    {
+      "command": "Initial PowerShell XML parse of frontend/src/assets/r2_*.svg",
+      "exit_code": 1,
+      "result": "Found one malformed opacity attribute in r2_monitor_data_read.svg; corrected before final validation."
+    },
+    {
+      "command": "Final PowerShell XML parse of all 35 frontend/src/assets/r2_*.svg",
+      "exit_code": 0,
+      "result": "35 parsed, 0 errors."
+    },
+    {
+      "command": "Node TypeScript compiler API on manifest.ts, noEmit ES2022/ESNext/Bundler; AST key uniqueness and URL existence check",
+      "exit_code": 0,
+      "result": "Diagnostics 0; keys R1/R2/layout 41/35/10; duplicates 0; missing URLs 0."
+    },
+    {
+      "command": "PowerShell SHA-256 comparison against v4.0 candidate-fixed.json for all original R1 SVGs, R1 manifest prefix, clue-answer scan and LF scan",
+      "exit_code": 0,
+      "result": "26/26 R1 SVG hashes match; R1 prefix matches; answer leaks 0; CRLF files 0."
+    },
+    {
+      "command": "git diff --check -- frontend/src/assets/manifest.ts",
+      "exit_code": 0,
+      "result": "No whitespace errors."
+    }
+  ],
+  "limitations": [
+    "Asset owner did not run formal API, build, or browser QA; Main/QA owns frozen-candidate joint QA.",
+    "No standalone raster preview was available for the final SVG snapshot; frontend owner visual smoke remains the final rendered check.",
+    "No R3 assets were created."
+  ]
+}

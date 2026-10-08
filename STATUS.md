@@ -10,11 +10,11 @@
 | v3.2 | 已验收、提交并推送 | 519c8d0 / v3.2-puzzle-redesign |
 | v3.3 | 已验收、提交并推送 | 58587cf / v3.3-mini-games |
 | v3.4 | 灰盒及多时刻存档已验收、推送 | 49a2f92 / 8e491d7 |
-| v4.0 | R1 联合验收通过，文档及同步收尾 | v4.0-room1-rusty-visual（待提交标签） |
-| v4.1 | 等待 v4.0 正常提交推送后实施 | R2 暗亮场景、电箱、电路与终端 |
+| v4.0 | R1 已验收、提交并推送 | 1047e29 / v4.0-room1-rusty-visual |
+| v4.1 | R2 独立验收通过，待正常提交推送 | v4.1-room2-rusty-visual |
 | v4.2 | 后续阶段 | R3、结算和最终 polish |
 
-唯一主要画面基线：[docs/visual-plan.md](docs/visual-plan.md)，与用户附件逐字节一致。玩法沿用 v3.4，后端规则/API/AI及多时刻存档保持不变，关卡3.4.0/Schema1.4.0。R1 使用 Phaser4.2.1 Canvas 与原创SVG，真实物件点击、特写、物品组合、笔记/AI/保存抽屉已验收；R2/R3 当前仍是可玩灰盒。v4.0 为联合证据：历史完整API127方法/337子项通过；初始定向API6方法/3子项、build、完整Chrome206项通过；仅CSS与3张SVG修正后build及窄Chrome112项通过，不重复相加、不宣称修后再跑全路线。85源码和旧12API/11e2e测试字节核对通过。见 [Main验收](evidence/upgrade/v4.0/accepted.json) 与 [独立QA](evidence/upgrade/v4.0/qa/result.json)。无付费调用；没有根CMD交互启动、受控缺图、音频或真人时长验收。下文均保留历史记录。
+唯一主要画面基线：[docs/visual-plan.md](docs/visual-plan.md)，与用户附件逐字节一致。玩法沿用 v3.4，后端规则/API/AI及多时刻存档保持不变，关卡3.4.0/Schema1.4.0。R1 使用 Phaser4.2.1 Canvas 与原创SVG，真实物件点击、特写、物品组合、笔记/AI/保存抽屉已验收；R2暗亮场景/六态电箱/公开电路/五态终端/托盘/隐藏签已独立验收：API6方法+3子项0、build0、Chrome339项0/issues[]、123源码及272证据hash一致；首两Chrome204/278退出1（新QA观察器遗漏）保留，仅新adapter修正、源码不变，重复数不相加。见 [v4.1验收](evidence/upgrade/v4.1/accepted.json)。R3仍是可玩灰盒，音频/受控缺图/延迟加载和最终结算留v4.2，待R2提交推送后GO。v4.0 为联合证据：历史完整API127方法/337子项通过；初始定向API6方法/3子项、build、完整Chrome206项通过；仅CSS与3张SVG修正后build及窄Chrome112项通过，不重复相加、不宣称修后再跑全路线。85源码和旧12API/11e2e测试字节核对通过。见 [Main验收](evidence/upgrade/v4.0/accepted.json) 与 [独立QA](evidence/upgrade/v4.0/qa/result.json)。无付费调用；没有根CMD交互启动、受控缺图、音频或真人时长验收。下文均保留历史记录。
 <!-- upgrade-current-end -->
 
 updated_at: 2026-10-06 (Asia/Shanghai)

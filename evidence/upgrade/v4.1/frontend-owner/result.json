@@ -1,0 +1,13 @@
+{
+  "scope": "Frontend owner development smoke; R1 preparation through actual API, R2 actual Canvas; not independent QA or human playtest",
+  "checks": [
+    "R2 Canvas ready/dark scene; hidden service and tray absent",
+    "same Assistant retains only synthetic memory key across R1/R2",
+    "six-state powerbox first stages; wrong item target keeps selection; public Canvas module rotation",
+    "public geometry circuit submit then separate main switch; hidden service revealed only after POWER_ON"
+  ],
+  "errors": [
+    "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '← 返回房间', exact: true })\u001b[22m\n\n    at back (D:\\深度能力\\evidence\\upgrade\\v4.1\\frontend-owner\\runner.cjs:20:80)\n    at D:\\深度能力\\evidence\\upgrade\\v4.1\\frontend-owner\\runner.cjs:36:194"
+  ],
+  "paid_calls": 0
+}

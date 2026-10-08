@@ -1,4 +1,5 @@
 import GameCanvas from '../game/GameCanvas';
+import { InventoryBar, RoomHud } from './RoomChrome';
 import type { SceneInput } from '../game/bridge';
 import type { ActionArguments, Receipt, Tool, VisibleState } from '../api';
 
@@ -15,6 +16,7 @@ export default function Room1(props: Props) {
   const clue = object ? state.clues.find(clue => clue.object_id === object.object_id) : null;
   const codeAction = object?.actions.find(action => action.tool === 'submit_code');
   const onInput = (input: SceneInput) => {
+    if (input.kind === 'circuit-module') return;
     if (input.kind === 'object') props.onObject(input.objectId);
     else if (selectedItemId && input.tool !== 'move') onAction('use_item', { item_id: selectedItemId, target_id: input.targetId });
     else if (input.tool === 'move') onAction('move', { destination_id: input.targetId });
@@ -25,11 +27,7 @@ export default function Room1(props: Props) {
     }
   };
   return <section className="visual-room" aria-label="实验准备室游戏">
-    <header className="game-hud"><div><small>CAMPUS LAB / R1</small><h2 id="room-title">{state.room.name}</h2></div><div>
-      <button className="hud-button" aria-label="线索笔记" onClick={props.onNotebook}>笔记 <span>{state.clues.length}</span></button>
-      <button className="hud-button" aria-label="AI 探索伙伴" onClick={props.onAssistant}>LAB ASSIST</button>
-      <button className="hud-button" aria-label="游戏菜单" onClick={props.onMenu}>☰</button>
-    </div></header>
+    <RoomHud state={state} onNotebook={props.onNotebook} onAssistant={props.onAssistant} onMenu={props.onMenu}/>
     <GameCanvas projection={{ state, view: object?.object_id || null, disabled, animation: props.animation }} onInput={onInput}/>
     {object && <div className="closeup-controls">
       <button className="button closeup-back" onClick={() => props.onView(null)}>← 返回房间</button>
@@ -44,8 +42,6 @@ export default function Room1(props: Props) {
       {clue && <article className={`closeup-reading ${object.object_id === 'r1_microscope' ? 'eyepiece-reading' : ''}`}><small>{clue.title}</small><p>{clue.text}</p></article>}
       {!clue && <p className="closeup-description">{object.description}</p>}
     </div>}
-    <aside className="inventory-bar inventory" aria-label="我的背包"><span className="inventory-label">背包</span>{state.inventory.map(item => <article className={`inventory-item ${selectedItemId === item.item_id ? 'item-selected' : ''}`} key={item.item_id} data-item-id={item.item_id}>
-      <button className="item-select-button" aria-pressed={selectedItemId === item.item_id} aria-label={`${item.name} · ${selectedItemId === item.item_id ? '取消选择' : '选择物品'}`} title={item.description} disabled={disabled} onClick={() => props.onItem(item.item_id)}><span aria-hidden="true" className={`item-glyph item-${item.item_id}`}/><span>{item.name}</span></button>
-    </article>)}{Array.from({ length: Math.max(0, 4 - state.inventory.length) }, (_, index) => <span key={index} className="empty-slot" aria-hidden="true"/>)}{selectedItemId && <button className="button subtle cancel-item" onClick={() => props.onItem(selectedItemId)}>取消</button>}</aside>
+    <InventoryBar state={state} selectedItemId={selectedItemId} disabled={disabled} onItem={props.onItem}/>
   </section>;
 }

@@ -145,3 +145,9 @@ User supplied final visual plan and requests implementation. Main integration co
 
 ### v4.0 accepted, 2026-10-08
 Main accepts85 fixed sources from independent joint QA: previsual full127/3370 reused, initial targeted6/3+build0+completeChrome2060, fixed CSS/3SVG build0+narrowChrome1120 (26layout/31pixel); repeated scopes not summed. QAOct08 only read-audited old actual executions and viewed6 fixed PNGs. Main matched85/evidence digests and viewedclock1920/lock375. Three findings closed; no backend/schema/AI/archive change. Documentation and normal liy222 commit/push next, then R2 GO. Limits remain in evidence/upgrade/v4.0/accepted.json; no paid/Astra/human claim.
+
+### v4.1 R2 implementation GO, 2026-10-08
+v4.0 commit1047e293ade70e446c9c76be0a0d751f3e3ad81a/tagv4.0-room1-rusty-visual private remote verified, author+committerliy222. v4.1 actual pre-implementation baseline6methods/3subtests11.40s0/build0/source85stable accepted. Exact owners/scope in evidence/upgrade/v4.1/plan.json; reuse bridge/API/AI/archive, no R3/audio/polish yet. Main mechanical post-sync README/UPGRADES metadata replaces only planned tag statement; old docs hashes remain historical; Assets regains these docs after4.1 QA. R1 SVG26/backendcontracts40/oldtests frozen, no paid/Astra.
+
+### v4.1 Main acceptance, 2026-10-08
+v4.1 R2 accepted after frozen123-source actual independentAPI6/3/build0/Chrome3390. Main verified272evidencehashes andviewedbright+mobiletray. Normalliy222 commit/tagv4.1-room2-rusty-visual/push next; thencompactbaseline+R3/finalpolish v4.2. No morev4.1suite runs; first204/278 QAobserverfailures preserved, no repeatedcount or productfix.

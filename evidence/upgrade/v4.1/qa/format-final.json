@@ -1,0 +1,63 @@
+{
+  "recorded_at": "2026-10-08T01:14:43.617948+00:00",
+  "operator": "visual_qa_oct08",
+  "scope": "Only one trailing ASCII space removed at line 476; CRLF preserved; no assertion/product changes or formal rerun",
+  "runner": "tests/e2e/run_visual_v41.mjs",
+  "line": 476,
+  "removed_bytes": 1,
+  "before_sha256": "c999fcf488d60793346535b7a4d07b18c7abf31915630923e87d3ae987fc874b",
+  "after_sha256": "adcb3426473296cab57f9e5db26f535f079f6b0a216ffe3a8c950ba6465db9c4",
+  "sealed_third_runner": "evidence/upgrade/v4.1/qa/runner-epochs/third.mjs",
+  "sealed_third_sha256": "c999fcf488d60793346535b7a4d07b18c7abf31915630923e87d3ae987fc874b",
+  "after_byte_exact_sealed_third_with_only_line476_trailing_space_removed": true,
+  "sealed_result_sha256": "35f8edb652068af0fdff39ad042572de41051049948150341646f2159d4060f4",
+  "sealed_result_and_all_recorded_artifacts_unchanged": true,
+  "candidate_source123_match": true,
+  "checks": [
+    {
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--check",
+        "tests/e2e/run_visual_v41.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "tests/e2e/run_visual_v41.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol",
+        "diff",
+        "--check",
+        "--",
+        "tests/e2e/run_visual_v41.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "check_note": "Initial plain diff-check flagged the preserved CRLF new line (exit 2); the final actual plain and one-shot cr-at-eol checks both returned 0. This agent did not change Git configuration or line endings; no product or formal rerun occurred.",
+  "SOURCE_STOP": true,
+  "initial_cleanup_attempt": {
+    "wrapper_exit_code": 1,
+    "node_check_exit_code": 0,
+    "plain_diff_check_exit_code": 2,
+    "plain_diff_check_stdout": "tests/e2e/run_visual_v41.mjs:476: trailing whitespace.\n+  if(state.device_states.powerbox==='POWER_ON'&&currentView==='r2_powerbox') {await expect(host.locator('.scene-keyboard-hotspot[data-object-id=\"r2_service_label\"]')).toHaveCount(1);}\n",
+    "scope": "One-byte cleanup already completed; initial wrapper stopped at whitespace check before writing evidence."
+  }
+}

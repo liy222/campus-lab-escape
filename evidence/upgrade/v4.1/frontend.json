@@ -1,0 +1,132 @@
+{
+  "stage": "v4.1 Room 2 only",
+  "status": "SOURCE STOP",
+  "role": "Frontend Owner",
+  "parent_commit": "1047e293ade70e446c9c76be0a0d751f3e3ad81a",
+  "paid_calls": 0,
+  "changed_source_files": [
+    "frontend/src/App.tsx",
+    "frontend/src/style.css",
+    "frontend/src/game/GameCanvas.tsx",
+    "frontend/src/game/Room2Scene.ts",
+    "frontend/src/game/bridge.ts",
+    "frontend/src/components/Room1.tsx",
+    "frontend/src/components/Room2.tsx",
+    "frontend/src/components/RoomChrome.tsx"
+  ],
+  "source_files": [
+    {
+      "path": "frontend/src/App.tsx",
+      "bytes": 44348,
+      "sha256": "b8044d51d4108a3ae9a5613fdbc0edb6591a6cb8d61cb0808277974d1e3cc60e"
+    },
+    {
+      "path": "frontend/src/style.css",
+      "bytes": 45605,
+      "sha256": "b945cbd5a7de7f06b382a3f834993d1eacc052190a43724cfb60827c1881e058"
+    },
+    {
+      "path": "frontend/src/game/GameCanvas.tsx",
+      "bytes": 4578,
+      "sha256": "b20217931e14dbaa565d31493f72fc8d1ae758a0ef4a446b3e08e994d75ca209"
+    },
+    {
+      "path": "frontend/src/game/Room2Scene.ts",
+      "bytes": 13818,
+      "sha256": "c1eb43b55b4a2d88d07eef7e09bcd5d8338488452afa45dfaad7394ddf26dad5"
+    },
+    {
+      "path": "frontend/src/game/bridge.ts",
+      "bytes": 867,
+      "sha256": "005aae2d54976f804f07bc5887236debaf56d1dbe7b5ea34ff2f5aae2c44d731"
+    },
+    {
+      "path": "frontend/src/components/Room1.tsx",
+      "bytes": 4349,
+      "sha256": "fd623c57a9f1ddea6544519d1ca09a9b9ba98267678a864283af80a8f1bbc85b"
+    },
+    {
+      "path": "frontend/src/components/Room2.tsx",
+      "bytes": 5426,
+      "sha256": "53120bdf18e969d48ae368c2828d36bf10b97a8225aa7427721cb7a4d50d8dcb"
+    },
+    {
+      "path": "frontend/src/components/RoomChrome.tsx",
+      "bytes": 1849,
+      "sha256": "1da6e8483078d3b9e5316eacacae70c0a9422a09653a56ecc1561c502771862f"
+    }
+  ],
+  "source_set_sha256": "d6b930631fa1fe643094ca62b2e41aa6e330addd07111fb5b000d9a37a8e5aad",
+  "behavior": "Shared Canvas/GameBridge/HUD/inventory; R2 public-state six-stage powerbox, Phaser 3x3 circuit, five-stage terminal and React CRT login, DATA_READ tray items, delayed POWER_ON service label, ordinary R3 latch and return R1. Existing App API/session/save/AI flow retained; success receipt only animations and static snapshot restore.",
+  "actual_commands": [
+    {
+      "command": "npm.cmd --prefix frontend run build",
+      "exit_code": 0,
+      "tool_chunk": "66098a",
+      "scope": "initial owner build before final asset blank-screen corrections; no persistent build log"
+    },
+    {
+      "command": "node.exe evidence/upgrade/v4.1/frontend-owner/runner.cjs",
+      "exit_code": 1,
+      "tool_chunk": "1f4e9f",
+      "evidence": "evidence/upgrade/v4.1/frontend-owner/result.json",
+      "reason": "Harness required back button after taken object disappeared; UI normally returns to overview. Earlier R2 steps retained; not a product failure."
+    },
+    {
+      "command": "npm.cmd --prefix frontend run build *> evidence/upgrade/v4.1/frontend-owner-fixed/build.log",
+      "exit_code": 0,
+      "tool_chunk": "55e2af",
+      "scope": "final owner build includes final assets and source"
+    },
+    {
+      "command": "node.exe evidence/upgrade/v4.1/frontend-owner-fixed/runner.cjs",
+      "exit_code": 0,
+      "tool_chunk": "6fb0a2",
+      "evidence": "evidence/upgrade/v4.1/frontend-owner-fixed/result.json"
+    }
+  ],
+  "owner_checks": {
+    "scope": "Frontend owner development smoke; R1 preparation through actual API, R2 actual Canvas; not independent QA or human playtest",
+    "checks": [
+      "R2 Canvas ready/dark scene; hidden service and tray absent",
+      "same Assistant retains only synthetic memory key across R1/R2",
+      "six-state powerbox first stages; wrong item target keeps selection; public Canvas module rotation",
+      "public geometry circuit submit then separate main switch; hidden service revealed only after POWER_ON",
+      "all terminal stages and mobile CRT login; DATA_READ tray items individually inspect/take",
+      "partial archive restores and reloads as static R2 snapshot",
+      "R2 return R1 and ordinary door to existing R3 graybox"
+    ],
+    "errors": [],
+    "source_unchanged": true,
+    "source_count": 78
+  },
+  "images": [
+    "evidence/upgrade/v4.1/frontend-owner-fixed/dark.png",
+    "evidence/upgrade/v4.1/frontend-owner-fixed/circuit.png",
+    "evidence/upgrade/v4.1/frontend-owner-fixed/terminal-desktop.png",
+    "evidence/upgrade/v4.1/frontend-owner-fixed/terminal-mobile.png",
+    "evidence/upgrade/v4.1/frontend-owner-fixed/tray-mobile.png"
+  ],
+  "viewed_images": [
+    "evidence/upgrade/v4.1/frontend-owner-fixed/terminal-desktop.png",
+    "evidence/upgrade/v4.1/frontend-owner-fixed/terminal-mobile.png",
+    "evidence/upgrade/v4.1/frontend-owner-fixed/tray-mobile.png"
+  ],
+  "selectors": {
+    "canvas": ".game-canvas-host[data-room=\"R2\"][data-view][data-assets-ready][data-renderer][data-animation][data-powerbox-state][data-computer-state][data-circuit-status]",
+    "public_hotspots": ".scene-keyboard-hotspot[data-object-id][data-bounds][data-scene-action]",
+    "circuit": ".scene-keyboard-hotspot[data-module-id][data-rotation][data-target-id=\"r2_powerbox\"]",
+    "submit": ".circuit-submit[data-scene-action=\"submit_circuit\"][data-target-id=\"r2_powerbox\"]",
+    "login": ".crt-login.login-form #terminal-username / #terminal-password; button[data-scene-action=\"submit_login\"]",
+    "tray": "research_strip and access_card actual object IDs in monitor closeup and room overview; removed after take",
+    "service": "r2_service_label only if state.objects exposes it, overview and powerbox closeup",
+    "return_R1": "data-object-id=\"return_R1\", data-scene-action=\"move\", data-target-id=\"R1\""
+  },
+  "limitations": [
+    "Frontend owner smoke only, not independent QA or human playtest. Independent frozen-candidate QA still pending.",
+    "R1 setup used actual authenticated API actions; this run does not certify the full R1 UI route. It did render R1 and test actual R2-to-R1 and R1-to-R2 Canvas transition.",
+    "No OS restart/formal API suite/mock hint suite repeated by this owner. Existing API/backend/contracts/api.ts and older SVG assets not edited by Frontend Owner.",
+    "No real provider calls, R3 visual implementation, audio or final v4.2 polish. Phaser bundle-size warning remains.",
+    "Main has deferred shared missing-asset interaction gate, lazy loading and EXIT visual polish to v4.2."
+  ]
+}

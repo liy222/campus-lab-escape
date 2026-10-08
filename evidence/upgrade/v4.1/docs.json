@@ -1,0 +1,36 @@
+{
+  "stage": "v4.1 final documentation handoff",
+  "status": "SOURCE_STOP",
+  "scope": "Mechanical v4.1 current-state update to README.md and release/UPGRADES.md only; no source, tests, accepted record, or historical QA artifacts changed.",
+  "accepted_record": "evidence/upgrade/v4.1/accepted.json",
+  "qa_result": "evidence/upgrade/v4.1/qa/result.json",
+  "qa_result_sha256": "35f8edb652068af0fdff39ad042572de41051049948150341646f2159d4060f4",
+  "candidate_sha256": "7ebfaefc93a22a62fd7c002da822f21ab79588641c2dd7609bf3e96d22b18bae",
+  "documents": {
+    "README.md": {
+      "sha256_raw": "0561afcf28864511456b83085647a3b3f9442063637a20854ea286eb36caae9d",
+      "line_endings": "LF"
+    },
+    "release/UPGRADES.md": {
+      "sha256_raw": "b4bec6e5811f744f80db63386dc818e06f01867c4c0dd99a1e18ecc0543c58f0",
+      "line_endings": "LF"
+    }
+  },
+  "checks": [
+    {
+      "result": "No whitespace errors.",
+      "command": "git -c core.whitespace=cr-at-eol diff --check -- README.md release/UPGRADES.md",
+      "exit_code": 0
+    },
+    {
+      "result": "README.md LF=93 CRLF=0; release/UPGRADES.md LF=81 CRLF=0; hashes recorded above.",
+      "command": "PowerShell byte count and SHA-256 verification for both documents",
+      "exit_code": 0
+    }
+  ],
+  "verification_limits": [
+    "No API, build, or browser QA rerun for this documentation-only change.",
+    "v4.1 commit/tag push remains pending Main integration; tag is not claimed as pushed.",
+    "R3/v4.2 remains not GO."
+  ]
+}

@@ -1,6 +1,6 @@
 import type { Receipt, VisibleState } from '../api';
 
-export type SceneInput = { kind: 'object'; objectId: string } | { kind: 'action'; tool: 'inspect' | 'take' | 'interact' | 'move'; targetId: string };
+export type SceneInput = { kind: 'object'; objectId: string } | { kind: 'action'; tool: 'inspect' | 'take' | 'interact' | 'move' | 'submit_circuit'; targetId: string } | { kind: 'circuit-module'; targetId: string; moduleId: string };
 export interface SceneProjection {
   state: VisibleState;
   view: string | null;

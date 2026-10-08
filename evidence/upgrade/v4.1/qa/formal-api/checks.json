@@ -1,0 +1,249 @@
+[
+  {
+    "test": "test_append_immutable_three_moments_restore_stats_reset_and_reopen",
+    "operation": "POST list/create",
+    "http_status": 201,
+    "error": null,
+    "slot_count": null,
+    "replayed": false,
+    "room": "R1",
+    "revision": 4,
+    "statistics": {
+      "started_at": "2026-10-07T00:00:00Z",
+      "finished_at": null,
+      "current_hint_level": 2,
+      "hint_count": 1,
+      "mistake_count": 0,
+      "clues_found": 2,
+      "clues_total": 10,
+      "hidden_found": 0,
+      "hidden_total": 2
+    },
+    "settlement": null
+  },
+  {
+    "test": "test_append_immutable_three_moments_restore_stats_reset_and_reopen",
+    "operation": "POST list/create",
+    "http_status": 201,
+    "error": null,
+    "slot_count": null,
+    "replayed": false,
+    "room": "R2",
+    "revision": 25,
+    "statistics": {
+      "started_at": "2026-10-07T00:00:00Z",
+      "finished_at": null,
+      "current_hint_level": 2,
+      "hint_count": 1,
+      "mistake_count": 0,
+      "clues_found": 6,
+      "clues_total": 10,
+      "hidden_found": 0,
+      "hidden_total": 2
+    },
+    "settlement": null
+  },
+  {
+    "test": "test_append_immutable_three_moments_restore_stats_reset_and_reopen",
+    "operation": "POST list/create",
+    "http_status": 201,
+    "error": null,
+    "slot_count": null,
+    "replayed": false,
+    "room": "EXIT",
+    "revision": 58,
+    "statistics": {
+      "started_at": "2026-10-07T00:00:00Z",
+      "finished_at": "2026-10-07T00:02:05Z",
+      "current_hint_level": 2,
+      "hint_count": 1,
+      "mistake_count": 0,
+      "clues_found": 8,
+      "clues_total": 10,
+      "hidden_found": 0,
+      "hidden_total": 2
+    },
+    "settlement": {
+      "clues_found": 8,
+      "clues_total": 10,
+      "hint_count": 1,
+      "mistake_count": 0,
+      "hidden_found": 0,
+      "hidden_total": 2,
+      "elapsed_seconds": 125,
+      "rating": "A"
+    }
+  },
+  {
+    "test": "test_append_immutable_three_moments_restore_stats_reset_and_reopen",
+    "operation": "GET list/create",
+    "http_status": 200,
+    "error": null,
+    "slot_count": 3,
+    "replayed": null,
+    "room": "EXIT",
+    "revision": 58,
+    "statistics": {
+      "started_at": "2026-10-07T00:00:00Z",
+      "finished_at": "2026-10-07T00:02:05Z",
+      "current_hint_level": 2,
+      "hint_count": 1,
+      "mistake_count": 0,
+      "clues_found": 8,
+      "clues_total": 10,
+      "hidden_found": 0,
+      "hidden_total": 2
+    },
+    "settlement": {
+      "clues_found": 8,
+      "clues_total": 10,
+      "hint_count": 1,
+      "mistake_count": 0,
+      "hidden_found": 0,
+      "hidden_total": 2,
+      "elapsed_seconds": 125,
+      "rating": "A"
+    }
+  },
+  {
+    "test": "test_append_immutable_three_moments_restore_stats_reset_and_reopen",
+    "operation": "GET list/create",
+    "http_status": 200,
+    "error": null,
+    "slot_count": 3,
+    "replayed": null,
+    "room": "R1",
+    "revision": 59,
+    "statistics": {
+      "started_at": "2026-10-07T00:12:05Z",
+      "finished_at": null,
+      "current_hint_level": 1,
+      "hint_count": 0,
+      "mistake_count": 0,
+      "clues_found": 0,
+      "clues_total": 10,
+      "hidden_found": 0,
+      "hidden_total": 2
+    },
+    "settlement": null
+  },
+  {
+    "test": "test_append_immutable_three_moments_restore_stats_reset_and_reopen",
+    "operation": "POST selected-restore",
+    "http_status": 200,
+    "error": null,
+    "slot_count": null,
+    "replayed": false,
+    "room": "R1",
+    "revision": 60,
+    "statistics": {
+      "started_at": "2026-10-07T00:00:00Z",
+      "finished_at": null,
+      "current_hint_level": 2,
+      "hint_count": 1,
+      "mistake_count": 0,
+      "clues_found": 2,
+      "clues_total": 10,
+      "hidden_found": 0,
+      "hidden_total": 2
+    },
+    "settlement": null
+  },
+  {
+    "test": "test_append_immutable_three_moments_restore_stats_reset_and_reopen",
+    "operation": "POST selected-restore",
+    "http_status": 200,
+    "error": null,
+    "slot_count": null,
+    "replayed": false,
+    "room": "R2",
+    "revision": 61,
+    "statistics": {
+      "started_at": "2026-10-07T00:00:00Z",
+      "finished_at": null,
+      "current_hint_level": 2,
+      "hint_count": 1,
+      "mistake_count": 0,
+      "clues_found": 6,
+      "clues_total": 10,
+      "hidden_found": 0,
+      "hidden_total": 2
+    },
+    "settlement": null
+  },
+  {
+    "test": "test_append_immutable_three_moments_restore_stats_reset_and_reopen",
+    "operation": "POST selected-restore",
+    "http_status": 200,
+    "error": null,
+    "slot_count": null,
+    "replayed": false,
+    "room": "EXIT",
+    "revision": 62,
+    "statistics": {
+      "started_at": "2026-10-07T00:00:00Z",
+      "finished_at": "2026-10-07T00:02:05Z",
+      "current_hint_level": 2,
+      "hint_count": 1,
+      "mistake_count": 0,
+      "clues_found": 8,
+      "clues_total": 10,
+      "hidden_found": 0,
+      "hidden_total": 2
+    },
+    "settlement": {
+      "clues_found": 8,
+      "clues_total": 10,
+      "hint_count": 1,
+      "mistake_count": 0,
+      "hidden_found": 0,
+      "hidden_total": 2,
+      "elapsed_seconds": 125,
+      "rating": "A"
+    }
+  },
+  {
+    "test": "test_selected_restore_expires_pending_mock_hint_without_stats_mutation",
+    "operation": "POST list/create",
+    "http_status": 201,
+    "error": null,
+    "slot_count": null,
+    "replayed": false,
+    "room": "R1",
+    "revision": 2,
+    "statistics": {
+      "started_at": "2026-10-07T00:00:00Z",
+      "finished_at": null,
+      "current_hint_level": 1,
+      "hint_count": 0,
+      "mistake_count": 0,
+      "clues_found": 2,
+      "clues_total": 10,
+      "hidden_found": 0,
+      "hidden_total": 2
+    },
+    "settlement": null
+  },
+  {
+    "test": "test_selected_restore_expires_pending_mock_hint_without_stats_mutation",
+    "operation": "POST selected-restore",
+    "http_status": 200,
+    "error": null,
+    "slot_count": null,
+    "replayed": false,
+    "room": "R1",
+    "revision": 3,
+    "statistics": {
+      "started_at": "2026-10-07T00:00:00Z",
+      "finished_at": null,
+      "current_hint_level": 1,
+      "hint_count": 0,
+      "mistake_count": 0,
+      "clues_found": 2,
+      "clues_total": 10,
+      "hidden_found": 0,
+      "hidden_total": 2
+    },
+    "settlement": null
+  }
+]

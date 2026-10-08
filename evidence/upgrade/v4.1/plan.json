@@ -1,0 +1,53 @@
+{
+  "stage": "v4.1",
+  "design": "docs/visual-plan.md",
+  "parent_commit": "1047e293ade70e446c9c76be0a0d751f3e3ad81a",
+  "parent_tag": "v4.0-room1-rusty-visual",
+  "status": "R2 implementation GO after actual API6/3/build0 baseline",
+  "ownership": {
+    "Main": [
+      "root progress/integration/git",
+      "evidence/upgrade/v4.1 Main records"
+    ],
+    "visual_frontend_oct08": [
+      "frontend/src/App.tsx",
+      "frontend/src/Assistant.tsx presentation-only if needed",
+      "frontend/src/style.css",
+      "frontend/src/game/",
+      "frontend/src/components/",
+      "frontend/package* if needed",
+      "evidence/upgrade/v4.1/frontend owner evidence"
+    ],
+    "visual_assets_oct08": [
+      "frontend/src/assets/ only additive R2+manifest room2 exports",
+      "README.md/release/UPGRADES.md mechanical docs after QA",
+      "evidence/upgrade/v4.1/assets/docs reports"
+    ],
+    "visual_qa_oct08": [
+      "new tests/e2e/run_visual_v41.mjs",
+      "review/findings/visual-v41.md",
+      "evidence/upgrade/v4.1/qa"
+    ]
+  },
+  "source_of_truth": "VisibleState; React API/session/AI/save unchanged; Phaser view/input/animations only",
+  "scope": "R2 only: dark/light,6powerbox states,3x3 public circuit,maintenance,5monitor states/CRT login,DATA_READ tray paper/card,POWER_ON service label, ordinary latch and R1/R3 exits",
+  "frozen": "backend/contracts40; R1 art26SVG bytes; prior tests/evidence",
+  "baseline_policy": "Reuse same85-source accepted v4.0 API/build plus actually run compactAPI6/build before R2 changes; no full127 repetition until final4.2",
+  "gate": "Stable owner SOURCE STOP then frozen Main candidate; targetedAPI/build/realCanvas complete route+all archives/reload/processrestart/touch/keyboard/R1regression; own normal liy222 commit/push beforeR3",
+  "paid_calls": 0,
+  "Astra": false,
+  "model_facts": "Oct08 actual requested spawn facts in v4.0/recovery-oct08.json; resumed/Mainruntime not independently verified",
+  "baseline_actual": {
+    "stage": "v4.1",
+    "status": "Baseline accepted; R2 implementation GO",
+    "candidate": "baseline-candidate.json",
+    "source85_match": true,
+    "API": "6methods/3subtests passed11.40s,1existingwarning; exit0",
+    "build_exit_code": 0,
+    "records": [
+      "qa/baseline-api/run.json",
+      "qa/baseline-build/run.json"
+    ],
+    "paid_calls": 0
+  }
+}

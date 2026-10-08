@@ -82,3 +82,12 @@ Prior visual agents are no longer live. Main created visual_qa_oct08 and visual_
 
 ### v4.0 accepted, 2026-10-08
 Main accepts85 fixed sources from independent joint QA: previsual full127/3370 reused, initial targeted6/3+build0+completeChrome2060, fixed CSS/3SVG build0+narrowChrome1120 (26layout/31pixel); repeated scopes not summed. QAOct08 only read-audited old actual executions and viewed6 fixed PNGs. Main matched85/evidence digests and viewedclock1920/lock375. Three findings closed; no backend/schema/AI/archive change. Documentation and normal liy222 commit/push next, then R2 GO. Limits remain in evidence/upgrade/v4.0/accepted.json; no paid/Astra/human claim.
+
+### v4.1 R2 implementation GO, 2026-10-08
+v4.0 commit1047e293ade70e446c9c76be0a0d751f3e3ad81a/tagv4.0-room1-rusty-visual private remote verified, author+committerliy222. v4.1 actual pre-implementation baseline6methods/3subtests11.40s0/build0/source85stable accepted. Exact owners/scope in evidence/upgrade/v4.1/plan.json; reuse bridge/API/AI/archive, no R3/audio/polish yet. Main mechanical post-sync README/UPGRADES metadata replaces only planned tag statement; old docs hashes remain historical; Assets regains these docs after4.1 QA. R1 SVG26/backendcontracts40/oldtests frozen, no paid/Astra.
+
+### v4.1 frozen candidate QA GO, 2026-10-08
+R2 Frontend and Assets final SOURCE STOP; Main freezes123sources, backend40raw unchanged, candidateSHA7ebfaefc93a22a62fd7c002da822f21ab79588641c2dd7609bf3e96d22b18bae. Final Ownerbuild0/smoke0 is development evidence only; first harness take-disappearance failure retained. Independent QA now owns actual targetedAPI6/build/complete R1-R2Canvas route plus R3graybox/archives/reload/restart/touch/keyboard on this candidate. R1SVG26raw same;35newR2SVG original. No R3 implementation, paidcall or Astra; final audio/missingasset/lazy/settlement stillv4.2 afterR2push.
+
+### v4.1 Main acceptance, 2026-10-08
+Main accepts frozen123source R2 from independentQA: targetedAPI6/3 exit0,build0,finalChrome339exit0/issues[],35pixelrecords/fullroute/5archives+legacy/reload/processrestart/touch/keyboard;272artifacts andcurrent123 rawhash match. FirstChrome204/278observer failures preserved, onlynewQAadapter fix, no productchange/no repeatedsum. Main now owns root/integration/Git; Assets Luna mechanically owns README/UPGRADES finaldocs. R3implementation still waits R2commit/push gate; backend40/R1SVG26 immutable,paid0,noAstra.

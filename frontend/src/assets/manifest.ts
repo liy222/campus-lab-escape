@@ -113,3 +113,56 @@ export const room1Layout: Record<string, [number, number, number, number]> = {
 };
 
 export const room1Viewport = { width: 1600, height: 900 } as const;
+
+
+// Additive R2 SVG assets. The accepted R1 exports and assets remain unchanged.
+export const room2Assets: Record<string, string> = {
+  r2_access_card: new URL('r2_access_card.svg', import.meta.url).href,
+  r2_background_dark: new URL('r2_background_dark.svg', import.meta.url).href,
+  r2_closeup_maintenance: new URL('r2_closeup_maintenance.svg', import.meta.url).href,
+  r2_closeup_monitor_booting: new URL('r2_closeup_monitor_booting.svg', import.meta.url).href,
+  r2_closeup_monitor_data_read: new URL('r2_closeup_monitor_data_read.svg', import.meta.url).href,
+  r2_closeup_monitor_login_locked: new URL('r2_closeup_monitor_login_locked.svg', import.meta.url).href,
+  r2_closeup_monitor_off: new URL('r2_closeup_monitor_off.svg', import.meta.url).href,
+  r2_closeup_monitor_unlocked: new URL('r2_closeup_monitor_unlocked.svg', import.meta.url).href,
+  r2_closeup_powerbox_circuit_ready: new URL('r2_closeup_powerbox_circuit_ready.svg', import.meta.url).href,
+  r2_closeup_powerbox_closed: new URL('r2_closeup_powerbox_closed.svg', import.meta.url).href,
+  r2_closeup_powerbox_fuse_installed: new URL('r2_closeup_powerbox_fuse_installed.svg', import.meta.url).href,
+  r2_closeup_powerbox_missing_fuse: new URL('r2_closeup_powerbox_missing_fuse.svg', import.meta.url).href,
+  r2_closeup_powerbox_open: new URL('r2_closeup_powerbox_open.svg', import.meta.url).href,
+  r2_closeup_powerbox_power_on: new URL('r2_closeup_powerbox_power_on.svg', import.meta.url).href,
+  r2_closeup_service_label: new URL('r2_closeup_service_label.svg', import.meta.url).href,
+  r2_door_closed: new URL('r2_door_closed.svg', import.meta.url).href,
+  r2_door_unlatched: new URL('r2_door_unlatched.svg', import.meta.url).href,
+  r2_light_overlay_on: new URL('r2_light_overlay_on.svg', import.meta.url).href,
+  r2_maintenance: new URL('r2_maintenance.svg', import.meta.url).href,
+  r2_monitor_booting: new URL('r2_monitor_booting.svg', import.meta.url).href,
+  r2_monitor_data_read: new URL('r2_monitor_data_read.svg', import.meta.url).href,
+  r2_monitor_login_locked: new URL('r2_monitor_login_locked.svg', import.meta.url).href,
+  r2_monitor_off: new URL('r2_monitor_off.svg', import.meta.url).href,
+  r2_monitor_unlocked: new URL('r2_monitor_unlocked.svg', import.meta.url).href,
+  r2_powerbox_circuit_ready: new URL('r2_powerbox_circuit_ready.svg', import.meta.url).href,
+  r2_powerbox_closed: new URL('r2_powerbox_closed.svg', import.meta.url).href,
+  r2_powerbox_fuse_installed: new URL('r2_powerbox_fuse_installed.svg', import.meta.url).href,
+  r2_powerbox_missing_fuse: new URL('r2_powerbox_missing_fuse.svg', import.meta.url).href,
+  r2_powerbox_open: new URL('r2_powerbox_open.svg', import.meta.url).href,
+  r2_powerbox_power_on: new URL('r2_powerbox_power_on.svg', import.meta.url).href,
+  r2_research_strip: new URL('r2_research_strip.svg', import.meta.url).href,
+  r2_return_door: new URL('r2_return_door.svg', import.meta.url).href,
+  r2_service_label: new URL('r2_service_label.svg', import.meta.url).href,
+  r2_tray: new URL('r2_tray.svg', import.meta.url).href,
+  r2_workbench: new URL('r2_workbench.svg', import.meta.url).href,
+};
+
+export const room2Layout: Record<string, [number, number, number, number]> = {
+  r2_return_door: [28, 365, 165, 375],
+  r2_powerbox: [218, 382, 232, 250],
+  r2_maintenance: [478, 422, 150, 100],
+  r2_monitor: [868, 319, 272, 232],
+  r2_door: [1288, 350, 238, 410],
+  r2_tray: [850, 536, 318, 112],
+  research_strip: [887, 566, 145, 68],
+  access_card: [1041, 565, 110, 72],
+  r2_service_label: [429, 480, 108, 58],
+  r2_workbench: [376, 402, 775, 300],
+};
