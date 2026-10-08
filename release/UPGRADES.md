@@ -89,8 +89,8 @@ Room 1、Room 2 与 Room 3 均使用 Phaser 4.2.1 Canvas、原创 SVG、固定�
 
 用户希望游戏图形画面周围的界面融入画面。修正后，桌面 HUD、背包和操作控件叠在实际 Canvas 画框内，登录表单位于终端的物理屏幕区域；窄屏的阅读/表单可作为场景内面板展开。默认视觉入口不渲染旧网页外壳，legacy 入口仍保留且与视觉入口互斥。此处记录的是版式调整，不代表曾复现旧灰盒与新场景重复显示。关卡规则、API、AI、多时刻存档和84项原创 SVG 资产未变。
 
-联合 QA 接受最终152个源码候选；四个发生产品变更的候选各有一次 build exit 0。浏览器证据保留7个失败 epoch，另有最终 `end` 87项 exit 0 与 `feedback` 63项 exit 0/issues为空；跨候选结果不累加，也不是单轮完整全绿。已关闭三个发现：恢复确认对话框按钮高度、移动背包按钮尺寸、横屏反馈提示与 HUD 重叠。没有新跑完整 API 套件，付费调用0。范围、截图、失败尝试与限制见 [`stage-ui 验收记录`](../evidence/integration/stage-ui/accepted.json)、[`stage-ui QA 结果`](../evidence/integration/stage-ui/qa/result.json) 和 [`独立报告`](../review/findings/stage-ui.md)。`v4.2-stage-ui` 标签待 Main 正常提交和推送；已推送的 `v4.2-final-rusty-visual` 历史标签不改写。
+联合 QA 接受最终152个源码候选；四个发生产品变更的候选各有一次 build exit 0。浏览器证据保留7个失败 epoch，另有最终 `end` 87项 exit 0 与 `feedback` 63项 exit 0/issues为空；跨候选结果不累加，也不是单轮完整全绿。已关闭三个发现：恢复确认对话框按钮高度、移动背包按钮尺寸、横屏反馈提示与 HUD 重叠。没有新跑完整 API 套件，付费调用0。范围、截图、失败尝试与限制见 [`stage-ui 验收记录`](../evidence/integration/stage-ui/accepted.json)、[`stage-ui QA 结果`](../evidence/integration/stage-ui/qa/result.json) 和 [`独立报告`](../review/findings/stage-ui.md)。修正 commit `68693a5fc36b16e21b9323e89145ca3195294499` 与 tag `v4.2-stage-ui` 已推送核实，作者与提交者均为 `liy222`；已推送的 `v4.2-final-rusty-visual` 历史标签不改写。
 
 ## 阶段边界
 
-v4.2 三房间视觉交付已按联合证据接受并 SOURCE STOP，commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实。其后的 stage-ui 版式修正已验收，`v4.2-stage-ui` 标签待 Main 正常同步。每阶段只交付计划内所需变更，不为升级路线发起付费实验。既有双击启动、手动 AI 模式与 API Key 说明继续有效；QA 未进行付费模型调用、真人音效质量或真人通关时长验收。
+v4.2 三房间视觉交付已按联合证据接受并 SOURCE STOP，commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实。其后的 stage-ui 版式修正已验收，修正 commit `68693a5fc36b16e21b9323e89145ca3195294499` 与 tag `v4.2-stage-ui` 已推送核实。每阶段只交付计划内所需变更，不为升级路线发起付费实验。既有双击启动、手动 AI 模式与 API Key 说明继续有效；QA 未进行付费模型调用、真人音效质量或真人通关时长验收。

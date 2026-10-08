@@ -135,3 +135,6 @@ Finalfunctionalend87exit0, but actualQA/Main viewed812x375 PNG feedbackbackgroun
 
 ### Stage UI Main acceptance / final documents GO, 2026-10-08
 Main accepts final152 candidate-fixed3 from independent jointQA d66c5b06: fourchangedbuilds0, retained7failedbrowser epochs plus end87/feedback63 each0, no repeatedsum/singlefullgreen. Main verified152source/65newQAartifacts/frozenimmutable/238oldv42 rawhashes and viewed7actualPNG. Threefindingsclosed: dialog44/nativeinventory44/landscapefeedbackHUD separation. ExistingAssets temporarily owns onlyREADME.md/release/UPGRADES.md +stage-ui/docs.json; Main root/integration/Git. No product/test/evidence run mutation or extra tests/paid/newspawn. Normal liy222 commit/newtagv4.2-stage-ui/push next; oldvisualtag stays. See evidence/integration/stage-ui/accepted.json.
+
+### Stage UI remote sealed / delivery complete, 2026-10-08
+Accepted sourcecommit68693a5fc36b16e21b9323e89145ca3195294499 andnewtagv4.2-stage-ui verified private remote; GitHubauthor/committerliy222. Selected121fileaudit0/76stagedrawmatches/CRLF-awarewhitespace0; normalcommit/push0. Originalvisualtag unchanged. Main now owns onlymechanical README/UPGRADES/root/syncmetadata; precedingDeliverydocs hashes remain historical. Accepted152sources/QAartifacts/oldtests unchanged; no retests/paidcalls/newagents. See evidence/integration/stage-ui/sync.json.

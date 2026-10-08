@@ -10,7 +10,7 @@ v3.4 API 联合验收保留首轮全套 exit 1：118个测试方法通过、315�
 
 v3.2 独立 API QA exit 0：97 passed、257 个子项通过、1 个弃用警告；旧89项和新增8个测试方法通过。覆盖46步三房间路线、各设备与物品槽阶段的保存/重置/恢复/Store 重开、错误尝试、跨版本快照拒绝，以及 AI 读取边界（12类伪造读取均被拒绝）。修复前候选的 Chrome 检查 exit 0（61项）和前端构建 exit 0被保留复用；它们不是修复后源码的重复运行。实际根目录启动 CMD 未运行，仅做字节与配置检查。具体范围、来源和限制见 [`v3.2 QA 结果`](evidence/upgrade/v3.2/qa/result.json) 与 [`独立报告`](review/findings/upgrade-v32.md)。QA 使用合成 AI fixture，没有真实 provider/网络调用；不代表真人试玩或20–30分钟游玩时长验收。
 
-v3.0 已完成并标记为 `v3.0-gameplay-information`。v3.4 三级提示、统计、结算、完整路线灰盒及多时刻存档均已按联合证据接受。v4.0–v4.2 三房间视觉升级与最终界面已由联合 QA 接受；v4.2 视觉版本 commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实。stage-ui 版式修正也已由联合 QA 接受，`v4.2-stage-ui` 标签待 Main 正常提交和推送。当前状态和 QA 边界见上方记录及 [`stage-ui 验收记录`](evidence/integration/stage-ui/accepted.json)。
+v3.0 已完成并标记为 `v3.0-gameplay-information`。v3.4 三级提示、统计、结算、完整路线灰盒及多时刻存档均已按联合证据接受。v4.0–v4.2 三房间视觉升级与最终界面已由联合 QA 接受；v4.2 视觉版本 commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实。stage-ui 版式修正也已由联合 QA 接受，修正 commit `68693a5fc36b16e21b9323e89145ca3195294499` 与 tag `v4.2-stage-ui` 已推送核实，作者与提交者均为 `liy222`。当前状态和 QA 边界见上方记录及 [`stage-ui 验收记录`](evidence/integration/stage-ui/accepted.json)。
 
 ## 双击启动当前游戏规则版本 v3.4
 
