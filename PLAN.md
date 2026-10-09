@@ -200,3 +200,5 @@ Baseline actual154oldsource match/build0. Deliver85PNG into frontend, calibrate 
 2026-10-09 手绘接入候选242项已冻结，独立QA执行中；完成真实主路线、存档恢复及屏幕适配验收后更新文档并正常提交/推送 v4.2-handpainted。候选与旧文件核对见 evidence/integration/handpainted/candidate.json。
 
 2026-10-09 手绘接入独立联合验收通过：85PNG静态0、唯一构建0，浏览器前段与定向剩余范围共同覆盖路线/存档/重载/进程重启/小屏/缺图重试/结算。首轮新QA adapter失误保留，不合计各轮记录；242源码/389不变量/84证据核对一致。现在仅完成文档与正常私有远端同步 v4.2-handpainted。
+
+2026-10-09 手绘运行接入与正常同步完成：source 041514d1691353deea8a52bfb2206f3678207c3c / tag v4.2-handpainted，私有远端与liy222身份核实；仅随后机械更新同步记录，无新增产品改动或重复测试。

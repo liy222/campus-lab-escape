@@ -103,7 +103,7 @@ Room 1、Room 2 与 Room 3 均使用 Phaser 4.2.1 Canvas、原创 SVG、固定�
 
 冻结候选 SHA-256 为 `e7341a6d778c0af4295c791946ec92633347287e1ae4a4d8813af3c58ab39f81`：242个源码项、389个不可变项、8个 QA 脚本和84件 QA 证据均与 Main 核对一致。85张 PNG 静态检查87项 exit 0；独立前端 build 一次，52个模块、2.98秒、exit 0，仍有既有 Phaser 大包警告。浏览器联合证据保留首轮201条记录 exit 1：R1/R2与早期 R3 CARD_ACCEPTED 实际 UI 检查后，QA 选中物品适配器把服务端409误判为应返回200；产品未修复。之后仅补剩余范围：101条 exit 0、issues为空，覆盖 fixture 准备下的 R3 FINAL_CHECK/PASS/UNLOCKED/OPEN/EXIT、终局存档与胜利；另有75条 exit 0 的已结算桌面胜利展示检查。联合覆盖还包括 PNG 故障重试、按需加载、特写隔离、线索读取、鼠标/触屏/键盘、响应式热点、存档选择、刷新及一次后端进程重启。各 epoch 记录数不相加，不能表述为一次完整浏览器全绿。
 
-QA 在新建私有会话与数据库上运行，没有访问历史用户数据库或凭据；未重跑完整127项后端套件，复用既有冻结后端证据及窄范围 API 接受记录。没有交互启动根目录 CMD、OS 重启、付费调用或真人通关时长验收。桌面1280与移动375×812/812×375为代表性视口；当前房间会预加载本房间状态/特写图，首次欢迎页按需加载不构成加载性能认证。保留的非阻断视觉细节：R3墙面导管与控制台导管略有偏移，钟面纸张区域可见纹理接缝。完整范围与证据见 [`Main 验收`](../evidence/integration/handpainted/accepted.json)、[`独立 QA 结果`](../evidence/integration/handpainted/qa/result.json)、[`素材交付`](../evidence/integration/handpainted/assets/report.json)。QA 付费调用0。正常同步后计划使用 `v4.2-handpainted` 标签；同步核实前不视为已推送。
+QA 在新建私有会话与数据库上运行，没有访问历史用户数据库或凭据；未重跑完整127项后端套件，复用既有冻结后端证据及窄范围 API 接受记录。没有交互启动根目录 CMD、OS 重启、付费调用或真人通关时长验收。桌面1280与移动375×812/812×375为代表性视口；当前房间会预加载本房间状态/特写图，首次欢迎页按需加载不构成加载性能认证。保留的非阻断视觉细节：R3墙面导管与控制台导管略有偏移，钟面纸张区域可见纹理接缝。完整范围与证据见 [`Main 验收`](../evidence/integration/handpainted/accepted.json)、[`独立 QA 结果`](../evidence/integration/handpainted/qa/result.json)、[`素材交付`](../evidence/integration/handpainted/assets/report.json)。QA 付费调用0。手绘接入提交 `041514d1691353deea8a52bfb2206f3678207c3c` 与标签 `v4.2-handpainted` 已推送至私有远端并核实，GitHub 作者与提交者均为 `liy222`。
 
 ## 阶段边界
 

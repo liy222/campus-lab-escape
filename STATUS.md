@@ -12,7 +12,7 @@
 | v3.4 | 灰盒及多时刻存档已验收、推送 | 49a2f92 / 8e491d7 |
 | v4.0 | R1 已验收、提交并推送 | 1047e29 / v4.0-room1-rusty-visual |
 | v4.1 | R2 已验收、提交并推送 | 161d3e6 / v4.1-room2-rusty-visual |
-| v4.2 | 三房画面与最终交互已验收、提交并推送 | 74f6272 / v4.2-final-rusty-visual |
+| v4.2 | 手绘运行画面与交互已验收、提交并推送 | 041514d / v4.2-handpainted |
 
 主要视觉基线是 [docs/visual-plan.md](docs/visual-plan.md)，与用户附件逐字节一致。三房固定视角2D、物件特写、玩家终检顺序、出口动画、服务器结算、静音/减少动画、缺图重试及延迟加载已按联合证据接受。原后端/API/AI、多时刻存档、关卡3.4.0/Schema1.4.0保留。
 
@@ -205,3 +205,5 @@ User now authorizes installing the previously standalone art. Actualbaseline154r
 2026-10-09 手绘素材已接入冻结候选（242项），独立QA执行中。开发主路线和小屏边缘点击通过；尚不计作正式验收。后端/API/AI/存档及原SVG未变。
 
 2026-10-09 手绘游戏画面接入已验收：80个物件/状态/特写PNG与5净背景实际加载，三房原规则/API/AI/同版本多时刻存档保留。独立唯一build0、静态85核验0；浏览器201首轮QA adapter失败与101定向剩余通过、75最终结算画面通过联合覆盖，不相加。Main核对242产品/389不变量/84QA产物，查看11实际PNG。正式发布同步待完成，详见 [接入验收](evidence/integration/handpainted/accepted.json)。
+
+2026-10-09 手绘接入版本已同步：提交041514d / 标签v4.2-handpainted，私有远端作者与提交者liy222。继续使用根目录启动游戏.cmd，旧同版本存档可读取。同步证据 evidence/integration/handpainted/sync.json；前述待同步状态是历史记录。
