@@ -1,0 +1,38 @@
+{
+  "operator": "paint_qa",
+  "classification": "pre-execution adapter strengthening; product not SOURCE STOP; no formal result",
+  "previous_preparation": "evidence/integration/handpainted/qa/preparation-epochs/hotspot-before",
+  "browser_body_before_sha256": "9a3b78a68f3b4325ed5c966f0534e9aa2176356980e9e607b83401f7f800533a",
+  "browser_body_after_sha256": "7f3dc5afd62eadd68a1dce6c35ec4e9b9dd4940345b0824b5cc3d738690da91a",
+  "new_checks": [
+    "Actual responsive module/device DOM rectangles pairwise nonintersecting; epsilon0.05CSSpx",
+    "375px R1 one object edge mouse and touch actual inspect receipt object_id",
+    "375px R2 one module edge mouse and touch actual rotate receipt/module/rotation",
+    "375px R3 one device edge mouse and touch actual local draft IDs and unchanged server state"
+  ],
+  "center_route_retained": true,
+  "actual_commands": [
+    {
+      "command": "python -B -X utf8 tests/handpainted/prepare.py",
+      "exit_code": 0
+    },
+    {
+      "command": "node --check tests/handpainted/run_browser.mjs",
+      "exit_code": 0
+    },
+    {
+      "command": "Python AST parse tests/handpainted/*.py",
+      "exit_code": 0
+    }
+  ],
+  "formal_static_runs": 0,
+  "formal_builds": 0,
+  "formal_browser_runs": 0,
+  "formal_API_runs": 0,
+  "paid_calls": 0,
+  "waiting": [
+    "Frontend final drawing/input coordinate protocol",
+    "Owner SOURCE STOP",
+    "Main frozen candidate GO"
+  ]
+}

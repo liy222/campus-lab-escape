@@ -1,0 +1,51 @@
+{
+  "operator": "paint_qa",
+  "classification": "new QA adapter pre-execution protocol correction; no product defect or formal failure",
+  "reason": "Initial nonzero alpha bbox did not match delivered alpha>16 convention; catalog closeups, clean backgrounds and no-alpha images use full canvas",
+  "previous_preparation_preserved": [
+    "evidence/integration/handpainted/qa/preparation-commands.json",
+    "evidence/integration/handpainted/qa/preparation-epochs/alpha-before.py",
+    "evidence/integration/handpainted/qa/preparation-epochs/initial-preparation.json"
+  ],
+  "sha256_before": "16f4c6e113494716478e68d4585cee3529f27ef676983ee7c9454d6c214058fa",
+  "sha256_after": "2ce20a89860b01373ebeaf8391c924423c1c9eeb214b010f1ff2383849eedf6d",
+  "assertions_retained": [
+    "frozen candidate raw hashes",
+    "immutable hashes",
+    "85 count",
+    "canonical SHA bytes",
+    "file existence/read/decode",
+    "real image dimensions",
+    "exact declared alpha/full-frame bbox",
+    "all expected filenames"
+  ],
+  "actual_commands": [
+    {
+      "command": "python -B -X utf8 tests/handpainted/prepare.py",
+      "exit_code": 0,
+      "result": "389immutable/formal0; protocol_ready=false"
+    },
+    {
+      "command": "node --check tests/handpainted/run_browser.mjs",
+      "exit_code": 0
+    },
+    {
+      "command": "Python AST parse tests/handpainted/*.py",
+      "exit_code": 0
+    }
+  ],
+  "marker_binding": {
+    "data-paint-frame": "bbox-contain-v1",
+    "data-controlled-clues": "known current-view IDs plus known r1_symbols in cabinet; order matches state.clues"
+  },
+  "formal_builds": 0,
+  "formal_browser_runs": 0,
+  "formal_static_runs": 0,
+  "formal_API_runs": 0,
+  "paid_calls": 0,
+  "unresolved": [
+    "Owner SOURCE STOP",
+    "Main frozen candidate GO",
+    "actual representative integrated PNG inspection"
+  ]
+}

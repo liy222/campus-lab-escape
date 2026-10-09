@@ -1,0 +1,51 @@
+{
+  "status": "PREPARATION ONLY; WAITING FOR MAIN QA ACCEPTANCE DATA GO",
+  "scope": "Read-only review of README.md and release/UPGRADES.md. No edits to either document, launchers, or root CMD.",
+  "actual_commands": [
+    {
+      "command": "Get-Content README.md; Get-Content release\\UPGRADES.md; Get-Content evidence\\integration\\handpainted\\assets\\report.json",
+      "exit_code": 0,
+      "result": "Read-only review; console output truncated by tool, no files modified."
+    },
+    {
+      "command": "Python SHA-256 read-only inspection of README.md and release/UPGRADES.md",
+      "exit_code": 0
+    }
+  ],
+  "read_only_document_baseline": [
+    {
+      "path": "README.md",
+      "sha256": "05f3fb3f028686e581d42cb328015f6cea1402f463e9dccb5fbf5d7c50a8b5b7",
+      "bytes": 14624
+    },
+    {
+      "path": "release/UPGRADES.md",
+      "sha256": "0df79743a49019412614c9f3ad3f1f06fd584ab6511c011d422b901f1c7fa09d",
+      "bytes": 22790
+    }
+  ],
+  "proposed_updates_after_qa_go": {
+    "README.md": [
+      "Add a compact entry stating 80 new source-mapped object PNGs and 5 clean room backgrounds are installed under frontend/public/art-handpainted and metadata is in frontend/src/assets/painted-metadata.json.",
+      "State that the source SVGs and existing saves/rules remain preserved; 4 reused scene studies were not copied, and r2_light_overlay_on is not a transparent lighting overlay.",
+      "Describe generated art as available assets only; do not claim runtime rendering, state matching, gameplay QA, or final visual acceptance until supported by Main acceptance data."
+    ],
+    "release/UPGRADES.md": [
+      "Add a clearly bounded hand-painted asset integration entry after Main provides QA acceptance data, linking the asset delivery report and integration acceptance evidence.",
+      "Report only verified checks; distinguish successful source-copy/hash and metadata validation from runtime rendering or gameplay QA.",
+      "Preserve existing version history, legacy SVG references, save/archive behavior, and unrelated delivery records."
+    ]
+  },
+  "current_verified_asset_delivery": {
+    "evidence": "evidence/integration/handpainted/assets/report.json",
+    "objects": 80,
+    "clean_backgrounds": 5,
+    "reused_scene_images_not_copied": 4,
+    "copied_pngs": 85,
+    "metadata_entries": 85,
+    "source_copy_hash_matches": 80,
+    "bbox_bounds_valid": 85,
+    "runtime_rendering_or_gameplay_qa": "not yet established by this Delivery report"
+  },
+  "unresolved_gate": "Wait for Main to provide real QA acceptance data and explicit document GO before editing README.md, release/UPGRADES.md, or writing final evidence/integration/handpainted/docs.json."
+}

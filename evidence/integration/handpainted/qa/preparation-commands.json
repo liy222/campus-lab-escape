@@ -1,0 +1,23 @@
+{
+  "operator": "paint_qa",
+  "status": "Preparation only; formal waits Main candidate GO",
+  "files": [
+    "tests/handpainted/prepare.py",
+    "tests/handpainted/audit_candidate.py",
+    "tests/handpainted/browser-body.mjs",
+    "tests/handpainted/run_browser.mjs",
+    "review/findings/handpainted.md",
+    "evidence/integration/handpainted/qa/preparation.json"
+  ],
+  "actual_commands": [
+    {"command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 tests/handpainted/prepare.py", "exit_code": 0, "result": "389 immutable file hashes captured; formal_runs0"},
+    {"command": "C:\\Program Files\\nodejs\\node.exe --check tests/handpainted/run_browser.mjs", "exit_code": 0, "result": "Syntax only"},
+    {"command": "Python AST parse tests/handpainted/*.py", "exit_code": 0, "result": "Syntax only"},
+    {"command": "Read catalog origin counts and preparation sensitive-runtime path check", "exit_code": 0, "result": "80new/4reused; no database/env/raw-log path captured"}
+  ],
+  "formal_builds": 0,
+  "formal_browser_runs": 0,
+  "formal_API_runs": 0,
+  "paid_calls": 0,
+  "unresolved": ["Final Owner SOURCE STOP", "Main frozen candidate GO", "Final controlled clue/frame marker protocol", "Actual representative integrated PNG inspection after formal browser"]
+}

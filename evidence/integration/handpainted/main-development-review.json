@@ -1,0 +1,31 @@
+{
+  "recorded_at": "2026-10-09T04:35:35.694111+00:00",
+  "phase": "Main read-only review during Owner development; not final candidate or formal QA",
+  "main_viewed_owner_png_sha256": {
+    "evidence/integration/handpainted/frontend/epoch-2/r1-overview.png": "108e6223017f72c26b8cb873cba74558a4257cf0b50c05db80a66235217963bd",
+    "evidence/integration/handpainted/frontend/epoch-2/r1-open-contents.png": "6e0ed7ad8243b5ff974480d96626d5e23f95b52e95f18e9f341291a235fa08ee",
+    "evidence/integration/handpainted/frontend/epoch-2/r2-circuit.png": "804512bcf75de9f96482e0a3dc6cb51a86962f4838202bea2c3dda1d09b434be",
+    "evidence/integration/handpainted/frontend/epoch-2/r3-on.png": "6d854d98572ab40884d01bf6f778269dabdb119ac44cbd53a1fe805b44830935",
+    "evidence/integration/handpainted/frontend/epoch-2/r3-panel-mobile.png": "fe9b43615725f51e1c22879b54d838a5f5ed7eae41c9225c7d99bc2cc96f22af"
+  },
+  "observations": [
+    "New R1/R3 rooms use clean backgrounds and independent object layers; no duplicate baked room objects in viewed scenes.",
+    "Cabinet contains separate fuse and label; R2 board is inside generated blank plate; R3panel four controls present on mobile early-strip screenshot.",
+    "R3 return-door proportion looks smaller than forward door; Owner asked to calibrate return-door width/ground position."
+  ],
+  "required_mobile_hit_geometry_fix": {
+    "viewport_width": 375,
+    "minimum_logical_size": 187.73333333333332,
+    "observed_R2_module_box": "[480+column*165,153+row*157,165,157]",
+    "R2_overlap_logical_x": 22.73333333333332,
+    "R2_overlap_logical_y": 30.73333333333332,
+    "observed_R3_button_box": "[580+(index%2)*255,415+floor(index/2)*140,250,140]",
+    "R3_overlap_logical_y": 47.73333333333332,
+    "basis": "Existing minHitArea expansion at375px produces overlapping interactive rectangles; this is a static computation, no formal failing browser execution claimed.",
+    "action": "Frontend responsive shared drawing/hotspot geometry before SOURCE STOP; QA must add pairwise non-overlap and edge mouse/touch input checks before formal."
+  },
+  "limits": [
+    "These are Owner development images on a still-mutable candidate; do not present as independent final QA.",
+    "No new test execution/model call performed by this review."
+  ]
+}

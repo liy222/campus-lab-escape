@@ -193,3 +193,10 @@ User requests all used item closeups and state variations following accepted R1v
 
 ### Hand-painted package remote sealed, 2026-10-09
 Artcommit 587dedbffbdd41a32e738a5c1d65ff34b5dd4e1c andnewtag art-pack-handpainted-v1 verified onprivate remote; GitHubauthor/committerliy222. Normal202-file commit/push0; stage audit201 before one Main proof metadata addition, whitespace0,188Owner staged rawmatches/89canonicalPNG matches,154game sources unchanged. All84mapped plus5clean backgrounds delivered,32closeups/47transparent objects; selective25Mainviews and Ownerreported review limits retained. Main post-sync metadata only; Owner reports/PNGs/prompts and pre-sync acceptance remain sealed. No game integration/newQA/paidDeepSeek/Astra claim. Preview output/art-concepts/asset-pack/index.html; sync output/art-concepts/asset-pack/sync.json.
+
+### Hand-painted game integration, 2026-10-09
+Baseline actual154oldsource match/build0. Deliver85PNG into frontend, calibrate visible alpha bounds while preserving original pixels; replace fullscene studies with5clean background variants. Accurate clue and circuit/sequence layers preserve observation boundaries. Keep existing three rooms, bridge/API/state/archives/AI and previous closeup/early-panel fixes. Owner development STOP -> Main candidate freeze -> independent focusedbuild/browser route/state/archives/reload/restart/touch/keyboard/missingassets/lazy/Victory -> document/normalcommit/newtag v4.2-handpainted/privatepush. Plan and baseline evidence: evidence/integration/handpainted/.
+
+2026-10-09 手绘接入候选242项已冻结，独立QA执行中；完成真实主路线、存档恢复及屏幕适配验收后更新文档并正常提交/推送 v4.2-handpainted。候选与旧文件核对见 evidence/integration/handpainted/candidate.json。
+
+2026-10-09 手绘接入独立联合验收通过：85PNG静态0、唯一构建0，浏览器前段与定向剩余范围共同覆盖路线/存档/重载/进程重启/小屏/缺图重试/结算。首轮新QA adapter失误保留，不合计各轮记录；242源码/389不变量/84证据核对一致。现在仅完成文档与正常私有远端同步 v4.2-handpainted。

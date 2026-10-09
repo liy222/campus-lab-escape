@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { paintedImage, paintedText, knownClue, beginPaintFrame } from './painted';
 import { room2Assets, room2Layout } from '../assets/manifest';
 import { GameBridge, sameSceneInput, type SceneInput, type SceneProjection } from './bridge';
 import type { CircuitPuzzle } from '../api';
@@ -11,16 +12,26 @@ const powerSuffix = { CLOSED: 'closed', OPEN: 'open', MISSING_FUSE: 'missing_fus
 const monitorSuffix = { OFF: 'off', BOOTING: 'booting', LOGIN_LOCKED: 'login_locked', UNLOCKED: 'unlocked', DATA_READ: 'data_read' };
 const trayIds = new Set(['research_strip', 'access_card']);
 const childBoxes: Record<string, [number, number, number, number]> = {
-  research_strip: [545, 635, 250, 95], access_card: [860, 625, 175, 105], r2_service_label: [135, 230, 180, 250],
+  research_strip: [465, 670, 245, 75], access_card: [790, 665, 150, 90], r2_service_label: [1110, 700, 190, 90],
 };
 const objectTexture: Record<string, string> = { research_strip: 'r2_research_strip', access_card: 'r2_access_card' };
-const moduleBox = (row: number, column: number): [number, number, number, number] => [520 + column * 200, 200 + row * 180, 200, 180];
+// Small canvases zoom the board itself; hit rectangles never overlap adjacent modules.
+function circuitGeometry(projection: SceneProjection) {
+  const minimum = Math.ceil(projection.minHitArea || 44), width = Math.max(165, minimum), height = Math.max(157, minimum);
+  return { x: minimum > 157 ? 280 : 480, y: 153, width, height, zoom: Math.max(width / 165, height / 157) };
+}
+const moduleBox = (projection: SceneProjection, row: number, column: number): [number, number, number, number] => {
+  const g = circuitGeometry(projection); return [g.x + column * g.width, g.y + row * g.height, g.width, g.height];
+};
+function powerBox(projection: SceneProjection, box: [number, number, number, number]): [number, number, number, number] {
+  const g = circuitGeometry(projection); return [g.x + (box[0] - 480) * g.zoom, g.y + (box[1] - 153) * g.zoom, box[2] * g.zoom, box[3] * g.zoom];
+}
 export function room2Hotspots(projection: SceneProjection): Room2Hotspot[] {
   const { state, view } = projection;
   const expand = (hotspots: Room2Hotspot[]) => hotspots.map(hotspot => {
     const [x, y, width, height] = hotspot.box, size = projection.minHitArea || 44;
     const w = Math.max(width, size), h = Math.max(height, size);
-    return { ...hotspot, box: [Math.max(0, x - (w - width) / 2), Math.max(0, y - (h - height) / 2), w, h] as [number, number, number, number] };
+    return { ...hotspot, box: [Math.max(0, Math.min(1600 - w, x - (w - width) / 2)), Math.max(0, Math.min(900 - h, y - (h - height) / 2)), w, h] as [number, number, number, number] };
   });
   if (!view) {
     const hotspots: Room2Hotspot[] = state.objects.filter(object => room2Layout[object.object_id]).map(object => ({
@@ -39,12 +50,12 @@ export function room2Hotspots(projection: SceneProjection): Room2Hotspot[] {
     const label = state.objects.find(value => value.object_id === 'r2_service_label');
     if (label) hotspots.push({ id: label.object_id, label: label.name, box: childBoxes.r2_service_label, input: { kind: 'object', objectId: label.object_id } });
     const circuit = state.minigames?.circuit;
-    if (circuit) for (const module of circuit.modules) hotspots.push({ id: module.module_id, label: `旋转线路模块 ${module.module_id} 顺时针90度`, box: moduleBox(module.row, module.column),
+    if (circuit) for (const module of circuit.modules) hotspots.push({ id: module.module_id, label: `旋转线路模块 ${module.module_id} 顺时针90度`, box: moduleBox(projection, module.row, module.column),
       input: { kind: 'circuit-module', targetId: circuit.target_id, moduleId: module.module_id }, moduleId: module.module_id, rotation: module.rotation, disabled: circuit.status === 'completed' });
-    else if (state.device_states?.powerbox === 'MISSING_FUSE') hotspots.push({ id: view, label: '保险丝触点', box: [540, 320, 500, 280], input: { kind: 'action', tool: 'inspect', targetId: view } });
+    else if (state.device_states?.powerbox === 'MISSING_FUSE') hotspots.push({ id: view, label: '保险丝触点', box: powerBox(projection, [560, 600, 370, 125]), input: { kind: 'action', tool: 'inspect', targetId: view } });
   }
   const next = object.actions.find(action => action.tool === 'interact' || action.tool === 'take');
-  if (next) hotspots.push({ id: view, label: next.label, box: view === 'r2_powerbox' ? [1200, 280, 150, 320] : view === 'r2_monitor' ? [420, 160, 760, 430] : [530, 250, 540, 400], input: { kind: 'action', tool: next.tool as 'interact' | 'take', targetId: view } });
+  if (next) hotspots.push({ id: view, label: next.label, box: view === 'r2_powerbox' ? (['CLOSED', 'OPEN'].includes(state.device_states?.powerbox || '') ? [755, 325, 215, 330] : powerBox(projection, [1400, 330, 175, 420])) : view === 'r2_monitor' ? [905, 590, 120, 110] : [575, 200, 450, 560], input: { kind: 'action', tool: next.tool as 'interact' | 'take', targetId: view } });
   else if (view === 'r2_door' && state.exits.some(exit => exit.destination_id === 'R3' && exit.unlocked)) hotspots.push({ id: view, label: '进入出口控制室', box: [580, 120, 400, 650], input: { kind: 'action', tool: 'move', targetId: 'R3' } });
   return expand(hotspots);
 }
@@ -57,12 +68,7 @@ export default class Room2Scene extends Phaser.Scene {
   private ready = false;
   constructor(private bridge: GameBridge, private onReady: (renderer: string, missing: string[]) => void, private onAnimation: (marker: string) => void) { super('Room2'); }
   preload() {
-    for (const [key, url] of Object.entries(room2Assets)) {
-      const comma = url.indexOf(',');
-      const source = url.startsWith('data:') && !url.slice(0, comma).includes(';base64')
-        ? `${url.slice(0, comma)};base64,${btoa(String.fromCharCode(...new TextEncoder().encode(decodeURIComponent(url.slice(comma + 1)))))}` : url;
-      this.load.svg(key, source, { scale: 1 });
-    }
+    for (const [key, url] of Object.entries(room2Assets)) this.load.image(key, url);
   }
   create() {
     this.ready = true;
@@ -73,43 +79,43 @@ export default class Room2Scene extends Phaser.Scene {
   activate(input: SceneInput) { if (room2Hotspots(this.bridge.projection).some(spot => !spot.disabled && sameSceneInput(spot.input, input))) this.bridge.emit(input); }
   private image(key: string, box: [number, number, number, number], id?: string) {
     if (!this.textures.exists(key)) return null;
-    const [x, y, width, height] = box;
-    const image = this.add.image(x, y, key).setOrigin(0).setDisplaySize(width, height);
+    const image = paintedImage(this, key, box);
+    if (!image) return null;
     if (id) { image.setAlpha(0.94); this.objects.set(id, image); }
     return image;
   }
   private text(x: number, y: number, content: string, size = 26, color = '#b2c5ac') {
     return this.add.text(x, y, content, { fontFamily: 'Consolas, Microsoft YaHei, monospace', fontSize: `${size}px`, color, lineSpacing: 15 });
   }
-  private circuit(board: CircuitPuzzle) {
+  private circuit(board: CircuitPuzzle, projection: SceneProjection) {
     for (const module of board.modules) {
-      const [x, y, width, height] = moduleBox(module.row, module.column), cx = x + width / 2, cy = y + height / 2;
-      this.add.rectangle(cx, cy, width - 16, height - 16, 0x263b3b).setStrokeStyle(3, board.status === 'completed' ? 0x819b7c : 0x627b78);
+      const [x, y, width, height] = moduleBox(projection, module.row, module.column), cx = x + width / 2, cy = y + height / 2;
+      this.add.rectangle(cx, cy, width - 7, height - 7, 0x263b3b).setStrokeStyle(3, board.status === 'completed' ? 0x819b7c : 0x627b78);
       const wire = this.add.graphics({ x: cx, y: cy });
-      wire.lineStyle(13, board.status === 'completed' ? 0x98b187 : 0xc5c49b, 1);
-      wire.beginPath(); wire.moveTo(0, -62); wire.lineTo(0, 0); wire.lineTo(module.shape === 'I' ? 0 : 70, module.shape === 'I' ? 62 : 0); wire.strokePath();
-      wire.fillStyle(0xcfc9a0, 1); wire.fillCircle(0, -62, 8); wire.fillCircle(module.shape === 'I' ? 0 : 70, module.shape === 'I' ? 62 : 0, 8);
+      wire.lineStyle(10 * circuitGeometry(projection).zoom, board.status === 'completed' ? 0x98b187 : 0xc5c49b, 1);
+      const arm = Math.min(width, height) * .33;
+      wire.beginPath(); wire.moveTo(0, -arm); wire.lineTo(0, 0); wire.lineTo(module.shape === 'I' ? 0 : arm, module.shape === 'I' ? arm : 0); wire.strokePath();
+      wire.fillStyle(0xcfc9a0, 1); wire.fillCircle(0, -arm, 8); wire.fillCircle(module.shape === 'I' ? 0 : arm, module.shape === 'I' ? arm : 0, 8);
       wire.setRotation(module.rotation * Math.PI / 2); this.modules.set(module.module_id, wire);
       this.text(x + 14, y + 11, module.module_id, 16, '#91a9a6');
     }
     for (const [terminal, label] of [[board.source, '电源端'], [board.sink, '主系统']] as const) {
       const module = board.modules.find(value => value.module_id === terminal.module_id); if (!module) continue;
-      const [x, y, w, h] = moduleBox(module.row, module.column);
+      const [x, y, w, h] = moduleBox(projection, module.row, module.column);
       const offset: Record<string, [number, number]> = { N: [w / 2, -12], E: [w + 10, h / 2], S: [w / 2, h + 10], W: [-12, h / 2] };
       const [dx, dy] = offset[terminal.side]; this.add.circle(x + dx, y + dy, 10, 0xcfbd80);
-      this.text(terminal === board.source ? 330 : 1140, terminal === board.source ? 165 : 680, `${label} ${terminal.side}`, 22, '#d2c595');
+      const g = circuitGeometry(projection); this.text(g.x + (terminal === board.source ? 0 : g.width * 1.65), terminal === board.source ? g.y - 40 : g.y + g.height * 3 + 20, `${label} ${terminal.side}`, 22 * g.zoom, '#d2c595');
     }
   }
   sync(projection: SceneProjection) {
     if (!this.ready) return;
     const old = this.previous;
-    this.tweens.killAll(); for (const child of [...this.children.list]) child.destroy(); this.objects.clear(); this.modules.clear();
+    this.tweens.killAll(); for (const child of [...this.children.list]) child.destroy(); beginPaintFrame(this); this.objects.clear(); this.modules.clear();
     const { state, view } = projection;
     const powered = state.progress.power_on;
     const power = state.device_states?.powerbox || 'CLOSED', computer = state.device_states?.computer || 'OFF';
     const doorOpen = state.exits.some(exit => exit.destination_id === 'R3' && exit.unlocked);
-    this.image('r2_background_dark', [0, 0, 1600, 900]);
-    if (powered) this.image('r2_light_overlay_on', [0, 0, 1600, 900]);
+    this.image(powered ? 'r2_background_on' : 'r2_background_dark', [0, 0, 1600, 900]);
     if (!view) {
       this.image('r2_workbench', room2Layout.r2_workbench);
       this.image('r2_return_door', room2Layout.r2_return_door);
@@ -122,17 +128,24 @@ export default class Room2Scene extends Phaser.Scene {
     } else {
       this.add.rectangle(800, 450, 1600, 900, 0x0d171d, 0.87);
       const key = view === 'r2_powerbox' ? `r2_closeup_powerbox_${powerSuffix[power]}` : view === 'r2_monitor' ? `r2_closeup_monitor_${monitorSuffix[computer]}` : `r2_closeup_${view.replace(/^r2_/, '')}`;
-      if (this.textures.exists(key)) this.image(key, [0, 0, 1600, 900], view);
+      if (this.textures.exists(key)) this.image(key, view === 'r2_powerbox' && !['CLOSED', 'OPEN'].includes(power) ? powerBox(projection, [-330, -140, 2400, 1350]) : [0, 0, 1600, 900], view);
       else this.image(view === 'r2_door' ? `r2_door_${doorOpen ? 'unlatched' : 'closed'}` : objectTexture[view] || view, view === 'r2_door' ? [580, 120, 400, 650] : [520, 230, 560, 360], view);
       if (view === 'r2_powerbox') {
-        if (state.minigames?.circuit) this.circuit(state.minigames.circuit);
-        if (state.objects.some(object => object.object_id === 'r2_service_label')) this.image('r2_service_label', [135, 300, 180, 96], 'r2_service_label');
+        if (state.minigames?.circuit) this.circuit(state.minigames.circuit, projection);
+        if (state.objects.some(object => object.object_id === 'r2_service_label')) this.image('r2_service_label', childBoxes.r2_service_label, 'r2_service_label');
       }
       if (view === 'r2_monitor') {
         const content = { OFF: '', BOOTING: 'LAB SYSTEM\n\nBOOT...', LOGIN_LOCKED: '', UNLOCKED: 'AUTH OK\n\nARCHIVED RESEARCH RECORD\n\n[ OPEN ]', DATA_READ: 'ARCHIVE OPEN\n\nRESEARCH RECORD AVAILABLE' }[computer];
-        if (content) this.text(465, 220, content, 31);
-        if (computer === 'DATA_READ') this.image('r2_tray', [475, 600, 610, 155]);
+        if (content) { this.add.rectangle(757, 393, 456, 325, 0x0b2118, .98); this.text(565, 255, content, 27); }
+        if (computer === 'DATA_READ') this.image('r2_tray', [405, 640, 610, 135]);
         for (const child of state.objects.filter(object => trayIds.has(object.object_id))) this.image(objectTexture[child.object_id], childBoxes[child.object_id], child.object_id);
+      }
+      const clue = knownClue(state, view);
+      if (clue && view === 'r2_maintenance') paintedText(this, [540, 210, 495, 390], `${clue.title}\n\n${clue.text}`, 34);
+      if (clue && view === 'r2_service_label') paintedText(this, [585, 250, 370, 405], `${clue.title}\n\n${clue.text}`, 30);
+      if (clue && view === 'research_strip') {
+        this.add.rectangle(800, 410, 500, 150, 0xd7c5a1);
+        paintedText(this, [555, 355, 490, 120], clue.text, 30);
       }
     }
     for (const hotspot of room2Hotspots(projection)) {

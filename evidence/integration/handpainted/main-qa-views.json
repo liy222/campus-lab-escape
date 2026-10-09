@@ -1,0 +1,27 @@
+{
+  "operator": "Main",
+  "candidate_sha256": "e7341a6d778c0af4295c791946ec92633347287e1ae4a4d8813af3c58ab39f81",
+  "source242_current_raw_match": true,
+  "actual_viewed_png_sha256": {
+    "evidence/integration/handpainted/qa/20261009T045300333Z-browser/R1-overview.png": "08e1c2b839509d33b093d42e7620f68bec99398a9fa02cadb2d166377b13b6b7",
+    "evidence/integration/handpainted/qa/20261009T045300333Z-browser/r1_clock-initial.png": "e8952a20c79703d25d5f64e52ed1e581bb81d1a45a9ed0e6f75118715df9c2aa",
+    "evidence/integration/handpainted/qa/20261009T045300333Z-browser/R2-overview-dark.png": "522e3b5a61c45b9a367541277e27ff33ed2359ad15485c6bf763736206b7b66d",
+    "evidence/integration/handpainted/qa/20261009T045300333Z-browser/R2-overview-on.png": "68b219071db276f63db6151f67548b9081919ecd4703b812dd34662d299ffc29",
+    "evidence/integration/handpainted/qa/20261009T045300333Z-browser/R2-computer-LOGIN_LOCKED.png": "b58687eb5123e15273886182ad802ca4e2572dfbaf02fb81c1beff274fcf577d",
+    "evidence/integration/handpainted/qa/20261009T045300333Z-browser/R3-overview.png": "2709f83cf35e048795b95fdfb2e304abae72c6ce9cf19550578c00b8bc6ebd64",
+    "evidence/integration/handpainted/qa/20261009T045643974Z-browser/R3-panel-passed.png": "d9b4bb188400693910097984c46fa679270cd00d35d9170de67e9f8b8fa0b1e5",
+    "evidence/integration/handpainted/qa/20261009T045643974Z-browser/R3-door-OPEN.png": "f56b65a869045663581d286ad68286e252413b94ce0a4ffddb18628680e624a6",
+    "evidence/integration/handpainted/qa/20261009T045643974Z-browser/R3-sequence-draft-375.png": "875b0e34f8ada1a6a163ae90625ee94b34eb9131a234b9d088f49825b3beebe4",
+    "evidence/integration/handpainted/qa/20261009T045643974Z-browser/Victory-mobile.png": "bcf6ca6a6e54ef475b89a76473748bc8dc1da89d9a8b46909d32ee94245ad6b1"
+  },
+  "findings": [
+    "Hand-painted object/background layer composition and readable canonical clue rendering selectively reviewed.",
+    "R2 dark/on and R3 early/final panel/open-door visuals match recorded server states.",
+    "No blocking visual issue found in these 10 selected PNGs. R3 overview conduit alignment is a minor composition limitation."
+  ],
+  "limitations": [
+    "Selective final QA image review, not all85 aesthetic approval or human playtest.",
+    "QA API-prepared continuation has artificial elapsed time; no human play duration claim.",
+    "Final QA consolidated result still pending at this review epoch."
+  ]
+}

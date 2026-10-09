@@ -1,0 +1,4143 @@
+[
+  {
+    "label": "R1-overview",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "view": "room",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r1_workbench",
+        "box": [
+          415,
+          516.3184615384615,
+          770,
+          292.36307692307696
+        ],
+        "source": [
+          24,
+          179,
+          1625,
+          617
+        ]
+      },
+      {
+        "key": "r1_clock",
+        "box": [
+          671.1265996343693,
+          90,
+          142.74680073126143,
+          145
+        ],
+        "source": [
+          84,
+          77,
+          1077,
+          1094
+        ]
+      },
+      {
+        "key": "r1_record",
+        "box": [
+          942.9376657824934,
+          472,
+          139.12466843501326,
+          150.00000000000003
+        ],
+        "source": [
+          77,
+          139,
+          1049,
+          1131
+        ]
+      },
+      {
+        "key": "r1_plaque",
+        "box": [
+          1250,
+          201.05501618122977,
+          190,
+          59.88996763754045
+        ],
+        "source": [
+          114,
+          202,
+          1545,
+          487
+        ]
+      },
+      {
+        "key": "r1_microscope_empty",
+        "box": [
+          670.2380952380952,
+          360,
+          159.52380952380952,
+          250
+        ],
+        "source": [
+          193,
+          30,
+          804,
+          1260
+        ]
+      },
+      {
+        "key": "sample_slide",
+        "box": [
+          520,
+          572.8552158273382,
+          110,
+          19.28956834532374
+        ],
+        "source": [
+          530,
+          276,
+          1112,
+          195
+        ]
+      },
+      {
+        "key": "r1_cabinet_locked",
+        "box": [
+          65,
+          559.4430051813472,
+          330,
+          231.1139896373057
+        ],
+        "source": [
+          120,
+          177,
+          1158,
+          811
+        ]
+      },
+      {
+        "key": "r1_door_closed",
+        "box": [
+          1260,
+          348.4357142857143,
+          230,
+          428.12857142857143
+        ],
+        "source": [
+          162,
+          112,
+          700,
+          1303
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r1_clock",
+        "box": "670,90,145,145",
+        "width": 116,
+        "height": 116,
+        "left": 536,
+        "right": 652,
+        "top": 162,
+        "bottom": 278,
+        "disabled": false
+      },
+      {
+        "id": "r1_record",
+        "box": "940,472,145,150",
+        "width": 116,
+        "height": 120,
+        "left": 752,
+        "right": 868,
+        "top": 467.59375,
+        "bottom": 587.59375,
+        "disabled": false
+      },
+      {
+        "id": "r1_plaque",
+        "box": "1250,190,190,82",
+        "width": 152,
+        "height": 65.59375,
+        "left": 1000,
+        "right": 1152,
+        "top": 242,
+        "bottom": 307.59375,
+        "disabled": false
+      },
+      {
+        "id": "r1_microscope",
+        "box": "635,360,230,250",
+        "width": 184,
+        "height": 200,
+        "left": 508,
+        "right": 692,
+        "top": 378,
+        "bottom": 578,
+        "disabled": false
+      },
+      {
+        "id": "sample_slide",
+        "box": "520,555,110,55",
+        "width": 88,
+        "height": 44,
+        "left": 416,
+        "right": 504,
+        "top": 534,
+        "bottom": 578,
+        "disabled": false
+      },
+      {
+        "id": "r1_cabinet",
+        "box": "65,540,330,270",
+        "width": 264,
+        "height": 216,
+        "left": 52,
+        "right": 316,
+        "top": 522,
+        "bottom": 738,
+        "disabled": false
+      },
+      {
+        "id": "r1_door",
+        "box": "1260,325,230,475",
+        "width": 184,
+        "height": 380,
+        "left": 1008,
+        "right": 1192,
+        "top": 350,
+        "bottom": 730,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "r1_clock-initial",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "view": "r1_clock",
+    "controlledClues": "r1_clock",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "closeup_clock",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "r1_record-initial",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "view": "r1_record",
+    "controlledClues": "r1_record",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "closeup_record",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "r1_plaque-initial",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "view": "r1_plaque",
+    "controlledClues": "r1_plaque",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "closeup_plaque",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "r1_microscope-initial",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "view": "r1_microscope",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "closeup_microscope_empty",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r1_microscope",
+        "box": "530,240,540,350",
+        "width": 432,
+        "height": 280,
+        "left": 424,
+        "right": 856,
+        "top": 282,
+        "bottom": 562,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R1-clock-375",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "view": "r1_clock",
+    "controlledClues": "r1_clock",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "closeup_clock",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "R1-clock-812",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "view": "r1_clock",
+    "controlledClues": "r1_clock",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "closeup_clock",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "R1-microscope-slide",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r1_microscope",
+    "controlledClues": "r1_microscope",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "microscope_view",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r1_microscope",
+        "box": "530,240,540,350",
+        "width": 432,
+        "height": 280,
+        "left": 424,
+        "right": 856,
+        "top": 282,
+        "bottom": 562,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R1-cabinet-LOCKED",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r1_cabinet",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "closeup_cabinet_locked",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "R1-cabinet-CODE_ACCEPTED",
+    "room": "R1",
+    "devices": {
+      "cabinet": "CODE_ACCEPTED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r1_cabinet",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "closeup_cabinet_locked",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r1_cabinet",
+        "box": "725,355,150,195",
+        "width": 120,
+        "height": 156,
+        "left": 580,
+        "right": 700,
+        "top": 373.984375,
+        "bottom": 529.984375,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R1-cabinet-OPEN",
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r1_cabinet",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "closeup_cabinet_open",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r1_symbols",
+        "box": [
+          895,
+          235.67504963600265,
+          285,
+          88.6499007279947
+        ],
+        "source": [
+          137,
+          214,
+          1511,
+          470
+        ]
+      },
+      {
+        "key": "r1_fuse",
+        "box": [
+          555,
+          552.8186274509804,
+          265,
+          49.36274509803922
+        ],
+        "source": [
+          224,
+          331,
+          1326,
+          247
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r1_symbols",
+        "box": "895,235,285,90",
+        "width": 228,
+        "height": 72,
+        "left": 716,
+        "right": 944,
+        "top": 278,
+        "bottom": 350,
+        "disabled": false
+      },
+      {
+        "id": "r1_fuse",
+        "box": "555,545,265,65",
+        "width": 212,
+        "height": 52,
+        "left": 444,
+        "right": 656,
+        "top": 526,
+        "bottom": 578,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R1-symbols",
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r1_symbols",
+    "controlledClues": "r1_symbols",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r1_symbols",
+        "box": [
+          530,
+          346.0158835208471,
+          540,
+          167.96823295830575
+        ],
+        "source": [
+          137,
+          214,
+          1511,
+          470
+        ]
+      },
+      {
+        "key": "r1_symbols",
+        "box": [
+          530,
+          306.0158835208471,
+          540,
+          167.96823295830575
+        ],
+        "source": [
+          137,
+          214,
+          1511,
+          470
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "R1-cabinet-ITEM_TAKEN",
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r1_cabinet",
+    "controlledClues": "r1_symbols",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "closeup_cabinet_open",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r1_symbols",
+        "box": [
+          895,
+          235.67504963600265,
+          285,
+          88.6499007279947
+        ],
+        "source": [
+          137,
+          214,
+          1511,
+          470
+        ]
+      },
+      {
+        "key": "r1_photo",
+        "box": [
+          623.5989010989011,
+          510,
+          237.8021978021978,
+          160
+        ],
+        "source": [
+          182,
+          186,
+          1082,
+          728
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r1_symbols",
+        "box": "895,235,285,90",
+        "width": 228,
+        "height": 72,
+        "left": 716,
+        "right": 944,
+        "top": 278,
+        "bottom": 350,
+        "disabled": false
+      },
+      {
+        "id": "r1_photo",
+        "box": "605,510,275,160",
+        "width": 220,
+        "height": 128,
+        "left": 484,
+        "right": 704,
+        "top": 498,
+        "bottom": 626,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R1-hidden-photo",
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r1_photo",
+    "controlledClues": "r1_photo",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "photo_closeup",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "R2-overview-dark",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "room",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_dark",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_workbench",
+        "box": [
+          490,
+          481.8588992974239,
+          725,
+          296.28220140515225
+        ],
+        "source": [
+          33,
+          105,
+          1708,
+          698
+        ]
+      },
+      {
+        "key": "r2_return_door",
+        "box": [
+          25,
+          334.10265878877397,
+          200,
+          406.794682422452
+        ],
+        "source": [
+          174,
+          73,
+          677,
+          1377
+        ]
+      },
+      {
+        "key": "r2_powerbox_closed",
+        "box": [
+          232.8008429926238,
+          327,
+          258.3983140147524,
+          305
+        ],
+        "source": [
+          293,
+          86,
+          804,
+          949
+        ]
+      },
+      {
+        "key": "r2_monitor_off",
+        "box": [
+          871,
+          322.24313072439634,
+          286,
+          225.51373855120733
+        ],
+        "source": [
+          152,
+          89,
+          1201,
+          947
+        ]
+      },
+      {
+        "key": "r2_maintenance",
+        "box": [
+          527.486036519871,
+          444,
+          144.0279269602578,
+          110
+        ],
+        "source": [
+          175,
+          55,
+          1219,
+          931
+        ]
+      },
+      {
+        "key": "r2_door_closed",
+        "box": [
+          1290,
+          352.2241379310345,
+          225,
+          415.55172413793105
+        ],
+        "source": [
+          150,
+          101,
+          725,
+          1339
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r2_powerbox",
+        "box": "232,327,260,305",
+        "width": 208,
+        "height": 244,
+        "left": 185.59375,
+        "right": 393.59375,
+        "top": 351.59375,
+        "bottom": 595.59375,
+        "disabled": false
+      },
+      {
+        "id": "r2_monitor",
+        "box": "871,300,286,270",
+        "width": 228.796875,
+        "height": 216,
+        "left": 696.796875,
+        "right": 925.59375,
+        "top": 330,
+        "bottom": 546,
+        "disabled": false
+      },
+      {
+        "id": "r2_maintenance",
+        "box": "527,444,145,110",
+        "width": 116,
+        "height": 88,
+        "left": 421.59375,
+        "right": 537.59375,
+        "top": 445.1875,
+        "bottom": 533.1875,
+        "disabled": false
+      },
+      {
+        "id": "r2_door",
+        "box": "1290,330,225,460",
+        "width": 180,
+        "height": 368,
+        "left": 1032,
+        "right": 1212,
+        "top": 354,
+        "bottom": 722,
+        "disabled": false
+      },
+      {
+        "id": "return_R1",
+        "box": "25,285,200,505",
+        "width": 160,
+        "height": 404,
+        "left": 20,
+        "right": 180,
+        "top": 318,
+        "bottom": 722,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-maintenance",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_maintenance",
+    "controlledClues": "r2_maintenance",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_dark",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_maintenance",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "R2-computer-OFF",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_monitor",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_dark",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_monitor_off",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "R2-powerbox-CLOSED",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_powerbox",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_dark",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_powerbox_closed",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r2_powerbox",
+        "box": "755,325,215,330",
+        "width": 172,
+        "height": 264,
+        "left": 604,
+        "right": 776,
+        "top": 350,
+        "bottom": 614,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-powerbox-OPEN",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "OPEN",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_powerbox",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_dark",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_powerbox_open",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r2_powerbox",
+        "box": "755,325,215,330",
+        "width": 172,
+        "height": 264,
+        "left": 604,
+        "right": 776,
+        "top": 350,
+        "bottom": 614,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-powerbox-MISSING_FUSE",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "MISSING_FUSE",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_powerbox",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_dark",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_powerbox_missing_fuse",
+        "box": [
+          -329.36238044633365,
+          -140,
+          2398.7247608926673,
+          1350
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r2_powerbox",
+        "box": "560,600,370,125",
+        "width": 296,
+        "height": 100,
+        "left": 448,
+        "right": 744,
+        "top": 570,
+        "bottom": 670,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-powerbox-FUSE_INSTALLED",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_powerbox",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_dark",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_powerbox_fuse_installed",
+        "box": [
+          -329.36238044633365,
+          -140,
+          2398.7247608926673,
+          1350
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "c00",
+        "module": "c00",
+        "box": "480,153,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 384,
+        "right": 516,
+        "top": 212.390625,
+        "bottom": 337.984375,
+        "disabled": false
+      },
+      {
+        "id": "c01",
+        "module": "c01",
+        "box": "645,153,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 516,
+        "right": 648,
+        "top": 212.390625,
+        "bottom": 337.984375,
+        "disabled": false
+      },
+      {
+        "id": "c02",
+        "module": "c02",
+        "box": "810,153,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 648,
+        "right": 780,
+        "top": 212.390625,
+        "bottom": 337.984375,
+        "disabled": false
+      },
+      {
+        "id": "c10",
+        "module": "c10",
+        "box": "480,310,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 384,
+        "right": 516,
+        "top": 337.984375,
+        "bottom": 463.578125,
+        "disabled": false
+      },
+      {
+        "id": "c11",
+        "module": "c11",
+        "box": "645,310,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 516,
+        "right": 648,
+        "top": 337.984375,
+        "bottom": 463.578125,
+        "disabled": false
+      },
+      {
+        "id": "c12",
+        "module": "c12",
+        "box": "810,310,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 648,
+        "right": 780,
+        "top": 337.984375,
+        "bottom": 463.578125,
+        "disabled": false
+      },
+      {
+        "id": "c20",
+        "module": "c20",
+        "box": "480,467,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 384,
+        "right": 516,
+        "top": 463.59375,
+        "bottom": 589.1875,
+        "disabled": false
+      },
+      {
+        "id": "c21",
+        "module": "c21",
+        "box": "645,467,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 516,
+        "right": 648,
+        "top": 463.59375,
+        "bottom": 589.1875,
+        "disabled": false
+      },
+      {
+        "id": "c22",
+        "module": "c22",
+        "box": "810,467,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 648,
+        "right": 780,
+        "top": 463.59375,
+        "bottom": 589.1875,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-circuit-375",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_powerbox",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_dark",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_powerbox_fuse_installed",
+        "box": [
+          -689.1727867765012,
+          -197.85350318471336,
+          2872.358312406506,
+          1616.56050955414
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "c00",
+        "module": "c00",
+        "box": "280,153,188,188",
+        "width": 44.0625,
+        "height": 44.0625,
+        "left": 65.625,
+        "right": 109.6875,
+        "top": 206.46875,
+        "bottom": 250.53125,
+        "disabled": false
+      },
+      {
+        "id": "c01",
+        "module": "c01",
+        "box": "468,153,188,188",
+        "width": 44.0625,
+        "height": 44.0625,
+        "left": 109.6875,
+        "right": 153.75,
+        "top": 206.46875,
+        "bottom": 250.53125,
+        "disabled": false
+      },
+      {
+        "id": "c02",
+        "module": "c02",
+        "box": "656,153,188,188",
+        "width": 44.0625,
+        "height": 44.0625,
+        "left": 153.75,
+        "right": 197.8125,
+        "top": 206.46875,
+        "bottom": 250.53125,
+        "disabled": false
+      },
+      {
+        "id": "c10",
+        "module": "c10",
+        "box": "280,341,188,188",
+        "width": 44.0625,
+        "height": 44.0625,
+        "left": 65.625,
+        "right": 109.6875,
+        "top": 250.53125,
+        "bottom": 294.59375,
+        "disabled": false
+      },
+      {
+        "id": "c11",
+        "module": "c11",
+        "box": "468,341,188,188",
+        "width": 44.0625,
+        "height": 44.0625,
+        "left": 109.6875,
+        "right": 153.75,
+        "top": 250.53125,
+        "bottom": 294.59375,
+        "disabled": false
+      },
+      {
+        "id": "c12",
+        "module": "c12",
+        "box": "656,341,188,188",
+        "width": 44.0625,
+        "height": 44.0625,
+        "left": 153.75,
+        "right": 197.8125,
+        "top": 250.53125,
+        "bottom": 294.59375,
+        "disabled": false
+      },
+      {
+        "id": "c20",
+        "module": "c20",
+        "box": "280,529,188,188",
+        "width": 44.0625,
+        "height": 44.0625,
+        "left": 65.625,
+        "right": 109.6875,
+        "top": 294.59375,
+        "bottom": 338.65625,
+        "disabled": false
+      },
+      {
+        "id": "c21",
+        "module": "c21",
+        "box": "468,529,188,188",
+        "width": 44.0625,
+        "height": 44.0625,
+        "left": 109.6875,
+        "right": 153.75,
+        "top": 294.59375,
+        "bottom": 338.65625,
+        "disabled": false
+      },
+      {
+        "id": "c22",
+        "module": "c22",
+        "box": "656,529,188,188",
+        "width": 44.0625,
+        "height": 44.0625,
+        "left": 153.75,
+        "right": 197.8125,
+        "top": 294.59375,
+        "bottom": 338.65625,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-circuit-812",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_powerbox",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_dark",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_powerbox_fuse_installed",
+        "box": [
+          -329.36238044633365,
+          -140,
+          2398.7247608926673,
+          1350
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "c00",
+        "module": "c00",
+        "box": "480,153,165,157",
+        "width": 68.734375,
+        "height": 65.40625,
+        "left": 272.65625,
+        "right": 341.390625,
+        "top": 63.75,
+        "bottom": 129.15625,
+        "disabled": false
+      },
+      {
+        "id": "c01",
+        "module": "c01",
+        "box": "645,153,165,157",
+        "width": 68.734375,
+        "height": 65.40625,
+        "left": 341.40625,
+        "right": 410.140625,
+        "top": 63.75,
+        "bottom": 129.15625,
+        "disabled": false
+      },
+      {
+        "id": "c02",
+        "module": "c02",
+        "box": "810,153,165,157",
+        "width": 68.734375,
+        "height": 65.40625,
+        "left": 410.15625,
+        "right": 478.890625,
+        "top": 63.75,
+        "bottom": 129.15625,
+        "disabled": false
+      },
+      {
+        "id": "c10",
+        "module": "c10",
+        "box": "480,310,165,157",
+        "width": 68.734375,
+        "height": 65.40625,
+        "left": 272.65625,
+        "right": 341.390625,
+        "top": 129.15625,
+        "bottom": 194.5625,
+        "disabled": false
+      },
+      {
+        "id": "c11",
+        "module": "c11",
+        "box": "645,310,165,157",
+        "width": 68.734375,
+        "height": 65.40625,
+        "left": 341.40625,
+        "right": 410.140625,
+        "top": 129.15625,
+        "bottom": 194.5625,
+        "disabled": false
+      },
+      {
+        "id": "c12",
+        "module": "c12",
+        "box": "810,310,165,157",
+        "width": 68.734375,
+        "height": 65.40625,
+        "left": 410.15625,
+        "right": 478.890625,
+        "top": 129.15625,
+        "bottom": 194.5625,
+        "disabled": false
+      },
+      {
+        "id": "c20",
+        "module": "c20",
+        "box": "480,467,165,157",
+        "width": 68.734375,
+        "height": 65.40625,
+        "left": 272.65625,
+        "right": 341.390625,
+        "top": 194.578125,
+        "bottom": 259.984375,
+        "disabled": false
+      },
+      {
+        "id": "c21",
+        "module": "c21",
+        "box": "645,467,165,157",
+        "width": 68.734375,
+        "height": 65.40625,
+        "left": 341.40625,
+        "right": 410.140625,
+        "top": 194.578125,
+        "bottom": 259.984375,
+        "disabled": false
+      },
+      {
+        "id": "c22",
+        "module": "c22",
+        "box": "810,467,165,157",
+        "width": 68.734375,
+        "height": 65.40625,
+        "left": 410.15625,
+        "right": 478.890625,
+        "top": 194.578125,
+        "bottom": 259.984375,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-powerbox-CIRCUIT_READY",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_powerbox",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_dark",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_powerbox_circuit_ready",
+        "box": [
+          -329.36238044633365,
+          -140,
+          2398.7247608926673,
+          1350
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "c00",
+        "module": "c00",
+        "box": "480,153,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 384,
+        "right": 516,
+        "top": 212.390625,
+        "bottom": 337.984375,
+        "disabled": true
+      },
+      {
+        "id": "c01",
+        "module": "c01",
+        "box": "645,153,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 516,
+        "right": 648,
+        "top": 212.390625,
+        "bottom": 337.984375,
+        "disabled": true
+      },
+      {
+        "id": "c02",
+        "module": "c02",
+        "box": "810,153,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 648,
+        "right": 780,
+        "top": 212.390625,
+        "bottom": 337.984375,
+        "disabled": true
+      },
+      {
+        "id": "c10",
+        "module": "c10",
+        "box": "480,310,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 384,
+        "right": 516,
+        "top": 337.984375,
+        "bottom": 463.578125,
+        "disabled": true
+      },
+      {
+        "id": "c11",
+        "module": "c11",
+        "box": "645,310,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 516,
+        "right": 648,
+        "top": 337.984375,
+        "bottom": 463.578125,
+        "disabled": true
+      },
+      {
+        "id": "c12",
+        "module": "c12",
+        "box": "810,310,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 648,
+        "right": 780,
+        "top": 337.984375,
+        "bottom": 463.578125,
+        "disabled": true
+      },
+      {
+        "id": "c20",
+        "module": "c20",
+        "box": "480,467,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 384,
+        "right": 516,
+        "top": 463.59375,
+        "bottom": 589.1875,
+        "disabled": true
+      },
+      {
+        "id": "c21",
+        "module": "c21",
+        "box": "645,467,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 516,
+        "right": 648,
+        "top": 463.59375,
+        "bottom": 589.1875,
+        "disabled": true
+      },
+      {
+        "id": "c22",
+        "module": "c22",
+        "box": "810,467,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 648,
+        "right": 780,
+        "top": 463.59375,
+        "bottom": 589.1875,
+        "disabled": true
+      },
+      {
+        "id": "r2_powerbox",
+        "box": "1400,330,175,420",
+        "width": 140,
+        "height": 336,
+        "left": 1120,
+        "right": 1260,
+        "top": 354,
+        "bottom": 690,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-powerbox-POWER_ON",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_powerbox",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_on",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_powerbox_power_on",
+        "box": [
+          -329.36238044633365,
+          -140,
+          2398.7247608926673,
+          1350
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_service_label",
+        "box": [
+          1110,
+          708.1782945736434,
+          190,
+          73.64341085271319
+        ],
+        "source": [
+          64,
+          222,
+          1419,
+          550
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r2_service_label",
+        "box": "1110,700,190,90",
+        "width": 152,
+        "height": 72,
+        "left": 888,
+        "right": 1040,
+        "top": 650,
+        "bottom": 722,
+        "disabled": false
+      },
+      {
+        "id": "c00",
+        "module": "c00",
+        "box": "480,153,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 384,
+        "right": 516,
+        "top": 212.390625,
+        "bottom": 337.984375,
+        "disabled": true
+      },
+      {
+        "id": "c01",
+        "module": "c01",
+        "box": "645,153,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 516,
+        "right": 648,
+        "top": 212.390625,
+        "bottom": 337.984375,
+        "disabled": true
+      },
+      {
+        "id": "c02",
+        "module": "c02",
+        "box": "810,153,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 648,
+        "right": 780,
+        "top": 212.390625,
+        "bottom": 337.984375,
+        "disabled": true
+      },
+      {
+        "id": "c10",
+        "module": "c10",
+        "box": "480,310,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 384,
+        "right": 516,
+        "top": 337.984375,
+        "bottom": 463.578125,
+        "disabled": true
+      },
+      {
+        "id": "c11",
+        "module": "c11",
+        "box": "645,310,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 516,
+        "right": 648,
+        "top": 337.984375,
+        "bottom": 463.578125,
+        "disabled": true
+      },
+      {
+        "id": "c12",
+        "module": "c12",
+        "box": "810,310,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 648,
+        "right": 780,
+        "top": 337.984375,
+        "bottom": 463.578125,
+        "disabled": true
+      },
+      {
+        "id": "c20",
+        "module": "c20",
+        "box": "480,467,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 384,
+        "right": 516,
+        "top": 463.59375,
+        "bottom": 589.1875,
+        "disabled": true
+      },
+      {
+        "id": "c21",
+        "module": "c21",
+        "box": "645,467,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 516,
+        "right": 648,
+        "top": 463.59375,
+        "bottom": 589.1875,
+        "disabled": true
+      },
+      {
+        "id": "c22",
+        "module": "c22",
+        "box": "810,467,165,157",
+        "width": 132,
+        "height": 125.59375,
+        "left": 648,
+        "right": 780,
+        "top": 463.59375,
+        "bottom": 589.1875,
+        "disabled": true
+      }
+    ]
+  },
+  {
+    "label": "R2-overview-on",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "room",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_on",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_workbench",
+        "box": [
+          490,
+          481.8588992974239,
+          725,
+          296.28220140515225
+        ],
+        "source": [
+          33,
+          105,
+          1708,
+          698
+        ]
+      },
+      {
+        "key": "r2_return_door",
+        "box": [
+          25,
+          334.10265878877397,
+          200,
+          406.794682422452
+        ],
+        "source": [
+          174,
+          73,
+          677,
+          1377
+        ]
+      },
+      {
+        "key": "r2_powerbox_power_on",
+        "box": [
+          232,
+          367.9923339011925,
+          260,
+          223.015332197615
+        ],
+        "source": [
+          105,
+          82,
+          1174,
+          1007
+        ]
+      },
+      {
+        "key": "r2_monitor_off",
+        "box": [
+          871,
+          322.24313072439634,
+          286,
+          225.51373855120733
+        ],
+        "source": [
+          152,
+          89,
+          1201,
+          947
+        ]
+      },
+      {
+        "key": "r2_maintenance",
+        "box": [
+          527.486036519871,
+          444,
+          144.0279269602578,
+          110
+        ],
+        "source": [
+          175,
+          55,
+          1219,
+          931
+        ]
+      },
+      {
+        "key": "r2_door_closed",
+        "box": [
+          1290,
+          352.2241379310345,
+          225,
+          415.55172413793105
+        ],
+        "source": [
+          150,
+          101,
+          725,
+          1339
+        ]
+      },
+      {
+        "key": "r2_service_label",
+        "box": [
+          440,
+          581.1821705426356,
+          110,
+          42.63565891472868
+        ],
+        "source": [
+          64,
+          222,
+          1419,
+          550
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r2_powerbox",
+        "box": "232,327,260,305",
+        "width": 208,
+        "height": 244,
+        "left": 185.59375,
+        "right": 393.59375,
+        "top": 351.59375,
+        "bottom": 595.59375,
+        "disabled": false
+      },
+      {
+        "id": "r2_monitor",
+        "box": "871,300,286,270",
+        "width": 228.796875,
+        "height": 216,
+        "left": 696.796875,
+        "right": 925.59375,
+        "top": 330,
+        "bottom": 546,
+        "disabled": false
+      },
+      {
+        "id": "r2_maintenance",
+        "box": "527,444,145,110",
+        "width": 116,
+        "height": 88,
+        "left": 421.59375,
+        "right": 537.59375,
+        "top": 445.1875,
+        "bottom": 533.1875,
+        "disabled": false
+      },
+      {
+        "id": "r2_door",
+        "box": "1290,330,225,460",
+        "width": 180,
+        "height": 368,
+        "left": 1032,
+        "right": 1212,
+        "top": 354,
+        "bottom": 722,
+        "disabled": false
+      },
+      {
+        "id": "r2_service_label",
+        "box": "440,575,110,55",
+        "width": 88,
+        "height": 44,
+        "left": 352,
+        "right": 440,
+        "top": 550,
+        "bottom": 594,
+        "disabled": false
+      },
+      {
+        "id": "return_R1",
+        "box": "25,285,200,505",
+        "width": 160,
+        "height": 404,
+        "left": 20,
+        "right": 180,
+        "top": 318,
+        "bottom": 722,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-hidden-maintenance",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_service_label",
+    "controlledClues": "r2_service_label",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_on",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_service_label",
+        "box": [
+          0.9032943676938885,
+          0,
+          1598.1934112646122,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1671,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "R1-return-powered",
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "room",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r1_workbench",
+        "box": [
+          415,
+          516.3184615384615,
+          770,
+          292.36307692307696
+        ],
+        "source": [
+          24,
+          179,
+          1625,
+          617
+        ]
+      },
+      {
+        "key": "r1_clock",
+        "box": [
+          671.1265996343693,
+          90,
+          142.74680073126143,
+          145
+        ],
+        "source": [
+          84,
+          77,
+          1077,
+          1094
+        ]
+      },
+      {
+        "key": "r1_record",
+        "box": [
+          942.9376657824934,
+          472,
+          139.12466843501326,
+          150.00000000000003
+        ],
+        "source": [
+          77,
+          139,
+          1049,
+          1131
+        ]
+      },
+      {
+        "key": "r1_plaque",
+        "box": [
+          1250,
+          201.05501618122977,
+          190,
+          59.88996763754045
+        ],
+        "source": [
+          114,
+          202,
+          1545,
+          487
+        ]
+      },
+      {
+        "key": "r1_microscope_slide",
+        "box": [
+          670.0039651070579,
+          360,
+          159.9920697858842,
+          250
+        ],
+        "source": [
+          189,
+          30,
+          807,
+          1261
+        ]
+      },
+      {
+        "key": "r1_cabinet_empty",
+        "box": [
+          65,
+          574.3778801843318,
+          330,
+          201.24423963133643
+        ],
+        "source": [
+          50,
+          178,
+          1302,
+          794
+        ]
+      },
+      {
+        "key": "r1_symbols",
+        "box": [
+          245,
+          608.3805426869623,
+          94,
+          29.23891462607545
+        ],
+        "source": [
+          137,
+          214,
+          1511,
+          470
+        ]
+      },
+      {
+        "key": "r1_photo",
+        "box": [
+          180,
+          689.6765249537893,
+          104.99999999999999,
+          70.64695009242143
+        ],
+        "source": [
+          182,
+          186,
+          1082,
+          728
+        ]
+      },
+      {
+        "key": "r1_door_unlatched",
+        "box": [
+          1260,
+          348.83522727272725,
+          230,
+          427.3295454545455
+        ],
+        "source": [
+          160,
+          110,
+          704,
+          1308
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r1_clock",
+        "box": "670,90,145,145",
+        "width": 116,
+        "height": 116,
+        "left": 536,
+        "right": 652,
+        "top": 162,
+        "bottom": 278,
+        "disabled": false
+      },
+      {
+        "id": "r1_record",
+        "box": "940,472,145,150",
+        "width": 116,
+        "height": 120,
+        "left": 752,
+        "right": 868,
+        "top": 467.59375,
+        "bottom": 587.59375,
+        "disabled": false
+      },
+      {
+        "id": "r1_plaque",
+        "box": "1250,190,190,82",
+        "width": 152,
+        "height": 65.59375,
+        "left": 1000,
+        "right": 1152,
+        "top": 242,
+        "bottom": 307.59375,
+        "disabled": false
+      },
+      {
+        "id": "r1_microscope",
+        "box": "635,360,230,250",
+        "width": 184,
+        "height": 200,
+        "left": 508,
+        "right": 692,
+        "top": 378,
+        "bottom": 578,
+        "disabled": false
+      },
+      {
+        "id": "r1_cabinet",
+        "box": "65,540,330,270",
+        "width": 264,
+        "height": 216,
+        "left": 52,
+        "right": 316,
+        "top": 522,
+        "bottom": 738,
+        "disabled": false
+      },
+      {
+        "id": "r1_door",
+        "box": "1260,325,230,475",
+        "width": 184,
+        "height": 380,
+        "left": 1008,
+        "right": 1192,
+        "top": 350,
+        "bottom": 730,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-restored-dark",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "room",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_dark",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_workbench",
+        "box": [
+          490,
+          481.8588992974239,
+          725,
+          296.28220140515225
+        ],
+        "source": [
+          33,
+          105,
+          1708,
+          698
+        ]
+      },
+      {
+        "key": "r2_return_door",
+        "box": [
+          25,
+          334.10265878877397,
+          200,
+          406.794682422452
+        ],
+        "source": [
+          174,
+          73,
+          677,
+          1377
+        ]
+      },
+      {
+        "key": "r2_powerbox_circuit_ready",
+        "box": [
+          232,
+          367.70666097352694,
+          260,
+          223.58667805294618
+        ],
+        "source": [
+          107,
+          82,
+          1171,
+          1007
+        ]
+      },
+      {
+        "key": "r2_monitor_off",
+        "box": [
+          871,
+          322.24313072439634,
+          286,
+          225.51373855120733
+        ],
+        "source": [
+          152,
+          89,
+          1201,
+          947
+        ]
+      },
+      {
+        "key": "r2_maintenance",
+        "box": [
+          527.486036519871,
+          444,
+          144.0279269602578,
+          110
+        ],
+        "source": [
+          175,
+          55,
+          1219,
+          931
+        ]
+      },
+      {
+        "key": "r2_door_closed",
+        "box": [
+          1290,
+          352.2241379310345,
+          225,
+          415.55172413793105
+        ],
+        "source": [
+          150,
+          101,
+          725,
+          1339
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r2_powerbox",
+        "box": "232,327,260,305",
+        "width": 208,
+        "height": 244,
+        "left": 185.59375,
+        "right": 393.59375,
+        "top": 351.59375,
+        "bottom": 595.59375,
+        "disabled": false
+      },
+      {
+        "id": "r2_monitor",
+        "box": "871,300,286,270",
+        "width": 228.796875,
+        "height": 216,
+        "left": 696.796875,
+        "right": 925.59375,
+        "top": 330,
+        "bottom": 546,
+        "disabled": false
+      },
+      {
+        "id": "r2_maintenance",
+        "box": "527,444,145,110",
+        "width": 116,
+        "height": 88,
+        "left": 421.59375,
+        "right": 537.59375,
+        "top": 445.1875,
+        "bottom": 533.1875,
+        "disabled": false
+      },
+      {
+        "id": "r2_door",
+        "box": "1290,330,225,460",
+        "width": 180,
+        "height": 368,
+        "left": 1032,
+        "right": 1212,
+        "top": 354,
+        "bottom": 722,
+        "disabled": false
+      },
+      {
+        "id": "return_R1",
+        "box": "25,285,200,505",
+        "width": 160,
+        "height": 404,
+        "left": 20,
+        "right": 180,
+        "top": 318,
+        "bottom": 722,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-computer-BOOTING",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "BOOTING",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_monitor",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_on",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_monitor_booting",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r2_monitor",
+        "box": "905,590,120,110",
+        "width": 96,
+        "height": 88,
+        "left": 724,
+        "right": 820,
+        "top": 562,
+        "bottom": 650,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-computer-LOGIN_LOCKED",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "LOGIN_LOCKED",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_monitor",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_on",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_monitor_login_locked",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "R2-login-375",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "LOGIN_LOCKED",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_monitor",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_on",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_monitor_login_locked",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "R2-login-812",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "LOGIN_LOCKED",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_monitor",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_on",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_monitor_login_locked",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "R2-computer-UNLOCKED",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "UNLOCKED",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_monitor",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_on",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_monitor_unlocked",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r2_monitor",
+        "box": "905,590,120,110",
+        "width": 96,
+        "height": 88,
+        "left": 724,
+        "right": 820,
+        "top": 562,
+        "bottom": 650,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-computer-DATA_READ",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r2_monitor",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_on",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_closeup_monitor_data_read",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_tray",
+        "box": [
+          452.0092024539877,
+          640,
+          515.9815950920246,
+          135
+        ],
+        "source": [
+          57,
+          175,
+          1869,
+          489
+        ]
+      },
+      {
+        "key": "r2_research_strip",
+        "box": [
+          465,
+          674.0977791486737,
+          245,
+          66.80444170265268
+        ],
+        "source": [
+          98,
+          219,
+          1621,
+          442
+        ]
+      },
+      {
+        "key": "r2_access_card",
+        "box": [
+          790,
+          673.391530460624,
+          150,
+          73.21693907875186
+        ],
+        "source": [
+          163,
+          155,
+          1346,
+          657
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "research_strip",
+        "box": "465,670,245,75",
+        "width": 196,
+        "height": 60,
+        "left": 372,
+        "right": 568,
+        "top": 626,
+        "bottom": 686,
+        "disabled": false
+      },
+      {
+        "id": "access_card",
+        "box": "790,665,150,90",
+        "width": 120,
+        "height": 72,
+        "left": 632,
+        "right": 752,
+        "top": 621.984375,
+        "bottom": 693.984375,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R2-research-strip",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "research_strip",
+    "controlledClues": "research_strip",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r2_background_on",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r2_research_strip",
+        "box": [
+          520,
+          333.65206662553976,
+          560,
+          152.69586674892042
+        ],
+        "source": [
+          98,
+          219,
+          1621,
+          442
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "research_strip",
+        "box": "575,200,450,560",
+        "width": 360,
+        "height": 448,
+        "left": 460,
+        "right": 820,
+        "top": 249.984375,
+        "bottom": 697.984375,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R3-overview",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "room",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_return_door",
+        "box": [
+          34.999999999999986,
+          347.1803499327052,
+          225.00000000000003,
+          400.6393001345895
+        ],
+        "source": [
+          141,
+          92,
+          743,
+          1323
+        ]
+      },
+      {
+        "key": "r3_legend",
+        "box": [
+          290,
+          214.99503968253967,
+          250,
+          280.00992063492066
+        ],
+        "source": [
+          143,
+          39,
+          1008,
+          1129
+        ]
+      },
+      {
+        "key": "r3_panel_empty",
+        "box": [
+          666.9591346153846,
+          245,
+          306.0817307692308,
+          535
+        ],
+        "source": [
+          111,
+          24,
+          833,
+          1456
+        ]
+      },
+      {
+        "key": "r3_exit_door_locked",
+        "box": [
+          1175,
+          309.82536764705884,
+          285,
+          475.3492647058823
+        ],
+        "source": [
+          127,
+          95,
+          816,
+          1361
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r3_legend",
+        "box": "290,210,250,290",
+        "width": 200,
+        "height": 232,
+        "left": 232,
+        "right": 432,
+        "top": 258,
+        "bottom": 490,
+        "disabled": false
+      },
+      {
+        "id": "r3_panel",
+        "box": "660,245,320,535",
+        "width": 256,
+        "height": 428,
+        "left": 528,
+        "right": 784,
+        "top": 286,
+        "bottom": 714,
+        "disabled": false
+      },
+      {
+        "id": "exit_door",
+        "box": "1175,285,285,525",
+        "width": 228,
+        "height": 420,
+        "left": 940,
+        "right": 1168,
+        "top": 318,
+        "bottom": 738,
+        "disabled": false
+      },
+      {
+        "id": "return_R2",
+        "box": "35,285,225,525",
+        "width": 180,
+        "height": 420,
+        "left": 28,
+        "right": 208,
+        "top": 318,
+        "bottom": 738,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R3-legend",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r3_legend",
+    "controlledClues": "r3_legend",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_legend",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": []
+  },
+  {
+    "label": "R3-panel-EMPTY",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "view": "r3_panel",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_panel_empty",
+        "box": [
+          -329.36238044633365,
+          -185,
+          2398.7247608926673,
+          1350
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r3_panel",
+        "box": "645,285,445,65",
+        "width": 356,
+        "height": 52,
+        "left": 516,
+        "right": 872,
+        "top": 318,
+        "bottom": 370,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R3-panel-early-STRIP_INSERTED",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "view": "r3_panel",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_panel_strip_inserted",
+        "box": [
+          -329.36238044633365,
+          -185,
+          2398.7247608926673,
+          1350
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "cooling",
+        "device": "cooling",
+        "box": "590,445,230,130",
+        "width": 184,
+        "height": 104,
+        "left": 472,
+        "right": 656,
+        "top": 446,
+        "bottom": 550,
+        "disabled": false
+      },
+      {
+        "id": "lighting",
+        "device": "lighting",
+        "box": "825,445,230,130",
+        "width": 184,
+        "height": 104,
+        "left": 660,
+        "right": 844,
+        "top": 446,
+        "bottom": 550,
+        "disabled": false
+      },
+      {
+        "id": "safety",
+        "device": "safety",
+        "box": "590,575,230,130",
+        "width": 184,
+        "height": 104,
+        "left": 472,
+        "right": 656,
+        "top": 550,
+        "bottom": 654,
+        "disabled": false
+      },
+      {
+        "id": "ventilation",
+        "device": "ventilation",
+        "box": "825,575,230,130",
+        "width": 184,
+        "height": 104,
+        "left": 660,
+        "right": 844,
+        "top": 550,
+        "bottom": 654,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R3-early-panel-375",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "view": "r3_panel",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_panel_strip_inserted",
+        "box": [
+          -1069.539442491621,
+          -466.076923076923,
+          3468.925038829396,
+          1952.3076923076922
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "cooling",
+        "device": "cooling",
+        "box": "260,445,332.6153846153846,188",
+        "width": 77.953125,
+        "height": 44.0625,
+        "left": 60.9375,
+        "right": 138.890625,
+        "top": 274.90625,
+        "bottom": 318.96875,
+        "disabled": false
+      },
+      {
+        "id": "lighting",
+        "device": "lighting",
+        "box": "599.8461538461538,445,332.6153846153846,188",
+        "width": 77.953125,
+        "height": 44.0625,
+        "left": 140.578125,
+        "right": 218.53125,
+        "top": 274.90625,
+        "bottom": 318.96875,
+        "disabled": false
+      },
+      {
+        "id": "safety",
+        "device": "safety",
+        "box": "260,633,332.6153846153846,188",
+        "width": 77.953125,
+        "height": 44.0625,
+        "left": 60.9375,
+        "right": 138.890625,
+        "top": 318.96875,
+        "bottom": 363.03125,
+        "disabled": false
+      },
+      {
+        "id": "ventilation",
+        "device": "ventilation",
+        "box": "599.8461538461538,633,332.6153846153846,188",
+        "width": 77.953125,
+        "height": 44.0625,
+        "left": 140.578125,
+        "right": 218.53125,
+        "top": 318.96875,
+        "bottom": 363.03125,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R3-early-panel-812",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "view": "r3_panel",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_panel_strip_inserted",
+        "box": [
+          -329.36238044633365,
+          -185,
+          2398.7247608926673,
+          1350
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "cooling",
+        "device": "cooling",
+        "box": "590,445,230,130",
+        "width": 95.828125,
+        "height": 54.15625,
+        "left": 318.5,
+        "right": 414.328125,
+        "top": 185.40625,
+        "bottom": 239.5625,
+        "disabled": false
+      },
+      {
+        "id": "lighting",
+        "device": "lighting",
+        "box": "825,445,230,130",
+        "width": 95.828125,
+        "height": 54.15625,
+        "left": 416.40625,
+        "right": 512.234375,
+        "top": 185.40625,
+        "bottom": 239.5625,
+        "disabled": false
+      },
+      {
+        "id": "safety",
+        "device": "safety",
+        "box": "590,575,230,130",
+        "width": 95.828125,
+        "height": 54.15625,
+        "left": 318.5,
+        "right": 414.328125,
+        "top": 239.578125,
+        "bottom": 293.734375,
+        "disabled": false
+      },
+      {
+        "id": "ventilation",
+        "device": "ventilation",
+        "box": "825,575,230,130",
+        "width": 95.828125,
+        "height": 54.15625,
+        "left": 416.40625,
+        "right": 512.234375,
+        "top": 239.578125,
+        "bottom": 293.734375,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R3-door-LOCKED",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "view": "exit_door",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_exit_door_locked",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "exit_door",
+        "box": "1135,310,130,160",
+        "width": 104,
+        "height": 128,
+        "left": 908,
+        "right": 1012,
+        "top": 337.984375,
+        "bottom": 465.984375,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R3-door-CARD_ACCEPTED",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "CARD_ACCEPTED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "view": "exit_door",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_exit_door_card_accepted",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "exit_door",
+        "box": "795,110,390,625",
+        "width": 312,
+        "height": 500,
+        "left": 636,
+        "right": 948,
+        "top": 178,
+        "bottom": 678,
+        "disabled": false
+      }
+    ]
+  }
+]

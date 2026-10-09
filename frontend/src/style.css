@@ -412,3 +412,15 @@ dialog.stage-confirmation { border-radius:3px; background:#17282b; color:#e0e2cd
 dialog.stage-confirmation::backdrop { background:#0b171ccc; }
 dialog.stage-confirmation .button { min-width:44px; min-height:44px; border-radius:3px; font-size:14px; background:#263c3b; color:#e0e2cd; border-color:#87947a; }
 dialog.stage-confirmation .button.primary { background:#b5bf98; color:#192b27; }
+
+/* Align the login overlay to the painted CRT's glass, retaining compact form scrolling. */
+.game-canvas-host>.crt-login { left:32%; top:24%; width:31%; padding:15px; gap:9px; background:#0c2118f5; font-size:14px; }
+.game-canvas-host>.crt-login h3 { font-size:17px; }
+@media(min-width:761px) and (min-height:521px) { .game-canvas-host>.crt-login input,.game-canvas-host>.crt-login .button { min-height:44px; } }
+
+.painted-object { position:relative; display:block; overflow:hidden; pointer-events:none; }
+.painted-object.painted-placed { position:absolute; }
+.inventory-painted { max-width:44px; max-height:22px; }
+@media(max-width:760px) and (orientation:portrait) { .inventory-painted { max-height:15px; max-width:30px; } }
+
+@media(min-width:761px) and (min-height:521px) { .visual-room[data-closeup="r2_powerbox"] .closeup-controls { left:18px; right:auto; } }

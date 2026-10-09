@@ -166,3 +166,12 @@ User accepts soft hand-painted style with detailed objects. New asset package is
 
 ### Hand-painted art acceptance boundary, 2026-10-09
 Accept complete standalone84asset+5background package with per-image provenance and preserved revision originals. 32closeups and47transparent objects are actual file counts; new-image count does not equal all builtin calls because repairs/unused drafts exist. Game sources unchanged154 and no duplicate game suite. R3 wood-door cutouts differ from old metal-door panorama; clean room shells plus independent objects and deterministic overlays must be calibrated during later integration. Gallery static validation and selective25-image Main review are explicitly limited.
+
+### Hand-painted integration design boundary, 2026-10-09
+Use80newmapped PNGs and5clean backgrounds, omit4baked fullscene studies from actual rooms. Preserve asset pixel bytes; use runtime alpha-visible bounds and aspect-preserving drawing rather than stretching padded PNGs. R2/R3 lighting inherits existing progress.power_on; door/console device states remain server-driven. Generated empty writing/circuit areas receive deterministic discovery-bound overlays. All earlier archive/closeup/early-sequence gating behaviors retained; no backend migration or new model call.
+
+## 2026-10-09 手绘运行素材接入验收
+
+运行使用80对应PNG+5净背景，原84SVG作为历史成果保留；透明物件按alpha>16边界统一裁切并等比摆放。谜题文字/线路/设备符号依据后端已知状态绘制，避免生成图片成为错误线索来源。适配小屏时同步放大视觉操作板与输入区域以避免相邻热点重叠。规则、API、AI、schema及存档未变。
+
+独立QA只重跑受影响前端与实际路线，不重复旧127后端套件。首轮QA未取消持有门禁卡而误期inspect，保留失败并以公开前置fixture补验未完成R3段；末轮仅补过渡完成后的桌面结算截图。联合范围不称单轮全绿，不相加重复记录。小幅管口错位/钟面纸纹接缝为非阻塞美术组合限制；不声称全部85素材审美验收、真人时长或真实模型质量。详情 evidence/integration/handpainted/accepted.json。

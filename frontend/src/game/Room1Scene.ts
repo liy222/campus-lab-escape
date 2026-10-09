@@ -1,11 +1,12 @@
 import Phaser from 'phaser';
+import { paintedImage, paintedText, knownClue, beginPaintFrame, clockFace, symbolLabel } from './painted';
 import { room1Assets, room1Layout } from '../assets/manifest';
 import { GameBridge, sameSceneInput, type SceneInput, type SceneProjection } from './bridge';
 
 export interface SceneHotspot { id: string; label: string; box: [number, number, number, number]; input: SceneInput }
 const children = new Set(['r1_symbols', 'r1_fuse', 'r1_photo']);
 const childBoxes: Record<string, [number, number, number, number]> = {
-  r1_symbols: [830, 240, 260, 150], r1_fuse: [590, 420, 270, 160], r1_photo: [600, 570, 260, 140],
+  r1_symbols: [895, 235, 285, 90], r1_fuse: [555, 545, 265, 65], r1_photo: [605, 510, 275, 160],
 };
 export function sceneHotspots(projection: SceneProjection): SceneHotspot[] {
   const { state, view } = projection;
@@ -24,7 +25,7 @@ export function sceneHotspots(projection: SceneProjection): SceneHotspot[] {
     hotspots.push({ id: child.object_id, label: child.name, box: childBoxes[child.object_id], input: { kind: 'object', objectId: child.object_id } });
   }
   const next = object.actions.find(action => action.tool === 'interact' || action.tool === 'take');
-  if (next) hotspots.push({ id: view, label: next.label, box: view === 'r1_cabinet' ? [1120, 280, 190, 250] : [530, 320, 540, 330],
+  if (next) hotspots.push({ id: view, label: next.label, box: view === 'r1_cabinet' ? [725, 355, 150, 195] : view === 'r1_door' ? [690, 220, 330, 560] : [575, 320, 460, 300],
     input: { kind: 'action', tool: next.tool as 'interact' | 'take', targetId: view } });
   else if (view === 'r1_door' && state.exits.some(exit => exit.destination_id === 'R2' && exit.unlocked)) {
     hotspots.push({ id: view, label: '进入设备实验室', box: [530, 220, 540, 500], input: { kind: 'action', tool: 'move', targetId: 'R2' } });
@@ -46,13 +47,7 @@ export default class Room1Scene extends Phaser.Scene {
     super('Room1'); this.bridge = bridge; this.onReady = onReady; this.onAnimation = onAnimation;
   }
   preload() {
-    for (const [key, url] of Object.entries(room1Assets)) {
-      // Vite may inline SVG using a percent-encoded data URI. Phaser's data loader expects base64.
-      const comma = url.indexOf(',');
-      const source = url.startsWith('data:') && !url.slice(0, comma).includes(';base64')
-        ? `${url.slice(0, comma)};base64,${btoa(String.fromCharCode(...new TextEncoder().encode(decodeURIComponent(url.slice(comma + 1)))))}` : url;
-      this.load.svg(key, source, { scale: 1 });
-    }
+    for (const [key, url] of Object.entries(room1Assets)) this.load.image(key, url);
   }
   create() {
     this.ready = true;
@@ -63,15 +58,15 @@ export default class Room1Scene extends Phaser.Scene {
   activate(input: SceneInput) { if (sceneHotspots(this.bridge.projection).some(spot => sameSceneInput(spot.input, input))) this.bridge.emit(input); }
   private image(key: string, box: [number, number, number, number], id?: string) {
     if (!this.textures.exists(key)) return null;
-    const [x, y, width, height] = box;
-    const image = this.add.image(x, y, key).setOrigin(0).setDisplaySize(width, height);
+    const image = paintedImage(this, key, box);
+    if (!image) return null;
     if (id) { image.setAlpha(0.94); this.objects.set(id, image); }
     return image;
   }
   sync(projection: SceneProjection) {
     if (!this.ready) return;
     const old = this.previous;
-    this.tweens.killAll(); for (const child of [...this.children.list]) child.destroy(); this.objects.clear();
+    this.tweens.killAll(); for (const child of [...this.children.list]) child.destroy(); beginPaintFrame(this); this.objects.clear();
     const { state, view } = projection;
     const cabinet = state.device_states?.cabinet;
     const microscope = state.puzzle_states?.microscope;
@@ -86,6 +81,11 @@ export default class Room1Scene extends Phaser.Scene {
         if (id === 'r1_microscope' && microscope === 'SLIDE_PLACED') key = 'r1_microscope_slide';
         if (id === 'r1_door' && doorOpen) key = 'r1_door_unlatched';
         this.image(key, box, id);
+        if (id === 'r1_clock') clockFace(this, [box[0] + 22, box[1] + 20, box[2] - 44, box[3] - 44]);
+        if (id === 'r1_cabinet' && ['OPEN', 'ITEM_TAKEN'].includes(cabinet || '')) for (const child of state.objects.filter(value => children.has(value.object_id))) {
+          if (child.object_id === 'r1_symbols') symbolLabel(this, room1Layout.r1_symbols, state);
+          else this.image(child.object_id, room1Layout[child.object_id]);
+        }
       }
     } else {
       this.add.rectangle(800, 450, 1600, 900, 0x111b20, 0.88);
@@ -98,8 +98,21 @@ export default class Room1Scene extends Phaser.Scene {
       if (view === 'r1_plaque') key = 'closeup_plaque';
       if (view === 'r1_photo') key = 'photo_closeup';
       if (this.textures.exists(key)) this.image(key, [0, 0, 1600, 900], view);
+      else if (view === 'r1_door') this.image(doorOpen ? 'r1_door_unlatched' : 'r1_door_closed', [645, 130, 410, 660], view);
       else this.image(view, [530, 230, 540, 400], view);
-      if (view === 'r1_cabinet') for (const child of state.objects.filter(object => children.has(object.object_id))) this.image(child.object_id, childBoxes[child.object_id], child.object_id);
+      if (view === 'r1_cabinet') for (const child of state.objects.filter(object => children.has(object.object_id))) {
+        if (child.object_id === 'r1_symbols') symbolLabel(this, childBoxes.r1_symbols, state);
+        else this.image(child.object_id, childBoxes[child.object_id], child.object_id);
+      }
+      if (view === 'r1_clock') {
+        clockFace(this, [538, 136, 514, 514]);
+        if (knownClue(state, view)) paintedText(this, [598, 675, 390, 105], '21:17\n实验开始', 36, '#443d2c', 'center');
+      }
+      if (view === 'r1_symbols') symbolLabel(this, [530, 270, 540, 240], state);
+      const clue = knownClue(state, view);
+      if (clue && view === 'r1_record') paintedText(this, [605, 175, 445, 405], `${clue.title}\n\n${clue.text}`, 34);
+      if (clue && view === 'r1_plaque') paintedText(this, [475, 350, 650, 145], clue.text.match(/LAB-\d+/)?.[0] || '', 75, '#423d32', 'center');
+      if (clue && key === 'microscope_view') paintedText(this, [575, 610, 500, 65], 'LAB SAMPLE 42', 42, '#37452e', 'center');
     }
     for (const hotspot of sceneHotspots(projection)) {
       const [x, y, width, height] = hotspot.box;
@@ -124,9 +137,9 @@ export default class Room1Scene extends Phaser.Scene {
         if (ghost) this.tweens.add({ targets: ghost, x: 780, y: 870, scaleX: ghost.scaleX * 0.15, scaleY: ghost.scaleY * 0.15, alpha: 0, duration: 340, onComplete: () => { ghost.destroy(); this.onAnimation('idle'); } });
         else this.time.delayedCall(340, () => this.onAnimation('idle'));
       } else if (receipt.tool === 'interact' && target === 'r1_cabinet' && state.device_states?.cabinet === 'OPEN' && view === target) {
-        const left = this.add.rectangle(335, 170, 390, 485, 0x79847a).setOrigin(0).setStrokeStyle(5, 0x3e4a44);
-        const right = this.add.rectangle(1115, 170, 390, 485, 0x79847a).setOrigin(1, 0).setStrokeStyle(5, 0x3e4a44);
-        this.tweens.add({ targets: [left, right], scaleX: 0.08, alpha: 0, duration: 420, ease: 'Sine.easeOut', onComplete: () => { left.destroy(); right.destroy(); this.onAnimation('idle'); } });
+        const cabinetImage = this.objects.get(view);
+        if (cabinetImage) { cabinetImage.setAlpha(.58); this.tweens.add({ targets: cabinetImage, alpha: .94, duration: 420, onComplete: () => this.onAnimation('idle') }); }
+        else this.time.delayedCall(420, () => this.onAnimation('idle'));
       } else if (receipt.tool === 'use_item' && target === 'r1_microscope') {
         const ghost = this.image('sample_slide', [740, 820, 180, 90]);
         if (ghost) this.tweens.add({ targets: ghost, x: 750, y: 470, scaleX: ghost.scaleX * 0.65, scaleY: ghost.scaleY * 0.65, alpha: 0, duration: 320, ease: 'Sine.easeOut', onComplete: () => { ghost.destroy(); this.onAnimation('idle'); } });

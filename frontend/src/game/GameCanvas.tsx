@@ -46,7 +46,7 @@ export default function GameCanvas({ projection, onInput, children, onAvailabili
     if (scene.current?.input) { scene.current.input.enabled = !displayProjection.disabled; scene.current.sync(displayProjection); }
   }, [projection.state, projection.view, projection.disabled, projection.animation, projection.sequenceDraft, projection.reducedMotion, minHitArea, available]);
   return <div className="game-canvas-host" data-room={roomId} data-view={projection.view || 'room'} data-assets-ready={!!available}
-    data-renderer={renderer} data-animation={animation} data-cabinet-state={projection.state.device_states?.cabinet}
+    data-paint-frame="bbox-contain-v1" data-controlled-clues={projection.state.clues.filter(clue => clue.object_id === projection.view || (projection.view === 'r1_cabinet' && clue.object_id === 'r1_symbols')).map(clue => clue.object_id).join(',')} data-renderer={renderer} data-animation={animation} data-cabinet-state={projection.state.device_states?.cabinet}
     data-microscope-state={projection.state.puzzle_states?.microscope} data-panel-state={projection.state.puzzle_states?.panel} data-exit-state={projection.state.device_states?.exit}
     data-powerbox-state={projection.state.device_states?.powerbox} data-computer-state={projection.state.device_states?.computer}
     data-circuit-status={projection.state.minigames?.circuit?.status} data-sequence-status={projection.state.minigames?.sequence?.status} aria-label={`${projection.state.room.name}画面`}>

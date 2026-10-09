@@ -1,0 +1,832 @@
+[
+  {
+    "label": "R3-door-FINAL_CHECK",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "view": "exit_door",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_exit_door_final_check",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "exit_door",
+        "box": "1135,310,130,160",
+        "width": 104,
+        "height": 128,
+        "left": 908,
+        "right": 1012,
+        "top": 337.984375,
+        "bottom": 465.984375,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R3-panel-FINAL_CHECK",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "view": "r3_panel",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_panel_final_check",
+        "box": [
+          -329.36238044633365,
+          -185,
+          2398.7247608926673,
+          1350
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "cooling",
+        "device": "cooling",
+        "box": "590,445,230,130",
+        "width": 184,
+        "height": 104,
+        "left": 472,
+        "right": 656,
+        "top": 446,
+        "bottom": 550,
+        "disabled": false
+      },
+      {
+        "id": "lighting",
+        "device": "lighting",
+        "box": "825,445,230,130",
+        "width": 184,
+        "height": 104,
+        "left": 660,
+        "right": 844,
+        "top": 446,
+        "bottom": 550,
+        "disabled": false
+      },
+      {
+        "id": "safety",
+        "device": "safety",
+        "box": "590,575,230,130",
+        "width": 184,
+        "height": 104,
+        "left": 472,
+        "right": 656,
+        "top": 550,
+        "bottom": 654,
+        "disabled": false
+      },
+      {
+        "id": "ventilation",
+        "device": "ventilation",
+        "box": "825,575,230,130",
+        "width": 184,
+        "height": 104,
+        "left": 660,
+        "right": 844,
+        "top": 550,
+        "bottom": 654,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R3-sequence-draft-375",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "view": "r3_panel",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_panel_final_check",
+        "box": [
+          -1069.539442491621,
+          -466.076923076923,
+          3468.925038829396,
+          1952.3076923076922
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "cooling",
+        "device": "cooling",
+        "box": "260,445,332.6153846153846,188",
+        "width": 77.953125,
+        "height": 44.0625,
+        "left": 60.9375,
+        "right": 138.890625,
+        "top": 274.90625,
+        "bottom": 318.96875,
+        "disabled": true
+      },
+      {
+        "id": "lighting",
+        "device": "lighting",
+        "box": "599.8461538461538,445,332.6153846153846,188",
+        "width": 77.953125,
+        "height": 44.0625,
+        "left": 140.578125,
+        "right": 218.53125,
+        "top": 274.90625,
+        "bottom": 318.96875,
+        "disabled": true
+      },
+      {
+        "id": "safety",
+        "device": "safety",
+        "box": "260,633,332.6153846153846,188",
+        "width": 77.953125,
+        "height": 44.0625,
+        "left": 60.9375,
+        "right": 138.890625,
+        "top": 318.96875,
+        "bottom": 363.03125,
+        "disabled": true
+      },
+      {
+        "id": "ventilation",
+        "device": "ventilation",
+        "box": "599.8461538461538,633,332.6153846153846,188",
+        "width": 77.953125,
+        "height": 44.0625,
+        "left": 140.578125,
+        "right": 218.53125,
+        "top": 318.96875,
+        "bottom": 363.03125,
+        "disabled": true
+      }
+    ]
+  },
+  {
+    "label": "R3-sequence-draft-812",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "view": "r3_panel",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_panel_final_check",
+        "box": [
+          -329.36238044633365,
+          -185,
+          2398.7247608926673,
+          1350
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "cooling",
+        "device": "cooling",
+        "box": "590,445,230,130",
+        "width": 95.828125,
+        "height": 54.15625,
+        "left": 318.5,
+        "right": 414.328125,
+        "top": 185.40625,
+        "bottom": 239.5625,
+        "disabled": true
+      },
+      {
+        "id": "lighting",
+        "device": "lighting",
+        "box": "825,445,230,130",
+        "width": 95.828125,
+        "height": 54.15625,
+        "left": 416.40625,
+        "right": 512.234375,
+        "top": 185.40625,
+        "bottom": 239.5625,
+        "disabled": true
+      },
+      {
+        "id": "safety",
+        "device": "safety",
+        "box": "590,575,230,130",
+        "width": 95.828125,
+        "height": 54.15625,
+        "left": 318.5,
+        "right": 414.328125,
+        "top": 239.578125,
+        "bottom": 293.734375,
+        "disabled": true
+      },
+      {
+        "id": "ventilation",
+        "device": "ventilation",
+        "box": "825,575,230,130",
+        "width": 95.828125,
+        "height": 54.15625,
+        "left": 416.40625,
+        "right": 512.234375,
+        "top": 239.578125,
+        "bottom": 293.734375,
+        "disabled": true
+      }
+    ]
+  },
+  {
+    "label": "R3-panel-passed",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "view": "r3_panel",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_panel_passed",
+        "box": [
+          -329.36238044633365,
+          -185,
+          2398.7247608926673,
+          1350
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "cooling",
+        "device": "cooling",
+        "box": "590,445,230,130",
+        "width": 184,
+        "height": 104,
+        "left": 472,
+        "right": 656,
+        "top": 446,
+        "bottom": 550,
+        "disabled": true
+      },
+      {
+        "id": "lighting",
+        "device": "lighting",
+        "box": "825,445,230,130",
+        "width": 184,
+        "height": 104,
+        "left": 660,
+        "right": 844,
+        "top": 446,
+        "bottom": 550,
+        "disabled": true
+      },
+      {
+        "id": "safety",
+        "device": "safety",
+        "box": "590,575,230,130",
+        "width": 184,
+        "height": 104,
+        "left": 472,
+        "right": 656,
+        "top": 550,
+        "bottom": 654,
+        "disabled": true
+      },
+      {
+        "id": "ventilation",
+        "device": "ventilation",
+        "box": "825,575,230,130",
+        "width": 184,
+        "height": 104,
+        "left": 660,
+        "right": 844,
+        "top": 550,
+        "bottom": 654,
+        "disabled": true
+      }
+    ]
+  },
+  {
+    "label": "R3-door-UNLOCKED",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "UNLOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "view": "exit_door",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_exit_door_unlocked",
+        "box": [
+          0.9032943676938885,
+          0,
+          1598.1934112646122,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1671,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "exit_door",
+        "box": "795,110,390,625",
+        "width": 312,
+        "height": 500,
+        "left": 636,
+        "right": 948,
+        "top": 178,
+        "bottom": 678,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R3-door-OPEN",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "OPEN"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "view": "exit_door",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "r3_background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_exit_door_open",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r3_closeup_exit_door_unlocked",
+        "box": [
+          0.9032943676938885,
+          0,
+          1598.1934112646122,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1671,
+          941
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "exit_door",
+        "box": "795,110,390,625",
+        "width": 312,
+        "height": 500,
+        "left": 636,
+        "right": 948,
+        "top": 178,
+        "bottom": 678,
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "label": "R1-mobile-selected-restore",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "view": "room",
+    "controlledClues": "",
+    "paintFrame": "bbox-contain-v1",
+    "paintedFrames": [
+      {
+        "key": "background",
+        "box": [
+          0.4250797024442363,
+          0,
+          1599.1498405951115,
+          900
+        ],
+        "source": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      {
+        "key": "r1_workbench",
+        "box": [
+          415,
+          516.3184615384615,
+          770,
+          292.36307692307696
+        ],
+        "source": [
+          24,
+          179,
+          1625,
+          617
+        ]
+      },
+      {
+        "key": "r1_clock",
+        "box": [
+          671.1265996343693,
+          90,
+          142.74680073126143,
+          145
+        ],
+        "source": [
+          84,
+          77,
+          1077,
+          1094
+        ]
+      },
+      {
+        "key": "r1_record",
+        "box": [
+          942.9376657824934,
+          472,
+          139.12466843501326,
+          150.00000000000003
+        ],
+        "source": [
+          77,
+          139,
+          1049,
+          1131
+        ]
+      },
+      {
+        "key": "r1_plaque",
+        "box": [
+          1250,
+          201.05501618122977,
+          190,
+          59.88996763754045
+        ],
+        "source": [
+          114,
+          202,
+          1545,
+          487
+        ]
+      },
+      {
+        "key": "r1_microscope_empty",
+        "box": [
+          670.2380952380952,
+          360,
+          159.52380952380952,
+          250
+        ],
+        "source": [
+          193,
+          30,
+          804,
+          1260
+        ]
+      },
+      {
+        "key": "sample_slide",
+        "box": [
+          520,
+          572.8552158273382,
+          110,
+          19.28956834532374
+        ],
+        "source": [
+          530,
+          276,
+          1112,
+          195
+        ]
+      },
+      {
+        "key": "r1_cabinet_locked",
+        "box": [
+          65,
+          559.4430051813472,
+          330,
+          231.1139896373057
+        ],
+        "source": [
+          120,
+          177,
+          1158,
+          811
+        ]
+      },
+      {
+        "key": "r1_door_closed",
+        "box": [
+          1260,
+          348.4357142857143,
+          230,
+          428.12857142857143
+        ],
+        "source": [
+          162,
+          112,
+          700,
+          1303
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "r1_clock",
+        "box": "648.6333333333333,68.63333333333334,187.73333333333332,187.73333333333332",
+        "width": 44,
+        "height": 44,
+        "left": 152.015625,
+        "right": 196.015625,
+        "top": 186.6875,
+        "bottom": 230.6875,
+        "disabled": false
+      },
+      {
+        "id": "r1_record",
+        "box": "918.6333333333333,453.1333333333333,187.73333333333332,187.73333333333332",
+        "width": 44,
+        "height": 44,
+        "left": 215.296875,
+        "right": 259.296875,
+        "top": 276.8125,
+        "bottom": 320.8125,
+        "disabled": false
+      },
+      {
+        "id": "r1_plaque",
+        "box": "1250,137.13333333333333,190,187.73333333333332",
+        "width": 44.53125,
+        "height": 44,
+        "left": 292.96875,
+        "right": 337.5,
+        "top": 202.75,
+        "bottom": 246.75,
+        "disabled": false
+      },
+      {
+        "id": "r1_microscope",
+        "box": "635,360,230,250",
+        "width": 53.90625,
+        "height": 58.59375,
+        "left": 148.828125,
+        "right": 202.734375,
+        "top": 254.984375,
+        "bottom": 313.578125,
+        "disabled": false
+      },
+      {
+        "id": "sample_slide",
+        "box": "481.1333333333333,488.6333333333333,187.73333333333332,187.73333333333332",
+        "width": 44,
+        "height": 44,
+        "left": 112.765625,
+        "right": 156.765625,
+        "top": 285.125,
+        "bottom": 329.125,
+        "disabled": false
+      },
+      {
+        "id": "r1_cabinet",
+        "box": "65,540,330,270",
+        "width": 77.34375,
+        "height": 63.28125,
+        "left": 15.234375,
+        "right": 92.578125,
+        "top": 297.171875,
+        "bottom": 360.453125,
+        "disabled": false
+      },
+      {
+        "id": "r1_door",
+        "box": "1260,325,230,475",
+        "width": 53.90625,
+        "height": 111.328125,
+        "left": 295.3125,
+        "right": 349.21875,
+        "top": 246.78125,
+        "bottom": 358.109375,
+        "disabled": false
+      }
+    ]
+  }
+]

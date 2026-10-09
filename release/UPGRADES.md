@@ -1,6 +1,6 @@
 # 游戏升级路线与交付门槛
 
-本文跟踪 `docs/upgrade-plan.md` 中已接受的 v3.0–v4.2 范围。计划是设计基线，不是执行或验收证据。v4.2 三房间视觉与最终界面已按联合 QA 证据接受并 SOURCE STOP；规则关卡仍为3.4.0、Schema 1.4.0，原有 AI、启动器和多时刻本地存档保持。此前 v3.4、v3.3、v4.0、v4.1 提交和标签均已推送核实；v4.2 commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实，GitHub 作者与提交者均为 `liy222`。`CH01_v2` 是历史冻结基线。旧版工程检查、实验与评价器结论不会自动扩展到本升级路线。
+本文跟踪 `docs/upgrade-plan.md` 中已接受的 v3.0–v4.2 范围。计划是设计基线，不是执行或验收证据。v4.2 三房间视觉与最终界面及 v4.2-handpainted 手绘素材增量均已按各自联合 QA 证据接受并 SOURCE STOP；规则关卡仍为3.4.0、Schema 1.4.0，原有 AI、启动器和多时刻本地存档保持。此前 v3.4、v3.3、v4.0、v4.1 提交和标签均已推送核实；v4.2 commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实，GitHub 作者与提交者均为 `liy222`。`CH01_v2` 是历史冻结基线。旧版工程检查、实验与评价器结论不会自动扩展到本升级路线。
 
 | 版本 | 主要范围 | 当前状态 |
 |---|---|---|
@@ -11,7 +11,7 @@
 | v3.4 | 跨房间线索、AI 三级提示、结算与完整灰盒通关 | 联合 QA 接受并已推送；多时刻存档增量也已联合 QA 接受并推送 |
 | v4.0 | 引入 Phaser，完成 Room 1 固定视角画面 | 联合 QA 接受并 SOURCE STOP；commit `1047e293ade70e446c9c76be0a0d751f3e3ad81a` 与 tag `v4.0-room1-rusty-visual` 已推送核实 |
 | v4.1 | 完成 Room 2 正式画面 | 联合 QA 接受并 SOURCE STOP；commit `161d3e6f25406d44eb55c48c295b86c7289d8f2c` 与 tag `v4.1-room2-rusty-visual` 已推送核实 |
-| v4.2 | 完成 Room 3、统一 UI、音效、动画与最终优化 | 联合 QA 接受并 SOURCE STOP；commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实 |
+| v4.2 | 完成 Room 3、统一 UI、音效、动画与最终优化 | 联合 QA 接受并 SOURCE STOP；commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实；手绘素材增量另见下文 |
 
 ## v3.0 已完成范围
 
@@ -96,6 +96,14 @@ Room 1、Room 2 与 Room 3 均使用 Phaser 4.2.1 Canvas、原创 SVG、固定�
 特写切换现在销毁旧交互区域，并校验输入仍属于当前热点；特写背景本身不可点击，柜体和托盘中的合法子物品仍可点选。Room 3 在 research_strip 插入后即显示四台设备图形并允许编辑本地草稿，最终提交仍要求服务端处于 `FINAL_CHECK`。v3.3 的旧投影与现有存档行为保持兼容。重启服务并刷新页面即可使用，现有存档无需重开。
 
 定向 API 8项 exit 0，前端 build exit 0。浏览器联合覆盖了首轮 R1 项和最终 R2/R3 remaining 68项 exit 0；两次新 adapter 失败保留在记录中。结果跨范围联合，不表示单次完整全绿路线；没有重复全套 API，也没有付费调用。EXIT 截图恰逢房间到达过渡而偏暗，功能结算 DOM 通过，先前验收的清晰胜利画面未变。详细命令、截图与限制见 [`closeup-panel 验收记录`](../evidence/integration/closeup-panel/accepted.json)、[`QA 结果`](../evidence/integration/closeup-panel/qa/result.json) 和 [`独立报告`](../review/findings/closeup-panel.md)。修正 commit `c76e77ec9129f32606bb5dee225621cae154427d` 与标签 `v4.2-closeup-panel` 已推送核实，GitHub 作者与提交者均为 `liy222`；stage-ui 的既有 commit/tag 历史保持不变。
+
+## v4.2-handpainted 手绘状态素材接入：联合 QA 接受
+
+运行画面现使用80张手绘状态物件与特写图、5张净房间背景；PNG 位于 `frontend/public/art-handpainted/`，尺寸与可见包围盒元数据位于 `frontend/src/assets/painted-metadata.json`。4张复用全景未复制，`r2_light_overlay_on` 是完整场景研究图，不是透明灯光层。既有84项 SVG 保留；关卡规则3.4.0、API/Schema 1.4.0、AI、启动器和多时刻本地存档未改，现有同版本存档继续使用。
+
+冻结候选 SHA-256 为 `e7341a6d778c0af4295c791946ec92633347287e1ae4a4d8813af3c58ab39f81`：242个源码项、389个不可变项、8个 QA 脚本和84件 QA 证据均与 Main 核对一致。85张 PNG 静态检查87项 exit 0；独立前端 build 一次，52个模块、2.98秒、exit 0，仍有既有 Phaser 大包警告。浏览器联合证据保留首轮201条记录 exit 1：R1/R2与早期 R3 CARD_ACCEPTED 实际 UI 检查后，QA 选中物品适配器把服务端409误判为应返回200；产品未修复。之后仅补剩余范围：101条 exit 0、issues为空，覆盖 fixture 准备下的 R3 FINAL_CHECK/PASS/UNLOCKED/OPEN/EXIT、终局存档与胜利；另有75条 exit 0 的已结算桌面胜利展示检查。联合覆盖还包括 PNG 故障重试、按需加载、特写隔离、线索读取、鼠标/触屏/键盘、响应式热点、存档选择、刷新及一次后端进程重启。各 epoch 记录数不相加，不能表述为一次完整浏览器全绿。
+
+QA 在新建私有会话与数据库上运行，没有访问历史用户数据库或凭据；未重跑完整127项后端套件，复用既有冻结后端证据及窄范围 API 接受记录。没有交互启动根目录 CMD、OS 重启、付费调用或真人通关时长验收。桌面1280与移动375×812/812×375为代表性视口；当前房间会预加载本房间状态/特写图，首次欢迎页按需加载不构成加载性能认证。保留的非阻断视觉细节：R3墙面导管与控制台导管略有偏移，钟面纸张区域可见纹理接缝。完整范围与证据见 [`Main 验收`](../evidence/integration/handpainted/accepted.json)、[`独立 QA 结果`](../evidence/integration/handpainted/qa/result.json)、[`素材交付`](../evidence/integration/handpainted/assets/report.json)。QA 付费调用0。正常同步后计划使用 `v4.2-handpainted` 标签；同步核实前不视为已推送。
 
 ## 阶段边界
 

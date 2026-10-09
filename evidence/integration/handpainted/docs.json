@@ -1,0 +1,82 @@
+{
+  "status": "Delivery documentation complete; SOURCE STOP; normal sync pending",
+  "operator": "paint_assets_delivery",
+  "actual_commands": [
+    {
+      "command": "Initial PowerShell here-string | Python document-edit script (failed before any file write: non-ASCII bytes literal syntax error)",
+      "exit_code": 1
+    },
+    {
+      "command": "Corrected PowerShell here-string | C:\\Users\\liyh\\.conda\\envs\\1\\python.exe - (mechanical README.md and release/UPGRADES.md edits; final docs evidence writer)",
+      "exit_code": 0
+    },
+    {
+      "command": "PowerShell here-string Python verification and docs.json refresh; then read-only formatting-repair attempt",
+      "exit_code": 1,
+      "result": "Repair guard found no literal backslash-n sequences; no file was changed by this guard."
+    },
+    {
+      "command": "PowerShell here-string read-only UTF-8, section, newline and evidence-hash verification plus docs.json refresh",
+      "exit_code": 0
+    }
+  ],
+  "verification": {
+    "utf8_decode": "passed; no replacement characters",
+    "upgrade_section_newlines": "passed; no literal \\n text",
+    "qa_evidence_links": "present",
+    "docs_hashes": "recorded"
+  },
+  "files": {
+    "README.md": "a8a82c90e9e23a75ca6142af31ed5971c262bb2d688242b45cc52c24a0d7c2a3",
+    "release/UPGRADES.md": "8dd9b06e3b17929554f729087efb1625c351bcf11f34342b3d516bad5c35ab93",
+    "frontend/public/art-handpainted/ and frontend/src/assets/painted-metadata.json": "frozen; not modified in this documentation stage"
+  },
+  "candidate_sha256": "e7341a6d778c0af4295c791946ec92633347287e1ae4a4d8813af3c58ab39f81",
+  "qa_result_sha256": "f753c673dd9e7c24b3cd3acf207e46a11be2d1dc47b20070a129477422922a15",
+  "qa_summary": {
+    "static_png_count": 85,
+    "static_check_count": 87,
+    "static_exit_code": 0,
+    "build_count": 1,
+    "build_exit_code": 0,
+    "browser_epochs": [
+      {
+        "records": 201,
+        "exit_code": 1,
+        "scope": "Real UI R1/R2 through early R3 CARD_ACCEPTED; accepted checkpoints before one QA selected-item protocol failure. PNG retry/lazy/three closeup isolation/mobile edge/restore/reload/one restart actual."
+      },
+      {
+        "records": 101,
+        "exit_code": 0,
+        "scope": "Narrow remaining actual R3 FINAL_CHECK/PASS/UNLOCKED/OPEN/EXIT/end archives/Victory. Public API prerequisites explicitly separate; no completed-route/build/restart/retry/lazy repeat."
+      },
+      {
+        "records": 75,
+        "exit_code": 0,
+        "scope": "Settled desktop Victory screenshot and native buttons only; public fixture through Win. No third UI route."
+      }
+    ],
+    "counts_summed": false,
+    "single_full_green_browser_claim": false,
+    "product_fixes_after_freeze": 0,
+    "paid_calls": 0
+  },
+  "evidence": [
+    "evidence/integration/handpainted/accepted.json",
+    "evidence/integration/handpainted/qa/result.json",
+    "evidence/integration/handpainted/assets/report.json"
+  ],
+  "limitations": [
+    "Private QA-owned new session/database only; no historical user DB or credentials.",
+    "No full127 backend rerun; reused frozen backend and prior narrow actual API acceptance via Main.",
+    "No rootCMD interactive launch, OS reboot, real model quality, paid calls or human completion-time claim.",
+    "Actual one backend process restart is not a whole operating-system restart.",
+    "Desktop1280 and mobile375x812/812x375 representative checks; not every device/browser or every pixel/edge.",
+    "Current room preloads all its state/closeup PNGs; first welcome lazy and actual per-room scene route tested, not a loading-performance certification.",
+    "44px responsive scene hotspots and selected-restore dialog actual; final settled desktop Victory native78x44 measured.",
+    "Run counts include fixtures/checkpoints/cleanup; no aggregate or single full-green claim.",
+    "R3 wall conduit is slightly right of control-panel conduit in overview; functional hotspots unaffected.",
+    "Clock paper patch retains visible texture seam."
+  ],
+  "pending": "Main normal commit/tag/push and remote verification for v4.2-handpainted; no commit performed by Delivery."
+}
