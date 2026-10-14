@@ -1,0 +1,53 @@
+{
+  "status": "DOCS SOURCE STOP",
+  "task": "Document current multi-save controls and accepted archive deletion QA",
+  "documents": {
+    "README.md": "5B3691B96B8EE9C5A5FB9C8296CE750986A9E313917F9083AC1D6CC2D7B4572D",
+    "release/UPGRADES.md": "EFE0E67A0AA3375E4EDB45A9207973C9D605719F7016FF3D2585F56420C40F02"
+  },
+  "changes": [
+    "README now describes named local saves, confirmed per-save read/delete, irreversible deletion affecting only the selected archive, cancel/Escape behavior, same-session local availability, and temporary/sequence drafts that must be re-entered after read or refresh.",
+    "release/UPGRADES.md adds a short accepted-QA scope and limitation entry. Earlier release history remains intact.",
+    "No product, test, or QA source was modified in this documentation epoch."
+  ],
+  "actual_commands": [
+    {
+      "command": "PowerShell targeted README paragraph replacement and append of the accepted QA release entry",
+      "exit_code": 0
+    },
+    {
+      "command": "git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --check -- README.md release/UPGRADES.md",
+      "exit_code": 0
+    },
+    {
+      "command": "Get-FileHash README.md,release/UPGRADES.md -Algorithm SHA256",
+      "exit_code": 0
+    },
+    {
+      "command": "rg -n \"旧版单槽兼容操作|存档列表保留旧版单槽记录|当前存档 UI 收敛|临时输入和顺序草稿\" README.md release/UPGRADES.md",
+      "exit_code": 0,
+      "result": "Current README contains the new draft behavior; new release entry is present; removed UI wording has no hits."
+    }
+  ],
+  "accepted_qa": {
+    "main_acceptance": "evidence/integration/save-delete/accepted.json",
+    "independent_result": "evidence/integration/save-delete/qa/result.json",
+    "result_sha256": "6f63dd575048b7f4e9aebae3272bae1127be6b5ac7d3ec60c19e67cb6c8b7542",
+    "api": "20 methods (11 new delete, 9 existing archive), 33 subtests, exit 0",
+    "contracts": "13 route references passed, exit 0",
+    "build": "One build, exit 0",
+    "browser": "First 71 checks exit 1 because the new QA fixture omitted inspect; this adapter failure is retained. Remaining 155 checks exit 0 with issues empty. Joint scoped evidence only; counts are not summed and this is not a single full-green browser run.",
+    "scope": "Desktop archive delete/cancel/save/read/reload/restart/missing/reconcile passed. 375px is computer Chrome viewport/touch emulation, with no physical phone or mobile app testing.",
+    "limitations": [
+      "No full 127-method suite, user database, paid provider, OS restart, root launcher interaction, or human timing claim.",
+      "No further tests were run by the documentation owner."
+    ]
+  },
+  "evidence": [
+    "evidence/integration/save-delete/accepted.json",
+    "evidence/integration/save-delete/qa/result.json",
+    "evidence/integration/save-delete/frontend/frontend.json",
+    "evidence/integration/save-delete/docs.json"
+  ],
+  "runtime_model_identity": "Not independently verified."
+}

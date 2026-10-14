@@ -79,11 +79,12 @@ export default function App() {
   const [notice, setNotice] = useState('');
   const [error, setError] = useState('');
   const [observation, setObservation] = useState('');
-  const [confirmation, setConfirmation] = useState<'new' | 'reset' | 'restore' | 'slot-restore' | null>(null);
+  const [confirmation, setConfirmation] = useState<'new' | 'reset' | 'slot-restore' | 'slot-delete' | null>(null);
   const [saveSlots, setSaveSlots] = useState<SaveSlot[]>([]);
   const [saveName, setSaveName] = useState('');
   const [saveListError, setSaveListError] = useState('');
   const [restoreSaveId, setRestoreSaveId] = useState<string | null>(null);
+  const [deleteSaveId, setDeleteSaveId] = useState<string | null>(null);
   const saveListRequest = useRef(0);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [history, setHistory] = useState<{ id: string; text: string }[]>([]);
@@ -110,7 +111,7 @@ export default function App() {
   useEffect(() => { const close = (event: KeyboardEvent) => { if (event.key === 'Escape' && !dialogRef.current?.open) { if (drawer) setDrawer(null); else setSelectedId(null); } }; window.addEventListener('keydown', close); return () => window.removeEventListener('keydown', close); }, [drawer]);
   useEffect(() => { if (drawer === 'assistant' || drawer === 'menu') document.querySelector<HTMLElement>('.visual-support [role="dialog"] .drawer-close')?.focus(); }, [drawer]);
   const selected = state?.objects.find(object => object.object_id === selectedId) || null;
-  useEffect(() => { if (confirmation) dialogRef.current?.showModal(); else dialogRef.current?.close(); }, [confirmation]);
+  useEffect(() => { if (confirmation) dialogRef.current?.showModal(); else { dialogRef.current?.close(); setRestoreSaveId(null); setDeleteSaveId(null); } }, [confirmation]);
   useEffect(() => { const timer = window.setInterval(() => setClockNow(Date.now()), 1000); return () => window.clearInterval(timer); }, []);
   function apply(next: VisibleState, replace = false, reconciled = false): boolean {
     const previous = stateRef.current;
@@ -126,6 +127,7 @@ export default function App() {
       setSequenceDraft([]);
       setDrawer(null); setNotebookPage(0);
       if (generationChanged) setHistory([]);
+      if (generationChanged) { setDeleteSaveId(null); setConfirmation(null); }
     }
     if (selectedItemId && !next.inventory.some(item => item.item_id === selectedItemId)) setSelectedItemId(null);
     stateRef.current = next; setState(next); if (replace || reconciled) setNeedsSync(false); return true;
@@ -142,7 +144,7 @@ export default function App() {
         || live.generation !== expected.generation || live.revision !== expected.revision
         || projection.session_id !== expected.session_id || projection.generation !== expected.generation
         || projection.revision !== expected.revision) return;
-      setSaveSlots(response.data.slots);
+      setSaveSlots(response.data.slots.filter(slot => slot.kind === 'archive'));
     } catch (caught) {
       if (requestId !== saveListRequest.current) return;
       if (caught instanceof ApiError && caught.code === 'FORBIDDEN_SESSION') { invalidateSession(activeSession.session_id); return; }
@@ -151,7 +153,7 @@ export default function App() {
   }
   function invalidateSession(sessionId: string) {
     if (stateRef.current && stateRef.current.session_id !== sessionId) return;
-    saveListRequest.current += 1; setSaveSlots([]); setSaveListError(''); setRestoreSaveId(null);
+    saveListRequest.current += 1; setSaveSlots([]); setSaveListError(''); setRestoreSaveId(null); setDeleteSaveId(null); setConfirmation(null);
     storeSession(null); setSession(null); stateRef.current = null; setState(null); setCodes({}); setLoginCredentials({ username: '', password: '' }); setHistory([]); setObservation(''); setSequenceDraft([]); setSelectedId(null); setSelectedItemId(null); setInteractionId(null); setLoginOpenId(null); setNeedsSync(false); retiredGenerations.current.clear();
   }
   async function execute(work: () => Promise<void>, reconcile = false, actionFeedback = false) {
@@ -219,11 +221,11 @@ export default function App() {
     else if (inspectAction) { setInteractionId(null); action('inspect', inspectAction.arguments); }
     else { setInteractionId(null); action('inspect', { object_id: objectId }); }
   }
-  function control(operation: 'reset' | 'save' | 'restore') {
+  function control(operation: 'reset') {
     setConfirmation(null);
     if (!session || !stateRef.current || needsSync) return;
     const current = stateRef.current;
-    void execute(async () => { const response = await api.control(session, current, operation); if (apply(response.data.visible_state)) { if (operation === 'reset' || operation === 'restore') setSequenceDraft([]); await refreshSaveSlots(session, response.data.visible_state); setNotice(response.data.message); } }, true);
+    void execute(async () => { const response = await api.control(session, current, operation); if (apply(response.data.visible_state)) { if (operation === 'reset') setSequenceDraft([]); await refreshSaveSlots(session, response.data.visible_state); setNotice(response.data.message); } }, true);
   }
   function saveNewSlot() {
     if (!session || !stateRef.current || needsSync) return;
@@ -257,13 +259,39 @@ export default function App() {
     setRestoreSaveId(slot.save_id);
     setConfirmation('slot-restore');
   }
+  function requestSlotDelete(slot: SaveSlot) {
+    if (busy.current || pending || needsSync) return;
+    setDeleteSaveId(slot.save_id);
+    setConfirmation('slot-delete');
+  }
+  function deleteSelectedSlot() {
+    setConfirmation(null);
+    if (!session || !stateRef.current || needsSync || !deleteSaveId) return;
+    const activeSession = session;
+    const current = stateRef.current;
+    const saveId = deleteSaveId;
+    setDeleteSaveId(null);
+    void execute(async () => {
+      let response;
+      try { response = await api.deleteSaveSlot(activeSession, current, saveId); }
+      catch (caught) {
+        if (caught instanceof ApiError && caught.code === 'SAVE_NOT_FOUND') {
+          const live = stateRef.current;
+          if (live?.session_id === activeSession.session_id) await refreshSaveSlots(activeSession, live);
+        }
+        throw caught;
+      }
+      if (!apply(response.data.visible_state)) return;
+      await refreshSaveSlots(activeSession, response.data.visible_state);
+      setNotice(response.data.message);
+    }, true);
+  }
   const won = state?.status === 'won';
   const disabled = pending || needsSync || !!won;
   const loginAffordance = selected?.object_id === 'r2_monitor'
     ? selected.actions.find(affordance => affordance.tool === 'submit_login' && affordance.arguments.target_id === 'r2_monitor')
     : undefined;
-  const savedAt = state?.save ? new Date(state.save.saved_at) : null;
-  const savedTime = savedAt && !Number.isNaN(savedAt.getTime()) ? savedAt.toLocaleString('zh-CN', { hour12: false }) : state?.save?.saved_at;
+  const selectedDeleteSlot = saveSlots.find(slot => slot.save_id === deleteSaveId);
   return <div className={`app-shell ${visual || visualEntry ? 'visual-shell' : ''} ${presentation.reducedMotion ? 'reduce-motion' : ''}`}>
     <span className="presentation-observer" hidden data-audio-state={presentation.audioState} data-audio-cues={presentation.cueCount} data-audio-last-cue={presentation.lastCue} data-reduced-motion={presentation.reducedMotion}/>
     <a className="skip-link" href="#game">跳到游戏内容</a>
@@ -305,21 +333,16 @@ export default function App() {
               <div className="save-slot-create-row"><input id="save-slot-name" className="save-slot-name" maxLength={40} value={saveName} disabled={pending || needsSync} placeholder="留空由系统命名" onChange={event => setSaveName(event.target.value)}/><button type="submit" className="button primary save-slot-create-button" disabled={pending || needsSync}>保存新存档</button></div>
             </form>
             <div className="save-slot-list" role="list" aria-label="当前游戏的存档列表">
-              {saveSlots.map(slot => <article className={`save-slot ${slot.kind === 'legacy' ? 'save-slot-legacy' : ''}`} role="listitem" key={slot.save_id} data-save-id={slot.save_id}>
-                <div className="save-slot-heading"><h3>{slot.name}</h3><span className="save-slot-kind">{slot.kind === 'legacy' ? '旧版单槽' : '独立存档'}</span></div>
+              {saveSlots.map(slot => <article className="save-slot" role="listitem" key={slot.save_id} data-save-id={slot.save_id}>
+                <div className="save-slot-heading"><h3>{slot.name}</h3><span className="save-slot-kind">独立存档</span></div>
                 <p className="save-slot-meta"><time dateTime={slot.saved_at}>{saveTimeLabel(slot.saved_at)}</time><span>{slot.room_id ? saveRoomLabel[slot.room_id] : '房间未知'}</span><span>{slot.status === 'won' ? '已通关' : slot.status === 'playing' ? '进行中' : '状态未记录'}</span><span>{slot.clues_found === null ? '线索数未记录' : `${slot.clues_found} 条线索`}</span></p>
                 <small>关卡 {slot.level_version}</small>
-                <button type="button" className="button save-slot-restore" aria-label={`读取存档：${slot.name}`} disabled={pending || needsSync} onClick={() => requestSlotRestore(slot)}>读取</button>
+                <div className="save-slot-actions"><button type="button" className="button save-slot-restore" aria-label={`读取存档：${slot.name}`} disabled={pending || needsSync} onClick={() => requestSlotRestore(slot)}>读取</button><button type="button" className="button save-slot-delete" aria-label={`删除存档：${slot.name}`} disabled={pending || needsSync} onClick={() => requestSlotDelete(slot)}>删除</button></div>
               </article>)}
               {!saveSlots.length && !saveListError && <p className="no-save">还没有存档。保存后可在这里选择任一时刻读取。</p>}
             </div>
             {saveListError && <p className="error save-list-error" role="alert">{saveListError}</p>}
-            <details className="legacy-save-controls" open>
-              <summary>旧版单槽兼容操作</summary>
-              <p>每次保存会替换这份旧版存档；上方新建的存档会各自保留。旧版存档也会出现在上方列表。</p>
-              {state.save ? <div className="save-summary"><span className="saved-badge">已有旧版单槽</span><p>保存时间：<time dateTime={state.save.saved_at}>{savedTime}</time></p><small>保存时进度 {state.save.source_revision} · 关卡 {state.save.level_version}</small></div> : <p className="no-save">尚无旧版单槽存档。</p>}
-              <div className="save-actions"><button className="button" disabled={pending || needsSync} onClick={() => control('save')}>保存进度</button><button className="button" disabled={pending || needsSync || !state.save} onClick={() => setConfirmation('restore')}>恢复存档</button><button className="button subtle" disabled={pending || needsSync} onClick={() => setConfirmation('reset')}>重新开始</button></div>
-            </details>
+            <div className="save-actions"><button className="button subtle" disabled={pending || needsSync} onClick={() => setConfirmation('reset')}>重新开始</button></div>
           </section>
         </div>
         {!visual && history.length > 0 && <details className="history"><summary>最近的行动记录 <span>{history.length}</span></summary><ol>{history.map(entry => <li key={entry.id}>{entry.text}</li>)}</ol></details>}
@@ -327,7 +350,7 @@ export default function App() {
       {!visual && !visualEntry && <footer><span>校园实验室 · 认真观察，大胆推理</span><span>{state ? `关卡 ${state.level_version} · 进度 ${state.revision}` : '本地探索 · 手动游玩'}</span></footer>}
     </main>
     {visualReceipt?.tool === 'move' && visualReceipt.changed && <div className="room-transition" key={visualReceipt.event_id} aria-hidden="true"/>}
-    <dialog ref={dialogRef} className={visual || visualEntry ? 'stage-confirmation' : undefined} onCancel={() => setConfirmation(null)} onClose={() => { setConfirmation(null); if (confirmation === 'slot-restore') setRestoreSaveId(null); }} aria-labelledby="confirmation-title"><h2 id="confirmation-title">{confirmation === 'new' ? '开始新的游戏？' : confirmation === 'slot-restore' ? '读取指定存档？' : confirmation === 'restore' ? '恢复已保存的进度？' : '重新开始当前游戏？'}</h2><p>{confirmation === 'new' ? '当前标签页将切换到新游戏，旧会话将无法从这里继续。' : confirmation === 'slot-restore' ? `当前进度将替换为“${saveSlots.find(slot => slot.save_id === restoreSaveId)?.name || '所选存档'}”保存的状态。读取后会清除当前临时输入和顺序草稿。` : confirmation === 'restore' ? '当前进度将替换为旧版单槽存档中的场景、道具和已发现线索。单槽存档会保留。' : '这会清空当前探索进度和线索；已有存档仍可读取。'} </p><div className="dialog-actions"><button className="button" autoFocus onClick={() => { setConfirmation(null); setRestoreSaveId(null); }}>取消</button><button className="button primary" disabled={pending} onClick={() => confirmation === 'new' ? create() : confirmation === 'slot-restore' ? restoreSelectedSlot() : control(confirmation === 'restore' ? 'restore' : 'reset')}>{confirmation === 'slot-restore' ? '读取此存档' : confirmation === 'restore' ? '确认恢复' : '确认开始'}</button></div></dialog>
+    <dialog ref={dialogRef} className={visual || visualEntry ? 'stage-confirmation' : undefined} onCancel={() => { setConfirmation(null); setRestoreSaveId(null); setDeleteSaveId(null); }} onClose={() => { setConfirmation(null); setRestoreSaveId(null); setDeleteSaveId(null); }} aria-labelledby="confirmation-title"><h2 id="confirmation-title">{confirmation === 'new' ? '开始新的游戏？' : confirmation === 'slot-restore' ? '读取指定存档？' : confirmation === 'slot-delete' ? '删除这份存档？' : '重新开始当前游戏？'}</h2><p>{confirmation === 'new' ? '当前标签页将切换到新游戏，旧会话将无法从这里继续。' : confirmation === 'slot-restore' ? `当前进度将替换为“${saveSlots.find(slot => slot.save_id === restoreSaveId)?.name || '所选存档'}”保存的状态。读取后会清除当前临时输入和顺序草稿。` : confirmation === 'slot-delete' ? `确定删除“${selectedDeleteSlot?.name || '所选存档'}”？删除后无法恢复，也不会影响当前游戏进度。` : '这会清空当前探索进度和线索；已有存档仍可读取。'} </p><div className="dialog-actions"><button className="button" autoFocus onClick={() => { setConfirmation(null); setRestoreSaveId(null); setDeleteSaveId(null); }}>取消</button><button className="button primary" disabled={pending || (confirmation === 'slot-delete' && !selectedDeleteSlot)} onClick={() => confirmation === 'new' ? create() : confirmation === 'slot-restore' ? restoreSelectedSlot() : confirmation === 'slot-delete' ? deleteSelectedSlot() : control('reset')}>{confirmation === 'slot-restore' ? '读取此存档' : confirmation === 'slot-delete' ? '确认删除' : '确认开始'}</button></div></dialog>
   </div>;
 }
 

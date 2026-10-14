@@ -1,0 +1,40 @@
+{
+  "status": "SOURCE STOP",
+  "task": "Remove legacy single-slot UI and add per-archive confirmed deletion",
+  "files": {
+    "frontend/src/App.tsx": "C2F0291F31A73E112BAA5DEF06E2C7183FBF7466EF12ECD1B8F992A7665566A5",
+    "frontend/src/api.ts": "A4AA279D0D5F386B48718AC8300199EE3BADC7F3778C5441A1DB9A867D1DC597",
+    "frontend/src/style.css": "8C3584066B0C44031BFFB6C6BCEAA0E84A594FD96964AF935F0D1D54F182AFE7"
+  },
+  "changes": [
+    "Removed the old single-slot save/restore controls and their frontend control operations; retained new game, sync, reset, and multi-moment saves.",
+    "Only archive-kind entries are placed in the visible list. Each archive has 44px read/delete controls.",
+    "Delete requires a native accessible confirmation naming the archive and stating deletion is irreversible and does not affect current progress. Cancel, Escape, and close clear targets without issuing a request.",
+    "Delete uses POST with the existing session header and VersionRequest fields. Success refreshes the save list without changing local drafts; uncertain network outcomes use the existing state/list reconciliation without replaying the delete. SAVE_NOT_FOUND refreshes the list and leaves the server error visible.",
+    "Session/generation changes clear pending targets. Save, read, and delete remain available in playing and won states."
+  ],
+  "actual_commands": [
+    {
+      "command": "node frontend/node_modules/typescript/bin/tsc --noEmit --project frontend/tsconfig.json; if successful, node frontend/node_modules/vite/bin/vite.js build (run from frontend)",
+      "exit_code": 0,
+      "result": "TypeScript check and production build both succeeded; Vite reported its existing large Phaser chunk warning."
+    },
+    {
+      "command": "git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --check -- frontend/src/App.tsx frontend/src/api.ts frontend/src/style.css",
+      "exit_code": 0
+    },
+    {
+      "command": "rg -n \"legacy-save-controls|confirmation === 'restore'|control\\('save'|control\\('restore'|state\\.save|旧版单槽\" frontend/src/App.tsx frontend/src/api.ts frontend/src/style.css",
+      "exit_code": 1,
+      "result": "No matching legacy UI or frontend save/restore control path remains."
+    }
+  ],
+  "evidence": [
+    "evidence/integration/save-delete/plan.json",
+    "evidence/integration/save-delete/frontend/frontend.json"
+  ],
+  "limitations": [
+    "This is owner-level source/build verification only; no browser interaction or formal QA was run. Independent QA should verify cancel/Escape/close, deletion success and missing-save refresh, timeout reconciliation without resending, archive list states, and mobile reachability on Main's frozen candidate.",
+    "No backend contract or integration result is claimed here."
+  ]
+}

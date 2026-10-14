@@ -1,0 +1,75 @@
+{
+  "operator": "Backend Owner",
+  "scope": "narrow development verification only",
+  "exit_code": 0,
+  "checks": [
+    {
+      "name": "delete one archive preserves game state/revision/generation and legacy",
+      "pass": true
+    },
+    {
+      "name": "completed replay preserves event and does not repeat delete",
+      "pass": true
+    },
+    {
+      "name": "completed replay precedes generation and returns current state",
+      "pass": true
+    },
+    {
+      "name": "same request id conflicts for changed slot or operation",
+      "pass": true
+    },
+    {
+      "name": "unauthenticated and foreign access leave archives unchanged",
+      "pass": true
+    },
+    {
+      "name": "legacy reserved id cannot delete original single slot",
+      "pass": true
+    },
+    {
+      "name": "missing-save error receipt replays before generation",
+      "pass": true
+    },
+    {
+      "name": "new request rejects wrong revision and generation",
+      "pass": true
+    },
+    {
+      "name": "strict ID/body/version and malformed JSON rejection",
+      "pass": true
+    },
+    {
+      "name": "unfinished receipt fails closed",
+      "pass": true
+    },
+    {
+      "name": "corrupt snapshot and metadata removable without parsing or game mutation",
+      "pass": true
+    },
+    {
+      "name": "event failure rolls back deletion/event/receipt/state",
+      "pass": true
+    },
+    {
+      "name": "receipt failure rolls back deletion/event/receipt/state",
+      "pass": true
+    },
+    {
+      "name": "rolled-back request can complete normally later",
+      "pass": true
+    },
+    {
+      "name": "archive create/selected restore and legacy restore stay operational",
+      "pass": true
+    }
+  ],
+  "check_count": 15,
+  "paid_calls": 0,
+  "databases": "temporary synthetic only; removed by TemporaryDirectory",
+  "limitations": [
+    "Not formal independent QA",
+    "No browser, full route or full backend suite run",
+    "Legacy metadata corruption unrelated to archive delete is unchanged"
+  ]
+}

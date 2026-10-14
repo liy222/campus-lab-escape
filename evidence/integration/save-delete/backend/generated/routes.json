@@ -1,0 +1,136 @@
+{
+  "contract_version": "1.4.0",
+  "schema": "api.schema.json",
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/api/sessions",
+      "request": "empty_request",
+      "response": "create_response",
+      "success_status": 201,
+      "requires_session_token": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/sessions/{id}/state",
+      "request": null,
+      "response": "state_response",
+      "success_status": 200,
+      "requires_session_token": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sessions/{id}/actions",
+      "request": "action_request",
+      "response": "action_response",
+      "success_status": 200,
+      "requires_session_token": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sessions/{id}/reset",
+      "request": "version_request",
+      "response": "control_response",
+      "success_status": 200,
+      "requires_session_token": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sessions/{id}/save",
+      "request": "version_request",
+      "response": "control_response",
+      "success_status": 200,
+      "requires_session_token": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sessions/{id}/restore",
+      "request": "version_request",
+      "response": "control_response",
+      "success_status": 200,
+      "requires_session_token": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/sessions/{id}/saves",
+      "request": null,
+      "response": "list_saves_response",
+      "success_status": 200,
+      "requires_session_token": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sessions/{id}/saves",
+      "request": "create_save_request",
+      "response": "save_slot_response",
+      "success_status": 201,
+      "requires_session_token": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sessions/{id}/saves/{save_id}/restore",
+      "request": "version_request",
+      "response": "save_slot_response",
+      "success_status": 200,
+      "requires_session_token": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sessions/{id}/saves/{save_id}/delete",
+      "request": "version_request",
+      "response": "delete_save_response",
+      "success_status": 200,
+      "requires_session_token": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sessions/{id}/ai/turns",
+      "request": "ai_turn_request",
+      "response": "ai_turn_response",
+      "success_status": 200,
+      "requires_session_token": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sessions/{id}/proposals/{pid}/confirm",
+      "request": "empty_request",
+      "response": "action_response",
+      "success_status": 200,
+      "requires_session_token": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sessions/{id}/proposals/{pid}/cancel",
+      "request": "empty_request",
+      "response": "cancel_response",
+      "success_status": 200,
+      "requires_session_token": true
+    }
+  ],
+  "error_statuses": {
+    "BAD_ARGUMENT": 422,
+    "INVALID_TOOL": 422,
+    "FORBIDDEN_SESSION": 403,
+    "NOT_VISIBLE": 409,
+    "PRECONDITION_FAILED": 409,
+    "WRONG_CODE": 409,
+    "ALREADY_TAKEN": 409,
+    "GAME_FINISHED": 409,
+    "STALE_STATE": 409,
+    "STALE_GENERATION": 409,
+    "REQUEST_ID_CONFLICT": 409,
+    "PROPOSAL_NOT_FOUND": 404,
+    "PROPOSAL_EXPIRED": 409,
+    "PROPOSAL_CANCELLED": 409,
+    "PROPOSAL_INVALIDATED": 409,
+    "PROPOSAL_REJECTED": 409,
+    "SAVE_NOT_FOUND": 404,
+    "INVALID_SNAPSHOT": 409,
+    "SNAPSHOT_VERSION_MISMATCH": 409,
+    "MODEL_UNAVAILABLE": 503,
+    "MODEL_TIMEOUT": 504,
+    "MODEL_INVALID_OUTPUT": 502,
+    "AI_LIMIT_REACHED": 429,
+    "INTERNAL_ERROR": 500
+  }
+}

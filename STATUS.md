@@ -213,3 +213,9 @@ User-reported inability to submit sequence is under investigation. Baseline HEAD
 
 ### 2026-10-14 terminal sequence submission accepted
 Only Room3.tsx changed; Main242source/18QAartifact matches and4PNG views. Independent build0/browser0(154 records incl102 public prerequisite records, issues[]) confirms retained-card natural panel/draft/start/submit, wrong order, save/restore/reload and EXIT desktop+375. No paid/fullAPI repeat. See evidence/integration/panel-submit/accepted.json. Normal commit/push next.
+
+### 2026-10-14 panel repair synced / archive deletion in development
+Panelfix5db122a has been committed and pushed to private main; GitHub author/committerliy222 verified. New save management request under development; no deletion QA claim yet. Plan evidence/integration/save-delete/plan.json. No user existing DB accessed.
+
+### 2026-10-14 requested save management accepted
+Oldsingle UI removed, archive-specific confirmed delete implemented. Main matches242source/63oldtests/24QAartifacts and3actualPNG. API20/33 and contract13/build pass; firstbrowser71 newfixture failure retained, remaining155 pass jointly, no sum/singlefullgreen. Existing game/cursor/snapshot compatibility protected. Small-screen checks were Chrome emulation, no phone App or physical device claim. Final docs/sync next; no extra features.

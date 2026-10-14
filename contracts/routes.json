@@ -76,6 +76,14 @@
     },
     {
       "method": "POST",
+      "path": "/api/sessions/{id}/saves/{save_id}/delete",
+      "request": "version_request",
+      "response": "delete_save_response",
+      "success_status": 200,
+      "requires_session_token": true
+    },
+    {
+      "method": "POST",
       "path": "/api/sessions/{id}/ai/turns",
       "request": "ai_turn_request",
       "response": "ai_turn_response",

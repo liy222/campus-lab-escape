@@ -181,3 +181,9 @@ Preserve server FINAL_CHECK submission requirement and puzzle answers. Expose ex
 
 ### 2026-10-14 terminal repair acceptance
 Device buttons edit local sequence regardless of selected item; the installed console opens by inspect while an item remains selected. Explicit console start uses the existing exit_door interact affordance and preserves server FINAL_CHECK validation. Readiness text exposes device operation prerequisites, no password/solution. Existing local draft remains unsaved and clears on restore/reload; server stage/save compatibility unchanged. Independent focused verification accepted; older handpainted QA scopes remain historical, this repair adds the natural held-card path coverage.
+
+### 2026-10-14 single save UI removal and archive deletion policy
+Interpret user old-save removal as removing the obsolete single-slot game UI/list entries, keeping a single multi-moment archive interface. Do not silently purge historical data or break preserved legacy APIs. Per-archive delete requires explicit UI confirmation, only affects that session save_slots row, no current game/cursor reset; keep original legacy saves table outside this delete route. Endpoint uses existing POST+VersionRequest style and completed receipt-before-generation replay semantics; deletion can remove corrupt archive payload without reading it.
+
+### 2026-10-14 scope control after user clarification
+Only requested save management functionality is delivered: remove obsolete single-slot controls/list row and add archive-specific confirmed deletion. Existing responsive layout was only verified in computer Chrome emulation, not a newly added mobile product. No additional feature development or testing after accepted result; final docs/Git only. Delete preserves current game revision/generation and other snapshots; backend legacy data/API remain for compatibility without user-facing controls.

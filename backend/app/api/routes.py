@@ -68,6 +68,12 @@ async def restore_selected_save(session_id: str, save_id: str, request: Request)
     return response(request.app.state.store.restore_save(session_id, request.headers.get("X-Session-Token"), save_id, raw, parsed))
 
 
+@router.post("/sessions/{session_id}/saves/{save_id}/delete")
+async def delete_selected_save(session_id: str, save_id: str, request: Request):
+    raw, parsed = await body(request)
+    return response(request.app.state.store.delete_save(session_id, request.headers.get("X-Session-Token"), save_id, raw, parsed))
+
+
 @router.post("/sessions/{session_id}/ai/turns")
 async def ai_turn(session_id: str, request: Request):
     import asyncio

@@ -27,6 +27,9 @@
       "$ref": "#/$defs/save_slot_response"
     },
     {
+      "$ref": "#/$defs/delete_save_response"
+    },
+    {
       "$ref": "#/$defs/error_response"
     }
   ],
@@ -6867,6 +6870,64 @@
         },
         "data": {
           "$ref": "#/$defs/save_slot_data"
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "delete_save_data": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "replayed": {
+          "type": "boolean"
+        },
+        "save_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "message": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "visible_state": {
+          "$ref": "#/$defs/visible_state"
+        }
+      },
+      "required": [
+        "request_id",
+        "replayed",
+        "save_id",
+        "message",
+        "visible_state"
+      ],
+      "additionalProperties": false
+    },
+    "delete_save_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "data": {
+          "$ref": "#/$defs/delete_save_data"
         }
       },
       "required": [

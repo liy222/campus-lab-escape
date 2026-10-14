@@ -223,7 +223,9 @@ D["list_saves_data"] = obj({"slots": arr(ref("save_slot")), "visible_state": ref
 D["save_slot_data"] = obj({"request_id": ID, "replayed": {"type": "boolean"}, "slot": ref("save_slot"), "visible_state": ref("visible_state"), "message": TEXT})
 D["list_saves_response"] = obj({"ok": {"const": True}, "event_id": ID, "data": ref("list_saves_data")})
 D["save_slot_response"] = obj({"ok": {"const": True}, "event_id": ID, "data": ref("save_slot_data")})
-document("api.schema.json", D, {"oneOf": [ref(name + "_response") for name in ["create", "state", "action", "control", "cancel", "ai_turn"]] + [ref("list_saves_response"), ref("save_slot_response"), ref("error_response")]})
+D["delete_save_data"] = obj({"request_id": ID, "replayed": {"type": "boolean"}, "save_id": ID, "message": TEXT, "visible_state": ref("visible_state")})
+D["delete_save_response"] = obj({"ok": {"const": True}, "event_id": ID, "data": ref("delete_save_data")})
+document("api.schema.json", D, {"oneOf": [ref(name + "_response") for name in ["create", "state", "action", "control", "cancel", "ai_turn"]] + [ref("list_saves_response"), ref("save_slot_response"), ref("delete_save_response"), ref("error_response")]})
 ROUTES = [
     ("POST", "/api/sessions", "empty_request", "create_response", 201, False),
     ("GET", "/api/sessions/{id}/state", None, "state_response", 200, True),
@@ -234,6 +236,7 @@ ROUTES = [
     ("GET", "/api/sessions/{id}/saves", None, "list_saves_response", 200, True),
     ("POST", "/api/sessions/{id}/saves", "create_save_request", "save_slot_response", 201, True),
     ("POST", "/api/sessions/{id}/saves/{save_id}/restore", "version_request", "save_slot_response", 200, True),
+    ("POST", "/api/sessions/{id}/saves/{save_id}/delete", "version_request", "delete_save_response", 200, True),
     ("POST", "/api/sessions/{id}/ai/turns", "ai_turn_request", "ai_turn_response", 200, True),
     ("POST", "/api/sessions/{id}/proposals/{pid}/confirm", "empty_request", "action_response", 200, True),
     ("POST", "/api/sessions/{id}/proposals/{pid}/cancel", "empty_request", "cancel_response", 200, True),

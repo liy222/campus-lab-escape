@@ -208,3 +208,9 @@ Investigate natural R3 sequence path, fix only necessary frontend event/readines
 
 ### 2026-10-14 terminal sequence submission verified
 Minimal Room3 frontend correction accepted from independent onebuild0 and onefocusedbrowser0. Natural retained-card flow, explicit start, error/correct submission, manual save/restore/reload and R3 EXIT tested on desktop/mobile. Delivery Luna finaldocs, then normal liy222 sync; AI companion redesign remains outside this repair.
+
+### 2026-10-14 save UI consolidation and deletion
+Panel repair has been pushed and authorliy222 verified. Next remove oldsingle UI, add per-archive confirmed delete with same-session authentication, strict version requests and transactional idempotency. Preserve user data and save/restore/game behavior; independent focused API/contract/desktop/mobile/reload/restart checks after stable source, one build, no duplicate full127 suite.
+
+### 2026-10-14 save deletion accepted
+Requested oldsingle UI removal and confirmed archive delete accepted from focused independent API20/33, contract13, onebuild and scoped browser joint evidence. Finish concise docs and normal liy222 commit/push only; user prohibits extra feature scope, no further mobile development/testing or AI expansion.

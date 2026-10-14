@@ -1,4 +1,4 @@
-"""Append-only, authenticated manual archives over the existing snapshot format.
+"""Authenticated manual archives over the existing snapshot format.
 
 Old single-slot rows/endpoints and public game projections remain untouched.
 Only these new routes replay completed receipts before checking generation.
@@ -54,6 +54,9 @@ class SaveStoreMixin:
     def restore_save(self, session_id, token, save_id, raw, parsed=True):
         return self.execute_save(session_id, token, 'archive_restore', raw, parsed, save_id=save_id)
 
+    def delete_save(self, session_id, token, save_id, raw, parsed=True):
+        return self.execute_save(session_id, token, 'archive_delete', raw, parsed, save_id=save_id)
+
     def execute_save(self, session_id, token, operation, raw, parsed=True, save_id=None):
         from .sqlite import canonical, checksum, new_id, utc_now, validate_snapshot
         event_id = new_id()
@@ -66,12 +69,12 @@ class SaveStoreMixin:
                     raise ValueError('Invalid JSON')
                 request = (CreateSaveRequest if operation == 'archive_create' else VersionRequest).model_validate(raw)
                 validate_generation(request.generation)
-                if operation == 'archive_restore':
+                if operation in {'archive_restore', 'archive_delete'}:
                     save_id = SelectedSave.model_validate({'save_id': save_id}).save_id
             except (ValidationError, ValueError, TypeError):
                 return self.failure(connection, event_id, session_id, operation, 'BAD_ARGUMENT', '存档请求字段不符合契约。', state, expose=False)
             normalized = {'operation': operation, **request.model_dump()}
-            if operation == 'archive_restore':
+            if operation in {'archive_restore', 'archive_delete'}:
                 normalized['save_id'] = save_id
             digest = hashlib.sha256(canonical(normalized).encode('utf-8')).hexdigest()
             prior = connection.execute('SELECT request_hash,response_json,http_status,phase FROM action_receipts WHERE session_id=? AND request_id=?', (session_id, request.request_id)).fetchone()
@@ -107,6 +110,15 @@ class SaveStoreMixin:
                     connection.execute('INSERT INTO save_slots (save_id,session_id,created_at,snapshot_json,metadata_json) VALUES (?,?,?,?,?)',
                                        (archive_id, session_id, saved_at, canonical(snapshot), canonical(slot)))
                     updated, status, message = state, 201, '已创建独立存档。'
+                elif operation == 'archive_delete':
+                    # Delete only the authenticated session's archive. Corrupt
+                    # snapshot/metadata must not prevent removing a bad slot.
+                    if save_id == 'legacy':
+                        raise RuleError('SAVE_NOT_FOUND', '没有找到该会话的指定存档。')
+                    deleted = connection.execute('DELETE FROM save_slots WHERE session_id=? AND save_id=?', (session_id, save_id))
+                    if deleted.rowcount != 1:
+                        raise RuleError('SAVE_NOT_FOUND', '没有找到该会话的指定存档。')
+                    updated, status, message = state, 200, '已删除所选存档。'
                 else:
                     if save_id == 'legacy':
                         row = connection.execute('SELECT snapshot_json FROM saves WHERE session_id=?', (session_id,)).fetchone()
@@ -124,8 +136,9 @@ class SaveStoreMixin:
                 if operation == 'archive_restore':
                     connection.execute('UPDATE sessions SET state_json=? WHERE session_id=?', (canonical(updated.model_dump()), session_id))
                     self.invalidate_pending(connection, session_id)
-                data = {'request_id': request.request_id, 'replayed': False, 'slot': slot, 'message': message,
+                data = {'request_id': request.request_id, 'replayed': False, 'message': message,
                         'visible_state': self.projection(connection, session_id, updated)}
+                data.update({'save_id': save_id} if operation == 'archive_delete' else {'slot': slot})
                 body = {'ok': True, 'event_id': event_id, 'data': data}
                 self.event(connection, event_id, session_id, operation, 'committed', body, updated, normalized, revision_before)
             connection.execute('INSERT INTO action_receipts (session_id,request_id,request_hash,generation,response_json,http_status) VALUES (?,?,?,?,?,?)',

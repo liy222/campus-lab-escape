@@ -1,0 +1,16 @@
+{
+  "operator": "Main integration final newline normalization",
+  "path": "tests/save-delete/run_browser.mjs",
+  "before_sha256": "a755570f3d5716feed74dd47fa090f0399fe17516714da62eb32d7cd6b9b2e57",
+  "after_sha256": "e610b3a8cda7b8050fdebf16cdcff30a651d080867ddea7e0efdc461b1d534e8",
+  "CRCRLF_sequences_normalized": 115,
+  "proof": "Only duplicated CR bytes before LF removed; all bytes equal after removing CR from both forms. No statements/assertions/product code changes.",
+  "syntax_command": [
+    "C:/Program Files/nodejs/node.exe",
+    "--check",
+    "tests/save-delete/run_browser.mjs"
+  ],
+  "syntax_exit_code": 0,
+  "formal_tests_rerun": false,
+  "historical_execution_hashes": "Original QA result/source/artifact maps remain sealed; this proof binds final staged adapter bytes to the historical executed code."
+}

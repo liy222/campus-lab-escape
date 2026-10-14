@@ -1,0 +1,11 @@
+{
+  "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/integration/save-delete/backend/owner_check.py",
+  "exit_code": 1,
+  "script_sha256": "7a39d71dc27c8a1cd87d698aef53fb8007b9610cf627403b153c9da375f931dc",
+  "failure": "Owner harness TemporaryDirectory cleanup WinError32: rows() used sqlite context manager without closing the connection; reached cleanup before producing final report",
+  "product_changed_after_run": false,
+  "correction": "Use contextlib.closing around temporary SQLite read connections",
+  "limitations": [
+    "No completed run report or full-green claim from this failed epoch"
+  ]
+}

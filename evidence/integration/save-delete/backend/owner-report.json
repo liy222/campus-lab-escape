@@ -1,0 +1,98 @@
+{
+  "status": "SOURCE STOP",
+  "operator": "Backend Owner",
+  "implementation": "Additive authenticated POST saves/{save_id}/delete; shared archive receipt replay/transaction; only session-owned save_slots row; no legacy deletion or snapshot/metadata parsing",
+  "files": [
+    {
+      "path": "backend/app/storage/saves.py",
+      "raw_sha256": "cbee6f356a6271a3d41ea365fef918c3c1678d24b9c9bf49dcc59e752d59af84"
+    },
+    {
+      "path": "backend/app/api/routes.py",
+      "raw_sha256": "44c7471735c4427f248c56ad646c5bd87f6e4ff42dc17d7330abda399c220ae0"
+    },
+    {
+      "path": "contracts/build_contracts.py",
+      "raw_sha256": "bfbff900eb7d809b8a7becd6244cd67a7cb8aa039a55885be4298d906c050bd9"
+    },
+    {
+      "path": "contracts/check_contracts.py",
+      "raw_sha256": "93d1409e568b702f21331b7da1659b80334b6c5105aa98e371ff9dcc722362f7"
+    },
+    {
+      "path": "contracts/api.schema.json",
+      "raw_sha256": "032c6f876a87c9d51d395d3e285749ca2d87168cad3466c0f20190f2a8e7ddb0"
+    },
+    {
+      "path": "contracts/routes.json",
+      "raw_sha256": "697bfc045f9cb702e94a45292af312cc9d84b01ed34e08ce511e1dda47f4821b"
+    },
+    {
+      "path": "docs/SPEC.md",
+      "raw_sha256": "d0fa3b0991819f408e9863c5293f24dae6d0c7a2416f4882ac175f8828de377f"
+    }
+  ],
+  "unchanged_owned_optional": "backend/app/domain/save_models.py",
+  "commands": [
+    {
+      "command": "initial inline Python byte editor",
+      "exit_code": 1,
+      "note": "LF/CRLF assertion while extending receipt operations; only header/delete_save wrapper existed, corrected before verification"
+    },
+    {
+      "command": "corrected inline Python byte editor",
+      "exit_code": 0
+    },
+    {
+      "command": "exec compile contracts/build_contracts.py with isolated new generated __file__; copy only api.schema.json/routes.json",
+      "exit_code": 0,
+      "evidence": "contract-generation.json"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/integration/save-delete/backend/owner_check.py [first epoch]",
+      "exit_code": 1,
+      "evidence": "owner-check-first-failure.json",
+      "note": "verification-harness SQLite cleanup only; no product edits after this epoch"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/integration/save-delete/backend/owner_check.py [closed-connection harness]",
+      "exit_code": 0,
+      "checks": 15,
+      "evidence": "owner-check.json"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 contracts/check_contracts.py --output evidence/integration/save-delete/backend/contract-validation.json",
+      "exit_code": 0,
+      "evidence": "contract-validation.json"
+    },
+    {
+      "command": "AST parse 4 owned Python files",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check -- [7 owned files]",
+      "exit_code": 2,
+      "note": "Default checker reports CR characters on new lines in existing CRLF contract JSON as trailing whitespace; no space/tab findings"
+    },
+    {
+      "command": "git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --check -- [7 owned files]",
+      "exit_code": 0,
+      "note": "Preserve original CRLF contract file style; CRLF-aware whitespace check passes"
+    },
+    {
+      "command": "Native PowerShell Remove-Item exact first failed run synthetic SQLite files + empty temporary directory; explicit absolute/name guards, no recursive deletion",
+      "exit_code": 0,
+      "note": "Only Owner-created temporary synthetic directory removed after process released locks"
+    }
+  ],
+  "evidence_root": "evidence/integration/save-delete/backend",
+  "paid_calls": 0,
+  "commits": 0,
+  "subagents_spawned": 0,
+  "limitations": [
+    "Development verification only; independent QA must run after Main freeze",
+    "No browser/full route/full backend suite executed by Owner",
+    "Original legacy API/data retained intentionally; Frontend UI work belongs to Frontend",
+    "Existing Starlette TestClient httpx deprecation warning remains"
+  ]
+}

@@ -46,6 +46,7 @@ export interface SaveSlot {
 }
 interface SaveSlotListData { slots: SaveSlot[]; visible_state: VisibleState }
 interface SaveSlotMutationData { request_id: string; replayed: boolean; slot: SaveSlot; visible_state: VisibleState; message: string }
+interface SaveSlotDeleteData { request_id: string; replayed: boolean; save_id: string; visible_state: VisibleState; message: string }
 export type AiSettings = { provider: 'mock' } | { provider: 'deepseek'; apiKey: string };
 export type ProgressTool = Exclude<Tool, 'inspect' | 'get_inventory' | 'interact' | 'submit_login' | 'rotate_circuit' | 'submit_circuit' | 'submit_sequence'>;
 export interface Proposal { proposal_id: string; tool: ProgressTool; arguments: Args; revision: number; generation: string; expires_at: string; status: 'pending' | 'committed' | 'cancelled' | 'expired' | 'invalidated' | 'rejected'; clue_refs: string[]; summary: string }
@@ -99,8 +100,9 @@ export const api = {
   saveSlots: (session: Session) => request<SaveSlotListData>(`${path(session)}/saves`, session),
   createSaveSlot: (session: Session, state: VisibleState, name?: string) => request<SaveSlotMutationData>(`${path(session)}/saves`, session, { ...version(state), ...(name ? { name } : {}) }),
   restoreSaveSlot: (session: Session, state: VisibleState, saveId: string) => request<SaveSlotMutationData>(`${path(session)}/saves/${encodeURIComponent(saveId)}/restore`, session, version(state)),
+  deleteSaveSlot: (session: Session, state: VisibleState, saveId: string) => request<SaveSlotDeleteData>(`${path(session)}/saves/${encodeURIComponent(saveId)}/delete`, session, version(state)),
   action: (session: Session, state: VisibleState, tool: Tool, args: ActionArguments) => request<ActionData>(`${path(session)}/actions`, session, { ...version(state), tool, arguments: args }),
-  control: (session: Session, state: VisibleState, operation: 'reset' | 'save' | 'restore') => request<ControlData>(`${path(session)}/${operation}`, session, version(state)),
+  control: (session: Session, state: VisibleState, operation: 'reset') => request<ControlData>(`${path(session)}/${operation}`, session, version(state)),
   ai: (session: Session, state: VisibleState, message: string, settings: AiSettings = { provider: 'mock' }, hintLevel?: 1 | 2 | 3) => {
     const headers: Record<string, string> = { 'X-AI-Provider': settings.provider };
     if (settings.provider === 'deepseek') {

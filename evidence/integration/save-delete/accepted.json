@@ -1,0 +1,65 @@
+{
+  "recorded_at": "2026-10-14T10:02:26.987308+00:00",
+  "client_date": "2026-10-14",
+  "operator": "Main",
+  "status": "Accepted requested archive UI consolidation and confirmed single-archive deletion.",
+  "candidate": "evidence/integration/save-delete/candidate.json",
+  "candidate_sha256": "4a63768015b3c82ce0df91f88bc4332222b5ba53f0b445f77846dc48ced6a801",
+  "independent_result": "evidence/integration/save-delete/qa/result.json",
+  "independent_result_sha256": "6f63dd575048b7f4e9aebae3272bae1127be6b5ac7d3ec60c19e67cb6c8b7542",
+  "product_source_verified": 242,
+  "old_test_verified": 63,
+  "new_QA_source_verified": 6,
+  "QA_artifact_verified": 24,
+  "product_delta": [
+    "backend/app/api/routes.py",
+    "backend/app/storage/saves.py",
+    "contracts/api.schema.json",
+    "contracts/build_contracts.py",
+    "contracts/check_contracts.py",
+    "contracts/routes.json",
+    "docs/SPEC.md",
+    "frontend/src/App.tsx",
+    "frontend/src/api.ts",
+    "frontend/src/style.css"
+  ],
+  "actual_api": {
+    "methods": 20,
+    "new_delete_methods": 11,
+    "unchanged_archive_methods": 9,
+    "subtests": 33,
+    "seconds": 11.757,
+    "exit_code": 0,
+    "paid_calls": 0
+  },
+  "actual_build": {
+    "count": 1,
+    "exit_code": 0
+  },
+  "actual_browser": {
+    "joint_scoped_pass": true,
+    "single_full_green_claim": false,
+    "first_raw_checks": 71,
+    "remaining_raw_checks": 155,
+    "failed_adapter_epochs": 1,
+    "product_fix_count": 0,
+    "repeated_counts_summed": false,
+    "no_resend": "Static production source inspection; no dynamic dispatch-count claim."
+  },
+  "main_actually_viewed_png_sha256": {
+    "evidence/integration/save-delete/qa/20261014T095444716Z-browser/delete-dialog-1280.png": "d5054a31a3346e8fe76d3653862273a457ba7da311d328e419d7190ba0737bd1",
+    "evidence/integration/save-delete/qa/20261014T095644685Z-browser/delete-dialog-375.png": "fdaacd3d939c32428b96e83e8874ce7e432f17b0d10b4db3df934c107e2d0955",
+    "evidence/integration/save-delete/qa/20261014T095644685Z-browser/last-deleted-empty-375.png": "1ca25a419fd02284bce4a9ce5297020a0195eb1c71c7ef774778ebc6d5001163"
+  },
+  "paid_calls": 0,
+  "user_scope_steering": "No extra features. Phone-size checks are completed verification of existing responsive UI only; no new phone application or mobile implementation in this task. Finish docs and normal synchronization only.",
+  "limitations": [
+    "Phone375 is computer Chrome viewport/touch emulation only; no physical mobile device or mobile App testing.",
+    "No user DB, paid provider, human timing, OS restart, root launcher or 127-method suite.",
+    "Game win progression is API fixture only; actual UI covers archive/delete/read/reload/process-restart/post-win desktop and mobile.",
+    "Existing Starlette/httpx deprecation warning remains.",
+    "One QA fixture failure retained; first and remaining browser runs jointly cover scopes without repeated sums.",
+    "Main acceptance and Git synchronization remain outside independent QA ownership."
+  ],
+  "final_delivery_owner": "Existing Frontend temporarily owns only README.md/release/UPGRADES.md/docs.json; no product/test/run edits."
+}

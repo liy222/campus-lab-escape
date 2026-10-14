@@ -23,19 +23,15 @@ dialog { border:1px solid #6f866d; border-radius:14px; background:#223127; color
 .save-slot-name::placeholder { color:#9da995; }
 .save-slot-list { display:grid; gap:9px; margin-top:14px; }
 .save-slot { padding:12px; border:1px solid #435542; border-radius:8px; background:#202f25; overflow-wrap:anywhere; }
-.save-slot-legacy { border-style:dashed; }
 .save-slot-heading { display:flex; align-items:center; justify-content:space-between; gap:8px; }
 .save-slot-heading h3 { color:#edf2e7; font-size:13px; }
 .save-slot-kind { flex:none; padding:3px 6px; border:1px solid #596d59; border-radius:10px; color:#c3d0b8; font-size:9px; }
 .save-slot-meta { display:flex; flex-wrap:wrap; gap:5px 10px; margin-top:8px; color:#b9c7b2; font-size:10px; line-height:1.5; }
 .save-slot>small { display:block; margin-top:5px; color:var(--muted); font-size:10px; }
-.save-slot-restore { margin-top:10px; min-height:34px; padding:6px 11px; font-size:11px; }
+.save-slot-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+.save-slot-restore,.save-slot-delete { min-height:44px; padding:8px 13px; font-size:12px; }
+.save-slot-delete { border-color:#74554b; color:#f0cabb; }
 .save-list-error { margin-top:10px; }
-.legacy-save-controls { margin-top:15px; padding-top:12px; border-top:1px solid #40503f; }
-.legacy-save-controls summary { color:#c5d3bc; cursor:pointer; font-size:11px; }
-.legacy-save-controls>p { margin-top:8px; }
-.legacy-save-controls .save-summary { margin-top:10px; }
-.legacy-save-controls .save-actions { margin-top:10px; }
 @media(max-width:480px) { .save-slot-create-row { grid-template-columns:1fr; } .save-slot-create-button { width:100%; } .save-slot-meta { gap:5px 8px; } }
 .lab-scene[data-room="R2"] { background:linear-gradient(0deg,#303c3a 0,#303c3a 18%,transparent 18%),linear-gradient(110deg,#26373b,#3b4d48 60%,#22302f); }
 .lab-scene[data-room="R2"][data-powered="false"] .scene-light:after { background:#64746b; box-shadow:none; }
