@@ -198,3 +198,6 @@ Main matched242sources/63oldtests/6newQA source-report entries/24artifacts and v
 
 ### Save deletion final newline integration handoff, 2026-10-14
 Main temporarily owns only newtests/save-delete/run_browser.mjs CRCRLF-to-CRLF normalization after staged whitespace check. No statement/assertion/product changes; exact CR-stripped byte proof and Node syntax0 in qa-newline-cleanup.json. Original QA source/result/run hashes remain historical and untouched; no further API/build/browser run. Final staged QA adapter binds to separate mechanical proof.
+
+### Save deletion remote sealed / public repository confirmed, 2026-10-14
+Source31313447fc6a124576cb33daeb30a8fc81990e22 normal66-file commit/push0, remote main and GitHubauthor/committerliy222 verified. Current GitHub repository is public; user explicitly says 保留公开, superseding original private-repository requirement. No visibility mutation, site deployment or Actions authorized/performed. Requested archive UI/delete complete, no extra mobile feature or tests. Main metadata-only post-sync root/sync record; all242 product/63oldtests/24QAartifacts remain unchanged. Previous source/doc/QA hashes remain historical, except separately proven new adapter newline normalization.

@@ -187,3 +187,6 @@ Interpret user old-save removal as removing the obsolete single-slot game UI/lis
 
 ### 2026-10-14 scope control after user clarification
 Only requested save management functionality is delivered: remove obsolete single-slot controls/list row and add archive-specific confirmed deletion. Existing responsive layout was only verified in computer Chrome emulation, not a newly added mobile product. No additional feature development or testing after accepted result; final docs/Git only. Delete preserves current game revision/generation and other snapshots; backend legacy data/API remain for compatibility without user-facing controls.
+
+### 2026-10-14 repository visibility confirmation
+GitHub API returned private=false. Main asked because original instruction required private; user explicitly replied 保留公开. Retain public repository and normal sync under that authorization. This does not authorize web hosting, deployment or Actions. No repository visibility mutation was made.

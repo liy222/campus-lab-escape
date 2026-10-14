@@ -12,7 +12,7 @@
 | v3.4 | 灰盒及多时刻存档已验收、推送 | 49a2f92 / 8e491d7 |
 | v4.0 | R1 已验收、提交并推送 | 1047e29 / v4.0-room1-rusty-visual |
 | v4.1 | R2 已验收、提交并推送 | 161d3e6 / v4.1-room2-rusty-visual |
-| v4.2 | 手绘运行画面与交互已验收、提交并推送 | 041514d / v4.2-handpainted |
+| v4.2 | 手绘画面、终检修复与存档管理已验收、推送 | 041514d / 5db122a / 3131344 |
 
 主要视觉基线是 [docs/visual-plan.md](docs/visual-plan.md)，与用户附件逐字节一致。三房固定视角2D、物件特写、玩家终检顺序、出口动画、服务器结算、静音/减少动画、缺图重试及延迟加载已按联合证据接受。原后端/API/AI、多时刻存档、关卡3.4.0/Schema1.4.0保留。
 
@@ -219,3 +219,6 @@ Panelfix5db122a has been committed and pushed to private main; GitHub author/com
 
 ### 2026-10-14 requested save management accepted
 Oldsingle UI removed, archive-specific confirmed delete implemented. Main matches242source/63oldtests/24QAartifacts and3actualPNG. API20/33 and contract13/build pass; firstbrowser71 newfixture failure retained, remaining155 pass jointly, no sum/singlefullgreen. Existing game/cursor/snapshot compatibility protected. Small-screen checks were Chrome emulation, no phone App or physical device claim. Final docs/sync next; no extra features.
+
+### 2026-10-14 current delivery synced
+Final console repair5db122a and save management3131344 are on remote main, author/committerliy222. Oldsingle UI removed; multi-moment save/read/confirmed delete accepted. Repository currently public, explicitly confirmed by user. This supersedes earlier private state records only for current visibility; old release facts stay historical. Sync: evidence/integration/save-delete/sync.json. No extra feature development.
