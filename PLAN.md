@@ -202,3 +202,9 @@ Baseline actual154oldsource match/build0. Deliver85PNG into frontend, calibrate 
 2026-10-09 手绘接入独立联合验收通过：85PNG静态0、唯一构建0，浏览器前段与定向剩余范围共同覆盖路线/存档/重载/进程重启/小屏/缺图重试/结算。首轮新QA adapter失误保留，不合计各轮记录；242源码/389不变量/84证据核对一致。现在仅完成文档与正常私有远端同步 v4.2-handpainted。
 
 2026-10-09 手绘运行接入与正常同步完成：source 041514d1691353deea8a52bfb2206f3678207c3c / tag v4.2-handpainted，私有远端与liy222身份核实；仅随后机械更新同步记录，无新增产品改动或重复测试。
+
+### 2026-10-14 terminal sequence submission correction
+Investigate natural R3 sequence path, fix only necessary frontend event/readiness handling, then independently verify isolated mock R3 route, guard/draft/errors/save/restore/reload and Win. Normal liy222 commit/push after actual passing evidence; AI companion redesign deferred.
+
+### 2026-10-14 terminal sequence submission verified
+Minimal Room3 frontend correction accepted from independent onebuild0 and onefocusedbrowser0. Natural retained-card flow, explicit start, error/correct submission, manual save/restore/reload and R3 EXIT tested on desktop/mobile. Delivery Luna finaldocs, then normal liy222 sync; AI companion redesign remains outside this repair.

@@ -16,12 +16,26 @@ export default function Room3(props: Props) {
   const disabled = props.disabled || !available || marker === 'door_open';
   const object = state.objects.find(object => object.object_id === view), clue = state.clues.find(clue => clue.object_id === view);
   const sequence = view === 'r3_panel' ? state.minigames?.sequence : null;
+  const submitSequence = object?.actions.find(action => action.tool === 'submit_sequence');
+  const startCheck = state.device_states?.exit === 'CARD_ACCEPTED'
+    ? state.objects.find(object => object.object_id === 'exit_door')?.actions.find(action => action.tool === 'interact')
+    : undefined;
+  const sequenceInstruction = sequence?.status === 'completed'
+    ? '终检已通过。请前往实验室出口释放门锁，再推开出口。'
+    : submitSequence
+      ? '终检已启动。按你推理出的次序点选四个设备，再提交顺序。'
+      : state.device_states?.exit === 'CARD_ACCEPTED'
+        ? '门禁卡已接受。请先启动终检；当前顺序草稿会保留。'
+        : '请先在实验室出口使用门禁卡，再返回此处启动终检。现在可以先填写顺序草稿。';
   const onInput = (input: SceneInput) => {
     if (disabled || input.kind === 'circuit-module') return;
-    if (input.kind === 'object') { props.onObject(input.objectId); return; }
+    if (input.kind === 'object') {
+      if (input.objectId === 'r3_panel' && state.puzzle_states?.panel === 'STRIP_INSERTED') onAction('inspect', { object_id: input.objectId });
+      else props.onObject(input.objectId);
+      return;
+    }
     if (input.kind === 'sequence-device') {
-      if (selectedItemId) onAction('use_item', { item_id: selectedItemId, target_id: input.targetId });
-      else if (sequence?.status === 'editing' && props.sequenceDraft.length < sequence.length && sequence.devices.some(device => device.device_id === input.deviceId)) props.onDraft([...props.sequenceDraft, input.deviceId]);
+      if (sequence?.status === 'editing' && props.sequenceDraft.length < sequence.length && sequence.devices.some(device => device.device_id === input.deviceId)) props.onDraft([...props.sequenceDraft, input.deviceId]);
       return;
     }
     if (selectedItemId && input.tool !== 'move') onAction('use_item', { item_id: selectedItemId, target_id: input.targetId });
@@ -40,8 +54,9 @@ export default function Room3(props: Props) {
         {selectedItemId && <button className="button use-button" disabled={disabled} onClick={() => onAction('use_item', { item_id: selectedItemId, target_id: object.object_id })}>使用物品 ↗</button>}
       </div>
       {sequence && <section className="sequence-controls" aria-label="设备顺序草稿" data-sequence-status={sequence.status}>
+        <p className="minigame-instructions sequence-instructions" role="status">{sequenceInstruction}</p>
         <ol className="sequence-draft" aria-label="当前顺序草稿">{Array.from({ length: sequence.length }, (_, index) => { const id = props.sequenceDraft[index], device = sequence.devices.find(device => device.device_id === id); return <li key={index} data-draft-index={index} data-device-id={sequence.status === 'completed' ? undefined : id}><span>{index + 1}</span><strong>{sequence.status === 'completed' ? '已通过' : device ? `${device.symbol} ${device.label}` : '待选择'}</strong></li>; })}</ol>
-        <div className="minigame-actions"><button className="button sequence-clear" disabled={disabled || !props.sequenceDraft.length || sequence.status === 'completed'} onClick={() => props.onDraft([])}>清除草稿</button><button className="button sequence-submit" data-scene-action="submit_sequence" data-target-id={sequence.target_id} disabled={disabled || props.sequenceDraft.length !== sequence.length || sequence.status === 'completed' || !object.actions.some(action => action.tool === 'submit_sequence')} onClick={() => { const submit = object.actions.find(action => action.tool === 'submit_sequence'); if (submit) onAction(submit.tool, { ...submit.arguments, device_ids: props.sequenceDraft }); }}>提交顺序</button></div>
+        <div className="minigame-actions">{startCheck && <button className="button sequence-start" data-scene-action={startCheck.tool} data-target-id="exit_door" disabled={disabled} onClick={() => onAction(startCheck.tool, startCheck.arguments)}>{startCheck.label}</button>}<button className="button sequence-clear" disabled={disabled || !props.sequenceDraft.length || sequence.status === 'completed'} onClick={() => props.onDraft([])}>清除草稿</button><button className="button sequence-submit" data-scene-action="submit_sequence" data-target-id={sequence.target_id} disabled={disabled || props.sequenceDraft.length !== sequence.length || sequence.status === 'completed' || !submitSequence} onClick={() => { if (submitSequence) onAction(submitSequence.tool, { ...submitSequence.arguments, device_ids: props.sequenceDraft }); }}>提交顺序</button></div>
       </section>}
       {clue && <article className="closeup-reading"><small>{clue.title}</small><p>{clue.text}</p></article>}
       {!clue && !sequence && <p className="closeup-description">{object.description}</p>}

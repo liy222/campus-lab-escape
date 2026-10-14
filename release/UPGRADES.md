@@ -105,6 +105,11 @@ Room 1、Room 2 与 Room 3 均使用 Phaser 4.2.1 Canvas、原创 SVG、固定�
 
 QA 在新建私有会话与数据库上运行，没有访问历史用户数据库或凭据；未重跑完整127项后端套件，复用既有冻结后端证据及窄范围 API 接受记录。没有交互启动根目录 CMD、OS 重启、付费调用或真人通关时长验收。桌面1280与移动375×812/812×375为代表性视口；当前房间会预加载本房间状态/特写图，首次欢迎页按需加载不构成加载性能认证。保留的非阻断视觉细节：R3墙面导管与控制台导管略有偏移，钟面纸张区域可见纹理接缝。完整范围与证据见 [`Main 验收`](../evidence/integration/handpainted/accepted.json)、[`独立 QA 结果`](../evidence/integration/handpainted/qa/result.json)、[`素材交付`](../evidence/integration/handpainted/assets/report.json)。QA 付费调用0。手绘接入提交 `041514d1691353deea8a52bfb2206f3678207c3c` 与标签 `v4.2-handpainted` 已推送至私有远端并核实，GitHub 作者与提交者均为 `liy222`。
 
+## Room 3 终检控制台提交：定向联合 QA 接受
+
+终检控制台修复已验证：access_card 仍选中时，可重新打开已插入 research_strip 的控制台并填写四按钮；控制台提供显式操作，调用现有服务器交互进入 `FINAL_CHECK`，再由原有 `submit_sequence` 校验答案。手动存档保存服务器阶段；选中恢复或刷新后，本地按钮草稿会清空，需要重新填写。服务器玩法校验、AI、API、存档格式与同版本存档兼容。
+
+前端 build exit 0；独立浏览器 exit 0、154条检查记录、issues为空，其中102条是 R1/R2 公开 API 前置 fixture 记录，不是154个独立测试。R3真实 UI 在桌面1280与手机375视口覆盖卡片仍选中时打开控制台、显式开始终检、错误顺序409拒绝、清空与正确顺序、手动存档/选中恢复/刷新及 UNLOCKED/OPEN/EXIT。详情见 [Main 验收](../evidence/integration/panel-submit/accepted.json)、[独立 QA 结果](../evidence/integration/panel-submit/qa/result.json)。服务重启并刷新页面即可使用；未验证 OS 重启、根目录启动器交互、真人通关时长或付费模型调用。
 ## 阶段边界
 
 v4.2 三房间视觉交付已按联合证据接受并 SOURCE STOP，commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实。其后的 stage-ui 版式修正已验收，修正 commit `68693a5fc36b16e21b9323e89145ca3195294499` 与 tag `v4.2-stage-ui` 已推送核实。每阶段只交付计划内所需变更，不为升级路线发起付费实验。既有双击启动、手动 AI 模式与 API Key 说明继续有效；QA 未进行付费模型调用、真人音效质量或真人通关时长验收。

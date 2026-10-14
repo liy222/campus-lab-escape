@@ -1,0 +1,134 @@
+{
+  "kind": "independent_static_baseline_investigation_not_formal_QA",
+  "baseline_head": "014921143065624ce77b2df743a441759f228db7",
+  "evidence": [
+    {
+      "path": "frontend/src/components/Room3.tsx",
+      "command": [
+        "git",
+        "show",
+        "014921143065624ce77b2df743a441759f228db7:frontend/src/components/Room3.tsx"
+      ],
+      "exit_code": 0,
+      "git_blob_sha256": "e00c0036f6f7f8d9e88589513c1070bb3b282540e818b505c59b71c753ec8692",
+      "selected_lines": [
+        {
+          "line": 8,
+          "text": "  state: VisibleState; view: string | null; selectedItemId: string | null; disabled: boolean; animation: Receipt | null; reducedMotion: boolean;"
+        },
+        {
+          "line": 14,
+          "text": "  const { state, view, selectedItemId, onAction } = props;"
+        },
+        {
+          "line": 22,
+          "text": "    if (input.kind === 'sequence-device') {"
+        },
+        {
+          "line": 23,
+          "text": "      if (selectedItemId) onAction('use_item', { item_id: selectedItemId, target_id: input.targetId });"
+        },
+        {
+          "line": 27,
+          "text": "    if (selectedItemId && input.tool !== 'move') onAction('use_item', { item_id: selectedItemId, target_id: input.targetId });"
+        },
+        {
+          "line": 40,
+          "text": "        {selectedItemId && <button className=\"button use-button\" disabled={disabled} onClick={() => onAction('use_item', { item_id: selectedItemId, target_id: object.object_id })}>使用物品 ↗</button>}"
+        },
+        {
+          "line": 44,
+          "text": "        <div className=\"minigame-actions\"><button className=\"button sequence-clear\" disabled={disabled || !props.sequenceDraft.length || sequence.status === 'completed'} onClick={() => props.onDraft([])}>清除草稿</button><button className=\"button sequence-submit\" data-scene-action=\"submit_sequence\" data-target-id={sequence.target_id} disabled={disabled || props.sequenceDraft.length !== sequence.length || sequence.status === 'completed' || !object.actions.some(action => action.tool === 'submit_sequence')} onClick={() => { const submit = object.actions.find(action => action.tool === 'submit_sequence'); if (submit) onAction(submit.tool, { ...submit.arguments, device_ids: props.sequenceDraft }); }}>提交顺序</button></div>"
+        },
+        {
+          "line": 49,
+          "text": "    <InventoryBar state={state} selectedItemId={selectedItemId} disabled={disabled} onItem={props.onItem}/>"
+        }
+      ]
+    },
+    {
+      "path": "frontend/src/App.tsx",
+      "command": [
+        "git",
+        "show",
+        "014921143065624ce77b2df743a441759f228db7:frontend/src/App.tsx"
+      ],
+      "exit_code": 0,
+      "git_blob_sha256": "297e17a35ff992b3531dce2774baf531c8e6d04db32f0ef21420eaf369b9f2b3",
+      "selected_lines": [
+        {
+          "line": 74,
+          "text": "  const [selectedItemId, setSelectedItemId] = useState<string | null>(null);"
+        },
+        {
+          "line": 130,
+          "text": "    if (selectedItemId && !next.inventory.some(item => item.item_id === selectedItemId)) setSelectedItemId(null);"
+        },
+        {
+          "line": 195,
+          "text": "    if (selectedItemId) { action('use_item', { item_id: selectedItemId, target_id: objectId }); return; }"
+        },
+        {
+          "line": 277,
+          "text": "        {visual ? <RoomLoader state={state} view={selectedId} selectedItemId={selectedItemId} disabled={disabled || !!drawer} animation={visualReceipt} reducedMotion={presentation.reducedMotion}"
+        },
+        {
+          "line": 283,
+          "text": "          <aside className=\"inventory panel\" aria-labelledby=\"inventory-title\"><div className=\"panel-heading\"><h2 id=\"inventory-title\"><Icon kind=\"bag\"/>我的背包</h2><span className=\"count\">{state.inventory.length}</span></div><p className=\"panel-caption\">收集的道具，会留在这里。</p>{state.inventory.length === 0 ? <div className=\"empty\"><span className=\"empty-icon\"><Icon kind=\"bag\"/></span><p>背包还是空的</p><small>探索场景，寻找可以带走的物品。</small></div> : <div className=\"item-list\">{state.inventory.map(item => <article className={`inventory-item ${selectedItemId === item.item_id ? 'item-selected' : ''}`} key={item.item_id}><h3><Icon kind=\"item\"/>{item.name}</h3><p>{item.description}</p><button className=\"button item-select-button\" aria-pressed={selectedItemId === item.item_id} disabled={disabled} onClick={() => setSelectedItemId(current => current === item.item_id ? null : item.item_id)}>{selectedItemId === item.item_id ? '取消选择' : '选择物品'}</button></article>)}</div>}<button className=\"button subtle inventory-refresh\" disabled={pending || needsSync} onClick={() => action('get_inventory', {})}>查看背包</button></aside>"
+        },
+        {
+          "line": 285,
+          "text": "            {selected && <section className=\"object-details\" aria-labelledby=\"selected-title\"><div className=\"detail-heading\"><span className=\"small-icon\"><Icon kind={selected.kind}/></span><div><small>选中的物件</small><h3 id=\"selected-title\">{selected.name}</h3></div></div><p>{selected.description}</p><div className=\"object-actions\">{selected.actions.some(affordance => affordance.tool === 'inspect') && <button className=\"button\" disabled={pending || needsSync} onClick={() => action('inspect', selected.actions.find(affordance => affordance.tool === 'inspect')!.arguments)}>观察 <span aria-hidden=\"true\">→</span></button>}<button className=\"button primary\" disabled={pending || needsSync || !!won} onClick={() => interact(selected.object_id)}>互动 <span aria-hidden=\"true\">→</span></button>{state.minigames?.circuit?.target_id === selected.object_id && state.minigames.circuit.status === 'completed' && <button className=\"button subtle\" disabled={pending} onClick={() => setInteractionId(selected.object_id)}>查看线路板</button>}{state.minigames?.sequence?.target_id === selected.object_id && state.minigames.sequence.status === 'completed' && <button className=\"button subtle\" disabled={pending} onClick={() => setInteractionId(selected.object_id)}>查看顺序</button>}{selectedItemId && <button className=\"button use-button\" disabled={disabled} onClick={() => action('use_item', { item_id: selectedItemId, target_id: selected.object_id })}>使用物品 ↗</button>}</div>{interactionId === selected.object_id && selected.actions.some(affordance => affordance.tool === 'submit_code') && <form className=\"code-form\" onSubmit={event => { event.preventDefault(); const affordance = selected.actions.find(item => item.tool === 'submit_code'); if (!affordance) return; const code = codes[selected.object_id] || ''; if (!/^[0-9]{1,16}$/.test(code)) { setError('请输入 1–16 位数字。'); return; } action(affordance.tool, { ...affordance.arguments, code }); }}><label htmlFor={`code-${selected.object_id}`}>输入你推理出的数字</label><div><input id={`code-${selected.object_id}`} type=\"text\" inputMode=\"numeric\" autoComplete=\"off\" pattern=\"[0-9]{1,16}\" maxLength={16} required placeholder=\"1–16 位数字\" value={codes[selected.object_id] || ''} disabled={disabled} onChange={event => setCodes(current => ({ ...current, [selected.object_id]: event.target.value }))}/><button className=\"button primary\" disabled={disabled}>提交</button></div></form>}{loginOpenId === selected.object_id && loginAffordance && <form className=\"login-form\" onSubmit={event => { event.preventDefault(); action('submit_login', { target_id: loginAffordance.arguments.target_id, username: loginCredentials.username, password: loginCredentials.password }); }}><h4>登录终端</h4><label htmlFor=\"terminal-username\">用户名</label><input id=\"terminal-username\" name=\"username\" autoComplete=\"username\" value={loginCredentials.username} disabled={disabled} onChange={event => setLoginCredentials(current => ({ ...current, username: event.target.value }))}/><label htmlFor=\"terminal-password\">密码</label><input id=\"terminal-password\" name=\"password\" type=\"password\" autoComplete=\"current-password\" value={loginCredentials.password} disabled={disabled} onChange={event => setLoginCredentials(current => ({ ...current, password: event.target.value }))}/><button className=\"button primary\" disabled={disabled}>提交登录</button></form>}{interactionId === selected.object_id && !selected.actions.some(affordance => affordance.tool === 'submit_code' || affordance.tool === 'submit_login' || affordance.tool === 'submit_circuit' || affordance.tool === 'submit_sequence') && <p className=\"interaction-prompt\">选择已发现的道具，或继续观察这个物件。</p>}{observation && <div className=\"observation\"><span>观察记录</span><p>{observation}</p></div>}</section>}"
+        },
+        {
+          "line": 287,
+          "text": "            {selected && interactionId === selected.object_id && state.minigames?.sequence && state.minigames.sequence.target_id === selected.object_id && <section className=\"minigame-panel sequence-panel\" aria-labelledby=\"sequence-title\"><div className=\"minigame-heading\"><div><p className=\"eyebrow\">设备小游戏 · 顺序操作</p><h3 id=\"sequence-title\">选择控制设备的顺序</h3></div><span className={`minigame-status ${state.minigames.sequence.status === 'completed' ? 'is-complete' : ''}`}>{state.minigames.sequence.status === 'completed' ? '顺序已确认' : '临时草稿'}</span></div><p className=\"minigame-instructions\">按你推理出的次序点选设备。草稿只保存在当前页面；提交后由设备判断结果。</p><ol className=\"sequence-draft\" aria-label=\"当前顺序草稿\">{sequenceDraft.map((deviceId, index) => { const device = state.minigames!.sequence!.devices.find(item => item.device_id === deviceId); return <li key={`${index}-${deviceId}`}><span>{index + 1}</span><strong>{device?.symbol} {device?.label || deviceId}</strong></li>; })}{sequenceDraft.length === 0 && <li className=\"sequence-draft-empty\">尚未选择设备</li>}</ol><div className=\"sequence-devices\" role=\"group\" aria-label=\"可选择的控制设备\">{state.minigames.sequence.devices.map(device => <button type=\"button\" className=\"button sequence-device\" key={device.device_id} data-device-id={device.device_id} disabled={disabled || state.minigames!.sequence!.status === 'completed' || sequenceDraft.length >= state.minigames!.sequence!.length} onClick={() => setSequenceDraft(current => current.length < state.minigames!.sequence!.length ? [...current, device.device_id] : current)} aria-label={`将${device.label}（${device.symbol}）加入当前顺序草稿`}><span aria-hidden=\"true\">{device.symbol}</span>{device.label}</button>)}</div><div className=\"minigame-actions\"><button type=\"button\" className=\"button subtle sequence-clear\" disabled={disabled || sequenceDraft.length === 0 || state.minigames.sequence.status === 'completed'} onClick={() => setSequenceDraft([])}>清除草稿</button><button type=\"button\" className=\"button primary sequence-submit\" disabled={disabled || sequenceDraft.length !== state.minigames.sequence.length || state.minigames.sequence.status === 'completed'} onClick={() => { const affordance = selected.actions.find(item => item.tool === 'submit_sequence'); if (affordance) action('submit_sequence', { ...affordance.arguments, device_ids: sequenceDraft }); }}>提交顺序</button></div></section>}"
+        }
+      ]
+    },
+    {
+      "path": "backend/app/domain/mini_rules.py",
+      "command": [
+        "git",
+        "show",
+        "014921143065624ce77b2df743a441759f228db7:backend/app/domain/mini_rules.py"
+      ],
+      "exit_code": 0,
+      "git_blob_sha256": "9104576bbb47c20d6f230c66a66d83c5e7835fd056dfc735e8a1f00876f1b49b",
+      "selected_lines": [
+        {
+          "line": 66,
+          "text": "            if exposed_sequence and d.exit == 'FINAL_CHECK' and not state.flags['check_done'] and state.status == 'playing':"
+        }
+      ]
+    },
+    {
+      "path": "backend/app/domain/puzzle_rules.py",
+      "command": [
+        "git",
+        "show",
+        "014921143065624ce77b2df743a441759f228db7:backend/app/domain/puzzle_rules.py"
+      ],
+      "exit_code": 0,
+      "git_blob_sha256": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+      "selected_lines": [
+        {
+          "line": 113,
+          "text": "                labels = {\"CARD_ACCEPTED\": \"启动终检\", \"FINAL_CHECK\": \"释放门锁\", \"UNLOCKED\": \"推开出口\"}"
+        },
+        {
+          "line": 245,
+          "text": "                d.exit = \"CARD_ACCEPTED\""
+        }
+      ]
+    }
+  ],
+  "browser_reproduction_executed": false,
+  "reason": "Frontend ownership is concurrent; avoid certifying a potentially stale production dist or mutating source.",
+  "findings": [
+    "Selected persistent access_card routes device click to use_item instead of local draft.",
+    "CARD_ACCEPTED has no panel start control; submit affordance requires FINAL_CHECK from existing exit_door interact.",
+    "Selected card also routes overview panel object click through App.visualObject to use_item."
+  ],
+  "paid_calls": 0
+}

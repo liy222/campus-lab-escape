@@ -1,0 +1,32 @@
+{
+  "operator": "Main integration mechanical final whitespace cleanup",
+  "handoff": "Only two new QA script trailing blank lines, no product/test assertion/old evidence changes; original accepted QA source hashes remain historical execution bytes.",
+  "files": [
+    {
+      "path": "tests/panel-submit/browser-body.mjs",
+      "before_sha256": "109520500a6b0d874f74bba00067621e9530dd32ba9e93ed2e8e0b32a2e4ac1c",
+      "after_sha256": "6f0de18d5e23372413ff8ee20bcc948595a189ab76d95ad903355b1874eed741",
+      "delta": "Removed redundant final blank line only; all prior non-EOF bytes exact.",
+      "node_syntax_command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--check",
+        "tests/panel-submit/browser-body.mjs"
+      ],
+      "node_syntax_exit_code": 0
+    },
+    {
+      "path": "tests/panel-submit/run_browser.mjs",
+      "before_sha256": "48d88f267721e4a7ae504f09c48d026585ebd319daf50d462bebe65ca894dd7b",
+      "after_sha256": "ea331d5721c94b002b666d352cfb161158014e19143730d87c550d22dc32df2b",
+      "delta": "Removed redundant final blank line only; all prior non-EOF bytes exact.",
+      "node_syntax_command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--check",
+        "tests/panel-submit/run_browser.mjs"
+      ],
+      "node_syntax_exit_code": 0
+    }
+  ],
+  "product_source_unchanged": 242,
+  "formal_build_browser_rerun": false
+}

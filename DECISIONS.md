@@ -175,3 +175,9 @@ Use80newmapped PNGs and5clean backgrounds, omit4baked fullscene studies from act
 运行使用80对应PNG+5净背景，原84SVG作为历史成果保留；透明物件按alpha>16边界统一裁切并等比摆放。谜题文字/线路/设备符号依据后端已知状态绘制，避免生成图片成为错误线索来源。适配小屏时同步放大视觉操作板与输入区域以避免相邻热点重叠。规则、API、AI、schema及存档未变。
 
 独立QA只重跑受影响前端与实际路线，不重复旧127后端套件。首轮QA未取消持有门禁卡而误期inspect，保留失败并以公开前置fixture补验未完成R3段；末轮仅补过渡完成后的桌面结算截图。联合范围不称单轮全绿，不相加重复记录。小幅管口错位/钟面纸纹接缝为非阻塞美术组合限制；不声称全部85素材审美验收、真人时长或真实模型质量。详情 evidence/integration/handpainted/accepted.json。
+
+### 2026-10-14 final inspection readiness
+Preserve server FINAL_CHECK submission requirement and puzzle answers. Expose explicit readiness operation in the current panel and keep device draft editing separate from inventory use; verify actual behavior before acceptance. Backend/storage/contracts remain unchanged unless a proven defect requires separate scope.
+
+### 2026-10-14 terminal repair acceptance
+Device buttons edit local sequence regardless of selected item; the installed console opens by inspect while an item remains selected. Explicit console start uses the existing exit_door interact affordance and preserves server FINAL_CHECK validation. Readiness text exposes device operation prerequisites, no password/solution. Existing local draft remains unsaved and clears on restore/reload; server stage/save compatibility unchanged. Independent focused verification accepted; older handpainted QA scopes remain historical, this repair adds the natural held-card path coverage.

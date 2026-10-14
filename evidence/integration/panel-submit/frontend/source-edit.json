@@ -1,0 +1,71 @@
+{
+  "scope": "Frontend owner minimal panel-submit correction; SOURCE STOP; development evidence only",
+  "baseline_head": "014921143065624ce77b2df743a441759f228db7",
+  "files": [
+    "frontend/src/components/Room3.tsx",
+    "evidence/integration/panel-submit/frontend/build-output.txt",
+    "evidence/integration/panel-submit/frontend/source-edit.json"
+  ],
+  "product_sha256": {
+    "frontend/src/components/Room3.tsx": "74a49c254e42c59c24adc7bc481b0bf5c2ceb70c654b14385e9571fb0663b32a"
+  },
+  "root_causes": [
+    "Sequence-device input was redirected to use_item whenever an inventory item remained selected, including the reusable access_card after it was accepted.",
+    "A paper-installed console exposed local sequence editing before FINAL_CHECK, but did not show the existing exit_door start-check affordance or explain why submission remained unavailable.",
+    "Returning from the card reader with access_card selected caused the overview console click to use the card on r3_panel instead of opening its closeup."
+  ],
+  "changes": [
+    "Sequence-device input always edits the validated local sequence draft, independent of selected inventory item.",
+    "A r3_panel overview click sends inspect when the public panel state is STRIP_INSERTED; the empty paper slot and all other overview objects retain existing selected-item semantics.",
+    "The console displays readiness instructions, without disclosing the puzzle answer.",
+    "When public exit state is CARD_ACCEPTED and exit_door exposes interact, an explicit console button uses that existing server affordance tool and arguments to start FINAL_CHECK while retaining the closeup and draft.",
+    "Submit remains disabled until the server provides submit_sequence, the draft has the required length and the sequence is not completed. Explicit use-item controls remain unchanged."
+  ],
+  "commands": [
+    {
+      "command": "Get-Content AGENTS.md -Tail 80; Get-Content frontend/src/components/Room3.tsx",
+      "exit_codes": [0, 0],
+      "purpose": "Read local ownership and current component"
+    },
+    {
+      "command": "rg -n sequence-device|sequence-submit|CARD_ACCEPTED|FINAL_CHECK|submit_sequence|selectedItemId|panel-submit frontend/src/App.tsx frontend/src/game/Room3Scene.ts backend/app evidence/integration/panel-submit docs/level_design.md",
+      "exit_code": 1,
+      "limitation": "The new evidence directory did not yet exist; relevant source matches were returned. No execution claim follows from this search."
+    },
+    {
+      "command": "Read Room3Scene/App/mini_rules/puzzle_rules/package.json and old closeup-panel owner runner; search existing source CSS and evidence paths",
+      "exit_codes": [0, 0, 0, 1],
+      "limitation": "The final optional read referenced a nonexistent frontend/scripts/owner-r3-smoke.mjs. The other source and old runner reads succeeded; no old runner was executed."
+    },
+    {
+      "command": "C:/Program Files/nodejs/node.exe C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js run build",
+      "cwd": "D:/深度能力/frontend",
+      "exit_code": 0,
+      "evidence": "evidence/integration/panel-submit/frontend/build-output.txt",
+      "result": "TypeScript checking and Vite production build passed; existing large-bundle warning retained."
+    },
+    {
+      "command": "git diff -- frontend/src/components/Room3.tsx; git diff --name-only -- frontend/src; Get-FileHash frontend/src/components/Room3.tsx",
+      "exit_code": 0,
+      "result": "Only Room3.tsx changed under frontend/src; current SHA256 recorded above."
+    },
+    {
+      "command": "git rev-parse HEAD; git diff --check -- frontend/src/components/Room3.tsx; Get-FileHash evidence/integration/panel-submit/frontend/build.log",
+      "exit_code": 0,
+      "result": "HEAD matches the assigned baseline; plain whitespace check displayed CR-at-EOL warnings on new lines in the existing CRLF file. The PowerShell command group ended successfully at the hash read, so it does not claim the inner plain whitespace check passed."
+    },
+    {
+      "command": "Copy-Item evidence/integration/panel-submit/frontend/build.log evidence/integration/panel-submit/frontend/build-output.txt; git -c core.whitespace=cr-at-eol diff --check -- frontend/src/components/Room3.tsx; Get-FileHash evidence/integration/panel-submit/frontend/build-output.txt",
+      "exit_code": 0,
+      "result": "CRLF-aware source whitespace check passed. Text evidence is a byte-identical copy of the owner build output; its SHA256 is 36d139fe00d961819fb6f3bd8ed3191d4dc369fba1133106f0c6ba3f46080fa4. Original .log remains an uncommitted runtime output, not a delivery file."
+    }
+  ],
+  "development_browser_runs": 0,
+  "formal_qa_runs_by_owner": 0,
+  "paid_calls": 0,
+  "commits_by_owner": 0,
+  "unresolved_limitations": [
+    "The owner build verifies compilation, not actual gameplay behavior or responsive reachability. Main freeze and independent focused browser QA must verify the natural retained-card path, explicit FINAL_CHECK transition, wrong/correct submission and save/restore/reload.",
+    "No backend/API/assets/schema/storage changes or complete old-route rerun were made."
+  ]
+}

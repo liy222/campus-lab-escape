@@ -1,7 +1,7 @@
 # Status
 
 <!-- upgrade-current-start -->
-## 当前升级进度（2026-10-09）
+## 当前升级进度（2026-10-14）
 
 | 阶段 | 状态 | 版本定位 |
 |---|---|---|
@@ -207,3 +207,9 @@ User now authorizes installing the previously standalone art. Actualbaseline154r
 2026-10-09 手绘游戏画面接入已验收：80个物件/状态/特写PNG与5净背景实际加载，三房原规则/API/AI/同版本多时刻存档保留。独立唯一build0、静态85核验0；浏览器201首轮QA adapter失败与101定向剩余通过、75最终结算画面通过联合覆盖，不相加。Main核对242产品/389不变量/84QA产物，查看11实际PNG。正式发布同步待完成，详见 [接入验收](evidence/integration/handpainted/accepted.json)。
 
 2026-10-09 手绘接入版本已同步：提交041514d / 标签v4.2-handpainted，私有远端作者与提交者liy222。继续使用根目录启动游戏.cmd，旧同版本存档可读取。同步证据 evidence/integration/handpainted/sync.json；前述待同步状态是历史记录。
+
+### 2026-10-14 terminal sequence submission investigation
+User-reported inability to submit sequence is under investigation. Baseline HEAD 014921143065624ce77b2df743a441759f228db7. Frontend and independent QA scopes recorded in evidence/integration/panel-submit/plan.json. Not accepted yet; no paid calls.
+
+### 2026-10-14 terminal sequence submission accepted
+Only Room3.tsx changed; Main242source/18QAartifact matches and4PNG views. Independent build0/browser0(154 records incl102 public prerequisite records, issues[]) confirms retained-card natural panel/draft/start/submit, wrong order, save/restore/reload and EXIT desktop+375. No paid/fullAPI repeat. See evidence/integration/panel-submit/accepted.json. Normal commit/push next.
