@@ -246,3 +246,6 @@ Current realmodel still chooses templates. New userrequest authorizes naturalque
 
 ### 2026-10-18 AI companion accepted
 Real mode sends currentquestion/limitedrecentdialogue/knownpublicevidence and preserves validated naturaltext instead of template replacement. Freepreset unchanged; fullguesscheck local0call/no-count; saves isolate olddialogue by newgeneration. IndependentAPI12/8.988s0/typecheck+build0/desktop13records0/issues[]. Main243/73/16/9hashes match. Syntheticprovider verification only; paid/external/mobile0, no semanticcompleteness claim. Docs/syncnext; evidence/integration/ai-companion/accepted.json.
+
+### 2026-10-18 AI companion synchronized
+Source4648b8a41ce6434781b61b222605859c900b010c is verified on GitHubmain, author/committerliy222. Question-aware shortdialogue and boundedhistory now separate from unchanged freepreset. Focused12methods/build/desktopUI accepted; existing saves compatible. Realmodel quality not exercised; paid/external/mobile0. Sync evidence/integration/ai-companion/sync.json. This metadata epoch changes no acceptedproduct/test/evidence-run bytes.
