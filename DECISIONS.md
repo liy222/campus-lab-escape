@@ -220,3 +220,6 @@ Two actualformatfailures require requesting officialJSONmode, not accepting malf
 
 ### 2026-10-18 limited actual quality acceptance
 Accepttestedimplementation boundaries andQ05login improvement, notallmodelquality. Keepfirstfailedpaidbatch visible andlinkit topre-fixcandidate; never reclassifyit aftersourcefixes. First15suite andfixed3narrow are separateepochs. Stop at4newcalls, no retries or paidjudge; dialoguequalitygeneralization remains a limitation rather than fabricatedpass.
+
+### 2026-10-18 generic next-step uses public actions
+Genericnextstep anddeicticclarificationofit needonecurrentlylegalpublicstep, notalloldpuzzlefacts. Explicitrelations retainknowncitations. Exactdiscoveredclockdata may bediscussed without treatingit asassembledpassword; credential/inputcontexts remainblocked. Existingmanual UI clicksinspect directly, so model-side labels say点击物件查看 whilebackendaffordance labelsstaycompatible. Rejectiontraces retainonlyfourfixedcategories, no rejectedprose.

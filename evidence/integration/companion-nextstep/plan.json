@@ -1,0 +1,54 @@
+{
+  "recorded_at": "2026-10-18T15:23:00.536223+00:00",
+  "baseline_commit": "fe4cc4a7a1bb8e8de88c4f490119e9d38a3a00ec",
+  "task": "Fix ordinary next-step companion rejection reported by player before placing slide, early R2.",
+  "owners": {
+    "companion_nextstep_fix": {
+      "requested_model": "gpt-6.1-sol",
+      "requested_reasoning": "high",
+      "paths": [
+        "backend/app/ai/companion.py",
+        "evidence/integration/companion-nextstep/owner.json"
+      ]
+    },
+    "companion_failure_copy": {
+      "requested_model": "gpt-6-luna",
+      "requested_reasoning": "medium",
+      "paths": [
+        "frontend/src/Assistant.tsx",
+        "evidence/integration/companion-nextstep/frontend.json"
+      ]
+    },
+    "companion_nextstep_qa": {
+      "requested_model": "gpt-6.1-sol",
+      "requested_reasoning": "high",
+      "paths": [
+        "tests/companion-nextstep/",
+        "review/findings/companion-nextstep.md",
+        "evidence/integration/companion-nextstep/qa/"
+      ]
+    },
+    "Main": "Root docs/integration/Git; exact Store trace-code allowlist only; read-only filtered local diagnosis and real fixture executor."
+  },
+  "baseline_product_sha256": {
+    "backend/app/ai/companion.py": "f821f5a241b00316265bbb6d2086c2b555b3d30b97e0d0305c8318a510f68dd9",
+    "backend/app/storage/ai.py": "819e8efe25e9861f084bf86bed602091f58fe507456c85dca58b83f27be4e984",
+    "frontend/src/Assistant.tsx": "d6c1e6f65eea34ba18e88959d001d5b5abcee1aa10fe2f602e767515b223bf26"
+  },
+  "scope": [
+    "Natural, legal, one-step public guidance for generic next-step questions.",
+    "Remove non-citeable context distractions; retain explicit evidence discussion.",
+    "Narrow already-discovered clock-time false-positive correction; keep passwords/solutions rejected.",
+    "Fixed-category rejection trace only, no rejected prose/question/secret logging.",
+    "Single correct companion error explanation; preserve freepreset/legacy and no automatic action/retry."
+  ],
+  "validation": "Focused independent offline tests after SOURCE STOP; one typecheck/build; max2 real new requests using legal cloned public stage, no user game writes.",
+  "paid_limit_cny": 0.16,
+  "maximum_real_calls": 2,
+  "original_project_budget_cny": 10,
+  "no_retries": true,
+  "limits": [
+    "User raw rejected reply was not saved; exact historic guard cause unknown.",
+    "A successful sample is not broad model quality certification."
+  ]
+}

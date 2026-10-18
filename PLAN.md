@@ -256,3 +256,9 @@ Remove genericobserve fromthreevisualcloseups; preserveclicktoinspect/notebook a
 
 ### 2026-10-18 duplicate observe cleanup complete
 Three duplicate visual controls removed, special observe hotspots and click-to-notebook behavior preserved. Exact3filter delta/other240sources unchanged; typecheck+build0. No extra tests or paidcalls; normal synchronization.
+
+### 2026-10-18 fix ordinary next-step discussion
+Resolve genericnextstep context loss/clockfalsepositive, simplifycompanionfailurecopy andretain safe rejectioncategories. Reconstruct earlyR2 publicstage withoutchangingusergame; focusedindependentregression/build andatmost2newrealcalls/.16CNY, normalcommit/push. Historicrawunknown retained aslimitation.
+
+### 2026-10-18 ordinary next-step repair accepted
+Publiclegalstep/clarificationcontext, knownclocknarrowguard andcontrolleddiagnostics fixed; companionfailurecopy singular andaccurate. Actual2newresponses delivered inreportedearlyR2clone; finalinspectwordingalignedwithdirectobjectclick onlyofflinechecked. Focusedjointregression+unique build0; preservefailednewQAepochs andsemanticslimits, thennormalGitHub sync.

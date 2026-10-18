@@ -329,6 +329,8 @@ class AIStoreMixin:
             for key in ('tool', 'status', 'stop_reason', 'outcome', 'error_code', 'code'):
                 value = entry.get(key)
                 allowed = set(TOOL_MODELS) | STOP_REASONS | {'completed', 'stopped', 'no_suggestion', 'proposed', 'committed', 'cancelled', 'rejected', 'WRONG_CODE', 'PRECONDITION_FAILED', 'NOT_VISIBLE', 'BAD_ARGUMENT', 'INVALID_TOOL', 'PROPOSAL_REJECTED', 'UNEXECUTED_ACTION_CLAIM'}
+                if key == 'code':
+                    allowed |= {'COMPANION_FORMAT', 'COMPANION_REFERENCE', 'COMPANION_CONTENT', 'COMPANION_CONTEXT'}
                 if isinstance(value, str) and value in allowed:
                     safe[key] = value
             tool = safe.get('tool')

@@ -1,0 +1,194 @@
+[
+  {
+    "check": "persisted-fixed-rejection-category-no-raw",
+    "trace": [
+      {
+        "call_id": null,
+        "cost_upper_cny": null,
+        "finish_reason": "stop",
+        "kind": "provider_result",
+        "provider": "deepseek",
+        "reported_model": "deepseek-flash",
+        "requested_model": "deepseek-flash",
+        "usage": {
+          "completion_tokens": 19,
+          "prompt_tokens": 37
+        }
+      },
+      {
+        "call_id": null,
+        "code": "COMPANION_FORMAT",
+        "cost_upper_cny": null,
+        "kind": "runtime_error",
+        "reported_model": null,
+        "requested_model": null,
+        "usage": null
+      }
+    ]
+  },
+  {
+    "check": "persisted-fixed-rejection-category-no-raw",
+    "trace": [
+      {
+        "call_id": null,
+        "cost_upper_cny": null,
+        "finish_reason": "stop",
+        "kind": "provider_result",
+        "provider": "deepseek",
+        "reported_model": "deepseek-flash",
+        "requested_model": "deepseek-flash",
+        "usage": {
+          "completion_tokens": 19,
+          "prompt_tokens": 37
+        }
+      },
+      {
+        "call_id": null,
+        "code": "COMPANION_FORMAT",
+        "cost_upper_cny": null,
+        "kind": "runtime_error",
+        "reported_model": null,
+        "requested_model": null,
+        "usage": null
+      }
+    ]
+  },
+  {
+    "check": "persisted-fixed-rejection-category-no-raw",
+    "trace": [
+      {
+        "call_id": null,
+        "cost_upper_cny": null,
+        "finish_reason": "stop",
+        "kind": "provider_result",
+        "provider": "deepseek",
+        "reported_model": "deepseek-flash",
+        "requested_model": "deepseek-flash",
+        "usage": {
+          "completion_tokens": 19,
+          "prompt_tokens": 37
+        }
+      },
+      {
+        "call_id": null,
+        "code": "COMPANION_CONTENT",
+        "cost_upper_cny": null,
+        "kind": "runtime_error",
+        "reported_model": null,
+        "requested_model": null,
+        "usage": null
+      }
+    ]
+  },
+  {
+    "check": "persisted-fixed-rejection-category-no-raw",
+    "trace": [
+      {
+        "call_id": null,
+        "cost_upper_cny": null,
+        "finish_reason": "stop",
+        "kind": "provider_result",
+        "provider": "deepseek",
+        "reported_model": "deepseek-flash",
+        "requested_model": "deepseek-flash",
+        "usage": {
+          "completion_tokens": 19,
+          "prompt_tokens": 37
+        }
+      },
+      {
+        "call_id": null,
+        "code": "COMPANION_CONTENT",
+        "cost_upper_cny": null,
+        "kind": "runtime_error",
+        "reported_model": null,
+        "requested_model": null,
+        "usage": null
+      }
+    ]
+  },
+  {
+    "check": "persisted-fixed-rejection-category-no-raw",
+    "trace": [
+      {
+        "call_id": null,
+        "cost_upper_cny": null,
+        "finish_reason": "stop",
+        "kind": "provider_result",
+        "provider": "deepseek",
+        "reported_model": "deepseek-flash",
+        "requested_model": "deepseek-flash",
+        "usage": {
+          "completion_tokens": 19,
+          "prompt_tokens": 37
+        }
+      },
+      {
+        "call_id": null,
+        "code": "COMPANION_REFERENCE",
+        "cost_upper_cny": null,
+        "kind": "runtime_error",
+        "reported_model": null,
+        "requested_model": null,
+        "usage": null
+      }
+    ]
+  },
+  {
+    "check": "strict-runtime-and-separate-store-no-state-delta",
+    "full_visible_state_compared": true,
+    "paid_calls": 0
+  },
+  {
+    "check": "rejected-no-state-delta",
+    "boundary": "Runtime",
+    "answer": "我帮你打开电源箱。",
+    "question": "下一步怎么做",
+    "refs": [],
+    "stop_reason": "MODEL_INVALID_OUTPUT"
+  },
+  {
+    "check": "rejected-no-state-delta",
+    "boundary": "Store",
+    "answer": "我帮你打开电源箱。",
+    "question": "下一步怎么做",
+    "refs": [],
+    "stop_reason": "MODEL_INVALID_OUTPUT"
+  },
+  {
+    "check": "rejected-no-state-delta",
+    "boundary": "Runtime",
+    "answer": "当前状态是CLOSED。",
+    "question": "下一步怎么做",
+    "refs": [],
+    "stop_reason": "MODEL_INVALID_OUTPUT"
+  },
+  {
+    "check": "rejected-no-state-delta",
+    "boundary": "Store",
+    "answer": "当前状态是CLOSED。",
+    "question": "下一步怎么做",
+    "refs": [],
+    "stop_reason": "MODEL_INVALID_OUTPUT"
+  },
+  {
+    "check": "rejected-no-state-delta",
+    "boundary": "Runtime",
+    "answer": "先观察电源箱。",
+    "question": "下一步怎么做",
+    "refs": [
+      "r2_maintenance_clue"
+    ],
+    "stop_reason": "MODEL_INVALID_OUTPUT"
+  },
+  {
+    "check": "rejected-no-state-delta",
+    "boundary": "Store",
+    "answer": "先观察电源箱。",
+    "question": "下一步怎么做",
+    "refs": [
+      "r2_maintenance_clue"
+    ],
+    "stop_reason": "MODEL_INVALID_OUTPUT"
+  }
+]

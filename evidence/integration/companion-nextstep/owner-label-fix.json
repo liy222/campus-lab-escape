@@ -1,0 +1,60 @@
+{
+  "epoch": "companion-nextstep observe label wording only",
+  "operator": "companion_nextstep_fix Owner",
+  "recorded_at": "2026-10-18T15:34:14.770079+00:00",
+  "status": "SOURCE STOP",
+  "authorization": "Main exact label-only followup after two actually displayed samples; no further tests or paid calls authorized to Owner.",
+  "files": [
+    "backend/app/ai/companion.py",
+    "evidence/integration/companion-nextstep/owner-label-fix.json"
+  ],
+  "before_sha256": "4311f666aa48ffc0fd05689e3b87cb7c5d6f7e6083667b0984e2ac0434c11d6b",
+  "after_sha256": "5fd0dbfa40689277b70f92f03168da3fae8229be8a5510ee020dbfb1523ac940",
+  "preceding_owner_sha256_preserved": "3bdab70ec60fea5f26938393e77ac8cbed44d952f20a03123f56b98371e7c4b4",
+  "preceding_owner_unchanged": true,
+  "exact_delta": [
+    {
+      "location": "SYSTEM",
+      "change": "One added sentence: ordinary observation is direct scene-object click, never finding an observe button; dedicated eyepiece hotspots follow provided operation instructions."
+    },
+    {
+      "location": "provider_companion_context visible_objects actions",
+      "change": "Only inspect tool label is humanized as 点击{name}查看; all non-inspect tool labels retained."
+    },
+    {
+      "location": "provider_companion_context director available_action",
+      "change": "Only observe goal label becomes 点击{obj[name]}查看; take/interact labels retained."
+    }
+  ],
+  "actual_commands": [
+    {
+      "tool_chunk": "6cd44d",
+      "invocation": "Read current SYSTEM/public director excerpts and preceding Owner report header",
+      "exit_code": 0
+    },
+    {
+      "invocation": "Inline Python byte-preserving three exact wording substitutions and new report write",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "line_endings_preserved": true,
+  "backend_API_actions_unchanged": true,
+  "old_evidence_modified": false,
+  "formal_QA_runs": 0,
+  "development_test_runs": 0,
+  "paid_calls": 0,
+  "network_calls": 0,
+  "database_access": false,
+  "commits": 0,
+  "limitations": [
+    "This wording-only source epoch has not been paid-retested. Prior two successful real samples belong to preceding source epoch.",
+    "Main/QA own only planned narrow label verification; no fresh whole-suite claim."
+  ]
+}

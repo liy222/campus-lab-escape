@@ -1,0 +1,18 @@
+{
+  "status": "SOURCE STOP",
+  "scope": "Companion-mode stopped replies only; mock, preset hints and legacy presentation retain their prior rendering.",
+  "files": {
+    "frontend/src/Assistant.tsx": "b158b0fb94e9bfc3908a3877a98f96fec4c0ea7d41221a7cb39d170bb765221a"
+  },
+  "behavior": [
+    "Real companion stopped replies show one concise reason and state that no hint count was added and progress was preserved.",
+    "Stop-reason explanations remain visible without rendering the generic backend answer a second time.",
+    "Backend storage increments hint_count and revision only in the successful non-stopped settlement branch (backend/app/storage/ai.py:457-468)."
+  ],
+  "checks": [
+    "No test/build/commit/paid call run by this owner; Main owns unified build verification."
+  ],
+  "limitations": [
+    "No UI screenshot needed; no UI behavior or controls changed."
+  ]
+}

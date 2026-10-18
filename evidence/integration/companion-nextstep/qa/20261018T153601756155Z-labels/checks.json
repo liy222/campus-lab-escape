@@ -1,0 +1,66 @@
+[
+  {
+    "check": "synthetic-click-prose-delivery",
+    "answer": "可以直接点击电源箱查看，先确认它的外观和当前提供的操作，再决定怎样继续。",
+    "context": {
+      "question": "下一步怎么做",
+      "public_progress": {
+        "room": "设备实验室",
+        "status": "仍在探索",
+        "device_states": []
+      },
+      "visible_objects": [
+        {
+          "name": "电源箱",
+          "actions": [
+            "点击电源箱查看"
+          ]
+        }
+      ],
+      "visible_object_catalog": [
+        {
+          "name": "电源箱"
+        },
+        {
+          "name": "电脑"
+        },
+        {
+          "name": "维护说明"
+        },
+        {
+          "name": "控制室门"
+        }
+      ],
+      "inventory": [],
+      "open_passages": [
+        {
+          "name": "实验准备室"
+        }
+      ],
+      "known_evidence": [],
+      "allowed_clue_refs": [],
+      "director": {
+        "focus": "电源箱",
+        "activity": "观察当前可见物件，不预报观察结果",
+        "available_action": "点击电源箱查看",
+        "already_observed": false
+      },
+      "related_topics": [],
+      "recent_history": [
+        {
+          "kind": "action",
+          "summary": "观察"
+        },
+        {
+          "kind": "action",
+          "summary": "通过通路"
+        },
+        {
+          "kind": "action",
+          "summary": "观察：维护说明"
+        }
+      ]
+    },
+    "actual_model_retest": false
+  }
+]

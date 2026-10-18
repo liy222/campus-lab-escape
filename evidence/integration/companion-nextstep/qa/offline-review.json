@@ -1,0 +1,52 @@
+{
+  "recorded_at": "2026-10-18T15:33:21.302760+00:00",
+  "status": "Offline joint acceptance with one corrected new-QA trace expectation; real quality pending",
+  "candidate": "evidence/integration/companion-nextstep/candidate.json",
+  "candidate_sha256": "9faa3c17eb8d2545cc7229c922c6c15cd170cdd9f00d3d2d8c0d2ccc4c57bfa9",
+  "first_run": {
+    "path": "evidence/integration/companion-nextstep/qa/20261018T153045999137Z-offline/run.json",
+    "sha256": "539878d6d1f160cb509e07650c501e36954abba1aaf87324afff377008bb61fa",
+    "methods": 8,
+    "seconds": 5.491,
+    "exit_code": 1,
+    "failures": 5,
+    "cause": "One new QA method expected no fixed null metadata in persisted trace; product categories correct."
+  },
+  "narrow_run": {
+    "path": "evidence/integration/companion-nextstep/qa/20261018T153140348851Z-trace-narrow/run.json",
+    "sha256": "b6007e23c96b67e3db0e5e234f180de1eacd4480d4711c88145b3171f9bff13a",
+    "methods": 1,
+    "seconds": 1.191,
+    "exit_code": 0
+  },
+  "product_fixes": 0,
+  "second_full_green_claim": false,
+  "source243_unchanged": true,
+  "old219_unchanged": true,
+  "qa_source_sha256": {
+    "tests/companion-nextstep/prepare.py": "c489702ca5eabf518e59dbeb25213e9f8a84c2b2aec2f8a4ecf0973a90b38ff2",
+    "tests/companion-nextstep/run_regression.py": "ca1f79315445708271c83c0edd6c7c1b402557b3952a90d5a9ada954343ae20f",
+    "tests/companion-nextstep/run_narrow.py": "d97c6c76abab681c9508350e5068e2be5a19b6e88b20edf6733c486e8b48b6da",
+    "review/findings/companion-nextstep.md": "933a4272245634e771c9498c75f9e99362cf06731a88ea2c95f3ba399b160d51"
+  },
+  "artifact_sha256": {
+    "evidence/integration/companion-nextstep/qa/preflight-review.json": "b7aca91615dc59b9f880c343b132ba41f8213de990cf5fa499d4bc50767c7115",
+    "evidence/integration/companion-nextstep/qa/preparation.json": "e341635acf6b942640a50c0e8a46aeb2973ccac712fb656e620c2e6738447813",
+    "evidence/integration/companion-nextstep/qa/20261018T153045999137Z-offline/checks.json": "36d25f63e5182bfc4ed59e875d2dd0209ce8e7eca263598a9b9fd7286af3f882",
+    "evidence/integration/companion-nextstep/qa/20261018T153045999137Z-offline/run.json": "539878d6d1f160cb509e07650c501e36954abba1aaf87324afff377008bb61fa",
+    "evidence/integration/companion-nextstep/qa/20261018T153045999137Z-offline/unittest.txt": "d4a188a60bd7a7c43292cf4e1b60266a2b11c0d39e9046de7eaec92bc082d54b",
+    "evidence/integration/companion-nextstep/qa/20261018T153140348851Z-trace-narrow/checks.json": "beada6841289fb39573d35d538630e6f8f435b49b1fbe88a216e66b6f4a59928",
+    "evidence/integration/companion-nextstep/qa/20261018T153140348851Z-trace-narrow/run.json": "b6007e23c96b67e3db0e5e234f180de1eacd4480d4711c88145b3171f9bff13a",
+    "evidence/integration/companion-nextstep/qa/20261018T153140348851Z-trace-narrow/unittest.txt": "86cd726d9f4e8dbff77d8849311b283566667ffb9f12665a2ba0a3e3bde61751"
+  },
+  "QA_paid_calls": 0,
+  "QA_network": false,
+  "QA_canonical_database_access": false,
+  "QA_builds": 0,
+  "QA_UI_runs": 0,
+  "limits": [
+    "Synthetic delivery does not grade actual provider text.",
+    "Original user raw not saved; exact historical reproduction unavailable.",
+    "Broad actual model quality and time-like confirmation question handling remain limited."
+  ]
+}

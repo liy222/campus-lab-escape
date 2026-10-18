@@ -1,0 +1,58 @@
+{
+  "recorded_at": "2026-10-18T15:40:14.696589+00:00",
+  "operator": "Main integration",
+  "verdict": "Limited acceptance of next-step failure correction and preserved guard boundaries.",
+  "independent_review": "evidence/integration/companion-nextstep/qa/final-review.json",
+  "independent_review_sha256": "c6e07159cb1468688b170b1dec9e91992919f3af62c093fb15cf0617bee02654",
+  "candidate": "evidence/integration/companion-nextstep/candidate-label-fixed.json",
+  "candidate_sha256": "dc3324277ef5151a08f9eecf944c7db3aa72298f547d6d56369adb6e43d969de",
+  "verified_current_sources": 243,
+  "old_files_preserved": 219,
+  "matched_QA_runs": 4,
+  "matched_QA_sources": 6,
+  "matched_QA_artifacts": 16,
+  "matched_paid_artifacts": 8,
+  "offline_epochs": [
+    {
+      "run": "20261018T153045999137Z-offline",
+      "methods": 8,
+      "exit_code": 1,
+      "failure": "New QA trace shape expected absent null metadata; seven methods passed."
+    },
+    {
+      "run": "20261018T153140348851Z-trace-narrow",
+      "methods": 1,
+      "exit_code": 0,
+      "scope": "Only corrected new trace assertion method; no product fix."
+    },
+    {
+      "run": "20261018T153601756155Z-labels",
+      "methods": 2,
+      "exit_code": 1,
+      "failure": "New static quote expectation; actual HTTP label delivery passed."
+    },
+    {
+      "run": "20261018T153709582024Z-label-static-narrow",
+      "methods": 1,
+      "exit_code": 0,
+      "scope": "Only remaining quote-aware label static method."
+    }
+  ],
+  "Main_frontend_build_exit_code": 0,
+  "browser_tests": 0,
+  "actual_real_calls": 2,
+  "cost_upper_cny": 0.00372936,
+  "new_unknown_calls": 0,
+  "real_N01": "Ordinary next-step question displayed a grounded local observation suggestion at legal clone of reported early R2 stage.",
+  "real_N02": "Actual followup delivered with true prior answer; observe-button wording was weak and remains historical.",
+  "final_label_fix": "Only model-side action wording/SYSTEM changed after actual paid samples; focused offline Runtime/Store and label checks passed, not paid-retested.",
+  "user_gameplay_DB_changes": 0,
+  "no_automatic_action_or_retry": true,
+  "limitations": [
+    "Original user rejected raw not saved, exact historical guard cause unknown.",
+    "No all-scenario model quality certification; prose guard remains heuristic.",
+    "No new browser rendering/human-playthrough validation.",
+    "Current running backend needs restart to load fix; same-version saves remain compatible."
+  ],
+  "stop": "Product/test/paid STOP; final short docs and normal liy222 commit/push only."
+}

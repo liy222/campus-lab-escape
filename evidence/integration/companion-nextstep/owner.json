@@ -1,0 +1,376 @@
+{
+  "epoch": "companion-nextstep",
+  "operator": "companion_nextstep_fix Owner",
+  "status": "SOURCE STOP",
+  "recorded_at": "2026-10-18T15:28:56.459038+00:00",
+  "files_written": [
+    "backend/app/ai/companion.py",
+    "evidence/integration/companion-nextstep/owner.json"
+  ],
+  "product_files_changed": [
+    "backend/app/ai/companion.py"
+  ],
+  "source_sha256": {
+    "backend/app/ai/companion.py": "4311f666aa48ffc0fd05689e3b87cb7c5d6f7e6083667b0984e2ac0434c11d6b",
+    "backend/app/storage/ai.py": "6d7c98627f5219ad678815f0750abeb202b290adac769004059c77c433d8cdce",
+    "backend/app/ai/provider.py": "547b9c4510e2e3e666bbeb08ea3898986c4d8b8fe266a0d024a584c83227bcbe",
+    "backend/app/ai/hints.py": "b6d3773d1066dd30d91691b60b2de89f150ec55ffb7ab9560cfd8e943ecbecb3"
+  },
+  "actual_commands": [
+    {
+      "tool_chunk": "ddc4ca",
+      "invocation": "Get-Content AGENTS.md and companion.py",
+      "exit_code": 0,
+      "truncated": true
+    },
+    {
+      "tool_chunk": "cc8fe4",
+      "invocation": "rg companion entrypoints/evidence paths and Get-Content companion.py first235",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "fdbbfc",
+      "invocation": "Get-Content Store history/finalizer, hints.py and original companion tests",
+      "exit_code": 0,
+      "truncated": true
+    },
+    {
+      "tool_chunk": "5452df",
+      "invocation": "Get-Content historical quality review/owner reports and narrow QA",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "b71dd2",
+      "invocation": "Read hints and regression excerpts, then rg AGENTS current keyword",
+      "exit_code": 1,
+      "note": "Reads succeeded; final rg no matching keyword caused exit1; not a product execution failure."
+    },
+    {
+      "tool_chunk": "66e0c4",
+      "invocation": "Read AGENTS tail/provider response validation and rule projection locations",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "342b4f",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Pure-domain memory all59 public route-prefix context constructions and time-answer guards",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "a14e4d",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Pure-domain initial/pre-slide/R2early context details and shared validation probes",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "91224d",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Read12 historical safe recorded provider results and replay current strict parser/guard against archived public state",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "c88845",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Write initial diagnosis-only Owner report",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "28faa4",
+      "command": null,
+      "invocation": "Read Main safe local diagnosis and Store trace sanitizer/type excerpts",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "5f20e0",
+      "command": null,
+      "invocation": "Read sanitizer whitelist; rg with nonexistent level.py and invalid PowerShell glob path",
+      "exit_code": 1
+    },
+    {
+      "tool_chunk": "dc16b4",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Apply approved companion-only context/time/trace changes preserving CRLF",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "2ed09b",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Narrow next-step intent and verify unlocked move passage",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "429e44",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "AST+59 memory context development, inspect public door action shape",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "838a24",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Shared generic legal-next-step context narrowing",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "4508d9",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Align SYSTEM guidance and guard new internal field names",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "0a1f73",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Pure-domain/guard/synthetic-runtime development epoch",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "28fb65",
+      "command": null,
+      "invocation": "Read product diff and Main trace handoff evidence",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "3cb3fd",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Add bounded action-followup helper and provisional parser ProviderError branch",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "025e54",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Exclude named object aliases from generic action-followup",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "2e1b1f",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Remove unnecessary provisional ProviderError branch after corrected static parser assumption; no formal run existed",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "ff2cec",
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Final bounded followup/relation/strictJSON/error-category development checks",
+      "exit_code": 0
+    }
+  ],
+  "findings": [
+    {
+      "id": "clock-colon-false-positive",
+      "status": "offline reproduced, not user root cause established",
+      "evidence": "Discovered prefix9 clock answer is rejected by Solution or credential-like text: looks_like_solution removes colon and merges21:17 into2117. Both ASCII/fullwidth colon versions trigger. Ordinary question asking whether clock21:17 represents experiment start time also triggers0call solution-check policy.",
+      "minimal_direction": "If repaired, use a narrowly contextual discovered-clock-time exception in validation, while preserving explicit password/code confirmation and all other full-solution protection. No broad numeric guard removal."
+    },
+    {
+      "id": "wire-evidence-not-citeable",
+      "status": "offline reproduced context inconsistency / model failure risk",
+      "evidence": "Generic next-step prefix1 shows r1_clock_clue in known_evidence but allowed refs empty; same natural observation suggestion with that ref rejected, with[] accepted. Prefix10,19,40 likewise show unrelated old evidence with no allowed refs because generic question does not match procedural cleanup.",
+      "minimal_direction": "Do not expand allowed refs. Suppress nonciteable evidence in model-facing context for generic next-step discussion and keep active relation evidence for explicit relationship questions."
+    },
+    {
+      "id": "director-action-information-loss",
+      "status": "static and offline confirmed information loss, no model outcome claim",
+      "evidence": "At prefix6 pre-slide, local director has use/sample_slide/r1_microscope but provider director retains only focus=显微镜. Initial/pre-slide/R2early contexts build successfully; legal actions and inventory remain independently visible.",
+      "minimal_direction": "For generic next-step questions, send one structured natural-public guidance retaining action kind/label and current carried item where required; do not return a preset answer or expose hidden results."
+    },
+    {
+      "id": "historical-formats-and-internals",
+      "status": "historical only",
+      "evidence": "Archived Q01/Q03 bare prose fail strict JSON; archived C08 fails internal vocabulary. Current JSON-mode optin already shipped afterward; no evidence this user failure is same category. Current output max600 tokens/hard360 chars can truncate or overrun but no new length/finish_reason proof yet.",
+      "minimal_direction": "Keep strict JSON/single call/token budget unchanged pending actual metadata. Prompt shorter2sentence reply and explicit JSON example if Main approves; do not auto-wrap bare prose or silently truncate."
+    }
+  ],
+  "proposed_scope": [
+    "backend/app/ai/companion.py only after Main design GO",
+    "Store ai.py diagnostic category recommendation only until separately authorized"
+  ],
+  "main_metadata_pending": false,
+  "user_failure_root_cause_verified": false,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "real_game_database_access": false,
+  "canonical_budget_access": false,
+  "env_file_access": false,
+  "commits": 0,
+  "spawned_agents": 0,
+  "formal_QA_runs": 0,
+  "limitations": [
+    "Pure domain route fixtures and authored guard examples demonstrate deterministic risks, not real provider behavior.",
+    "User room description is ambiguous; no assumed R2 or pre-slide actual state.",
+    "No internal guard broadening, citation whitelist expansion, full solution exposure, natural prose fallback or extra model attempt proposed.",
+    "No claim that shortening or richer public guidance guarantees future model quality."
+  ],
+  "diagnosis_before_GO": {
+    "status": "READ-ONLY DIAGNOSIS / DESIGN WAITING MAIN GO",
+    "recorded_at": "2026-10-18T15:20:20.235814+00:00",
+    "source_sha256": {
+      "backend/app/ai/companion.py": "f821f5a241b00316265bbb6d2086c2b555b3d30b97e0d0305c8318a510f68dd9",
+      "backend/app/storage/ai.py": "819e8efe25e9861f084bf86bed602091f58fe507456c85dca58b83f27be4e984",
+      "backend/app/ai/provider.py": "547b9c4510e2e3e666bbeb08ea3898986c4d8b8fe266a0d024a584c83227bcbe",
+      "backend/app/ai/hints.py": "b6d3773d1066dd30d91691b60b2de89f150ec55ffb7ab9560cfd8e943ecbecb3"
+    },
+    "findings": [
+      {
+        "id": "clock-colon-false-positive",
+        "status": "offline reproduced, not user root cause established",
+        "evidence": "Discovered prefix9 clock answer is rejected by Solution or credential-like text: looks_like_solution removes colon and merges21:17 into2117. Both ASCII/fullwidth colon versions trigger. Ordinary question asking whether clock21:17 represents experiment start time also triggers0call solution-check policy.",
+        "minimal_direction": "If repaired, use a narrowly contextual discovered-clock-time exception in validation, while preserving explicit password/code confirmation and all other full-solution protection. No broad numeric guard removal."
+      },
+      {
+        "id": "wire-evidence-not-citeable",
+        "status": "offline reproduced context inconsistency / model failure risk",
+        "evidence": "Generic next-step prefix1 shows r1_clock_clue in known_evidence but allowed refs empty; same natural observation suggestion with that ref rejected, with[] accepted. Prefix10,19,40 likewise show unrelated old evidence with no allowed refs because generic question does not match procedural cleanup.",
+        "minimal_direction": "Do not expand allowed refs. Suppress nonciteable evidence in model-facing context for generic next-step discussion and keep active relation evidence for explicit relationship questions."
+      },
+      {
+        "id": "director-action-information-loss",
+        "status": "static and offline confirmed information loss, no model outcome claim",
+        "evidence": "At prefix6 pre-slide, local director has use/sample_slide/r1_microscope but provider director retains only focus=显微镜. Initial/pre-slide/R2early contexts build successfully; legal actions and inventory remain independently visible.",
+        "minimal_direction": "For generic next-step questions, send one structured natural-public guidance retaining action kind/label and current carried item where required; do not return a preset answer or expose hidden results."
+      },
+      {
+        "id": "historical-formats-and-internals",
+        "status": "historical only",
+        "evidence": "Archived Q01/Q03 bare prose fail strict JSON; archived C08 fails internal vocabulary. Current JSON-mode optin already shipped afterward; no evidence this user failure is same category. Current output max600 tokens/hard360 chars can truncate or overrun but no new length/finish_reason proof yet.",
+        "minimal_direction": "Keep strict JSON/single call/token budget unchanged pending actual metadata. Prompt shorter2sentence reply and explicit JSON example if Main approves; do not auto-wrap bare prose or silently truncate."
+      }
+    ]
+  },
+  "authorization": "Main design GO and followup generic-action context/clock-time/four-category instructions. Main separately owns Store trace allowlist change in trace-handoff.json.",
+  "local_failure_evidence": "evidence/integration/companion-nextstep/local-diagnosis.json",
+  "actual_user_stage": "Main exported five recent normal-finish MODEL_INVALID_OUTPUT attempts at R2, cabinetLOCKED, computerOFF, powerboxCLOSED, microscopeEMPTY, inventory empty, four discovered clues. Owner reconstructed matching public stage from10 legal pure-domain actions.",
+  "implementation": [
+    "Generic next-step intent with a valid current public goal receives one model-facing natural activity plus legal action label/observation status or current carried-item name. Existing local director and full current name-only catalog remain; no preset reply substitutes for generated prose.",
+    "That action discussion narrows shared Runtime/Store context known_evidence/allowed_clue_refs/related_topics to[]; explicit evidence/why-relation questions and active puzzle stages without a valid action goal retain their original references. Model-facing procedural cleanup also handles ordinary next-step requests.",
+    "A bounded referential clarification of the last generic action question inherits the current public-action scope only when there is no named object or explicit puzzle/evidence term; history is not new fact. True clock/maintenance format relationship questions retain supporting evidence.",
+    "Shared answer validation narrowly exempts only the actually discovered clock clue same original HH:MM value discussed with explicit clock/time prose. Explicit password/answer/input/assembly contexts remain guarded; a separate pure refusal sentence without numbers can coexist with a clock explanation. All other numeric values remain in the whole-solution scan.",
+    "Global looks_like_solution and local is_solution_check policies remain unchanged. Internal-vocabulary guard also covers the four new guidance field names; unknown facts/references/completion/credential/whole-answer/360char limits remain.",
+    "Runtime rejection trace records only fixed runtime_error/code categories COMPANION_FORMAT, COMPANION_REFERENCE, COMPANION_CONTENT, COMPANION_CONTEXT. Never persist rejected raw prose/question/exception text. Existing provider network errors do not gain content categories. Main separately allows these code values through Store sanitizer.",
+    "Strict JSON, json_mode optin, one measured call, max600 output tokens, no tools/proposals/actions/retries, provider/payment/auth/budget and game/save schema behavior unchanged."
+  ],
+  "development_epochs": [
+    {
+      "tool_chunk": "0a1f73",
+      "exit_code": 0,
+      "scope": "Owner development before bounded-followup addition; historical epoch, not final full-suite claim",
+      "AST_files": 1,
+      "pure_memory_public_route_prefixes": 59,
+      "guidance_kind_counts": {
+        "observe": 19,
+        "take": 5,
+        "use": 4,
+        "interact": 12,
+        "move": 3
+      },
+      "local_stage_recreated": true,
+      "positive_authored_answers": 6,
+      "negative_authored_answers": 9,
+      "fixed_categories_checked": 4,
+      "synthetic_runtime_provider_attempts": 3,
+      "context_rejection_provider_attempts": 0
+    },
+    {
+      "tool_chunk": "ff2cec",
+      "exit_code": 0,
+      "scope": "Final candidate narrow Owner development after bounded-followup change",
+      "AST_files": 1,
+      "bounded_action_followup": 1,
+      "explicit_relation_preserved": 2,
+      "no_history_or_password_not_action_followup": 2,
+      "JSON_format_categories": 2,
+      "provider_error_not_misclassified": 1,
+      "synthetic_runtime_provider_attempts": 3
+    }
+  ],
+  "unresolved_limitations": [
+    "Rejected original provider prose was not persisted, so no exact user-failure guard diagnosis is claimed. Normal finish/81-114 completion tokens make timeout unlikely but do not identify syntax/reference/content rejection.",
+    "Owner generated no real-provider sample and cannot certify natural-language quality; independent frozen-candidate QA belongs to QA/Main.",
+    "Clock exception is intentionally conservative. Global whole-guess question policy remains unchanged, so some colon-time confirmation questions may still receive local policy refusal; this is outside the approved narrow answer-validation fix.",
+    "Context/guard logic remains heuristic and cannot prove every natural-language inference or disguised solution safe. Existing schema, saves and observed state are not changed."
+  ],
+  "old_suites_run": 0,
+  "database_access": false
+}

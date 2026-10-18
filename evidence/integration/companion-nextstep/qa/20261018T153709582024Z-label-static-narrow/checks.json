@@ -1,0 +1,80 @@
+[
+  {
+    "check": "label-only-wire-public-api-unchanged",
+    "route_prefix": 0,
+    "director": {
+      "focus": "实验记录",
+      "activity": "观察当前可见物件，不预报观察结果",
+      "available_action": "点击实验记录查看",
+      "already_observed": false
+    },
+    "visible_objects": [
+      {
+        "name": "实验记录",
+        "actions": [
+          "点击实验记录查看"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "label-only-wire-public-api-unchanged",
+    "route_prefix": 5,
+    "director": {
+      "focus": "样本玻片",
+      "activity": "收起当前已经观察过的物品",
+      "available_action": "拿起物品",
+      "already_observed": true
+    },
+    "visible_objects": [
+      {
+        "name": "样本玻片",
+        "actions": [
+          "点击样本玻片查看",
+          "拿起物品"
+        ],
+        "description": "桌边的小盒里放着一块薄玻璃片。"
+      }
+    ]
+  },
+  {
+    "check": "label-only-wire-public-api-unchanged",
+    "route_prefix": 10,
+    "director": {
+      "focus": "储物柜",
+      "activity": "讨论当前装置的一次可用操作",
+      "available_action": "拉开柜门",
+      "already_observed": true
+    },
+    "visible_objects": [
+      {
+        "name": "储物柜",
+        "actions": [
+          "点击储物柜查看",
+          "拉开柜门"
+        ],
+        "description": "绿灯亮起，门闩发出一声轻响，柜门仍合着。"
+      }
+    ]
+  },
+  {
+    "check": "label-only-wire-public-api-unchanged",
+    "route_prefix": 20,
+    "director": {
+      "focus": "电源箱",
+      "activity": "讨论当前装置的一次可用操作",
+      "available_action": "打开箱盖",
+      "already_observed": true
+    },
+    "visible_objects": [
+      {
+        "name": "电源箱",
+        "actions": [
+          "点击电源箱查看",
+          "打开箱盖"
+        ],
+        "description": "金属箱盖紧闭，外侧有一个搭扣。"
+      }
+    ]
+  }
+]

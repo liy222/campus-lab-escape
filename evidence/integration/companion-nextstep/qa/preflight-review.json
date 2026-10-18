@@ -1,0 +1,72 @@
+{
+  "recorded_at": "2026-10-18T15:32:14.825288+00:00",
+  "operator": "Independent QA read-only offline preflight",
+  "exit_code": 0,
+  "checks": [
+    {
+      "check": "frozen243-current",
+      "ok": true
+    },
+    {
+      "check": "preview-same-source",
+      "ok": true
+    },
+    {
+      "check": "exact-two-new-no-retry-budget",
+      "ok": true
+    },
+    {
+      "check": "official-existing-endpoint-model",
+      "ok": true
+    },
+    {
+      "check": "legal10-public-stage-cases",
+      "ok": true
+    },
+    {
+      "check": "reservation-within-round-cap",
+      "ok": true
+    },
+    {
+      "check": "N01-json-no-tools",
+      "ok": true
+    },
+    {
+      "check": "N01-public-one-step-no-unrelated-evidence",
+      "ok": true
+    },
+    {
+      "check": "N02-json-no-tools",
+      "ok": true
+    },
+    {
+      "check": "N02-public-one-step-no-unrelated-evidence",
+      "ok": true
+    },
+    {
+      "check": "N01-question-no-history",
+      "ok": true
+    },
+    {
+      "check": "N02-actual-history-binding-required",
+      "ok": true
+    },
+    {
+      "check": "executor-historical-binding",
+      "ok": true
+    }
+  ],
+  "issues": [],
+  "candidate_sha256": "9faa3c17eb8d2545cc7229c922c6c15cd170cdd9f00d3d2d8c0d2ccc4c57bfa9",
+  "preview_sha256": "7da1303c1cd16274ae98adf032f2e2a49821322139cc8fcc7518ec669e87e77c",
+  "wrapper_sha256": "24d0fa46abcd28a17911d7c8c207ab69e016402036f39a6be3733293f7adeecf",
+  "reservation_upper_cny": 0.105296,
+  "go": "Main may dispatch at most two NEW samples under original CNY10 and current0.16 cap; no retry; N02 only after accepted actual N01 and live recomputation.",
+  "paid_calls_by_QA": 0,
+  "canonical_database_access": false,
+  "limitations": [
+    "Preflight does not prove model quality.",
+    "History placeholder is not real history; executor must replace with accepted N01.",
+    "Reported user raw reply not stored; two new samples cannot reproduce exact old reply."
+  ]
+}

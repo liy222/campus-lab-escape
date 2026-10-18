@@ -1,0 +1,20 @@
+{
+  "status": "SOURCE STOP",
+  "scope": "Mechanical final notes: exactly one dated paragraph appended to each assigned document; no product, test, or QA source changed.",
+  "qa_final_review": {
+    "path": "evidence/integration/companion-nextstep/qa/final-review.json",
+    "sha256": "c6e07159cb1468688b170b1dec9e91992919f3af62c093fb15cf0617bee02654",
+    "status": "LIMITED_ACCEPTANCE; QA SOURCE STOP"
+  },
+  "documents": {
+    "README.md": {
+      "before_sha256": "24d159366bf94d3772a0651a874c9f75258880ebbc3561ec85b269b5826f11f5",
+      "after_sha256": "6acf7ed3422dc302e04d92608403441a337ddc6d013e77cbc1b457c6b7408e8b"
+    },
+    "release/UPGRADES.md": {
+      "before_sha256": "7e80bdd2f279870879027fef2042e67a25ee41595b897cae95c8d43136304126",
+      "after_sha256": "40c1130aafced438692d6bf6238f3c75bc0239d084b921cd5b104a1c72bec88b"
+    }
+  },
+  "summary": "Two actual companion rounds delivered normally after targeted regression and build. Last model wording adjustment was checked offline only; the evidence does not certify overall model quality. Restart the one-click launcher for backend changes; existing saves remain usable. N02 observe-button wording remains weak, and the exact cause of the earlier raw rejected reply is unknown."
+}

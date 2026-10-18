@@ -279,3 +279,12 @@ Threevisualroomfilters assignedLuna forminimaldeletion. Specialmicroscope/reinsp
 
 ### 2026-10-18 duplicate observe controls removed
 三个视觉房间特写中的重复“观察”按钮已移除；点击物品仍观察并记录线索，目镜等专用观察热点保留。Main核对仅3处filter字节差异，其他240产品文件不变；唯一类型检查/前端构建exit0，未新增测试、浏览器运行或付费调用。证据 evidence/integration/remove-observe/verification.json；按liy222身份常规提交同步。
+
+### 2026-10-18 player-reported companion failure investigation
+Localreadonlymetadata confirmsfiveR2failures withnormalproviderfinish andno placedslide/inventory; rawnotretained soexactguardunknown. Provenofflineclockfalsepositive andgenericnextstepcontextdefect beingfixed. FrontenderrorcopySOURCESTOP; Backendpending; formal/paidnotyetexecuted.
+
+### 2026-10-18 next-step real reproduction responds
+Legalclone of reportedearlyR2: N01普通下一步与N02同history追问两次真实回复均显示，原游戏事实不变。新调用2/upper.00372936CNY/newunknown0；不是重放用户旧call。N02仍说寻找已移除的观察按钮，进行最后模型侧操作词窄修，旧raw结果保留、不再付费。
+
+### 2026-10-18 next-step repair verified
+修复普通下一步/行动追问的上下文，已发现钟面时刻窄误拦和伙伴失败重复说明；保留严格JSON、引用、完整答案及不代操作边界。用户同阶段合法克隆中，两条真实回复正常显示且未推进游戏。N02旧按钮措辞弱点已据实保留，最终模型侧用词修正仅离线验证；定向回归联合通过、唯一构建exit0，原用户raw缺失所以不声称查明唯一旧触发器。重启启动游戏.cmd并刷新后生效，原存档可继续。证据 evidence/integration/companion-nextstep/accepted.json，常规提交同步。

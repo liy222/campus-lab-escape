@@ -1,0 +1,134 @@
+test_dynamic_nextstep_and_explicit_relation_intent (__main__.PublicStages.test_dynamic_nextstep_and_explicit_relation_intent) ... ok
+test_actual_public_stage_nextstep_then_explanation_delivery (__main__.make_tests.<locals>.NextStepHTTP.test_actual_public_stage_nextstep_then_explanation_delivery) ... ok
+test_clock_observation_allowed_but_password_and_unknown_times_rejected (__main__.make_tests.<locals>.NextStepHTTP.test_clock_observation_allowed_but_password_and_unknown_times_rejected) ... ok
+test_strict_delivery_and_store_failures_leave_all_state_unchanged (__main__.make_tests.<locals>.NextStepHTTP.test_strict_delivery_and_store_failures_leave_all_state_unchanged) ... 
+  test_strict_delivery_and_store_failures_leave_all_state_unchanged (__main__.make_tests.<locals>.NextStepHTTP.test_strict_delivery_and_store_failures_leave_all_state_unchanged) (raw='先观察电源箱。') ... FAIL
+  test_strict_delivery_and_store_failures_leave_all_state_unchanged (__main__.make_tests.<locals>.NextStepHTTP.test_strict_delivery_and_store_failures_leave_all_state_unchanged) (raw='{"answer":"先观察电源箱。","answer":"重复键。","clue_refs":[]}') ... FAIL
+  test_strict_delivery_and_store_failures_leave_all_state_unchanged (__main__.make_tests.<locals>.NextStepHTTP.test_strict_delivery_and_store_failures_leave_all_state_unchanged) (answer='我帮你打开电源箱。', refs=[], store=False) ... FAIL
+  test_strict_delivery_and_store_failures_leave_all_state_unchanged (__main__.make_tests.<locals>.NextStepHTTP.test_strict_delivery_and_store_failures_leave_all_state_unchanged) (answer='当前状态是CLOSED。', refs=[], store=False) ... FAIL
+  test_strict_delivery_and_store_failures_leave_all_state_unchanged (__main__.make_tests.<locals>.NextStepHTTP.test_strict_delivery_and_store_failures_leave_all_state_unchanged) (answer='先观察电源箱。', refs=['r2_maintenance_clue'], store=False) ... FAIL
+test_full_guess_confirmation_is_not_a_no_digits_bypass (tests.api.test_ai_companion.CompanionAcceptance.test_full_guess_confirmation_is_not_a_no_digits_bypass) ... ok
+test_user_pass_words_are_clue_content_and_known_refs_remain_guarded (nextstep_prior_quality.make_tests.<locals>.QualityHTTP.test_user_pass_words_are_clue_content_and_known_refs_remain_guarded) ... ok
+test_initial_observation_valid_repeat_replay_stale_and_failed_provider (tests.api.test_hint_flow.HintFlowHTTP.test_initial_observation_valid_repeat_replay_stale_and_failed_provider) ... ok
+test_real_selection_is_fixed_offline_redacted_and_request_is_idempotent (tests.api.test_play_ai_settings.PlayAiSettings.test_real_selection_is_fixed_offline_redacted_and_request_is_idempotent) ... ok
+
+======================================================================
+FAIL: test_strict_delivery_and_store_failures_leave_all_state_unchanged (__main__.make_tests.<locals>.NextStepHTTP.test_strict_delivery_and_store_failures_leave_all_state_unchanged) (raw='先观察电源箱。')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\深度能力\tests\companion-nextstep\run_regression.py", line 149, in test_strict_delivery_and_store_failures_leave_all_state_unchanged
+    self.assertEqual(errors, [{'kind': 'runtime_error', 'code': 'COMPANION_FORMAT'}])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'call_id': None, 'code': 'COMPANION_FORMAT[111 chars]one}] != [{'kind': 'runtime_error', 'code': 'COMPANION_FORMAT'}]
+
+First differing element 0:
+{'call_id': None, 'code': 'COMPANION_FORMAT[110 chars]None}
+{'kind': 'runtime_error', 'code': 'COMPANION_FORMAT'}
+
++ [{'code': 'COMPANION_FORMAT', 'kind': 'runtime_error'}]
+- [{'call_id': None,
+-   'code': 'COMPANION_FORMAT',
+-   'cost_upper_cny': None,
+-   'kind': 'runtime_error',
+-   'reported_model': None,
+-   'requested_model': None,
+-   'usage': None}]
+
+======================================================================
+FAIL: test_strict_delivery_and_store_failures_leave_all_state_unchanged (__main__.make_tests.<locals>.NextStepHTTP.test_strict_delivery_and_store_failures_leave_all_state_unchanged) (raw='{"answer":"先观察电源箱。","answer":"重复键。","clue_refs":[]}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\深度能力\tests\companion-nextstep\run_regression.py", line 149, in test_strict_delivery_and_store_failures_leave_all_state_unchanged
+    self.assertEqual(errors, [{'kind': 'runtime_error', 'code': 'COMPANION_FORMAT'}])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'call_id': None, 'code': 'COMPANION_FORMAT[111 chars]one}] != [{'kind': 'runtime_error', 'code': 'COMPANION_FORMAT'}]
+
+First differing element 0:
+{'call_id': None, 'code': 'COMPANION_FORMAT[110 chars]None}
+{'kind': 'runtime_error', 'code': 'COMPANION_FORMAT'}
+
++ [{'code': 'COMPANION_FORMAT', 'kind': 'runtime_error'}]
+- [{'call_id': None,
+-   'code': 'COMPANION_FORMAT',
+-   'cost_upper_cny': None,
+-   'kind': 'runtime_error',
+-   'reported_model': None,
+-   'requested_model': None,
+-   'usage': None}]
+
+======================================================================
+FAIL: test_strict_delivery_and_store_failures_leave_all_state_unchanged (__main__.make_tests.<locals>.NextStepHTTP.test_strict_delivery_and_store_failures_leave_all_state_unchanged) (answer='我帮你打开电源箱。', refs=[], store=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\深度能力\tests\companion-nextstep\run_regression.py", line 162, in test_strict_delivery_and_store_failures_leave_all_state_unchanged
+    self.assertEqual([x for x in trace if x.get('kind') == 'runtime_error'],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     [{'kind': 'runtime_error', 'code': category}])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'call_id': None, 'code': 'COMPANION_CONTEN[112 chars]one}] != [{'kind': 'runtime_error', 'code': 'COMPANION_CONTENT'}]
+
+First differing element 0:
+{'call_id': None, 'code': 'COMPANION_CONTEN[111 chars]None}
+{'kind': 'runtime_error', 'code': 'COMPANION_CONTENT'}
+
++ [{'code': 'COMPANION_CONTENT', 'kind': 'runtime_error'}]
+- [{'call_id': None,
+-   'code': 'COMPANION_CONTENT',
+-   'cost_upper_cny': None,
+-   'kind': 'runtime_error',
+-   'reported_model': None,
+-   'requested_model': None,
+-   'usage': None}]
+
+======================================================================
+FAIL: test_strict_delivery_and_store_failures_leave_all_state_unchanged (__main__.make_tests.<locals>.NextStepHTTP.test_strict_delivery_and_store_failures_leave_all_state_unchanged) (answer='当前状态是CLOSED。', refs=[], store=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\深度能力\tests\companion-nextstep\run_regression.py", line 162, in test_strict_delivery_and_store_failures_leave_all_state_unchanged
+    self.assertEqual([x for x in trace if x.get('kind') == 'runtime_error'],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     [{'kind': 'runtime_error', 'code': category}])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'call_id': None, 'code': 'COMPANION_CONTEN[112 chars]one}] != [{'kind': 'runtime_error', 'code': 'COMPANION_CONTENT'}]
+
+First differing element 0:
+{'call_id': None, 'code': 'COMPANION_CONTEN[111 chars]None}
+{'kind': 'runtime_error', 'code': 'COMPANION_CONTENT'}
+
++ [{'code': 'COMPANION_CONTENT', 'kind': 'runtime_error'}]
+- [{'call_id': None,
+-   'code': 'COMPANION_CONTENT',
+-   'cost_upper_cny': None,
+-   'kind': 'runtime_error',
+-   'reported_model': None,
+-   'requested_model': None,
+-   'usage': None}]
+
+======================================================================
+FAIL: test_strict_delivery_and_store_failures_leave_all_state_unchanged (__main__.make_tests.<locals>.NextStepHTTP.test_strict_delivery_and_store_failures_leave_all_state_unchanged) (answer='先观察电源箱。', refs=['r2_maintenance_clue'], store=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\深度能力\tests\companion-nextstep\run_regression.py", line 162, in test_strict_delivery_and_store_failures_leave_all_state_unchanged
+    self.assertEqual([x for x in trace if x.get('kind') == 'runtime_error'],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     [{'kind': 'runtime_error', 'code': category}])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'call_id': None, 'code': 'COMPANION_REFERE[114 chars]one}] != [{'kind': 'runtime_error', 'code': 'COMPANION_REFERENCE'}]
+
+First differing element 0:
+{'call_id': None, 'code': 'COMPANION_REFERE[113 chars]None}
+{'kind': 'runtime_error', 'code': 'COMPANION_REFERENCE'}
+
++ [{'code': 'COMPANION_REFERENCE', 'kind': 'runtime_error'}]
+- [{'call_id': None,
+-   'code': 'COMPANION_REFERENCE',
+-   'cost_upper_cny': None,
+-   'kind': 'runtime_error',
+-   'reported_model': None,
+-   'requested_model': None,
+-   'usage': None}]
+
+----------------------------------------------------------------------
+Ran 8 tests in 5.491s
+
+FAILED (failures=5)

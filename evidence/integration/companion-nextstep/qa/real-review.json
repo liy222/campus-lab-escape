@@ -1,0 +1,84 @@
+{
+  "recorded_at": "2026-10-18T15:34:44.882201+00:00",
+  "operator": "Independent QA offline actual raw/display review; no model judge",
+  "status": "DELIVERY_PASS_WITH_UI_WORDING_WEAKNESS; not overall model quality acceptance",
+  "paid_epoch_candidate_sha256": "9faa3c17eb8d2545cc7229c922c6c15cd170cdd9f00d3d2d8c0d2ccc4c57bfa9",
+  "provider_source_sha256": "4311f666aa48ffc0fd05689e3b87cb7c5d6f7e6083667b0984e2ac0434c11d6b",
+  "cases": [
+    {
+      "case_id": "N01",
+      "raw_answer": "可以先观察电源箱。你之前看过维护说明，但还没检查电源箱本身，先确认它的外观和状态，再决定是否需要其他操作。",
+      "display_equals_raw": true,
+      "strictJSON": true,
+      "refs": [],
+      "model_calls": 1,
+      "count_delta": 1,
+      "revision_delta": 1,
+      "gameplay_core_unchanged": true,
+      "quality": {
+        "current_question_relevance": "PASS",
+        "public_fact_grounding": "PASS_LOCAL",
+        "one_local_no_complete_solution": "PASS",
+        "no_action_execution_or_claim": "PASS",
+        "natural_prose": "PASS",
+        "followup_continuity": "N/A",
+        "UI_instruction_accuracy": "PASS",
+        "only_explain_basis_request": "N/A"
+      },
+      "notes": "Accurately distinguishes already-read maintenance from unobserved powerbox; no unseen result or exclusive-world claim."
+    },
+    {
+      "case_id": "N02",
+      "raw_answer": "我先前建议看电源箱，是因为你已读到维护说明，它是当前与供电有关、又能直接查看的物件；但它只是可查看对象之一，并不表示必须先动它。你想自己操作的话，可以先点电源箱的“观察”，查看外观和状态会显示什么。",
+      "display_equals_raw": true,
+      "strictJSON": true,
+      "refs": [],
+      "model_calls": 1,
+      "count_delta": 1,
+      "revision_delta": 1,
+      "gameplay_core_unchanged": true,
+      "quality": {
+        "current_question_relevance": "PASS",
+        "public_fact_grounding": "PASS_LOCAL",
+        "one_local_no_complete_solution": "PASS",
+        "no_action_execution_or_claim": "PASS",
+        "natural_prose": "PASS",
+        "followup_continuity": "PASS",
+        "UI_instruction_accuracy": "WEAK",
+        "only_explain_basis_request": "WEAK"
+      },
+      "notes": "Actual same-session N01 history supplied and meaningfully referenced. Extra instruction to click powerbox observation implies obsolete observe control; user asked only for basis. Weak UI wording retained, not all-quality pass."
+    }
+  ],
+  "actual_calls": 2,
+  "charged_upper_cny": 0.00372936,
+  "after_budget": {
+    "cap_cny": 10.0,
+    "charged_upper_cny": 0.97538384,
+    "remaining_cny": 9.02461616,
+    "calls": 130,
+    "unknown_or_pending_calls": 3,
+    "frozen": false
+  },
+  "new_unknown_count": 0,
+  "same_session_followup_verified": true,
+  "artifact_sha256": {
+    "evidence/integration/companion-nextstep/paid/20261018T153235027841Z-real/N01-outgoing.json": "dfa00480eaac4dff802dedee85e3ca07ac1d5866e8eebc1f93cc9860091c679b",
+    "evidence/integration/companion-nextstep/paid/20261018T153235027841Z-real/N01-provider.json": "fc6dbfb21e2b46bb29f4124c4f22358636e364d349c4b750fd71d970c5772441",
+    "evidence/integration/companion-nextstep/paid/20261018T153235027841Z-real/N01-result.json": "a7a2f3bed9c51ddd755cb112e0ea5b96b874f512fa62efec2fc6f3d00750f478",
+    "evidence/integration/companion-nextstep/paid/20261018T153235027841Z-real/N02-outgoing.json": "0ae89589662710ab04e3ca5d9591f218712df58b30aebb7ee089d356663b4fb4",
+    "evidence/integration/companion-nextstep/paid/20261018T153235027841Z-real/N02-provider.json": "7bc8fa408ad3888689ea18249c539872bd661354286783e3ff1b6e76427c66e1",
+    "evidence/integration/companion-nextstep/paid/20261018T153235027841Z-real/N02-result.json": "2daf3b7e551b1fd3ee46dd2edfdd76715bf075937f65684651b03d10ec9a6c04",
+    "evidence/integration/companion-nextstep/paid/20261018T153235027841Z-real/result.json": "ecd78facf39b49cc745d759b45ee34e35d4d4fa05e4df757003945ea96cfbfc2",
+    "evidence/integration/companion-nextstep/paid-summary.json": "39a625d95ac6775a10ee70726007e46b28bb300447d040a52c9c860fba88d5f3"
+  },
+  "QA_paid_calls": 0,
+  "QA_canonical_database_access": false,
+  "QA_network": false,
+  "limits": [
+    "Historical player raw reply unavailable; no exact historic reproduction.",
+    "Two controlled samples do not certify broad companion quality.",
+    "Any subsequent wire/prompt-only UI wording fix is a separate source epoch with no new real retest.",
+    "No automatic retry; both authorized calls are consumed."
+  ]
+}
