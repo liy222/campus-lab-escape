@@ -1,0 +1,38 @@
+{
+  "recorded_at": "2026-10-18T11:22:13.250407+00:00",
+  "operator": "Main integration",
+  "source_commit": "32062a3afe5076b6543b6eb3d770710f3230468a",
+  "remote": "https://github.com/liy222/campus-lab-escape",
+  "remote_main_verified": "32062a3afe5076b6543b6eb3d770710f3230468a",
+  "author_login": "liy222",
+  "committer_login": "liy222",
+  "commands": [
+    {
+      "command": "git push origin main",
+      "exit_code": 0
+    },
+    {
+      "command": "gh api source commit identity",
+      "exit_code": 0
+    },
+    {
+      "command": "git ls-remote origin refs/heads/main",
+      "exit_code": 0
+    }
+  ],
+  "source_commit_files": 67,
+  "staged_secret_runtime_audit_exit_code": 0,
+  "precommit_raw_matches": 66,
+  "actual_paid_calls": 8,
+  "round_cost_upper_cny": 0.020108,
+  "quality_verdict": "limited_quality_acceptance_with_known_weaknesses",
+  "overall_model_quality_certified": false,
+  "accepted_evidence": "evidence/integration/ai-companion-real/accepted.json",
+  "independent_review": "evidence/integration/ai-companion-real/qa/final-review.json",
+  "limitations": [
+    "Conservative ledger upper bound is not a supplier invoice.",
+    "C08 verifies a single fixed-source cabinet-stage scenario; other initial weak cases were not all paid-retested.",
+    "Technical wording and direct guidance remain quality weaknesses.",
+    "This synchronization epoch changes no product, test or sealed execution evidence and performs no paid call."
+  ]
+}

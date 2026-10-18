@@ -255,3 +255,6 @@ Credentialsconfigured, canonicalconservativecharged0.87425848/10CNY; remaining9.
 
 ### 2026-10-18 actual AI quality findings and limited acceptance
 Real8calls,7displayed/1guardblocked,local0call; conservativeledgerupper0.020108CNY,projectremaining9.10563352,newunknown0. Initialqualitymixed: C03/C07good, falseexclusivity/invented-or-irrelevantrefs elsewhere. Narrowcontext/catalog/citationfix+provider1017compat implemented;14methods0. C08accuratecatalog/cabinetstate+emptyrefs butCODE_ACCEPTED/directstyle persists; notgeneralqualitypass. Evidence evidence/integration/ai-companion-real/accepted.json. Paid/tests/sourceSTOP; docs/syncnext.
+
+### 2026-10-18 real AI quality results synchronized
+Source32062a3afe5076b6543b6eb3d770710f3230468a verified on GitHub main; author/committer liy222. Actual8paidcalls, conservativeupper0.020108CNY; mixedquality and narrowfix/C08 improvement retained without overallquality certification. Regression14methods passed; no additional paidcall/test/productchange in finalsync. See evidence/integration/ai-companion-real/sync.json and review/findings/ai-companion-real.md.
