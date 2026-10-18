@@ -1,0 +1,1355 @@
+{
+  "recorded_at": "2026-10-18T04:54:49.512757+00:00",
+  "client_date": "2026-10-18",
+  "baseline_head": "cf38ea0cd43b71fcf4e69017c10e1bafdd0f31c1",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "evidence/documentation/gameplay-walkthrough-20261018/verify_flow.py"
+  ],
+  "exit_code": 0,
+  "scope": "Pure domain-memory walkthrough verification. Not an HTTP/browser/save/AI quality test.",
+  "level_version": "3.4.0",
+  "schema_version": "1.4.0",
+  "source_sha256": {
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/mini_rules.py": "9104576bbb47c20d6f230c66a66d83c5e7835fd056dfc735e8a1f00876f1b49b",
+    "backend/app/domain/graybox_rules.py": "2d6598034c30b8d50d01008ae8d0ed0843e42c2e4a84d46d80d737d0b97e655b",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "frontend/src/components/Room3.tsx": "74a49c254e42c59c24adc7bc481b0bf5c2ceb70c654b14385e9571fb0663b32a",
+    "backend/app/ai/hints.py": "7d769e7720ed7af899359fcbaa98f4aa7ac7c1032a52196610c4accdaeb8a849"
+  },
+  "route_steps": [
+    {
+      "step": 1,
+      "room_before": "R1",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_clock"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [
+        "r1_clock_clue"
+      ],
+      "message": "已观察。"
+    },
+    {
+      "step": 2,
+      "room_before": "R1",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_record"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [
+        "r1_record_clue"
+      ],
+      "message": "已观察。"
+    },
+    {
+      "step": 3,
+      "room_before": "R1",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_plaque"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [
+        "r1_plaque_clue"
+      ],
+      "message": "已观察。"
+    },
+    {
+      "step": 4,
+      "room_before": "R1",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_microscope"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已观察。"
+    },
+    {
+      "step": 5,
+      "room_before": "R1",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "sample_slide"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已观察。"
+    },
+    {
+      "step": 6,
+      "room_before": "R1",
+      "tool": "take",
+      "arguments": {
+        "item_id": "sample_slide"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "EMPTY",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已拿起样本玻片。"
+    },
+    {
+      "step": 7,
+      "room_before": "R1",
+      "tool": "use_item",
+      "arguments": {
+        "item_id": "sample_slide",
+        "target_id": "r1_microscope"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "玻片已固定在载物台上，目镜等待读取。"
+    },
+    {
+      "step": 8,
+      "room_before": "R1",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_microscope"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [
+        "r1_sample_clue"
+      ],
+      "message": "已观察。"
+    },
+    {
+      "step": 9,
+      "room_before": "R1",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_cabinet"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "LOCKED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已观察。"
+    },
+    {
+      "step": 10,
+      "room_before": "R1",
+      "tool": "submit_code",
+      "arguments": {
+        "target_id": "r1_cabinet",
+        "code": "4217"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "CODE_ACCEPTED",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "数字锁已接受输入，柜门仍保持当前状态。"
+    },
+    {
+      "step": 11,
+      "room_before": "R1",
+      "tool": "interact",
+      "arguments": {
+        "target_id": "r1_cabinet"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "柜门敞开，里面有一个玻璃管和一张旧标签。"
+    },
+    {
+      "step": 12,
+      "room_before": "R1",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_symbols"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [
+        "r1_symbols_clue"
+      ],
+      "message": "已观察。"
+    },
+    {
+      "step": 13,
+      "room_before": "R1",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_fuse"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "OPEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已观察。"
+    },
+    {
+      "step": 14,
+      "room_before": "R1",
+      "tool": "take",
+      "arguments": {
+        "item_id": "fuse"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已拿起保险丝。"
+    },
+    {
+      "step": 15,
+      "room_before": "R1",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_photo"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [
+        "r1_photo_clue"
+      ],
+      "message": "已观察。"
+    },
+    {
+      "step": 16,
+      "room_before": "R1",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r1_door"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已观察。"
+    },
+    {
+      "step": 17,
+      "room_before": "R1",
+      "tool": "interact",
+      "arguments": {
+        "target_id": "r1_door"
+      },
+      "room_after": "R1",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "门闩已拉开，可以通行。"
+    },
+    {
+      "step": 18,
+      "room_before": "R1",
+      "tool": "move",
+      "arguments": {
+        "destination_id": "R2"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已进入设备实验室。"
+    },
+    {
+      "step": 19,
+      "room_before": "R2",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r2_maintenance"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [
+        "r2_maintenance_clue"
+      ],
+      "message": "已观察。"
+    },
+    {
+      "step": 20,
+      "room_before": "R2",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r2_powerbox"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CLOSED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已观察。"
+    },
+    {
+      "step": 21,
+      "room_before": "R2",
+      "tool": "interact",
+      "arguments": {
+        "target_id": "r2_powerbox"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "OPEN",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "箱盖已打开，里面的触点被一块小护板挡着。"
+    },
+    {
+      "step": 22,
+      "room_before": "R2",
+      "tool": "interact",
+      "arguments": {
+        "target_id": "r2_powerbox"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "MISSING_FUSE",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "护板已移开，两枚触点之间的窄槽空着。"
+    },
+    {
+      "step": 23,
+      "room_before": "R2",
+      "tool": "use_item",
+      "arguments": {
+        "item_id": "fuse",
+        "target_id": "r2_powerbox"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "玻璃管已卡入触点之间，总闸仍抬着。"
+    },
+    {
+      "step": 24,
+      "room_before": "R2",
+      "tool": "rotate_circuit",
+      "arguments": {
+        "target_id": "r2_powerbox",
+        "module_id": "c00"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "线路模块已旋转。"
+    },
+    {
+      "step": 25,
+      "room_before": "R2",
+      "tool": "rotate_circuit",
+      "arguments": {
+        "target_id": "r2_powerbox",
+        "module_id": "c01"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "线路模块已旋转。"
+    },
+    {
+      "step": 26,
+      "room_before": "R2",
+      "tool": "rotate_circuit",
+      "arguments": {
+        "target_id": "r2_powerbox",
+        "module_id": "c02"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "线路模块已旋转。"
+    },
+    {
+      "step": 27,
+      "room_before": "R2",
+      "tool": "rotate_circuit",
+      "arguments": {
+        "target_id": "r2_powerbox",
+        "module_id": "c02"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "线路模块已旋转。"
+    },
+    {
+      "step": 28,
+      "room_before": "R2",
+      "tool": "rotate_circuit",
+      "arguments": {
+        "target_id": "r2_powerbox",
+        "module_id": "c10"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "线路模块已旋转。"
+    },
+    {
+      "step": 29,
+      "room_before": "R2",
+      "tool": "rotate_circuit",
+      "arguments": {
+        "target_id": "r2_powerbox",
+        "module_id": "c10"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "线路模块已旋转。"
+    },
+    {
+      "step": 30,
+      "room_before": "R2",
+      "tool": "rotate_circuit",
+      "arguments": {
+        "target_id": "r2_powerbox",
+        "module_id": "c21"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "线路模块已旋转。"
+    },
+    {
+      "step": 31,
+      "room_before": "R2",
+      "tool": "rotate_circuit",
+      "arguments": {
+        "target_id": "r2_powerbox",
+        "module_id": "c22"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "线路模块已旋转。"
+    },
+    {
+      "step": 32,
+      "room_before": "R2",
+      "tool": "rotate_circuit",
+      "arguments": {
+        "target_id": "r2_powerbox",
+        "module_id": "c22"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "线路模块已旋转。"
+    },
+    {
+      "step": 33,
+      "room_before": "R2",
+      "tool": "rotate_circuit",
+      "arguments": {
+        "target_id": "r2_powerbox",
+        "module_id": "c22"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "FUSE_INSTALLED",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "线路模块已旋转。"
+    },
+    {
+      "step": 34,
+      "room_before": "R2",
+      "tool": "submit_circuit",
+      "arguments": {
+        "target_id": "r2_powerbox"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "CIRCUIT_READY",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "线路检查通过，总闸仍抬着。"
+    },
+    {
+      "step": 35,
+      "room_before": "R2",
+      "tool": "interact",
+      "arguments": {
+        "target_id": "r2_powerbox"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "总闸已合上，设备的电源灯亮着。"
+    },
+    {
+      "step": 36,
+      "room_before": "R2",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r2_service_label"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [
+        "r2_service_clue"
+      ],
+      "message": "已观察。"
+    },
+    {
+      "step": 37,
+      "room_before": "R2",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r2_monitor"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "OFF",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已观察。"
+    },
+    {
+      "step": 38,
+      "room_before": "R2",
+      "tool": "interact",
+      "arguments": {
+        "target_id": "r2_monitor"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "BOOTING",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "启动灯闪烁，屏幕显示启动进度，等待确认继续。"
+    },
+    {
+      "step": 39,
+      "room_before": "R2",
+      "tool": "interact",
+      "arguments": {
+        "target_id": "r2_monitor"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "LOGIN_LOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "登录界面亮着，等待输入USER和PASS。"
+    },
+    {
+      "step": 40,
+      "room_before": "R2",
+      "tool": "submit_login",
+      "arguments": {
+        "target_id": "r2_monitor",
+        "username": "LAB-42",
+        "password": "2117"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "UNLOCKED",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "登录已通过，研究记录等待读取。"
+    },
+    {
+      "step": 41,
+      "room_before": "R2",
+      "tool": "interact",
+      "arguments": {
+        "target_id": "r2_monitor"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "研究记录已经打开，侧边的小托盘里露出窄纸和塑料卡片。"
+    },
+    {
+      "step": 42,
+      "room_before": "R2",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "research_strip"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [
+        "r2_indices_clue"
+      ],
+      "message": "已观察。"
+    },
+    {
+      "step": 43,
+      "room_before": "R2",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "access_card"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已观察。"
+    },
+    {
+      "step": 44,
+      "room_before": "R2",
+      "tool": "take",
+      "arguments": {
+        "item_id": "research_strip"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已拿起研究纸条。"
+    },
+    {
+      "step": 45,
+      "room_before": "R2",
+      "tool": "take",
+      "arguments": {
+        "item_id": "access_card"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已拿起门禁卡。"
+    },
+    {
+      "step": 46,
+      "room_before": "R2",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r2_door"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已观察。"
+    },
+    {
+      "step": 47,
+      "room_before": "R2",
+      "tool": "interact",
+      "arguments": {
+        "target_id": "r2_door"
+      },
+      "room_after": "R2",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "门闩已拉开，可以通行。"
+    },
+    {
+      "step": 48,
+      "room_before": "R2",
+      "tool": "move",
+      "arguments": {
+        "destination_id": "R3"
+      },
+      "room_after": "R3",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已进入出口控制室。"
+    },
+    {
+      "step": 49,
+      "room_before": "R3",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r3_legend"
+      },
+      "room_after": "R3",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [
+        "r3_legend_clue"
+      ],
+      "message": "已观察。"
+    },
+    {
+      "step": 50,
+      "room_before": "R3",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "r3_panel"
+      },
+      "room_after": "R3",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "EMPTY"
+      },
+      "new_clue_ids": [],
+      "message": "已观察。"
+    },
+    {
+      "step": 51,
+      "room_before": "R3",
+      "tool": "use_item",
+      "arguments": {
+        "item_id": "research_strip",
+        "target_id": "r3_panel"
+      },
+      "room_after": "R3",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "new_clue_ids": [],
+      "message": "窄纸已经沿定位齿插好，控制台等待设备操作顺序。"
+    },
+    {
+      "step": 52,
+      "room_before": "R3",
+      "tool": "inspect",
+      "arguments": {
+        "object_id": "exit_door"
+      },
+      "room_after": "R3",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "LOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "new_clue_ids": [],
+      "message": "已观察。"
+    },
+    {
+      "step": 53,
+      "room_before": "R3",
+      "tool": "use_item",
+      "arguments": {
+        "item_id": "access_card",
+        "target_id": "exit_door"
+      },
+      "room_after": "R3",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "CARD_ACCEPTED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "new_clue_ids": [],
+      "message": "读卡灯已经亮起，出口仍保持当前状态。"
+    },
+    {
+      "step": 54,
+      "room_before": "R3",
+      "tool": "interact",
+      "arguments": {
+        "target_id": "exit_door"
+      },
+      "room_after": "R3",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "new_clue_ids": [],
+      "message": "终检灯亮起，出口仍锁着。"
+    },
+    {
+      "step": 55,
+      "room_before": "R3",
+      "tool": "submit_sequence",
+      "arguments": {
+        "target_id": "r3_panel",
+        "device_ids": [
+          "ventilation",
+          "cooling",
+          "lighting",
+          "safety"
+        ]
+      },
+      "room_after": "R3",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "FINAL_CHECK"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "new_clue_ids": [],
+      "message": "终检已完成，出口仍等待释放门锁。"
+    },
+    {
+      "step": 56,
+      "room_before": "R3",
+      "tool": "interact",
+      "arguments": {
+        "target_id": "exit_door"
+      },
+      "room_after": "R3",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "UNLOCKED"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "new_clue_ids": [],
+      "message": "出口锁舌已经收回，门仍合着。"
+    },
+    {
+      "step": 57,
+      "room_before": "R3",
+      "tool": "interact",
+      "arguments": {
+        "target_id": "exit_door"
+      },
+      "room_after": "R3",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "OPEN"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "new_clue_ids": [],
+      "message": "出口门已经打开，外面的走廊映入眼前。"
+    },
+    {
+      "step": 58,
+      "room_before": "R3",
+      "tool": "move",
+      "arguments": {
+        "destination_id": "EXIT"
+      },
+      "room_after": "EXIT",
+      "device_states": {
+        "cabinet": "ITEM_TAKEN",
+        "powerbox": "POWER_ON",
+        "computer": "DATA_READ",
+        "exit": "OPEN"
+      },
+      "puzzle_states": {
+        "microscope": "SLIDE_PLACED",
+        "panel": "STRIP_INSERTED"
+      },
+      "new_clue_ids": [],
+      "message": "已进入实验室出口。"
+    }
+  ],
+  "circuit_example": {
+    "clockwise_clicks_from_initial": {
+      "c00": 1,
+      "c01": 1,
+      "c02": 2,
+      "c10": 2,
+      "c11": 0,
+      "c12": 0,
+      "c20": 0,
+      "c21": 1,
+      "c22": 3
+    },
+    "port_directions": {
+      "c00": "EW",
+      "c01": "EW",
+      "c02": "SW",
+      "c10": "SW",
+      "c11": "NS",
+      "c12": "NS",
+      "c20": "NE",
+      "c21": "EW",
+      "c22": "NW"
+    },
+    "path": [
+      "c00",
+      "c01",
+      "c02",
+      "c12",
+      "c22",
+      "c21",
+      "c20",
+      "c10"
+    ],
+    "center_not_required_and_alternative_valid": true
+  },
+  "answers": {
+    "cabinet": "4217",
+    "login_username": "LAB-42",
+    "login_password": "2117",
+    "final_sequence": [
+      "ventilation",
+      "cooling",
+      "lighting",
+      "safety"
+    ]
+  },
+  "final_status": "won",
+  "discovered_clue_ids": [
+    "r1_clock_clue",
+    "r1_record_clue",
+    "r1_plaque_clue",
+    "r1_sample_clue",
+    "r1_symbols_clue",
+    "r1_photo_clue",
+    "r2_maintenance_clue",
+    "r2_service_clue",
+    "r2_indices_clue",
+    "r3_legend_clue"
+  ],
+  "hidden_found": 2,
+  "paid_calls": 0,
+  "limitations": [
+    "No product changes, provider calls, database access, HTTP or browser operation.",
+    "One valid route including two optional story clues, not a unique or minimum-length route.",
+    "Current UI observations and draft inputs are explained from source; this verification only executes domain actions.",
+    "Future AI suggestions in the document are proposals, not implemented functionality."
+  ]
+}

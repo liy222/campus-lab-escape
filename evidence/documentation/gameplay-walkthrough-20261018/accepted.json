@@ -1,0 +1,53 @@
+{
+  "client_date": "2026-10-18",
+  "recorded_at": "2026-10-18T04:58:01.023661+00:00",
+  "operator": "Main",
+  "status": "Documentation accepted after source review and actual in-memory full-route verification.",
+  "baseline_head": "cf38ea0cd43b71fcf4e69017c10e1bafdd0f31c1",
+  "document": "docs/gameplay-walkthrough.md",
+  "document_sha256": "08dce18b6ba5ab0a7252ae94850ea76cf5d12ee470a27180e5d52704f6b009ab",
+  "owner_report": "evidence/documentation/gameplay-walkthrough-20261018/doc-owner.json",
+  "owner_report_sha256": "a85a0b955ba406385dd8034cbce60be057162f38004d93efd22f116e3ce986ec",
+  "verified_product_sources_unchanged": 242,
+  "verification": {
+    "path": "evidence/documentation/gameplay-walkthrough-20261018/verification.json",
+    "sha256": "67be13a6c089f1fcd17a558a6927ef0ab7805d5768d5c55cc7f54ee19ccd2ed6",
+    "command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "evidence/documentation/gameplay-walkthrough-20261018/verify_flow.py"
+    ],
+    "exit_code": 0,
+    "actions": 58,
+    "status": "won",
+    "clues": 10,
+    "hidden": 2,
+    "meaning": "Pure in-memory rule actions, not UI/API/save/real-provider QA."
+  },
+  "circuit_example_verified": [
+    1,
+    1,
+    2,
+    2,
+    0,
+    0,
+    0,
+    1,
+    3
+  ],
+  "additional_findings_resolved": [
+    "Cabinet requires separate interact, not inspect.",
+    "Clue combination is concatenation, not numerical addition.",
+    "Selected item mode is frontend-only; cancel selection to inspect general targets, with installed panel exception."
+  ],
+  "scope": "Only full spoiler/reference document and minimal root/provenance notes; AI preparation suggestions not implemented features.",
+  "paid_calls": 0,
+  "limitations": [
+    "No product changes, provider calls, database access, HTTP or browser operation.",
+    "One valid route including two optional story clues, not a unique or minimum-length route.",
+    "Current UI observations and draft inputs are explained from source; this verification only executes domain actions.",
+    "Future AI suggestions in the document are proposals, not implemented functionality."
+  ]
+}

@@ -217,3 +217,9 @@ Requested oldsingle UI removal and confirmed archive delete accepted from focuse
 
 ### 2026-10-14 requested changes synchronized
 Panel repair5db122a and archive UI/delete3131344 independently accepted and normally pushed, author/committerliy222 verified. User confirms repository remains public. Required work complete; final metadata-only checkpoint, no additional functionality/test work.
+
+### 2026-10-18 current gameplay walkthrough
+Prepare complete current3.4/v4.2 spoiler/reference document with room steps, clues, exact answers, device-state gates, one valid circuit and optional observations. Main in-memory route verification passed; document owner Luna drafting, Main factual acceptance next. AI companion material is preparation only, no game changes.
+
+### 2026-10-18 walkthrough complete
+Full current spoiler walkthrough reviewed and accepted: main route, exact answers, new-game circuit example, optional clues, state/knowledge distinction and AI preparation boundaries. Normal documentation sync only; no gameplay or AI implementation.

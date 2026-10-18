@@ -222,3 +222,9 @@ Oldsingle UI removed, archive-specific confirmed delete implemented. Main matche
 
 ### 2026-10-14 current delivery synced
 Final console repair5db122a and save management3131344 are on remote main, author/committerliy222. Oldsingle UI removed; multi-moment save/read/confirmed delete accepted. Repository currently public, explicitly confirmed by user. This supersedes earlier private state records only for current visibility; old release facts stay historical. Sync: evidence/integration/save-delete/sync.json. No extra feature development.
+
+### 2026-10-18 walkthrough preparation
+Current product242 files unchanged. Complete current-rule domain route actually executed in memory:58 actions including two optional observations, won/10clues/hidden2/exit0. Document in progress at docs/gameplay-walkthrough.md. Not a new browser/API/AI test or feature.
+
+### 2026-10-18 complete solution reference accepted
+See docs/gameplay-walkthrough.md for current full solution and AI-preparation reference. Rules checked and one in-memory58-action route reacheswon with10clues/2optional; current242product sources unchanged. No new build/browser/API/provider call. Normal documentation sync next.

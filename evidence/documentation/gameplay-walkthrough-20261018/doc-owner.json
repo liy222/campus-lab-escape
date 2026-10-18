@@ -1,0 +1,60 @@
+{
+  "task": "v3.4 gameplay walkthrough documentation",
+  "owner": "Spec",
+  "date": "2026-10-18",
+  "version_scope": {
+    "level_version": "3.4.0",
+    "schema_version": "1.4.0",
+    "visual_epoch": "v4.2"
+  },
+  "files": [
+    "docs/gameplay-walkthrough.md",
+    "evidence/documentation/gameplay-walkthrough-20261018/doc-owner.json"
+  ],
+  "source_review": [
+    "AGENTS.md",
+    "backend/app/domain/puzzle_rules.py",
+    "backend/app/domain/mini_rules.py",
+    "backend/app/domain/graybox_rules.py",
+    "backend/app/domain/circuit.py",
+    "backend/app/domain/device_flow.py",
+    "backend/app/ai/hints.py",
+    "frontend/src/components/Room3.tsx",
+    "tests/api/test_upgrade_v34.py",
+    "tests/e2e/run_visual_v42.mjs"
+  ],
+  "commands": [
+    {
+      "command": "Get-Content AGENTS.md; Get-Content backend/app/domain/puzzle_rules.py; Get-Content backend/app/domain/mini_rules.py; Get-Content backend/app/domain/graybox_rules.py; Get-Content backend/app/domain/circuit.py; Get-Content backend/app/domain/device_flow.py; Get-Content frontend/src/components/Room3.tsx; Get-Content backend/app/ai/hints.py; rg -n \"4792|231|4217|2117|FINAL_CHECK|CARD_ACCEPTED|walkthrough|通关\" tests backend",
+      "exit_code": 0,
+      "result": "Read completed; terminal output was truncated, followed by targeted reads."
+    },
+    {
+      "command": "Targeted Get-Content and rg reads of the listed rules, hints, and v3.4/v4.2 test files",
+      "exit_code": 0,
+      "result": "Confirmed device transitions, optional clues, circuit connectivity checks, sequence guard, and final exit steps."
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/documentation/gameplay-walkthrough-20261018/verify_flow.py",
+      "operator": "Main",
+      "exit_code": 0,
+      "evidence": "evidence/documentation/gameplay-walkthrough-20261018/verification.json",
+      "result": "58 domain actions reached won with 10 clues and 2 optional story clues; one valid circuit route recorded. Pure in-memory rule run only, not UI/API/AI or human play."
+    },
+    {
+      "command": "Python read-only check after Main review edits: Markdown LF/single-final-newline and JSON parse",
+      "exit_code": 0,
+      "result": "13,905 Markdown bytes; LF-only with one final newline; doc-owner.json parses successfully. Main review epoch adds explicit cabinet interact behavior, current UI selected-item guidance, and describes 42 with 17 as concatenation."
+    }
+  ],
+  "verification": {
+    "full_tests": "not run",
+    "frontend_build": "not run",
+    "real_ai_calls": 0,
+    "notes": "Documentation-only assignment. One legal circuit example from Main's pure-memory route evidence is included with its new-game-only click counts; alternative connections exist and no unique solution is claimed."
+  },
+  "limitations": [
+    "This guide is an internal spoiler reference and is not an implemented in-game AI feature or prompt payload.",
+    "A completion route is not a substitute for independent QA or a human playthrough claim."
+  ]
+}

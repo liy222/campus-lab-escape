@@ -190,3 +190,6 @@ Only requested save management functionality is delivered: remove obsolete singl
 
 ### 2026-10-14 repository visibility confirmation
 GitHub API returned private=false. Main asked because original instruction required private; user explicitly replied 保留公开. Retain public repository and normal sync under that authorization. This does not authorize web hosting, deployment or Actions. No repository visibility mutation was made.
+
+### 2026-10-18 walkthrough and AI preparation boundaries
+Current walkthrough follows level3.4.0/schema1.4.0 with v4.2UI and latest panel fix. Keep actual puzzle solutions in internal reference documentation; do not pass the entire spoiler guide to a future model by default. Separate hard readiness/action gates from knowledge needed for intended inference; navigation/reordering/guessed solutions must be represented honestly. This epoch writes documentation only.
