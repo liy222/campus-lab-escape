@@ -1,0 +1,1128 @@
+{
+  "recorded_at": "2026-10-18T11:03:36.445770+00:00",
+  "scope": "Read-only manifest arithmetic/path/hash/control audit; semantic review is separate.",
+  "input_manifest": "evidence/integration/ai-companion-real/20261018T110144068872Z-real/result.json",
+  "input_sha256": "7d29b1cc3ab50a1ba16bfbc05738c3082143ba411b479f0ece727b1c16a4c152",
+  "checks": [
+    {
+      "check": "source_sha256 present",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/ai/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/ai/budget.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/ai/context.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/ai/hints.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/ai/mock.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/ai/provider.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/ai/provider_check.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/ai/provider_probe.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/ai/runtime.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/ai/types.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/api/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/api/routes.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/circuit.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/device_flow.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/graybox_models.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/graybox_rules.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/mini_models.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/mini_rules.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/models.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/puzzle_models.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/puzzle_rules.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/rules.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/save_models.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/upgrade_models.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/domain/upgrade_rules.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/main.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/storage/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/storage/ai.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/storage/saves.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/storage/sqlite.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:contracts/T28-contract-validation-20261005.json",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:contracts/api.schema.json",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:contracts/build_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:contracts/check_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:contracts/routes.json",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:contracts/tools.json",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:contracts/tools.schema.json",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:contracts/validation.json",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:docs/SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:docs/level_design.md",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/index.html",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/package-lock.json",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/package.json",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/backgrounds/r1-room-shell.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/backgrounds/r2-room-shell-off.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/backgrounds/r2-room-shell-on.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/backgrounds/r3-room-shell-off.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/backgrounds/r3-room-shell-on.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/closeup_cabinet_locked.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/closeup_cabinet_open.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/closeup_clock.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/closeup_microscope_empty.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/closeup_microscope_slide.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/closeup_plaque.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/closeup_record.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/microscope_view.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/photo_closeup.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_cabinet_accepted.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_cabinet_empty.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_cabinet_locked.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_cabinet_open.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_clock.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_door_closed.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_door_unlatched.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_fuse.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_microscope_empty.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_microscope_slide.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_photo.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_plaque.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_record.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_symbols.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/r1_workbench.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room1/sample_slide.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_access_card.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_closeup_maintenance.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_closeup_monitor_booting.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_closeup_monitor_data_read.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_closeup_monitor_login_locked.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_closeup_monitor_off.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_closeup_monitor_unlocked.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_closeup_powerbox_circuit_ready.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_closeup_powerbox_closed.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_closeup_powerbox_fuse_installed.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_closeup_powerbox_missing_fuse.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_closeup_powerbox_open.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_closeup_powerbox_power_on.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_closeup_service_label.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_door_closed.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_door_unlatched.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_maintenance.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_monitor_booting.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_monitor_data_read.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_monitor_login_locked.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_monitor_off.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_monitor_unlocked.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_powerbox_circuit_ready.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_powerbox_closed.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_powerbox_fuse_installed.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_powerbox_missing_fuse.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_powerbox_open.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_powerbox_power_on.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_research_strip.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_return_door.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_service_label.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_tray.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room2/r2_workbench.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_closeup_exit_door_card_accepted.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_closeup_exit_door_final_check.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_closeup_exit_door_locked.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_closeup_exit_door_open.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_closeup_exit_door_unlocked.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_closeup_legend.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_closeup_panel_empty.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_closeup_panel_final_check.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_closeup_panel_passed.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_closeup_panel_strip_inserted.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_exit_door_card_accepted.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_exit_door_final_check.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_exit_door_locked.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_exit_door_open.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_exit_door_unlocked.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_legend.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_panel_empty.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_panel_final_check.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_panel_passed.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_panel_strip_inserted.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_return_door.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/public/art-handpainted/room3/r3_victory_background.png",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/App.tsx",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/Assistant.tsx",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/api.ts",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/closeup_cabinet_locked.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/closeup_cabinet_open.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/closeup_clock.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/closeup_microscope_empty.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/closeup_microscope_slide.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/closeup_plaque.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/closeup_record.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/manifest.ts",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/microscope_view.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/painted-metadata.json",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/photo_closeup.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_background.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_cabinet_accepted.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_cabinet_empty.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_cabinet_locked.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_cabinet_open.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_clock.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_door_closed.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_door_unlatched.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_fuse.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_microscope_empty.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_microscope_slide.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_photo.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_plaque.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_record.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_symbols.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r1_workbench.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_access_card.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_background_dark.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_closeup_maintenance.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_closeup_monitor_booting.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_closeup_monitor_data_read.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_closeup_monitor_login_locked.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_closeup_monitor_off.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_closeup_monitor_unlocked.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_closeup_powerbox_circuit_ready.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_closeup_powerbox_closed.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_closeup_powerbox_fuse_installed.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_closeup_powerbox_missing_fuse.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_closeup_powerbox_open.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_closeup_powerbox_power_on.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_closeup_service_label.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_door_closed.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_door_unlatched.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_light_overlay_on.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_maintenance.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_monitor_booting.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_monitor_data_read.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_monitor_login_locked.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_monitor_off.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_monitor_unlocked.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_powerbox_circuit_ready.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_powerbox_closed.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_powerbox_fuse_installed.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_powerbox_missing_fuse.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_powerbox_open.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_powerbox_power_on.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_research_strip.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_return_door.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_service_label.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_tray.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r2_workbench.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_background.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_closeup_exit_door_card_accepted.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_closeup_exit_door_final_check.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_closeup_exit_door_locked.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_closeup_exit_door_open.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_closeup_exit_door_unlocked.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_closeup_legend.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_closeup_panel_empty.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_closeup_panel_final_check.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_closeup_panel_passed.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_closeup_panel_strip_inserted.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_exit_door_card_accepted.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_exit_door_final_check.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_exit_door_locked.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_exit_door_open.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_exit_door_unlocked.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_legend.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_panel_empty.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_panel_final_check.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_panel_passed.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_panel_strip_inserted.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_return_door.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/r3_victory_background.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/assets/sample_slide.svg",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/components/Entry.tsx",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/components/Notebook.tsx",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/components/PaintedObject.tsx",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/components/Room1.tsx",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/components/Room2.tsx",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/components/Room3.tsx",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/components/RoomChrome.tsx",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/components/RoomLoader.tsx",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/components/Settlement.tsx",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/components/panelFocus.ts",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/game/GameCanvas.tsx",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/game/Room1Scene.ts",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/game/Room2Scene.ts",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/game/Room3Scene.ts",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/game/bridge.ts",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/game/painted.ts",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/game/preferences.ts",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/main.tsx",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/src/style.css",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/tsconfig.json",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:frontend/vite.config.ts",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:scripts/dev.py",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:启动游戏.cmd",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:backend/app/ai/companion.py",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256 present",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C01-outgoing.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C01-provider.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C01-result.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C02-outgoing.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C02-provider.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C02-result.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C03-outgoing.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C03-provider.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C03-result.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C04-outgoing.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C04-provider.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C04-result.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C05-outgoing.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C05-provider.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C05-result.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C06-outgoing.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C06-provider.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C06-result.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C07-outgoing.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C07-provider.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/C07-result.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256:evidence/integration/ai-companion-real/20261018T110144068872Z-real/L01-result.json",
+      "passed": true
+    },
+    {
+      "check": "actual case records present",
+      "passed": true
+    },
+    {
+      "check": "case IDs unique",
+      "passed": true
+    },
+    {
+      "check": "at most8 real dispatches",
+      "passed": true
+    },
+    {
+      "check": "dispatch total matches cases",
+      "passed": true
+    },
+    {
+      "check": "actual charged within epoch ceiling",
+      "passed": true
+    },
+    {
+      "check": "reserved upper total within epoch ceiling",
+      "passed": true
+    },
+    {
+      "check": "charged total matches cases",
+      "passed": true
+    },
+    {
+      "check": "original cap10 unchanged",
+      "passed": true
+    },
+    {
+      "check": "historical unknown requests not retried",
+      "passed": true
+    },
+    {
+      "check": "local whole-answer control recorded",
+      "passed": true
+    },
+    {
+      "check": "L01 local0call",
+      "passed": true
+    },
+    {
+      "check": "L01 local unchanged",
+      "passed": true
+    }
+  ],
+  "issues": [],
+  "exit_code": 0,
+  "paid_calls_by_QA": 0,
+  "direct_ledger_access": false
+}

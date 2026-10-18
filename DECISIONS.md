@@ -205,3 +205,9 @@ RealAI question and recentconversation must enter newbounded companioncontext, n
 
 ### 2026-10-18 companion interpretation and limits
 Only explicit completeguess validity requests use local no-call reminders; ordinary knownnumeric background or operation-feedback questions remain discussable. Naturalreply acceptedhelp counts once without changing presetlevel, local/failed/replay does notcount. UI pagehistory4 is ephemeral, backend currentgenerationhistory3 survivesreload but restore isolates it. Syntheticprovider tests certify pipeline/security samples, not actual paidmodel quality or perfect semanticgrounding.
+
+### 2026-10-18 paid test scope
+Use actual gameAPI/Runtime/productionDeepSeekProvider with publiclegalfixture contexts and no toolactions. Capturewrapper records only outgoingmodelcontent and rawproviderreply/usage, no headers/credentials; complete originalmethod really sends request. CaseC02 adds actualacceptedfirstreply as boundedhistory. Budgetledger peakrate is conservative and not supplierinvoice; retain priorunknown charges without extra reconciliation. Stop on newlyunknownusage/modelmismatch/clearrawsolution. Localguesscontrol must0call/no-count. No bulkrepeat or extraLLMevaluator.
+
+### 2026-10-18 retain real quality failures honestly
+Do not equate acceptedAPIstatus or guardblock with answerquality. Preserve7initialraw/displayed replies and originalsourceepoch; onefixedC08 doesnotconvert oldfailures to passes. Publicfocusdetails require full name/id catalog toavoidfalseexclusivity. Currentstate/action/geometry needemptyrefs; bothruntime+Store enforcefocusedevidence refs without removingunknownrefguard. KeepCODE_ACCEPTED/technicalwording/directstyle as remainingweakness, no extra paidstyleexperiments. Costs conservativepeakupper from actualusage, not supplierbill.

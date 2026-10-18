@@ -26,7 +26,7 @@ v3.0 已完成并标记为 `v3.0-gameplay-information`。v3.4 三级提示、统
 
 真实 AI 伙伴需填写 API Key 和自然语言问题。每次请求会结合当前问题、最近3轮成功伙伴问答、最近3条不含参数的动作摘要、相关的已发现证据与当前公开进度，目标是简短讨论；伙伴不会代替你操作，也不会直接给出完整答案。普通数字或背景问题可以交流；明确请求判定整组答案对错或核对完整答案时，界面显示本地提醒，不调用模型，也不增加提示次数。经校验的伙伴帮助会计入提示次数，但不会修改免费预设提示当前等级。防剧透识别是启发式，不能保证识别所有隐晦答案或事实错误。当前页面最多展示最近4轮交流；刷新后页面历史清空，但同一游戏进度下的后端上下文仍可能保留最近3轮。读取存档会创建新游戏进度并隔离此前上下文。当前页历史展示会遮住误粘贴的问题中的 API Key 或会话令牌。
 
-手动输入的 Key 只保留在当前页面内存中，不写入存档；刷新页面、切回免费预设、切换游戏会话或开始新游戏都会清除。真实请求按你自己的 API 账户规则计费；本轮 QA 未进行付费模型调用，因此没有验证真实模型回答质量。选择真实模式不会重置项目现有共享预算或账本。日常游玩无需编辑 `启动游戏.cmd` 或 `.env`；命令行 `--provider` 与 `.env` 仍供本地开发使用。详情见 [Main 验收](evidence/integration/ai-companion/accepted.json) 与 [独立 QA 结果](evidence/integration/ai-companion/qa/result.json)。
+手动输入的 Key 只保留在当前页面内存中，不写入存档；刷新页面、切回免费预设、切换游戏会话或开始新游戏都会清除。真实请求按你自己的 API 账户规则计费；先前 UI QA 未调用付费模型，后续定向真实试玩见下方记录。选择真实模式不会重置项目现有共享预算或账本。日常游玩无需编辑 `启动游戏.cmd` 或 `.env`；命令行 `--provider` 与 `.env` 仍供本地开发使用。先前 UI 范围见 [AI 伙伴验收](evidence/integration/ai-companion/accepted.json) 与 [独立 QA 结果](evidence/integration/ai-companion/qa/result.json)。
 
 ## 本地启动当前游戏规则版本 v3.4
 
@@ -95,3 +95,6 @@ $env:SQLITE_PATH = './data/game-v1.sqlite'
 
 截至 2026-10-06 的历史证据仍有明确边界。`CH01_v2`（commit `242ecfc4d9f7bf1a8480508de701d9efc7822fe7`）与 v1 回退 commit `7821af4efe0613c20a80ea164c1dab1c0f288bab` 有独立源清单和本地数据库。Main 对 commit `833aafb09ad20dc1ba82cfed198485ce13300067` 的新源码目录复现 exit 0，10,778 文件逐字节匹配，8项外层检查及3项评价器precheck均通过；独立只读复核 10,842/10,842、exit 0，另有2项静态补充说明。范围仍是当时的 Windows/Conda，不是新OS/新Python环境。E1 continuation 命令 exit 0，49计划项中48调用、47返回、1项 `MODEL_UNAVAILABLE` 用量未知、1项未调用；原22完成和1超时没有重放。新数据独立合并复核最终路径 `evidence/qa/T25-merged-20261005T160549469322Z/result.json` 为1427/1427、exit 0、STOP：69/72有终态、34个完整配对，另外2 failed、1 not_called；结论不支持完整三重复或统计优胜。最新Main快照为101 settled calls、保守上界¥0.81685848、cap ¥10、pending 0、frozen 0；新8次评价器调用的已知用量¥0.1484352为调用元数据，不是供应商发票。原K1/K2记录维持10/11。之后旧6项批准载荷各调用一次：K4模型有效且按预期判FAIL；E1两条与CH01三条为 `INSUFFICIENT_EVIDENCE`，保留原结论且不可重发。提示版本2e977的8项新载荷（校准3、E1 2、CH01 3）各调用一次，独立 QA 75/75 SOURCE STOP。校准11/11由3条付费判读与8项确定性对照构成；E1原登记批次判读2条PASS，但对应的72计划状态仍为22 completed、1 timeout、49 not_called，不能写成72完成；CH01三条PASS限于当时冻结工程 Claim。CH01 v3身份/别名检查79/79通过，但不等于真实语义验收。没有真人试玩、玩家决策或人类/教师签署；没有公开部署。
 </details>
+
+
+真实模型定向试玩共8次：首批7次与一次窄修后的 C08；首批只有 C03、C07 通过全部适用质量项，C01/C02 有事实问题，C04 被引用保护拦截，C05/C06 的引用不足以支持回答。C08 返回了柜体状态与目录相关内容、空引用，但措辞较直接且仍带有 `CODE_ACCEPTED` 状态字样；不能据此称整体质量通过，首轮其余问题场景未全部真实复测。8次按账本 usage 与既有峰值价格计算的计费上界为 ¥0.020108，累计上界 ¥0.89436648；这是保守上界，不是供应商账单。审查结论与限制见 [真实试玩验收](evidence/integration/ai-companion-real/accepted.json)、[最终 QA 复核](evidence/integration/ai-companion-real/qa/final-review.json) 和[独立发现记录](review/findings/ai-companion-real.md)。

@@ -249,3 +249,9 @@ Real mode sends currentquestion/limitedrecentdialogue/knownpublicevidence and pr
 
 ### 2026-10-18 AI companion synchronized
 Source4648b8a41ce6434781b61b222605859c900b010c is verified on GitHubmain, author/committerliy222. Question-aware shortdialogue and boundedhistory now separate from unchanged freepreset. Focused12methods/build/desktopUI accepted; existing saves compatible. Realmodel quality not exercised; paid/external/mobile0. Sync evidence/integration/ai-companion/sync.json. This metadata epoch changes no acceptedproduct/test/evidence-run bytes.
+
+### 2026-10-18 real AI quality test preparation
+Credentialsconfigured, canonicalconservativecharged0.87425848/10CNY; remaining9.12574152, historicalunknown2 retained/notretried. Sevenrealcase preview prepared, worstinitialreservation0.34096CNY, strictroundcap1.50. Paiduserauthorization explicit; actual execution stillpending preflight. No fabricatedrealqualityresults.
+
+### 2026-10-18 actual AI quality findings and limited acceptance
+Real8calls,7displayed/1guardblocked,local0call; conservativeledgerupper0.020108CNY,projectremaining9.10563352,newunknown0. Initialqualitymixed: C03/C07good, falseexclusivity/invented-or-irrelevantrefs elsewhere. Narrowcontext/catalog/citationfix+provider1017compat implemented;14methods0. C08accuratecatalog/cabinetstate+emptyrefs butCODE_ACCEPTED/directstyle persists; notgeneralqualitypass. Evidence evidence/integration/ai-companion-real/accepted.json. Paid/tests/sourceSTOP; docs/syncnext.

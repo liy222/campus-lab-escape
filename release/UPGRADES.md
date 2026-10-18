@@ -130,3 +130,12 @@ v4.2 三房间视觉交付已按联合证据接受并 SOURCE STOP，commit `74f6
 免费预设提示维持无需输入问题及原有三级强度。真实伙伴现在接收自然语言问题，并根据最近3轮成功伙伴问答、最近3条不含参数的动作摘要、已发现相关证据和当前公开进度进行简短交流；它不会代操作或直接给出完整答案。明确请求判定整组答案对错或核对完整答案时会触发本地提醒，不调用模型且不计提示次数。普通数字或背景问题仍可讨论；经校验的伙伴帮助会计入提示次数，但不改免费预设提示当前等级。防剧透识别是启发式，不能保证识别所有隐晦答案或事实错误。界面显示当前页最近4轮；刷新只清除页面显示，同一 generation 下后端仍可保留最近3轮，读取存档会换 generation 并隔离旧上下文。
 
 独立 API QA 覆盖12个方法（新增8、回归4），8.988秒，exit 0；一次 TypeScript 检查和前端构建 exit 0；桌面 Chrome 13条记录，exit 0，issues 为空。QA 未发现问题；未进行完整旧套件、移动设备或真实/付费模型回答质量验收，外部请求及付费调用均为0。完整范围见 [Main 验收](../evidence/integration/ai-companion/accepted.json) 与 [独立 QA 结果](../evidence/integration/ai-companion/qa/result.json)。
+
+
+## v3.4 AI 伙伴真实模型定向试玩
+
+Main 对窄修候选进行了8次真实 DeepSeek 调用：首批7次后，按 QA 发现补全当前公开目录并收紧证据引用策略；随后只增加一次 C08 柜体状态样本。离线回归14个方法、8.687秒、exit 0；没有重建前端。首批实际语义审查仅 C03、C07 通过全部适用质量项；C01/C02 将 focus 子集误当完整目录，C04 的伪造引用被 guard 拦截，C05/C06 引用的维护说明不支持线路/状态判断。C08 返回空引用及柜阶段/目录说明，但措辞较直接且仍包含 `CODE_ACCEPTED`，只是单个新样本，未重测并解决前述场景，不能称整批质量通过。
+
+本轮8次账本计费上界 ¥0.020108，累计上界由 ¥0.87425848 增至 ¥0.89436648；原 ¥10 cap 未变，剩余上界 ¥9.10563352。历史2个 unknown 未重发，新 unknown 为0，未冻结。金额是依据 usage 和峰值价格的保守预算上界，不是供应商发票。旧模型 reported-name aliases 兼容检查同时接受新增的 `deepseek-v4.1-flash-1017` 与 `DeepSeek-V4.1-Flash-1017`，并拒绝无关名称、冻结临时账本；仍请求 `deepseek-flash`，base URL 与费率未改。
+
+详细范围、逐例质量结论和限制见 [Main 验收](../evidence/integration/ai-companion-real/accepted.json)、[最终 QA 复核](../evidence/integration/ai-companion-real/qa/final-review.json)、[独立发现记录](../review/findings/ai-companion-real.md) 与 [reported-model 兼容记录](../evidence/integration/ai-companion-real/compat/report.json)。防剧透仍是启发式；该次 C08 与有限样本不认证模型的一般回答质量，未进行真人体验验收。

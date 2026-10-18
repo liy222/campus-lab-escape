@@ -1,0 +1,56 @@
+{
+  "scope": "Fixed-source offline regression and singleC08 static preflight; not yet actual C08 quality review.",
+  "candidate": "evidence/integration/ai-companion-real/candidate-fixed.json",
+  "candidate_sha": "d4bf7c1c95f866118bed12b675b449d0fa53954dce0fbb8777992dee9884c2e5",
+  "regression": {
+    "path": "evidence/integration/ai-companion-real/qa/20261018T111053477549Z-fixed-regression",
+    "command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 tests/ai-companion-real/run_regression.py evidence/integration/ai-companion-real/candidate-fixed.json",
+    "exit_code": 0,
+    "methods": 14,
+    "seconds": 8.687,
+    "existing_companion_methods": 8,
+    "new_quality_fix_methods": 2,
+    "old_preset_methods": 2,
+    "old_legacy_methods": 2,
+    "failures": 0,
+    "errors": 0,
+    "source_files_match_before_after": 243,
+    "old_test_files_unchanged": 73,
+    "first_batch_artifacts_unchanged": true,
+    "paid_calls": 0,
+    "canonical_budget_access": false,
+    "builds": 0,
+    "UI_runs": 0
+  },
+  "new_checks": [
+    "Full visible id/name catalog exactly matches actual public objects and has no undiscovered object/descriptions.",
+    "Focused detail subset is not mistaken for catalog in context assertions.",
+    "C04 cabinet state/C05 pure circuit geometry/C06 current computer state have allowedrefs empty.",
+    "C03 normal time relation and C07 sequence relation keep supporting discovered refs.",
+    "Unknown cabinetclue still rejected.",
+    "HTTP natural procedural reply with refs empty accepted; unrelated but known clock ref rejected both Runtime and Store.",
+    "Existing companion safety/replay/history/restore/race and selected preset/legacy controls retained."
+  ],
+  "C08_static_preflight": {
+    "status": "GO",
+    "runner_sha256": "8a58a008b4dac787f537a6c43696b91b0e937b1f356ef2fabb7475368c32d1ea",
+    "preview_sha256": "cc4377c31b9867aaab2d947ec03c03b0b31e5766593731395a45a28bfe40fc40",
+    "executor_sha256": "9385dd8e220dffb8e3587640c8caaca932f06b1969c68e55798534efbfd1d143",
+    "hash_and_AST_exit_code": 0,
+    "route_prefix": 10,
+    "cabinet_state": "CODE_ACCEPTED",
+    "catalog_count": 6,
+    "allowed_clue_refs": [],
+    "reserved_upper_cny": "0.061096",
+    "targeted_ceiling_cny": "0.20",
+    "planned_dispatches": 1,
+    "combined_paid_calls_maximum": 8,
+    "overall_ceiling_cny": "1.50",
+    "execution_operator": "Main; QA sends no call"
+  },
+  "limitations": [
+    "Offline regressions and a static preview do not certify actual natural model quality.",
+    "At most one C08 new sample, not a rerun/pass claim for all initial cases.",
+    "First paid batch remains source/evidence history."
+  ]
+}

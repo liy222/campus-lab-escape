@@ -238,3 +238,9 @@ Separate true question-aware brief dialogue from freepreset. Reuse serverpublics
 
 ### 2026-10-18 AI companion accepted
 Question-aware shortdiscussion now separate from freepreset; bounded3dialogue/3argumentfreeactions context, local publicgoal and Storefinalguard. Independent12methods0/build0/desktopUI0 accepted, old73testsrawsame. Final docs then normal liy222 commit/push; no realmodel quality/paidcall claim.
+
+### 2026-10-18 real companion quality playtest
+Prepare and execute7paid shortscenario probes+1localcontrol underCNY1.50/original10, one followup and legalstate fixtures. Record actualraw/displayedanswers,usage/cost/latency/guardoutcomes; independent qualitative review with6axes, no paidjudge/mobile/fullsuite. Narrowofficial1017reportedmodel compatibility testedoffline. Currentphasepreflight, no realrequest yet.
+
+### 2026-10-18 real paid quality test complete
+Actual8requests+localcontrol complete, uppercost0.020108; recordmixedquality and acceptnarrowcatalog/refchecks corrections with14methodsofflineregression0. C08singlepaidretest improvedcabinetcase, stilltechnicalwording/directstyle; originalotherproblemcases notpaidretested. No overallqualitycertification. Finaldocs+normal liy222 syncnext, paidstop.

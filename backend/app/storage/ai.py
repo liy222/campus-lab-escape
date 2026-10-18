@@ -450,7 +450,7 @@ class AIStoreMixin:
                                     raise ValueError('Companion requires one measured attempt')
                                 context = build_companion_context(projection, question)
                                 reply = validate_companion_reply(projection, {'answer': data['answer'], 'clue_refs': data['clue_refs']}, question,
-                                                                 allowed_refs=[c['clue_id'] for c in context['known_evidence']])
+                                                                 allowed_refs=context['allowed_clue_refs'])
                                 answer, refs = reply['answer'], reply['clue_refs']
                         else:
                             raise ValueError('Invalid stored turn mode')

@@ -1,0 +1,68 @@
+{
+  "recorded_at": "2026-10-18T11:07:44.050954+00:00",
+  "operator": "Main narrow integration fix",
+  "paths": [
+    "backend/app/ai/companion.py",
+    "backend/app/storage/ai.py",
+    "backend/app/ai/provider.py"
+  ],
+  "source_sha256": {
+    "backend/app/ai/companion.py": "a4211f7fbb2de583b9fd4a3eb693e50f4f588761046c77b53d202c8c13912c69",
+    "backend/app/storage/ai.py": "1d77d50c8cdcefa1ea90e543df283479d60cd22cf67dadd981e42786057fb7d0",
+    "backend/app/ai/provider.py": "fed778f21339bb380dbf7769205c79f1e6b4c0e53cc2440d18c429d69928e633"
+  },
+  "command": "python -B -X utf8 inline AST/6 public-context assertions",
+  "exit_code": 0,
+  "checks": [
+    {
+      "route_prefix": 0,
+      "question": "现在该先观察哪里？",
+      "catalog_count": 7,
+      "allowed_clue_refs": []
+    },
+    {
+      "route_prefix": 9,
+      "question": "墙钟21:17和记录的末两位是什么关系？",
+      "catalog_count": 6,
+      "allowed_clue_refs": [
+        "r1_clock_clue",
+        "r1_record_clue",
+        "r1_sample_clue"
+      ]
+    },
+    {
+      "route_prefix": 10,
+      "question": "柜门没自动打开，现在什么状态？",
+      "catalog_count": 6,
+      "allowed_clue_refs": []
+    },
+    {
+      "route_prefix": 23,
+      "question": "两块线路怎么判断能不能连上？",
+      "catalog_count": 4,
+      "allowed_clue_refs": []
+    },
+    {
+      "route_prefix": 40,
+      "question": "已经登录了，现在还要解密码吗？",
+      "catalog_count": 5,
+      "allowed_clue_refs": []
+    },
+    {
+      "route_prefix": 54,
+      "question": "源符号和读取位置及设备表是什么关系？",
+      "catalog_count": 3,
+      "allowed_clue_refs": [
+        "r1_symbols_clue",
+        "r2_indices_clue",
+        "r3_legend_clue"
+      ]
+    }
+  ],
+  "paid_calls": 0,
+  "scope": "Complete visible catalog; focus is partial; exact citeable refs for active relations or explicitly asked evidence, procedural states/geometry empty refs. Runtime and Store enforce same citeable list; unknown-ref guard retained.",
+  "limitations": [
+    "Question-to-evidence focus matching is conservative, not semantic proof.",
+    "No actual paid new-model quality claimed yet."
+  ]
+}

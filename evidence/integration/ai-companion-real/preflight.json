@@ -1,0 +1,27 @@
+{
+  "operator": "Main integration",
+  "phase": "prepared; no real calls yet",
+  "runner_sha256": "9385dd8e220dffb8e3587640c8caaca932f06b1969c68e55798534efbfd1d143",
+  "preview_sha256": "2b122b8a596582823001894e0e1f09ebb81e21fba863ad9bf29111eb7f2e0592",
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "original_cap_cny": 10,
+  "round_limit_cny": 1.5,
+  "planned_real_calls": 7,
+  "maximum_real_calls": 8,
+  "old_unknown_call_count": 2,
+  "old_unknown_retries": 0,
+  "old_charged_upper_cny": 0.87425848,
+  "remaining_upper_cny": 9.12574152,
+  "sources": 243,
+  "compat_source": "provider.py only adds official1017 response aliases; compat local check0",
+  "official_sources": [
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/updates/",
+      "fact": "2026-10-17 Flash1017 update, same alias/API/pricing"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+      "fact": "Peak input miss2CNY/million, cachehit0.04, output8; existingledger remains conservative"
+    }
+  ]
+}

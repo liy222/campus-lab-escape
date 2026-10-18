@@ -1,0 +1,34 @@
+{
+  "task": "AI companion real-model trial documentation handoff",
+  "scope": [
+    "README.md",
+    "release/UPGRADES.md"
+  ],
+  "outcome": "documented limited real-model results and known weaknesses; no overall model-quality certification",
+  "actual_verification": [
+    {
+      "command": "git -c core.whitespace=cr-at-eol diff --check -- README.md release/UPGRADES.md",
+      "exit_code": 0
+    }
+  ],
+  "tests_build_paid_calls_or_commit": 0,
+  "evidence": {
+    "accepted": "evidence/integration/ai-companion-real/accepted.json",
+    "final_review": "evidence/integration/ai-companion-real/qa/final-review.json",
+    "independent_findings": "review/findings/ai-companion-real.md",
+    "model_alias_compat": "evidence/integration/ai-companion-real/compat/report.json"
+  },
+  "sha256": {
+    "README.md": "26e7e8f4738df400686148dcb4208e49ff01554245d53c556a2a22a379074bf6",
+    "release/UPGRADES.md": "63fcd6f6d6c9da90e05c8d556ecb4c211d574b2f724070e4ebdce1741c6de734",
+    "evidence/integration/ai-companion-real/accepted.json": "d81031b04233971ab7946bcf407ba5b627182d984fcd402d48d2df26ab6158bf",
+    "evidence/integration/ai-companion-real/qa/final-review.json": "25f904224e19774cbfd107bc911ac89bc1c84b53fff02f60971ce62678159769"
+  },
+  "limitations": [
+    "Eight real calls across two source epochs are a small sample, not statistical or general quality certification.",
+    "C08 was a new sample; the original weak cases were not all retested.",
+    "Heuristic safety checks do not guarantee semantic correctness or prevent every indirect spoiler.",
+    "Ledger amount is a conservative usage/peak-price upper bound, not a supplier invoice.",
+    "No human-playtest, mobile, build, or complete legacy-suite claim."
+  ]
+}

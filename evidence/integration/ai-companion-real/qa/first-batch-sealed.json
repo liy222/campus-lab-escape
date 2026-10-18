@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-10-18T11:06:44.454073+00:00",
+  "scope": "First actual7-call batch independent review sealed; no fix/retest quality claim.",
+  "sha256": {
+    "evidence/integration/ai-companion-real/20261018T110144068872Z-real/result.json": "7d29b1cc3ab50a1ba16bfbc05738c3082143ba411b479f0ece727b1c16a4c152",
+    "evidence/integration/ai-companion-real/qa/20261018T110336446510Z-manifest-review.json": "a3772ca0b33d29b94df69772494ec545bca94d511a79492ee8594c50c04dbe60",
+    "evidence/integration/ai-companion-real/qa/first-batch-quality.json": "6a00ddf2291957449c06aecbe57c7555fe60a37b573b20a300be8a743dfea017",
+    "review/findings/ai-companion-real.md": "8f0850106137fbb6a9c76200bdf3b43c868675d64fed3c4e0c91ee5987b46322",
+    "tests/ai-companion-real/review_result.py": "d6741028dc9a95eedc509cdc725be457bf8c32af86ab61a4e84dc4e8bc41ab3c"
+  },
+  "manifest_audit_exit_code": 0,
+  "quality_verdict": "needs_targeted_fix",
+  "QA_paid_calls": 0,
+  "QA_direct_ledger_access": false,
+  "actual_commands": [
+    {
+      "command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 tests/ai-companion-real/review_result.py evidence/integration/ai-companion-real/20261018T110144068872Z-real/result.json",
+      "exit_code": 0
+    }
+  ]
+}

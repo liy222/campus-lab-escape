@@ -284,7 +284,7 @@ class DeepSeekProvider:
                 "tool_call_shapes":[{"known_fields":sorted(k for k in c if k in {"id","type","function","index"}),"unknown_field_count":len(set(c)-{"id","type","function","index"}),"id_matches":isinstance(c.get("id"),str) and bool(re.fullmatch(r"[A-Za-z0-9_-]{1,128}",c["id"])),"function_known_fields":sorted(k for k in c.get("function",{}) if k in {"name","arguments"}) if isinstance(c.get("function"),dict) else [],"function_unknown_field_count":len(set(c.get("function",{})) - {"name","arguments"}) if isinstance(c.get("function"),dict) else None} for c in diagnostic_calls if isinstance(c,dict)] if isinstance(diagnostic_calls,list) else []}
             if not isinstance(body, dict) or not isinstance(body.get("model"), str) or not re.fullmatch(r"[A-Za-z0-9_.:-]{1,128}", body["model"]) or not isinstance(body.get("choices"), list) or len(body["choices"]) != 1:
                 raise ProviderError("MODEL_INVALID_OUTPUT")
-            if body["model"] not in {"deepseek-flash", "deepseek-v4.1-flash", "DeepSeek-V4.1-Flash"}:
+            if body["model"] not in {"deepseek-flash", "deepseek-v4.1-flash", "DeepSeek-V4.1-Flash", "deepseek-v4.1-flash-1017", "DeepSeek-V4.1-Flash-1017"}:
                 self.ledger.freeze()
                 raise ProviderError("UNAPPROVED_REPORTED_MODEL")
             choice = body["choices"][0]

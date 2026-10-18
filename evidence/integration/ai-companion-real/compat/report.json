@@ -1,0 +1,53 @@
+{
+  "task": "Reported-model alias compatibility for the DeepSeek V4.1 Flash 1017 update",
+  "result": "passed",
+  "scope": {
+    "source": "backend/app/ai/provider.py",
+    "allowlist_additions": [
+      "deepseek-v4.1-flash-1017",
+      "DeepSeek-V4.1-Flash-1017"
+    ],
+    "preserved_request_model": "deepseek-flash",
+    "preserved_base_url": "https://api.deepseek.com",
+    "other_provider_budget_auth_logic_changed": false,
+    "source_line_endings": {
+      "before_bytes": 19596,
+      "before_crlf": 0,
+      "before_bare_lf": 336,
+      "after_bytes": 19652,
+      "after_crlf": 0,
+      "after_bare_lf": 336
+    }
+  },
+  "verification": {
+    "command": "python -B -X utf8 evidence/integration/ai-companion-real/compat/check.py",
+    "exit_code": 0,
+    "checks": 6,
+    "accepted_reported_models": [
+      "deepseek-flash",
+      "deepseek-v4.1-flash",
+      "DeepSeek-V4.1-Flash",
+      "deepseek-v4.1-flash-1017",
+      "DeepSeek-V4.1-Flash-1017"
+    ],
+    "rejected_and_froze_temporary_ledger": [
+      "deepseek-unrelated-model"
+    ],
+    "mock_transport_only": true,
+    "temporary_ledgers_cleaned": true,
+    "real_provider_calls": 0,
+    "paid_calls": 0,
+    "request_model_and_url_asserted": true
+  },
+  "additional_check": {
+    "command": "git diff --check -- backend/app/ai/provider.py",
+    "exit_code": 0
+  },
+  "sha256": {
+    "backend/app/ai/provider.py": "fed778f21339bb380dbf7769205c79f1e6b4c0e53cc2440d18c429d69928e633",
+    "evidence/integration/ai-companion-real/compat/check.py": "b97e09956bade5fa369991c1f6f07bd1a9269bbe42eebea8d820c6304a619249"
+  },
+  "limitations": [
+    "Local MockTransport compatibility verification only; no real provider request or paid model quality claim."
+  ]
+}

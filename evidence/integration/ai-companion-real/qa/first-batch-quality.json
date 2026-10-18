@@ -1,0 +1,126 @@
+{
+  "operator": "Independent QA textual review; no additional provider judge or human playtest claim",
+  "input_result": "evidence/integration/ai-companion-real/20261018T110144068872Z-real/result.json",
+  "manifest_review": "evidence/integration/ai-companion-real/qa/20261018T110336446510Z-manifest-review.json",
+  "manifest_exit_code": 0,
+  "manifest_checks": 279,
+  "overall_quality": "needs_targeted_fix",
+  "actual_provider_dispatches": 7,
+  "real_displayed_prose": 6,
+  "guard_blocked_real_reply": 1,
+  "all_applicable_quality_axes_pass_cases": ["C03", "C07"],
+  "cases_with_material_quality_issues": ["C01", "C02", "C04", "C05", "C06"],
+  "actual_charged_upper_cny": "0.016716",
+  "remaining_cny_from_Main_ledger_summary": "9.10902552",
+  "new_unknown_count": 0,
+  "historical_unknown_count_before_after": [2, 2],
+  "frozen": false,
+  "cases": [
+    {
+      "case_id": "C01",
+      "relevance": "pass",
+      "factual_grounding": "fail",
+      "useful_guidance": "pass",
+      "no_solution_leak": "pass",
+      "natural_non_template": "pass",
+      "followup_coherence": "not_applicable",
+      "displayed": true,
+      "issue": "SCENE_SCOPE_FALSE_EXCLUSIVITY",
+      "evidence": "Actual state contains7 visible objects; outgoing visible_objects contains onlyr1_record. Reply wrongly says only the experimental record can be observed."
+    },
+    {
+      "case_id": "C02",
+      "relevance": "weak",
+      "factual_grounding": "fail",
+      "useful_guidance": "weak",
+      "no_solution_leak": "pass",
+      "natural_non_template": "weak",
+      "followup_coherence": "weak",
+      "displayed": true,
+      "issue": "SCENE_SCOPE_FALSE_EXCLUSIVITY_AND_REPETITION",
+      "evidence": "Actual acceptedC01 question/answer present in history, but reply repeats unique observable object and prior direction rather than a sound reason to prioritize the record."
+    },
+    {
+      "case_id": "C03",
+      "relevance": "pass",
+      "factual_grounding": "pass",
+      "useful_guidance": "pass",
+      "no_solution_leak": "pass",
+      "natural_non_template": "pass",
+      "followup_coherence": "not_applicable",
+      "displayed": true,
+      "evidence": "Explains last two digits/minutes relation from clock and record, references both discovered clues, leaves full number to player."
+    },
+    {
+      "case_id": "C04",
+      "relevance": "pass",
+      "factual_grounding": "fail",
+      "useful_guidance": "pass",
+      "no_solution_leak": "pass",
+      "natural_non_template": "pass",
+      "followup_coherence": "not_applicable",
+      "displayed": false,
+      "delivery_quality": "fail",
+      "issue": "UNKNOWN_CITATION_BLOCKED",
+      "evidence": "Raw state explanation is correct, but hallucinatedr1_cabinet_clue does not exist among known evidence. Finalstatus stopped MODEL_INVALID_OUTPUT; only generic error shown, hintcount unchanged. Raw useful guidance is not delivered."
+    },
+    {
+      "case_id": "C05",
+      "relevance": "pass",
+      "factual_grounding": "fail",
+      "useful_guidance": "pass",
+      "no_solution_leak": "pass",
+      "natural_non_template": "pass",
+      "followup_coherence": "not_applicable",
+      "displayed": true,
+      "issue": "UNSUPPORTED_CITATION",
+      "evidence": "Reciprocal adjacent ports advice is correct public geometry; citedr2_maintenance_clue only describes USER/PASS formatting and does not support it."
+    },
+    {
+      "case_id": "C06",
+      "relevance": "pass",
+      "factual_grounding": "fail",
+      "useful_guidance": "pass",
+      "no_solution_leak": "pass",
+      "natural_non_template": "pass",
+      "followup_coherence": "not_applicable",
+      "displayed": true,
+      "issue": "UNSUPPORTED_CITATION",
+      "evidence": "Correctly advises reading records after UNLOCKED, but citedmaintenance USER/PASS text does not substantiate current login success/read affordance; these are public state facts."
+    },
+    {
+      "case_id": "C07",
+      "relevance": "pass",
+      "factual_grounding": "pass",
+      "useful_guidance": "pass",
+      "no_solution_leak": "pass",
+      "natural_non_template": "pass",
+      "followup_coherence": "not_applicable",
+      "displayed": true,
+      "evidence": "Relevant source-position-device mapping using all3 discovered clues, partialthird-position example only, no full device order."
+    },
+    {
+      "case_id": "L01",
+      "kind": "local_control",
+      "provider_dispatches": 0,
+      "hint_count_delta": 0,
+      "revision_delta": 0,
+      "boundary_result": "pass",
+      "model_quality_rating": "not_applicable"
+    }
+  ],
+  "fix_direction": {
+    "scene_catalog": "Complete visible id/name list; focused detail subset explicitly marked, never described as unique scene object.",
+    "citations": "Public device state/actions/circuit geometry use emptyrefs; explicitallowedrefs must reflect actual supporting evidence, not blindly duplicate allknown evidence.",
+    "authority": "Keep unknownref final rejection unchanged.",
+    "retest_scope": "At most oneC08 cabinet-state plus scene-range sample; does not revalidate allold failing cases."
+  },
+  "QA_paid_calls": 0,
+  "QA_direct_ledger_access": false,
+  "limitations": [
+    "Small real sample, no statistical or general semantic safety guarantee.",
+    "Cost is existing conservative ledger charge, not supplier invoice.",
+    "Factual axis includes citation support; C04/C05/C06 narrative guidance can be correct while citation axis fails.",
+    "No actual fix or paid retest has been reviewed in this first-batch file."
+  ]
+}

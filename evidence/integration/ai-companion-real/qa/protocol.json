@@ -1,0 +1,19 @@
+{
+  "status": "Independent review protocol prepared; no actual paid request by QA.",
+  "scope": "6-8 legal game state samples plus whole-answer local0call control; actual request execution owned by Main.",
+  "epoch_max_cny": "1.50",
+  "max_provider_dispatches": 8,
+  "original_cap_cny": "10",
+  "main_reported_remaining_cny_before_execution": "9.12574152",
+  "main_reported_historical_unknown_count": 2,
+  "reported_budget_values_independently_verified": false,
+  "axes": ["question relevance", "public factual support", "useful partial guidance", "no full solution or unknown fact", "natural and not template repetition", "followup coherence or N/A"],
+  "ratings": ["pass", "weak", "fail", "not_applicable"],
+  "stop_on": ["new unknown", "provider/model allowlist freeze", "budget freeze", "solution or hidden-fact leak"],
+  "retry_policy": "No retry or replacement call for a failed/unknown case; do not redispatch historical unknowns or add calls solely to reach sample count.",
+  "judge": "Independent textual review of actual records; no extra provider judge calls and no claim of human playtesting.",
+  "QA_paid_calls": 0,
+  "QA_direct_ledger_access": false,
+  "product_changes": 0,
+  "formal_quality_results": null
+}

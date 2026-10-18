@@ -1,0 +1,56 @@
+{
+  "recorded_at": "2026-10-18T11:04:52.472258+00:00",
+  "operator": "Main integration narrow fix",
+  "finding_source": "20261018T110144068872Z-real C01/C02 exclusive-scene hallucination; C04 unknown citation; C05/C06 unsupported citation relevance",
+  "changed_path": "backend/app/ai/companion.py",
+  "changes": [
+    "Complete public name/id catalog plus explicit distinction from focus details.",
+    "Explicit exact allowed references; public stage/actions/geometry should use empty refs.",
+    "Do not relax unknown-reference/fact/solution guards."
+  ],
+  "source_sha256": "b70935ca695b2381140ce1bc7d73c4554a30694020c4daa679efba1b84838425",
+  "development_command": "python -B -X utf8 inline AST and four legal public contexts",
+  "exit_code": 0,
+  "context_checks": [
+    {
+      "route_prefix": 0,
+      "full_visible_catalog_count": 7,
+      "focus_details_count": 1,
+      "allowed_refs": []
+    },
+    {
+      "route_prefix": 10,
+      "full_visible_catalog_count": 6,
+      "focus_details_count": 5,
+      "allowed_refs": [
+        "r1_clock_clue",
+        "r1_record_clue",
+        "r1_plaque_clue",
+        "r1_sample_clue"
+      ]
+    },
+    {
+      "route_prefix": 23,
+      "full_visible_catalog_count": 4,
+      "focus_details_count": 2,
+      "allowed_refs": [
+        "r2_maintenance_clue"
+      ]
+    },
+    {
+      "route_prefix": 54,
+      "full_visible_catalog_count": 3,
+      "focus_details_count": 3,
+      "allowed_refs": [
+        "r1_symbols_clue",
+        "r2_indices_clue",
+        "r3_legend_clue"
+      ]
+    }
+  ],
+  "paid_calls": 0,
+  "limits": [
+    "Prompt/context fix does not prove all future model claims or citations correct.",
+    "Initial paid outcomes remain immutable and are not reclassified as successes."
+  ]
+}
