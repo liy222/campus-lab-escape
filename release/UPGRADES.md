@@ -139,3 +139,9 @@ Main 对窄修候选进行了8次真实 DeepSeek 调用：首批7次后，按 QA
 本轮8次账本计费上界 ¥0.020108，累计上界由 ¥0.87425848 增至 ¥0.89436648；原 ¥10 cap 未变，剩余上界 ¥9.10563352。历史2个 unknown 未重发，新 unknown 为0，未冻结。金额是依据 usage 和峰值价格的保守预算上界，不是供应商发票。旧模型 reported-name aliases 兼容检查同时接受新增的 `deepseek-v4.1-flash-1017` 与 `DeepSeek-V4.1-Flash-1017`，并拒绝无关名称、冻结临时账本；仍请求 `deepseek-flash`，base URL 与费率未改。
 
 详细范围、逐例质量结论和限制见 [Main 验收](../evidence/integration/ai-companion-real/accepted.json)、[最终 QA 复核](../evidence/integration/ai-companion-real/qa/final-review.json)、[独立发现记录](../review/findings/ai-companion-real.md) 与 [reported-model 兼容记录](../evidence/integration/ai-companion-real/compat/report.json)。防剧透仍是启发式；该次 C08 与有限样本不认证模型的一般回答质量，未进行真人体验验收。
+
+## AI 伙伴质量修正：登录单例有限接受
+
+独立 QA 仅接受 fixed 候选的一个登录问题真实样本。Q05 使用官方 JSON mode，严格解析与拒绝策略保持不变；回复以自然两句话区分登录成功和记录仍未读取，没有内部状态码或无依据的线索关系，五项适用质量检查通过，连问项不适用。代码同时减少状态问题中的无关上下文、使用完整且有界的伙伴历史，并在 Runtime/Store 维持澄清重复与内部码防线。
+
+失败历史继续有效：首批 Q01、Q03 的裸中文回复因非 JSON 被严格 guard 拦截，Q02 未执行，Q04 虽显示却错误关联旧线索，故首批结论为 NOT_ACCEPTED。Q05 是唯一 fixed-source 真实成功样本，不能抵消前三个问题或证明连问、柜体/线路场景及一般模型质量。首候选离线15方法/11.394秒 exit 0 与 fixed 候选窄3方法/2.741秒 exit 0 属于不同源码阶段，不合并为同一候选18方法通过。QA 核对当前243项源码匹配，保留172项旧文件；本轮没有 build、UI 或真人体验验证。账本计费上界为 ¥0.00958448，累计上界 ¥0.90395096/¥10，非供应商账单。完整范围、逐例结论与限制见[最终独立 QA](../evidence/integration/ai-companion-quality/qa/final-review.json)和[独立发现记录](../review/findings/ai-companion-quality.md)。

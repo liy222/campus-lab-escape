@@ -258,3 +258,15 @@ Real8calls,7displayed/1guardblocked,local0call; conservativeledgerupper0.020108C
 
 ### 2026-10-18 real AI quality results synchronized
 Source32062a3afe5076b6543b6eb3d770710f3230468a verified on GitHub main; author/committer liy222. Actual8paidcalls, conservativeupper0.020108CNY; mixedquality and narrowfix/C08 improvement retained without overallquality certification. Regression14methods passed; no additional paidcall/test/productchange in finalsync. See evidence/integration/ai-companion-real/sync.json and review/findings/ai-companion-real.md.
+
+### 2026-10-18 companion quality refinement in progress
+User authorized correction of realplaytest weaknesses. Solimplementation and independentSolQA assigned newexactpaths; formalQA and paidretest notyetexecuted. Naturalstate/continuity/guidance refinements preserve freepreset/API/save and previous8paid records.
+
+### 2026-10-18 companion quality candidate verified offline
+Frozen243sources withonlycompanion.py+Store3lines changed; independent15methods/11.394s exit0, not estimated16. Internalvocabulary and clarificationduplicates guarded atRuntime/Store, naturalstate/USERPASS andsavegeneration accepted; no productfinding. Fourpayloadpreview prepared <=0.30CNY, realexecution waits finalpreflight; old8results untouched.
+
+### 2026-10-18 real retest exposes further defects
+Actual3newcalls upper0.00740048CNY/no newunknown; Q01/Q03 naturalprose failedJSON, Q02followupskipped, Q04validJSON butunsupportedoldclue detour. Notaccepted. Necessaryfix2uses officialJSONmode with strictparserretained, andproceduralcontextdenoising; oldresultssealed. Atmost1remainingnewpaid sample, no retries.
+
+### 2026-10-18 companion quality fixes accepted with limits
+Final243source/172old/12raw/21QA bindings matched. Independentoriginal15 andfixednarrow3 passed separately. Actual4newpaidcalls conservativeupper.00958448; fixedQ05 naturalJSON correctlydistinguishescompletedlogin/unreadrecord, nooldcluedetour. EarlierQ01/Q03formatfailures andQ04semanticfailure preserved; Q02skipped so realfollowup remainsunverified. Noallqualitypass/build/UI claim. Finaldocs/normalGitHubsyncnext, source/test/paidSTOP.

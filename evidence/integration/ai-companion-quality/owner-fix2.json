@@ -1,0 +1,150 @@
+{
+  "epoch": "ai-companion-quality fix2",
+  "operator": "companion_quality_fix Owner",
+  "recorded_at": "2026-10-18T11:45:06.490704+00:00",
+  "status": "SOURCE STOP",
+  "authorized_product_paths": [
+    "backend/app/ai/companion.py",
+    "backend/app/ai/provider.py"
+  ],
+  "new_evidence": "evidence/integration/ai-companion-quality/owner-fix2.json",
+  "source_sha256": {
+    "backend/app/ai/companion.py": "f821f5a241b00316265bbb6d2086c2b555b3d30b97e0d0305c8318a510f68dd9",
+    "backend/app/ai/provider.py": "547b9c4510e2e3e666bbeb08ea3898986c4d8b8fe266a0d024a584c83227bcbe"
+  },
+  "preceding_paid_source_sha256": {
+    "backend/app/ai/companion.py": "3c26324f51b7d4751513d2cbcd862dc4221844ef1cdab6281ba3b8a5ace1addc",
+    "backend/app/ai/provider.py": "fed778f21339bb380dbf7769205c79f1e6b4c0e53cc2440d18c429d69928e633"
+  },
+  "frozen_store_sha256": "819e8efe25e9861f084bf86bed602091f58fe507456c85dca58b83f27be4e984",
+  "historical_evidence_read_not_modified": {
+    "evidence/integration/ai-companion-quality/owner.json": "201dff7056c087a10fa96075c2092fc84dc6e7797fdfeaa659698b92492b22ab",
+    "evidence/integration/ai-companion-quality/paid/20261018T113949130750Z-real/result.json": "e72996400d542b7edb8f8ad5d9b3df86b5b5ea7cc740d2b8cfb7db2a566a0da1"
+  },
+  "findings": {
+    "Q01": "Actual natural prose instead of JSON; strict JSON parser stopped it. Historical response remains format failure.",
+    "Q03": "Actual natural prose instead of JSON; strict JSON parser stopped it. Historical response remains format failure.",
+    "Q04": "Actual JSON accepted, but model invented a useful date/number relationship and returned to login-format/story details after login had completed. Historical quality failure retained."
+  },
+  "implementation": [
+    "No natural-prose fallback or JSON extraction. strict_json and the complete shared semantic/reference guard remain unchanged.",
+    "Main explicitly authorized provider.py extension: CallLimits.json_mode bool=False retains old two positional arguments; validate requires exact bool before reservation. DeepSeek payload adds response_format={type:json_object} only when enabled.",
+    "Companion alone enables CallLimits json_mode=True. Endpoint/model/complete signature/authentication/pricing/ledger rules and single-call policy unchanged; request bound still includes the final serialized payload.",
+    "When clue whitelist is empty and the question explicitly asks about state/operation/public geometry, without explicit evidence/relationship/format terms, model context removes unrelated clue/story material, topics and object/device details. Complete current visible name-only catalog remains.",
+    "Explicit relationship and discovered-evidence questions keep their evidence. SYSTEM forbids deriving date/number relations from catalog names, reopening completed checks, and adding unsupported extra puzzle branches; at most one local explanation and one supported question."
+  ],
+  "official_documentation": [
+    {
+      "url": "https://api-docs.deepseek.com/guides/json_mode/",
+      "provenance": "Main verified official documentation and supplied narrow authorization; Owner did not independently browse."
+    },
+    {
+      "url": "https://api-docs.deepseek.com/api/create-chat-completion/",
+      "provenance": "Main verified official documentation and supplied narrow authorization; Owner did not independently browse."
+    }
+  ],
+  "actual_commands": [
+    {
+      "invocation": "Get-Content paid result.json and current companion.py",
+      "exit_code": 0,
+      "tool_chunk": "7f3f9e",
+      "output_truncated": true
+    },
+    {
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Read focused paid case questions/raw responses",
+      "exit_code": 0,
+      "tool_chunk": "a93790",
+      "output_truncated": true
+    },
+    {
+      "invocation": "rg strict_json and Get-Content provider parser excerpt",
+      "exit_code": 0,
+      "tool_chunk": "644009"
+    },
+    {
+      "invocation": "Get-Content provider.py CallLimits and complete implementation",
+      "exit_code": 0,
+      "tool_chunk": "d194eb"
+    },
+    {
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Guarded byte-edit attempt",
+      "exit_code": 1,
+      "tool_chunk": "10b54c",
+      "failure": "Incorrect CRLF needle for provider.py. Assertion occurred before any file write; no partial product edit."
+    },
+    {
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Inspect provider line-ending bytes",
+      "exit_code": 0,
+      "tool_chunk": "e11900",
+      "result": "provider original 0CRLF/336LF"
+    },
+    {
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "Apply approved changes preserving provider LF and companion CRLF",
+      "exit_code": 0,
+      "tool_chunk": "0a5206"
+    },
+    {
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "New isolated MockTransport request-body and minimum procedural context development checks",
+      "exit_code": 0,
+      "tool_chunk": "36f5b9",
+      "ast_files": 2,
+      "synthetic_http_exchanges": 2,
+      "synthetic_reservations": 2,
+      "json_mode_true_body_checked": true,
+      "legacy_default_two_argument_body_checked": true,
+      "non_bool_rejected_before_reserve_and_transport": true,
+      "procedural_context_cases": 3,
+      "explicit_relationship_context_preserved": true,
+      "scope": "Owner development, not independent formal QA"
+    }
+  ],
+  "paid_calls": 0,
+  "network_calls": 0,
+  "database_access": false,
+  "canonical_budget_access": false,
+  "old_suites_run": 0,
+  "commits": 0,
+  "spawned_agents": 0,
+  "limitations": [
+    "No new real-provider call by Owner. Historical Q01/Q03/Q04 results retain their original source epoch and outcomes; no claim the format/context changes prove future model quality.",
+    "Context focus is a conservative keyword policy; explicit relationship questions retain evidence and semantic citation relevance remains heuristic.",
+    "JSON response mode improves transport format constraints, but strict local parser, schema/semantic validation and existing stop behavior remain necessary.",
+    "Natural prose remains prompted toward one explanation/one question; unsupported semantic associations are not completely detectable by local guards.",
+    "Independent QA and any last budgeted paid sample belong to Main; no inferred runtime model identity."
+  ]
+}

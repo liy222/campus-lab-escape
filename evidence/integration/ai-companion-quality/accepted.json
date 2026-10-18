@@ -1,0 +1,51 @@
+{
+  "recorded_at": "2026-10-18T11:48:34.509097+00:00",
+  "operator": "Main integration",
+  "verdict": "limited_acceptance_login_sample_and_offline_boundaries_only",
+  "overall_model_quality_certified": false,
+  "candidate": "evidence/integration/ai-companion-quality/candidate-fixed.json",
+  "candidate_file_sha256": "143958e6ab9c37c02296d59c2e83bfae336dc72e3559b8cb4701068d007edab5",
+  "independent_review": "evidence/integration/ai-companion-quality/qa/final-review.json",
+  "independent_review_sha256": "e46ee8b0820338489e1d412bb988e0dbe10b1f9ade9bff39b4fb4831c4dc2f5b",
+  "Main_verified_hash_maps": {
+    "current_source": 243,
+    "old_files": 172,
+    "paid_raw_artifacts": 12,
+    "QA_result_files": 21
+  },
+  "offline_execution_epochs": [
+    {
+      "candidate": "candidate.json",
+      "methods": 15,
+      "seconds": 11.394,
+      "exit_code": 0
+    },
+    {
+      "candidate": "candidate-fixed.json",
+      "methods": 3,
+      "seconds": 2.741,
+      "exit_code": 0
+    }
+  ],
+  "paid_actual_calls": 4,
+  "skipped_cases": [
+    "Q02 followup: Q01 was rejected"
+  ],
+  "round_conservative_cost_upper_cny": 0.00958448,
+  "new_unknown_calls": 0,
+  "first_batch_quality": "Q01/Q03 format rejected; Q04 unsupported relationship displayed. NOT_ACCEPTED, preserved.",
+  "fixed_Q05": "Strict JSON, two natural grounded sentences distinguish finished login from unread record; no code, unsupported relationship or full solution. Applicable five quality axes pass for this sample only.",
+  "product_paths": [
+    "backend/app/ai/companion.py",
+    "backend/app/ai/provider.py",
+    "backend/app/storage/ai.py"
+  ],
+  "limitations": [
+    "Actual paid followup quality remains untested: Q02 skipped.",
+    "No fixed-source paid cabinet/circuit quality retest; no statistical or all-scenario certification.",
+    "Natural language truth and indirect solution detection remain heuristic.",
+    "No new build/UI/human playthrough, no gameplay/save-schema change.",
+    "Conservative charge upper bound is not supplier invoice."
+  ],
+  "stop": "Product/test/paid execution STOP; final documents and normal liy222 commit/push only."
+}

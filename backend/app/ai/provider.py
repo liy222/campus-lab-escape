@@ -37,9 +37,10 @@ def strict_json(text: str) -> Any:
 class CallLimits:
     max_tokens: int = 1000
     timeout_seconds: float = 20.0
+    json_mode: bool = False
 
     def validate(self):
-        if type(self.max_tokens) is not int or not 1 <= self.max_tokens <= 1000 or not 0 < self.timeout_seconds <= 20:
+        if type(self.json_mode) is not bool or type(self.max_tokens) is not int or not 1 <= self.max_tokens <= 1000 or not 0 < self.timeout_seconds <= 20:
             raise ProviderError("INVALID_CALL_LIMITS")
 
 
@@ -220,6 +221,8 @@ class DeepSeekProvider:
         for tool in wire_tools:
             tool["function"].pop("strict", None)
         payload = {"model": self.config.model, "messages": copy.deepcopy(messages), "max_tokens": limits.max_tokens, "thinking": {"type": "disabled"}, "stream": False}
+        if limits.json_mode:
+            payload["response_format"] = {"type": "json_object"}
         if wire_tools:
             payload.update(tools=wire_tools, tool_choice=tool_choice)
         encoded = json.dumps(payload, ensure_ascii=False, separators=(",", ":"), allow_nan=False).encode("utf-8")

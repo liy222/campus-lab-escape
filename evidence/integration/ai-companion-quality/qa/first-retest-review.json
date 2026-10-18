@@ -1,0 +1,130 @@
+{
+  "recorded_at": "2026-10-18T11:41:36.516170+00:00",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "tests/ai-companion-quality/review_first_retest.py"
+  ],
+  "audit_exit_code": 0,
+  "audit_issues": [],
+  "semantic_verdict": "NOT_ACCEPTED_needs_narrow_fix_preserve_first_batch",
+  "result": "evidence/integration/ai-companion-quality/paid/20261018T113949130750Z-real/result.json",
+  "result_sha256": "e72996400d542b7edb8f8ad5d9b3df86b5b5ea7cc740d2b8cfb7db2a566a0da1",
+  "artifact_files_checked": 9,
+  "actual_dispatches": 3,
+  "displayed_model_replies": 1,
+  "blocked_non_JSON": 2,
+  "skipped_followup": 1,
+  "charge_upper_cny": "0.00740048",
+  "budget_cumulative_upper_cny": "0.90176696",
+  "budget_remaining_cny": "9.09823304",
+  "unknown_before_after": [
+    2,
+    2
+  ],
+  "QA_paid_calls": 0,
+  "QA_canonical_budget_access": false,
+  "cases": [
+    {
+      "case_id": "Q01",
+      "assessment": {
+        "relevance": "pass_in_raw",
+        "factual_grounding": "pass_in_raw",
+        "useful_partial_guidance": "pass_in_raw",
+        "no_complete_solution": "pass_in_raw",
+        "natural_non_template": "pass_in_raw",
+        "followup_coherence": "not_applicable",
+        "delivery": "fail_non_JSON_stopped",
+        "overall": "failed_delivery",
+        "basis": "Raw explains input accepted versus door physically closed and allows other visible objects; strict JSON failure means player only sees generic stopped text."
+      },
+      "question": "柜门仍合着，但刚才输入后绿灯亮了。这说明什么？是不是只有柜子能继续观察？",
+      "dispatches": 1,
+      "raw_provider_path": "evidence/integration/ai-companion-quality/paid/20261018T113949130750Z-real/Q01-provider.json",
+      "raw_content": "绿灯亮和门闩轻响说明刚才的输入已被柜子接受，但它只解锁、并未自动开门，所以柜门仍合着。并不是只能继续看柜子，房间里的墙钟、实验记录、铭牌等仍可查看。你想先拉开柜门确认解锁结果，还是先核对输入依据？",
+      "JSON_object": false,
+      "displayed_answer": "本轮提示没有完成，已发现线索与游戏进度仍保留。",
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "hint_count_delta": 0,
+      "revision_delta": 0
+    },
+    {
+      "case_id": "Q02",
+      "assessment": {
+        "relevance": "not_tested",
+        "factual_grounding": "not_tested",
+        "useful_partial_guidance": "not_tested",
+        "no_complete_solution": "not_tested",
+        "natural_non_template": "not_tested",
+        "followup_coherence": "not_tested",
+        "delivery": "skipped_parent_stopped",
+        "overall": "no_actual_followup_evidence",
+        "basis": "Q01 was not accepted; parent skip policy correctly dispatches zero."
+      },
+      "question": null,
+      "dispatches": 0,
+      "skip_reason": "Parent reply not accepted"
+    },
+    {
+      "case_id": "Q03",
+      "assessment": {
+        "relevance": "pass_in_raw",
+        "factual_grounding": "pass_in_raw",
+        "useful_partial_guidance": "pass_in_raw",
+        "no_complete_solution": "pass_in_raw",
+        "natural_non_template": "pass_in_raw",
+        "followup_coherence": "not_applicable",
+        "delivery": "fail_non_JSON_stopped",
+        "overall": "failed_delivery",
+        "basis": "Raw describes adjacent reciprocal ports without rotations/full layout, but non-JSON fails delivery and player only sees generic stopped text."
+      },
+      "question": "线路有点乱，我不知道该怎么判断两块能不能连上。请只讲一个局部检查方法，不给旋转步骤。",
+      "dispatches": 1,
+      "raw_provider_path": "evidence/integration/ai-companion-quality/paid/20261018T113949130750Z-real/Q03-provider.json",
+      "raw_content": "这个局部检查只看相邻两块模块朝向彼此的那一边：如果左边模块的右侧有端口，同时右边模块的左侧也有端口，这两块才算在这一侧对得上；只看到一边有接口，就不能判断为连上。",
+      "JSON_object": false,
+      "displayed_answer": "本轮提示没有完成，已发现线索与游戏进度仍保留。",
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "hint_count_delta": 0,
+      "revision_delta": 0
+    },
+    {
+      "case_id": "Q04",
+      "assessment": {
+        "relevance": "weak",
+        "factual_grounding": "fail",
+        "useful_partial_guidance": "weak",
+        "no_complete_solution": "pass",
+        "natural_non_template": "weak",
+        "followup_coherence": "not_applicable",
+        "delivery": "displayed",
+        "overall": "unsupported_relation_and_regressive_focus",
+        "basis": "Opening recognizes login passed and record unread; later suggests date/number relation between maintenance label, service note and unread record without any evidence of such relation, then returns to the completed login identity issue. Visible/discovered objects alone do not support this connection; empty refs do not validate prose."
+      },
+      "question": "我已经登录了，屏幕没再要求输入信息。现在是还要解密码，还是应该换一种观察方式？",
+      "dispatches": 1,
+      "raw_provider_path": "evidence/integration/ai-companion-quality/paid/20261018T113949130750Z-real/Q04-provider.json",
+      "raw_content": "{\"answer\":\"登录已经通过，说明账号和密码这一关已经过了，不是还要再解密码。现在电脑提示的是“一份封存研究记录等待读取”，这属于下一步读取内容，而不是继续猜登录信息。你说的“换一种观察方式”，更适合把注意力从登录界面移到机身旁的维护说明和箱背维护签，看看它们与当前封存记录之间有没有可对照的日期或编号关系。还有一个可查的小问题：维护说明里提到的编号，你在电脑或机身上是否已找到同样的写法？\",\"clue_refs\":[]}",
+      "JSON_object": true,
+      "displayed_answer": "登录已经通过，说明账号和密码这一关已经过了，不是还要再解密码。现在电脑提示的是“一份封存研究记录等待读取”，这属于下一步读取内容，而不是继续猜登录信息。你说的“换一种观察方式”，更适合把注意力从登录界面移到机身旁的维护说明和箱背维护签，看看它们与当前封存记录之间有没有可对照的日期或编号关系。还有一个可查的小问题：维护说明里提到的编号，你在电脑或机身上是否已找到同样的写法？",
+      "status": "no_suggestion",
+      "stop_reason": null,
+      "hint_count_delta": 1,
+      "revision_delta": 1
+    }
+  ],
+  "required_fix": [
+    "Preserve strict schema rejection; improve provider-side JSON compliance without silently wrapping raw prose.",
+    "Constrain inferred relations to provided supporting facts; known visibility alone is insufficient.",
+    "Keep successful login acknowledged and ground the explanation in current unread-record feedback."
+  ],
+  "limitations": [
+    "Three actual calls, one displayed model reply; no real followup answer occurred.",
+    "Audit exit0 means records/hash/arithmetic consistent, not semantic quality accepted.",
+    "No paid retries, provider judge, UI/build or human experience claim."
+  ]
+}

@@ -98,3 +98,5 @@ $env:SQLITE_PATH = './data/game-v1.sqlite'
 
 
 真实模型定向试玩共8次：首批7次与一次窄修后的 C08；首批只有 C03、C07 通过全部适用质量项，C01/C02 有事实问题，C04 被引用保护拦截，C05/C06 的引用不足以支持回答。C08 返回了柜体状态与目录相关内容、空引用，但措辞较直接且仍带有 `CODE_ACCEPTED` 状态字样；不能据此称整体质量通过，首轮其余问题场景未全部真实复测。8次按账本 usage 与既有峰值价格计算的计费上界为 ¥0.020108，累计上界 ¥0.89436648；这是保守上界，不是供应商账单。审查结论与限制见 [真实试玩验收](evidence/integration/ai-companion-real/accepted.json)、[最终 QA 复核](evidence/integration/ai-companion-real/qa/final-review.json) 和[独立发现记录](review/findings/ai-companion-real.md)。
+
+本轮 AI 伙伴质量修正仅获有限接受：新的 strict JSON mode 与上下文减噪后，唯一真实 Q05 登录样本通过适用质量项；Q01/Q03 因非 JSON 被拦、Q02 跳过、Q04 的无依据旧线索联系均保留为未接受结果。离线验证来自两个源码阶段，不能合并成同一候选全绿；尚未验证连问、柜体/线路新候选真实质量或真人体验。详情见 [独立 QA 结论](evidence/integration/ai-companion-quality/qa/final-review.json) 与[发现记录](review/findings/ai-companion-quality.md)。

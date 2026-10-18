@@ -1,0 +1,12 @@
+{
+  "operator": "Main integration after QA agents no longer live",
+  "scope": "One mechanical chronological sentence clarification in final report; no semantic finding, QA execution, sealed final-review or product changes.",
+  "file": "review/findings/ai-companion-quality.md",
+  "before_sha256": "aec6cf95b9e5134aed2ef7bb1937ebf437405fc73716fe19ac17df8c7c1bf5e1",
+  "after_sha256": "97f3f881235cd1b806321c816af42f8d8808693ec2109e33919b3aa5b2cb6723",
+  "old": "fixed候选新增窄QA已实际通过，最终真实Q05待审。",
+  "new": "阶段记录：fixed候选新增窄QA通过时，Q05尚待实际审查；其后结果见上节。",
+  "historical_binding": "final-review.json qa_and_result_sha256 binds before bytes; this proof binds the final mechanical document epoch.",
+  "earlier_attempt_exit_code": 1,
+  "earlier_attempt_reason": "Conservative assertion assumed report was not bound by final manifest; stopped before any write. Corrected check now explicitly validates the sealed before hash."
+}

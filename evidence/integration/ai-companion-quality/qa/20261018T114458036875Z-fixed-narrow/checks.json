@@ -1,0 +1,289 @@
+[
+  {
+    "check": "real-provider-optin-request-body",
+    "intercepted_requests": [
+      {
+        "url": "https://api.deepseek.com/chat/completions",
+        "body": {
+          "model": "deepseek-flash",
+          "messages": [
+            {
+              "role": "user",
+              "content": "Return a JSON object for this isolated transport test."
+            }
+          ],
+          "max_tokens": 100,
+          "thinking": {
+            "type": "disabled"
+          },
+          "stream": false
+        }
+      },
+      {
+        "url": "https://api.deepseek.com/chat/completions",
+        "body": {
+          "model": "deepseek-flash",
+          "messages": [
+            {
+              "role": "user",
+              "content": "Return a JSON object for this isolated transport test."
+            }
+          ],
+          "max_tokens": 100,
+          "thinking": {
+            "type": "disabled"
+          },
+          "stream": false,
+          "response_format": {
+            "type": "json_object"
+          }
+        }
+      }
+    ],
+    "temporary_ledger": {
+      "cap_cny": 10.0,
+      "charged_upper_cny": 2.4e-05,
+      "remaining_cny": 9.999976,
+      "calls": 2,
+      "unknown_or_pending_calls": 0,
+      "frozen": false
+    },
+    "external_network": false,
+    "canonical_ledger": false
+  },
+  {
+    "check": "strict-format-direct-runtime",
+    "raw": "绿灯亮和门闩轻响说明刚才的输入已被柜子接受，但它只解锁、并未自动开门，所以柜门仍合着。并不是只能继续看柜子，房间里的墙钟、实验记录、铭牌等仍可查看。你想先拉开柜门确认解锁结果，还是先核对输入依据？",
+    "runtime": {
+      "answer": "本轮回复未通过校验，游戏进度仍保留。",
+      "clue_refs": [],
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "input_tokens": 37,
+        "output_tokens": 19,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      }
+    },
+    "final_status": "stopped"
+  },
+  {
+    "check": "strict-format-direct-runtime",
+    "raw": "这个局部检查只看相邻两块模块朝向彼此的那一边：如果左边模块的右侧有端口，同时右边模块的左侧也有端口，这两块才算在这一侧对得上；只看到一边有接口，就不能判断为连上。",
+    "runtime": {
+      "answer": "本轮回复未通过校验，游戏进度仍保留。",
+      "clue_refs": [],
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "input_tokens": 37,
+        "output_tokens": 19,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      }
+    },
+    "final_status": "stopped"
+  },
+  {
+    "check": "strict-format-direct-runtime",
+    "raw": "{\"answer\":\"解释到这里。\",\"clue_refs\":[],}",
+    "runtime": {
+      "answer": "本轮回复未通过校验，游戏进度仍保留。",
+      "clue_refs": [],
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "input_tokens": 37,
+        "output_tokens": 19,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      }
+    },
+    "final_status": "stopped"
+  },
+  {
+    "check": "strict-format-direct-runtime",
+    "raw": "{\"answer\":\"解释到这里。\",\"answer\":\"重复键。\",\"clue_refs\":[]}",
+    "runtime": {
+      "answer": "本轮回复未通过校验，游戏进度仍保留。",
+      "clue_refs": [],
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "input_tokens": 37,
+        "output_tokens": 19,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      }
+    },
+    "final_status": "stopped"
+  },
+  {
+    "check": "strict-format-direct-runtime",
+    "raw": "先说一句。{\"answer\":\"解释到这里。\",\"clue_refs\":[]}",
+    "runtime": {
+      "answer": "本轮回复未通过校验，游戏进度仍保留。",
+      "clue_refs": [],
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "input_tokens": 37,
+        "output_tokens": 19,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      }
+    },
+    "final_status": "stopped"
+  },
+  {
+    "check": "strict-format-direct-runtime",
+    "raw": "```json\n{\"answer\":\"解释到这里。\",\"clue_refs\":[]}\n```",
+    "runtime": {
+      "answer": "本轮回复未通过校验，游戏进度仍保留。",
+      "clue_refs": [],
+      "status": "stopped",
+      "stop_reason": "MODEL_INVALID_OUTPUT",
+      "usage": {
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "input_tokens": 37,
+        "output_tokens": 19,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      }
+    },
+    "final_status": "stopped"
+  },
+  {
+    "check": "direct-runtime-and-forged-store-guards",
+    "runtime_rejections": 2,
+    "Store_rejections": 2
+  },
+  {
+    "check": "logged-in-focused-wire-and-direct-runtime-success",
+    "context": {
+      "question": "我已经登录了，屏幕没再要求输入信息。现在是还要解密码，还是应该换一种观察方式？",
+      "public_progress": {
+        "room": "设备实验室",
+        "status": "仍在探索",
+        "device_states": [
+          {
+            "name": "电脑",
+            "description": "登录已通过，一份封存研究记录等待读取。"
+          }
+        ]
+      },
+      "visible_objects": [
+        {
+          "name": "电脑",
+          "actions": [
+            "观察",
+            "读取记录"
+          ],
+          "description": "登录已通过，一份封存研究记录等待读取。"
+        }
+      ],
+      "visible_object_catalog": [
+        {
+          "name": "电源箱"
+        },
+        {
+          "name": "电脑"
+        },
+        {
+          "name": "维护说明"
+        },
+        {
+          "name": "控制室门"
+        },
+        {
+          "name": "箱背维护签"
+        }
+      ],
+      "inventory": [],
+      "open_passages": [
+        {
+          "name": "实验准备室"
+        }
+      ],
+      "known_evidence": [],
+      "allowed_clue_refs": [],
+      "director": {
+        "focus": "电脑"
+      },
+      "related_topics": [],
+      "recent_history": [
+        {
+          "kind": "action",
+          "summary": "操作装置：电脑"
+        },
+        {
+          "kind": "action",
+          "summary": "操作装置：电脑"
+        },
+        {
+          "kind": "action",
+          "summary": "进行一次操作：电脑"
+        }
+      ]
+    },
+    "runtime_answer": {
+      "answer": "登录已经通过，账号和密码这一关完成了。屏幕现在等的是读取封存记录，可以先区分“获准进入”和“看过内容”这两件事。",
+      "clue_refs": [],
+      "status": "no_suggestion",
+      "stop_reason": null,
+      "usage": {
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "input_tokens": 37,
+        "output_tokens": 19,
+        "model_calls": 1,
+        "read_tool_calls": 0
+      }
+    },
+    "final_answer": "登录已经通过，账号和密码这一关完成了。屏幕现在等的是读取封存记录，可以先区分“获准进入”和“看过内容”这两件事。"
+  },
+  {
+    "check": "rejected-no-state-delta",
+    "boundary": "Runtime",
+    "answer": "当前阶段为CODE_ACCEPTED。",
+    "question": "请结合当前状态解释，不要输出内部字段。",
+    "refs": [],
+    "stop_reason": "MODEL_INVALID_OUTPUT"
+  },
+  {
+    "check": "rejected-no-state-delta",
+    "boundary": "Runtime",
+    "answer": "可以先从你已经注意到的一个物件说起，再指出其中让你疑惑的一点。",
+    "question": "刚才没明白，为什么要从那里开始？",
+    "refs": [],
+    "stop_reason": "MODEL_INVALID_OUTPUT"
+  },
+  {
+    "check": "rejected-no-state-delta",
+    "boundary": "Store",
+    "answer": "当前阶段为CODE_ACCEPTED。",
+    "question": "请结合当前状态解释，不要输出内部字段。",
+    "refs": [],
+    "stop_reason": "MODEL_INVALID_OUTPUT"
+  },
+  {
+    "check": "rejected-no-state-delta",
+    "boundary": "Store",
+    "answer": "可以先从你已经注意到的一个物件说起，再指出其中让你疑惑的一点。",
+    "question": "刚才没明白，为什么要从那里开始？",
+    "refs": [],
+    "stop_reason": "MODEL_INVALID_OUTPUT"
+  }
+]

@@ -1,0 +1,86 @@
+{
+  "operator": "Independent QA offline reading of existing sanitized provider evidence",
+  "paid_calls": 0,
+  "canonical_budget_access": false,
+  "case_count": 8,
+  "cases": [
+    {
+      "case_id": "C01",
+      "provider_evidence": "evidence/integration/ai-companion-real/20261018T110144068872Z-real/C01-provider.json",
+      "raw_answer": "先别急着推密码，我们只做观察。当前能直接看的只有实验记录；你点它的“观察”，把看到的内容按原样告诉我，尤其留意数字或符号出现在什么位置。拿到这段记录后，我们再只挑一个局部关系来梳理。你现在看到记录了吗？",
+      "raw_refs": [],
+      "offline_assessment": "Historical fact failure: only experiment record claimed directly observable despite seven public objects. Not retested by the lone C08.",
+      "current_candidate_retest": false
+    },
+    {
+      "case_id": "C02",
+      "provider_evidence": "evidence/integration/ai-companion-real/20261018T110144068872Z-real/C02-provider.json",
+      "raw_answer": "刚才那个方向只是当前场景里唯一可直接观察的对象，不代表我已知道内容或结论。你还没有观察任何东西，所以先看清“实验记录”本身即可，不预设它写着什么。看完后只告诉我记录里数字或符号出现的位置，别急着推断。",
+      "raw_refs": [],
+      "offline_assessment": "Historical followup repeats false exclusivity; actual prior history supplied, but no exact duplicate. Needs actual followup quality sample.",
+      "current_candidate_retest": false
+    },
+    {
+      "case_id": "C03",
+      "provider_evidence": "evidence/integration/ai-companion-real/20261018T110144068872Z-real/C03-provider.json",
+      "raw_answer": "“末两位”指的是实验记录规则里最后两位要取实验开始时间的分钟数；墙钟已明确是实验开始时间，它显示的分钟部分就是可查的那一段。两处只在该“分钟”上发生关联，前两位仍另按样本编号规则确定。",
+      "raw_refs": [
+        "r1_clock_clue",
+        "r1_record_clue"
+      ],
+      "offline_assessment": "Historical local time/record relation supported by discovered evidence; no new model test in this preparation.",
+      "current_candidate_retest": false
+    },
+    {
+      "case_id": "C04",
+      "provider_evidence": "evidence/integration/ai-companion-real/20261018T110144068872Z-real/C04-provider.json",
+      "raw_answer": "输入被接受后，柜子只是从锁止变成可拉开的状态，并没有自动弹开；柜门的描述也写“仍合着”。所以先关注储物柜这个装置本身，看看它现在是否还合着、下一步是否轮到拉开柜门。",
+      "raw_refs": [
+        "r1_cabinet_clue"
+      ],
+      "offline_assessment": "Historical invented cabinet clue rejected; guard success does not make delivered response useful.",
+      "current_candidate_retest": false
+    },
+    {
+      "case_id": "C05",
+      "provider_evidence": "evidence/integration/ai-companion-real/20261018T110144068872Z-real/C05-provider.json",
+      "raw_answer": "先只看相邻两块朝向彼此的那一个端口：若两边都标出面向对方的端口，这一小段才可能接通；任一边缺这个朝向就先搁置。你可先在已记录的模块里挑一对上下相邻的，核对它们相对端口是否成对。",
+      "raw_refs": [
+        "r2_maintenance_clue"
+      ],
+      "offline_assessment": "Historical circuit explanation relevant but maintenance reference unrelated; no new real retest yet.",
+      "current_candidate_retest": false
+    },
+    {
+      "case_id": "C06",
+      "provider_evidence": "evidence/integration/ai-companion-real/20261018T110144068872Z-real/C06-provider.json",
+      "raw_answer": "登录已通过，不必再输入密码；接下来更合适的是换一种观察方式，先读取电脑里那份封存研究记录。",
+      "raw_refs": [
+        "r2_maintenance_clue"
+      ],
+      "offline_assessment": "Historical logged-in next-step relevant but maintenance reference unrelated; no new real retest yet.",
+      "current_candidate_retest": false
+    },
+    {
+      "case_id": "C07",
+      "provider_evidence": "evidence/integration/ai-companion-real/20261018T110144068872Z-real/C07-provider.json",
+      "raw_answer": "先取“批次源序”里的符号，再用转录纸条的位置编号挑出读取次序，最后拿设备对应表把每个符号换成设备；三份记录是逐层映射，不要跳步。可以先只核对源序第3位在设备表里对应哪个设备，再决定它是否该排到读取序列的开头。",
+      "raw_refs": [
+        "r1_symbols_clue",
+        "r2_indices_clue",
+        "r3_legend_clue"
+      ],
+      "offline_assessment": "Historical partial transcription relation supported; no full order disclosed in this sample.",
+      "current_candidate_retest": false
+    },
+    {
+      "case_id": "C08",
+      "provider_evidence": "evidence/integration/ai-companion-real/targeted/20261018T111212456755Z-real/C08-provider.json",
+      "raw_answer": "不是只有储物柜能继续观察：当前可见目录里还有墙钟、实验记录、铭牌、显微镜和设备间门。柜子状态是校验已通过（CODE_ACCEPTED），绿灯亮、门闩轻响，但柜门仍合着，所以下一步是把注意力放在柜门的“拉开”互动上，而不是再猜新数字；其余物件仍可继续观察，用来补充关系。",
+      "raw_refs": [],
+      "offline_assessment": "Historical narrow improvement in catalog/ref policy; CODE_ACCEPTED and implementation vocabulary still leaked. Naturalness weak.",
+      "current_candidate_retest": false
+    }
+  ],
+  "limitation": "Historical outputs span two old source epochs; this is not new model quality evidence or a new global pass."
+}

@@ -122,7 +122,7 @@ class AIStoreMixin:
             if not question:
                 continue
             history.append({'kind': 'dialogue', 'question': '[先前问题包含整组猜测，未发送其内容]' if looks_like_solution(question) else question[-300:],
-                            'answer': data['answer'][-300:], 'clue_refs': [ref for ref in data.get('clue_refs', []) if ref in state.discovered_clue_ids]})
+                            'answer': data['answer'][-360:], 'clue_refs': [ref for ref in data.get('clue_refs', []) if ref in state.discovered_clue_ids]})
             if len(history) == 3:
                 break
         history.reverse()
@@ -448,9 +448,9 @@ class AIStoreMixin:
                             else:
                                 if usage['model_calls'] != 1:
                                     raise ValueError('Companion requires one measured attempt')
-                                context = build_companion_context(projection, question)
+                                context = build_companion_context(projection, question, self.companion_history(connection, session_id, state))
                                 reply = validate_companion_reply(projection, {'answer': data['answer'], 'clue_refs': data['clue_refs']}, question,
-                                                                 allowed_refs=context['allowed_clue_refs'])
+                                                                 allowed_refs=context['allowed_clue_refs'], history=context['recent_history'])
                                 answer, refs = reply['answer'], reply['clue_refs']
                         else:
                             raise ValueError('Invalid stored turn mode')

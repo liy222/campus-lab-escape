@@ -244,3 +244,9 @@ Prepare and execute7paid shortscenario probes+1localcontrol underCNY1.50/origina
 
 ### 2026-10-18 real paid quality test complete
 Actual8requests+localcontrol complete, uppercost0.020108; recordmixedquality and acceptnarrowcatalog/refchecks corrections with14methodsofflineregression0. C08singlepaidretest improvedcabinetcase, stilltechnicalwording/directstyle; originalotherproblemcases notpaidretested. No overallqualitycertification. Finaldocs+normal liy222 syncnext, paidstop.
+
+### 2026-10-18 companion quality refinement
+Fix technicalstate wording, overdirect instruction and repeated dialogue using publiccontext/prompt plus narrowsharedguard. Stablecandidate independentofflineAPI/count/save/history/citation regression, then atmost4targetedpaid quality samples under0.30CNY/original10 if needed; preserve allpreviousresults. No newUI/gameplay feature.
+
+### 2026-10-18 companion quality refinement accepted
+Naturalpubliccontext/preciseinternalcodeguard/clarificationhistory implemented; actualformatdefects addressedwith officialJSONmode while strictparserretained, proceduralcontextdropsunrelatedevidence. Independent15thenfixed3 pass separatecandidates. New4paidcalls preservefirstfailures; finalQ05login sampleaccurate/natural, no broadqualityclaim or actualfollowupcheck. Finaldoc/syncnext, paidSTOP.

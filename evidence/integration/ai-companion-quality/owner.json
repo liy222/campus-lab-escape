@@ -1,0 +1,130 @@
+{
+  "epoch": "ai-companion-quality",
+  "operator": "companion_quality_fix Owner",
+  "recorded_at": "2026-10-18T11:38:14.576075+00:00",
+  "status": "SOURCE STOP",
+  "scope": "Authorized companion quality repair; Store limited to three explicitly authorized existing lines",
+  "files": [
+    "backend/app/ai/companion.py",
+    "backend/app/storage/ai.py",
+    "evidence/integration/ai-companion-quality/owner.json"
+  ],
+  "source_sha256": {
+    "backend/app/ai/companion.py": "3c26324f51b7d4751513d2cbcd862dc4221844ef1cdab6281ba3b8a5ace1addc",
+    "backend/app/storage/ai.py": "819e8efe25e9861f084bf86bed602091f58fe507456c85dca58b83f27be4e984"
+  },
+  "implementation": [
+    "Keep local director and catalog identifiers for compatibility; send a separate model-facing public prose context via provider_companion_context(context, state).",
+    "Model-facing device descriptions are limited to currently visible and already observed devices; full catalog contains names only, legal actions contain labels only; no remote raw device-state projection.",
+    "Explain an observable change or one supported relationship before one reasoning question; operational questions can receive one legal action explanation; explicitly acknowledge prior observation and clarify rather than repeat.",
+    "Strict clue whitelist, full-guess refusal, no tools/proposals, existing measured single-call budget and all prior semantic guards retained.",
+    "Explicit follow-up alone may recover the previous dialogue question for evidence lookup; operation/state/circuit questions cannot inherit unrelated references; old clue_refs are never trusted.",
+    "Shared runtime/finalizer guard rejects precise internal identifiers/enums and exact normalized repetitions to clarification requests, with quoting exception; USER/PASS remains allowed.",
+    "Store changes only bounded answer history from 300 to hardcap360 and finalizer context/validation history arguments; byte replacements preserve existing line endings."
+  ],
+  "actual_development_commands": [
+    {
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "PowerShell inline Python; unittest loadTestsFromModule(tests.api.test_ai_companion) under create_test_runtime patch",
+      "exit_code": 0,
+      "methods": 8,
+      "seconds": 5.356,
+      "failures": 0,
+      "errors": 0,
+      "tool_chunk": "505bf8",
+      "scope": "Owner development compatibility, not independent formal QA"
+    },
+    {
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "PowerShell inline Python; AST two files, C01/C03/C04/C05/C06/C07 wire checks, six internal-code guards, USER/PASS acceptance, then long-answer fixture",
+      "exit_code": 1,
+      "completed_checks_before_failure": 13,
+      "tool_chunk": "010d71",
+      "failure": "Development fixture repeated a 15-character sentence 20 times, exactly300, then asserted greater than300. No product assertion failed and no product change followed."
+    },
+    {
+      "command": [
+        "C:/Users/liyh/.conda/envs/1/python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-"
+      ],
+      "invocation": "PowerShell inline Python; only long-answer remainder, sentence repeated21 times produces315 characters; clarification duplicate rejected, ordinary repeated question and explicit quote allowed",
+      "exit_code": 0,
+      "checks": 3,
+      "answer_length": 315,
+      "tool_chunk": "d4e373",
+      "earlier_checks_repeated": false
+    },
+    {
+      "command": "Get-Content tests/api/test_ai_companion.py excerpt; optional test_context_fix.py; rg public state fields in graybox_rules.py and nonexistent device_rules.py",
+      "exit_code": 1,
+      "tool_chunk": "41c50a",
+      "failure": "Read-only exploratory search included a nonexistent file; used existing puzzle_rules.py/device_flow data afterward. No implementation or test failure."
+    },
+    {
+      "command": "git diff --stat -- backend/app/ai/companion.py backend/app/storage/ai.py; git diff -- backend/app/storage/ai.py",
+      "exit_code": 0,
+      "tool_chunk": "46dd94",
+      "scope": "Read-only development diff before final authorized history-limit line"
+    }
+  ],
+  "read_sources": [
+    "AGENTS.md",
+    "review/findings/ai-companion-real.md",
+    "backend/app/ai/companion.py",
+    "backend/app/storage/ai.py",
+    "backend/app/ai/hints.py",
+    "backend/app/domain/graybox_rules.py",
+    "backend/app/domain/puzzle_rules.py",
+    "backend/app/domain/upgrade_rules.py",
+    "backend/app/domain/mini_rules.py",
+    "backend/app/domain/circuit.py",
+    "tests/api/test_ai_companion.py",
+    "tests/ai-companion/fake_runtime.py",
+    "tests/ai-companion-real/run_regression.py"
+  ],
+  "read_command_results": {
+    "d5a988": 0,
+    "bfdc04": 0,
+    "39beef": 0,
+    "c7c960": 0,
+    "41c50a": 1,
+    "a0b6ec": 0,
+    "eedd91": 0,
+    "9d835c": 0,
+    "46dd94": 0
+  },
+  "mutation_command_results": {
+    "6eab0d": 0,
+    "fa1095": 0,
+    "9cc0b3": 0,
+    "bdec01": 0
+  },
+  "paid_calls": 0,
+  "network_calls": 0,
+  "canonical_budget_access": false,
+  "commits": 0,
+  "spawned_agents": 0,
+  "limitations": [
+    "Owner development checks are not independent formal QA or real-model quality acceptance; formal QA and paid retest are Main-managed.",
+    "The old eight compatibility methods ran before the last precise-field expansion and full360-history adjustment; final minimum guard checks cover those additions, with the retained fixture failure above.",
+    "Prose safety, citation relevance and non-repetition beyond exact clarification duplicates remain heuristic/prompt-dependent; no general semantic safety proof.",
+    "No preset replacement or extra model call; invalid output still stops rather than automatically retrying.",
+    "Existing Starlette/httpx deprecation warning observed in the development suite.",
+    "No runtime model identity is independently verified; requested model configuration is only a dispatch fact."
+  ]
+}

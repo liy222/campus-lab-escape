@@ -211,3 +211,12 @@ Use actual gameAPI/Runtime/productionDeepSeekProvider with publiclegalfixture co
 
 ### 2026-10-18 retain real quality failures honestly
 Do not equate acceptedAPIstatus or guardblock with answerquality. Preserve7initialraw/displayed replies and originalsourceepoch; onefixedC08 doesnotconvert oldfailures to passes. Publicfocusdetails require full name/id catalog toavoidfalseexclusivity. Currentstate/action/geometry needemptyrefs; bothruntime+Store enforcefocusedevidence refs without removingunknownrefguard. KeepCODE_ACCEPTED/technicalwording/directstyle as remainingweakness, no extra paidstyleexperiments. Costs conservativepeakupper from actualusage, not supplierbill.
+
+### 2026-10-18 refine prose at source
+Prefer naturalpublicstate summaries and question-sensitive localreasoning over forwarding internal codes/action instructions. Preserve provider rawnaturalanswer and guards, no extra rewrite model call or preset replacement. Followup context should distinguish explanation from repetition. Actualquality claims require raw/displayed paid samples; syntheticQA certifies pipeline boundaries only.
+
+### 2026-10-18 preserve structured output boundary
+Two actualformatfailures require requesting officialJSONmode, not accepting malformedoutput or auto-retrying. CompaniononlyoptionalCallLimitsflag leaves oldcallsdefaultunchanged. Factuallyvisiblecatalog alone does notsupporthypothesizeddate/numberrelations; proceduralanswers should receive onlyrelevantobservedfacts, while fullcatalognames remain forscopeaccuracy.
+
+### 2026-10-18 limited actual quality acceptance
+Accepttestedimplementation boundaries andQ05login improvement, notallmodelquality. Keepfirstfailedpaidbatch visible andlinkit topre-fixcandidate; never reclassifyit aftersourcefixes. First15suite andfixed3narrow are separateepochs. Stop at4newcalls, no retries or paidjudge; dialoguequalitygeneralization remains a limitation rather than fabricatedpass.

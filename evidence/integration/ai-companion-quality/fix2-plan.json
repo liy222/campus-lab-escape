@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-10-18T11:42:34.454452+00:00",
+  "trigger": "Actual new batch Q01/Q03 plain-text format failures; Q04 unsupported old-clue detour; Q02 skipped.",
+  "original_candidate_preserved": "evidence\\integration\\ai-companion-quality\\candidate.json",
+  "actual_result": "evidence/integration/ai-companion-quality/paid/20261018T113949130750Z-real/result.json",
+  "decision": "Preserve strict JSON parser. Opt in to official JSON mode for companion via backward-compatible optional CallLimits flag; reduce unrelated procedural context rather than parse arbitrary plain text.",
+  "additional_owner_path": "backend/app/ai/provider.py",
+  "provider_scope": "Optional CallLimits.json_mode=False and true-only payload response_format json_object, validated before reservation. Endpoint, prices, auth and retry behavior unchanged.",
+  "official_sources": [
+    "https://api-docs.deepseek.com/guides/json_mode/",
+    "https://api-docs.deepseek.com/api/create-chat-completion/"
+  ],
+  "remaining_new_paid_calls": 1,
+  "maximum_round_paid_calls": 4,
+  "maximum_round_upper_cny": 0.3,
+  "no_retries": true,
+  "validation": "Only changed-scope independent checks after fixed source STOP; no duplicate15methods or build/UI."
+}
