@@ -414,6 +414,14 @@ dialog.stage-confirmation .button.primary { background:#b5bf98; color:#192b27; }
 .game-canvas-host>.crt-login h3 { font-size:17px; }
 @media(min-width:761px) and (min-height:521px) { .game-canvas-host>.crt-login input,.game-canvas-host>.crt-login .button { min-height:44px; } }
 
+.companion-history { display:grid; gap:8px; margin-top:14px; }
+.companion-exchange { padding:10px 12px; border-left:2px solid #809276; background:#182721; border-radius:3px; }
+.companion-exchange p { margin:0; font-size:12px; line-height:1.65; white-space:pre-wrap; overflow-wrap:anywhere; }
+.companion-exchange .companion-question { color:#c6d2bb; }
+.companion-exchange .companion-answer { margin-top:5px; color:#e0e5d5; }
+.companion-exchange small { display:block; margin-top:6px; color:#bdc2ae; font-size:10px; line-height:1.5; }
+.companion-exchange.outdated { border-left-color:#8a7667; opacity:.8; }
+
 .painted-object { position:relative; display:block; overflow:hidden; pointer-events:none; }
 .painted-object.painted-placed { position:absolute; }
 .inventory-painted { max-width:44px; max-height:22px; }

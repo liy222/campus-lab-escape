@@ -1,0 +1,22 @@
+{
+  "supersedes": "implementation-v2.json for zero-model-call response display behavior.",
+  "files": {
+    "frontend/src/Assistant.tsx": "d6c1e6f65eea34ba18e88959d001d5b5abcee1aa10fe2f602e767515b223bf26",
+    "frontend/src/style.css": "c40b06abba3d19dca85ff57af3e0bda06e78a1cbc2ee89da4664fc9c06fbf740"
+  },
+  "changes": [
+    "In 3.4.0 companion mode, model_calls=0 is labeled as a local notice without using provider as the mode signal.",
+    "Zero-call responses are excluded from successful companion history and remain visible in the regular answer area with their references and usage details.",
+    "Successful called responses continue to show their answer once in history while retaining current-turn references and usage details."
+  ],
+  "verification": {
+    "command": "& 'C:\\Program Files\\nodejs\\node.exe' '.\\node_modules\\typescript\\bin\\tsc' --noEmit -p '.\\tsconfig.json'",
+    "working_directory": "frontend",
+    "exit_code": 0,
+    "scope": "TypeScript type check after zero-call local-notice changes; no production build repeated."
+  },
+  "limits": [
+    "No real provider request or paid call.",
+    "Independent QA will verify zero-call fallback and history behavior on the frozen candidate."
+  ]
+}

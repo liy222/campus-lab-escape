@@ -1,0 +1,125 @@
+{
+  "recorded_at": "2026-10-18T05:35:51.971495+00:00",
+  "status": "DESIGN ONLY; product implementation requires Main GO",
+  "baseline_head": "32cdc6eed53534584db279aadc24e57c515e5473",
+  "owner": "Backend/AI design owner; prior requested Sol/high is historical spawn fact, runtime model not independently verified",
+  "files_written": [
+    "evidence/integration/ai-companion/backend/design.json"
+  ],
+  "actual_commands": [
+    {
+      "command": "Read-only PowerShell Get-Content and rg for runtime/context/types/storage/routes/provider/request models/existing tests and AGENTS tail",
+      "exit_code": 0
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "exit_code": 0
+    }
+  ],
+  "read_source_sha256": {
+    "backend/app/ai/runtime.py": "3d73ceb972eac6a67dda1acb7e889fc1d372f8a1dc5f4531cda62f0023c6b797",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/types.py": "ac5cf0c259580fbc48431094a0662aeac4aa5e441a027b46574b53631537094e",
+    "backend/app/ai/hints.py": "6f6f86d4f56c957d1233dbde84c12f588bf6864c453bd359b52209cb82a1af5a",
+    "backend/app/ai/provider.py": "e3f19f1bfe46ed647522d83055793107376af99e44934f12959f4ce250d2766a",
+    "backend/app/storage/ai.py": "e4437468129c5b70a7dad37f6eab1d2e7017204ccde23259aa8fd38b6c151e5b",
+    "backend/app/api/routes.py": "44c7471735c4427f248c56ad646c5bd87f6e4ff42dc17d7330abda399c220ae0",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "tests/api/test_play_ai_settings.py": "d24bbc2012f3448f4cc9366e9bfaf38d6f49d39f947c05ed33fc4ace8b48343e",
+    "tests/api/test_hint_flow.py": "b495df12e5170562040d59b15fcae08c46961175f9f04fbb1853d183ef7c974e",
+    "tests/api/test_m3.py": "78a4715d1db5c90921be7daf0f45dd16b1e211ffcd06142d81edde343f652aa4"
+  },
+  "product_changes": 0,
+  "tests_executed": 0,
+  "model_calls": 0,
+  "paid_calls": 0,
+  "external_payloads_sent": 0,
+  "goal": "True question-responsive short discussion grounded in current progress and bounded history, rather than rewriting a preset. The local director guides the next useful focus, while the model can address another supported question.",
+  "proposed_paths": {
+    "backend/app/ai/companion.py": "New bounded question/context builder, teaching policy, strict reply validator and local public-fact/output guard. No private game-answer or walkthrough imports.",
+    "backend/app/ai/hints.py": "Expose a structured local goal through an optional internal as_goal flag on _next_step; existing default tuple/text output remains byte-equivalent. No free Mock behavior change.",
+    "backend/app/ai/runtime.py": "For level3.4, dispatch using TurnStart.mode from Store; preset->run_hint, companion->run_companion. Legacy levels retain existing runtime. Provider/auth/budget implementations unchanged.",
+    "backend/app/ai/types.py": "Append TurnStart.mode default preset after existing default history; TurnResult public fields unchanged and do not contain trusted mode.",
+    "backend/app/storage/ai.py": "Persist trusted behavior_mode in ai_turns; choose callbacks and final branch from stored mode; dedicated limited history; companion final validator; preserve legacy/preset semantics.",
+    "backend/app/api/routes.py": "Resolve mode only from validated request selection or actual server DeepSeekProvider instance, pass trusted internal keyword to begin_ai; replay before constructing new provider.",
+    "docs/SPEC.md": "Only if separately authorized: append concise companion behavior/privacy/count/history policy; API and snapshot schema unchanged."
+  },
+  "mode_authority": {
+    "values": [
+      "existing",
+      "preset",
+      "companion"
+    ],
+    "migration": "Add ai_turns.behavior_mode TEXT NOT NULL DEFAULT existing, guarded by PRAGMA table_info; existing historical rows infer old behavior by level and remain replayable. New turns explicitly write preset or companion.",
+    "route_resolution": "For level3.4, validated explicit provider=mock => preset; explicit provider=deepseek => companion; no header => companion only when actual configured server provider is a DeepSeekProvider instance, otherwise preset. Other levels retain legacy behavior. Do not derive mode from provider_name text on injected runtime, returned usage, trace, model payload or TurnResult.",
+    "reservation": "begin_ai(..., behavior_mode=server_resolved_mode) validates the trusted internal mode against level, persists it before model execution, and returns matching TurnStart.mode. Store finish reloads durable mode and ignores runtime claims.",
+    "replay": "Keep existing normalized body digest to preserve old receipts. For new explicit-mode turns, an identical body/ID under a different resolved mode is REQUEST_ID_CONFLICT without model work; old existing-mode completed receipts replay under prior rules. Replays never instantiate a request provider, increase count or append a second history pair.",
+    "callbacks": "Only snapshot access for companion/preset. Add server-side ai_read/ai_precheck rejection based on durable mode so a faulty injected runtime cannot bypass the readonly wrapper. Legacy modes keep original tool behavior."
+  },
+  "local_director": {
+    "inputs": "Current public state only: visible objects/actions, observed IDs, discovered clues, inventory, public devices/puzzles/minigames/progress and open exits.",
+    "goal_shape": [
+      "goal_id",
+      "kind=observe/take/use/interact/move/reason/clarify",
+      "visible target/item/destination IDs where applicable",
+      "stage teaching purpose",
+      "allowed known clue IDs",
+      "completed stage facts"
+    ],
+    "not_prompted": "Do not send _next_step rendered preset sentences or TEMPLATES prose. Do not send private answers, full stage chain, walkthrough or hidden future contents.",
+    "question_focus": "Supply current supported relation topic metadata and relevant known evidence as alternatives to the default director goal. A question about password formatting can discuss the known format even while the default goal is another local preparation step; unknown content gets an honest observation question, not a guessed answer.",
+    "completed_goals": "No demands to re-solve completed cabinet/login/final stages; early-room traversal and returning for missing materials remain valid."
+  },
+  "provider_protocol": {
+    "endpoint_and_model": "Reuse existing fixed official DeepSeekProvider configuration and canonical budget; no new endpoint/model or credential storage.",
+    "call_limits": "One call only, no correction retry, tools=[], tool_choice=none; output cap no greater than existing runtime output_tokens and initially min(existing,600); reuse call/total deadline and measured usage/error handling.",
+    "input": "One system teaching/safety policy plus one JSON user context; all user/history/scene data explicitly untrusted. Context contains current sanitized question, minimal current public facts and known related evidence, local structured goal, supported question-focus relations, at most 3 recent accepted question/answer pairs and 3 current-generation legal action summaries.",
+    "context_bounds": "Current question retains existing <=2000-character contract; per old question/answer history excerpt <=300 characters; total context <=24576 UTF-8 bytes, dropping oldest history first and non-relevant clues/objects next. Keep evidence records intact or omit them; do not silently change numeric clue text.",
+    "output_shape": {
+      "answer": "nonempty natural Chinese short discussion, <=360 characters, normally 2-4 short sentences",
+      "clue_refs": "unique list containing only supplied known clue IDs"
+    },
+    "public_result": "Map accepted output to existing answer/clue_refs/status=no_suggestion/stop_reason=null/usage with candidate=None. No proposal or mode field added to public response."
+  },
+  "history": {
+    "new_helper_only": "Keep existing safe_history semantics for legacy/preset to avoid changing old evaluation behavior. A companion-specific helper queries bounded recent events for this session/current generation.",
+    "question_source": "Join accepted completed companion ai_turn to the matching ai_begin by turn_id and read that event request_json.message, already session-token/API-key redacted by existing path. Do not expose arbitrary raw event/request payloads.",
+    "filters": "Only completed accepted replies, same session and generation, revision <= current; ignore reserved, unknown, failed/stopped turns and duplicate/replay receipts. Include latest 3 pairs in chronological order.",
+    "actions": "Latest 3 committed actions summarized only as tool/target or item/destination IDs, public success message and new known clue IDs. Omit action.arguments, code/login values/sequence/rotation arrays, raw observation text, token/session/turn/event IDs and raw receipts. Current known clues provide factual evidence separately.",
+    "restore_reset": "Both change generation, so history starts empty; do not reconstruct old-generation chat from archives. Device/inventory/statistics restore normally. Reload/process restart can recover same-generation bounded chat from durable events."
+  },
+  "final_store_validation": {
+    "preset": "Existing bounded_render(projection, refs) remains the final authority and ignores runtime prose exactly as before.",
+    "companion": "After existing shape/usage/stale checks, require no proposal, no reads, and strict companion reply validation. Rebuild the allowed public fact/ID set from current Store projection and apply the same local answer guard again; do not trust runtime-reported mode, evidence claims or trace.",
+    "guard_hard_checks": [
+      "Known unique refs; no tools/proposal/free action fields; answer length and safe text shape.",
+      "Normalize NFKC, case, common separators/zero-width characters and common Chinese digit confusions before answer-pattern checks.",
+      "Reject complete numeric codes/login values and common spaced/fullwidth/Chinese-digit variants; refuse to echo user-provided solution-like values rather than treating them as discovered facts.",
+      "Reject complete device-order lists/symbol orders/internal device-ID arrays and nine-module rotation/path arrays; allow only partial relation guidance and at most one public action recommendation.",
+      "Reject references to absent hidden objects/unknown clue names or IDs using a local identifier/name vocabulary comparison. Known clue text and current public stage are the fact boundary; no undiscovered clue contents are supplied to the model.",
+      "Reject common false claims of having executed an action or changed a device/door/inventory; only current projection may state accomplished facts."
+    ],
+    "failure": "Fixed local safe stopped response (MODEL_INVALID_OUTPUT or existing mapped provider/stale code), no model retry and no hint_count change; preserve measured usage if available. Never silently replace a failed natural reply with a preset and claim companion success.",
+    "honest_limit": "Format/ID/state checks are deterministic. Natural-language fact grounding, disguised full solutions and semantic action claims cannot be perfectly proven by regex or a single model. Explicit prompt plus conservative local checks and adversarial offline tests reduce risk, not eliminate it. No real quality/safety acceptance without separately approved actual calls."
+  },
+  "count_and_compatibility": {
+    "companion": "Each new accepted valid assistance reply increments existing hint_count and revision once, preserving scoring; do not update current_hint_level from companion request.hint_level. Failed/stale/blocked replies and replay do not count.",
+    "preset": "Existing no-topic early return, levels, local rotation and validated count remain unchanged.",
+    "archives": "No new game field, snapshot field/schema/version, archive metadata or save behavior. Existing restore validates and restores statistics, then generation change invalidates pending companion turns and clears chat context.",
+    "no_topic": "Companion is not gated by available_topics alone: a known-evidence question or clarification is possible without a preset topic. Terminal won state may retain a local no-provider response for minimal scope; Main decides this policy before GO."
+  },
+  "proposed_independent_QA": [
+    "Offline fake-provider captures show different questions at the same state receive distinct relevant replies and preserve natural text rather than bounded_render replacement.",
+    "Payload allowlist excludes walkthrough/private constants/key/token/raw action arguments/hidden objects; bounded known evidence/history only.",
+    "Trusted mode fake-runtime bypass attempts via usage.provider, trace, TurnResult fields, returned proposal/read calls; persisted mode survives Store replacement.",
+    "Adversarial raw/encoded/fullwidth/separated/Chinese-digit answers, copied user guesses, unknown refs/object names/hidden clue contents, full device/circuit arrays and false completion claims.",
+    "Concurrent revision/reset/archive restore while in flight => stale without count; completed replay and unknown-crash restart do not repeat calls/count.",
+    "Accepted count increments once, no hint-level mutation for companion; save/restore/reopen stats and generation-specific history; preset/legacy regressions preserved.",
+    "Frontend desktop checks only after stable Main freeze: separate free preset versus companion input and history states. No new mobile feature or real call in this epoch."
+  ],
+  "unresolved_before_GO": [
+    "Main approval of exact product ownership paths, terminal-state policy and conservative lexical guard details.",
+    "No promise of perfect semantic leak prevention; Main/user must see the documented practical limit.",
+    "Actual paid payload/quality evaluation requires a separately concrete approved call and budget; none is authorized/executed by this design."
+  ]
+}

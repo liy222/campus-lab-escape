@@ -1,0 +1,24 @@
+{
+  "candidate_baseline": "Current hint-flow SOURCE STOP after Main GO",
+  "files": [
+    "frontend/src/Assistant.tsx",
+    "frontend/src/style.css"
+  ],
+  "behavior": {
+    "free_preset": "Retains the existing question-free preset request text and hint-level submission. Hint level remains visible only in v3.4.0 mock mode.",
+    "real_companion": "v3.4.0 DeepSeek mode sends the question through the existing API without hint_level. It explains the bounded recent context, known clues, public progress, short-answer and no-action limits.",
+    "history": "Displays up to four successful real exchanges in component memory. Stopped or empty responses are not added. Provider, session, generation changes and reload clear the history. Progress revisions caused by a companion response do not clear history; other revision changes mark prior exchanges as outdated.",
+    "guards": "Retains API-key validation/ephemeral storage, busy/manualPending/needsSync/won checks, generation response checks, stale-state handling, and late-response context guard."
+  },
+  "verification": {
+    "command": "& 'C:\\Program Files\\nodejs\\node.exe' 'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js' run build",
+    "working_directory": "frontend",
+    "exit_code": 0,
+    "result": "TypeScript check and Vite production build succeeded; Vite retained its large-chunk advisory."
+  },
+  "limits": [
+    "No browser or independent QA run; candidate is handed to Main for freeze and QA.",
+    "No real provider request or paid call.",
+    "Backend context safety and recent-turn storage are covered by the Backend/QA epoch, not this frontend record."
+  ]
+}

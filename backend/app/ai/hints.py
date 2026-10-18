@@ -38,7 +38,7 @@ TEMPLATES = {
 }
 
 
-def _next_step(state):
+def _next_step(state, *, as_goal=False):
     """One bounded observation/action, derived only from the public projection.
 
     The four item/target pairs describe public uses, never puzzle answers.
@@ -54,6 +54,17 @@ def _next_step(state):
     room = state['room']['room_id']
     done = state['progress']['check_done']
 
+    def emit(texts, kind, **focus):
+        if as_goal:
+            return {'kind': kind, 'focus': focus, 'teaching_goal': {
+                'observe': '先观察当前可见对象，不预报观察结果',
+                'take': '提醒收起当前已观察物品',
+                'use': '讨论背包物品与已观察装置的一次公开用途',
+                'interact': '解释当前装置的一次公开可用操作',
+                'move': '讨论当前开放通路，可回溯补充观察',
+            }[kind]}
+        return texts
+
     def action(object_id, tool):
         obj = objects.get(object_id)
         return next((entry for entry in obj['actions'] if entry['tool'] == tool), None) if obj else None
@@ -61,9 +72,9 @@ def _next_step(state):
     def look(object_id, *, again=False):
         if action(object_id, 'inspect') and (again or object_id not in observed):
             name = objects[object_id]['name']
-            return ('先留意当前环境中还可以细看的地方。',
+            return emit(('先留意当前环境中还可以细看的地方。',
                     f'可以把注意力放在{name}上。',
-                    f'可以再次观察{name}，确认当前可见的信息。' if again else f'可以先观察{name}，取得它当前可见的信息。')
+                    f'可以再次观察{name}，确认当前可见的信息。' if again else f'可以先观察{name}，取得它当前可见的信息。'), 'observe', object_id=object_id)
 
     def take(item_id, object_id):
         result = look(object_id)
@@ -71,9 +82,9 @@ def _next_step(state):
             return result
         if item_id not in inventory and action(object_id, 'take'):
             name = objects[object_id]['name']
-            return ('留意已经看见、尚未收起的物品。',
+            return emit(('留意已经看见、尚未收起的物品。',
                     f'{name}还在当前环境中，可以关注它的操作。',
-                    f'可以对{name}选择“拿起物品”。')
+                    f'可以对{name}选择“拿起物品”。'), 'take', object_id=object_id, item_id=item_id)
 
     def interact(object_id):
         result = look(object_id)
@@ -82,9 +93,9 @@ def _next_step(state):
         entry = action(object_id, 'interact')
         if entry:
             name = objects[object_id]['name']
-            return ('留意当前装置还提供了什么操作。',
+            return emit(('留意当前装置还提供了什么操作。',
                     f'{name}的当前阶段还有可用操作。',
-                    f'可以在{name}选择“{entry["label"]}”。')
+                    f'可以在{name}选择“{entry["label"]}”。'), 'interact', object_id=object_id, label=entry['label'])
 
     def use(item_id, object_id):
         result = look(object_id)
@@ -92,17 +103,17 @@ def _next_step(state):
             return result
         if item_id in inventory and object_id in objects and object_id in observed:
             item, target = inventory[item_id]['name'], objects[object_id]['name']
-            return ('留意背包物件与当前装置的配合。',
+            return emit(('留意背包物件与当前装置的配合。',
                     f'可以对照背包里的{item}与{target}。',
-                    f'可以将背包中的{item}用于{target}。')
+                    f'可以将背包中的{item}用于{target}。'), 'use', object_id=object_id, item_id=item_id)
 
     def travel(destination, *, back=False):
         passage = next((entry for entry in state['exits'] if entry['destination_id'] == destination and entry['unlocked']), None)
         if passage:
             name = passage['name']
-            return ('可以回顾先前房间，补看环境或尚未收起的物品。' if back else '可以留意当前已经开放的通路。',
+            return emit(('可以回顾先前房间，补看环境或尚未收起的物品。' if back else '可以留意当前已经开放的通路。',
                     f'当前有一条通往{name}的开放通路。',
-                    f'可以沿当前开放通路前往{name}，继续查看环境。')
+                    f'可以沿当前开放通路前往{name}，继续查看环境。'), 'move', destination_id=destination, backtrack=back)
         door = {('R1', 'R2'): 'r1_door', ('R2', 'R3'): 'r2_door'}.get((room, destination))
         return interact(door) if door else None
 

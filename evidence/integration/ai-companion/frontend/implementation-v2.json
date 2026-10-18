@@ -1,0 +1,23 @@
+{
+  "supersedes": "implementation.json for final frontend source details; original owner report is retained as the initial epoch record.",
+  "files": {
+    "frontend/src/Assistant.tsx": "6b541dd9607cb7a20b92917429d9a216f55b9a06c6abb768d386aedc8b28c66d",
+    "frontend/src/style.css": "c40b06abba3d19dca85ff57af3e0bda06e78a1cbc2ee89da4664fc9c06fbf740"
+  },
+  "narrow_changes": [
+    "For successful companion turns, the answer body and status remain displayed once in the in-memory exchange list; the current AI result panel still exposes clue references and service/usage details.",
+    "Stopped or empty results retain the existing status and response feedback; stopped results are not added to conversation history.",
+    "The history question is captured from the exact request message closure. Before display only, occurrences of the current API key, its trimmed form, and session token are replaced with [已隐藏]; the API request body is unchanged.",
+    "No API, dependency, backend, or product asset changed."
+  ],
+  "verification": {
+    "command": "& 'C:\\Program Files\\nodejs\\node.exe' '.\\node_modules\\typescript\\bin\\tsc' --noEmit -p '.\\tsconfig.json'",
+    "working_directory": "frontend",
+    "exit_code": 0,
+    "scope": "TypeScript type check after the narrow owner changes; no repeated production build."
+  },
+  "limits": [
+    "Independent browser QA is pending on the Main-frozen candidate.",
+    "No real provider request or paid call."
+  ]
+}

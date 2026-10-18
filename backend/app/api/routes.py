@@ -77,7 +77,7 @@ async def delete_selected_save(session_id: str, save_id: str, request: Request):
 @router.post("/sessions/{session_id}/ai/turns")
 async def ai_turn(session_id: str, request: Request):
     import asyncio
-    from ..ai.runtime import create_request_runtime, validate_request_selection
+    from ..ai.runtime import create_request_runtime, validate_request_selection, resolve_turn_mode
     from ..ai.types import TurnStart
     from ..storage.sqlite import new_id
     raw, parsed = await body(request)
@@ -101,7 +101,8 @@ async def ai_turn(session_id: str, request: Request):
         # A credential accidentally pasted into chat must not reach persistence,
         # history, trace, responses or model messages. Do not mutate the body.
         raw = {**raw, "message": raw["message"].replace(api_key, "[REDACTED]")}
-    started = store.begin_ai(session_id, token, raw, parsed)
+    mode = resolve_turn_mode(store.rules.LEVEL_VERSION, provider_name, request.app.state.ai_runtime)
+    started = store.begin_ai(session_id, token, raw, parsed, behavior_mode=mode)
     if not isinstance(started[0], TurnStart):
         return response(started)
     start, callbacks = started

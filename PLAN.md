@@ -232,3 +232,9 @@ Implement authorized repeat-topic rotation/current-state coverage/accurate fallb
 
 ### 2026-10-18 default hint repair accepted
 Freepreset question input removed; currentpublicstate graded guidance and eligible-topic rotation implemented, original18texts retained. Focused independent11methods0/build0/desktopbrowser0, source/save/count/replay guards accepted; realAI input retained without newchat. Documentation and normalliy222 commit/push next.
+
+### 2026-10-18 AI companion improvement
+Separate true question-aware brief dialogue from freepreset. Reuse serverpublicstate/historicalevent safety and stableexisting API; add localteachinggoal, boundedhistory and serverfinalguard. Implement then focused independentsecurity/count/save/restore+desktopUI/build; documents and normal liy222 sync. No new paidcall authorized.
+
+### 2026-10-18 AI companion accepted
+Question-aware shortdiscussion now separate from freepreset; bounded3dialogue/3argumentfreeactions context, local publicgoal and Storefinalguard. Independent12methods0/build0/desktopUI0 accepted, old73testsrawsame. Final docs then normal liy222 commit/push; no realmodel quality/paidcall claim.

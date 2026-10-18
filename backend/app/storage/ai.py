@@ -68,6 +68,9 @@ class AIStoreMixin:
             CREATE UNIQUE INDEX IF NOT EXISTS one_pending_proposal_per_session
                 ON proposals(session_id) WHERE json_extract(proposal_json,'$.status')='pending';
         ''')
+        turn_columns = {row['name'] for row in connection.execute('PRAGMA table_info(ai_turns)')}
+        if 'behavior_mode' not in turn_columns:
+            connection.execute("ALTER TABLE ai_turns ADD COLUMN behavior_mode TEXT NOT NULL DEFAULT 'existing'")
 
     def invalidate_pending(self, connection, session_id, except_id=None):
         rows = connection.execute('SELECT proposal_id,proposal_json FROM proposals WHERE session_id=?', (session_id,)).fetchall()
@@ -96,7 +99,49 @@ class AIStoreMixin:
                                 'revision': data['visible_state']['revision'], 'generation': data['visible_state']['generation'], 'outcome': data['status']})
         return tuple(history)
 
-    def begin_ai(self, session_id, token, raw, parsed=True):
+    def _turn_mode(self, turn):
+        if self.rules.LEVEL_VERSION != '3.4.0':
+            return 'legacy'
+        return 'preset' if turn['behavior_mode'] == 'existing' else turn['behavior_mode']
+
+    def companion_question(self, connection, session_id, turn_id):
+        row = connection.execute("SELECT request_json FROM events WHERE session_id=? AND operation='ai_begin' AND json_extract(result_json,'$.turn_id')=? ORDER BY sequence DESC LIMIT 1", (session_id, turn_id)).fetchone()
+        value = json.loads(row['request_json']) if row and row['request_json'] else {}
+        return value.get('message', '') if isinstance(value.get('message'), str) else ''
+
+    def companion_history(self, connection, session_id, state):
+        from ..ai.companion import looks_like_solution
+        history = []
+        rows = connection.execute("SELECT t.turn_id,t.event_id FROM ai_turns t JOIN events e ON e.event_id=t.event_id WHERE t.session_id=? AND t.generation=? AND t.phase='completed' AND t.behavior_mode='companion' AND e.revision_after<=? AND json_extract(e.result_json,'$.data.status')='no_suggestion' AND json_extract(e.result_json,'$.data.usage.model_calls')=1 ORDER BY e.sequence DESC LIMIT 3", (session_id, state.generation, state.revision)).fetchall()
+        for row in rows:
+            event = connection.execute('SELECT result_json FROM events WHERE event_id=? AND session_id=? AND revision_after<=?', (row['event_id'], session_id, state.revision)).fetchone()
+            data = json.loads(event['result_json']).get('data', {}) if event else {}
+            if data.get('status') != 'no_suggestion' or not isinstance(data.get('answer'), str) or data.get('usage', {}).get('model_calls', 0) < 1:
+                continue
+            question = self.companion_question(connection, session_id, row['turn_id'])
+            if not question:
+                continue
+            history.append({'kind': 'dialogue', 'question': '[先前问题包含整组猜测，未发送其内容]' if looks_like_solution(question) else question[-300:],
+                            'answer': data['answer'][-300:], 'clue_refs': [ref for ref in data.get('clue_refs', []) if ref in state.discovered_clue_ids]})
+            if len(history) == 3:
+                break
+        history.reverse()
+        rows = connection.execute("SELECT result_json FROM events WHERE session_id=? AND generation=? AND operation='action' AND outcome='committed' AND revision_after<=? ORDER BY sequence DESC LIMIT 3", (session_id, state.generation, state.revision)).fetchall()
+        actions = []
+        for row in rows:
+            receipt = json.loads(row['result_json']).get('data', {}).get('receipt', {})
+            if receipt.get('tool') not in self.rules.tool_models:
+                continue
+            summary = {'kind': 'action', 'tool': receipt['tool']}
+            # Deliberately omit arguments/observations and any entered solutions.
+            for key in ('target_id', 'object_id', 'item_id', 'destination_id'):
+                value = receipt.get('arguments', {}).get(key)
+                if isinstance(value, str):
+                    summary[key] = value
+            actions.append(summary)
+        return tuple(history + list(reversed(actions)))
+
+    def begin_ai(self, session_id, token, raw, parsed=True, *, behavior_mode=None):
         from .sqlite import new_id, utc_now
         event_id = new_id()
         with self.transaction() as connection:
@@ -108,18 +153,25 @@ class AIStoreMixin:
                     raise ValueError()
                 request = getattr(self.rules, 'ai_request_model', AITurnRequest).model_validate(raw)
                 validate_generation(request.generation)
+                mode = ('preset' if self.rules.LEVEL_VERSION == '3.4.0' else 'legacy') if behavior_mode is None else behavior_mode
+                allowed_modes = {'preset', 'companion'} if self.rules.LEVEL_VERSION == '3.4.0' else {'legacy'}
+                if type(mode) is not str or mode not in allowed_modes:
+                    raise ValueError('Invalid trusted turn mode')
             except (ValidationError, ValueError, TypeError):
                 return self.failure(connection, event_id, session_id, 'ai_turn', 'BAD_ARGUMENT', 'AI 请求字段不符合契约。', state, expose=False)
-            normalized = {'operation': 'ai_turn', **request.model_dump()}
+            old_normalized = {'operation': 'ai_turn', **request.model_dump()}
+            old_digest = hashlib.sha256(encoded(old_normalized).encode('utf-8')).hexdigest()
+            normalized = {**old_normalized, 'behavior_mode': mode}
             digest = hashlib.sha256(encoded(normalized).encode('utf-8')).hexdigest()
             # Never persist or send the current session capability if pasted into
             # a chat message. Hash original content for conflict detection only.
             safe_request = {**normalized, 'message': request.message.replace(token, '[REDACTED]')}
             if request.generation != state.generation:
                 return self.failure(connection, event_id, session_id, 'ai_turn', 'STALE_GENERATION', '游戏已重置或恢复，请刷新状态。', state, safe_request)
-            prior = connection.execute('SELECT request_hash,response_json,http_status,phase FROM action_receipts WHERE session_id=? AND request_id=?', (session_id, request.request_id)).fetchone()
+            prior = connection.execute("SELECT r.request_hash,r.response_json,r.http_status,r.phase,COALESCE(t.behavior_mode,'existing') AS behavior_mode FROM action_receipts r LEFT JOIN ai_turns t ON t.session_id=r.session_id AND t.request_id=r.request_id WHERE r.session_id=? AND r.request_id=?", (session_id, request.request_id)).fetchone()
             if prior:
-                if prior['request_hash'] != digest:
+                accepted_digests = {digest, old_digest} if prior['behavior_mode'] == 'existing' else {digest}
+                if prior['request_hash'] not in accepted_digests:
                     return self.failure(connection, event_id, session_id, 'ai_turn', 'REQUEST_ID_CONFLICT', '同一请求标识不能替换请求内容。', state, safe_request)
                 if prior['phase'] != 'completed':
                     return self.failure(connection, event_id, session_id, 'ai_turn', 'MODEL_UNAVAILABLE', '该轮次正在处理或结果未知；使用相同请求标识查询，不会重复调用模型。', state)
@@ -139,7 +191,8 @@ class AIStoreMixin:
                 status, body = self.failure(connection, event_id, session_id, 'ai_turn', 'STALE_STATE', '状态已变化，请刷新后重新提问。', state, safe_request)
                 connection.execute('INSERT INTO action_receipts (session_id,request_id,request_hash,generation,response_json,http_status) VALUES (?,?,?,?,?,?)', (session_id, request.request_id, digest, state.generation, encoded(body), status))
                 return status, body
-            hint_mode = self.rules.LEVEL_VERSION == '3.4.0'
+            hint_mode = mode == 'preset'
+            companion_mode = mode == 'companion'
             hint_topics = []
             if hint_mode:
                 from ..ai.hints import available_topics
@@ -152,10 +205,13 @@ class AIStoreMixin:
                     self.invalidate_pending(connection, session_id)
             turn_id = new_id()
             connection.execute("INSERT INTO action_receipts (session_id,request_id,request_hash,generation,response_json,http_status,phase) VALUES (?,?,?,?,?,0,'reserved')", (session_id, request.request_id, digest, state.generation, '{}'))
-            connection.execute("INSERT INTO ai_turns (turn_id,session_id,request_id,event_id,generation,cursor_revision,owner,phase,created_at) VALUES (?,?,?,?,?,?,?,'reserved',?)", (turn_id, session_id, request.request_id, event_id, state.generation, state.revision, self.runtime_owner, utc_now()))
-            if hint_mode and not hint_topics:
+            connection.execute("INSERT INTO ai_turns (turn_id,session_id,request_id,event_id,generation,cursor_revision,owner,phase,created_at,behavior_mode) VALUES (?,?,?,?,?,?,?,'reserved',?,?)", (turn_id, session_id, request.request_id, event_id, state.generation, state.revision, self.runtime_owner, utc_now(), mode))
+            from ..ai.companion import is_solution_check, POLICY_REPLY
+            local_policy = companion_mode and is_solution_check(safe_request['message'])
+            if (hint_mode and not hint_topics) or (companion_mode and state.status != 'playing') or local_policy:
                 from ..ai.hints import NO_HINT
-                data = {'turn_id': turn_id, 'answer': NO_HINT, 'clue_refs': [], 'proposal': None, 'status': 'no_suggestion', 'stop_reason': None,
+                local_answer = POLICY_REPLY if local_policy and state.status == 'playing' else NO_HINT
+                data = {'turn_id': turn_id, 'answer': local_answer, 'clue_refs': [], 'proposal': None, 'status': 'no_suggestion', 'stop_reason': None,
                         'usage': {'provider': 'unavailable', 'model': None, 'input_tokens': None, 'output_tokens': None, 'model_calls': 0, 'read_tool_calls': 0},
                         'visible_state': self.projection(connection, session_id, state)}
                 public_validator('ai_turn_data').validate(data)
@@ -164,10 +220,11 @@ class AIStoreMixin:
                 connection.execute("UPDATE action_receipts SET phase='completed',response_json=?,http_status=200 WHERE session_id=? AND request_id=?", (encoded(body), session_id, request.request_id))
                 self.event(connection, event_id, session_id, 'ai_turn', 'no_suggestion', body, state, {'turn_id': turn_id}, state.revision)
                 return 200, body
-            start = TurnStart(turn_id, safe_request['message'], self.projection(connection, session_id, state), self.safe_history(connection, session_id, state))
+            history = self.companion_history(connection, session_id, state) if companion_mode else self.safe_history(connection, session_id, state)
+            start = TurnStart(turn_id, safe_request['message'], self.projection(connection, session_id, state), history, mode)
             self.event(connection, new_id(), session_id, 'ai_begin', 'reserved', {'turn_id': turn_id, 'revision': state.revision, 'generation': state.generation}, state, safe_request, state.revision)
             callbacks = BoundCallbacks(self, session_id, turn_id)
-            if hint_mode:
+            if hint_mode or companion_mode:
                 from ..ai.hints import HintCallbacks
                 callbacks = HintCallbacks(callbacks)
             return start, callbacks
@@ -191,7 +248,7 @@ class AIStoreMixin:
         from .sqlite import new_id
         with self.transaction() as connection:
             turn, state = self.ai_cursor(connection, session_id, turn_id, expected)
-            if tool not in {'inspect', 'get_inventory'}:
+            if self._turn_mode(turn) in {'preset', 'companion'} or tool not in {'inspect', 'get_inventory'}:
                 return ReadResult(False, self.projection(connection, session_id, state), error_code='INVALID_TOOL')
             try:
                 args = self.rules.tool_models[tool].model_validate(arguments).model_dump()
@@ -234,7 +291,9 @@ class AIStoreMixin:
 
     def ai_precheck(self, session_id, turn_id, expected, candidate):
         with self.transaction() as connection:
-            _, state = self.ai_cursor(connection, session_id, turn_id, expected)
+            turn, state = self.ai_cursor(connection, session_id, turn_id, expected)
+            if self._turn_mode(turn) in {'preset', 'companion'}:
+                return CheckResult(False, 'PROPOSAL_REJECTED')
             try:
                 self.candidate_arguments(state, candidate)
             except RuleError as error:
@@ -368,25 +427,46 @@ class AIStoreMixin:
                 data['usage'] = usage
             if self.rules.LEVEL_VERSION == '3.4.0':
                 from ..ai.hints import bounded_render
+                mode = self._turn_mode(turn)
                 if data['status'] == 'stopped':
                     # Even failure text from an injected runtime is untrusted.
                     data.update(answer='本轮提示没有完成，已发现线索与游戏进度仍保留。', clue_refs=[])
                 if data['status'] != 'stopped':
+                    local_policy = False
                     try:
                         if candidate is not None or turn['read_calls'] != 0:
                             raise ValueError('Progress is forbidden in hint mode')
-                        answer, refs = bounded_render(projection, data['clue_refs'])
+                        if mode == 'preset':
+                            answer, refs = bounded_render(projection, data['clue_refs'])
+                        elif mode == 'companion' and data['status'] == 'no_suggestion':
+                            from ..ai.companion import build_companion_context, validate_companion_reply, is_solution_check, POLICY_REPLY
+                            question = self.companion_question(connection, session_id, turn_id)
+                            local_policy = is_solution_check(question)
+                            if local_policy:
+                                answer, refs = POLICY_REPLY, []
+                                data['usage'] = {**usage, 'provider': 'unavailable', 'model': None}
+                            else:
+                                if usage['model_calls'] != 1:
+                                    raise ValueError('Companion requires one measured attempt')
+                                context = build_companion_context(projection, question)
+                                reply = validate_companion_reply(projection, {'answer': data['answer'], 'clue_refs': data['clue_refs']}, question,
+                                                                 allowed_refs=[c['clue_id'] for c in context['known_evidence']])
+                                answer, refs = reply['answer'], reply['clue_refs']
+                        else:
+                            raise ValueError('Invalid stored turn mode')
                     except (ValueError, KeyError, TypeError):
                         data.update(answer='提示选择不符合已发现信息，本轮已停止。', clue_refs=[], status='stopped', stop_reason='MODEL_INVALID_OUTPUT')
                     else:
-                        # The final authority renders again and ignores runtime prose.
+                        # Presets re-render; companion prose passes the shared guard
+                        # under the durable reservation mode, never a runtime claim.
                         data.update(answer=answer, clue_refs=refs, status='no_suggestion', stop_reason=None)
-                        state.statistics.hint_count += 1
-                        state.revision += 1
-                        self.rules.validate_invariants(state)
-                        connection.execute('UPDATE sessions SET state_json=? WHERE session_id=?', (encoded(state.model_dump()), session_id))
-                        self.invalidate_pending(connection, session_id)
-                        projection = self.projection(connection, session_id, state)
+                        if not local_policy:
+                            state.statistics.hint_count += 1
+                            state.revision += 1
+                            self.rules.validate_invariants(state)
+                            connection.execute('UPDATE sessions SET state_json=? WHERE session_id=?', (encoded(state.model_dump()), session_id))
+                            self.invalidate_pending(connection, session_id)
+                            projection = self.projection(connection, session_id, state)
                 candidate = None
             proposal = None
             if data['status'] == 'stopped':
@@ -405,7 +485,13 @@ class AIStoreMixin:
             data.update(turn_id=turn_id, proposal=proposal, visible_state=projection)
             public_validator('ai_turn_data').validate(data)
             body = {'ok': True, 'event_id': turn['event_id'], 'data': data}
-            trace = self.sanitize_trace(result.trace, state) if valid_result else []
+            raw_trace = result.trace if valid_result else ()
+            if self.rules.LEVEL_VERSION == '3.4.0' and self._turn_mode(turn) == 'companion':
+                # Rejected/free prose must not leak through injected trace fields.
+                fields = {'kind', 'provider', 'requested_model', 'reported_model', 'usage', 'call_id', 'cost_upper_cny', 'finish_reason', 'code'}
+                raw_trace = tuple({key: value for key, value in entry.items() if key in fields}
+                                  for entry in raw_trace if isinstance(entry, dict) and entry.get('kind') in {'provider_result', 'provider_error', 'runtime_error'}) if isinstance(raw_trace, tuple) else ()
+            trace = self.sanitize_trace(raw_trace, state)
             connection.execute("UPDATE ai_turns SET phase='completed',trace_json=? WHERE turn_id=? AND phase='reserved'", (encoded(trace), turn_id))
             connection.execute("UPDATE action_receipts SET phase='completed',response_json=?,http_status=200 WHERE session_id=? AND request_id=? AND phase='reserved'", (encoded(body), session_id, turn['request_id']))
             self.event(connection, turn['event_id'], session_id, 'ai_turn', 'proposed' if proposal else data['status'], body, state, {'turn_id': turn_id}, revision_before_finish)

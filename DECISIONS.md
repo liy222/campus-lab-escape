@@ -199,3 +199,9 @@ Treat default hints as v3.4 with mock provider: user chooses intensity and click
 
 ### 2026-10-18 hint compatibility and verification
 Use existing hint_count for selection rotation, preserving snapshot/API/storage formats. Store final authority re-renders currentpublicstate; empty-ref procedure and circuit topics exclusive. Keep historical initialNO_HINT/firsttopic tests intact, explicitly superseded; focused new tests and4validoldregressions pass. Preset input removal does not imply realAI gained question-aware conversation.
+
+### 2026-10-18 companion separation
+RealAI question and recentconversation must enter newbounded companioncontext, not presetselector. Keep freepreset noinput/L123 unchanged; realmode hidespresetstrength and displays briefdialogue. Servertrusted reservedmode and independentfinalguard preserve authority; never let claimedusage/provider/trace choose bypass. Exactpaidpayloads from prior runs do not authorize new modelcalls; implement and verify offline first.
+
+### 2026-10-18 companion interpretation and limits
+Only explicit completeguess validity requests use local no-call reminders; ordinary knownnumeric background or operation-feedback questions remain discussable. Naturalreply acceptedhelp counts once without changing presetlevel, local/failed/replay does notcount. UI pagehistory4 is ephemeral, backend currentgenerationhistory3 survivesreload but restore isolates it. Syntheticprovider tests certify pipeline/security samples, not actual paidmodel quality or perfect semanticgrounding.

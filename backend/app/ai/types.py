@@ -27,6 +27,7 @@ class TurnStart:
     message: str
     visible_state: dict
     history: tuple[dict, ...] = ()
+    mode: str = "preset"
 
 
 @dataclass(frozen=True)

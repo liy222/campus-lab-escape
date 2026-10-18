@@ -1,0 +1,70 @@
+{
+  "recorded_at": "2026-10-18T10:48:02.967300+00:00",
+  "operator": "Main integration",
+  "status": "accepted focused scope",
+  "candidate": "evidence/integration/ai-companion/candidate.json",
+  "candidate_sha256": "a3966227ee5d6f85303ddda6577e90324d6e4731c1c866fe5c8b8be18001a5c1",
+  "qa_result": "evidence/integration/ai-companion/qa/result.json",
+  "qa_result_sha256": "c426ceafae3cb784f0bd3ec0068cdd08db676382a4c5856a99fdc756e0ff0a45",
+  "matched_source_files": 243,
+  "matched_old_test_files": 73,
+  "matched_QA_artifacts": 16,
+  "matched_QA_sources": 9,
+  "main_viewed_actual_PNG": [
+    "evidence/integration/ai-companion/qa/20261018T104317562Z-browser/natural-dialogue.png",
+    "evidence/integration/ai-companion/qa/20261018T104317562Z-browser/preset-retained.png",
+    "evidence/integration/ai-companion/qa/20261018T104317562Z-browser/recent-four.png"
+  ],
+  "actual_API": {
+    "path": "evidence/integration/ai-companion/qa/20261018T104302627701Z-api",
+    "exit_code": 0,
+    "methods": 12,
+    "seconds": 8.988,
+    "new_methods": 8,
+    "old_preset_methods": 2,
+    "old_legacy_methods": 2,
+    "subtest_count": null,
+    "runs": 1
+  },
+  "actual_browser": {
+    "path": "evidence/integration/ai-companion/qa/20261018T104317562Z-browser",
+    "exit_code": 0,
+    "record_count": 13,
+    "issues": [],
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "runs": 1,
+    "production_builds": 1,
+    "typecheck_exit": 0,
+    "build_exit": 0
+  },
+  "changed_existing_paths": [
+    "backend/app/ai/hints.py",
+    "backend/app/ai/runtime.py",
+    "backend/app/ai/types.py",
+    "backend/app/api/routes.py",
+    "backend/app/storage/ai.py",
+    "docs/SPEC.md",
+    "docs/level_design.md",
+    "frontend/src/Assistant.tsx",
+    "frontend/src/style.css"
+  ],
+  "new_paths": [
+    "backend/app/ai/companion.py"
+  ],
+  "provider_budget_auth_core_unchanged": true,
+  "paid_calls": 0,
+  "external_requests": 0,
+  "mobile_checks": 0,
+  "limitations": [
+    "Synthetic request runtime and complete preserve real route/type/mode/Store/Runtime/context/finalizer, not production provider constructor/budget or real-model quality.",
+    "Prose guard is heuristic; explicit attack samples are not complete semantic safety proof.",
+    "Focused old4 methods only; no full127/mobile/user historical DB/human timing.",
+    "13 browser records include cleanup, not unique assertion count; scrollable PNGs show current visible area.",
+    "Preparation-only quoting failure retained, final report patch tool failures corrected without formal reruns.",
+    "Existing Starlette/httpx deprecation and Vite chunk warning retained."
+  ],
+  "git_status": "Normal liy222 commit/push next; not yet claimed."
+}

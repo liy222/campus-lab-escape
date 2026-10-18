@@ -1,0 +1,32 @@
+{
+  "epoch": "AI companion delivery documentation",
+  "status": "SOURCE STOP",
+  "files": {
+    "README.md": "ff22e4f43642100b9f2346abd0ac9e7eedba9ebe93b82a1a9ec814bf054eebfd",
+    "release/UPGRADES.md": "b0469dce9954c3000490dd2056f62c686810969eac418314cc16fad127224d60"
+  },
+  "acceptance": {
+    "accepted_record": "evidence/integration/ai-companion/accepted.json",
+    "accepted_sha256": "1b38ba728e8a349d2402d918353950fc3243cf1298f5e795163df716206dbbff",
+    "qa_result": "evidence/integration/ai-companion/qa/result.json",
+    "qa_result_sha256": "c426ceafae3cb784f0bd3ec0068cdd08db676382a4c5856a99fdc756e0ff0a45",
+    "actual_verification": {
+      "api": "12 methods (8 new, 2 retained preset regressions, 2 legacy regressions); 8.988 seconds; exit 0.",
+      "browser": "13 desktop records; exit 0; issues []; 1280x900 viewport.",
+      "typecheck_exit_code": 0,
+      "build_exit_code": 0,
+      "paid_calls": 0,
+      "external_requests": 0
+    },
+    "limits": [
+      "Focused companion verification; no full old suite claim.",
+      "No mobile verification or real provider answer-quality evaluation.",
+      "Answer-guess detection is heuristic and cannot identify every indirect answer request or factual error."
+    ]
+  },
+  "documentation_scope": [
+    "README current AI operation instructions replaced; earlier release history retained.",
+    "UPGRADES received a new current-stage entry; earlier sections retained."
+  ],
+  "commit_or_push_performed": false
+}

@@ -112,6 +112,15 @@ def create_request_runtime(base_runtime, provider_name: str, api_key: str | None
     return Runtime(provider, base_runtime.limits, context_mode=base_runtime.context_mode)
 
 
+def resolve_turn_mode(level_version, provider_name, runtime):
+    """Server route decision, never inferred from a runtime result or trace."""
+    if level_version != '3.4.0':
+        return 'legacy'
+    if provider_name is not None:
+        return 'companion' if provider_name == 'deepseek' else 'preset'
+    return 'companion' if isinstance(getattr(runtime, 'provider', None), DeepSeekProvider) else 'preset'
+
+
 class UnavailableProvider:
     """Bad AI settings fail when asked for AI; manual gameplay stays available."""
     def __init__(self, code: str, *, provider_name: str = "unavailable", model_name: str | None = None):
@@ -182,6 +191,11 @@ class Runtime:
 
     async def run(self, start: TurnStart, callbacks: RuntimeCallbacks) -> TurnResult:
         if start.visible_state.get('level_version') == '3.4.0':
+            if start.mode == 'companion':
+                from .companion import run_companion
+                return await run_companion(self, start, callbacks)
+            if start.mode != 'preset':
+                raise RuntimeBoundaryError('MODEL_INVALID_OUTPUT')
             from .hints import run_hint
             return await run_hint(self, start, callbacks)
         state = copy.deepcopy(start.visible_state)

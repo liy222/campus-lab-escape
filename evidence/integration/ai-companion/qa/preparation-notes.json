@@ -1,0 +1,20 @@
+{
+  "scope": "Preparation only; no formal product execution.",
+  "mechanical_edit_attempts": [
+    {
+      "operation": "Insert local-policy UI checks in the new QA browser runner through a quoted inline Python edit",
+      "exit_code": 1,
+      "result": "PowerShell ParserError before Python executed; no file/product/test operation occurred."
+    },
+    {
+      "operation": "Apply the same new-QA-only edit with a literal PowerShell here-string",
+      "exit_code": 0,
+      "result": "New QA runner edit completed; subsequent Node syntax check passed."
+    }
+  ],
+  "formal_failed_epochs": [],
+  "formal_tests": 0,
+  "product_changes": 0,
+  "canonical_budget_access": false,
+  "paid_calls": 0
+}

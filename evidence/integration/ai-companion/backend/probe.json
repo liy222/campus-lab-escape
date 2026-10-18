@@ -1,0 +1,58 @@
+{
+  "recorded_at": "2026-10-18T05:46:48.586100+00:00",
+  "operator": "Backend/AI Owner development only",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "evidence/integration/ai-companion/backend/probe.py"
+  ],
+  "exit_code": 0,
+  "checks": [
+    {
+      "check": "preset-baseline-byte-text-semantics",
+      "actual_domain_states": 59,
+      "levels_each": 3
+    },
+    {
+      "check": "guard-controls",
+      "conditional_accepted": 3,
+      "unsafe_blocked": 13,
+      "normalized_digits_correct": true
+    },
+    {
+      "check": "temporary-store",
+      "accepted_natural_discussions": 3,
+      "different_question_different_reply": true,
+      "replay_once": true,
+      "mode_conflict": true,
+      "local_no_call_no_count_reminders": 13,
+      "last_three_successful_history_preserved": true,
+      "zero_call_prose_rejected": true,
+      "preset_result_mode_spoof_ignored": true,
+      "old_receipt_digest_replayed": true,
+      "manual_action_stale_stop": true,
+      "trace_raw_text_removed": true,
+      "actual_fake_provider_calls": 5
+    }
+  ],
+  "source_sha256": {
+    "backend/app/ai/companion.py": "d0d2de2356a1d5585c1692bab994a4b8b97c5414650728b735ee00d10e5f31e1",
+    "backend/app/ai/hints.py": "b6d3773d1066dd30d91691b60b2de89f150ec55ffb7ab9560cfd8e943ecbecb3",
+    "backend/app/ai/runtime.py": "0e3ad7b1a93d9af43bea17f35ceeda76c1845b6d1fe138c9bd071fbf1a177be8",
+    "backend/app/ai/types.py": "9e7d1dacf68f1f42970885fff9a4b0f2fcce46baa29a7fa3fb78c42f3354a830",
+    "backend/app/storage/ai.py": "5863009ce67290347dc7d4425743ca3be1cb89160c8fe73b87fa7f228393684f",
+    "backend/app/api/routes.py": "3365ee072750ab2fc3b1a63b95402c88e4a5e8b64fecb5d686d22565a3b0677b"
+  },
+  "real_provider_calls": 0,
+  "paid_calls": 0,
+  "HTTP_requests": 0,
+  "limitations": [
+    "This is Owner development evidence, not independent QA.",
+    "Fake provider calls prove plumbing/context/count boundaries, not real natural reply quality.",
+    "The local natural-language guard is heuristic; no perfect semantic anti-spoiler/factuality claim.",
+    "No browser/build/full legacy suite or actual paid network call.",
+    "Old-receipt compatibility branch used a deliberately seeded historical digest/mode in a temporary DB, not a user database."
+  ]
+}

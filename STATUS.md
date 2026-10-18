@@ -240,3 +240,9 @@ Default mode needs only intensity and GetHint; no question box. Rotation, public
 
 ### 2026-10-18 default hint fixes synchronized
 Accepted source2bfb8ff9cc5f69033b571a356668068e089f8023 is on GitHub main; author/committerliy222 verified. Presetinput removed, AIcompanioninput retained, publicstageguidance/rotation accepted with focusedAPI11/build/desktopUI passing. Sameversion archives remain compatible; no paidcalls or newmobile features. See evidence/integration/hint-flow/sync.json. This finalmetadata epoch changes no product/tests or prior evidence.
+
+### 2026-10-18 AI companion improvement in progress
+Current realmodel still chooses templates. New userrequest authorizes naturalquestion-aware shortreplies and limited dialogue using publicprogress/localdirector, while freepreset stays unchanged. Backend design/Frontend narrowimplementation/QA prep active, not yet accepted. Plan evidence/integration/ai-companion/plan.json.
+
+### 2026-10-18 AI companion accepted
+Real mode sends currentquestion/limitedrecentdialogue/knownpublicevidence and preserves validated naturaltext instead of template replacement. Freepreset unchanged; fullguesscheck local0call/no-count; saves isolate olddialogue by newgeneration. IndependentAPI12/8.988s0/typecheck+build0/desktop13records0/issues[]. Main243/73/16/9hashes match. Syntheticprovider verification only; paid/external/mobile0, no semanticcompleteness claim. Docs/syncnext; evidence/integration/ai-companion/accepted.json.
