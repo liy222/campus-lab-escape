@@ -237,3 +237,6 @@ Audit findings now authorized for implementation. Defaultpreset question box rem
 
 ### 2026-10-18 default hint repair accepted
 Default mode needs only intensity and GetHint; no question box. Rotation, public-stage single-step guidance and accurate no-topic fallback accepted. IndependentAPI11methods0/typecheck+build0/desktopbrowser71records0/issues[], 242sources+68oldtests match. AIcompanion input remains, bounded model behavior unchanged; no paidcalls/mobile/fullsuite. Final docs/syncnext; evidence/integration/hint-flow/accepted.json.
+
+### 2026-10-18 default hint fixes synchronized
+Accepted source2bfb8ff9cc5f69033b571a356668068e089f8023 is on GitHub main; author/committerliy222 verified. Presetinput removed, AIcompanioninput retained, publicstageguidance/rotation accepted with focusedAPI11/build/desktopUI passing. Sameversion archives remain compatible; no paidcalls or newmobile features. See evidence/integration/hint-flow/sync.json. This finalmetadata epoch changes no product/tests or prior evidence.
