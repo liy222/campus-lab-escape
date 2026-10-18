@@ -270,3 +270,6 @@ Actual3newcalls upper0.00740048CNY/no newunknown; Q01/Q03 naturalprose failedJSO
 
 ### 2026-10-18 companion quality fixes accepted with limits
 Final243source/172old/12raw/21QA bindings matched. Independentoriginal15 andfixednarrow3 passed separately. Actual4newpaidcalls conservativeupper.00958448; fixedQ05 naturalJSON correctlydistinguishescompletedlogin/unreadrecord, nooldcluedetour. EarlierQ01/Q03formatfailures andQ04semanticfailure preserved; Q02skipped so realfollowup remainsunverified. Noallqualitypass/build/UI claim. Finaldocs/normalGitHubsyncnext, source/test/paidSTOP.
+
+### 2026-10-18 companion quality refinement synchronized
+Source10d1c38a02d6533f2074c2f86abf7b5d27cff592 verified on GitHub main; author/committerliy222. Naturalpubliccontext/clarificationguard/officialJSONmode/proceduraldenoise delivered. Independent15thenfixed3 passed separateepochs; Q05loginonlyrealquality accepted, failedsamples/Q02skip preserved. New4calls upper.00958448CNY; no extra tests/calls/productchanges in finalmetadata. See evidence/integration/ai-companion-quality/sync.json.
