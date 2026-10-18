@@ -1,0 +1,35 @@
+{
+  "client_date": "2026-10-18",
+  "recorded_at": "2026-10-18T05:06:18.195653+00:00",
+  "operator": "Main",
+  "status": "Audit complete; findings recorded, no fixes authorized or applied.",
+  "baseline_head": "c4d79cc38b1a108061cf40393bfc15b857241b8d",
+  "product_sources_unchanged": 242,
+  "requested_independent_agent": {
+    "task": "default_hint_audit",
+    "requested_model": "gpt-6-luna",
+    "requested_effort": "medium",
+    "runtime_model": "Not independently verified"
+  },
+  "evidence_sha256": {
+    "review/findings/default-hints-20261018.md": "a2ba147068b73acc875ceefe33795777c00a76dd7383601674270c261f291d4f",
+    "evidence/review/default-hints-20261018/probe.py": "396bb412e33c48ebb96464ec7d78b6b68c079c088ea8ea52c8109e427e39fcf1",
+    "evidence/review/default-hints-20261018/probe.json": "51b30ebb9d4caf65fc36b7dd6121d526dab7f34ffcc925c1132209d9ba325297",
+    "evidence/review/default-hints-20261018/independent.json": "7edf94c511b985de1031d8f91a53767063100ccd37223bfd08211516dac3bcc1"
+  },
+  "actual_checks": {
+    "domain_snapshots": 59,
+    "topic_templates": 6,
+    "level_variants": 18,
+    "runtime_probes": 14,
+    "exit_code": 0
+  },
+  "paid_calls": 0,
+  "scope": "Template correctness agrees; state coverage, default selection and fallback messages have gaps. No game or AI behavior changes.",
+  "limitations": [
+    "No Store/API/browser/counting integration test was executed; those claims are source inspection and existing-test review only.",
+    "Question/history comparison holds state fixed and does not test frontend rendering or simulated Store counter updates.",
+    "Provider branch not called; no real or fake model-quality acceptance.",
+    "Findings describe current fixed-template design scope and gaps, not a claim every old safety requirement was violated."
+  ]
+}

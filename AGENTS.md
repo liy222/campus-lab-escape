@@ -207,3 +207,6 @@ User requests full current solution flow before AI companion preparation. Main a
 
 ### Gameplay walkthrough accepted, 2026-10-18
 Main reviewed Luna document and resolved three wording ambiguities (separate cabinet interact, numeric-string concatenation, selected-item frontend mode). Product242 byte-identical. Main pure-memory58-action route0/won10clues2hidden/circuit alternatecenter proof reused; no UI/API/build/DB/provider test claim. Only docs/gameplay-walkthrough.md +documentation evidence/root notes; no AI feature. Normal liy222 doc commit/push next; repository public per explicit user choice.
+
+### Default hint audit only, 2026-10-18
+User asks checking current default hints against walkthrough, no fixes. Main temporarily owns new review/findings/default-hints-20261018.md and audit evidence except independent.json; default_hint_audit requestedLuna/medium independently reads exact source and owns independent.json only, no further agents/commits. Main242product raw unchanged. Pure-memory59states/18rendered variants/14MockRuntime probes exit0, modelcalls0/DB0/API0. Existing text factual match but fixed-first-topic bias, action-state coverage gaps and misleading NO_HINT recorded; empty response count source-only unchanged. No hint/product change, no fullsuite/build/realprovider call. Mainroot/integration/Git.

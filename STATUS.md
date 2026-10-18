@@ -228,3 +228,6 @@ Current product242 files unchanged. Complete current-rule domain route actually 
 
 ### 2026-10-18 complete solution reference accepted
 See docs/gameplay-walkthrough.md for current full solution and AI-preparation reference. Rules checked and one in-memory58-action route reacheswon with10clues/2optional; current242product sources unchanged. No new build/browser/API/provider call. Normal documentation sync next.
+
+### 2026-10-18 default hint audit result
+Current default hints checked without changes. Content correct for existing4puzzle categories; not a full-route guide. Repeated first-topic selection, ignored question/history and generic NO_HINT at operation stages documented. Product242bytes unchanged; no DB/API/browser/build/provider test. Detailed report review/findings/default-hints-20261018.md; no fix completion claim.

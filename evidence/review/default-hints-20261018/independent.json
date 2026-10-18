@@ -1,0 +1,31 @@
+{
+  "review": "independent source audit of default v3.4 hints",
+  "date": "2026-10-18",
+  "scope": "Read-only source review; no provider, DB, API, dynamic probe, full tests, or build run.",
+  "commands": [
+    {"command": "Get-Location; git status --short; rg --files -g gameplay-walkthrough.md -g hints.py -g runtime.py -g Assistant.tsx -g ai.py backend/app", "exit_code": 0},
+    {"command": "rg --files | rg '(gameplay-walkthrough\\.md|Assistant\\.tsx|domain|hints\\.py|runtime\\.py|storage\\\\ai\\.py)'", "exit_code": 0},
+    {"command": "Read numbered walkthrough, hints/runtime/Assistant/storage/domain sources using PowerShell Get-Content; targeted rg for hint selection, clue IDs, and counts", "exit_code": 0}
+  ],
+  "findings": {
+    "truth_and_known_clue_basis": "All six topic templates (three levels each, 18 total) are factually aligned with current v3.4 clue text and do not reveal an answer: sample_time/sample_mark use record+clock or record+sample refs; login_identity/login_time use plaque+maintenance or clock+maintenance; sequence uses symbols+indices+legend; circuit uses public exposed board geometry with no clue refs. Eligibility requires the referenced discovered clue IDs (circuit's empty refs are backed by current R2 editing board). Templates contain no old 4792/231 numeric terminal answer and no complete route. I found no incorrect factual statement in the 18 templates. This factuality finding is separate from coverage.",
+    "default_selection": "Deterministic mock selects topics[0] (hints.py:120-123). Topic order is sample_time before sample_mark (54-56), and login_identity before login_time (57-59). Thus where both are eligible the default topic masks its sibling. Selection is independent of requested hint level except that the selected template uses current_hint_level (68-75); level affects strength, not topic ordering.",
+    "flow_coverage": "The six topics are puzzle-reasoning hints only, not a full walkthrough. There are no dedicated hints for finding/observing clues, placing and re-observing the slide, opening the cabinet after correct code, fuse retrieval/installation, circuit check then main switch, two-stage computer start then login and separate records read, taking strip/card, inserting strip, swiping card, explicitly starting final check, releasing lock, pushing door, or moving to EXIT. This is a coverage/design gap relative to walkthrough guidance, not by itself a breach of the old safety boundary: existing hints remain bounded to known references/current geometry and perform no actions.",
+    "no_hint": "NO_HINT says discovered information is not yet sufficient and recommends observing the currently visible environment, obtaining more clues, then asking again (hints.py:12; branch 117-120). That advice can mislead when no eligible topic exists because the player has already passed the relevant state (e.g. cabinet no longer LOCKED, computer no longer LOGIN_LOCKED), is in another room/stage, or otherwise cannot obtain a matching topic through observation. The no-topic branch in storage returns NO_HINT without incrementing statistics; actual successfully rendered eligible hints increment hint_count (storage/ai.py:156-166, 369-388).",
+    "no_hint_ui_status": "When it reaches Assistant.tsx, status is no_suggestion and usage provider is unavailable, but the status label conditional only special-cases stopped and unavailable-provider; it displays 暂无可用提示 in the unavailable-provider case (Assistant.tsx:144). No topic therefore is not presented as a successfully provided hint.",
+    "state_and_history": "Eligible topics depend on current visible clues, room, device/panel/exit/progress state, and level version (hints.py:41-65), not the question text or history. The UI question is sent in the request (Assistant.tsx:76-82), but the bounded hint runtime selects from available_topics(snapshot) and does not use the question or history (hints.py:96-145). Stored history may exist for the general runtime, but v3.4 uses the hint runtime path; this audit found no historical answer influence on default topic choice. State can affect which topics are eligible, so prior gameplay actions matter insofar as they change current state/clues.",
+    "version_scope": "hints.py gates this behavior to level_version 3.4.0 and playing status (41-44). runtime.py routes v3.4.0 through the hint path (184-190); older versions retain the general AI path, and this review makes no claim about old-version answer behavior."
+  },
+  "evidence_paths_and_lines": [
+    {"path": "docs/gameplay-walkthrough.md", "lines": [7, 9, 11, 17, 21, 31, 47, 49, 59, 63, 69, 94, 102, 111, 115]},
+    {"path": "backend/app/ai/hints.py", "lines": [12, 13, 38, 41, 65, 68, 76, 96, 145]},
+    {"path": "frontend/src/Assistant.tsx", "lines": [21, 22, 76, 82, 119, 144]},
+    {"path": "backend/app/storage/ai.py", "lines": [142, 173, 369, 388]},
+    {"path": "backend/app/domain/puzzle_rules.py", "lines": [23, 30, 37, 43, 46, 61, 69, 78, 121, 127]},
+    {"path": "backend/app/domain/mini_rules.py", "lines": [37, 68, 85, 103, 112, 134]},
+    {"path": "backend/app/domain/graybox_rules.py", "lines": [42, 45, 56, 84, 113, 138]},
+    {"path": "backend/app/domain/device_flow.py", "lines": [7, 12, 19, 30]}
+  ],
+  "not_executed": ["Provider/model call", "database interaction", "HTTP/API request", "Main's in-memory dynamic probe", "full tests", "frontend build", "browser or human usability validation"],
+  "limitations": "Static source inspection only. No product changes, commits, or claims about runtime behavior beyond the inspected code paths."
+}
