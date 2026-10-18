@@ -1,0 +1,42 @@
+{
+  "recorded_at": "2026-10-18T15:13:14.837093+00:00",
+  "operator": "Main integration",
+  "product_delta": {
+    "frontend/src/components/Room1.tsx": {
+      "before_sha256": "a8c744c518a68fb112579ca71a71fe28df1ce47bdb3f4ac69d0856efd77510fe",
+      "after_sha256": "c66099c632c030d2b0e76b94e86339662c12ae7ab21406dbc467765f2fadc845",
+      "exact_single_filter_deletion": true
+    },
+    "frontend/src/components/Room2.tsx": {
+      "before_sha256": "2006745fac1248ffd353f48bbb105927295ff60d43d13174898dae924165ef1b",
+      "after_sha256": "1d3ce33904d3cfae0401ab58ad69a98154c8779715480f06d3935a0029bb05ab",
+      "exact_single_filter_deletion": true
+    },
+    "frontend/src/components/Room3.tsx": {
+      "before_sha256": "74a49c254e42c59c24adc7bc481b0bf5c2ceb70c654b14385e9571fb0663b32a",
+      "after_sha256": "300e77fa9acb4b2a3831b05778288d909252a94042daa802c90e8cf4871e96e5",
+      "exact_single_filter_deletion": true
+    }
+  },
+  "other_product_paths_unchanged": 240,
+  "checks": [
+    "Room1: generic duplicate inspect removed; inspect input branch preserved",
+    "Room2: generic duplicate inspect removed; inspect input branch preserved",
+    "Room3: generic duplicate inspect removed; inspect input branch preserved",
+    "App click-to-inspect and all three special scene hotspot files unchanged"
+  ],
+  "build": {
+    "command": "npm run build (tsc --noEmit && vite build)",
+    "exit_code": 0,
+    "log": "evidence/integration/remove-observe/build.txt",
+    "log_sha256": "9901a8f7a77d06dcb321be42aa534c22735f01eba8ea367a97d997224cb6b184",
+    "existing_warning": "Phaser chunk size warning; build succeeded."
+  },
+  "new_tests": 0,
+  "browser_tests": 0,
+  "paid_calls": 0,
+  "limitations": [
+    "Exact source delta and build verified; no new browser or full-route test for this low-impact three-filter removal."
+  ],
+  "status": "Accepted for normal commit/push"
+}

@@ -1,0 +1,28 @@
+{
+  "recorded_at": "2026-10-18T15:11:06.324310+00:00",
+  "baseline_commit": "69473acb8b28f9adfaaf5a1663e001ea2d115672",
+  "scope": "Remove only duplicate generic observe buttons in three visual room closeups. Clicking objects still performs inspect; special scene observe hotspots remain.",
+  "owner": {
+    "task": "remove_observe_button",
+    "requested_model": "gpt-6-luna",
+    "requested_reasoning": "medium",
+    "paths": [
+      "frontend/src/components/Room1.tsx",
+      "frontend/src/components/Room2.tsx",
+      "frontend/src/components/Room3.tsx",
+      "README.md",
+      "release/UPGRADES.md",
+      "evidence/integration/remove-observe/owner.json"
+    ]
+  },
+  "verification": "Main build/typecheck once and exact byte delta review after source STOP; no new tests, paid calls or gameplay/schema/backend changes.",
+  "before_sha256": {
+    "frontend/src/components/Room1.tsx": "a8c744c518a68fb112579ca71a71fe28df1ce47bdb3f4ac69d0856efd77510fe",
+    "frontend/src/components/Room2.tsx": "2006745fac1248ffd353f48bbb105927295ff60d43d13174898dae924165ef1b",
+    "frontend/src/components/Room3.tsx": "74a49c254e42c59c24adc7bc481b0bf5c2ceb70c654b14385e9571fb0663b32a",
+    "frontend/src/App.tsx": "c2f0291f31a73e112baa5def06e2c7183fbf7466ef12ecd1b8f992a7665566a5",
+    "frontend/src/game/Room1Scene.ts": "ce729085fbdedaa7bfc149845f46742545be2ec9b5f83b5ec83d3e1dfbb8fbb5",
+    "frontend/src/game/Room2Scene.ts": "9a9309812bf188bb9c5dddfa253de55ec393edfd88a03cfd6f4d62e302da5ee0",
+    "frontend/src/game/Room3Scene.ts": "4242909efbacf5b6f42e8cf1b84da443072e3e5b8dbe672ffe6f99d20e87052c"
+  }
+}

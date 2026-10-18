@@ -1,0 +1,105 @@
+{
+  "recorded_at": "2026-10-18T15:11:55.829965+00:00",
+  "task": "remove_observe_button",
+  "status": "SOURCE STOP",
+  "scope": "Removed only inspect from generic closeup action filters in Room1/2/3; retained input inspect branches and special scene hotspots. Added one short note to README and release notes.",
+  "files": {
+    "frontend/src/components/Room1.tsx": {
+      "original_sha256": "a8c744c518a68fb112579ca71a71fe28df1ce47bdb3f4ac69d0856efd77510fe",
+      "current_before_finalize_sha256": "c66099c632c030d2b0e76b94e86339662c12ae7ab21406dbc467765f2fadc845",
+      "after_sha256": "c66099c632c030d2b0e76b94e86339662c12ae7ab21406dbc467765f2fadc845",
+      "target_replacements": 1
+    },
+    "frontend/src/components/Room2.tsx": {
+      "original_sha256": "2006745fac1248ffd353f48bbb105927295ff60d43d13174898dae924165ef1b",
+      "current_before_finalize_sha256": "1d3ce33904d3cfae0401ab58ad69a98154c8779715480f06d3935a0029bb05ab",
+      "after_sha256": "1d3ce33904d3cfae0401ab58ad69a98154c8779715480f06d3935a0029bb05ab",
+      "target_replacements": 1
+    },
+    "frontend/src/components/Room3.tsx": {
+      "original_sha256": "74a49c254e42c59c24adc7bc481b0bf5c2ceb70c654b14385e9571fb0663b32a",
+      "current_before_finalize_sha256": "74a49c254e42c59c24adc7bc481b0bf5c2ceb70c654b14385e9571fb0663b32a",
+      "after_sha256": "300e77fa9acb4b2a3831b05778288d909252a94042daa802c90e8cf4871e96e5",
+      "target_replacements": 1
+    },
+    "README.md": {
+      "before_sha256": "4f97a637204e31578b23bbef0efc4e7f2b20414ee8b52233de860260fb8dd593",
+      "after_sha256": "24d159366bf94d3772a0651a874c9f75258880ebbc3561ec85b269b5826f11f5",
+      "sentence_insertions": 1
+    },
+    "release/UPGRADES.md": {
+      "before_sha256": "395e4667e3e0ce8adece941ce827044a6c46d4b8b6f80cc16ed5b9a4f6a8f681",
+      "after_sha256": "7e80bdd2f279870879027fef2042e67a25ee41595b897cae95c8d43136304126",
+      "sentence_insertions": 1,
+      "post_handoff_before_sha256": "5d62bccb8e9f07249b9220393073104d411226f036fb6b4ccec62e3a0dc5961d",
+      "note": "Rebuilt from unchanged HEAD historical bytes plus one dated EOF paragraph; Main-reported build result included.",
+      "post_build_sha256": "1666680d485ba769664a03eb2b6f17b6b31f7507c70c1b8acfeab2722469b049"
+    }
+  },
+  "commands": [
+    {
+      "command": "Get-Content AGENTS.md and Room1/2/3 components; attempted frontend/src/scenes/Room1Scene.ts",
+      "exit_code": 1,
+      "note": "Assigned source reads succeeded; the attempted Room1Scene path was wrong."
+    },
+    {
+      "command": "rg ownership and inspect hotspots in assigned components/game paths, including nonexistent frontend/src/scenes search root",
+      "exit_code": 1,
+      "note": "Relevant source matches returned; nonexistent search root reported."
+    },
+    {
+      "command": "Get-Content AGENTS.md -Tail 35; Get-Location; git status --short; Get-Command Python interpreter",
+      "exit_code": 0,
+      "note": "Confirmed latest ownership entry, workspace and pre-existing unrelated changes."
+    },
+    {
+      "command": "Get-Content plan.json; rg observe/closeup in README.md and release/UPGRADES.md; list evidence directory",
+      "exit_code": 0,
+      "note": "Confirmed plan, insertion points and no existing owner report."
+    },
+    {
+      "command": "Python -B -X utf8 initial exact-replacement attempt",
+      "exit_code": 1,
+      "note": "Room1 and Room2 replacements completed before Room3 filter mismatch stopped execution; no docs/report written."
+    },
+    {
+      "command": "rg closeup-actions in the three assigned components",
+      "exit_code": 0,
+      "note": "Confirmed Room1/2 modified and Room3 original filter."
+    },
+    {
+      "command": "Python -B -X utf8 final byte-exact replacement, documentation update and owner report",
+      "exit_code": 0,
+      "note": "Completed Room3, added both documentation notes and recorded final hashes."
+    },
+    {
+      "command": "git diff assigned components and docs; Get-Content owner.json",
+      "exit_code": 0,
+      "note": "Reviewed final diff and owner evidence."
+    },
+    {
+      "command": "Python -B -X utf8 move release note out of historical QA paragraph and update owner hash",
+      "exit_code": 0,
+      "note": "Only release/UPGRADES.md and owner evidence changed; product sources unchanged."
+    },
+    {
+      "command": "Python -B -X utf8 add Main-reported build result to dated release note and update owner hash",
+      "exit_code": 0,
+      "note": "Documentation/evidence only; product sources unchanged."
+    },
+    {
+      "command": "Earlier Python -B -X utf8 documentation handoff attempt (TypeError before writes)",
+      "exit_code": 1,
+      "note": "Bytes/string mismatch; no file was modified by this attempt."
+    },
+    {
+      "command": "Python -B -X utf8 rebuild release notes from HEAD historical bytes plus dated final paragraph and update owner hash",
+      "exit_code": 0,
+      "note": "Preserved old sections byte-for-byte; only assigned release note and evidence changed."
+    }
+  ],
+  "unresolved_limitations": [
+    "Main build/typecheck remains pending under the plan.",
+    "No tests were created or run, as authorized."
+  ]
+}

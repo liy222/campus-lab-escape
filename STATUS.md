@@ -273,3 +273,9 @@ Final243source/172old/12raw/21QA bindings matched. Independentoriginal15 andfixe
 
 ### 2026-10-18 companion quality refinement synchronized
 Source10d1c38a02d6533f2074c2f86abf7b5d27cff592 verified on GitHub main; author/committerliy222. Naturalpubliccontext/clarificationguard/officialJSONmode/proceduraldenoise delivered. Independent15thenfixed3 passed separateepochs; Q05loginonlyrealquality accepted, failedsamples/Q02skip preserved. New4calls upper.00958448CNY; no extra tests/calls/productchanges in finalmetadata. See evidence/integration/ai-companion-quality/sync.json.
+
+### 2026-10-18 duplicate observe button removal in progress
+Threevisualroomfilters assignedLuna forminimaldeletion. Specialmicroscope/reinspecthotspots retained; no gameplay/backend/AI/savechange. Stablethenbuild/sync.
+
+### 2026-10-18 duplicate observe controls removed
+三个视觉房间特写中的重复“观察”按钮已移除；点击物品仍观察并记录线索，目镜等专用观察热点保留。Main核对仅3处filter字节差异，其他240产品文件不变；唯一类型检查/前端构建exit0，未新增测试、浏览器运行或付费调用。证据 evidence/integration/remove-observe/verification.json；按liy222身份常规提交同步。

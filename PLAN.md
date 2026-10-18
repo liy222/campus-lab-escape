@@ -250,3 +250,9 @@ Fix technicalstate wording, overdirect instruction and repeated dialogue using p
 
 ### 2026-10-18 companion quality refinement accepted
 Naturalpubliccontext/preciseinternalcodeguard/clarificationhistory implemented; actualformatdefects addressedwith officialJSONmode while strictparserretained, proceduralcontextdropsunrelatedevidence. Independent15thenfixed3 pass separatecandidates. New4paidcalls preservefirstfailures; finalQ05login sampleaccurate/natural, no broadqualityclaim or actualfollowupcheck. Finaldoc/syncnext, paidSTOP.
+
+### 2026-10-18 remove duplicate observe buttons
+Remove genericobserve fromthreevisualcloseups; preserveclicktoinspect/notebook andspecialsceneobservation. Onebuild/typecheck+exactdeltareview, thennormalcommit/push.
+
+### 2026-10-18 duplicate observe cleanup complete
+Three duplicate visual controls removed, special observe hotspots and click-to-notebook behavior preserved. Exact3filter delta/other240sources unchanged; typecheck+build0. No extra tests or paidcalls; normal synchronization.

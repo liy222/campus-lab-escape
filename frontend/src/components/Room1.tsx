@@ -36,7 +36,7 @@ export default function Room1(props: Props) {
     {object && <div className="closeup-controls">
       <button className="button closeup-back" disabled={disabled} onClick={() => props.onView(null)}>← 返回房间</button>
       <span className="closeup-title">{object.name}</span>
-      <div className="closeup-actions">{object.actions.filter(action => ['inspect', 'take', 'interact'].includes(action.tool)).map(action => <button key={action.tool} className="button" data-scene-action={action.tool} data-target-id={object.object_id} disabled={disabled} onClick={() => onAction(action.tool, action.arguments)}>{action.label}</button>)}
+      <div className="closeup-actions">{object.actions.filter(action => ['take', 'interact'].includes(action.tool)).map(action => <button key={action.tool} className="button" data-scene-action={action.tool} data-target-id={object.object_id} disabled={disabled} onClick={() => onAction(action.tool, action.arguments)}>{action.label}</button>)}
         {object.object_id === 'r1_door' && state.exits.some(exit => exit.destination_id === 'R2' && exit.unlocked) && <button className="button exit-button" data-scene-action="move" disabled={disabled} onClick={() => onAction('move', { destination_id: 'R2' })}>进入设备实验室 →</button>}
         {selectedItemId && <button className="button use-button" disabled={disabled} onClick={() => onAction('use_item', { item_id: selectedItemId, target_id: object.object_id })}>使用物品 ↗</button>}
       </div>
