@@ -1,0 +1,8800 @@
+[
+  {
+    "check": "domain-node",
+    "label": "early:initial",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在实验记录上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察实验记录，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "early:1:inspect:{'object_id': 'r1_door'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [
+      "r1_door"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在实验记录上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察实验记录，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "early:2:interact:{'target_id': 'r1_door'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [
+      "r1_door"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在实验记录上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察实验记录，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "early:3:move:{'destination_id': 'R2'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [
+      "r1_door"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在电源箱上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察电源箱，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "early:4:inspect:{'object_id': 'r2_door'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [
+      "r1_door",
+      "r2_door"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在电源箱上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察电源箱，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "early:5:interact:{'target_id': 'r2_door'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [
+      "r1_door",
+      "r2_door"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在电源箱上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察电源箱，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "early:6:move:{'destination_id': 'R3'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [
+      "r1_door",
+      "r2_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "可以回顾先前房间，补看环境或尚未收起的物品。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "当前有一条通往设备实验室的开放通路。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以沿当前开放通路前往设备实验室，继续查看环境。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "early:7:inspect:{'object_id': 'r3_panel'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [
+      "r1_door",
+      "r2_door",
+      "r3_panel"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "可以回顾先前房间，补看环境或尚未收起的物品。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "当前有一条通往设备实验室的开放通路。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以沿当前开放通路前往设备实验室，继续查看环境。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "early:8:inspect:{'object_id': 'exit_door'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [
+      "r1_door",
+      "r2_door",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "可以回顾先前房间，补看环境或尚未收起的物品。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "当前有一条通往设备实验室的开放通路。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以沿当前开放通路前往设备实验室，继续查看环境。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:initial",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在实验记录上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察实验记录，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:1:inspect:{'object_id': 'r1_cabinet'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [
+      "r1_cabinet"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在实验记录上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察实验记录，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:2:submit_code:{'target_id': 'r1_cabinet', 'code': '4217'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "CODE_ACCEPTED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [
+      "r1_cabinet"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "储物柜的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在储物柜选择“拉开柜门”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:3:interact:{'target_id': 'r1_cabinet'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [
+      "r1_cabinet"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door",
+      "r1_symbols",
+      "r1_fuse"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在保险丝上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察保险丝，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:4:inspect:{'object_id': 'r1_fuse'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door",
+      "r1_symbols",
+      "r1_fuse"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意已经看见、尚未收起的物品。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "保险丝还在当前环境中，可以关注它的操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以对保险丝选择“拿起物品”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:5:take:{'item_id': 'fuse'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door",
+      "r1_symbols",
+      "r1_photo"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在柜内旧标签上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察柜内旧标签，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:6:inspect:{'object_id': 'r1_photo'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door",
+      "r1_symbols",
+      "r1_photo"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在柜内旧标签上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察柜内旧标签，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:7:inspect:{'object_id': 'r1_door'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door",
+      "r1_symbols",
+      "r1_photo"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在柜内旧标签上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察柜内旧标签，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:8:interact:{'target_id': 'r1_door'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door",
+      "r1_symbols",
+      "r1_photo"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在柜内旧标签上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察柜内旧标签，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:9:move:{'destination_id': 'R2'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在电源箱上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察电源箱，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:10:inspect:{'object_id': 'r2_powerbox'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "电源箱的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在电源箱选择“打开箱盖”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:11:interact:{'target_id': 'r2_powerbox'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "OPEN",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "电源箱的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在电源箱选择“移开护板”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:12:interact:{'target_id': 'r2_powerbox'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "MISSING_FUSE",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意背包物件与当前装置的配合。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以对照背包里的保险丝与电源箱。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以将背包中的保险丝用于电源箱。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:13:use_item:{'item_id': 'fuse', 'target_id': 'r2_powerbox'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:14:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c00'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:15:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c01'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:16:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c02'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:17:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c02'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:18:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c10'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:19:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c10'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:20:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c21'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:21:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c22'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:22:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c22'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:23:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c22'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:24:submit_circuit:{'target_id': 'r2_powerbox'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "电源箱的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在电源箱选择“合上总闸”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:25:interact:{'target_id': 'r2_powerbox'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在电脑上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察电脑，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:26:inspect:{'object_id': 'r2_service_label'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在电脑上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察电脑，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:27:inspect:{'object_id': 'r2_monitor'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "电脑的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在电脑选择“按下启动键”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:28:interact:{'target_id': 'r2_monitor'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "BOOTING",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "电脑的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在电脑选择“继续启动”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:29:interact:{'target_id': 'r2_monitor'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "LOGIN_LOCKED",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在维护说明上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察维护说明，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:30:submit_login:{'target_id': 'r2_monitor', 'username': 'LAB-42', 'password': '2117'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "UNLOCKED",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "电脑的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在电脑选择“读取记录”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:31:interact:{'target_id': 'r2_monitor'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "research_strip",
+      "access_card",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在研究纸条上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察研究纸条，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:32:inspect:{'object_id': 'research_strip'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "research_strip",
+      "access_card",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意已经看见、尚未收起的物品。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "研究纸条还在当前环境中，可以关注它的操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以对研究纸条选择“拿起物品”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:33:inspect:{'object_id': 'access_card'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "research_strip",
+      "access_card",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意已经看见、尚未收起的物品。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "研究纸条还在当前环境中，可以关注它的操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以对研究纸条选择“拿起物品”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:34:take:{'item_id': 'research_strip'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "access_card",
+      "r2_service_label"
+    ],
+    "inventory": [
+      "research_strip"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意已经看见、尚未收起的物品。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "门禁卡还在当前环境中，可以关注它的操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以对门禁卡选择“拿起物品”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:35:take:{'item_id': 'access_card'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [
+      "research_strip",
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在控制室门上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察控制室门，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:36:inspect:{'object_id': 'r2_door'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [
+      "research_strip",
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "控制室门的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在控制室门选择“拉开门闩”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:37:interact:{'target_id': 'r2_door'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [
+      "research_strip",
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "可以留意当前已经开放的通路。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "当前有一条通往出口控制室的开放通路。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以沿当前开放通路前往出口控制室，继续查看环境。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:38:move:{'destination_id': 'R3'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "research_strip",
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在终检控制台上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察终检控制台，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:39:inspect:{'object_id': 'r3_panel'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_panel"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "research_strip",
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意背包物件与当前装置的配合。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以对照背包里的研究纸条与终检控制台。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以将背包中的研究纸条用于终检控制台。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:40:use_item:{'item_id': 'research_strip', 'target_id': 'r3_panel'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_panel"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在实验室出口上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察实验室出口，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:41:inspect:{'object_id': 'exit_door'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意背包物件与当前装置的配合。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以对照背包里的门禁卡与实验室出口。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以将背包中的门禁卡用于实验室出口。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:42:use_item:{'item_id': 'access_card', 'target_id': 'exit_door'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "CARD_ACCEPTED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "实验室出口的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在实验室出口选择“启动终检”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:43:interact:{'target_id': 'exit_door'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在设备对应表上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察设备对应表，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:44:submit_sequence:{'target_id': 'r3_panel', 'device_ids': ['ventilation', 'cooling', 'lighting', 'safety']}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "实验室出口的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在实验室出口选择“释放门锁”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:45:interact:{'target_id': 'exit_door'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "UNLOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "实验室出口的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在实验室出口选择“推开出口”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:46:interact:{'target_id': 'exit_door'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "OPEN"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "可以留意当前已经开放的通路。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "当前有一条通往实验室出口的开放通路。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以沿当前开放通路前往实验室出口，继续查看环境。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "guessed:47:move:{'destination_id': 'EXIT'}",
+    "room": "EXIT",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "OPEN"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_photo_clue",
+      "r2_indices_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_cabinet",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [],
+    "rendered": []
+  },
+  {
+    "check": "domain-node",
+    "label": "initial",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [],
+    "observed": [],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在实验记录上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察实验记录，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "1:inspect:{'object_id': 'r1_clock'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue"
+    ],
+    "observed": [
+      "r1_clock"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在实验记录上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察实验记录，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "2:inspect:{'object_id': 'r1_record'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_record_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "sample_time",
+        "level": 1,
+        "answer": "已发现的记录和时间信息之间可能存在联系。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 2,
+        "answer": "可以对照已读过的样本编号规则和实验开始时间。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 3,
+        "answer": "记录把编号末两位指向开始时间的分钟数。先确定这一部分，另一部分仍需从样本信息推理。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在显微镜上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察显微镜，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "3:inspect:{'object_id': 'r1_plaque'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_plaque_clue",
+      "r1_record_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "sample_time",
+        "level": 1,
+        "answer": "已发现的记录和时间信息之间可能存在联系。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 2,
+        "answer": "可以对照已读过的样本编号规则和实验开始时间。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 3,
+        "answer": "记录把编号末两位指向开始时间的分钟数。先确定这一部分，另一部分仍需从样本信息推理。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在显微镜上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察显微镜，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "4:inspect:{'object_id': 'r1_microscope'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_plaque_clue",
+      "r1_record_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "sample_time",
+        "level": 1,
+        "answer": "已发现的记录和时间信息之间可能存在联系。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 2,
+        "answer": "可以对照已读过的样本编号规则和实验开始时间。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 3,
+        "answer": "记录把编号末两位指向开始时间的分钟数。先确定这一部分，另一部分仍需从样本信息推理。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在样本玻片上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察样本玻片，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "5:inspect:{'object_id': 'sample_slide'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_plaque_clue",
+      "r1_record_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "sample_time",
+        "level": 1,
+        "answer": "已发现的记录和时间信息之间可能存在联系。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 2,
+        "answer": "可以对照已读过的样本编号规则和实验开始时间。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 3,
+        "answer": "记录把编号末两位指向开始时间的分钟数。先确定这一部分，另一部分仍需从样本信息推理。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意已经看见、尚未收起的物品。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "样本玻片还在当前环境中，可以关注它的操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以对样本玻片选择“拿起物品”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "6:take:{'item_id': 'sample_slide'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "EMPTY",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_plaque_clue",
+      "r1_record_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [
+      "sample_slide"
+    ],
+    "topics": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "sample_time",
+        "level": 1,
+        "answer": "已发现的记录和时间信息之间可能存在联系。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 2,
+        "answer": "可以对照已读过的样本编号规则和实验开始时间。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 3,
+        "answer": "记录把编号末两位指向开始时间的分钟数。先确定这一部分，另一部分仍需从样本信息推理。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意背包物件与当前装置的配合。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以对照背包里的样本玻片与显微镜。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以将背包中的样本玻片用于显微镜。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "7:use_item:{'item_id': 'sample_slide', 'target_id': 'r1_microscope'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_plaque_clue",
+      "r1_record_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "sample_time",
+        "level": 1,
+        "answer": "已发现的记录和时间信息之间可能存在联系。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 2,
+        "answer": "可以对照已读过的样本编号规则和实验开始时间。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 3,
+        "answer": "记录把编号末两位指向开始时间的分钟数。先确定这一部分，另一部分仍需从样本信息推理。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在显微镜上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以再次观察显微镜，确认当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "8:inspect:{'object_id': 'r1_microscope'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "sample_time",
+        "level": 1,
+        "answer": "已发现的记录和时间信息之间可能存在联系。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 2,
+        "answer": "可以对照已读过的样本编号规则和实验开始时间。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 3,
+        "answer": "记录把编号末两位指向开始时间的分钟数。先确定这一部分，另一部分仍需从样本信息推理。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "level": 1,
+        "answer": "样本上的标记也许能补充记录中的编号规则。",
+        "refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "level": 2,
+        "answer": "可以对照已发现的样本标记和样本编号规则。",
+        "refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "level": 3,
+        "answer": "记录说明编号前两位来自样本编号。先处理这部分，再用已发现的时间信息补足余下部分。",
+        "refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "9:inspect:{'object_id': 'r1_cabinet'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "LOCKED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "sample_time",
+        "level": 1,
+        "answer": "已发现的记录和时间信息之间可能存在联系。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 2,
+        "answer": "可以对照已读过的样本编号规则和实验开始时间。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_time",
+        "level": 3,
+        "answer": "记录把编号末两位指向开始时间的分钟数。先确定这一部分，另一部分仍需从样本信息推理。",
+        "refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "level": 1,
+        "answer": "样本上的标记也许能补充记录中的编号规则。",
+        "refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "level": 2,
+        "answer": "可以对照已发现的样本标记和样本编号规则。",
+        "refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "level": 3,
+        "answer": "记录说明编号前两位来自样本编号。先处理这部分，再用已发现的时间信息补足余下部分。",
+        "refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "10:submit_code:{'target_id': 'r1_cabinet', 'code': '4217'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "CODE_ACCEPTED",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "r1_cabinet",
+      "r1_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "储物柜的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在储物柜选择“拉开柜门”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "11:interact:{'target_id': 'r1_cabinet'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "r1_cabinet",
+      "r1_door",
+      "r1_symbols",
+      "r1_fuse"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在保险丝上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察保险丝，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "12:inspect:{'object_id': 'r1_symbols'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "r1_cabinet",
+      "r1_door",
+      "r1_symbols",
+      "r1_fuse"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在保险丝上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察保险丝，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "13:inspect:{'object_id': 'r1_fuse'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "OPEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "r1_cabinet",
+      "r1_door",
+      "r1_symbols",
+      "r1_fuse"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意已经看见、尚未收起的物品。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "保险丝还在当前环境中，可以关注它的操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以对保险丝选择“拿起物品”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "14:take:{'item_id': 'fuse'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "r1_cabinet",
+      "r1_door",
+      "r1_symbols",
+      "r1_photo"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在设备间门上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察设备间门，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "15:inspect:{'object_id': 'r1_photo'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "r1_cabinet",
+      "r1_door",
+      "r1_symbols",
+      "r1_photo"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在设备间门上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察设备间门，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "16:inspect:{'object_id': 'r1_door'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "r1_cabinet",
+      "r1_door",
+      "r1_symbols",
+      "r1_photo"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "设备间门的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在设备间门选择“拉开门闩”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "17:interact:{'target_id': 'r1_door'}",
+    "room": "R1",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door"
+    ],
+    "visible": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "r1_cabinet",
+      "r1_door",
+      "r1_symbols",
+      "r1_photo"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "可以留意当前已经开放的通路。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "当前有一条通往设备实验室的开放通路。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以沿当前开放通路前往设备实验室，继续查看环境。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "18:move:{'destination_id': 'R2'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在电源箱上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察电源箱，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "19:inspect:{'object_id': 'r2_maintenance'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在电源箱上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察电源箱，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "20:inspect:{'object_id': 'r2_powerbox'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CLOSED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "电源箱的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在电源箱选择“打开箱盖”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "21:interact:{'target_id': 'r2_powerbox'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "OPEN",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "电源箱的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在电源箱选择“移开护板”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "22:interact:{'target_id': 'r2_powerbox'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "MISSING_FUSE",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [
+      "fuse"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意背包物件与当前装置的配合。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以对照背包里的保险丝与电源箱。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以将背包中的保险丝用于电源箱。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "23:use_item:{'item_id': 'fuse', 'target_id': 'r2_powerbox'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "24:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c00'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "25:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c01'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "26:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c02'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "27:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c02'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "28:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c10'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "29:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c10'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "30:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c21'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "31:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c22'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "32:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c22'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "33:rotate_circuit:{'target_id': 'r2_powerbox', 'module_id': 'c22'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "FUSE_INSTALLED",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "circuit",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "circuit",
+        "level": 1,
+        "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 2,
+        "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+        "refs": []
+      },
+      {
+        "topic": "circuit",
+        "level": 3,
+        "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "34:submit_circuit:{'target_id': 'r2_powerbox'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "CIRCUIT_READY",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "电源箱的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在电源箱选择“合上总闸”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "35:interact:{'target_id': 'r2_powerbox'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在电脑上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察电脑，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "36:inspect:{'object_id': 'r2_service_label'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在电脑上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察电脑，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "37:inspect:{'object_id': 'r2_monitor'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "OFF",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "电脑的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在电脑选择“按下启动键”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "38:interact:{'target_id': 'r2_monitor'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "BOOTING",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "电脑的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在电脑选择“继续启动”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "39:interact:{'target_id': 'r2_monitor'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "LOGIN_LOCKED",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "login_identity",
+        "clue_refs": [
+          "r1_plaque_clue",
+          "r2_maintenance_clue"
+        ]
+      },
+      {
+        "topic": "login_time",
+        "clue_refs": [
+          "r1_clock_clue",
+          "r2_maintenance_clue"
+        ]
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "login_identity",
+        "level": 1,
+        "answer": "先前记录的环境编号可能对当前终端有帮助。",
+        "refs": [
+          "r1_plaque_clue",
+          "r2_maintenance_clue"
+        ]
+      },
+      {
+        "topic": "login_identity",
+        "level": 2,
+        "answer": "可以把已发现的实验室铭牌与终端维护说明放在一起读。",
+        "refs": [
+          "r1_plaque_clue",
+          "r2_maintenance_clue"
+        ]
+      },
+      {
+        "topic": "login_identity",
+        "level": 3,
+        "answer": "维护说明要求完整实验室编号，铭牌的字母前缀也属于编号的一部分。这里仍需自行输入。",
+        "refs": [
+          "r1_plaque_clue",
+          "r2_maintenance_clue"
+        ]
+      },
+      {
+        "topic": "login_time",
+        "level": 1,
+        "answer": "维护要求中的时间格式可以与已经读过的钟面对照。",
+        "refs": [
+          "r1_clock_clue",
+          "r2_maintenance_clue"
+        ]
+      },
+      {
+        "topic": "login_time",
+        "level": 2,
+        "answer": "可以对照已发现的维护说明和实验开始时间。",
+        "refs": [
+          "r1_clock_clue",
+          "r2_maintenance_clue"
+        ]
+      },
+      {
+        "topic": "login_time",
+        "level": 3,
+        "answer": "维护说明要求HHMM格式且不含冒号，可以从已经读过的钟面分别取小时和分钟。",
+        "refs": [
+          "r1_clock_clue",
+          "r2_maintenance_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "40:submit_login:{'target_id': 'r2_monitor', 'username': 'LAB-42', 'password': '2117'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "UNLOCKED",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "电脑的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在电脑选择“读取记录”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "41:interact:{'target_id': 'r2_monitor'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "research_strip",
+      "access_card",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在研究纸条上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察研究纸条，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "42:inspect:{'object_id': 'research_strip'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "research_strip",
+      "access_card",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意已经看见、尚未收起的物品。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "研究纸条还在当前环境中，可以关注它的操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以对研究纸条选择“拿起物品”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "43:inspect:{'object_id': 'access_card'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "research_strip",
+      "access_card",
+      "r2_service_label"
+    ],
+    "inventory": [],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意已经看见、尚未收起的物品。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "研究纸条还在当前环境中，可以关注它的操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以对研究纸条选择“拿起物品”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "44:take:{'item_id': 'research_strip'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "access_card",
+      "r2_service_label"
+    ],
+    "inventory": [
+      "research_strip"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意已经看见、尚未收起的物品。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "门禁卡还在当前环境中，可以关注它的操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以对门禁卡选择“拿起物品”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "45:take:{'item_id': 'access_card'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [
+      "research_strip",
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在控制室门上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察控制室门，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "46:inspect:{'object_id': 'r2_door'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [
+      "research_strip",
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "控制室门的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在控制室门选择“拉开门闩”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "47:interact:{'target_id': 'r2_door'}",
+    "room": "R2",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door"
+    ],
+    "visible": [
+      "r2_powerbox",
+      "r2_monitor",
+      "r2_maintenance",
+      "r2_door",
+      "r2_service_label"
+    ],
+    "inventory": [
+      "research_strip",
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "可以留意当前已经开放的通路。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "当前有一条通往出口控制室的开放通路。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以沿当前开放通路前往出口控制室，继续查看环境。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "48:move:{'destination_id': 'R3'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "research_strip",
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在终检控制台上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察终检控制台，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "49:inspect:{'object_id': 'r3_legend'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue",
+      "r3_legend_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_legend"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "research_strip",
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在终检控制台上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察终检控制台，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "50:inspect:{'object_id': 'r3_panel'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "EMPTY"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue",
+      "r3_legend_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_legend",
+      "r3_panel"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "research_strip",
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意背包物件与当前装置的配合。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以对照背包里的研究纸条与终检控制台。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以将背包中的研究纸条用于终检控制台。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "51:use_item:{'item_id': 'research_strip', 'target_id': 'r3_panel'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue",
+      "r3_legend_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_legend",
+      "r3_panel"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "先留意当前环境中还可以细看的地方。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以把注意力放在实验室出口上。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以先观察实验室出口，取得它当前可见的信息。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "52:inspect:{'object_id': 'exit_door'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "LOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue",
+      "r3_legend_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意背包物件与当前装置的配合。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "可以对照背包里的门禁卡与实验室出口。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以将背包中的门禁卡用于实验室出口。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "53:use_item:{'item_id': 'access_card', 'target_id': 'exit_door'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "CARD_ACCEPTED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue",
+      "r3_legend_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "实验室出口的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在实验室出口选择“启动终检”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "54:interact:{'target_id': 'exit_door'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue",
+      "r3_legend_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "sequence",
+        "clue_refs": [
+          "r1_symbols_clue",
+          "r2_indices_clue",
+          "r3_legend_clue"
+        ]
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "sequence",
+        "level": 1,
+        "answer": "先前保存的源序与现在的转录规则可以组合使用。",
+        "refs": [
+          "r1_symbols_clue",
+          "r2_indices_clue",
+          "r3_legend_clue"
+        ]
+      },
+      {
+        "topic": "sequence",
+        "level": 2,
+        "answer": "可以对照已发现的批次源序、纸条读取位置和设备对应表。",
+        "refs": [
+          "r1_symbols_clue",
+          "r2_indices_clue",
+          "r3_legend_clue"
+        ]
+      },
+      {
+        "topic": "sequence",
+        "level": 3,
+        "answer": "纸条要求先读取源序的第3位，再在对应表找同一符号的设备。其余位置请继续自行转录。",
+        "refs": [
+          "r1_symbols_clue",
+          "r2_indices_clue",
+          "r3_legend_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "55:submit_sequence:{'target_id': 'r3_panel', 'device_ids': ['ventilation', 'cooling', 'lighting', 'safety']}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "FINAL_CHECK"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue",
+      "r3_legend_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "实验室出口的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在实验室出口选择“释放门锁”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "56:interact:{'target_id': 'exit_door'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "UNLOCKED"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue",
+      "r3_legend_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "留意当前装置还提供了什么操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "实验室出口的当前阶段还有可用操作。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以在实验室出口选择“推开出口”。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "57:interact:{'target_id': 'exit_door'}",
+    "room": "R3",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "OPEN"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue",
+      "r3_legend_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ],
+    "rendered": [
+      {
+        "topic": "next_step",
+        "level": 1,
+        "answer": "可以留意当前已经开放的通路。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 2,
+        "answer": "当前有一条通往实验室出口的开放通路。",
+        "refs": []
+      },
+      {
+        "topic": "next_step",
+        "level": 3,
+        "answer": "可以沿当前开放通路前往实验室出口，继续查看环境。",
+        "refs": []
+      }
+    ]
+  },
+  {
+    "check": "domain-node",
+    "label": "58:move:{'destination_id': 'EXIT'}",
+    "room": "EXIT",
+    "devices": {
+      "cabinet": "ITEM_TAKEN",
+      "powerbox": "POWER_ON",
+      "computer": "DATA_READ",
+      "exit": "OPEN"
+    },
+    "puzzles": {
+      "microscope": "SLIDE_PLACED",
+      "panel": "STRIP_INSERTED"
+    },
+    "known": [
+      "r1_clock_clue",
+      "r1_photo_clue",
+      "r1_plaque_clue",
+      "r1_record_clue",
+      "r1_sample_clue",
+      "r1_symbols_clue",
+      "r2_indices_clue",
+      "r2_maintenance_clue",
+      "r2_service_clue",
+      "r3_legend_clue"
+    ],
+    "observed": [
+      "r1_clock",
+      "r1_record",
+      "r1_plaque",
+      "r1_microscope",
+      "sample_slide",
+      "r1_cabinet",
+      "r1_symbols",
+      "r1_fuse",
+      "r1_photo",
+      "r1_door",
+      "r2_maintenance",
+      "r2_powerbox",
+      "r2_service_label",
+      "r2_monitor",
+      "research_strip",
+      "access_card",
+      "r2_door",
+      "r3_legend",
+      "r3_panel",
+      "exit_door"
+    ],
+    "visible": [],
+    "inventory": [
+      "access_card"
+    ],
+    "topics": [],
+    "rendered": []
+  },
+  {
+    "check": "original-18-byte-text-preserved",
+    "templates": {
+      "sample_time": {
+        "1": {
+          "answer": "已发现的记录和时间信息之间可能存在联系。",
+          "clue_refs": [
+            "r1_record_clue",
+            "r1_clock_clue"
+          ]
+        },
+        "2": {
+          "answer": "可以对照已读过的样本编号规则和实验开始时间。",
+          "clue_refs": [
+            "r1_record_clue",
+            "r1_clock_clue"
+          ]
+        },
+        "3": {
+          "answer": "记录把编号末两位指向开始时间的分钟数。先确定这一部分，另一部分仍需从样本信息推理。",
+          "clue_refs": [
+            "r1_record_clue",
+            "r1_clock_clue"
+          ]
+        }
+      },
+      "sample_mark": {
+        "1": {
+          "answer": "样本上的标记也许能补充记录中的编号规则。",
+          "clue_refs": [
+            "r1_record_clue",
+            "r1_sample_clue"
+          ]
+        },
+        "2": {
+          "answer": "可以对照已发现的样本标记和样本编号规则。",
+          "clue_refs": [
+            "r1_record_clue",
+            "r1_sample_clue"
+          ]
+        },
+        "3": {
+          "answer": "记录说明编号前两位来自样本编号。先处理这部分，再用已发现的时间信息补足余下部分。",
+          "clue_refs": [
+            "r1_record_clue",
+            "r1_sample_clue"
+          ]
+        }
+      },
+      "circuit": {
+        "1": {
+          "answer": "可以先关注当前线路盘起点与终点附近的接口方向。",
+          "clue_refs": []
+        },
+        "2": {
+          "answer": "只看目前暴露的线路盘，检查相邻两格的端口是否朝向彼此。",
+          "clue_refs": []
+        },
+        "3": {
+          "answer": "相邻格两端同时朝向彼此才算接通。先检查公开起点的西侧端口，再逐格核对连接。",
+          "clue_refs": []
+        }
+      },
+      "login_identity": {
+        "1": {
+          "answer": "先前记录的环境编号可能对当前终端有帮助。",
+          "clue_refs": [
+            "r1_plaque_clue",
+            "r2_maintenance_clue"
+          ]
+        },
+        "2": {
+          "answer": "可以把已发现的实验室铭牌与终端维护说明放在一起读。",
+          "clue_refs": [
+            "r1_plaque_clue",
+            "r2_maintenance_clue"
+          ]
+        },
+        "3": {
+          "answer": "维护说明要求完整实验室编号，铭牌的字母前缀也属于编号的一部分。这里仍需自行输入。",
+          "clue_refs": [
+            "r1_plaque_clue",
+            "r2_maintenance_clue"
+          ]
+        }
+      },
+      "login_time": {
+        "1": {
+          "answer": "维护要求中的时间格式可以与已经读过的钟面对照。",
+          "clue_refs": [
+            "r1_clock_clue",
+            "r2_maintenance_clue"
+          ]
+        },
+        "2": {
+          "answer": "可以对照已发现的维护说明和实验开始时间。",
+          "clue_refs": [
+            "r1_clock_clue",
+            "r2_maintenance_clue"
+          ]
+        },
+        "3": {
+          "answer": "维护说明要求HHMM格式且不含冒号，可以从已经读过的钟面分别取小时和分钟。",
+          "clue_refs": [
+            "r1_clock_clue",
+            "r2_maintenance_clue"
+          ]
+        }
+      },
+      "sequence": {
+        "1": {
+          "answer": "先前保存的源序与现在的转录规则可以组合使用。",
+          "clue_refs": [
+            "r1_symbols_clue",
+            "r2_indices_clue",
+            "r3_legend_clue"
+          ]
+        },
+        "2": {
+          "answer": "可以对照已发现的批次源序、纸条读取位置和设备对应表。",
+          "clue_refs": [
+            "r1_symbols_clue",
+            "r2_indices_clue",
+            "r3_legend_clue"
+          ]
+        },
+        "3": {
+          "answer": "纸条要求先读取源序的第3位，再在对应表找同一符号的设备。其余位置请继续自行转录。",
+          "clue_refs": [
+            "r1_symbols_clue",
+            "r2_indices_clue",
+            "r3_legend_clue"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "电源箱的当前阶段还有可用操作。",
+    "count_before": 0,
+    "count_after": 1,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "电脑的当前阶段还有可用操作。",
+    "count_before": 1,
+    "count_after": 2,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "电脑的当前阶段还有可用操作。",
+    "count_before": 2,
+    "count_after": 3,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "可以把注意力放在研究纸条上。",
+    "count_before": 3,
+    "count_after": 4,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "研究纸条还在当前环境中，可以关注它的操作。",
+    "count_before": 4,
+    "count_after": 5,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "研究纸条还在当前环境中，可以关注它的操作。",
+    "count_before": 5,
+    "count_after": 6,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "门禁卡还在当前环境中，可以关注它的操作。",
+    "count_before": 6,
+    "count_after": 7,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "可以把注意力放在控制室门上。",
+    "count_before": 7,
+    "count_after": 8,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "控制室门的当前阶段还有可用操作。",
+    "count_before": 8,
+    "count_after": 9,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "当前有一条通往出口控制室的开放通路。",
+    "count_before": 9,
+    "count_after": 10,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "可以把注意力放在终检控制台上。",
+    "count_before": 10,
+    "count_after": 11,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "可以把注意力放在终检控制台上。",
+    "count_before": 11,
+    "count_after": 12,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "可以对照背包里的研究纸条与终检控制台。",
+    "count_before": 12,
+    "count_after": 13,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "可以把注意力放在实验室出口上。",
+    "count_before": 13,
+    "count_after": 14,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "可以对照背包里的门禁卡与实验室出口。",
+    "count_before": 14,
+    "count_after": 15,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "实验室出口的当前阶段还有可用操作。",
+    "count_before": 15,
+    "count_after": 16,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "可以对照已发现的批次源序、纸条读取位置和设备对应表。",
+    "count_before": 16,
+    "count_after": 17,
+    "eligible": [
+      {
+        "topic": "sequence",
+        "clue_refs": [
+          "r1_symbols_clue",
+          "r2_indices_clue",
+          "r3_legend_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "实验室出口的当前阶段还有可用操作。",
+    "count_before": 17,
+    "count_after": 18,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "实验室出口的当前阶段还有可用操作。",
+    "count_before": 18,
+    "count_after": 19,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_http_route_to_r3_and_no_topic_fallback_count_zero_after_exit",
+    "level": 2,
+    "answer": "当前有一条通往实验室出口的开放通路。",
+    "count_before": 19,
+    "count_after": 20,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_initial_observation_valid_repeat_replay_stale_and_failed_provider",
+    "level": 1,
+    "answer": "先留意当前环境中还可以细看的地方。",
+    "count_before": 0,
+    "count_after": 1,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_initial_observation_valid_repeat_replay_stale_and_failed_provider",
+    "level": 1,
+    "answer": "先留意当前环境中还可以细看的地方。",
+    "count_before": 1,
+    "count_after": 2,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_mock_round_robin_at_two_original_topics_and_levels",
+    "level": 1,
+    "answer": "已发现的记录和时间信息之间可能存在联系。",
+    "count_before": 0,
+    "count_after": 1,
+    "eligible": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_mock_round_robin_at_two_original_topics_and_levels",
+    "level": 1,
+    "answer": "样本上的标记也许能补充记录中的编号规则。",
+    "count_before": 1,
+    "count_after": 2,
+    "eligible": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_mock_round_robin_at_two_original_topics_and_levels",
+    "level": 2,
+    "answer": "可以对照已读过的样本编号规则和实验开始时间。",
+    "count_before": 2,
+    "count_after": 3,
+    "eligible": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_mock_round_robin_at_two_original_topics_and_levels",
+    "level": 2,
+    "answer": "可以对照已发现的样本标记和样本编号规则。",
+    "count_before": 3,
+    "count_after": 4,
+    "eligible": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_mock_round_robin_at_two_original_topics_and_levels",
+    "level": 3,
+    "answer": "记录把编号末两位指向开始时间的分钟数。先确定这一部分，另一部分仍需从样本信息推理。",
+    "count_before": 4,
+    "count_after": 5,
+    "eligible": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_mock_round_robin_at_two_original_topics_and_levels",
+    "level": 3,
+    "answer": "记录说明编号前两位来自样本编号。先处理这部分，再用已发现的时间信息补足余下部分。",
+    "count_before": 5,
+    "count_after": 6,
+    "eligible": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_selected_archive_restore_reopen_preserves_count_level_and_rotation",
+    "level": 3,
+    "answer": "记录把编号末两位指向开始时间的分钟数。先确定这一部分，另一部分仍需从样本信息推理。",
+    "count_before": 0,
+    "count_after": 1,
+    "eligible": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_selected_archive_restore_reopen_preserves_count_level_and_rotation",
+    "level": 3,
+    "answer": "记录说明编号前两位来自样本编号。先处理这部分，再用已发现的时间信息补足余下部分。",
+    "count_before": 1,
+    "count_after": 2,
+    "eligible": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_selected_archive_restore_reopen_preserves_count_level_and_rotation",
+    "level": 1,
+    "answer": "已发现的记录和时间信息之间可能存在联系。",
+    "count_before": 2,
+    "count_after": 3,
+    "eligible": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_selected_archive_restore_reopen_preserves_count_level_and_rotation",
+    "level": 3,
+    "answer": "记录说明编号前两位来自样本编号。先处理这部分，再用已发现的时间信息补足余下部分。",
+    "count_before": 1,
+    "count_after": 2,
+    "eligible": [
+      {
+        "topic": "sample_time",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_clock_clue"
+        ]
+      },
+      {
+        "topic": "sample_mark",
+        "clue_refs": [
+          "r1_record_clue",
+          "r1_sample_clue"
+        ]
+      }
+    ]
+  },
+  {
+    "check": "HTTP-mock",
+    "test": "test_store_does_not_trust_prose_refs_proposals_or_read_tools",
+    "level": 1,
+    "answer": "先留意当前环境中还可以细看的地方。",
+    "count_before": 0,
+    "count_after": 1,
+    "eligible": [
+      {
+        "topic": "next_step",
+        "clue_refs": []
+      }
+    ]
+  },
+  {
+    "check": "Store-authority",
+    "case": "prose",
+    "status": "no_suggestion",
+    "count_delta": 1
+  },
+  {
+    "check": "Store-authority",
+    "case": "unknown-refs",
+    "status": "stopped",
+    "count_delta": 0
+  },
+  {
+    "check": "Store-authority",
+    "case": "proposal",
+    "status": "stopped",
+    "count_delta": 0
+  },
+  {
+    "check": "Store-authority",
+    "case": "stale",
+    "status": "stopped",
+    "count_delta": 0
+  },
+  {
+    "check": "Store-authority",
+    "case": "read",
+    "status": "no_suggestion",
+    "count_delta": 1
+  },
+  {
+    "check": "Store-authority",
+    "case": "stopped",
+    "status": "stopped",
+    "count_delta": 0
+  }
+]

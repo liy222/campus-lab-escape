@@ -1,0 +1,28 @@
+{
+  "epoch": "hint-flow final delivery documentation",
+  "status": "SOURCE STOP",
+  "files": {
+    "README.md": "6aba6163025cda5c1d5d151755eeb8e4142d1d3b7ad711e22557172cde32b903",
+    "release/UPGRADES.md": "6af4e41ad2438e8cc621beb1c41617e601168784177e02788d108b6b26930abc"
+  },
+  "acceptance": {
+    "accepted_record": "evidence/integration/hint-flow/accepted.json",
+    "accepted_sha256": "e5d0aaf02c658a671bb424285ed3de2ef3531c4803e529b71c3bdcfc5e99e3ad",
+    "qa_result": "evidence/integration/hint-flow/qa/result.json",
+    "qa_result_sha256": "7ff1aa383b05273ee4d58ca950101fd6085da2e817890cb8d1f18170f6d479b9",
+    "actual_verification": {
+      "api": "11 methods (7 new, 4 retained regression); 12.371 seconds; exit 0.",
+      "browser": "71 desktop records; exit 0; issues []; 1280x900 viewport.",
+      "typecheck_exit_code": 0,
+      "build_exit_code": 0,
+      "paid_calls": 0
+    },
+    "limits": [
+      "Focused hint-flow verification; no complete old backend suite or full visual acceptance claim.",
+      "Browser record count includes public API setup and cleanup, not unique assertions.",
+      "No mobile viewport, real provider request/quality, historical user database, or human timing verification."
+    ]
+  },
+  "source_tests_assets_modified": false,
+  "commit_or_push_performed": false
+}

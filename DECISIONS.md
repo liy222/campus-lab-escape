@@ -193,3 +193,9 @@ GitHub API returned private=false. Main asked because original instruction requi
 
 ### 2026-10-18 walkthrough and AI preparation boundaries
 Current walkthrough follows level3.4.0/schema1.4.0 with v4.2UI and latest panel fix. Keep actual puzzle solutions in internal reference documentation; do not pass the entire spoiler guide to a future model by default. Separate hard readiness/action gates from knowledge needed for intended inference; navigation/reordering/guessed solutions must be represented honestly. This epoch writes documentation only.
+
+### 2026-10-18 preset input versus AI companion input
+Treat default hints as v3.4 with mock provider: user chooses intensity and clicks directly; keep existing required API message by fixed neutral string, no schema expansion. Preserve DeepSeek/legacy input and settings without claiming new free-chat capability. Default hints rotate eligible topics from existing savedhintcount and supplement only observed/public-state guidance; currentstate must determine unfinished goals, never hidden answers. No extra mobile or conversation feature.
+
+### 2026-10-18 hint compatibility and verification
+Use existing hint_count for selection rotation, preserving snapshot/API/storage formats. Store final authority re-renders currentpublicstate; empty-ref procedure and circuit topics exclusive. Keep historical initialNO_HINT/firsttopic tests intact, explicitly superseded; focused new tests and4validoldregressions pass. Preset input removal does not imply realAI gained question-aware conversation.

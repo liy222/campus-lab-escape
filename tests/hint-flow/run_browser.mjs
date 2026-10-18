@@ -1,0 +1,70 @@
+// Independent desktop-only UI acceptance. No credentials or paid requests.
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import os from 'node:os';
+import net from 'node:net';
+import crypto from 'node:crypto';
+import {createRequire} from 'node:module';
+import {spawn,spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
+const {chromium,expect}=createRequire(path.join(root,'frontend/package.json'))('@playwright/test');
+const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8').replace(/^\uFEFF/,''));
+const candidatePath=process.argv[2];assert(candidatePath,'Main candidate is required');
+const candidate=read(candidatePath),prep=read('evidence/integration/hint-flow/qa/preparation.json');assert(prep.protocol_ready);
+const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
+const hashes=()=>Object.fromEntries(Object.keys(candidate.source_sha256).map(p=>[p,sha(p)]));
+const before=hashes();assert.deepEqual(before,candidate.source_sha256);
+for(const [p,h]of Object.entries(prep.old_test_sha256))assert.equal(sha(p),h,p);
+const folder=path.join(root,'evidence/integration/hint-flow/qa',new Date().toISOString().replace(/[-:.]/g,'')+'-browser');fs.mkdirSync(folder,{recursive:true});
+const temp=fs.mkdtempSync(path.join(os.tmpdir(),'campus-hint-flow-')),children=[],commands=[],checks=[],issues=[];
+const route=read('evidence/documentation/gameplay-walkthrough-20261018/verification.json').route_steps;
+const py='C:/Users/liyh/.conda/envs/1/python.exe',node='C:/Program Files/nodejs/node.exe';
+let browser,page,state,front,back,actions=0,turns=0,paid=0;const started=new Date().toISOString();
+async function port(){return new Promise((ok,bad)=>{const s=net.createServer();s.once('error',bad);s.listen(0,'127.0.0.1',()=>{const p=s.address().port;s.close(e=>e?bad(e):ok(p));});});}
+function start(label,exe,args,env,cwd=root){commands.push({label,executable:exe,arguments:args,cwd,public_environment:env});const p=spawn(exe,args,{cwd,env:{...process.env,...env},windowsHide:true,stdio:'ignore'});children.push(p);p.on('error',e=>issues.push({check:label,error:e.message}));return p;}
+function command(label,exe,args,cwd){const r=spawnSync(exe,args,{cwd,windowsHide:true,encoding:'utf8',env:{...process.env,VITE_GAMEPLAY_VERSION:'v3.4'}});fs.writeFileSync(path.join(folder,label+'.txt'),r.stdout+'\n'+r.stderr);commands.push({label,executable:exe,arguments:args,cwd,exit_code:r.status});assert.equal(r.status,0,label);}
+async function ready(url){await expect.poll(async()=>{try{return(await fetch(url)).status;}catch{return 0;}},{timeout:30000}).toBe(200);}
+async function response(suffix,op,status=200){const wait=page.waitForResponse(r=>new URL(r.url()).pathname.endsWith(suffix)&&r.request().method()===(suffix==='/state'?'GET':'POST'));await op();const r=await wait,b=await r.json();assert.equal(r.status(),status,b.error?.code);assert(b.ok,b.error?.code);state=b.data.visible_state;return b;}
+async function close(){if(await page.locator('.drawer-backdrop').isVisible())await page.getByRole('button',{name:'关闭面板',exact:true}).click({position:{x:5,y:5}});await expect(page.locator('.drawer-backdrop')).toHaveCount(0);}
+async function assistant(){await close();await page.getByRole('button',{name:'AI 探索伙伴',exact:true}).click();await expect(page.locator('.assistant-container')).toBeVisible();}
+async function menu(){await close();await page.getByRole('button',{name:'游戏菜单',exact:true}).click();await expect(page.locator('.save-panel')).toBeVisible();}
+async function sync(){await menu();await response('/state',()=>page.locator('.save-panel').getByRole('button',{name:'同步进度',exact:true}).click());await close();}
+function core(s){return Object.fromEntries(Object.entries(s).filter(([k])=>!['revision','statistics','save','settlement'].includes(k)));}
+async function ask(level){await page.locator('#hint-level').selectOption(String(level));const old=structuredClone(state),count=actions;await expect(page.locator('.hint-ask')).toBeEnabled();const b=await response('/ai/turns',()=>page.locator('.hint-ask').click());assert.equal(b.data.usage.model_calls,0);assert.equal(b.data.usage.read_tool_calls,0);assert.equal(b.data.proposal,null);assert.equal(b.data.visible_state.statistics.hint_count,old.statistics.hint_count+1);assert.equal(b.data.visible_state.statistics.current_hint_level,level);assert.deepEqual(core(state),core(old));assert.equal(actions,count);await expect(page.locator('.hint-count')).toHaveText(String(state.statistics.hint_count));await expect(page.locator('.ai-answer>p').first()).toHaveText(b.data.answer);checks.push({check:'real-UI-free-hint',room:state.room.room_id,level,answer:b.data.answer,count:state.statistics.hint_count,observed:state.observed_object_ids});return b.data.answer;}
+async function api(tool,args){const r=await page.evaluate(async({tool,args,revision,generation})=>{const s=JSON.parse(sessionStorage.getItem('campus-lab-session-upgrade-v3.4'));const r=await fetch(`/api/sessions/${s.session_id}/actions`,{method:'POST',headers:{'Content-Type':'application/json','X-Session-Token':s.token},body:JSON.stringify({tool,arguments:args,revision,generation,request_id:crypto.randomUUID()})});return {status:r.status,body:await r.json()};},{tool,args,revision:state.revision,generation:state.generation});assert.equal(r.status,200,tool+':'+r.body.error?.code);state=r.body.data.visible_state;checks.push({check:'public-API-prerequisite',tool,room:state.room.room_id});}
+async function mainUI(){
+  const context=await browser.newContext({viewport:{width:1280,height:900},deviceScaleFactor:1});page=await context.newPage();
+  await page.route('**/*',r=>{const u=new URL(r.request().url());if(!['127.0.0.1','localhost'].includes(u.hostname)){paid++;issues.push({check:'external-network-blocked',host:u.hostname});return r.abort();}return r.continue();});
+  page.on('pageerror',e=>issues.push({check:'pageerror',error:e.message}));page.on('request',r=>{if(r.method()==='POST'&&new URL(r.url()).pathname.endsWith('/actions'))actions++;if(r.method()==='POST'&&new URL(r.url()).pathname.endsWith('/ai/turns'))turns++;});
+  await page.goto(front,{waitUntil:'networkidle'});await response('/api/sessions',()=>page.getByRole('button',{name:'开始新游戏 →',exact:true}).click(),201);await assistant();
+  await expect(page.locator('#ai-question')).toHaveCount(0);await expect(page.locator('label[for="ai-question"]')).toHaveCount(0);await expect(page.locator('.ai-question small')).toHaveCount(0);await expect(page.locator('#ai-api-key')).toHaveCount(0);await expect(page.locator('.hint-ask')).toBeEnabled();
+  const answers=[];for(const level of [1,2,3])answers.push(await ask(level));assert.equal(new Set(answers).size,3);assert.deepEqual(state.observed_object_ids,[]);await page.screenshot({path:path.join(folder,'default-free.png'),fullPage:true});
+  const requests=turns;await page.locator('input[value="deepseek"]').check();await expect(page.locator('#ai-question')).toBeVisible();await expect(page.locator('#ai-api-key')).toBeVisible();await expect(page.locator('.hint-ask')).toBeDisabled();await page.locator('#ai-question').fill('当前应该关注哪里？');await page.locator('#ai-api-key').fill('qa-local-placeholder-not-a-real-key');await expect(page.locator('.hint-ask')).toBeEnabled();await page.locator('#ai-api-key').fill('包含空格 key');await expect(page.locator('.hint-ask')).toBeDisabled();assert.equal(turns,requests);await page.screenshot({path:path.join(folder,'real-mode-retained.png'),fullPage:true});await page.locator('input[value="mock"]').check();await expect(page.locator('#ai-question')).toHaveCount(0);await expect(page.locator('#ai-api-key')).toHaveCount(0);assert.equal(turns,requests);checks.push({check:'real-mode-input-key-format-no-request',passed:true});await close();
+  for(const step of route.slice(0,9))await api(step.tool,step.arguments);await sync();await assistant();const pair=[await ask(2),await ask(2)];assert.notEqual(pair[0],pair[1]);await menu();await page.locator('#save-slot-name').fill('提示等级和轮换');const savedState=structuredClone(state);const saved=await response('/saves',()=>page.locator('.save-slot-create-button').click(),201);const id=saved.data.slot.save_id;await assistant();const expected=await ask(2);await ask(1);await page.reload({waitUntil:'networkidle'});await response('/state',()=>page.getByRole('button',{name:'继续当前游戏',exact:true}).click());await menu();await page.locator(`[data-save-id="${id}"] .save-slot-restore`).click();await response(`/saves/${id}/restore`,()=>page.locator('dialog[open]').getByRole('button',{name:'读取此存档',exact:true}).click());assert.equal(state.statistics.hint_count,savedState.statistics.hint_count);assert.equal(state.statistics.current_hint_level,2);await assistant();await expect(page.locator('#hint-level')).toHaveValue('2');assert.equal(await ask(2),expected);await page.screenshot({path:path.join(folder,'restored-rotation.png'),fullPage:true});checks.push({check:'actual-selected-archive-reload-restore-count-level-rotation',passed:true});await close();
+  for(const step of route.slice(9)){
+    if(step.tool==='submit_sequence')break;
+    await api(step.tool,step.arguments);
+  }
+  assert.equal(state.room.room_id,'R3');assert.equal(state.device_states.exit,'FINAL_CHECK');assert.equal(state.progress.check_done,false);await sync();await assistant();await ask(3);assert.equal(state.progress.check_done,false);assert.equal(state.minigames.sequence.status,'editing');await page.screenshot({path:path.join(folder,'R3-readonly-hint.png'),fullPage:true});checks.push({check:'R3-final-check-hint-does-not-submit',passed:true});await context.close();
+}
+async function legacyUI(){
+  const bp=await port(),fp=await port(),url=`http://127.0.0.1:${fp}`,backend=`http://127.0.0.1:${bp}`;
+  start('legacy-owned-backend',py,['-B','-X','utf8','-m','uvicorn','backend.app.main:app','--host','127.0.0.1','--port',String(bp),'--no-access-log'],{AI_PROVIDER:'mock',GAMEPLAY_VERSION:'legacy',SQLITE_PATH:path.join(temp,'legacy.sqlite')});
+  start('legacy-isolated-dev-view',node,[path.join(root,'frontend/node_modules/vite/bin/vite.js'),'--host','127.0.0.1','--port',String(fp),'--strictPort'],{CAMPUS_BACKEND_URL:backend,VITE_GAMEPLAY_VERSION:'legacy'},path.join(root,'frontend'));
+  await Promise.all([ready(backend+'/api/health'),ready(url)]);const c=await browser.newContext({viewport:{width:1280,height:900}});page=await c.newPage();await page.route('**/*',r=>{const u=new URL(r.request().url());return ['127.0.0.1','localhost'].includes(u.hostname)?r.continue():r.abort();});await page.goto(url,{waitUntil:'networkidle'});await response('/api/sessions',()=>page.getByRole('button',{name:'开始新游戏 →',exact:true}).click(),201);assert.equal(state.level_version,'2.0.0');await expect(page.locator('#ai-question')).toBeVisible();await expect(page.locator('.ai-question button')).toBeDisabled();await page.locator('#ai-question').fill('我应该先观察什么？');await expect(page.locator('.ai-question button')).toBeEnabled();const b=await response('/ai/turns',()=>page.locator('.ai-question button').click());assert.equal(b.data.usage.provider,'mock');await expect(page.locator('.ai-answer')).toBeVisible();await page.screenshot({path:path.join(folder,'legacy-input.png'),fullPage:true});checks.push({check:'legacy-real-isolated-UI-input-and-free-submit',level:state.level_version,status:b.data.status});await c.close();
+}
+let code=0;
+try{
+  command('typecheck',node,[path.join(root,'frontend/node_modules/typescript/bin/tsc'),'--noEmit'],path.join(root,'frontend'));
+  command('build',node,[path.join(root,'frontend/node_modules/vite/bin/vite.js'),'build'],path.join(root,'frontend'));
+  const bp=await port(),fp=await port();back=`http://127.0.0.1:${bp}`;front=`http://127.0.0.1:${fp}`;
+  start('owned-mock-backend',py,['-B','-X','utf8','-m','uvicorn','backend.app.main:app','--host','127.0.0.1','--port',String(bp),'--no-access-log'],{AI_PROVIDER:'mock',GAMEPLAY_VERSION:'v3.4',SQLITE_PATH:path.join(temp,'hint-flow.sqlite')});
+  start('built-preview',node,[path.join(root,'frontend/node_modules/vite/bin/vite.js'),'preview','--host','127.0.0.1','--port',String(fp),'--strictPort'],{CAMPUS_BACKEND_URL:back,VITE_GAMEPLAY_VERSION:'v3.4'},path.join(root,'frontend'));await Promise.all([ready(back+'/api/health'),ready(front)]);browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});await mainUI();await legacyUI();assert.deepEqual(issues,[]);
+}catch(e){code=1;issues.push({check:'runner',error:e.message,stack:String(e.stack).split('\n').filter(s=>s.trim().startsWith('at '))});if(page&&!page.isClosed())try{await page.screenshot({path:path.join(folder,'failure.png'),fullPage:true});}catch{}}
+finally{
+  if(browser)await browser.close();for(const p of children.reverse())if(p.pid&&p.exitCode===null){const r=spawnSync('taskkill',['/PID',String(p.pid),'/T','/F'],{windowsHide:true,encoding:'utf8'});checks.push({check:'stop-owned-process',exit_code:r.status});}
+  const after=hashes();if(JSON.stringify(before)!==JSON.stringify(after)){code=1;issues.push({check:'source-changed'});}
+  fs.writeFileSync(path.join(folder,'run.json'),JSON.stringify({candidate:candidatePath,command:[process.execPath,...process.argv.slice(1)],started,ended:new Date().toISOString(),exit_code:code,commands,source_sha256_before:before,source_sha256_after:after,checks,issues,desktop_viewport:{width:1280,height:900},paid_calls:0,external_requests_blocked:paid,limitations:['Public API prerequisites prepare R1-R3; this is focused desktop hint UI verification, not full visual route acceptance.','Legacy isolated Vite dev view reuses frozen source without another production build.','No real provider credentials/requests/quality, mobile or historical user DB verification.']},null,2)+'\n');console.log(JSON.stringify({evidence:folder,exit_code:code,checks:checks.length,issues:issues.length}));process.exitCode=code;
+}

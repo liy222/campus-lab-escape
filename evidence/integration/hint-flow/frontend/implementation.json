@@ -1,0 +1,22 @@
+{
+  "candidate": "c3d9a41 plus Frontend Assistant.tsx change",
+  "scope": [
+    "In level 3.4.0 with mock provider, omit the prompt label, textarea, character count, and prompt-empty button condition.",
+    "Keep hint strength and Get Hint available without user-entered text; call the existing API with the fixed message 获取当前进度的预设提示.",
+    "Keep question validation and API-key requirements for DeepSeek and retain question input in older versions.",
+    "Clarify that the real model remains limited to constrained hints and does not answer arbitrary questions."
+  ],
+  "files": [
+    "frontend/src/Assistant.tsx"
+  ],
+  "verification": {
+    "command": "& 'C:\\Program Files\\nodejs\\node.exe' 'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js' run build",
+    "working_directory": "frontend",
+    "exit_code": 0,
+    "result": "TypeScript check and Vite production build completed. Vite reported a large-chunk advisory; no build failure."
+  },
+  "limits": [
+    "No browser or formal QA run; candidate is handed to Main for freeze and independent QA.",
+    "No provider call made."
+  ]
+}

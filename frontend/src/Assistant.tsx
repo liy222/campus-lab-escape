@@ -20,6 +20,7 @@ export default function Assistant({ session, state, manualPending, needsSync, on
   const [now, setNow] = useState(Date.now);
   const [hintLevel, setHintLevel] = useState<1 | 2 | 3>(state.statistics?.current_hint_level || 1);
   const hintMode = state.level_version === '3.4.0';
+  const presetHintMode = hintMode && provider === 'mock';
   const busy = useRef(false);
   const current = useRef(state);
   const pendingGeneration = useRef<string | null>(null);
@@ -73,12 +74,13 @@ export default function Assistant({ session, state, manualPending, needsSync, on
     if (busy.current || manualPending || needsSync || state.status === 'won') return;
     if (missingApiKey) { setError('请先填写 DeepSeek API Key，再询问伙伴。'); return; }
     if (invalidApiKey) { setError('API Key 格式不正确，请重新输入，避免空格、中文或换行。'); return; }
-    if (!question.trim() || question.length > 2000) { setError('请填写 1–2000 字的问句。'); return; }
+    if (!presetHintMode && (!question.trim() || question.length > 2000)) { setError('请填写 1–2000 字的问句。'); return; }
     const started = current.current;
     busy.current = true; pendingGeneration.current = started.generation; setPending('ask'); setError(''); setNotice(''); setView(null);
     try {
       const settings: AiSettings = provider === 'deepseek' ? { provider, apiKey } : { provider };
-      const response = await api.ai(session, started, question, settings, hintMode ? hintLevel : undefined);
+      const message = presetHintMode ? '获取当前进度的预设提示' : question;
+      const response = await api.ai(session, started, message, settings, hintMode ? hintLevel : undefined);
       const data = response.data;
       if (!onState(data.visible_state)) { setNotice('问答来自较早的进度，已忽略。请重新询问。'); return; }
       if (current.current.generation !== started.generation || data.visible_state.generation !== started.generation) { setNotice('游戏进度已更换，旧问答已清除。请重新询问。'); return; }
@@ -122,22 +124,22 @@ export default function Assistant({ session, state, manualPending, needsSync, on
     <fieldset className="ai-settings" disabled={!!pending}>
       <legend>选择伙伴模式</legend>
       <div className="ai-mode-options">
-        <label className={provider === 'mock' ? 'ai-mode selected' : 'ai-mode'}><input type="radio" name="ai-provider" value="mock" checked={provider === 'mock'} onChange={() => chooseProvider('mock')}/><span><strong>免费模拟</strong><small>使用预设建议，无 API 费用</small></span></label>
-        <label className={provider === 'deepseek' ? 'ai-mode selected' : 'ai-mode'}><input type="radio" name="ai-provider" value="deepseek" checked={provider === 'deepseek'} onChange={() => chooseProvider('deepseek')}/><span><strong>真实 DeepSeek</strong><small>使用你自己的 API 账户</small></span></label>
+        <label className={provider === 'mock' ? 'ai-mode selected' : 'ai-mode'}><input type="radio" name="ai-provider" value="mock" checked={provider === 'mock'} onChange={() => chooseProvider('mock')}/><span><strong>{hintMode ? '预设提示（免费）' : '免费模拟'}</strong><small>使用预设建议，无 API 费用</small></span></label>
+        <label className={provider === 'deepseek' ? 'ai-mode selected' : 'ai-mode'}><input type="radio" name="ai-provider" value="deepseek" checked={provider === 'deepseek'} onChange={() => chooseProvider('deepseek')}/><span><strong>{hintMode ? 'AI 伙伴（真实模型）' : '真实 DeepSeek'}</strong><small>使用你自己的 API 账户</small></span></label>
       </div>
       {provider === 'deepseek' && <div className="ai-key-settings">
         <label htmlFor="ai-api-key">DeepSeek API Key</label>
         <div className="ai-key-row"><input id="ai-api-key" type="password" autoComplete="off" autoCapitalize="none" spellCheck={false} value={apiKey} placeholder="在这里输入你的 API Key" aria-describedby={`ai-key-note${missingApiKey || invalidApiKey ? ' ai-key-required' : ''}`} onChange={event => setApiKey(event.target.value)}/><button type="button" className="button subtle" disabled={!apiKey || !!pending} onClick={() => setApiKey('')}>清除密钥</button></div>
         <p id="ai-key-note">密钥仅在当前页面内存中保留；刷新、切换游戏或回到免费模拟时会清除，不随进度保存。</p>
         {(missingApiKey || invalidApiKey) && <p id="ai-key-required" className="ai-key-required">{missingApiKey ? '请先填写 API Key，才能询问真实伙伴。' : 'API Key 格式不正确，请重新输入，避免空格、中文或换行。'}</p>}
-        <p className="ai-real-note">{hintMode ? '点击“获取提示”会根据已发现的信息请求一个受限提示。发送给 DeepSeek 的仅是符合条件的提示主题名称和已发现线索 ID，不包含你的问题、对话历史或线索全文；请求会使用你的 API 账户用量。使用模型：deepseek-flash。' : '点击“询问伙伴”会把你的问题与已发现的线索发送给 DeepSeek，并扣除你的 API 账户用量。使用模型：deepseek-flash。'}</p>
+        <p className="ai-real-note">{hintMode ? '点击“获取提示”会根据已发现的信息请求一个受限提示。发送给 DeepSeek 的仅是符合条件的提示主题名称和已发现线索 ID，不包含你的问题、对话历史或线索全文；请求会使用你的 API 账户用量。AI 伙伴当前仍提供受限提示，不会按问题自由聊天。使用模型：deepseek-flash。' : '点击“询问伙伴”会把你的问题与已发现的线索发送给 DeepSeek，并扣除你的 API 账户用量。使用模型：deepseek-flash。'}</p>
       </div>}
       <p className="ai-settings-note">{hintMode ? '选择提示强度、选择模式、填写或清除密钥都不会发起请求；只有点击“获取提示”才会调用所选服务。' : '选择模式、填写或清除密钥不会发起问答；只有点击“询问伙伴”才会调用所选伙伴。'}</p>
     </fieldset>
     <form className="ai-question" onSubmit={event => { event.preventDefault(); void ask(); }}>
-      <label htmlFor="ai-question">{hintMode ? '想获得什么提示？' : '想问探索伙伴什么？'}</label>
-      <textarea id="ai-question" maxLength={2000} rows={3} value={question} disabled={!!pending || needsSync || state.status === 'won'} placeholder={hintMode ? '例如：下一步可以关注哪里？' : '例如：我应该先查看哪些物件？'} onChange={event => setQuestion(event.target.value)}/>
-      <div className="ai-question-actions"><small>{question.length}/2000</small><button className={`button primary ${hintMode ? 'hint-ask' : ''}`} disabled={!!pending || manualPending || needsSync || state.status === 'won' || !question.trim() || missingApiKey || invalidApiKey}>{hintMode ? '获取提示' : '询问伙伴'}</button></div>
+      {!presetHintMode && <><label htmlFor="ai-question">{hintMode ? '想获得什么提示？' : '想问探索伙伴什么？'}</label>
+      <textarea id="ai-question" maxLength={2000} rows={3} value={question} disabled={!!pending || needsSync || state.status === 'won'} placeholder={hintMode ? '例如：下一步可以关注哪里？' : '例如：我应该先查看哪些物件？'} onChange={event => setQuestion(event.target.value)}/></>}
+      <div className="ai-question-actions">{!presetHintMode && <small>{question.length}/2000</small>}<button className={`button primary ${hintMode ? 'hint-ask' : ''}`} disabled={!!pending || manualPending || needsSync || state.status === 'won' || (!presetHintMode && !question.trim()) || missingApiKey || invalidApiKey}>{hintMode ? '获取提示' : '询问伙伴'}</button></div>
     </form>
     {state.status === 'won' && <p className="muted">已完成探索。可以保存、恢复或开始新游戏。</p>}
     <div className="ai-feedback" aria-live="polite">{pending && <p className="pending"><span className="spinner"/>{pending === 'ask' ? pendingGeneration.current !== state.generation ? '进度已更换，正在结束旧问答…' : '正在查看线索并思考，最长约 45 秒。你仍可手动探索…' : pending === 'confirm' ? '正在确认行动，请稍候…' : '正在取消建议，请稍候…'}</p>}{error && <p className="error" role="alert">{error}</p>}{notice && <p className="notice">{notice}</p>}</div>

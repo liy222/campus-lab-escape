@@ -254,3 +254,9 @@ slot公开元数据严格包含save_id、name、saved_at、schema_version、leve
 删除、事件和完成receipt在同一原Store事务内，任何后续持久化异常整笔回滚；成功不修改游戏状态、revision、generation、其他存档、原saves单槽或AI轮次/提案。认证和严格参数验证后，完整相同完成receipt优先于generation/revision重放，保持原event/save_id、返回当前visible_state及replayed=true，已删记录不再次删除。相同request_id换operation/save_id/游标为REQUEST_ID_CONFLICT409，未完成receipt为MODEL_UNAVAILABLE503并拒绝重做。无receipt的新请求必须匹配当前generation和revision，否则STALE_GENERATION/STALE_STATE409。新失败receipt也按原archive策略持久化，重放不重新执行。
 
 上述删除能力取代前节历史“无删除功能”的限制；旧单槽save/restore API、列表legacy兼容投影和原数据仍保留。当前前端移除旧单槽入口并过滤legacy列表，只管理独立archive；不会自动批量删除已有记录。游戏/快照版本及各旧版入口均不变。实际Owner窄验证与独立QA另见evidence/integration/save-delete/，本节不构成QA通过声明。
+
+## 默认提示流程增量（2026-10-18）
+
+v3.4 提示保留原六主题十八条受限推理文案；新增请求时依据当前公开物件、可用动作、已观察记录、已发现线索、背包及公开装置阶段生成的单步预设提示。等级1只给方向，等级2聚焦可见对象，等级3可说明一次合法观察或操作；缺物件或跨房线索时可沿当前开放通路回溯，不预报隐藏物件或未发现线索内容，也不代执行行动。已完成目标不要求重做，线路仍只说明公开端口，不输出柜码、登录值、完整设备顺序或线路旋转答案。
+
+默认免费 Mock 按已成功提示次数轮换当前候选，无需填写问题；AI 伙伴输入保留，真实模式仍是原受限主题选择，不是自由聊天。本增量不改变 API、快照、provider/auth/budget；每状态最多一个空引用操作主题，且与编辑中的线路主题互斥，Store 最终仍按当前投影和引用重渲染并忽略运行时自由文字。无候选准确提示“当前没有合适的预设提示”，不调用模型或增加提示次数；成功新请求计一次，同请求重放不重复计数。实施与验证事实另见 evidence/integration/hint-flow/。

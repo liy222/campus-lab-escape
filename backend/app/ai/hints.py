@@ -9,7 +9,7 @@ import json
 from .provider import CallLimits, ProviderError, strict_json
 from .types import CheckResult, ReadResult, RuntimeBoundaryError, TurnResult, Version
 
-NO_HINT = '目前已发现的信息还不足以形成提示。可以先观察当前可见环境，取得更多线索后再询问。'
+NO_HINT = '当前没有合适的预设提示。可以查看当前环境和装置提供的操作，或回顾已经发现的线索。'
 TEMPLATES = {
     'sample_time': (
         '已发现的记录和时间信息之间可能存在联系。',
@@ -38,6 +38,154 @@ TEMPLATES = {
 }
 
 
+def _next_step(state):
+    """One bounded observation/action, derived only from the public projection.
+
+    The four item/target pairs describe public uses, never puzzle answers.
+    usable_targets is empty in this level, so visible/observed targets, carried
+    items and their public stages jointly gate these suggestions. No action is
+    executed and no undiscovered clue text or hidden object is consulted.
+    """
+    objects = {obj['object_id']: obj for obj in state['objects']}
+    known = {clue['clue_id'] for clue in state['clues']}
+    observed = set(state['observed_object_ids'])
+    inventory = {item['item_id']: item for item in state['inventory']}
+    devices, puzzles = state['device_states'], state['puzzle_states']
+    room = state['room']['room_id']
+    done = state['progress']['check_done']
+
+    def action(object_id, tool):
+        obj = objects.get(object_id)
+        return next((entry for entry in obj['actions'] if entry['tool'] == tool), None) if obj else None
+
+    def look(object_id, *, again=False):
+        if action(object_id, 'inspect') and (again or object_id not in observed):
+            name = objects[object_id]['name']
+            return ('先留意当前环境中还可以细看的地方。',
+                    f'可以把注意力放在{name}上。',
+                    f'可以再次观察{name}，确认当前可见的信息。' if again else f'可以先观察{name}，取得它当前可见的信息。')
+
+    def take(item_id, object_id):
+        result = look(object_id)
+        if result:
+            return result
+        if item_id not in inventory and action(object_id, 'take'):
+            name = objects[object_id]['name']
+            return ('留意已经看见、尚未收起的物品。',
+                    f'{name}还在当前环境中，可以关注它的操作。',
+                    f'可以对{name}选择“拿起物品”。')
+
+    def interact(object_id):
+        result = look(object_id)
+        if result:
+            return result
+        entry = action(object_id, 'interact')
+        if entry:
+            name = objects[object_id]['name']
+            return ('留意当前装置还提供了什么操作。',
+                    f'{name}的当前阶段还有可用操作。',
+                    f'可以在{name}选择“{entry["label"]}”。')
+
+    def use(item_id, object_id):
+        result = look(object_id)
+        if result:
+            return result
+        if item_id in inventory and object_id in objects and object_id in observed:
+            item, target = inventory[item_id]['name'], objects[object_id]['name']
+            return ('留意背包物件与当前装置的配合。',
+                    f'可以对照背包里的{item}与{target}。',
+                    f'可以将背包中的{item}用于{target}。')
+
+    def travel(destination, *, back=False):
+        passage = next((entry for entry in state['exits'] if entry['destination_id'] == destination and entry['unlocked']), None)
+        if passage:
+            name = passage['name']
+            return ('可以回顾先前房间，补看环境或尚未收起的物品。' if back else '可以留意当前已经开放的通路。',
+                    f'当前有一条通往{name}的开放通路。',
+                    f'可以沿当前开放通路前往{name}，继续查看环境。')
+        door = {('R1', 'R2'): 'r1_door', ('R2', 'R3'): 'r2_door'}.get((room, destination))
+        return interact(door) if door else None
+
+    if room == 'R1':
+        if devices['cabinet'] == 'LOCKED':
+            for clue, target in (('r1_record_clue', 'r1_record'), ('r1_clock_clue', 'r1_clock')):
+                if clue not in known:
+                    return look(target)
+            if 'r1_sample_clue' not in known:
+                result = look('r1_microscope')
+                if result:
+                    return result
+                if puzzles['microscope'] == 'SLIDE_PLACED':
+                    return look('r1_microscope', again=True)
+                if 'sample_slide' in inventory:
+                    return use('sample_slide', 'r1_microscope')
+                return take('sample_slide', 'sample_slide')
+            # All cabinet materials are known: retain only the original topics.
+            return None
+        if devices['cabinet'] == 'CODE_ACCEPTED':
+            return interact('r1_cabinet')
+        if 'r1_fuse' in objects:
+            return take('fuse', 'r1_fuse')
+        if not done and 'r1_symbols_clue' not in known:
+            return look('r1_symbols')
+        if devices['computer'] not in {'UNLOCKED', 'DATA_READ'}:
+            for clue, target in (('r1_plaque_clue', 'r1_plaque'), ('r1_clock_clue', 'r1_clock')):
+                if clue not in known:
+                    return look(target)
+        return travel('R2')
+
+    if room == 'R2':
+        power = devices['powerbox']
+        if power in {'CLOSED', 'OPEN', 'CIRCUIT_READY'}:
+            return interact('r2_powerbox')
+        if power == 'MISSING_FUSE':
+            if 'fuse' in inventory:
+                return use('fuse', 'r2_powerbox')
+            return travel('R1', back=True)
+        if power == 'FUSE_INSTALLED':
+            # Current public circuit geometry has its own sole empty-ref topic.
+            return None
+        computer = devices['computer']
+        if computer in {'OFF', 'BOOTING', 'UNLOCKED'}:
+            return interact('r2_monitor')
+        if computer == 'LOGIN_LOCKED':
+            if 'r2_maintenance_clue' not in known:
+                return look('r2_maintenance')
+            if not {'r1_plaque_clue', 'r1_clock_clue'} <= known:
+                return travel('R1', back=True)
+            return None
+        if computer == 'DATA_READ':
+            for item in ('research_strip', 'access_card'):
+                if item in objects:
+                    return take(item, item)
+            if not done and puzzles['panel'] == 'STRIP_INSERTED' and devices['exit'] == 'FINAL_CHECK' and 'r1_symbols_clue' not in known:
+                return travel('R1', back=True)
+            return travel('R3')
+
+    if room == 'R3':
+        if done:
+            if devices['exit'] == 'OPEN':
+                return travel('EXIT')
+            return interact('exit_door')
+        if puzzles['panel'] == 'EMPTY':
+            if 'research_strip' in inventory:
+                return use('research_strip', 'r3_panel')
+            return travel('R2', back=True)
+        if devices['exit'] == 'LOCKED':
+            if 'access_card' in inventory:
+                return use('access_card', 'exit_door')
+            return travel('R2', back=True)
+        if devices['exit'] == 'CARD_ACCEPTED':
+            return interact('exit_door')
+        if devices['exit'] == 'FINAL_CHECK':
+            if 'r3_legend_clue' not in known:
+                return look('r3_legend')
+            if not {'r1_symbols_clue', 'r2_indices_clue'} <= known:
+                return travel('R2', back=True)
+            return None
+    return None
+
+
 def available_topics(state):
     """Eligibility uses public facts only; no reads, hidden facts or discovery."""
     if state.get('level_version') != '3.4.0' or state.get('status') != 'playing':
@@ -62,6 +210,9 @@ def available_topics(state):
     board = state.get('minigames', {}).get('circuit')
     if room == 'R2' and isinstance(board, dict) and board['status'] == 'editing':
         add('circuit', ())
+    elif _next_step(state) is not None:
+        # Unique empty refs preserve finish_ai's final refs-only re-render.
+        add('next_step', ())
     return topics
 
 
@@ -72,7 +223,8 @@ def bounded_render(state, refs, topic=None):
     for allowed in available_topics(state):
         if set(refs) == set(allowed['clue_refs']) and (topic is None or topic == allowed['topic']):
             level = state['statistics']['current_hint_level']
-            return TEMPLATES[allowed['topic']][level - 1], list(allowed['clue_refs'])
+            texts = _next_step(state) if allowed['topic'] == 'next_step' else TEMPLATES[allowed['topic']]
+            return texts[level - 1], list(allowed['clue_refs'])
     raise ValueError('No eligible known topic')
 
 
@@ -119,7 +271,7 @@ async def run_hint(runtime, start, callbacks):
                 return result(NO_HINT, [])
             from .mock import DeterministicMockProvider
             if isinstance(provider, DeterministicMockProvider):
-                selected = topics[0]
+                selected = topics[state['statistics']['hint_count'] % len(topics)]
                 # This is local template selection: no fabricated model/token call.
             else:
                 messages = [

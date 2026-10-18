@@ -231,3 +231,9 @@ See docs/gameplay-walkthrough.md for current full solution and AI-preparation re
 
 ### 2026-10-18 default hint audit result
 Current default hints checked without changes. Content correct for existing4puzzle categories; not a full-route guide. Repeated first-topic selection, ignored question/history and generic NO_HINT at operation stages documented. Product242bytes unchanged; no DB/API/browser/build/provider test. Detailed report review/findings/default-hints-20261018.md; no fix completion claim.
+
+### 2026-10-18 default hint fixes in progress
+Audit findings now authorized for implementation. Defaultpreset question box removed in scope, AI companion input retained. BackendSol/FrontendLuna/QA Sol assigned exact paths in evidence/integration/hint-flow/plan.json. FormalQA not yetrun, no completion claim.
+
+### 2026-10-18 default hint repair accepted
+Default mode needs only intensity and GetHint; no question box. Rotation, public-stage single-step guidance and accurate no-topic fallback accepted. IndependentAPI11methods0/typecheck+build0/desktopbrowser71records0/issues[], 242sources+68oldtests match. AIcompanion input remains, bounded model behavior unchanged; no paidcalls/mobile/fullsuite. Final docs/syncnext; evidence/integration/hint-flow/accepted.json.

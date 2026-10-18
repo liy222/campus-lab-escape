@@ -226,3 +226,9 @@ Full current spoiler walkthrough reviewed and accepted: main route, exact answer
 
 ### 2026-10-18 default hints checked
 Check-only audit complete: existing18texts agree with current solution, but default topic bias, unanswered action gaps and misleading fallback remain findings for later authorization. No implementation changes. Report review/findings/default-hints-20261018.md; actual memory probe59states/18variants/14cases0; no paid calls.
+
+### 2026-10-18 default hint repair
+Implement authorized repeat-topic rotation/current-state coverage/accurate fallback; remove only freepreset question UI and submit fixed compatible message. Preserve realAI/legacy question input, existing realbounded behavior, stats/save safety. SourceSTOP then focused independentQA/build/desktopUI and normalliy222 sync; no extra features.
+
+### 2026-10-18 default hint repair accepted
+Freepreset question input removed; currentpublicstate graded guidance and eligible-topic rotation implemented, original18texts retained. Focused independent11methods0/build0/desktopbrowser0, source/save/count/replay guards accepted; realAI input retained without newchat. Documentation and normalliy222 commit/push next.

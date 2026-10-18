@@ -1,0 +1,57 @@
+{
+  "recorded_at": "2026-10-18T05:24:07.353167+00:00",
+  "operator": "Main integration",
+  "status": "accepted focused scope",
+  "candidate": "evidence/integration/hint-flow/candidate.json",
+  "candidate_sha256": "cae6d5cb1b42e1a5ad036b973f3ffaa19bd933ee15655c3bfe1e80b2ec3b3ac7",
+  "qa_result": "evidence/integration/hint-flow/qa/result.json",
+  "qa_result_sha256": "7ff1aa383b05273ee4d58ca950101fd6085da2e817890cb8d1f18170f6d479b9",
+  "source_files_matched": 242,
+  "old_tests_matched": 68,
+  "QA_artifacts_matched": 13,
+  "QA_sources_matched": 6,
+  "main_viewed_actual_PNG": [
+    "evidence/integration/hint-flow/qa/20261018T052128899Z-browser/default-free.png",
+    "evidence/integration/hint-flow/qa/20261018T052128899Z-browser/real-mode-retained.png"
+  ],
+  "actual_API": {
+    "path": "evidence/integration/hint-flow/qa/20261018T052105812289Z-api",
+    "exit_code": 0,
+    "methods": 11,
+    "seconds": 12.371,
+    "new_methods": 7,
+    "old_methods": 4,
+    "subtest_count": null,
+    "runs": 1
+  },
+  "actual_browser": {
+    "path": "evidence/integration/hint-flow/qa/20261018T052128899Z-browser",
+    "exit_code": 0,
+    "record_count": 71,
+    "issues": [],
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "runs": 1,
+    "production_builds": 1,
+    "typecheck_exit": 0,
+    "build_exit": 0,
+    "legacy_view": "Isolated real legacy backend/Vite dev view, no second production build."
+  },
+  "product_delta": [
+    "backend/app/ai/hints.py",
+    "docs/SPEC.md",
+    "docs/level_design.md",
+    "frontend/src/Assistant.tsx"
+  ],
+  "paid_calls": 0,
+  "limitations": [
+    "No full old backend suite, full visual acceptance or human timing.",
+    "No real provider request/quality or historical user DB test.",
+    "Original initial NO_HINT/fixed-first-topic expectations are superseded and source-retained, not weakened.",
+    "116 projection records include repeated states; 71 browser records include public API setup/cleanup, not unique assertions.",
+    "Existing Starlette/httpx deprecation and Vite chunk warning retained."
+  ],
+  "git_status": "normal commit/push next; not yet claimed"
+}
