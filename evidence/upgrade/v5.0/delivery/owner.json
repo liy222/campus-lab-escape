@@ -1,0 +1,50 @@
+{
+  "owner": "Delivery",
+  "task": "V5 local launcher, scoped check runner, and candid delivery documentation",
+  "status": "IMPLEMENTED; candidate QA pending",
+  "files": [
+    "scripts/run_v5.py",
+    "scripts/check_v5.py",
+    "新版本启动.cmd",
+    ".gitignore",
+    "README.md",
+    "release/V5.md"
+  ],
+  "commands": [
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m py_compile scripts/run_v5.py scripts/check_v5.py",
+      "exit_code": 0,
+      "purpose": "Python syntax compilation"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m scripts.run_v5 --help",
+      "exit_code": 0,
+      "purpose": "Launcher CLI inspection; services not started"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m scripts.check_v5 --help",
+      "exit_code": 0,
+      "purpose": "Checker CLI inspection; no QA suite run"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m scripts.run_v5",
+      "exit_code": 1,
+      "purpose": "Production startup smoke during concurrent implementation; backend exited before opening storage because V5 gameplay selection was not yet available (Unsupported gameplay version)"
+    }
+  ],
+  "evidence": [
+    "evidence/upgrade/v5.0/delivery/owner.json"
+  ],
+  "behavior": {
+    "production": "127.0.0.1:8001, module-selected GAMEPLAY_VERSION=v5, SQLITE_PATH=./data/game-v5.sqlite, AI_PROVIDER=mock, no-proxy-headers, requires frontend/dist-v5/index.html",
+    "development": "Vite 127.0.0.1:5174 proxies to backend 127.0.0.1:8001; sets VITE_GAMEPLAY_VERSION=v5 and V5_DEV=1",
+    "check_runner": "Fresh run-id output directory; mock provider and isolated run-local database before test imports; command/exit/log hash/source hashes recorded; absent suites return NOT_READY exit 2; no suite is reported as passing when absent",
+    "secrets": "Frontend environment strips inherited VITE and common provider/secret variables; checker does not dump environment and redacts common credential-shaped text in command logs"
+  },
+  "limitations": [
+    "No V5 tests/v5 suites or contracts/v2 checker existed at the time of this report. frontend/dist-v5 appeared during concurrent Frontend work; the production startup smoke exited 1 because Backend's V5 gameplay selector was still in progress. Backend requested no further launcher run until its checks finish, so this failure was not repeated; no V5 database was created and no formal QA was run.",
+    "README and release notes describe the current implementation status as in progress and do not claim V5 acceptance.",
+    "Environment log redaction covers common credential field patterns; it is not a claim of a complete privacy audit.",
+    "Main acceptance and normal commit/push remain pending."
+  ]
+}

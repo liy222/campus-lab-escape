@@ -101,3 +101,11 @@ $env:SQLITE_PATH = './data/game-v1.sqlite'
 
 本轮 AI 伙伴质量修正仅获有限接受：新的 strict JSON mode 与上下文减噪后，唯一真实 Q05 登录样本通过适用质量项；Q01/Q03 因非 JSON 被拦、Q02 跳过、Q04 的无依据旧线索联系均保留为未接受结果。离线验证来自两个源码阶段，不能合并成同一候选全绿；尚未验证连问、柜体/线路新候选真实质量或真人体验。详情见 [独立 QA 结论](evidence/integration/ai-companion-quality/qa/final-review.json) 与[发现记录](review/findings/ai-companion-quality.md)。
 2026-10-18：AI 伙伴 next-step 修复完成定向回归与构建；真实两轮问答均正常交付，最后的模型用词调整仅离线核对，不构成全面质量认证。重启一键启动器后生效，现有存档可继续使用，无需重开。N02 的“观察”按钮措辞仍属弱项；未保存的旧拒绝回复具体触发原因未知。详见[独立 QA 限定结论](evidence/integration/companion-nextstep/qa/final-review.json)。
+
+## V5（开发中）
+
+V5 正在作为独立玩法版本实现，使用新的 `data/game-v5.sqlite`，不复用或迁移现有 V3.4 数据库。当前仅完成了 V5 启动与检查入口；版本功能仍在实现，正式 QA/验收结果尚未形成，不应据此视为已交付。
+
+新入口为根目录 [`启动新版.cmd`](启动新版.cmd)，生产预览地址为 `http://127.0.0.1:8001/`，仅在健康检查通过后打开浏览器。生产模式要求先有 `frontend/dist-v5/`；V5 启动器不会自动安装依赖、构建或删除数据，也不会结束占用端口的其他进程。服务固定使用后端 `127.0.0.1:8001` 与开发前端 `127.0.0.1:5174`。开发模式可从仓库根目录运行 `python -m scripts.run_v5 --dev --open-browser`，默认 AI 为 mock；QA 可通过 `--database <临时目录>/game-v5.sqlite` 使用独立临时库，启动器只接受带 V5 标记的已有数据库。
+
+手动构建 V5 前端时设置 `VITE_GAMEPLAY_VERSION=v5` 后运行 `npm --prefix frontend run build`，产物写入 `frontend/dist-v5/`。按范围运行 `scripts/check_v5.py`；缺失的 QA 套件会明确报告 `NOT_READY`，不会伪报通过。启动和版本范围详见 [`release/V5.md`](release/V5.md)。

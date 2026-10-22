@@ -1,0 +1,28 @@
+{
+  "kind": "backend_owner_narrow_origin_fix_source_stop",
+  "timestamp_utc": "2026-10-22T16:52:10.274854+00:00",
+  "finding": "QA read preparation identified duplicate Origin header bypass of exact origin cardinality",
+  "delta": "Only security existing-Origin branch additionally requires exactly one Origin value",
+  "file": "backend/app/api/v5.py",
+  "before_sha256": "23f15113a33aed0ecb106c158901a229eb0193ac660193091921d5ead7abf0b1",
+  "after_sha256": "0b0a7e5c2ccca4a73136976b6e4482a9bf0c8590c50319dd21d7014525181a83",
+  "actual_command": "inline TEMP TestClient duplicate-Origin GET/POST, legal GET/registration POST and absent-Origin GET/POST checks",
+  "exit_code": 0,
+  "actual_statuses": {
+    "duplicate_origin_get": 403,
+    "duplicate_origin_post": 403,
+    "legal_origin_get": 200,
+    "legal_origin_post_register": 201,
+    "no_origin_health_get": 200,
+    "no_origin_post": 403
+  },
+  "product_files_changed": 1,
+  "formal_qa": false,
+  "paid_calls": 0,
+  "experiments_rerun": false,
+  "historical_experiment_source": "evidence/upgrade/v5.0/experiments-owner/run1/result.json",
+  "limitations": [
+    "Narrow Backend-owner check only.",
+    "Original E1/E2/E3 forty-source maps and results remain historical and were not rerun on this one-branch source change."
+  ]
+}

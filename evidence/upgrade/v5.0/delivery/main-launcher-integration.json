@@ -1,0 +1,40 @@
+{
+  "operator": "Main integration development check, not independent QA",
+  "command": "isolated scripts.run_v5 --dev --database TEMP/game-v5.sqlite followed by HTTPX assertions",
+  "exit_code": 0,
+  "ended_at": "2026-10-22T17:25:40.524715+00:00",
+  "checks": [
+    {
+      "check": "dev frontend",
+      "status": 200
+    },
+    {
+      "check": "proxy registration exact5174 Origin and8001 Host",
+      "status": 201,
+      "httponly_cookie": true
+    },
+    {
+      "check": "private classic session via dev proxy",
+      "status": 201
+    },
+    {
+      "check": "null Origin denied through proxy",
+      "status": 403
+    },
+    {
+      "check": "same backend production static dist-v5 served",
+      "status": 200
+    }
+  ],
+  "source_sha256": {
+    "scripts/run_v5.py": "6b3c498d320e0d1b8a3ad0b1864f2bea7bc03c22565ca60d29aa84817aa3ff68",
+    "frontend/vite.config.ts": "f8df24f7d4c4d7b9e705c3a740f702511a5cf1d5bc0a05f6bf37bbef57225065",
+    "backend/app/api/v5.py": "ea042ff760c8688f899988b3b7b3ef117d565d7fa065db9ed00b07e7469f3dcc"
+  },
+  "paid_calls": 0,
+  "limitations": [
+    "No interactive root CMD or OS restart claim.",
+    "Uses disposable synthetic account and TEMP database; original databases unopened.",
+    "Launcher shutdown is verified in a separate record."
+  ]
+}

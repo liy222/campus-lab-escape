@@ -1,0 +1,57 @@
+{
+  "kind": "backend_owner_narrow_history_fix_source_stop",
+  "timestamp_utc": "2026-10-22T17:24:01.671604+00:00",
+  "file": "backend/app/storage/v5.py",
+  "before_sha256": "70483ac138bb60f8e4c01218f81b00fc53d55ee391eb3d5ab36c789cc167eaec",
+  "after_sha256": "fa83448cfb7859b492147ac57cdbfc4fa3ed7935a82f22bec05e0efe4dfad66c",
+  "delta": "Only dialogue-history SQL adds usage.provider=deepseek AND usage.model_calls=1 before LIMIT3; original CRLF bytes preserved. Existing generation/session ownership and parameter-free action history unchanged.",
+  "actual_commands": [
+    {
+      "command": "$env:PYTHONPATH='.'; & 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 evidence/upgrade/v5.0/backend/history_check.py",
+      "exit_code": 0,
+      "tool_chunk": "edd520"
+    },
+    {
+      "command": "inline report-only historical hash assertion",
+      "exit_code": 1,
+      "tool_chunk": "ac02b1",
+      "failure": "Compared normalized LF bytes with historical CRLF hash."
+    },
+    {
+      "command": "inline report-only newline-equivalence assertion",
+      "exit_code": 1,
+      "tool_chunk": "3d446a",
+      "failure": "Compared normalized LF against unchanged tested CRLF bytes; product file hash unchanged."
+    },
+    {
+      "command": "inline CRLF-aware exact SQL-only delta verification",
+      "exit_code": 0,
+      "proof": "Removing only new SQL predicates and retaining CRLF reproduces historical SHA exactly; current source SHA equals the source tested by history_check."
+    }
+  ],
+  "actual_checks": {
+    "mock_presets_excluded": true,
+    "local_zero_call_reminders_excluded": true,
+    "last_three_successful_model_result_dialogues_only": true,
+    "actions_parameter_free": true,
+    "restore_generation_history_empty": true,
+    "reset_generation_history_empty": true
+  },
+  "simulated_service_calls": 10,
+  "network_calls": 0,
+  "paid_provider_calls": 0,
+  "formal_qa": false,
+  "experiments_rerun": false,
+  "harness_sha256": "4cc77bda467d59f326e9f553d6c12327631be3af6c07bcc27b16d491ce84fbf4",
+  "approval_failure": {
+    "action": "previous report finalization",
+    "executed": false,
+    "reason": "Automatic approval reviewer usage limit; resumed only after user continue."
+  },
+  "limitations": [
+    "Synthetic injected service metadata only, not ten real model calls.",
+    "Backend-owner narrow development check; independent QA pending.",
+    "Old experiments remain frozen historical evidence and were not rerun.",
+    "Two failed report assertions retained; neither was a functional test failure or a product delta."
+  ]
+}

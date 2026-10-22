@@ -270,3 +270,28 @@ v3.4 提示保留原六主题十八条受限推理文案；新增请求时依据
 问答上下文只取当前会话同 generation 最近3次成功模型问答与3条合法动作摘要；每个历史问题和回复至多300字，动作不带 arguments/observation，因此不重发已输入的密码、顺序和旋转数组。旧预设/legacy 的历史行为不改。恢复或重置改变 generation 后不复活旧对话；同 generation 重载可从已有事件恢复有限上下文。完整猜测只有同时明确请求判对错时才返回本地提醒，usage unavailable/model null/calls0，不计次数、不改 revision，也不加入成功模型对话；正常含钟面数值或操作经历的问题仍可讨论，回复不复述完整答案。终局无候选仍本地返回，不调用。
 
 每个新通过最终校验的伙伴回复必须恰有一次调用、无读工具/提案，成功 hint_count 与 revision 各加1，沿用分数口径但不修改 current_hint_level；失败/本地提醒/重放不计数。新请求摘要包含模式；历史既有模式与旧摘要完成 receipt 保持重放兼容。游戏/快照/API/schema/archive 均不增加字段或改变版本，内部 AI 表迁移只增加行为模式。实际证据见 evidence/integration/ai-companion/。
+
+## v5 私人生成关卡规格（2026-10-23，独立入口）
+
+本节只适用于新版入口，旧接口、旧规则和旧数据库继续按前述历史规格运行。范围与稳定需求编号以 `docs/v5-build-plan.md` 第3–4节为准：26条MUST、20个正向/负向/对抗场景；本节给出落实位置与状态边界，不把实现或开发自查当成已验收。正式结果由 `STATUS.md` 和本轮独立QA记录确定。
+
+|需求|权威行为/实现边界|验收入口|
+|---|---|---|
+|GEN-01–04|1–3房间与三种结构难度；严格数据草稿→确定性编译→规划与真实规则回放→不可变定义；只有ready可玩；失败/未知不重发|v2生成API、tests/v5/test_kernel.py、test_generation.py|
+|USER-01–03|小写唯一用户名、Argon2id；服务端Cookie、轮换/撤销/期限/限速；所有私人列表和资源先认证再归属校验|test_auth.py、test_security.py|
+|KEY-01–02|Key只页面内存及请求/官方认证头，禁止落库/模型内容/URL/日志；换身份、免费、恢复/reset等清理；旧身份迟到结果不写入|test_generation.py、test_security.py、真实浏览器隔离Canary|
+|COST-01–02|每用户1/global2在途，3/10分钟、10/北京时间日；生成6000/60秒、整项90秒；伙伴600/20秒；原账本10元，单次保守峰值先预留；没有自动重试|临时账本+MockTransport、生成任务/重放/未知测试|
+|SAVE-01–02、SYNC-01|复用Store事务/回执/revision/generation；档绑定身份/会话/关卡/hash/版本；选择恢复后新generation；坏档拒绝且不覆盖；reset保留档；删除不改当前事实|test_integration.py及真实浏览器|
+|AI-01–02|免费分级只看公开状态；伙伴仅当前公开投影、最近至多3轮成功对话和3条无参数动作；无工具/提案/代执行；双层最终校验；失败/本地提醒不算成功帮助|test_generation.py、test_integration.py；真实质量单独标注|
+|WEB-01–02、API-01|精确Host/Origin、单一CSRF/context、JSON与16KiB限制、CSP/无敏感静态文件/无旧匿名路由；契约见contracts/v2|contracts/v2/check_contracts.py与test_security.py|
+|UI-01、ASSET-01|通用Phaser公开状态场景、触控与键盘、特写拦截、动态线索；前后共用generated-catalog，禁止固定经典答案图案充当真值|真实浏览器三视口+经典素材原字节核对|
+|LEGACY-01、DELIVERY-01|game-v5.sqlite单独标识，迁移前检查；原启动入口/旧库不变；新版本机同源启动与恢复/回退说明|test_legacy.py、新启动器限定自有进程检查|
+|ENG-01–02、EVAL-01|每次实际执行绑定输入/源码/起止/exit；E1/E2/E3；有限三Claim、四状态和缺证不PASS，严格付费评价门控|experiments/v5与evaluation新增可信登记，独立复核|
+
+账号身份与游戏状态分开：身份token随机，DB只存hash；Cookie HttpOnly/SameSite=Strict/host-only/Path=/api/v2，闲置30分钟、绝对8小时。本机HTTP的Secure=false不是公网配置。匿名nonce/CSRF十分钟保护注册登录，登录后轮换为绑定认证上下文的CSRF。所有修改均要求精确Origin；认证修改还要求单一X-CSRF-Token和X-Auth-Context。跨用户资源统一404，不先读取目标回执。CSRF获取不轮换既有认证token，防另一页只读刷新破坏当前页面。
+
+生成状态：pending→generating→validating→ready/rejected/failed/unknown。重启时pending→failed，generating→unknown，validating→failed；不会持久保存Key或自动继续调用。相同用户/request_id/参数返回同任务，换参数409。模型结果不可信，严格JSON拒重复键/非有限数/额外字段/脚本URL路径等；参考、材料语义、依赖、规模和槽位由Host验证。25000抽象状态或5秒超限返回PROOF_UNKNOWN，表示尚未证明；不能解释成无解或放行。
+
+存储/契约版本分离：API=2.0.0；经典规则/快照仍3.4.0/1.4.0；生成关卡level=5.0.0、快照schema=2.0.0、definition/rules=1.0.0、正式policy=1.0.0。CompiledLevel hash覆盖规范化草稿及definition/rules/policy，不包含模型自报答案。私有快照绑定owner_id/level_id/hash/versions；公开DTO只含当前可见事实，完整草稿、answers、witness、owner和认证字段不对前端/伙伴输出。
+
+伙伴完整payload保守峰值若超过0.05元，先减无参数动作、旧对话、低相关已知材料和描述；当前问题与保留的最近完整问答不伪造事实。仍无法满足则在发送前拒绝。生成0.20元预算与6000token权限仅允许v5_generation scope，不扩大经典默认1000/20或伙伴600/20。真实质量和真实生成验收需要实际样本；离线fixture、MockTransport、结构校验均不能替代。

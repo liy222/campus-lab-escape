@@ -1,0 +1,17 @@
+{
+  "operator": "Main",
+  "kind": "development check, not independent QA",
+  "exit_code": 0,
+  "checks": [
+    "generation: one synthetic dispatch, JSON6000, Key absent from content",
+    "legacy 1000/20 unchanged; generation scope cannot be selected by old calls",
+    "preset zero calls; companion public-only JSON600, real-prose pipeline via fake transport",
+    "complete-guess request refused locally without dispatch"
+  ],
+  "actual_network_calls": 0,
+  "synthetic_transport_calls": 2,
+  "canonical_budget_opened": false,
+  "limitations": [
+    "Synthetic protocol/guard checks do not certify real model quality."
+  ]
+}

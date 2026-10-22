@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
-import { api, ApiError, type ActionArguments, type AiSettings, type AiTurnData, type Proposal, type Receipt, type Session, type VisibleState } from './api';
+import { api as legacyApi, ApiError, type ActionArguments, type AiSettings, type AiTurnData, type Proposal, type Receipt, type Session, type VisibleState } from './api';
 
 const reasons: Record<string, string> = { MODEL_TIMEOUT: '模型未能在时间内完成，已停止本次问答。', MODEL_UNAVAILABLE: '模型服务暂不可用，可以继续手动探索。', MODEL_INVALID_OUTPUT: '返回的建议无法通过检查，未执行任何建议行动。', AI_LIMIT_REACHED: '本次问答达到调用上限，已停止。', STALE_STATE: '问答期间进度已改变，请依据当前场景重新询问。' };
 const proposalLabels = { pending: '待确认 · proposed', committed: '已执行 · committed', cancelled: '已取消 · cancelled', expired: '已过期', invalidated: '已失效', rejected: '已拒绝 · rejected', unknown: '结果待核对' };
 type ProposalView = { proposal: Proposal; receipt: Receipt | null; outcome: keyof typeof proposalLabels; message?: string; replayed?: boolean };
 type Trace = { id: string; eventId: string | null; outcome: string; tool: string; arguments: ActionArguments; revision: number; generation: string; message: string; receipt?: Receipt };
 type CompanionExchange = { id: string; generation: string; revision: number; question: string; answer: string; outdated: boolean };
-interface Props { session: Session; state: VisibleState; manualPending: boolean; needsSync: boolean; onState: (state: VisibleState, reconciled?: boolean) => boolean; onUncertain: (value: boolean) => void; onForbidden: (sessionId: string) => void; onReference?: (clueId: string) => void }
+interface Props { apiOverride?: typeof legacyApi; session: Session; state: VisibleState; manualPending: boolean; needsSync: boolean; onState: (state: VisibleState, reconciled?: boolean) => boolean; onUncertain: (value: boolean) => void; onForbidden: (sessionId: string) => void; onReference?: (clueId: string) => void }
 
-export default function Assistant({ session, state, manualPending, needsSync, onState, onUncertain, onForbidden, onReference }: Props) {
+export default function Assistant({ apiOverride, session, state, manualPending, needsSync, onState, onUncertain, onForbidden, onReference }: Props) {
+  const api = apiOverride || legacyApi;
+  const questionLimit = apiOverride ? 300 : 2000;
   const [question, setQuestion] = useState('');
   const [provider, setProvider] = useState<AiSettings['provider']>('mock');
   const [apiKey, setApiKey] = useState('');
@@ -21,7 +23,7 @@ export default function Assistant({ session, state, manualPending, needsSync, on
   const [companionHistory, setCompanionHistory] = useState<CompanionExchange[]>([]);
   const [now, setNow] = useState(Date.now);
   const [hintLevel, setHintLevel] = useState<1 | 2 | 3>(state.statistics?.current_hint_level || 1);
-  const hintMode = state.level_version === '3.4.0';
+  const hintMode = !!apiOverride || state.level_version === '3.4.0';
   const presetHintMode = hintMode && provider === 'mock';
   const companionMode = hintMode && provider === 'deepseek';
   const busy = useRef(false);
@@ -101,13 +103,13 @@ export default function Assistant({ session, state, manualPending, needsSync, on
     if (busy.current || manualPending || needsSync || state.status === 'won') return;
     if (missingApiKey) { setError('请先填写 DeepSeek API Key，再询问伙伴。'); return; }
     if (invalidApiKey) { setError('API Key 格式不正确，请重新输入，避免空格、中文或换行。'); return; }
-    if (!presetHintMode && (!question.trim() || question.length > 2000)) { setError('请填写 1–2000 字的问句。'); return; }
+    if (!presetHintMode && (!question.trim() || question.length > questionLimit)) { setError(`请填写 1–${questionLimit} 字的问句。`); return; }
     const started = current.current;
     const startedContext = requestContext.current.version;
     busy.current = true; pendingGeneration.current = started.generation; setPending('ask'); setError(''); setNotice(''); setView(null);
     try {
       const settings: AiSettings = provider === 'deepseek' ? { provider, apiKey } : { provider };
-      const message = presetHintMode ? '获取当前进度的预设提示' : question;
+      const message = presetHintMode ? '获取当前进度的预设提示' : redactCompanionText(question).replace(/sk-[A-Za-z0-9_-]{8,}/g, '[已隐藏]');
       const response = await api.ai(session, started, message, settings, presetHintMode ? hintLevel : undefined);
       if (requestContext.current.version !== startedContext) return;
       const data = response.data;
@@ -175,8 +177,8 @@ export default function Assistant({ session, state, manualPending, needsSync, on
     </fieldset>
     <form className="ai-question" onSubmit={event => { event.preventDefault(); void ask(); }}>
       {!presetHintMode && <><label htmlFor="ai-question">{companionMode ? '想问探索伙伴什么？' : hintMode ? '想获得什么提示？' : '想问探索伙伴什么？'}</label>
-      <textarea id="ai-question" maxLength={2000} rows={3} value={question} disabled={!!pending || needsSync || state.status === 'won'} placeholder={companionMode ? '例如：我已经发现的线索之间有什么联系？' : hintMode ? '例如：下一步可以关注哪里？' : '例如：我应该先查看哪些物件？'} onChange={event => setQuestion(event.target.value)}/></>}
-      <div className="ai-question-actions">{!presetHintMode && <small>{question.length}/2000</small>}<button className={`button primary ${presetHintMode ? 'hint-ask' : ''}`} disabled={!!pending || manualPending || needsSync || state.status === 'won' || (!presetHintMode && !question.trim()) || missingApiKey || invalidApiKey}>{presetHintMode ? '获取提示' : '询问伙伴'}</button></div>
+      <textarea id="ai-question" maxLength={questionLimit} rows={3} value={question} disabled={!!pending || needsSync || state.status === 'won'} placeholder={companionMode ? '例如：我已经发现的线索之间有什么联系？' : hintMode ? '例如：下一步可以关注哪里？' : '例如：我应该先查看哪些物件？'} onChange={event => setQuestion(event.target.value)}/></>}
+      <div className="ai-question-actions">{!presetHintMode && <small>{question.length}/{questionLimit}</small>}<button className={`button primary ${presetHintMode ? 'hint-ask' : ''}`} disabled={!!pending || manualPending || needsSync || state.status === 'won' || (!presetHintMode && !question.trim()) || missingApiKey || invalidApiKey}>{presetHintMode ? '获取提示' : '询问伙伴'}</button></div>
     </form>
     {state.status === 'won' && <p className="muted">已完成探索。可以保存、恢复或开始新游戏。</p>}
     <div className="ai-feedback" aria-live="polite">{pending && <p className="pending"><span className="spinner"/>{pending === 'ask' ? pendingGeneration.current !== state.generation ? '进度已更换，正在结束旧问答…' : '正在查看线索并思考，最长约 45 秒。你仍可手动探索…' : pending === 'confirm' ? '正在确认行动，请稍候…' : '正在取消建议，请稍候…'}</p>}{error && <p className="error" role="alert">{error}</p>}{notice && <p className="notice">{notice}</p>}</div>

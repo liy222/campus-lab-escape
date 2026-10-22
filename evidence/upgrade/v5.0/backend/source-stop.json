@@ -1,0 +1,66 @@
+{
+  "kind": "backend_owner_source_stop_not_formal_qa",
+  "source_stop_utc": "2026-10-22T16:43:38.416098+00:00",
+  "files": {
+    "backend/app/domain/generated.py": "85cf36705cdf488060347c8dadce7a53f409fc0d92377cc72ffb46e7f12e912e",
+    "backend/app/storage/v5.py": "70483ac138bb60f8e4c01218f81b00fc53d55ee391eb3d5ab36c789cc167eaec",
+    "backend/app/api/v5.py": "f9058f81a4e0288fd4a55b3ba0172a020a41adaae564d90e52a3deef203bc7d5",
+    "backend/app/main.py": "9b06944ece5908938662583f31329f94784b0aefc77db6bcad4f203f8e94761e",
+    "backend/requirements.in": "3b735ecbb432e3367e8ab0468531f67019901d5d505957562fb8244f351d5317",
+    "backend/requirements.lock.txt": "31084ea7caf51d51e32ae5437d97aa69460b8bf9065f7a6bd8bf503df367ca3e"
+  },
+  "actual_commands": [
+    {
+      "command": "inline Python9 fixture compile/witness replay",
+      "exit_code": 0,
+      "output_summary": "9 room-count/difficulty combinations accepted and replayed to EXIT"
+    },
+    {
+      "command": "inline auth/classic/archive/freehint development integration",
+      "exit_code": 1,
+      "failure": "Freehint service unavailable due AI-owned import SYSTEM_PROMPT mismatch; preceding auth/classic/create/save/reset/restore executed. No complete pass claimed."
+    },
+    {
+      "command": "inline generated3hard/archive/crossuser/security development integration",
+      "exit_code": 1,
+      "failure": "Unlabelled old-route assertion after generated witness/archive checks. Old anonymous POST responded405; fixed to404. Not full pass."
+    },
+    {
+      "command": "inline focused integration after fixes",
+      "exit_code": 0,
+      "output_summary": "auth/stableCSRF/classic/generated freehint/job at-most-once/3hard38action win/archive/crossuser/oldroute/origin/media/oldDB unchanged"
+    },
+    {
+      "command": "$env:PYTHONPATH='.'; & 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 evidence/upgrade/v5.0/backend/owner_check.py",
+      "exit_code": 0,
+      "tool_chunk": "f96d0a",
+      "output_summary": "9 fixture witnesses/private0.9 policy/reject selflock/API integration/hash-corruption preservation; preceding source epoch"
+    },
+    {
+      "command": "$env:PYTHONPATH='.'; & 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 evidence/upgrade/v5.0/backend/owner_check.py",
+      "exit_code": 0,
+      "tool_chunk": "fc67b9",
+      "output_summary": "Same scopes on final sources; repeated scopes not summed"
+    }
+  ],
+  "dependency_versions": {
+    "argon2-cffi": "25.1.0",
+    "argon2-cffi-bindings": "26.1.0",
+    "cffi": "2.1.1",
+    "pycparser": "3.0"
+  },
+  "paid_provider_calls": 0,
+  "fixture_provider_calls_last_run": 1,
+  "formal_qa": false,
+  "limitations": [
+    "Owner development only; independent QA has not run.",
+    "No real generation/companion calls or production user database opened.",
+    "Known Starlette/httpx deprecation warning retained.",
+    "No browser/UI acceptance by Backend owner.",
+    "Earlier failed command epochs retained in this report; tool transcript is their original raw execution source."
+  ],
+  "evidence": [
+    "evidence/upgrade/v5.0/backend/owner_check.py",
+    "evidence/upgrade/v5.0/backend/source-stop.json"
+  ]
+}

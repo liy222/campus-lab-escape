@@ -1,0 +1,17 @@
+{
+  "exit_code": 1,
+  "checks_completed": [],
+  "error_type": "KeyError",
+  "error": "'properties'",
+  "ended_at": "2026-10-22T16:48:45.093241+00:00",
+  "source_sha256": {
+    "contracts/v2/build_contracts.py": "193a5cd322bca1c8acc037a8f6c58fe7e51dd0fa96558f42cf717ea554d09433",
+    "contracts/v2/check_contracts.py": "a6f146a5825afb27572aabf41d574cb05745fcb2400d69fcf990db54333badbb",
+    "contracts/v2/README.md": "09aa374a0d3abc41414c475f81879aa5dd12717c36c8f7eec2ec4537b9a113e6"
+  },
+  "limitations": [
+    "Development contract checks, not independent QA or real model validation.",
+    "Classic response validation is additionally covered by API integration QA."
+  ],
+  "paid_calls": 0
+}

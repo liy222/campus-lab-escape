@@ -1,0 +1,26 @@
+{
+  "exit_code": 0,
+  "checks": [
+    "generated Draft full schema instances",
+    "20 exact route bindings",
+    "nine real-rule witness projections including minigames and EXIT",
+    "strict unknown public field rejection",
+    "reproducible schema artifacts"
+  ],
+  "validated_generated_states": 196,
+  "route_count": 20,
+  "ended_at": "2026-10-22T16:49:25.814962+00:00",
+  "source_sha256": {
+    "contracts/v2/api.schema.json": "68a8891e10956837f4bc370dd4a67bfc79674e86bcd9d9cf4bd2ce7c6c63dc72",
+    "contracts/v2/build_contracts.py": "15e8c68dcf0708d3c3f364c091dd4118e4d7eb7e6212e1ad94e8ca6e0312f0c2",
+    "contracts/v2/check_contracts.py": "a6f146a5825afb27572aabf41d574cb05745fcb2400d69fcf990db54333badbb",
+    "contracts/v2/level-draft.schema.json": "24698f399cba5697c61bd02f8c3616f52fd5a568ad4aaa264c02a55d19bd9044",
+    "contracts/v2/README.md": "09aa374a0d3abc41414c475f81879aa5dd12717c36c8f7eec2ec4537b9a113e6",
+    "contracts/v2/routes.json": "02ea513df16777612f96e8541c95084658c93c21b0e52f1d804039c55cebaf0d"
+  },
+  "limitations": [
+    "Development contract checks, not independent QA or real model validation.",
+    "Classic response validation is additionally covered by API integration QA."
+  ],
+  "paid_calls": 0
+}

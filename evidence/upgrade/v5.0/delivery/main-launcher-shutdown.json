@@ -1,0 +1,21 @@
+{
+  "command": "Main Ctrl+C to owned PTY6384 then socket probes",
+  "outer_pty_exit_code": 1,
+  "shutdown_message_observed": true,
+  "checks": [
+    {
+      "port": 8001,
+      "still_reachable": false
+    },
+    {
+      "port": 5174,
+      "still_reachable": false
+    }
+  ],
+  "probe_exit_code": 0,
+  "limitations": [
+    "Outer PowerShell PTY reports1 after Ctrl+C; no fabricated launcher process exit0.",
+    "Both listeners started by this check are closed; no unrelated process stopped.",
+    "Disposable TEMP database retained, not committed."
+  ]
+}

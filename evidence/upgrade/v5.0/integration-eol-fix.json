@@ -1,0 +1,38 @@
+{
+  "operator": "Main mechanical integration before formal QA",
+  "recorded_at": "2026-10-22T17:30:41.682090+00:00",
+  "exit_code": 0,
+  "files": [
+    {
+      "path": "frontend/src/App.tsx",
+      "before_sha256": "84432efe09b999e677299876be5116091ad745f8e7ecc85571e58a1c02cee323",
+      "after_sha256": "c341213759c7dd2747d760ebd5da29e1042c09cd94a5561f12dd9be3423ffe43",
+      "removed_bytes": 360,
+      "before_duplicate_CR": 360,
+      "after_duplicate_CR": 0,
+      "logical_text_equal_ignoring_CR_and_terminal_newlines": true
+    },
+    {
+      "path": "backend/app/main.py",
+      "before_sha256": "9b06944ece5908938662583f31329f94784b0aefc77db6bcad4f203f8e94761e",
+      "after_sha256": "f17f5de8a9921fbfa07997255279c2e109c1e9eaf0a053010233f851f623a696",
+      "removed_bytes": 2,
+      "before_duplicate_CR": 0,
+      "after_duplicate_CR": 0,
+      "logical_text_equal_ignoring_CR_and_terminal_newlines": true
+    },
+    {
+      "path": "backend/app/storage/v5.py",
+      "before_sha256": "fa83448cfb7859b492147ac57cdbfc4fa3ed7935a82f22bec05e0efe4dfad66c",
+      "after_sha256": "46449e525eed09cd093325b468cd7365cb3b9f2b5f504972408aa95d72d2552c",
+      "removed_bytes": 2,
+      "before_duplicate_CR": 0,
+      "after_duplicate_CR": 0,
+      "logical_text_equal_ignoring_CR_and_terminal_newlines": true
+    }
+  ],
+  "scope": "App CRCRLF to CRLF only; two Python duplicate terminal blank lines only",
+  "prior_owner_reports": "Historical hashes preserved; no old evidence rewritten",
+  "validation": "Byte equality assertion; final build and tests run by independent QA on the new candidate; no duplicate Owner suite",
+  "paid_calls": 0
+}

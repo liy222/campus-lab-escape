@@ -1,0 +1,27 @@
+{
+  "kind": "backend_owner_narrow_anon_csrf_fix_source_stop",
+  "timestamp_utc": "2026-10-22T16:52:52.496798+00:00",
+  "finding": "Anonymous register/login must reject multiple X-CSRF-Token values before nonce validation",
+  "delta": "Only anonymous login_or_register CSRF branch additionally requires exactly one X-CSRF-Token value",
+  "file": "backend/app/api/v5.py",
+  "before_sha256": "0b0a7e5c2ccca4a73136976b6e4482a9bf0c8590c50319dd21d7014525181a83",
+  "after_sha256": "ea042ff760c8688f899988b3b7b3ef117d565d7fa065db9ed00b07e7469f3dcc",
+  "actual_command": "inline TEMP TestClient duplicate-CSRF register/login and database-count assertions; single-CSRF register/login checks",
+  "exit_code": 0,
+  "actual_statuses": {
+    "duplicate_csrf_register": 403,
+    "duplicate_csrf_login": 403,
+    "single_csrf_register": 201,
+    "single_csrf_login": 200
+  },
+  "duplicate_requests_created_users": 0,
+  "duplicate_requests_created_auth_sessions": 0,
+  "formal_qa": false,
+  "paid_calls": 0,
+  "experiments_rerun": false,
+  "historical_origin_fix": "evidence/upgrade/v5.0/backend/source-stop-origin-fix.json",
+  "limitations": [
+    "Backend-owner narrow check only.",
+    "Original experiments and Origin evidence unchanged; E1/E2/E3 were not repeated on this source."
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "status": "SOURCE STOP",
+  "operator": "Frontend owner development checks; not independent QA",
+  "files": [
+    "frontend/src/App.tsx",
+    "frontend/src/Assistant.tsx",
+    "frontend/src/assets/generated-catalog.json",
+    "frontend/src/main.tsx",
+    "frontend/src/v5/GeneratedPlay.tsx",
+    "frontend/src/v5/GeneratedScene.tsx",
+    "frontend/src/v5/Workspace.tsx",
+    "frontend/src/v5/client.ts",
+    "frontend/src/v5/v5.css",
+    "frontend/vite.config.ts"
+  ],
+  "source_sha256": {
+    "frontend/src/App.tsx": "5c38e794f817bd31042f45389e9e94e1bd5ea11900b4d1eba2aa2b4614910dfd",
+    "frontend/src/Assistant.tsx": "2b5e87c73b3043a2f8118b7e91d38e6983b6eaecb6533a38288ba26ccfcd305f",
+    "frontend/src/assets/generated-catalog.json": "c702e73f0c8b234af95564b321652979ebd806a0093f008042e9c2a3fc9b80b8",
+    "frontend/src/main.tsx": "91a69caeac1ec2b58382f0a3ddd9b8a21bbc89fbc68742837e7e07b819813891",
+    "frontend/src/v5/GeneratedPlay.tsx": "0bc6d8aba3562a862d30dcae001dd6fbe1c327777ba614f904b165b2f1b898b1",
+    "frontend/src/v5/GeneratedScene.tsx": "ddfa97ff668d19715aa9008c43fc09d9a4260affce3453f50771e0d915e2e7de",
+    "frontend/src/v5/Workspace.tsx": "408b23308907cfddbaa294026124e79d254942c2e4aed001b6fa77f13fb2d04c",
+    "frontend/src/v5/client.ts": "b8778ccd0fb2b683f77a3feb2d0cc01f14685e16246f7af3554d3cc6301d83ca",
+    "frontend/src/v5/v5.css": "ad4647a2eb1bacdad4c74e9f336c6483134f7e52f14024f3b937bb464333b55e",
+    "frontend/vite.config.ts": "f8df24f7d4c4d7b9e705c3a740f702511a5cf1d5bc0a05f6bf37bbef57225065"
+  },
+  "old_asset_api_tracked_deltas": [],
+  "implementation": [
+    "VITE_GAMEPLAY_VERSION=v5 and dist-v5, default entry and old anonymous storage preserved for old mode",
+    "Cookie/CSRF/auth-context client and account-bound injected classic adapter; classic uses existing RoomLoader and Phaser scene",
+    "Local account dashboard, private generation task polling/list recovery, 1..3 rooms and difficulty/theme input",
+    "Generic projected fixed-view Phaser, canonical discovered clues only, puzzle target IDs, circuit and sequence panels",
+    "Manual save create/list/selected restore/delete confirmation; reset reuses fixed definition; free and real companion modes with memory-only key"
+  ],
+  "commands": [
+    {
+      "command": "VITE_GAMEPLAY_VERSION=v5 npm --prefix frontend run build",
+      "epoch": "initial",
+      "exit_code": 1,
+      "reason": "ImportMeta env typing and GeneratedState object intersection, corrected"
+    },
+    {
+      "command": "VITE_GAMEPLAY_VERSION=v5 npm --prefix frontend run build",
+      "epoch": "subsequent development builds",
+      "exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_evidence": "frontend/owner-evidence/v5/final-build2.log",
+      "note": "Each followed actual source changes; final success includes latest product source"
+    },
+    {
+      "command": "node frontend/owner-evidence/v5-owner-smoke.mjs",
+      "epoch": "initial launcher",
+      "exit_code": 1,
+      "reason": "Playwright bundled browser absent; used installed Chrome without installing dependencies"
+    },
+    {
+      "command": "node frontend/owner-evidence/v5-owner-smoke.mjs",
+      "epoch": "fixture-public-state final pass",
+      "exit_code": 0,
+      "evidence": "frontend/owner-evidence/v5/owner-smoke.json",
+      "scope": "1280x720/390x844/812x375 target size/overflow, generated closeup Escape and classic adapter, fixture-only"
+    },
+    {
+      "command": "node frontend/owner-evidence/v5-actual-owner-smoke.mjs",
+      "epoch": "actual first",
+      "exit_code": 1,
+      "reason": "Backend CSP blocked Phaser image blob decoding; backend owner narrow fix",
+      "evidence": "frontend/owner-evidence/v5/actual-owner-failure.json"
+    },
+    {
+      "command": "node frontend/owner-evidence/v5-loading-probe.mjs",
+      "exit_code": 0,
+      "evidence": "frontend/owner-evidence/v5/loading-probe.log"
+    },
+    {
+      "command": "node frontend/owner-evidence/v5-actual-owner-smoke.mjs",
+      "epoch": "actual second",
+      "exit_code": 1,
+      "reason": "New harness pointer-clicked keyboard-only hotspot below canvas; harness corrected to focus+Enter",
+      "evidence": "frontend/owner-evidence/v5/actual-owner-failure-1792687673240.json"
+    },
+    {
+      "command": "node frontend/owner-evidence/v5-actual-owner-smoke.mjs",
+      "epoch": "actual third current source",
+      "exit_code": 0,
+      "evidence": "frontend/owner-evidence/v5/actual-owner-smoke.json",
+      "scope": "10 named scopes; no repeated scope sums"
+    }
+  ],
+  "viewed_final_screenshots": [
+    "frontend/owner-evidence/v5/actual-classic-1280.png",
+    "frontend/owner-evidence/v5/actual-generated-won-390.png"
+  ],
+  "evidence_paths": [
+    "frontend/owner-evidence/v5-actual-owner-smoke.mjs",
+    "frontend/owner-evidence/v5-loading-probe.mjs",
+    "frontend/owner-evidence/v5-owner-server.py",
+    "frontend/owner-evidence/v5-owner-smoke.mjs",
+    "frontend/owner-evidence/v5/actual-classic-1280.png",
+    "frontend/owner-evidence/v5/actual-failure-1792687673240.png",
+    "frontend/owner-evidence/v5/actual-first-failure.png",
+    "frontend/owner-evidence/v5/actual-generated-won-1280.png",
+    "frontend/owner-evidence/v5/actual-generated-won-390.png",
+    "frontend/owner-evidence/v5/actual-generated-won-812.png",
+    "frontend/owner-evidence/v5/actual-owner-failure-1792687673240.json",
+    "frontend/owner-evidence/v5/actual-owner-failure.json",
+    "frontend/owner-evidence/v5/actual-owner-run2.log",
+    "frontend/owner-evidence/v5/actual-owner-run3.log",
+    "frontend/owner-evidence/v5/actual-owner-smoke.json",
+    "frontend/owner-evidence/v5/classic-1280.png",
+    "frontend/owner-evidence/v5/dashboard-1280.png",
+    "frontend/owner-evidence/v5/final-build.log",
+    "frontend/owner-evidence/v5/final-build2.log",
+    "frontend/owner-evidence/v5/generated-1280.png",
+    "frontend/owner-evidence/v5/generated-390.png",
+    "frontend/owner-evidence/v5/generated-812.png",
+    "frontend/owner-evidence/v5/loading-probe.log",
+    "frontend/owner-evidence/v5/owner-smoke.json"
+  ],
+  "limitations": [
+    "No independent formal QA or human acceptance",
+    "Actual generation service was explicitly injected deterministic make_fixture; zero real provider/model calls",
+    "Actual owner browser full generated route was one room easy (code+item), circuit/sequence UI formal verification remains for independent QA",
+    "No process-restart browser scope in this owner run; backend owner checked storage, formal QA must cover requested restart",
+    "Classic actual owner check rendered R1 and exercised archive cancellation; full three-room classic route not repeated here",
+    "Existing Phaser large chunk warning remains",
+    "Initial screenshot output URL path was percent-encoded outside workspace; only five just-generated PNGs copied into owned evidence and individual originals removed; harness fixed to fileURLToPath",
+    "Compiled dist-v5 and isolated runtime database are ignored, never commit them; no existing environment reset or new dependency",
+    "Default old dist build was not run or modified by a V5 build"
+  ]
+}

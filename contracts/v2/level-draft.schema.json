@@ -1,0 +1,356 @@
+{
+  "$defs": {
+    "Clue": {
+      "additionalProperties": false,
+      "properties": {
+        "clue_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Clue Id",
+          "type": "string"
+        },
+        "tokens": {
+          "items": {
+            "maxLength": 40,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Tokens",
+          "type": "array"
+        },
+        "indices": {
+          "items": {
+            "maximum": 8,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "maxItems": 8,
+          "title": "Indices",
+          "type": "array"
+        },
+        "symbol_map": {
+          "additionalProperties": {
+            "maxLength": 40,
+            "minLength": 1,
+            "type": "string"
+          },
+          "propertyNames": {
+            "maxLength": 40,
+            "minLength": 1
+          },
+          "title": "Symbol Map",
+          "type": "object"
+        }
+      },
+      "required": [
+        "clue_id"
+      ],
+      "title": "Clue",
+      "type": "object"
+    },
+    "Object": {
+      "additionalProperties": false,
+      "properties": {
+        "object_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Object Id",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 240,
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "slot": {
+          "maximum": 7,
+          "minimum": 0,
+          "title": "Slot",
+          "type": "integer"
+        },
+        "art_id": {
+          "enum": [
+            "note",
+            "key",
+            "terminal",
+            "cabinet",
+            "circuit",
+            "panel"
+          ],
+          "title": "Art Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "clue",
+            "item",
+            "puzzle"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "clue_id": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Clue Id"
+        },
+        "item_id": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Item Id"
+        },
+        "puzzle_id": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Puzzle Id"
+        },
+        "locked_by": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Locked By",
+          "type": "array"
+        }
+      },
+      "required": [
+        "object_id",
+        "name",
+        "description",
+        "slot",
+        "art_id",
+        "kind"
+      ],
+      "title": "Object",
+      "type": "object"
+    },
+    "Puzzle": {
+      "additionalProperties": false,
+      "properties": {
+        "puzzle_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Puzzle Id",
+          "type": "string"
+        },
+        "room_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Room Id",
+          "type": "string"
+        },
+        "mechanism": {
+          "enum": [
+            "item",
+            "code",
+            "sequence",
+            "circuit"
+          ],
+          "title": "Mechanism",
+          "type": "string"
+        },
+        "prerequisite_ids": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Prerequisite Ids",
+          "type": "array"
+        },
+        "required_item_id": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Required Item Id"
+        },
+        "clue_ids": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "type": "string"
+          },
+          "maxItems": 4,
+          "title": "Clue Ids",
+          "type": "array"
+        },
+        "recipe": {
+          "default": "concat",
+          "enum": [
+            "concat",
+            "index",
+            "symbol_map"
+          ],
+          "title": "Recipe",
+          "type": "string"
+        }
+      },
+      "required": [
+        "puzzle_id",
+        "room_id",
+        "mechanism"
+      ],
+      "title": "Puzzle",
+      "type": "object"
+    },
+    "Room": {
+      "additionalProperties": false,
+      "properties": {
+        "room_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Room Id",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 240,
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "background_id": {
+          "enum": [
+            "neutral_lab",
+            "neutral_archive",
+            "neutral_control"
+          ],
+          "title": "Background Id",
+          "type": "string"
+        },
+        "objects": {
+          "items": {
+            "$ref": "#/$defs/Object"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Objects",
+          "type": "array"
+        }
+      },
+      "required": [
+        "room_id",
+        "name",
+        "description",
+        "background_id",
+        "objects"
+      ],
+      "title": "Room",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "maxLength": 40,
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "story": {
+      "maxLength": 240,
+      "minLength": 1,
+      "title": "Story",
+      "type": "string"
+    },
+    "rooms": {
+      "items": {
+        "$ref": "#/$defs/Room"
+      },
+      "maxItems": 3,
+      "minItems": 1,
+      "title": "Rooms",
+      "type": "array"
+    },
+    "clues": {
+      "items": {
+        "$ref": "#/$defs/Clue"
+      },
+      "maxItems": 18,
+      "title": "Clues",
+      "type": "array"
+    },
+    "puzzles": {
+      "items": {
+        "$ref": "#/$defs/Puzzle"
+      },
+      "maxItems": 6,
+      "minItems": 2,
+      "title": "Puzzles",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title",
+    "story",
+    "rooms",
+    "clues",
+    "puzzles"
+  ],
+  "title": "Draft",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

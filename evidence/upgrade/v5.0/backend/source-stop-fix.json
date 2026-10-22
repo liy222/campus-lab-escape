@@ -1,0 +1,28 @@
+{
+  "kind": "backend_owner_narrow_fix_source_stop",
+  "timestamp_utc": "2026-10-22T16:46:24.093288+00:00",
+  "finding": "Actual frontend Chrome Phaser image decoding blocked by img-src blob omission",
+  "finding_evidence": "frontend/owner-evidence/v5/loading-probe.log",
+  "files": {
+    "backend/app/api/v5.py": {
+      "before_sha256": "f9058f81a4e0288fd4a55b3ba0172a020a41adaae564d90e52a3deef203bc7d5",
+      "after_sha256": "23f15113a33aed0ecb106c158901a229eb0193ac660193091921d5ead7abf0b1"
+    }
+  },
+  "delta": "Only img-src adds blob:; no other CSP directive changed",
+  "actual_command": "inline isolated TestClient GET /health CSP assertions",
+  "exit_code": 0,
+  "checks": [
+    "health200",
+    "img-src self/data/blob",
+    "script-src self only",
+    "connect-src self only",
+    "no unsafe-eval"
+  ],
+  "formal_qa": false,
+  "paid_calls": 0,
+  "limitations": [
+    "Browser render confirmation belongs to Frontend owner; this check asserts response policy only."
+  ],
+  "previous_source_stop": "evidence/upgrade/v5.0/backend/source-stop.json"
+}

@@ -1,0 +1,249 @@
+{
+  "contract_version": "2.0.0",
+  "schema": "api.schema.json",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/v2/auth/csrf",
+      "request": null,
+      "response": "auth_response",
+      "authenticated": false,
+      "csrf_required": false,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/auth/register",
+      "request": "credentials",
+      "response": "auth_response",
+      "authenticated": false,
+      "csrf_required": true,
+      "success_statuses": [
+        200,
+        201
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/auth/login",
+      "request": "credentials",
+      "response": "auth_response",
+      "authenticated": false,
+      "csrf_required": true,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/auth/me",
+      "request": null,
+      "response": "auth_response",
+      "authenticated": true,
+      "csrf_required": false,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/auth/logout",
+      "request": "logout_request",
+      "response": "logout_response",
+      "authenticated": true,
+      "csrf_required": true,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/sessions",
+      "request": null,
+      "response": "sessions_response",
+      "authenticated": true,
+      "csrf_required": false,
+      "success_statuses": [
+        200,
+        201
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/sessions",
+      "request": "session_request",
+      "response": "session_response",
+      "authenticated": true,
+      "csrf_required": true,
+      "success_statuses": [
+        200,
+        201
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/sessions/{sid}/state",
+      "request": null,
+      "response": "state_response",
+      "authenticated": true,
+      "csrf_required": false,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/sessions/{sid}/actions",
+      "request": "action_request",
+      "response": "action_response",
+      "authenticated": true,
+      "csrf_required": true,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/sessions/{sid}/reset",
+      "request": "version_request",
+      "response": "control_response",
+      "authenticated": true,
+      "csrf_required": true,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/sessions/{sid}/saves",
+      "request": null,
+      "response": "list_saves_response",
+      "authenticated": true,
+      "csrf_required": false,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/sessions/{sid}/saves",
+      "request": "create_save_request",
+      "response": "save_slot_response",
+      "authenticated": true,
+      "csrf_required": true,
+      "success_statuses": [
+        201
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/sessions/{sid}/saves/{save_id}/restore",
+      "request": "version_request",
+      "response": "save_slot_response",
+      "authenticated": true,
+      "csrf_required": true,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/sessions/{sid}/saves/{save_id}/delete",
+      "request": "version_request",
+      "response": "delete_save_response",
+      "authenticated": true,
+      "csrf_required": true,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/sessions/{sid}/ai/turns",
+      "request": "hint_request",
+      "response": "ai_turn_response",
+      "authenticated": true,
+      "csrf_required": true,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/level-generations",
+      "request": null,
+      "response": "jobs_response",
+      "authenticated": true,
+      "csrf_required": false,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/level-generations",
+      "request": "generation_request",
+      "response": "job_response",
+      "authenticated": true,
+      "csrf_required": true,
+      "success_statuses": [
+        200,
+        202
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/level-generations/{job_id}",
+      "request": null,
+      "response": "job_response",
+      "authenticated": true,
+      "csrf_required": false,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/levels",
+      "request": null,
+      "response": "levels_response",
+      "authenticated": true,
+      "csrf_required": false,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/levels/{lid}",
+      "request": null,
+      "response": "level_response",
+      "authenticated": true,
+      "csrf_required": false,
+      "success_statuses": [
+        200
+      ]
+    }
+  ],
+  "health_paths": [
+    "/health",
+    "/api/v2/health"
+  ],
+  "headers": {
+    "mutations": [
+      "Origin",
+      "Content-Type: application/json",
+      "X-CSRF-Token",
+      "X-Auth-Context"
+    ],
+    "generation": [
+      "X-AI-Api-Key"
+    ],
+    "partner": [
+      "X-AI-Provider",
+      "X-AI-Api-Key"
+    ]
+  }
+}

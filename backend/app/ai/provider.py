@@ -45,6 +45,44 @@ class CallLimits:
 
 
 @dataclass(frozen=True)
+class GenerationLimits(CallLimits):
+    """Server-only v5 generation profile; never widens legacy/companion limits."""
+    max_tokens: int = 6000
+    timeout_seconds: float = 60.0
+    json_mode: bool = True
+    max_cost_units: int = 200_000_000
+
+    def validate(self):
+        if (self.json_mode is not True or type(self.max_tokens) is not int
+                or not 1 <= self.max_tokens <= 6000
+                or not 0 < self.timeout_seconds <= 60
+                or type(self.max_cost_units) is not int
+                or not 0 < self.max_cost_units <= 200_000_000):
+            raise ProviderError("INVALID_CALL_LIMITS")
+
+
+@dataclass(frozen=True)
+class V5CompanionLimits(CallLimits):
+    max_tokens: int = 600
+    json_mode: bool = True
+    max_cost_units: int = 50_000_000
+
+    def validate(self):
+        super().validate()
+        if (self.json_mode is not True or self.max_tokens > 600
+                or type(self.max_cost_units) is not int
+                or not 0 < self.max_cost_units <= 50_000_000):
+            raise ProviderError("INVALID_CALL_LIMITS")
+
+
+def _validate_profile(limits, tools, scope, tool_choice):
+    if isinstance(limits, GenerationLimits) and (scope != "v5_generation" or tools or tool_choice != "none"):
+        raise ProviderError("INVALID_CALL_LIMITS")
+    if isinstance(limits, V5CompanionLimits) and (scope != "v5_companion" or tools or tool_choice != "none"):
+        raise ProviderError("INVALID_CALL_LIMITS")
+
+
+@dataclass(frozen=True)
 class ProviderResult:
     content: str | None
     tool_calls: tuple[dict, ...]
@@ -208,6 +246,7 @@ class DeepSeekProvider:
     async def complete(self, messages, tools, limits=CallLimits(), *, scope="game", tool_choice="auto"):
         self.last_response_metadata = None
         limits.validate()
+        _validate_profile(limits, tools, scope, tool_choice)
         if not self.config.api_key.strip():
             raise ProviderError("MISSING_CREDENTIALS")
         schemas = _validate_tools(tools)
@@ -231,6 +270,8 @@ class DeepSeekProvider:
         input_bound = len(encoded) * 4 + 8192
         if input_bound > 1_000_000:
             raise ProviderError("INPUT_TOO_LARGE")
+        if cost_units(input_bound, limits.max_tokens) > getattr(limits, "max_cost_units", 10_000_000_000):
+            raise ProviderError("AI_LIMIT_REACHED")
         try:
             call_id = self.ledger.reserve(scope, cost_units(input_bound, limits.max_tokens))
         except BudgetError as error:
@@ -328,6 +369,7 @@ class MockProvider:
 
     async def complete(self, messages, tools, limits=CallLimits(), *, scope="game", tool_choice="auto"):
         limits.validate()
+        _validate_profile(limits, tools, scope, tool_choice)
         _validate_messages(messages, _validate_tools(tools))
         self.calls += 1
         if not self.replies:

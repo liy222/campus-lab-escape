@@ -1,0 +1,18 @@
+import { useEffect, useRef, useState } from 'react';
+import Phaser from 'phaser';
+import catalog from '../assets/generated-catalog.json';
+import type { GameObject, VisibleState } from '../api';
+export type GeneratedObject=GameObject&{art_id:string;slot:number;target_id?:string|null;completed?:boolean;canonical_overlay?:string};
+export type GeneratedState=Omit<VisibleState,'objects'|'room'|'minigames'>&{mode:'generated';level_id:string;definition_hash:string;room:VisibleState['room']&{background_id?:string;background_art_id?:string};objects:GeneratedObject[];minigames?:VisibleState['minigames']&{circuits?:NonNullable<VisibleState['minigames']>['circuit'][];sequences?:NonNullable<VisibleState['minigames']>['sequence'][]}};
+const positions=[[205,285],[585,285],[965,285],[1345,285],[205,625],[585,625],[965,625],[1345,625]];
+export default function GeneratedScene({state,disabled,onObject}:{state:GeneratedState;disabled:boolean;onObject:(id:string)=>void}){
+ const host=useRef<HTMLDivElement>(null),scene=useRef<Phaser.Scene|null>(null),current=useRef(state);current.current=state;
+ const [ready,setReady]=useState(false),[failed,setFailed]=useState(false),[retry,setRetry]=useState(0);
+ function draw(s:Phaser.Scene){s.children.list.slice().forEach(child=>child.destroy());const st=current.current;const bg=st.room.background_art_id||st.room.background_id||'neutral_lab';if(s.textures.exists(bg))s.add.image(800,450,bg).setDisplaySize(1600,900).setAlpha(.68);s.add.rectangle(800,450,1600,900,0x152326,.22);
+ st.objects.forEach(o=>{const a=catalog.assets.find(a=>a.id===o.art_id&&a.role==='object');const p=positions[Math.max(0,Math.min(7,o.slot))]||positions[0];s.add.rectangle(p[0],p[1]+90,310,225,0x101f20,.75).setStrokeStyle(2,0xb5a27a,.65);if(a&&s.textures.exists(a.id)){const tex=s.textures.get(a.id);const cropKey=`${a.id}-crop`;if(!tex.has(cropKey))tex.add(cropKey,0,a.bbox.x,a.bbox.y,a.bbox.width,a.bbox.height);const scale=Math.min(270/a.bbox.width,180/a.bbox.height);s.add.image(p[0],p[1]+65,a.id,cropKey).setScale(scale);if(a.mask_content)s.add.rectangle(p[0],p[1]+65,180,140,0xd7c9a9).setStrokeStyle(3,0x9d8d69);}
+ if(o.completed)s.add.text(p[0],p[1]-5,'✓ 已完成',{fontFamily:'sans-serif',fontSize:'25px',color:'#dce9ad'}).setOrigin(.5);s.add.text(p[0],p[1]+180,o.name,{fontFamily:'sans-serif',fontSize:'27px',color:'#f4e8cf',wordWrap:{width:280}}).setOrigin(.5);});}
+ useEffect(()=>{if(!host.current)return;setReady(false);setFailed(false);class Generic extends Phaser.Scene{constructor(){super('generated-campus');}preload(){catalog.assets.forEach(a=>this.load.image(a.id,a.url));this.load.on('loaderror',()=>setFailed(true));}create(){scene.current=this;draw(this);setReady(true);}}
+ const game=new Phaser.Game({type:Phaser.CANVAS,parent:host.current,width:1600,height:900,backgroundColor:'#142426',scene:Generic,scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},audio:{noAudio:true},banner:false});return()=>{scene.current=null;game.destroy(true);};},[retry]);
+ useEffect(()=>{if(ready&&scene.current)draw(scene.current);},[state,ready]);
+ return <div className="v5-scene" aria-label={`${state.room.name}固定视角场景`}><div ref={host} className="v5-phaser"/>{!ready&&<p className="v5-scene-status" role="status">正在加载已有手绘材料…</p>}{failed&&<div className="v5-scene-status" role="alert">部分材料未加载。<button onClick={()=>setRetry(v=>v+1)}>重试加载</button></div>}<div className="v5-hotspots" aria-label="可见物件">{state.objects.map(o=>{const p=positions[Math.max(0,Math.min(7,o.slot))]||positions[0];return <button key={o.object_id} disabled={disabled||!ready} style={{left:`${p[0]/16}%`,top:`${(p[1]+70)/9}%`}} onClick={()=>onObject(o.object_id)} aria-label={`查看${o.name}`}>{o.name}</button>;})}</div></div>;
+}

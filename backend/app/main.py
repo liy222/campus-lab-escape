@@ -37,5 +37,18 @@ def create_app(sqlite_path: str | Path | None = None, *, db_path: str | Path | N
     return application
 
 
-app = create_app(gameplay_version=os.environ.get("GAMEPLAY_VERSION", "upgrade"))
+def create_v5_app(db_path: str | Path | None = None, *, generation_service=None, companion_service=None, runtime=None, provider=None, dev=None) -> FastAPI:
+    """Isolated v5 factory. Importing v5 never opens a classic database."""
+    from .api.v5 import create_v5_application
+    default_path = Path(__file__).resolve().parents[2] / "data" / "game-v5.sqlite"
+    configured = os.environ.get("SQLITE_PATH")
+    if db_path is None and configured and Path(configured).name != "game-v5.sqlite":
+        raise ValueError("V5 requires its isolated game-v5.sqlite path")
+    return create_v5_application(db_path or configured or default_path,
+        generation_service=generation_service, companion_service=companion_service,
+        runtime=runtime, provider=provider,
+        dev=(os.environ.get("V5_DEV") == "1") if dev is None else dev)
+
+
+app = create_v5_app() if os.environ.get("GAMEPLAY_VERSION") == "v5" else create_app(gameplay_version=os.environ.get("GAMEPLAY_VERSION", "upgrade"))
 

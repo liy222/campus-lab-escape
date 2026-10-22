@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { api, ApiError, readSession, storeSession, type ActionArguments, type CircuitPuzzle, type Receipt, type SaveSlot, type Session, type Tool, type VisibleState } from './api';
+import { api as legacyApi, ApiError, readSession, storeSession, type ActionArguments, type CircuitPuzzle, type Receipt, type SaveSlot, type Session, type Tool, type VisibleState } from './api';
 import Assistant from './Assistant';
 import RoomLoader from './components/RoomLoader';
 import Entry from './components/Entry';
@@ -62,8 +62,11 @@ function CircuitBoard({ circuit, disabled, onRotate }: { circuit: CircuitPuzzle;
     })}
   </div>;
 }
-export default function App() {
-  const [session, setSession] = useState<Session | null>(readSession);
+export interface AppConnection { api: typeof legacyApi; session: Session; onForbidden: () => void }
+export default function App({ connection }: { connection?: AppConnection } = {}) {
+  const api = connection?.api || legacyApi;
+  const persistSession = (value: Session | null) => { if (!connection) storeSession(value); };
+  const [session, setSession] = useState<Session | null>(() => connection?.session || readSession());
   const [state, setState] = useState<VisibleState | null>(null);
   const stateRef = useRef<VisibleState | null>(null);
   const retiredGenerations = useRef(new Set<string>());
@@ -110,6 +113,7 @@ export default function App() {
   useEffect(() => { if (!visual) setDrawer(null); }, [visual]);
   useEffect(() => { const close = (event: KeyboardEvent) => { if (event.key === 'Escape' && !dialogRef.current?.open) { if (drawer) setDrawer(null); else setSelectedId(null); } }; window.addEventListener('keydown', close); return () => window.removeEventListener('keydown', close); }, [drawer]);
   useEffect(() => { if (drawer === 'assistant' || drawer === 'menu') document.querySelector<HTMLElement>('.visual-support [role="dialog"] .drawer-close')?.focus(); }, [drawer]);
+  useEffect(() => { if (connection) sync(); }, [connection?.session.session_id]);
   const selected = state?.objects.find(object => object.object_id === selectedId) || null;
   useEffect(() => { if (confirmation) dialogRef.current?.showModal(); else { dialogRef.current?.close(); setRestoreSaveId(null); setDeleteSaveId(null); } }, [confirmation]);
   useEffect(() => { const timer = window.setInterval(() => setClockNow(Date.now()), 1000); return () => window.clearInterval(timer); }, []);
@@ -154,7 +158,7 @@ export default function App() {
   function invalidateSession(sessionId: string) {
     if (stateRef.current && stateRef.current.session_id !== sessionId) return;
     saveListRequest.current += 1; setSaveSlots([]); setSaveListError(''); setRestoreSaveId(null); setDeleteSaveId(null); setConfirmation(null);
-    storeSession(null); setSession(null); stateRef.current = null; setState(null); setCodes({}); setLoginCredentials({ username: '', password: '' }); setHistory([]); setObservation(''); setSequenceDraft([]); setSelectedId(null); setSelectedItemId(null); setInteractionId(null); setLoginOpenId(null); setNeedsSync(false); retiredGenerations.current.clear();
+    persistSession(null); if (connection) connection.onForbidden(); setSession(null); stateRef.current = null; setState(null); setCodes({}); setLoginCredentials({ username: '', password: '' }); setHistory([]); setObservation(''); setSequenceDraft([]); setSelectedId(null); setSelectedItemId(null); setInteractionId(null); setLoginOpenId(null); setNeedsSync(false); retiredGenerations.current.clear();
   }
   async function execute(work: () => Promise<void>, reconcile = false, actionFeedback = false) {
     if (busy.current) return;
@@ -174,7 +178,7 @@ export default function App() {
   }
   function create() {
     setConfirmation(null);
-    void execute(async () => { const response = await api.create(); const nextSession = { session_id: response.data.session_id, token: response.data.token }; saveListRequest.current += 1; setSaveSlots([]); setSaveListError(''); storeSession(nextSession); setSession(nextSession); apply(response.data.visible_state, true); await refreshSaveSlots(nextSession, response.data.visible_state); setNotice('游戏已开始。选择场景中的物件，慢慢寻找线索。'); });
+    void execute(async () => { const response = connection && session && stateRef.current ? await api.control(session, stateRef.current, 'reset').then(r => ({...r,data:{...r.data,session_id:session.session_id,token:''}})) : await api.create(); const nextSession = { session_id: response.data.session_id, token: response.data.token }; saveListRequest.current += 1; setSaveSlots([]); setSaveListError(''); persistSession(nextSession); setSession(nextSession); apply(response.data.visible_state, true); await refreshSaveSlots(nextSession, response.data.visible_state); setNotice('游戏已开始。选择场景中的物件，慢慢寻找线索。'); });
   }
   function sync() { if (!session) return; void execute(async () => { const response = await api.state(session); if (apply(response.data.visible_state, false, true)) await refreshSaveSlots(session, response.data.visible_state); setNotice('已同步当前进度和存档列表。'); }); }
   function action(tool: Tool, args: ActionArguments) {
@@ -320,14 +324,14 @@ export default function App() {
         {visual && drawer && <button className="drawer-backdrop" aria-label="关闭面板" onClick={() => setDrawer(null)}/>}
         {visual && drawer === 'notebook' && <Notebook state={state} page={notebookPage} onPage={setNotebookPage} onClose={() => setDrawer(null)}/>}
         <div className={`support-grid ${visual ? 'visual-support' : ''}`} data-drawer={drawer || 'closed'} aria-hidden={visual && confirmation ? true : undefined}>
-          <div className="assistant-container" hidden={visual && drawer !== 'assistant'} role={visual && drawer === 'assistant' ? 'dialog' : undefined} aria-modal={visual && drawer === 'assistant' ? true : undefined} aria-labelledby={visual ? 'assistant-title' : undefined} onKeyDown={visual ? trapPanelFocus : undefined}>{visual && <button className="button drawer-close" onClick={() => setDrawer(null)}>关闭伙伴</button>}<Assistant key={state.session_id} session={session!} state={state} manualPending={pending} needsSync={needsSync} onState={(next, reconciled = false) => apply(next, false, reconciled)} onUncertain={value => { if (stateRef.current?.session_id === state.session_id) setNeedsSync(value); }} onForbidden={invalidateSession} onReference={visual ? openReference : undefined}/></div>
+          <div className="assistant-container" hidden={visual && drawer !== 'assistant'} role={visual && drawer === 'assistant' ? 'dialog' : undefined} aria-modal={visual && drawer === 'assistant' ? true : undefined} aria-labelledby={visual ? 'assistant-title' : undefined} onKeyDown={visual ? trapPanelFocus : undefined}>{visual && <button className="button drawer-close" onClick={() => setDrawer(null)}>关闭伙伴</button>}<Assistant apiOverride={connection?.api} key={state.session_id} session={session!} state={state} manualPending={pending} needsSync={needsSync} onState={(next, reconciled = false) => apply(next, false, reconciled)} onUncertain={value => { if (stateRef.current?.session_id === state.session_id) setNeedsSync(value); }} onForbidden={invalidateSession} onReference={visual ? openReference : undefined}/></div>
           <section className="save-panel panel" aria-labelledby="save-title" hidden={visual && drawer !== 'menu'} role={visual && drawer === 'menu' ? 'dialog' : undefined} aria-modal={visual && drawer === 'menu' ? true : undefined} onKeyDown={visual ? trapPanelFocus : undefined}>
             {visual && <button className="button drawer-close" onClick={() => setDrawer(null)}>继续游戏</button>}
             <h2 id="save-title">游戏进度</h2>
             {visual && <div className="presentation-settings"><button className="button sound-toggle" aria-pressed={presentation.muted} onClick={() => presentation.setMuted(value => !value)}>{presentation.muted ? '开启声音' : '静音'}</button><label><input type="checkbox" className="motion-toggle" checked={presentation.manualReduced || presentation.systemReduced} disabled={presentation.systemReduced} onChange={event => presentation.setManualReduced(event.target.checked)}/>减少动态效果</label></div>}
             {visual && state.statistics && <dl className="statistics-grid menu-statistics"><div><dt>用时</dt><dd data-stat="elapsed_seconds">{durationLabel(state.settlement?.elapsed_seconds ?? Math.floor(Math.max(0, clockNow - Date.parse(state.statistics.started_at)) / 1000))}</dd></div><div><dt>线索</dt><dd data-stat="clues_found">{state.statistics.clues_found}/{state.statistics.clues_total}</dd></div><div><dt>AI 提示</dt><dd data-stat="hint_count">{state.statistics.hint_count}</dd></div><div><dt>失误</dt><dd data-stat="mistake_count">{state.statistics.mistake_count}</dd></div><div><dt>隐藏发现</dt><dd data-stat="hidden_found">{state.statistics.hidden_found}/{state.statistics.hidden_total}</dd></div></dl>}
             {visual && <div className="menu-actions"><button className="button" disabled={pending} onClick={sync}>同步进度</button><button className="button" disabled={pending} onClick={() => setConfirmation('new')}>新游戏</button></div>}
-            <p>存档保存在本机并跟随当前游戏。每次保存都会新增一份，不覆盖已有记录；新游戏会使用另一份存档列表。</p>
+            <p>存档保存在本机并跟随当前游戏。每次保存都会新增一份，不覆盖已有记录；重新开始会保留已有存档。</p>
             <form className="save-slot-create" onSubmit={event => { event.preventDefault(); saveNewSlot(); }}>
               <label htmlFor="save-slot-name">存档名称（可选，最多40字）</label>
               <div className="save-slot-create-row"><input id="save-slot-name" className="save-slot-name" maxLength={40} value={saveName} disabled={pending || needsSync} placeholder="留空由系统命名" onChange={event => setSaveName(event.target.value)}/><button type="submit" className="button primary save-slot-create-button" disabled={pending || needsSync}>保存新存档</button></div>
@@ -350,7 +354,7 @@ export default function App() {
       {!visual && !visualEntry && <footer><span>校园实验室 · 认真观察，大胆推理</span><span>{state ? `关卡 ${state.level_version} · 进度 ${state.revision}` : '本地探索 · 手动游玩'}</span></footer>}
     </main>
     {visualReceipt?.tool === 'move' && visualReceipt.changed && <div className="room-transition" key={visualReceipt.event_id} aria-hidden="true"/>}
-    <dialog ref={dialogRef} className={visual || visualEntry ? 'stage-confirmation' : undefined} onCancel={() => { setConfirmation(null); setRestoreSaveId(null); setDeleteSaveId(null); }} onClose={() => { setConfirmation(null); setRestoreSaveId(null); setDeleteSaveId(null); }} aria-labelledby="confirmation-title"><h2 id="confirmation-title">{confirmation === 'new' ? '开始新的游戏？' : confirmation === 'slot-restore' ? '读取指定存档？' : confirmation === 'slot-delete' ? '删除这份存档？' : '重新开始当前游戏？'}</h2><p>{confirmation === 'new' ? '当前标签页将切换到新游戏，旧会话将无法从这里继续。' : confirmation === 'slot-restore' ? `当前进度将替换为“${saveSlots.find(slot => slot.save_id === restoreSaveId)?.name || '所选存档'}”保存的状态。读取后会清除当前临时输入和顺序草稿。` : confirmation === 'slot-delete' ? `确定删除“${selectedDeleteSlot?.name || '所选存档'}”？删除后无法恢复，也不会影响当前游戏进度。` : '这会清空当前探索进度和线索；已有存档仍可读取。'} </p><div className="dialog-actions"><button className="button" autoFocus onClick={() => { setConfirmation(null); setRestoreSaveId(null); setDeleteSaveId(null); }}>取消</button><button className="button primary" disabled={pending || (confirmation === 'slot-delete' && !selectedDeleteSlot)} onClick={() => confirmation === 'new' ? create() : confirmation === 'slot-restore' ? restoreSelectedSlot() : confirmation === 'slot-delete' ? deleteSelectedSlot() : control('reset')}>{confirmation === 'slot-restore' ? '读取此存档' : confirmation === 'slot-delete' ? '确认删除' : '确认开始'}</button></div></dialog>
+    <dialog ref={dialogRef} className={visual || visualEntry ? 'stage-confirmation' : undefined} onCancel={() => { setConfirmation(null); setRestoreSaveId(null); setDeleteSaveId(null); }} onClose={() => { setConfirmation(null); setRestoreSaveId(null); setDeleteSaveId(null); }} aria-labelledby="confirmation-title"><h2 id="confirmation-title">{confirmation === 'new' ? '开始新的游戏？' : confirmation === 'slot-restore' ? '读取指定存档？' : confirmation === 'slot-delete' ? '删除这份存档？' : '重新开始当前游戏？'}</h2><p>{confirmation === 'new' ? (connection ? '重新开始当前经典关卡，清空当前探索进度；已有手动存档仍保留，可以稍后读取。' : '当前标签页将切换到新游戏，旧会话将无法从这里继续。') : confirmation === 'slot-restore' ? `当前进度将替换为“${saveSlots.find(slot => slot.save_id === restoreSaveId)?.name || '所选存档'}”保存的状态。读取后会清除当前临时输入和顺序草稿。` : confirmation === 'slot-delete' ? `确定删除“${selectedDeleteSlot?.name || '所选存档'}”？删除后无法恢复，也不会影响当前游戏进度。` : '这会清空当前探索进度和线索；已有存档仍可读取。'} </p><div className="dialog-actions"><button className="button" autoFocus onClick={() => { setConfirmation(null); setRestoreSaveId(null); setDeleteSaveId(null); }}>取消</button><button className="button primary" disabled={pending || (confirmation === 'slot-delete' && !selectedDeleteSlot)} onClick={() => confirmation === 'new' ? create() : confirmation === 'slot-restore' ? restoreSelectedSlot() : confirmation === 'slot-delete' ? deleteSelectedSlot() : control('reset')}>{confirmation === 'slot-restore' ? '读取此存档' : confirmation === 'slot-delete' ? '确认删除' : '确认开始'}</button></div></dialog>
   </div>;
 }
 
