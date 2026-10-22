@@ -292,3 +292,7 @@ Legalclone of reportedearlyR2: N01普通下一步与N02同history追问两次真
 ### 2026-10-21 next-version handoff
 
 用户准备在新对话构建下一版本；新增 docs/HANDOFF-20261021.md 作为全面交接入口，涵盖当前功能、架构、启动、存档/AI边界、最新修复及历史证据导航。产品基线9eeea511673867402b269124b6d1b739eb25a68d；GitHub只读确认main相同、公开、作者/提交者liy222。UTF-8与50个具体引用存在性核验exit0。仅文档变更，无新产品测试/构建/付费调用/用户数据库修改；下一版范围等待用户新计划，不自动新增功能。现有未跟踪报告、素材和runtime保留。
+
+
+### 2026-10-23 v5.0 execution GO
+User requests executing accepted v5 plan with GitHub commits. Read-only workspace/GitHub CLI/main baseline confirmed fe62d59, product9eeea51, liy222 identity; tracked clean before v5, original untracked preserved. Detailed design saved docs/v5-build-plan.md, separate development branch created. Backend/Frontend Sol and mechanical Delivery Luna tasks created with explicit paths. Main handles T0/AI/integration; current v5 acceptance remains pending, no test/build/paid result claimed.

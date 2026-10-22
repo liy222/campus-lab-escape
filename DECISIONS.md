@@ -223,3 +223,7 @@ Accepttestedimplementation boundaries andQ05login improvement, notallmodelqualit
 
 ### 2026-10-18 generic next-step uses public actions
 Genericnextstep anddeicticclarificationofit needonecurrentlylegalpublicstep, notalloldpuzzlefacts. Explicitrelations retainknowncitations. Exactdiscoveredclockdata may bediscussed without treatingit asassembledpassword; credential/inputcontexts remainblocked. Existingmanual UI clicksinspect directly, so model-side labels say点击物件查看 whilebackendaffordance labelsstaycompatible. Rejectiontraces retainonlyfourfixedcategories, no rejectedprose.
+
+
+### 2026-10-23 v5.0 accepted engineering decisions
+Use declarative generated data + server compilation/proof and request-bound rules over existing Store; separate v5 DB with marker precheck, no old-save migration; account Cookie+CSRF+object ownership, temporary BYOK and fixed provider; generic versioned hand-painted asset roles and server-known clue overlays; preserve classic route. Full alternatives/costs: docs/v5-build-plan.md ADR01-06. User chose strict paid evaluator gate: historical unknown charges retained, no new paid judgement until gate legitimately satisfied. No arbitrary script levels, new provider, imagegen, public deployment or Actions.

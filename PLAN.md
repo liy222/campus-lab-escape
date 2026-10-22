@@ -262,3 +262,7 @@ Resolve genericnextstep context loss/clockfalsepositive, simplifycompanionfailur
 
 ### 2026-10-18 ordinary next-step repair accepted
 Publiclegalstep/clarificationcontext, knownclocknarrowguard andcontrolleddiagnostics fixed; companionfailurecopy singular andaccurate. Actual2newresponses delivered inreportedearlyR2clone; finalinspectwordingalignedwithdirectobjectclick onlyofflinechecked. Focusedjointregression+unique build0; preservefailednewQAepochs andsemanticslimits, thennormalGitHub sync.
+
+
+### 2026-10-23 v5.0 implementation started
+Accepted scope and full task/acceptance design: docs/v5-build-plan.md. T0 records baseline/26 MUST/20 scenarios/8 task cards; T1 accounts and T2 generated kernel start additively, then T3 generation, T4 generic art scene and launcher, T5 saves/AI/sync, T6 experiments/evaluator, T7 stable independent QA. New codex/v5-campus-generation branch; milestone normal commit/push liy222. Strict evaluator unknown gate retained. Current product tests/paid calls for v5 are not yet run.
