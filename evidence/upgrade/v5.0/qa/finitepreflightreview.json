@@ -1,0 +1,98 @@
+{
+  "kind": "independent_finite_no_network_preflight",
+  "utc": "2026-10-22T17:41:55.026679+00:00",
+  "operator": "independent QA agent",
+  "runner_sha256": "6d4c28468710f53896769d1d3d90fe54d4cfb80a7d27848ff6230a4aa86361d1",
+  "preview_sha256": "243f39c6b48c4ae9d2f7920e437df8d42e688728142ecf25887cc6963a29611b",
+  "source_map_mismatches_at_this_check": [
+    "backend/app/domain/generated.py"
+  ],
+  "checks": {
+    "fixed_3_generation_cases": true,
+    "generation_caps_each_0_20": true,
+    "placeholder_companions_not_actual_approved_payloads": true,
+    "actual_A1_requires_real_generated_public_stage": true,
+    "actual_A2_requires_successful_actual_A1_history": true,
+    "exact_payload_saved_before_one_dispatch": true,
+    "single_use_exclusive_marker_and_fsynced_attempt_journal": true,
+    "fixed_official_model_endpoint": true,
+    "canonical_10CNY_ledger_only": true,
+    "prior_3_unknown_preserved_not_waived_for_evaluator": true,
+    "new_unknown_or_frozen_or_concurrent_ledger_change_stops": true,
+    "reported_model_anomaly_success_and_error_stops": true,
+    "keys_cookies_passwords_scrubbed_and_forbidden_model_content_stops": true,
+    "TEMP_game_v5_SQLite_before_main_import": true,
+    "automatic_retries_zero": true,
+    "maximum_calls_5_cap_0_70": true,
+    "no_evaluator_dispatch": true
+  },
+  "exact_preview_bounds": [
+    {
+      "case_id": "G1",
+      "payload_utf8_bytes": 8481,
+      "cost_upper_cny": 0.132232,
+      "recorded_bound_match": true,
+      "payload_hash_match": true,
+      "placeholder_only": false
+    },
+    {
+      "case_id": "G2",
+      "payload_utf8_bytes": 8504,
+      "cost_upper_cny": 0.132416,
+      "recorded_bound_match": true,
+      "payload_hash_match": true,
+      "placeholder_only": false
+    },
+    {
+      "case_id": "G3",
+      "payload_utf8_bytes": 8511,
+      "cost_upper_cny": 0.132472,
+      "recorded_bound_match": true,
+      "payload_hash_match": true,
+      "placeholder_only": false
+    },
+    {
+      "case_id": "A1",
+      "payload_utf8_bytes": 2700,
+      "cost_upper_cny": 0.042784,
+      "recorded_bound_match": true,
+      "payload_hash_match": true,
+      "placeholder_only": true
+    },
+    {
+      "case_id": "A2",
+      "payload_utf8_bytes": 2971,
+      "cost_upper_cny": 0.044952,
+      "recorded_bound_match": true,
+      "payload_hash_match": true,
+      "placeholder_only": true
+    }
+  ],
+  "logic_conclusion": "Finite executor logic reviewed as adequate for the stated five product samples; preview is not real generation success.",
+  "dispatch_status": "NOT_AUTHORIZED_BY_QA_NOW",
+  "required_before_Main_dispatch": [
+    "Offline product critical MUST, affected planner verification, final build/browser and integration accepted.",
+    "After planner source fix, current v2 preview source hash is stale; Main must prepare and bind a fresh exact preview, preserving old preview, and obtain narrow read-only review.",
+    "Recompute actual A1/A2 payloads and <=0.05 bounds at dispatch from real generated public stage/history; placeholders must never be dispatched."
+  ],
+  "actual_checks": [
+    {
+      "command": "Read runner and offline-preview-v2/revision-v2 without importing or executing runner",
+      "exit_code": 0
+    },
+    {
+      "command": "Recompute each serialized preview SHA256, UTF-8 byte bound and integer upper cost without credentials/ledger/network",
+      "exit_code": 0
+    }
+  ],
+  "credentials_read": false,
+  "canonical_ledger_opened": false,
+  "game_database_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "limitations": [
+    "Static control-flow review and arithmetic recomputation, not a fake paid run or provider quality judgement.",
+    "Existing Owner DummyController branch checks remain Owner evidence; QA has not represented them as independently rerun.",
+    "No Main execute permission is inferred from this report."
+  ]
+}

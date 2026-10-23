@@ -1,0 +1,34 @@
+{
+  "status": "SOURCE STOP",
+  "owner": "Frontend, narrow QA P1 repair",
+  "finding": "review/findings/v5-generated-take-closeup.md",
+  "files": [
+    "frontend/src/v5/GeneratedPlay.tsx"
+  ],
+  "before_sha256": "0bc6d8aba3562a862d30dcae001dd6fbe1c327777ba614f904b165b2f1b898b1",
+  "after_sha256": "ed3c8b389f9478fd19a1c2eef8aa1d24b51c0d3108ec7f3242849560644edb01",
+  "change": "After accepting authoritative public state, clear only a view whose object no longer exists. Existing valid closeups and room/generation/revision guards remain unchanged.",
+  "exact_delta": {
+    "inserted_statement": " setView(open => open && !next.objects.some(object => object.object_id === open) ? null : open);",
+    "single_insertion": true,
+    "removing_inserted_bytes_exactly_restores_before": true,
+    "original_newline_style_preserved": true
+  },
+  "commands": [
+    {
+      "command": "Python byte-preserving exact single insertion and reversal assertion",
+      "exit_code": 0
+    },
+    {
+      "command": "Node TypeScript createSourceFile TSX syntax-only parser; no emit or target execution",
+      "exit_code": 0
+    }
+  ],
+  "owner_builds": 0,
+  "owner_browser_runs": 0,
+  "paid_calls": 0,
+  "limitations": [
+    "No build/browser rerun by Owner as instructed. Main freeze then independent QA must verify taking immediately re-enables input without Escape, plus affected build/remaining browser checks.",
+    "No claim of independent acceptance or model/runtime verification."
+  ]
+}

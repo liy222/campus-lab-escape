@@ -1,0 +1,76 @@
+{
+  "kind": "real_sample_runner_offline_revision_v2",
+  "timestamp_utc": "2026-10-22T17:36:44.473183+00:00",
+  "scope": "Only evidence real-sample executor model anomaly stop guard and fixed preview filename",
+  "before_runner_sha256": "c41b5f5a3891bb4c12f13793cb55c43bb9204bc69460aaf727c7d678f3e76524",
+  "after_runner_sha256": "6d4c28468710f53896769d1d3d90fe54d4cfb80a7d27848ff6230a4aa86361d1",
+  "original_preview_preserved": true,
+  "original_preview_sha256": "f765535c263d3b6174c21df60afba0108f2020ab69e622765a42ee8da3ad0f42",
+  "active_fixed_preview": "offline-preview-v2.json",
+  "active_candidate_sha256": "3951528ad79b968a5a92eb741b73b0b2a700f4ec43d59948b884e08e99a5924d",
+  "delta": [
+    "Both success and exception paths inspect reported_model using the existing provider five-name allowlist.",
+    "Any present diagnostic model outside allowlist (including missing/None diagnostic model) sets MODEL_ANOMALY_STOP.",
+    "Anomalous success stops before writing provider content; exception journal records only fixed MODEL_ANOMALY_STOP, never anomalous model value.",
+    "Prepare and execute now both load the fixed v2 preview; original preview unchanged."
+  ],
+  "actual_commands": [
+    {
+      "command": "$env:PYTHONPATH='.'; & 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 evidence/upgrade/v5.0/real-samples/run.py --prepare",
+      "exit_code": 0,
+      "tool_chunk": "c31f0f"
+    },
+    {
+      "command": "inline pure DummyController/MockInner success+exception model guard checks",
+      "exit_code": 0,
+      "cases": 5
+    }
+  ],
+  "offline_checks": [
+    {
+      "path": "exception",
+      "model_case": "unapproved",
+      "expected_stop": true,
+      "actual_stop": "MODEL_ANOMALY_STOP",
+      "network_calls": 0
+    },
+    {
+      "path": "success",
+      "model_case": "unapproved",
+      "expected_stop": true,
+      "actual_stop": "MODEL_ANOMALY_STOP",
+      "network_calls": 0
+    },
+    {
+      "path": "exception",
+      "model_case": "missing",
+      "expected_stop": true,
+      "actual_stop": "MODEL_ANOMALY_STOP",
+      "network_calls": 0
+    },
+    {
+      "path": "exception",
+      "model_case": "allowlisted",
+      "expected_stop": false,
+      "actual_stop": null,
+      "network_calls": 0
+    },
+    {
+      "path": "success",
+      "model_case": "allowlisted",
+      "expected_stop": false,
+      "actual_stop": null,
+      "network_calls": 0
+    }
+  ],
+  "key_loaded": false,
+  "canonical_ledger_opened": false,
+  "game_database_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "execute_invoked": false,
+  "limitations": [
+    "Offline synthetic branch checks only, not paid API validation.",
+    "Await independent read-only QA and Main execution authorization."
+  ]
+}

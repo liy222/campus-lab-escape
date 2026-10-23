@@ -1,0 +1,18 @@
+{
+  "case_id": "G2",
+  "fictional_test_content": true,
+  "content_redacted": "{\"title\":\"校园天文社观测资料交接\",\"story\":\"天文社观测准备室与资料室即将关闭。社员需核对记录、复用交接道具，完成关闭前的检查。\",\"rooms\":[{\"room_id\":\"R_prep\",\"name\":\"观测准备室\",\"description\":\"望远镜箱旁散落着交接记录，终端还亮着。\",\"background_id\":\"neutral_lab\",\"objects\":[{\"object_id\":\"O_prep_key\",\"name\":\"交接钥匙\",\"description\":\"天文社通用的交接钥匙，可重复使用。\",\"slot\":0,\"art_id\":\"key\",\"kind\":\"item\",\"item_id\":\"I_handover_key\"},{\"object_id\":\"O_prep_note1\",\"name\":\"观测批次单\",\"description\":\"列出本季观测批次的编号。\",\"slot\":1,\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"C_batch\"},{\"object_id\":\"O_prep_puz_code\",\"name\":\"批次登记终端\",\"description\":\"按批次单输入交接校验码。\",\"slot\":2,\"art_id\":\"terminal\",\"kind\":\"puzzle\",\"puzzle_id\":\"P_code_batch\"},{\"object_id\":\"O_prep_puz_item\",\"name\":\"交接柜\",\"description\":\"锁上的小柜，需交接钥匙开启。\",\"slot\":3,\"art_id\":\"cabinet\",\"kind\":\"puzzle\",\"puzzle_id\":\"P_item_cabinet\"}],\"locked_by\":[]},{\"room_id\":\"R_archive\",\"name\":\"资料室\",\"description\":\"档案柜整齐排列，墙面贴着设备编号表。\",\"background_id\":\"neutral_archive\",\"objects\":[{\"object_id\":\"O_arch_note2\",\"name\":\"读取位置表\",\"description\":\"说明按第几位读取批次编号。\",\"slot\":0,\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"C_positions\"},{\"object_id\":\"O_arch_note3\",\"name\":\"设备编号对照\",\"description\":\"记录符号与设备ID的对应。\",\"slot\":1,\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"C_symbols\"},{\"object_id\":\"O_arch_circuit\",\"name\":\"供电检查盘\",\"description\":\"按值班记录接通检查线路。\",\"slot\":2,\"art_id\":\"circuit\",\"kind\":\"puzzle\",\"puzzle_id\":\"P_circuit_power\"},{\"object_id\":\"O_arch_puz_seq\",\"name\":\"设备关机面板\",\"description\":\"依次输入四台设备ID完成关机。\",\"slot\":3,\"art_id\":\"panel\",\"kind\":\"puzzle\",\"puzzle_id\":\"P_seq_shutdown\"}]}],\"clues\":[{\"clue_id\":\"C_batch\",\"tokens\":[\"A\",\"S\",\"T\",\"R\",\"O\",\"9\",\"2\",\"5\"],\"indices\":[2,5,8,1]},{\"clue_id\":\"C_positions\",\"indices\":[2,5,8,1]},{\"clue_id\":\"C_symbols\",\"tokens\":[\"A\",\"B\",\"C\",\"D\"],\"symbol_map\":{\"A\":\"TEL1\",\"B\":\"CAM2\",\"C\":\"MNT3\",\"D\":\"DOME4\"}}],\"puzzles\":[{\"puzzle_id\":\"P_code_batch\",\"room_id\":\"R_prep\",\"mechanism\":\"code\",\"prerequisite_ids\":[],\"required_item_id\":null,\"clue_ids\":[\"C_batch\",\"C_positions\"],\"recipe\":\"index\"},{\"puzzle_id\":\"P_item_cabinet\",\"room_id\":\"R_prep\",\"mechanism\":\"item\",\"prerequisite_ids\":[\"P_code_batch\"],\"required_item_id\":\"I_handover_key\",\"clue_ids\":[]},{\"puzzle_id\":\"P_circuit_power\",\"room_id\":\"R_archive\",\"mechanism\":\"circuit\",\"prerequisite_ids\":[\"P_item_cabinet\"],\"required_item_id\":null,\"clue_ids\":[]},{\"puzzle_id\":\"P_seq_shutdown\",\"room_id\":\"R_archive\",\"mechanism\":\"sequence\",\"prerequisite_ids\":[\"P_code_batch\",\"P_circuit_power\"],\"required_item_id\":null,\"clue_ids\":[\"C_batch\",\"C_positions\",\"C_symbols\"],\"recipe\":\"symbol_map\"}]}",
+  "content_raw_sha256": "d435a43c35cbdb0ad990f03655e6c00102da3c0c94f94ad68942a85dcc639d5d",
+  "usage": {
+    "prompt_tokens": 2118,
+    "completion_tokens": 870,
+    "total_tokens": 2988,
+    "prompt_cache_hit_tokens": 256
+  },
+  "requested_model": "deepseek-flash",
+  "reported_model": "deepseek-flash",
+  "finish_reason": "stop",
+  "call_id": "a38ea41f1ebb4e38b669da57cdb0d35b",
+  "cost_upper_cny": 0.01069424,
+  "secret_detected": false
+}

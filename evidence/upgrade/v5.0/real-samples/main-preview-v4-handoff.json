@@ -1,0 +1,29 @@
+{
+  "kind": "Main offline preview v4 handoff, not model execution",
+  "utc": "2026-10-23T06:36:15.722057+00:00",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "evidence\\upgrade\\v5.0\\real-samples\\run.py",
+    "--prepare"
+  ],
+  "actual_exit_code": 0,
+  "tool_chunk": "7f05a1",
+  "change": "Only fixed preview filename v3 to v4, exactly two byte substitutions, reverse matches preceding raw executor.",
+  "executor_sha256": "f4f9a560c39617acf6e5ed9a008fda99ecd4f58b4e3b36bd59feb18f35d5d025",
+  "preview_sha256": "a9dbe001bf445cfff6fda36c05656c9edef022708b064af313e4f09418640798",
+  "source_candidate_sha256": "58a4547e61e37503bd52516c0e0eebb183b5df5c67e5932c4e056caf6e1c8120",
+  "product_matches_candidate": "v5.0-authmaterial-611ca687f09f4732",
+  "payloads_and_bounds_identical_to_v3": true,
+  "prepare_key_loaded": false,
+  "prepare_ledger_opened": false,
+  "prepare_network_calls": 0,
+  "actual_model_calls": 0,
+  "remaining_gate": [
+    "Independent affected offline product QA",
+    "Independent v4 source/payload preflight read review",
+    "Main finite authorized execution only; evaluator forbidden"
+  ]
+}

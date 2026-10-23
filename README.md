@@ -1,5 +1,7 @@
 # 逃离校园实验室
 
+V5 目前是未发布的开发候选，启动、隔离与有限验证范围见本页末尾的 [V5 说明](#v5-开发候选未发布验收)。
+
 这是一个本地运行的三房间解谜游戏：规则由后端执行，AI 队友提供受限帮助；旧版本中的推进建议须由玩家确认。当前画面版本为 v4.2：三个房间均使用 Phaser 4.2.1 Canvas、固定视角点选和局部特写；v4.2-handpainted 增量已将80张手绘状态/特写物件图与5张净背景接入运行画面，原有84项 SVG 保留，并加入全屏结算、静音与减少动画选项、缺失素材重试和按需加载。另经 stage-ui 版式修正，将桌面 HUD、背包和操作控件置于 Canvas 画框内，窄屏表单作为场景内面板显示；legacy 入口保留且与默认视觉入口互斥。Room 3 终检控制台本轮修复已验证：即使 access_card 仍选中，也能打开已插入纸条的控制台、填写四个按钮，并通过控制台显式启动 FINAL_CHECK；服务器提交校验与答案不变，同版本存档兼容。服务重启后刷新页面即可使用。详情见[终检控制台修复验收](evidence/integration/panel-submit/accepted.json)。最新 closeup-panel 修正清理切换特写时的旧交互区域：背景不可点，当前热点和柜体/托盘内合法物品仍可操作；Room 3 插入 research_strip 后立即显示四台设备图形并允许本地编辑草稿，最终提交仍须进入 FINAL_CHECK。三房间特写不再显示重复的“观察”按钮；点击物品仍会触发观察，目镜等专用观察热点保留。游戏规则关卡仍为3.4.0，接口与 Schema 仍为1.4.0，原有启动器、AI 和多时刻本地存档继续使用。v4.2 联合 QA 的范围与限制见 [`v4.2 验收记录`](evidence/upgrade/v4.2/accepted.json)、[`v4.2 独立 QA 报告`](evidence/upgrade/v4.2/qa/result.json) 和 [`升级交付门槛`](release/UPGRADES.md)。v4.2 commit `74f6272b9204f352a6b598d3bd4273452f8184be` 与 tag `v4.2-final-rusty-visual` 已推送核实，GitHub 作者与提交者均为 `liy222`。v4.1 commit `161d3e6f25406d44eb55c48c295b86c7289d8f2c` 与 tag `v4.1-room2-rusty-visual` 已推送核实，GitHub 作者与提交者均为 `liy222`。v4.0 commit `1047e293ade70e446c9c76be0a0d751f3e3ad81a` 与 tag `v4.0-room1-rusty-visual` 已推送并核实，GitHub 作者与提交者均为 `liy222`。v3.4 commit `49a2f925a78055552781685e79ee96496bb9bdd6`、tag `v3.4-graybox-complete` 与多时刻存档增量 commit `8e491d7c4b4972cb4a3972627fde3a5fc98c28ee`、tag `v3.4-multiple-saves` 已推送并核实，作者与提交者均为 `liy222`。多时刻存档可分别命名并选择读取，重新开始会保留存档；验收见 [`多存档验收`](evidence/integration/multiple-saves/accepted.json) 和 [`独立报告`](review/findings/multiple-saves.md)。主要画面基线见 [`docs/visual-plan.md`](docs/visual-plan.md)，历史玩法升级规划见 [`docs/upgrade-plan.md`](docs/upgrade-plan.md)；更早版本的交付信息见 [`升级交付门槛`](release/UPGRADES.md)。
 
 v4.2-handpainted 已通过独立联合定向 QA：85张 PNG 静态核对87项 exit 0，前端构建52个模块、2.98秒、exit 0（仍有既有 Phaser 大包警告）。浏览器证据由多个范围组成：首轮201条记录在 R1/R2 和早期 R3 CARD_ACCEPTED 后因 QA 选中物品适配器断言失败而 exit 1；随后窄范围101条 exit 0、issues为空，另有75条 exit 0 的胜利页展示检查。计数未相加，也不是一次全程浏览器全绿。联合范围覆盖实际 R1/R2 与早期 R3、fixture 准备后的 R3 终检至 EXIT/胜利、多存档选择、刷新、一次后端进程重启、触屏/键盘、PNG 重试与按需加载。规则关卡3.4.0、API/Schema 1.4.0、AI和多时刻本地存档保持。QA 使用独立新数据库；没有重跑完整后端套件、启动根目录 CMD、OS 重启、付费模型调用或真人通关时间验收。详情见 [`手绘接入验收`](evidence/integration/handpainted/accepted.json)、[`QA 结果`](evidence/integration/handpainted/qa/result.json) 和 [`素材/元数据交付记录`](evidence/integration/handpainted/assets/report.json)。手绘接入提交 `041514d1691353deea8a52bfb2206f3678207c3c` 与标签 `v4.2-handpainted` 已推送至私有远端并核实，GitHub 作者与提交者均为 `liy222`。
@@ -102,10 +104,26 @@ $env:SQLITE_PATH = './data/game-v1.sqlite'
 本轮 AI 伙伴质量修正仅获有限接受：新的 strict JSON mode 与上下文减噪后，唯一真实 Q05 登录样本通过适用质量项；Q01/Q03 因非 JSON 被拦、Q02 跳过、Q04 的无依据旧线索联系均保留为未接受结果。离线验证来自两个源码阶段，不能合并成同一候选全绿；尚未验证连问、柜体/线路新候选真实质量或真人体验。详情见 [独立 QA 结论](evidence/integration/ai-companion-quality/qa/final-review.json) 与[发现记录](review/findings/ai-companion-quality.md)。
 2026-10-18：AI 伙伴 next-step 修复完成定向回归与构建；真实两轮问答均正常交付，最后的模型用词调整仅离线核对，不构成全面质量认证。重启一键启动器后生效，现有存档可继续使用，无需重开。N02 的“观察”按钮措辞仍属弱项；未保存的旧拒绝回复具体触发原因未知。详见[独立 QA 限定结论](evidence/integration/companion-nextstep/qa/final-review.json)。
 
-## V5（开发中）
+## V5 开发候选（未发布验收）
 
-V5 正在作为独立玩法版本实现，使用新的 `data/game-v5.sqlite`，不复用或迁移现有 V3.4 数据库。当前仅完成了 V5 启动与检查入口；版本功能仍在实现，正式 QA/验收结果尚未形成，不应据此视为已交付。
+V5 是与经典版本并存的本机开发候选，尚未达到发布验收。新版默认使用 `data/game-v5.sqlite`，不会迁移或复用旧库；旧入口 [`启动游戏.cmd`](启动游戏.cmd) 与 `data/game-v3.4.sqlite` 保留。新版入口是 [`启动新版.cmd`](启动新版.cmd)，生产预览固定为 `http://127.0.0.1:8001/`，须先构建 `frontend/dist-v5/`。开发模式在 `127.0.0.1:5174/`，从项目 Python 启动：
 
-新入口为根目录 [`启动新版.cmd`](启动新版.cmd)，生产预览地址为 `http://127.0.0.1:8001/`，仅在健康检查通过后打开浏览器。生产模式要求先有 `frontend/dist-v5/`；V5 启动器不会自动安装依赖、构建或删除数据，也不会结束占用端口的其他进程。服务固定使用后端 `127.0.0.1:8001` 与开发前端 `127.0.0.1:5174`。开发模式可从仓库根目录运行 `python -m scripts.run_v5 --dev --open-browser`，默认 AI 为 mock；QA 可通过 `--database <临时目录>/game-v5.sqlite` 使用独立临时库，启动器只接受带 V5 标记的已有数据库。
+```powershell
+$env:PYTHONUTF8 = '1'
+& 'C:\Users\liyh\.conda\envs\1\python.exe' -B -X utf8 -m scripts.run_v5 --dev --open-browser
+```
 
-手动构建 V5 前端时设置 `VITE_GAMEPLAY_VERSION=v5` 后运行 `npm --prefix frontend run build`，产物写入 `frontend/dist-v5/`。按范围运行 `scripts/check_v5.py`；缺失的 QA 套件会明确报告 `NOT_READY`，不会伪报通过。启动和版本范围详见 [`release/V5.md`](release/V5.md)。
+手动构建新版前端：
+
+```powershell
+$env:VITE_GAMEPLAY_VERSION = 'v5'
+npm.cmd --prefix frontend run build
+```
+
+V5 本机私人账户不是云账户。经典玩法、已经生成的关卡和免费提示不需要 Key；新关卡生成才需要临时输入 BYOK。生成失败不会自动重试并产生额外付费调用。启动器不会安装依赖、自动构建、删除旧数据或结束占用端口的其他进程；QA 临时库选项只用于隔离验证。完整启动细节见 [`release/V5.md`](release/V5.md)。
+
+离线独立验证只对记录的候选与范围成立：共覆盖 38 个网页动作、归档与恢复、重载和后端进程重启，以及 3 个浏览器视口的布局检查；不同源码阶段的定向检查不相加为一次全绿。四项定向发现均已关闭，详见[离线联合复核](review/findings/v5-offline-joint.md)和[离线结果](evidence/upgrade/v5.0/qa/final-offline-result.json)。这不证明真实生成质量或整体发布验收。
+
+随后一次真实生成样本运行实际调用模型 3 次，G1/G2/G3 均被准入校验拒绝，A1/A2 因没有成功生成关卡而跳过；无自动重试、未调用付费评价器。按记录的保守用量上界增量为 ¥0.03128048（不是供应商账单）；原有 3 条未知调用仍未知。细节见[真实样本结果](evidence/upgrade/v5.0/real-samples/result.json)及[独立复核](review/findings/v5-real-samples-review.md)。因此 GEN-01 的真实生成成功与质量仍未证实。之后新提示候选的 11 项窄检查离线通过，尚无真实复测；下一轮真实调用需用户另行明确同意。
+
+评价器 C1/C2/C3 有限声明已完成登记校验（53 个源码文件、9 个登记产物）；CLI precheck 为 READY，但确定性判读为 3 项 `INSUFFICIENT_EVIDENCE`，并非产品测试失败，也不代表 PASS。付费评价因 3 条历史未知调用而严格阻塞；没有真实模型判读时，不将任何声明标为 PASS。其他已知限制包括：两个冷启动标签页同时且都没有 Cookie 时可能需要手动刷新；2000 字全由四字节 Unicode 构成的输入可能触及单次 ¥0.20 预算上限而被拒绝；当前目录是通用素材，不是大量定制校园美术。当前没有 V5 发布 tag、合并到 main 或部署。

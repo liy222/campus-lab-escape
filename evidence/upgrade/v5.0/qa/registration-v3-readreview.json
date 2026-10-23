@@ -1,0 +1,37 @@
+{
+  "kind": "independent_read_only_registration_v3_projection_review",
+  "utc": "2026-10-23T12:28:15.401523+00:00",
+  "exit_code": 0,
+  "schema_valid": true,
+  "sources": 53,
+  "evidence_artifacts": 9,
+  "exact_recorded_and_current_source_subset": true,
+  "original_actual_command_exit": 0,
+  "checks_exact_raw_projection": true,
+  "artifact_and_installation_hashes_match": true,
+  "window_utf8_sizes": {
+    "v5.0-engineering:V5-C1:summary": 8481,
+    "v5.0-engineering:V5-C2:summary": 4636,
+    "v5.0-engineering:V5-C3:summary": 3934,
+    "v5.0-engineering:RAW1:identity": 856,
+    "v5.0-engineering:RAW2:identity": 6567,
+    "v5.0-engineering:RAW3:identity": 2825,
+    "v5.0-engineering:RAW4:identity": 1356,
+    "v5.0-engineering:RAW5:identity": 434
+  },
+  "registration_sha256": "31769fbd967d550d4bd30bf988d84de1f6466e4a763c6e389b69ac767aa3e614",
+  "active_pin_at_review": null,
+  "target_code_executed": false,
+  "qa_model_calls": 0,
+  "test_preparation_ast_only": {
+    "path": "tests/v5/test_prompt_fixed.py",
+    "sha256": "833b2673c9615165a103ebefb24ff8b537dda861a9341d9ac596e922d26587d3"
+  },
+  "conclusion": "Source projection is sufficient for finite synthetic DSL admission/replay and authenticated ownership/archive Claims only; it does not certify the changed production prompt or GEN01. No repeated product execution is needed for this projection.",
+  "wording_note": "C2 includes an ai/turns request denied404 before service execution. Prefer no admitted AI turns or production AI service invocation over no AI turns.",
+  "limits": [
+    "Registration not yet activated/pinned; actual precheck/deterministic outcome awaits Main freeze and GO.",
+    "No evaluation semantic PASS or universal security/model quality/human approval certified.",
+    "Only syntax preparation completed for new prompt tests; zero new formal tests run."
+  ]
+}

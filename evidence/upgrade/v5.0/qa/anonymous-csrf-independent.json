@@ -1,0 +1,29 @@
+{
+  "kind": "independent isolated anonymous-CSRF cross-tab counterexample",
+  "utc": "2026-10-23T06:24:38.882557+00:00",
+  "operator": "independent QA agent",
+  "command": "TEMP V5 TestClient shared cookie jar: GETcsrf twice, submit first page token then latest page token",
+  "exit_code": 0,
+  "observations": {
+    "anonymous_cookie_rotates_on_second_get": true,
+    "csrf_tokens_changed": true,
+    "earlier_tab_status": 403,
+    "earlier_tab_error": "CSRF_FAILED",
+    "latest_tab_status": 201
+  },
+  "source_before": {
+    "backend/app/api/v5.py": "ea042ff760c8688f899988b3b7b3ef117d565d7fa065db9ed00b07e7469f3dcc",
+    "backend/app/storage/v5.py": "46449e525eed09cd093325b468cd7365cb3b9f2b5f504972408aa95d72d2552c",
+    "backend/app/main.py": "f17f5de8a9921fbfa07997255279c2e109c1e9eaf0a053010233f851f623a696"
+  },
+  "source_after": {
+    "backend/app/api/v5.py": "ea042ff760c8688f899988b3b7b3ef117d565d7fa065db9ed00b07e7469f3dcc",
+    "backend/app/storage/v5.py": "46449e525eed09cd093325b468cd7365cb3b9f2b5f504972408aa95d72d2552c",
+    "backend/app/main.py": "f17f5de8a9921fbfa07997255279c2e109c1e9eaf0a053010233f851f623a696"
+  },
+  "player_database_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "secret_values_recorded": false,
+  "limitation": "Shared-cookie two-page protocol reproduced without physical browser concurrency; actual browser failure supplies UI race evidence."
+}

@@ -1,0 +1,77 @@
+{
+  "kind": "independent_v4_narrow_finite_preflight",
+  "utc": "2026-10-23T06:42:02.989379+00:00",
+  "prior_logic_review": "evidence/upgrade/v5.0/qa/finitepreflightreview.json",
+  "prior_v3_review": "evidence/upgrade/v5.0/qa/preflightreview-v3.json",
+  "runner_sha256": "f4f9a560c39617acf6e5ed9a008fda99ecd4f58b4e3b36bd59feb18f35d5d025",
+  "preview_v4_sha256": "a9dbe001bf445cfff6fda36c05656c9edef022708b064af313e4f09418640798",
+  "exact_byte_delta_only_two_fixed_preview_filenames": true,
+  "source_mismatches": [],
+  "backend_candidate_differences": [],
+  "payload_checks": [
+    {
+      "case_id": "G1",
+      "payload_bound_same": true,
+      "payload_hash_valid": true,
+      "bound_valid": true,
+      "cost_upper_cny": 0.132232,
+      "placeholder_only": false
+    },
+    {
+      "case_id": "G2",
+      "payload_bound_same": true,
+      "payload_hash_valid": true,
+      "bound_valid": true,
+      "cost_upper_cny": 0.132416,
+      "placeholder_only": false
+    },
+    {
+      "case_id": "G3",
+      "payload_bound_same": true,
+      "payload_hash_valid": true,
+      "bound_valid": true,
+      "cost_upper_cny": 0.132472,
+      "placeholder_only": false
+    },
+    {
+      "case_id": "A1",
+      "payload_bound_same": true,
+      "payload_hash_valid": true,
+      "bound_valid": true,
+      "cost_upper_cny": 0.042784,
+      "placeholder_only": true
+    },
+    {
+      "case_id": "A2",
+      "payload_bound_same": true,
+      "payload_hash_valid": true,
+      "bound_valid": true,
+      "cost_upper_cny": 0.044952,
+      "placeholder_only": true
+    }
+  ],
+  "conclusion": "FINITE_PREFLIGHT_READY_PENDING_OFFLINE_GATE",
+  "unchanged_constraints": [
+    "Main personally executes only after offline gate",
+    "At most5 calls/0.70 CNY; fixed3 generation caps0.20 and2 companion caps0.05",
+    "Every actual payload bounded/saved before one dispatch; attempts/journal consumed on failure",
+    "A1 real generated public stage and A2 successful actual A1 history; placeholders never dispatch",
+    "Canonical10CNY ledger; historical3unknown unchanged, no evaluator authorization; newunknown/frozen/modelanomaly/secret/concurrentledgerchange stops",
+    "No automatic retry"
+  ],
+  "actual_checks": [
+    {
+      "command": "Read-only v4 runner inverse byte reconstruction, current source/candidate hash match and five exact payload SHA/integer fee recomputations",
+      "exit_code": 0
+    }
+  ],
+  "key_read": false,
+  "ledger_opened": false,
+  "game_database_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "limits": [
+    "Narrow static/arithmetic review only; no real model quality or generation success claim.",
+    "Offline gate still awaits the authorized remaining QA fixture and identity-only checks."
+  ]
+}

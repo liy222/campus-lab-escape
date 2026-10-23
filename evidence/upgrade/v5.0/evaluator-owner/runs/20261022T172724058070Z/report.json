@@ -1,0 +1,43 @@
+{
+  "actual_network_calls": 0,
+  "actual_paid_calls": 0,
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-m",
+    "evaluation.cli",
+    "precheck",
+    "--release",
+    "v5.0-engineering"
+  ],
+  "credentials_accessed": false,
+  "ended": "2026-10-22T17:27:24.163622+00:00",
+  "exit_code": 2,
+  "human_signoff": null,
+  "ledger_opened": false,
+  "limitations": [
+    "Synthetic calibration is not independent QA or real semantic evaluation.",
+    "Three historical unknown calls keep paid evaluation strictly blocked."
+  ],
+  "mode": "deterministic",
+  "precheck": {
+    "deterministic_findings": [],
+    "event_id": "v5-finite-engineering",
+    "generated_runtime_only": [],
+    "historical_unbound_records": [],
+    "issues": [
+      {
+        "code": "V5_REGISTRATION_NOT_READY"
+      }
+    ],
+    "product_commit": "UNREGISTERED",
+    "release_id": "v5.0-engineering",
+    "runtime_source_bindings": [],
+    "scope": "Read/hash registered data only; no target imports, subprocess, AGENTS execution, credentials or ledger.",
+    "source_identities": {},
+    "status": "NOT_READY"
+  },
+  "started": "2026-10-22T17:27:24.058037+00:00",
+  "synthetic": false,
+  "target_code_executed": false,
+  "teacher_approval": null
+}

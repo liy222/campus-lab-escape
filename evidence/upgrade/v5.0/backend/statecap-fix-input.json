@@ -1,0 +1,13 @@
+{
+  "kind": "statecap_owner_fix_input",
+  "timestamp_utc": "2026-10-22T17:40:30.114288+00:00",
+  "file": "backend/app/domain/generated.py",
+  "before_sha256": "85cf36705cdf488060347c8dadce7a53f409fc0d92377cc72ffb46e7f12e912e",
+  "after_sha256": "9013c53915c892e33428e5ceff71c6d74fe7467d207308611ad8e8d8615112f1",
+  "exact_delta": {
+    "before": "            if k not in seen: seen.add(k); queue.append((nxt,path+actions))",
+    "after": "            if k not in seen:\r\n                if len(seen)>=25000: raise ValueError('PROOF_UNKNOWN')\r\n                seen.add(k); queue.append((nxt,path+actions))"
+  },
+  "byte_reverse_delta_equals_original": true,
+  "scope": "Only reject unseen-state insertion when seen already contains25000; original loop and5s guards remain."
+}

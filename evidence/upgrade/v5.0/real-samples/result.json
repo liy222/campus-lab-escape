@@ -1,0 +1,132 @@
+{
+  "kind": "actual_paid_validation_run",
+  "run_id": "v5-real-samples-single-run-v1",
+  "candidate_sha256": "58a4547e61e37503bd52516c0e0eebb183b5df5c67e5932c4e056caf6e1c8120",
+  "end_utc": "2026-10-23T06:46:59.878573+00:00",
+  "exit_code": 1,
+  "cases": [
+    {
+      "case_id": "G1",
+      "api_status": 202,
+      "theme": "夜间校园图书馆闭馆巡查：找齐借阅资料并检查离馆装置，在一间阅览室内有序离开。",
+      "room_count": 1,
+      "difficulty": "easy",
+      "real_model_attempted": true,
+      "job": {
+        "job_id": "98e3b60afb88404e85f7e5054a50c976",
+        "status": "rejected",
+        "room_count": 1,
+        "difficulty": "easy",
+        "created_at": 1792738005.3182483,
+        "updated_at": 1792738009.3647754,
+        "level_id": null,
+        "error_code": "ADMISSION_REJECTED"
+      },
+      "status": "not_successful",
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "G2",
+      "api_status": 202,
+      "theme": "校园天文社观测资料交接：在观测准备室与资料室之间核对记录、复用交接道具，完成关闭前的检查。",
+      "room_count": 2,
+      "difficulty": "normal",
+      "real_model_attempted": true,
+      "job": {
+        "job_id": "6ee0205221b14fa5ab44f8db0dd2ea74",
+        "status": "rejected",
+        "room_count": 2,
+        "difficulty": "normal",
+        "created_at": 1792738009.4155097,
+        "updated_at": 1792738014.2245393,
+        "level_id": null,
+        "error_code": "ADMISSION_REJECTED"
+      },
+      "status": "not_successful",
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "G3",
+      "api_status": 202,
+      "theme": "校园生态实验楼标本交接：三间相连实验室保留采样资料与维护装置，需要跨房间核对材料后完成离楼检查。",
+      "room_count": 3,
+      "difficulty": "hard",
+      "real_model_attempted": true,
+      "job": {
+        "job_id": "21e3affee929401a839941da716aed12",
+        "status": "rejected",
+        "room_count": 3,
+        "difficulty": "hard",
+        "created_at": 1792738014.276685,
+        "updated_at": 1792738019.8448308,
+        "level_id": null,
+        "error_code": "ADMISSION_REJECTED"
+      },
+      "status": "not_successful",
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "A1",
+      "status": "skipped",
+      "reason": "NO_SUCCESSFUL_GENERATED_STAGE"
+    },
+    {
+      "case_id": "A2",
+      "status": "skipped",
+      "reason": "NO_SUCCESSFUL_GENERATED_STAGE"
+    }
+  ],
+  "attempted_case_ids": [
+    "G1",
+    "G2",
+    "G3"
+  ],
+  "sum_reserved_upper_cny": 0.39712,
+  "stopped_reason": null,
+  "automatic_retries": 0,
+  "evaluation_invoked": false,
+  "game_database": "TEMP only; removed after run",
+  "source_after": {
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/companion.py": "5fd0dbfa40689277b70f92f03168da3fae8229be8a5510ee020dbfb1523ac940",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/hints.py": "b6d3773d1066dd30d91691b60b2de89f150ec55ffb7ab9560cfd8e943ecbecb3",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "1c4f5c170f1bd1d303899c2ccf6d3185c258db214f47fff6f0d1e4b442eff85d",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "0e3ad7b1a93d9af43bea17f35ceeda76c1845b6d1fe138c9bd071fbf1a177be8",
+    "backend/app/ai/types.py": "9e7d1dacf68f1f42970885fff9a4b0f2fcce46baa29a7fa3fb78c42f3354a830",
+    "backend/app/ai/v5.py": "ecfdbefaf26bd2926c0e82243210e3887b5d8ccd9ba7363c6b8a26c2cac43fd5",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "70d7475cddb3f63a4334df8c8268f8d07af997540209173dadb90201f07807b8",
+    "backend/app/api/v5.py": "430a9df195e0c01787b7c5bd5b09af634eb5417ca15774437890b447747a6740",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+    "backend/app/domain/graybox_models.py": "ea21b1d81f09a4178fb3ec40cf32ae98960b8607b3589b247eb956bc72cb1b5a",
+    "backend/app/domain/graybox_rules.py": "2d6598034c30b8d50d01008ae8d0ed0843e42c2e4a84d46d80d737d0b97e655b",
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/mini_rules.py": "9104576bbb47c20d6f230c66a66d83c5e7835fd056dfc735e8a1f00876f1b49b",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/domain/save_models.py": "2dc073a8f8e94721d04ff39157c5e1c4b51ed8bc6f5e092e6ba2fa839cd03d8b",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/main.py": "f17f5de8a9921fbfa07997255279c2e109c1e9eaf0a053010233f851f623a696",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "6d7c98627f5219ad678815f0750abeb202b290adac769004059c77c433d8cdce",
+    "backend/app/storage/saves.py": "cbee6f356a6271a3d41ea365fef918c3c1678d24b9c9bf49dcc59e752d59af84",
+    "backend/app/storage/sqlite.py": "cb1f946f6377cb92a6776ec00513b4470be262ad59a907e3f17c1972c027994a",
+    "backend/app/storage/v5.py": "eb58009dbfd715d8eff4e28b2db3ea346ac11a3b2d822f80838445b849b70fba",
+    "backend/requirements.in": "3b735ecbb432e3367e8ab0468531f67019901d5d505957562fb8244f351d5317",
+    "backend/requirements.lock.txt": "31084ea7caf51d51e32ae5437d97aa69460b8bf9065f7a6bd8bf503df367ca3e",
+    "evidence/upgrade/v5.0/real-samples/run.py": "f4f9a560c39617acf6e5ed9a008fda99ecd4f58b4e3b36bd59feb18f35d5d025",
+    "frontend/src/assets/generated-catalog.json": "c702e73f0c8b234af95564b321652979ebd806a0093f008042e9c2a3fc9b80b8"
+  }
+}

@@ -16,6 +16,7 @@ export default function GeneratedPlay({client,run}:{client:V5Client;run:Run}){
  const [credentials,setCredentials]=useState({username:'',password:''});
  function apply(next:VisibleState,reconciled=false){const old=current.current;if(!alive.current||next.session_id!==run.session_id||old&&(next.revision<old.revision||retired.current.has(next.generation)))return false;
  if(old?.generation!==next.generation){if(old)retired.current.add(old.generation);setView(null);setDrawer(null);setItem(null);setCode('');setSequence([]);setCredentials({username:'',password:''});setConfirm(null);}else if(old?.room.room_id!==next.room.room_id){setView(null);setItem(null);setCode('');setSequence([]);}
+ setView(open => open && !next.objects.some(object => object.object_id === open) ? null : open);
  current.current=next as GeneratedState;setState(next as GeneratedState);if(reconciled)setUncertain(false);return true;}
  async function saves(){const r=await api.saveSlots(session);if(alive.current&&r.data.visible_state.generation===current.current?.generation)setSlots(r.data.slots);}
  async function sync(){const r=await api.state(session);if(apply(r.data.visible_state,true))await saves();}

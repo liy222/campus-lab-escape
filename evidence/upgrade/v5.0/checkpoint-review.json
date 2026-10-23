@@ -1,0 +1,48 @@
+{
+  "kind": "Main reviewed development checkpoint, not release acceptance",
+  "operator": "Main",
+  "utc": "2026-10-23T12:34:11.025472+00:00",
+  "actual_command": "Read-only current402 source map, sealed QA artifact SHA, actual paid-run saved-source/ledger-delta and active registration pin checks",
+  "actual_exit_code": 0,
+  "candidate_id": "v5.0-prompt-registration-f2aeeade8826fd47",
+  "source_count": 402,
+  "qa_integrity_checks": [
+    {
+      "report": "evidence/upgrade/v5.0/qa/final-offline-result.json",
+      "report_sha256": "aa00e8ecc5fcb3c83afc480bd4816bb3cc5ada86ed875f4709d1e993a1302267",
+      "matched_raw_artifacts": 104
+    },
+    {
+      "report": "evidence/upgrade/v5.0/qa/prompt-registration-result.json",
+      "report_sha256": "dcd45e73de4330f0d79077fc4d73af9f650bc3b713e9cc52314dc5d5c637a692",
+      "matched_raw_artifacts": 19
+    }
+  ],
+  "actual_model_attempts": 3,
+  "real_successful_generated_levels": 0,
+  "companion_real_calls": 0,
+  "new_cost_upper_cny": 0.03128048,
+  "historical_unknown_unchanged": true,
+  "current_prompt_only_offline_verified": true,
+  "evaluation_states": [
+    "INSUFFICIENT_EVIDENCE",
+    "INSUFFICIENT_EVIDENCE",
+    "INSUFFICIENT_EVIDENCE"
+  ],
+  "release_accepted": false,
+  "release_tag_created": false,
+  "main_merge_or_deployment": false,
+  "next_paid_round_authorized": false,
+  "main_viewed_actual_screenshots": [
+    "evidence/upgrade/v5.0/qa/browser-takefix/20261023T062042.556640Z-9c899a5f/G3-812.png",
+    "evidence/upgrade/v5.0/qa/browser-takefix/20261023T062042.556640Z-9c899a5f/victory.png",
+    "evidence/upgrade/v5.0/qa/browser-authmaterial/20261023T063801.567576Z-61ffd296/public-material-order.png"
+  ],
+  "limitations": [
+    "Joint finite offline scopes are not one new full-suite green claim.",
+    "Actual generation0/3 and A1/A2 skipped remain open; prompt fix has no paid retest.",
+    "Original paid source map is preserved; current AI module differs deliberately.",
+    "New round2 preview is read-reviewed preparation only and cannot dispatch before additional finite user authorization.",
+    "No universal safety, arbitrary solvability, physical-device, human timing or teacher approval assertion."
+  ]
+}

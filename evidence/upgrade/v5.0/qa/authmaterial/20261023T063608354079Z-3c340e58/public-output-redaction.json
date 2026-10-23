@@ -1,0 +1,26 @@
+{
+  "kind": "Public redaction copy, original execution evidence retained locally unchanged",
+  "operator": "Main",
+  "utc": "2026-10-23T12:36:52.636724+00:00",
+  "original_path": "evidence/upgrade/v5.0/qa/authmaterial/20261023T063608354079Z-3c340e58/output.txt",
+  "original_raw_sha256": "204875c0fa35889e8f81eda89b627989349ea25b99591ca4472184aee94a3da7",
+  "original_committed": false,
+  "original_ignored_and_unstaged": true,
+  "public_copy": "evidence/upgrade/v5.0/qa/authmaterial/20261023T063608354079Z-3c340e58/output.redacted.txt",
+  "public_copy_raw_sha256": "917e3f3b8a599656d4dab760b8ebe23d942c488d65c7211843eed8f54af62670",
+  "redacted_distinct_values": 2,
+  "content": "Random ephemeral anonymous cookie from isolated synthetic TEMP database in HTTPX failure traceback; not player data or configured API credential.",
+  "transform": [
+    "Replace every occurrence of the matched temporary nonce with a fixed redaction marker.",
+    "Normalize CRCRLF/CRLF presentation to LF in the explicitly derived public copy only."
+  ],
+  "original_command_exit_code": 1,
+  "original_outcomes_relabelled": false,
+  "sealed_original_qa_manifests_changed": false,
+  "limitations": [
+    "Original104-artifact QA manifest describes local sealed evidence; this sensitive original is intentionally absent from Git.",
+    "The committed redacted copy is derived data and does not claim the original raw hash."
+  ],
+  "actual_command_exit_code": 0,
+  "tests_or_paid_calls": 0
+}

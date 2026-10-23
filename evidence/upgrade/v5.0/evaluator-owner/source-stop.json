@@ -1,0 +1,599 @@
+{
+  "actual_runs": [
+    {
+      "calibration": {
+        "case_count": 12,
+        "false_pass": [],
+        "matches": 12,
+        "real_paid_calibration": false,
+        "synthetic_inputs": true
+      },
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "calibrate",
+        "--fixture-set",
+        "v5-k1-k6-v1",
+        "--mode",
+        "mock"
+      ],
+      "error_code": null,
+      "exit_code": 0,
+      "mode": "mock",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T172554024869Z/report.json",
+      "source_unchanged": null,
+      "states": [
+        "PASS",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "NOT_APPLICABLE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "calibration": {
+        "case_count": 15,
+        "false_pass": [],
+        "matches": 15,
+        "real_paid_calibration": false,
+        "synthetic_inputs": true
+      },
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "calibrate",
+        "--fixture-set",
+        "v5-k1-k6-v1",
+        "--mode",
+        "mock"
+      ],
+      "error_code": null,
+      "exit_code": 0,
+      "mode": "mock",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T172653263506Z/report.json",
+      "source_unchanged": null,
+      "states": [
+        "PASS",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "NOT_APPLICABLE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "calibration": {
+        "case_count": 15,
+        "false_pass": [],
+        "matches": 15,
+        "real_paid_calibration": false,
+        "synthetic_inputs": true
+      },
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "calibrate",
+        "--fixture-set",
+        "v5-k1-k6-v1",
+        "--mode",
+        "deterministic"
+      ],
+      "error_code": null,
+      "exit_code": 0,
+      "mode": "deterministic",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T172721957521Z/report.json",
+      "source_unchanged": null,
+      "states": [
+        "INSUFFICIENT_EVIDENCE",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "NOT_APPLICABLE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "calibration": null,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "precheck",
+        "--release",
+        "v5.0-engineering"
+      ],
+      "error_code": null,
+      "exit_code": 2,
+      "mode": "deterministic",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T172724058070Z/report.json",
+      "source_unchanged": null,
+      "states": []
+    },
+    {
+      "calibration": null,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "evaluate",
+        "--release",
+        "v5.0-engineering",
+        "--mode",
+        "deterministic"
+      ],
+      "error_code": null,
+      "exit_code": 2,
+      "mode": "deterministic",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T172724660814Z/report.json",
+      "source_unchanged": null,
+      "states": [
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "calibration": null,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "evaluate",
+        "--release",
+        "v5.0-engineering",
+        "--mode",
+        "mock"
+      ],
+      "error_code": null,
+      "exit_code": 2,
+      "mode": "mock",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T172725396534Z/report.json",
+      "source_unchanged": null,
+      "states": [
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "calibration": null,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "evaluate",
+        "--release",
+        "v5.0-engineering",
+        "--mode",
+        "paid"
+      ],
+      "error_code": "PRIOR_CALL_UNKNOWN_STOP",
+      "exit_code": 2,
+      "mode": "paid",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T172726208002Z/report.json",
+      "source_unchanged": null,
+      "states": []
+    },
+    {
+      "calibration": {
+        "case_count": 15,
+        "false_pass": [],
+        "matches": 15,
+        "real_paid_calibration": false,
+        "synthetic_inputs": true
+      },
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "calibrate",
+        "--fixture-set",
+        "v5-k1-k6-v1",
+        "--mode",
+        "mock"
+      ],
+      "error_code": null,
+      "exit_code": 0,
+      "mode": "mock",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T172844670247Z/report.json",
+      "source_unchanged": true,
+      "states": [
+        "PASS",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "NOT_APPLICABLE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "calibration": {
+        "case_count": 15,
+        "false_pass": [],
+        "matches": 15,
+        "real_paid_calibration": false,
+        "synthetic_inputs": true
+      },
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "calibrate",
+        "--fixture-set",
+        "v5-k1-k6-v1",
+        "--mode",
+        "deterministic"
+      ],
+      "error_code": null,
+      "exit_code": 0,
+      "mode": "deterministic",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173028363895Z/report.json",
+      "source_unchanged": true,
+      "states": [
+        "INSUFFICIENT_EVIDENCE",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "NOT_APPLICABLE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "calibration": null,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "precheck",
+        "--release",
+        "v5.0-engineering"
+      ],
+      "error_code": null,
+      "exit_code": 2,
+      "mode": "deterministic",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173030525075Z/report.json",
+      "source_unchanged": true,
+      "states": []
+    },
+    {
+      "calibration": null,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "evaluate",
+        "--release",
+        "v5.0-engineering",
+        "--mode",
+        "deterministic"
+      ],
+      "error_code": null,
+      "exit_code": 2,
+      "mode": "deterministic",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173031206008Z/report.json",
+      "source_unchanged": true,
+      "states": [
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "calibration": null,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "evaluate",
+        "--release",
+        "v5.0-engineering",
+        "--mode",
+        "mock"
+      ],
+      "error_code": null,
+      "exit_code": 2,
+      "mode": "mock",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173032027995Z/report.json",
+      "source_unchanged": true,
+      "states": [
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "calibration": null,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "evaluate",
+        "--release",
+        "v5.0-engineering",
+        "--mode",
+        "paid"
+      ],
+      "error_code": "PRIOR_CALL_UNKNOWN_STOP",
+      "exit_code": 2,
+      "mode": "paid",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173032815043Z/report.json",
+      "source_unchanged": true,
+      "states": []
+    },
+    {
+      "calibration": {
+        "case_count": 15,
+        "false_pass": [],
+        "matches": 15,
+        "real_paid_calibration": false,
+        "synthetic_inputs": true
+      },
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "calibrate",
+        "--fixture-set",
+        "v5-k1-k6-v1",
+        "--mode",
+        "mock"
+      ],
+      "error_code": null,
+      "exit_code": 0,
+      "mode": "mock",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173212194259Z/report.json",
+      "source_unchanged": true,
+      "states": [
+        "PASS",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE",
+        "NOT_APPLICABLE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "calibration": null,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "precheck",
+        "--release",
+        "v5.0-engineering"
+      ],
+      "error_code": null,
+      "exit_code": 2,
+      "mode": "deterministic",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173241199338Z/report.json",
+      "source_unchanged": true,
+      "states": []
+    },
+    {
+      "calibration": null,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "evaluate",
+        "--release",
+        "v5.0-engineering",
+        "--mode",
+        "deterministic"
+      ],
+      "error_code": null,
+      "exit_code": 2,
+      "mode": "deterministic",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173241838284Z/report.json",
+      "source_unchanged": true,
+      "states": [
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "calibration": null,
+      "command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-m",
+        "evaluation.cli",
+        "evaluate",
+        "--release",
+        "v5.0-engineering",
+        "--mode",
+        "paid"
+      ],
+      "error_code": "PRIOR_CALL_UNKNOWN_STOP",
+      "exit_code": 2,
+      "mode": "paid",
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173242617364Z/report.json",
+      "source_unchanged": true,
+      "states": []
+    }
+  ],
+  "cli_diff_numstat": "140\t137\tevaluation/cli.py",
+  "credentials_read": false,
+  "current_final_results": {
+    "deterministic_claims": {
+      "exit_code": 2,
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173241838284Z/report.json",
+      "states": [
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    "mock_calibration": {
+      "cases": 15,
+      "exit_code": 0,
+      "false_pass": [],
+      "matches": 15,
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173212194259Z/report.json"
+    },
+    "owner_check_exit": 0,
+    "owner_checks": 24,
+    "owner_command": [
+      "C:/Users/liyh/.conda/envs/1/python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "evidence/upgrade/v5.0/evaluator-owner/check.py"
+    ],
+    "paid": {
+      "code": "PRIOR_CALL_UNKNOWN_STOP",
+      "exit_code": 2,
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173242617364Z/report.json"
+    },
+    "precheck": {
+      "exit_code": 2,
+      "path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173241199338Z/report.json",
+      "status": "NOT_READY"
+    }
+  },
+  "failed_or_unexecuted_attempts": [
+    {
+      "reason": "Automatic approval-review quota blocked the original combined v5.py/CLI write; no process exit existed. Recovery verified the files absent before actual implementation.",
+      "status": "not_executed"
+    },
+    {
+      "reason": "Read-only PowerShell brace path syntax parser failure; corrected explicit paths, no write.",
+      "status": "exit1"
+    },
+    {
+      "reason": "First source-stop report assertion detected the separate App raw delta and stopped before writing. Report now records the observation honestly.",
+      "status": "exit1"
+    }
+  ],
+  "files": [
+    "evaluation/cli.py",
+    "evaluation/v5.py",
+    "evaluation/v5/README.md",
+    "evaluation/v5/contract.json",
+    "evaluation/v5/fixture-contract.json",
+    "evaluation/v5/fixtures/failure.json",
+    "evaluation/v5/fixtures/injection.json",
+    "evaluation/v5/fixtures/na.json",
+    "evaluation/v5/fixtures/self-claim.json",
+    "evaluation/v5/fixtures/source.json",
+    "evaluation/v5/fixtures/support.json",
+    "evaluation/v5/proof.template.json",
+    "evaluation/v5/registration.json",
+    "evaluation/v5/registration.schema.json",
+    "evaluation/v5/registration.template.json"
+  ],
+  "frontend_observation_not_changed_by_this_evaluator_role": [
+    {
+      "observed_raw_sha256": "c341213759c7dd2747d760ebd5da29e1042c09cd94a5561f12dd9be3423ffe43",
+      "path": "frontend/src/App.tsx",
+      "prior_stop_sha256": "84432efe09b999e677299876be5116091ad745f8e7ecc85571e58a1c02cee323"
+    }
+  ],
+  "frontend_observation_note": "Main confirmed this is its later authorized mechanical epoch: App CRCRLF-to-CRLF, integration-eol-fix.json byte proof, checkpoint commit 1a2d454 pushed; old Owner raw remains historical. This Evaluator role did not change or retest frontend and does not claim the old raw matched.",
+  "frontend_observation_resolution": {
+    "checkpoint_commit": "1a2d454",
+    "current_app_raw_sha256": "c341213759c7dd2747d760ebd5da29e1042c09cd94a5561f12dd9be3423ffe43",
+    "independently_retested_by_evaluator": false,
+    "record": "integration-eol-fix.json (Main-provided reference)",
+    "reported_by": "Main"
+  },
+  "ledger_opened": false,
+  "legacy_identity_check": "evidence/upgrade/v5.0/evaluator-owner/check-result.json",
+  "limitations": [
+    "No independent QA or human approval; Owner checks cannot certify this evaluator.",
+    "No actual evidence is registered. Main must bind real candidate/source/evidence and nonempty exact before/after maps; current real Claims stay INSUFFICIENT_EVIDENCE.",
+    "K1-K6, mock judgements and added attacks are synthetic; no real model calibration. Repeated epochs are listed, not summed as coverage.",
+    "Three historical unknown reservations strictly block paid evaluation; no ledger, Key, reservation or network access was used.",
+    "Hashes establish byte identity, not provenance; derived observations must name actual operator/command and pin original outputs.",
+    "Final reporting-consistency source-change branch lacks a concurrent real-file mutation execution; independent QA should exercise it. Previous deterministic calibration15 exit0 preceded that reporting-only change; final mock15 and unregistered CLI runs bind current source.",
+    "Reader extension/path/10MiB/16KiB/64KiB restrictions remain; finite Claim source maps cannot silently add binary assets or CMD files.",
+    "Main registration/pin edits are a separate trusted metadata epoch; the loader cannot raw-self-reference its own embedded registration pin."
+  ],
+  "network_calls": 0,
+  "paid_calls": 0,
+  "registration": {
+    "contract_id": "campus-lab-v5-engineering",
+    "instructions": "evaluation/v5/README.md",
+    "observations_template": "evaluation/v5/proof.template.json",
+    "pin": "REGISTRATION_RAW_SHA256=None; Main only",
+    "release": "v5.0-engineering",
+    "schema": "evaluation/v5/registration.schema.json",
+    "status": "NOT_READY",
+    "template": "evaluation/v5/registration.template.json",
+    "version": "1.0.0"
+  },
+  "role": "Temporary Evaluator Owner; development checks only, not independent QA",
+  "source_sha256": {
+    "evaluation/cli.py": "f0bf46132fd3a7b49bacfb5c1b76b409f6f0eb2b34426337775d243e1bca7076",
+    "evaluation/v5.py": "7477bd09c79d55c86f28506ed1ec38365eb1223e6629f870d1df8abebf387a49",
+    "evaluation/v5/README.md": "37a03d75f66f7b335dd9f0b6a5830aa49f401267fe7c921e389a2a52dbf85f98",
+    "evaluation/v5/contract.json": "85a3b4ac3d0e3c9b6b55a0d9cba531e8ca06fe144b7e38d209aad1885ef2b744",
+    "evaluation/v5/fixture-contract.json": "8cebb1a471255fd2ff884f53b97bfb4fc7308a7d2287d92a9bb75e345b250aea",
+    "evaluation/v5/fixtures/failure.json": "0a01591fa9207f1775c3dac2795fefc2e05abbddbde3aa14298d2d376f212fbf",
+    "evaluation/v5/fixtures/injection.json": "28922151828991230f07529f2fc826aee0c0f3a51af62293d5f92331ba4fd1fd",
+    "evaluation/v5/fixtures/na.json": "096d9f87b6fcfbf65b51fab9cd827b1e9fd4240c2c005ec9460e9aad89bc88fb",
+    "evaluation/v5/fixtures/self-claim.json": "7847b0eb7939b30560cbb9af186ab8244a381aeeaf0562d6f4b25623de63156a",
+    "evaluation/v5/fixtures/source.json": "78b2168fbb2df8e03760f4e522df3b00018ccfcedf1b672d973c00e91cba533e",
+    "evaluation/v5/fixtures/support.json": "c6278c3855a0f1475a0dead5eead50f49b124bc493b0620345c48339ad45fc66",
+    "evaluation/v5/proof.template.json": "74011f980e3006bcb22574ea815f5de364a411475d07bde732038256e99a8388",
+    "evaluation/v5/registration.json": "ae6fc1bec5e1a83088b879759e2f5e87f6ae1d60acf508ac30ff2fb5b3e0e1e6",
+    "evaluation/v5/registration.schema.json": "5e2b8f6248d8bba29d89371c6f90c8243d653049e6b0972ba27cd611f5f77860",
+    "evaluation/v5/registration.template.json": "5a11114009c16031d438c733576d2e3891e11bfb3d9de879a18a153f011a67c3"
+  },
+  "status": "SOURCE STOP"
+}

@@ -1,0 +1,383 @@
+{
+  "kind": "offline_readonly_real_admission_diagnosis",
+  "created_utc": "2026-10-23T06:53:32.503756+00:00",
+  "actual_commands": [
+    {
+      "command": "inline actual compile_level on original redacted G1/G2/G3 outputs",
+      "exit_code": 0,
+      "tool_chunk": "9541fb"
+    },
+    {
+      "command": "inline structural/recipe/dependency paths only",
+      "exit_code": 0,
+      "tool_chunk": "299b45"
+    },
+    {
+      "command": "inline copied-memory layered diagnosis with original-file hash verification",
+      "exit_code": 0
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "G1",
+      "actual_original_outcome": {
+        "classification": "PUZZLE_COUNT"
+      },
+      "original_job_result": "rejected/ADMISSION_REJECTED",
+      "expected_puzzles": 2,
+      "actual_puzzles": 3,
+      "original_independent_blockers": [
+        {
+          "classification": "UNUSED_FACTS",
+          "paths": [
+            "puzzles[0].clue_ids",
+            "clues[0]",
+            "clues[1]"
+          ],
+          "root_cause": "Selected facts violate recipe allowed-field/domain requirements; no derived value is included."
+        },
+        {
+          "classification": "RECIPE_FORBIDDEN_FACT_FIELDS",
+          "paths": [
+            "puzzles[0].recipe",
+            "clues[1].symbol_map"
+          ]
+        },
+        {
+          "classification": "UNUSED_FACTS",
+          "paths": [
+            "puzzles[2].clue_ids",
+            "clues[1]"
+          ],
+          "root_cause": "Selected facts violate recipe allowed-field/domain requirements; no derived value is included."
+        },
+        {
+          "classification": "RECIPE_FORBIDDEN_FACT_FIELDS",
+          "paths": [
+            "puzzles[2].recipe",
+            "clues[1].indices"
+          ]
+        },
+        {
+          "classification": "INSUFFICIENT_FACTS_AFTER_FIELD_GATE",
+          "paths": [
+            "puzzles[2].clue_ids"
+          ],
+          "unmapped_source_token_count": 4
+        }
+      ],
+      "counterfactual_layers": [
+        {
+          "counterfactual_only": true,
+          "local_memory_edit": "Remove final leaf puzzle and its object solely to satisfy requested count; original sequence recipe is independently analyzed above.",
+          "field_paths": [
+            "puzzles[2]",
+            "rooms[0].objects[5]"
+          ],
+          "next_actual_compiler_outcome": {
+            "classification": "UNUSED_FACTS"
+          },
+          "counts_as_real_generation_success": false
+        },
+        {
+          "counterfactual_only": true,
+          "local_memory_edit": "Remove mapping fields forbidden for remaining index recipe, without changing original files.",
+          "field_paths": [
+            "clues[1].symbol_map"
+          ],
+          "next_actual_compiler_outcome": {
+            "classification": "COUNTERFACTUAL_ADMITTED_ONLY",
+            "original_real_success": false,
+            "witness_actions": 8
+          },
+          "counts_as_real_generation_success": false
+        },
+        {
+          "counterfactual_only": true,
+          "local_memory_edit": "Substitute synthetic numeric token strings for code-domain diagnosis only.",
+          "field_paths": [
+            "clues[0].tokens",
+            "clues[1].tokens"
+          ],
+          "next_actual_compiler_outcome": {
+            "classification": "COUNTERFACTUAL_ADMITTED_ONLY",
+            "original_real_success": false,
+            "witness_actions": 8
+          },
+          "counts_as_real_generation_success": false
+        }
+      ],
+      "provider_evidence_sha256": "56e7fb960407c4797d375317dafd3583ff3b0d4e541a6c7365e0132c0c0188d8",
+      "original_parsed_json_sha256": "3032b55d8b3d1f7e760b0849fec51d442aecb6382281b1d929c3da921f1af8ff"
+    },
+    {
+      "case_id": "G2",
+      "actual_original_outcome": {
+        "classification": "DRAFT_SCHEMA",
+        "field_errors": [
+          {
+            "path": "rooms.0.locked_by",
+            "code": "extra_forbidden"
+          }
+        ]
+      },
+      "original_job_result": "rejected/ADMISSION_REJECTED",
+      "expected_puzzles": 4,
+      "actual_puzzles": 4,
+      "original_independent_blockers": [
+        {
+          "classification": "INVALID_CODE",
+          "paths": [
+            "puzzles[0].clue_ids",
+            "clues[0]",
+            "clues[1]"
+          ],
+          "root_cause": "Selected facts violate recipe allowed-field/domain requirements; no derived value is included."
+        },
+        {
+          "classification": "SELF_LOCKING_FORWARD_ROOM_MATERIAL",
+          "paths": [
+            "puzzles[0].clue_ids",
+            "rooms[1].objects[0]"
+          ],
+          "root_cause": "Current-room puzzle requires material placed later; moving forward requires all current-room puzzles already solved."
+        },
+        {
+          "classification": "UNUSED_FACTS",
+          "paths": [
+            "puzzles[3].clue_ids",
+            "clues[0]",
+            "clues[1]",
+            "clues[2]"
+          ],
+          "root_cause": "Selected facts violate recipe allowed-field/domain requirements; no derived value is included."
+        },
+        {
+          "classification": "RECIPE_FORBIDDEN_FACT_FIELDS",
+          "paths": [
+            "puzzles[3].recipe",
+            "clues[0].indices"
+          ]
+        },
+        {
+          "classification": "RECIPE_FORBIDDEN_FACT_FIELDS",
+          "paths": [
+            "puzzles[3].recipe",
+            "clues[1].indices"
+          ]
+        },
+        {
+          "classification": "INSUFFICIENT_FACTS_AFTER_FIELD_GATE",
+          "paths": [
+            "puzzles[3].clue_ids"
+          ],
+          "unmapped_source_token_count": 7
+        },
+        {
+          "classification": "INVALID_SEQUENCE_LENGTH_AFTER_FIELD_GATE",
+          "paths": [
+            "puzzles[3].clue_ids"
+          ],
+          "combined_source_length": 12,
+          "required_length": 4
+        }
+      ],
+      "counterfactual_layers": [
+        {
+          "counterfactual_only": true,
+          "local_memory_edit": "Drop unsupported Room field in memory only.",
+          "field_paths": [
+            "rooms[0].locked_by"
+          ],
+          "next_actual_compiler_outcome": {
+            "classification": "INVALID_CODE"
+          },
+          "counts_as_real_generation_success": false
+        },
+        {
+          "counterfactual_only": true,
+          "local_memory_edit": "Substitute synthetic numeric code-source tokens to expose later admission gates.",
+          "field_paths": [
+            "clues[0].tokens"
+          ],
+          "next_actual_compiler_outcome": {
+            "classification": "UNUSED_FACTS"
+          },
+          "counts_as_real_generation_success": false
+        },
+        {
+          "counterfactual_only": true,
+          "local_memory_edit": "Limit sequence to its own mapping material to expose reachability; this is a diagnostic redesign, never a product repair.",
+          "field_paths": [
+            "puzzles[3].clue_ids"
+          ],
+          "next_actual_compiler_outcome": {
+            "classification": "UNSOLVABLE"
+          },
+          "counts_as_real_generation_success": false
+        }
+      ],
+      "provider_evidence_sha256": "5f947e846409de4407a8c77f9fb0be49753e3737554658d4a45abef0d8325c7f",
+      "original_parsed_json_sha256": "0c0554ef9069dcb9bc994a4520324b829e8ad027e61bd6c9186104f1db767a67"
+    },
+    {
+      "case_id": "G3",
+      "actual_original_outcome": {
+        "classification": "PUZZLE_COUNT"
+      },
+      "original_job_result": "rejected/ADMISSION_REJECTED",
+      "expected_puzzles": 6,
+      "actual_puzzles": 5,
+      "original_independent_blockers": [
+        {
+          "classification": "SELF_LOCKING_FORWARD_ROOM_MATERIAL",
+          "paths": [
+            "puzzles[0].required_item_id",
+            "rooms[1].objects[1]"
+          ],
+          "root_cause": "Current-room puzzle requires material placed later; moving forward requires all current-room puzzles already solved."
+        },
+        {
+          "classification": "INVALID_CODE",
+          "paths": [
+            "puzzles[1].clue_ids",
+            "clues[0]"
+          ],
+          "root_cause": "Selected facts violate recipe allowed-field/domain requirements; no derived value is included."
+        },
+        {
+          "classification": "UNEXPECTED_FACTS",
+          "paths": [
+            "puzzles[2].clue_ids"
+          ],
+          "root_cause": "Item/circuit mechanisms require no recipe clue_ids."
+        },
+        {
+          "classification": "UNUSED_FACTS",
+          "paths": [
+            "puzzles[3].clue_ids",
+            "clues[2]",
+            "clues[1]"
+          ],
+          "root_cause": "Selected facts violate recipe allowed-field/domain requirements; no derived value is included."
+        },
+        {
+          "classification": "RECIPE_FORBIDDEN_FACT_FIELDS",
+          "paths": [
+            "puzzles[3].recipe",
+            "clues[1].indices"
+          ]
+        },
+        {
+          "classification": "INSUFFICIENT_FACTS_AFTER_FIELD_GATE",
+          "paths": [
+            "puzzles[3].clue_ids"
+          ],
+          "unmapped_source_token_count": 8
+        },
+        {
+          "classification": "INVALID_SEQUENCE_LENGTH_AFTER_FIELD_GATE",
+          "paths": [
+            "puzzles[3].clue_ids"
+          ],
+          "combined_source_length": 8,
+          "required_length": 4
+        },
+        {
+          "classification": "COMBINATION_COUNT",
+          "paths": [
+            "puzzles[*].clue_ids"
+          ],
+          "actual_combination_puzzles": 1,
+          "required_minimum": 2
+        }
+      ],
+      "counterfactual_layers": [
+        {
+          "counterfactual_only": true,
+          "local_memory_edit": "Append an explicitly synthetic circuit node/object only to get past the count gate; never persist or count this as model output.",
+          "field_paths": [
+            "puzzles[5]",
+            "rooms[2].objects[3]"
+          ],
+          "next_actual_compiler_outcome": {
+            "classification": "DUPLICATE_ID"
+          },
+          "counts_as_real_generation_success": false
+        },
+        {
+          "counterfactual_only": true,
+          "local_memory_edit": "Substitute numeric code-source tokens in memory only.",
+          "field_paths": [
+            "clues[0].tokens"
+          ],
+          "next_actual_compiler_outcome": {
+            "classification": "DUPLICATE_ID"
+          },
+          "counts_as_real_generation_success": false
+        },
+        {
+          "counterfactual_only": true,
+          "local_memory_edit": "Clear clue_ids prohibited on fixed circuit mechanism.",
+          "field_paths": [
+            "puzzles[2].clue_ids"
+          ],
+          "next_actual_compiler_outcome": {
+            "classification": "DUPLICATE_ID"
+          },
+          "counts_as_real_generation_success": false
+        },
+        {
+          "counterfactual_only": true,
+          "local_memory_edit": "Select only mapping-compatible sequence material; original hard combination shortfall is separately recorded.",
+          "field_paths": [
+            "puzzles[3].clue_ids"
+          ],
+          "next_actual_compiler_outcome": {
+            "classification": "DUPLICATE_ID"
+          },
+          "counts_as_real_generation_success": false
+        }
+      ],
+      "provider_evidence_sha256": "ac2cc8472b767aa000a95fd45d572cc903858b185aaf51868c1ff31d4a1a0d34",
+      "original_parsed_json_sha256": "da42d38227608e19eb320084989f3661fe9d41736cc3040487db87e45b5cdf0b"
+    }
+  ],
+  "judgment": {
+    "compiler_bug_established": false,
+    "must_constraints_preserved": true,
+    "count_rule_already_in_prompt": "Formula is already present; G1/G3 violate it. Explicit per-request required_puzzle_count and exact schema array bounds are recommended, not a relaxed count.",
+    "prompt_missing_or_underexplicit": [
+      "Recipe-specific allowed/nonempty fact fields are not fully enumerated in model input.",
+      "Computed code must be ASCII digits length1..16, while a sequence must resolve to exactly4 distinct ASCII identifiers.",
+      "item/circuit clue_ids must be empty; required_item_id only belongs to item.",
+      "Room has no locked_by; it belongs only to Object. Forward passages require all current-room puzzles, so materials must be obtainable in the same or earlier rooms.",
+      "Hard requires two distinct code/sequence puzzles each combining at least two valid clue IDs."
+    ],
+    "production_repair_recommendation": "Clarify AI inputs and specialize requested room/puzzle array counts. Do not strip fields, rewrite facts, alter answers, relax compiler gates, or reclassify these rejected real samples as successes."
+  },
+  "a1_stage_readonly_review": {
+    "witness_requires_puzzle_observation": true,
+    "source_lines": [
+      "backend/app/domain/generated.py:360",
+      "backend/app/domain/generated.py:399",
+      "backend/app/domain/generated.py:401"
+    ],
+    "hypothesized_observation_bypass_confirmed": false,
+    "executed_real_run_reached_stage_branch": false,
+    "residual_limit": "A valid easy level consisting only of item/circuit puzzles and no clues may offer no eligible relation stage. A future separately authorized round should inspect actual public objects legally and skip if no facts exist; never invent observed state or substitute a placeholder."
+  },
+  "original_raw_evidence_bytes_unchanged": true,
+  "product_source_edited": false,
+  "key_loaded": false,
+  "ledger_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "additional_calls_authorized": false,
+  "limitations": [
+    "Counterfactual layers are private copied-memory diagnostics, not model output or player content and are not persisted.",
+    "A counterfactual compile admission cannot count as GEN-01 success.",
+    "This finite diagnosis is not a general proof of compiler correctness.",
+    "All three original real jobs remain rejected; A1/A2 remain skipped, no retries or slot reassignment."
+  ]
+}

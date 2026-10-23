@@ -1,0 +1,378 @@
+{
+  "operator": "Main pure-memory semantic counterexample, not independent QA",
+  "command": "isolated two admitted definitions differing only in private material order; observe both clues and puzzle",
+  "exit_code": 0,
+  "both_admitted": true,
+  "public_materials_and_puzzle_instructions_equal": true,
+  "compiled_answer_hashes_differ": true,
+  "definition_hashes": [
+    "b99b0c5f2048ba4f2b02f29533310a8f6ea4d96ee873a54492b79db63f7207a4",
+    "ec002ddb2121f534e21896fe79d75fd335dcf285c4062af41640260272360c6a"
+  ],
+  "private_material_orders": [
+    [
+      "fact_source",
+      "fact_order"
+    ],
+    [
+      "fact_order",
+      "fact_source"
+    ]
+  ],
+  "public_observations": [
+    {
+      "room": {
+        "room_id": "G1",
+        "name": "房间1",
+        "description": "一间安静的实验室。",
+        "background_id": "neutral_lab",
+        "background_art_id": "neutral_lab"
+      },
+      "objects": [
+        {
+          "object_id": "obj_key",
+          "name": "钥匙",
+          "kind": "item",
+          "description": "一把可重复使用的钥匙。",
+          "art_id": "key",
+          "slot": 0,
+          "target_id": null,
+          "mechanism": null,
+          "completed": false,
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "obj_key"
+              }
+            },
+            {
+              "tool": "take",
+              "label": "拿取",
+              "arguments": {
+                "item_id": "shared_key"
+              }
+            }
+          ]
+        },
+        {
+          "object_id": "obj_source",
+          "name": "数据纸",
+          "kind": "clue",
+          "description": "记录了批次源序。",
+          "art_id": "note",
+          "slot": 1,
+          "target_id": null,
+          "mechanism": null,
+          "completed": false,
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "obj_source"
+              }
+            }
+          ]
+        },
+        {
+          "object_id": "obj_order",
+          "name": "读取说明",
+          "kind": "clue",
+          "description": "记录了读取位置。",
+          "art_id": "note",
+          "slot": 2,
+          "target_id": null,
+          "mechanism": null,
+          "completed": false,
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "obj_order"
+              }
+            }
+          ]
+        },
+        {
+          "object_id": "obj_puzzle_0",
+          "name": "装置1",
+          "kind": "puzzle",
+          "description": "根据资料完成操作。 按资料列出的顺序拼接源序。",
+          "art_id": "terminal",
+          "slot": 3,
+          "target_id": "puzzle_0",
+          "mechanism": "code",
+          "completed": false,
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "obj_puzzle_0"
+              }
+            },
+            {
+              "tool": "submit_code",
+              "label": "提交",
+              "arguments": {
+                "target_id": "puzzle_0"
+              }
+            }
+          ]
+        },
+        {
+          "object_id": "obj_puzzle_1",
+          "name": "装置2",
+          "kind": "puzzle",
+          "description": "根据资料完成操作。 按资料列出的顺序拼接源序。",
+          "art_id": "terminal",
+          "slot": 4,
+          "target_id": "puzzle_1",
+          "mechanism": "code",
+          "completed": false,
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "obj_puzzle_1"
+              }
+            }
+          ]
+        },
+        {
+          "object_id": "obj_puzzle_2",
+          "name": "装置3",
+          "kind": "puzzle",
+          "description": "根据资料完成操作。 将匹配的背包物品用于此装置，物品不会消耗。",
+          "art_id": "terminal",
+          "slot": 5,
+          "target_id": "puzzle_2",
+          "mechanism": "item",
+          "completed": false,
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "obj_puzzle_2"
+              }
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "object_id": "obj_source",
+          "title": "资料 fact_source",
+          "text": "源序：1、2。"
+        },
+        {
+          "clue_id": "fact_order",
+          "object_id": "obj_order",
+          "title": "资料 fact_order",
+          "text": "源序：3、4。"
+        }
+      ],
+      "inventory": [],
+      "exits": [
+        {
+          "destination_id": "EXIT",
+          "name": "出口",
+          "unlocked": false
+        }
+      ],
+      "minigames": {
+        "circuits": [],
+        "sequences": [],
+        "circuit": null,
+        "sequence": null
+      }
+    },
+    {
+      "room": {
+        "room_id": "G1",
+        "name": "房间1",
+        "description": "一间安静的实验室。",
+        "background_id": "neutral_lab",
+        "background_art_id": "neutral_lab"
+      },
+      "objects": [
+        {
+          "object_id": "obj_key",
+          "name": "钥匙",
+          "kind": "item",
+          "description": "一把可重复使用的钥匙。",
+          "art_id": "key",
+          "slot": 0,
+          "target_id": null,
+          "mechanism": null,
+          "completed": false,
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "obj_key"
+              }
+            },
+            {
+              "tool": "take",
+              "label": "拿取",
+              "arguments": {
+                "item_id": "shared_key"
+              }
+            }
+          ]
+        },
+        {
+          "object_id": "obj_source",
+          "name": "数据纸",
+          "kind": "clue",
+          "description": "记录了批次源序。",
+          "art_id": "note",
+          "slot": 1,
+          "target_id": null,
+          "mechanism": null,
+          "completed": false,
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "obj_source"
+              }
+            }
+          ]
+        },
+        {
+          "object_id": "obj_order",
+          "name": "读取说明",
+          "kind": "clue",
+          "description": "记录了读取位置。",
+          "art_id": "note",
+          "slot": 2,
+          "target_id": null,
+          "mechanism": null,
+          "completed": false,
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "obj_order"
+              }
+            }
+          ]
+        },
+        {
+          "object_id": "obj_puzzle_0",
+          "name": "装置1",
+          "kind": "puzzle",
+          "description": "根据资料完成操作。 按资料列出的顺序拼接源序。",
+          "art_id": "terminal",
+          "slot": 3,
+          "target_id": "puzzle_0",
+          "mechanism": "code",
+          "completed": false,
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "obj_puzzle_0"
+              }
+            },
+            {
+              "tool": "submit_code",
+              "label": "提交",
+              "arguments": {
+                "target_id": "puzzle_0"
+              }
+            }
+          ]
+        },
+        {
+          "object_id": "obj_puzzle_1",
+          "name": "装置2",
+          "kind": "puzzle",
+          "description": "根据资料完成操作。 按资料列出的顺序拼接源序。",
+          "art_id": "terminal",
+          "slot": 4,
+          "target_id": "puzzle_1",
+          "mechanism": "code",
+          "completed": false,
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "obj_puzzle_1"
+              }
+            }
+          ]
+        },
+        {
+          "object_id": "obj_puzzle_2",
+          "name": "装置3",
+          "kind": "puzzle",
+          "description": "根据资料完成操作。 将匹配的背包物品用于此装置，物品不会消耗。",
+          "art_id": "terminal",
+          "slot": 5,
+          "target_id": "puzzle_2",
+          "mechanism": "item",
+          "completed": false,
+          "actions": [
+            {
+              "tool": "inspect",
+              "label": "查看",
+              "arguments": {
+                "object_id": "obj_puzzle_2"
+              }
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "object_id": "obj_source",
+          "title": "资料 fact_source",
+          "text": "源序：1、2。"
+        },
+        {
+          "clue_id": "fact_order",
+          "object_id": "obj_order",
+          "title": "资料 fact_order",
+          "text": "源序：3、4。"
+        }
+      ],
+      "inventory": [],
+      "exits": [
+        {
+          "destination_id": "EXIT",
+          "name": "出口",
+          "unlocked": false
+        }
+      ],
+      "minigames": {
+        "circuits": [],
+        "sequences": [],
+        "circuit": null,
+        "sequence": null
+      }
+    }
+  ],
+  "source_sha256": "9013c53915c892e33428e5ceff71c6d74fe7467d207308611ad8e8d8615112f1",
+  "limitations": [
+    "Finite synthetic input only, no player database or network/model call.",
+    "Actual compiled answers are intentionally omitted; only inequality is recorded.",
+    "Independent QA must review whether public material order is sufficient."
+  ],
+  "paid_calls": 0,
+  "network_calls": 0
+}

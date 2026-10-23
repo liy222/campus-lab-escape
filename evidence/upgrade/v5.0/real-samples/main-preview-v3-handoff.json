@@ -1,0 +1,32 @@
+{
+  "kind": "Main source-refresh-only real preview epoch",
+  "utc": "2026-10-23T06:05:50.765090+00:00",
+  "product_candidate": "v5.0-fixed-be88f5a2397e0dba",
+  "runner_sha256": "219e92d90e22229700e6926e0372eec9cebebeff9c8760370e4f090c3db5c0b4",
+  "active_preview": "offline-preview-v3.json",
+  "active_preview_sha256": "43180be8585e237b0b1f5b51fae53c287d8527250870fa3f0246cc424adb414c",
+  "source_candidate_sha256": "5244f470c5a8f8ba03a1ad8e784d249c7bfad6b18ef75e9fbd614ca55070092e",
+  "payloads_and_bounds_equal_to_v2": true,
+  "old_previews_preserved": true,
+  "changes": [
+    "Fixed preview filename v2 to v3 only, preserving earlier files.",
+    "Add explicit repository root import path so standalone invocation works without inherited PYTHONPATH.",
+    "Rebind current generated.py exact state-cap source."
+  ],
+  "actual_commands": [
+    {
+      "command": "Configured Python run.py --prepare before standalone import fix",
+      "exit_code": 1,
+      "failure": "ModuleNotFoundError backend before output/credentials/ledger/network"
+    },
+    {
+      "command": "Configured Python run.py --prepare after explicit root path",
+      "exit_code": 0
+    }
+  ],
+  "credentials_read": false,
+  "canonical_ledger_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "dispatch": "WAITING independent offline gate and v3 narrow preflight review; companion placeholders are never actual dispatch payloads"
+}

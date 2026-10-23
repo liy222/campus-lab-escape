@@ -95,7 +95,8 @@ def main() -> int:
     }
     environment = os.environ.copy()
     environment.update({"AI_PROVIDER": "mock", "PYTHONUTF8": "1",
-                        "SQLITE_PATH": str(directory / "isolated-data" / "game-v5.sqlite")})
+                        "SQLITE_PATH": str(directory / "isolated-data" / "game-v5.sqlite"),
+                        "V5_QA_OUTPUT": str(directory)})
     result = 0
     try:
         if args.suite == "evidence":

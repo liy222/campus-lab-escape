@@ -1,0 +1,86 @@
+{
+  "kind": "v5_final_documentation_followup_epoch",
+  "date": "2026-10-23",
+  "status": "documentation_source_stop",
+  "changed_paths": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/delivery/final-docs-followup.json"
+  ],
+  "scope": "Translate the V5 release note into concise Chinese and update only the prompt-verification and finite evaluator-registration status. The prior final-docs.json remains unchanged.",
+  "current_candidate": {
+    "id": "v5.0-prompt-registration-f2aeeade8826fd47",
+    "prompt_qa_candidate_sha256": "665c3c8f2d168da487e407baf316317290b9af6ea5d5d9bb3a4ae06a25bf4a75",
+    "source_files": 402,
+    "real_generation_retest": "not_run; no success or quality claim"
+  },
+  "sealed_qa_evidence": {
+    "prompt_narrow_run": {
+      "path": "evidence/upgrade/v5.0/qa/prompt-fixed/20261023T123000891489Z-f3bc3de5/summary.json",
+      "pytest_output": "evidence/upgrade/v5.0/qa/prompt-fixed/20261023T123000891489Z-f3bc3de5/pytest.txt",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m pytest tests/v5/test_prompt_fixed.py tests/v5/test_generation.py::test_real_adapter_fake_httpx_generation_profile_and_secret_boundary -q -p no:cacheprovider",
+      "result": "11 passed; exit 0; one deprecation warning",
+      "scope_limit": "Narrow offline verification with fake HTTP transport, including the adapter and secret-boundary test; no real model retest."
+    },
+    "active_registration": {
+      "path": "evidence/upgrade/v5.0/qa/registration-active/20261023T123104720649Z-c31a3caf/summary.json",
+      "source_projection_count": 53,
+      "registered_artifacts": 9,
+      "active_copy_matches_registered_v4": true,
+      "commands": [
+        {
+          "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m evaluation.cli precheck --release v5.0-engineering",
+          "exit_code": 0,
+          "result": "READY; issues=[]; no target code execution or paid/network calls",
+          "report": "evidence/upgrade/v5.0/evaluator-owner/runs/20261023T123104950553Z/report.json"
+        },
+        {
+          "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m evaluation.cli evaluate --release v5.0-engineering --mode deterministic",
+          "exit_code": 2,
+          "result": "3 INSUFFICIENT_EVIDENCE; final precheck READY; no target code execution or paid/network calls",
+          "report": "evidence/upgrade/v5.0/evaluator-owner/runs/20261023T123105451983Z/report.json"
+        }
+      ],
+      "interpretation": "READY confirms registered identity and finite observations only. Three INSUFFICIENT_EVIDENCE outcomes reflect missing real model judgement; they are neither product-test failures nor PASS claims. Paid evaluation remains blocked by three historical unknown calls."
+    }
+  },
+  "real_generation_and_authorization": {
+    "previous_real_run": "G1/G2/G3 rejected; A1/A2 skipped; no automatic retries; usage upper-bound increment CNY 0.03128048, not an invoice",
+    "additional_real_calls_in_this_epoch": 0,
+    "next_real_retest": "requires separate explicit user consent; not authorized or run in this epoch",
+    "gen_01": "Real generation success and quality remain unestablished."
+  },
+  "documentation_hashes_sha256_after_edit": {
+    "README.md": "85657dbf4c1b96d0d7379ebe9e4e05b1dcf5e654e3caa0648e672b6592c79ec3",
+    "release/V5.md": "79a3a56dbc3484f80fc6a74c92b860ebee7844dc2dfc0c613ac97ffb93657d83"
+  },
+  "this_documentation_epoch_commands": [
+    {
+      "command": "Get-Content README.md -Head 6; Get-Content README.md -Tail 28; Get-Content release/V5.md; Get-Content evidence/upgrade/v5.0/delivery/final-docs.json -Raw",
+      "exit_code": 0,
+      "purpose": "Read-only baseline inspection"
+    },
+    {
+      "command": "Get-Content README.md -Tail 11; Get-Content release/V5.md -Tail 13",
+      "exit_code": 0,
+      "purpose": "Read-only documentation review"
+    },
+    {
+      "command": "Get-FileHash -LiteralPath README.md,release/V5.md -Algorithm SHA256",
+      "exit_code": 0,
+      "purpose": "Record post-edit documentation hashes"
+    }
+  ],
+  "this_documentation_epoch_validation": {
+    "tests_run": [],
+    "builds_run": [],
+    "paid_calls": 0,
+    "git_operations": 0,
+    "limitations": [
+      "Prompt QA is offline and narrow; the fake HTTP transport does not establish real provider generation quality.",
+      "Evaluator precheck READY is registration readiness only; deterministic INSUFFICIENT_EVIDENCE is not a semantic PASS.",
+      "The paid evaluator remains blocked by three historical unknown calls.",
+      "No additional real-generation retest was authorized or performed."
+    ]
+  }
+}

@@ -1,0 +1,321 @@
+{
+  "kind": "Main prompt-fix SOURCE STOP and development checks",
+  "utc": "2026-10-23T12:25:14.466214+00:00",
+  "command": "Inline nine shape/schema/nonmutation/full-payload bound checks and actual domain replay; no provider instantiated",
+  "exit_code": 0,
+  "before_sha256": "ecfdbefaf26bd2926c0e82243210e3887b5d8ccd9ba7363c6b8a26c2cac43fd5",
+  "after_sha256": "6a9dda7d47013dca8a6ef6cd878946ba40ecfa82168b2528e0c8225131d5f500",
+  "files": [
+    "backend/app/ai/v5.py"
+  ],
+  "cases": [
+    {
+      "room_count": 1,
+      "difficulty": "easy",
+      "requirements": {
+        "room_count": 1,
+        "puzzle_count": 2,
+        "minimum_two_material_puzzles": 0,
+        "minimum_dependency_depth": 1
+      },
+      "example_admitted_and_replayed": true,
+      "schema_validation_rules_preserved": true,
+      "schema_input_unmodified": true,
+      "bounds": [
+        {
+          "case": "short",
+          "payload_bytes": 8679,
+          "cost_upper_cny": 0.133816,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_chinese",
+          "payload_bytes": 14661,
+          "cost_upper_cny": 0.181672,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_four_byte_unicode",
+          "payload_bytes": 16661,
+          "cost_upper_cny": 0.197672,
+          "fits_original_cap": true
+        }
+      ]
+    },
+    {
+      "room_count": 1,
+      "difficulty": "normal",
+      "requirements": {
+        "room_count": 1,
+        "puzzle_count": 3,
+        "minimum_two_material_puzzles": 1,
+        "minimum_dependency_depth": 1
+      },
+      "example_admitted_and_replayed": true,
+      "schema_validation_rules_preserved": true,
+      "schema_input_unmodified": true,
+      "bounds": [
+        {
+          "case": "short",
+          "payload_bytes": 9039,
+          "cost_upper_cny": 0.136696,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_chinese",
+          "payload_bytes": 15021,
+          "cost_upper_cny": 0.184552,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_four_byte_unicode",
+          "payload_bytes": 17021,
+          "cost_upper_cny": 0.200552,
+          "fits_original_cap": false
+        }
+      ]
+    },
+    {
+      "room_count": 1,
+      "difficulty": "hard",
+      "requirements": {
+        "room_count": 1,
+        "puzzle_count": 4,
+        "minimum_two_material_puzzles": 2,
+        "minimum_dependency_depth": 3
+      },
+      "example_admitted_and_replayed": true,
+      "schema_validation_rules_preserved": true,
+      "schema_input_unmodified": true,
+      "bounds": [
+        {
+          "case": "short",
+          "payload_bytes": 9330,
+          "cost_upper_cny": 0.139024,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_chinese",
+          "payload_bytes": 15312,
+          "cost_upper_cny": 0.18688,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_four_byte_unicode",
+          "payload_bytes": 17312,
+          "cost_upper_cny": 0.20288,
+          "fits_original_cap": false
+        }
+      ]
+    },
+    {
+      "room_count": 2,
+      "difficulty": "easy",
+      "requirements": {
+        "room_count": 2,
+        "puzzle_count": 3,
+        "minimum_two_material_puzzles": 0,
+        "minimum_dependency_depth": 1
+      },
+      "example_admitted_and_replayed": true,
+      "schema_validation_rules_preserved": true,
+      "schema_input_unmodified": true,
+      "bounds": [
+        {
+          "case": "short",
+          "payload_bytes": 9179,
+          "cost_upper_cny": 0.137816,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_chinese",
+          "payload_bytes": 15161,
+          "cost_upper_cny": 0.185672,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_four_byte_unicode",
+          "payload_bytes": 17161,
+          "cost_upper_cny": 0.201672,
+          "fits_original_cap": false
+        }
+      ]
+    },
+    {
+      "room_count": 2,
+      "difficulty": "normal",
+      "requirements": {
+        "room_count": 2,
+        "puzzle_count": 4,
+        "minimum_two_material_puzzles": 1,
+        "minimum_dependency_depth": 1
+      },
+      "example_admitted_and_replayed": true,
+      "schema_validation_rules_preserved": true,
+      "schema_input_unmodified": true,
+      "bounds": [
+        {
+          "case": "short",
+          "payload_bytes": 9474,
+          "cost_upper_cny": 0.140176,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_chinese",
+          "payload_bytes": 15456,
+          "cost_upper_cny": 0.188032,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_four_byte_unicode",
+          "payload_bytes": 17456,
+          "cost_upper_cny": 0.204032,
+          "fits_original_cap": false
+        }
+      ]
+    },
+    {
+      "room_count": 2,
+      "difficulty": "hard",
+      "requirements": {
+        "room_count": 2,
+        "puzzle_count": 5,
+        "minimum_two_material_puzzles": 2,
+        "minimum_dependency_depth": 3
+      },
+      "example_admitted_and_replayed": true,
+      "schema_validation_rules_preserved": true,
+      "schema_input_unmodified": true,
+      "bounds": [
+        {
+          "case": "short",
+          "payload_bytes": 9834,
+          "cost_upper_cny": 0.143056,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_chinese",
+          "payload_bytes": 15816,
+          "cost_upper_cny": 0.190912,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_four_byte_unicode",
+          "payload_bytes": 17816,
+          "cost_upper_cny": 0.206912,
+          "fits_original_cap": false
+        }
+      ]
+    },
+    {
+      "room_count": 3,
+      "difficulty": "easy",
+      "requirements": {
+        "room_count": 3,
+        "puzzle_count": 4,
+        "minimum_two_material_puzzles": 0,
+        "minimum_dependency_depth": 1
+      },
+      "example_admitted_and_replayed": true,
+      "schema_validation_rules_preserved": true,
+      "schema_input_unmodified": true,
+      "bounds": [
+        {
+          "case": "short",
+          "payload_bytes": 9614,
+          "cost_upper_cny": 0.141296,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_chinese",
+          "payload_bytes": 15596,
+          "cost_upper_cny": 0.189152,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_four_byte_unicode",
+          "payload_bytes": 17596,
+          "cost_upper_cny": 0.205152,
+          "fits_original_cap": false
+        }
+      ]
+    },
+    {
+      "room_count": 3,
+      "difficulty": "normal",
+      "requirements": {
+        "room_count": 3,
+        "puzzle_count": 5,
+        "minimum_two_material_puzzles": 1,
+        "minimum_dependency_depth": 1
+      },
+      "example_admitted_and_replayed": true,
+      "schema_validation_rules_preserved": true,
+      "schema_input_unmodified": true,
+      "bounds": [
+        {
+          "case": "short",
+          "payload_bytes": 9978,
+          "cost_upper_cny": 0.144208,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_chinese",
+          "payload_bytes": 15960,
+          "cost_upper_cny": 0.192064,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_four_byte_unicode",
+          "payload_bytes": 17960,
+          "cost_upper_cny": 0.208064,
+          "fits_original_cap": false
+        }
+      ]
+    },
+    {
+      "room_count": 3,
+      "difficulty": "hard",
+      "requirements": {
+        "room_count": 3,
+        "puzzle_count": 6,
+        "minimum_two_material_puzzles": 2,
+        "minimum_dependency_depth": 3
+      },
+      "example_admitted_and_replayed": true,
+      "schema_validation_rules_preserved": true,
+      "schema_input_unmodified": true,
+      "bounds": [
+        {
+          "case": "short",
+          "payload_bytes": 10269,
+          "cost_upper_cny": 0.146536,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_chinese",
+          "payload_bytes": 16251,
+          "cost_upper_cny": 0.194392,
+          "fits_original_cap": true
+        },
+        {
+          "case": "max_four_byte_unicode",
+          "payload_bytes": 18251,
+          "cost_upper_cny": 0.210392,
+          "fits_original_cap": false
+        }
+      ]
+    }
+  ],
+  "paid_calls": 0,
+  "network_calls": 0,
+  "key_loaded": false,
+  "ledger_opened": false,
+  "source_stop": true,
+  "limitations": [
+    "Earlier owner-check.json captured the larger intermediate prompt; it is not overwritten.",
+    "Maximal four-byte-Unicode themes can still exceed the fixed monetary cap and must be refused before dispatch; legal length never overrides cost safety.",
+    "Examples and domain replays are synthetic, not successful real generation.",
+    "Three original paid failures and skipped A1/A2 remain unmodified; no paid retry."
+  ]
+}

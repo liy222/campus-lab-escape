@@ -1,0 +1,39 @@
+{
+  "stage": "PREPARED_NOT_EXECUTED",
+  "utc": "2026-10-22T17:29:58.777667+00:00",
+  "formal_runs": 0,
+  "paid_calls": 0,
+  "operator": "assigned independent QA agent",
+  "source_independent_checks": [
+    {
+      "command": "AST parse all tests/v5 Python files without imports",
+      "exit_code": 0,
+      "files": 12,
+      "test_functions_before_parametrization": 47
+    }
+  ],
+  "new_preparation": [
+    "Independent evaluator K1-K6 and reference/source/NA/path negative probes",
+    "Candidate-bound production build runner",
+    "conftest lazily imports product only for product fixtures, allowing evaluator-only pytest without target import"
+  ],
+  "source_sha256": {
+    "tests/v5/__init__.py": "5aa61a2018b20cc8ba93688e9803de72323a122d4db3ee89cae741d9d6090060",
+    "tests/v5/browser_plan.py": "a7b6305f57ab50c432de45b437e59b1a2a3e1adb013f347ccc52261327c24f39",
+    "tests/v5/conftest.py": "914be450d29068b222ef4cd2b7d5f7153970fe3f553baede29a67ddedb3da7d4",
+    "tests/v5/fixture_server.py": "8f452eaae939ddb1a3c3476e4df36651e1589867837b3cfb5844980d3016e035",
+    "tests/v5/run_browser.mjs": "985f4e405329c262fe5b132d766396886f62d62ce6b9e7f34992e8ad82b812fb",
+    "tests/v5/run_build.py": "6417a81810a79f65d7a1e24a4bfd4cfb2e476113296d2226319d4ef0ee9e4c0d",
+    "tests/v5/test_auth.py": "af585c1755819b51b2e01c31aa10e06f8ebc1afd361d93aa94189cd8820ed8bc",
+    "tests/v5/test_evaluation.py": "ce2e588f03627a494a21a30dae0b60a184a5338fd831289e3442e4d82b6903ce",
+    "tests/v5/test_generation.py": "485a01d8f86e6dc6e1cb648ff1d23d7c9701c085f25b071bc59af2766d7ae3ac",
+    "tests/v5/test_integration.py": "5c277b147ac504aefd0ac5b39f83c56520c8491e68aeaec75a393c2ab7fffb94",
+    "tests/v5/test_kernel.py": "0b0e79b438f20dd53e2ca16e788220de7c0413138e288342a623597a425c809a",
+    "tests/v5/test_legacy.py": "4d3f4e5d2f0973f19e0e666603f9d2bac948c129ed67ca23fb9ada3dd4b7786e",
+    "tests/v5/test_security.py": "df869fcf14e3a8a4247f6d1ac78ff68cbfdb0e0461496c43138e13b5e72bcfb6"
+  },
+  "limitations": [
+    "No SOURCE STOP candidate GO yet; formal product/build/browser/evaluator execution zero.",
+    "V5 evaluator still Owner epoch; test adapter may require narrow adjustment before freeze."
+  ]
+}

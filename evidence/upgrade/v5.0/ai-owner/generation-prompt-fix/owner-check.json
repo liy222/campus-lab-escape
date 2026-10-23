@@ -1,0 +1,252 @@
+{
+  "kind": "Main development prompt-shape and full-payload bound checks, not real generation",
+  "utc": "2026-10-23T06:52:48.402755+00:00",
+  "command": "Main inline nine requested messages/examples/real rule replays and short/max theme serialized payload estimates",
+  "exit_code": 0,
+  "source_sha256": "a0f368efc0632392b3b7bdb9c502f8396df63cd4d83891593ac2f231307640d3",
+  "cases": [
+    {
+      "room_count": 1,
+      "difficulty": "easy",
+      "requirements": {
+        "room_count": 1,
+        "puzzle_count": 2,
+        "minimum_two_material_puzzles": 0,
+        "minimum_dependency_depth": 1
+      },
+      "example_admitted_and_replayed": true,
+      "example_actions": 8,
+      "bounds": [
+        {
+          "theme_chars": 6,
+          "payload_bytes": 9724,
+          "cost_upper_cny": 0.142176,
+          "within_cap": true
+        },
+        {
+          "theme_chars": 2000,
+          "payload_bytes": 15706,
+          "cost_upper_cny": 0.190032,
+          "within_cap": true
+        }
+      ]
+    },
+    {
+      "room_count": 1,
+      "difficulty": "normal",
+      "requirements": {
+        "room_count": 1,
+        "puzzle_count": 3,
+        "minimum_two_material_puzzles": 1,
+        "minimum_dependency_depth": 1
+      },
+      "example_admitted_and_replayed": true,
+      "example_actions": 10,
+      "bounds": [
+        {
+          "theme_chars": 6,
+          "payload_bytes": 10084,
+          "cost_upper_cny": 0.145056,
+          "within_cap": true
+        },
+        {
+          "theme_chars": 2000,
+          "payload_bytes": 16066,
+          "cost_upper_cny": 0.192912,
+          "within_cap": true
+        }
+      ]
+    },
+    {
+      "room_count": 1,
+      "difficulty": "hard",
+      "requirements": {
+        "room_count": 1,
+        "puzzle_count": 4,
+        "minimum_two_material_puzzles": 2,
+        "minimum_dependency_depth": 3
+      },
+      "example_admitted_and_replayed": true,
+      "example_actions": 22,
+      "bounds": [
+        {
+          "theme_chars": 6,
+          "payload_bytes": 10375,
+          "cost_upper_cny": 0.147384,
+          "within_cap": true
+        },
+        {
+          "theme_chars": 2000,
+          "payload_bytes": 16357,
+          "cost_upper_cny": 0.19524,
+          "within_cap": true
+        }
+      ]
+    },
+    {
+      "room_count": 2,
+      "difficulty": "easy",
+      "requirements": {
+        "room_count": 2,
+        "puzzle_count": 3,
+        "minimum_two_material_puzzles": 0,
+        "minimum_dependency_depth": 1
+      },
+      "example_admitted_and_replayed": true,
+      "example_actions": 11,
+      "bounds": [
+        {
+          "theme_chars": 6,
+          "payload_bytes": 10224,
+          "cost_upper_cny": 0.146176,
+          "within_cap": true
+        },
+        {
+          "theme_chars": 2000,
+          "payload_bytes": 16206,
+          "cost_upper_cny": 0.194032,
+          "within_cap": true
+        }
+      ]
+    },
+    {
+      "room_count": 2,
+      "difficulty": "normal",
+      "requirements": {
+        "room_count": 2,
+        "puzzle_count": 4,
+        "minimum_two_material_puzzles": 1,
+        "minimum_dependency_depth": 1
+      },
+      "example_admitted_and_replayed": true,
+      "example_actions": 23,
+      "bounds": [
+        {
+          "theme_chars": 6,
+          "payload_bytes": 10519,
+          "cost_upper_cny": 0.148536,
+          "within_cap": true
+        },
+        {
+          "theme_chars": 2000,
+          "payload_bytes": 16501,
+          "cost_upper_cny": 0.196392,
+          "within_cap": true
+        }
+      ]
+    },
+    {
+      "room_count": 2,
+      "difficulty": "hard",
+      "requirements": {
+        "room_count": 2,
+        "puzzle_count": 5,
+        "minimum_two_material_puzzles": 2,
+        "minimum_dependency_depth": 3
+      },
+      "example_admitted_and_replayed": true,
+      "example_actions": 25,
+      "bounds": [
+        {
+          "theme_chars": 6,
+          "payload_bytes": 10879,
+          "cost_upper_cny": 0.151416,
+          "within_cap": true
+        },
+        {
+          "theme_chars": 2000,
+          "payload_bytes": 16861,
+          "cost_upper_cny": 0.199272,
+          "within_cap": true
+        }
+      ]
+    },
+    {
+      "room_count": 3,
+      "difficulty": "easy",
+      "requirements": {
+        "room_count": 3,
+        "puzzle_count": 4,
+        "minimum_two_material_puzzles": 0,
+        "minimum_dependency_depth": 1
+      },
+      "example_admitted_and_replayed": true,
+      "example_actions": 24,
+      "bounds": [
+        {
+          "theme_chars": 6,
+          "payload_bytes": 10659,
+          "cost_upper_cny": 0.149656,
+          "within_cap": true
+        },
+        {
+          "theme_chars": 2000,
+          "payload_bytes": 16641,
+          "cost_upper_cny": 0.197512,
+          "within_cap": true
+        }
+      ]
+    },
+    {
+      "room_count": 3,
+      "difficulty": "normal",
+      "requirements": {
+        "room_count": 3,
+        "puzzle_count": 5,
+        "minimum_two_material_puzzles": 1,
+        "minimum_dependency_depth": 1
+      },
+      "example_admitted_and_replayed": true,
+      "example_actions": 26,
+      "bounds": [
+        {
+          "theme_chars": 6,
+          "payload_bytes": 11023,
+          "cost_upper_cny": 0.152568,
+          "within_cap": true
+        },
+        {
+          "theme_chars": 2000,
+          "payload_bytes": 17005,
+          "cost_upper_cny": 0.200424,
+          "within_cap": false
+        }
+      ]
+    },
+    {
+      "room_count": 3,
+      "difficulty": "hard",
+      "requirements": {
+        "room_count": 3,
+        "puzzle_count": 6,
+        "minimum_two_material_puzzles": 2,
+        "minimum_dependency_depth": 3
+      },
+      "example_admitted_and_replayed": true,
+      "example_actions": 38,
+      "bounds": [
+        {
+          "theme_chars": 6,
+          "payload_bytes": 11314,
+          "cost_upper_cny": 0.154896,
+          "within_cap": true
+        },
+        {
+          "theme_chars": 2000,
+          "payload_bytes": 17296,
+          "cost_upper_cny": 0.202752,
+          "within_cap": false
+        }
+      ]
+    }
+  ],
+  "network_calls": 0,
+  "paid_calls": 0,
+  "key_read": false,
+  "ledger_opened": false,
+  "limitations": [
+    "Shape examples are synthetic teaching inputs, never production fallback or actual model replies.",
+    "Original real three failures remain unchanged; no real retest or model quality acceptance.",
+    "No admission/rules/API/Frontend/provider/profile changes."
+  ]
+}

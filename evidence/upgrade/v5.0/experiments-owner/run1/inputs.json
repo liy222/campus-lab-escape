@@ -1,0 +1,4648 @@
+[
+  {
+    "case_id": "GOOD-1-easy",
+    "category": "good",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "accept"
+  },
+  {
+    "case_id": "GOOD-1-normal",
+    "category": "good",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            },
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 5
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "normal",
+    "expected_full": "accept"
+  },
+  {
+    "case_id": "GOOD-1-hard",
+    "category": "good",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            },
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 5
+            },
+            {
+              "object_id": "obj_puzzle_3",
+              "name": "装置4",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_3",
+              "slot": 6
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G1",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_3",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_2"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "hard",
+    "expected_full": "accept"
+  },
+  {
+    "case_id": "GOOD-2-easy",
+    "category": "good",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        },
+        {
+          "room_id": "G2",
+          "name": "房间2",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_archive",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 0
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G2",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 2,
+    "difficulty": "easy",
+    "expected_full": "accept"
+  },
+  {
+    "case_id": "GOOD-2-normal",
+    "category": "good",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        },
+        {
+          "room_id": "G2",
+          "name": "房间2",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_archive",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_puzzle_3",
+              "name": "装置4",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_3",
+              "slot": 1
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G2",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_3",
+          "room_id": "G2",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_2"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 2,
+    "difficulty": "normal",
+    "expected_full": "accept"
+  },
+  {
+    "case_id": "GOOD-2-hard",
+    "category": "good",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            },
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 5
+            }
+          ]
+        },
+        {
+          "room_id": "G2",
+          "name": "房间2",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_archive",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_3",
+              "name": "装置4",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_3",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_puzzle_4",
+              "name": "装置5",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_4",
+              "slot": 1
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G1",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_3",
+          "room_id": "G2",
+          "mechanism": "sequence",
+          "prerequisite_ids": [
+            "puzzle_2"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_4",
+          "room_id": "G2",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_3"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 2,
+    "difficulty": "hard",
+    "expected_full": "accept"
+  },
+  {
+    "case_id": "GOOD-3-easy",
+    "category": "good",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        },
+        {
+          "room_id": "G2",
+          "name": "房间2",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_archive",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 0
+            }
+          ]
+        },
+        {
+          "room_id": "G3",
+          "name": "房间3",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_control",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_3",
+              "name": "装置4",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_3",
+              "slot": 0
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G2",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_3",
+          "room_id": "G3",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_2"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 3,
+    "difficulty": "easy",
+    "expected_full": "accept"
+  },
+  {
+    "case_id": "GOOD-3-normal",
+    "category": "good",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        },
+        {
+          "room_id": "G2",
+          "name": "房间2",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_archive",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_puzzle_3",
+              "name": "装置4",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_3",
+              "slot": 1
+            }
+          ]
+        },
+        {
+          "room_id": "G3",
+          "name": "房间3",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_control",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_4",
+              "name": "装置5",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_4",
+              "slot": 0
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G2",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_3",
+          "room_id": "G2",
+          "mechanism": "sequence",
+          "prerequisite_ids": [
+            "puzzle_2"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_4",
+          "room_id": "G3",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_3"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 3,
+    "difficulty": "normal",
+    "expected_full": "accept"
+  },
+  {
+    "case_id": "GOOD-3-hard",
+    "category": "good",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        },
+        {
+          "room_id": "G2",
+          "name": "房间2",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_archive",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_puzzle_3",
+              "name": "装置4",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_3",
+              "slot": 1
+            }
+          ]
+        },
+        {
+          "room_id": "G3",
+          "name": "房间3",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_control",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_4",
+              "name": "装置5",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_4",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_puzzle_5",
+              "name": "装置6",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_5",
+              "slot": 1
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G2",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_3",
+          "room_id": "G2",
+          "mechanism": "sequence",
+          "prerequisite_ids": [
+            "puzzle_2"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_4",
+          "room_id": "G3",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_3"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_5",
+          "room_id": "G3",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_4"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 3,
+    "difficulty": "hard",
+    "expected_full": "accept"
+  },
+  {
+    "case_id": "REF-01",
+    "category": "reference",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "missing_room",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "REF-02",
+    "category": "reference",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "missing_clue"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "REF-03",
+    "category": "reference",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "missing_item"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "REF-04",
+    "category": "reference",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "missing_puzzle"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "REF-05",
+    "category": "reference",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_key",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "DEP-01",
+    "category": "dependency",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "DEP-02",
+    "category": "dependency",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "DEP-03",
+    "category": "dependency",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1,
+              "locked_by": [
+                "puzzle_0"
+              ]
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "DEP-04",
+    "category": "dependency",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0,
+              "locked_by": [
+                "puzzle_1"
+              ]
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "DEP-05",
+    "category": "dependency",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 3
+            }
+          ]
+        },
+        {
+          "room_id": "G2",
+          "name": "房间2",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_archive",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_puzzle_3",
+              "name": "装置4",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_3",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 2
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G2",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_3",
+          "room_id": "G2",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_2"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 2,
+    "difficulty": "normal",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "SEM-01",
+    "category": "semantics",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            8,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "SEM-02",
+    "category": "semantics",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        },
+        {
+          "room_id": "G2",
+          "name": "房间2",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_archive",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_puzzle_3",
+              "name": "装置4",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_3",
+              "slot": 1
+            }
+          ]
+        },
+        {
+          "room_id": "G3",
+          "name": "房间3",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_control",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_4",
+              "name": "装置5",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_4",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_puzzle_5",
+              "name": "装置6",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_5",
+              "slot": 1
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G2",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_3",
+          "room_id": "G2",
+          "mechanism": "sequence",
+          "prerequisite_ids": [
+            "puzzle_2"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_4",
+          "room_id": "G3",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_3"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_5",
+          "room_id": "G3",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_4"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 3,
+    "difficulty": "hard",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "SEM-03",
+    "category": "semantics",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            },
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 5
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source"
+          ],
+          "recipe": "concat"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source"
+          ],
+          "recipe": "concat"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "normal",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "SEM-04",
+    "category": "semantics",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        },
+        {
+          "room_id": "G2",
+          "name": "房间2",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_archive",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_puzzle_3",
+              "name": "装置4",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_3",
+              "slot": 1
+            }
+          ]
+        },
+        {
+          "room_id": "G3",
+          "name": "房间3",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_control",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_4",
+              "name": "装置5",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_4",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_puzzle_5",
+              "name": "装置6",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_5",
+              "slot": 1
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source"
+          ],
+          "recipe": "concat"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source"
+          ],
+          "recipe": "concat"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G2",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_3",
+          "room_id": "G2",
+          "mechanism": "sequence",
+          "prerequisite_ids": [
+            "puzzle_2"
+          ],
+          "clue_ids": [
+            "fact_source"
+          ],
+          "recipe": "concat"
+        },
+        {
+          "puzzle_id": "puzzle_4",
+          "room_id": "G3",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_3"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_5",
+          "room_id": "G3",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_4"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 3,
+    "difficulty": "hard",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "SEM-05",
+    "category": "semantics",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "symbol_map"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "LAY-01",
+    "category": "layout",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "LAY-02",
+    "category": "layout",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 8
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "LAY-03",
+    "category": "layout",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "external_image",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "LAY-04",
+    "category": "layout",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            },
+            {
+              "object_id": "extra_0",
+              "name": "多余物件",
+              "description": "超出布局预算。",
+              "slot": 0,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source"
+            },
+            {
+              "object_id": "extra_1",
+              "name": "多余物件",
+              "description": "超出布局预算。",
+              "slot": 1,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source"
+            },
+            {
+              "object_id": "extra_2",
+              "name": "多余物件",
+              "description": "超出布局预算。",
+              "slot": 2,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source"
+            },
+            {
+              "object_id": "extra_3",
+              "name": "多余物件",
+              "description": "超出布局预算。",
+              "slot": 3,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source"
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "LAY-05",
+    "category": "layout",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        },
+        {
+          "room_id": "G2",
+          "name": "房间2",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_archive",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_puzzle_3",
+              "name": "装置4",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_3",
+              "slot": 1
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G2",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G2",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_3",
+          "room_id": "G2",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_2"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 2,
+    "difficulty": "normal",
+    "expected_full": "reject"
+  },
+  {
+    "case_id": "LIMIT-01",
+    "category": "limit",
+    "raw": "{\"title\": \"\\u6d4b\\u8bd5\\u5b9e\\u9a8c\\u5ba4\", \"story\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\", \"rooms\": [{\"room_id\": \"G1\", \"name\": \"\\u623f\\u95f41\", \"description\": \"\\u4e00\\u95f4\\u5b89\\u9759\\u7684\\u5b9e\\u9a8c\\u5ba4\\u3002\", \"background_id\": \"neutral_lab\", \"objects\": [{\"object_id\": \"obj_key\", \"name\": \"\\u94a5\\u5319\", \"description\": \"\\u4e00\\u628a\\u53ef\\u91cd\\u590d\\u4f7f\\u7528\\u7684\\u94a5\\u5319\\u3002\", \"art_id\": \"key\", \"kind\": \"item\", \"item_id\": \"shared_key\", \"slot\": 0}, {\"object_id\": \"obj_source\", \"name\": \"\\u6570\\u636e\\u7eb8\", \"description\": \"\\u8bb0\\u5f55\\u4e86\\u6279\\u6b21\\u6e90\\u5e8f\\u3002\", \"art_id\": \"note\", \"kind\": \"clue\", \"clue_id\": \"fact_source\", \"slot\": 1}, {\"object_id\": \"obj_order\", \"name\": \"\\u8bfb\\u53d6\\u8bf4\\u660e\", \"description\": \"\\u8bb0\\u5f55\\u4e86\\u8bfb\\u53d6\\u4f4d\\u7f6e\\u3002\", \"art_id\": \"note\", \"kind\": \"clue\", \"clue_id\": \"fact_order\", \"slot\": 2}, {\"object_id\": \"obj_puzzle_0\", \"name\": \"\\u88c5\\u7f6e1\", \"description\": \"\\u6839\\u636e\\u8d44\\u6599\\u5b8c\\u6210\\u64cd\\u4f5c\\u3002\", \"art_id\": \"terminal\", \"kind\": \"puzzle\", \"puzzle_id\": \"puzzle_0\", \"slot\": 3}, {\"object_id\": \"obj_puzzle_1\", \"name\": \"\\u88c5\\u7f6e2\", \"description\": \"\\u6839\\u636e\\u8d44\\u6599\\u5b8c\\u6210\\u64cd\\u4f5c\\u3002\", \"art_id\": \"terminal\", \"kind\": \"puzzle\", \"puzzle_id\": \"puzzle_1\", \"slot\": 4}]}], \"clues\": [{\"clue_id\": \"fact_source\", \"tokens\": [\"1\", \"2\", \"3\", \"4\"]}, {\"clue_id\": \"fact_order\", \"indices\": [3, 1, 4, 2]}], \"puzzles\": [{\"puzzle_id\": \"puzzle_0\", \"room_id\": \"G1\", \"mechanism\": \"code\", \"prerequisite_ids\": [], \"clue_ids\": [\"fact_source\", \"fact_order\"], \"recipe\": \"index\"}, {\"puzzle_id\": \"puzzle_1\", \"room_id\": \"G1\", \"mechanism\": \"item\", \"prerequisite_ids\": [\"puzzle_0\"], \"required_item_id\": \"shared_key\"}]}",
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject",
+    "limit": "output_bytes"
+  },
+  {
+    "case_id": "LIMIT-02",
+    "category": "limit",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ],
+      "unexpected": {
+        "nested": {
+          "nested": {
+            "nested": {
+              "nested": {
+                "nested": {
+                  "nested": {
+                    "nested": {
+                      "nested": {
+                        "nested": {
+                          "nested": {
+                            "nested": {
+                              "nested": {
+                                "nested": {
+                                  "nested": {
+                                    "nested": {
+                                      "nested": {
+                                        "nested": {
+                                          "nested": {
+                                            "nested": {
+                                              "nested": {
+                                                "nested": {
+                                                  "nested": {
+                                                    "nested": {
+                                                      "nested": {
+                                                        "nested": {
+                                                          "nested": {
+                                                            "nested": {
+                                                              "nested": {
+                                                                "nested": {
+                                                                  "nested": {
+                                                                    "nested": {
+                                                                      "nested": {
+                                                                        "nested": {
+                                                                          "nested": {}
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject",
+    "limit": "output_depth"
+  },
+  {
+    "case_id": "LIMIT-03",
+    "category": "limit",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            },
+            {
+              "object_id": "optional_object_0",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 5,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_0"
+            },
+            {
+              "object_id": "optional_object_1",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 6,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_1"
+            },
+            {
+              "object_id": "optional_object_2",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 7,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_2"
+            }
+          ]
+        },
+        {
+          "room_id": "G2",
+          "name": "房间2",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_archive",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_2",
+              "name": "装置3",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_2",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_puzzle_3",
+              "name": "装置4",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_3",
+              "slot": 1
+            },
+            {
+              "object_id": "optional_object_3",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 2,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_3"
+            },
+            {
+              "object_id": "optional_object_4",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 3,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_4"
+            },
+            {
+              "object_id": "optional_object_5",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 4,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_5"
+            },
+            {
+              "object_id": "optional_object_6",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 5,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_6"
+            },
+            {
+              "object_id": "optional_object_7",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 6,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_7"
+            },
+            {
+              "object_id": "optional_object_8",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 7,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_8"
+            }
+          ]
+        },
+        {
+          "room_id": "G3",
+          "name": "房间3",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_control",
+          "objects": [
+            {
+              "object_id": "obj_puzzle_4",
+              "name": "装置5",
+              "description": "根据资料完成操作。",
+              "art_id": "circuit",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_4",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_puzzle_5",
+              "name": "装置6",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_5",
+              "slot": 1
+            },
+            {
+              "object_id": "optional_object_9",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 2,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_9"
+            },
+            {
+              "object_id": "optional_object_10",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 3,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_10"
+            },
+            {
+              "object_id": "optional_object_11",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 4,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_11"
+            },
+            {
+              "object_id": "optional_object_12",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 5,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_12"
+            },
+            {
+              "object_id": "optional_object_13",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 6,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_13"
+            },
+            {
+              "object_id": "optional_object_14",
+              "name": "可选资料",
+              "description": "独立的观察资料。",
+              "slot": 7,
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "optional_fact_14"
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        },
+        {
+          "clue_id": "optional_fact_0",
+          "tokens": [
+            "0"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_1",
+          "tokens": [
+            "1"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_2",
+          "tokens": [
+            "2"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_3",
+          "tokens": [
+            "3"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_4",
+          "tokens": [
+            "4"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_5",
+          "tokens": [
+            "5"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_6",
+          "tokens": [
+            "6"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_7",
+          "tokens": [
+            "7"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_8",
+          "tokens": [
+            "8"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_9",
+          "tokens": [
+            "0"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_10",
+          "tokens": [
+            "1"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_11",
+          "tokens": [
+            "2"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_12",
+          "tokens": [
+            "3"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_13",
+          "tokens": [
+            "4"
+          ]
+        },
+        {
+          "clue_id": "optional_fact_14",
+          "tokens": [
+            "5"
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_2",
+          "room_id": "G2",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_1"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_3",
+          "room_id": "G2",
+          "mechanism": "sequence",
+          "prerequisite_ids": [
+            "puzzle_2"
+          ],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_4",
+          "room_id": "G3",
+          "mechanism": "circuit",
+          "prerequisite_ids": [
+            "puzzle_3"
+          ]
+        },
+        {
+          "puzzle_id": "puzzle_5",
+          "room_id": "G3",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_4"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 3,
+    "difficulty": "hard",
+    "expected_full": "unknown",
+    "limit": "planner_states",
+    "clock": "disable_deadline_only"
+  },
+  {
+    "case_id": "LIMIT-04",
+    "category": "limit",
+    "raw": {
+      "title": "测试实验室",
+      "story": "这是离线验证用定义。",
+      "rooms": [
+        {
+          "room_id": "G1",
+          "name": "房间1",
+          "description": "一间安静的实验室。",
+          "background_id": "neutral_lab",
+          "objects": [
+            {
+              "object_id": "obj_key",
+              "name": "钥匙",
+              "description": "一把可重复使用的钥匙。",
+              "art_id": "key",
+              "kind": "item",
+              "item_id": "shared_key",
+              "slot": 0
+            },
+            {
+              "object_id": "obj_source",
+              "name": "数据纸",
+              "description": "记录了批次源序。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_source",
+              "slot": 1
+            },
+            {
+              "object_id": "obj_order",
+              "name": "读取说明",
+              "description": "记录了读取位置。",
+              "art_id": "note",
+              "kind": "clue",
+              "clue_id": "fact_order",
+              "slot": 2
+            },
+            {
+              "object_id": "obj_puzzle_0",
+              "name": "装置1",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_0",
+              "slot": 3
+            },
+            {
+              "object_id": "obj_puzzle_1",
+              "name": "装置2",
+              "description": "根据资料完成操作。",
+              "art_id": "terminal",
+              "kind": "puzzle",
+              "puzzle_id": "puzzle_1",
+              "slot": 4
+            }
+          ]
+        }
+      ],
+      "clues": [
+        {
+          "clue_id": "fact_source",
+          "tokens": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "clue_id": "fact_order",
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle_id": "puzzle_0",
+          "room_id": "G1",
+          "mechanism": "code",
+          "prerequisite_ids": [],
+          "clue_ids": [
+            "fact_source",
+            "fact_order"
+          ],
+          "recipe": "index"
+        },
+        {
+          "puzzle_id": "puzzle_1",
+          "room_id": "G1",
+          "mechanism": "item",
+          "prerequisite_ids": [
+            "puzzle_0"
+          ],
+          "required_item_id": "shared_key"
+        }
+      ]
+    },
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "unknown",
+    "limit": "planner_seconds",
+    "clock": "controlled_boundary"
+  },
+  {
+    "case_id": "LIMIT-05",
+    "category": "limit",
+    "raw": "{\"title\":",
+    "room_count": 1,
+    "difficulty": "easy",
+    "expected_full": "reject",
+    "limit": "truncated_output"
+  }
+]

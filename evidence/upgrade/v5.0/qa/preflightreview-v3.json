@@ -1,0 +1,77 @@
+{
+  "kind": "independent_v3_narrow_finite_preflight",
+  "utc": "2026-10-23T06:07:01.994032+00:00",
+  "prior_review": "evidence/upgrade/v5.0/qa/finitepreflightreview.json",
+  "runner_sha256": "219e92d90e22229700e6926e0372eec9cebebeff9c8760370e4f090c3db5c0b4",
+  "preview_v3_sha256": "43180be8585e237b0b1f5b51fae53c287d8527250870fa3f0246cc424adb414c",
+  "exact_runner_delta_reconstructed_old_sha256": true,
+  "allowed_delta": [
+    "two fixed preview filenames v2 to v3",
+    "one repository-root sys.path insertion"
+  ],
+  "v3_source_mismatches": [],
+  "candidate_fixed_backend_differences": [],
+  "payload_checks": [
+    {
+      "case_id": "G1",
+      "payload_bound_unchanged": true,
+      "sha256_match": true,
+      "cost_recomputed_match": true,
+      "cost_upper_cny": 0.132232,
+      "placeholder_only": false
+    },
+    {
+      "case_id": "G2",
+      "payload_bound_unchanged": true,
+      "sha256_match": true,
+      "cost_recomputed_match": true,
+      "cost_upper_cny": 0.132416,
+      "placeholder_only": false
+    },
+    {
+      "case_id": "G3",
+      "payload_bound_unchanged": true,
+      "sha256_match": true,
+      "cost_recomputed_match": true,
+      "cost_upper_cny": 0.132472,
+      "placeholder_only": false
+    },
+    {
+      "case_id": "A1",
+      "payload_bound_unchanged": true,
+      "sha256_match": true,
+      "cost_recomputed_match": true,
+      "cost_upper_cny": 0.042784,
+      "placeholder_only": true
+    },
+    {
+      "case_id": "A2",
+      "payload_bound_unchanged": true,
+      "sha256_match": true,
+      "cost_recomputed_match": true,
+      "cost_upper_cny": 0.044952,
+      "placeholder_only": true
+    }
+  ],
+  "conclusion": "FINITE_PREFLIGHT_READY_PENDING_OFFLINE_GATE",
+  "dispatch_conditions": [
+    "Main personally dispatches only after final offline critical MUST gate.",
+    "A1/A2 placeholders never dispatch; actual generated public stage and successful real A1 history are recomputed and bounded before each call.",
+    "Original single-use marker/journal, <=5 calls/0.70 ceiling, old3unknown identity preservation, newunknown/modelanomaly/secret/frozen stop and automatic retry0 remain unchanged."
+  ],
+  "actual_checks": [
+    {
+      "command": "Read-only exact byte delta reconstruction, V3 payload SHA/cost recomputation and source/candidate comparison",
+      "exit_code": 0
+    }
+  ],
+  "key_read": false,
+  "ledger_opened": false,
+  "game_database_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "limitations": [
+    "This is a narrow static/arithmetic review, not a real provider test or generation quality success.",
+    "Owner prepare first failure and later success are historical Owner evidence; QA did not rerun prepare."
+  ]
+}

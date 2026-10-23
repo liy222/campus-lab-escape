@@ -1,0 +1,214 @@
+{
+  "kind": "Main normalized observations from actual independent QA",
+  "claim_id": "V5-C2",
+  "release_id": "v5.0-engineering",
+  "candidate_id": "v5.0-authmaterial-qa-432be5c746a03905",
+  "exit_code": 0,
+  "checks": {
+    "owner_id": "9930efc8ce584f8e8feebae28e2b116a",
+    "intruder_id": "8c0349bd6b2a41438b9e850a92b6c7b1",
+    "requests": [
+      {
+        "operation": "read",
+        "http_status": 404,
+        "target_before_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab",
+        "target_after_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab"
+      },
+      {
+        "operation": "read",
+        "http_status": 404,
+        "target_before_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab",
+        "target_after_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab"
+      },
+      {
+        "operation": "read",
+        "http_status": 404,
+        "target_before_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab",
+        "target_after_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab"
+      },
+      {
+        "operation": "read",
+        "http_status": 404,
+        "target_before_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab",
+        "target_after_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab"
+      },
+      {
+        "operation": "actions",
+        "http_status": 404,
+        "target_before_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab",
+        "target_after_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab"
+      },
+      {
+        "operation": "reset",
+        "http_status": 404,
+        "target_before_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab",
+        "target_after_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab"
+      },
+      {
+        "operation": "saves",
+        "http_status": 404,
+        "target_before_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab",
+        "target_after_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab"
+      },
+      {
+        "operation": "restore",
+        "http_status": 404,
+        "target_before_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab",
+        "target_after_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab"
+      },
+      {
+        "operation": "saves/b68e495be98945f4a7794465941e226f/delete",
+        "http_status": 404,
+        "target_before_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab",
+        "target_after_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab"
+      },
+      {
+        "operation": "ai/turns",
+        "http_status": 404,
+        "target_before_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab",
+        "target_after_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab"
+      },
+      {
+        "operation": "create_session",
+        "http_status": 404,
+        "target_before_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab",
+        "target_after_sha256": "239572d7b59e0c7669fbdf44cc5971decf836afc7cbf4333f74094700191faab"
+      }
+    ]
+  },
+  "source_before": {
+    "backend/__init__.py": "678b058c761ee3af2cdc84b51b12645d79e182e2954a54491b94a50c1d32c665",
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/companion.py": "5fd0dbfa40689277b70f92f03168da3fae8229be8a5510ee020dbfb1523ac940",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/hints.py": "b6d3773d1066dd30d91691b60b2de89f150ec55ffb7ab9560cfd8e943ecbecb3",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "1c4f5c170f1bd1d303899c2ccf6d3185c258db214f47fff6f0d1e4b442eff85d",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "0e3ad7b1a93d9af43bea17f35ceeda76c1845b6d1fe138c9bd071fbf1a177be8",
+    "backend/app/ai/types.py": "9e7d1dacf68f1f42970885fff9a4b0f2fcce46baa29a7fa3fb78c42f3354a830",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "70d7475cddb3f63a4334df8c8268f8d07af997540209173dadb90201f07807b8",
+    "backend/app/api/v5.py": "430a9df195e0c01787b7c5bd5b09af634eb5417ca15774437890b447747a6740",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+    "backend/app/domain/graybox_models.py": "ea21b1d81f09a4178fb3ec40cf32ae98960b8607b3589b247eb956bc72cb1b5a",
+    "backend/app/domain/graybox_rules.py": "2d6598034c30b8d50d01008ae8d0ed0843e42c2e4a84d46d80d737d0b97e655b",
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/mini_rules.py": "9104576bbb47c20d6f230c66a66d83c5e7835fd056dfc735e8a1f00876f1b49b",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/domain/save_models.py": "2dc073a8f8e94721d04ff39157c5e1c4b51ed8bc6f5e092e6ba2fa839cd03d8b",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/main.py": "f17f5de8a9921fbfa07997255279c2e109c1e9eaf0a053010233f851f623a696",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "6d7c98627f5219ad678815f0750abeb202b290adac769004059c77c433d8cdce",
+    "backend/app/storage/saves.py": "cbee6f356a6271a3d41ea365fef918c3c1678d24b9c9bf49dcc59e752d59af84",
+    "backend/app/storage/sqlite.py": "cb1f946f6377cb92a6776ec00513b4470be262ad59a907e3f17c1972c027994a",
+    "backend/app/storage/v5.py": "eb58009dbfd715d8eff4e28b2db3ea346ac11a3b2d822f80838445b849b70fba",
+    "backend/requirements.in": "3b735ecbb432e3367e8ab0468531f67019901d5d505957562fb8244f351d5317",
+    "backend/requirements.lock.txt": "31084ea7caf51d51e32ae5437d97aa69460b8bf9065f7a6bd8bf503df367ca3e",
+    "frontend/src/assets/generated-catalog.json": "c702e73f0c8b234af95564b321652979ebd806a0093f008042e9c2a3fc9b80b8",
+    "scripts/check_v5.py": "609d74c4cad2dcee1d3814fa24814de9b068afd0572d357085f50fc9e6bd1d08",
+    "tests/v5/__init__.py": "5aa61a2018b20cc8ba93688e9803de72323a122d4db3ee89cae741d9d6090060",
+    "tests/v5/conftest.py": "586e2cb33b5dd9ed379babdc1d9a7eb71e34337713e0bacb9130a95e8f4431bd",
+    "tests/v5/test_integration.py": "0e54950b1d57b5351500514751ee9e4d412102c965dd52d1a610c71f255efda8",
+    "tests/v5/test_material_auth_fixed.py": "6ff5cb726504d140eeaa15273d0626a0cc01c3b6d071ef1211e7130e2cf472f7",
+    "tests/v5/test_planner_fixed.py": "94bc7c84b5aa034d1c303b17084f37956075e78f3d779192495d84a717c6532d",
+    "tests/v5/test_security.py": "e0e761ae6712e7f886d8460b80f6b7274d2d397b509d445a45561f653b6eb73e",
+    "contracts/v2/api.schema.json": "68a8891e10956837f4bc370dd4a67bfc79674e86bcd9d9cf4bd2ce7c6c63dc72",
+    "contracts/v2/build_contracts.py": "10d695c3f6d1d94a2ddefbc49b8d09b5d254d9e385404ef81c2601284da0a38c",
+    "contracts/v2/check_contracts.py": "a6f146a5825afb27572aabf41d574cb05745fcb2400d69fcf990db54333badbb",
+    "contracts/v2/level-draft.schema.json": "24698f399cba5697c61bd02f8c3616f52fd5a568ad4aaa264c02a55d19bd9044",
+    "contracts/v2/README.md": "09aa374a0d3abc41414c475f81879aa5dd12717c36c8f7eec2ec4537b9a113e6",
+    "contracts/v2/routes.json": "6e8d84d8897d848087979a54b98bc076da92241ef4ebfab975ee255c47b2e730"
+  },
+  "source_after": {
+    "backend/__init__.py": "678b058c761ee3af2cdc84b51b12645d79e182e2954a54491b94a50c1d32c665",
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/companion.py": "5fd0dbfa40689277b70f92f03168da3fae8229be8a5510ee020dbfb1523ac940",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/hints.py": "b6d3773d1066dd30d91691b60b2de89f150ec55ffb7ab9560cfd8e943ecbecb3",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "1c4f5c170f1bd1d303899c2ccf6d3185c258db214f47fff6f0d1e4b442eff85d",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "0e3ad7b1a93d9af43bea17f35ceeda76c1845b6d1fe138c9bd071fbf1a177be8",
+    "backend/app/ai/types.py": "9e7d1dacf68f1f42970885fff9a4b0f2fcce46baa29a7fa3fb78c42f3354a830",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "70d7475cddb3f63a4334df8c8268f8d07af997540209173dadb90201f07807b8",
+    "backend/app/api/v5.py": "430a9df195e0c01787b7c5bd5b09af634eb5417ca15774437890b447747a6740",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+    "backend/app/domain/graybox_models.py": "ea21b1d81f09a4178fb3ec40cf32ae98960b8607b3589b247eb956bc72cb1b5a",
+    "backend/app/domain/graybox_rules.py": "2d6598034c30b8d50d01008ae8d0ed0843e42c2e4a84d46d80d737d0b97e655b",
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/mini_rules.py": "9104576bbb47c20d6f230c66a66d83c5e7835fd056dfc735e8a1f00876f1b49b",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/domain/save_models.py": "2dc073a8f8e94721d04ff39157c5e1c4b51ed8bc6f5e092e6ba2fa839cd03d8b",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/main.py": "f17f5de8a9921fbfa07997255279c2e109c1e9eaf0a053010233f851f623a696",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "6d7c98627f5219ad678815f0750abeb202b290adac769004059c77c433d8cdce",
+    "backend/app/storage/saves.py": "cbee6f356a6271a3d41ea365fef918c3c1678d24b9c9bf49dcc59e752d59af84",
+    "backend/app/storage/sqlite.py": "cb1f946f6377cb92a6776ec00513b4470be262ad59a907e3f17c1972c027994a",
+    "backend/app/storage/v5.py": "eb58009dbfd715d8eff4e28b2db3ea346ac11a3b2d822f80838445b849b70fba",
+    "backend/requirements.in": "3b735ecbb432e3367e8ab0468531f67019901d5d505957562fb8244f351d5317",
+    "backend/requirements.lock.txt": "31084ea7caf51d51e32ae5437d97aa69460b8bf9065f7a6bd8bf503df367ca3e",
+    "frontend/src/assets/generated-catalog.json": "c702e73f0c8b234af95564b321652979ebd806a0093f008042e9c2a3fc9b80b8",
+    "scripts/check_v5.py": "609d74c4cad2dcee1d3814fa24814de9b068afd0572d357085f50fc9e6bd1d08",
+    "tests/v5/__init__.py": "5aa61a2018b20cc8ba93688e9803de72323a122d4db3ee89cae741d9d6090060",
+    "tests/v5/conftest.py": "586e2cb33b5dd9ed379babdc1d9a7eb71e34337713e0bacb9130a95e8f4431bd",
+    "tests/v5/test_integration.py": "0e54950b1d57b5351500514751ee9e4d412102c965dd52d1a610c71f255efda8",
+    "tests/v5/test_material_auth_fixed.py": "6ff5cb726504d140eeaa15273d0626a0cc01c3b6d071ef1211e7130e2cf472f7",
+    "tests/v5/test_planner_fixed.py": "94bc7c84b5aa034d1c303b17084f37956075e78f3d779192495d84a717c6532d",
+    "tests/v5/test_security.py": "e0e761ae6712e7f886d8460b80f6b7274d2d397b509d445a45561f653b6eb73e",
+    "contracts/v2/api.schema.json": "68a8891e10956837f4bc370dd4a67bfc79674e86bcd9d9cf4bd2ce7c6c63dc72",
+    "contracts/v2/build_contracts.py": "10d695c3f6d1d94a2ddefbc49b8d09b5d254d9e385404ef81c2601284da0a38c",
+    "contracts/v2/check_contracts.py": "a6f146a5825afb27572aabf41d574cb05745fcb2400d69fcf990db54333badbb",
+    "contracts/v2/level-draft.schema.json": "24698f399cba5697c61bd02f8c3616f52fd5a568ad4aaa264c02a55d19bd9044",
+    "contracts/v2/README.md": "09aa374a0d3abc41414c475f81879aa5dd12717c36c8f7eec2ec4537b9a113e6",
+    "contracts/v2/routes.json": "6e8d84d8897d848087979a54b98bc076da92241ef4ebfab975ee255c47b2e730"
+  },
+  "provenance": {
+    "operator": "Independent QA agent executed the original command; Main only filtered and registered observations.",
+    "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m pytest tests/v5/test_material_auth_fixed.py::test_legacy_random_anonymous_context_rotates_safely tests/v5/test_planner_fixed.py::test_affected_nine_and_twenty_original_inputs tests/v5/test_security.py::test_all_private_ids_read_write_denied_without_owner_change tests/v5/test_integration.py::test_three_archives_restore_delete_reset_relogin_reopen tests/v5/test_integration.py::test_bad_definition_or_archive_does_not_overwrite[checksum] -q -p no:cacheprovider",
+    "actual_product_execution": true,
+    "input_origin": "Offline synthetic definitions/accounts; actual compiler, rules and authenticated API. No model quality inference.",
+    "original_candidate_manifest": "evidence/upgrade/v5.0/candidate-authmaterial-qa-fixed.json",
+    "source_projection": "Exact subset of equal full401 before/after runtime maps. Backend/contracts and relevant tests only, excluding AI/v5.py: the recorded commands inject FixtureGenerator and execute no admitted AI turn or production AI service invocation, so production prompts/model quality are outside C1/C2/C3. UI/evaluator/CMD/binary sources are also outside these finite claims. Current prompt repair is a separate source epoch, not relabelled as part of these executions.",
+    "raw_artifacts": [
+      {
+        "path": "evidence/upgrade/v5.0/qa/authmaterial-qa-fixed/20261023T064227981427Z-1ba7558d/summary.json",
+        "raw_sha256": "617d51aeaa6d56c742a361a2392a7b792c73d3ba6db3f6e8b212b68db09dfdc7"
+      },
+      {
+        "path": "evidence/upgrade/v5.0/qa/authmaterial-qa-fixed/20261023T064227981427Z-1ba7558d/C2-observations.json",
+        "raw_sha256": "cb19f6f8bf3fbbad73f641921e403a364829ed74e147537ced8224010267525d"
+      }
+    ],
+    "historical_seven_suites_relabelled": false,
+    "bad_save_fixture": null
+  },
+  "limitations": [
+    "These finite observations are not universal solvability, universal security, real AI generation or real semantic judgement."
+  ],
+  "human_signoff": null,
+  "teacher_approval": null
+}

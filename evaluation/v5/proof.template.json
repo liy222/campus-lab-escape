@@ -1,0 +1,74 @@
+{
+  "C2_checks_shape": {
+    "intruder_id": "B",
+    "owner_id": "A",
+    "requests": [
+      {
+        "http_status": 404,
+        "operation": "read",
+        "target_after_sha256": "ACTUAL_HASH",
+        "target_before_sha256": "ACTUAL_HASH"
+      },
+      {
+        "http_status": 404,
+        "operation": "restore",
+        "target_after_sha256": "ACTUAL_HASH",
+        "target_before_sha256": "ACTUAL_HASH"
+      }
+    ]
+  },
+  "C3_checks_shape": {
+    "bad_saves": [
+      {
+        "case_id": "bad-1",
+        "current_after_sha256": "ACTUAL_HASH",
+        "current_before_sha256": "ACTUAL_HASH",
+        "rejected": true
+      }
+    ],
+    "original_definition_sha256": "ACTUAL_HASH",
+    "restores": [
+      {
+        "moment_id": "time-1",
+        "restored_definition_sha256": "ACTUAL_HASH",
+        "restored_state_sha256": "ACTUAL_HASH",
+        "saved_state_sha256": "ACTUAL_HASH"
+      }
+    ]
+  },
+  "candidate_id": "ACTUAL_CANDIDATE",
+  "checks": {
+    "admissions": [
+      {
+        "admitted": true,
+        "difficulty": "easy",
+        "replay_won": true,
+        "room_count": 1,
+        "steps": 1
+      }
+    ],
+    "rejections": [
+      {
+        "case_id": "bad-01",
+        "category": "reference",
+        "rejected": true
+      }
+    ]
+  },
+  "claim_id": "V5-C1",
+  "exit_code": 0,
+  "provenance": {
+    "command": "ACTUAL_COMMAND",
+    "operator": "ACTUAL_OPERATOR",
+    "raw_artifacts": [
+      "REGISTER_AND_PIN_ACTUAL_OUTPUTS_TOO"
+    ]
+  },
+  "release_id": "v5.0-engineering",
+  "source_after": {
+    "backend/app/domain/generated.py": "ACTUAL_RAW_SHA256"
+  },
+  "source_before": {
+    "backend/app/domain/generated.py": "ACTUAL_RAW_SHA256"
+  }
+}

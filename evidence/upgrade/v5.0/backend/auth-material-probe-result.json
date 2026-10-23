@@ -1,0 +1,62 @@
+{
+  "kind": "owner_narrow_auth_material_probe_not_formal_qa",
+  "material": {
+    "valid_fixtures": [
+      {
+        "fixture": "concat",
+        "definition_hash_and_answers_unchanged": true,
+        "required_material_and_observation_gate": true,
+        "canonical_title_order_visible": true,
+        "old_snapshot_restores": true
+      },
+      {
+        "fixture": "reverse",
+        "definition_hash_and_answers_unchanged": true,
+        "required_material_and_observation_gate": true,
+        "canonical_title_order_visible": true,
+        "old_snapshot_restores": true
+      },
+      {
+        "fixture": "index",
+        "definition_hash_and_answers_unchanged": true,
+        "required_material_and_observation_gate": true,
+        "canonical_title_order_visible": true,
+        "old_snapshot_restores": true
+      },
+      {
+        "fixture": "map_same_value",
+        "definition_hash_and_answers_unchanged": true,
+        "required_material_and_observation_gate": true,
+        "canonical_title_order_visible": true,
+        "old_snapshot_restores": true
+      },
+      {
+        "fixture": "sequence",
+        "definition_hash_and_answers_unchanged": true,
+        "required_material_and_observation_gate": true,
+        "canonical_title_order_visible": true,
+        "old_snapshot_restores": true
+      }
+    ],
+    "same_value_map_allowed": true,
+    "conflicting_map_rejected": "CONFLICTING_MAP",
+    "baseline_snapshot_file_bytes_unchanged": true
+  },
+  "auth": {
+    "anon_get_reuses_nonce_and_csrf": true,
+    "get_does_not_slide_database_time_or_cookie_expiry": true,
+    "nonce_and_csrf_hash_only": true,
+    "logout_seeds_anon_cookie_before_parallel_gets": true,
+    "two_parallel_gets_same_csrf": true,
+    "following_registration_status": 201,
+    "duplicate_csrf_status": 403,
+    "stale_auth_context_status": 403,
+    "expired_nonce_rotates": true,
+    "legacy_random_csrf_row_rotates_once": true,
+    "paid_calls": 0,
+    "network_calls": 0,
+    "database": "TEMP only"
+  },
+  "paid_calls": 0,
+  "network_calls": 0
+}

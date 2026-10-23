@@ -1,0 +1,40 @@
+{
+  "operator": "independent QA agent",
+  "kind": "finite pure-memory material-sufficiency counterexamples",
+  "utc": "2026-10-23T06:24:03.306731+00:00",
+  "command": "Inline independent neutral two-material concat and conflicting symbol_map compiled/public projections",
+  "exit_code": 0,
+  "source_before": {
+    "backend/app/domain/generated.py": "9013c53915c892e33428e5ceff71c6d74fe7467d207308611ad8e8d8615112f1",
+    "frontend/src/assets/generated-catalog.json": "c702e73f0c8b234af95564b321652979ebd806a0093f008042e9c2a3fc9b80b8"
+  },
+  "source_after": {
+    "backend/app/domain/generated.py": "9013c53915c892e33428e5ceff71c6d74fe7467d207308611ad8e8d8615112f1",
+    "frontend/src/assets/generated-catalog.json": "c702e73f0c8b234af95564b321652979ebd806a0093f008042e9c2a3fc9b80b8"
+  },
+  "concat": {
+    "both_admitted": true,
+    "public_semantic_fields_equal": true,
+    "answers_hashes_differ": true,
+    "definition_hashes": [
+      "1eb3d2600ee100351cc9322bba5d261d0ea5f4401679d9936bfba8478175d92a",
+      "5a1ff57f5e0e9ff06bdfb3abdcc7c3969b878666c8a041804e8b0f018f476e4b"
+    ],
+    "witnesses_won_by_compiler": true,
+    "no_answer_values_recorded": true
+  },
+  "symbol_map": {
+    "both_conflicting_maps_admitted": true,
+    "public_semantic_fields_equal": true,
+    "answers_hashes_differ": true,
+    "no_answer_values_recorded": true
+  },
+  "player_database_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "limitations": [
+    "Finite synthetic counterexamples, not full generated-level or human deduction quality assessment.",
+    "Public definition hashes intentionally differ; equal semantic fields show no player-facing derivation distinguishes required private order.",
+    "No actual answer values, credentials or private definition bodies recorded."
+  ]
+}

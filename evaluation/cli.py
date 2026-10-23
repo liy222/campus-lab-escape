@@ -30,6 +30,9 @@ def find_gate(approval_id,input_hash,purpose):
 
 
 async def run(args):
+    if getattr(args,'release',None)=='v5.0-engineering' or getattr(args,'fixture_set',None)=='v5-k1-k6-v1':
+        from .v5 import run_v5
+        return await run_v5(args)
     freeze,files,tools=load_tools()
     event=getattr(tools,'event_contexts',{}).get(getattr(args,'release',None))
     folder=output_folder()

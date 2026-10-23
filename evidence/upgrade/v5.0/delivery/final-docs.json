@@ -1,0 +1,36 @@
+{
+  "kind": "v5_final_documentation_epoch",
+  "status": "development_candidate_unpublished_not_release_accepted",
+  "date": "2026-10-23",
+  "changed_paths": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/delivery/final-docs.json"
+  ],
+  "documentation_scope": "README V5 end section and one top-level pointer; V5 release note; this evidence index only",
+  "evidence_refs": {
+    "implementation_plan": "docs/v5-build-plan.md",
+    "implementation_checkpoint": "evidence/upgrade/v5.0/checkpoint-sync.json",
+    "offline_independent_result": "evidence/upgrade/v5.0/qa/final-offline-result.json",
+    "offline_joint_review": "review/findings/v5-offline-joint.md",
+    "real_samples_result": "evidence/upgrade/v5.0/real-samples/result.json",
+    "real_samples_review": "review/findings/v5-real-samples-review.md",
+    "paid_evaluator_blocked_report": "evidence/upgrade/v5.0/evaluator-owner/runs/20261022T173242617364Z/report.json"
+  },
+  "documented_findings": {
+    "offline_candidate_scopes": "Finite independent scopes only; four directional findings closed; epochs are not summed into one all-green run.",
+    "real_generation": "G1/G2/G3 rejected; A1/A2 skipped; three paid generation calls; no retries or paid evaluator invocation; conservative usage upper-bound delta CNY 0.03128048, not an invoice.",
+    "unknown_history": "Three prior unknown calls remain unknown.",
+    "gen_01": "Real generation success and quality remain unestablished; later AI prompt change is only in narrow offline verification.",
+    "evaluator": "C1/C2/C3 registration preparation remains ongoing; paid evaluation blocked; no model judgement means no PASS claims.",
+    "release_state": "No V5 release tag, main merge, or deployment."
+  },
+  "verification_for_this_document_epoch": {
+    "tests_run": [],
+    "builds_run": [],
+    "paid_calls": 0,
+    "git_operations": 0,
+    "read_only_path_and_content_inspection": "completed",
+    "scope_note": "This epoch updates documentation and records references only; prior evidence remains authoritative for the runs it describes."
+  }
+}

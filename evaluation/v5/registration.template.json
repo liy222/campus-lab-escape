@@ -1,0 +1,122 @@
+{
+  "candidate_id": "MAIN_REPLACE_WITH_ACTUAL_CANDIDATE",
+  "claims": {
+    "V5-C1": {
+      "refs": [
+        {
+          "evidence_id": "v5.0-engineering:C1",
+          "snippet": "summary"
+        }
+      ]
+    },
+    "V5-C2": {
+      "refs": [
+        {
+          "evidence_id": "v5.0-engineering:C2",
+          "snippet": "summary"
+        }
+      ]
+    },
+    "V5-C3": {
+      "refs": [
+        {
+          "evidence_id": "v5.0-engineering:C3",
+          "snippet": "summary"
+        }
+      ]
+    }
+  },
+  "contract_id": "campus-lab-v5-engineering",
+  "contract_version": "1.0.0",
+  "evidence": [
+    {
+      "evidence_id": "v5.0-engineering:C1",
+      "path": "evidence/upgrade/v5.0/ACTUAL-C1.json",
+      "raw_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "windows": {
+        "summary": {
+          "fields": [
+            "claim_id",
+            "release_id",
+            "candidate_id",
+            "exit_code",
+            "checks",
+            "provenance"
+          ],
+          "kind": "json_fields"
+        }
+      }
+    },
+    {
+      "evidence_id": "v5.0-engineering:C2",
+      "path": "evidence/upgrade/v5.0/ACTUAL-C2.json",
+      "raw_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "windows": {
+        "summary": {
+          "fields": [
+            "claim_id",
+            "release_id",
+            "candidate_id",
+            "exit_code",
+            "checks",
+            "provenance"
+          ],
+          "kind": "json_fields"
+        }
+      }
+    },
+    {
+      "evidence_id": "v5.0-engineering:C3",
+      "path": "evidence/upgrade/v5.0/ACTUAL-C3.json",
+      "raw_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "windows": {
+        "summary": {
+          "fields": [
+            "claim_id",
+            "release_id",
+            "candidate_id",
+            "exit_code",
+            "checks",
+            "provenance"
+          ],
+          "kind": "json_fields"
+        }
+      }
+    }
+  ],
+  "installation": {
+    "evaluation/v5.py": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "release_id": "v5.0-engineering",
+  "runtime_records": [
+    {
+      "after_field": "source_after",
+      "before_field": "source_before",
+      "candidate_field": "candidate_id",
+      "evidence_id": "v5.0-engineering:C1",
+      "exit_field": "exit_code",
+      "release_field": "release_id"
+    },
+    {
+      "after_field": "source_after",
+      "before_field": "source_before",
+      "candidate_field": "candidate_id",
+      "evidence_id": "v5.0-engineering:C2",
+      "exit_field": "exit_code",
+      "release_field": "release_id"
+    },
+    {
+      "after_field": "source_after",
+      "before_field": "source_before",
+      "candidate_field": "candidate_id",
+      "evidence_id": "v5.0-engineering:C3",
+      "exit_field": "exit_code",
+      "release_field": "release_id"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": {
+    "backend/app/domain/generated.py": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "status": "READY"
+}

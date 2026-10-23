@@ -1,0 +1,18 @@
+{
+  "case_id": "G1",
+  "fictional_test_content": true,
+  "content_redacted": "{\"title\":\"夜巡阅览室\",\"story\":\"闭馆音乐已响，你被反锁在二楼阅览室。找齐夜间巡查资料，解开离馆装置，按顺序离开。\",\"rooms\":[{\"room_id\":\"R1\",\"name\":\"二楼阅览室\",\"description\":\"台灯半亮，长桌上摊着巡查记录和一台旧终端。\",\"background_id\":\"neutral_archive\",\"objects\":[{\"object_id\":\"O1\",\"name\":\"巡查便笺\",\"description\":\"便笺上抄着夜间编号。\",\"slot\":0,\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"C1\"},{\"object_id\":\"O2\",\"name\":\"离馆说明\",\"description\":\"说明提示按位置取字。\",\"slot\":1,\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"C2\"},{\"object_id\":\"O3\",\"name\":\"抽屉钥匙\",\"description\":\"挂在桌角的小钥匙。\",\"slot\":2,\"art_id\":\"key\",\"kind\":\"item\",\"item_id\":\"I1\"},{\"object_id\":\"O4\",\"name\":\"旧终端\",\"description\":\"需要输入离馆码。\",\"slot\":3,\"art_id\":\"terminal\",\"kind\":\"puzzle\",\"puzzle_id\":\"P1\",\"locked_by\":[]},{\"object_id\":\"O5\",\"name\":\"资料柜\",\"description\":\"柜门可由抽屉钥匙打开。\",\"slot\":4,\"art_id\":\"cabinet\",\"kind\":\"puzzle\",\"puzzle_id\":\"P2\",\"locked_by\":[]},{\"object_id\":\"O6\",\"name\":\"离馆闸机\",\"description\":\"需按设备顺序解除。\",\"slot\":5,\"art_id\":\"panel\",\"kind\":\"puzzle\",\"puzzle_id\":\"P3\",\"locked_by\":[]}]}],\"clues\":[{\"clue_id\":\"C1\",\"tokens\":[\"7\",\"4\",\"1\",\"6\"],\"indices\":[2,4,1,3]},{\"clue_id\":\"C2\",\"tokens\":[\"门\",\"窗\",\"灯\",\"柜\"],\"indices\":[4,1,3,2],\"symbol_map\":{\"4\":\"DEV-A\",\"1\":\"DEV-B\",\"3\":\"DEV-C\",\"2\":\"DEV-D\"}}],\"puzzles\":[{\"puzzle_id\":\"P1\",\"room_id\":\"R1\",\"mechanism\":\"code\",\"prerequisite_ids\":[],\"required_item_id\":null,\"clue_ids\":[\"C1\",\"C2\"],\"recipe\":\"index\"},{\"puzzle_id\":\"P2\",\"room_id\":\"R1\",\"mechanism\":\"item\",\"prerequisite_ids\":[\"P1\"],\"required_item_id\":\"I1\",\"clue_ids\":[]},{\"puzzle_id\":\"P3\",\"room_id\":\"R1\",\"mechanism\":\"sequence\",\"prerequisite_ids\":[\"P2\"],\"required_item_id\":null,\"clue_ids\":[\"C2\"],\"recipe\":\"symbol_map\"}]}",
+  "content_raw_sha256": "c955589a49962dc77eef12b9b6a7fe58b84c5682daed5c47bb79d5c01ba6e506",
+  "usage": {
+    "prompt_tokens": 2116,
+    "completion_tokens": 590,
+    "total_tokens": 2706,
+    "prompt_cache_hit_tokens": 0
+  },
+  "requested_model": "deepseek-flash",
+  "reported_model": "deepseek-flash",
+  "finish_reason": "stop",
+  "call_id": "8cf6d75dc715465a995ca67da0b98623",
+  "cost_upper_cny": 0.008952,
+  "secret_detected": false
+}

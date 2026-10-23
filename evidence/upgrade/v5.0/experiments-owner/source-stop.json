@@ -1,0 +1,48 @@
+{
+  "kind": "experiments_owner_source_stop_not_formal_qa",
+  "timestamp_utc": "2026-10-22T16:51:37.430419+00:00",
+  "files": {
+    "experiments/v5/__init__.py": "4f6a997a6d6b5e874f01d7ad61adc6e1543321c0303cec6f5e49a48c5e84409f",
+    "experiments/v5/dataset.py": "1f85ab92a3aa290a08174471331f7eb9c264ab0c97b3609e69a9dfdb4fb1da41",
+    "experiments/v5/run.py": "e32fc4990910a992ea9baa61cc14f630c99175d870384e31f8f72419386c4b2e",
+    "experiments/v5/README.md": "e34debe8ffd52be9ddc18837802d7b0c4d13f1cdd10c852256a7a35505f96b46"
+  },
+  "actual_commands": [
+    {
+      "command": "& 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 -m experiments.v5.run --prepare --output evidence/upgrade/v5.0/experiments-owner/run1",
+      "exit_code": 0,
+      "tool_chunk": "c1003a"
+    },
+    {
+      "command": "& 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 -m experiments.v5.run --output evidence/upgrade/v5.0/experiments-owner/run1",
+      "exit_code": 0,
+      "initial_tool_chunk": "71a7ff",
+      "completion_tool_chunk": "eaebca"
+    }
+  ],
+  "python": "3.14.7 | packaged by Anaconda, Inc. | (main, Aug 14 2026, 10:12:46) [MSC v.1942 64 bit (AMD64)]",
+  "execution_epochs": 1,
+  "failed_experiment_epochs": 0,
+  "source_files_bound": 40,
+  "paid_calls": 0,
+  "network_calls": 0,
+  "formal_qa": false,
+  "evidence": [
+    "evidence/upgrade/v5.0/experiments-owner/run1/e1-progress.json",
+    "evidence/upgrade/v5.0/experiments-owner/run1/e1.json",
+    "evidence/upgrade/v5.0/experiments-owner/run1/e2.json",
+    "evidence/upgrade/v5.0/experiments-owner/run1/e3.json",
+    "evidence/upgrade/v5.0/experiments-owner/run1/expected.json",
+    "evidence/upgrade/v5.0/experiments-owner/run1/inputs.json",
+    "evidence/upgrade/v5.0/experiments-owner/run1/result.json"
+  ],
+  "limitations": [
+    "Finite deterministic fixtures; no real model quality or general solvability claim.",
+    "State-count guard observed 25005 discovered states because it checks at the next expansion-loop boundary; no assertion of exactly25000 discoveries.",
+    "State-budget deadline disabled only in the experiment harness.",
+    "Time-budget boundary uses a controlled clock; actualelapsed0.117s, not five seconds of real execution.",
+    "E2 is private policy rehearsal only; original bytes preserved.",
+    "E3 weakened control demonstrates read disclosure on an isolated backup, not successful restore or a product vulnerability.",
+    "Independent QA has not certified these experiments."
+  ]
+}

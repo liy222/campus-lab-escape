@@ -1,0 +1,18 @@
+{
+  "case_id": "G3",
+  "fictional_test_content": true,
+  "content_redacted": "{\"title\":\"生态实验楼标本交接\",\"story\":\"三间相连实验室留存采样资料与维护装置。你需跨房间核对材料，依次解除标本柜、代码终端和电路面板，完成离楼检查。\",\"rooms\":[{\"room_id\":\"LAB_A\",\"name\":\"采样准备室\",\"description\":\"门边有标本暂存柜和交接便签，终端记录采样批次。\",\"background_id\":\"neutral_lab\",\"objects\":[{\"object_id\":\"A_NOTE_BATCH\",\"name\":\"采样批次便签\",\"description\":\"列出本批采样编号顺序。\",\"slot\":0,\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"CLUE_BATCH\"},{\"object_id\":\"A_CABINET\",\"name\":\"标本暂存柜\",\"description\":\"柜门需钥匙开启，内有维护卡。\",\"slot\":1,\"art_id\":\"cabinet\",\"kind\":\"puzzle\",\"puzzle_id\":\"PUZ_CABINET\"},{\"object_id\":\"A_TERM_LOCK\",\"name\":\"交接终端\",\"description\":\"需输入四位批次码。\",\"slot\":2,\"art_id\":\"terminal\",\"kind\":\"puzzle\",\"puzzle_id\":\"PUZ_BATCH_CODE\"}]},{\"room_id\":\"LAB_B\",\"name\":\"标本维护室\",\"description\":\"台面留有维护卡和操作顺序卡，电路面板控制离楼门禁。\",\"background_id\":\"neutral_archive\",\"objects\":[{\"object_id\":\"B_SEQ_CARD\",\"name\":\"维护顺序卡\",\"description\":\"标明设备维护的操作顺序。\",\"slot\":0,\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"CLUE_SEQ\"},{\"object_id\":\"B_CARD_PICK\",\"name\":\"维护卡\",\"description\":\"可携带的维护门禁卡。\",\"slot\":1,\"art_id\":\"key\",\"kind\":\"item\",\"item_id\":\"ITEM_CARD\"},{\"object_id\":\"B_CIRCUIT\",\"name\":\"门禁电路面板\",\"description\":\"三乘三电路模板，需按顺序恢复通路。\",\"slot\":2,\"art_id\":\"circuit\",\"kind\":\"puzzle\",\"puzzle_id\":\"PUZ_CIRCUIT\"}]},{\"room_id\":\"LAB_C\",\"name\":\"离楼检查室\",\"description\":\"墙上挂有设备编号图，出口面板等待最终确认。\",\"background_id\":\"neutral_control\",\"objects\":[{\"object_id\":\"C_DEV_MAP\",\"name\":\"设备编号图\",\"description\":\"将符号映射为设备编号。\",\"slot\":0,\"art_id\":\"panel\",\"kind\":\"clue\",\"clue_id\":\"CLUE_MAP\"},{\"object_id\":\"C_EXIT_PANEL\",\"name\":\"出口确认面板\",\"description\":\"需按正确设备序列确认离楼。\",\"slot\":1,\"art_id\":\"panel\",\"kind\":\"puzzle\",\"puzzle_id\":\"PUZ_EXIT\"},{\"object_id\":\"C_EXIT\",\"name\":\"出口\",\"description\":\"离楼检查通过后开启。\",\"slot\":2,\"art_id\":\"terminal\",\"kind\":\"puzzle\",\"puzzle_id\":\"EXIT\"}]}],\"clues\":[{\"clue_id\":\"CLUE_BATCH\",\"tokens\":[\"A7\",\"C2\",\"B9\",\"D4\"],\"indices\":[2,4,1,3]},{\"clue_id\":\"CLUE_SEQ\",\"tokens\":[\"泵\",\"灯\",\"阀\",\"门\"],\"indices\":[3,1,4,2]},{\"clue_id\":\"CLUE_MAP\",\"tokens\":[\"T1\",\"T2\",\"T3\",\"T4\"],\"symbol_map\":{\"α\":\"T1\",\"β\":\"T2\",\"γ\":\"T3\",\"δ\":\"T4\"}}],\"puzzles\":[{\"puzzle_id\":\"PUZ_CABINET\",\"room_id\":\"LAB_A\",\"mechanism\":\"item\",\"prerequisite_ids\":[],\"required_item_id\":\"ITEM_CARD\"},{\"puzzle_id\":\"PUZ_BATCH_CODE\",\"room_id\":\"LAB_A\",\"mechanism\":\"code\",\"prerequisite_ids\":[\"PUZ_CABINET\"],\"clue_ids\":[\"CLUE_BATCH\"],\"recipe\":\"index\"},{\"puzzle_id\":\"PUZ_CIRCUIT\",\"room_id\":\"LAB_B\",\"mechanism\":\"circuit\",\"prerequisite_ids\":[\"PUZ_BATCH_CODE\"],\"clue_ids\":[\"CLUE_SEQ\"],\"recipe\":\"concat\"},{\"puzzle_id\":\"PUZ_EXIT\",\"room_id\":\"LAB_C\",\"mechanism\":\"sequence\",\"prerequisite_ids\":[\"PUZ_CIRCUIT\"],\"clue_ids\":[\"CLUE_MAP\",\"CLUE_SEQ\"],\"recipe\":\"symbol_map\"},{\"puzzle_id\":\"EXIT\",\"room_id\":\"LAB_C\",\"mechanism\":\"item\",\"prerequisite_ids\":[\"PUZ_EXIT\"],\"required_item_id\":\"ITEM_CARD\"}]}",
+  "content_raw_sha256": "ed532f882fe046eaab581ae48d625a8342129669fd21278165606338374a49c6",
+  "usage": {
+    "prompt_tokens": 2120,
+    "completion_tokens": 987,
+    "total_tokens": 3107,
+    "prompt_cache_hit_tokens": 256
+  },
+  "requested_model": "deepseek-flash",
+  "reported_model": "deepseek-flash",
+  "finish_reason": "stop",
+  "call_id": "1df93b085acc407a9efc3a3c9317aba4",
+  "cost_upper_cny": 0.01163424,
+  "secret_detected": false
+}

@@ -1,0 +1,216 @@
+{
+  "kind": "Evaluator Owner synthetic/identity checks; not independent QA",
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "evidence/upgrade/v5.0/evaluator-owner/check.py"
+  ],
+  "checks": [
+    {
+      "name": "C2-complete",
+      "actual": [
+        [],
+        []
+      ],
+      "expected": [
+        [],
+        []
+      ],
+      "pass": true
+    },
+    {
+      "name": "C2-observed-authority-failure",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "C3-complete",
+      "actual": [
+        [],
+        []
+      ],
+      "expected": [
+        [],
+        []
+      ],
+      "pass": true
+    },
+    {
+      "name": "C3-observed-overwrite-failure",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "C1-no-execution-coverage",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "reader-reject-../AGENTS.md",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "reader-reject-.env",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "reader-reject-data/api-key.json",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "reader-reject-https://example.com/test.json",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "registration-main-pin-unset",
+      "actual": null,
+      "expected": null,
+      "pass": true
+    },
+    {
+      "name": "real-contract-no-NA",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "name": "real-claims-only",
+      "actual": [
+        "V5-C1",
+        "V5-C2",
+        "V5-C3"
+      ],
+      "expected": [
+        "V5-C1",
+        "V5-C2",
+        "V5-C3"
+      ],
+      "pass": true
+    },
+    {
+      "name": "unregistered-precheck",
+      "actual": "NOT_READY",
+      "expected": "NOT_READY",
+      "pass": true
+    },
+    {
+      "name": "only-existing-output-schemas",
+      "actual": [
+        "schemas/output.schema.json",
+        "schemas/suggestion.schema.json"
+      ],
+      "expected": [
+        "schemas/output.schema.json",
+        "schemas/suggestion.schema.json"
+      ],
+      "pass": true
+    },
+    {
+      "name": "not-ready-registration-schema",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "no-target-ledger-network-imports",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "legacy-bytes-evaluation/engine.py",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "legacy-bytes-evaluation/reader.py",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "legacy-bytes-evaluation/provider.py",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "legacy-bytes-evaluation/common.py",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "legacy-bytes-evaluation/trust.py",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "legacy-bytes-evaluation/fixtures/cases.json",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "legacy-bytes-evaluation/trusted/contract.json",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "legacy-bytes-evaluation/trusted/freeze.json",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    }
+  ],
+  "legacy_identity": {
+    "evaluation/engine.py": {
+      "head_sha256": "2e9778f186c8191a475db9fa359a06dea8725cd4733872c450bf261d0cbfb74c",
+      "current_sha256": "2e9778f186c8191a475db9fa359a06dea8725cd4733872c450bf261d0cbfb74c"
+    },
+    "evaluation/reader.py": {
+      "head_sha256": "050a8f6deb3e7ca209fde3362cd617274f0941cd5968662606bc2a6e282c5e7b",
+      "current_sha256": "050a8f6deb3e7ca209fde3362cd617274f0941cd5968662606bc2a6e282c5e7b"
+    },
+    "evaluation/provider.py": {
+      "head_sha256": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd",
+      "current_sha256": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd"
+    },
+    "evaluation/common.py": {
+      "head_sha256": "91509d55058126319117b45f7e256aec5f46d35f97cd6bda7cbe6472f8227ab8",
+      "current_sha256": "91509d55058126319117b45f7e256aec5f46d35f97cd6bda7cbe6472f8227ab8"
+    },
+    "evaluation/trust.py": {
+      "head_sha256": "8f8e02c1734d37263bbac3a0203f94c5b1f24fdea7f104c34ff53a0d67c38a14",
+      "current_sha256": "8f8e02c1734d37263bbac3a0203f94c5b1f24fdea7f104c34ff53a0d67c38a14"
+    },
+    "evaluation/fixtures/cases.json": {
+      "head_sha256": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1",
+      "current_sha256": "58423418e0f336899fbeffc1439f007f73bd4206d54f09e10121235dc56fabe1"
+    },
+    "evaluation/trusted/contract.json": {
+      "head_sha256": "4752aceb826ec5f89b7dd39e02106824167901a9c633aa9365366c30a8c79662",
+      "current_sha256": "4752aceb826ec5f89b7dd39e02106824167901a9c633aa9365366c30a8c79662"
+    },
+    "evaluation/trusted/freeze.json": {
+      "head_sha256": "576b4f02755b12ecdf8234a13ab47fe14866994b5f99242a8ac0bc70c335df6a",
+      "current_sha256": "576b4f02755b12ecdf8234a13ab47fe14866994b5f99242a8ac0bc70c335df6a"
+    }
+  },
+  "paid_calls": 0,
+  "network_calls": 0,
+  "exit_code": 0
+}

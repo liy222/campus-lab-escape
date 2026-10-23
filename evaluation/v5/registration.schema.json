@@ -1,0 +1,330 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "READY"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "evidence": {
+            "minItems": 3
+          },
+          "installation": {
+            "additionalProperties": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "maxProperties": 1000,
+            "minProperties": 1,
+            "type": "object"
+          },
+          "runtime_records": {
+            "minItems": 3
+          },
+          "sources": {
+            "additionalProperties": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "maxProperties": 1000,
+            "minProperties": 1,
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "properties": {
+    "candidate_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "type": "string"
+    },
+    "claims": {
+      "additionalProperties": false,
+      "properties": {
+        "V5-C1": {
+          "additionalProperties": false,
+          "properties": {
+            "refs": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "evidence_id": {
+                    "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+                    "type": "string"
+                  },
+                  "snippet": {
+                    "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "evidence_id",
+                  "snippet"
+                ],
+                "type": "object"
+              },
+              "maxItems": 20,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "refs"
+          ],
+          "type": "object"
+        },
+        "V5-C2": {
+          "additionalProperties": false,
+          "properties": {
+            "refs": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "evidence_id": {
+                    "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+                    "type": "string"
+                  },
+                  "snippet": {
+                    "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "evidence_id",
+                  "snippet"
+                ],
+                "type": "object"
+              },
+              "maxItems": 20,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "refs"
+          ],
+          "type": "object"
+        },
+        "V5-C3": {
+          "additionalProperties": false,
+          "properties": {
+            "refs": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "evidence_id": {
+                    "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+                    "type": "string"
+                  },
+                  "snippet": {
+                    "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "evidence_id",
+                  "snippet"
+                ],
+                "type": "object"
+              },
+              "maxItems": 20,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "refs"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "V5-C1",
+        "V5-C2",
+        "V5-C3"
+      ],
+      "type": "object"
+    },
+    "contract_id": {
+      "const": "campus-lab-v5-engineering"
+    },
+    "contract_version": {
+      "const": "1.0.0"
+    },
+    "evidence": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_id": {
+            "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+            "type": "string"
+          },
+          "path": {
+            "maxLength": 400,
+            "minLength": 1,
+            "type": "string"
+          },
+          "raw_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "windows": {
+            "additionalProperties": {
+              "oneOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "fields": {
+                      "items": {
+                        "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "kind": {
+                      "const": "json_fields"
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "fields"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "maximum": 1000,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "kind": {
+                      "const": "lines"
+                    },
+                    "start": {
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "start",
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "minProperties": 1,
+            "type": "object"
+          }
+        },
+        "required": [
+          "evidence_id",
+          "path",
+          "raw_sha256",
+          "windows"
+        ],
+        "type": "object"
+      },
+      "maxItems": 60,
+      "type": "array"
+    },
+    "installation": {
+      "additionalProperties": {
+        "pattern": "^[0-9a-f]{64}$",
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "release_id": {
+      "const": "v5.0-engineering"
+    },
+    "runtime_records": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "after_field": {
+            "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+            "type": "string"
+          },
+          "before_field": {
+            "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+            "type": "string"
+          },
+          "candidate_field": {
+            "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+            "type": "string"
+          },
+          "evidence_id": {
+            "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+            "type": "string"
+          },
+          "exit_field": {
+            "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+            "type": "string"
+          },
+          "release_field": {
+            "pattern": "^[A-Za-z0-9_:.-]{1,128}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "evidence_id",
+          "release_field",
+          "candidate_field",
+          "before_field",
+          "after_field",
+          "exit_field"
+        ],
+        "type": "object"
+      },
+      "maxItems": 60,
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "sources": {
+      "additionalProperties": {
+        "pattern": "^[0-9a-f]{64}$",
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "status": {
+      "enum": [
+        "NOT_READY",
+        "READY"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "status",
+    "release_id",
+    "contract_id",
+    "contract_version",
+    "candidate_id",
+    "sources",
+    "installation",
+    "evidence",
+    "runtime_records",
+    "claims"
+  ],
+  "type": "object"
+}

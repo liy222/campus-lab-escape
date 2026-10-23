@@ -1,0 +1,72 @@
+.F...............                                                        [100%]
+================================== FAILURES ===================================
+________ test_companion_full_serialized_payload_cap_and_profile_scope _________
+
+tmp_path = WindowsPath('C:/Users/liyh/AppData/Local/Temp/pytest-of-liyh/pytest-0/test_companion_full_serialized0')
+
+    def test_companion_full_serialized_payload_cap_and_profile_scope(tmp_path):
+        from backend.app.ai.v5 import bounded_messages,public_context
+        from backend.app.domain.generated import GeneratedRules
+        from backend.app.ai.budget import cost_units
+        compiled=compile_level(make_fixture(1,'easy'),1,'easy')
+        rules=GeneratedRules(compiled); state=rules.visible_state('private',rules.initial_state())
+        history=[{'kind':'dialogue','question':'问题'*150,'answer':'解释'*180} for _ in range(3)]
+        history += [{'kind':'action','tool':'inspect','arguments':{'private':'must not forward'}} for _ in range(3)]
+>       messages,allowed=bounded_messages(public_context(state,'下一步？',history))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\v5\test_generation.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+context = {'question': '下一步？', 'room': {'name': '房间1', 'description': '一间安静的实验室。'}, 'visible_object_catalog': [{'name': '钥匙'}, {...operations': ['点击查看', '填写资料推理结果']}, {'name': '装置2', 'already_observed': False, 'available_operations': ['点击查看']}], ...}
+
+    def bounded_messages(context):
+        """Bound the actual serialized payload; keep the latest complete dialogue.
+    
+        Old turns/actions and unrelated clues may be selected out, never rewritten
+        into facts. If even the necessary current question cannot fit, fail closed.
+        """
+        context = copy.deepcopy(context)
+        question = context['question']
+        evidence = context['known_evidence']
+        evidence.sort(key=lambda c: sum(word in question for word in (c.get('title', ''), c.get('clue_id', '')) if word), reverse=True)
+        context['known_evidence'] = evidence[:3]
+        for obj in context['visible_objects']:
+            obj['description'] = obj['description'][:80]
+        def make():
+            context['allowed_clue_refs'] = [c['clue_id'] for c in context['known_evidence']]
+            messages = [{'role': 'system', 'content': COMPANION_PROMPT},
+                        {'role': 'user', 'content': json.dumps(context, ensure_ascii=False, separators=(',', ':'))}]
+            payload = {'model': 'deepseek-flash', 'messages': messages, 'max_tokens': 600,
+                       'thinking': {'type': 'disabled'}, 'stream': False, 'response_format': {'type': 'json_object'}}
+            size = len(json.dumps(payload, ensure_ascii=False, separators=(',', ':')).encode())
+            return messages, cost_units(size * 4 + 8192, 600)
+        while True:
+            messages, bound = make()
+            if bound <= 50_000_000:
+                return messages, set(context['allowed_clue_refs'])
+            history = context['recent_history']
+            disposable = next((i for i, entry in enumerate(history) if entry.get('kind') == 'action'), None)
+            if disposable is not None:
+                history.pop(disposable)
+            elif sum(e.get('kind') == 'dialogue' for e in history) > 1:
+                history.pop(0)
+            elif context['known_evidence']:
+                context['known_evidence'].pop()
+            elif any('description' in o for o in context['visible_objects']):
+                for obj in context['visible_objects']:
+                    obj.pop('description', None)
+            else:
+>               raise ServiceError('AI_LIMIT_REACHED')
+E               backend.app.ai.v5.ServiceError: AI_LIMIT_REACHED
+
+backend\app\ai\v5.py:195: ServiceError
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/v5/test_generation.py::test_companion_full_serialized_payload_cap_and_profile_scope
+1 failed, 16 passed, 1 warning in 6.77s

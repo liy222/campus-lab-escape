@@ -1,0 +1,47 @@
+{
+  "approved_by": "Scope authorized by Main under accepted v5 plan; execution remains unregistered",
+  "approved_na": [],
+  "contract_id": "campus-lab-v5-engineering",
+  "criteria": {
+    "V5-C1": {
+      "must_observe": "9个组合均admitted/replay_won，steps>0；引用/依赖/语义/布局各5个拒绝。",
+      "na_allowed": false,
+      "operation": "9个房数×难度组合实际准入并回放；20个坏例实际拒绝。",
+      "require_execution": true,
+      "title": "有限准入与回放"
+    },
+    "V5-C2": {
+      "must_observe": "两个不同账号；读/恢复均404；每个请求目标状态前后hash相同。",
+      "na_allowed": false,
+      "operation": "B读取及恢复A的存档。",
+      "require_execution": true,
+      "title": "双账号隔离"
+    },
+    "V5-C3": {
+      "must_observe": "三个不同moment/statehash，原定义hash未变、恢复等于保存状态；坏档拒绝且当前状态不被覆盖。",
+      "na_allowed": false,
+      "operation": "保存三个不同时刻并选定恢复；拒绝坏档。",
+      "require_execution": true,
+      "title": "定义与存档一致"
+    }
+  },
+  "human_signoff": null,
+  "policy": {
+    "deterministic_failure_cannot_be_overridden": true,
+    "must_cannot_be_downgraded": true,
+    "no_human_signoff_inference": true,
+    "no_target_execution": true,
+    "no_teacher_grade": true,
+    "positive_requires_valid_evidence": true,
+    "states": [
+      "PASS",
+      "FAIL",
+      "INSUFFICIENT_EVIDENCE",
+      "NOT_APPLICABLE"
+    ]
+  },
+  "source_plan": "docs/v5-build-plan.md",
+  "source_plan_raw_sha256": "8931e11d62669edb38572b7dbd26a07c130e51c6f324ed09c2e7c16d43900448",
+  "teacher_approval": null,
+  "version": "1.0.0"
+}

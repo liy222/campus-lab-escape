@@ -1,0 +1,34 @@
+{
+  "stage": "PREPARED_NOT_EXECUTED",
+  "operator": "assigned independent QA agent",
+  "utc": "2026-10-22T16:51:52.605515+00:00",
+  "formal_runs": 0,
+  "paid_calls": 0,
+  "actual_runtime_model": null,
+  "source_independent_checks": [
+    {
+      "command": "Python AST parse tests/v5/*.py without imports",
+      "exit_code": 0,
+      "python_files": 10,
+      "test_functions_before_parametrization": 39
+    }
+  ],
+  "source_sha256": {
+    "tests/v5/__init__.py": "5aa61a2018b20cc8ba93688e9803de72323a122d4db3ee89cae741d9d6090060",
+    "tests/v5/browser_plan.py": "a7b6305f57ab50c432de45b437e59b1a2a3e1adb013f347ccc52261327c24f39",
+    "tests/v5/conftest.py": "7a0a4e3fd7a366eb99e4ebf359b6c2864552fe8a66426e915637d88cf32e643a",
+    "tests/v5/fixture_server.py": "8f452eaae939ddb1a3c3476e4df36651e1589867837b3cfb5844980d3016e035",
+    "tests/v5/run_browser.mjs": "caddeea9c058ab3830e9dca9630b8f62a70260facdcb755d518977cd63b0f17a",
+    "tests/v5/test_auth.py": "af585c1755819b51b2e01c31aa10e06f8ebc1afd361d93aa94189cd8820ed8bc",
+    "tests/v5/test_generation.py": "da0500b3e297cbb3dc64691a350dd36a4117432bc73835b282ea305af219a43b",
+    "tests/v5/test_integration.py": "91129a842bd82806b9c0768c553edb5201d643fe3832a2d08f96da5196725837",
+    "tests/v5/test_kernel.py": "0b0e79b438f20dd53e2ca16e788220de7c0413138e288342a623597a425c809a",
+    "tests/v5/test_legacy.py": "4d3f4e5d2f0973f19e0e666603f9d2bac948c129ed67ca23fb9ada3dd4b7786e",
+    "tests/v5/test_security.py": "49aa425ead2521d6a982a84635944614979f75610714d5718bf5c144d9206129"
+  },
+  "limitations": [
+    "No SOURCE STOP/candidate GO has been issued; no product tests or browser executed.",
+    "Real provider tests will use injected HTTPX MockTransport and private fake-only temporary budget ledger.",
+    "Real generation/model quality and paid evaluator remain unverified."
+  ]
+}

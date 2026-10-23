@@ -130,8 +130,10 @@ def csrf(request:Request):
     if p:
         token=db.csrf_for(p,request.cookies.get(COOKIE))
         return success({'csrf_token':token,'auth_context':p['auth_context'],'user':{'user_id':p['user_id'],'username':p['username']}})
-    nonce,token=db.anonymous(); response=success({'csrf_token':token,'auth_context':None,'user':None})
-    set_cookie(response,ANON_COOKIE,nonce,max_age=600); return response
+    existing_nonce=request.cookies.get(ANON_COOKIE)
+    nonce,token=db.anonymous(existing_nonce); response=success({'csrf_token':token,'auth_context':None,'user':None})
+    if nonce!=existing_nonce: set_cookie(response,ANON_COOKIE,nonce,max_age=600)
+    return response
 
 async def login_or_register(request,register):
     db=request.app.state.v5_database; old=request.cookies.get(COOKIE)
@@ -160,7 +162,10 @@ def me(request:Request):
 async def logout(request:Request):
     p=principal(request,True); await raw_body(request,LogoutRequest)
     with request.app.state.v5_database.transaction() as c: c.execute('UPDATE auth_sessions SET revoked=1 WHERE auth_id=?',(p['auth_id'],))
-    response=success({'logged_out':True}); response.delete_cookie(COOKIE,path=PREFIX); return response
+    nonce,_=request.app.state.v5_database.anonymous()
+    response=success({'logged_out':True}); response.delete_cookie(COOKIE,path=PREFIX)
+    set_cookie(response,ANON_COOKIE,nonce,max_age=600)
+    return response
 @router.get('/sessions')
 def sessions(request:Request): return success({'sessions':request.app.state.v5_database.sessions(principal(request)['user_id'])})
 @router.post('/sessions')

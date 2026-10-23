@@ -1,0 +1,159 @@
+{
+  "actual_network_calls": 0,
+  "actual_paid_calls": 0,
+  "audits": [
+    {
+      "claim_id": "V5-C1",
+      "provider_metadata": null,
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": null,
+      "raw_suggestion_size_bytes": null,
+      "validation_errors": [
+        "RELEASE_IDENTITY_PRECHECK_FAILED"
+      ]
+    },
+    {
+      "claim_id": "V5-C2",
+      "provider_metadata": null,
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": null,
+      "raw_suggestion_size_bytes": null,
+      "validation_errors": [
+        "RELEASE_IDENTITY_PRECHECK_FAILED"
+      ]
+    },
+    {
+      "claim_id": "V5-C3",
+      "provider_metadata": null,
+      "raw_suggestion": null,
+      "raw_suggestion_sha256": null,
+      "raw_suggestion_size_bytes": null,
+      "validation_errors": [
+        "RELEASE_IDENTITY_PRECHECK_FAILED"
+      ]
+    }
+  ],
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-m",
+    "evaluation.cli",
+    "evaluate",
+    "--release",
+    "v5.0-engineering",
+    "--mode",
+    "mock"
+  ],
+  "credentials_accessed": false,
+  "ended": "2026-10-22T17:27:25.681164+00:00",
+  "exit_code": 2,
+  "final_precheck": {
+    "deterministic_findings": [],
+    "event_id": "v5-finite-engineering",
+    "generated_runtime_only": [],
+    "historical_unbound_records": [],
+    "issues": [
+      {
+        "code": "V5_REGISTRATION_NOT_READY"
+      }
+    ],
+    "product_commit": "UNREGISTERED",
+    "release_id": "v5.0-engineering",
+    "runtime_source_bindings": [],
+    "scope": "Read/hash registered data only; no target imports, subprocess, AGENTS execution, credentials or ledger.",
+    "source_identities": {},
+    "status": "NOT_READY"
+  },
+  "human_signoff": null,
+  "ledger_opened": false,
+  "limitations": [
+    "Synthetic calibration is not independent QA or real semantic evaluation.",
+    "Three historical unknown calls keep paid evaluation strictly blocked."
+  ],
+  "mode": "mock",
+  "precheck": {
+    "deterministic_findings": [],
+    "event_id": "v5-finite-engineering",
+    "generated_runtime_only": [],
+    "historical_unbound_records": [],
+    "issues": [
+      {
+        "code": "V5_REGISTRATION_NOT_READY"
+      }
+    ],
+    "product_commit": "UNREGISTERED",
+    "release_id": "v5.0-engineering",
+    "runtime_source_bindings": [],
+    "scope": "Read/hash registered data only; no target imports, subprocess, AGENTS execution, credentials or ledger.",
+    "source_identities": {},
+    "status": "NOT_READY"
+  },
+  "results": [
+    {
+      "claim_id": "V5-C1",
+      "evidence_refs": [],
+      "execution_scope": {
+        "actual_model_requests_this_claim": 0,
+        "human_review_required": true,
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "target_execution": "none; existing evidence read only"
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending",
+      "missing_check": [
+        "Main must register exact actual candidate/source/evidence and required windows."
+      ],
+      "reason": "V5_IDENTITY_NOT_READY_OR_CHANGED",
+      "release_id": "v5.0-engineering",
+      "status": "INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "claim_id": "V5-C2",
+      "evidence_refs": [],
+      "execution_scope": {
+        "actual_model_requests_this_claim": 0,
+        "human_review_required": true,
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "target_execution": "none; existing evidence read only"
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending",
+      "missing_check": [
+        "Main must register exact actual candidate/source/evidence and required windows."
+      ],
+      "reason": "V5_IDENTITY_NOT_READY_OR_CHANGED",
+      "release_id": "v5.0-engineering",
+      "status": "INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "claim_id": "V5-C3",
+      "evidence_refs": [],
+      "execution_scope": {
+        "actual_model_requests_this_claim": 0,
+        "human_review_required": true,
+        "judgement_mode": "mock",
+        "llm_status": "not_run",
+        "real_paid_judgement": false,
+        "synthetic_judgement": true,
+        "target_execution": "none; existing evidence read only"
+      },
+      "human_signoff": null,
+      "human_signoff_status": "pending",
+      "missing_check": [
+        "Main must register exact actual candidate/source/evidence and required windows."
+      ],
+      "reason": "V5_IDENTITY_NOT_READY_OR_CHANGED",
+      "release_id": "v5.0-engineering",
+      "status": "INSUFFICIENT_EVIDENCE"
+    }
+  ],
+  "started": "2026-10-22T17:27:25.396501+00:00",
+  "synthetic": true,
+  "target_code_executed": false,
+  "teacher_approval": null
+}

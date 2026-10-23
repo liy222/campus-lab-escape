@@ -1,0 +1,543 @@
+{
+  "kind": "owner_synthetic_baseline_before_fix",
+  "source": {
+    "backend/app/storage/v5.py": "46449e525eed09cd093325b468cd7365cb3b9f2b5f504972408aa95d72d2552c",
+    "backend/app/api/v5.py": "ea042ff760c8688f899988b3b7b3ef117d565d7fa065db9ed00b07e7469f3dcc",
+    "backend/app/domain/generated.py": "9013c53915c892e33428e5ceff71c6d74fe7467d207308611ad8e8d8615112f1"
+  },
+  "fixtures": {
+    "concat": {
+      "raw": {
+        "title": "测试实验室",
+        "story": "这是离线验证用定义。",
+        "rooms": [
+          {
+            "room_id": "G1",
+            "name": "房间1",
+            "description": "一间安静的实验室。",
+            "background_id": "neutral_lab",
+            "objects": [
+              {
+                "object_id": "obj_key",
+                "name": "钥匙",
+                "description": "一把可重复使用的钥匙。",
+                "art_id": "key",
+                "kind": "item",
+                "item_id": "shared_key",
+                "slot": 0
+              },
+              {
+                "object_id": "obj_source",
+                "name": "数据纸",
+                "description": "记录了批次源序。",
+                "art_id": "note",
+                "kind": "clue",
+                "clue_id": "fact_source",
+                "slot": 1
+              },
+              {
+                "object_id": "obj_order",
+                "name": "读取说明",
+                "description": "记录了读取位置。",
+                "art_id": "note",
+                "kind": "clue",
+                "clue_id": "fact_order",
+                "slot": 2
+              },
+              {
+                "object_id": "obj_puzzle_0",
+                "name": "装置1",
+                "description": "根据资料完成操作。",
+                "art_id": "terminal",
+                "kind": "puzzle",
+                "puzzle_id": "puzzle_0",
+                "slot": 3
+              },
+              {
+                "object_id": "obj_puzzle_1",
+                "name": "装置2",
+                "description": "根据资料完成操作。",
+                "art_id": "terminal",
+                "kind": "puzzle",
+                "puzzle_id": "puzzle_1",
+                "slot": 4
+              }
+            ]
+          }
+        ],
+        "clues": [
+          {
+            "clue_id": "fact_source",
+            "tokens": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "clue_id": "fact_order",
+            "tokens": [
+              "3",
+              "4"
+            ]
+          }
+        ],
+        "puzzles": [
+          {
+            "puzzle_id": "puzzle_0",
+            "room_id": "G1",
+            "mechanism": "code",
+            "prerequisite_ids": [],
+            "clue_ids": [
+              "fact_source",
+              "fact_order"
+            ],
+            "recipe": "concat"
+          },
+          {
+            "puzzle_id": "puzzle_1",
+            "room_id": "G1",
+            "mechanism": "item",
+            "prerequisite_ids": [
+              "puzzle_0"
+            ],
+            "required_item_id": "shared_key"
+          }
+        ]
+      },
+      "definition_hash": "011424c5cd262613724a5adee579cacf652c5d4fa30831ff5743d03eb9d6f384",
+      "answers": {
+        "puzzle_0": "1234"
+      },
+      "snapshot_json": "{\"checksum\":\"cb544a96dc9a4602b26c52c7708ad84e66688c43387174e44d6b19a3c585c5c6\",\"game_fields\":{\"circuit_rotations\":{},\"definition_hash\":\"011424c5cd262613724a5adee579cacf652c5d4fa30831ff5743d03eb9d6f384\",\"definition_version\":\"1.0.0\",\"discovered_clue_ids\":[\"fact_source\",\"fact_order\"],\"finished_at\":null,\"hint_count\":0,\"inventory\":[],\"level_id\":\"private\",\"level_version\":\"5.0.0\",\"mistake_count\":0,\"observed_object_ids\":[\"obj_source\",\"obj_order\",\"obj_puzzle_0\"],\"owner_id\":\"private\",\"policy_version\":\"1.0.0\",\"room_id\":\"G1\",\"rules_version\":\"1.0.0\",\"solved_puzzle_ids\":[],\"started_at\":\"2026-10-23T06:31:36.116809Z\",\"status\":\"playing\"},\"level_version\":\"5.0.0\",\"saved_at\":\"2026-10-23T00:00:00Z\",\"schema_version\":\"2.0.0\",\"session_id\":\"fixture_session\"}"
+    },
+    "reverse": {
+      "raw": {
+        "title": "测试实验室",
+        "story": "这是离线验证用定义。",
+        "rooms": [
+          {
+            "room_id": "G1",
+            "name": "房间1",
+            "description": "一间安静的实验室。",
+            "background_id": "neutral_lab",
+            "objects": [
+              {
+                "object_id": "obj_key",
+                "name": "钥匙",
+                "description": "一把可重复使用的钥匙。",
+                "art_id": "key",
+                "kind": "item",
+                "item_id": "shared_key",
+                "slot": 0
+              },
+              {
+                "object_id": "obj_source",
+                "name": "数据纸",
+                "description": "记录了批次源序。",
+                "art_id": "note",
+                "kind": "clue",
+                "clue_id": "fact_source",
+                "slot": 1
+              },
+              {
+                "object_id": "obj_order",
+                "name": "读取说明",
+                "description": "记录了读取位置。",
+                "art_id": "note",
+                "kind": "clue",
+                "clue_id": "fact_order",
+                "slot": 2
+              },
+              {
+                "object_id": "obj_puzzle_0",
+                "name": "装置1",
+                "description": "根据资料完成操作。",
+                "art_id": "terminal",
+                "kind": "puzzle",
+                "puzzle_id": "puzzle_0",
+                "slot": 3
+              },
+              {
+                "object_id": "obj_puzzle_1",
+                "name": "装置2",
+                "description": "根据资料完成操作。",
+                "art_id": "terminal",
+                "kind": "puzzle",
+                "puzzle_id": "puzzle_1",
+                "slot": 4
+              }
+            ]
+          }
+        ],
+        "clues": [
+          {
+            "clue_id": "fact_source",
+            "tokens": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "clue_id": "fact_order",
+            "tokens": [
+              "3",
+              "4"
+            ]
+          }
+        ],
+        "puzzles": [
+          {
+            "puzzle_id": "puzzle_0",
+            "room_id": "G1",
+            "mechanism": "code",
+            "prerequisite_ids": [],
+            "clue_ids": [
+              "fact_order",
+              "fact_source"
+            ],
+            "recipe": "concat"
+          },
+          {
+            "puzzle_id": "puzzle_1",
+            "room_id": "G1",
+            "mechanism": "item",
+            "prerequisite_ids": [
+              "puzzle_0"
+            ],
+            "required_item_id": "shared_key"
+          }
+        ]
+      },
+      "definition_hash": "65158306fa9f910cc46b7416c519a9ce11c2cf18c1043e7a0b8fcb5eac641bd0",
+      "answers": {
+        "puzzle_0": "3412"
+      },
+      "snapshot_json": "{\"checksum\":\"4881d4de69764eceb24f3a1d6c1baf269e8a481d37a1cfef8288cd73a2907c57\",\"game_fields\":{\"circuit_rotations\":{},\"definition_hash\":\"65158306fa9f910cc46b7416c519a9ce11c2cf18c1043e7a0b8fcb5eac641bd0\",\"definition_version\":\"1.0.0\",\"discovered_clue_ids\":[\"fact_source\",\"fact_order\"],\"finished_at\":null,\"hint_count\":0,\"inventory\":[],\"level_id\":\"private\",\"level_version\":\"5.0.0\",\"mistake_count\":0,\"observed_object_ids\":[\"obj_source\",\"obj_order\",\"obj_puzzle_0\"],\"owner_id\":\"private\",\"policy_version\":\"1.0.0\",\"room_id\":\"G1\",\"rules_version\":\"1.0.0\",\"solved_puzzle_ids\":[],\"started_at\":\"2026-10-23T06:31:36.239704Z\",\"status\":\"playing\"},\"level_version\":\"5.0.0\",\"saved_at\":\"2026-10-23T00:00:00Z\",\"schema_version\":\"2.0.0\",\"session_id\":\"fixture_session\"}"
+    },
+    "index": {
+      "raw": {
+        "title": "测试实验室",
+        "story": "这是离线验证用定义。",
+        "rooms": [
+          {
+            "room_id": "G1",
+            "name": "房间1",
+            "description": "一间安静的实验室。",
+            "background_id": "neutral_lab",
+            "objects": [
+              {
+                "object_id": "obj_key",
+                "name": "钥匙",
+                "description": "一把可重复使用的钥匙。",
+                "art_id": "key",
+                "kind": "item",
+                "item_id": "shared_key",
+                "slot": 0
+              },
+              {
+                "object_id": "obj_source",
+                "name": "数据纸",
+                "description": "记录了批次源序。",
+                "art_id": "note",
+                "kind": "clue",
+                "clue_id": "fact_source",
+                "slot": 1
+              },
+              {
+                "object_id": "obj_order",
+                "name": "读取说明",
+                "description": "记录了读取位置。",
+                "art_id": "note",
+                "kind": "clue",
+                "clue_id": "fact_order",
+                "slot": 2
+              },
+              {
+                "object_id": "obj_puzzle_0",
+                "name": "装置1",
+                "description": "根据资料完成操作。",
+                "art_id": "terminal",
+                "kind": "puzzle",
+                "puzzle_id": "puzzle_0",
+                "slot": 3
+              },
+              {
+                "object_id": "obj_puzzle_1",
+                "name": "装置2",
+                "description": "根据资料完成操作。",
+                "art_id": "terminal",
+                "kind": "puzzle",
+                "puzzle_id": "puzzle_1",
+                "slot": 4
+              }
+            ]
+          }
+        ],
+        "clues": [
+          {
+            "clue_id": "fact_source",
+            "tokens": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          },
+          {
+            "clue_id": "fact_order",
+            "indices": [
+              3,
+              1,
+              4,
+              2
+            ]
+          }
+        ],
+        "puzzles": [
+          {
+            "puzzle_id": "puzzle_0",
+            "room_id": "G1",
+            "mechanism": "code",
+            "prerequisite_ids": [],
+            "clue_ids": [
+              "fact_source",
+              "fact_order"
+            ],
+            "recipe": "index"
+          },
+          {
+            "puzzle_id": "puzzle_1",
+            "room_id": "G1",
+            "mechanism": "item",
+            "prerequisite_ids": [
+              "puzzle_0"
+            ],
+            "required_item_id": "shared_key"
+          }
+        ]
+      },
+      "definition_hash": "d5ee40d65a8dc8b2538be48f3f903d81e0024793dd3b6b262922befe9f482a96",
+      "answers": {
+        "puzzle_0": "3142"
+      },
+      "snapshot_json": "{\"checksum\":\"e302e1530eb395763e8cd029771bd563fe3c7f0cf57fd64d34dc268706af25cc\",\"game_fields\":{\"circuit_rotations\":{},\"definition_hash\":\"d5ee40d65a8dc8b2538be48f3f903d81e0024793dd3b6b262922befe9f482a96\",\"definition_version\":\"1.0.0\",\"discovered_clue_ids\":[\"fact_source\",\"fact_order\"],\"finished_at\":null,\"hint_count\":0,\"inventory\":[],\"level_id\":\"private\",\"level_version\":\"5.0.0\",\"mistake_count\":0,\"observed_object_ids\":[\"obj_source\",\"obj_order\",\"obj_puzzle_0\"],\"owner_id\":\"private\",\"policy_version\":\"1.0.0\",\"room_id\":\"G1\",\"rules_version\":\"1.0.0\",\"solved_puzzle_ids\":[],\"started_at\":\"2026-10-23T06:31:36.358757Z\",\"status\":\"playing\"},\"level_version\":\"5.0.0\",\"saved_at\":\"2026-10-23T00:00:00Z\",\"schema_version\":\"2.0.0\",\"session_id\":\"fixture_session\"}"
+    },
+    "map_same_value": {
+      "raw": {
+        "title": "测试实验室",
+        "story": "这是离线验证用定义。",
+        "rooms": [
+          {
+            "room_id": "G1",
+            "name": "房间1",
+            "description": "一间安静的实验室。",
+            "background_id": "neutral_lab",
+            "objects": [
+              {
+                "object_id": "obj_key",
+                "name": "钥匙",
+                "description": "一把可重复使用的钥匙。",
+                "art_id": "key",
+                "kind": "item",
+                "item_id": "shared_key",
+                "slot": 0
+              },
+              {
+                "object_id": "obj_source",
+                "name": "数据纸",
+                "description": "记录了批次源序。",
+                "art_id": "note",
+                "kind": "clue",
+                "clue_id": "fact_source",
+                "slot": 1
+              },
+              {
+                "object_id": "obj_order",
+                "name": "读取说明",
+                "description": "记录了读取位置。",
+                "art_id": "note",
+                "kind": "clue",
+                "clue_id": "fact_order",
+                "slot": 2
+              },
+              {
+                "object_id": "obj_puzzle_0",
+                "name": "装置1",
+                "description": "根据资料完成操作。",
+                "art_id": "terminal",
+                "kind": "puzzle",
+                "puzzle_id": "puzzle_0",
+                "slot": 3
+              },
+              {
+                "object_id": "obj_puzzle_1",
+                "name": "装置2",
+                "description": "根据资料完成操作。",
+                "art_id": "terminal",
+                "kind": "puzzle",
+                "puzzle_id": "puzzle_1",
+                "slot": 4
+              }
+            ]
+          }
+        ],
+        "clues": [
+          {
+            "clue_id": "fact_source",
+            "tokens": [
+              "A",
+              "B"
+            ],
+            "symbol_map": {
+              "A": "1",
+              "B": "2"
+            }
+          },
+          {
+            "clue_id": "fact_order",
+            "symbol_map": {
+              "A": "1",
+              "B": "2"
+            }
+          }
+        ],
+        "puzzles": [
+          {
+            "puzzle_id": "puzzle_0",
+            "room_id": "G1",
+            "mechanism": "code",
+            "prerequisite_ids": [],
+            "clue_ids": [
+              "fact_source",
+              "fact_order"
+            ],
+            "recipe": "symbol_map"
+          },
+          {
+            "puzzle_id": "puzzle_1",
+            "room_id": "G1",
+            "mechanism": "item",
+            "prerequisite_ids": [
+              "puzzle_0"
+            ],
+            "required_item_id": "shared_key"
+          }
+        ]
+      },
+      "definition_hash": "1429c7c97c89f8f5cde0922da71d09fcadaddd333999550cc7c42cc54ec7f7ab",
+      "answers": {
+        "puzzle_0": "12"
+      },
+      "snapshot_json": "{\"checksum\":\"8738969bc2cf158928f620ff2cb6c0e1115ff6c400877c059d0a8d5cf8a3ba95\",\"game_fields\":{\"circuit_rotations\":{},\"definition_hash\":\"1429c7c97c89f8f5cde0922da71d09fcadaddd333999550cc7c42cc54ec7f7ab\",\"definition_version\":\"1.0.0\",\"discovered_clue_ids\":[\"fact_source\",\"fact_order\"],\"finished_at\":null,\"hint_count\":0,\"inventory\":[],\"level_id\":\"private\",\"level_version\":\"5.0.0\",\"mistake_count\":0,\"observed_object_ids\":[\"obj_source\",\"obj_order\",\"obj_puzzle_0\"],\"owner_id\":\"private\",\"policy_version\":\"1.0.0\",\"room_id\":\"G1\",\"rules_version\":\"1.0.0\",\"solved_puzzle_ids\":[],\"started_at\":\"2026-10-23T06:31:36.477996Z\",\"status\":\"playing\"},\"level_version\":\"5.0.0\",\"saved_at\":\"2026-10-23T00:00:00Z\",\"schema_version\":\"2.0.0\",\"session_id\":\"fixture_session\"}"
+    },
+    "sequence": {
+      "raw": {
+        "title": "测试实验室",
+        "story": "这是离线验证用定义。",
+        "rooms": [
+          {
+            "room_id": "G1",
+            "name": "房间1",
+            "description": "一间安静的实验室。",
+            "background_id": "neutral_lab",
+            "objects": [
+              {
+                "object_id": "obj_key",
+                "name": "钥匙",
+                "description": "一把可重复使用的钥匙。",
+                "art_id": "key",
+                "kind": "item",
+                "item_id": "shared_key",
+                "slot": 0
+              },
+              {
+                "object_id": "obj_source",
+                "name": "数据纸",
+                "description": "记录了批次源序。",
+                "art_id": "note",
+                "kind": "clue",
+                "clue_id": "fact_source",
+                "slot": 1
+              },
+              {
+                "object_id": "obj_order",
+                "name": "读取说明",
+                "description": "记录了读取位置。",
+                "art_id": "note",
+                "kind": "clue",
+                "clue_id": "fact_order",
+                "slot": 2
+              },
+              {
+                "object_id": "obj_puzzle_0",
+                "name": "装置1",
+                "description": "根据资料完成操作。",
+                "art_id": "terminal",
+                "kind": "puzzle",
+                "puzzle_id": "puzzle_0",
+                "slot": 3
+              },
+              {
+                "object_id": "obj_puzzle_1",
+                "name": "装置2",
+                "description": "根据资料完成操作。",
+                "art_id": "terminal",
+                "kind": "puzzle",
+                "puzzle_id": "puzzle_1",
+                "slot": 4
+              }
+            ]
+          }
+        ],
+        "clues": [
+          {
+            "clue_id": "fact_source",
+            "tokens": [
+              "d1",
+              "d2"
+            ]
+          },
+          {
+            "clue_id": "fact_order",
+            "tokens": [
+              "d3",
+              "d4"
+            ]
+          }
+        ],
+        "puzzles": [
+          {
+            "puzzle_id": "puzzle_0",
+            "room_id": "G1",
+            "mechanism": "sequence",
+            "prerequisite_ids": [],
+            "clue_ids": [
+              "fact_source",
+              "fact_order"
+            ],
+            "recipe": "concat"
+          },
+          {
+            "puzzle_id": "puzzle_1",
+            "room_id": "G1",
+            "mechanism": "item",
+            "prerequisite_ids": [
+              "puzzle_0"
+            ],
+            "required_item_id": "shared_key"
+          }
+        ]
+      },
+      "definition_hash": "43cf54fef3e19718eb8c050da8b3dd9c3bd0ee5c98f5acd8fded5415ca1765e1",
+      "answers": {
+        "puzzle_0": [
+          "d1",
+          "d2",
+          "d3",
+          "d4"
+        ]
+      },
+      "snapshot_json": "{\"checksum\":\"dd491431658805127491d4229b684b1325008fcf817614fe74a3027dc3065741\",\"game_fields\":{\"circuit_rotations\":{},\"definition_hash\":\"43cf54fef3e19718eb8c050da8b3dd9c3bd0ee5c98f5acd8fded5415ca1765e1\",\"definition_version\":\"1.0.0\",\"discovered_clue_ids\":[\"fact_source\",\"fact_order\"],\"finished_at\":null,\"hint_count\":0,\"inventory\":[],\"level_id\":\"private\",\"level_version\":\"5.0.0\",\"mistake_count\":0,\"observed_object_ids\":[\"obj_source\",\"obj_order\",\"obj_puzzle_0\"],\"owner_id\":\"private\",\"policy_version\":\"1.0.0\",\"room_id\":\"G1\",\"rules_version\":\"1.0.0\",\"solved_puzzle_ids\":[],\"started_at\":\"2026-10-23T06:31:36.606063Z\",\"status\":\"playing\"},\"level_version\":\"5.0.0\",\"saved_at\":\"2026-10-23T00:00:00Z\",\"schema_version\":\"2.0.0\",\"session_id\":\"fixture_session\"}"
+    }
+  }
+}

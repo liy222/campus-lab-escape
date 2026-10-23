@@ -1,0 +1,31 @@
+{
+  "status": "FAIL",
+  "kind": "independent production UI plus explicitly synthetic injected generator",
+  "scope": "remaining generated route and identity scope; classic matrix reused from first epoch",
+  "records": [
+    {
+      "name": "production health",
+      "pass": true
+    },
+    {
+      "name": "remaining continuation",
+      "reused_scope": "first browser epoch dashboard/classic actual Canvas and three viewports; not repeated or added to this run count"
+    },
+    {
+      "name": "screenshot",
+      "file": "failure.png"
+    }
+  ],
+  "issues": [
+    "locator.selectOption: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('房间数量', { exact: true })\u001b[22m\n"
+  ],
+  "page_errors": [],
+  "missing_assets": [],
+  "paid_calls": 0,
+  "real_model_calls": 0,
+  "limitations": [
+    "Synthetic generator proves offline pipeline/UI only; no real model quality claim.",
+    "Process restart is the owned QA backend only; no OS restart or interactive root CMD claim.",
+    "Viewports are browser emulation, not physical mobile devices."
+  ]
+}

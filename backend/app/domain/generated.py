@@ -161,7 +161,11 @@ def derive(p,clues):
     selected=[clues[x] for x in p.clue_ids]
     tokens=[t for c in selected for t in c.tokens]
     indices=[i for c in selected for i in c.indices]
-    mapping={k:v for c in selected for k,v in c.symbol_map.items()}
+    mapping={}
+    for clue in selected:
+        for symbol,value in clue.symbol_map.items():
+            if symbol in mapping and mapping[symbol]!=value: raise ValueError('CONFLICTING_MAP')
+            mapping[symbol]=value
     if p.recipe=='concat':
         if any(not c.tokens or c.indices or c.symbol_map for c in selected): raise ValueError('UNUSED_FACTS')
         result=tokens
@@ -310,6 +314,10 @@ class GeneratedRules:
             if o.kind=='puzzle':
                 p=self.puzzles[o.puzzle_id]
                 description+=' '+({'item':'将匹配的背包物品用于此装置，物品不会消耗。','circuit':'旋转模块，让入口与出口通过双方接口连通。'}.get(p.mechanism) or {'concat':'按资料列出的顺序拼接源序。','index':'按资料中的读取位置，从一开始读取源序。','symbol_map':'按资料源序逐项查找对应关系。'}[p.recipe])
+            if o.kind=='puzzle' and p.mechanism in {'code','sequence'} and o.object_id in s.observed_object_ids and set(p.clue_ids)<=set(s.discovered_clue_ids):
+                order=' → '.join('资料 '+cid for cid in p.clue_ids)
+                combine={'concat':'按此序拼接各资料的源序。','index':'源序与读取位置分别依此序合并。','symbol_map':'源序依此序合并，对应表共同使用。'}[p.recipe]
+                description='资料组合次序：'+order+'；'+combine+description
             objects.append({'object_id':o.object_id,'name':o.name,'kind':o.kind,'description':description,'art_id':o.art_id,'slot':o.slot,'target_id':o.puzzle_id,'mechanism':self.puzzles[o.puzzle_id].mechanism if o.puzzle_id else None,'completed':o.puzzle_id in s.solved_puzzle_ids if o.puzzle_id else False,'actions':actions})
         clues=[]
         for cid in s.discovered_clue_ids:
@@ -408,7 +416,9 @@ def solve(compiled):
                 for action in actions: nxt,_=rules.apply_action(nxt,action['tool'],action['arguments'])
             except RuleError: continue
             k=key(nxt)
-            if k not in seen: seen.add(k); queue.append((nxt,path+actions))
+            if k not in seen:
+                if len(seen)>=25000: raise ValueError('PROOF_UNKNOWN')
+                seen.add(k); queue.append((nxt,path+actions))
     raise ValueError('UNSOLVABLE')
 
 def make_fixture(room_count=2,difficulty='normal'):

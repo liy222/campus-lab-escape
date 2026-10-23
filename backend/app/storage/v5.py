@@ -54,11 +54,20 @@ class V5Database:
             ''')
             c.execute("UPDATE level_generations SET status=CASE status WHEN 'generating' THEN 'unknown' ELSE 'failed' END,error_code='PROCESS_RESTARTED',updated_at=? WHERE status IN ('pending','generating','validating')",(time.time(),))
     def transaction(self): return self.base.transaction()
-    def anonymous(self):
-        nonce,csrf=secrets.token_urlsafe(32),secrets.token_urlsafe(32)
+    def anonymous(self,existing_nonce=None):
+        now=time.time()
         with self.transaction() as c:
-            c.execute('DELETE FROM anonymous_csrf WHERE created_at<?',(time.time()-600,))
-            c.execute('INSERT INTO anonymous_csrf VALUES(?,?,?)',(digest(nonce),digest(csrf),time.time()))
+            c.execute('DELETE FROM anonymous_csrf WHERE created_at<?',(now-600,))
+            if existing_nonce:
+                row=c.execute('SELECT csrf_hash,created_at FROM anonymous_csrf WHERE nonce_hash=?',(digest(existing_nonce),)).fetchone()
+                csrf=hmac.new(existing_nonce.encode(),b'campus-v5-anonymous-csrf',hashlib.sha256).hexdigest()
+                if row and now-row['created_at']<600 and hmac.compare_digest(row['csrf_hash'],digest(csrf)):
+                    return existing_nonce,csrf
+                # A legacy random-CSRF row cannot be reconstructed; rotate once.
+                c.execute('DELETE FROM anonymous_csrf WHERE nonce_hash=?',(digest(existing_nonce),))
+            nonce=secrets.token_urlsafe(32)
+            csrf=hmac.new(nonce.encode(),b'campus-v5-anonymous-csrf',hashlib.sha256).hexdigest()
+            c.execute('INSERT INTO anonymous_csrf VALUES(?,?,?)',(digest(nonce),digest(csrf),now))
         return nonce,csrf
     def check_anonymous(self,nonce,csrf):
         with self.transaction() as c:

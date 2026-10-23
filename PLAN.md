@@ -269,3 +269,9 @@ Accepted scope and full task/acceptance design: docs/v5-build-plan.md. T0 record
 
 ### 2026-10-23 v5 implementation milestone, not acceptance
 T0 V2 schema/routes and additive SPEC/level design implemented; T1–T5 owners SOURCE STOP with narrow CSP, Origin, anonymous CSRF and successful-model-history corrections. Main AI services and generation-specific provider profile integrated. Classic assets/API/rules/storage source preserved except the explicit main factory/profile/presentation bridges. Development evidence contains actual failed and fixed epochs; no independent green-suite claim. T6 E1–E3 finite offline experiments executed once, evaluator additive adapter/calibration completing. T7 independent tests prepared, waiting final whole-candidate freeze. Next: formal scoped API/contracts/build/browser/evaluator review, proven fixes only, then approved real product samples if credential/budget preflight succeeds; strict paid evaluator remains blocked. Normal implementation checkpoint commit/push precedes final acceptance; no release tag yet.
+
+
+### 2026-10-23 v5 定向验证完成，真实生成门待复测
+T0—T5 增量实现与有限离线联合 QA 已完成；四项实际发现（规划状态上限、拿取残留特写、匿名跨页 CSRF、资料组合顺序/映射冲突）均有来源绑定的窄修与独立关闭证据。复用已通过的38步网页路线、三视口、档案/重载/后端进程重启，不机械重跑。T6 的 E1/E2/E3 是冻结合成输入实验；有限评价登记绑定53个相关来源与9份证据，预检READY，但确定性评价为3项INSUFFICIENT_EVIDENCE，付费判读仍按历史unknown门槛阻塞。
+真实G1/G2/G3各调用一次，0/3准入成功；A1/A2按协议跳过，不能验收GEN-01或真实伙伴质量。Main已将生成提示中的精确数量、配方互斥与结果域、房间先后依赖写明；九种请求的教学示例与完整费用边界、真实适配器MockTransport/密钥边界共11项定向离线检查通过，未真实复测。T7发布门未关闭，不打v5发布tag、不合并main。
+下一安全动作：完成正常liy222提交/推送；修复后的第二轮真实样本仅已离线准备，须额外明确批准后才可执行至多5次/0.70元，无自动重试，不挪用评价器名额。若未获批准，停在已提交的开发候选。证据入口：review/findings/v5-offline-joint.md、v5-real-samples-review.md及evidence/upgrade/v5.0/candidate-prompt-registration.json。

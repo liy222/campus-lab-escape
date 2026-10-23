@@ -1,0 +1,115 @@
+{
+  "kind": "backend_owner_auth_material_fix_source_stop",
+  "completed_utc": "2026-10-23T06:34:24.007074+00:00",
+  "files": {
+    "backend/app/storage/v5.py": {
+      "before_sha256": "46449e525eed09cd093325b468cd7365cb3b9f2b5f504972408aa95d72d2552c",
+      "after_sha256": "eb58009dbfd715d8eff4e28b2db3ea346ac11a3b2d822f80838445b849b70fba",
+      "reverse_only_authorized_blocks_matches_before_bytes": true
+    },
+    "backend/app/api/v5.py": {
+      "before_sha256": "ea042ff760c8688f899988b3b7b3ef117d565d7fa065db9ed00b07e7469f3dcc",
+      "after_sha256": "430a9df195e0c01787b7c5bd5b09af634eb5417ca15774437890b447747a6740",
+      "reverse_only_authorized_blocks_matches_before_bytes": true
+    },
+    "backend/app/domain/generated.py": {
+      "before_sha256": "9013c53915c892e33428e5ceff71c6d74fe7467d207308611ad8e8d8615112f1",
+      "after_sha256": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+      "reverse_only_authorized_blocks_matches_before_bytes": true
+    }
+  },
+  "scope": [
+    "Stable HMAC-derived anonymous CSRF from an existing valid nonce, with hashes only and no created_at/cookie expiry sliding.",
+    "GETcsrf forwards cookie and sets a cookie only for a new nonce; logout seeds a new anonymous cookie after auth revocation.",
+    "Observed code/sequence puzzle with all required clues prefixes canonical title-based material order; no hidden IDs or answers in that sentence.",
+    "Selected-clue symbol-map conflicts reject CONFLICTING_MAP; duplicate same-value entries remain accepted."
+  ],
+  "actual_commands": [
+    {
+      "command": "inline synthetic pre-fix5-definition/hash/answer/snapshot baseline capture",
+      "exit_code": 0,
+      "tool_chunk": "09f0f2"
+    },
+    {
+      "command": "$env:PYTHONPATH='.'; & 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 evidence/upgrade/v5.0/backend/auth_material_check.py",
+      "exit_code": 0,
+      "tool_chunk": "47c57f"
+    }
+  ],
+  "actual_probe": {
+    "kind": "owner_narrow_auth_material_probe_not_formal_qa",
+    "material": {
+      "valid_fixtures": [
+        {
+          "fixture": "concat",
+          "definition_hash_and_answers_unchanged": true,
+          "required_material_and_observation_gate": true,
+          "canonical_title_order_visible": true,
+          "old_snapshot_restores": true
+        },
+        {
+          "fixture": "reverse",
+          "definition_hash_and_answers_unchanged": true,
+          "required_material_and_observation_gate": true,
+          "canonical_title_order_visible": true,
+          "old_snapshot_restores": true
+        },
+        {
+          "fixture": "index",
+          "definition_hash_and_answers_unchanged": true,
+          "required_material_and_observation_gate": true,
+          "canonical_title_order_visible": true,
+          "old_snapshot_restores": true
+        },
+        {
+          "fixture": "map_same_value",
+          "definition_hash_and_answers_unchanged": true,
+          "required_material_and_observation_gate": true,
+          "canonical_title_order_visible": true,
+          "old_snapshot_restores": true
+        },
+        {
+          "fixture": "sequence",
+          "definition_hash_and_answers_unchanged": true,
+          "required_material_and_observation_gate": true,
+          "canonical_title_order_visible": true,
+          "old_snapshot_restores": true
+        }
+      ],
+      "same_value_map_allowed": true,
+      "conflicting_map_rejected": "CONFLICTING_MAP",
+      "baseline_snapshot_file_bytes_unchanged": true
+    },
+    "auth": {
+      "anon_get_reuses_nonce_and_csrf": true,
+      "get_does_not_slide_database_time_or_cookie_expiry": true,
+      "nonce_and_csrf_hash_only": true,
+      "logout_seeds_anon_cookie_before_parallel_gets": true,
+      "two_parallel_gets_same_csrf": true,
+      "following_registration_status": 201,
+      "duplicate_csrf_status": 403,
+      "stale_auth_context_status": 403,
+      "expired_nonce_rotates": true,
+      "legacy_random_csrf_row_rotates_once": true,
+      "paid_calls": 0,
+      "network_calls": 0,
+      "database": "TEMP only"
+    },
+    "paid_calls": 0,
+    "network_calls": 0
+  },
+  "formal_qa": false,
+  "paid_calls": 0,
+  "network_calls": 0,
+  "game_database": "TEMP only",
+  "key_or_budget_ledger_accessed": false,
+  "other_source_paths_modified": false,
+  "historical_evidence_rewritten": false,
+  "limitations": [
+    "Completely cold concurrent first GET requests with no cookie can still initialize separate anonymous nonces; no IP-based nonce sharing or automatic retry introduced.",
+    "No frontend change or automatic credential/Key retry.",
+    "Conflict admission now rejects previously inconsistent selected mapping data; no old definition or snapshot bytes are rewritten.",
+    "Five focused valid synthetic material fixtures and limited auth probes only; no full suite or independent QA claim.",
+    "Existing real-sample previews remain historical and were not regenerated or executed."
+  ]
+}

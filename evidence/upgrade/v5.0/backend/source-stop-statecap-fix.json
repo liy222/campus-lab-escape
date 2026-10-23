@@ -1,0 +1,42 @@
+{
+  "kind": "backend_owner_narrow_statecap_fix_source_stop",
+  "timestamp_utc": "2026-10-22T17:40:30.114288+00:00",
+  "file": "backend/app/domain/generated.py",
+  "before_sha256": "85cf36705cdf488060347c8dadce7a53f409fc0d92377cc72ffb46e7f12e912e",
+  "after_sha256": "9013c53915c892e33428e5ceff71c6d74fe7467d207308611ad8e8d8615112f1",
+  "exact_delta": {
+    "before": "            if k not in seen: seen.add(k); queue.append((nxt,path+actions))",
+    "after": "            if k not in seen:\r\n                if len(seen)>=25000: raise ValueError('PROOF_UNKNOWN')\r\n                seen.add(k); queue.append((nxt,path+actions))"
+  },
+  "byte_reverse_delta_equals_original": true,
+  "scope": "Only reject unseen-state insertion when seen already contains25000; original loop and5s guards remain.",
+  "completed_utc": "2026-10-22T17:41:12.502593+00:00",
+  "actual_command": "$env:PYTHONPATH='.'; & 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 evidence/upgrade/v5.0/backend/statecap_check.py",
+  "exit_code": 0,
+  "initial_tool_chunk": "51a5de",
+  "completion_tool_chunk": "7e39b7",
+  "actual_probe": {
+    "kind": "owner_narrow_statecap_probe_not_formal_qa",
+    "fixture": "Existing E1 LIMIT-03 stress input only",
+    "actual_result": "PROOF_UNKNOWN",
+    "state_peak": 25000,
+    "elapsed_seconds": 27.498635100000683,
+    "controlled_clock": "deadline disabled only in probe; production5s guard unchanged",
+    "paid_calls": 0,
+    "network_calls": 0,
+    "api_suites_run": 0,
+    "full_fixture_matrix_run": false
+  },
+  "formal_qa": false,
+  "independent_finding": "Formal QA P2 finding; independent finding/report remains owned by QA",
+  "historical_experiments_unchanged": true,
+  "real_preview_v2_unchanged": true,
+  "real_preview_v2_now_source_mismatch": true,
+  "paid_execution_authorized_or_attempted": false,
+  "limitations": [
+    "Only one stress input was executed; no9-good/20-bad/API/full-suite repetition.",
+    "The probe disables its deadline to isolate the state-count guard; elapsed time is not production5s behavior.",
+    "Historical E1 state25005 record remains unchanged; new candidate records25000.",
+    "Independent QA must verify the re-frozen candidate; real preview requires a later separate reviewed epoch."
+  ]
+}

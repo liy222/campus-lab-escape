@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "real_direct_foreign_session_restore_status": 404,
+  "real_foreign_archive_on_own_session_restore_status": 404,
+  "real_live_states_unchanged": true,
+  "guarded_control_read": "denied",
+  "weakened_isolated_control_read": "private_archive_disclosed",
+  "control_private_snapshot_sha256": "e415ac7121e17bbfa94d99f05bc55d98924b4b9c7fa756f3373af85f0a531fde",
+  "control_only_removed_predicate": " AND o.user_id=?",
+  "control_guarded_sql": "SELECT s.snapshot_json FROM save_slots s JOIN session_owners o ON o.session_id=s.session_id WHERE s.save_id=? AND o.user_id=?",
+  "control_weakened_sql": "SELECT s.snapshot_json FROM save_slots s JOIN session_owners o ON o.session_id=s.session_id WHERE s.save_id=?",
+  "product_code_modified": false,
+  "control_is_product_vulnerability": false,
+  "control_performed_restore": false,
+  "database_storage": "TEMP only",
+  "llm_calls": 0
+}
