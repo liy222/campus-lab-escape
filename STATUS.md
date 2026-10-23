@@ -320,3 +320,5 @@ Independent QA preparation exists, formal product runs still0 at this checkpoint
 随后只修改backend/app/ai/v5.py：明确生成引用/配方/跨房与组合要求；把伙伴可见的已发现资料标题和已公开的组合说明改成公开名称或中性序号。未改规则、DSL、API、存储、UI、供应商或防泄题/ID校验。Main冻结403来源；独立QA实际指定8项exit0，含captured公开事实/引用/输入不变、18份中文序号及C1/C10边界、经典上下文兼容、原A1仍拒、一次完整生产服务的合成MockTransport与预算/Key边界、3hard教学与Unicode上限。没有再次付费，也没有重跑旧全套验证。新候选尚无真实伙伴交付或多房间复测。
 
 发布仍未验收；无v5发布tag、main合并或部署。有限53-source评价登记不包含本次AI服务文件，相关来源仍匹配，但其3项INSUFFICIENT_EVIDENCE和付费未知费用门槛均保持。独立报告：review/findings/v5-round2-real-review.md、review/findings/v5-round2-ai-fix.md；实际结果：evidence/upgrade/v5.0/real-samples-round2/result.json、qa/round2-ai-fix-result.json。当前后续动作仅文档和正常liy222提交/推送，不自动追加调用。
+
+2026-10-23本轮同步完成：修复与第二轮证据提交6c6304f1e50b8873654b70b82894d7e79abaf22e已正常推送codex/v5-campus-generation，远端哈希与GitHub作者/提交者liy222均核对。403源码、8项窄离线结果和真实4次调用结果不变；新调用/测试0。当前停在未发布开发候选，多房间生成及真实伙伴交付/追问仍待另行有限验证。同步记录见evidence/upgrade/v5.0/round2-sync.json。
