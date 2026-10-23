@@ -1,0 +1,77 @@
+{
+  "kind": "round3_preparation_owner_source_stop",
+  "timestamp_utc": "2026-10-23T13:27:40.599692+00:00",
+  "artifacts": {
+    "evidence/upgrade/v5.0/real-samples-round3/run.py": "82daf8a6bf0d164997df61b50ffc92bab44a93a95e07a2e36d59d5e0fb5ebcdb",
+    "evidence/upgrade/v5.0/real-samples-round3/offline-preview-v1.json": "3d5e33b1abdfff67665e9d7b06d8095f337cbd4fca1b5712a61460bd673ee4cf",
+    "evidence/upgrade/v5.0/real-samples-round3/preparation-report.json": "006ad50a78c280c195fb7dcb7787522dd54312e258c5b368a6db386c18ec150f",
+    "evidence/upgrade/v5.0/real-samples-round3/offline-gate-check-failure.json": "da4311b329711bb2bfe63c373d4a20a3eb0e83804756d05dfcad291cb777dbe0",
+    "evidence/upgrade/v5.0/real-samples-round3/offline-gate-check.json": "e205b5c8ded748600d8a790c57bdcd5cc3c37919e3dd393f4e0e74c75455cdb4"
+  },
+  "candidate_sha256": "02349e27e6523be15474ca019ba302a96a36083ec9728447a50c0a1f2d375b4e",
+  "actual_commands": [
+    {
+      "command": "& 'C:\\Users\\liyh\\.conda\\envs\\1\\python.exe' -B -X utf8 evidence/upgrade/v5.0/real-samples-round3/run.py --prepare",
+      "exit_code": 0,
+      "tool_chunk": "2e8389",
+      "executed_prepare_times": 1
+    },
+    {
+      "command": "inline pure offline gate check using relative runpy import",
+      "exit_code": 1,
+      "tool_chunk": "395a09",
+      "failure": "Offline-check harness relative __file__ only; no paid/marker/config/ledger access."
+    },
+    {
+      "command": "inline absolute-path offline gate/source/history-input/cap checks",
+      "exit_code": 0,
+      "tool_chunk": "4a221e",
+      "scope": "Pure memory only; no execute/fixture/prepare rerun."
+    }
+  ],
+  "exact_A1_upper_cny": 0.046688,
+  "generation_upper_cny": [
+    0.143528,
+    0.14996
+  ],
+  "A2_placeholder_upper_cny": 0.049,
+  "fixed_scope": [
+    "G2",
+    "G3",
+    "A1",
+    "A2"
+  ],
+  "max_calls": 4,
+  "max_reserved_units": 500000000,
+  "authorization_format": {
+    "approved": false,
+    "run_id": "v5-real-samples-round3-pending-approval",
+    "preview_file_sha256": "3d5e33b1abdfff67665e9d7b06d8095f337cbd4fca1b5712a61460bd673ee4cf",
+    "candidate_sha256": "02349e27e6523be15474ca019ba302a96a36083ec9728447a50c0a1f2d375b4e",
+    "scope": [
+      "G2",
+      "G3",
+      "A1",
+      "A2"
+    ],
+    "max_calls": 4,
+    "max_reserved_units": 500000000,
+    "actual_user_approval_reference": "Main supplies reference to a future actual explicit user approval; do not infer approval from this template."
+  },
+  "source_map_count": 45,
+  "authorization_file_created": false,
+  "execute_invoked": false,
+  "key_or_config_loaded": false,
+  "canonical_ledger_opened": false,
+  "paid_calls": 0,
+  "network_calls": 0,
+  "product_and_old_artifacts_changed": false,
+  "formal_qa": false,
+  "limits": [
+    "Fresh explicit human approval is still absent; the Main-authored authorization file must reference the actual future user reply and cannot stand as proof alone.",
+    "A1 is exact reviewed historical-G1 reconstruction context; A2 remains placeholder until a newly successful API/Store-delivered A1 supplies real history.",
+    "Historical G1 replay is offline test setup, never new generation or a product fallback.",
+    "One relative-path check failure retained; no old run/result/raw/previews rewritten.",
+    "No additional preparation, fixture matrix, suite/build/browser/evaluator or paid execution."
+  ]
+}

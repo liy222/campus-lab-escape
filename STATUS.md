@@ -322,3 +322,9 @@ Independent QA preparation exists, formal product runs still0 at this checkpoint
 发布仍未验收；无v5发布tag、main合并或部署。有限53-source评价登记不包含本次AI服务文件，相关来源仍匹配，但其3项INSUFFICIENT_EVIDENCE和付费未知费用门槛均保持。独立报告：review/findings/v5-round2-real-review.md、review/findings/v5-round2-ai-fix.md；实际结果：evidence/upgrade/v5.0/real-samples-round2/result.json、qa/round2-ai-fix-result.json。当前后续动作仅文档和正常liy222提交/推送，不自动追加调用。
 
 2026-10-23本轮同步完成：修复与第二轮证据提交6c6304f1e50b8873654b70b82894d7e79abaf22e已正常推送codex/v5-campus-generation，远端哈希与GitHub作者/提交者liy222均核对。403源码、8项窄离线结果和真实4次调用结果不变；新调用/测试0。当前停在未发布开发候选，多房间生成及真实伙伴交付/追问仍待另行有限验证。同步记录见evidence/upgrade/v5.0/round2-sync.json。
+
+### 2026-10-23 当前工作：第三轮离线预检
+
+基线与远端9691e0f一致，403个产品/验证来源未变；旧源码、数据和原始证据继续封存。仅准备新的隔离验证执行器，拟用两次生成加两次伙伴调用，总计最多4次/0.50元，尚无本轮付费授权，新增模型调用0。G1原始真实定义及公开阶段在TEMP库中经正常规则/API重建，用于伙伴修复验证，不重复支付G1生成费用，也不宣称新的生成成功。
+
+Owner离线prepare已执行一次exit0：G2/G3载荷上界分别0.143528/0.149960元；A1精确公开上下文为0.046688元；A2占位预估0.049000元，真实A2需带入成功A1后重新检查。独立审查e850c6 exit0已封存，45项输入与403项来源保持一致，无阻断项；这只允许提交待审批提案，不能据此执行或宣称第三轮真实验收。原3条unknown与付费评价阻塞、未发布开发候选及真人/教师未确认限制保持。基线记录evidence/upgrade/v5.0/round3-baseline.json。

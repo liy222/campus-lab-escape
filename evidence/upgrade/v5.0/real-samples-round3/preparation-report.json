@@ -1,0 +1,52 @@
+{
+  "kind": "round3_offline_preparation_source_stop",
+  "prepared_utc": "2026-10-23T13:24:30.180696+00:00",
+  "runner_sha256": "82daf8a6bf0d164997df61b50ffc92bab44a93a95e07a2e36d59d5e0fb5ebcdb",
+  "preview_sha256": "3d5e33b1abdfff67665e9d7b06d8095f337cbd4fca1b5712a61460bd673ee4cf",
+  "candidate_sha256": "02349e27e6523be15474ca019ba302a96a36083ec9728447a50c0a1f2d375b4e",
+  "reviewed_round2_runner_sha256": "f833068ad200c41b4016d1fa7e3f1b502bea2704ecfa0a2237b965a05bef185c",
+  "historical_input_sha256": {
+    "evidence/upgrade/v5.0/real-samples-round2/G1-provider-result.json": "b7a2139acbe4bcc95e37320b6cd7dcf8606f21358cd0c1606530f46581725a29",
+    "evidence/upgrade/v5.0/real-samples-round2/G1-api-result.json": "748c8bcf0fd938d4f0d1be09ecdd0a45960f4b60f0e6d088615ddfaec205f4bd",
+    "evidence/upgrade/v5.0/real-samples-round2/companion-actual-stage.json": "52a86785516d2c14a5df96996cdf28c4a13b6e05fe41a9d7287aff8357db579b",
+    "evidence/upgrade/v5.0/real-samples-round2/A1-exact-payload.json": "3590994aaf6a1480433dfcfaad887826eb9f282f2d11000a4a4976a11eb7e28d"
+  },
+  "generation_upper_cny": [
+    0.143528,
+    0.14996
+  ],
+  "exact_A1_upper_cny": 0.046688,
+  "A2_placeholder_upper_cny": 0.049,
+  "A2_actual_payload_preapproved": false,
+  "historical_fixture_definition_and_witness_match": true,
+  "public_projection_and_actual_3_action_labels_match": true,
+  "authorization_file_created": false,
+  "future_Main_authorization_format": {
+    "approved": false,
+    "run_id": "v5-real-samples-round3-pending-approval",
+    "preview_file_sha256": "3d5e33b1abdfff67665e9d7b06d8095f337cbd4fca1b5712a61460bd673ee4cf",
+    "candidate_sha256": "02349e27e6523be15474ca019ba302a96a36083ec9728447a50c0a1f2d375b4e",
+    "scope": [
+      "G2",
+      "G3",
+      "A1",
+      "A2"
+    ],
+    "max_calls": 4,
+    "max_reserved_units": 500000000,
+    "actual_user_approval_reference": "Main supplies reference to a future actual explicit user approval; do not infer approval from this template."
+  },
+  "actual_command": "python -B -X utf8 evidence/upgrade/v5.0/real-samples-round3/run.py --prepare",
+  "exit_code": 0,
+  "key_or_config_loaded": false,
+  "canonical_ledger_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "product_or_old_artifacts_modified": false,
+  "limitations": [
+    "Historical real G1 is an offline reconstruction fixture, not a new real generation or product fallback.",
+    "A2 remains placeholder and is replaced only by current API-delivered A1 history with its own <=.05 bound.",
+    "No fresh paid authorization exists at preparation; no execute command was invoked.",
+    "Companion quality requires actual later delivery and finite manual review, never a paid evaluator."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "round3_owner_offline_gate_and_scope_checks",
+  "completed_utc": "2026-10-23T13:26:40.703127+00:00",
+  "actual_command": "inline absolute-path runpy pure authorization/AST-order/MemoryController/facts-comparison checks, no execute call",
+  "exit_code": 0,
+  "prior_harness_failure": "offline-gate-check-failure.json",
+  "missing_authorization_stops_without_marker": true,
+  "authorization_fixture_only_not_actual_approval": true,
+  "rejected_authorization_variants": 10,
+  "authorization_gate_before_marker_config_and_ledger": true,
+  "fixed_case_ids": [
+    "G2",
+    "G3",
+    "A1",
+    "A2"
+  ],
+  "sum_simulated_reserved_upper_cny": 0.388584,
+  "duplicate_case_rejected": true,
+  "aggregate_half_yuan_cap_rejected_before_dispatch": true,
+  "hint_metadata_only_comparison": true,
+  "inventory_change_detected": true,
+  "source_map_still_matches_preview": true,
+  "historical_pins_still_match": true,
+  "authorization_file_created": false,
+  "execute_marker_created": false,
+  "key_or_config_loaded": false,
+  "canonical_ledger_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "artifacts": {
+    "evidence/upgrade/v5.0/real-samples-round3/run.py": "82daf8a6bf0d164997df61b50ffc92bab44a93a95e07a2e36d59d5e0fb5ebcdb",
+    "evidence/upgrade/v5.0/real-samples-round3/offline-preview-v1.json": "3d5e33b1abdfff67665e9d7b06d8095f337cbd4fca1b5712a61460bd673ee4cf",
+    "evidence/upgrade/v5.0/real-samples-round3/preparation-report.json": "006ad50a78c280c195fb7dcb7787522dd54312e258c5b368a6db386c18ec150f"
+  },
+  "limits": [
+    "Pure in-memory dummy controller never constructed a real provider or ledger.",
+    "A2 actual answer and payload remain unobserved; the synthetic check does not approve a real A2 dispatch.",
+    "Await independent QA and fresh explicit user finite approval."
+  ]
+}

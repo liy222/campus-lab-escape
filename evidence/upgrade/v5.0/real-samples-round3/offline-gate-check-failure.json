@@ -1,0 +1,13 @@
+{
+  "kind": "owner_offline_check_harness_failure",
+  "timestamp_utc": "2026-10-23T13:26:40.578320+00:00",
+  "actual_command": "inline runpy.run_path with a relative script path",
+  "exit_code": 1,
+  "tool_chunk": "395a09",
+  "failure": "runpy relative __file__ caused source_map Path.relative_to absolute ROOT failure before scope/gate checks. The normal CLI --prepare had passed.",
+  "correction": "Use absolute runpy script path in the offline check only; no runner/source/preview changes.",
+  "key_loaded": false,
+  "canonical_ledger_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0
+}
