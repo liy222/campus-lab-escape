@@ -310,3 +310,5 @@ Independent QA preparation exists, formal product runs still0 at this checkpoint
 新版入口启动新版.cmd（8001，同源、独立game-v5.sqlite），旧入口/旧库/旧素材/环境和原未跟踪文件保留；不自动迁移。规则/API/素材等207个旧跟踪文件只读对照无内容变化。没有OS重启、交互根CMD、实体手机、真人时长、教师签署、部署/Actions或v5正式发布声明。第二轮真实验证仅prepare，尚未获新付费授权；发布门仍待GEN-01实际成功与伙伴真实连续对话结果。
 
 提交前补充：一条合成账号失败日志包含TEMP匿名Cookie，原output.txt留在本地且精确忽略，公开仓库只收录明确脱敏副本及原哈希说明。原封存104项清单描述本地证据，不等于104项均公开；有限评价登记未引用该敏感原日志。其他原证据字节/失败退出码保持，见qa/authmaterial/20261023T063608354079Z-3c340e58/public-output-redaction.json。
+
+2026-10-23同步：源码检查点3a5e4108497a50b0fb008f47e7e8ebfaa8f75231已正常推送codex/v5-campus-generation，远端哈希与GitHub作者/提交者liy222均实际核对。仍是开发候选；无v5发布tag/main合并/部署。后续仅机械同步记录，不改变402源码或复测/费用结果，见evidence/upgrade/v5.0/validation-sync.json。

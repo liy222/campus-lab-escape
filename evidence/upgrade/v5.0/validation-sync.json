@@ -1,0 +1,43 @@
+{
+  "kind": "Verified source checkpoint synchronization, not release acceptance",
+  "utc": "2026-10-23T12:42:58.423376+00:00",
+  "source_commit": "3a5e4108497a50b0fb008f47e7e8ebfaa8f75231",
+  "branch": "codex/v5-campus-generation",
+  "remote": "https://github.com/liy222/campus-lab-escape",
+  "push_exit_code": 0,
+  "remote_branch_sha256_not_applicable": "Remote Git object ID is the source_commit field, verified by git ls-remote.",
+  "remote_branch_object_id": "3a5e4108497a50b0fb008f47e7e8ebfaa8f75231",
+  "github_api_commit": {
+    "sha": "3a5e4108497a50b0fb008f47e7e8ebfaa8f75231",
+    "author": "liy222",
+    "committer": "liy222"
+  },
+  "actual_commands": [
+    {
+      "command": "git push origin codex/v5-campus-generation; git ls-remote --heads origin codex/v5-campus-generation",
+      "exit_code": 0,
+      "tool_chunks": [
+        "deea7a",
+        "290373"
+      ]
+    },
+    {
+      "command": "gh api repos/liy222/campus-lab-escape/commits/3a5e4108497a50b0fb008f47e7e8ebfaa8f75231 --jq attribution",
+      "exit_code": 0,
+      "tool_chunk": "3d4b43"
+    }
+  ],
+  "release_accepted": false,
+  "main_merge_or_release_tag_or_deployment": false,
+  "paid_samples": {
+    "generation_attempts": 3,
+    "successful_admissions": 0,
+    "companion_calls": 0,
+    "upper_cost_cny": 0.03128048,
+    "automatic_retries": 0
+  },
+  "next_paid_round_authorized": false,
+  "next_preview": "evidence/upgrade/v5.0/real-samples-round2/offline-preview-v1.json",
+  "metadata_followup": "This record is a distinct documentation epoch after the source commit; it does not alter product source or relabel prior run hashes.",
+  "historical_privacy_scanner": "scan_staged_privacy.py has a fixed report output from its sealed run; preserve source and report, do not rerun it in place."
+}

@@ -275,3 +275,5 @@ T0 V2 schema/routes and additive SPEC/level design implemented; T1–T5 owners S
 T0—T5 增量实现与有限离线联合 QA 已完成；四项实际发现（规划状态上限、拿取残留特写、匿名跨页 CSRF、资料组合顺序/映射冲突）均有来源绑定的窄修与独立关闭证据。复用已通过的38步网页路线、三视口、档案/重载/后端进程重启，不机械重跑。T6 的 E1/E2/E3 是冻结合成输入实验；有限评价登记绑定53个相关来源与9份证据，预检READY，但确定性评价为3项INSUFFICIENT_EVIDENCE，付费判读仍按历史unknown门槛阻塞。
 真实G1/G2/G3各调用一次，0/3准入成功；A1/A2按协议跳过，不能验收GEN-01或真实伙伴质量。Main已将生成提示中的精确数量、配方互斥与结果域、房间先后依赖写明；九种请求的教学示例与完整费用边界、真实适配器MockTransport/密钥边界共11项定向离线检查通过，未真实复测。T7发布门未关闭，不打v5发布tag、不合并main。
 下一安全动作：完成正常liy222提交/推送；修复后的第二轮真实样本仅已离线准备，须额外明确批准后才可执行至多5次/0.70元，无自动重试，不挪用评价器名额。若未获批准，停在已提交的开发候选。证据入口：review/findings/v5-offline-joint.md、v5-real-samples-review.md及evidence/upgrade/v5.0/candidate-prompt-registration.json。
+
+2026-10-23提交门已执行：3a5e410已推送并核对liy222归属。第二轮样本已有离线请求和独立预检，下一步等待额外有限调用授权；不得将此前“继续”或原三次失败后的剩余伙伴名额自动解释为生成重试许可。
