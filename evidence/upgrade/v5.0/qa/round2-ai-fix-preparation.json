@@ -1,0 +1,46 @@
+{
+  "kind": "independent_AI_round2_fix_preparation_and_static_scope_review",
+  "utc": "2026-10-23T13:00:09.184085+00:00",
+  "syntax_command": "AST parse tests/v5/test_round2_ai_fixed.py only; no target import or test execution",
+  "exit_code": 0,
+  "test_file": "tests/v5/test_round2_ai_fixed.py",
+  "test_file_sha256": "5b35be06ed054df94af9b8ad79d818e4b465f7527debaf33e6312d4976f446b8",
+  "prepared_test_methods": 6,
+  "AI_source_sha256": "1fcf31cab2cf1667c8e76011d7d1b7821832e8abc277620f353ec8c6be5d6fed",
+  "generation_teaching_read_review": [
+    {
+      "observed_real_G2_failure": "item ID in object locked_by",
+      "new_instruction_scope": "locked_by/prerequisite_ids puzzle-only; item/clue/object identifiers excluded"
+    },
+    {
+      "observed_real_G2_failure": "8 selected sequence tokens, 4 unmapped",
+      "new_instruction_scope": "selected source tokens require full map coverage and sequence derives exactly four distinct ASCII IDs"
+    },
+    {
+      "observed_real_G2_failure": "all dependencies same-room",
+      "new_instruction_scope": "later puzzle must actually select earlier material/item; adjacent rooms alone insufficient"
+    },
+    {
+      "observed_real_G3_failure": "mapping only, no source tokens",
+      "new_instruction_scope": "nonempty combined source tokens and covering mapping both required"
+    },
+    {
+      "observed_real_G3_failure": "only one multi-clue puzzle at hard",
+      "new_instruction_scope": "count distinct code/sequence puzzles with at least2 clue_ids against numeric requirement"
+    }
+  ],
+  "public_projection_static_review": "Existing public clue object_id joins currently visible name; fallback uses public notebook ordinal; canonical machine IDs retained; descriptions replace explicit material-ID references with exact nonidentifier boundary; Chinese ordinal labels avoid unsupported numeric claims. No domain/private lookup added.",
+  "planned_formal_scope": [
+    "tests/v5/test_round2_ai_fixed.py (6 methods)",
+    "tests/v5/test_prompt_fixed.py::test_numeric_requirements_requested_example_and_schema_preserved[3-hard-6-2-3]",
+    "tests/v5/test_prompt_fixed.py::test_maximum_four_byte_unicode_theme_rejected_before_reservation_or_send"
+  ],
+  "formal_runs": 0,
+  "paid_network_calls": 0,
+  "stored_real_outputs_changed": false,
+  "limits": [
+    "Static teaching review is not a real-model generation success claim.",
+    "Original real A1 remains a historical blocked reply; synthetic name-only control is explicitly not delivered or real.",
+    "No nine-matrix/full suite/browser/build/evaluator/C1-C3 repeat; formal execution waits Main freeze/GO."
+  ]
+}

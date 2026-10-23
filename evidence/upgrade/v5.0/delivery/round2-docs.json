@@ -1,0 +1,109 @@
+{
+  "kind": "v5_round_two_documentation_epoch",
+  "date": "2026-10-23",
+  "status": "documentation_source_stop",
+  "changed_paths": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/delivery/round2-docs.json"
+  ],
+  "scope": "Document the sealed real-sample round two and the later AI-only 403-source offline QA. Earlier final-docs.json and final-docs-followup.json remain unchanged.",
+  "sealed_real_runs": {
+    "round_one": {
+      "result": "evidence/upgrade/v5.0/real-samples/result.json",
+      "independent_review": "review/findings/v5-real-samples-review.md",
+      "actual_generation_calls": 3,
+      "G1_G2_G3": "all rejected",
+      "A1_A2": "skipped",
+      "usage_upper_increment_cny": 0.03128048,
+      "prior_unknown_calls": 3
+    },
+    "round_two": {
+      "result": "evidence/upgrade/v5.0/real-samples-round2/result.json",
+      "main_execution_review": "evidence/upgrade/v5.0/real-samples-round2/main-execution-review.json",
+      "independent_review_json": "evidence/upgrade/v5.0/qa/real-round2-independent-review.json",
+      "independent_review": "review/findings/v5-round2-real-review.md",
+      "actual_paid_calls": 4,
+      "G1": "one-room easy sample admitted, actually HTTP-replayed, solved 2/2 puzzles and reached EXIT in 8 actions",
+      "G2_G3": "rejected",
+      "A1": "HTTP 502 MODEL_INVALID_OUTPUT because reply prose repeated clue IDs used in public material titles; gameplay projection preserved",
+      "A2": "skipped; no reuse",
+      "automatic_retries": 0,
+      "evaluator_invoked": false,
+      "usage_upper_increment_cny": 0.03340072,
+      "prior_unknown_calls_unchanged": 3,
+      "scope_limit": "Different source epochs: record round one as 0/3 and round two as 1/3 generation samples. Do not combine as one rate or infer multi-room generation, real companion success, broad quality, or GEN-01 acceptance."
+    }
+  },
+  "sealed_ai_only_offline_qa": {
+    "candidate_id": "v5.0-round2-ai-fix-a45d73cb8dc24523",
+    "candidate_path": "evidence/upgrade/v5.0/candidate-round2-ai-fix.json",
+    "candidate_sha256": "e1b32bf8641f956d78365fe4a087d5e6d1235368a73322faaa00d8ba229a4b40",
+    "source_files": 403,
+    "source_unchanged": true,
+    "result": "evidence/upgrade/v5.0/qa/round2-ai-fix-result.json",
+    "result_sha256": "996335180e167132fcab98a981dcf6a692379d65f6b292879ca208d5eb66a5c4",
+    "independent_review": "review/findings/v5-round2-ai-fix.md",
+    "review_sha256": "32f7ec379d5539b4f602dd815c956985a783ecd281657445cb95e01625a89137",
+    "actual_command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "tests/v5/test_round2_ai_fixed.py",
+      "tests/v5/test_prompt_fixed.py::test_numeric_requirements_requested_example_and_schema_preserved[3-hard-6-2-3]",
+      "tests/v5/test_prompt_fixed.py::test_maximum_four_byte_unicode_theme_rejected_before_reservation_or_send",
+      "-q",
+      "-p",
+      "no:cacheprovider"
+    ],
+    "execution_id": "240898",
+    "exit_code": 0,
+    "result_summary": "8 passed in 0.40 seconds; one existing Starlette/httpx deprecation warning",
+    "meaning": "AI public-projection label fix and scoped synthetic cases verified offline only. The original real A1 remains rejected; A2 was not dispatched or reused; real companion retest count is zero.",
+    "budget_boundaries": {
+      "synthetic_companion_upper_cny": 0.046688,
+      "companion_cap_cny": 0.05,
+      "four_byte_unicode_generation_upper_cny": 0.212808,
+      "generation_cap_cny": 0.2,
+      "unicode_transport_sends": 0,
+      "unicode_reservation_or_fake_ledger_calls": 0
+    },
+    "limitations": [
+      "Only the specified eight narrow offline cases ran once; no full suite, browser, build, evaluator, or C1/C2/C3 repeat.",
+      "MockTransport response is synthetic and does not establish a real paid-model response or companion success.",
+      "G2/G3 failures and original A1 rejection remain unchanged; no real retest or additional paid-call authorization.",
+      "First-round 0/3 and three historical unknown calls remain unchanged; paid evaluation remains blocked.",
+      "The V5 candidate remains unpublished and is not accepted for release."
+    ]
+  },
+  "documentation_hashes_sha256": {
+    "README.md": "abb73c9c32793dd5935ac933c285cb71a1b043adb4c183ca72d0234ec072d174",
+    "release/V5.md": "a956d4fe4b5f395a1078cdb9149cde57cefbf88f2362bec8cb493b33e066681e"
+  },
+  "this_documentation_epoch": {
+    "read_only_commands": [
+      {
+        "command": "Get-Content evidence/upgrade/v5.0/qa/round2-ai-fix-result.json -Raw; Get-Content review/findings/v5-round2-ai-fix.md",
+        "exit_code": 0,
+        "purpose": "Read sealed QA result and independent review"
+      },
+      {
+        "command": "Get-ChildItem evidence/upgrade/v5.0/real-samples-round2 -File | Where-Object { $_.Name -ceq 'main-execution-review.json' } | Select-Object -ExpandProperty Name",
+        "exit_code": 0,
+        "purpose": "Confirm case-sensitive review artifact name used by documentation links"
+      },
+      {
+        "command": "Get-FileHash -LiteralPath README.md,release/V5.md -Algorithm SHA256 | ForEach-Object { '{0} {1}' -f $_.Path,$_.Hash }",
+        "exit_code": 0,
+        "purpose": "Record corrected post-review documentation hashes"
+      }
+    ],
+    "tests_run_by_documentation_owner": [],
+    "builds_run_by_documentation_owner": [],
+    "paid_calls": 0,
+    "git_operations": 0
+  }
+}

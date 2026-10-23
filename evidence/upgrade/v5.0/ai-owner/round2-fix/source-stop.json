@@ -1,0 +1,45 @@
+{
+  "kind": "Main AI-only round2 finding repair SOURCE STOP; development evidence",
+  "utc": "2026-10-23T12:55:29.934664+00:00",
+  "command": "Inline captured public-stage projection/nonmutation/canonical refs, original-vs-synthetic-prose validation and full-payload monetary checks",
+  "actual_exit_code": 0,
+  "source_before_sha256": "6a9dda7d47013dca8a6ef6cd878946ba40ecfa82168b2528e0c8225131d5f500",
+  "source_after_sha256": "1fcf31cab2cf1667c8e76011d7d1b7821832e8abc277620f353ec8c6be5d6fed",
+  "original_actual_A1_still_rejected": true,
+  "synthetic_name_only_prose_accepted": true,
+  "canonical_refs_and_fact_text_unchanged": true,
+  "caller_public_state_unchanged": true,
+  "validate_reply_and_bounded_messages_AST_unchanged": true,
+  "captured_stage_current_A1_upper_cny": 0.045472,
+  "generation_bounds": [
+    {
+      "rooms": 1,
+      "difficulty": "easy",
+      "theme_chars": 2000,
+      "cost_upper_cny": 0.184088
+    },
+    {
+      "rooms": 2,
+      "difficulty": "normal",
+      "theme_chars": 2000,
+      "cost_upper_cny": 0.190448
+    },
+    {
+      "rooms": 3,
+      "difficulty": "hard",
+      "theme_chars": 2000,
+      "cost_upper_cny": 0.196808
+    }
+  ],
+  "additional_model_calls": 0,
+  "ledger_or_key_read": false,
+  "files_changed": [
+    "backend/app/ai/v5.py"
+  ],
+  "limitations": [
+    "Synthetic name substitution is an offline control, not rewriting the actual paid reply or delivering A1.",
+    "Only one admitted real G1; G2/G3 and actual A1 failures stay unchanged.",
+    "No new real generation or companion call; no reuse of skipped A2.",
+    "Next actual requests require a fresh source-bound preview and finite authorization."
+  ]
+}

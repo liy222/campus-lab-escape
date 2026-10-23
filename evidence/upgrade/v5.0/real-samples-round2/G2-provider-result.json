@@ -1,0 +1,18 @@
+{
+  "case_id": "G2",
+  "fictional_test_content": true,
+  "content_redacted": "{\"title\":\"天文社观测资料交接\",\"story\":\"天文社观测结束前，需要核对准备室与资料室的记录，并用交接道具完成关闭检查。\",\"rooms\":[{\"room_id\":\"room_prep\",\"name\":\"观测准备室\",\"description\":\"桌上散着交接便签与器材。\",\"background_id\":\"neutral_lab\",\"objects\":[{\"object_id\":\"obj_prep_note\",\"name\":\"交接便签\",\"description\":\"记录了交接编号片段。\",\"slot\":0,\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"clue_prep_note\"},{\"object_id\":\"obj_reading_rule\",\"name\":\"读取规则卡\",\"description\":\"说明按位置取字符。\",\"slot\":1,\"art_id\":\"panel\",\"kind\":\"clue\",\"clue_id\":\"clue_reading_rule\"},{\"object_id\":\"obj_handover_key\",\"name\":\"交接钥匙\",\"description\":\"准备室抽屉里的通用钥匙。\",\"slot\":2,\"art_id\":\"key\",\"kind\":\"item\",\"item_id\":\"item_handover_key\"},{\"object_id\":\"obj_prep_terminal\",\"name\":\"交接终端\",\"description\":\"输入核对码。\",\"slot\":3,\"art_id\":\"terminal\",\"kind\":\"puzzle\",\"puzzle_id\":\"puzzle_prep_code\"},{\"object_id\":\"obj_prep_cabinet\",\"name\":\"器材柜\",\"description\":\"用钥匙打开的交接柜。\",\"slot\":4,\"art_id\":\"cabinet\",\"kind\":\"puzzle\",\"puzzle_id\":\"puzzle_prep_item\",\"locked_by\":[\"item_handover_key\"]}]},{\"room_id\":\"room_archive\",\"name\":\"资料室\",\"description\":\"档案架与关闭检查面板。\",\"background_id\":\"neutral_archive\",\"objects\":[{\"object_id\":\"obj_archive_map\",\"name\":\"资料室符号表\",\"description\":\"记录设备编号与符号对应。\",\"slot\":0,\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"clue_symbol_map\"},{\"object_id\":\"obj_archive_order\",\"name\":\"关闭顺序条\",\"description\":\"记录资料室面板的操作次序。\",\"slot\":1,\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"clue_device_order\"},{\"object_id\":\"obj_archive_panel\",\"name\":\"关闭检查面板\",\"description\":\"按顺序操作设备。\",\"slot\":2,\"art_id\":\"panel\",\"kind\":\"puzzle\",\"puzzle_id\":\"puzzle_archive_sequence\"},{\"object_id\":\"obj_archive_circuit\",\"name\":\"线路检查盒\",\"description\":\"检查三乘三线路状态。\",\"slot\":3,\"art_id\":\"circuit\",\"kind\":\"puzzle\",\"puzzle_id\":\"puzzle_archive_circuit\"}]}],\"clues\":[{\"clue_id\":\"clue_prep_note\",\"tokens\":[\"4\",\"1\",\"5\"]},{\"clue_id\":\"clue_reading_rule\",\"indices\":[1,2,3,2]},{\"clue_id\":\"clue_symbol_map\",\"tokens\":[\"北\",\"南\",\"东\",\"西\"],\"symbol_map\":{\"A\":\"T7\",\"B\":\"T2\",\"C\":\"T9\",\"D\":\"T4\"}},{\"clue_id\":\"clue_device_order\",\"tokens\":[\"B\",\"D\",\"A\",\"C\"]}],\"puzzles\":[{\"puzzle_id\":\"puzzle_prep_code\",\"room_id\":\"room_prep\",\"mechanism\":\"code\",\"prerequisite_ids\":[],\"required_item_id\":null,\"clue_ids\":[\"clue_prep_note\",\"clue_reading_rule\"],\"recipe\":\"index\"},{\"puzzle_id\":\"puzzle_prep_item\",\"room_id\":\"room_prep\",\"mechanism\":\"item\",\"prerequisite_ids\":[\"puzzle_prep_code\"],\"required_item_id\":\"item_handover_key\",\"clue_ids\":[]},{\"puzzle_id\":\"puzzle_archive_sequence\",\"room_id\":\"room_archive\",\"mechanism\":\"sequence\",\"prerequisite_ids\":[\"puzzle_prep_item\"],\"required_item_id\":null,\"clue_ids\":[\"clue_symbol_map\",\"clue_device_order\"],\"recipe\":\"symbol_map\"},{\"puzzle_id\":\"puzzle_archive_circuit\",\"room_id\":\"room_archive\",\"mechanism\":\"circuit\",\"prerequisite_ids\":[\"puzzle_archive_sequence\"],\"required_item_id\":null,\"clue_ids\":[]}]}",
+  "content_raw_sha256": "8ccc8c7d8f047f45805254d1ab77284f4ec16ae5e7d7efd5bb2dbd2eb4584107",
+  "usage": {
+    "prompt_tokens": 2371,
+    "completion_tokens": 905,
+    "total_tokens": 3276,
+    "prompt_cache_hit_tokens": 384
+  },
+  "requested_model": "deepseek-flash",
+  "reported_model": "deepseek-flash",
+  "finish_reason": "stop",
+  "call_id": "35f6f67c06c94c689d9f6bb12476ec92",
+  "cost_upper_cny": 0.01122936,
+  "secret_detected": false
+}

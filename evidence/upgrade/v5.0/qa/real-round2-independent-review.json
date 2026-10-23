@@ -1,0 +1,356 @@
+{
+  "kind": "independent_read_only_real_round2_review",
+  "utc": "2026-10-23T12:51:02.091777+00:00",
+  "review_command": "PYTHONPATH=. python -B -X utf8 evidence/upgrade/v5.0/qa/review_real_round2.py",
+  "review_exit_code": 0,
+  "original_actual_execute_exit_code": 1,
+  "source_before": {
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/companion.py": "5fd0dbfa40689277b70f92f03168da3fae8229be8a5510ee020dbfb1523ac940",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/hints.py": "b6d3773d1066dd30d91691b60b2de89f150ec55ffb7ab9560cfd8e943ecbecb3",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "1c4f5c170f1bd1d303899c2ccf6d3185c258db214f47fff6f0d1e4b442eff85d",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "0e3ad7b1a93d9af43bea17f35ceeda76c1845b6d1fe138c9bd071fbf1a177be8",
+    "backend/app/ai/types.py": "9e7d1dacf68f1f42970885fff9a4b0f2fcce46baa29a7fa3fb78c42f3354a830",
+    "backend/app/ai/v5.py": "6a9dda7d47013dca8a6ef6cd878946ba40ecfa82168b2528e0c8225131d5f500",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "70d7475cddb3f63a4334df8c8268f8d07af997540209173dadb90201f07807b8",
+    "backend/app/api/v5.py": "430a9df195e0c01787b7c5bd5b09af634eb5417ca15774437890b447747a6740",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+    "backend/app/domain/graybox_models.py": "ea21b1d81f09a4178fb3ec40cf32ae98960b8607b3589b247eb956bc72cb1b5a",
+    "backend/app/domain/graybox_rules.py": "2d6598034c30b8d50d01008ae8d0ed0843e42c2e4a84d46d80d737d0b97e655b",
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/mini_rules.py": "9104576bbb47c20d6f230c66a66d83c5e7835fd056dfc735e8a1f00876f1b49b",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/domain/save_models.py": "2dc073a8f8e94721d04ff39157c5e1c4b51ed8bc6f5e092e6ba2fa839cd03d8b",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/main.py": "f17f5de8a9921fbfa07997255279c2e109c1e9eaf0a053010233f851f623a696",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "6d7c98627f5219ad678815f0750abeb202b290adac769004059c77c433d8cdce",
+    "backend/app/storage/saves.py": "cbee6f356a6271a3d41ea365fef918c3c1678d24b9c9bf49dcc59e752d59af84",
+    "backend/app/storage/sqlite.py": "cb1f946f6377cb92a6776ec00513b4470be262ad59a907e3f17c1972c027994a",
+    "backend/app/storage/v5.py": "eb58009dbfd715d8eff4e28b2db3ea346ac11a3b2d822f80838445b849b70fba",
+    "backend/requirements.in": "3b735ecbb432e3367e8ab0468531f67019901d5d505957562fb8244f351d5317",
+    "backend/requirements.lock.txt": "31084ea7caf51d51e32ae5437d97aa69460b8bf9065f7a6bd8bf503df367ca3e",
+    "evidence/upgrade/v5.0/real-samples-round2/run.py": "f833068ad200c41b4016d1fa7e3f1b502bea2704ecfa0a2237b965a05bef185c",
+    "frontend/src/assets/generated-catalog.json": "c702e73f0c8b234af95564b321652979ebd806a0093f008042e9c2a3fc9b80b8"
+  },
+  "source_after": {
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/companion.py": "5fd0dbfa40689277b70f92f03168da3fae8229be8a5510ee020dbfb1523ac940",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/hints.py": "b6d3773d1066dd30d91691b60b2de89f150ec55ffb7ab9560cfd8e943ecbecb3",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "1c4f5c170f1bd1d303899c2ccf6d3185c258db214f47fff6f0d1e4b442eff85d",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "0e3ad7b1a93d9af43bea17f35ceeda76c1845b6d1fe138c9bd071fbf1a177be8",
+    "backend/app/ai/types.py": "9e7d1dacf68f1f42970885fff9a4b0f2fcce46baa29a7fa3fb78c42f3354a830",
+    "backend/app/ai/v5.py": "6a9dda7d47013dca8a6ef6cd878946ba40ecfa82168b2528e0c8225131d5f500",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "70d7475cddb3f63a4334df8c8268f8d07af997540209173dadb90201f07807b8",
+    "backend/app/api/v5.py": "430a9df195e0c01787b7c5bd5b09af634eb5417ca15774437890b447747a6740",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+    "backend/app/domain/graybox_models.py": "ea21b1d81f09a4178fb3ec40cf32ae98960b8607b3589b247eb956bc72cb1b5a",
+    "backend/app/domain/graybox_rules.py": "2d6598034c30b8d50d01008ae8d0ed0843e42c2e4a84d46d80d737d0b97e655b",
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/mini_rules.py": "9104576bbb47c20d6f230c66a66d83c5e7835fd056dfc735e8a1f00876f1b49b",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/domain/save_models.py": "2dc073a8f8e94721d04ff39157c5e1c4b51ed8bc6f5e092e6ba2fa839cd03d8b",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/main.py": "f17f5de8a9921fbfa07997255279c2e109c1e9eaf0a053010233f851f623a696",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "6d7c98627f5219ad678815f0750abeb202b290adac769004059c77c433d8cdce",
+    "backend/app/storage/saves.py": "cbee6f356a6271a3d41ea365fef918c3c1678d24b9c9bf49dcc59e752d59af84",
+    "backend/app/storage/sqlite.py": "cb1f946f6377cb92a6776ec00513b4470be262ad59a907e3f17c1972c027994a",
+    "backend/app/storage/v5.py": "eb58009dbfd715d8eff4e28b2db3ea346ac11a3b2d822f80838445b849b70fba",
+    "backend/requirements.in": "3b735ecbb432e3367e8ab0468531f67019901d5d505957562fb8244f351d5317",
+    "backend/requirements.lock.txt": "31084ea7caf51d51e32ae5437d97aa69460b8bf9065f7a6bd8bf503df367ca3e",
+    "evidence/upgrade/v5.0/real-samples-round2/run.py": "f833068ad200c41b4016d1fa7e3f1b502bea2704ecfa0a2237b965a05bef185c",
+    "frontend/src/assets/generated-catalog.json": "c702e73f0c8b234af95564b321652979ebd806a0093f008042e9c2a3fc9b80b8"
+  },
+  "source_matches_actual_execute": true,
+  "source_unchanged": true,
+  "cases": [
+    {
+      "case_id": "G1",
+      "draft_schema_valid": true,
+      "requested_shape_matches": true,
+      "actual_first_compile_result": "ADMITTED",
+      "recipe_checks": [
+        {
+          "puzzle_id": "P_code",
+          "mechanism": "code",
+          "recipe": "index",
+          "result": "ADMITTED",
+          "flattened_token_count": 4,
+          "unmapped_token_count": null
+        }
+      ],
+      "independent_observed_violations": [],
+      "two_material_puzzles": 1,
+      "cross_room_material_dependency": false,
+      "campus_surface_theme": "Library closing patrol",
+      "art_scope": "Fixed neutral catalog backgrounds and existing object sprites; no new AI art",
+      "independent_memory_replay_won": true,
+      "replay_room_id": "EXIT",
+      "witness_actions": 8,
+      "definition_hash": "b4270160c24398843182d327a8e8f2ef194bd4bea2d2e749505c3238966bf34d",
+      "witness_sha256": "5eb15981794eb5b21d7da77ae16836d0a7ec2de8d4388a81e669255a3339de4e",
+      "main_actual_HTTP_replay_record_matches": true
+    },
+    {
+      "case_id": "G2",
+      "draft_schema_valid": true,
+      "requested_shape_matches": true,
+      "actual_first_compile_result": "UNKNOWN_REFERENCE",
+      "recipe_checks": [
+        {
+          "puzzle_id": "puzzle_prep_code",
+          "mechanism": "code",
+          "recipe": "index",
+          "result": "ADMITTED",
+          "flattened_token_count": 3,
+          "unmapped_token_count": null
+        },
+        {
+          "puzzle_id": "puzzle_archive_sequence",
+          "mechanism": "sequence",
+          "recipe": "symbol_map",
+          "result": "INSUFFICIENT_FACTS",
+          "flattened_token_count": 8,
+          "unmapped_token_count": 4
+        }
+      ],
+      "independent_observed_violations": [
+        {
+          "category": "UNKNOWN_REFERENCE",
+          "object_id": "obj_prep_cabinet",
+          "invalid_locked_by_ids": [
+            "item_handover_key"
+          ],
+          "reason": "locked_by must reference puzzle IDs, not an item ID"
+        },
+        {
+          "category": "INSUFFICIENT_FACTS",
+          "puzzle_id": "puzzle_archive_sequence",
+          "reason": "selected symbol sources are missing or unmapped"
+        },
+        {
+          "category": "INVALID_SEQUENCE_SHAPE",
+          "puzzle_id": "puzzle_archive_sequence",
+          "flattened_token_count": 8,
+          "required_count": 4,
+          "reason": "Even supplying missing mappings would preserve this token count; no modified real draft was tested or accepted"
+        },
+        {
+          "category": "CROSS_ROOM_REQUIRED",
+          "reason": "All selected materials/items serve only same-room puzzles"
+        }
+      ],
+      "two_material_puzzles": 2,
+      "cross_room_material_dependency": false,
+      "campus_surface_theme": "Astronomy club records handover",
+      "art_scope": "Fixed neutral catalog backgrounds and existing object sprites; no new AI art"
+    },
+    {
+      "case_id": "G3",
+      "draft_schema_valid": true,
+      "requested_shape_matches": true,
+      "actual_first_compile_result": "INSUFFICIENT_FACTS",
+      "recipe_checks": [
+        {
+          "puzzle_id": "P1",
+          "mechanism": "code",
+          "recipe": "concat",
+          "result": "ADMITTED",
+          "flattened_token_count": 4,
+          "unmapped_token_count": null
+        },
+        {
+          "puzzle_id": "P3",
+          "mechanism": "code",
+          "recipe": "index",
+          "result": "ADMITTED",
+          "flattened_token_count": 4,
+          "unmapped_token_count": null
+        },
+        {
+          "puzzle_id": "P4",
+          "mechanism": "code",
+          "recipe": "symbol_map",
+          "result": "INSUFFICIENT_FACTS",
+          "flattened_token_count": 0,
+          "unmapped_token_count": 0
+        },
+        {
+          "puzzle_id": "P6",
+          "mechanism": "sequence",
+          "recipe": "concat",
+          "result": "ADMITTED",
+          "flattened_token_count": 4,
+          "unmapped_token_count": null
+        }
+      ],
+      "independent_observed_violations": [
+        {
+          "category": "INSUFFICIENT_FACTS",
+          "puzzle_id": "P4",
+          "reason": "selected symbol sources are missing or unmapped"
+        },
+        {
+          "category": "COMBINATION_COUNT",
+          "observed": 1,
+          "minimum": 2
+        }
+      ],
+      "two_material_puzzles": 1,
+      "cross_room_material_dependency": true,
+      "campus_surface_theme": "Ecology laboratory specimen handover",
+      "art_scope": "Fixed neutral catalog backgrounds and existing object sprites; no new AI art"
+    }
+  ],
+  "A1": {
+    "actual_http_status": 502,
+    "actual_error": "MODEL_INVALID_OUTPUT",
+    "pure_memory_guard": "COMPANION_CONTENT",
+    "traced_exception": [
+      {
+        "line": 228,
+        "exception": "COMPANION_CONTENT"
+      }
+    ],
+    "offending_public_clue_ids": [
+      "C_borrow",
+      "C_order"
+    ],
+    "clue_refs_allowed": true,
+    "known_titles_contain_ids": true,
+    "looks_like_solution": false,
+    "complete_compiled_answer_absent": true,
+    "history_kind_counts": {
+      "action": 3,
+      "dialogue": 0
+    },
+    "gameplay_projection_preserved_after_failure": true,
+    "in_memory_public_name_substitution_only": "ADMITTED",
+    "raw_not_modified_or_delivered": true,
+    "independent_public_fact_review": "The index relation matches the observed puzzle rule and both discovered clue materials; no unsupported object/state/action claim was found. Reply is concise natural Chinese but includes machine IDs copied from public labels.",
+    "minimum_fix_recommendation": "Use the discovered clue object names in public clue titles and ordered-material description. Keep IDs only for machine clue_refs and retain existing no-full-answer/internal-ID-prose validation."
+  },
+  "A2": "SKIPPED_A1_NOT_SUCCESSFUL_NO_PAID_RETRY",
+  "actual_main_calls": [
+    "G1",
+    "G2",
+    "G3",
+    "A1"
+  ],
+  "actual_main_admitted_generation_samples": 1,
+  "payload_usage_checks": [
+    {
+      "case_id": "G1",
+      "full_payload_bytes": 8775,
+      "reserved_upper_units": 134584000,
+      "actual_usage_upper_units": 8010000,
+      "requested_model": "deepseek-flash",
+      "reported_model": "deepseek-flash",
+      "finish_reason": "stop",
+      "secret_detected_by_controller": false
+    },
+    {
+      "case_id": "G2",
+      "full_payload_bytes": 9591,
+      "reserved_upper_units": 141112000,
+      "actual_usage_upper_units": 11229360,
+      "requested_model": "deepseek-flash",
+      "reported_model": "deepseek-flash",
+      "finish_reason": "stop",
+      "secret_detected_by_controller": false
+    },
+    {
+      "case_id": "G3",
+      "full_payload_bytes": 10395,
+      "reserved_upper_units": 147544000,
+      "actual_usage_upper_units": 12369360,
+      "requested_model": "deepseek-flash",
+      "reported_model": "deepseek-flash",
+      "finish_reason": "stop",
+      "secret_detected_by_controller": false
+    },
+    {
+      "case_id": "A1",
+      "full_payload_bytes": 3048,
+      "reserved_upper_units": 45568000,
+      "actual_usage_upper_units": 1792000,
+      "requested_model": "deepseek-flash",
+      "reported_model": "deepseek-flash",
+      "finish_reason": "stop",
+      "secret_detected_by_controller": false
+    }
+  ],
+  "sum_reserved_upper_cny": 0.468808,
+  "actual_usage_upper_increment_cny": 0.03340072,
+  "old_unknown_identity_unchanged": true,
+  "unknown_count_before_after": [
+    3,
+    3
+  ],
+  "pending_after": 0,
+  "frozen_after": false,
+  "saved_artifact_secret_pattern_hits_without_values": [],
+  "qa_provider_calls": 0,
+  "qa_network_calls": 0,
+  "qa_credential_reads": 0,
+  "qa_database_access": false,
+  "artifact_sha256": {
+    "evidence/upgrade/v5.0/real-samples-round2/A1-api-result.json": "bd339e03bd95bbec91b10c0187e08c0a78339a2ed69d05a850ae3503431b7041",
+    "evidence/upgrade/v5.0/real-samples-round2/A1-exact-payload.json": "3590994aaf6a1480433dfcfaad887826eb9f282f2d11000a4a4976a11eb7e28d",
+    "evidence/upgrade/v5.0/real-samples-round2/A1-provider-result.json": "31c67b4d4d4b2825cb9a92a9ce1cf55c4907b990bbd8c9ab7107ec83e9f47a16",
+    "evidence/upgrade/v5.0/real-samples-round2/companion-actual-stage.json": "52a86785516d2c14a5df96996cdf28c4a13b6e05fe41a9d7287aff8357db579b",
+    "evidence/upgrade/v5.0/real-samples-round2/execute-started.json": "9324ce851ebcb3d2346ebcd5471f199aec10eca6d9ac1c6c46b4c3642608e52c",
+    "evidence/upgrade/v5.0/real-samples-round2/G1-api-result.json": "748c8bcf0fd938d4f0d1be09ecdd0a45960f4b60f0e6d088615ddfaec205f4bd",
+    "evidence/upgrade/v5.0/real-samples-round2/G1-exact-payload.json": "af1472a6df40a5cdda7419f2a0fa30ca3fc4544e05014f7046fd996ca4baa766",
+    "evidence/upgrade/v5.0/real-samples-round2/G1-provider-result.json": "b7a2139acbe4bcc95e37320b6cd7dcf8606f21358cd0c1606530f46581725a29",
+    "evidence/upgrade/v5.0/real-samples-round2/G2-api-result.json": "6520b9fe31319a65a1e74d7969519ed869bba90a41a71b9da95f81e053336e7a",
+    "evidence/upgrade/v5.0/real-samples-round2/G2-exact-payload.json": "436beb2c4004ce78e037ea57ffc06192d07e78cb4638d1ca0379be05b27c2297",
+    "evidence/upgrade/v5.0/real-samples-round2/G2-provider-result.json": "ab8ab533dbfc299756aa30afb278c91e41ea100d74288f1eba92cacbf8539f58",
+    "evidence/upgrade/v5.0/real-samples-round2/G3-api-result.json": "5317e913e09084a21519fde62ba9e7838f018206943b312723719bafaeb45994",
+    "evidence/upgrade/v5.0/real-samples-round2/G3-exact-payload.json": "7a068d56717f9028ad42bac38eaa23b946a98d49944b75c1a6e513d1b7dc0a1f",
+    "evidence/upgrade/v5.0/real-samples-round2/G3-provider-result.json": "3a4f43870dfa89661db8d0db62a8341ece0345a56ac2288b0f5636de3a3a0af3",
+    "evidence/upgrade/v5.0/real-samples-round2/ledger-after.json": "876a56ab543148ad78565adabf42b03ba8834e0f6c3108ec05bb7f6199737242",
+    "evidence/upgrade/v5.0/real-samples-round2/ledger-before.json": "fb24237919a45806a65c587d7ce809c0e0fda6d3484df9fbb3f0d9c239d830b2",
+    "evidence/upgrade/v5.0/real-samples-round2/offline-preview-v1.json": "1eefd15cf312c578b2098bd9cc9aca1985a57f2492c7fa1f6bbc844a011a9da0",
+    "evidence/upgrade/v5.0/real-samples-round2/result.json": "d6dea26c0c2ec89318301d22d7c0f17923efec2ded3a412fe0d756a00860f44b",
+    "evidence/upgrade/v5.0/real-samples-round2/user-authorization.json": "8611f560bbc1051e56bc5772699a614f82050d652dc72bb57288005bac2a0474",
+    "evidence/upgrade/v5.0/real-samples-round2/dispatch-journal.jsonl": "44f7112fb3f1e5cb35d01a63de367c23659a9b9c394b522cf448d8eb6ed4ae58"
+  },
+  "limits": [
+    "One real 1/easy sample admitted and actual Main HTTP-replayed; independent QA replay is in memory only, not another HTTP run.",
+    "G2/G3 remain rejected; no solver-limit classification or repair of stored real drafts. Listed downstream violations are independent structural/recipe observations, not accepted edited samples.",
+    "A1 was blocked and never delivered; A2 skipped, so no successful real companion/history-continuity claim.",
+    "QA did not read the credential: no-value secret-pattern review plus executor secret checks do not constitute a universal credential audit.",
+    "First combined inline diagnosis cffb95 exited1 on a QA Pydantic-object .get typo after G2/G3 classification; corrected A1 guard diagnosis 0cd8e0 exited0. No source/raw change.",
+    "Original round1 0/3 and earlier sealed evidence remain unchanged. This round is not a whole-suite rerun or overall release acceptance."
+  ]
+}

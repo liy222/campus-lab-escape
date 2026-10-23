@@ -1,0 +1,56 @@
+{
+  "kind": "Main limited acceptance of AI-only offline repair and actual paid round2 review",
+  "utc": "2026-10-23T13:04:51.166442+00:00",
+  "actual_command": "Inline candidate/source403, independent11 artifact seal, real-round2 saved artifact seal, evaluator53 source map, guard AST and saved ledger delta read-only verification",
+  "actual_exit_code": 0,
+  "candidate_path": "evidence/upgrade/v5.0/candidate-round2-ai-fix.json",
+  "candidate_sha256": "e1b32bf8641f956d78365fe4a087d5e6d1235368a73322faaa00d8ba229a4b40",
+  "candidate_id": "v5.0-round2-ai-fix-a45d73cb8dc24523",
+  "source403_matches": true,
+  "new_independent_qa": {
+    "path": "evidence/upgrade/v5.0/qa/round2-ai-fix-result.json",
+    "sha256": "996335180e167132fcab98a981dcf6a692379d65f6b292879ca208d5eb66a5c4",
+    "actual_exit_code": 0,
+    "passed_cases": 8,
+    "sealed_artifacts_verified": 11
+  },
+  "real_round2_independent_review": {
+    "path": "evidence/upgrade/v5.0/qa/real-round2-independent-review.json",
+    "sha256": "59ea41812747143d8142a3f61c893514a8ee19b293eed546dc4fd9aeeb730dbb",
+    "original_actual_executor_exit_code": 1,
+    "saved_artifacts_verified": 20
+  },
+  "actual_paid_calls": 4,
+  "real_generation_admitted": {
+    "G1": "1/easy, 8 actual HTTP actions to EXIT"
+  },
+  "real_generation_rejected": [
+    "G2",
+    "G3"
+  ],
+  "real_companion_delivered": false,
+  "A2": "skipped, not reusable",
+  "usage_conservative_upper_increment_cny": 0.03340072,
+  "pre_dispatch_reservations_upper_cny": 0.468808,
+  "old_unknown_unchanged": true,
+  "new_unknown": 0,
+  "pending": 0,
+  "reply_validator_and_bounded_messages_AST_unchanged": true,
+  "finite_registered_source_count_current": 53,
+  "finite_registration_raw_sha256": "80b312f31b73d3cef3a29575e07d1ca8f4f84d114490edd8289779aa7cb7a63d",
+  "finite_evaluator_reexecuted": false,
+  "new_offline_fix_status": "ACCEPTED_WITHIN_TARGETED_SCOPE_REAL_RETEST_NOT_RUN",
+  "overall_release_accepted": false,
+  "remaining_paid_authorization": false,
+  "main_read_preparation_failure": {
+    "tool": "ac583d",
+    "exit_code": 1,
+    "reason": "Read-only registry structure probe indexed dictionary with 0; corrected 6436b2, no product/test/provider effect"
+  },
+  "limits": [
+    "Original real failures and first-round 0/3 remain their exact source epochs.",
+    "No actual new companion delivery, follow-up or multroom proof after this repair.",
+    "No full suite/build/browser/evaluator/paid rerun, public deployment or release tag.",
+    "Finite evaluator still INSUFFICIENT_EVIDENCE; old unknown gate is unchanged."
+  ]
+}

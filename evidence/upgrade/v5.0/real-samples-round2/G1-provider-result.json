@@ -1,0 +1,18 @@
+{
+  "case_id": "G1",
+  "fictional_test_content": true,
+  "content_redacted": "{\"title\":\"闭馆巡查夜\",\"story\":\"闭馆前，你在一间阅览室发现两台待检装置；先查借阅资料，再依次解锁并确认离馆。\",\"rooms\":[{\"room_id\":\"R1\",\"name\":\"夜读阅览室\",\"description\":\"灯已调暗，借阅台与离馆装置都在这间屋内。\",\"background_id\":\"neutral_archive\",\"objects\":[{\"object_id\":\"O_note_borrow\",\"name\":\"借阅登记单\",\"description\":\"记录了几本待归架图书的编号。\",\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"C_borrow\",\"slot\":0},{\"object_id\":\"O_note_order\",\"name\":\"归架顺序卡\",\"description\":\"标出登记单中图书的读取次序。\",\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"C_order\",\"slot\":1},{\"object_id\":\"O_key_desk\",\"name\":\"阅览台钥匙\",\"description\":\"可开启离馆确认面板的钥匙。\",\"art_id\":\"key\",\"kind\":\"item\",\"item_id\":\"I_key\",\"slot\":2},{\"object_id\":\"O_panel\",\"name\":\"离馆确认面板\",\"description\":\"输入归架码后显示可离馆。\",\"art_id\":\"panel\",\"kind\":\"puzzle\",\"puzzle_id\":\"P_code\",\"slot\":3},{\"object_id\":\"O_exit\",\"name\":\"门禁终端\",\"description\":\"用钥匙确认离馆。\",\"art_id\":\"terminal\",\"kind\":\"puzzle\",\"puzzle_id\":\"P_item\",\"slot\":4}]}],\"clues\":[{\"clue_id\":\"C_borrow\",\"tokens\":[\"2\",\"5\",\"7\",\"9\"]},{\"clue_id\":\"C_order\",\"indices\":[2,4,1,3]}],\"puzzles\":[{\"puzzle_id\":\"P_code\",\"room_id\":\"R1\",\"mechanism\":\"code\",\"prerequisite_ids\":[],\"clue_ids\":[\"C_borrow\",\"C_order\"],\"recipe\":\"index\"},{\"puzzle_id\":\"P_item\",\"room_id\":\"R1\",\"mechanism\":\"item\",\"prerequisite_ids\":[\"P_code\"],\"required_item_id\":\"I_key\",\"clue_ids\":[]}]}",
+  "content_raw_sha256": "2670adccc989a60fc020f4d9e0b3c56285786dd38d1cc57e30f7a5fbce8ac45a",
+  "usage": {
+    "prompt_tokens": 2169,
+    "completion_tokens": 459,
+    "total_tokens": 2628,
+    "prompt_cache_hit_tokens": 0
+  },
+  "requested_model": "deepseek-flash",
+  "reported_model": "deepseek-flash",
+  "finish_reason": "stop",
+  "call_id": "b88bc479d8ab4d8293bbf420f5f52673",
+  "cost_upper_cny": 0.00801,
+  "secret_detected": false
+}

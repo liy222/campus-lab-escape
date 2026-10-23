@@ -1,0 +1,21 @@
+# V5 round-two AI repair: independent offline confirmation
+
+Candidate `v5.0-round2-ai-fix-a45d73cb8dc24523`, 403 frozen files. The single authorized command ran the six new `test_round2_ai_fixed.py` methods, the existing `[3-hard-6-2-3]` numeric/schema/example case, and the existing maximum-Unicode cap case. Actual result: **8 passed, exit0**, 0.40 seconds; source-before/source-after exactly equal the candidate. One existing Starlette/httpx deprecation warning remains. No other suite, nine-case matrix, browser, build, evaluator, C1/C2/C3 or paid call ran.
+
+The captured real G1 public stage now produces natural evidence labels using only public notebook order and currently visible object names. Missing objects from another room receive a neutral known-material label without consulting hidden fields. Canonical clue refs and factual text remain unchanged, and callers' state is not mutated. C1/C10 substitution uses exact identifier boundaries; unknown longer IDs stay untouched. All 18 possible known materials receive distinct Chinese ordinal labels, avoiding invented numeric claims. An actual classic 3.4 public projection retains its evidence titles and object descriptions.
+
+The original paid A1 raw response remains byte-identical and still raises `COMPANION_CONTENT`, as required by the unchanged ID-prose guard. A separately labelled in-memory synthetic control changes only its prose to already-public object names, retaining original machine refs, and passes. The production `CompanionService` plus `DeepSeekProvider` was exercised once with that **synthetic** reply through HTTPX MockTransport and an isolated fake ledger. The three action-history labels reconstruct the recorded public history. The complete outgoing payload's conservative upper bound is **46,688,000 units (0.046688 CNY)**, within the unchanged 50,000,000-unit cap. The synthetic credential appears only in the expected authorization header, not model content or the fake ledger; public refs/fact text and caller state are preserved. This is not a successful delivered real A1 or A2.
+
+The 3/hard request retains exact numeric requirements, equivalent schema validation rules, the real title property and caller-schema immutability. Its matching synthetic example compiles and replays to completion in 38 actions. A 2000-character four-byte Unicode theme produces 18,553 serialized bytes and a conservative **212,808,000-unit** bound, exceeding the unchanged 200,000,000-unit generation cap. The real provider code rejects `AI_LIMIT_REACHED` before transport or reservation: zero sends and fake-ledger calls 0→0. No budget was widened.
+
+The static generation-teaching review in `qa/round2-ai-fix-preparation.json` maps the new instructions to this round's observed item-ID lock misuse, missing/unmapped sequence sources, same-room-only dependency, mapping-without-source and hard multi-clue-count failures. These instructions and the synthetic request check do not establish real-model adherence. Actual G2/G3 remain historical rejections; no draft was edited into acceptance.
+
+Exact actual command:
+
+```text
+C:\Users\liyh\.conda\envs\1\python.exe -B -X utf8 -m pytest tests/v5/test_round2_ai_fixed.py tests/v5/test_prompt_fixed.py::test_numeric_requirements_requested_example_and_schema_preserved[3-hard-6-2-3] tests/v5/test_prompt_fixed.py::test_maximum_four_byte_unicode_theme_rejected_before_reservation_or_send -q -p no:cacheprovider
+```
+
+Actual execution tool `240898`, exit0. Raw command, stdout, 403-source maps and observations are in `evidence/upgrade/v5.0/qa/round2-ai-fix/20261023T130156103054Z-94b19f24/`. The new seal `qa/round2-ai-fix-result.json` binds their raw hashes and verifies that the original real-round-two artifacts remain unchanged.
+
+The public-label integration finding is **fixed and verified offline** in the AI projection; no domain/API/store/UI/schema/provider/ledger change was needed. The real run's blocked A1, skipped A2, G2/G3 failures and first round's 0/3 are preserved. Real successful companion delivery/history and broad generation quality remain unverified. No additional paid call or use of the skipped A2 slot is authorized by this result. This finite new epoch is not added to old test counts or presented as overall release acceptance. SOURCE STOP.

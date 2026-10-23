@@ -1,0 +1,36 @@
+{
+  "kind": "Explicit user authorization for second finite real product validation round",
+  "utc": "2026-10-23T12:45:06.013982+00:00",
+  "user_answer": "批准追加一轮，最多5次／0.70元（推荐）",
+  "scope": {
+    "generation_cases": [
+      "G1",
+      "G2",
+      "G3"
+    ],
+    "companion_cases": [
+      "A1",
+      "A2"
+    ],
+    "maximum_calls": 5,
+    "maximum_cost_upper_cny": 0.7,
+    "generation_per_case_cap_cny": 0.2,
+    "companion_per_case_cap_cny": 0.05,
+    "automatic_retries": 0
+  },
+  "companion_dependencies": [
+    "A1 uses an actual successful generated public stage",
+    "A2 requires actual successful A1 dialogue, never placeholder history"
+  ],
+  "historical_unknown_policy": "Keep original3 unknown identities; any newly unknown outcome, frozen ledger, model anomaly, exposed secret or concurrent ledger interference stops the round.",
+  "canonical_ledger_cap_cny": 10,
+  "paid_evaluator_authorized": false,
+  "head": "32565a9e7074baeb5a05274fa07c7dc6e2142207",
+  "preview_sha256": "1eefd15cf312c578b2098bd9cc9aca1985a57f2492c7fa1f6bbc844a011a9da0",
+  "runner_sha256": "f833068ad200c41b4016d1fa7e3f1b502bea2704ecfa0a2237b965a05bef185c",
+  "source_bundle_sha256": "e370954904d023e5a076d2607580ba3b9ae0579dc48ab0d107d32a644cd2a980",
+  "source402_matches_frozen_candidate": true,
+  "before_dispatch_key_read": false,
+  "before_dispatch_ledger_opened": false,
+  "before_dispatch_network_calls": 0
+}
