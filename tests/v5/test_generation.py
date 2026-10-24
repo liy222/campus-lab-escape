@@ -25,11 +25,12 @@ def test_real_adapter_fake_httpx_generation_profile_and_secret_boundary(tmp_path
     """Production GenerationService/DeepSeekProvider, entirely injected HTTPX transport."""
     seen=[]; ledger=BudgetLedger(tmp_path/'fake-only-budget.sqlite')
     def handler(request):
+        from .test_blueprint_generation import content_for_messages
         seen.append(request)
         assert request.url==httpx.URL('https://api.deepseek.com/chat/completions')
         assert request.headers['authorization']=='Bearer '+CANARY
         assert CANARY.encode() not in request.content
-        return httpx.Response(200,json=wire_body(json.dumps(make_fixture(1,'easy'))))
+        return httpx.Response(200,json=wire_body(json.dumps(content_for_messages(json.loads(request.content)['messages']))))
     provider=DeepSeekProvider(DeepSeekConfig(CANARY),ledger,transport=httpx.MockTransport(handler))
     service=GenerationService(lambda key:provider)
     result=asyncio.run(service.generate(theme='校园 '+CANARY,room_count=1,difficulty='easy',api_key=CANARY,draft_schema=Draft.model_json_schema()))
@@ -89,10 +90,11 @@ def test_fake_budget_and_oversize_limits_prevent_send(tmp_path):
 def test_fake_provider_failures_conservative_one_send_and_unknown_charge(tmp_path,kind,expected):
     count=0; ledger=BudgetLedger(tmp_path/'fake-only-budget.sqlite')
     def handler(request):
+        from .test_blueprint_generation import content_for_messages
         nonlocal count; count+=1
         if kind=='auth': return httpx.Response(401,json={'error':{'message':'synthetic'}})
         if kind=='timeout': raise httpx.ReadTimeout('synthetic',request=request)
-        return httpx.Response(200,json=wire_body('' if kind=='empty' else '{' if kind=='truncated' else json.dumps(make_fixture(1,'easy')),usage=kind!='missing_usage'))
+        return httpx.Response(200,json=wire_body('' if kind=='empty' else '{' if kind=='truncated' else json.dumps(content_for_messages(json.loads(request.content)['messages'])),usage=kind!='missing_usage'))
     provider=DeepSeekProvider(DeepSeekConfig(CANARY),ledger,transport=httpx.MockTransport(handler))
     service=GenerationService(lambda key:provider)
     with pytest.raises(ServiceError) as error:

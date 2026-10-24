@@ -1,0 +1,48 @@
+{
+  "kind": "Narrow R4 draft preflight findings fix source stop; static only",
+  "utc": "2026-10-24T14:28:33.344648+00:00",
+  "source_stop": true,
+  "runner_path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/run.py",
+  "old_draft_runner_sha256": "72f8e48559a5521ad74ef9531360bbf632a8a14961b9e423085c6d5a006b1a69",
+  "runner_sha256": "31d72c5cf6e84cde83d371a3849a4793896758e4d87c0d7b2148fe1fcb1781f0",
+  "runner_bytes": 33443,
+  "old_author_report_path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/draft-author-source-stop.json",
+  "old_author_report_sha256": "f5e016c12450a96df2e4f209b0d6333292e5fea105e607b95dd91fd305d33537",
+  "delta": [
+    "Initial canonical ledger gate anchors exactly the sealed historical3 unknown identity SHA supplied by Main; no real ledger read during authoring.",
+    "Final source map must equal reviewed preview source, otherwise final exit1 with reason.",
+    "Final ledger snapshot uses safe_ledger; any newunknown/foreign/unreadable state makes exit1, records finalization failure and resolves exit before result write.",
+    "On ready only: future local evidence retains compiled private_dump, complete witness and every action API-result/state hash with final full visible state; never sent to model or published.",
+    "Scope explicitly excludes real API save/restore; this R4 only tests real admission and HTTP witness."
+  ],
+  "actual_command": "Owner inline Python ast.parse/ast.literal_eval/source assertions via C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -; full static command in tool transcript",
+  "exit_code": 0,
+  "checks": [
+    "AST syntax and whitespace",
+    "fixed historical unknown SHA initial gate",
+    "2case/.40 constants/rootparents5",
+    "authorization before marker/config/ledger",
+    "final source comparison and final safe_ledger path",
+    "private definition/witness/replay hash artifact calls and save-restore exclusion",
+    "prepare remains static-only",
+    "no copied generate method",
+    "prior Backend frozen source hashes still match",
+    "old author report retained with original runner epoch"
+  ],
+  "earlier_narrow_static_command_chunk": "213596",
+  "earlier_narrow_static_exit_code": 0,
+  "runner_imported": false,
+  "prepare_executed": false,
+  "execute_executed": false,
+  "key_or_config_read": false,
+  "canonical_ledger_opened": false,
+  "database_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "limitations": [
+    "Static author checks do not validate runtime behavior, produce a preview or authorize any provider request.",
+    "Await independent QA preflight/Main current candidate binding and explicit prepare GO.",
+    "Future execute requires fresh actual max2/.40 human approval plus matching authorization file; no approval file or marker has been created.",
+    "Future private-definition/witness/replay-local files contain test answer material: local review only, exclude from publication/model inputs."
+  ]
+}

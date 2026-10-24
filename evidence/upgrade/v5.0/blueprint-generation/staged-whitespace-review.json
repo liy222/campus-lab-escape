@@ -1,0 +1,37 @@
+{
+  "kind": "Main staged whitespace scope review; raw failed-run evidence preserved",
+  "utc": "2026-10-24T14:38:43.319972+00:00",
+  "whole_staged_check": {
+    "tool_chunk": "7651fd",
+    "exit_code": 1,
+    "findings": 8,
+    "paths": [
+      "evidence/upgrade/v5.0/blueprint-generation/qa/api-run1/junit.xml",
+      "evidence/upgrade/v5.0/blueprint-generation/qa/api-run1/output.txt"
+    ],
+    "reason": "Original pytest traceback includes blank-line indentation and runner source lines ending with spaces. Original evidence is sealed; no whitespace cleanup of raw artifacts."
+  },
+  "other_selected_files_check": {
+    "argv": [
+      "git",
+      "-c",
+      "core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      ".",
+      ":(exclude)evidence/upgrade/v5.0/blueprint-generation/qa/api-run1/junit.xml",
+      ":(exclude)evidence/upgrade/v5.0/blueprint-generation/qa/api-run1/output.txt"
+    ],
+    "exit_code": 0,
+    "output": ""
+  },
+  "raw_artifact_sha256": {
+    "evidence/upgrade/v5.0/blueprint-generation/qa/api-run1/junit.xml": "32247439c4eea5a3a945411ca6bf068f8e2d1592e56deced45b505f1457c1e5c",
+    "evidence/upgrade/v5.0/blueprint-generation/qa/api-run1/output.txt": "e6c01a5e9d3a4a7a914f2d8b498313a153723ae6c7ad6dd8cf6e346a76fb4973"
+  },
+  "raw_originals_changed": false,
+  "not_a_whole_whitespace_green_claim": true,
+  "new_tests_or_model_calls": 0
+}

@@ -1,0 +1,60 @@
+{
+  "kind": "Main offline preview read review and privacy integration",
+  "document_date": "2026-10-24",
+  "utc": "2026-10-24T14:31:15.187477+00:00",
+  "operator": "Main integration",
+  "actual_prepare_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/blueprint-generation/real-samples/run.py --prepare",
+  "actual_prepare_exit_code": 0,
+  "runner_sha256": "31d72c5cf6e84cde83d371a3849a4793896758e4d87c0d7b2148fe1fcb1781f0",
+  "preview_sha256": "fec5789db9d55f76928ba68902d85655cfb6cca1ed5537315ed9d4fb51151d95",
+  "source_bound_files": 411,
+  "all_source_sha256_match": true,
+  "source_bundle_sha256": "207b07f44f5070ae499f892c4ff2ca49c9cc89f8de3604571d0cc35bbad415b3",
+  "payload_sha256_match": true,
+  "proposed_cases": [
+    {
+      "case_id": "G2",
+      "room_count": 2,
+      "difficulty": "normal",
+      "expected_family": "position_v1",
+      "host_seed": 0,
+      "upper_cost_cny": 0.110968
+    },
+    {
+      "case_id": "G3",
+      "room_count": 3,
+      "difficulty": "hard",
+      "expected_family": "mapping_v1",
+      "host_seed": 1,
+      "upper_cost_cny": 0.148456
+    }
+  ],
+  "request_upper_cny_sum": 0.259424,
+  "proposal_limit_cny": 0.4,
+  "proposal_max_calls": 2,
+  "paid_calls_authorized": false,
+  "authorization_marker_journal_absent": true,
+  "key_config_ledger_gameDB_or_provider_access": false,
+  "gitignore_integration_owner": "Main, only six exact future local-only private-artifact paths; original sensitive-log exclusion preserved",
+  "future_local_only_paths_and_original_sensitive_log_ignored": [
+    "evidence/upgrade/v5.0/blueprint-generation/real-samples/G2-private-definition-local.json",
+    "evidence/upgrade/v5.0/blueprint-generation/real-samples/G2-witness-local.json",
+    "evidence/upgrade/v5.0/blueprint-generation/real-samples/G2-api-replay-local.json",
+    "evidence/upgrade/v5.0/blueprint-generation/real-samples/G3-private-definition-local.json",
+    "evidence/upgrade/v5.0/blueprint-generation/real-samples/G3-witness-local.json",
+    "evidence/upgrade/v5.0/blueprint-generation/real-samples/G3-api-replay-local.json",
+    "evidence/upgrade/v5.0/qa/authmaterial/20261023T063608354079Z-3c340e58/output.txt"
+  ],
+  "git_check_ignore_exit_code": 0,
+  "git_check_ignore_protocol": "binary NUL-delimited stdin/output; no text newline conversion",
+  "earlier_text_pipe_check_exit_code": 1,
+  "earlier_outer_assertion_exit_code": 1,
+  "earlier_failure_note": "Text newline pipe did not match any path, including pre-existing ignored sensitive log; binary NUL protocol confirms rules without any rule change.",
+  "actual_execute_or_model_calls": 0,
+  "independent_final_preflight": "pending, separate reviewer record follows",
+  "limitations": [
+    "Preview and finite source checks do not establish actual AI content admission or quality.",
+    "Request upper sum is not usage or a supplier bill; proposed total permission is at most0.40.",
+    "R4 scope is actual generation admission and API witness; no additional API save/restore claim."
+  ]
+}

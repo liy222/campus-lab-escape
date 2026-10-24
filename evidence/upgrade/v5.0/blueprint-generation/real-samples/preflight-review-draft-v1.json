@@ -1,0 +1,90 @@
+{
+  "kind": "Independent read-only draft runner pre-review; not execution preflight acceptance",
+  "utc": "2026-10-24T14:27:30.404012+00:00",
+  "status": "NOT_READY_PENDING_FINAL_RUNNER_FREEZE_AND_PREPARE",
+  "initial_owner_reported_runner_sha256": "72f8e48559a5521ad74ef9531360bbf632a8a14961b9e423085c6d5a006b1a69",
+  "current_in_progress_runner_sha256": "8d27f22757fcd6f900c94f5c8b82fcfff6d16183912fd3c8475f149103ec78d7",
+  "source_snapshot_is_in_progress_not_final_freeze": true,
+  "historical_unknown_evidence": {
+    "path": "evidence/upgrade/v5.0/real-samples-round3/ledger-after.json",
+    "raw_sha256": "fe69683fa01ff7ef1cc850642adc2fc010966ad999cb56f4f05563e62f75d527",
+    "unknown_calls": 3,
+    "unknown_identity_sha256": "b7490c5f157e75f973533e518a1e245c1ea0a3818318065c9c7ddf5e5b59085e"
+  },
+  "findings": [
+    {
+      "id": "BP-R4-01",
+      "initial_issue": "Initial gate checked count3 but did not bind the sealed historical unknown identity.",
+      "decision": "Main authorized fixed expected identity constant and initial equality gate. Owner reports change; final frozen-source verification pending."
+    },
+    {
+      "id": "BP-R4-02",
+      "initial_issue": "Finally recorded source_after but did not compare with reviewed preview source, allowing runner/candidate-only drift after last begin to leave exit0.",
+      "decision": "Main accepted explicit final equality check and failure result; Owner reports change, final frozen-source verification pending."
+    },
+    {
+      "id": "BP-R4-03",
+      "initial_issue": "Finally used unchecked ledger_readonly and did not downgrade exit0 when final ledger unsafe or unavailable.",
+      "decision": "Main accepted final safe ledger gate and result downgrade; final frozen-source verification pending."
+    },
+    {
+      "id": "BP-R4-04",
+      "initial_issue": "Only witness hash/count/settlement remained after TEMP DB removal; no durable compiled definition/full witness/per-action result evidence.",
+      "decision": "Main explicitly scoped R4 to generation admission plus HTTP witness, adds scrubbed compiled definition/full witness/action observations/final state; no new save/restore claim."
+    }
+  ],
+  "positive_static_observations": [
+    "Prepare imports production messages/blueprints and computes deterministic payload bounds without config/key/db/provider/network calls.",
+    "Actual production GenerationService is injected; only isolated Host family selection is controlled through original selector.",
+    "Source map binds409 current accepted sources plus candidate raw bytes and runner, total411.",
+    "Authorization binds exact preview raw hash, source map digest, scopeG2/G3, exactinteger2calls/400000000units and nonempty actual-user-reference before marker/config/key/ledger.",
+    "Exclusive execution marker and before-dispatch journal prevent rerun; no repair/fallback/companion/evaluator branches."
+  ],
+  "read_only_commands": [
+    {
+      "tool_chunk": "db73c8",
+      "purpose": "locate runner/evidence paths",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "a1e27b",
+      "purpose": "read runner and Owner report only",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "f29f08",
+      "purpose": "read acceptance plus search; Windows wildcard path search failed",
+      "exit_code": 1
+    },
+    {
+      "tool_chunk": "39c2dd",
+      "purpose": "read sealed historical unknown hashes and product construction source",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "c5e47b",
+      "purpose": "read API request/factory/history and witness output branches",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "e2d47b",
+      "purpose": "read Identifier/provider constructor/import boundaries",
+      "exit_code": 0
+    }
+  ],
+  "runner_imported": false,
+  "prepare_executed": false,
+  "execute_executed": false,
+  "key_or_config_read": false,
+  "canonical_ledger_opened": false,
+  "database_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "authorization_or_marker_created": false,
+  "old_QA_seal_modified": false,
+  "limitations": [
+    "Static read-only pre-review, not runtime prepare or paid approval.",
+    "No final runner hash or offline preview exists in this review epoch; final preflight required after fixes/Owner STOP/Main pure prepare.",
+    "Historical sealed ledger summary read only; current canonical ledger was not opened."
+  ]
+}

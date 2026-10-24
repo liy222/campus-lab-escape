@@ -1,0 +1,5933 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Host blueprint AI content (internal, not public LevelDraft)",
+  "content_contract_version": "1.0.0",
+  "$defs": {
+    "slot_text": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "name",
+        "description"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "position_v1-r1-easy"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_puzzle_1",
+            "obj_puzzle_2"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "positions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "type": "integer"
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "digits",
+            "positions"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "position_v1-r1-normal"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "positions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "type": "integer"
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "devices": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "device_a",
+                  "device_b",
+                  "device_c",
+                  "device_d"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "digits",
+            "positions",
+            "devices"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "position_v1-r1-hard"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_4": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3",
+            "obj_puzzle_4"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "positions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "type": "integer"
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "devices": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "device_a",
+                  "device_b",
+                  "device_c",
+                  "device_d"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "digits",
+            "positions",
+            "devices"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "position_v1-r2-easy"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G2": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1",
+            "G2"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "positions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "type": "integer"
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "devices": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "device_a",
+                  "device_b",
+                  "device_c",
+                  "device_d"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "digits",
+            "positions",
+            "devices"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "position_v1-r2-normal"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G2": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1",
+            "G2"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_4": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3",
+            "obj_puzzle_4"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "positions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "type": "integer"
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "devices": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "device_a",
+                  "device_b",
+                  "device_c",
+                  "device_d"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "digits",
+            "positions",
+            "devices"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "position_v1-r2-hard"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G2": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1",
+            "G2"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_code_a": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_code_b": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_4": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_5": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3",
+            "obj_extra_code_a",
+            "obj_extra_code_b",
+            "obj_puzzle_4",
+            "obj_puzzle_5"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "positions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "type": "integer"
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "devices": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "device_a",
+                  "device_b",
+                  "device_c",
+                  "device_d"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "extra_digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            }
+          },
+          "required": [
+            "digits",
+            "positions",
+            "devices",
+            "extra_digits"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "position_v1-r3-easy"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G3": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1",
+            "G2",
+            "G3"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_4": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3",
+            "obj_puzzle_4"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "positions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "type": "integer"
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "devices": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "device_a",
+                  "device_b",
+                  "device_c",
+                  "device_d"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "digits",
+            "positions",
+            "devices"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "position_v1-r3-normal"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G3": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1",
+            "G2",
+            "G3"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_code_a": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_code_b": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_4": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_5": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3",
+            "obj_extra_code_a",
+            "obj_extra_code_b",
+            "obj_puzzle_4",
+            "obj_puzzle_5"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "positions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "type": "integer"
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "devices": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "device_a",
+                  "device_b",
+                  "device_c",
+                  "device_d"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "extra_digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            }
+          },
+          "required": [
+            "digits",
+            "positions",
+            "devices",
+            "extra_digits"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "position_v1-r3-hard"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G3": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1",
+            "G2",
+            "G3"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_code_a": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_code_b": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_4": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_devices_a": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_devices_b": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_5": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_6": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3",
+            "obj_extra_code_a",
+            "obj_extra_code_b",
+            "obj_puzzle_4",
+            "obj_extra_devices_a",
+            "obj_extra_devices_b",
+            "obj_puzzle_5",
+            "obj_puzzle_6"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "positions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "type": "integer"
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "devices": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "device_a",
+                  "device_b",
+                  "device_c",
+                  "device_d"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "extra_digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "extra_devices": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "device_a",
+                  "device_b",
+                  "device_c",
+                  "device_d"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "digits",
+            "positions",
+            "devices",
+            "extra_digits",
+            "extra_devices"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "mapping_v1-r1-easy"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_puzzle_1",
+            "obj_puzzle_2"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "code_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "digit_map": {
+              "type": "object",
+              "properties": {
+                "A": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "B": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "C": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "D": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                }
+              },
+              "required": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "code_symbols",
+            "digit_map"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "mapping_v1-r1-normal"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "code_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "digit_map": {
+              "type": "object",
+              "properties": {
+                "A": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "B": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "C": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "D": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                }
+              },
+              "required": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "additionalProperties": false
+            },
+            "sequence_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "E",
+                  "F",
+                  "G",
+                  "H"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "device_map": {
+              "type": "object",
+              "properties": {
+                "E": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "F": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "G": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "H": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                }
+              },
+              "required": [
+                "E",
+                "F",
+                "G",
+                "H"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "F": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "F": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "F": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "F": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "required": [
+            "code_symbols",
+            "digit_map",
+            "sequence_symbols",
+            "device_map"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "mapping_v1-r1-hard"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_4": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3",
+            "obj_puzzle_4"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "code_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "digit_map": {
+              "type": "object",
+              "properties": {
+                "A": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "B": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "C": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "D": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                }
+              },
+              "required": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "additionalProperties": false
+            },
+            "sequence_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "E",
+                  "F",
+                  "G",
+                  "H"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "device_map": {
+              "type": "object",
+              "properties": {
+                "E": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "F": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "G": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "H": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                }
+              },
+              "required": [
+                "E",
+                "F",
+                "G",
+                "H"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "F": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "F": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "F": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "F": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "required": [
+            "code_symbols",
+            "digit_map",
+            "sequence_symbols",
+            "device_map"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "mapping_v1-r2-easy"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G2": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1",
+            "G2"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "code_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "digit_map": {
+              "type": "object",
+              "properties": {
+                "A": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "B": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "C": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "D": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                }
+              },
+              "required": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "additionalProperties": false
+            },
+            "sequence_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "E",
+                  "F",
+                  "G",
+                  "H"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "device_map": {
+              "type": "object",
+              "properties": {
+                "E": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "F": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "G": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "H": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                }
+              },
+              "required": [
+                "E",
+                "F",
+                "G",
+                "H"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "F": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "F": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "F": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "F": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "required": [
+            "code_symbols",
+            "digit_map",
+            "sequence_symbols",
+            "device_map"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "mapping_v1-r2-normal"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G2": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1",
+            "G2"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_4": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3",
+            "obj_puzzle_4"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "code_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "digit_map": {
+              "type": "object",
+              "properties": {
+                "A": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "B": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "C": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "D": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                }
+              },
+              "required": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "additionalProperties": false
+            },
+            "sequence_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "E",
+                  "F",
+                  "G",
+                  "H"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "device_map": {
+              "type": "object",
+              "properties": {
+                "E": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "F": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "G": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "H": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                }
+              },
+              "required": [
+                "E",
+                "F",
+                "G",
+                "H"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "F": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "F": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "F": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "F": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "required": [
+            "code_symbols",
+            "digit_map",
+            "sequence_symbols",
+            "device_map"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "mapping_v1-r2-hard"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G2": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1",
+            "G2"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_code_a": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_code_b": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_4": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_5": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3",
+            "obj_extra_code_a",
+            "obj_extra_code_b",
+            "obj_puzzle_4",
+            "obj_puzzle_5"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "code_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "digit_map": {
+              "type": "object",
+              "properties": {
+                "A": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "B": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "C": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "D": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                }
+              },
+              "required": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "additionalProperties": false
+            },
+            "sequence_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "E",
+                  "F",
+                  "G",
+                  "H"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "device_map": {
+              "type": "object",
+              "properties": {
+                "E": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "F": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "G": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "H": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                }
+              },
+              "required": [
+                "E",
+                "F",
+                "G",
+                "H"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "F": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "F": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "F": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "F": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "extra_digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            }
+          },
+          "required": [
+            "code_symbols",
+            "digit_map",
+            "sequence_symbols",
+            "device_map",
+            "extra_digits"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "mapping_v1-r3-easy"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G3": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1",
+            "G2",
+            "G3"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_4": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3",
+            "obj_puzzle_4"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "code_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "digit_map": {
+              "type": "object",
+              "properties": {
+                "A": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "B": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "C": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "D": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                }
+              },
+              "required": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "additionalProperties": false
+            },
+            "sequence_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "E",
+                  "F",
+                  "G",
+                  "H"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "device_map": {
+              "type": "object",
+              "properties": {
+                "E": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "F": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "G": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "H": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                }
+              },
+              "required": [
+                "E",
+                "F",
+                "G",
+                "H"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "F": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "F": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "F": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "F": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "required": [
+            "code_symbols",
+            "digit_map",
+            "sequence_symbols",
+            "device_map"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "mapping_v1-r3-normal"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G3": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1",
+            "G2",
+            "G3"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_code_a": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_code_b": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_4": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_5": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3",
+            "obj_extra_code_a",
+            "obj_extra_code_b",
+            "obj_puzzle_4",
+            "obj_puzzle_5"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "code_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "digit_map": {
+              "type": "object",
+              "properties": {
+                "A": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "B": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "C": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "D": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                }
+              },
+              "required": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "additionalProperties": false
+            },
+            "sequence_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "E",
+                  "F",
+                  "G",
+                  "H"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "device_map": {
+              "type": "object",
+              "properties": {
+                "E": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "F": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "G": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "H": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                }
+              },
+              "required": [
+                "E",
+                "F",
+                "G",
+                "H"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "F": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "F": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "F": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "F": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "extra_digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            }
+          },
+          "required": [
+            "code_symbols",
+            "digit_map",
+            "sequence_symbols",
+            "device_map",
+            "extra_digits"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "content_version": {
+          "const": "1.0.0"
+        },
+        "blueprint_id": {
+          "const": "mapping_v1-r3-hard"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "rooms": {
+          "type": "object",
+          "properties": {
+            "G1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "G3": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "G1",
+            "G2",
+            "G3"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "object",
+          "properties": {
+            "obj_key": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_code_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_relation": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_device_source": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_1": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_2": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_3": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_code_a": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_code_b": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_4": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_devices_a": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_extra_devices_b": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_5": {
+              "$ref": "#/$defs/slot_text"
+            },
+            "obj_puzzle_6": {
+              "$ref": "#/$defs/slot_text"
+            }
+          },
+          "required": [
+            "obj_key",
+            "obj_code_source",
+            "obj_relation",
+            "obj_device_source",
+            "obj_puzzle_1",
+            "obj_puzzle_2",
+            "obj_puzzle_3",
+            "obj_extra_code_a",
+            "obj_extra_code_b",
+            "obj_puzzle_4",
+            "obj_extra_devices_a",
+            "obj_extra_devices_b",
+            "obj_puzzle_5",
+            "obj_puzzle_6"
+          ],
+          "additionalProperties": false
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "code_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "digit_map": {
+              "type": "object",
+              "properties": {
+                "A": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "B": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "C": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                },
+                "D": {
+                  "type": "string",
+                  "pattern": "^[0-9]$",
+                  "minLength": 1,
+                  "maxLength": 1
+                }
+              },
+              "required": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "additionalProperties": false
+            },
+            "sequence_symbols": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "E",
+                  "F",
+                  "G",
+                  "H"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "device_map": {
+              "type": "object",
+              "properties": {
+                "E": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "F": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "G": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                },
+                "H": {
+                  "enum": [
+                    "device_a",
+                    "device_b",
+                    "device_c",
+                    "device_d"
+                  ]
+                }
+              },
+              "required": [
+                "E",
+                "F",
+                "G",
+                "H"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "F": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "F": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "F": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "F": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "E": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "G": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "G": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "G": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "G": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "F": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_a"
+                      },
+                      "H": {
+                        "const": "device_a"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_b"
+                      },
+                      "H": {
+                        "const": "device_b"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_c"
+                      },
+                      "H": {
+                        "const": "device_c"
+                      }
+                    }
+                  }
+                },
+                {
+                  "not": {
+                    "properties": {
+                      "G": {
+                        "const": "device_d"
+                      },
+                      "H": {
+                        "const": "device_d"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "extra_digits": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]$",
+                "minLength": 1,
+                "maxLength": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "extra_devices": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "device_a",
+                  "device_b",
+                  "device_c",
+                  "device_d"
+                ]
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "code_symbols",
+            "digit_map",
+            "sequence_symbols",
+            "device_map",
+            "extra_digits",
+            "extra_devices"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "content_version",
+        "blueprint_id",
+        "title",
+        "story",
+        "rooms",
+        "objects",
+        "parameters"
+      ],
+      "additionalProperties": false,
+      "$defs": {
+        "slot_text": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

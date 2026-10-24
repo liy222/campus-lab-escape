@@ -338,3 +338,14 @@ Owner离线prepare已执行一次exit0：G2/G3载荷上界分别0.143528/0.14996
 独立实际复核a67df3 exit0，review/findings/v5-round3-real.md和qa/round3-real-review.json/seal已封存。Main恢复只读核对和机械文档；403源码与45项输入、26项封存产物保持。此前Backend设计子任务触及用量限制，未写完整设计产物；Main接手形成docs/v5-generation-reliability-proposal.md草案，未实现或接受改变。无v5发布tag/main合并/部署，53source/9artifact有限评价及3项INSUFFICIENT_EVIDENCE保持，真人/教师确认仍未发生。
 
 2026-10-24本轮同步：第三轮终端结果、独立复核及未实施设计草案提交9595740411aaeea036f3b493cd5cddbd4dab024e已推送codex/v5-campus-generation，远端一致、GitHub作者/提交者liy222。403源码与26封存产物不变，无新增模型/测试调用。下一步等待结构自由度的实际设计选择，不自动实施B或追加付费；见evidence/upgrade/v5.0/round3-sync.json。
+
+### 2026-10-24 当前：选项1已接受，实施中
+
+用户明确选择程序结构+AI内容及实际谜面参数；可靠性提案B方向已接受，v5-build-plan.md升为1.2并新增第13节。基线4d4b599/403source raw一致；实施只新增Host蓝图/内部填参合同、改生成服务及少量说明文字，原编译器/API/Store/provider/伙伴/资产冻结。R0/R1/R2按依赖进行，Owner开发记录不等于独立QA；R3需稳定冻结后实跑。未进行新的真实模型调用、未获得新付费授权，前三轮原失败/有限成功仍封存。
+
+### 2026-10-24 当前：选项1工程实现离线验收，未发布
+本条取代上条“实施中”的当前进度。R0–R3已完成：Host选择两类版本化结构，AI一次返回主题及实际材料参数，再严格组装并经过原编译/可解证明/API提交。18个合同变体的受控参数经真实规则witness到EXIT；真实ProductionService+MockTransport经API准入、动作、档案恢复及账号隔离，旧完整定义恢复不调用新生成。原compiler/API/Store/provider/伙伴/资产保留，409来源全匹配。
+独立首轮86pass、1测试事实预期fail、1超长测试ID errorcase(setup/teardown两个error)，exit1原件保留。只修QA显式短ID与原classic13路由事实后精确2项exit0，未重复86项；合同两步骤0、唯一构建0、创建页1280/390/812三视口30records0/issues[]且零生成提交。63封存产物、原53评价来源经Main复核；Main实际查看3PNG。用户暂停后只恢复审计和封存，未重跑。Starlette弃用/大包warning保留。
+本轮真实模型调用0；合成离线成功不代表新模型合同的实际准入率、主题质量或真人难度。当前没有新付费授权，R4至少两房normal/三房hard仍须来源绑定预检后另行明确批准。旧前三轮结果、历史3unknown、有限评价3项INSUFFICIENT和付费判读阻塞保持，无v5发布tag/main合并/部署。现做必要交付文档与正常liy222提交推送。证据evidence/upgrade/v5.0/blueprint-generation/accepted.json、qa/result.json及review/findings/v5-blueprint-generation.md。
+
+2026-10-24后续有限预检已封存：新runner/实际preview绑定411来源、12份预检证据核对一致。两次候选请求保守上界分别0.110968与0.148456元，合计0.259424元，低于拟议最多2次/0.40元；这不是实际费用或授权。固定历史unknown身份、末尾源码/账本异常降失败、缺新授权前禁止marker/配置/密钥/账本的边界已独立核对。预检中两次QA抽取探针包装错误保留，窄修后的同范围探针通过，没有改产品或重跑产品验证。未来完整定义/witness/回放私有证据仅本地保留且精确忽略；R4只测真实生成准入及HTTP witness，不另称本轮存档恢复验证。当前无授权/执行marker/journal，真实模型0；先完成正常liy222提交/推送，再等待新的有限调用批准。

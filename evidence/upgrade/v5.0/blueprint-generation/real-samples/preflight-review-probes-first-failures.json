@@ -1,0 +1,18 @@
+{
+  "kind": "Preserved isolated QA wrapper failures; runner/product unchanged",
+  "attempts": [
+    {
+      "tool_chunk": "0aa42c",
+      "exit_code": 1,
+      "error": "UnboundLocalError: wrapper omitted explicit exit_code argument"
+    },
+    {
+      "tool_chunk": "244e51",
+      "exit_code": 1,
+      "error": "NameError: wrapper omitted re dependency for unsafe-ledger branch"
+    }
+  ],
+  "correction": "Wrapper gains argument and already-loaded re module; actual finally AST unchanged.",
+  "configuration_key_ledger_db_network_access": false,
+  "marker_or_journal_created": false
+}

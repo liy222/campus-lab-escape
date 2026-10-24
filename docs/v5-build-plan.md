@@ -1,6 +1,6 @@
 # 《逃离校园实验室》v5.0正式构建计划书
 
-版本1.1；2026-10-23实施登记，设计讨论日期2026-10-22。用户于2026-10-23要求开始执行，并持续正常提交到GitHub。此文定义范围和验收，不是执行证明。
+版本1.2；2026-10-24按用户选择的“程序结构+AI内容与谜面参数”修订，保留2026-10-23实施登记与2026-10-22设计讨论来源。用户于2026-10-23要求开始执行，并持续正常提交到GitHub。此文定义范围和验收，不是执行证明。
 
 ## 1. Intent / Problem Frame
 
@@ -33,9 +33,9 @@
 
 四机制：非消耗道具匹配；数字拼接/位置读取/符号映射密码；四设备顺序；现有3x3线路可信模板。谜题=房间数+1/2/3、最多6；多房至少1跨房依赖；normal至少1双线索；hard至少2组合推理且依赖链>=3。每房<=8主要物件、出口另计，items<=4；错误不销毁资源，开放通路往返；显式EXIT才won。结构难度不等于真人时间。
 
-模型LevelDraft不可信，只含白名单数据，不含答案/脚本/HTML/SQL/路径/外部URL。编译形成不可变CompiledLevel；服务器计算答案与权威线索。VisibleState仅公开事实；ValidationReport含hash/version/witness且不发给玩家。
+模型现在提交GenerationContent，不自行设计引用/依赖/槽位。Host选择一次版本化生产蓝图，严格验证指定槽位文本与typed数值/排列/映射参数，按事先合同组装LevelDraft；坏填参不补写、不修值、不用fixture或历史关卡替代。完整Draft仍不可信，只含白名单数据，不含答案/脚本/HTML/SQL/路径/外部URL，继续由原编译器形成不可变CompiledLevel；服务器计算答案与权威线索。VisibleState仅公开事实；ValidationReport含hash/version/witness且不发给玩家。
 
-准入：严格JSON（重复键/非有限数/深度/额外字段）→引用/唯一性/资源→谜题参数与材料充分性→依赖无自锁→25000抽象状态/5秒规划→真实领域动作回放→合法槽位布局。规划先获取必要材料，不以后台答案跳过线索；线路宏展开并实际回放。超限=尚未证明可解，不称无解且不可玩。JSON mode仍需拒绝空内容、截断和语义错误，无自动修复付费调用。
+准入：严格JSON（重复键/非有限数/深度/额外字段）→已选GenerationContent exact槽位/类型/值域→声明式组装Draft→原Draft形状/引用/唯一性/资源→谜题参数与材料充分性→依赖无自锁→25000抽象状态/5秒规划→真实领域动作回放→合法槽位布局。规划先获取必要材料，不以后台答案跳过线索；线路宏展开并实际回放。超限=尚未证明可解，不称无解且不可玩。JSON mode仍需拒绝空内容、截断和语义错误，无自动修复付费调用。
 
 Store共享事务/迁移/回执；每请求绑定可信principal、session、冻结rules。禁止全局Store.rules变更。认证先于私有回执。新版无旧能力token旁路；classic绑定3.4规则，generated绑定定义。保留原动作/控制/存档的各自幂等与generation顺序。
 
@@ -67,7 +67,7 @@ Store共享事务/迁移/回执；每请求绑定可信principal、session、冻
 
 |Req|可观察要求|Cases|Task|证据桶|
 |---|---|---|---|---|
-|GEN-01|输入形成对应可玩关卡，真实与离线分开|P02|T3|generation|
+|GEN-01|主题/规模/难度形成对应关卡；Host限定结构，AI生成真实内容参数，真实与离线分开|P02|T3|generation|
 |GEN-02|准入失败不可玩|N01|T2|admission|
 |GEN-03|四机制/规模/难度约束|P02,N01|T2|kernel|
 |GEN-04|失败/拒绝/中断/未知准确无重发|N03|T3|jobs|
@@ -133,8 +133,8 @@ ADR01选择声明式数据+编译，拒模型脚本/仅换文案：可验证可�
 |---|---|---|---|
 |T0|Main根/本稿，Spec docsSPEC/level_design及contracts/v2，Delivery/QA各入口|基线核对→规格/状态/合同/矩阵/Harness|V0引用、26Req8Task20Cases；冲突冻结受影响任务|
 |T1|Backend api/storage/main/deps，Frontend v5账号入口|T0→账号/CSRF/归属/私人经典|V1auth/P01N06A01A03；双账号+重登；停止新版回旧入口|
-|T2|Backend domain新增generated/中性算法，Spec合同|T0→DSL编译/四机制/规划回放|V1kernel/P02N01；正常可解坏例拒；无模型补救|
-|T3|AI ai生成/profile，Backend api/storage任务|T1T2→生成状态/幂等/限额/准入|V1generation/N03N04A04A06；通过才可玩无重复付费；未知不重发|
+|T2|Backend domain/generated及新增blueprints，Spec合同|T0→Host蓝图/typed填参与原DSL编译/四机制/规划回放|V1kernel/P02N01；正常可解坏例拒；无模型补救|
+|T3|AI ai生成/profile，Backend api/storage任务|T1T2→单次GenerationContent/组装及生成状态/幂等/限额/准入|V1generation/N03N04A04A06；通过才可玩无重复付费；未知不重发|
 |T4|Frontend全目录，Delivery scripts/新启动新版.cmd|T1入口T2合同→通用画面/目录/同源入口|V2V3/P05A02；3视口/键盘/无答案串入；保留旧构建入口|
 |T5|Backend saves/storage，AI动态提示伙伴，Frontend界面|T1-T4→定义存档/同步/提示/跨页|V1integration/P03P04N02N05A05A07；保留旧进度拒坏档|
 |T6|Experiments experiments/v5，Evaluator evaluation，Main登记，QA复核|T2-T5稳定→E1E2E3/新合同3Claims/离线K校准|V4V5A08；保留旧标准，付费评价阻塞|
@@ -154,7 +154,7 @@ Project：AGENTS规范，PLAN依赖，STATUS实际状态，DECISIONS取舍，doc
 
 范围=用户接受意图；行为=规格合同；状态=DB事务+规则；关卡=不可变定义hash；身份=服务端会话归属；执行=来源绑定命令exit/状态；接受=独立QA范围+Main记录+真实人类确认。冲突记录查明，不把实现改写成原需求，UI需同步，动画/模型自述不是真值。
 
-Host负责认证、参数/资源授权、工具/费用、最终写、投影和审计；Agent只受限草稿/答复。Raw/Derived/Masked/On-demand/Prohibited：完整定义答案HostRaw、前端/伙伴Prohibited；生成器不回传编译真值；公开状态前端Derived/伙伴按需；Key仅输入者内存与Host请求Raw，所有模型/证据Prohibited；Cookie令牌仅传输/浏览器内部且DBhash，JS禁止；密码仅输入/认证且DBhash；Trace脱敏按需。来源/版本/user/session/generation绑定，换号/恢复/reset失效。
+Host负责认证、参数/资源授权、工具/费用、最终写、投影和审计；Agent只受限槽位内容/typed谜面参数或伙伴答复。Raw/Derived/Masked/On-demand/Prohibited：完整定义答案HostRaw、前端/伙伴Prohibited；生成器不回传编译真值；公开状态前端Derived/伙伴按需；Key仅输入者内存与Host请求Raw，所有模型/证据Prohibited；Cookie令牌仅传输/浏览器内部且DBhash，JS禁止；密码仅输入/认证且DBhash；Trace脱敏按需。来源/版本/user/session/generation绑定，换号/恢复/reset失效。
 
 ## 9. Validation / Trace / Budget / Stop
 
@@ -191,3 +191,32 @@ data/game-v5.sqlite只新版；启动前app标识/版本检查，非空非v5拒�
 本人接管：解释生成→准入→Store→公开状态及存档generation链；解释ADR；诊断真实/隔离标注反例；实际停止重启回退继续；指出未验证边界。AI披露实际活动、QA实际operator，人签/教师批准仅真实发生后填写。
 
 本计划实施记录以STATUS和evidence/upgrade/v5.0为准；此文不预填测试通过。
+
+
+## 13. 2026-10-24接受的生成职责修订（选项1）
+
+用户在解释结构自由度下降后明确选择“那就选项1”。这接受docs/v5-generation-reliability-proposal.md中的B方向；不授权新增付费。本节优先于v1.1中模型直接提交完整Draft的描述；26条MUST、20个Case及T0–T7编号不变，R0–R4是其实施子任务。
+
+### 13.1 What / Why / 权威边界
+
+Host确定房间顺序、谜题数、前向依赖、资源引用、物件位置与配方，模型生成校园主题文本和真正改变答案的材料参数。首版是position_v1、mapping_v1两种资料结构族，覆盖九种房数/难度请求共18个精确合同变体；共同采用前向依赖链，不能称为18种独立拓扑或任意新玩法。选族由Host每次生成时随机选择；可控非负整数seed只供内部验证，不新增公开请求字段。
+
+模型不再处理导致第三轮失败的全局引用连接；它仍决定数字源、设备排列、读取位置、符号排列/对应值以及额外谜题源序。素材、结构与配方选择范围有限，叙事是否贴切/有趣仍需有限实际样本；声明式结构证明不等于全部语义或真人难度认证。
+
+### 13.2 稳定内部合同
+
+content_version=1.0.0，与原Draft/definition/rules版本分别命名。根字段严格为content_version、blueprint_id、title、story、rooms、objects、parameters。rooms/objects恰好包含已选Host槽位，值仅name/description；不增删ID。schema中的版本/blueprint_id是const。文本长度与安全规则沿用原Draft边界。
+
+position_v1包含四个单数字字符串digits及1–4的完整整数排列positions；存在基础顺序谜题时还需四设备完整排列devices。mapping_v1包含A–D排列code_symbols与单数字digit_map；存在基础顺序谜题时增加E–H排列sequence_symbols与四个互异白名单设备device_map。两族在5题时追加独立extra_digits，6题时追加独立extra_devices，各被合同规定拆为2+2两份concat资料。digits允许重复；排列、映射类型/值域严格校验，不接受bool/浮点充当整数。
+
+1房hard为4谜题+1道具+3份共享兼容资料，恰好8物件。多房额外资料置于相应谜题房；初始资料与道具在首房，最后道具谜题形成真实跨房依赖。每份资料恰有一个可发现物件；不自锁或要求前房依赖后房。四机制按规模使用，4题以上覆盖code/sequence/circuit/item；其余规模不强求四者全部出现。原组合数/深度/规划/布局/原始答案泄露检查继续生效。
+
+生产模块backend/app/domain/blueprints.py独立于make_fixture；只提供不可变蓝图、精确Schema、manifest及严格assemble。public API仍20路由，GenerationService保留worker参数调用兼容；同一次generate只选一次蓝图，消息和组装使用同一实例。原provider、6000/60、0.20元、0重试和经典/伙伴限制不变。合法2000字符的完整费用边界按新载荷实测，不沿用旧提示大小结论。
+
+### 13.3 Tasks / 验收 / Change / 交接
+
+R0 Main/Spec更新本稿、SPEC、level_design、DECISIONS、新内部合同说明，保留旧规格和真实失败的Git/证据来源。R1 Backend只新增blueprints.py及generation-content.schema.json/build_generation_content.py。R2 Main/AI仅改AI/v5.py生成提示与GenerationService；伙伴投影/保护、编译器/API/Store冻结。Frontend仅Workspace.tsx解释文字；Delivery待实际QA后更新README/release。精确Owner清单与实际派发见evidence/upgrade/v5.0/blueprint-generation/plan.json。
+
+R3独立QA只在所有Owner SOURCE STOP与Main冻结之后执行：18变体及两组受控参数的编译/witness、独立预期答案/参数变化、typed/raw/extra/missing/恶意内容拒绝；真实ProductionService+MockTransport/fakeledger一发→原API准入/动作/档案/恢复；旧完整定义不调用新生成。新内部合同重建检查，公开合同不改；一次受影响前端构建和生成表单的有限布局核对。旧test_generation/prompt中已被本合同替代的expectation可以明确修订，禁止放宽Key/预算/一次调用等保护或改写旧运行结果。旧53-source有限评价不覆盖新生成模块，不自动重登记或伪称实际判读。
+
+R4实际模型质量仍须新的来源绑定请求预检及明确有限授权，至少针对之前失败的2/normal与3/hard；当前无授权。合成参数/MockTransport/代码证明均不填成真实生成成功。无任何fallback/修稿/补调用；秘密/越权/账本冻结/新unknown即停，求解超限仍PROOF_UNKNOWN。依赖与回退：先稳定R0/R1再接R2，完成R3后普通liy222提交/推送；保留旧入口/库/定义/档与过去真实结果，不迁移、不重算旧hash。最终人类和课程确认仍仅按实际发生记录。

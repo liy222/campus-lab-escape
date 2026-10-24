@@ -1,0 +1,41 @@
+{
+  "kind": "Backend narrow local-ref Schema representation SOURCE STOP",
+  "source_stop": true,
+  "scope": "Deduplicate repeated room/object text schemas via local #/$defs/slot_text; preserve every expanded validation constraint and Blueprint/assembly behavior.",
+  "changed_source_files": [
+    "backend/app/domain/blueprints.py",
+    "contracts/v2/build_generation_content.py",
+    "contracts/v2/generation-content.schema.json"
+  ],
+  "source_sha256": {
+    "backend/app/domain/blueprints.py": "37c41f90166ea1978ec22d02d7b188fcdc25b80a5a2bed67de4bb6728fb9657e",
+    "contracts/v2/build_generation_content.py": "5f1c9f0739f99217630a23e2cb932df9184ca95af22aa508221427c4cd45c6cf",
+    "contracts/v2/generation-content.schema.json": "35e5dc8c75c961353676815f344b352e2536183121e06ceeda0be0558bad1ade"
+  },
+  "new_evidence_files": [
+    "evidence/upgrade/v5.0/blueprint-generation/backend-schema-compact-check-plan.json",
+    "evidence/upgrade/v5.0/blueprint-generation/backend-schema-compact-development.json",
+    "evidence/upgrade/v5.0/blueprint-generation/backend-schema-compact-source-stop.json"
+  ],
+  "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -c \"import json; exec(json.load(open('evidence/upgrade/v5.0/blueprint-generation/backend-schema-compact-check-plan.json',encoding='utf-8'))['script'])\"",
+  "tool_chunk_id": "8584ea",
+  "exit_code": 0,
+  "checks": {
+    "expanded_schema_constraints_equal_to_precompact_contract": 18,
+    "static_variants_with_valid_text_and_rejected_empty_object_name": 18,
+    "chosen_dynamic_static_assembly_valid_invalid_text_boundaries": 22,
+    "explicit_builder_rebuild_exit_code": 0,
+    "explicit_builder_check_exit_code": 0,
+    "previous_owner_evidence_unchanged": true
+  },
+  "r3_hard_dynamic_compact_schema_bytes": {
+    "position_v1": 2545,
+    "mapping_v1": 4954
+  },
+  "limitations": [
+    "Owner-only narrow development verification, not independent formal QA.",
+    "Original 18-witness matrix and controlled-parameter checks were not rerun; their old source/evidence epoch remains unchanged.",
+    "Main separately recalculates full production payload and conservative cost bounds.",
+    "No field or value-domain relaxation, model-output repair, retry, new feature, paid/network/provider/credential/ledger/DB access, full suite, build, browser run or commit."
+  ]
+}

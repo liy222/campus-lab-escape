@@ -295,3 +295,11 @@ v3.4 提示保留原六主题十八条受限推理文案；新增请求时依据
 存储/契约版本分离：API=2.0.0；经典规则/快照仍3.4.0/1.4.0；生成关卡level=5.0.0、快照schema=2.0.0、definition/rules=1.0.0、正式policy=1.0.0。CompiledLevel hash覆盖规范化草稿及definition/rules/policy，不包含模型自报答案。私有快照绑定owner_id/level_id/hash/versions；公开DTO只含当前可见事实，完整草稿、answers、witness、owner和认证字段不对前端/伙伴输出。
 
 伙伴完整payload保守峰值若超过0.05元，先减无参数动作、旧对话、低相关已知材料和描述；当前问题与保留的最近完整问答不伪造事实。仍无法满足则在发送前拒绝。生成0.20元预算与6000token权限仅允许v5_generation scope，不扩大经典默认1000/20或伙伴600/20。真实质量和真实生成验收需要实际样本；离线fixture、MockTransport、结构校验均不能替代。
+
+## v5 生成职责修订：Host结构与GenerationContent（2026-10-24）
+
+用户明确接受程序定结构、AI生成内容和真实typed谜面参数。以v5-build-plan.md第13节为当前权威，取代旧“模型直接提交完整Draft”的生成内部步骤；公开API/编译Draft/定义及快照版本不变。两种资料结构族position_v1/mapping_v1覆盖九种请求共18合同变体，均为前向依赖链，不声称18种拓扑或无限结构。
+
+Host每次选一个不可变Blueprint；精确槽位与typed参数的content_version1.0.0合同见contracts/v2/generation-content.schema.json和generation-content.README.md。模型不能增删房间/物件/引用/配方/坐标。有效内容按预先声明规则组装为原Draft，再经原compile/proof/Store决定可玩；错误内容直接MODEL_INVALID_OUTPUT，无修补、默认值、fixture/历史关卡替代或重试。模型仍决定数字/位置/设备排列/符号对应值，extra_digits/extra_devices服务独立额外谜题。仅有合法类型不保证文案贴切，完整答案进入叙事仍由原准入拒绝。
+
+首版1房hard恰好8物件；多房通过首房道具与末房道具谜题形成真实跨房依赖。4题以上覆盖四机制。旧编译器全部规模/组合/依赖/材料/布局/25000状态5秒/witness保护继续适用；旧完整定义和档案恢复不调用或重新选择Blueprint。一次模型调用与原profile/Key/预算/任务状态/迟到同步规则不改。合成和真实验收分开，当前选择不构成付费授权。

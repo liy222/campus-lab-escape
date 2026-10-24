@@ -299,3 +299,13 @@ T7仍未关闭：真实多房间准入、伙伴成功交付和连续对话质量
 上一轮4次/0.50元提案已由用户明确批准并于2026-10-23实际执行一次，取代前述待授权状态。G2/G3两份新生成均拒绝；A1/A2在历史真实G1的合法重建阶段真实交付，原执行exit1保留，usage保守费用上界增量0.0294056元。独立只读复核exit0已封存；产品403及45项付费输入不变，未机械重跑既有验证，无追加付费授权。
 
 T7仍缺可靠的真实多房间生成；伙伴已有一个阶段两轮有限实际证据，仍有解释深度与焦点限制。下一步先选择docs/v5-generation-reliability-proposal.md中的生成职责：A保留AI完整结构，B程序骨架+AI内容/严格材料参数。B降低结构自由度，尚未接受，不修改当前v5计划或产品；选定后再落正式Spec/ADR、文件任务与必要独立验证。当前完成本轮证据/文档/正常liy222提交推送，不追加调用、不重新使用任何旧名额。
+
+### 2026-10-24 选项1正式实施
+
+用户已明确接受Host结构+AI内容/typed参数，替代前述待设计选择状态。基线4d4b599/403source核对相同，普通实施与Git仍授权，新增付费0。R0 Main更新正式规格/ADR；R1 Backend新生产blueprints及内部合同；R2 Main只接生成服务，Frontend只解释文案；R3待所有Owner STOP和Main冻结后独立定向验证，R4实际模型预检/授权另行处理。两种资料族×九种请求，保留原编译/API/Store/存档/伙伴，不用fixture fallback。具体文件Owner与真实派发配置见evidence/upgrade/v5.0/blueprint-generation/plan.json。
+
+### 2026-10-24 选项1：R0–R3离线范围验收，R4待有限真实验证
+程序结构与AI真实数值/排列/映射填参已实现，正式计划1.2第13节及新内部合同生效。两个资料族覆盖9种规模/难度共18合同，采用共同前向链，不代表18种拓扑。冻结409来源通过独立联合离线范围：首86项及仅补验的2项、合同、一次构建和创建表单三视口；保留首次测试协议失败，不称单次全绿。原compiler/API/Store/provider/伙伴/素材与旧定义/档案继续复用。
+完成README/release及正常liy222提交/推送；R4只先做来源绑定的离线预检，再取得新的有限付费授权。当前真实新生成0，无剩余调用许可；旧真实结果与评价INSUFFICIENT不改写。验收入口evidence/upgrade/v5.0/blueprint-generation/accepted.json与review/findings/v5-blueprint-generation.md。
+
+2026-10-24 R4离线提案也已独立预检通过：绑定411输入的两份精确请求，G2为两房normal/position、G3为三房hard/mapping，各一次，保守预占上界0.110968/0.148456元。实际真实模型0；提案最多2次/0.40元须普通提交/推送完成后取得新的明确有限授权，未创建授权文件或执行标记。原测试结果、数据与未知费用门槛保持。见blueprint-generation/preflight-accepted.json与review/findings/v5-blueprint-real-preflight.md。

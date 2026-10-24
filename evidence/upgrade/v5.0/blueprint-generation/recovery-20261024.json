@@ -1,0 +1,77 @@
+{
+  "kind": "Main read-only recovery after explicit user stop/resume",
+  "document_date": "2026-10-24",
+  "utc": "2026-10-24T14:20:34.352395+00:00",
+  "operator": "Main integration",
+  "user_stop": "先停止",
+  "user_resume": "继续",
+  "head": "4d4b599a613053af3521bab1dcf22a3c38ee291f",
+  "candidate": "evidence\\upgrade\\v5.0\\blueprint-generation\\candidate-qa-fixed.json",
+  "candidate_sha256": "f454b109c4c9ebe1ac1f283c785ffc3b1439411a5fad3f1108b6e7841cfa1dad",
+  "source_count": 409,
+  "all_current_sources_match": true,
+  "delta_vs_baseline": [
+    "backend/app/ai/v5.py",
+    "backend/app/domain/blueprints.py",
+    "frontend/src/v5/Workspace.tsx",
+    "tests/v5/test_blueprint_generation.py",
+    "tests/v5/test_generation.py",
+    "tests/v5/test_prompt_fixed.py",
+    "contracts/v2/build_generation_content.py",
+    "contracts/v2/generation-content.README.md",
+    "contracts/v2/generation-content.schema.json",
+    "evidence/upgrade/v5.0/blueprint-generation/qa/run_creation_ui.mjs"
+  ],
+  "generation_AST_delta_only": [
+    "ASSIGN:GENERATION_PROMPT",
+    "GenerationService"
+  ],
+  "finite_registry_source_count": 53,
+  "finite_registry_sources_match": true,
+  "registry_sha256": "80b312f31b73d3cef3a29575e07d1ca8f4f84d114490edd8289779aa7cb7a63d",
+  "existing_junit_read_only": {
+    "api-run1": {
+      "junit_sha256": "32247439c4eea5a3a945411ca6bf068f8e2d1592e56deced45b505f1457c1e5c",
+      "suite": {
+        "name": "pytest",
+        "errors": "2",
+        "failures": "1",
+        "skipped": "0",
+        "tests": "88",
+        "time": "12.970",
+        "timestamp": "2026-10-24T18:04:17.275702+08:00",
+        "hostname": "DESKTOP-9I5GA4C"
+      },
+      "testcase_count": 88
+    },
+    "api-qa-fixed-run1": {
+      "junit_sha256": "c955aaec5558629beadaf5fd6f7531de07a6e2b1302fcbcff3bbdddd4e7104ab",
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "2",
+        "time": "0.622",
+        "timestamp": "2026-10-24T18:07:11.941503+08:00",
+        "hostname": "DESKTOP-9I5GA4C"
+      },
+      "testcase_count": 2
+    }
+  },
+  "images_actually_viewed_by_Main": {
+    "evidence\\upgrade\\v5.0\\blueprint-generation\\qa\\ui-run1\\creation-1280.png": "c14b205594766cdd3e041150a1d453c9d57129c0278de3baacbf453eea27990a",
+    "evidence\\upgrade\\v5.0\\blueprint-generation\\qa\\ui-run1\\creation-390.png": "af45fa5314c59cb2918c800adf65e57d3081e3dc138fc63330e93dcc2e781097",
+    "evidence\\upgrade\\v5.0\\blueprint-generation\\qa\\ui-run1\\creation-812.png": "d9db95b1ba7f95686a9d7d7fd8b8800d51e9ee200f9d9c8e16fb17b91b388cf7"
+  },
+  "actual_action": "Read current sources, stored run records/output/JUnit and view three existing PNGs. Resume existing Backend draft authoring and QA final report only; no test/build/UI execution.",
+  "new_tests_build_or_browser_runs": 0,
+  "real_model_calls": 0,
+  "canonical_ledger_or_credentials_access": false,
+  "limitations": [
+    "Original API first exit1 remains; exact two later checks exit0 do not convert it into a single green run.",
+    "Final independent report/seal and delivery documents are still pending at this recovery point.",
+    "New generation uses synthetic MockTransport in offline checks; actual model content quality/admission not established.",
+    "Resuming existing agents does not independently disclose their runtime model."
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "kind": "Main AI GenerationService development SOURCE STOP (not independent QA)",
+  "document_date": "2026-10-24",
+  "utc": "2026-10-24T09:55:32.726992+00:00",
+  "actual_command": "Inline AST baseline comparison, caller-schema nonmutation and six full-payload cost calculations; no provider or database",
+  "actual_exit_code": 0,
+  "source": "backend/app/ai/v5.py",
+  "source_sha256": "d0c8ff7fd7240fe0a848acc43b89b9b295c2de8608dab75d4254fcca48d19034",
+  "only_definition_changed": "GenerationService plus GENERATION_PROMPT constant",
+  "all_other_functions_classes_AST_identical": true,
+  "COMPANION_PROMPT_unchanged": true,
+  "production_make_fixture_reference_removed": true,
+  "same_selected_blueprint_for_messages_and_assembly": true,
+  "whole_payload_cost_probes": [
+    {
+      "family": "position_v1",
+      "theme": "short",
+      "payload_bytes": 10774,
+      "cost_upper_units": 150576000,
+      "within_original_cap": true
+    },
+    {
+      "family": "position_v1",
+      "theme": "Chinese2000",
+      "payload_bytes": 16747,
+      "cost_upper_units": 198360000,
+      "within_original_cap": true
+    },
+    {
+      "family": "position_v1",
+      "theme": "Unicode4byte2000",
+      "payload_bytes": 18747,
+      "cost_upper_units": 214360000,
+      "within_original_cap": false
+    },
+    {
+      "family": "mapping_v1",
+      "theme": "short",
+      "payload_bytes": 13741,
+      "cost_upper_units": 174312000,
+      "within_original_cap": true
+    },
+    {
+      "family": "mapping_v1",
+      "theme": "Chinese2000",
+      "payload_bytes": 19714,
+      "cost_upper_units": 222096000,
+      "within_original_cap": false
+    },
+    {
+      "family": "mapping_v1",
+      "theme": "Unicode4byte2000",
+      "payload_bytes": 21714,
+      "cost_upper_units": 238096000,
+      "within_original_cap": false
+    }
+  ],
+  "provider_calls": 0,
+  "key_or_ledger_or_database_access": false,
+  "paid_calls": 0,
+  "limits": [
+    "These are development code/payload checks, not independent API/QA or actual model-quality success.",
+    "Original0.20 cap stays; large legal Unicode text may still be refused if whole payload exceeds cap.",
+    "Raw typed content invalid still rejects, no repair/fallback/retry."
+  ]
+}

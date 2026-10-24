@@ -1,0 +1,66 @@
+{
+  "kind": "Main selected-schema deduplication payload followup; development only",
+  "document_date": "2026-10-24",
+  "utc": "2026-10-24T10:02:42.636520+00:00",
+  "actual_command": "Pure six current serialized-payload byte/cost calculations; no provider, Key or ledger",
+  "actual_exit_code": 0,
+  "source_sha256": {
+    "backend/app/ai/v5.py": "d0c8ff7fd7240fe0a848acc43b89b9b295c2de8608dab75d4254fcca48d19034",
+    "backend/app/domain/blueprints.py": "37c41f90166ea1978ec22d02d7b188fcdc25b80a5a2bed67de4bb6728fb9657e",
+    "contracts/v2/build_generation_content.py": "5f1c9f0739f99217630a23e2cb932df9184ca95af22aa508221427c4cd45c6cf",
+    "contracts/v2/generation-content.schema.json": "35e5dc8c75c961353676815f344b352e2536183121e06ceeda0be0558bad1ade"
+  },
+  "predecessor": "evidence/upgrade/v5.0/blueprint-generation/ai-source-stop.json",
+  "schema_owner_stop": "evidence/upgrade/v5.0/blueprint-generation/backend-schema-compact-source-stop.json",
+  "original_cap_units": 200000000,
+  "measurements": [
+    {
+      "family": "position_v1",
+      "theme": "short",
+      "payload_bytes": 7425,
+      "upper_units": 123784000,
+      "within_original_cap": true
+    },
+    {
+      "family": "position_v1",
+      "theme": "Chinese2000",
+      "payload_bytes": 13398,
+      "upper_units": 171568000,
+      "within_original_cap": true
+    },
+    {
+      "family": "position_v1",
+      "theme": "Unicode4byte2000",
+      "payload_bytes": 15398,
+      "upper_units": 187568000,
+      "within_original_cap": true
+    },
+    {
+      "family": "mapping_v1",
+      "theme": "short",
+      "payload_bytes": 10392,
+      "upper_units": 147520000,
+      "within_original_cap": true
+    },
+    {
+      "family": "mapping_v1",
+      "theme": "Chinese2000",
+      "payload_bytes": 16365,
+      "upper_units": 195304000,
+      "within_original_cap": true
+    },
+    {
+      "family": "mapping_v1",
+      "theme": "Unicode4byte2000",
+      "payload_bytes": 18365,
+      "upper_units": 211304000,
+      "within_original_cap": false
+    }
+  ],
+  "model_provider_database_or_ledger_calls": 0,
+  "limits": [
+    "Original Owner cost probes remain their preceding schema-representation epoch.",
+    "Current short and 2000-Chinese probes fit both families; four-byte Unicode may still refuse before send when its actual full payload exceeds original cap.",
+    "No actual model quality or independent QA result is claimed."
+  ]
+}

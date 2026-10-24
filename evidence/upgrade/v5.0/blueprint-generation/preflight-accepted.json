@@ -1,0 +1,77 @@
+{
+  "kind": "Main accepts independent R4 preparation only; ready to request fresh approval after Git sync",
+  "document_date": "2026-10-24",
+  "utc": "2026-10-24T14:37:06.162482+00:00",
+  "operator": "Main integration",
+  "status": "READY_FOR_NEW_FINITE_APPROVAL_NOT_PAID_EXECUTION",
+  "independent_review_path": "evidence\\upgrade\\v5.0\\blueprint-generation\\real-samples\\preflight-review-final-v1.json",
+  "independent_review_sha256": "d8a34b48ef28dbdf626ccb84045fddea577821ce79f93bc4e4a6ca73b4c46e6c",
+  "review_path": "review/findings/v5-blueprint-real-preflight.md",
+  "review_sha256": "b5392771d956a005ff75c7a56f060cef44d526112c1d13bec01874215c0506cb",
+  "seal_path": "evidence\\upgrade\\v5.0\\blueprint-generation\\real-samples\\preflight-review-seal-v1.json",
+  "seal_sha256": "6812ea980a94b4292fbb748005620affb388a84617138ecdcc4e266e35abe088",
+  "source_count": 411,
+  "all_current_sources_match": true,
+  "all_12_preflight_artifacts_match": true,
+  "runner_sha256": "31d72c5cf6e84cde83d371a3849a4793896758e4d87c0d7b2148fe1fcb1781f0",
+  "preview_path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/offline-preview-v1.json",
+  "preview_sha256": "fec5789db9d55f76928ba68902d85655cfb6cca1ed5537315ed9d4fb51151d95",
+  "source_bundle_sha256": "207b07f44f5070ae499f892c4ff2ca49c9cc89f8de3604571d0cc35bbad415b3",
+  "cases": [
+    {
+      "case_id": "G2",
+      "rooms": 2,
+      "difficulty": "normal",
+      "host_seed": 0,
+      "family": "position_v1",
+      "payload_bytes": 5823,
+      "payload_sha256": "d08c62f3bd6ea72de86e26c880f72f81ce824003bbab1add36540b4be3410c6b",
+      "cost_upper_units": 110968000,
+      "cost_upper_cny": 0.110968
+    },
+    {
+      "case_id": "G3",
+      "rooms": 3,
+      "difficulty": "hard",
+      "host_seed": 1,
+      "family": "mapping_v1",
+      "payload_bytes": 10509,
+      "payload_sha256": "a652d063e32c36abc721caafc7d2810ed5d6cfe09ee37ecca8f23480eb88b67d",
+      "cost_upper_units": 148456000,
+      "cost_upper_cny": 0.148456
+    }
+  ],
+  "max_calls_proposed": 2,
+  "max_reserved_cny_proposed": 0.4,
+  "request_upper_cny_sum": 0.259424,
+  "key_config_current_ledger_database_or_provider_access": false,
+  "real_model_calls": 0,
+  "authorization_marker_journal_absent": true,
+  "paid_authorization_granted": false,
+  "old_QA_and_evaluation_still_sealed": true,
+  "preflight_probe_failures_preserved": [
+    {
+      "tool_chunk": "0aa42c",
+      "exit_code": 1,
+      "cause": "QA extracted wrapper missing exit_code argument"
+    },
+    {
+      "tool_chunk": "244e51",
+      "exit_code": 1,
+      "cause": "QA extracted wrapper missing re dependency"
+    }
+  ],
+  "limitations": [
+    "No current paid approval; Main must obtain actual new finite approval and bind exact preview/source/scope before any config/key/ledger/provider access.",
+    "Static/pure isolated probes and actual offline payload review establish no real provider/admission/witness success.",
+    "Historical unknowns remain, current ledger must be checked only inside later properly authorized execute.",
+    "Only G2/G3 generation admission and HTTP witness are proposed; save/restore, companion and evaluator excluded.",
+    "Future private definition/witness/replay artifacts are local-only and excluded from Git/model input.",
+    "No arbitrary topology, narrative-quality, human acceptance or whole-release claim."
+  ],
+  "next_steps": [
+    "Selectively stage/privacy and raw-byte audit, normal liy222 commit/push",
+    "Fresh explicit finite user approval for at most G2/G3 once each /0.40CNY required; no approval file from continue or option1 choice",
+    "After approved actual execution, independent read-only result review; no automatic retry or sample substitution"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "kind": "Main accepts R0-R3 independent offline integration only",
+  "document_date": "2026-10-24",
+  "utc": "2026-10-24T14:23:38.613692+00:00",
+  "operator": "Main integration",
+  "scope": "Accepted option1 Host structure / AI typed content",
+  "candidate_id": "v5.0-blueprint-qa-fixed-ba75ae39ab3302c5",
+  "candidate_path": "evidence\\upgrade\\v5.0\\blueprint-generation\\candidate-qa-fixed.json",
+  "candidate_sha256": "f454b109c4c9ebe1ac1f283c785ffc3b1439411a5fad3f1108b6e7841cfa1dad",
+  "source_count": 409,
+  "all_current_sources_match": true,
+  "qa_result": "evidence\\upgrade\\v5.0\\blueprint-generation\\qa\\result.json",
+  "qa_result_sha256": "3648a6c6b9ceb26f0f0108befdd611a62a76ada5d5a7f24e6a807f58c65d7e32",
+  "qa_review": "review/findings/v5-blueprint-generation.md",
+  "qa_review_sha256": "21181af095780f4773d71e2fbafd7d21c3ab43baf1391942d375a4442803fcbc",
+  "qa_seal": "evidence/upgrade/v5.0/blueprint-generation/qa/artifact-seal.json",
+  "qa_seal_sha256": "827b25cfdf44ab45bb8d4bee77217aff4dc39944ff41714ff51990e7d2ca5b0e",
+  "all_63_sealed_artifacts_match": true,
+  "accepted_actual_scope": {
+    "first_api_run": {
+      "exit_code": 1,
+      "junit_testcase_records": 88,
+      "passed": 86,
+      "failed": 1,
+      "error_testcases": 1,
+      "error_phases": 2,
+      "duration_seconds_pytest": 12.99,
+      "qa_protocol_issues": [
+        "Windows oversized PYTEST_CURRENT_TEST id prevented raw-size case setup/teardown",
+        "Unchanged classic route count expected8 but actual historical13"
+      ],
+      "raw_preserved": true
+    },
+    "narrow_completion": {
+      "exit_code": 0,
+      "items": 2,
+      "junit_duration_seconds": 0.622,
+      "scope": "raw-size65537 or test_internal_schema_is_reproducible_and_public_contracts_keep_their_roles",
+      "other86_not_repeated": true,
+      "only_source_delta_between_epochs": [
+        "tests/v5/test_blueprint_generation.py"
+      ]
+    },
+    "contracts_steps_exit_codes": [
+      0,
+      0
+    ],
+    "unique_changed_build_exit_code": 0,
+    "creation_UI_records": 30,
+    "creation_UI_exit_code": 0,
+    "UI_issues": [],
+    "viewports": [
+      [
+        1280,
+        720
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        812,
+        375
+      ]
+    ],
+    "paid_calls": 0
+  },
+  "images_actually_viewed_by_Main": [
+    "evidence/upgrade/v5.0/blueprint-generation/qa/ui-run1/creation-1280.png",
+    "evidence/upgrade/v5.0/blueprint-generation/qa/ui-run1/creation-390.png",
+    "evidence/upgrade/v5.0/blueprint-generation/qa/ui-run1/creation-812.png"
+  ],
+  "unchanged_boundaries": [
+    "original compiler and proof bounds",
+    "public API and Store",
+    "provider and canonical budgets",
+    "all non-generation AI top-level AST",
+    "assets and old definitions/saves"
+  ],
+  "historical_registry_53_sources_match": true,
+  "historical_registry_covers_new_generation": false,
+  "evaluator_outcome_unchanged": "3 INSUFFICIENT_EVIDENCE; paid judge remains blocked by three historical unknowns",
+  "paid_authorization_remaining": false,
+  "not_a_single_full_green_run": true,
+  "old_failures_preserved": true,
+  "no_repeated_tests_after_resume": true,
+  "not_release_acceptance": true,
+  "limitations": [
+    "Offline synthetic transport is not real model reliability, narrative quality or release acceptance.",
+    "Only two implemented blueprint families; no arbitrary novel topology claim.",
+    "Historical paid failures and unknown reservations unchanged; no new paid authorization.",
+    "No full game browser route, unrelated API suite, classic checker or evaluator repeated.",
+    "Viewport emulation is not physical-device or human playtesting.",
+    "Factory reopen is not an OS restart or interactive root CMD test.",
+    "Existing Starlette deprecation and build chunk size warning remain.",
+    "Finite privacy patterns do not detect every possible secret format."
+  ],
+  "next_steps": [
+    "Mechanical README/release and root status updates",
+    "Normal liy222 development branch commit/push with selected path/privacy audit",
+    "R4 pure offline source-bound preview and independent preflight, then fresh finite user approval before any actual paid request"
+  ]
+}

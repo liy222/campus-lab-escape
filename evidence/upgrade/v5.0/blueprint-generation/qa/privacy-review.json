@@ -1,0 +1,42 @@
+{
+  "kind": "Finite read-only privacy review of initial failed synthetic QA output/JUnit",
+  "utc": "2026-10-24T14:20:20.638572+00:00",
+  "records": [
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-generation/qa/api-run1/output.txt",
+      "sha256_before": "e6c01a5e9d3a4a7a914f2d8b498313a153723ae6c7ad6dd8cf6e346a76fb4973",
+      "sha256_after": "e6c01a5e9d3a4a7a914f2d8b498313a153723ae6c7ad6dd8cf6e346a76fb4973",
+      "pattern_counts": {
+        "cookie_assignment": 0,
+        "authorization_value": 0,
+        "api_key_value": 0,
+        "cookie_header_value": 0,
+        "secret_key_format": 0,
+        "csrf_or_auth_context_value": 0
+      },
+      "synthetic_canary_occurrences": 0
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-generation/qa/api-run1/junit.xml",
+      "sha256_before": "32247439c4eea5a3a945411ca6bf068f8e2d1592e56deced45b505f1457c1e5c",
+      "sha256_after": "32247439c4eea5a3a945411ca6bf068f8e2d1592e56deced45b505f1457c1e5c",
+      "pattern_counts": {
+        "cookie_assignment": 0,
+        "authorization_value": 0,
+        "api_key_value": 0,
+        "cookie_header_value": 0,
+        "secret_key_format": 0,
+        "csrf_or_auth_context_value": 0
+      },
+      "synthetic_canary_occurrences": 0
+    }
+  ],
+  "matched_sensitive_value_patterns": 0,
+  "raw_files_preserved": true,
+  "values_printed": false,
+  "real_credentials_or_environment_secrets_read": false,
+  "limitations": [
+    "Pattern-limited review, not a claim that every possible secret format is detectable.",
+    "First long-parameter Windows setup/teardown failure and original exit1 remain byte-identical."
+  ]
+}

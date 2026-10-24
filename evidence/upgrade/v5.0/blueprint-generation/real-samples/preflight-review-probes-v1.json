@@ -1,0 +1,65 @@
+{
+  "kind": "Independent isolated actual-AST guard/finalization probes; not real runner execution",
+  "utc": "2026-10-24T14:33:04.777134+00:00",
+  "exit_code": 0,
+  "runner_sha256": "31d72c5cf6e84cde83d371a3849a4793896758e4d87c0d7b2148fe1fcb1781f0",
+  "preview_sha256": "fec5789db9d55f76928ba68902d85655cfb6cca1ed5537315ed9d4fb51151d95",
+  "synthetic_valid_authorization_shape_accepted_without_file": true,
+  "invalid_authorization_variants_rejected": 26,
+  "missing_fresh_authorization_rejected_before_marker_import_config": true,
+  "stubbed_finalization_branches": [
+    {
+      "case": "valid",
+      "exit_code": 0,
+      "stopped_reason": null,
+      "finalization_failures": []
+    },
+    {
+      "case": "source_changed",
+      "exit_code": 1,
+      "stopped_reason": "SOURCE_CHANGED_DURING_RUN",
+      "finalization_failures": [
+        "SOURCE_CHANGED_DURING_RUN"
+      ]
+    },
+    {
+      "case": "source_unavailable",
+      "exit_code": 1,
+      "stopped_reason": "SOURCE_CHANGED_OR_UNAVAILABLE",
+      "finalization_failures": [
+        "SOURCE_CHANGED_OR_UNAVAILABLE"
+      ]
+    },
+    {
+      "case": "ledger_unsafe",
+      "exit_code": 1,
+      "stopped_reason": "LEDGER_UNSAFE_OR_NEW_UNKNOWN",
+      "finalization_failures": [
+        "LEDGER_UNSAFE_OR_NEW_UNKNOWN"
+      ]
+    },
+    {
+      "case": "ledger_unavailable",
+      "exit_code": 1,
+      "stopped_reason": "FINAL_LEDGER_UNAVAILABLE",
+      "finalization_failures": [
+        "FINAL_LEDGER_UNAVAILABLE"
+      ]
+    }
+  ],
+  "intercepts": {
+    "runtime_imports": 0,
+    "marker_journal_writes": 0
+  },
+  "isolated_OUT_no_files_created": true,
+  "runner_imported": false,
+  "real_execute_invoked": false,
+  "prepare_repeated": false,
+  "configuration_key_ledger_db_network_access": false,
+  "paid_calls": 0,
+  "first_failures_retained": "preflight-review-probes-first-failures.json",
+  "limitations": [
+    "Pure guards/finally AST only, synthetic data and stubbed source/ledger/artifact boundaries.",
+    "No paid authorization or real model/admission/witness result is established."
+  ]
+}

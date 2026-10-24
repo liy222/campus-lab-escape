@@ -1,0 +1,90 @@
+{
+  "kind": "Backend Owner source stop; implementation and synthetic development only",
+  "source_stop": true,
+  "files_created": [
+    "backend/app/domain/blueprints.py",
+    "contracts/v2/generation-content.schema.json",
+    "contracts/v2/build_generation_content.py",
+    "evidence/upgrade/v5.0/blueprint-generation/backend-check-plan.json",
+    "evidence/upgrade/v5.0/blueprint-generation/backend-development.json",
+    "evidence/upgrade/v5.0/blueprint-generation/backend-source-stop.json"
+  ],
+  "source_sha256": {
+    "backend/app/domain/blueprints.py": "36fa86b5d68c2ece3ad18c206ad5a05ddddfe02d579d0244baa1a225236acb69",
+    "contracts/v2/build_generation_content.py": "05a786568ce461ceef8e519f6207568f7ae88b5b0c5152ea9448b2a1e7d27f9c",
+    "contracts/v2/generation-content.schema.json": "0ab261fdeb2e52bf843f87d6abb3290d882f93a1fc2b1f6451a024f8f26ada8e"
+  },
+  "interfaces": {
+    "select_blueprint": "select_blueprint(room_count, difficulty, *, seed=None) -> Blueprint; room_count exact int 1/2/3; difficulty exact str easy/normal/hard; seed None uses one secrets.randbelow(2), otherwise nonnegative exact int seed % 2 selects position_v1/mapping_v1",
+    "content_schema": "content_schema(blueprint: Blueprint) -> fresh exact-slot JSON Schema dict",
+    "request_manifest": "request_manifest(blueprint: Blueprint) -> fresh public-to-generator structural/role outline",
+    "assemble_draft": "assemble_draft(blueprint: Blueprint, raw_model_content) -> original full Draft dict; strict_json first; exact types/keys/ranges then declared construction; no compile/proof inside",
+    "content_root": [
+      "content_version",
+      "blueprint_id",
+      "title",
+      "story",
+      "rooms",
+      "objects",
+      "parameters"
+    ],
+    "content_version": "1.0.0",
+    "errors": "Selection raises ValueError(BLUEPRINT_ROOM_COUNT/BLUEPRINT_DIFFICULTY/BLUEPRINT_SEED). Existing strict_json ValueError classifications preserved. Typed content errors raise ValueError(GENERATION_CONTENT_INVALID); unencodable/non-JSON input TypeError/RecursionError normalized to that ValueError.",
+    "position_parameters": "digits 4 single digit strings; positions permutation of exact ints 1..4; devices permutation of device_a..device_d when puzzle count>=3",
+    "mapping_parameters": "code_symbols permutation A..D; digit_map exact keys A..D to single digit strings; sequence_symbols permutation E..H and device_map exact keys E..H to distinct device_a..device_d when count>=3",
+    "extra_parameters": "Both families count>=5 require independent extra_digits 4 single digit strings; count>=6 also extra_devices permutation; each splits 2+2 into two concat clues",
+    "blueprint_fields": "frozen dataclass slots: blueprint_id,family,room_count,difficulty,room_ids tuple,objects tuple ObjectSlot,puzzles tuple PuzzleSlot,content_version",
+    "schema_check": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe contracts/v2/build_generation_content.py --check",
+    "integration_requirement": "Select once and retain the same immutable Blueprint for messages and assembly; supply only chosen dynamic variant to model; caller/API still runs original compile/proof exactly as before."
+  },
+  "actual_commands": [
+    {
+      "command": "Initial read-only exec_command without escalation",
+      "exit_code": null,
+      "result": "Unified exec process failed to initialize (helper_unknown_error); no command executed. Authorized read/write work continued using require_escalated."
+    },
+    {
+      "command": "rg 'jsonschema' backend/requirements* contracts/v2/check_contracts.py; Get-ChildItem <3 assigned new paths> -ErrorAction SilentlyContinue",
+      "exit_code": 1,
+      "result": "Read-only discovery used a Windows wildcard rg path that was invalid; corrected with direct file reads. No mutation."
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe contracts/v2/build_generation_content.py",
+      "exit_code": 0,
+      "evidence": "0af9c3 output: Wrote generation-content.schema.json (18 variants)"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe contracts/v2/build_generation_content.py --check",
+      "exit_code": 0,
+      "evidence": "0af9c3 and a935ed: matches all 18 variants"
+    },
+    {
+      "command": "git diff --check -- backend/app/domain/blueprints.py contracts/v2/build_generation_content.py contracts/v2/generation-content.schema.json",
+      "exit_code": 0,
+      "limitation": "These were new untracked files; final direct Python per-line whitespace checks provide the actual new-file whitespace check."
+    },
+    {
+      "command": "Owner initial inline Python 1room/hard position_v1 compile/proof probe via C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -",
+      "exit_code": 0,
+      "evidence": "1bfcbe: 8 objects, 23 witness actions, 0.072s. This overlaps the later 18-case scope and is not added to coverage counts."
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -c \"import json; exec(json.load(open('evidence/upgrade/v5.0/blueprint-generation/backend-check-plan.json',encoding='utf-8'))['script'])\"",
+      "exit_code": 0,
+      "evidence": "ab899d; backend-development.json: 18 normal compile+witness replays, 4 controlled parameter replays, 13 rejected development probes; 2.757155s script elapsed"
+    },
+    {
+      "command": "Final inline Python AST/JSON/trailing-whitespace/hash/no make_fixture-or-compile_level-or-solve calls read audit via C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -",
+      "exit_code": 0,
+      "evidence": "a935ed; 3 source hashes match backend-development.json; all 18 per-room object counts <=8"
+    }
+  ],
+  "immutable_scope": "No existing compiler/generated.py, API, Store, provider, AI module, tests, Main documents, assets, previous evidence, database or environment edited by this Owner.",
+  "limitations": [
+    "Owner synthetic checks are not formal independent QA or successful real AI generation.",
+    "Typed content may still fail original compiler admission for answer-in-prose or other original semantic/proof checks. No local repair/default/fallback/retry.",
+    "First version has two finite recipe families; the chain/room allocation is Host-owned, not arbitrary AI topology.",
+    "Independent source slots can coincidentally produce equal answers if the model selects equal values; there is no cross-puzzle answer-distinctness requirement or silent rewriting.",
+    "No API/Store/save/build/browser suite, network, paid call, credential/canonical-ledger read, commit or further agent spawn performed."
+  ]
+}

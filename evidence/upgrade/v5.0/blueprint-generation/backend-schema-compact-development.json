@@ -1,0 +1,283 @@
+{
+  "kind": "Owner-only schema representation deduplication; no structural/proof retest",
+  "utc": "2026-10-24T09:58:31.274102+00:00",
+  "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -c \"import json; exec(json.load(open('evidence/upgrade/v5.0/blueprint-generation/backend-schema-compact-check-plan.json',encoding='utf-8'))['script'])\"",
+  "exit_code": 0,
+  "source_sha256_before": {
+    "backend/app/domain/blueprints.py": "36fa86b5d68c2ece3ad18c206ad5a05ddddfe02d579d0244baa1a225236acb69",
+    "contracts/v2/build_generation_content.py": "05a786568ce461ceef8e519f6207568f7ae88b5b0c5152ea9448b2a1e7d27f9c",
+    "contracts/v2/generation-content.schema.json": "0ab261fdeb2e52bf843f87d6abb3290d882f93a1fc2b1f6451a024f8f26ada8e"
+  },
+  "source_sha256_after": {
+    "backend/app/domain/blueprints.py": "37c41f90166ea1978ec22d02d7b188fcdc25b80a5a2bed67de4bb6728fb9657e",
+    "contracts/v2/build_generation_content.py": "5f1c9f0739f99217630a23e2cb932df9184ca95af22aa508221427c4cd45c6cf",
+    "contracts/v2/generation-content.schema.json": "35e5dc8c75c961353676815f344b352e2536183121e06ceeda0be0558bad1ade"
+  },
+  "old_evidence_unchanged_sha256": {
+    "evidence\\upgrade\\v5.0\\blueprint-generation\\backend-source-stop.json": "e7ba6cd9529989532162be16b1b02df167dc7b702e3891a076b13045ed61c834",
+    "evidence\\upgrade\\v5.0\\blueprint-generation\\backend-development.json": "673b0b7eb3c5470111060947b9fe47b1ab501f16c5dbae4b0405d609b59b2737",
+    "evidence\\upgrade\\v5.0\\blueprint-generation\\backend-check-plan.json": "5ad65c22e38094f73efcd4888cead5c5b3a7318d34ae139590537f6bfc162e7a"
+  },
+  "expanded_constraint_equality_for_all_18_variants": true,
+  "static_local_ref_variant_cases": [
+    {
+      "blueprint_id": "position_v1-r1-easy",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "position_v1-r1-normal",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "position_v1-r1-hard",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "position_v1-r2-easy",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "position_v1-r2-normal",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "position_v1-r2-hard",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "position_v1-r3-easy",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "position_v1-r3-normal",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "position_v1-r3-hard",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "mapping_v1-r1-easy",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "mapping_v1-r1-normal",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "mapping_v1-r1-hard",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "mapping_v1-r2-easy",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "mapping_v1-r2-normal",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "mapping_v1-r2-hard",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "mapping_v1-r3-easy",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "mapping_v1-r3-normal",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    },
+    {
+      "blueprint_id": "mapping_v1-r3-hard",
+      "valid_text_accepted": true,
+      "empty_referenced_object_name_rejected": true
+    }
+  ],
+  "chosen_dynamic_static_assembly_text_boundary_cases": [
+    {
+      "location": "room",
+      "case": "minimum",
+      "expected_acceptance": true,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "room",
+      "case": "maximum",
+      "expected_acceptance": true,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "room",
+      "case": "empty_name",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "room",
+      "case": "long_name",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "room",
+      "case": "empty_description",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "room",
+      "case": "long_description",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "room",
+      "case": "missing_name",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "room",
+      "case": "missing_description",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "room",
+      "case": "extra_field",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "room",
+      "case": "wrong_name_type",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "room",
+      "case": "wrong_description_type",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "object",
+      "case": "minimum",
+      "expected_acceptance": true,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "object",
+      "case": "maximum",
+      "expected_acceptance": true,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "object",
+      "case": "empty_name",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "object",
+      "case": "long_name",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "object",
+      "case": "empty_description",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "object",
+      "case": "long_description",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "object",
+      "case": "missing_name",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "object",
+      "case": "missing_description",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "object",
+      "case": "extra_field",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "object",
+      "case": "wrong_name_type",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    },
+    {
+      "location": "object",
+      "case": "wrong_description_type",
+      "expected_acceptance": false,
+      "dynamic_static_assembly_match": true
+    }
+  ],
+  "builder_commands": [
+    {
+      "argv": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "contracts/v2/build_generation_content.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Wrote generation-content.schema.json (18 variants)",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "contracts/v2/build_generation_content.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "generation-content.schema.json matches all 18 current variants",
+      "stderr": ""
+    }
+  ],
+  "static_compact_json_bytes_before": 85357,
+  "static_compact_json_bytes_after": 54301,
+  "dynamic_r3_hard_compact_schema_bytes": {
+    "position_v1": 2545,
+    "mapping_v1": 4954
+  },
+  "network": 0,
+  "paid_calls": 0,
+  "proof_matrix_repeated": false,
+  "limitations": [
+    "Only local Schema representation and text boundaries checked; original structural/witness evidence remains its historical source epoch.",
+    "No model-output repair, extra invocation, API/Store/provider/DB change or full suite/build/browser run.",
+    "Production payload/cost bounds are separately calculated by Main; Schema byte reduction does not certify real generation quality."
+  ]
+}

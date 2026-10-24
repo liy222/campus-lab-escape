@@ -1,0 +1,664 @@
+{
+  "kind": "Owner synthetic local development checks, not independent QA or real generation",
+  "utc": "2026-10-24T09:47:23.852168+00:00",
+  "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -c \"import json; exec(json.load(open('evidence/upgrade/v5.0/blueprint-generation/backend-check-plan.json',encoding='utf-8'))['script'])\"",
+  "exit_code": 0,
+  "source_sha256_before": {
+    "backend/app/domain/blueprints.py": "36fa86b5d68c2ece3ad18c206ad5a05ddddfe02d579d0244baa1a225236acb69",
+    "contracts/v2/build_generation_content.py": "05a786568ce461ceef8e519f6207568f7ae88b5b0c5152ea9448b2a1e7d27f9c",
+    "contracts/v2/generation-content.schema.json": "0ab261fdeb2e52bf843f87d6abb3290d882f93a1fc2b1f6451a024f8f26ada8e"
+  },
+  "source_sha256_after": {
+    "backend/app/domain/blueprints.py": "36fa86b5d68c2ece3ad18c206ad5a05ddddfe02d579d0244baa1a225236acb69",
+    "contracts/v2/build_generation_content.py": "05a786568ce461ceef8e519f6207568f7ae88b5b0c5152ea9448b2a1e7d27f9c",
+    "contracts/v2/generation-content.schema.json": "0ab261fdeb2e52bf843f87d6abb3290d882f93a1fc2b1f6451a024f8f26ada8e"
+  },
+  "normal_compile_and_witness_replay_count": 18,
+  "normal_cases": [
+    {
+      "blueprint_id": "position_v1-r1-easy",
+      "family": "position_v1",
+      "room_count": 1,
+      "difficulty": "easy",
+      "object_counts": [
+        5
+      ],
+      "puzzle_count": 2,
+      "clue_count": 2,
+      "mechanisms": [
+        "code",
+        "item"
+      ],
+      "definition_hash": "648436fcde008c86d74f48b569058b3f1a587be49f1967aefbb2d4633cef96c8",
+      "input_sha256": "b335dd10e9a0503943d533050f4a1bbfb0da94619c19511abf473c587fad8b0b",
+      "witness_sha256": "e23a9152c3f8ad2682eff7387420c8a0d627dc3c6c84356b672df62869b06122",
+      "witness_actions": 8,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.06335
+    },
+    {
+      "blueprint_id": "position_v1-r1-normal",
+      "family": "position_v1",
+      "room_count": 1,
+      "difficulty": "normal",
+      "object_counts": [
+        7
+      ],
+      "puzzle_count": 3,
+      "clue_count": 3,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "item"
+      ],
+      "definition_hash": "fe5a2822e185073635da565514b35d4d8706eddb5169113fb6f460c600b083a1",
+      "input_sha256": "ee3eae03f5da5f5e3ec14bd4d27e31f036fa3fd9e358404383a5739b8d0e3e02",
+      "witness_sha256": "5fa15620dc55d30d37cdfe2937c1f8f9d21bae70e5b29da9aafa901bbe637d41",
+      "witness_actions": 11,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.066475
+    },
+    {
+      "blueprint_id": "position_v1-r1-hard",
+      "family": "position_v1",
+      "room_count": 1,
+      "difficulty": "hard",
+      "object_counts": [
+        8
+      ],
+      "puzzle_count": 4,
+      "clue_count": 3,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "definition_hash": "bdb14d2f49f0da239466f74722972290d003744f3315a484bb4e36d934aaa30a",
+      "input_sha256": "5aa9d654f154e253f9ed25183378162eb45e97da51fc638672f7f9a419e09cf1",
+      "witness_sha256": "59894abb0f822204fc69e421ab7e41ada73a62fc26fc8e569351e90f972104ff",
+      "witness_actions": 23,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.069925
+    },
+    {
+      "blueprint_id": "position_v1-r2-easy",
+      "family": "position_v1",
+      "room_count": 2,
+      "difficulty": "easy",
+      "object_counts": [
+        5,
+        2
+      ],
+      "puzzle_count": 3,
+      "clue_count": 3,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "item"
+      ],
+      "definition_hash": "c24d7e96821d55c61db1f1cf2acda22fe74bce61a1dcfbc583ba87aa7ca03e76",
+      "input_sha256": "70bd9ddd56157916dbe9a06dd2b1d533f0f452799334d5237f0eeb3775125275",
+      "witness_sha256": "b9ce1caddbb5e0fefbe26efee8a6f2af401b83838d42b06735ef887c37133b33",
+      "witness_actions": 12,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.067943
+    },
+    {
+      "blueprint_id": "position_v1-r2-normal",
+      "family": "position_v1",
+      "room_count": 2,
+      "difficulty": "normal",
+      "object_counts": [
+        6,
+        2
+      ],
+      "puzzle_count": 4,
+      "clue_count": 3,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "definition_hash": "280fdfdf387bf8b2b3b12965eecf8b5800f545ce489deaa5d2de6628efd6a7df",
+      "input_sha256": "016b94b60af4f713da7ff2fd7505d26a3d75f64cf2b76833f60970ebc2dfb101",
+      "witness_sha256": "23f5cdf8571485c9328627add2e1aac6d687aa577fd7fde748565c6e12870a39",
+      "witness_actions": 24,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.071767
+    },
+    {
+      "blueprint_id": "position_v1-r2-hard",
+      "family": "position_v1",
+      "room_count": 2,
+      "difficulty": "hard",
+      "object_counts": [
+        6,
+        5
+      ],
+      "puzzle_count": 5,
+      "clue_count": 5,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "item"
+      ],
+      "definition_hash": "50726241a2b63d7f75c53fe5178f17cc4ccfd7376bc16b43bdb39f2abb5734ec",
+      "input_sha256": "8e8f853982a8062c92e5fb17102c19e5da74754b1c492b6597d634427ce21977",
+      "witness_sha256": "72f2e72ccc708f7899f36275c361243ebad1416af603dfb2a764587cd9f4a9f7",
+      "witness_actions": 28,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.090374
+    },
+    {
+      "blueprint_id": "position_v1-r3-easy",
+      "family": "position_v1",
+      "room_count": 3,
+      "difficulty": "easy",
+      "object_counts": [
+        5,
+        1,
+        2
+      ],
+      "puzzle_count": 4,
+      "clue_count": 3,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "definition_hash": "bfd4bf0dcd437ddde11b250820b44fd59a947c88f1142dce6835c166afdd6b39",
+      "input_sha256": "c9de47c50a6e9632d9d82f1a0431b4379d9a048d50aa6a4cd36d4929e1db2d25",
+      "witness_sha256": "d7b4f08e36d19aee834a5ff2ef47a54401502c15a15206a617289e92e3ea00da",
+      "witness_actions": 25,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.07469
+    },
+    {
+      "blueprint_id": "position_v1-r3-normal",
+      "family": "position_v1",
+      "room_count": 3,
+      "difficulty": "normal",
+      "object_counts": [
+        5,
+        2,
+        4
+      ],
+      "puzzle_count": 5,
+      "clue_count": 5,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "item"
+      ],
+      "definition_hash": "52fa2a1476a833c3154ded56b250f37a0da6448f76327b0cc8aea1bb4df17963",
+      "input_sha256": "234a76b093cc7f101a3592f2f281196c3458452592185690f2770133cd32462d",
+      "witness_sha256": "920cfc3df032a9f67b0cf54b3aed6d397b6092a60995137b7b44044f01e1ddd1",
+      "witness_actions": 29,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.08919
+    },
+    {
+      "blueprint_id": "position_v1-r3-hard",
+      "family": "position_v1",
+      "room_count": 3,
+      "difficulty": "hard",
+      "object_counts": [
+        6,
+        4,
+        4
+      ],
+      "puzzle_count": 6,
+      "clue_count": 7,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "sequence",
+        "item"
+      ],
+      "definition_hash": "d278ee9386f753262d08d155ba0db2352374f08071975a43ff793de2312fe467",
+      "input_sha256": "a23f6877f7f5a05da65dbab9de3a6549ec7be0d631371bac5250dacbea7550da",
+      "witness_sha256": "c1f3ac2ed308a7309985a22d912ce8e6d6a2b10e398063d78ec04975805d41c5",
+      "witness_actions": 33,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.110465
+    },
+    {
+      "blueprint_id": "mapping_v1-r1-easy",
+      "family": "mapping_v1",
+      "room_count": 1,
+      "difficulty": "easy",
+      "object_counts": [
+        5
+      ],
+      "puzzle_count": 2,
+      "clue_count": 2,
+      "mechanisms": [
+        "code",
+        "item"
+      ],
+      "definition_hash": "217e213e6e7fce1705d6eddf30df182b84876d6a64a56d878bb4b67a1d04c54f",
+      "input_sha256": "8ad9caa429e7c4ddbf50ab4fe207a1232340a6555819bb13489bab5db4acb9e3",
+      "witness_sha256": "e23a9152c3f8ad2682eff7387420c8a0d627dc3c6c84356b672df62869b06122",
+      "witness_actions": 8,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.060567
+    },
+    {
+      "blueprint_id": "mapping_v1-r1-normal",
+      "family": "mapping_v1",
+      "room_count": 1,
+      "difficulty": "normal",
+      "object_counts": [
+        7
+      ],
+      "puzzle_count": 3,
+      "clue_count": 3,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "item"
+      ],
+      "definition_hash": "9a45c12633de9107acb44947a22f97998c5ce51b2b354368a9d04e4c06d70018",
+      "input_sha256": "3dfec5a9c7a4ca9740599ecbbe05458f5d41bb97b44283605881cb4629c92514",
+      "witness_sha256": "cda980636be5f0948290683a82d6875c0d231735b8f0bb8f48727afa06b908df",
+      "witness_actions": 11,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.067388
+    },
+    {
+      "blueprint_id": "mapping_v1-r1-hard",
+      "family": "mapping_v1",
+      "room_count": 1,
+      "difficulty": "hard",
+      "object_counts": [
+        8
+      ],
+      "puzzle_count": 4,
+      "clue_count": 3,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "definition_hash": "c0bc15a740118b3f995862707ad5d8bfb054ecd0f2fc20f9cfb5583a2c07c992",
+      "input_sha256": "2ff319495e836952b9d61e3457c65f6eaa41b4b200ae01bebb77a1e70f393b4c",
+      "witness_sha256": "a0032f88a651a45b125fd9c915afc799e9672ce483e7f72ad891e1b95c6f3558",
+      "witness_actions": 23,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.072179
+    },
+    {
+      "blueprint_id": "mapping_v1-r2-easy",
+      "family": "mapping_v1",
+      "room_count": 2,
+      "difficulty": "easy",
+      "object_counts": [
+        5,
+        2
+      ],
+      "puzzle_count": 3,
+      "clue_count": 3,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "item"
+      ],
+      "definition_hash": "d84e03d06f2391619ff333cc2a60aba1c967721cdc4b1dc17eba970bfca62590",
+      "input_sha256": "879228f6446896b9e17affa051eb01d2c5677bf684ba666a9cac368edbda0221",
+      "witness_sha256": "0840a533c0b311b01b002460292cb464b7e97af5a0250df62053036b1e6f9126",
+      "witness_actions": 12,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.066332
+    },
+    {
+      "blueprint_id": "mapping_v1-r2-normal",
+      "family": "mapping_v1",
+      "room_count": 2,
+      "difficulty": "normal",
+      "object_counts": [
+        6,
+        2
+      ],
+      "puzzle_count": 4,
+      "clue_count": 3,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "definition_hash": "4173dcdac543d5220747983e1e1fbb86a3a8516b254a07e6886f3dd4009e0082",
+      "input_sha256": "409e425b493e910a97ffcf9350fe53b917e8c163a60ed7357678f0a01c7c8960",
+      "witness_sha256": "b9705cbfa50bc57d2b6cf3b89af7c8a601f9248fffc7859e7e5b0eaebe00ac32",
+      "witness_actions": 24,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.070557
+    },
+    {
+      "blueprint_id": "mapping_v1-r2-hard",
+      "family": "mapping_v1",
+      "room_count": 2,
+      "difficulty": "hard",
+      "object_counts": [
+        6,
+        5
+      ],
+      "puzzle_count": 5,
+      "clue_count": 5,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "item"
+      ],
+      "definition_hash": "1e120805037cac4bb38b5ea533e07e020904310a1c3565152cdbfcfba19a18b3",
+      "input_sha256": "31a70903c52a15fd8aa4dffcf2fcaf34b1a10c0419b640d56d257396cefb2836",
+      "witness_sha256": "a807b210b7be379e96c00503ccddc210973d498a2863e9779565da28bf3b9e70",
+      "witness_actions": 28,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.090886
+    },
+    {
+      "blueprint_id": "mapping_v1-r3-easy",
+      "family": "mapping_v1",
+      "room_count": 3,
+      "difficulty": "easy",
+      "object_counts": [
+        5,
+        1,
+        2
+      ],
+      "puzzle_count": 4,
+      "clue_count": 3,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "definition_hash": "07422a47cb58f92be83930a443dd7b7015f3f706d236bc2bbf0dc626d271898d",
+      "input_sha256": "7c660f99f2a95df5dd47f095365b4d9c759c64c653b807b232fe96e44382a64d",
+      "witness_sha256": "fc04f7cc20261ae49ad18cdfd7d3bc5a8ba70de791ea1634c7b2b275f915a55c",
+      "witness_actions": 25,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.073656
+    },
+    {
+      "blueprint_id": "mapping_v1-r3-normal",
+      "family": "mapping_v1",
+      "room_count": 3,
+      "difficulty": "normal",
+      "object_counts": [
+        5,
+        2,
+        4
+      ],
+      "puzzle_count": 5,
+      "clue_count": 5,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "item"
+      ],
+      "definition_hash": "738cf5070e229efa3c3440fd2cf1de75d36f3933c33abc0292622121397777da",
+      "input_sha256": "c61d098fe4a4c2c0272fd3eb900027e3518caf4e2635d86b999947c6aab609c7",
+      "witness_sha256": "d05cbab9b70d78da0fbc55204629a3cb6e2d3fe1e909ff8ff21281f64b604fff",
+      "witness_actions": 29,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.085748
+    },
+    {
+      "blueprint_id": "mapping_v1-r3-hard",
+      "family": "mapping_v1",
+      "room_count": 3,
+      "difficulty": "hard",
+      "object_counts": [
+        6,
+        4,
+        4
+      ],
+      "puzzle_count": 6,
+      "clue_count": 7,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "sequence",
+        "item"
+      ],
+      "definition_hash": "b2677531fb5ab441334246b7d6d846e135726caeecdbfc907eb7022e7a070967",
+      "input_sha256": "f97060517e866ab5252882754997ce1e48f871d4b33da06c107269510e75f22c",
+      "witness_sha256": "549697cd146f3b20f4960c6d4998d06c7d9e34d12d74c7e398376d58b4e69578",
+      "witness_actions": 33,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.106162
+    }
+  ],
+  "controlled_parameter_replays": [
+    {
+      "blueprint_id": "position_v1-r3-hard",
+      "family": "position_v1",
+      "room_count": 3,
+      "difficulty": "hard",
+      "object_counts": [
+        6,
+        4,
+        4
+      ],
+      "puzzle_count": 6,
+      "clue_count": 7,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "sequence",
+        "item"
+      ],
+      "definition_hash": "811e4b6378d2ef5cb5e14820cdef6c96076f08611d568290a7d52609e54af796",
+      "input_sha256": "ca6a5f205a082f0fe051f6cf4ca23fa87680695e147cf716aa24c7b4b42637a3",
+      "witness_sha256": "0bf592aad4f84eef8b3b6d743374824e93c1f9b5390c1f396daf92a776b72371",
+      "witness_actions": 33,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.104688,
+      "kind": "base_digit",
+      "target_puzzle_id": "puzzle_1",
+      "before_answer": "7295",
+      "after_answer": "7395"
+    },
+    {
+      "blueprint_id": "position_v1-r3-hard",
+      "family": "position_v1",
+      "room_count": 3,
+      "difficulty": "hard",
+      "object_counts": [
+        6,
+        4,
+        4
+      ],
+      "puzzle_count": 6,
+      "clue_count": 7,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "sequence",
+        "item"
+      ],
+      "definition_hash": "f3e8d70f68c35c593597addb132af54ca7909017a8ae0fcc3b435e5d32cc9b7d",
+      "input_sha256": "058137ab5d4f72c617d4aa1e451bcc1f77a9b4f69c5445d0e64f90e7f380eef0",
+      "witness_sha256": "fab4e7d4ba1feda8420567c2ab0ef0414deff9b1d29d862edbbf94b5f297a19a",
+      "witness_actions": 33,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.106413,
+      "kind": "extra_sequence",
+      "target_puzzle_id": "puzzle_5",
+      "before_answer": [
+        "device_b",
+        "device_d",
+        "device_a",
+        "device_c"
+      ],
+      "after_answer": [
+        "device_c",
+        "device_b",
+        "device_d",
+        "device_a"
+      ]
+    },
+    {
+      "blueprint_id": "mapping_v1-r3-hard",
+      "family": "mapping_v1",
+      "room_count": 3,
+      "difficulty": "hard",
+      "object_counts": [
+        6,
+        4,
+        4
+      ],
+      "puzzle_count": 6,
+      "clue_count": 7,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "sequence",
+        "item"
+      ],
+      "definition_hash": "e3bd1b6198dd75a767a3e59a9706c933ed7f430d4edd3d3c26286e2e3307b290",
+      "input_sha256": "b15a327ab32722eabc109b63ff95373233da54f4601c7f738bb8cc6551164942",
+      "witness_sha256": "cbcc102e527e90283c472a08ab11629b0861559c5ba02729fa4dfb9a56152850",
+      "witness_actions": 33,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.109571,
+      "kind": "base_digit",
+      "target_puzzle_id": "puzzle_1",
+      "before_answer": "7295",
+      "after_answer": "7395"
+    },
+    {
+      "blueprint_id": "mapping_v1-r3-hard",
+      "family": "mapping_v1",
+      "room_count": 3,
+      "difficulty": "hard",
+      "object_counts": [
+        6,
+        4,
+        4
+      ],
+      "puzzle_count": 6,
+      "clue_count": 7,
+      "mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "sequence",
+        "item"
+      ],
+      "definition_hash": "66e386af6e64cb0c68fd8a48b13a173454b346cd1e21bec4c750c4f16605f931",
+      "input_sha256": "d255d19d8c6052b5d3776a95c73b0a48196a49e917aaadb3567eea7708192e13",
+      "witness_sha256": "9e59679cfca718225b80a0b235dbb2aef70cb28ff66ce88eaf2485242741b366",
+      "witness_actions": 33,
+      "replayed_terminal": "EXIT/won",
+      "seconds": 0.105288,
+      "kind": "extra_sequence",
+      "target_puzzle_id": "puzzle_5",
+      "before_answer": [
+        "device_b",
+        "device_d",
+        "device_a",
+        "device_c"
+      ],
+      "after_answer": [
+        "device_c",
+        "device_b",
+        "device_d",
+        "device_a"
+      ]
+    }
+  ],
+  "negative_development_checks": [
+    {
+      "case": "float_position",
+      "error": "GENERATION_CONTENT_INVALID"
+    },
+    {
+      "case": "bool_position",
+      "error": "GENERATION_CONTENT_INVALID"
+    },
+    {
+      "case": "numeric_digit",
+      "error": "GENERATION_CONTENT_INVALID"
+    },
+    {
+      "case": "duplicate_position",
+      "error": "GENERATION_CONTENT_INVALID"
+    },
+    {
+      "case": "duplicate_device",
+      "error": "GENERATION_CONTENT_INVALID"
+    },
+    {
+      "case": "unknown_parameter",
+      "error": "GENERATION_CONTENT_INVALID"
+    },
+    {
+      "case": "missing_object",
+      "error": "GENERATION_CONTENT_INVALID"
+    },
+    {
+      "case": "unsafe_text",
+      "error": "UNSAFE_TEXT"
+    },
+    {
+      "case": "duplicate_json_key",
+      "error": "DUPLICATE_KEY"
+    },
+    {
+      "case": "nonfinite",
+      "error": "NONFINITE"
+    },
+    {
+      "case": "oversize",
+      "error": "OUTPUT_SIZE"
+    },
+    {
+      "case": "too_deep",
+      "error": "OUTPUT_DEPTH"
+    },
+    {
+      "case": "mapping_duplicate_value",
+      "error": "GENERATION_CONTENT_INVALID"
+    }
+  ],
+  "immutability_and_fresh_schema_manifest": true,
+  "static_schema_variant_count": 18,
+  "elapsed_seconds": 2.757155,
+  "paid_calls": 0,
+  "network": 0,
+  "databases_opened": 0,
+  "provider_or_credentials_read": false,
+  "limitations": [
+    "Synthetic values only; no actual AI reliability, theme fit or human gameplay quality claim.",
+    "No API/Store/save/build/browser suite run in Owner checks; independent QA awaits stable Main freeze.",
+    "Four mechanisms available across families; smaller puzzle counts intentionally use a subset.",
+    "Additional typed source slots are independent; model-selected values can coincidentally yield the same answer."
+  ]
+}
