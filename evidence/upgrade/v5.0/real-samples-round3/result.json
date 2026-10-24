@@ -1,0 +1,1180 @@
+{
+  "kind": "actual_paid_validation_round3",
+  "run_id": "v5-real-samples-round3-pending-approval",
+  "candidate_sha256": "02349e27e6523be15474ca019ba302a96a36083ec9728447a50c0a1f2d375b4e",
+  "end_utc": "2026-10-23T15:03:28.273495+00:00",
+  "exit_code": 1,
+  "scope": [
+    "G2",
+    "G3",
+    "A1",
+    "A2"
+  ],
+  "cases": [
+    {
+      "case_id": "G2",
+      "api_status": 202,
+      "theme": "校园天文社观测资料交接：在观测准备室与资料室之间核对记录、复用交接道具，完成关闭前的检查。",
+      "room_count": 2,
+      "difficulty": "normal",
+      "real_model_attempted": true,
+      "job": {
+        "job_id": "b05b667495554f9e86fb9aa8414d999f",
+        "status": "rejected",
+        "room_count": 2,
+        "difficulty": "normal",
+        "created_at": 1792767795.3051832,
+        "updated_at": 1792767799.4406943,
+        "level_id": null,
+        "error_code": "ADMISSION_REJECTED"
+      },
+      "status": "not_successful",
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "G3",
+      "api_status": 202,
+      "theme": "校园生态实验楼标本交接：三间相连实验室保留采样资料与维护装置，需要跨房间核对材料后完成离楼检查。",
+      "room_count": 3,
+      "difficulty": "hard",
+      "real_model_attempted": true,
+      "job": {
+        "job_id": "9234f8aef8184bbb8d6bf57b89b0f1dd",
+        "status": "rejected",
+        "room_count": 3,
+        "difficulty": "hard",
+        "created_at": 1792767799.4697082,
+        "updated_at": 1792767805.189646,
+        "level_id": null,
+        "error_code": "ADMISSION_REJECTED"
+      },
+      "status": "not_successful",
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "A1",
+      "api_status": 200,
+      "source_generation_case": "HISTORICAL_ROUND2_G1",
+      "not_current_real_generation": true,
+      "real_model_attempted": true,
+      "api_storeguard_delivered": true,
+      "status": "successful",
+      "response": {
+        "ok": true,
+        "event_id": "15cadfade03b4287a51e9e04d7a3bb91",
+        "data": {
+          "turn_id": "5676f8d6cf0449c2a0452c1d677028bd",
+          "answer": "离馆确认面板说明资料按借阅登记单、归架顺序卡合并，而第一份资料的源序与第二份资料的读取位置正好对应这一先后次序；局部关系是读取位置作用于源序，但具体归架码需自行推导。门禁终端尚未观察，可点击物件查看。",
+          "clue_refs": [
+            "C_borrow",
+            "C_order"
+          ],
+          "proposal": null,
+          "status": "no_suggestion",
+          "stop_reason": null,
+          "usage": {
+            "provider": "deepseek",
+            "model": "deepseek-flash",
+            "input_tokens": 679,
+            "output_tokens": 84,
+            "model_calls": 1,
+            "read_tool_calls": 0
+          },
+          "visible_state": {
+            "schema_version": "2.0.0",
+            "level_version": "5.0.0",
+            "mode": "generated",
+            "definition_hash": "b4270160c24398843182d327a8e8f2ef194bd4bea2d2e749505c3238966bf34d",
+            "session_id": "dda0382e7a8844caab99db06b97327da",
+            "room_id": "R1",
+            "room": {
+              "room_id": "R1",
+              "name": "夜读阅览室",
+              "description": "灯已调暗，借阅台与离馆装置都在这间屋内。",
+              "background_id": "neutral_archive",
+              "background_art_id": "neutral_archive"
+            },
+            "inventory": [
+              {
+                "item_id": "I_key",
+                "name": "阅览台钥匙",
+                "art_id": "key"
+              }
+            ],
+            "objects": [
+              {
+                "object_id": "O_note_borrow",
+                "name": "借阅登记单",
+                "kind": "clue",
+                "description": "记录了几本待归架图书的编号。",
+                "art_id": "note",
+                "slot": 0,
+                "target_id": null,
+                "mechanism": null,
+                "completed": false,
+                "actions": [
+                  {
+                    "tool": "inspect",
+                    "label": "查看",
+                    "arguments": {
+                      "object_id": "O_note_borrow"
+                    }
+                  }
+                ]
+              },
+              {
+                "object_id": "O_note_order",
+                "name": "归架顺序卡",
+                "kind": "clue",
+                "description": "标出登记单中图书的读取次序。",
+                "art_id": "note",
+                "slot": 1,
+                "target_id": null,
+                "mechanism": null,
+                "completed": false,
+                "actions": [
+                  {
+                    "tool": "inspect",
+                    "label": "查看",
+                    "arguments": {
+                      "object_id": "O_note_order"
+                    }
+                  }
+                ]
+              },
+              {
+                "object_id": "O_panel",
+                "name": "离馆确认面板",
+                "kind": "puzzle",
+                "description": "资料组合次序：资料 C_borrow → 资料 C_order；源序与读取位置分别依此序合并。输入归架码后显示可离馆。 按资料中的读取位置，从一开始读取源序。",
+                "art_id": "panel",
+                "slot": 3,
+                "target_id": "P_code",
+                "mechanism": "code",
+                "completed": false,
+                "actions": [
+                  {
+                    "tool": "inspect",
+                    "label": "查看",
+                    "arguments": {
+                      "object_id": "O_panel"
+                    }
+                  },
+                  {
+                    "tool": "submit_code",
+                    "label": "提交",
+                    "arguments": {
+                      "target_id": "P_code"
+                    }
+                  }
+                ]
+              },
+              {
+                "object_id": "O_exit",
+                "name": "门禁终端",
+                "kind": "puzzle",
+                "description": "用钥匙确认离馆。 将匹配的背包物品用于此装置，物品不会消耗。",
+                "art_id": "terminal",
+                "slot": 4,
+                "target_id": "P_item",
+                "mechanism": "item",
+                "completed": false,
+                "actions": [
+                  {
+                    "tool": "inspect",
+                    "label": "查看",
+                    "arguments": {
+                      "object_id": "O_exit"
+                    }
+                  }
+                ]
+              }
+            ],
+            "clues": [
+              {
+                "clue_id": "C_borrow",
+                "object_id": "O_note_borrow",
+                "title": "资料 C_borrow",
+                "text": "源序：2、5、7、9。"
+              },
+              {
+                "clue_id": "C_order",
+                "object_id": "O_note_order",
+                "title": "资料 C_order",
+                "text": "按位置读取：2、4、1、3。"
+              }
+            ],
+            "observed_object_ids": [
+              "O_note_borrow",
+              "O_note_order",
+              "O_panel"
+            ],
+            "exits": [
+              {
+                "destination_id": "EXIT",
+                "name": "出口",
+                "unlocked": false
+              }
+            ],
+            "minigames": {
+              "circuits": [],
+              "sequences": [],
+              "circuit": null,
+              "sequence": null
+            },
+            "statistics": {
+              "started_at": "2026-10-23T15:03:15.209957Z",
+              "finished_at": null,
+              "clues_found": 2,
+              "clues_total": 2,
+              "puzzles_solved": 0,
+              "puzzles_total": 2,
+              "hint_count": 1,
+              "mistake_count": 0,
+              "hidden_found": 0,
+              "hidden_total": 0,
+              "current_hint_level": 1
+            },
+            "settlement": null,
+            "status": "playing",
+            "revision": 14,
+            "generation": "04d87790-eac0-446d-b50a-e8e970a3814e",
+            "save": null,
+            "flags": {},
+            "level_id": "7140a39c284e4d04a14c103f2757aff5"
+          }
+        }
+      },
+      "before_visible_state": {
+        "clues": [
+          {
+            "clue_id": "C_borrow",
+            "object_id": "O_note_borrow",
+            "text": "源序：2、5、7、9。",
+            "title": "资料 C_borrow"
+          },
+          {
+            "clue_id": "C_order",
+            "object_id": "O_note_order",
+            "text": "按位置读取：2、4、1、3。",
+            "title": "资料 C_order"
+          }
+        ],
+        "definition_hash": "b4270160c24398843182d327a8e8f2ef194bd4bea2d2e749505c3238966bf34d",
+        "exits": [
+          {
+            "destination_id": "EXIT",
+            "name": "出口",
+            "unlocked": false
+          }
+        ],
+        "flags": {},
+        "generation": "04d87790-eac0-446d-b50a-e8e970a3814e",
+        "inventory": [
+          {
+            "art_id": "key",
+            "item_id": "I_key",
+            "name": "阅览台钥匙"
+          }
+        ],
+        "level_id": "7140a39c284e4d04a14c103f2757aff5",
+        "level_version": "5.0.0",
+        "minigames": {
+          "circuit": null,
+          "circuits": [],
+          "sequence": null,
+          "sequences": []
+        },
+        "mode": "generated",
+        "objects": [
+          {
+            "actions": [
+              {
+                "arguments": {
+                  "object_id": "O_note_borrow"
+                },
+                "label": "查看",
+                "tool": "inspect"
+              }
+            ],
+            "art_id": "note",
+            "completed": false,
+            "description": "记录了几本待归架图书的编号。",
+            "kind": "clue",
+            "mechanism": null,
+            "name": "借阅登记单",
+            "object_id": "O_note_borrow",
+            "slot": 0,
+            "target_id": null
+          },
+          {
+            "actions": [
+              {
+                "arguments": {
+                  "object_id": "O_note_order"
+                },
+                "label": "查看",
+                "tool": "inspect"
+              }
+            ],
+            "art_id": "note",
+            "completed": false,
+            "description": "标出登记单中图书的读取次序。",
+            "kind": "clue",
+            "mechanism": null,
+            "name": "归架顺序卡",
+            "object_id": "O_note_order",
+            "slot": 1,
+            "target_id": null
+          },
+          {
+            "actions": [
+              {
+                "arguments": {
+                  "object_id": "O_panel"
+                },
+                "label": "查看",
+                "tool": "inspect"
+              },
+              {
+                "arguments": {
+                  "target_id": "P_code"
+                },
+                "label": "提交",
+                "tool": "submit_code"
+              }
+            ],
+            "art_id": "panel",
+            "completed": false,
+            "description": "资料组合次序：资料 C_borrow → 资料 C_order；源序与读取位置分别依此序合并。输入归架码后显示可离馆。 按资料中的读取位置，从一开始读取源序。",
+            "kind": "puzzle",
+            "mechanism": "code",
+            "name": "离馆确认面板",
+            "object_id": "O_panel",
+            "slot": 3,
+            "target_id": "P_code"
+          },
+          {
+            "actions": [
+              {
+                "arguments": {
+                  "object_id": "O_exit"
+                },
+                "label": "查看",
+                "tool": "inspect"
+              }
+            ],
+            "art_id": "terminal",
+            "completed": false,
+            "description": "用钥匙确认离馆。 将匹配的背包物品用于此装置，物品不会消耗。",
+            "kind": "puzzle",
+            "mechanism": "item",
+            "name": "门禁终端",
+            "object_id": "O_exit",
+            "slot": 4,
+            "target_id": "P_item"
+          }
+        ],
+        "observed_object_ids": [
+          "O_note_borrow",
+          "O_note_order",
+          "O_panel"
+        ],
+        "revision": 13,
+        "room": {
+          "background_art_id": "neutral_archive",
+          "background_id": "neutral_archive",
+          "description": "灯已调暗，借阅台与离馆装置都在这间屋内。",
+          "name": "夜读阅览室",
+          "room_id": "R1"
+        },
+        "room_id": "R1",
+        "save": null,
+        "schema_version": "2.0.0",
+        "session_id": "dda0382e7a8844caab99db06b97327da",
+        "settlement": null,
+        "statistics": {
+          "clues_found": 2,
+          "clues_total": 2,
+          "current_hint_level": 1,
+          "finished_at": null,
+          "hidden_found": 0,
+          "hidden_total": 0,
+          "hint_count": 0,
+          "mistake_count": 0,
+          "puzzles_solved": 0,
+          "puzzles_total": 2,
+          "started_at": "2026-10-23T15:03:15.209957Z"
+        },
+        "status": "playing"
+      },
+      "after_visible_state": {
+        "schema_version": "2.0.0",
+        "level_version": "5.0.0",
+        "mode": "generated",
+        "definition_hash": "b4270160c24398843182d327a8e8f2ef194bd4bea2d2e749505c3238966bf34d",
+        "session_id": "dda0382e7a8844caab99db06b97327da",
+        "room_id": "R1",
+        "room": {
+          "room_id": "R1",
+          "name": "夜读阅览室",
+          "description": "灯已调暗，借阅台与离馆装置都在这间屋内。",
+          "background_id": "neutral_archive",
+          "background_art_id": "neutral_archive"
+        },
+        "inventory": [
+          {
+            "item_id": "I_key",
+            "name": "阅览台钥匙",
+            "art_id": "key"
+          }
+        ],
+        "objects": [
+          {
+            "object_id": "O_note_borrow",
+            "name": "借阅登记单",
+            "kind": "clue",
+            "description": "记录了几本待归架图书的编号。",
+            "art_id": "note",
+            "slot": 0,
+            "target_id": null,
+            "mechanism": null,
+            "completed": false,
+            "actions": [
+              {
+                "tool": "inspect",
+                "label": "查看",
+                "arguments": {
+                  "object_id": "O_note_borrow"
+                }
+              }
+            ]
+          },
+          {
+            "object_id": "O_note_order",
+            "name": "归架顺序卡",
+            "kind": "clue",
+            "description": "标出登记单中图书的读取次序。",
+            "art_id": "note",
+            "slot": 1,
+            "target_id": null,
+            "mechanism": null,
+            "completed": false,
+            "actions": [
+              {
+                "tool": "inspect",
+                "label": "查看",
+                "arguments": {
+                  "object_id": "O_note_order"
+                }
+              }
+            ]
+          },
+          {
+            "object_id": "O_panel",
+            "name": "离馆确认面板",
+            "kind": "puzzle",
+            "description": "资料组合次序：资料 C_borrow → 资料 C_order；源序与读取位置分别依此序合并。输入归架码后显示可离馆。 按资料中的读取位置，从一开始读取源序。",
+            "art_id": "panel",
+            "slot": 3,
+            "target_id": "P_code",
+            "mechanism": "code",
+            "completed": false,
+            "actions": [
+              {
+                "tool": "inspect",
+                "label": "查看",
+                "arguments": {
+                  "object_id": "O_panel"
+                }
+              },
+              {
+                "tool": "submit_code",
+                "label": "提交",
+                "arguments": {
+                  "target_id": "P_code"
+                }
+              }
+            ]
+          },
+          {
+            "object_id": "O_exit",
+            "name": "门禁终端",
+            "kind": "puzzle",
+            "description": "用钥匙确认离馆。 将匹配的背包物品用于此装置，物品不会消耗。",
+            "art_id": "terminal",
+            "slot": 4,
+            "target_id": "P_item",
+            "mechanism": "item",
+            "completed": false,
+            "actions": [
+              {
+                "tool": "inspect",
+                "label": "查看",
+                "arguments": {
+                  "object_id": "O_exit"
+                }
+              }
+            ]
+          }
+        ],
+        "clues": [
+          {
+            "clue_id": "C_borrow",
+            "object_id": "O_note_borrow",
+            "title": "资料 C_borrow",
+            "text": "源序：2、5、7、9。"
+          },
+          {
+            "clue_id": "C_order",
+            "object_id": "O_note_order",
+            "title": "资料 C_order",
+            "text": "按位置读取：2、4、1、3。"
+          }
+        ],
+        "observed_object_ids": [
+          "O_note_borrow",
+          "O_note_order",
+          "O_panel"
+        ],
+        "exits": [
+          {
+            "destination_id": "EXIT",
+            "name": "出口",
+            "unlocked": false
+          }
+        ],
+        "minigames": {
+          "circuits": [],
+          "sequences": [],
+          "circuit": null,
+          "sequence": null
+        },
+        "statistics": {
+          "started_at": "2026-10-23T15:03:15.209957Z",
+          "finished_at": null,
+          "clues_found": 2,
+          "clues_total": 2,
+          "puzzles_solved": 0,
+          "puzzles_total": 2,
+          "hint_count": 1,
+          "mistake_count": 0,
+          "hidden_found": 0,
+          "hidden_total": 0,
+          "current_hint_level": 1
+        },
+        "settlement": null,
+        "status": "playing",
+        "revision": 14,
+        "generation": "04d87790-eac0-446d-b50a-e8e970a3814e",
+        "save": null,
+        "flags": {},
+        "level_id": "7140a39c284e4d04a14c103f2757aff5"
+      },
+      "gameplay_facts_unchanged": true,
+      "allowed_metadata_changes": {
+        "revision_before": 13,
+        "revision_after": 14,
+        "hint_count_before": 0,
+        "hint_count_after": 1,
+        "current_hint_level_before": 1,
+        "current_hint_level_after": 1,
+        "rule": "Successful generated-mode model hint increments hint_count/revision once; existing generated current_hint_level projection remains unchanged. Failure does not count as a delivered hint."
+      },
+      "raw_provider_success_alone_is_not_delivery": true
+    },
+    {
+      "case_id": "A2",
+      "api_status": 200,
+      "source_generation_case": "HISTORICAL_ROUND2_G1",
+      "not_current_real_generation": true,
+      "real_model_attempted": true,
+      "api_storeguard_delivered": true,
+      "status": "successful",
+      "response": {
+        "ok": true,
+        "event_id": "b7485660000d4324aeb7705ba4e8e11e",
+        "data": {
+          "turn_id": "49cb177269f24911a05dc280bde01c3f",
+          "answer": "这个关系成立，是因为离馆确认面板明确写了“第一份资料 → 第二份资料”，而第一份资料的源序与第二份资料的读取位置各是一组序号；按说明，后者是按位置读取前者，因此读取位置对应源序条目，而不是独立生成输入。完整归架码仍需你在面板自行处理。门禁终端未观察，可点击物件查看。",
+          "clue_refs": [
+            "C_borrow",
+            "C_order"
+          ],
+          "proposal": null,
+          "status": "no_suggestion",
+          "stop_reason": null,
+          "usage": {
+            "provider": "deepseek",
+            "model": "deepseek-flash",
+            "input_tokens": 759,
+            "output_tokens": 100,
+            "model_calls": 1,
+            "read_tool_calls": 0
+          },
+          "visible_state": {
+            "schema_version": "2.0.0",
+            "level_version": "5.0.0",
+            "mode": "generated",
+            "definition_hash": "b4270160c24398843182d327a8e8f2ef194bd4bea2d2e749505c3238966bf34d",
+            "session_id": "dda0382e7a8844caab99db06b97327da",
+            "room_id": "R1",
+            "room": {
+              "room_id": "R1",
+              "name": "夜读阅览室",
+              "description": "灯已调暗，借阅台与离馆装置都在这间屋内。",
+              "background_id": "neutral_archive",
+              "background_art_id": "neutral_archive"
+            },
+            "inventory": [
+              {
+                "item_id": "I_key",
+                "name": "阅览台钥匙",
+                "art_id": "key"
+              }
+            ],
+            "objects": [
+              {
+                "object_id": "O_note_borrow",
+                "name": "借阅登记单",
+                "kind": "clue",
+                "description": "记录了几本待归架图书的编号。",
+                "art_id": "note",
+                "slot": 0,
+                "target_id": null,
+                "mechanism": null,
+                "completed": false,
+                "actions": [
+                  {
+                    "tool": "inspect",
+                    "label": "查看",
+                    "arguments": {
+                      "object_id": "O_note_borrow"
+                    }
+                  }
+                ]
+              },
+              {
+                "object_id": "O_note_order",
+                "name": "归架顺序卡",
+                "kind": "clue",
+                "description": "标出登记单中图书的读取次序。",
+                "art_id": "note",
+                "slot": 1,
+                "target_id": null,
+                "mechanism": null,
+                "completed": false,
+                "actions": [
+                  {
+                    "tool": "inspect",
+                    "label": "查看",
+                    "arguments": {
+                      "object_id": "O_note_order"
+                    }
+                  }
+                ]
+              },
+              {
+                "object_id": "O_panel",
+                "name": "离馆确认面板",
+                "kind": "puzzle",
+                "description": "资料组合次序：资料 C_borrow → 资料 C_order；源序与读取位置分别依此序合并。输入归架码后显示可离馆。 按资料中的读取位置，从一开始读取源序。",
+                "art_id": "panel",
+                "slot": 3,
+                "target_id": "P_code",
+                "mechanism": "code",
+                "completed": false,
+                "actions": [
+                  {
+                    "tool": "inspect",
+                    "label": "查看",
+                    "arguments": {
+                      "object_id": "O_panel"
+                    }
+                  },
+                  {
+                    "tool": "submit_code",
+                    "label": "提交",
+                    "arguments": {
+                      "target_id": "P_code"
+                    }
+                  }
+                ]
+              },
+              {
+                "object_id": "O_exit",
+                "name": "门禁终端",
+                "kind": "puzzle",
+                "description": "用钥匙确认离馆。 将匹配的背包物品用于此装置，物品不会消耗。",
+                "art_id": "terminal",
+                "slot": 4,
+                "target_id": "P_item",
+                "mechanism": "item",
+                "completed": false,
+                "actions": [
+                  {
+                    "tool": "inspect",
+                    "label": "查看",
+                    "arguments": {
+                      "object_id": "O_exit"
+                    }
+                  }
+                ]
+              }
+            ],
+            "clues": [
+              {
+                "clue_id": "C_borrow",
+                "object_id": "O_note_borrow",
+                "title": "资料 C_borrow",
+                "text": "源序：2、5、7、9。"
+              },
+              {
+                "clue_id": "C_order",
+                "object_id": "O_note_order",
+                "title": "资料 C_order",
+                "text": "按位置读取：2、4、1、3。"
+              }
+            ],
+            "observed_object_ids": [
+              "O_note_borrow",
+              "O_note_order",
+              "O_panel"
+            ],
+            "exits": [
+              {
+                "destination_id": "EXIT",
+                "name": "出口",
+                "unlocked": false
+              }
+            ],
+            "minigames": {
+              "circuits": [],
+              "sequences": [],
+              "circuit": null,
+              "sequence": null
+            },
+            "statistics": {
+              "started_at": "2026-10-23T15:03:15.209957Z",
+              "finished_at": null,
+              "clues_found": 2,
+              "clues_total": 2,
+              "puzzles_solved": 0,
+              "puzzles_total": 2,
+              "hint_count": 2,
+              "mistake_count": 0,
+              "hidden_found": 0,
+              "hidden_total": 0,
+              "current_hint_level": 1
+            },
+            "settlement": null,
+            "status": "playing",
+            "revision": 15,
+            "generation": "04d87790-eac0-446d-b50a-e8e970a3814e",
+            "save": null,
+            "flags": {},
+            "level_id": "7140a39c284e4d04a14c103f2757aff5"
+          }
+        }
+      },
+      "before_visible_state": {
+        "clues": [
+          {
+            "clue_id": "C_borrow",
+            "object_id": "O_note_borrow",
+            "text": "源序：2、5、7、9。",
+            "title": "资料 C_borrow"
+          },
+          {
+            "clue_id": "C_order",
+            "object_id": "O_note_order",
+            "text": "按位置读取：2、4、1、3。",
+            "title": "资料 C_order"
+          }
+        ],
+        "definition_hash": "b4270160c24398843182d327a8e8f2ef194bd4bea2d2e749505c3238966bf34d",
+        "exits": [
+          {
+            "destination_id": "EXIT",
+            "name": "出口",
+            "unlocked": false
+          }
+        ],
+        "flags": {},
+        "generation": "04d87790-eac0-446d-b50a-e8e970a3814e",
+        "inventory": [
+          {
+            "art_id": "key",
+            "item_id": "I_key",
+            "name": "阅览台钥匙"
+          }
+        ],
+        "level_id": "7140a39c284e4d04a14c103f2757aff5",
+        "level_version": "5.0.0",
+        "minigames": {
+          "circuit": null,
+          "circuits": [],
+          "sequence": null,
+          "sequences": []
+        },
+        "mode": "generated",
+        "objects": [
+          {
+            "actions": [
+              {
+                "arguments": {
+                  "object_id": "O_note_borrow"
+                },
+                "label": "查看",
+                "tool": "inspect"
+              }
+            ],
+            "art_id": "note",
+            "completed": false,
+            "description": "记录了几本待归架图书的编号。",
+            "kind": "clue",
+            "mechanism": null,
+            "name": "借阅登记单",
+            "object_id": "O_note_borrow",
+            "slot": 0,
+            "target_id": null
+          },
+          {
+            "actions": [
+              {
+                "arguments": {
+                  "object_id": "O_note_order"
+                },
+                "label": "查看",
+                "tool": "inspect"
+              }
+            ],
+            "art_id": "note",
+            "completed": false,
+            "description": "标出登记单中图书的读取次序。",
+            "kind": "clue",
+            "mechanism": null,
+            "name": "归架顺序卡",
+            "object_id": "O_note_order",
+            "slot": 1,
+            "target_id": null
+          },
+          {
+            "actions": [
+              {
+                "arguments": {
+                  "object_id": "O_panel"
+                },
+                "label": "查看",
+                "tool": "inspect"
+              },
+              {
+                "arguments": {
+                  "target_id": "P_code"
+                },
+                "label": "提交",
+                "tool": "submit_code"
+              }
+            ],
+            "art_id": "panel",
+            "completed": false,
+            "description": "资料组合次序：资料 C_borrow → 资料 C_order；源序与读取位置分别依此序合并。输入归架码后显示可离馆。 按资料中的读取位置，从一开始读取源序。",
+            "kind": "puzzle",
+            "mechanism": "code",
+            "name": "离馆确认面板",
+            "object_id": "O_panel",
+            "slot": 3,
+            "target_id": "P_code"
+          },
+          {
+            "actions": [
+              {
+                "arguments": {
+                  "object_id": "O_exit"
+                },
+                "label": "查看",
+                "tool": "inspect"
+              }
+            ],
+            "art_id": "terminal",
+            "completed": false,
+            "description": "用钥匙确认离馆。 将匹配的背包物品用于此装置，物品不会消耗。",
+            "kind": "puzzle",
+            "mechanism": "item",
+            "name": "门禁终端",
+            "object_id": "O_exit",
+            "slot": 4,
+            "target_id": "P_item"
+          }
+        ],
+        "observed_object_ids": [
+          "O_note_borrow",
+          "O_note_order",
+          "O_panel"
+        ],
+        "revision": 14,
+        "room": {
+          "background_art_id": "neutral_archive",
+          "background_id": "neutral_archive",
+          "description": "灯已调暗，借阅台与离馆装置都在这间屋内。",
+          "name": "夜读阅览室",
+          "room_id": "R1"
+        },
+        "room_id": "R1",
+        "save": null,
+        "schema_version": "2.0.0",
+        "session_id": "dda0382e7a8844caab99db06b97327da",
+        "settlement": null,
+        "statistics": {
+          "clues_found": 2,
+          "clues_total": 2,
+          "current_hint_level": 1,
+          "finished_at": null,
+          "hidden_found": 0,
+          "hidden_total": 0,
+          "hint_count": 1,
+          "mistake_count": 0,
+          "puzzles_solved": 0,
+          "puzzles_total": 2,
+          "started_at": "2026-10-23T15:03:15.209957Z"
+        },
+        "status": "playing"
+      },
+      "after_visible_state": {
+        "schema_version": "2.0.0",
+        "level_version": "5.0.0",
+        "mode": "generated",
+        "definition_hash": "b4270160c24398843182d327a8e8f2ef194bd4bea2d2e749505c3238966bf34d",
+        "session_id": "dda0382e7a8844caab99db06b97327da",
+        "room_id": "R1",
+        "room": {
+          "room_id": "R1",
+          "name": "夜读阅览室",
+          "description": "灯已调暗，借阅台与离馆装置都在这间屋内。",
+          "background_id": "neutral_archive",
+          "background_art_id": "neutral_archive"
+        },
+        "inventory": [
+          {
+            "item_id": "I_key",
+            "name": "阅览台钥匙",
+            "art_id": "key"
+          }
+        ],
+        "objects": [
+          {
+            "object_id": "O_note_borrow",
+            "name": "借阅登记单",
+            "kind": "clue",
+            "description": "记录了几本待归架图书的编号。",
+            "art_id": "note",
+            "slot": 0,
+            "target_id": null,
+            "mechanism": null,
+            "completed": false,
+            "actions": [
+              {
+                "tool": "inspect",
+                "label": "查看",
+                "arguments": {
+                  "object_id": "O_note_borrow"
+                }
+              }
+            ]
+          },
+          {
+            "object_id": "O_note_order",
+            "name": "归架顺序卡",
+            "kind": "clue",
+            "description": "标出登记单中图书的读取次序。",
+            "art_id": "note",
+            "slot": 1,
+            "target_id": null,
+            "mechanism": null,
+            "completed": false,
+            "actions": [
+              {
+                "tool": "inspect",
+                "label": "查看",
+                "arguments": {
+                  "object_id": "O_note_order"
+                }
+              }
+            ]
+          },
+          {
+            "object_id": "O_panel",
+            "name": "离馆确认面板",
+            "kind": "puzzle",
+            "description": "资料组合次序：资料 C_borrow → 资料 C_order；源序与读取位置分别依此序合并。输入归架码后显示可离馆。 按资料中的读取位置，从一开始读取源序。",
+            "art_id": "panel",
+            "slot": 3,
+            "target_id": "P_code",
+            "mechanism": "code",
+            "completed": false,
+            "actions": [
+              {
+                "tool": "inspect",
+                "label": "查看",
+                "arguments": {
+                  "object_id": "O_panel"
+                }
+              },
+              {
+                "tool": "submit_code",
+                "label": "提交",
+                "arguments": {
+                  "target_id": "P_code"
+                }
+              }
+            ]
+          },
+          {
+            "object_id": "O_exit",
+            "name": "门禁终端",
+            "kind": "puzzle",
+            "description": "用钥匙确认离馆。 将匹配的背包物品用于此装置，物品不会消耗。",
+            "art_id": "terminal",
+            "slot": 4,
+            "target_id": "P_item",
+            "mechanism": "item",
+            "completed": false,
+            "actions": [
+              {
+                "tool": "inspect",
+                "label": "查看",
+                "arguments": {
+                  "object_id": "O_exit"
+                }
+              }
+            ]
+          }
+        ],
+        "clues": [
+          {
+            "clue_id": "C_borrow",
+            "object_id": "O_note_borrow",
+            "title": "资料 C_borrow",
+            "text": "源序：2、5、7、9。"
+          },
+          {
+            "clue_id": "C_order",
+            "object_id": "O_note_order",
+            "title": "资料 C_order",
+            "text": "按位置读取：2、4、1、3。"
+          }
+        ],
+        "observed_object_ids": [
+          "O_note_borrow",
+          "O_note_order",
+          "O_panel"
+        ],
+        "exits": [
+          {
+            "destination_id": "EXIT",
+            "name": "出口",
+            "unlocked": false
+          }
+        ],
+        "minigames": {
+          "circuits": [],
+          "sequences": [],
+          "circuit": null,
+          "sequence": null
+        },
+        "statistics": {
+          "started_at": "2026-10-23T15:03:15.209957Z",
+          "finished_at": null,
+          "clues_found": 2,
+          "clues_total": 2,
+          "puzzles_solved": 0,
+          "puzzles_total": 2,
+          "hint_count": 2,
+          "mistake_count": 0,
+          "hidden_found": 0,
+          "hidden_total": 0,
+          "current_hint_level": 1
+        },
+        "settlement": null,
+        "status": "playing",
+        "revision": 15,
+        "generation": "04d87790-eac0-446d-b50a-e8e970a3814e",
+        "save": null,
+        "flags": {},
+        "level_id": "7140a39c284e4d04a14c103f2757aff5"
+      },
+      "gameplay_facts_unchanged": true,
+      "allowed_metadata_changes": {
+        "revision_before": 14,
+        "revision_after": 15,
+        "hint_count_before": 1,
+        "hint_count_after": 2,
+        "current_hint_level_before": 1,
+        "current_hint_level_after": 1,
+        "rule": "Successful generated-mode model hint increments hint_count/revision once; existing generated current_hint_level projection remains unchanged. Failure does not count as a delivered hint."
+      },
+      "raw_provider_success_alone_is_not_delivery": true
+    }
+  ],
+  "attempted_case_ids": [
+    "G2",
+    "G3",
+    "A1",
+    "A2"
+  ],
+  "sum_reserved_upper_cny": 0.389912,
+  "maximum_reserved_upper_cny": 0.5,
+  "stopped_reason": null,
+  "automatic_retries": 0,
+  "evaluation_invoked": false,
+  "historical_G1_is_new_real_generation": false,
+  "historical_G1_role": "Offline replay fixture from exact already-real-generated capture; companion stage independent of current G2/G3 results.",
+  "game_database": "TEMP only; removed after run",
+  "source_after": {
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/companion.py": "5fd0dbfa40689277b70f92f03168da3fae8229be8a5510ee020dbfb1523ac940",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/hints.py": "b6d3773d1066dd30d91691b60b2de89f150ec55ffb7ab9560cfd8e943ecbecb3",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "1c4f5c170f1bd1d303899c2ccf6d3185c258db214f47fff6f0d1e4b442eff85d",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "0e3ad7b1a93d9af43bea17f35ceeda76c1845b6d1fe138c9bd071fbf1a177be8",
+    "backend/app/ai/types.py": "9e7d1dacf68f1f42970885fff9a4b0f2fcce46baa29a7fa3fb78c42f3354a830",
+    "backend/app/ai/v5.py": "1fcf31cab2cf1667c8e76011d7d1b7821832e8abc277620f353ec8c6be5d6fed",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "70d7475cddb3f63a4334df8c8268f8d07af997540209173dadb90201f07807b8",
+    "backend/app/api/v5.py": "430a9df195e0c01787b7c5bd5b09af634eb5417ca15774437890b447747a6740",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+    "backend/app/domain/graybox_models.py": "ea21b1d81f09a4178fb3ec40cf32ae98960b8607b3589b247eb956bc72cb1b5a",
+    "backend/app/domain/graybox_rules.py": "2d6598034c30b8d50d01008ae8d0ed0843e42c2e4a84d46d80d737d0b97e655b",
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/mini_rules.py": "9104576bbb47c20d6f230c66a66d83c5e7835fd056dfc735e8a1f00876f1b49b",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/domain/save_models.py": "2dc073a8f8e94721d04ff39157c5e1c4b51ed8bc6f5e092e6ba2fa839cd03d8b",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/main.py": "f17f5de8a9921fbfa07997255279c2e109c1e9eaf0a053010233f851f623a696",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "6d7c98627f5219ad678815f0750abeb202b290adac769004059c77c433d8cdce",
+    "backend/app/storage/saves.py": "cbee6f356a6271a3d41ea365fef918c3c1678d24b9c9bf49dcc59e752d59af84",
+    "backend/app/storage/sqlite.py": "cb1f946f6377cb92a6776ec00513b4470be262ad59a907e3f17c1972c027994a",
+    "backend/app/storage/v5.py": "eb58009dbfd715d8eff4e28b2db3ea346ac11a3b2d822f80838445b849b70fba",
+    "backend/requirements.in": "3b735ecbb432e3367e8ab0468531f67019901d5d505957562fb8244f351d5317",
+    "backend/requirements.lock.txt": "31084ea7caf51d51e32ae5437d97aa69460b8bf9065f7a6bd8bf503df367ca3e",
+    "evidence/upgrade/v5.0/real-samples-round2/A1-exact-payload.json": "3590994aaf6a1480433dfcfaad887826eb9f282f2d11000a4a4976a11eb7e28d",
+    "evidence/upgrade/v5.0/real-samples-round2/companion-actual-stage.json": "52a86785516d2c14a5df96996cdf28c4a13b6e05fe41a9d7287aff8357db579b",
+    "evidence/upgrade/v5.0/real-samples-round2/G1-api-result.json": "748c8bcf0fd938d4f0d1be09ecdd0a45960f4b60f0e6d088615ddfaec205f4bd",
+    "evidence/upgrade/v5.0/real-samples-round2/G1-provider-result.json": "b7a2139acbe4bcc95e37320b6cd7dcf8606f21358cd0c1606530f46581725a29",
+    "evidence/upgrade/v5.0/real-samples-round3/run.py": "82daf8a6bf0d164997df61b50ffc92bab44a93a95e07a2e36d59d5e0fb5ebcdb",
+    "frontend/src/assets/generated-catalog.json": "c702e73f0c8b234af95564b321652979ebd806a0093f008042e9c2a3fc9b80b8"
+  }
+}

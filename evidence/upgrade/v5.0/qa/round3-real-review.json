@@ -1,0 +1,431 @@
+{
+  "kind": "independent_round3_actual_terminal_read_review",
+  "utc": "2026-10-23T15:08:35.436706+00:00",
+  "actual_review_command": "C:/Users/liyh/.conda/envs/1/python.exe -B -X utf8 - (inline source/hash/payload/fee/schema/guard/pure-domain diagnostic; no provider or DB)",
+  "review_exit_code": 0,
+  "original_actual_execute_exit_code": 1,
+  "source_count": 45,
+  "source_before": {
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/companion.py": "5fd0dbfa40689277b70f92f03168da3fae8229be8a5510ee020dbfb1523ac940",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/hints.py": "b6d3773d1066dd30d91691b60b2de89f150ec55ffb7ab9560cfd8e943ecbecb3",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "1c4f5c170f1bd1d303899c2ccf6d3185c258db214f47fff6f0d1e4b442eff85d",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "0e3ad7b1a93d9af43bea17f35ceeda76c1845b6d1fe138c9bd071fbf1a177be8",
+    "backend/app/ai/types.py": "9e7d1dacf68f1f42970885fff9a4b0f2fcce46baa29a7fa3fb78c42f3354a830",
+    "backend/app/ai/v5.py": "1fcf31cab2cf1667c8e76011d7d1b7821832e8abc277620f353ec8c6be5d6fed",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "70d7475cddb3f63a4334df8c8268f8d07af997540209173dadb90201f07807b8",
+    "backend/app/api/v5.py": "430a9df195e0c01787b7c5bd5b09af634eb5417ca15774437890b447747a6740",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+    "backend/app/domain/graybox_models.py": "ea21b1d81f09a4178fb3ec40cf32ae98960b8607b3589b247eb956bc72cb1b5a",
+    "backend/app/domain/graybox_rules.py": "2d6598034c30b8d50d01008ae8d0ed0843e42c2e4a84d46d80d737d0b97e655b",
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/mini_rules.py": "9104576bbb47c20d6f230c66a66d83c5e7835fd056dfc735e8a1f00876f1b49b",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/domain/save_models.py": "2dc073a8f8e94721d04ff39157c5e1c4b51ed8bc6f5e092e6ba2fa839cd03d8b",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/main.py": "f17f5de8a9921fbfa07997255279c2e109c1e9eaf0a053010233f851f623a696",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "6d7c98627f5219ad678815f0750abeb202b290adac769004059c77c433d8cdce",
+    "backend/app/storage/saves.py": "cbee6f356a6271a3d41ea365fef918c3c1678d24b9c9bf49dcc59e752d59af84",
+    "backend/app/storage/sqlite.py": "cb1f946f6377cb92a6776ec00513b4470be262ad59a907e3f17c1972c027994a",
+    "backend/app/storage/v5.py": "eb58009dbfd715d8eff4e28b2db3ea346ac11a3b2d822f80838445b849b70fba",
+    "backend/requirements.in": "3b735ecbb432e3367e8ab0468531f67019901d5d505957562fb8244f351d5317",
+    "backend/requirements.lock.txt": "31084ea7caf51d51e32ae5437d97aa69460b8bf9065f7a6bd8bf503df367ca3e",
+    "evidence/upgrade/v5.0/real-samples-round2/A1-exact-payload.json": "3590994aaf6a1480433dfcfaad887826eb9f282f2d11000a4a4976a11eb7e28d",
+    "evidence/upgrade/v5.0/real-samples-round2/companion-actual-stage.json": "52a86785516d2c14a5df96996cdf28c4a13b6e05fe41a9d7287aff8357db579b",
+    "evidence/upgrade/v5.0/real-samples-round2/G1-api-result.json": "748c8bcf0fd938d4f0d1be09ecdd0a45960f4b60f0e6d088615ddfaec205f4bd",
+    "evidence/upgrade/v5.0/real-samples-round2/G1-provider-result.json": "b7a2139acbe4bcc95e37320b6cd7dcf8606f21358cd0c1606530f46581725a29",
+    "evidence/upgrade/v5.0/real-samples-round3/run.py": "82daf8a6bf0d164997df61b50ffc92bab44a93a95e07a2e36d59d5e0fb5ebcdb",
+    "frontend/src/assets/generated-catalog.json": "c702e73f0c8b234af95564b321652979ebd806a0093f008042e9c2a3fc9b80b8"
+  },
+  "source_after": {
+    "backend/app/__init__.py": "01fedc22f12a680534e37cb3c0ae5a89deb7af5a30514170ec7b7a193a7a121c",
+    "backend/app/ai/__init__.py": "867257b272ac9059139e161eba08271cb0a1e57aa2c86c9cfc1bd61b07088347",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/ai/companion.py": "5fd0dbfa40689277b70f92f03168da3fae8229be8a5510ee020dbfb1523ac940",
+    "backend/app/ai/context.py": "147896a856c68bae3dfcd4023a4a158e23be2f38608ff93015d011a6ab39811b",
+    "backend/app/ai/hints.py": "b6d3773d1066dd30d91691b60b2de89f150ec55ffb7ab9560cfd8e943ecbecb3",
+    "backend/app/ai/mock.py": "dba5c34d92678392201d777cf61720dec12b1b296f7b55701eb4519a1deba651",
+    "backend/app/ai/provider.py": "1c4f5c170f1bd1d303899c2ccf6d3185c258db214f47fff6f0d1e4b442eff85d",
+    "backend/app/ai/provider_check.py": "59c50b35c070c9f8c4549a3ef0ae65088c93d8df3a9efce2a5f8f232d9d0c9c9",
+    "backend/app/ai/provider_probe.py": "f46d3692a842579893b65aa70472951ee8c6a48a13baa4e43fcc07c6a03ec4aa",
+    "backend/app/ai/runtime.py": "0e3ad7b1a93d9af43bea17f35ceeda76c1845b6d1fe138c9bd071fbf1a177be8",
+    "backend/app/ai/types.py": "9e7d1dacf68f1f42970885fff9a4b0f2fcce46baa29a7fa3fb78c42f3354a830",
+    "backend/app/ai/v5.py": "1fcf31cab2cf1667c8e76011d7d1b7821832e8abc277620f353ec8c6be5d6fed",
+    "backend/app/api/__init__.py": "0ad33563116ca68c29af75817a4e77e51ced58024511f3c2449947e398e1f56c",
+    "backend/app/api/routes.py": "70d7475cddb3f63a4334df8c8268f8d07af997540209173dadb90201f07807b8",
+    "backend/app/api/v5.py": "430a9df195e0c01787b7c5bd5b09af634eb5417ca15774437890b447747a6740",
+    "backend/app/domain/__init__.py": "24115820cf30a540047437687b1f06097998a1660ef093c87cb131fd77586a32",
+    "backend/app/domain/circuit.py": "19cd99e728adf8def63485135f32e8830498970b1dee9fa8a4a5ffb79d130028",
+    "backend/app/domain/device_flow.py": "f237c8913dd7a3488feac3f309e8c0473d64d2f73576ed91808a9cb60f886557",
+    "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+    "backend/app/domain/graybox_models.py": "ea21b1d81f09a4178fb3ec40cf32ae98960b8607b3589b247eb956bc72cb1b5a",
+    "backend/app/domain/graybox_rules.py": "2d6598034c30b8d50d01008ae8d0ed0843e42c2e4a84d46d80d737d0b97e655b",
+    "backend/app/domain/mini_models.py": "89b8088cf2d5a9e647e04c74a1de803ca3571f12f33056b7f3b0c91cc077d4e1",
+    "backend/app/domain/mini_rules.py": "9104576bbb47c20d6f230c66a66d83c5e7835fd056dfc735e8a1f00876f1b49b",
+    "backend/app/domain/models.py": "3818da38a6863099173605485afc5163c68288be9954135df01ec44183119ea1",
+    "backend/app/domain/puzzle_models.py": "e4b6a2287496d5bb3e163a3068ca53bc04d7ca967f16bbb48d8d7bd45dbb40b2",
+    "backend/app/domain/puzzle_rules.py": "281cf6d67634c5bb134d68f698d586dd9aa4e2fe0f3fa52ce4237d3063e7c150",
+    "backend/app/domain/rules.py": "e0331d3519884654997da3683cde4bdbc5ca4af3afa8621904b349539515b40e",
+    "backend/app/domain/save_models.py": "2dc073a8f8e94721d04ff39157c5e1c4b51ed8bc6f5e092e6ba2fa839cd03d8b",
+    "backend/app/domain/upgrade_models.py": "74e46f7c989125ca1f24927be9ba678cf65587fe22eb873098f55a57cbf885fb",
+    "backend/app/domain/upgrade_rules.py": "242fe7c7e577018e79bde9ddbc19e68e88325890cc9f1fd641ebfbc226e9ef83",
+    "backend/app/main.py": "f17f5de8a9921fbfa07997255279c2e109c1e9eaf0a053010233f851f623a696",
+    "backend/app/storage/__init__.py": "70018da94845e7c5805ae307daf7c8f38a9bef919e725f49da52c5cedb08ef4d",
+    "backend/app/storage/ai.py": "6d7c98627f5219ad678815f0750abeb202b290adac769004059c77c433d8cdce",
+    "backend/app/storage/saves.py": "cbee6f356a6271a3d41ea365fef918c3c1678d24b9c9bf49dcc59e752d59af84",
+    "backend/app/storage/sqlite.py": "cb1f946f6377cb92a6776ec00513b4470be262ad59a907e3f17c1972c027994a",
+    "backend/app/storage/v5.py": "eb58009dbfd715d8eff4e28b2db3ea346ac11a3b2d822f80838445b849b70fba",
+    "backend/requirements.in": "3b735ecbb432e3367e8ab0468531f67019901d5d505957562fb8244f351d5317",
+    "backend/requirements.lock.txt": "31084ea7caf51d51e32ae5437d97aa69460b8bf9065f7a6bd8bf503df367ca3e",
+    "evidence/upgrade/v5.0/real-samples-round2/A1-exact-payload.json": "3590994aaf6a1480433dfcfaad887826eb9f282f2d11000a4a4976a11eb7e28d",
+    "evidence/upgrade/v5.0/real-samples-round2/companion-actual-stage.json": "52a86785516d2c14a5df96996cdf28c4a13b6e05fe41a9d7287aff8357db579b",
+    "evidence/upgrade/v5.0/real-samples-round2/G1-api-result.json": "748c8bcf0fd938d4f0d1be09ecdd0a45960f4b60f0e6d088615ddfaec205f4bd",
+    "evidence/upgrade/v5.0/real-samples-round2/G1-provider-result.json": "b7a2139acbe4bcc95e37320b6cd7dcf8606f21358cd0c1606530f46581725a29",
+    "evidence/upgrade/v5.0/real-samples-round3/run.py": "82daf8a6bf0d164997df61b50ffc92bab44a93a95e07a2e36d59d5e0fb5ebcdb",
+    "frontend/src/assets/generated-catalog.json": "c702e73f0c8b234af95564b321652979ebd806a0093f008042e9c2a3fc9b80b8"
+  },
+  "source_unchanged": true,
+  "source_matches_preview_and_actual_execute": true,
+  "product403_unchanged": true,
+  "old_round2_and_preflight_artifacts_hashes_unchanged": true,
+  "actual_call_ids": [
+    "G2",
+    "G3",
+    "A1",
+    "A2"
+  ],
+  "new_generation_admissions": 0,
+  "historical_G1_new_generation": false,
+  "generation_diagnosis": [
+    {
+      "case_id": "G2",
+      "draft_schema_valid": true,
+      "actual_first_compile_rejection": "INVALID_CODE",
+      "observed_static_violations": [
+        {
+          "category": "INVALID_CODE",
+          "puzzle_id": "puzzle_checkin",
+          "reason": "Code result includes nondigit material"
+        },
+        {
+          "category": "INSUFFICIENT_FACTS",
+          "puzzle_id": "puzzle_panel",
+          "reason": "Index recipe has no reading positions"
+        }
+      ],
+      "recipe_shapes": [
+        {
+          "puzzle_id": "puzzle_checkin",
+          "mechanism": "code",
+          "recipe": "concat",
+          "derive": "INVALID_CODE",
+          "selected_clue_ids": [
+            "clue_schedule",
+            "clue_device_tags"
+          ],
+          "tokens": 8,
+          "indices": 0,
+          "map_entries": 0
+        },
+        {
+          "puzzle_id": "puzzle_panel",
+          "mechanism": "sequence",
+          "recipe": "index",
+          "derive": "INSUFFICIENT_FACTS",
+          "selected_clue_ids": [
+            "clue_schedule",
+            "clue_device_tags"
+          ],
+          "tokens": 8,
+          "indices": 0,
+          "map_entries": 0
+        }
+      ],
+      "actual_new_admitted_level": false,
+      "edited_draft_attempts": 0
+    },
+    {
+      "case_id": "G3",
+      "draft_schema_valid": true,
+      "actual_first_compile_rejection": "PUZZLE_COUNT",
+      "observed_static_violations": [
+        {
+          "category": "PUZZLE_COUNT",
+          "actual": 5,
+          "required": 6
+        },
+        {
+          "category": "CLUE_REFERENCE",
+          "clue_id": "CLUE_MARK",
+          "clue_object_count": 0,
+          "required": 1
+        },
+        {
+          "category": "INSUFFICIENT_FACTS",
+          "puzzle_id": "PUZ_LAB2_SEQ",
+          "reason": "Map recipe has no source tokens"
+        },
+        {
+          "category": "INSUFFICIENT_FACTS",
+          "puzzle_id": "PUZ_LAB3_CODE",
+          "reason": "Index recipe has no reading positions"
+        },
+        {
+          "category": "COMBINATION_COUNT",
+          "observed": 1,
+          "required": 2
+        }
+      ],
+      "recipe_shapes": [
+        {
+          "puzzle_id": "PUZ_LAB1_CODE",
+          "mechanism": "code",
+          "recipe": "concat",
+          "derive": "VALID",
+          "selected_clue_ids": [
+            "CLUE_BATCH"
+          ],
+          "tokens": 3,
+          "indices": 0,
+          "map_entries": 0
+        },
+        {
+          "puzzle_id": "PUZ_LAB2_SEQ",
+          "mechanism": "sequence",
+          "recipe": "symbol_map",
+          "derive": "INSUFFICIENT_FACTS",
+          "selected_clue_ids": [
+            "CLUE_DEVICE"
+          ],
+          "tokens": 0,
+          "indices": 0,
+          "map_entries": 4
+        },
+        {
+          "puzzle_id": "PUZ_LAB3_CODE",
+          "mechanism": "code",
+          "recipe": "index",
+          "derive": "INSUFFICIENT_FACTS",
+          "selected_clue_ids": [
+            "CLUE_MARK",
+            "CLUE_BATCH"
+          ],
+          "tokens": 7,
+          "indices": 0,
+          "map_entries": 0
+        }
+      ],
+      "actual_new_admitted_level": false,
+      "edited_draft_attempts": 0
+    }
+  ],
+  "instruction_assessment": [
+    {
+      "constraint": "Numeric code, exact requested puzzle count, nonempty map source plus coverage, hard two distinct multi-clue puzzles",
+      "already_explicit": true,
+      "observed_noncompliance": "G2 nonnumeric code; G3 count5/6, map without source, hard only1 multi-clue puzzle."
+    },
+    {
+      "constraint": "Index recipe needs combined nonempty reading positions",
+      "already_explicit": "Recipe describes reading merged positions, but does not state combined indices must be nonempty as explicitly as the symbol_map source rule.",
+      "observed_noncompliance": "Both drafts select index recipes with zero indices; compiler refuses correctly."
+    },
+    {
+      "constraint": "Each defined clue has exactly one discoverable clue object",
+      "already_explicit": "Kind/ref fields and availability are described; explicit one-to-one placement cardinality is not written in the prompt.",
+      "observed_noncompliance": "G3 CLUE_MARK is defined and required but unplaced."
+    }
+  ],
+  "companion_actual_review": [
+    {
+      "case_id": "A1",
+      "actual_API_status": 200,
+      "actual_deepseek_model_calls": 1,
+      "API_Storeguard_delivered": true,
+      "actual_reply_sha256": "747599ed11090151dafd45e35a947e621390523f4cd33aec184f041dfb226540",
+      "refs": [
+        "C_borrow",
+        "C_order"
+      ],
+      "public_ref_support": "Observed puzzle index rule and both discovered materials support the local relation.",
+      "full_answer_absent": true,
+      "internal_ID_prose_absent": true,
+      "guard_recheck": "VALID",
+      "facts_preserved": true,
+      "revision_delta": 1,
+      "hint_count_delta": 1,
+      "current_hint_level_before_after": [
+        1,
+        1
+      ],
+      "bounded_history_kind_counts": {
+        "action": 3
+      },
+      "actual_new_A1_dialogue_preserved": false,
+      "terminal_tip_assessment": "Unobserved terminal is present in current public catalog and inspection is legal, but the appended tip is off-topic/repeated for this relation question.",
+      "followup_assessment": "Correct local relation; phrasing about order partly repeats the description."
+    },
+    {
+      "case_id": "A2",
+      "actual_API_status": 200,
+      "actual_deepseek_model_calls": 1,
+      "API_Storeguard_delivered": true,
+      "actual_reply_sha256": "fe03897b02e135ec5fbd47d71660b6aa4bba273d42af97c0f5fb6872057cbe8a",
+      "refs": [
+        "C_borrow",
+        "C_order"
+      ],
+      "public_ref_support": "Observed puzzle index rule and both discovered materials support the local relation.",
+      "full_answer_absent": true,
+      "internal_ID_prose_absent": true,
+      "guard_recheck": "VALID",
+      "facts_preserved": true,
+      "revision_delta": 1,
+      "hint_count_delta": 1,
+      "current_hint_level_before_after": [
+        1,
+        1
+      ],
+      "bounded_history_kind_counts": {
+        "dialogue": 1,
+        "action": 1
+      },
+      "actual_new_A1_dialogue_preserved": true,
+      "terminal_tip_assessment": "Unobserved terminal is present in current public catalog and inspection is legal, but the appended tip is off-topic/repeated for this relation question.",
+      "followup_assessment": "Adds explanation that positions address entries in the source sequence, rather than generating an independent input; modest deepening, still substantially restates the rule."
+    }
+  ],
+  "companion_quality_conclusion": "Both actual replies delivered and locally grounded with valid refs, no complete solution/internal-ID prose; A2 preserves actual A1 and modestly explains why. Focus/depth remain limited; repeated unrelated terminal tip is unnecessary. Not an all-quality PASS.",
+  "payload_usage_checks": [
+    {
+      "case_id": "G2",
+      "payload_sha256": "bbb32bd6207f20528ce38ee9339bd971011683686d680c25c018f80ab1aa3925",
+      "payload_bytes": 9893,
+      "reserved_upper_units": 143528000,
+      "actual_usage": {
+        "prompt_tokens": 2445,
+        "completion_tokens": 710,
+        "total_tokens": 3155,
+        "prompt_cache_hit_tokens": 128
+      },
+      "charged_upper_units": 10319120,
+      "model": "deepseek-flash",
+      "secret_detected": false
+    },
+    {
+      "case_id": "G3",
+      "payload_sha256": "7edd8f6b36242839d036e7c9c24dd3ee26119aa4c61f8707bc83a3519fa7e379",
+      "payload_bytes": 10697,
+      "reserved_upper_units": 149960000,
+      "actual_usage": {
+        "prompt_tokens": 2647,
+        "completion_tokens": 1306,
+        "total_tokens": 3953,
+        "prompt_cache_hit_tokens": 512
+      },
+      "charged_upper_units": 14738480,
+      "model": "deepseek-flash",
+      "secret_detected": false
+    },
+    {
+      "case_id": "A1",
+      "payload_sha256": "2c5e99360572753c9a01dc6c1286a4eb488246bfe20ad0a6a82653ae61656f05",
+      "payload_bytes": 3188,
+      "reserved_upper_units": 46688000,
+      "actual_usage": {
+        "prompt_tokens": 679,
+        "completion_tokens": 84,
+        "total_tokens": 763,
+        "prompt_cache_hit_tokens": 0
+      },
+      "charged_upper_units": 2030000,
+      "model": "deepseek-flash",
+      "secret_detected": false
+    },
+    {
+      "case_id": "A2",
+      "payload_sha256": "bfc4dca22284f8691851cac21be0fd95f2fd1e4135d71caddf5e129fd7c90c9b",
+      "payload_bytes": 3569,
+      "reserved_upper_units": 49736000,
+      "actual_usage": {
+        "prompt_tokens": 759,
+        "completion_tokens": 100,
+        "total_tokens": 859,
+        "prompt_cache_hit_tokens": 0
+      },
+      "charged_upper_units": 2318000,
+      "model": "deepseek-flash",
+      "secret_detected": false
+    }
+  ],
+  "reserved_upper_cny": 0.389912,
+  "actual_usage_upper_increment_cny": 0.0294056,
+  "ledger_call_increment": 4,
+  "unknown_identity_unchanged": true,
+  "unknown_before_after": [
+    3,
+    3
+  ],
+  "pending_after": 0,
+  "frozen_after": false,
+  "actual_approval_bound_to_preview": true,
+  "secret_pattern_hits_without_values": [],
+  "qa_actual_key_reads": 0,
+  "canonical_ledger_opened": false,
+  "qa_database_provider_network_paid_calls": 0,
+  "API_or_suite_build_browser_eval_repeated": false,
+  "artifact_sha256": {
+    "evidence/upgrade/v5.0/real-samples-round3/A1-api-result.json": "144b40a24dd838be9f0649a9505e5bf1349718ea92fb926e74648cefa9420e6e",
+    "evidence/upgrade/v5.0/real-samples-round3/A1-exact-payload.json": "1a1a03c32e7db007e5287f5c545a437df73b93b418a50c90985a2d649f82ed49",
+    "evidence/upgrade/v5.0/real-samples-round3/A1-provider-result.json": "f3ee168a03d98dfc1180c4914930e77dbe6bdc52a974cde6131a7a42e9a2cfe6",
+    "evidence/upgrade/v5.0/real-samples-round3/A2-api-result.json": "3ad5c23994840a874b2d2aaf39b6c871a132464cda141651a0988ab7c98b9db1",
+    "evidence/upgrade/v5.0/real-samples-round3/A2-exact-payload.json": "d66871382241ba88b07b4e425caa374e514c93715e084ded41f45f7d96215415",
+    "evidence/upgrade/v5.0/real-samples-round3/A2-provider-result.json": "896fcd912cf903ed5394a4546c88d06bb5bf961b6467954ffb0418d622ad44fc",
+    "evidence/upgrade/v5.0/real-samples-round3/authorization-binding.json": "9ee4aa13f23c053aa56f435d6e02eff5c6cab2ce952bb211a96efb045ef4538d",
+    "evidence/upgrade/v5.0/real-samples-round3/execute-started.json": "d16d933682e2842a8a1856b5f9319ffee10c9288e7ae4e846f789274d24ef637",
+    "evidence/upgrade/v5.0/real-samples-round3/G2-api-result.json": "cb9fde1c9bd960ef883ee0f06ffd0b5fe40de93c2186d9c9fa62502d452b0152",
+    "evidence/upgrade/v5.0/real-samples-round3/G2-exact-payload.json": "8cc9201968cf44e5e1489733e5db7eaf2f30e65fc5c96a73382590b9a3127cfb",
+    "evidence/upgrade/v5.0/real-samples-round3/G2-provider-result.json": "163aebfa1242164d683d61080158fc5e1bf4fef9a2a5e83be0a47e9bbdc74eab",
+    "evidence/upgrade/v5.0/real-samples-round3/G3-api-result.json": "d5d39849b0ad73baceccbcecea9d4f81ce204e1832bd8a1581142059e217d561",
+    "evidence/upgrade/v5.0/real-samples-round3/G3-exact-payload.json": "c75d767048e4528abdfd9130c41ba30ec04cd2f62b652c7b466464182d0d2aa2",
+    "evidence/upgrade/v5.0/real-samples-round3/G3-provider-result.json": "13dbb140ea299c05cce8629c23ebfe1b4fdb39b927fec97fca4d0efd126f300d",
+    "evidence/upgrade/v5.0/real-samples-round3/historical-G1-stage-reconstruction.json": "d84facd84a1c5e54582a68459249038a45109b84e95a996a7a4597d239e28c43",
+    "evidence/upgrade/v5.0/real-samples-round3/ledger-after.json": "fe69683fa01ff7ef1cc850642adc2fc010966ad999cb56f4f05563e62f75d527",
+    "evidence/upgrade/v5.0/real-samples-round3/ledger-before.json": "876a56ab543148ad78565adabf42b03ba8834e0f6c3108ec05bb7f6199737242",
+    "evidence/upgrade/v5.0/real-samples-round3/main-execution-review.json": "cd2a55068690dc47d06d8ee7c0c568cc5aeae03cfb4775b828b5baf9e29acc16",
+    "evidence/upgrade/v5.0/real-samples-round3/offline-gate-check-failure.json": "da4311b329711bb2bfe63c373d4a20a3eb0e83804756d05dfcad291cb777dbe0",
+    "evidence/upgrade/v5.0/real-samples-round3/offline-gate-check.json": "e205b5c8ded748600d8a790c57bdcd5cc3c37919e3dd393f4e0e74c75455cdb4",
+    "evidence/upgrade/v5.0/real-samples-round3/offline-preview-v1.json": "3d5e33b1abdfff67665e9d7b06d8095f337cbd4fca1b5712a61460bd673ee4cf",
+    "evidence/upgrade/v5.0/real-samples-round3/preparation-report.json": "006ad50a78c280c195fb7dcb7787522dd54312e258c5b368a6db386c18ec150f",
+    "evidence/upgrade/v5.0/real-samples-round3/result.json": "73a03e648faea1ffefd814c7b58eca3c7e1b1009cd7f8c9e7be284be9b6e06bc",
+    "evidence/upgrade/v5.0/real-samples-round3/source-stop.json": "a7306a561a7091203f1a806b03f62bd2f2235de64350a058226950c498a62e75",
+    "evidence/upgrade/v5.0/real-samples-round3/user-authorization.json": "66846cbfd0d89eb777e6252e49481d077d3abd757001bb2df4ede45b9cd9d641",
+    "evidence/upgrade/v5.0/real-samples-round3/dispatch-journal.jsonl": "00e174e4ba2d4831be4a947455bb7a03d90a7907c17f08e4e3a0d0f912282def"
+  },
+  "limits": [
+    "Main execution exit1 retained because both new generations rejected; partial companion success does not make the round green.",
+    "Historical G1 is an existing real definition setup, not a third-round generation success.",
+    "Finite manual review of one real two-turn companion exchange; no universal style, pedagogy, generation/security/human acceptance claim.",
+    "G2/G3 original drafts never modified or repaired into success; first rejection and independent downstream defects are separated.",
+    "An initial shape-only diagnosis 0d823c exited1 when it assumed every clue had a placed object; later diagnosis established the actual missing CLUE_MARK placement. No raw/product was changed.",
+    "No Key was read: finite pattern scans and controller secret flags complement each other but do not constitute universal secret assurance.",
+    "No extra call or unused-slot reuse; this round is terminal."
+  ],
+  "source_stop": true,
+  "overall_release_accepted": false
+}

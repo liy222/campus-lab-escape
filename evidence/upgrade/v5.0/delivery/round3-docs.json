@@ -1,0 +1,43 @@
+{
+  "kind": "Main temporary delivery documentation ownership epoch after interrupted agents",
+  "document_date": "2026-10-24",
+  "utc": "2026-10-24T09:23:31.297045+00:00",
+  "files": [
+    "README.md",
+    "release/V5.md",
+    "PLAN.md",
+    "STATUS.md",
+    "DECISIONS.md",
+    "AGENTS.md",
+    "docs/v5-generation-reliability-proposal.md"
+  ],
+  "working_raw_sha256": {
+    "README.md": "7f85e6c53996b85305604090fa08a8b3f839caa8aa3ba131dad7cb43bb6d53e7",
+    "release/V5.md": "6db6f32cfadf67900892103383dd4e32a6eb9c6b8a8a51f6a3a8693b35a6cc5d",
+    "PLAN.md": "6dc8d12a6f8383b3584581cdb0d0e4874eb5b87a23b586df65699e926f7c0d82",
+    "STATUS.md": "0fc36557198c8a35a60d886357988f46fdb6a705ac1ea099992af2237bb4ba06",
+    "DECISIONS.md": "101c894c3f225c40dcd83bc68f62a30da46b9d05bd813778de0f194f1aae07eb",
+    "AGENTS.md": "ce58b0de3fa9be0938d3443f71363886abc26879daf7502045947f1cfbb7927b",
+    "docs/v5-generation-reliability-proposal.md": "a8bf9791aacc09767c777fc0e6dc6d139d50efc0ed4a555ae1b6a54802b2e58f"
+  },
+  "actual_command": "Read sealed terminal results; byte-preserving documentation edits; local-link/hash/current-source checks",
+  "actual_exit_code": 0,
+  "actual_calls_in_this_documentation_epoch": 0,
+  "new_tests_build_browser_evaluation": 0,
+  "third_round_actual_calls": 4,
+  "actual_third_round_executor_exit": 1,
+  "independent_result_exit": 0,
+  "evidence_paths": [
+    "evidence/upgrade/v5.0/qa/round3-real-review.json",
+    "evidence/upgrade/v5.0/qa/round3-real-review-seal.json",
+    "review/findings/v5-round3-real.md",
+    "evidence/upgrade/v5.0/round3-main-acceptance.json"
+  ],
+  "links_checked": 72,
+  "limitations": [
+    "Historical results are not rewritten; three generation rounds remain separate source epochs.",
+    "No claim of independent QA of the new design draft; no product implementation.",
+    "No new paid allowance or automatic reuse of old cases.",
+    "Old databases/environments and original untracked files remain outside selected paths."
+  ]
+}

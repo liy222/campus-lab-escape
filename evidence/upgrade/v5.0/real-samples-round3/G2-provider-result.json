@@ -1,0 +1,18 @@
+{
+  "case_id": "G2",
+  "fictional_test_content": true,
+  "content_redacted": "{\"title\":\"天文社资料交接核查\",\"story\":\"天文社结束观测后，需要把准备室和资料室的记录核对清楚。请依次完成各房间的谜题，再进入下一间。\",\"rooms\":[{\"room_id\":\"room_prep\",\"name\":\"观测准备室\",\"description\":\"桌面上摊着当晚的观测记录和交接便签。\",\"background_id\":\"neutral_lab\",\"objects\":[{\"object_id\":\"obj_prep_note\",\"name\":\"观测排班表\",\"description\":\"记录各时段的观测序号。\",\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"clue_schedule\",\"slot\":0},{\"object_id\":\"obj_prep_tag\",\"name\":\"设备标签\",\"description\":\"标出几台设备的短代号。\",\"art_id\":\"note\",\"kind\":\"clue\",\"clue_id\":\"clue_device_tags\",\"slot\":1},{\"object_id\":\"obj_prep_key\",\"name\":\"资料室钥匙\",\"description\":\"可重复使用的资料室交接钥匙。\",\"art_id\":\"key\",\"kind\":\"item\",\"item_id\":\"item_archive_key\",\"slot\":2},{\"object_id\":\"obj_prep_puzzle\",\"name\":\"交接登记终端\",\"description\":\"按排班表与设备标签核对登记码。\",\"art_id\":\"terminal\",\"kind\":\"puzzle\",\"puzzle_id\":\"puzzle_checkin\",\"slot\":3}]},{\"room_id\":\"room_archive\",\"name\":\"资料室\",\"description\":\"档案柜与收尾面板等待交接检查。\",\"background_id\":\"neutral_archive\",\"objects\":[{\"object_id\":\"obj_arch_shelf\",\"name\":\"资料柜\",\"description\":\"存放观测原始记录，可用钥匙打开核对。\",\"art_id\":\"cabinet\",\"kind\":\"puzzle\",\"puzzle_id\":\"puzzle_cabinet\",\"slot\":0},{\"object_id\":\"obj_arch_panel\",\"name\":\"收尾检查面板\",\"description\":\"按设备代号重新排列四台设备的检查顺序。\",\"art_id\":\"panel\",\"kind\":\"puzzle\",\"puzzle_id\":\"puzzle_panel\",\"slot\":1},{\"object_id\":\"obj_arch_circuit\",\"name\":\"电源检查板\",\"description\":\"在模板上复核观测电源回路。\",\"art_id\":\"circuit\",\"kind\":\"puzzle\",\"puzzle_id\":\"puzzle_circuit\",\"slot\":2}]}],\"clues\":[{\"clue_id\":\"clue_schedule\",\"tokens\":[\"03\",\"12\",\"25\",\"40\"]},{\"clue_id\":\"clue_device_tags\",\"tokens\":[\"CAM\",\"TEL\",\"MNT\",\"PWR\"]}],\"puzzles\":[{\"puzzle_id\":\"puzzle_checkin\",\"room_id\":\"room_prep\",\"mechanism\":\"code\",\"prerequisite_ids\":[],\"clue_ids\":[\"clue_schedule\",\"clue_device_tags\"],\"recipe\":\"concat\"},{\"puzzle_id\":\"puzzle_cabinet\",\"room_id\":\"room_archive\",\"mechanism\":\"item\",\"prerequisite_ids\":[\"puzzle_checkin\"],\"required_item_id\":\"item_archive_key\"},{\"puzzle_id\":\"puzzle_panel\",\"room_id\":\"room_archive\",\"mechanism\":\"sequence\",\"prerequisite_ids\":[\"puzzle_cabinet\"],\"clue_ids\":[\"clue_schedule\",\"clue_device_tags\"],\"recipe\":\"index\"},{\"puzzle_id\":\"puzzle_circuit\",\"room_id\":\"room_archive\",\"mechanism\":\"circuit\",\"prerequisite_ids\":[\"puzzle_panel\"]}]}",
+  "content_raw_sha256": "0311451b6b00998cc77323d3e6dfb31784eb247667974f9259591dfab4000d7b",
+  "usage": {
+    "prompt_tokens": 2445,
+    "completion_tokens": 710,
+    "total_tokens": 3155,
+    "prompt_cache_hit_tokens": 128
+  },
+  "requested_model": "deepseek-flash",
+  "reported_model": "deepseek-flash",
+  "finish_reason": "stop",
+  "call_id": "5e1c4e5c182b4adbb9f07c699dfe0f56",
+  "cost_upper_cny": 0.01031912,
+  "secret_detected": false
+}

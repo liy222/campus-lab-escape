@@ -328,3 +328,11 @@ Independent QA preparation exists, formal product runs still0 at this checkpoint
 基线与远端9691e0f一致，403个产品/验证来源未变；旧源码、数据和原始证据继续封存。仅准备新的隔离验证执行器，拟用两次生成加两次伙伴调用，总计最多4次/0.50元，尚无本轮付费授权，新增模型调用0。G1原始真实定义及公开阶段在TEMP库中经正常规则/API重建，用于伙伴修复验证，不重复支付G1生成费用，也不宣称新的生成成功。
 
 Owner离线prepare已执行一次exit0：G2/G3载荷上界分别0.143528/0.149960元；A1精确公开上下文为0.046688元；A2占位预估0.049000元，真实A2需带入成功A1后重新检查。独立审查e850c6 exit0已封存，45项输入与403项来源保持一致，无阻断项；这只允许提交待审批提案，不能据此执行或宣称第三轮真实验收。原3条unknown与付费评价阻塞、未发布开发候选及真人/教师未确认限制保持。基线记录evidence/upgrade/v5.0/round3-baseline.json。
+
+### 2026-10-24 当前结果：伙伴有限交付，多房间仍未验收
+
+第三轮已实际消耗批准的4次：G2/G3拒绝，A1/A2真实API与Store交付；原整体exit1保持。G2首拒INVALID_CODE（字母设备资料拼入数字密码），其index缺位置；G3首拒PUZZLE_COUNT（5应6），另有资料未落位、映射无源/索引无位置及困难组合数不足。均未到可玩准入，不改稿后冒称原样本成功。伙伴关系有公开支持、无完整答案/内部ID复述，追问略有解释但仍偏重述，重复终端建议多余，不是全质量PASS。
+
+真实用量保守费用上界增量0.0294056元、预占合计0.389912元；历史unknown3身份不变、新unknown0/pending0/frozen=false，无重试/付费评价/剩余授权。A2实际携带本轮成功A1，合法预算裁剪后保留完整问答和1条动作，载荷上界0.049736元。谜题事实不变，各轮提示计数及revision加1。
+
+独立实际复核a67df3 exit0，review/findings/v5-round3-real.md和qa/round3-real-review.json/seal已封存。Main恢复只读核对和机械文档；403源码与45项输入、26项封存产物保持。此前Backend设计子任务触及用量限制，未写完整设计产物；Main接手形成docs/v5-generation-reliability-proposal.md草案，未实现或接受改变。无v5发布tag/main合并/部署，53source/9artifact有限评价及3项INSUFFICIENT_EVIDENCE保持，真人/教师确认仍未发生。
