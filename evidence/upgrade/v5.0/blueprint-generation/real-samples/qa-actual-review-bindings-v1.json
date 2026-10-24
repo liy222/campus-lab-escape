@@ -1,0 +1,91 @@
+{
+  "kind": "Independent terminal actual-source/authorization/usage-budget evidence review",
+  "utc": "2026-10-24T14:50:40.616021+00:00",
+  "exit_code": 0,
+  "source_count": 411,
+  "current_and_terminal_source_map_exact_match": true,
+  "source_bundle_sha256": "207b07f44f5070ae499f892c4ff2ca49c9cc89f8de3604571d0cc35bbad415b3",
+  "authorization_sha256": "f42b0073f1d71ecc3290d694b484aa706702c10c6aa8a35334f295e2cca73819",
+  "actual_approval_reference_matches_Main_supplied_user_reply": true,
+  "authorization_precedes_marker_and_first_dispatch": true,
+  "dispatch_count": 2,
+  "ordered_cases": [
+    "G2",
+    "G3"
+  ],
+  "journal_events": 4,
+  "distinct_provider_call_ids": 2,
+  "automatic_retries": 0,
+  "cases": [
+    {
+      "case_id": "G2",
+      "requested_model": "deepseek-flash",
+      "reported_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1410,
+        "completion_tokens": 581,
+        "total_tokens": 1991,
+        "prompt_cache_hit_tokens": 0
+      },
+      "finish_reason": "stop",
+      "upper_cost_units": 7468000,
+      "upper_cost_cny": 0.007468,
+      "payload_sha_matches_reviewed": true,
+      "provider_raw_content_hash_matches": true,
+      "definition_hash": "23c367279c3ba81c840cff7486b205fa8f5d1b9dc04acff40b6c8ed45e474837",
+      "witness_actions": 24
+    },
+    {
+      "case_id": "G3",
+      "requested_model": "deepseek-flash",
+      "reported_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 2661,
+        "completion_tokens": 1023,
+        "total_tokens": 3684,
+        "prompt_cache_hit_tokens": 128
+      },
+      "finish_reason": "stop",
+      "upper_cost_units": 13255120,
+      "upper_cost_cny": 0.01325512,
+      "payload_sha_matches_reviewed": true,
+      "provider_raw_content_hash_matches": true,
+      "definition_hash": "2c975d4576c86c52337be69c51cd64b0218c15f70a9bbb824d3d8f8569f3b4ff",
+      "witness_actions": 33
+    }
+  ],
+  "ledger_snapshot_before": {
+    "cap_units": 10000000000,
+    "frozen": false,
+    "charged_upper_units": 1072378880,
+    "calls": 142,
+    "unknown_calls": 3,
+    "pending_calls": 0,
+    "unknown_identity_sha256": "b7490c5f157e75f973533e518a1e245c1ea0a3818318065c9c7ddf5e5b59085e"
+  },
+  "ledger_snapshot_after": {
+    "cap_units": 10000000000,
+    "frozen": false,
+    "charged_upper_units": 1093102000,
+    "calls": 144,
+    "unknown_calls": 3,
+    "pending_calls": 0,
+    "unknown_identity_sha256": "b7490c5f157e75f973533e518a1e245c1ea0a3818318065c9c7ddf5e5b59085e"
+  },
+  "charged_upper_delta_units": 20723120,
+  "charged_upper_delta_cny": 0.02072312,
+  "reserved_payload_upper_cny": 0.259424,
+  "approved_maximum_cny": 0.4,
+  "historical_unknown_identity_unchanged": true,
+  "no_remaining_authorized_calls": true,
+  "old_QA63_preflight12_registry53_unchanged": true,
+  "scope": "Only saved terminal artifacts and local memory; no live ledger or provider access",
+  "key_config_or_canonical_ledger_access": false,
+  "database_or_HTTP_or_model_calls": 0,
+  "product_tests_build_UI_evaluator_repeated": false,
+  "limitations": [
+    "Usage-based conservative upper cost is not an external invoice.",
+    "Two actual samples under distinct family/size requests do not establish general reliability or narrative quality.",
+    "Caller authorization independently matched recorded file and Main-provided actual user reference; software file alone is not proof of human consent."
+  ]
+}

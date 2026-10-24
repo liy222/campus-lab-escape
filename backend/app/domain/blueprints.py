@@ -176,6 +176,7 @@ def content_schema(blueprint: Blueprint) -> dict:
 def request_manifest(blueprint: Blueprint) -> dict:
     """Public-to-generator outline, containing no answers or execution authority."""
     clue_objects = {obj.reference_id: obj.object_id for obj in blueprint.objects if obj.kind == 'clue'}
+    item_objects = {obj.reference_id: obj.object_id for obj in blueprint.objects if obj.kind == 'item'}
     return {
         'content_version': CONTENT_VERSION, 'blueprint_id': blueprint.blueprint_id,
         'family': blueprint.family, 'room_count': blueprint.room_count,
@@ -187,7 +188,10 @@ def request_manifest(blueprint: Blueprint) -> dict:
                                         if obj.kind == 'puzzle' and obj.reference_id == puzzle.puzzle_id),
                      'room_slot': puzzle.room_id, 'mechanism': puzzle.mechanism,
                      'recipe': puzzle.recipe if puzzle.clue_ids else None,
-                     'material_slots': [clue_objects[cid] for cid in puzzle.clue_ids]}
+                     'material_slots': [clue_objects[cid] for cid in puzzle.clue_ids],
+                     **({'item_use': {'item_object_slot': item_objects[puzzle.required_item_id],
+                                      'tool': 'use_item', 'consumed': False}}
+                        if puzzle.mechanism == 'item' else {})}
                     for puzzle in blueprint.puzzles],
         'parameter_meaning': {
             'position_v1': 'digits是四个单数字，devices是四个设备的排列；共享positions从一开始读取各自源序。',

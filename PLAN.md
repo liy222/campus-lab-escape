@@ -311,3 +311,7 @@ T7仍缺可靠的真实多房间生成；伙伴已有一个阶段两轮有限实
 2026-10-24 R4离线提案也已独立预检通过：绑定411输入的两份精确请求，G2为两房normal/position、G3为三房hard/mapping，各一次，保守预占上界0.110968/0.148456元。实际真实模型0；提案最多2次/0.40元须普通提交/推送完成后取得新的明确有限授权，未创建授权文件或执行标记。原测试结果、数据与未知费用门槛保持。见blueprint-generation/preflight-accepted.json与review/findings/v5-blueprint-real-preflight.md。
 
 2026-10-24选项1实现及离线预检提交f0977564e4145b6b6d3d9c967b07b8a7a68a006f已正常推送开发分支，远端与GitHub作者/提交者liy222核对一致。409候选、411预检输入与旧证据不变，新增真实调用0。下一步只等待精确G2/G3各一次、最多2次/0.40元的新有限批准；未批准前不执行，不自动重试，不发布。同步记录blueprint-generation/sync.json。
+
+### 2026-10-24 R4两例真实技术成功；道具输入窄修离线通过
+用户批准的2次/0.40元已按计划用完，G2两房normal/position和G3三房hard/mapping均准入并分别24/33次真实HTTP动作到EXIT。按usage保守上界增量0.02072312元，预占合计0.259424元，两者非供应商账单；旧3unknown身份不变/new0/pending0/frozenfalse，无重试或剩余调用授权。
+独立AI QA确认G3“资料袋/钥匙”叙述误导（OPEN）。已普通窄修模型输入：明确实际道具槽位与使用后保留，prompt要求同名且不虚构物品/放回。当前410来源仅新增上下文与定向测试，纯离线联合8+1通过，保留首次测试基线错误；没有重跑旧全套、构建、网页、规划、HTTP或付费。当前补充未真实复测，不能把旧两例标为新prompt质量通过。下一步仅文档、保密审查和正常liy222提交/推送；仍不发布、不合并main或新增功能。证据blueprint-generation/real-samples/qa-actual-review-final-v1.json、blueprint-item-context/accepted.json与已澄清的AI QA报告。

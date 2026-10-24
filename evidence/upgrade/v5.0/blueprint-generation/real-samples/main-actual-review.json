@@ -1,0 +1,99 @@
+{
+  "kind": "Main actual approved two-case execution terminal review",
+  "document_date": "2026-10-24",
+  "utc": "2026-10-24T14:48:18.589919+00:00",
+  "operator": "Main integration",
+  "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/blueprint-generation/real-samples/run.py --execute",
+  "start_tool_chunk": "8780f8",
+  "process_session": 66818,
+  "completion_tool_chunk": "41832a",
+  "actual_process_exit_code": 0,
+  "source_bound_files": 411,
+  "all_current_sources_and_result_map_match": true,
+  "actual_call_count": 2,
+  "automatic_retries": 0,
+  "reserved_upper_cny_sum": 0.259424,
+  "actual_usage_upper_units_increment": 20723120,
+  "actual_usage_upper_cny_increment": 0.02072312,
+  "not_supplier_invoice": true,
+  "historical_unknowns_unchanged": true,
+  "new_unknowns": 0,
+  "pending_calls_after": 0,
+  "frozen_after": false,
+  "cases": [
+    {
+      "case_id": "G2",
+      "room_count": 2,
+      "difficulty": "normal",
+      "controlled_host_selection": {
+        "blueprint_id": "position_v1-r2-normal",
+        "family": "position_v1",
+        "host_seed": 0,
+        "controlled_host_selection": true
+      },
+      "actual_model_calls": 1,
+      "status": "ready_and_replayed",
+      "witness_actions": 24,
+      "definition_hash": "23c367279c3ba81c840cff7486b205fa8f5d1b9dc04acff40b6c8ed45e474837",
+      "witness_sha256": "6edf662075eb718985790e9351a48802790edf68f6252c9880f32cd580d35d13",
+      "usage": {
+        "prompt_tokens": 1410,
+        "completion_tokens": 581,
+        "total_tokens": 1991,
+        "prompt_cache_hit_tokens": 0
+      },
+      "actual_usage_upper_cny": 0.007468,
+      "narrative_quality": "pending independent finite review; not all-quality PASS",
+      "real_API_save_restore_tested": false
+    },
+    {
+      "case_id": "G3",
+      "room_count": 3,
+      "difficulty": "hard",
+      "controlled_host_selection": {
+        "blueprint_id": "mapping_v1-r3-hard",
+        "family": "mapping_v1",
+        "host_seed": 1,
+        "controlled_host_selection": true
+      },
+      "actual_model_calls": 1,
+      "status": "ready_and_replayed",
+      "witness_actions": 33,
+      "definition_hash": "2c975d4576c86c52337be69c51cd64b0218c15f70a9bbb824d3d8f8569f3b4ff",
+      "witness_sha256": "0818ca872eaeafa3f496023d872fdbfc85913e2fd98b0a2ffe4bf47513d6a253",
+      "usage": {
+        "prompt_tokens": 2661,
+        "completion_tokens": 1023,
+        "total_tokens": 3684,
+        "prompt_cache_hit_tokens": 128
+      },
+      "actual_usage_upper_cny": 0.01325512,
+      "narrative_quality": "pending independent finite review; not all-quality PASS",
+      "real_API_save_restore_tested": false
+    }
+  ],
+  "local_only_private_artifact_sha256": {
+    "evidence/upgrade/v5.0/blueprint-generation/real-samples/G2-private-definition-local.json": "40b7698c95ea05b9e0d7d473d6c794694ff08cbea063c86a380429086c109968",
+    "evidence/upgrade/v5.0/blueprint-generation/real-samples/G2-witness-local.json": "7fd53cd3e36c56fff275da4be42eaf65ad994bcff4487f213fcb75538d52b39c",
+    "evidence/upgrade/v5.0/blueprint-generation/real-samples/G2-api-replay-local.json": "2688fe7184a837ec54d97a191a1e0ac10b12898dcc2c7255982254aa115be08a",
+    "evidence/upgrade/v5.0/blueprint-generation/real-samples/G3-private-definition-local.json": "a2d9b552a4502be03a2517d2b597c0856317d20a7db0745abec90bf3602976e0",
+    "evidence/upgrade/v5.0/blueprint-generation/real-samples/G3-witness-local.json": "f5320baf8b366c158570ff86b0ad94656863c2a5c78c050bb080d41ccc5a0db2",
+    "evidence/upgrade/v5.0/blueprint-generation/real-samples/G3-api-replay-local.json": "bd83d477f2751dc8722cbb45666287b8951833a0af620a63b6df2aa1ee9a3612"
+  },
+  "local_only_artifacts_must_not_be_published_or_sent_to_model": true,
+  "independent_review_pending": true,
+  "initial_narrative_observations": [
+    "G3 final item description asks for a specimen-document bag, while the authoritative Host item is the specimen-cabinet key; independent reviewer must assess the actual projection.",
+    "G3 device-material prose says alphabetical order; reviewer should compare actual typed source order and authoritative material."
+  ],
+  "paid_allowance_terminal_no_remaining_call_reuse": true,
+  "no_product_tests_build_UI_or_evaluation_repeated": true,
+  "limitations": [
+    "Two controlled Host families are sampled; this is not a reliability rate for arbitrary themes or eighteen shapes.",
+    "Actual API witness uses compiled private solutions for test automation, not human clue solving or browser gameplay.",
+    "Elapsed_seconds0 and ratingS in automatic settlement are not human difficulty/time evidence.",
+    "No new real save/restore/companion/evaluator validation in this batch.",
+    "Narrative accuracy can fail while schema/proof/API witness succeeds.",
+    "Original three paid rounds and historical unknowns remain unchanged."
+  ]
+}

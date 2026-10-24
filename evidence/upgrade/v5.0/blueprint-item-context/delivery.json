@@ -1,0 +1,89 @@
+{
+  "kind": "V5 R4 and item-context Delivery documentation SOURCE STOP",
+  "date": "2026-10-24",
+  "owned_paths": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/blueprint-item-context/delivery.json"
+  ],
+  "R4_source_binding": {
+    "source_count": 411,
+    "source_bundle_sha256": "207b07f44f5070ae499f892c4ff2ca49c9cc89f8de3604571d0cc35bbad415b3",
+    "main_result": "evidence/upgrade/v5.0/blueprint-generation/real-samples/result.json",
+    "main_result_sha256": "dc1b9e23aee3623ff68e917c31edcff949e2c36f2cfcd5c471441360a7fdbb69",
+    "independent_review": "evidence/upgrade/v5.0/blueprint-generation/real-samples/qa-actual-review-final-v1.json",
+    "independent_review_sha256": "a5dd48933cf2de08693b0dc9232dbbc7475ee3f110ad5daf8731e5fdf8dbb537",
+    "review_seal": "evidence/upgrade/v5.0/blueprint-generation/real-samples/qa-actual-review-seal-v1.json",
+    "review_seal_sha256": "b49f31d9a452e69d7b8b5185aba45f068d90d87e59609d64ea346a1a83ea4abc"
+  },
+  "item_context_source_binding": {
+    "candidate_id": "v5.0-item-context-qa-fixed-20b0be4421735bee",
+    "candidate": "evidence/upgrade/v5.0/blueprint-item-context/candidate-qa-fixed.json",
+    "candidate_sha256": "918f155521767e31dabdc9b9f8eb1a6ad0c834a82532662ee1646f713ee5aa49",
+    "source_count": 410,
+    "qa_result": "evidence/upgrade/v5.0/blueprint-item-context/qa/result.json",
+    "qa_result_sha256": "9d4585b271530ef72bf1471f224344be7496ae5bdde13b63d95f469cad4a6554",
+    "qa_artifact_seal": "evidence/upgrade/v5.0/blueprint-item-context/qa/artifact-seal.json",
+    "qa_artifact_seal_sha256": "b9c51a53a423827b3ca202b2685542880f7374b904e1bd9b38d92d0746496ce5",
+    "clarified_report": "review/findings/v5-blueprint-item-context-clarified.md",
+    "clarified_report_sha256": "0086f0f05353a9ccad56e5059ed08816230d1f21a5f9f2fa58a1c8691896f497",
+    "actor_clarification": "evidence/upgrade/v5.0/blueprint-item-context/qa/actor-clarification.json",
+    "actor_clarification_sha256": "ee14ce0d85967d67876bd63985fb6ec46d3592f064778e8dea713795f6442a18"
+  },
+  "documented_R4_facts": {
+    "actual_calls": 2,
+    "cases": ["G2 2-room normal", "G3 3-room hard"],
+    "result": "Both ready; HTTP witness EXIT after 24 and 33 successful actions, respectively.",
+    "usage_conservative_upper_delta_yuan": 0.02072312,
+    "pre_reserved_upper_yuan": 0.259424,
+    "provider_invoice": false,
+    "retries": 0,
+    "new_unknown": 0,
+    "historical_unknown_count_and_identity_changed": false,
+    "pending": 0,
+    "ledger_frozen": false,
+    "remaining_authorized_calls": 0
+  },
+  "documented_context_QA_facts": {
+    "first_run": "8 passed, 1 QA raw-line-ending baseline comparison failure; exit 1",
+    "narrow_run": "The one corrected QA comparison passed; exit 0. The other eight were not repeated; this is not a second full 9-item green run.",
+    "provider_or_model_calls": 0,
+    "current_narrative_P2": "Still open in the original real-sample epoch; not real-model-retested after context-only prompt changes.",
+    "pure_budget_measurement_yuan": {
+      "position_2000_four_byte_characters": 0.189928,
+      "mapping_2000_four_byte_characters": 0.213664,
+      "actual_dispatch_or_refusal_tested": false
+    },
+    "semantic_reader": "Independent AI QA agent; no human or teacher review, playtest, signature, or acceptance is implied."
+  },
+  "checks_performed": [
+    {
+      "command": "git -c core.whitespace=cr-at-eol diff --check -- README.md release/V5.md",
+      "exit_code": 0,
+      "note": "Only the existing LF-to-CRLF warning for release/V5.md."
+    },
+    {
+      "command": "Read-only ConvertFrom-Json parsing of the R4 result, R4 independent review/seal, context QA result/seal, and actor-clarification metadata",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --stat -- README.md release/V5.md",
+      "exit_code": 0,
+      "output": "2 files changed, 10 insertions(+), 2 deletions(-)"
+    }
+  ],
+  "document_sha256": {
+    "README.md": "3de62613fa4dce72a2662726c60b99d96c4c2633413488576c1ceafa5cc316d1",
+    "release/V5.md": "3600af078f6b0a1f5f3a46bb58a6d688d8b2cab269742340e0fbb2a5fb96c6d1"
+  },
+  "not_run_by_delivery_owner": [
+    "No tests, build, UI, network, provider, or paid calls were run. Only existing sealed evidence was cited."
+  ],
+  "limitations": [
+    "R4 covers two controlled Host structures, not arbitrary topology or general model reliability.",
+    "G3 nonexistent document-bag text versus required specimen-cabinet key remains P2 OPEN; device-symbol/device-order wording remains ambiguous; G2 text overstates nonconsuming use_item as returning items.",
+    "The context-only QA did not dispatch a provider or re-test those real outputs; AI QA semantic reading is not human review or proof of model compliance.",
+    "No human playtest, teacher acceptance, real narrative-quality acceptance, or release acceptance is claimed. Historical evaluation remains INSUFFICIENT_EVIDENCE, V5 remains unpublished, and original unknown-call state is unchanged."
+  ],
+  "status": "DELIVERY SOURCE STOP; docs only, no commit or push."
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "Proven item narrative input-gap narrow repair; no paid authority",
+  "document_date": "2026-10-24",
+  "utc": "2026-10-24T14:54:49.052882+00:00",
+  "baseline_head": "d2618e45d73ffd95e3e1a35a537e7fb7651460b2",
+  "baseline_candidate": "evidence/upgrade/v5.0/blueprint-generation/candidate-qa-fixed.json",
+  "baseline_real_source_bundle": "207b07f44f5070ae499f892c4ff2ca49c9cc89f8de3604571d0cc35bbad415b3",
+  "finding": "BP-REAL-NARRATIVE-01; missing explicit required item slot and nonconsuming-use semantics in generator manifest",
+  "roles": {
+    "Backend": [
+      "backend/app/domain/blueprints.py: request_manifest only",
+      "new item-context owner evidence"
+    ],
+    "Main": [
+      "backend/app/ai/v5.py: GENERATION_PROMPT only",
+      "contracts/v2/generation-content.README.md: explanatory paragraph only",
+      "AGENTS/PLAN/STATUS/DECISIONS/integration/Git"
+    ],
+    "QA": [
+      "tests/v5/test_blueprint_item_context.py",
+      "new review/findings/v5-blueprint-item-context.md",
+      "new item-context QA evidence"
+    ],
+    "Delivery": [
+      "README.md",
+      "release/V5.md",
+      "new item-context delivery evidence after QA"
+    ]
+  },
+  "acceptance": [
+    "item_use slot derived from actual required_item_id and actual ObjectSlot, not fixed object name; use_item, consumed false",
+    "only item puzzle gets metadata; other mechanisms and output schema/assembly/structure unchanged",
+    "prompt asks same generated object name and no invented required item or return/consumption action",
+    "independent pure request/renamed-slot/content-schema/nonmutation and whole-payload costs; no network/real generation call",
+    "stable source freeze before narrow formal QA; no old suite/build/UI/evaluator repeat",
+    "old actual findings/outputs/status remain historical; prompt addition does not establish actual narrative quality fixed"
+  ],
+  "paid_calls_allowed": 0,
+  "formal_QA": "only after Backend/Main source stop and Main candidate freeze",
+  "unchanged": [
+    "selector/structure/typed content contract/assembler/compiler/API/Store/provider/companion/assets",
+    "old actual and offline evidence, historical unknowns, original untracked files/databases/environments"
+  ],
+  "runtime_model_information": "Existing agent request configurations are historical; resuming does not verify runtime model. No new agent/Astra."
+}

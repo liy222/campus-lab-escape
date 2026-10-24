@@ -6,6 +6,8 @@ Host每次只选择一个不可变Blueprint。`select_blueprint(room_count, diff
 
 `content_schema(blueprint)`返回该次选择的精确Schema，`request_manifest(blueprint)`只说明槽位、角色与参数含义；不提供CompiledLevel答案/witness。`GenerationService`将相同Blueprint用于消息和严格组装，保留旧worker的`draft_schema`调用参数但不向模型发送原Draft Schema，也不修改调用者的Schema。
 
+道具装置的manifest另含`item_use`：`item_object_slot`从该谜题的实际`required_item_id`找到对应物件槽位，`tool`为`use_item`、`consumed`为`false`。模型叙述须引用本次回复中该槽位的同一物件名称，描述使用后保留，不虚构另一件必需物品、放回或额外操作。它只补充已有规则关系的输入，不改变模型输出Schema、组装或游戏规则，也不能保证模型叙述完全正确。真实样本中“资料袋/钥匙”的错误原稿和准入结果保持；补充后的叙述效果尚未真实复测。
+
 模型根字段必须恰为：
 
 | 字段 | 约束 |

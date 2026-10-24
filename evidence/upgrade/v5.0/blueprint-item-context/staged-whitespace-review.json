@@ -1,0 +1,37 @@
+{
+  "kind": "Main staged whitespace scope: original failed raw traces preserved",
+  "utc": "2026-10-24T15:11:03.016055+00:00",
+  "whole_staged_check": {
+    "tool_chunk": "6b6d88",
+    "exit_code": 1,
+    "entries": 2,
+    "paths": [
+      "evidence/upgrade/v5.0/blueprint-item-context/qa/run1/junit.xml",
+      "evidence/upgrade/v5.0/blueprint-item-context/qa/run1/output.txt"
+    ],
+    "reason": "Original pytest assertion traceback has E followed by indentation; sealed raw retained."
+  },
+  "all_other_selected_check": {
+    "argv": [
+      "git",
+      "-c",
+      "core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      ".",
+      ":(exclude)evidence/upgrade/v5.0/blueprint-item-context/qa/run1/junit.xml",
+      ":(exclude)evidence/upgrade/v5.0/blueprint-item-context/qa/run1/output.txt"
+    ],
+    "exit_code": 0,
+    "output": ""
+  },
+  "original_trace_hashes": {
+    "evidence/upgrade/v5.0/blueprint-item-context/qa/run1/junit.xml": "e5153b31d0b6698c529b14dea56d5b80ca15e7c901361c74dee687702bb50a5d",
+    "evidence/upgrade/v5.0/blueprint-item-context/qa/run1/output.txt": "bec7d445ff799b799b21fba61772952ca913a49b0473aa4bc8551fa457ead8c3"
+  },
+  "raw_cleanup_performed": false,
+  "not_full_whitespace_green": true,
+  "tests_or_model_calls_repeated": false
+}

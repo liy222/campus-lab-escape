@@ -1,0 +1,48 @@
+{
+  "kind": "Item context narrow Backend Owner source stop; pure development only",
+  "utc": "2026-10-24T14:56:10.439576+00:00",
+  "source_stop": true,
+  "files_changed": [
+    "backend/app/domain/blueprints.py: request_manifest only"
+  ],
+  "baseline_head": "d2618e45d73ffd95e3e1a35a537e7fb7651460b2",
+  "baseline_git_blob_sha256": "37c41f90166ea1978ec22d02d7b188fcdc25b80a5a2bed67de4bb6728fb9657e",
+  "source_sha256": {
+    "backend/app/domain/blueprints.py": "2fad1607e8d4e379c705c5c36ac9245c2002d622953e08c230934ac6c64e5688"
+  },
+  "delta": "Only item puzzle manifest rows add item_use {item_object_slot: resolved actual required_item_id ObjectSlot, tool:use_item, consumed:false}; nonitem rows unchanged.",
+  "actual_command": "Owner inline Python pure manifest/renamed-item-decoy/nonmutation checks plus git-show AST/text delta audit via C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -; complete command retained in tool transcript",
+  "exit_code": 0,
+  "pure_development_checks": [
+    {
+      "family": "position_v1",
+      "item_slot_matches_actual_required_item": true,
+      "nonitem_field_absent": true,
+      "renamed_item_and_decoy_resolve_actual_reference": true,
+      "blueprint_schema_nonmutation": true,
+      "fresh_manifest": true
+    },
+    {
+      "family": "mapping_v1",
+      "item_slot_matches_actual_required_item": true,
+      "nonitem_field_absent": true,
+      "renamed_item_and_decoy_resolve_actual_reference": true,
+      "blueprint_schema_nonmutation": true,
+      "fresh_manifest": true
+    }
+  ],
+  "AST_and_text_delta_limited_to_request_manifest": true,
+  "internal_contract_builder_and_static_schema_hashes_unchanged": true,
+  "compiler_or_witness_run": false,
+  "API_or_HTTP_run": false,
+  "provider_or_network_calls": 0,
+  "paid_calls": 0,
+  "key_config_or_canonical_ledger_read": false,
+  "database_opened": false,
+  "limits": [
+    "Pure Owner development checks are not independent QA or real generation quality evidence.",
+    "Successful actual samples, their narrative error, old411source and all old evidence retain their original epoch.",
+    "No selector/structure/typed schema/parameter/assembler/compiler/API/Store/provider/companion/assets change.",
+    "No build/UI/fullsuite, old18 compile/witness matrix, executor preparation or paid call repeated."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "G3",
+  "fictional_test_content": true,
+  "content_redacted": "{\n  \"content_version\": \"1.0.0\",\n  \"blueprint_id\": \"mapping_v1-r3-hard\",\n  \"title\": \"标本楼交接检查\",\n  \"story\": \"生态实验楼闭馆前，你受托完成标本交接。三间相连实验室里留存采样资料和维护装置，需逐一核对材料，理清符号与设备对应关系，才能通过离楼检查。\",\n  \"rooms\": {\n    \"G1\": {\n      \"name\": \"标本准备室\",\n      \"description\": \"靠墙的标本柜半开着，操作台上散放着采样登记卡、符号对照表和旧设备清单。\"\n    },\n    \"G2\": {\n      \"name\": \"材料分析室\",\n      \"description\": \"中央实验台排列着培养皿，角落的电路板指示灯微亮，白板上贴着两段编码便签。\"\n    },\n    \"G3\": {\n      \"name\": \"离楼检查室\",\n      \"description\": \"门禁旁挂着两页设备排班表，物品交接台空着，离楼前需在此完成最后核验。\"\n    }\n  },\n  \"objects\": {\n    \"obj_key\": {\n      \"name\": \"标本柜钥匙\",\n      \"description\": \"一把铜色旧钥匙，可反复开启标本柜，暂存于准备室抽屉。\"\n    },\n    \"obj_code_source\": {\n      \"name\": \"采样登记卡\",\n      \"description\": \"卡片上按采样顺序列出四个符号，似乎可与对照表组合出编码。\"\n    },\n    \"obj_relation\": {\n      \"name\": \"符号对照表\",\n      \"description\": \"表中每个符号旁标有一个数字，另附设备栏供顺序谜题参考。\"\n    },\n    \"obj_device_source\": {\n      \"name\": \"旧设备清单\",\n      \"description\": \"清单按字母序记着几种维护设备，符号与设备需对照使用。\"\n    },\n    \"obj_puzzle_1\": {\n      \"name\": \"标本柜数字锁\",\n      \"description\": \"四位数字锁，需结合采样登记卡与符号对照表推得密码。\"\n    },\n    \"obj_puzzle_2\": {\n      \"name\": \"设备启动顺序盘\",\n      \"description\": \"面板上排列四个设备槽，需按旧设备清单与对照表安排正确顺序。\"\n    },\n    \"obj_puzzle_3\": {\n      \"name\": \"分析室电路板\",\n      \"description\": \"电路板指示灯闪烁，需按接线规则恢复通路才能继续后续检查。\"\n    },\n    \"obj_extra_code_a\": {\n      \"name\": \"培养皿标签甲\",\n      \"description\": \"第一组培养皿底贴有两位数字，为编码拼接的前半段资料。\"\n    },\n    \"obj_extra_code_b\": {\n      \"name\": \"培养皿标签乙\",\n      \"description\": \"另一组培养皿底另贴两位数字，与标签甲共同构成完整编码。\"\n    },\n    \"obj_puzzle_4\": {\n      \"name\": \"白板编码锁\",\n      \"description\": \"白板旁的四位数字锁，需将两组标签信息拼接后输入。\"\n    },\n    \"obj_extra_devices_a\": {\n      \"name\": \"设备排班表上页\",\n      \"description\": \"排班表上页记录两种维护设备的顺序，作为拼接资料前半段。\"\n    },\n    \"obj_extra_devices_b\": {\n      \"name\": \"设备排班表下页\",\n      \"description\": \"排班表下页记录另两种设备的顺序，与上页衔接成完整排班。\"\n    },\n    \"obj_puzzle_5\": {\n      \"name\": \"离楼设备核对盘\",\n      \"description\": \"检查室门旁的设备盘需按排班表拼接顺序摆放维护设备。\"\n    },\n    \"obj_puzzle_6\": {\n      \"name\": \"标本交接箱\",\n      \"description\": \"空交接箱需放入指定的标本资料袋，完成离楼最后一项。\"\n    }\n  },\n  \"parameters\": {\n    \"code_symbols\": [\"A\", \"B\", \"C\", \"D\"],\n    \"digit_map\": {\n      \"A\": \"3\",\n      \"B\": \"7\",\n      \"C\": \"1\",\n      \"D\": \"9\"\n    },\n    \"sequence_symbols\": [\"E\", \"F\", \"G\", \"H\"],\n    \"device_map\": {\n      \"E\": \"device_b\",\n      \"F\": \"device_d\",\n      \"G\": \"device_a\",\n      \"H\": \"device_c\"\n    },\n    \"extra_digits\": [\"4\", \"6\", \"8\", \"2\"],\n    \"extra_devices\": [\"device_c\", \"device_a\", \"device_d\", \"device_b\"]\n  }\n}",
+  "content_raw_sha256": "50697c5f0312159d127e49b1ea7cdf4a89c2de893d2a9bc2a7cd6ef17a62075a",
+  "usage": {
+    "prompt_tokens": 2661,
+    "completion_tokens": 1023,
+    "total_tokens": 3684,
+    "prompt_cache_hit_tokens": 128
+  },
+  "requested_model": "deepseek-flash",
+  "reported_model": "deepseek-flash",
+  "finish_reason": "stop",
+  "call_id": "2819ac7ba3c0470ea6ab4ebf0d8f19b3",
+  "cost_upper_cny": 0.01325512,
+  "secret_detected": false
+}

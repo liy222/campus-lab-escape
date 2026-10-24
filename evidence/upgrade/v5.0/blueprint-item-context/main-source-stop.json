@@ -1,0 +1,28 @@
+{
+  "kind": "Main generation item-narrative input instruction SOURCE STOP",
+  "utc": "2026-10-24T14:56:20.289942+00:00",
+  "owner": "Main",
+  "files": {
+    "backend/app/ai/v5.py": "84cee15dcec90d5d3e8867db217f9a537ba01e872ef4ae01b16477aeb35f525e",
+    "contracts/v2/generation-content.README.md": "a5adc7c77ab9c65cf87d3f69c32cd91d164c1a7d74d69869f1ebfd120c6ea03c"
+  },
+  "AST_delta_only": [
+    "ASSIGN:GENERATION_PROMPT"
+  ],
+  "GenerationService_and_all_other_functions_unchanged": true,
+  "actual_static_command": "python -X utf8 - : AST top-level comparison to HEAD",
+  "actual_static_exit_code": 0,
+  "patch_operations": [
+    "initial combined patch rejected before mutation due empty README hunk",
+    "corrected prompt-only patch completed",
+    "separate internal README paragraph patch completed"
+  ],
+  "new_model_or_HTTP_calls": 0,
+  "credentials_or_ledger_read": false,
+  "formal_QA": "not yet executed; waits Backend and QA preparation STOP then Main freeze",
+  "limitations": [
+    "Instruction/input-context change only, no actual generated text corrected or real quality retest.",
+    "Old G3 narrative finding remains open for its actual source epoch.",
+    "No compiler/schema/structure/assembler/API/Store/provider/companion/assets edits."
+  ]
+}

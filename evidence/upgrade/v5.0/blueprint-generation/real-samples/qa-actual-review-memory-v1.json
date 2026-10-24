@@ -1,0 +1,188 @@
+{
+  "kind": "Independent local-memory consistency review of actual paid outputs; private content kept local",
+  "utc": "2026-10-24T14:49:33.895897+00:00",
+  "exit_code": 0,
+  "records": [
+    {
+      "case_id": "G2",
+      "scope": "No new HTTP/model/proof search; memory explanation of already saved actual artifacts",
+      "real_content_raw_hash_matches": true,
+      "assembled_and_static_validated_definition_exact_match": true,
+      "original_compile_prove_argument": false,
+      "new_solver_invocations": 0,
+      "definition_hash": "23c367279c3ba81c840cff7486b205fa8f5d1b9dc04acff40b6c8ed45e474837",
+      "saved_witness_hash_matches": true,
+      "saved_witness_action_count": 24,
+      "memory_rule_state_hash_matches": 24,
+      "initial_hash_matches": true,
+      "final_full_projection_exact_match": true,
+      "final_status": "won",
+      "final_room": "EXIT",
+      "metadata_reused_for_comparison": [
+        "recorded generation",
+        "recorded started_at",
+        "recorded finished_at",
+        "recorded session/level_id",
+        "recorded save projection"
+      ],
+      "api_result_hash_limitation": "Only opaque API-result hashes were retained, not full per-action HTTP bodies; cannot independently reconstruct event_id-bearing response hash. Saved status and every state hash verified.",
+      "narrative_observations": {
+        "last_puzzle_requires_existing_item_name": "交接钥匙",
+        "last_puzzle_description": "检查结束后，需要把交接钥匙等物品放回归还箱并确认清单。",
+        "last_description_mentions_required_item": true,
+        "unprovided_specimen_bag_named": false
+      },
+      "local_private_artifacts": [
+        {
+          "path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/G2-private-definition-local.json",
+          "raw_sha256": "40b7698c95ea05b9e0d7d473d6c794694ff08cbea063c86a380429086c109968",
+          "local_only": true,
+          "content_not_published_or_forwarded_to_model": true
+        },
+        {
+          "path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/G2-witness-local.json",
+          "raw_sha256": "7fd53cd3e36c56fff275da4be42eaf65ad994bcff4487f213fcb75538d52b39c",
+          "local_only": true,
+          "content_not_published_or_forwarded_to_model": true
+        },
+        {
+          "path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/G2-api-replay-local.json",
+          "raw_sha256": "2688fe7184a837ec54d97a191a1e0ac10b12898dcc2c7255982254aa115be08a",
+          "local_only": true,
+          "content_not_published_or_forwarded_to_model": true
+        }
+      ]
+    },
+    {
+      "case_id": "G3",
+      "scope": "No new HTTP/model/proof search; memory explanation of already saved actual artifacts",
+      "real_content_raw_hash_matches": true,
+      "assembled_and_static_validated_definition_exact_match": true,
+      "original_compile_prove_argument": false,
+      "new_solver_invocations": 0,
+      "definition_hash": "2c975d4576c86c52337be69c51cd64b0218c15f70a9bbb824d3d8f8569f3b4ff",
+      "saved_witness_hash_matches": true,
+      "saved_witness_action_count": 33,
+      "memory_rule_state_hash_matches": 33,
+      "initial_hash_matches": true,
+      "final_full_projection_exact_match": true,
+      "final_status": "won",
+      "final_room": "EXIT",
+      "metadata_reused_for_comparison": [
+        "recorded generation",
+        "recorded started_at",
+        "recorded finished_at",
+        "recorded session/level_id",
+        "recorded save projection"
+      ],
+      "api_result_hash_limitation": "Only opaque API-result hashes were retained, not full per-action HTTP bodies; cannot independently reconstruct event_id-bearing response hash. Saved status and every state hash verified.",
+      "narrative_observations": {
+        "last_puzzle_requires_existing_item_name": "标本柜钥匙",
+        "last_puzzle_description": "空交接箱需放入指定的标本资料袋，完成离楼最后一项。",
+        "last_description_mentions_required_item": false,
+        "unprovided_specimen_bag_named": true,
+        "source_symbols_alphabetical": true,
+        "mapped_devices_alphabetical": false,
+        "device_source_description": "清单按字母序记着几种维护设备，符号与设备需对照使用。"
+      },
+      "local_private_artifacts": [
+        {
+          "path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/G3-private-definition-local.json",
+          "raw_sha256": "a2d9b552a4502be03a2517d2b597c0856317d20a7db0745abec90bf3602976e0",
+          "local_only": true,
+          "content_not_published_or_forwarded_to_model": true
+        },
+        {
+          "path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/G3-witness-local.json",
+          "raw_sha256": "f5320baf8b366c158570ff86b0ad94656863c2a5c78c050bb080d41ccc5a0db2",
+          "local_only": true,
+          "content_not_published_or_forwarded_to_model": true
+        },
+        {
+          "path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/G3-api-replay-local.json",
+          "raw_sha256": "bd83d477f2751dc8722cbb45666287b8951833a0af620a63b6df2aa1ee9a3612",
+          "local_only": true,
+          "content_not_published_or_forwarded_to_model": true
+        }
+      ]
+    }
+  ],
+  "raw_artifacts_before": {
+    "authorization-binding.json": "afd177cbfe9da660a9ca0c9e9b29dee82bb8a920e229038f2f695e1be4e9a252",
+    "dispatch-journal.jsonl": "ea2c388c96534b8aaac243af22e8dadc9f4bd236ad3650277bfe3cf4639efdde",
+    "draft-author-source-stop.json": "f5e016c12450a96df2e4f209b0d6333292e5fea105e607b95dd91fd305d33537",
+    "draft-preflight-fix-source-stop.json": "78e2d92b43a4e50a2a7da1310ab350d360babe563fc0f57993f3b7e6e476c3ea",
+    "execute-started.json": "c1dbe6c8f0c69db096088d92750aec31a4f2ac306e01a17abe00f1fd7cb0996a",
+    "G2-api-replay-local.json": "2688fe7184a837ec54d97a191a1e0ac10b12898dcc2c7255982254aa115be08a",
+    "G2-api-result.json": "ed5dd4723892707f9ecf90d62847b93efd02d192f7f2b07971051e974d57d03b",
+    "G2-exact-payload.json": "473d683ec35f6d072f86457549b7a683a86165e97e67f093659d5f8dc3400107",
+    "G2-private-definition-local.json": "40b7698c95ea05b9e0d7d473d6c794694ff08cbea063c86a380429086c109968",
+    "G2-provider-result.json": "2e4dec7d2b65162d8c9a86183ddc9b3472e5ff64788e134858d6b850c7d1fe30",
+    "G2-witness-local.json": "7fd53cd3e36c56fff275da4be42eaf65ad994bcff4487f213fcb75538d52b39c",
+    "G3-api-replay-local.json": "bd83d477f2751dc8722cbb45666287b8951833a0af620a63b6df2aa1ee9a3612",
+    "G3-api-result.json": "59dc1d783524fe1ff7b2e5d9f7990970e094f04ea6331281ad1009b91e54b9a5",
+    "G3-exact-payload.json": "533a876d379532427f0b52cb0f462593b9739b6e858d874da7cc5aa3bc76b965",
+    "G3-private-definition-local.json": "a2d9b552a4502be03a2517d2b597c0856317d20a7db0745abec90bf3602976e0",
+    "G3-provider-result.json": "9f059074143a213f2c296287b44d6282d014465d5ec799882d2600b9c60383f0",
+    "G3-witness-local.json": "f5320baf8b366c158570ff86b0ad94656863c2a5c78c050bb080d41ccc5a0db2",
+    "ledger-after.json": "51ef843004d0e03410f3b0b4afab6e05aa6ad568b3879b1bc168bad366e230c6",
+    "ledger-before.json": "fe69683fa01ff7ef1cc850642adc2fc010966ad999cb56f4f05563e62f75d527",
+    "main-actual-review.json": "7e5e42548a2b10b2c832f4db1c5c4f2da322ec26d1ceb357923545eb2e814a94",
+    "offline-preview-v1.json": "fec5789db9d55f76928ba68902d85655cfb6cca1ed5537315ed9d4fb51151d95",
+    "preflight-review-draft-v1.json": "563e8c5569b5be746464806d8a23f4b0b8174b6bc2bb7fefb1e69fa1372b6c9b",
+    "preflight-review-final-v1.json": "d8a34b48ef28dbdf626ccb84045fddea577821ce79f93bc4e4a6ca73b4c46e6c",
+    "preflight-review-preview-v1.json": "014b04cc39ef93cf5bb9eac614af12107909093adf804a9fb1cb1f05cfae48c4",
+    "preflight-review-probes-first-failures.json": "071e462498bd5543490c8cb5132ebf43760781073019e1c2196cffddf5afe83c",
+    "preflight-review-probes-v1.json": "0c38f76d0dc5e95765dd4234bc31f92f34c90eff5e8ad9c0e37ab2d073e989f5",
+    "preflight-review-seal-v1.json": "6812ea980a94b4292fbb748005620affb388a84617138ecdcc4e266e35abe088",
+    "preparation-report.json": "92ec3635bab96fee3ceac7a65f126cd94734b2627d40beb34009311d865258d8",
+    "result.json": "dc1b9e23aee3623ff68e917c31edcff949e2c36f2cfcd5c471441360a7fdbb69",
+    "run.py": "31d72c5cf6e84cde83d371a3849a4793896758e4d87c0d7b2148fe1fcb1781f0",
+    "user-authorization.json": "f42b0073f1d71ecc3290d694b484aa706702c10c6aa8a35334f295e2cca73819"
+  },
+  "raw_artifacts_after": {
+    "authorization-binding.json": "afd177cbfe9da660a9ca0c9e9b29dee82bb8a920e229038f2f695e1be4e9a252",
+    "dispatch-journal.jsonl": "ea2c388c96534b8aaac243af22e8dadc9f4bd236ad3650277bfe3cf4639efdde",
+    "draft-author-source-stop.json": "f5e016c12450a96df2e4f209b0d6333292e5fea105e607b95dd91fd305d33537",
+    "draft-preflight-fix-source-stop.json": "78e2d92b43a4e50a2a7da1310ab350d360babe563fc0f57993f3b7e6e476c3ea",
+    "execute-started.json": "c1dbe6c8f0c69db096088d92750aec31a4f2ac306e01a17abe00f1fd7cb0996a",
+    "G2-api-replay-local.json": "2688fe7184a837ec54d97a191a1e0ac10b12898dcc2c7255982254aa115be08a",
+    "G2-api-result.json": "ed5dd4723892707f9ecf90d62847b93efd02d192f7f2b07971051e974d57d03b",
+    "G2-exact-payload.json": "473d683ec35f6d072f86457549b7a683a86165e97e67f093659d5f8dc3400107",
+    "G2-private-definition-local.json": "40b7698c95ea05b9e0d7d473d6c794694ff08cbea063c86a380429086c109968",
+    "G2-provider-result.json": "2e4dec7d2b65162d8c9a86183ddc9b3472e5ff64788e134858d6b850c7d1fe30",
+    "G2-witness-local.json": "7fd53cd3e36c56fff275da4be42eaf65ad994bcff4487f213fcb75538d52b39c",
+    "G3-api-replay-local.json": "bd83d477f2751dc8722cbb45666287b8951833a0af620a63b6df2aa1ee9a3612",
+    "G3-api-result.json": "59dc1d783524fe1ff7b2e5d9f7990970e094f04ea6331281ad1009b91e54b9a5",
+    "G3-exact-payload.json": "533a876d379532427f0b52cb0f462593b9739b6e858d874da7cc5aa3bc76b965",
+    "G3-private-definition-local.json": "a2d9b552a4502be03a2517d2b597c0856317d20a7db0745abec90bf3602976e0",
+    "G3-provider-result.json": "9f059074143a213f2c296287b44d6282d014465d5ec799882d2600b9c60383f0",
+    "G3-witness-local.json": "f5320baf8b366c158570ff86b0ad94656863c2a5c78c050bb080d41ccc5a0db2",
+    "ledger-after.json": "51ef843004d0e03410f3b0b4afab6e05aa6ad568b3879b1bc168bad366e230c6",
+    "ledger-before.json": "fe69683fa01ff7ef1cc850642adc2fc010966ad999cb56f4f05563e62f75d527",
+    "main-actual-review.json": "7e5e42548a2b10b2c832f4db1c5c4f2da322ec26d1ceb357923545eb2e814a94",
+    "offline-preview-v1.json": "fec5789db9d55f76928ba68902d85655cfb6cca1ed5537315ed9d4fb51151d95",
+    "preflight-review-draft-v1.json": "563e8c5569b5be746464806d8a23f4b0b8174b6bc2bb7fefb1e69fa1372b6c9b",
+    "preflight-review-final-v1.json": "d8a34b48ef28dbdf626ccb84045fddea577821ce79f93bc4e4a6ca73b4c46e6c",
+    "preflight-review-preview-v1.json": "014b04cc39ef93cf5bb9eac614af12107909093adf804a9fb1cb1f05cfae48c4",
+    "preflight-review-probes-first-failures.json": "071e462498bd5543490c8cb5132ebf43760781073019e1c2196cffddf5afe83c",
+    "preflight-review-probes-v1.json": "0c38f76d0dc5e95765dd4234bc31f92f34c90eff5e8ad9c0e37ab2d073e989f5",
+    "preflight-review-seal-v1.json": "6812ea980a94b4292fbb748005620affb388a84617138ecdcc4e266e35abe088",
+    "preparation-report.json": "92ec3635bab96fee3ceac7a65f126cd94734b2627d40beb34009311d865258d8",
+    "result.json": "dc1b9e23aee3623ff68e917c31edcff949e2c36f2cfcd5c471441360a7fdbb69",
+    "run.py": "31d72c5cf6e84cde83d371a3849a4793896758e4d87c0d7b2148fe1fcb1781f0",
+    "user-authorization.json": "f42b0073f1d71ecc3290d694b484aa706702c10c6aa8a35334f295e2cca73819"
+  },
+  "raw_artifacts_unchanged": true,
+  "new_HTTP_provider_model_calls": 0,
+  "new_proof_searches": 0,
+  "key_config_or_canonical_ledger_access": false,
+  "database_opened": false,
+  "backend_main_imported": false,
+  "private_material_in_public_report": "hashes and limited narrative assessment only; no complete definition, witness, typed parameters or answers",
+  "limitations": [
+    "This replays saved actions in memory only, not a new HTTP execution or model generation.",
+    "Original timestamps/generation reused solely to compare exact saved projections; no human timing claim.",
+    "Opaque per-action full-API-body hashes cannot be reconstructed without original random event IDs; state hash chain independently matches."
+  ]
+}

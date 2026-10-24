@@ -1,0 +1,55 @@
+{
+  "kind": "Derived actor terminology correction only; historical sealed files retained",
+  "utc": "2026-10-24T15:06:22.979280+00:00",
+  "source_stop": true,
+  "actual_actor": "Independent AI QA agent",
+  "incorrect_historical_terms": [
+    "人工读审",
+    "prompt_human_semantic_review"
+  ],
+  "correction": "These refer to semantic review by the independent AI QA agent, not a human reviewer. No human or teacher performed this review.",
+  "human_or_teacher_review_performed": false,
+  "human_playtest_signature_or_acceptance_implied": false,
+  "sole_human_developer": "User; no review or acceptance by the user inferred from AI QA",
+  "original_report": {
+    "path": "review/findings/v5-blueprint-item-context.md",
+    "sha256": "3197fcb08ba15552983f916af2a2c7f22c4d58f014fb9a84aaefe80e3b4505aa"
+  },
+  "original_result": {
+    "path": "evidence/upgrade/v5.0/blueprint-item-context/qa/result.json",
+    "sha256": "9d4585b271530ef72bf1471f224344be7496ae5bdde13b63d95f469cad4a6554"
+  },
+  "original_seal": {
+    "path": "evidence/upgrade/v5.0/blueprint-item-context/qa/artifact-seal.json",
+    "sha256": "b9c51a53a423827b3ca202b2685542880f7374b904e1bd9b38d92d0746496ce5"
+  },
+  "clarified_reading_entry": {
+    "path": "review/findings/v5-blueprint-item-context-clarified.md",
+    "sha256": "0086f0f05353a9ccad56e5059ed08816230d1f21a5f9f2fa58a1c8691896f497"
+  },
+  "original_16_artifacts_unchanged": true,
+  "old_files_before": {
+    "review/findings/v5-blueprint-item-context.md": "3197fcb08ba15552983f916af2a2c7f22c4d58f014fb9a84aaefe80e3b4505aa",
+    "evidence/upgrade/v5.0/blueprint-item-context/qa/result.json": "9d4585b271530ef72bf1471f224344be7496ae5bdde13b63d95f469cad4a6554",
+    "evidence/upgrade/v5.0/blueprint-item-context/qa/artifact-seal.json": "b9c51a53a423827b3ca202b2685542880f7374b904e1bd9b38d92d0746496ce5"
+  },
+  "old_files_after": {
+    "review/findings/v5-blueprint-item-context.md": "3197fcb08ba15552983f916af2a2c7f22c4d58f014fb9a84aaefe80e3b4505aa",
+    "evidence/upgrade/v5.0/blueprint-item-context/qa/result.json": "9d4585b271530ef72bf1471f224344be7496ae5bdde13b63d95f469cad4a6554",
+    "evidence/upgrade/v5.0/blueprint-item-context/qa/artifact-seal.json": "b9c51a53a423827b3ca202b2685542880f7374b904e1bd9b38d92d0746496ce5"
+  },
+  "execution_results_scope_and_limitations_changed": false,
+  "review_repeated": false,
+  "tests_or_models_repeated": false,
+  "product_modified": false,
+  "paid_calls": 0,
+  "budget_changed": false,
+  "new_paid_authority": false,
+  "historical_real_G3_finding": "OPEN, not real-model-retested",
+  "new_files_only": [
+    "review/findings/v5-blueprint-item-context-clarified.md",
+    "evidence/upgrade/v5.0/blueprint-item-context/qa/actor-clarification.json"
+  ],
+  "actual_metadata_command": "python -X utf8 - ; only verify original hashes and write this derived actor metadata",
+  "exit_code": 0
+}

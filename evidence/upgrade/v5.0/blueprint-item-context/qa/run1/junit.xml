@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="9" time="0.349" timestamp="2026-10-24T23:00:49.244354+08:00" hostname="DESKTOP-9I5GA4C"><testcase classname="tests.v5.test_blueprint_item_context" name="test_item_context_uses_actual_reference_only_and_is_fresh[0]" time="0.002" /><testcase classname="tests.v5.test_blueprint_item_context" name="test_item_context_uses_actual_reference_only_and_is_fresh[1]" time="0.001" /><testcase classname="tests.v5.test_blueprint_item_context" name="test_renamed_item_slot_with_old_name_decoy_is_derived_not_hardcoded[0]" time="0.002" /><testcase classname="tests.v5.test_blueprint_item_context" name="test_renamed_item_slot_with_old_name_decoy_is_derived_not_hardcoded[1]" time="0.002" /><testcase classname="tests.v5.test_blueprint_item_context" name="test_only_request_manifest_and_generation_prompt_ast_changed" time="0.156"><failure message="AssertionError: backend/app/domain/generated.py&#10;assert 'b05952d9ebf3...047bc0ede769e' == 'c3fb78a7b0e9...0eaa2bcde89cf'&#10;  &#10;  - c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf&#10;  + b05952d9ebf381d12c67f3c8bd27b3bbc006c925d7bad3c9adb047bc0ede769e">def test_only_request_manifest_and_generation_prompt_ast_changed():
+        def tree_without(text, omit):
+            return [ast.dump(node, include_attributes=False) for node in ast.parse(text).body if not omit(node)]
+        path = 'backend/app/domain/blueprints.py'
+        assert tree_without(baseline_text(path), lambda node: isinstance(node, ast.FunctionDef) and node.name == 'request_manifest') == tree_without((ROOT / path).read_text(encoding='utf-8-sig'), lambda node: isinstance(node, ast.FunctionDef) and node.name == 'request_manifest')
+        path = 'backend/app/ai/v5.py'
+        is_prompt = lambda node: isinstance(node, ast.Assign) and any(isinstance(target, ast.Name) and target.id == 'GENERATION_PROMPT' for target in node.targets)
+        assert tree_without(baseline_text(path), is_prompt) == tree_without((ROOT / path).read_text(encoding='utf-8-sig'), is_prompt)
+        frozen = ('contracts/v2/generation-content.schema.json', 'contracts/v2/build_generation_content.py',
+                  'backend/app/domain/generated.py', 'backend/app/ai/provider.py', 'backend/app/ai/budget.py',
+                  'backend/app/api/v5.py', 'backend/app/storage/v5.py')
+        for name in frozen:
+            raw = subprocess.run(['git', 'show', BASELINE + ':' + name], cwd=ROOT, capture_output=True, check=True).stdout
+&gt;           assert hashlib.sha256(raw).hexdigest() == hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), name
+E           AssertionError: backend/app/domain/generated.py
+E           assert 'b05952d9ebf3...047bc0ede769e' == 'c3fb78a7b0e9...0eaa2bcde89cf'
+E             
+E             - c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf
+E             + b05952d9ebf381d12c67f3c8bd27b3bbc006c925d7bad3c9adb047bc0ede769e
+
+tests\v5\test_blueprint_item_context.py:115: AssertionError</failure></testcase><testcase classname="tests.v5.test_blueprint_item_context" name="test_messages_serialize_item_interaction_contract_without_output_schema_change[0]" time="0.001" /><testcase classname="tests.v5.test_blueprint_item_context" name="test_messages_serialize_item_interaction_contract_without_output_schema_change[1]" time="0.001" /><testcase classname="tests.v5.test_blueprint_item_context" name="test_whole_request_short_and_four_byte_theme_budget_measurements[0]" time="0.002" /><testcase classname="tests.v5.test_blueprint_item_context" name="test_whole_request_short_and_four_byte_theme_budget_measurements[1]" time="0.002" /></testsuite></testsuites>

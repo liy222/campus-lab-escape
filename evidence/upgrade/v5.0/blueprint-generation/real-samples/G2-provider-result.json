@@ -1,0 +1,18 @@
+{
+  "case_id": "G2",
+  "fictional_test_content": true,
+  "content_redacted": "{\n  \"content_version\": \"1.0.0\",\n  \"blueprint_id\": \"position_v1-r2-normal\",\n  \"title\": \"天文社观测资料交接\",\n  \"story\": \"天文社观测结束后，你需要从观测准备室前往资料室，核对交接记录并复用交接道具，完成关闭前的最后检查。\",\n  \"rooms\": {\n    \"G1\": {\n      \"name\": \"观测准备室\",\n      \"description\": \"桌上散落着观测日志和交接清单，墙上贴着值班注意事项，角落放着几个设备箱。\"\n    },\n    \"G2\": {\n      \"name\": \"资料室\",\n      \"description\": \"资料柜整齐排列，桌面留有一份关闭检查表，等待你完成线路和物品的最后确认。\"\n    }\n  },\n  \"objects\": {\n    \"obj_key\": {\n      \"name\": \"交接钥匙\",\n      \"description\": \"系着天文社徽章的钥匙，可用于开启资料室的部分储物柜，需要循环使用。\"\n    },\n    \"obj_code_source\": {\n      \"name\": \"观测记录页码\",\n      \"description\": \"观测日志上标着四个页码数字，旁边注明按记录顺序读取。\"\n    },\n    \"obj_relation\": {\n      \"name\": \"交接顺序便签\",\n      \"description\": \"便签上写着四个读取位置，提示从源资料的第几位开始按序核对。\"\n    },\n    \"obj_device_source\": {\n      \"name\": \"设备使用登记表\",\n      \"description\": \"登记表列出四台设备的名称，底部有按登记先后读取的提示。\"\n    },\n    \"obj_puzzle_1\": {\n      \"name\": \"记录核对密码锁\",\n      \"description\": \"档案盒上的密码锁，需要结合日志页码和便签顺序才能打开。\"\n    },\n    \"obj_puzzle_2\": {\n      \"name\": \"设备复位次序盘\",\n      \"description\": \"圆形复位盘有四个档位，需依照登记表和位置提示排定设备顺序。\"\n    },\n    \"obj_puzzle_3\": {\n      \"name\": \"线路关闭检查板\",\n      \"description\": \"资料室墙上的线路板，需按关闭检查表逐一确认线路状态。\"\n    },\n    \"obj_puzzle_4\": {\n      \"name\": \"物品归还箱\",\n      \"description\": \"检查结束后，需要把交接钥匙等物品放回归还箱并确认清单。\"\n    }\n  },\n  \"parameters\": {\n    \"digits\": [\"3\", \"7\", \"1\", \"5\"],\n    \"positions\": [2, 4, 1, 3],\n    \"devices\": [\"device_c\", \"device_a\", \"device_d\", \"device_b\"]\n  }\n}",
+  "content_raw_sha256": "df879aeafb726a75c73e7ea2e25e45714a23a01c59caae31d5fe2aebc6b1b589",
+  "usage": {
+    "prompt_tokens": 1410,
+    "completion_tokens": 581,
+    "total_tokens": 1991,
+    "prompt_cache_hit_tokens": 0
+  },
+  "requested_model": "deepseek-flash",
+  "reported_model": "deepseek-flash",
+  "finish_reason": "stop",
+  "call_id": "3e506f91c8644cc3955e10abd00344fc",
+  "cost_upper_cny": 0.007468,
+  "secret_detected": false
+}

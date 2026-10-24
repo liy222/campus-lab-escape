@@ -1,0 +1,78 @@
+{
+  "kind": "Main accepts input-context repair only offline, preserves actual narrative finding",
+  "document_date": "2026-10-24",
+  "utc": "2026-10-24T15:07:42.914619+00:00",
+  "operator": "Main integration AI agent",
+  "qa_operator": "Independent AI QA agent; no human/teacher review or acceptance claimed",
+  "candidate_id": "v5.0-item-context-qa-fixed-20b0be4421735bee",
+  "candidate_path": "evidence\\upgrade\\v5.0\\blueprint-item-context\\candidate-qa-fixed.json",
+  "candidate_sha256": "918f155521767e31dabdc9b9f8eb1a6ad0c834a82532662ee1646f713ee5aa49",
+  "current_source_count": 410,
+  "all_current_sources_match": true,
+  "qa_result": "evidence\\upgrade\\v5.0\\blueprint-item-context\\qa\\result.json",
+  "qa_result_sha256": "9d4585b271530ef72bf1471f224344be7496ae5bdde13b63d95f469cad4a6554",
+  "qa_seal": "evidence\\upgrade\\v5.0\\blueprint-item-context\\qa\\artifact-seal.json",
+  "qa_seal_sha256": "b9c51a53a423827b3ca202b2685542880f7374b904e1bd9b38d92d0746496ce5",
+  "all_16_artifacts_match": true,
+  "reading_entry": "review/findings/v5-blueprint-item-context-clarified.md",
+  "reading_entry_sha256": "0086f0f05353a9ccad56e5059ed08816230d1f21a5f9f2fa58a1c8691896f497",
+  "actor_clarification": "evidence\\upgrade\\v5.0\\blueprint-item-context\\qa\\actor-clarification.json",
+  "actor_clarification_sha256": "ee14ce0d85967d67876bd63985fb6ec46d3592f064778e8dea713795f6442a18",
+  "old_term_human_review_is_corrected_by_derivative_metadata_not_a_real_human_claim": true,
+  "actual_scopes": {
+    "first_run_exit": 1,
+    "first_run_passed": 8,
+    "sole_method_completion_exit": 0,
+    "sole_method_items": 1,
+    "other_eight_and_budget_not_repeated": true,
+    "not_single_full_green": true,
+    "first_run_QA_EOL_baseline_error": 1
+  },
+  "actual_R4_before_context_repair": {
+    "generation_cases": 2,
+    "ready_and_HTTP_EXIT": [
+      24,
+      33
+    ],
+    "usage_upper_increment_cny": 0.02072312,
+    "reserved_upper_cny_sum": 0.259424,
+    "historical_unknowns": 3,
+    "new_unknowns": 0,
+    "pending": 0,
+    "frozen": false,
+    "independent_result": "blueprint-generation/real-samples/qa-actual-review-final-v1.json",
+    "P2_narrative_finding": "BP-REAL-NARRATIVE-01 remains open in original actual epoch"
+  },
+  "current_input_fix": [
+    "derive required item object slot into item_use metadata",
+    "use_item and consumedFalse represent existing rules",
+    "prompt asks same generated item name and forbids invented required items/return/consumption steps"
+  ],
+  "new_real_quality_tested": false,
+  "current_context_paid_calls": 0,
+  "remaining_authorized_paid_calls": 0,
+  "old_source_epochs_and_raw_artifacts_unchanged": {
+    "QA": 63,
+    "preflight": 12,
+    "actual_public": 17,
+    "actual_local_only": 6,
+    "registered_sources": 53
+  },
+  "budget_measurements_only": {
+    "position_short": 0.126072,
+    "mapping_short": 0.149808,
+    "position_2000_four_byte": 0.189928,
+    "mapping_2000_four_byte": 0.213664,
+    "cap": 0.2,
+    "dispatch_or_refusal_executed_in_this_epoch": false
+  },
+  "not_release_acceptance": true,
+  "limitations": [
+    "Pure request context only; no proof that actual model will comply.",
+    "Historical real output error and previous finite successes retain original epoch.",
+    "Budget table measures complete payload and cap classification only; no provider constructed to send/refuse.",
+    "No new real generation, human playtest or release acceptance.",
+    "Existing Starlette deprecation warning retained."
+  ],
+  "next": "Delivery/root documents and ordinary liy222 commit/push; no more tests or paid calls"
+}
