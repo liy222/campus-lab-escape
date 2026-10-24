@@ -357,3 +357,5 @@ Owner离线prepare已执行一次exit0：G2/G3载荷上界分别0.143528/0.14996
 技术成功不等于叙事或真人体验通过：G3末题错误要求资料袋，Host实际需要标本柜钥匙，P2 finding仍OPEN；G2归还/清单用语及G3设备/符号措辞另有限制。自动回放依赖服务器答案，结算elapsed0/ratingS不作真人难度证据，opaque完整API响应hash因只留hash不可独立重构，逐步状态hash均一致。没有本轮新增真实存档/恢复、伙伴、评价器或网页验证。
 随后只补齐request_manifest的实际item_use关系与非消耗使用语义、生成prompt及内部说明。输出Schema、组装、原compiler/API/Store/provider/伙伴/素材保留；当前410来源独立纯离线联合通过（首8pass/1QA换行基线误报，修正后仅补该1项exit0，未重复8项/预算，非单次全绿）。新完整请求3hard计量：position短/2000四字节为0.126072/0.189928元；mapping为0.149808/0.213664元，后者超过0.20 cap。本epoch只是纯计量，没有发送/验拒/真实模型复测，实际文案改善尚未证实。原实际错误和各历史source/exit/raw不改写。所有QA语义复核由AI智能体完成，无真人/教师确认；旧“人工读审”错误术语有派生更正入口，封存原件保持。
 当前仅收尾文档与普通提交推送，付费STOP。仍是未发布开发候选：有限评价53source/9evidence及3项INSUFFICIENT、付费评价unknown严格门槛不变；不打v5tag、不合并main、不部署。依据review/findings/v5-blueprint-real-results.md、v5-blueprint-item-context-clarified.md及blueprint-item-context/accepted.json。
+
+2026-10-24最终同步：真实结果、独立复核、道具上下文窄修与交付文档提交c9baaed3932c03e316faf91f58a06f8744145aa8已推送codex/v5-campus-generation，远端哈希与GitHub作者/提交者liy222均核对。58个选定文件原字节一致且保密检查0；两份封存失败日志的2处空白原样保留，其他文件格式检查0。410当前来源匹配，原8未跟踪文件未动，6私有定义/答案回放文件未入Git。真实两例的技术成功保持在原源码epoch，当前上下文改进仅离线通过，叙述质量未真实复测；无追加调用许可、无正式发布。同步只补元数据，不复测、不增加费用。

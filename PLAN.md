@@ -315,3 +315,5 @@ T7仍缺可靠的真实多房间生成；伙伴已有一个阶段两轮有限实
 ### 2026-10-24 R4两例真实技术成功；道具输入窄修离线通过
 用户批准的2次/0.40元已按计划用完，G2两房normal/position和G3三房hard/mapping均准入并分别24/33次真实HTTP动作到EXIT。按usage保守上界增量0.02072312元，预占合计0.259424元，两者非供应商账单；旧3unknown身份不变/new0/pending0/frozenfalse，无重试或剩余调用授权。
 独立AI QA确认G3“资料袋/钥匙”叙述误导（OPEN）。已普通窄修模型输入：明确实际道具槽位与使用后保留，prompt要求同名且不虚构物品/放回。当前410来源仅新增上下文与定向测试，纯离线联合8+1通过，保留首次测试基线错误；没有重跑旧全套、构建、网页、规划、HTTP或付费。当前补充未真实复测，不能把旧两例标为新prompt质量通过。下一步仅文档、保密审查和正常liy222提交/推送；仍不发布、不合并main或新增功能。证据blueprint-generation/real-samples/qa-actual-review-final-v1.json、blueprint-item-context/accepted.json与已澄清的AI QA报告。
+
+2026-10-24本轮源码及证据已提交c9baaed3932c03e316faf91f58a06f8744145aa8并正常推送开发分支；远端与GitHub作者/提交者liy222核对一致。当前410来源不变，原8未跟踪文件和6本地私有材料保持。两次真实调用名额已用完；上下文后续补充未真实复测，叙述finding与未发布状态保持。仅补同步回执，新增测试/调用0。见blueprint-item-context/sync.json。
