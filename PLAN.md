@@ -309,3 +309,5 @@ T7仍缺可靠的真实多房间生成；伙伴已有一个阶段两轮有限实
 完成README/release及正常liy222提交/推送；R4只先做来源绑定的离线预检，再取得新的有限付费授权。当前真实新生成0，无剩余调用许可；旧真实结果与评价INSUFFICIENT不改写。验收入口evidence/upgrade/v5.0/blueprint-generation/accepted.json与review/findings/v5-blueprint-generation.md。
 
 2026-10-24 R4离线提案也已独立预检通过：绑定411输入的两份精确请求，G2为两房normal/position、G3为三房hard/mapping，各一次，保守预占上界0.110968/0.148456元。实际真实模型0；提案最多2次/0.40元须普通提交/推送完成后取得新的明确有限授权，未创建授权文件或执行标记。原测试结果、数据与未知费用门槛保持。见blueprint-generation/preflight-accepted.json与review/findings/v5-blueprint-real-preflight.md。
+
+2026-10-24选项1实现及离线预检提交f0977564e4145b6b6d3d9c967b07b8a7a68a006f已正常推送开发分支，远端与GitHub作者/提交者liy222核对一致。409候选、411预检输入与旧证据不变，新增真实调用0。下一步只等待精确G2/G3各一次、最多2次/0.40元的新有限批准；未批准前不执行，不自动重试，不发布。同步记录blueprint-generation/sync.json。
