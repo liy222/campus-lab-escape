@@ -449,3 +449,6 @@ Main read6b8a0e accepts independentAI documentreviewbf5fe68e as READY_TO_PRESENT
 
 ### v5 proposal CRCRLF-only correction / narrow document proof GO, 2026-10-25
 Precommit13d44e stopped before auditrecord/commit on git whitespace2; Main revision had doubled96CR in newproposal only. Main exactCRCRLFtoCRLF removes96extraCR, fullnonCRbytes identical, no semantic/product change. Prior design-review/plan/ready/check records remain historical rawepochs untouched; newnewline-normalization.json binds befored2c83990 and finalhash. ExistingQA owns only newdesign-format-review.json to check byteproof/currentdocument hash, no repeateddesign/source/producttests. Main will restage exactownedfiles; no indexreset or whitespacebypass, no paidcalls.
+
+### v5 text-authority proposal remote sealed / product choice pending, 2026-10-25
+DRAFTproposal80135d60c10d641f01160785e2a5b70d911a7bfb normalcommit/push0/remotehash/GitHubauthor+committerliy222 verified.11docs rawmatch/finitecredential0/whitespace0; finalproposal2c6a39ad with originalsemanticreviewbf5fe68e plus independent96CR-onlyproofformat4c36f819. No product/formalplan/contracts/tests/paid change; original8 excluded. Main only sync/rootmetadata then actual A/B question. B notaccepted/implemented by continue, no fees authorized; allimplementation remainsSTOP until actual productdirection accepted.
