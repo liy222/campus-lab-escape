@@ -1,0 +1,46 @@
+{
+  "kind": "Main normal source preparation commit/push receipt; no real execution",
+  "document_date": "2026-10-25",
+  "utc": "2026-10-25T11:59:16.603492+00:00",
+  "source_commit": "eb230113ea4766f2777afd7e3c0e4e1cd1fefb08",
+  "branch": "codex/v5-campus-generation",
+  "actual_commit": {
+    "command": "git commit -m docs(v5): prepare single G3 item-context retest",
+    "tool_chunk": "a766db",
+    "exit_code": 0
+  },
+  "actual_push": {
+    "command": "git push origin codex/v5-campus-generation",
+    "tool_chunk": "bfa9c8",
+    "exit_code": 0
+  },
+  "remote_verification": {
+    "command": "git ls-remote --exit-code origin refs/heads/codex/v5-campus-generation",
+    "tool_chunk": "64c944",
+    "exit_code": 0,
+    "matched": "eb230113ea4766f2777afd7e3c0e4e1cd1fefb08"
+  },
+  "github_metadata_verification": {
+    "tool": "mcp__codex_apps__github_fetch_commit",
+    "sha": "eb230113ea4766f2777afd7e3c0e4e1cd1fefb08",
+    "author_login": "liy222",
+    "committer_login": "liy222",
+    "url": "https://github.com/liy222/campus-lab-escape/commit/eb230113ea4766f2777afd7e3c0e4e1cd1fefb08"
+  },
+  "selected_paths": 17,
+  "staged_working_bytes_match": true,
+  "privacy_findings": 0,
+  "whitespace_exit_code": 0,
+  "audit_tool_chunk": "2aa3c7",
+  "audit_exit_code": 0,
+  "post_push_prepared412_preflight8_original_untracked8_match": true,
+  "fresh_authorization_marker_journal_private_directory_absent": true,
+  "real_paid_calls_this_epoch": 0,
+  "prepare_or_product_tests_repeated": false,
+  "next": "Fresh explicit source-bound maximum1 call/0.20CNY G3-only approval required before execute; failing calls consume the one slot, no retries/companion/evaluator.",
+  "limitations": [
+    "Old narrative finding remains OPEN; no new actual narrative evidence.",
+    "This receipt records the source preparation commit; subsequent metadata-only commit does not rerun or change its evidence.",
+    "No release tag/main merge/deployment or new paid evaluation."
+  ]
+}
