@@ -1,0 +1,39 @@
+{
+  "kind": "Independent AI QA actual single-G3 public and local-private hash seal",
+  "utc": "2026-10-25T14:07:24.312867+00:00",
+  "source_count": 412,
+  "source_bundle_sha256": "279c04228d1217c6c25e1c0381eea0646d8e9982f301f8972ab6317fbb659a6b",
+  "unique_source_map_location": "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/offline-preview-v1.json",
+  "preview_sha256": "ba61fe1ff55d1d8cd03140df7ca9d38b60227372565e25beaf6313d10ed54179",
+  "public_artifact_count": 18,
+  "public_artifact_sha256": {
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/user-authorization.json": "42a046d1a6748073bf91fe5fa5d6c3e0ccba4e3fe158315eeff6d9fc81e06740",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/authorization-binding.json": "8f54f43e2aefbceef1a27c20647083c636aadb6d5bc275159b99ec44f7d2a7f7",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/execute-started.json": "614cada96667c3416d61dcde54aa3ad6a53536d55e41ca92f03470481028205f",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/dispatch-journal.jsonl": "673485f7d0e5313cf8badbe94fffa00ecc3f7873ffaf9c372e61b218458f31e6",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/G3-exact-payload.json": "40dfde9d0b7ea73198ce8418a0c447f83f54b2eee8bad6858a5ee667e06d1e2f",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/G3-provider-result.json": "5a0ced794feb5a21e72d8ab57422102e2c5588ce68c9af432ee4ad1a57772b21",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/G3-api-result.json": "f833d1aadbbf2be91f2956a444f15c0ad27ef261b311f100b1c11f165bc1df4b",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/ledger-before.json": "fa0f11da1b62f4ba7fd6380f9cb87bde392fa989c950c025a5546bf705d3f460",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/ledger-after.json": "a069f5dfef35e68f3da40db322b7a34766ea3df3a16a590791e81b0e144824bc",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/result.json": "fc6f9adbf7d077b4c466cef08ebf8878f7eed97c4b53e8839a01e81b5c662486",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/qa-actual-memory-v1.json": "855ec342f88b8ea600486abe4c2f50c4f4a6493a8b9a02336010b305e638527a",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/qa-actual-bindings-v1.json": "654362b1d59c218eb9c577fbf2ffc85ed747b40f407274648f1965010cf34b30",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/qa-actual-privacy-v1.json": "a47c6ad477b82586718eb425b71262303e53cecc9124cc480fb100fb555c1d7f",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/offline-preview-v1.json": "ba61fe1ff55d1d8cd03140df7ca9d38b60227372565e25beaf6313d10ed54179",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/run.py": "0f6bc53c52d3cb987f4e2047a3f312a4fd900aaa286a20c8e97dcab0466de554",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/preflight-final-v1.json": "4cc90cc9a5485ddf03d22092217afc7b16e25b85036f649dea9033d285bf161a",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/preflight-seal-v1.json": "fdd7942a1c9398293d64e667fba765a5523050e0a872ce311a402b6a7d4421d4",
+    "review/findings/v5-slot-completeness-real-result.md": "da5e936d7bc5231330dcc7be99dbc5bfca4cb08f2605879b581e6e0ee487ec0c"
+  },
+  "local_only_private_artifact_count": 3,
+  "local_only_private_artifact_sha256": {
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/raw-sensitive/G3-private-definition-local.json": "21c8ff62b7078458813b19d24e61c57f38d1dd3a1d1b04e86beea8061d42d27b",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/raw-sensitive/G3-witness-local.json": "9933857c4a7b90fb132c66044401eb8a03dd059f5424be204699425ec9c03d79",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/raw-sensitive/G3-api-replay-local.json": "73d0e8b1fa1da7e2f6de60dc652bef9418f5da2252cc53f1260099a5e91ad8a2"
+  },
+  "local_private_files_not_publication_artifacts": true,
+  "private_content_not_embedded_in_public_artifacts": true,
+  "private_context_exposure_limitation": "See qa-actual-privacy-v1.json: private clue projection entered a local tool transcript and AI QA context; not public evidence/repository or generation/companion/evaluation provider requests.",
+  "excludes_self_and_final_to_avoid_cycles": true
+}

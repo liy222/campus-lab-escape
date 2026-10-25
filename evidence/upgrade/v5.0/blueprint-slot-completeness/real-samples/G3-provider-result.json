@@ -1,0 +1,18 @@
+{
+  "case_id": "G3",
+  "fictional_test_content": true,
+  "content_redacted": "{\"content_version\":\"1.0.0\",\"blueprint_id\":\"mapping_v1-r3-hard\",\"title\":\"标本楼离楼核对\",\"story\":\"生态实验楼临近闭馆，三间相连实验室还留着采样资料和待维护的装置。值班老师请你按交接单逐项核对，确认钥匙、符号对照和器材记录都归位后再离楼。\",\"rooms\":{\"G1\":{\"name\":\"采样资料室\",\"description\":\"靠墙的标本柜贴着旧标签，桌上摊着采样登记和符号对照卡，墙角挂着一串钥匙。\"},\"G2\":{\"name\":\"维护准备间\",\"description\":\"操作台上摆着待接线的维护装置，两份编号记录被夹在资料板两侧，灯下能看清接线提示。\"},\"G3\":{\"name\":\"器材交接室\",\"description\":\"器材柜半开着，交接架上放着两台设备的记录卡，最后一道离楼检查就在门边的装置上。\"}},\"objects\":{\"obj_key\":{\"name\":\"标本柜钥匙\",\"description\":\"一串挂着绿色标本牌的小钥匙，能打开室内维护装置的锁扣，用后照常挂回原处。\"},\"obj_code_source\":{\"name\":\"采样编号登记页\",\"description\":\"记录着几组采样编号，页眉用字母给每组做了标记，需配合对照卡查看。\"},\"obj_relation\":{\"name\":\"样本符号对照卡\",\"description\":\"卡片列出字母标记与数字的对应关系，边缘留有核对用的空白格。\"},\"obj_device_source\":{\"name\":\"维护装置挂牌\",\"description\":\"挂牌上按字母排着设备简称，顺序提示与对照卡上的符号对应。\"},\"obj_puzzle_1\":{\"name\":\"编号确认面板\",\"description\":\"面板要求输入由采样编号推出的四位码，数字旁标有样本字母，需查阅对照资料。\"},\"obj_puzzle_2\":{\"name\":\"设备顺序旋钮\",\"description\":\"四个旋钮可转到不同设备档位，需按挂牌与对照卡确定先后。\"},\"obj_puzzle_3\":{\"name\":\"维护接线板\",\"description\":\"接线板上有若干插孔和指示灯，尚未完成的线路需按室内提示一次性校验。\"},\"obj_extra_code_a\":{\"name\":\"左侧编号夹页\",\"description\":\"资料板左侧夹着两格编号记录，需与右侧夹页按顺序合看。\"},\"obj_extra_code_b\":{\"name\":\"右侧编号夹页\",\"description\":\"资料板右侧夹着另两格编号记录，与左侧夹页合起来才完整。\"},\"obj_puzzle_4\":{\"name\":\"合页密码锁\",\"description\":\"小锁需输入左右夹页拼合后的四位码，输入区旁有夹页提示。\"},\"obj_extra_devices_a\":{\"name\":\"前两台设备记录卡\",\"description\":\"记录卡写着前两台设备简称，卡角标注了它们在交接序列中的位置。\"},\"obj_extra_devices_b\":{\"name\":\"后两台设备记录卡\",\"description\":\"记录卡写着后两台设备简称，需与前卡衔接成完整交接序列。\"},\"obj_puzzle_5\":{\"name\":\"交接序列转盘\",\"description\":\"转盘需按四台设备记录卡排出正确顺序，转盘边缘标有方向提示。\"},\"obj_puzzle_6\":{\"name\":\"离楼检查锁扣\",\"description\":\"门边装置需用标本柜钥匙打开锁扣，再完成最终核查，钥匙用后仍可保留。\"}},\"parameters\":{\"code_symbols\":[\"C\",\"A\",\"D\",\"B\"],\"digit_map\":{\"A\":\"3\",\"B\":\"7\",\"C\":\"1\",\"D\":\"9\"},\"sequence_symbols\":[\"G\",\"E\",\"H\",\"F\"],\"device_map\":{\"E\":\"device_b\",\"F\":\"device_d\",\"G\":\"device_a\",\"H\":\"device_c\"},\"extra_digits\":[\"4\",\"8\",\"2\",\"6\"],\"extra_devices\":[\"device_c\",\"device_a\",\"device_d\",\"device_b\"]}}",
+  "content_raw_sha256": "c320b88f4a7475d0f1260aae4c38c9668d6acc8eb73b7f876b737e0a6424a3c4",
+  "usage": {
+    "prompt_tokens": 2806,
+    "completion_tokens": 817,
+    "total_tokens": 3623,
+    "prompt_cache_hit_tokens": 0
+  },
+  "requested_model": "deepseek-flash",
+  "reported_model": "deepseek-flash",
+  "finish_reason": "stop",
+  "call_id": "6c058353aa484e0192bd3e4bc3912aac",
+  "cost_upper_cny": 0.012148,
+  "secret_detected": false
+}

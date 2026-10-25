@@ -1,0 +1,128 @@
+{
+  "kind": "Independent AI QA terminal actual binding and accounting audit",
+  "actor": "Independent AI QA agent",
+  "actual_QA_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 - (saved source/auth/payload/journal/usage/snapshots/old-seal read audit and new metadata; tool transcript)",
+  "exit_code": 0,
+  "main_actual_execute": {
+    "command": "python -B -X utf8 evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/run.py --execute",
+    "tool_chunk": "c122f1",
+    "exit_code": 0,
+    "seconds": 9.37,
+    "single_execution_no_retry": true
+  },
+  "preview_sha256": "ba61fe1ff55d1d8cd03140df7ca9d38b60227372565e25beaf6313d10ed54179",
+  "unique_full_source_map_location": "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/offline-preview-v1.json",
+  "source_count": 412,
+  "source_bundle_sha256": "279c04228d1217c6c25e1c0381eea0646d8e9982f301f8972ab6317fbb659a6b",
+  "current_sources_and_saved_after_equal_preview": true,
+  "approval_reference": "request_user_input_async call_a4be3eac419849f480b0e432f9b62c7e item0",
+  "authorization_sha256": "42a046d1a6748073bf91fe5fa5d6c3e0ccba4e3fe158315eeff6d9fc81e06740",
+  "exact_authorization_marker_journal_binding": true,
+  "actual_payload_equals_approved_preview": true,
+  "payload_bound": {
+    "payload_utf8_bytes": 11148,
+    "input_token_bound": 52784,
+    "output_token_bound": 6000,
+    "cost_upper_units": 153568000,
+    "cost_upper_cny": 0.153568,
+    "payload_sha256": "8237c17e07e0b79cfd9e9707cfd2e71687d2ba0b7086d7fcf86a2c70f88f653e"
+  },
+  "journal_before_after_count": 2,
+  "actual_attempts": 1,
+  "remaining_paid_authorization_calls": 0,
+  "usage": {
+    "prompt_tokens": 2806,
+    "completion_tokens": 817,
+    "total_tokens": 3623,
+    "prompt_cache_hit_tokens": 0
+  },
+  "usage_cost_upper_units": 12148000,
+  "usage_cost_upper_cny": 0.012148,
+  "saved_calls_before_after": [
+    145,
+    146
+  ],
+  "saved_charged_units_before_after": [
+    1103688000,
+    1115836000
+  ],
+  "old_unknown_identity_unchanged": true,
+  "pending": 0,
+  "frozen": false,
+  "finalization_failures": [],
+  "historical_seals_unchanged": [
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-generation/qa/artifact-seal.json",
+      "sha256": "827b25cfdf44ab45bb8d4bee77217aff4dc39944ff41714ff51990e7d2ca5b0e",
+      "all_sealed_artifacts_match": true,
+      "counts": {
+        "artifact_sha256": 63
+      }
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-item-context/qa/artifact-seal.json",
+      "sha256": "b9c51a53a423827b3ca202b2685542880f7374b904e1bd9b38d92d0746496ce5",
+      "all_sealed_artifacts_match": true,
+      "counts": {
+        "artifact_sha256": 16
+      }
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/preflight-review-seal-v1.json",
+      "sha256": "6812ea980a94b4292fbb748005620affb388a84617138ecdcc4e266e35abe088",
+      "all_sealed_artifacts_match": true,
+      "counts": {
+        "artifact_sha256": 12
+      }
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/qa-actual-review-seal-v1.json",
+      "sha256": "b49f31d9a452e69d7b8b5185aba45f068d90d87e59609d64ea346a1a83ea4abc",
+      "all_sealed_artifacts_match": true,
+      "counts": {
+        "public_artifact_sha256": 17,
+        "local_only_private_artifact_sha256": 6
+      }
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/preflight-review-seal-v1.json",
+      "sha256": "9606c840709190f90a18d04d1e74d284a294604dc7027475b3d5e8ecbf2761c8",
+      "all_sealed_artifacts_match": true,
+      "counts": {
+        "artifact_sha256": 8
+      }
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/qa-actual-seal-v1.json",
+      "sha256": "d298c8559fcdb2205a6ce2f69e9994a584afa5d8c737a360673948b4ba1b06f9",
+      "all_sealed_artifacts_match": true,
+      "counts": {
+        "public_artifact_sha256": 14
+      }
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-slot-completeness/qa/artifact-seal.json",
+      "sha256": "ce32e24b623f55ed8d1ba6e19ac91ce12c19f96017e7bba4332f1d5037b6ad4a",
+      "all_sealed_artifacts_match": true,
+      "counts": {
+        "artifact_sha256": 9
+      }
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/preflight-seal-v1.json",
+      "sha256": "fdd7942a1c9398293d64e667fba765a5523050e0a872ce311a402b6a7d4421d4",
+      "all_sealed_artifacts_match": true,
+      "counts": {
+        "artifact_sha256": 8
+      }
+    }
+  ],
+  "registered_source_count": 53,
+  "registered_sources_current_raw_match": true,
+  "QA_live_ledger_or_config_Key_database_provider_network_access": false,
+  "limitations": [
+    "Saved ledger snapshots and unchanged runner gates reviewed; canonical ledger not opened independently.",
+    "Actual invocation/exit/time supplied by Main terminal tool record, no QA rerun.",
+    "Finite one sample, no broad reliability or human timing claim."
+  ]
+}

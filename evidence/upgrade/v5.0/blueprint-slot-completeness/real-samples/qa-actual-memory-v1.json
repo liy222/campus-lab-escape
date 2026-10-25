@@ -1,0 +1,58 @@
+{
+  "kind": "Independent AI QA saved actual content and pure-rule memory consistency audit",
+  "actor": "Independent AI QA agent",
+  "actual_QA_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 - (strict raw assembly, saved Draft/CompiledLevel hash reconstruction, saved 33-action pure-rule comparison; full tool transcript)",
+  "exit_code": 0,
+  "original_raw_sha_matches": true,
+  "strict_internal_schema_errors": 0,
+  "exact_required_objects": 14,
+  "all_four_extra_clues_present": true,
+  "assembled_Draft_equals_saved_actual_definition": true,
+  "saved_definition_hash_matches": true,
+  "saved_witness_hash_matches": true,
+  "saved_witness_actions": 33,
+  "memory_rule_state_hashes_match": 33,
+  "initial_state_hash_matches": true,
+  "final_full_projection_matches": true,
+  "final_status": "won",
+  "final_room": "EXIT",
+  "puzzles_solved": 6,
+  "clues_discovered": 7,
+  "item_use": [
+    {
+      "action_index": 31,
+      "required_item_present_before": true,
+      "inventory_identical_after": true,
+      "consumed_item_ids_empty": true
+    }
+  ],
+  "required_key_retained_at_EXIT": true,
+  "metadata_reused_only_for_hash_comparison": [
+    "saved generation",
+    "saved session/level identifiers",
+    "saved started_at/finished_at",
+    "saved save projection"
+  ],
+  "new_HTTP_calls": 0,
+  "new_compiler_or_solver_runs": 0,
+  "new_model_calls": 0,
+  "provider_main_storage_imported": false,
+  "api_body_hash_limit": "Per-step api_result_sha256 are opaque. Full HTTP bodies including random event IDs were not saved; no independent reconstruction of those full response hashes is claimed. Status and every saved visible-state hash verified.",
+  "narrative_facts": {
+    "key_name": "标本柜钥匙",
+    "item_description": "一串挂着绿色标本牌的小钥匙，能打开室内维护装置的锁扣，用后照常挂回原处。",
+    "item_puzzle_description": "门边装置需用标本柜钥匙打开锁扣，再完成最终核查，钥匙用后仍可保留。",
+    "item_puzzle_exact_full_key_name": true,
+    "key_description_requires_hanging_back": true,
+    "return_action_exists_in_production_tools": false,
+    "no_specimen_bag_mentioned": true,
+    "device_description": "挂牌上按字母排着设备简称，顺序提示与对照卡上的符号对应。",
+    "actual_source_symbols_alphabetically_sorted": false,
+    "actual_source_matches_typed_sequence_symbols": true,
+    "mapped_device_order_happens_alphabetically_sorted": true,
+    "mapping_keys_alphabetically_ordered": true,
+    "device_narrative_conclusion": "The actual source object displays a nonalphabetical symbol source sequence rather than device abbreviations. The mapped devices happen to be alphabetically ordered. The sentence does not explicitly identify which ordering subject is intended; evidence supports ambiguity/misleading-material risk, not an unconditional claim that every interpretation is false or the puzzle unsolvable."
+  },
+  "tool_transcript_privacy_incident": "Earlier d4fe5b helper printed private clue projection into the local tool transcript and independent AI QA context through an overbroad metadata filter. No such projection was written into public evidence/repository or sent in generation/companion/evaluation provider requests. Subsequent outputs contain only necessary booleans/counts/hashes. This is not a claim that private values never entered any model context.",
+  "public_evidence_has_no_private_answer_values": true
+}

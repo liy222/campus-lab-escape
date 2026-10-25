@@ -1,0 +1,21 @@
+{
+  "kind": "Independent AI QA bounded privacy review",
+  "actor": "Independent AI QA agent",
+  "exit_code": 0,
+  "public_raw_files_checked": 10,
+  "finite_token_cookie_bearer_pattern_matches": 0,
+  "configured_actual_Key_or_live_session_values_not_loaded": true,
+  "private_artifacts": {
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/raw-sensitive/G3-private-definition-local.json": "21c8ff62b7078458813b19d24e61c57f38d1dd3a1d1b04e86beea8061d42d27b",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/raw-sensitive/G3-witness-local.json": "9933857c4a7b90fb132c66044401eb8a03dd059f5424be204699425ec9c03d79",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/raw-sensitive/G3-api-replay-local.json": "73d0e8b1fa1da7e2f6de60dc652bef9418f5da2252cc53f1260099a5e91ad8a2"
+  },
+  "private_files_remain_local_only": true,
+  "private_body_embedded_in_public_QA_artifacts": false,
+  "local_tool_transcript_and_AI_QA_context_exposure": "Earlier d4fe5b helper printed private clue projection into the local tool transcript and independent AI QA context through an overbroad metadata filter. No such projection was written into public evidence/repository or sent in generation/companion/evaluation provider requests. Subsequent outputs contain only necessary booleans/counts/hashes. This is not a claim that private values never entered any model context.",
+  "limits": [
+    "Pattern scan is finite and cannot prove absence of all possible secret formats; no credentials read to compare configured values.",
+    "No actual generation/companion/evaluation request forwarded saved private evidence.",
+    "Do not publish the three private files or the affected local private projection tool output."
+  ]
+}

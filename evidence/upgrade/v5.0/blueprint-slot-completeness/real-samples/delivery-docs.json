@@ -1,0 +1,86 @@
+{
+  "kind": "Slot-completeness actual sample Delivery documentation SOURCE STOP",
+  "date": "2026-10-25",
+  "owned_paths": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/delivery-docs.json"
+  ],
+  "source_binding": {
+    "actual_source_count": 412,
+    "source_bundle_sha256": "279c04228d1217c6c25e1c0381eea0646d8e9982f301f8972ab6317fbb659a6b",
+    "actual_run_result": "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/result.json",
+    "actual_run_result_sha256": "fc6f9adbf7d077b4c466cef08ebf8878f7eed97c4b53e8839a01e81b5c662486",
+    "independent_review": "review/findings/v5-slot-completeness-real-result.md",
+    "independent_review_sha256": "da5e936d7bc5231330dcc7be99dbc5bfca4cb08f2605879b581e6e0ee487ec0c",
+    "public_actual_QA_result": "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/qa-actual-final-v1.json",
+    "public_actual_QA_result_sha256": "40dde1ad3862a2467c257d10c2fd7385de72643944a78db56dd5051e307723b1",
+    "public_actual_QA_seal": "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/qa-actual-seal-v1.json",
+    "public_actual_QA_seal_sha256": "c1a7e20161184691d3574a28c661b7d4dba35145d1c3602ec537ded6b8c3115b",
+    "prior_prompt_only_result": "evidence/upgrade/v5.0/blueprint-slot-completeness/qa/result.json",
+    "prior_prompt_only_result_sha256": "9ce6cc8fcfedbf158cf5d896c271faec231e474461a68cdd5c3825363caa8281",
+    "prior_prompt_only_review_sha256": "9725f9526cc09bc72dc57d2c2691f9fc9c77577121d8db4cfdb7c6646bde8a60"
+  },
+  "documented_actual_result": {
+    "approval": "One approved call, executed exactly once; exit 0.",
+    "case": "G3, 3 rooms, hard, mapping_v1, controlled Host seed 1, same theme as prior failed sample.",
+    "level_status": "ready_and_replayed",
+    "complete_objects": 14,
+    "http_actions_to_EXIT": 33,
+    "puzzles": "6 of 6",
+    "clues": "7 of 7",
+    "independent_pure_rule_replay": "Initial, all 33 per-step state hashes, and final projection matched; key use_item did not consume the key and the key remained in inventory through EXIT.",
+    "compile_or_solver_rerun": false,
+    "usage_conservative_upper_delta_yuan": 0.012148,
+    "pre_reserved_upper_yuan": 0.153568,
+    "provider_invoice": false,
+    "calls": "145 -> 146",
+    "charged_upper_units": "1103688000 -> 1115836000",
+    "historical_unknown_count_and_identity_unchanged": 3,
+    "new_unknown": 0,
+    "pending": 0,
+    "frozen": false,
+    "finalization_failures": [],
+    "retries": 0,
+    "remaining_authorized_slots": 0,
+    "companion_or_evaluation_call": false
+  },
+  "limitations_and_caveats": [
+    "This is one finite technical sample, not model-wide reliability or narrative-quality acceptance; the previous failed output and original prompt-only QA remain separate historical epochs.",
+    "The original narrative finding stays OPEN: the key object text suggests hanging the key back, while the real nonconsuming use_item operation has no return action; device-order wording remains ambiguous.",
+    "Automated elapsed_seconds=0 and rating=S are program data, not human time or difficulty ratings. No human or teacher playtest, save/restore, build, UI, evaluation, or release acceptance is claimed.",
+    "Only saved state-hash chains were independently replayed; full API response-body hashes could not be reconstructed because original response bodies were not saved.",
+    "The QA report records an over-broad metadata read that placed a private clue projection into the local AI QA agent context. The value was not published in public artifacts and was not sent to generation, companion, or evaluation providers. No raw clue content is reproduced here.",
+    "Existing three unknown reservations and INSUFFICIENT_EVIDENCE evaluation status remain unchanged; V5 has no release tag, main merge, or deployment."
+  ],
+  "chronology": "This single actual success follows the earlier slot-completeness prompt-only 5-pass/4-deselected offline result and the earlier real G3 rejected sample. It does not rewrite or merge either epoch.",
+  "checks_performed_by_delivery_owner": [
+    {
+      "command": "Test-Path over newly cited actual-sample and prior prompt-QA report/result/seal paths",
+      "exit_code": 0,
+      "output": "ALL_NEW_LINK_TARGETS_EXIST"
+    },
+    {
+      "command": "Read-only ConvertFrom-Json parsing of public actual result/seal and prior prompt result/seal",
+      "exit_code": 0
+    },
+    {
+      "command": "git -c core.whitespace=cr-at-eol diff --check -- README.md release/V5.md",
+      "exit_code": 0,
+      "note": "Existing LF-to-CRLF warning for release/V5.md only."
+    },
+    {
+      "command": "git diff --stat -- README.md release/V5.md",
+      "exit_code": 0,
+      "output": "2 files changed, 6 insertions(+), 2 deletions(-)"
+    }
+  ],
+  "document_sha256": {
+    "README.md": "cbdcdc2a3dca780e4e434a1a79d4bac54466a3e972cea000c76618a134b16255",
+    "release/V5.md": "e77b9e356b7a7193607c4245dee41ea6be3506dbf7e139c06b70921724b5a3ac"
+  },
+  "not_run_by_delivery_owner": [
+    "No tests, build, browser, provider, network, or model calls were run. Only existing public sealed evidence was read; raw-sensitive files were not opened."
+  ],
+  "status": "DELIVERY SOURCE STOP; no commit or push."
+}
