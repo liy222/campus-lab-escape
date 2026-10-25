@@ -1,0 +1,30 @@
+{
+  "kind": "Main pureprepare GO only after Owner STOP and independent initial review",
+  "utc": "2026-10-25T13:54:02.188051+00:00",
+  "runner_sha256": "0f6bc53c52d3cb987f4e2047a3f312a4fd900aaa286a20c8e97dcab0466de554",
+  "independent_initial_review": {
+    "path": "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/preflight-source-v1.json",
+    "sha256": "0a49e453ddbfd5415ba2f1eb432cf26df20f89bd2926da512bbf536c4d3c8a02",
+    "tool_chunk": "58afd7",
+    "exit_code": 0,
+    "no_static_blocker": true
+  },
+  "Main_diff_read": {
+    "tool_chunk": "1cb6f0",
+    "exit_code": 0,
+    "only_six_approved_literal_replacements": true
+  },
+  "Main_private_ignore_check": {
+    "tool_chunk": "013580",
+    "exit_code": 0,
+    "three_future_paths_ignored": true
+  },
+  "allowed_action": "Main may run this new --prepare exactly once, full wirebody/source/cost only",
+  "authorization_marker_journal_private_preview_absent": true,
+  "paid_authorization": false,
+  "configuration_key_ledger_database_provider_or_network_allowed": false,
+  "limitations": [
+    "No execution, quality or narrative finding closure.",
+    "Existing guard evidence reused, no old tests or probes repeated."
+  ]
+}

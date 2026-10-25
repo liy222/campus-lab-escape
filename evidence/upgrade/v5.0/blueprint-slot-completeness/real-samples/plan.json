@@ -1,0 +1,74 @@
+{
+  "kind": "Main one-case retest preparation only for current slot-completeness prompt",
+  "document_date": "2026-10-25",
+  "utc": "2026-10-25T13:49:51.896522+00:00",
+  "baseline_head": "891102e5bd9b0af5e1ec878ec711834b29c8da28",
+  "baseline_remote_match": true,
+  "matched_before_preparation": {
+    "current_source": 410,
+    "current_QA_artifacts": 9,
+    "last_actual_artifacts": 14,
+    "original_untracked": 8
+  },
+  "product_candidate": "evidence/upgrade/v5.0/blueprint-slot-completeness/candidate.json",
+  "product_source_count": 410,
+  "product_bundle": "71155c8b17d70383499ad845db6b3e7e4b61a620c52cb9ecb803c69ea1618dc4",
+  "historical_executor": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/run.py",
+  "historical_executor_sha256": "eed8325b4cff57668eb36ec5d3584b1ef270080b59f69755a946f7190d2b38cf",
+  "scope": {
+    "case_id": "G3",
+    "room_count": 3,
+    "difficulty": "hard",
+    "family": "mapping_v1",
+    "host_seed": 1,
+    "theme": "校园生态实验楼标本交接：三间相连实验室保留采样资料与维护装置，需要跨房间核对材料后完成离楼检查。"
+  },
+  "proposed_maximum_calls": 1,
+  "proposed_maximum_cny": 0.2,
+  "actual_paid_authorization": false,
+  "why": "Current prompt clarified extra clue objects after previous raw output omitted four required slots. New exact request is not yet actually sampled; only one same-scenario call would assess finite completeness and narrative facts.",
+  "ownership": {
+    "existing_Backend": [
+      "new run.py and author-source-stop.json only; mechanical derivation from sealed prior runner",
+      "no prepare/execute or credentials/ledger/DB/network"
+    ],
+    "existing_QA": [
+      "new preflight review records and review/findings/v5-slot-completeness-retest-preflight.md",
+      "read/AST inheritance review and actual source/body/cost bindings only, no repeated guard suite/product tests or model"
+    ],
+    "Main": [
+      "this plan and pureprepare GO",
+      "AGENTS.md",
+      "PLAN.md",
+      "STATUS.md",
+      "integration/read audit/privacy/Git",
+      "one --prepare after Owner STOP and initial read review"
+    ]
+  },
+  "allowed_executor_delta": [
+    "current candidate path and expected bundle",
+    "new unique RUN_ID and output/private directory namespace",
+    "sanitized result kind/temporary prefix only",
+    "hardcoded actual_command and current-run descriptive namespace metadata updated to the actual new runner path; historical baseline references remain historical"
+  ],
+  "inherited_unchanged": [
+    "exact G3 theme/selection, max1/.20, fixed oldunknown identity and10CNY ledger",
+    "fresh authorization before marker/config/Key/ledger; exclusive marker/journal failures consume slot",
+    "source/payload/model/secret/concurrent ledger and final-source/safe-ledger stops",
+    "production GenerationService/provider/API/compiler/witness; no repair/fallback/retry/companion/evaluator"
+  ],
+  "future_private_paths": "new OUT/raw-sensitive with existing generic ignore; no .gitignore change",
+  "acceptance": [
+    "no product/test/source changes",
+    "read-only diff/AST shows all functional guards inherited without change",
+    "Main prepare exactly once current full wire request/source bound and upper<=.20; no config/Key/ledger/DB/network",
+    "independent preflight actualpreview/source/limit/ignore and fresh-approval absence reviewed, reuse old sealed guard evidence",
+    "selective normal liy222 commit/push before fresh finite approval question"
+  ],
+  "limits": [
+    "No fresh paid authority exists, continue is not finite approval.",
+    "No actual quality/finding closure or generation success implied by prepare.",
+    "Prior rejected output/OPEN narrative finding and all old evidence unchanged.",
+    "No v5 release/main merge/tag/deployment, no evaluator or historical unknown investigation."
+  ]
+}

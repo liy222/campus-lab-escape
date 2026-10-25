@@ -1,0 +1,78 @@
+{
+  "kind": "Mechanical new-namespace clone author SOURCE STOP; static only",
+  "utc": "2026-10-25T13:52:33.732599+00:00",
+  "source_stop": true,
+  "files_created": [
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/run.py",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/author-source-stop.json"
+  ],
+  "runner_sha256": "0f6bc53c52d3cb987f4e2047a3f312a4fd900aaa286a20c8e97dcab0466de554",
+  "runner_bytes": 33906,
+  "historical_runner_path": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/run.py",
+  "historical_runner_sha256": "eed8325b4cff57668eb36ec5d3584b1ef270080b59f69755a946f7190d2b38cf",
+  "historical_runner_unchanged": true,
+  "approved_literal_replacements": [
+    {
+      "from": "v5-item-context-real-G3-pending-approval",
+      "to": "v5-slot-completeness-real-G3-pending-approval",
+      "occurrences": 1
+    },
+    {
+      "from": "evidence/upgrade/v5.0/blueprint-item-context/candidate-qa-fixed.json",
+      "to": "evidence/upgrade/v5.0/blueprint-slot-completeness/candidate.json",
+      "occurrences": 1
+    },
+    {
+      "from": "20b0be4421735beefae6c4e051935565866606d4c6887b0075ab822620220f6d",
+      "to": "71155c8b17d70383499ad845db6b3e7e4b61a620c52cb9ecb803c69ea1618dc4",
+      "occurrences": 1
+    },
+    {
+      "from": "v5-item-context-approved-real-G3-",
+      "to": "v5-slot-completeness-approved-real-G3-",
+      "occurrences": 1
+    },
+    {
+      "from": "actual_paid_item_context_G3_validation",
+      "to": "actual_paid_slot_completeness_G3_validation",
+      "occurrences": 1
+    },
+    {
+      "from": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/run.py --prepare",
+      "to": "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/run.py --prepare",
+      "occurrences": 1
+    }
+  ],
+  "namespace_command_metadata_extra_permission": "Main explicitly allowed correcting only the hardcoded prepare report actual_command to the new namespace; no functional change.",
+  "byte_inverse_replacements_equal_entire_historical_runner": true,
+  "AST_equal_after_normalizing_only_six_namespace_literals": true,
+  "functional_guards_and_payload_logic_identical": true,
+  "case_selection_and_limits_AST_identical": true,
+  "source_map_future_count": 412,
+  "actual_command": "Author inline Python byte-level six-literal replacement/inverse equality and AST normalized equality check via C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -; full command retained in tool transcript",
+  "exit_code": 0,
+  "prior_author_static_failure": {
+    "tool_chunk": "fec78a",
+    "exit_code": 1,
+    "stage": "Before any file writes",
+    "cause": "Author AST normalizer initially matched only entire constants; it missed the new path embedded in actual_command. Comparator changed to substring normalization only; executor delta was unchanged.",
+    "runner_or_report_written": false
+  },
+  "runner_imported": false,
+  "prepare_executed": false,
+  "execute_executed": false,
+  "key_or_config_read": false,
+  "canonical_ledger_opened": false,
+  "database_opened": false,
+  "provider_calls": 0,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "new_raw_sensitive_directory_created": false,
+  "approval_or_marker_created": false,
+  "limitations": [
+    "Static mechanical inheritance review only; no new guard tests, runtime import, payload generation or cost measurement performed.",
+    "Main alone may later run one separately authorized pure prepare; independent QA reviews that actual full preview.",
+    "No fresh paid approval exists: any future one-case max1/.20 execute requires a new finite source-bound actual user approval.",
+    "All410 frozen product/test sources and old runner/raw/seals/.gitignore remain unchanged; no claim of real completeness or narrative quality success."
+  ]
+}

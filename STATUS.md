@@ -376,3 +376,7 @@ Owner离线prepare已执行一次exit0：G2/G3载荷上界分别0.143528/0.14996
 2026-10-25当前收尾：新slot-completeness候选71155c8b的五项纯离线检查一次全部通过（5passed/4deselected/0.24s/exit0），Main核对410来源与9份新QA原件一致。新提示的实际模型效果仍未验证；此前唯一真实G3失败及0.010586元用量上界保留、名额耗尽，旧P2保持OPEN。没有新构建、网页、API回放、存档恢复或付费调用；正在完成文档与正常Git同步，仍不发布。见blueprint-slot-completeness/accepted.json和独立v5-slot-completeness-prompt.md。
 
 2026-10-25本轮已同步GitHub：18a64f5221c2bd429fc1edf7e22df4ca3c95a3fb，远端一致且作者/提交者均liy222。真实G3缺4物件被拒，调用1次、usage保守上界0.010586元，批准名额已用完。随后仅澄清prompt，5项定向离线一次通过；新提示未真实复测，旧叙事finding仍OPEN。42文件保密/格式/原字节核对通过，原8未跟踪与私有材料保持，当前410源码不变。正常同步回执不增加测试/费用，无正式发布。
+
+2026-10-25最新：新提示尚无实际模型样本，旧G3拒绝与叙述OPEN维持。现在仅准备同一三房hard/mapping场景的一次复测提案，拟上限1次/0.20元，无付费许可或新调用。当前源码与封存匹配，历史测试不重跑、原数据和未跟踪材料保留；准备记录blueprint-slot-completeness/real-samples/plan.json。
+
+2026-10-25当前准备已完成：独立preflight4cc90cc9为PASS_PROPOSAL_ONLY_FRESH_APPROVAL_REQUIRED，当前412来源和8新封存原字节一致，完整请求上界0.153568元。尚无新授权/执行marker/journal/私有证明或真实调用，原失败与叙述finding仍OPEN。现在只做选择性保密/字节核对与GitHub同步；不是模型质量通过，也不重复旧验证。

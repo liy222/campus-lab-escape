@@ -1,0 +1,50 @@
+{
+  "kind": "Main read review of actual single-G3 slot-completeness preview only",
+  "utc": "2026-10-25T13:54:49.823327+00:00",
+  "actual_prepare_argv": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/run.py",
+    "--prepare"
+  ],
+  "actual_prepare_tool_chunk": "6f77e6",
+  "actual_prepare_exit_code": 0,
+  "prepare_repeated": false,
+  "source_count": 412,
+  "source_bundle": "279c04228d1217c6c25e1c0381eea0646d8e9982f301f8972ab6317fbb659a6b",
+  "preview_sha256": "ba61fe1ff55d1d8cd03140df7ca9d38b60227372565e25beaf6313d10ed54179",
+  "runner_sha256": "0f6bc53c52d3cb987f4e2047a3f312a4fd900aaa286a20c8e97dcab0466de554",
+  "actual_wire_body_bytes": 11148,
+  "actual_wire_sha256": "8237c17e07e0b79cfd9e9707cfd2e71687d2ba0b7086d7fcf86a2c70f88f653e",
+  "required_object_slots": 14,
+  "new_slot_completeness_prompt_present": true,
+  "actual_nonconsuming_item_relation_present": true,
+  "same_scope": {
+    "case_id": "G3",
+    "room_count": 3,
+    "difficulty": "hard",
+    "family": "mapping_v1",
+    "seed": 1,
+    "theme": "校园生态实验楼标本交接：三间相连实验室保留采样资料与维护装置，需要跨房间核对材料后完成离楼检查。"
+  },
+  "bound": {
+    "payload_utf8_bytes": 11148,
+    "input_token_bound": 52784,
+    "output_token_bound": 6000,
+    "cost_upper_units": 153568000,
+    "cost_upper_cny": 0.153568,
+    "payload_sha256": "8237c17e07e0b79cfd9e9707cfd2e71687d2ba0b7086d7fcf86a2c70f88f653e"
+  },
+  "maximum_calls_proposed": 1,
+  "maximum_cny_proposed": 0.2,
+  "fresh_authorization_marker_journal_private_absent": true,
+  "config_key_liveledger_DB_provider_or_network_access_by_this_review": false,
+  "paid_calls": 0,
+  "limitations": [
+    "Source-bound input and budget only, no actual model output or admission/witness.",
+    "Old narrative and missing-slot findings not closed; model compliance unproven.",
+    "Live canonical ledger remains unopened and must be checked only after fresh actual finite approval."
+  ]
+}
