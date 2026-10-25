@@ -1,0 +1,64 @@
+{
+  "kind": "Chronology correction for slot-completeness delivery docs",
+  "date": "2026-10-25",
+  "scope": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/delivery-docs-corrected.json"
+  ],
+  "correction": "Reordered the paragraphs so the single real G3 attempt on the earlier item-context candidate appears before the later slot-completeness prompt-only candidate. The G3 attempt cannot be read as a result of the later prompt change. Removed redundant repetition of the five-case QA result from the real-call paragraph.",
+  "chronology": [
+    {
+      "epoch": "item-context real sample",
+      "source_count": 412,
+      "review": "review/findings/v5-item-context-real-result.md",
+      "review_sha256": "7130eb234fc56801a20d9339ea08f7256f76850e4c0be84ef320c00c7b7d9d02",
+      "actual_result": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/qa-actual-final-v1.json",
+      "actual_result_sha256": "847218443a7322a1c5502bdc1882327da4fa00e8e466f99d4b94046fe058af81",
+      "seal": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/qa-actual-seal-v1.json",
+      "seal_sha256": "d298c8559fcdb2205a6ce2f69e9994a584afa5d8c737a360673948b4ba1b06f9",
+      "result": "One authorized real G3 call, exit 1; complete non-truncated output omitted four required object slots (10/14), rejected as MODEL_INVALID_OUTPUT before Draft/witness. Usage upper delta 0.010586 yuan and reserved upper 0.150816 yuan, neither an invoice; one slot consumed, no retry, three historical unknown identities unchanged, new unknown 0, pending 0, frozen false. Earlier P2 remains open."
+    },
+    {
+      "epoch": "slot-completeness prompt-only candidate after the sealed G3 failure",
+      "source_count": 410,
+      "candidate_sha256": "a4af0c09c5f46138215119d9070be1c6678dafc99b516d096fc1fc95ff08d5e8",
+      "review": "review/findings/v5-slot-completeness-prompt.md",
+      "review_sha256": "9725f9526cc09bc72dc57d2c2691f9fc9c77577121d8db4cfdb7c6646bde8a60",
+      "qa_result": "evidence/upgrade/v5.0/blueprint-slot-completeness/qa/result.json",
+      "qa_result_sha256": "9ce6cc8fcfedbf158cf5d896c271faec231e474461a68cdd5c3825363caa8281",
+      "artifact_seal": "evidence/upgrade/v5.0/blueprint-slot-completeness/qa/artifact-seal.json",
+      "artifact_seal_sha256": "ce32e24b623f55ed8d1ba6e19ac91ce12c19f96017e7bba4332f1d5037b6ad4a",
+      "result": "Only the GENERATION_PROMPT section was clarified. The single formal run reused existing pure checks: 5 passed, 4 deselected, 0.24 seconds, exit 0; this epoch had no pytest failure or supplemental rerun. Pure complete-payload budgets: short position 0.128824 and mapping 0.152560 yuan; 2000 four-byte-character position 0.192680 and mapping 0.216416 yuan (over the 0.20 cap). No provider dispatch/refusal, real model call, or narrative retest."
+    }
+  ],
+  "prior_delivery_record": {
+    "path": "evidence/upgrade/v5.0/blueprint-slot-completeness/delivery-docs.json",
+    "sha256": "4f9aeac09bb09d2a2830c28284d733c7dcf0c31169567295fcd824f205873a7e",
+    "note": "Preserved byte-for-byte as the preceding documentation epoch; its document hashes are historical, not hashes of the corrected files."
+  },
+  "commands_and_results": [
+    {
+      "command": "git -c core.whitespace=cr-at-eol diff --check -- README.md release/V5.md",
+      "exit_code": 0,
+      "note": "Existing LF-to-CRLF warning for release/V5.md only."
+    },
+    {
+      "command": "git diff --stat -- README.md release/V5.md",
+      "exit_code": 0,
+      "output": "2 files changed, 10 insertions(+), 0 deletions(-)"
+    },
+    {
+      "command": "Get-FileHash README.md,release/V5.md -Algorithm SHA256",
+      "exit_code": 0
+    }
+  ],
+  "corrected_document_sha256": {
+    "README.md": "dfea9e134cfb4565a65d9f519593c2813804e9ae4182a73066805ea311eca23c",
+    "release/V5.md": "fef3382a9b80b92e8b8adad7a31070a0c87eb429b5012c49db5aa4a0068dd609"
+  },
+  "not_run": [
+    "No tests, build, browser, network, provider, or paid call was run. Product source and all QA files remain unchanged."
+  ],
+  "status": "SOURCE STOP; chronology correction only."
+}

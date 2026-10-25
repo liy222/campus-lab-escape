@@ -1,0 +1,149 @@
+{
+  "kind": "Main finite prompt-only offline acceptance after independently sealed actual rejection",
+  "document_date": "2026-10-25",
+  "utc": "2026-10-25T12:20:10.463692+00:00",
+  "status": "FINITE_OFFLINE_ACCEPTED_REAL_EFFECT_UNVERIFIED",
+  "candidate_id": "v5.0-slot-completeness-71155c8b17d70383",
+  "candidate_bundle": "71155c8b17d70383499ad845db6b3e7e4b61a620c52cb9ecb803c69ea1618dc4",
+  "independent_QA_result_sha256": "9ce6cc8fcfedbf158cf5d896c271faec231e474461a68cdd5c3825363caa8281",
+  "independent_QA_seal_sha256": "ce32e24b623f55ed8d1ba6e19ac91ce12c19f96017e7bba4332f1d5037b6ad4a",
+  "Main_actual_read_tool_chunk": "3f1587",
+  "Main_actual_read_exit_code": 0,
+  "actual_QA_formal_run": {
+    "command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "tests/v5/test_blueprint_item_context.py",
+      "-k",
+      "only_request_manifest_and_generation_prompt_ast_changed or messages_serialize_item_interaction_contract_without_output_schema_change or whole_request_short_and_four_byte_theme_budget_measurements",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--junitxml=D:\\深度能力\\evidence\\upgrade\\v5.0\\blueprint-slot-completeness\\qa\\run1\\junit.xml"
+    ],
+    "exit_code": 0,
+    "pytest_passed": 5,
+    "pytest_deselected": 4,
+    "pytest_elapsed_seconds": 0.24,
+    "junit": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "5",
+      "time": "0.179",
+      "timestamp": "2026-10-25T20:13:05.486590+08:00",
+      "hostname": "DESKTOP-9I5GA4C"
+    },
+    "formal_runs": 1,
+    "original_test_source_observe_fixture_assertions_driver_unchanged": true,
+    "no_new_mirror_tests": true
+  },
+  "raw_match_counts": {
+    "current_source": 410,
+    "new_QA_artifacts": 9,
+    "latest_real_artifacts": 14,
+    "old_context_QA": 16,
+    "old_blueprint_QA": 63,
+    "old_preflight": 12,
+    "latest_preflight": 8,
+    "old_actual_public": 17,
+    "old_actual_local_only": 6,
+    "registered_sources": 53,
+    "original_untracked": 8
+  },
+  "old_real412_source_epoch": "Historical; exactly backend/app/ai/v5.py prompt differs after actual seal. Raw actual artifacts are unchanged.",
+  "only_delta_vs_original410": [
+    "backend/app/ai/v5.py"
+  ],
+  "nonprompt_AST_unchanged": true,
+  "test_source_helpers_fixtures_assertions_not_changed": true,
+  "old_test_cases_not_repeated": 4,
+  "new_prompt_read_review": "Only explicitly distinguishes extra parameter arrays from schema-required extra clue objects and exact key coverage. Full-name and nonconsuming wording retained.",
+  "budget_observations": [
+    {
+      "family": "mapping_v1",
+      "measurements": [
+        {
+          "theme_kind": "short",
+          "theme_characters": 6,
+          "whole_payload_utf8_bytes": 11022,
+          "whole_payload_sha256": "1582dc9e883d760022f5d0e8d15666d691ec0a3de9183db28b06b9e2f3346047",
+          "input_token_bound": 52280,
+          "upper_cost_units": 152560000,
+          "original_cap_units": 200000000,
+          "within_original_budget_cap": true,
+          "actual_dispatch_or_refusal_tested": false
+        },
+        {
+          "theme_kind": "four-byte-max",
+          "theme_characters": 2000,
+          "whole_payload_utf8_bytes": 19004,
+          "whole_payload_sha256": "77fe4daa7fe459d723f54f0a19fa04913a0ad377dc40ed1d2d05f4796c0c4752",
+          "input_token_bound": 84208,
+          "upper_cost_units": 216416000,
+          "original_cap_units": 200000000,
+          "within_original_budget_cap": false,
+          "actual_dispatch_or_refusal_tested": false
+        }
+      ],
+      "scope": "pure complete-payload accounting only; provider never constructed",
+      "paid_calls": 0
+    },
+    {
+      "family": "position_v1",
+      "measurements": [
+        {
+          "theme_kind": "short",
+          "theme_characters": 6,
+          "whole_payload_utf8_bytes": 8055,
+          "whole_payload_sha256": "baee9dd4215a74acc06ec16dce44fa947a6afc9ad26714b0ab2e87c4978b79bc",
+          "input_token_bound": 40412,
+          "upper_cost_units": 128824000,
+          "original_cap_units": 200000000,
+          "within_original_budget_cap": true,
+          "actual_dispatch_or_refusal_tested": false
+        },
+        {
+          "theme_kind": "four-byte-max",
+          "theme_characters": 2000,
+          "whole_payload_utf8_bytes": 16037,
+          "whole_payload_sha256": "ca581bee84f3c331a5ab7c1a84c6ebdf77731f6e035fffa4cfc85f4163969d97",
+          "input_token_bound": 72340,
+          "upper_cost_units": 192680000,
+          "original_cap_units": 200000000,
+          "within_original_budget_cap": true,
+          "actual_dispatch_or_refusal_tested": false
+        }
+      ],
+      "scope": "pure complete-payload accounting only; provider never constructed",
+      "paid_calls": 0
+    }
+  ],
+  "actual_dispatch_or_refusal_tested_for_new_prompt": false,
+  "actual_real_single_G3_result": {
+    "exit_code": 1,
+    "status": "rejected/MODEL_INVALID_OUTPUT",
+    "missing_required_object_slots": 4,
+    "no_Draft_or_witness": true,
+    "usage_upper_cny": 0.010586,
+    "reserved_upper_cny": 0.150816,
+    "paid_slots_consumed": 1,
+    "remaining_authority": 0,
+    "old_narrative_finding": "OPEN"
+  },
+  "new_paid_calls_after_prompt_edit": 0,
+  "new_tests_HTTP_compile_solver_witness_build_UI_or_evaluator_by_Main": 0,
+  "human_teacher_or_release_acceptance": false,
+  "limitations": [
+    "Five reused pure checks are limited, not a full-suite or actual-model quality pass.",
+    "Mapping 2000 four-byte theme pure bound0.216416 still exceeds unchanged0.20 cap; no actual send/refusal claimed.",
+    "No new real generated-level admission, save/restore/browser/human difficulty evidence.",
+    "Original3 unknown/evaluator INSUFFICIENT and no release tag/main merge/deploy restrictions remain."
+  ],
+  "next": "Factual README/release delivery, selective privacy/raw-byte audit, normal liy222 commit/push. No new paid proposal."
+}

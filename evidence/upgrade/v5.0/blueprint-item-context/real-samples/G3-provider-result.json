@@ -1,0 +1,18 @@
+{
+  "case_id": "G3",
+  "fictional_test_content": true,
+  "content_redacted": "{\"content_version\":\"1.0.0\",\"blueprint_id\":\"mapping_v1-r3-hard\",\"title\":\"生态实验楼标本交接\",\"story\":\"毕业季的生态实验楼里，三间相连实验室还留着待交接的采样资料。你作为值日生，需逐间核对标本线索、维护装置，完成离楼检查。走廊灯忽明忽暗，只剩钥匙和笔记陪你把最后一道检查做完。\",\"rooms\":{\"G1\":{\"name\":\"采样准备室\",\"description\":\"靠墙摆着标签架和干燥箱，白板上留着标本编号与符号对照。\"},\"G2\":{\"name\":\"培养观察室\",\"description\":\"培养架整齐排列，角落的电学测试台线路交错，记录板夹在两台仪器之间。\"},\"G3\":{\"name\":\"标本暂存室\",\"description\":\"恒温柜发出低鸣，交接清单和备用设备箱堆在长桌上，离楼检查由此收尾。\"}},\"objects\":{\"obj_key\":{\"name\":\"标本柜铜钥匙\",\"description\":\"系着绿色标签的铜钥匙，能开启标本暂存区域的检修锁。\"},\"obj_code_source\":{\"name\":\"编号标签卡\",\"description\":\"一排标本瓶标签上印着字母与编号，是核对柜台密码的原始资料。\"},\"obj_relation\":{\"name\":\"符号对照板\",\"description\":\"白板上贴着符号与数字的对应表，供采样资料交叉核对。\"},\"obj_device_source\":{\"name\":\"设备登记页\",\"description\":\"交接夹里的旧登记页列出各维护设备的代号与功能备注。\"},\"obj_puzzle_1\":{\"name\":\"标本柜台密码锁\",\"description\":\"准备室标本柜台上的四位数字锁，需按标签资料逐项核对。\"},\"obj_puzzle_2\":{\"name\":\"干燥箱启动序列\",\"description\":\"干燥箱面板要求按登记页的设备次序逐项启动，才能进入下一间。\"},\"obj_puzzle_3\":{\"name\":\"培养架电路测试\",\"description\":\"观察室测试台需要按线路提示完成通路检查，让培养架恢复供电。\"},\"obj_puzzle_4\":{\"name\":\"观察室记录锁\",\"description\":\"夹在仪器间的记录板带简易数字锁，素材分两处保存。\"},\"obj_puzzle_5\":{\"name\":\"暂存室设备序列\",\"description\":\"暂存室控制面板需按设备清单设定启动顺序，确保柜体稳定。\"},\"obj_puzzle_6\":{\"name\":\"标本柜检修锁\",\"description\":\"标本暂存柜的检修锁孔与铜钥匙匹配，是离楼前的最后一步。\"}},\"parameters\":{\"code_symbols\":[\"B\",\"D\",\"A\",\"C\"],\"digit_map\":{\"A\":\"5\",\"B\":\"2\",\"C\":\"8\",\"D\":\"1\"},\"sequence_symbols\":[\"G\",\"E\",\"H\",\"F\"],\"device_map\":{\"E\":\"device_b\",\"F\":\"device_d\",\"G\":\"device_a\",\"H\":\"device_c\"},\"extra_digits\":[\"4\",\"7\",\"2\",\"9\"],\"extra_devices\":[\"device_c\",\"device_a\",\"device_d\",\"device_b\"]}}",
+  "content_raw_sha256": "3bfe6957da9a1d2c86ac29ef4f79df2af2242dfefe9a04a72ca69e05be6a4adc",
+  "usage": {
+    "prompt_tokens": 2729,
+    "completion_tokens": 641,
+    "total_tokens": 3370,
+    "prompt_cache_hit_tokens": 0
+  },
+  "requested_model": "deepseek-flash",
+  "reported_model": "deepseek-flash",
+  "finish_reason": "stop",
+  "call_id": "8474c505cbb24e3e9202784e1c85e6af",
+  "cost_upper_cny": 0.010586,
+  "secret_detected": false
+}

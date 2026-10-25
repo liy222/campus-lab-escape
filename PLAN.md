@@ -324,3 +324,11 @@ T7仍缺可靠的真实多房间生成；伙伴已有一个阶段两轮有限实
 独立 AI QA 对新单次提案预检通过，Main恢复核对当前410/预览412来源和8份新封存产物一致；旧证据、53项登记及原8未跟踪文件不变。唯一请求为沿用主题的三房hard/mapping seed1，完整载荷费用上界0.150816元，拟最多1次/0.20元。只准备未执行，原G3叙述问题仍OPEN。上一轮自动审批额度中断的收尾写入现恢复；先选择性提交推送，再请求新的有限批准，不重跑prepare或历史测试。证据evidence/upgrade/v5.0/blueprint-item-context/real-samples/main-preflight-accepted.json。
 
 2026-10-25单G3复测准备已提交并推送eb230113ea4766f2777afd7e3c0e4e1cd1fefb08；远端和GitHub作者/提交者liy222核对一致。17文件保密/格式检查0、原字节一致；当前只补同步回执，不改变预检或执行收费脚本。下一步须明确批准新的一次/0.20元后才可检验叙述；失败占次数、不重试，无伙伴/评价器。见blueprint-item-context/real-samples/sync.json。
+
+2026-10-25用户已明确批准新单G3最多1次/0.20元（call_816b3ba868734520b192ddddab3fdeeb item0），替代本轮“等待授权”状态。Main写精确来源/预览绑定授权并仅执行封存runner一次，失败占名额、不重试；之后独立AI QA复核实际文本/准入/API回放/账本，不改旧证据、不外推质量。
+
+2026-10-25唯一批准的G3真实调用已执行，原退出码1保留：MODEL_INVALID_OUTPUT/rejected，未进入可玩准入或API回放。费用用量保守上界增量0.010586元、预占0.150816元；名额1/1消耗，无重试或剩余许可。Main已封存实际操作记录，独立AI QA正在查确缺槽位原因与文本限制；产品仍STOP，先结果复核/事实文档/正常Git同步。
+
+2026-10-25独立实际复核已封存：缺四个objects槽位（10/14），JSON未截断，原严格组装正确拒绝。Main仅接受失败诊断，不接受生成/叙事质量。另开slot-completeness窄修，只有GENERATION_PROMPT澄清参数数组不能替代四个必需资料物件及按schema逐项核对；其他409来源/Schema/组装/费用/规则均未改。新410候选已冻结，独立仅复用AST1/messages2/budget2五项纯离线检查；不重复全套、不新增真实调用。原真实412来源保持历史epoch，旧finding仍OPEN。
+
+2026-10-25缺槽位提示澄清已获有限离线接受：独立原五项一次5passed/4deselected、exit0、0.24秒；410来源与9封存产物匹配，旧真实14与其他旧原件保持。完整请求纯计量：短主题position0.128824/mapping0.152560元，2000四字节position0.192680/mapping0.216416元（后者仍超原0.20 cap）；没有发送/验拒或真实复测。实际唯一G3仍是旧source被拒，叙事finding OPEN，无剩余授权。现在仅交付事实文档、保密/字节核对、liy222正常提交推送，不再新paid提案。证据blueprint-slot-completeness/accepted.json。

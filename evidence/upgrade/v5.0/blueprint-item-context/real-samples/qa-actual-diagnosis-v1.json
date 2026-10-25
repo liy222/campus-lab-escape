@@ -1,0 +1,104 @@
+{
+  "kind": "Independent AI QA pure offline diagnosis of saved single real rejected G3 reply",
+  "utc": "2026-10-25T12:05:05.675505+00:00",
+  "diagnostic_command_exit_code": 0,
+  "actual_executor_exit_code": 1,
+  "actual_job_status": "rejected",
+  "actual_job_error_code": "MODEL_INVALID_OUTPUT",
+  "raw_content_sha256_matches": true,
+  "raw_json_and_safety_parse_passed": true,
+  "first_rejection_stage": "Exact selected content schema, before Draft assembly/compiler/proof",
+  "production_assemble_error": "GENERATION_CONTENT_INVALID",
+  "missing_required_object_slots": [
+    "obj_extra_code_a",
+    "obj_extra_code_b",
+    "obj_extra_devices_a",
+    "obj_extra_devices_b"
+  ],
+  "additional_object_slots": [],
+  "schema_error_count": 4,
+  "schema_errors": [
+    {
+      "validator": "required",
+      "path": [
+        "objects"
+      ],
+      "message": "'obj_extra_code_a' is a required property"
+    },
+    {
+      "validator": "required",
+      "path": [
+        "objects"
+      ],
+      "message": "'obj_extra_code_b' is a required property"
+    },
+    {
+      "validator": "required",
+      "path": [
+        "objects"
+      ],
+      "message": "'obj_extra_devices_a' is a required property"
+    },
+    {
+      "validator": "required",
+      "path": [
+        "objects"
+      ],
+      "message": "'obj_extra_devices_b' is a required property"
+    }
+  ],
+  "other_schema_errors_observed": 0,
+  "room_count": 3,
+  "expected_object_slots": 14,
+  "returned_object_slots": 10,
+  "provider_finish_reason": "stop",
+  "provider_completion_tokens": 641,
+  "output_tokens_cap": 6000,
+  "not_truncation_observation": "Strict JSON complete, finishstop and641tokens; missing slots are structural omission, not observed truncation.",
+  "raw_content_not_repaired_or_substituted": true,
+  "narrative_observations": {
+    "generated_item_name": "标本柜铜钥匙",
+    "generated_item_description": "系着绿色标签的铜钥匙，能开启标本暂存区域的检修锁。",
+    "item_puzzle_name": "标本柜检修锁",
+    "item_puzzle_description": "标本暂存柜的检修锁孔与铜钥匙匹配，是离楼前的最后一步。",
+    "exact_full_item_name_in_item_puzzle_description": false,
+    "recognizable_short_key_term_in_description": true,
+    "invented_required_specimen_bag_in_text": false,
+    "return_or_consumption_in_item_puzzle_description": false,
+    "explicit_nonconsuming_retention_in_item_puzzle_description": false,
+    "checklist_environment_text_present": true,
+    "mandatory_checklist_operation_in_item_puzzle_description": false,
+    "device_source_description": "交接夹里的旧登记页列出各维护设备的代号与功能备注。",
+    "base_sequence_source_symbols_alphabetical": false,
+    "base_mapped_devices_alphabetical": true,
+    "alphabetical_order_instruction_in_device_text": false,
+    "assessment_limit": "Raw reply only. Incomplete content was rejected before Draft exists, so no playable projection or rule/witness claim."
+  },
+  "private_directory_exists": false,
+  "compiled_definition_or_witness_or_rule_projection_created": false,
+  "provider_or_main_imported": false,
+  "key_config_or_canonicalledger_DB_network_access": false,
+  "model_or_HTTP_calls": 0,
+  "compiler_proof_or_tests_run": false,
+  "raw_files_before": {
+    "run.py": "eed8325b4cff57668eb36ec5d3584b1ef270080b59f69755a946f7190d2b38cf",
+    "offline-preview-v1.json": "c335185bc2769941cbf890f5e5d9cc9df674ad19b05ff46d74696cd498305c1b",
+    "G3-provider-result.json": "b8797af84764bc62ec619c1fdde936e99178a54e46326e9120937a1d7489f43b",
+    "G3-exact-payload.json": "6d3bb7e20034c8e53816b1964f62c489f34e7a12cf464c7141d11347de33290b",
+    "G3-api-result.json": "d1d2a37208d2f2e24e986ec94ee2cba86164be73a61d76831f91cec3a5de4902",
+    "result.json": "75d1a2cf9c499d1e1ed2a5185ebd8db554cd3599afa7a4985c0acc48b8371078"
+  },
+  "raw_files_after": {
+    "run.py": "eed8325b4cff57668eb36ec5d3584b1ef270080b59f69755a946f7190d2b38cf",
+    "offline-preview-v1.json": "c335185bc2769941cbf890f5e5d9cc9df674ad19b05ff46d74696cd498305c1b",
+    "G3-provider-result.json": "b8797af84764bc62ec619c1fdde936e99178a54e46326e9120937a1d7489f43b",
+    "G3-exact-payload.json": "6d3bb7e20034c8e53816b1964f62c489f34e7a12cf464c7141d11347de33290b",
+    "G3-api-result.json": "d1d2a37208d2f2e24e986ec94ee2cba86164be73a61d76831f91cec3a5de4902",
+    "result.json": "75d1a2cf9c499d1e1ed2a5185ebd8db554cd3599afa7a4985c0acc48b8371078"
+  },
+  "limitations": [
+    "Only actual saved raw reply diagnosed, without fixing missing fields or compiling a hypothetical repaired draft.",
+    "Limited text observations cannot establish model compliance, playable narrative quality or closure of old G3 finding.",
+    "No new real generation or request dispatched."
+  ]
+}

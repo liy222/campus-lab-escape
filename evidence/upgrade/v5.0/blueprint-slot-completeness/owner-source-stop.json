@@ -1,0 +1,19 @@
+{
+  "kind": "Main prompt owner SOURCE STOP, development static evidence only",
+  "utc": "2026-10-25T12:10:51.164414+00:00",
+  "owned_file": "backend/app/ai/v5.py",
+  "change": "Only GENERATION_PROMPT wording clarifies extra arrays vs mandatory clue objects and required key sets",
+  "before_sha256": "84cee15dcec90d5d3e8867db217f9a537ba01e872ef4ae01b16477aeb35f525e",
+  "after_sha256": "d1a8cab3dceaa85f933e1d93b49f166d864c4805124ae81725075688de195529",
+  "nonprompt_AI_AST_identical": true,
+  "current_source_count": 410,
+  "candidate_bundle": "71155c8b17d70383499ad845db6b3e7e4b61a620c52cb9ecb803c69ea1618dc4",
+  "actual_command": "Main Python stdin: ast.parse both versions, compare AST omitting GENERATION_PROMPT, exact byte replacement and410raw hash diff",
+  "exit_code": 0,
+  "source_stop": true,
+  "new_tests_or_paid_calls": 0,
+  "limitations": [
+    "Clarifies instructions; no model compliance guarantee or quality claim.",
+    "Original rejected raw remains unchanged and old finding OPEN."
+  ]
+}

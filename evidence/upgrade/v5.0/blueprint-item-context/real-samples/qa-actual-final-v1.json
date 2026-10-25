@@ -1,0 +1,141 @@
+{
+  "kind": "Independent AI QA terminal result of actual single-G3 item-context retest",
+  "utc": "2026-10-25T12:09:06.655943+00:00",
+  "status": "ACTUAL_GENERATION_REJECTED_NARRATIVE_QUALITY_NOT_ESTABLISHED",
+  "source_stop": true,
+  "actual_reviewer": "Independent AI QA agent",
+  "human_teacher_review_playtest_signature_or_acceptance": false,
+  "actual_Main_execution": {
+    "runner_path": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/run.py",
+    "command": "run.py --execute; Main tool transcript7ad987",
+    "runner_sha256": "eed8325b4cff57668eb36ec5d3584b1ef270080b59f69755a946f7190d2b38cf",
+    "exit_code": 1,
+    "elapsed_seconds_reported_by_Main": 8.02,
+    "calls": 1,
+    "automatic_retries": 0,
+    "approved_scope": [
+      "G3"
+    ],
+    "approved_maximum_cny": 0.2,
+    "actual_user_approval_reference": "call_816b3ba868734520b192ddddab3fdeeb item0",
+    "all_call_slots_consumed": true,
+    "remaining_authorized_calls": 0
+  },
+  "independent_diagnosis": {
+    "exit_code": 0,
+    "raw_hash_matches": true,
+    "strict_JSON_and_safety_checks_pass": true,
+    "first_rejection_stage": "Selected exact content schema; before Draft/compiler/proof",
+    "production_assemble_error": "GENERATION_CONTENT_INVALID",
+    "worker_status": "rejected",
+    "worker_error": "MODEL_INVALID_OUTPUT",
+    "level_id": null,
+    "missing_required_object_slots": [
+      "obj_extra_code_a",
+      "obj_extra_code_b",
+      "obj_extra_devices_a",
+      "obj_extra_devices_b"
+    ],
+    "returned_object_slot_count": 10,
+    "expected_object_slot_count": 14,
+    "schema_required_errors": 4,
+    "other_schema_errors_observed": 0,
+    "raw_not_repaired_or_substituted": true
+  },
+  "source_count": 412,
+  "source_bundle_sha256": "6232d032655ecf5a894dd60e82cb782fd175ebe71c1d01194a2941ff9b14672d",
+  "current_and_actual_preview_source_maps_exact_match": true,
+  "source_map_evidence_path": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/qa-actual-bindings-v1.json",
+  "source_map_evidence_sha256": "5e5c070e47edf1cccf523225ae93455d0883e2d183c9f893eb5876607d352476",
+  "actual_request_equals_approved_preview": true,
+  "provider": {
+    "requested_model": "deepseek-flash",
+    "reported_model": "deepseek-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 2729,
+      "completion_tokens": 641,
+      "total_tokens": 3370,
+      "prompt_cache_hit_tokens": 0
+    }
+  },
+  "cost": {
+    "reserved_upper_cny": 0.150816,
+    "usage_upper_delta_cny": 0.010586,
+    "saved_calls_before_after": [
+      144,
+      145
+    ],
+    "saved_charged_upper_before_after": [
+      1093102000,
+      1103688000
+    ],
+    "not_invoice": true
+  },
+  "historical_unknown_identity_unchanged": true,
+  "saved_pending0_frozenfalse": true,
+  "finalization_failures": [],
+  "narrative_observations": {
+    "generated_item_name": "标本柜铜钥匙",
+    "generated_item_description": "系着绿色标签的铜钥匙，能开启标本暂存区域的检修锁。",
+    "item_puzzle_name": "标本柜检修锁",
+    "item_puzzle_description": "标本暂存柜的检修锁孔与铜钥匙匹配，是离楼前的最后一步。",
+    "exact_full_item_name_in_item_puzzle_description": false,
+    "recognizable_short_key_term_in_description": true,
+    "invented_required_specimen_bag_in_text": false,
+    "return_or_consumption_in_item_puzzle_description": false,
+    "explicit_nonconsuming_retention_in_item_puzzle_description": false,
+    "checklist_environment_text_present": true,
+    "mandatory_checklist_operation_in_item_puzzle_description": false,
+    "device_source_description": "交接夹里的旧登记页列出各维护设备的代号与功能备注。",
+    "base_sequence_source_symbols_alphabetical": false,
+    "base_mapped_devices_alphabetical": true,
+    "alphabetical_order_instruction_in_device_text": false,
+    "assessment_limit": "Raw reply only. Incomplete content was rejected before Draft exists, so no playable projection or rule/witness claim."
+  },
+  "narrative_assessment": "No bag and recognizable key short name in raw reply are limited observations only; exact generated full name not used, nonconsuming behavior not observable without an admitted level.",
+  "old_G3_finding_status": "OPEN; old wrong text and prior accepted definition/witness retain original source epoch",
+  "accepted_definition_proof_rule_projection_or_witness": false,
+  "new_private_directory_or_private_proof_artifacts": false,
+  "no_compile_repair_or_hypothetical_repaired_draft": true,
+  "independent_QA_commands": [
+    {
+      "tool_chunk": "985f43/e93931",
+      "scope": "read only sealed preflight context and412source availability before terminal, no current run outputs read",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "448620",
+      "scope": "read terminated actual result/raw narrative/saved metadata",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "5835e6",
+      "scope": "pure offline production strict-assembler diagnosis, not provider/API/compiler",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "e641c8",
+      "scope": "source/auth/payload/usage/saved-snapshots and finite privacy review",
+      "exit_code": 0
+    }
+  ],
+  "all_old_protected_products_and_seals_and_registry_unchanged": true,
+  "privacy_pattern_matches": 0,
+  "QA_provider_config_key_currentledger_DB_network_access": false,
+  "QA_product_tests_compile_solver_witness_HTTP_build_UI_evaluation_prepare_execute_or_model_calls": 0,
+  "review_path": "review/findings/v5-item-context-real-result.md",
+  "review_sha256": "7130eb234fc56801a20d9339ea08f7256f76850e4c0be84ef320c00c7b7d9d02",
+  "seal_path": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/qa-actual-seal-v1.json",
+  "seal_sha256": "d298c8559fcdb2205a6ce2f69e9994a584afa5d8c737a360673948b4ba1b06f9",
+  "public_artifact_count": 14,
+  "limitations": [
+    "One rejected real sample cannot establish general reliability or model-obedience guarantee.",
+    "Diagnostic exit0 means failure cause identified; actual execution remains exit1/rejected.",
+    "No admitted definition, game projection or witness exists; no playable narrative-quality or nonconsuming-use confirmation.",
+    "Prior real bad text remains immutable and finding open; any later change requires separate epoch.",
+    "Costs are usage-based conservative upper bounds, not external invoice.",
+    "Finite secret pattern checks are not exhaustive, actual credentials not read.",
+    "No further paid authority, product repair or proposed dispatch made by this QA."
+  ]
+}

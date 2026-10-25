@@ -366,3 +366,11 @@ Owner离线prepare已执行一次exit0：G2/G3载荷上界分别0.143528/0.14996
 当前2c6e8e9基线下的新G3提案已由独立AI QA封存，状态PASS_PROPOSAL_ONLY_FRESH_APPROVAL_REQUIRED；410当前来源、412预览来源及8份新封存产物恢复核对一致，未重复prepare/产品测试/构建。完整请求费用上界0.150816元，拟最多1次/0.20元，尚无新授权、执行marker、journal、私有目录或真实调用。G3旧“资料袋/钥匙”finding仍OPEN，不把提示意图写成模型质量通过。现完成上次审批额度中断后未执行的记录并按liy222普通提交推送；发布/评价/历史unknown限制保持。证据blueprint-item-context/real-samples/main-preflight-accepted.json。
 
 2026-10-25预检准备同步完成：eb230113ea4766f2777afd7e3c0e4e1cd1fefb08已推送开发分支，远端一致且GitHub作者/提交者均liy222。17文件原字节/保密/格式核对通过，412来源/8新封存/原8未跟踪文件保持。新增真实调用0，G3叙述finding仍OPEN；现等待新的最多1次/0.20元明确授权，尚未真实复测或发布。同步回执evidence/upgrade/v5.0/blueprint-item-context/real-samples/sync.json。
+
+2026-10-25最新：收到单G3最多1次/0.20元明确批准，授权已绑定预览c335185b及412来源6232d032。即将仅执行一次，当前尚无本次实际结果；成功或失败均消耗名额，无伙伴/评价器/重试。实际叙述是否改善仍待观察，G3旧finding不提前关闭。
+
+2026-10-25本次真实结果：G3唯一调用被严格内容合同拒绝（MODEL_INVALID_OUTPUT，execute exit1），没有ready关卡或通关回放。名额已用完，新增真实调用1、无重试；用量保守上界0.010586元（非账单）、预占0.150816元。账本144→145calls，旧unknown3身份不变/new0/pending0/frozenfalse，412来源匹配、终态无附加异常。铜钥匙叙述仅是拒绝原稿中的观察，不称修复通过；原P2仍OPEN。独立实际复核及交付文档待完成，付费STOP。证据blueprint-item-context/real-samples/main-execution-review.json及result.json。
+
+2026-10-25本次实际结果独立QA已封存（qa-actual-final-v1.json，84721844）；真实exit1与诊断exit0分开记录，四个额外资料物件槽位遗漏，未形成Draft。随后只澄清生成提示的额外物件完整性，不补原模型输出、不放宽校验。当前新410来源候选等待五项定向纯离线检查，原实际结果属于此前412来源，不能称新提示真实复测。费用/名额已终结，付费STOP；无发布。
+
+2026-10-25当前收尾：新slot-completeness候选71155c8b的五项纯离线检查一次全部通过（5passed/4deselected/0.24s/exit0），Main核对410来源与9份新QA原件一致。新提示的实际模型效果仍未验证；此前唯一真实G3失败及0.010586元用量上界保留、名额耗尽，旧P2保持OPEN。没有新构建、网页、API回放、存档恢复或付费调用；正在完成文档与正常Git同步，仍不发布。见blueprint-slot-completeness/accepted.json和独立v5-slot-completeness-prompt.md。

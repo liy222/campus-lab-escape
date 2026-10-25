@@ -1,0 +1,117 @@
+{
+  "kind": "V5 slot-completeness documentation delivery SOURCE STOP",
+  "date": "2026-10-25",
+  "owned_paths": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/delivery-docs.json"
+  ],
+  "real_sample_binding": {
+    "source_count": 412,
+    "source_bundle_sha256": "6232d032655ecf5a894dd60e82cb782fd175ebe71c1d01194a2941ff9b14672d",
+    "execution_result": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/result.json",
+    "execution_result_sha256": "75d1a2cf9c499d1e1ed2a5185ebd8db554cd3599afa7a4985c0acc48b8371078",
+    "independent_review": "review/findings/v5-item-context-real-result.md",
+    "independent_review_sha256": "7130eb234fc56801a20d9339ea08f7256f76850e4c0be84ef320c00c7b7d9d02",
+    "actual_qa_result": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/qa-actual-final-v1.json",
+    "actual_qa_result_sha256": "847218443a7322a1c5502bdc1882327da4fa00e8e466f99d4b94046fe058af81",
+    "actual_qa_seal": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/qa-actual-seal-v1.json",
+    "actual_qa_seal_sha256": "d298c8559fcdb2205a6ce2f69e9994a584afa5d8c737a360673948b4ba1b06f9"
+  },
+  "slot_completeness_binding": {
+    "candidate_id": "v5.0-slot-completeness-71155c8b17d70383",
+    "candidate": "evidence/upgrade/v5.0/blueprint-slot-completeness/candidate.json",
+    "candidate_sha256": "a4af0c09c5f46138215119d9070be1c6678dafc99b516d096fc1fc95ff08d5e8",
+    "source_count": 410,
+    "qa_result": "evidence/upgrade/v5.0/blueprint-slot-completeness/qa/result.json",
+    "qa_result_sha256": "9ce6cc8fcfedbf158cf5d896c271faec231e474461a68cdd5c3825363caa8281",
+    "artifact_seal": "evidence/upgrade/v5.0/blueprint-slot-completeness/qa/artifact-seal.json",
+    "artifact_seal_sha256": "ce32e24b623f55ed8d1ba6e19ac91ce12c19f96017e7bba4332f1d5037b6ad4a",
+    "review": "review/findings/v5-slot-completeness-prompt.md",
+    "review_sha256": "9725f9526cc09bc72dc57d2c2691f9fc9c77577121d8db4cfdb7c6646bde8a60",
+    "sealed_artifact_count": 9
+  },
+  "documented_real_generation": {
+    "authorized_calls": 1,
+    "case": "G3, 3 rooms, hard, mapping_v1, controlled Host seed 1",
+    "execution_exit_code": 1,
+    "finish_reason": "stop, complete and not truncated",
+    "result": "MODEL_INVALID_OUTPUT; four required object slots omitted; only 10 of 14 returned; strict parser/assembler rejected before Draft construction",
+    "missing_object_slots": [
+      "obj_extra_code_a",
+      "obj_extra_code_b",
+      "obj_extra_devices_a",
+      "obj_extra_devices_b"
+    ],
+    "draft_or_level_or_witness_or_private_directory_created": false,
+    "usage_upper_increment_yuan": 0.010586,
+    "pre_reserved_upper_yuan": 0.150816,
+    "provider_invoice": false,
+    "retries": 0,
+    "original_unknown_count_and_identity_unchanged": 3,
+    "new_unknown": 0,
+    "pending": 0,
+    "ledger_frozen": false,
+    "authorized_slots_remaining": 0,
+    "old_P2_finding_closed": false
+  },
+  "documented_prompt_only_offline_check": {
+    "formal_run_count": 1,
+    "scope": "Existing pure AST, message serialization and two-family payload-budget cases only",
+    "pytest_passed": 5,
+    "pytest_deselected": 4,
+    "elapsed_seconds": 0.24,
+    "exit_code": 0,
+    "prior_QA_failure_in_this_epoch": false,
+    "real_model_retest": false,
+    "provider_dispatch_or_refusal_tested": false,
+    "paid_calls": 0,
+    "pure_budget_upper_yuan": {
+      "position_short_6_chars": 0.128824,
+      "mapping_short_6_chars": 0.15256,
+      "position_2000_four_byte_chars": 0.19268,
+      "mapping_2000_four_byte_chars": 0.216416
+    },
+    "mapping_2000_character_case_exceeds_original_cap_yuan": 0.2
+  },
+  "historical_epoch_boundary": {
+    "prior_410_source_item_context_QA": "A separate earlier epoch had 8 passes plus one QA raw-line-ending baseline comparison failure (exit 1), followed only by the narrow 1-item corrected comparison (exit 0). This is not a slot-completeness QA failure and is not merged with the current five-pass run.",
+    "prior_two_real_samples": "Their finite technical successes remain historical; neither is relabeled as validation of this later slot-completeness prompt.",
+    "current_unknowns_and_evaluation": "Three historical unknown calls remain unchanged; evaluation remains INSUFFICIENT_EVIDENCE."
+  },
+  "checks_performed": [
+    {
+      "command": "Read-only ConvertFrom-Json parsing of the actual G3 result/review/seal and slot-completeness result/seal",
+      "exit_code": 0
+    },
+    {
+      "command": "Test-Path over all README.md/release/V5.md evidence and review link targets added for these two epochs",
+      "exit_code": 0,
+      "output": "ALL_LINK_TARGETS_EXIST"
+    },
+    {
+      "command": "git -c core.whitespace=cr-at-eol diff --check -- README.md release/V5.md",
+      "exit_code": 0,
+      "note": "Only the existing LF-to-CRLF warning for release/V5.md."
+    },
+    {
+      "command": "git diff --stat -- README.md release/V5.md",
+      "exit_code": 0,
+      "output": "2 files changed, 8 insertions(+), 0 deletions(-)"
+    }
+  ],
+  "document_sha256": {
+    "README.md": "deec104e0931170e8eaabf47f27ac40dacf319ac838ce30adda7bae1c3c8f227",
+    "release/V5.md": "910ff5cecb2c1715383c964902298048708b5c634db93d5574ba2a3303b6d865"
+  },
+  "not_run_by_delivery_owner": [
+    "No tests, build, network, provider, or paid calls were run; only already sealed artifacts were read."
+  ],
+  "limitations": [
+    "One rejected sample does not establish general model reliability or prove that the prompt change resolves the prior narrative finding.",
+    "The current prompt-only offline run reused five pure cases and deselected four; it is neither a full test suite nor real generation.",
+    "No model call tested these four request budgets for dispatch or pre-dispatch refusal.",
+    "No human or teacher acceptance, player test, evaluation PASS, V5 release tag, main merge, or deployment is claimed."
+  ],
+  "status": "DELIVERY SOURCE STOP; docs and delivery record only, no commit or push."
+}

@@ -1,0 +1,59 @@
+{
+  "kind": "Main plan for narrow prompt clarification after sealed one-G3 failure",
+  "document_date": "2026-10-25",
+  "utc": "2026-10-25T12:08:28.969673+00:00",
+  "trigger": "Real single G3 rejected because content omitted obj_extra_code_a/b and obj_extra_devices_a/b; source epoch preserved before edits.",
+  "baseline_product_candidate": "evidence/upgrade/v5.0/blueprint-item-context/candidate-qa-fixed.json",
+  "baseline_product_bundle": "20b0be4421735beefae6c4e051935565866606d4c6887b0075ab822620220f6d",
+  "actual_rejected_result": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/result.json",
+  "prerequisite": "Independent AI QA must seal the actual result with original412 sources before product edit.",
+  "why": "Existing extra_digits/extra_devices wording calls them independent materials without explicitly distinguishing parameter arrays from mandatory extra clue objects. Clarify this proven omission risk; strict admission already rejects the incomplete reply correctly.",
+  "authorized_change": {
+    "owner": "Main, GENERATION_PROMPT constant only",
+    "path": "backend/app/ai/v5.py",
+    "scope": "Clarify that extra parameter arrays do not replace extra clue objects, conditionally name the four required extra slots, and require exact room/object required-key coverage before output.",
+    "not_allowed": [
+      "Schema relaxation or default filling",
+      "Editing old model reply",
+      "Retry/fallback",
+      "Provider/model/token/time/cost/rules/compiler/API/Store/UI/assets changes"
+    ]
+  },
+  "acceptance": {
+    "new_candidate": "Same explicit410 source paths, exactly one prompt-file delta; nonprompt AST identical",
+    "independent_QA": "After Main SOURCE STOP/freeze, only existing pure AST scope1/messages2/budget2 tests, five items; same schema/manifest/production body and limits, plus read semantic review.",
+    "no_new_mirror_tests": true,
+    "new_output_only": true,
+    "historical_evidence": "Old real/QA/preflight bytes unchanged, historical source maps retain original meaning; no old/current-source match claim after prompt edit.",
+    "paid_calls": 0,
+    "narrative_quality": "Unverified; rejected sample and old OPEN narrative finding remain, no guarantee prompt is followed.",
+    "observation_output": "Original observe directory guard retained. New unique evidence/upgrade/v5.0/blueprint-item-context/qa/slot-completeness-20261025-run1/observations stores only current candidate observations; output/junit/run/result/seal stay slot-completeness/qa/. Original test/helper/fixtures/assertions unchanged. QA wrapper verified observation parent absent before pytest; original helper mkdir(parents=True, exist_ok=True) created it. New run output directory used exist_ok=False; no OS-atomic exclusive claim for the original observation helper."
+  },
+  "ownership": {
+    "Main": [
+      "this namespace plan/candidate/owner and acceptance records",
+      "GENERATION_PROMPT only",
+      "AGENTS.md",
+      "PLAN.md",
+      "STATUS.md",
+      "Git integration"
+    ],
+    "existing_QA": [
+      "new namespace qa/ and new independent report, after real-result seal and candidate freeze",
+      "evidence/upgrade/v5.0/blueprint-item-context/qa/slot-completeness-20261025-run1/observations (new unique observation subdirectory only)"
+    ],
+    "existing_Delivery": [
+      "README.md",
+      "release/V5.md",
+      "new delivery record, only after actual and offline review"
+    ]
+  },
+  "next": "Independent real seal -> Main prompt-only edit/freeze -> independent pure5 QA -> factual docs -> privacy/staged-byte audit -> normal liy222 commit/push. No further real-call proposal in this epoch.",
+  "qa_preparation_path_check": {
+    "tool_chunk": "8f8d36",
+    "exit_code": 0,
+    "formal_tests_run_at_check": 0,
+    "finding": "Existing test observe also requires observation path inside original item-context/qa; new unique subdirectory granted, original guard unchanged.",
+    "Main_metadata_write_note": "b141d3 exit1 before any writes because QA had already started creating granted new directory; no product/test failure, no delete/retry of tests."
+  }
+}

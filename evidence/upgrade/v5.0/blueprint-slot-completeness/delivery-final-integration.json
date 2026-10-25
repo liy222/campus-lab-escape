@@ -1,0 +1,28 @@
+{
+  "kind": "Main final documentation integration after Delivery SOURCE STOP",
+  "document_date": "2026-10-25",
+  "utc": "2026-10-25T13:44:05.799733+00:00",
+  "actual_read_tool_chunk": "b06537",
+  "actual_read_exit_code": 0,
+  "temporary_integration_owned_path": "README.md only",
+  "change": "Remove one stale duplicate slot-completeness paragraph that survived Delivery chronology correction; keep actual G3 paragraph before later prompt-only paragraph. release/V5.md already correct and unchanged.",
+  "before_README_sha256": "dfea9e134cfb4565a65d9f519593c2813804e9ae4182a73066805ea311eca23c",
+  "after_README_sha256": "dd5a84370850513809c0111c479cd7be43090c1d5bd9af3c4606b3cff7b1d58f",
+  "removed_paragraph_sha256": "11891e880d1bd10c2ca85de0192a5b34e0506a9829027e37b8a35ac98c51afcd",
+  "final_document_sha256": {
+    "README.md": "dd5a84370850513809c0111c479cd7be43090c1d5bd9af3c4606b3cff7b1d58f",
+    "release/V5.md": "fef3382a9b80b92e8b8adad7a31070a0c87eb429b5012c49db5aa4a0068dd609"
+  },
+  "prior_delivery_records_preserved": {
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/delivery-docs.json": "4f9aeac09bb09d2a2830c28284d733c7dcf0c31169567295fcd824f205873a7e",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/delivery-docs-corrected.json": "e539d0db4eb78dee26e95fb9d7fc2a28f385041e8a96d6ba0e2faa9226ef355f"
+  },
+  "source_QA_actual_raw_modified": false,
+  "tests_build_model_or_paid_calls": 0,
+  "actual_command": "Main Python stdin: assert unique stale paragraph, remove exact bytes, verify one correct paragraph and real-before-prompt order",
+  "exit_code": 0,
+  "limitations": [
+    "Prior Delivery document hashes describe preceding epochs. This record binds the final current document bytes.",
+    "Prompt-only five-item result remains offline, actual single G3 remains rejected, no narrative quality closure."
+  ]
+}
