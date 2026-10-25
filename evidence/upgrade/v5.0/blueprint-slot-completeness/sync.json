@@ -1,0 +1,51 @@
+{
+  "kind": "Main source sync receipt after actual rejected G3 and later prompt-only offline acceptance",
+  "document_date": "2026-10-25",
+  "utc": "2026-10-25T13:46:30.759732+00:00",
+  "source_commit": "18a64f5221c2bd429fc1edf7e22df4ca3c95a3fb",
+  "branch": "codex/v5-campus-generation",
+  "commit_command": "git commit -m fix(v5): clarify required clue slots and preserve G3 rejection",
+  "commit_tool_chunk": "5eb3c3",
+  "commit_exit_code": 0,
+  "push_command": "git push origin codex/v5-campus-generation",
+  "push_tool_chunk": "10f261",
+  "push_exit_code": 0,
+  "remote_check_command": "git ls-remote --exit-code origin refs/heads/codex/v5-campus-generation",
+  "remote_check_tool_chunk": "1a29c0",
+  "remote_check_exit_code": 0,
+  "remote_hash_match": true,
+  "GitHub_metadata_check": {
+    "tool": "mcp__codex_apps__github_fetch_commit",
+    "sha": "18a64f5221c2bd429fc1edf7e22df4ca3c95a3fb",
+    "author_login": "liy222",
+    "committer_login": "liy222",
+    "url": "https://github.com/liy222/campus-lab-escape/commit/18a64f5221c2bd429fc1edf7e22df4ca3c95a3fb"
+  },
+  "selected_paths": 42,
+  "staged_raw_bytes_match": true,
+  "privacy_findings": 0,
+  "whitespace_exit_code": 0,
+  "preflight_tool_chunk": "8fa208",
+  "preflight_exit_code": 0,
+  "current_product410_matches": true,
+  "original_untracked8_and_old_private6_excluded_and_unchanged": true,
+  "actual_G3": {
+    "source_epoch": "prior412source6232d032, executionHEAD2bfaa30",
+    "exit_code": 1,
+    "calls": 1,
+    "status": "rejected/MODEL_INVALID_OUTPUT, four required clue objects missing, noDraft/witness",
+    "usage_upper_cny": 0.010586,
+    "reserved_upper_cny": 0.150816,
+    "remaining_authority": 0,
+    "old_narrative_finding": "OPEN"
+  },
+  "later_prompt_clarification": {
+    "candidate_id": "v5.0-slot-completeness-71155c8b17d70383",
+    "unique_pure_test_run": "5passed/4deselected/0.24s/exit0",
+    "real_retested": false
+  },
+  "test_model_build_HTTP_or_evaluator_calls_for_this_sync": 0,
+  "historical_unknown_and_evaluation_limits": "Preserved, not investigated or recharged; no paid evaluation.",
+  "no_release_tag_main_merge_deploy": true,
+  "record_scope": "This receipt binds the verified source commit. A subsequent metadata-only commit does not change sealed product/QA/actual evidence."
+}

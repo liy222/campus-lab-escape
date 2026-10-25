@@ -413,3 +413,6 @@ Main read3f1587/matched current410/newQA9/latestreal14 and old63/16/preflight12/
 
 ### v5 final Delivery integration ownership, 2026-10-25
 Delivery SOURCE STOP records remain originalbytes/historicaldocepochs. Main finalreadb06537 found one stale duplicate slot paragraph survived in README before actual G3 paragraph. Main temporarily owns README only to remove that exact unique paragraph, preserving correct actualbeforelaterprompt sequence; releaseV5 already correct/unchanged. Newdelivery-final-integration.json binds currenttwo docs and preservedtwo Ownerrecords, no code/QA/raw/test/model change. Main resumes only selectiveGit/root/sync.
+
+### v5 G3 rejection / prompt-only source remote sealed, 2026-10-25
+Sourcecommit18a64f5221c2bd429fc1edf7e22df4ca3c95a3fb normalcommit/push0, remotehash and GitHubauthor+committerliy222 verified.42selectedpaths byteexact/privacy0/whitespace0, current410frozenraw match, original8untracked/private6 excluded and unchanged. ActualsingleG3 remains old412source exit1/fourmissing/rejected/noDraft/witness, usageupper0.010586/reserved0.150816, oneapprovedslot exhausted. Laterprompt-only71155c8b has only unique5pass4deselected/.24s0, no newrealretest, oldnarrativeOPEN. Main only post-sync rootmetadata/sync receipt now; product/QA/raw/Delivery STOP, no retest/build/UI/HTTP/model/evaluator/release/tag/mainmerge/deploy.

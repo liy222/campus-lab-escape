@@ -332,3 +332,5 @@ T7仍缺可靠的真实多房间生成；伙伴已有一个阶段两轮有限实
 2026-10-25独立实际复核已封存：缺四个objects槽位（10/14），JSON未截断，原严格组装正确拒绝。Main仅接受失败诊断，不接受生成/叙事质量。另开slot-completeness窄修，只有GENERATION_PROMPT澄清参数数组不能替代四个必需资料物件及按schema逐项核对；其他409来源/Schema/组装/费用/规则均未改。新410候选已冻结，独立仅复用AST1/messages2/budget2五项纯离线检查；不重复全套、不新增真实调用。原真实412来源保持历史epoch，旧finding仍OPEN。
 
 2026-10-25缺槽位提示澄清已获有限离线接受：独立原五项一次5passed/4deselected、exit0、0.24秒；410来源与9封存产物匹配，旧真实14与其他旧原件保持。完整请求纯计量：短主题position0.128824/mapping0.152560元，2000四字节position0.192680/mapping0.216416元（后者仍超原0.20 cap）；没有发送/验拒或真实复测。实际唯一G3仍是旧source被拒，叙事finding OPEN，无剩余授权。现在仅交付事实文档、保密/字节核对、liy222正常提交推送，不再新paid提案。证据blueprint-slot-completeness/accepted.json。
+
+2026-10-25最终同步：18a64f5221c2bd429fc1edf7e22df4ca3c95a3fb已正常推送开发分支，远端与GitHub作者/提交者liy222均核对。42个选定文件原字节一致、保密与格式检查0，当前410来源保持。实际唯一G3失败与后续提示仅5项离线通过分属不同源码时期；无新增真实调用或剩余许可，P2仍OPEN。只补同步回执，不复测、不发布。见blueprint-slot-completeness/sync.json。
