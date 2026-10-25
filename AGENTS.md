@@ -452,3 +452,6 @@ Precommit13d44e stopped before auditrecord/commit on git whitespace2; Main revis
 
 ### v5 text-authority proposal remote sealed / product choice pending, 2026-10-25
 DRAFTproposal80135d60c10d641f01160785e2a5b70d911a7bfb normalcommit/push0/remotehash/GitHubauthor+committerliy222 verified.11docs rawmatch/finitecredential0/whitespace0; finalproposal2c6a39ad with originalsemanticreviewbf5fe68e plus independent96CR-onlyproofformat4c36f819. No product/formalplan/contracts/tests/paid change; original8 excluded. Main only sync/rootmetadata then actual A/B question. B notaccepted/implemented by continue, no fees authorized; allimplementation remainsSTOP until actual productdirection accepted.
+
+### Deferred structure-diversity roadmap recorded, 2026-10-25
+User explicitly requests writing the selected multi-valid-skeleton/same-room-difficulty clue-distribution and solve-order goal into plan. Main owns this documentation-only change: docs/v5-build-plan.md1.3 newsection14 plus PLAN/STATUS/thisAGENTS/new roadmap-update evidence. Stage follows current object-text choice/implementation/acceptance; it does not accept pending A/B or start structure implementation. FutureSD0 freezes feasibility/variants/signatures/owners before SD1–SD4; oldsource/contracts/DB/env/QA remain unchanged. No agent dispatch/producttests/paidcalls/release/tag/mainmerge/deploy for this update.
