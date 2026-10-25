@@ -359,3 +359,8 @@ Owner离线prepare已执行一次exit0：G2/G3载荷上界分别0.143528/0.14996
 当前仅收尾文档与普通提交推送，付费STOP。仍是未发布开发候选：有限评价53source/9evidence及3项INSUFFICIENT、付费评价unknown严格门槛不变；不打v5tag、不合并main、不部署。依据review/findings/v5-blueprint-real-results.md、v5-blueprint-item-context-clarified.md及blueprint-item-context/accepted.json。
 
 2026-10-24最终同步：真实结果、独立复核、道具上下文窄修与交付文档提交c9baaed3932c03e316faf91f58a06f8744145aa8已推送codex/v5-campus-generation，远端哈希与GitHub作者/提交者liy222均核对。58个选定文件原字节一致且保密检查0；两份封存失败日志的2处空白原样保留，其他文件格式检查0。410当前来源匹配，原8未跟踪文件未动，6私有定义/答案回放文件未入Git。真实两例的技术成功保持在原源码epoch，当前上下文改进仅离线通过，叙述质量未真实复测；无追加调用许可、无正式发布。同步只补元数据，不复测、不增加费用。
+
+2026-10-24继续：当前2c6e8e9基线与远端一致，410来源及旧证据绑定匹配。仅准备当前上下文修复后的G3三房hard/mapping一次真实叙述复测提案（最多1次/0.20元），复用原主题和Host seed1；本轮无新付费授权或真实调用。产品代码、现有数据/环境、原始失败及成功证据保持。独立预检与普通提交推送完成后，再申请新的有限许可。计划evidence/upgrade/v5.0/blueprint-item-context/real-samples/plan.json。
+
+### 2026-10-25 当前：单次叙述复测提案通过离线预检，尚未调用
+当前2c6e8e9基线下的新G3提案已由独立AI QA封存，状态PASS_PROPOSAL_ONLY_FRESH_APPROVAL_REQUIRED；410当前来源、412预览来源及8份新封存产物恢复核对一致，未重复prepare/产品测试/构建。完整请求费用上界0.150816元，拟最多1次/0.20元，尚无新授权、执行marker、journal、私有目录或真实调用。G3旧“资料袋/钥匙”finding仍OPEN，不把提示意图写成模型质量通过。现完成上次审批额度中断后未执行的记录并按liy222普通提交推送；发布/评价/历史unknown限制保持。证据blueprint-item-context/real-samples/main-preflight-accepted.json。

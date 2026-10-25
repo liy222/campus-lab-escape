@@ -1,0 +1,99 @@
+{
+  "kind": "Main preparation-only acceptance and recovery read audit, not real test or paid approval",
+  "document_date": "2026-10-25",
+  "utc": "2026-10-25T11:55:36.440953+00:00",
+  "status": "PREPARATION_ACCEPTED_PENDING_GIT_SYNC_AND_FRESH_FINITE_APPROVAL",
+  "baseline_head": "2c6e8e9a84ca0fb015a9abfab9c5a8aeabba2311",
+  "preflight_status": "PASS_PROPOSAL_ONLY_FRESH_APPROVAL_REQUIRED",
+  "preflight_final_sha256": "1c079b0ddd46e8f3e075b9fee4db3f19ba90b45653d14d185c022ef692148e1a",
+  "preflight_seal_sha256": "9606c840709190f90a18d04d1e74d284a294604dc7027475b3d5e8ecbf2761c8",
+  "matched_raw_hash_counts": {
+    "current_product": 410,
+    "current_prepared_sources": 412,
+    "new_preflight_artifacts": 8,
+    "old_context_QA": 16,
+    "old_blueprint_QA": 63,
+    "old_preflight": 12,
+    "old_actual_public": 17,
+    "old_local_only_private": 6,
+    "original_untracked": 8,
+    "registered_sources": 53
+  },
+  "runner_sha256": "eed8325b4cff57668eb36ec5d3584b1ef270080b59f69755a946f7190d2b38cf",
+  "preview_sha256": "c335185bc2769941cbf890f5e5d9cc9df674ad19b05ff46d74696cd498305c1b",
+  "source_bundle_sha256": "6232d032655ecf5a894dd60e82cb782fd175ebe71c1d01194a2941ff9b14672d",
+  "scope": [
+    "G3"
+  ],
+  "maximum_calls_proposed": 1,
+  "maximum_cny_proposed": 0.2,
+  "offline_upper_cny": 0.150816,
+  "fresh_authorization_marker_journal_private_directory_absent": true,
+  "future_private_paths_gitignored": [
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/raw-sensitive/G3-private-definition-local.json",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/raw-sensitive/G3-witness-local.json",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/raw-sensitive/G3-api-replay-local.json"
+  ],
+  "actual_previous_prepare": {
+    "tool_chunk": "be6ed5",
+    "exit_code": 0,
+    "not_repeated": true
+  },
+  "actual_previous_independent_QA_commands": [
+    {
+      "tool_chunk": "edcf7c",
+      "purpose": "read-only old/new runner diff and raw hash comparison",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "5a68fa",
+      "purpose": "only changed-scope/cap pure authorization five negatives plus one positive, AST inheritance and private paths",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "c7b442",
+      "purpose": "actual prepared412source/payload/bound/theme/item-use read-only verification",
+      "exit_code": 0
+    }
+  ],
+  "current_main_read_commands": [
+    {
+      "tool_chunk": "20c48e",
+      "purpose": "workspace status",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "72e1b3",
+      "purpose": "read final QA, seal, preview summary and report",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "afe843",
+      "purpose": "read protection and historical seal fields",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "f23a8a",
+      "purpose": "read privacy method and budget requirements",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "f679fb",
+      "purpose": "read registration and seal field names",
+      "exit_code": 0
+    }
+  ],
+  "previous_interruption": "Prior acceptance/status write was not executed because automatic approval review hit usage limit. This is the resumed write after the approval mechanism became available.",
+  "real_model_calls_this_epoch": 0,
+  "no_paid_authorization_created": true,
+  "product_or_tests_modified_this_epoch": false,
+  "config_key_ledger_DB_provider_or_network_access_by_this_audit": false,
+  "old_narrative_finding": "BP-REAL-NARRATIVE-01 OPEN; current input repair has not received actual model narrative retest",
+  "limitations": [
+    "Independent QA is AI-agent work, no human or teacher acceptance.",
+    "Same-source historical guard evidence is reused rather than repeated.",
+    "No new real output, success-rate or narrative-quality claim.",
+    "No v5 release tag/main merge/deployment; finite evaluator claims remain INSUFFICIENT_EVIDENCE and paid evaluation blocked."
+  ],
+  "next_safe_action": "Selectively stage and privacy/byte audit preparation records, normal liy222 commit/push, then request fresh max1/.20 finite approval."
+}

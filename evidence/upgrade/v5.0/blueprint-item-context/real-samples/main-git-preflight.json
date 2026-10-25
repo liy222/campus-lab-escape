@@ -1,0 +1,49 @@
+{
+  "kind": "Main selective Git preflight for single-G3 preparation only",
+  "utc": "2026-10-25T11:57:10.568345+00:00",
+  "baseline_head": "2c6e8e9a84ca0fb015a9abfab9c5a8aeabba2311",
+  "actual_operator": "Main",
+  "selected_paths_before_this_record": 16,
+  "captured_staged_sha256": {
+    "AGENTS.md": "ac14f6c97bfa4e2a0eff9d0a0dbc206d5ff809fe5fc4a263f0387dca6d602f58",
+    "PLAN.md": "a3233af0f6039896e6638dcd32241c4e8cb93a9d56552e0440115163fdf98eea",
+    "STATUS.md": "231530855ea484e4802d1e81cdfd2b94454cec051b83d8ba8ccdadb2628b432e",
+    "review/findings/v5-item-context-retest-preflight.md": "af1f112b02e0c540dc9299876beb3a6bb324f387c1587d9159ed8f1b4f5d4936",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/draft-author-source-stop.json": "56660adc7b560d3aa7afc1897189e571e44aadfeddd68d45fccef0b7158a6e3c",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/main-preflight-accepted.json": "a4f444e16080b7925f5ec2c6e49201e8b859d908c730867dbdb57aa27bd69226",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/main-prepare-go.json": "bfece2e259d58082a23541f3f5011f6deccca53219b11a77505d041c28b73e0d",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/main-preview-review.json": "3fdf63c57e02f51b4718d5f4b1896684fee1c6d440a94298ef95495e9d1feb40",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/offline-preview-v1.json": "c335185bc2769941cbf890f5e5d9cc9df674ad19b05ff46d74696cd498305c1b",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/plan.json": "67b23b1042d4b33509d9127bc2964c07c2882a720fc6457553ac2979beb61e9a",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/preflight-review-final-v1.json": "1c079b0ddd46e8f3e075b9fee4db3f19ba90b45653d14d185c022ef692148e1a",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/preflight-review-preview-v1.json": "0c7d42188fef77b5979314ed8c062b735d810bbae1a5e355d534d2efe7b4aa7b",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/preflight-review-seal-v1.json": "9606c840709190f90a18d04d1e74d284a294604dc7027475b3d5e8ecbf2761c8",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/preflight-review-source-v1.json": "963fe49cebdb0097ab977fd8fb73d5bcefd554aff62e4d7b6a5cd120b788a85d",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/preparation-report.json": "51dc8f51a8e167cc20c1839d55a3275222ed9b275893f361db6ec22843c9863c",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/run.py": "eed8325b4cff57668eb36ec5d3584b1ef270080b59f69755a946f7190d2b38cf"
+  },
+  "staged_and_working_raw_bytes_match": true,
+  "privacy_findings": 0,
+  "credential_sources_for_privacy_only": [
+    "in-memory process values",
+    "local .env credential fields if present",
+    "known historical ignored raw Cookie if present"
+  ],
+  "credential_values_output_or_saved": false,
+  "privacy_scope": "Exact configured/known values plus finite credential patterns; not a universal secret audit. No provider/config object/ledger/DB instantiated.",
+  "source_ownership": "Root/integration only; sealed Backend runner and independent AI QA records unchanged.",
+  "original_untracked8_unchanged_and_excluded": true,
+  "private_proof_files_not_staged": true,
+  "product_test_build_HTTP_provider_or_evaluator_runs": 0,
+  "paid_calls": 0,
+  "actual_stage_command": "git -c core.autocrlf=false add -- <16 explicit selected paths>",
+  "stage_exit_code": 0,
+  "actual_staged_byte_and_privacy_read_command": "Main Python stdin using immutable git show :path blobs, assertions; no secret output",
+  "staged_byte_and_privacy_read_exit_code": 0,
+  "actual_whitespace_command": "git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --cached --check",
+  "whitespace_exit_code": 0,
+  "limitations": [
+    "Pure preparation only, no actual new sample or paid approval.",
+    "Old G3 narrative finding stays OPEN; no release/main merge/tag/deployment."
+  ]
+}

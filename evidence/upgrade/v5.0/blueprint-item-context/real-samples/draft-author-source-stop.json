@@ -1,0 +1,164 @@
+{
+  "kind": "Single G3 retest draft-author SOURCE STOP; AST/text only",
+  "utc": "2026-10-24T15:24:23.682987+00:00",
+  "source_stop": true,
+  "files_created": [
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/run.py",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/draft-author-source-stop.json"
+  ],
+  "runner_sha256": "eed8325b4cff57668eb36ec5d3584b1ef270080b59f69755a946f7190d2b38cf",
+  "runner_bytes": 33890,
+  "old_runner_path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/run.py",
+  "old_runner_sha256": "31d72c5cf6e84cde83d371a3849a4793896758e4d87c0d7b2148fe1fcb1781f0",
+  "old_runner_unchanged": true,
+  "candidate_path": "evidence/upgrade/v5.0/blueprint-item-context/candidate-qa-fixed.json",
+  "candidate_raw_sha256": "918f155521767e31dabdc9b9f8eb1a6ad0c834a82532662ee1646f713ee5aa49",
+  "product_source_bundle_sha256": "20b0be4421735beefae6c4e051935565866606d4c6887b0075ab822620220f6d",
+  "future_source_map_count": 412,
+  "scope": [
+    "G3"
+  ],
+  "max_calls": 1,
+  "max_reserved_units": 200000000,
+  "case": {
+    "case_id": "G3",
+    "theme": "校园生态实验楼标本交接：三间相连实验室保留采样资料与维护装置，需要跨房间核对材料后完成离楼检查。",
+    "room_count": 3,
+    "difficulty": "hard",
+    "host_seed": 1,
+    "expected_family": "mapping_v1",
+    "cap_units": 200000000
+  },
+  "text_replacements": [
+    {
+      "from": "Draft two-case real validation executor",
+      "to": "Draft single-G3 real validation executor",
+      "occurrences": 1
+    },
+    {
+      "from": "RUN_ID = 'v5-blueprint-real-G2-G3-pending-approval'",
+      "to": "RUN_ID = 'v5-item-context-real-G3-pending-approval'",
+      "occurrences": 1
+    },
+    {
+      "from": "CANDIDATE_RELATIVE_PATH = 'evidence/upgrade/v5.0/blueprint-generation/candidate-qa-fixed.json'",
+      "to": "CANDIDATE_RELATIVE_PATH = 'evidence/upgrade/v5.0/blueprint-item-context/candidate-qa-fixed.json'",
+      "occurrences": 1
+    },
+    {
+      "from": "EXPECTED_CANDIDATE_BUNDLE = 'ba75ae39ab3302c522c646c6bec95e5bde4d3ba55ee1c25af25428dba0e38687'",
+      "to": "EXPECTED_CANDIDATE_BUNDLE = '20b0be4421735beefae6c4e051935565866606d4c6887b0075ab822620220f6d'",
+      "occurrences": 1
+    },
+    {
+      "from": "MAX_CALLS = 2",
+      "to": "MAX_CALLS = 1",
+      "occurrences": 1
+    },
+    {
+      "from": "MAX_RESERVED_UNITS = 400_000_000",
+      "to": "MAX_RESERVED_UNITS = 200_000_000",
+      "occurrences": 1
+    },
+    {
+      "from": "Bind all 409 named sources",
+      "to": "Bind all 410 named sources",
+      "occurrences": 1
+    },
+    {
+      "from": "candidate.get('source_count') != 409",
+      "to": "candidate.get('source_count') != 410",
+      "occurrences": 1
+    },
+    {
+      "from": "len(expected) != 409",
+      "to": "len(expected) != 410",
+      "occurrences": 1
+    },
+    {
+      "from": "['G2', 'G3']",
+      "to": "['G3']",
+      "occurrences": 3
+    },
+    {
+      "from": "{'G2', 'G3'}",
+      "to": "{'G3'}",
+      "occurrences": 1
+    },
+    {
+      "from": "0.40",
+      "to": "0.20",
+      "occurrences": 2
+    },
+    {
+      "from": "max2/.40",
+      "to": "max1/.20",
+      "occurrences": 1
+    },
+    {
+      "from": "evidence/upgrade/v5.0/blueprint-generation/real-samples/run.py --prepare",
+      "to": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/run.py --prepare",
+      "occurrences": 1
+    },
+    {
+      "from": "prefix='v5-blueprint-approved-real-samples-'",
+      "to": "prefix='v5-item-context-approved-real-G3-'",
+      "occurrences": 1
+    },
+    {
+      "from": "'request_id': 'blueprint-real-'",
+      "to": "'request_id': 'item-context-real-'",
+      "occurrences": 1
+    },
+    {
+      "from": "'request_id': 'blueprint-play-'",
+      "to": "'request_id': 'item-context-play-'",
+      "occurrences": 1
+    },
+    {
+      "from": "'kind': 'actual_paid_blueprint_validation'",
+      "to": "'kind': 'actual_paid_item_context_G3_validation'",
+      "occurrences": 1
+    }
+  ],
+  "removed_case": "G2 only; retained G3 case dictionary byte-equivalent at Python value level to sealed runner",
+  "private_evidence_delta": "Only future execute ready branch creates new OUT/raw-sensitive/ then saves private definition/witness/replay there; prepare creates no private directory.",
+  "changed_function_or_class_ASTs": [
+    "source_map",
+    "prepare",
+    "authorization_matches",
+    "Controller",
+    "execute"
+  ],
+  "unchanged_inherited_guards": [
+    "ledger_readonly",
+    "CaptureProvider",
+    "require_authorization",
+    "payload",
+    "estimate",
+    "Controller.safe_ledger",
+    "Controller.select",
+    "Controller.stop",
+    "Controller.journal",
+    "Controller.secret_present",
+    "main"
+  ],
+  "actual_command": "Author inline Python old-runner read/text derivation/AST/literal_eval/delta assertions via C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -; full command retained in tool transcript",
+  "exit_code": 0,
+  "runner_imported": false,
+  "prepare_executed": false,
+  "execute_executed": false,
+  "key_or_config_read": false,
+  "canonical_ledger_opened": false,
+  "database_opened": false,
+  "network_calls": 0,
+  "provider_calls": 0,
+  "paid_calls": 0,
+  "approval_or_marker_created": false,
+  "limitations": [
+    "Author static assertions do not produce or verify an actual preview/payload/cost bound, nor authorize any paid call.",
+    "Await Main pureprepare GO, independent concrete preflight and NEW actual finite max1/.20 user approval before execute.",
+    "Current410 product/test sources, old runner/real outputs/seals/private artifacts and .gitignore were not changed.",
+    "One future sample observes finite narrative axes; no assumed actual repair success, broad quality acceptance, save/restore retest or evaluator call."
+  ]
+}

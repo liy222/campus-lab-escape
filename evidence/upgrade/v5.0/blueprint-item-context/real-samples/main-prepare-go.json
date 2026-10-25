@@ -1,0 +1,24 @@
+{
+  "kind": "Main read-only scoped runner review and pureprepare GO",
+  "utc": "2026-10-24T15:26:24.566350+00:00",
+  "runner_sha256": "eed8325b4cff57668eb36ec5d3584b1ef270080b59f69755a946f7190d2b38cf",
+  "baseline_runner": "evidence/upgrade/v5.0/blueprint-generation/real-samples/run.py",
+  "baseline_runner_sha256": "31d72c5cf6e84cde83d371a3849a4793896758e4d87c0d7b2148fe1fcb1781f0",
+  "main_diff_review_tool_chunk": "4e355e",
+  "main_diff_review_exit_code": 0,
+  "independent_initial_review": "QA edcf7c exit0, no new blocker; final review follows actual preview",
+  "private_paths": [
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/raw-sensitive/G3-private-definition-local.json",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/raw-sensitive/G3-witness-local.json",
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/raw-sensitive/G3-api-replay-local.json"
+  ],
+  "existing_generic_gitignore_applies": true,
+  "gitignore_changed": false,
+  "authorization_marker_journal_preview_private_dir_absent": true,
+  "permission": "Main may run --prepare exactly once only; no execute/config/Key/canonicalledger/DB/network/provider",
+  "paid_authorization": false,
+  "limitations": [
+    "No current ledger read or actual model output here.",
+    "New scope/cap and actual preview still need final independent audit before a paid proposal can be submitted."
+  ]
+}

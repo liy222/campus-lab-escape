@@ -317,3 +317,8 @@ T7仍缺可靠的真实多房间生成；伙伴已有一个阶段两轮有限实
 独立AI QA确认G3“资料袋/钥匙”叙述误导（OPEN）。已普通窄修模型输入：明确实际道具槽位与使用后保留，prompt要求同名且不虚构物品/放回。当前410来源仅新增上下文与定向测试，纯离线联合8+1通过，保留首次测试基线错误；没有重跑旧全套、构建、网页、规划、HTTP或付费。当前补充未真实复测，不能把旧两例标为新prompt质量通过。下一步仅文档、保密审查和正常liy222提交/推送；仍不发布、不合并main或新增功能。证据blueprint-generation/real-samples/qa-actual-review-final-v1.json、blueprint-item-context/accepted.json与已澄清的AI QA报告。
 
 2026-10-24本轮源码及证据已提交c9baaed3932c03e316faf91f58a06f8744145aa8并正常推送开发分支；远端与GitHub作者/提交者liy222核对一致。当前410来源不变，原8未跟踪文件和6本地私有材料保持。两次真实调用名额已用完；上下文后续补充未真实复测，叙述finding与未发布状态保持。仅补同步回执，新增测试/调用0。见blueprint-item-context/sync.json。
+
+2026-10-24继续：当前2c6e8e9基线与远端一致，410来源及旧证据绑定匹配。仅准备当前上下文修复后的G3三房hard/mapping一次真实叙述复测提案（最多1次/0.20元），复用原主题和Host seed1；本轮无新付费授权或真实调用。产品代码、现有数据/环境、原始失败及成功证据保持。独立预检与普通提交推送完成后，再申请新的有限许可。计划evidence/upgrade/v5.0/blueprint-item-context/real-samples/plan.json。
+
+### 2026-10-25 单 G3 复测准备完成，待同步及新授权
+独立 AI QA 对新单次提案预检通过，Main恢复核对当前410/预览412来源和8份新封存产物一致；旧证据、53项登记及原8未跟踪文件不变。唯一请求为沿用主题的三房hard/mapping seed1，完整载荷费用上界0.150816元，拟最多1次/0.20元。只准备未执行，原G3叙述问题仍OPEN。上一轮自动审批额度中断的收尾写入现恢复；先选择性提交推送，再请求新的有限批准，不重跑prepare或历史测试。证据evidence/upgrade/v5.0/blueprint-item-context/real-samples/main-preflight-accepted.json。
