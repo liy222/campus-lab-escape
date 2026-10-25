@@ -1,0 +1,106 @@
+{
+  "kind": "Independent AI QA design-document read review only",
+  "utc": "2026-10-25T14:29:59.042972+00:00",
+  "actor": "Independent AI QA agent",
+  "status": "READY_TO_PRESENT_USER_CHOICE_NOT_APPROVAL_OR_PRODUCT_QA",
+  "source_stop": true,
+  "reviewed_proposal_sha256": "d2c839902641bee0a8acb695b9bce6d0c1949231992588818e2651bf1599e598",
+  "prior_proposal_sha256": "5d24198d19449c053db3ba7ac90c6c999bd3756dc2937d6295df56a95298dd60",
+  "reference_sha256": {
+    "docs/v5-generation-text-authority-proposal.md": "d2c839902641bee0a8acb695b9bce6d0c1949231992588818e2651bf1599e598",
+    "evidence/upgrade/v5.0/text-authority-proposal/plan.json": "e4d071349f539e1ea0bbb406f3b4e32aa2a4a08702b83a58461b17e30b8741ab",
+    "docs/v5-build-plan.md": "8d7c29a53afb0c283ccd488ff630126ea5bea49542535e2de3ce1a4540580385",
+    "review/findings/v5-slot-completeness-real-result.md": "da5e936d7bc5231330dcc7be99dbc5bfca4cb08f2605879b581e6e0ee487ec0c",
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/main-actual-accepted.json": "b7169c523774a151de022ea3d759046acfd10e51aa7d69eb9a1179fe74cfc538",
+    "contracts/v2/build_generation_content.py": "5f1c9f0739f99217630a23e2cb932df9184ca95af22aa508221427c4cd45c6cf",
+    "backend/app/domain/blueprints.py": "2fad1607e8d4e379c705c5c36ac9245c2002d622953e08c230934ac6c64e5688",
+    "backend/app/ai/v5.py": "d1a8cab3dceaa85f933e1d93b49f166d864c4805124ae81725075688de195529",
+    "backend/app/api/v5.py": "430a9df195e0c01787b7c5bd5b09af634eb5417ca15774437890b447747a6740"
+  },
+  "actual_commands": [
+    {
+      "tool_chunk": "ae0935",
+      "command": "PowerShell Get-Content latest AGENTS tail, design plan and original stopped proposal",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "95726e",
+      "command": "PowerShell rg/Get-Content accepted plan section13, public actual review/acceptance, current blueprint types and v1 builder",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "69d1fe",
+      "command": "PowerShell rg/Get-Content generation/provenance interface and accepted plan section13",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "669e40",
+      "command": "PowerShell Get-Content existing GenerationService return and API compile/commit worker",
+      "exit_code": 0
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library-only final two changed paragraphs/hash/relative links/UTF8 audit and this new JSON write (full tool transcript)",
+      "exit_code": 0
+    }
+  ],
+  "finding": {
+    "id": "DESIGN-PROVENANCE-SCOPE-01",
+    "status": "RESOLVED_IN_REVISED_DRAFT",
+    "initial_issue": "Original phrase retaining raw reply hash/version could imply new production persistence despite frozen Draft/API/Store.",
+    "resolution": "Revised section3 binds raw hash/contract version only in authorized isolated verification evidence. Production still returns existing full Draft into unchanged API/Store; no persistent fields/tables/raw logging.",
+    "Main_revision_tool": "aa404c",
+    "Main_revision_exit_code": 0,
+    "affected_text_only_rechecked": true
+  },
+  "conclusions": {
+    "public_actual_facts_and_device_ambiguity_precise": true,
+    "technical_pass_narrative_not_passed_legacy_finding_open": true,
+    "local_tool_AI_QA_private_projection_incident_accurately_disclosed": true,
+    "A_B_require_explicit_user_choice_B_reduces_object_description_freedom": true,
+    "new_internal_v2_name_only_strict_extra_description_rejection": true,
+    "declared_legal_v2_to_Draft_transform_is_not_bad_reply_repair_or_v1_fallback": true,
+    "background_names_room_text_remain_semantic_risks": true,
+    "v1_schema_builder_and_full_old_definitions_policy_feasible_in_principle": true,
+    "no_old_text_hash_or_storage_rewrite_planned": true,
+    "frozen_compiler_API_Store_provider_companion_discovery_assets_scope_explicit": true,
+    "Host_text_must_not_preveal_typed_answers_or_skip_discovery": true,
+    "minimal_v2_adapter_interface_still_required_before_implementation": true,
+    "unexpected_frozen_scope_impact_must_be_listed_before_changes": true,
+    "TXT_tasks_acceptance_matrix_and_payload_budget_are_future_plans_not_results": true
+  },
+  "utf8_strict_decode": true,
+  "relative_links": [
+    {
+      "reference": "v5-build-plan.md#13-2026-10-24接受的生成职责修订选项1",
+      "target_exists": true,
+      "anchor_checked": true
+    },
+    {
+      "reference": "../review/findings/v5-slot-completeness-real-result.md",
+      "target_exists": true,
+      "anchor_checked": false
+    },
+    {
+      "reference": "../evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/main-actual-accepted.json",
+      "target_exists": true,
+      "anchor_checked": false
+    }
+  ],
+  "files_created": [
+    "evidence/upgrade/v5.0/text-authority-proposal/design-review.json"
+  ],
+  "product_tests_contracts_old_evidence_modified": false,
+  "application_or_provider_imports": 0,
+  "tests_solver_compile_replay_HTTP_build_UI_eval_runs": 0,
+  "private_body_or_projection_reads": 0,
+  "config_Key_liveledger_DB_network_or_model_access": false,
+  "paid_calls": 0,
+  "limits": [
+    "This read review only supports presenting choices to the user; it does not accept B or change formal build scope.",
+    "No product implementation, formal QA, migration, real generation quality, budget/refusal or release pass has occurred in this design epoch.",
+    "Future Backend must define the minimal reuse interface and ownership before implementation; existing v1 assembly accepts its own contract and is not a permissive production fallback.",
+    "Old actual raw, successful and failed epochs, seals and OPEN finding are unchanged.",
+    "Current source maps not duplicated/re-run; no runtime/compatibility test executed.",
+    "Background and AI names remain fallible; mechanical Host text cannot guarantee all semantics or human experience."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "Main new proposal CRCRLF-only correction before commit",
+  "utc": "2026-10-25T14:34:21.313170+00:00",
+  "path": "docs/v5-generation-text-authority-proposal.md",
+  "before_sha256": "d2c839902641bee0a8acb695b9bce6d0c1949231992588818e2651bf1599e598",
+  "after_sha256": "2c6a39ad252ed6034e30d4b71a33b93b14506ec56bc9846e9a53394e06b55ebe",
+  "extra_CR_removed": 96,
+  "entire_non_CR_byte_sequence_identical": true,
+  "only_change": "CRCRLF to CRLF, no wording/fields/choices changed",
+  "trigger": {
+    "tool_chunk": "13d44e",
+    "exit_code": 1,
+    "underlying_git_diff_check_exit_code": 2,
+    "followup_read": "2b5afe",
+    "commit_happened": false,
+    "git_preflight_report_created": false
+  },
+  "cause": "Main revised text via bytes.decode then default write_text newline translation on Windows, duplicating existing CR; corrected via exact byte replacement.",
+  "prior_design_review_preserved": "design-review.json is the preceding raw newline epoch; design semantics remain applicable pending narrow independent format proof",
+  "plan_ready_document_check_records_preserved": true,
+  "product_tests_QA_actual_or_paid_source_changes": false,
+  "new_tests_or_paid_calls": 0
+}
