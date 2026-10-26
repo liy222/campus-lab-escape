@@ -1,0 +1,112 @@
+{
+  "kind": "TXT-C6 mechanical single-G3 runner author SOURCE STOP; static only",
+  "utc": "2026-10-26T11:36:48.289378+00:00",
+  "source_stop": true,
+  "files_created": [
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/run.py",
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/author-source-stop.json"
+  ],
+  "runner_sha256": "5103629ab3ea01411def15068d08b8bbb3480d65a11437cba1547dca40aa05b7",
+  "runner_bytes": 33931,
+  "historical_executor": "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/run.py",
+  "historical_executor_sha256": "0f6bc53c52d3cb987f4e2047a3f312a4fd900aaa286a20c8e97dcab0466de554",
+  "historical_executor_unchanged": true,
+  "allowed_replacements": [
+    {
+      "from": "v5-slot-completeness-real-G3-pending-approval",
+      "to": "v5-text-authority-v2-real-G3-pending-approval",
+      "occurrences": 1
+    },
+    {
+      "from": "evidence/upgrade/v5.0/blueprint-slot-completeness/candidate.json",
+      "to": "evidence/upgrade/v5.0/text-authority-v2/candidate-qa-fixed.json",
+      "occurrences": 1
+    },
+    {
+      "from": "71155c8b17d70383499ad845db6b3e7e4b61a620c52cb9ecb803c69ea1618dc4",
+      "to": "15e9e46eca8db586e7b5225be8c2138ed8563e92c03b14100e2bd4cd9abfaa89",
+      "occurrences": 1
+    },
+    {
+      "from": "Bind all 410 named sources",
+      "to": "Bind all 420 named sources",
+      "occurrences": 1
+    },
+    {
+      "from": "candidate.get('source_count') != 410",
+      "to": "candidate.get('source_count') != 420",
+      "occurrences": 1
+    },
+    {
+      "from": "len(expected) != 410",
+      "to": "len(expected) != 420",
+      "occurrences": 1
+    },
+    {
+      "from": "from backend.app.domain.blueprints import select_blueprint",
+      "to": "from backend.app.domain.generation_content_v2 import select_blueprint",
+      "occurrences": 1
+    },
+    {
+      "from": "from backend.app.domain import blueprints",
+      "to": "from backend.app.domain import generation_content_v2 as blueprints",
+      "occurrences": 1
+    },
+    {
+      "from": "v5-slot-completeness-approved-real-G3-",
+      "to": "v5-text-authority-v2-approved-real-G3-",
+      "occurrences": 1
+    },
+    {
+      "from": "actual_paid_slot_completeness_G3_validation",
+      "to": "actual_paid_text_authority_v2_G3_validation",
+      "occurrences": 1
+    },
+    {
+      "from": "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/run.py --prepare",
+      "to": "evidence/upgrade/v5.0/text-authority-v2/real-samples/run.py --prepare",
+      "occurrences": 1
+    }
+  ],
+  "byte_inverse_replacements_equal_entire_old_runner": true,
+  "syntax_ast_parse_passed": true,
+  "unchanged_protected_AST_names": [
+    "canonical",
+    "sha",
+    "stamp",
+    "StopRun",
+    "payload",
+    "estimate",
+    "raw_write",
+    "authorization_matches",
+    "require_authorization",
+    "ledger_readonly",
+    "public_snapshot",
+    "Controller",
+    "CaptureProvider",
+    "make_temp_client",
+    "version_body",
+    "main"
+  ],
+  "CASES_limits_unknown_identity_ROOT_AST_unchanged": true,
+  "source_map_future_count": 422,
+  "product_candidate": "evidence/upgrade/v5.0/text-authority-v2/candidate-qa-fixed.json",
+  "product_bundle": "15e9e46eca8db586e7b5225be8c2138ed8563e92c03b14100e2bd4cd9abfaa89",
+  "internal_contract_version_metadata": "No added persistent/runner field. Future full preview schema.const2.0.0, source table and original provider raw SHA bind the model contract.",
+  "actual_command": "Author inline Python standard-library byte replacements/inverse equality/ast.parse and protected-AST equality via C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -; complete command retained in tool transcript",
+  "exit_code": 0,
+  "runner_imported": false,
+  "prepare_executed": false,
+  "execute_executed": false,
+  "new_private_directory_created": false,
+  "authorization_or_marker_created": false,
+  "key_config_liveledger_private_body_or_DB_read": false,
+  "network_or_provider_calls": 0,
+  "paid_calls": 0,
+  "limits": [
+    "Mechanical static inheritance proof only; no guard probes, product tests, payload preparation or cost measurement run.",
+    "Main may later run one explicitly authorized pure prepare; independent QA reviews that actual schema2 body/source/cost.",
+    "No fresh paid authorization exists. Any future G3 once/max1/.20 execute needs new finite source-bound actual user approval.",
+    "Frozen product/test sources, old executors/evidence/private bodies and original files are not modified; no real-generation/prose-quality claim."
+  ]
+}

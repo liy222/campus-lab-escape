@@ -1,0 +1,73 @@
+{
+  "kind": "Independent AI QA TXT-C6 actual offline preview review",
+  "utc": "2026-10-26T11:41:31.305545+00:00",
+  "actor": "Independent AI QA agent",
+  "exit_code": 0,
+  "preview_sha256": "6f7d48de595192dc9a4b106a07349bbf18121372503a80c1b362f35145fe41f2",
+  "source_count": 422,
+  "source_bundle_sha256": "dc06818ccf9031d4590d6266fd217cbd87ac6bb25a21bd3e03ad1dde923bf085",
+  "unique_source_map_location": "evidence/upgrade/v5.0/text-authority-v2/real-samples/offline-preview-v1.json",
+  "all_current_named_sources_match": true,
+  "product_candidate_sha256": "7210a08f64537f31545bcea9a47cae17b9f0b3138de779bf6fd508586d1fddb9",
+  "same_G3_theme_three_hard_mapping_seed1": true,
+  "v2_schema_equals_selected_static_variant": true,
+  "content_version": "2.0.0",
+  "exact_name_only_object_slots": 14,
+  "room_name_description_retained": true,
+  "four_extra_clue_slots_present": true,
+  "item_use_real_slot_nonconsuming": true,
+  "current_system_prompt_matches_frozen_AST_literal": true,
+  "complete_body_bound": {
+    "payload_utf8_bytes": 11728,
+    "input_token_bound": 55104,
+    "output_token_bound": 6000,
+    "cost_upper_units": 158208000,
+    "cost_upper_cny": 0.158208,
+    "payload_sha256": "ec708c41b517c7d601e10e106bbc27ef4637fa53d23bf3f9a371b6b14565919a"
+  },
+  "maximum_calls": 1,
+  "maximum_reserved_units": 200000000,
+  "automatic_retries": 0,
+  "private_future_paths_gitignored": [
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/raw-sensitive/G3-private-definition-local.json",
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/raw-sensitive/G3-witness-local.json",
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/raw-sensitive/G3-api-replay-local.json"
+  ],
+  "git_check_ignore_exit_code": 0,
+  "absence": {
+    "user-authorization.json": true,
+    "execute-started.json": true,
+    "dispatch-journal.jsonl": true,
+    "raw-sensitive": true,
+    "result.json": true,
+    "G3-provider-result.json": true,
+    "ledger-before.json": true,
+    "ledger-after.json": true
+  },
+  "Main_prepare": {
+    "tool": "7eee98",
+    "command": "python -B -X utf8 evidence/upgrade/v5.0/text-authority-v2/real-samples/run.py --prepare",
+    "exit_code": 0,
+    "QA_repeated": false
+  },
+  "actual_QA_commands": [
+    {
+      "tool": "668a09",
+      "exit_code": 0,
+      "scope": "New offline preview metadata/schema only, no actual output"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library-only source/payload/schema/cost/ignore/absence review and new report/seals; full tool transcript",
+      "exit_code": 0
+    }
+  ],
+  "runner_or_product_imports": 0,
+  "prepare_execute_guard_probe_or_suite_runs": 0,
+  "old_real_raw_private_body_Key_config_liveledger_DB_network_provider_access": false,
+  "paid_calls": 0,
+  "limits": [
+    "Offline request only, no real model content/admission/narrative quality.",
+    "No fresh finite paid authorization; future Main must bind actual user approval to exact preview/source/max1/.20.",
+    "Future prose reads only explicit player-public allowlist, parameters/clues/answers/witness/private projection never dumped."
+  ]
+}

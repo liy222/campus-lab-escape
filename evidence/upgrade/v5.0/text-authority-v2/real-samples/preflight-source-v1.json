@@ -1,0 +1,126 @@
+{
+  "kind": "Independent AI QA TXT-C6 initial source/inheritance preflight only",
+  "utc": "2026-10-26T11:38:06.439653+00:00",
+  "actor": "Independent AI QA agent",
+  "source_stop": true,
+  "status": "NO_STATIC_BLOCKER_MAIN_ONE_PURE_PREPARE_RECOMMENDED",
+  "runner_sha256": "5103629ab3ea01411def15068d08b8bbb3480d65a11437cba1547dca40aa05b7",
+  "historical_runner_sha256": "0f6bc53c52d3cb987f4e2047a3f312a4fd900aaa286a20c8e97dcab0466de554",
+  "allowed_substitutions": [
+    [
+      "v5-slot-completeness-real-G3-pending-approval",
+      "v5-text-authority-v2-real-G3-pending-approval"
+    ],
+    [
+      "evidence/upgrade/v5.0/blueprint-slot-completeness/candidate.json",
+      "evidence/upgrade/v5.0/text-authority-v2/candidate-qa-fixed.json"
+    ],
+    [
+      "71155c8b17d70383499ad845db6b3e7e4b61a620c52cb9ecb803c69ea1618dc4",
+      "15e9e46eca8db586e7b5225be8c2138ed8563e92c03b14100e2bd4cd9abfaa89"
+    ],
+    [
+      "Bind all 410 named sources",
+      "Bind all 420 named sources"
+    ],
+    [
+      "candidate.get('source_count') != 410",
+      "candidate.get('source_count') != 420"
+    ],
+    [
+      "len(expected) != 410",
+      "len(expected) != 420"
+    ],
+    [
+      "from backend.app.domain.blueprints import select_blueprint",
+      "from backend.app.domain.generation_content_v2 import select_blueprint"
+    ],
+    [
+      "from backend.app.domain import blueprints",
+      "from backend.app.domain import generation_content_v2 as blueprints"
+    ],
+    [
+      "v5-slot-completeness-approved-real-G3-",
+      "v5-text-authority-v2-approved-real-G3-"
+    ],
+    [
+      "actual_paid_slot_completeness_G3_validation",
+      "actual_paid_text_authority_v2_G3_validation"
+    ],
+    [
+      "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/run.py --prepare",
+      "evidence/upgrade/v5.0/text-authority-v2/real-samples/run.py --prepare"
+    ]
+  ],
+  "inverse_entire_bytes_equal": true,
+  "normalized_entire_AST_equal": true,
+  "unchanged_protected_guard_AST": [
+    "authorization_matches",
+    "require_authorization",
+    "ledger_readonly",
+    "Controller",
+    "CaptureProvider"
+  ],
+  "same_G3_CASe_root_max1_point20_unknown_identity": true,
+  "v2_prepare_import_and_execute_blueprints_alias": true,
+  "product_candidate_path": "evidence/upgrade/v5.0/text-authority-v2/candidate-qa-fixed.json",
+  "current_inputs_verified": 420,
+  "future_source_count": 422,
+  "current_QA_artifacts_unchanged": 44,
+  "inherited_guard_evidence": {
+    "evidence/upgrade/v5.0/blueprint-generation/real-samples/preflight-review-seal-v1.json": {
+      "sha256": "6812ea980a94b4292fbb748005620affb388a84617138ecdcc4e266e35abe088",
+      "sealed_artifacts_match": 12
+    },
+    "evidence/upgrade/v5.0/blueprint-item-context/real-samples/preflight-review-seal-v1.json": {
+      "sha256": "9606c840709190f90a18d04d1e74d284a294604dc7027475b3d5e8ecbf2761c8",
+      "sealed_artifacts_match": 8
+    },
+    "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/preflight-seal-v1.json": {
+      "sha256": "fdd7942a1c9398293d64e667fba765a5523050e0a872ce311a402b6a7d4421d4",
+      "sealed_artifacts_match": 8
+    }
+  },
+  "guard_probes_repeated": false,
+  "future_private_paths_gitignored": [
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/raw-sensitive/G3-private-definition-local.json",
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/raw-sensitive/G3-witness-local.json",
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/raw-sensitive/G3-api-replay-local.json"
+  ],
+  "git_check_ignore_exit_code": 0,
+  "absence_before_prepare": {
+    "offline-preview-v1.json": true,
+    "user-authorization.json": true,
+    "execute-started.json": true,
+    "dispatch-journal.jsonl": true,
+    "raw-sensitive": true,
+    "result.json": true
+  },
+  "actual_commands": [
+    {
+      "tool": "61d7b8",
+      "exit_code": 0,
+      "scope": "Read new plan/ownership only"
+    },
+    {
+      "tool": "e68346",
+      "exit_code": 0,
+      "scope": "Read author stop only"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library byte/AST/source/public-seal/ignore/absence audit and this record; full tool transcript",
+      "exit_code": 0
+    }
+  ],
+  "runner_imported_or_prepare_execute_run": false,
+  "product_tests_or_guard_probes_run": false,
+  "old_real_raw_or_private_body_or_parameters_read": false,
+  "Key_config_liveledger_playerDB_network_provider_access": false,
+  "paid_calls": 0,
+  "future_prose_boundary": "Only explicitly allowlisted fictional player-public story, room atmosphere, names and Host base descriptions if needed after separately approved terminal execution; never dump parameters/clue values/answers/witness/private projections. Local checks output counts/bools/hashes.",
+  "limits": [
+    "Initial static review only. Main must prepare once, then independent actual-preview/source/body/cost review.",
+    "No fresh finite paid approval, no quality/admission/real-model success conclusion.",
+    "Old failed/successful outputs and OPEN narrative finding unchanged."
+  ]
+}
