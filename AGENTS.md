@@ -491,3 +491,6 @@ Main read8b1323 accepts initial independent b9616350/newrunner5103629a: only11ap
 
 ### Text-authority v2 single-G3 proposal accepted / Git GO, 2026-10-26
 Main read89ec36 accepts independent preflight43336716/sealb2fcb65e as proposal only, current422/QArecord8/oldQA44/original8 match. UniqueMainprepare7eee98 exit0 full11728B/input55104/output6000/schema2-nameonly14/costupper.158208, proposedmax1/.20; noKey/config/liveledger/DB/provider/paid. Freshapproval/marker/journal/private/result absent; sourcesSTOP, inheritedguards notrerun. Main only root/privacy/selective normal liy222 commit/push, then actualfiniteapproval question. OldqualityOPEN/unknown/evaluator/no release limits retained.
+
+### Text-authority v2 single-G3 proposal remote sealed / freshapproval pending, 2026-10-26
+Proposal8cd66ad846e53cc848316830717f5ac87d7d1c16 normalcommit/push0/remotehash and GitHubauthor+committerliy222 verified.16selectedfiles byteexact/finitecredential0/whitespace0; postpush422/preflight8 match, original8 excluded. Newauth/marker/journal/private/result absent; actualpaid0. SameG3/3hard/mappingseed1 fullupper.158208 proposedmax1/.20 only. Main root/sync metadata and actualfinitebudget question now; allsourceSTOP, no repeatprepare/probe/tests/eval or Key/config/liveledger/provider whilepending. OldqualityOPEN/unknown/no release limits remain.
