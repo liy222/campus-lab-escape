@@ -1,0 +1,101 @@
+{
+  "kind": "NG1 alias2 authority-boundary narrow fix Owner SOURCE STOP",
+  "utc": "2026-10-26T16:14:26.603124+00:00",
+  "source_stop": true,
+  "recovery": {
+    "tool_chunk": "acc9a1",
+    "exit_code": 0,
+    "fix2_previously_existed": false,
+    "working_source_matched_fix1": true
+  },
+  "diagnosis": {
+    "tool_chunk": "cc3e2e",
+    "exit_code": 0,
+    "before_source_sha256": "05f470f9da978555db6f92d62d6b6a23bb14f29a37f31c44ad212c2571bfd782",
+    "finding": "An instruction-shaped data alias masked the same known generic material obligation in story. Safe-story excluded name and ordinary noun mention already preserved."
+  },
+  "delta": "Only alias eligibility in _guard_narrative: an alias already recognized by the unchanged generic-material matcher is not granted action-masking literal status. Names alone are not rejected; the existing story/room prose gate still makes the rejection.",
+  "changed_file": "backend/app/domain/generation_content_v2.py",
+  "source_sha256": "413ab1e2c6a541c33f9394be3a6dba2daa3d32dbbe5a552106a60667a6f28c36",
+  "inverse_two_site_text_change_restores_entire_fix1_source_bytes": true,
+  "all_other_top_level_AST_nodes_unchanged": true,
+  "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 - (inline9 affected pure cases, inverse-byte scope proof and AST comparison; full command retained in tool transcript)",
+  "exit_code": 0,
+  "affected_checks": [
+    {
+      "kind": "item",
+      "case": "alias_equals_instruction",
+      "expected_rejection": true,
+      "actual_rejection": true,
+      "nonmutation": true
+    },
+    {
+      "kind": "item",
+      "case": "excluded_name_only",
+      "expected_rejection": false,
+      "actual_rejection": false,
+      "nonmutation": true
+    },
+    {
+      "kind": "item",
+      "case": "noun_mention",
+      "expected_rejection": false,
+      "actual_rejection": false,
+      "nonmutation": true
+    },
+    {
+      "kind": "item",
+      "case": "prior_literal_real_return",
+      "expected_rejection": true,
+      "actual_rejection": true,
+      "nonmutation": true
+    },
+    {
+      "kind": "clue",
+      "case": "alias_equals_instruction",
+      "expected_rejection": true,
+      "actual_rejection": true,
+      "nonmutation": true
+    },
+    {
+      "kind": "clue",
+      "case": "excluded_name_only",
+      "expected_rejection": false,
+      "actual_rejection": false,
+      "nonmutation": true
+    },
+    {
+      "kind": "clue",
+      "case": "noun_mention",
+      "expected_rejection": false,
+      "actual_rejection": false,
+      "nonmutation": true
+    },
+    {
+      "kind": "clue",
+      "case": "prior_literal_real_return",
+      "expected_rejection": true,
+      "actual_rejection": true,
+      "nonmutation": true
+    }
+  ],
+  "room_description_generic_instruction_not_masked": true,
+  "affected_check_count": 9,
+  "old_records_and_readme_unchanged_sha256": {
+    "evidence/upgrade/v5.0/narrative-guard/backend-owner.json": "fe5911ad57f5a0ea35d64380bc5cb1c56f307b3fb788fd0e61691452d6423d9d",
+    "evidence/upgrade/v5.0/narrative-guard/backend-fix1.json": "e47837c5d65fc118d3dcd1020e7ee3ec026122085c8e67de44b618a5e7450e2a",
+    "contracts/v2/generation-content-v2.README.md": "00e2d7322e8b192a9fa45f8cfb8610261e858b64e6990be1f2334189b61e5fa9"
+  },
+  "policy_revision": "1",
+  "content_version": "2.0.0",
+  "original18_matrix_repeated": false,
+  "formal_QA_run": false,
+  "compiler_witness_API_provider_Key_config_liveledger_DB_private_body_access": false,
+  "paid_calls": 0,
+  "limits": [
+    "Finite alias-eligibility rule reuses existing words and matcher; no broader semantics, new policy, fields, Host story, version or template change.",
+    "Safe story with the instruction-shaped object name remains accepted by this guard; names remain outside rejection-field scope.",
+    "Name quoting and unfamiliar constructions can remain ambiguous. No arbitrary-language guarantee or actual quality-rate claim.",
+    "Initial Owner/fix1 are immutable historical source epochs. Independent QA remains pending Main freeze; no suite or real sample repeated."
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "kind": "NG1 Backend finite pure development SOURCE STOP, not independent QA",
+  "utc": "2026-10-26T12:27:57.803051+00:00",
+  "source_stop": true,
+  "files_changed": [
+    "backend/app/domain/generation_content_v2.py",
+    "contracts/v2/generation-content-v2.README.md"
+  ],
+  "source_sha256": {
+    "backend/app/domain/generation_content_v2.py": "ed784ccb6e90fd5a921191492a8cc6c76f0133f79c4d0e1cea2b00f9a564dd89",
+    "contracts/v2/generation-content-v2.README.md": "00e2d7322e8b192a9fa45f8cfb8610261e858b64e6990be1f2334189b61e5fa9"
+  },
+  "baseline_planned_before_sha256": {
+    "backend/app/domain/generation_content_v2.py": "524325eceea5da4646092a20051b90bac398239f3530507da6eb8ddc3600f1ae",
+    "contracts/v2/generation-content-v2.README.md": "fc382080b8be820f781e5184d4186859e3fc962cd43161858a0e4601a9496d98"
+  },
+  "policy_revision": "1",
+  "content_version": "2.0.0",
+  "actual_commands": [
+    {
+      "tool_chunk": "7354f7",
+      "exit_code": 0,
+      "scope": "Original8reject/10preserve once, pure guard story checks"
+    },
+    {
+      "exit_code": 0,
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 - (inline finite boundary/strictgate/nonmutation/AST/hash checks; complete command in transcript)",
+      "scope": "Selected extra boundaries and freeze proof only, no original18 repetition"
+    }
+  ],
+  "fixed_pairs_result": {
+    "reject": 8,
+    "preserve": 10,
+    "all_as_expected": true,
+    "run": "7354f7"
+  },
+  "selected_boundary_cases": [
+    {
+      "case": "invalidated_old_quote_then_current",
+      "expected_rejection": true,
+      "raw_nonmutation": true
+    },
+    {
+      "case": "local_negation_then_current",
+      "expected_rejection": true,
+      "raw_nonmutation": true
+    },
+    {
+      "case": "local_negative_target_action",
+      "expected_rejection": false,
+      "raw_nonmutation": true
+    },
+    {
+      "case": "quoted_current_request",
+      "expected_rejection": true,
+      "raw_nonmutation": true
+    },
+    {
+      "case": "historical_obligation",
+      "expected_rejection": false,
+      "raw_nonmutation": true
+    },
+    {
+      "case": "completed_then_neutral",
+      "expected_rejection": false,
+      "raw_nonmutation": true
+    },
+    {
+      "case": "format_newline_after_departure",
+      "expected_rejection": true,
+      "raw_nonmutation": true
+    },
+    {
+      "case": "format_newline_after_please",
+      "expected_rejection": true,
+      "raw_nonmutation": true
+    },
+    {
+      "case": "room_G1",
+      "expected_rejection": true,
+      "raw_nonmutation": true
+    },
+    {
+      "case": "room_G2",
+      "expected_rejection": true,
+      "raw_nonmutation": true
+    },
+    {
+      "case": "room_G3",
+      "expected_rejection": true,
+      "raw_nonmutation": true
+    },
+    {
+      "case": "actual_item_renamed_target",
+      "expected_rejection": true
+    },
+    {
+      "case": "actual_clue_renamed_target",
+      "expected_rejection": true
+    },
+    {
+      "case": "escaped_literal_True",
+      "expected_rejection": true
+    },
+    {
+      "case": "escaped_literal_False",
+      "expected_rejection": false
+    },
+    {
+      "case": "excluded_title_room_object_names_not_scanned",
+      "expected_rejection": false
+    },
+    {
+      "case": "blank_normalized_names_no_empty_regex",
+      "expected_rejection": false
+    },
+    {
+      "case": "valid_raw_typed_structure_Host_text_unchanged",
+      "expected_rejection": false
+    }
+  ],
+  "strict_JSON_and_schema_precede_guard": true,
+  "guard_refusal_never_calls_helper": true,
+  "rejection_error_code": "UNSUPPORTED_NARRATIVE_OPERATION",
+  "protected_function_ASTs_unchanged": [
+    "_require_v2",
+    "select_blueprint",
+    "content_schema",
+    "request_manifest",
+    "_describe"
+  ],
+  "assembler_AST_only_added_guard_call": true,
+  "prior9_frozen_raw_unchanged": {
+    "backend/app/domain/blueprints.py": "2fad1607e8d4e379c705c5c36ac9245c2002d622953e08c230934ac6c64e5688",
+    "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+    "backend/app/ai/provider.py": "1c4f5c170f1bd1d303899c2ccf6d3185c258db214f47fff6f0d1e4b442eff85d",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/api/v5.py": "430a9df195e0c01787b7c5bd5b09af634eb5417ca15774437890b447747a6740",
+    "backend/app/storage/v5.py": "eb58009dbfd715d8eff4e28b2db3ea346ac11a3b2d822f80838445b849b70fba",
+    "contracts/v2/generation-content.schema.json": "35e5dc8c75c961353676815f344b352e2536183121e06ceeda0be0558bad1ade",
+    "contracts/v2/build_generation_content.py": "5f1c9f0739f99217630a23e2cb932df9184ca95af22aa508221427c4cd45c6cf",
+    "contracts/v2/generation-content.README.md": "a5adc7c77ab9c65cf87d3f69c32cd91d164c1a7d74d69869f1ebfd120c6ea03c"
+  },
+  "comparison_only_format_whitespace_merged": true,
+  "negative_quote_mask_limited_to_explicit_old_quote_span": true,
+  "compiler_witness_HTTP_API_provider_key_config_liveledger_DB_or_privatebody_access": false,
+  "paid_calls": 0,
+  "QA_tests_written": false,
+  "limits": [
+    "Owner synthetic pure checks only; independent formal QA requires Main freeze and is not claimed here.",
+    "Finite actions/material aliases/short-clause patterns, not all-language understanding. Synonyms, double negation, cross-sentence references or unfamiliar quotations can misfire or be missed.",
+    "Standalone key need-not-be-taken-away sentence is preserved, not classified as forced discard.",
+    "Material names are escaped targets but excluded as scanned prose; title/room/object names and all other narrative risks remain outside the guard.",
+    "Original raw is never normalized in place; no story rewrite, Host story template, new schema/version/API/DB metadata, fallback or retry.",
+    "Strict rejection may reduce effective generation yield; no measured refusal rate or actual narrative-quality repair claim.",
+    "No original raw/private evidence or sealed tests changed; no fullsuite/compile/proof/witness/API/build/UI/evaluator or paid run."
+  ]
+}

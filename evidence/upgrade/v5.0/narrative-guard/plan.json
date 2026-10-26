@@ -1,0 +1,127 @@
+{
+  "kind": "Bounded unsupported ambient return-instruction guard; ordinary repair of existing B constraint",
+  "date": "2026-10-26",
+  "utc": "2026-10-26T12:19:12.710455+00:00",
+  "baseline_head": "427451b5e0df4bf0c52f00c02cd2e0ffa2e59e25",
+  "baseline_remote_matched": true,
+  "baseline_source_map": "evidence/upgrade/v5.0/text-authority-v2/real-samples/offline-preview-v1.json",
+  "before_edits_verified": {
+    "source422": true,
+    "actual_public21": true,
+    "local_private4_hash_only_ignored": true,
+    "original8": true,
+    "tool": "d2c550",
+    "exit_code": 0
+  },
+  "reason": "Current prompt already prohibits story/room atmosphere from inventing operations. The actual G3 admitted an explicit unsupported material-return instruction. Enforce a limited recognizable subset before assembly without changing AI authorship, fields, prompt, prices or calls.",
+  "scope_decision": "Ordinary constraint-enforcement repair under existing authorization, not Host story generation or a universal story grammar. Backend56fff1/7ea39c and independent QA02e484 read-only recommendations agree; no new product-direction or paid approval inferred.",
+  "policy_revision": "1; evidence/documentation/code constant only, not API/DB field or model schema version",
+  "model_contract": "GenerationContent2.0.0 unchanged; schema/manifest/payload unchanged, additional bounded semantic admission check",
+  "policy": {
+    "fields": [
+      "story",
+      "rooms[*].description"
+    ],
+    "excluded_fields": [
+      "title",
+      "room names",
+      "object names as scanned prose",
+      "Host descriptions",
+      "parameters/answers/witness"
+    ],
+    "targets": "Only material/inventory/document targets: explicit material-type nouns and validated names of actual Blueprint kind=item/clue objects; names must be escaped, never treated as regex/code. No puzzle control/reset meanings inferred.",
+    "unsupported_action_subset": [
+      "归位",
+      "归还",
+      "交回",
+      "放回",
+      "挂回",
+      "返还"
+    ],
+    "trigger": "A bounded current-player request/obligation or departure precondition tied within a short clause to such a target/action. Quoted current notices are not exempt solely for quotation.",
+    "context": "Negation applies to its local action/clause, not a global whole-paragraph bypass. Historical/completed descriptions and explicitly invalidated old-quote spans are preserved; a later current instruction still rejects. Unknown/double-negation/cross-sentence/synonym cases are limits, not all-language guarantees.",
+    "comparison_normalization": "NFKC/whitespace may be used for bounded matching only; original raw/content untouched. No punctuation/normalization written back.",
+    "gate_order": "strict_json + exact schema first, then finite prose guard, then construct declared Host helper/v1 assemble. Invalid input never reaches helper, no discard/repair/default/fallback/retry.",
+    "ambiguity": "The standalone key need-not-be-taken-away sentence is not forced consume/discard; keep it out of this hard-rejection subset."
+  },
+  "frozen_known_pairs": {
+    "reject": [
+      "管理员提醒：所有材料都要归位，钥匙也不必带走。",
+      "离楼前请把钥匙放回原处。",
+      "必须归还记录卡才能离开。",
+      "要求：“把钥匙交回后才能离开。”",
+      "无需归还其他材料，但必须放回钥匙。",
+      "往年的规定已作废；现在必须把材料放回原处。",
+      "请在离开前把资料挂回墙上。",
+      "所有材料一律归位后才能离楼。"
+    ],
+    "preserve": [
+      "器材已经归位，窗外下雨。",
+      "去年交接结束后材料已归位。",
+      "这里不要求材料归位；钥匙仍在背包。",
+      "往年“材料归位”标语现已作废。",
+      "旧标语写着“所有材料必须归还”，这条旧规现已作废。",
+      "无需归还材料，继续核对资料即可。",
+      "钥匙也不必带走。",
+      "你需要穿过三间实验室，核对资料，使用匹配的背包物件完成装置。",
+      "墙上挂着一张“材料归位区”的旧标签。",
+      "窗边的记录夹安静地躺在操作台上。"
+    ],
+    "extra_required_checks": [
+      "actual material renamed to 校验通行卡 rather than hardcode钥匙",
+      "same phrase in excluded name fields not scanned",
+      "every requested room description inspected",
+      "invalid raw/schema precedence and helper not called on prose rejection",
+      "valid input unchanged and typed structure/Host text unaffected",
+      "production service one synthetic send then MODEL_INVALID_OUTPUT, worker publishes no level",
+      "old saved full definitions never reprocessed by this new generation guard"
+    ]
+  },
+  "ownership": {
+    "Main": [
+      "AGENTS.md",
+      "PLAN.md",
+      "STATUS.md",
+      "DECISIONS.md ADR10",
+      "docs/v5-build-plan.md section16/version1.5",
+      "docs/SPEC.md additive policy note",
+      "this epoch plan/freeze/acceptance/Git"
+    ],
+    "Backend": [
+      "backend/app/domain/generation_content_v2.py: finite pure helper/revision and assembly call only",
+      "contracts/v2/generation-content-v2.README.md: bounded policy documentation only",
+      "this epoch backend-owner.json"
+    ],
+    "QA": [
+      "tests/v5/test_narrative_guard.py new only",
+      "this epoch qa/runner/review/result/seal",
+      "review/findings/v5-narrative-guard.md"
+    ],
+    "Delivery": [
+      "README.md",
+      "release/V5.md",
+      "this epoch delivery-docs.json after Main finite QA acceptance"
+    ]
+  },
+  "allowed_product_source_deltas": [
+    "backend/app/domain/generation_content_v2.py",
+    "contracts/v2/generation-content-v2.README.md"
+  ],
+  "frozen_product_behaviors": "select_blueprint/content_schema/request_manifest/_describe AST and original v1/helper/Draft/rules/API/Store/provider/budget/companion/frontend/assets frozen; old schema/builders/test sources unchanged.",
+  "baseline_changed_path_before_hashes": {
+    "backend/app/domain/generation_content_v2.py": "524325eceea5da4646092a20051b90bac398239f3530507da6eb8ddc3600f1ae",
+    "contracts/v2/generation-content-v2.README.md": "fc382080b8be820f781e5184d4186859e3fc962cd43161858a0e4601a9496d98"
+  },
+  "owner_checks": "Development only: finite policy paired examples, byte nonmutation/helper-not-called, AST/hashes for frozen functions/paths. No compiler/witness/HTTP/model or old suites.",
+  "formal_QA": "After OwnerSTOP and Mainfreeze; one meaningful finite synthetic suite for policy pairs/field scope/current service+MockTransport refusal/worker no-level/old-definition compatibility. No repeat18solver/79suite/build/UI/actual executor/guard budget probes/eval; exact preparation STOP/count/commands before formalGO.",
+  "evidence_boundary": "Use public fictional quoted bad sentence with explicitly synthetic valid content; never open/copy actual rawprovider/private4/real params as test fixture. No original result or seal rewrites; old actual422 becomes historical after product edit, not retested current quality.",
+  "paid_calls_authorized": 0,
+  "no_Key_config_liveledger_playerDB_provider_network_paid_access": true,
+  "risks": [
+    "Finite patterns may miss alternative language or reject unfamiliar constructions. No measured false-positive/refusal-rate/real-model-quality/human result.",
+    "AI names/story/atmosphere remain fallible outside this bounded set; oldP2/TXT-C6 remain historical OPEN.",
+    "Strict rejection can reduce effective generation yield and still consumes any future separately approved call; no automatic repair/retry."
+  ],
+  "stop_rules": "If implementation needs fields/schema/story responsibility/general whitelist/semantic model/new calls, STOP and propose scope separately. Proven finding -> narrow fix/refreeze; preserve original failures.",
+  "delivery": "Normal selective liy222 commit/push only; no release/tag/mainmerge/deploy/Actions. Existing agents only, resumed/Main runtime unverified; no Astra/newagent claim."
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "NG2 preparation fixed1: only two action-word material-name cases added",
+  "utc": "2026-10-26T12:35:44.591165+00:00",
+  "actor": "Independent AI QA agent",
+  "status": "PREPARATION_ONLY_AWAIT_FINAL_OWNER_SOURCE_AND_MAIN_FREEZE",
+  "formal_runs": 0,
+  "prior_preparation_path": "evidence/upgrade/v5.0/narrative-guard/qa/preparation-source-stop.json",
+  "prior_preparation_sha256": "d6a2ac954edfc12d44e4ae72350bc9bc48b56e95b43b1311e61c80df3247da81",
+  "prior_record_unchanged_historical": true,
+  "test_sha256": "f1e6586a776fca871792e635467e91932941ff37447a6204c0d900630800f7f8",
+  "runner_sha256": "743116f119d200a845d5769ce7bd6ab97b71cad37b6e69b5eeaf8c1860bde894",
+  "policy_plan_sha256": "f72500928354ecbdfb50c859feeccbf52e93047c1f67a0fc3c7bd0ca34bb3c32",
+  "previous_items": 39,
+  "current_items": 41,
+  "only_new_test_function": "test_action_word_inside_material_name_does_not_hide_real_instruction",
+  "new_case_kinds": [
+    "item",
+    "clue"
+  ],
+  "new_pairs": {
+    "reject": "请把归位卡放回原处。",
+    "preserve": "请核对归位卡。"
+  },
+  "new_material_name": "归位卡",
+  "actual_preparation_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; ast.parse/count/hash/prior-record-preservation check and new preparation-fixed1.json only; full tool transcript",
+  "exit_code": 0,
+  "no_other_test_source_or_runner_edits": true,
+  "remaining_pre_freeze_owner_diagnostic": "Main requested known story clause must not be hidden merely by equal literal name; and literal钥匙归位卡 request-to-inspect must preserve. Wait finalOwnerSTOP, no additional QA case or execution yet.",
+  "proposed_command_unchanged": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/narrative-guard/qa/run_targeted.py --candidate evidence/upgrade/v5.0/narrative-guard/candidate.json --output evidence/upgrade/v5.0/narrative-guard/qa/run1",
+  "limits": [
+    "No formal test, runtime import, provider/HTTP/DB/Key/network/paid/oldactual-private input.",
+    "Prior preparation sourcehash refers its preceding39-item source epoch, not current41-item test.",
+    "Await finalOwnerSTOP/Mainfreeze; no random-language matrix expansion."
+  ]
+}

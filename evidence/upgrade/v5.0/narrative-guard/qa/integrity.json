@@ -1,0 +1,77 @@
+{
+  "kind": "Independent AI QA NG2 finite synthetic run integrity/privacy",
+  "utc": "2026-10-26T16:23:14.613712+00:00",
+  "actor": "Independent AI QA agent",
+  "exit_code": 0,
+  "current_candidate_path": "evidence/upgrade/v5.0/narrative-guard/candidate.json",
+  "current_candidate_sha256": "633c7ded2fe2febdfe9c47f49635248aa8e364bc48a00a3fb13fcf2252147aeb",
+  "current_input_count": 426,
+  "current_source_bundle_sha256": "bac38ee3696e95545c46959c2db7a0f287e7e2da30844742d96afadb14f00ae6",
+  "current_sources_match": true,
+  "formal_run_tool": "00ba27",
+  "formal_run_exit_code": 0,
+  "tool_wall_seconds": 7.4573714,
+  "pytest_seconds": 4.117,
+  "formal_runs": 1,
+  "items": 43,
+  "passed": 43,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "runtime_guard": {
+    "external_network_config_or_nonTEMP_DB_attempts": 0,
+    "stdlib_socketpair_local_IPC_connects": 15,
+    "all_database_connections_restricted_to_TEMP": true,
+    "provider_transports_synthetic_only": true,
+    "real_paid_calls": 0
+  },
+  "fixed_policy_field_assertions": {
+    "known_reject8_times4fields": 32,
+    "known_preserve10_times4fields": 40
+  },
+  "observation_count": 24,
+  "public_finite_privacy": [
+    {
+      "path": "evidence/upgrade/v5.0/narrative-guard/qa/run1/output.txt",
+      "sha256": "6e68c8a48d502590bf5c7c1be8b3aa8d0056afff70c8294b5458a2950cf072a9",
+      "finite_nonsynthetic_credential_pattern_matches": 0
+    },
+    {
+      "path": "evidence/upgrade/v5.0/narrative-guard/qa/run1/junit.xml",
+      "sha256": "5f101a104730908fc50b75758ee991f24d4bb7928238b092d000f41c0d44d0be",
+      "finite_nonsynthetic_credential_pattern_matches": 0
+    }
+  ],
+  "public_raw_logs_eligible_in_finite_review": true,
+  "redaction_required": false,
+  "credential_comparison_limit": "Configured credentials never read; known-pattern scan is finite, not an all-encoding guarantee.",
+  "prior_preparation_records_unchanged": {
+    "evidence/upgrade/v5.0/narrative-guard/qa/preparation-source-stop.json": "d6a2ac954edfc12d44e4ae72350bc9bc48b56e95b43b1311e61c80df3247da81",
+    "evidence/upgrade/v5.0/narrative-guard/qa/preparation-fixed1.json": "a9b80dcaec8b1b5370febea9080910bc456c3b7439fa2d415c5b44e703bacae3",
+    "evidence/upgrade/v5.0/narrative-guard/qa/preparation-fixed2.json": "af5c531e506008cccf19714c947c8e2d91309f7d3bfa0ed4c0860dba345568ff"
+  },
+  "preparation_epoch_sizes_not_executed_tests": [
+    39,
+    41,
+    43
+  ],
+  "Owner_development_and_quota_preparation_not_formal_results": true,
+  "old_422_source_map_is_historical": true,
+  "only_current_source_differences_from_old422": [
+    "backend/app/domain/generation_content_v2.py",
+    "contracts/v2/generation-content-v2.README.md"
+  ],
+  "existing_helpers_frozen_in_current_candidate": true,
+  "actual_raw_or_local_private4_or_real_parameters_opened_or_replayed": false,
+  "old_actual_or_old_test_reports_modified": false,
+  "current_new_guard_has_real_model_quality_sample": false,
+  "old_findings": "BP-REAL-NARRATIVE-01 and TXT-C6-STORY-01 remain historical OPEN; finite controlled counterexample conditions now checked only",
+  "read_audit_tool": "078717",
+  "read_audit_exit_code": 0,
+  "final_audit_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library current source/JUnit/observation/hash/finite privacy and new report/seal metadata only, full tool transcript",
+  "limits": [
+    "No arbitrary Chinese semantic coverage, measured false-positive/refusal-rate or effective-generation-yield claim.",
+    "Literal-alias qualification does not scan/reject object names by themselves; excluded names/title/background risk remains.",
+    "No new paid authority/retry/real-provider/private-raw/playerDB/build/UI/eval/oldsolver matrices."
+  ]
+}

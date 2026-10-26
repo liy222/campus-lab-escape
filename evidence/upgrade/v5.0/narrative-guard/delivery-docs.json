@@ -1,0 +1,69 @@
+{
+  "files": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/narrative-guard/delivery-docs.json"
+  ],
+  "status": "SOURCE_STOP",
+  "date": "2026-10-27",
+  "actual_checks": [
+    "Get-FileHash public report/result/seal; expected hashes matched",
+    "Appended one paragraph to each document preserving original byte prefix",
+    "UTF-8 no BOM append; retained single EOF newline",
+    "git diff --check with CRLF-aware setting"
+  ],
+  "claims": {
+    "limitations": [
+      "No arbitrary-language guarantee or measured false-positive/yield rate",
+      "No current real-generation quality evidence",
+      "Finite guard may miss or reject content; rejected real calls consume authorized slot",
+      "No full suite/build/UI/evaluation/human experience"
+    ],
+    "real_model_retest": false,
+    "old_actual422_historical": true,
+    "old_P2_TXT_C6_open": true,
+    "paid_calls": 0,
+    "scope": "Finite synthetic policy only"
+  },
+  "qa": {
+    "seconds": 4.117,
+    "seal": "evidence/upgrade/v5.0/narrative-guard/qa/artifact-seal.json",
+    "report_sha256": "5ddfdd64f42bf5749e72cfb4773ec7d1e10e9580d4911e49af03386e241b988c",
+    "seal_sha256": "dc3159cba54afbd8cfed3b49647dce79145278e86bb9a57d903f20fd759a3bd8",
+    "report": "review/findings/v5-narrative-guard.md",
+    "result": "evidence/upgrade/v5.0/narrative-guard/qa/result.json",
+    "accepted": "evidence/upgrade/v5.0/narrative-guard/accepted.json",
+    "items": 43,
+    "formal_command": "00ba27",
+    "result_sha256": "f2a67322bc525623e4570dbd67a35f2a997fcd60e090112c108693b51a0ff7e6",
+    "formal_exit": 0,
+    "passed": 43
+  },
+  "kind": "Mechanical Delivery record for finite narrative-guard result",
+  "doc_hashes": {
+    "release_V5": "943caf1e37e795079a2c73203199b945c924f6f886c0a5c0165a9161f4e89701",
+    "README": "2a6c130e49baea730d8bbd135e1adc27c86884057ed339b5e44202c257a9e2ed"
+  },
+  "final_checks": {
+    "whitespace_command": "git -c core.whitespace=cr-at-eol diff --check -- README.md release/V5.md",
+    "public_links_exist": 0,
+    "json_parse": 0,
+    "whitespace_exit": 0,
+    "utf8_eof": 0
+  },
+  "correction_log": [
+    {
+      "command": "Initial UTF-8/EOF check",
+      "finding": "PowerShell append encoded the paragraph separator as literal backtick-n text.",
+      "exit": 1
+    },
+    {
+      "command": "Replace appended literal separator with CRLF paragraph break and preserve EOF newline",
+      "exit": 0
+    },
+    {
+      "command": "Final UTF-8/EOF/link/JSON/whitespace checks",
+      "exit": 0
+    }
+  ]
+}

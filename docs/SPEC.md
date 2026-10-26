@@ -310,3 +310,7 @@ Host每次选一个不可变Blueprint；精确槽位与typed参数的content_ver
 用户明确选择B，当前权威为v5-build-plan.md第15节及text-authority-v2/plan.json。模型内部content2.0.0的objects严格仅name；room氛围与title/story/typed参数继续来自模型。Host用实际角色/引用/配方和名称生成description，使用后保留、资料类型等机械事实来自规则，不让模型编新操作。v2校验失败直接拒绝，不删除description、不补值、不接受旧v1回复作为fallback。合法2才声明转换并复用旧v1纯组装helper，原raw不变。
 
 旧v1模块/Schema/构建入口保留；公开格式、规则、资料发现门、API/Store/Key/费用/伙伴和旧档不变，不新增DB字段/表/原稿日志。旧完整定义/hash/文案不重写。Host文字不得含秘密参数/答案/顺序/未发现ID；名称/背景仍可能误导，不承诺全部语义正确。当前为实施规格而非QA/真实模型验收；多骨架/结构变化仍按第14节后续阶段。
+
+### 2026-10-26 背景语句有限准入守卫（修订1）
+
+沿用B与content2.0.0，不改变AI故事职责或Schema。strict_json/exact校验后、Host helper之前，只对story/rooms.description中的有限当前材料归还类义务/离楼条件拒绝。完整例表与上下文范围见v5-build-plan.md第16节及narrative-guard/plan.json；历史/完成/局部否定/明确作废引用与现行指令分别判断，钥匙不必带走的歧义不作为强制丢弃。命中拒绝原回复，不删改、补值、回退或重试。名称/参数/Host说明与旧完整定义不经过本扫描。有限规则不能代表通用语义正确，旧真实结果不重判。

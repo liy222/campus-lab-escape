@@ -1,0 +1,134 @@
+{
+  "kind": "NG2 QA preparation SOURCE STOP, formal0",
+  "utc": "2026-10-26T12:30:36.471162+00:00",
+  "actor": "Independent AI QA agent",
+  "source_stop": true,
+  "formal_runs": 0,
+  "files_created": [
+    "tests/v5/test_narrative_guard.py",
+    "evidence/upgrade/v5.0/narrative-guard/qa/run_targeted.py",
+    "evidence/upgrade/v5.0/narrative-guard/qa/preparation-source-stop.json"
+  ],
+  "test_sha256": "4ece2ffdeca33b2bd630773d33e086af91f80a7f3ea8fd3ea62dfe253519ab6f",
+  "runner_sha256": "743116f119d200a845d5769ce7bd6ab97b71cad37b6e69b5eeaf8c1860bde894",
+  "policy_plan_sha256": "f72500928354ecbdfb50c859feeccbf52e93047c1f67a0fc3c7bd0ca34bb3c32",
+  "existing_helper_sources_unchanged": {
+    "tests/v5/conftest.py": "586e2cb33b5dd9ed379babdc1d9a7eb71e34337713e0bacb9130a95e8f4431bd",
+    "tests/v5/test_blueprint_generation.py": "cc7be1a0e36532f203fb3a19a309a7ba1e2742efed0dfcecffc4210f8f90cb80",
+    "tests/v5/test_generation.py": "1753c6d290586230a738fbdb28f489486ea842193373fae6c5ccdb4daf8fa4fb"
+  },
+  "required_inputs_in_runner_candidate_assertion": [
+    "evidence/upgrade/v5.0/narrative-guard/plan.json",
+    "evidence/upgrade/v5.0/narrative-guard/qa/run_targeted.py",
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/offline-preview-v1.json",
+    "tests/v5/conftest.py",
+    "tests/v5/test_blueprint_generation.py",
+    "tests/v5/test_generation.py",
+    "tests/v5/test_narrative_guard.py"
+  ],
+  "actual_preparation_commands": [
+    {
+      "tool": "456a19",
+      "exit_code": 0,
+      "scope": "Read frozen policy and previous proven isolation worker"
+    },
+    {
+      "tool": "16e4c3",
+      "exit_code": 0,
+      "scope": "Create only new runner; exact worker AST reuse proof"
+    },
+    {
+      "tool": "9cf960",
+      "exit_code": 0,
+      "scope": "Read ownerSTOP interface/current assembly order"
+    },
+    {
+      "tool": "8d3688",
+      "exit_code": 0,
+      "scope": "Read finite guard only"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library AST/finite-case-count/direct whitespace/helper hash and preparation metadata only; full tool transcript",
+      "exit_code": 0
+    }
+  ],
+  "estimated_items": 39,
+  "item_methods": [
+    {
+      "method": "test_frozen_policy_pairs_each_story_and_each_room_field",
+      "items": 18
+    },
+    {
+      "method": "test_excluded_name_fields_are_not_scanned",
+      "items": 3
+    },
+    {
+      "method": "test_actual_material_names_are_targets_after_rename",
+      "items": 2
+    },
+    {
+      "method": "test_material_name_regex_characters_are_literal",
+      "items": 2
+    },
+    {
+      "method": "test_line_break_formatting_does_not_split_one_explicit_instruction",
+      "items": 2
+    },
+    {
+      "method": "test_matching_normalization_never_rewrites_preserved_prose",
+      "items": 1
+    },
+    {
+      "method": "test_whitespace_material_names_do_not_create_empty_regex_targets",
+      "items": 1
+    },
+    {
+      "method": "test_original_strict_json_schema_precede_narrative_guard",
+      "items": 7
+    },
+    {
+      "method": "test_revision_policy_and_frozen_existing_source_boundaries",
+      "items": 1
+    },
+    {
+      "method": "test_one_production_mock_send_rejected_worker_publishes_no_level",
+      "items": 1
+    },
+    {
+      "method": "test_old_full_definition_archive_ignores_new_generation_guard",
+      "items": 1
+    }
+  ],
+  "known_pairs_field_checks": {
+    "reject8_times_story_and3rooms": 32,
+    "preserve10_times_story_and3rooms": 40
+  },
+  "newline_directive_checks": 8,
+  "guard_revision": "1",
+  "domain_error": "UNSUPPORTED_NARRATIVE_OPERATION",
+  "strict_raw_schema_precedence_expected_codes": [
+    "DUPLICATE_KEY",
+    "OUTPUT_SIZE",
+    "UNSAFE_TEXT",
+    "GENERATION_CONTENT_INVALID"
+  ],
+  "minimal_integration": "One production GenerationService+DeepSeekProvider MockTransport request through worker->MODEL_INVALID_OUTPUT/no level/no helper/compiler; one explicit synthetic old complete-definition archive/reload preserving story/hash without current guard/model",
+  "why_no_old_matrices": "No existing tests/source modified. No repeat18proof/79suite/current real executor/budgetguardprobes/UI/build/eval. Only historical synthetic setup requires original compiler once.",
+  "Windows_runtime_guard_worker_AST_exactly_reused": true,
+  "new_namespace_only_no_old_observation_helper_changes": true,
+  "new_run1_absent": true,
+  "proposed_formal_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/narrative-guard/qa/run_targeted.py --candidate evidence/upgrade/v5.0/narrative-guard/candidate.json --output evidence/upgrade/v5.0/narrative-guard/qa/run1",
+  "estimated_seconds": [
+    10,
+    30
+  ],
+  "timeout_seconds": 120,
+  "preparation_import_HTTP_DB_Key_config_network_model_paid_access": false,
+  "limits": [
+    "Formal only after Main candidate freeze and explicit GO. Syntax/read proof is not product acceptance.",
+    "Controlled synthetic content and public known bad sentence only; no actual raw/private4/real parameters read.",
+    "Narrow policy assertions do not establish general Chinese semantics, rejection-rate/yield improvement, real-model/human quality.",
+    "Old actual422 is historical after authorized module/README edit; old results/findings/seals not relabelled current or rewritten.",
+    "No code/metadata publication, commit/spawn or paid authority."
+  ]
+}

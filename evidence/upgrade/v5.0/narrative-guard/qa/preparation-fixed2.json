@@ -1,0 +1,53 @@
+{
+  "kind": "NG2 final preparation fixed2 SOURCE STOP, formal0",
+  "utc": "2026-10-26T16:16:07.002635+00:00",
+  "actor": "Independent AI QA agent",
+  "source_stop": true,
+  "formal_runs": 0,
+  "items": 43,
+  "test_sha256": "14ae8e0e2f4ecb606156bb23ad508de9c85ba46a7e359a038efa2e8b2132c4a4",
+  "runner_sha256": "743116f119d200a845d5769ce7bd6ab97b71cad37b6e69b5eeaf8c1860bde894",
+  "policy_plan_sha256": "f72500928354ecbdfb50c859feeccbf52e93047c1f67a0fc3c7bd0ca34bb3c32",
+  "final_backend_module_sha256": "413ab1e2c6a541c33f9394be3a6dba2daa3d32dbbe5a552106a60667a6f28c36",
+  "contract_README_sha256": "00e2d7322e8b192a9fa45f8cfb8610261e858b64e6990be1f2334189b61e5fa9",
+  "prior_preparation_records_unchanged": {
+    "preparation-source-stop.json": "d6a2ac954edfc12d44e4ae72350bc9bc48b56e95b43b1311e61c80df3247da81",
+    "preparation-fixed1.json": "a9b80dcaec8b1b5370febea9080910bc456c3b7439fa2d415c5b44e703bacae3"
+  },
+  "source_epoch_note": "Prior39/41-item preparation records retain their old test hashes; current43-item test is a later authorized preparation source epoch.",
+  "only_fixed2_added_function": "test_instruction_like_alias_cannot_mask_scanned_prose_and_names_remain_unscanned",
+  "added_case_kinds": [
+    "item",
+    "clue"
+  ],
+  "cross_checks": [
+    "Bad instruction-like material name with safe story stays accepted",
+    "Same known bad directive in story or room description must reject despite equal material name",
+    "Literal钥匙归位卡 mentioned by请核对 is not a return instruction"
+  ],
+  "worker_and_existing_test_helpers_unchanged": true,
+  "existing_helper_sha256": {
+    "tests/v5/conftest.py": "586e2cb33b5dd9ed379babdc1d9a7eb71e34337713e0bacb9130a95e8f4431bd",
+    "tests/v5/test_blueprint_generation.py": "cc7be1a0e36532f203fb3a19a309a7ba1e2742efed0dfcecffc4210f8f90cb80",
+    "tests/v5/test_generation.py": "1753c6d290586230a738fbdb28f489486ea842193373fae6c5ccdb4daf8fa4fb"
+  },
+  "recovery_read_tool": "31502c",
+  "recovery_read_exit_code": 0,
+  "final_preparation_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; ast.parse/finite-item-count/hash/whitespace and unchanged-record proof only; full tool transcript",
+  "final_preparation_exit_code": 0,
+  "proposed_formal_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/narrative-guard/qa/run_targeted.py --candidate evidence/upgrade/v5.0/narrative-guard/candidate.json --output evidence/upgrade/v5.0/narrative-guard/qa/run1",
+  "estimated_seconds": [
+    10,
+    30
+  ],
+  "timeout_seconds": 120,
+  "output_run1_absent": true,
+  "runtime_Windows_safe_worker_unchanged_since_initial_AST_proof": true,
+  "product_imports_test_HTTP_DB_Key_liveledger_network_model_paid_calls": 0,
+  "limits": [
+    "Await final Mainfreeze and explicit formalGO. No source-change acceptance inferred from syntax.",
+    "No random language matrix expansion or oldsuite replay; current43includes only approved finite policy/field/alias/strict/oneMockWorker/oldArchive checks.",
+    "No actualraw/private4/realparams reads or oldsealed evidence writes.",
+    "Finite policy, not arbitrary semantic guarantee or real-model yield/quality measurement; old findings remain historical."
+  ]
+}

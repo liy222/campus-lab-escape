@@ -6,14 +6,89 @@ for the frozen v1 pure assembler. Invalid v2 never reaches a v1 fallback.
 from __future__ import annotations
 
 import copy
+import re
+import unicodedata
 from dataclasses import replace
 
 from . import blueprints as v1
 from .generated import strict_json
 
 CONTENT_VERSION = '2.0.0'
+NARRATIVE_GUARD_REVISION = '1'
 Blueprint = v1.Blueprint
 FAMILIES = v1.FAMILIES
+
+_MATERIAL_TERMS = ('材料', '物品', '道具', '钥匙', '资料', '记录卡', '器材', '标本', '样本', '文件', '卡片')
+_RETURN_ACTION = re.compile(r'归位|归还|交回|放回|挂回|返还')
+_DIRECTIVE = re.compile(r'必须|务必|请|须|需|要求|一律|都要|(?:你|玩家)要')
+_NEGATION_TAIL = re.compile(
+    r'(?:无需|无须|不必|不用|不需要|不要求|不要|禁止|不得)'
+    r'(?:再|先|立即|把|将|让|使|所有|全部|这些|其他|任何|的|你|玩家|都|也){0,8}$')
+_NEGATION_BRIDGE = re.compile(r'(?:都|也|再|先|立即|重新|必须|要|须|被|的){0,6}')
+_INVALIDATED_OLD_QUOTE = re.compile(
+    r'(?:旧标语|旧规|往年)[^“”「」『"\r\n。;；]{0,16}[“「『"]'
+    r'[^”」』"\r\n。;；]{0,120}[”」』"]'
+    r'[,，]?(?:这条旧规|该旧规|这条规定|这项规定|该规定|该标语|标语)?'
+    r'(?:现已|已经|已)?作废')
+
+
+def _has_return_instruction(text: str, material_pattern: re.Pattern) -> bool:
+    """Recognize a finite short-clause subset, not general narrative semantics."""
+    compared = re.sub(r'\s+', '', unicodedata.normalize('NFKC', text))
+    # Mask only the explicitly invalidated old quotation, never later demands.
+    compared = _INVALIDATED_OLD_QUOTE.sub(' ', compared)
+    for clause in re.split(r'[。！？!?;；\r\n,，]|但是|但|不过|然而', compared):
+        materials = list(material_pattern.finditer(clause))
+        previous_action_end = 0
+        for action in _RETURN_ACTION.finditer(clause):
+            if any(material.start() <= action.start() and action.end() <= material.end()
+                   for material in materials):
+                continue
+            local_start = previous_action_end
+            previous_action_end = action.end()
+            prefix = clause[local_start:action.start()]
+            directive = _DIRECTIVE.search(prefix)
+            history = re.search(r'去年|往年|以前|当年|过去|曾经', prefix)
+            current = re.search(r'现在|如今|目前', prefix)
+            if (history and (not directive or history.start() < directive.start())
+                    and not (current and current.start() > history.start())):
+                continue
+            for material in materials:
+                if material.start() < local_start or material.start() <= action.start() < material.end():
+                    continue
+                start = min(material.start(), action.start())
+                end = max(material.end(), action.end())
+                if end - start > 80:
+                    continue
+                if _NEGATION_TAIL.search(prefix):
+                    continue
+                if (material.end() <= action.start()
+                        and _NEGATION_TAIL.search(clause[local_start:material.start()])
+                        and _NEGATION_BRIDGE.fullmatch(clause[material.end():action.start()])):
+                    continue
+                before = clause[max(local_start, start - 24):action.start()]
+                after = clause[action.end():action.end() + 24]
+                if (_DIRECTIVE.search(before)
+                        or re.search(r'(?:离开|离楼|出门|出去)前', before)
+                        or re.search(r'后?才能(?:离开|离楼|出门|出去)', after)):
+                    return True
+    return False
+
+
+def _guard_narrative(blueprint: Blueprint, content: dict) -> None:
+    """Check only schema-valid story/room atmosphere; names are target literals."""
+    targets = set(_MATERIAL_TERMS)
+    generic_material_pattern = re.compile('|'.join(re.escape(name) for name in _MATERIAL_TERMS))
+    for obj in blueprint.objects:
+        if obj.kind in ('item', 'clue'):
+            name = content['objects'][obj.object_id]['name']
+            compared_name = re.sub(r'\s+', '', unicodedata.normalize('NFKC', name))
+            if compared_name and not _has_return_instruction(compared_name, generic_material_pattern):
+                targets.add(compared_name)
+    material_pattern = re.compile('|'.join(re.escape(name) for name in sorted(targets, key=lambda value: (-len(value), value))))
+    fields = [content['story']] + [content['rooms'][rid]['description'] for rid in blueprint.room_ids]
+    if any(_has_return_instruction(text, material_pattern) for text in fields):
+        raise ValueError('UNSUPPORTED_NARRATIVE_OPERATION')
 
 
 def _require_v2(blueprint: Blueprint) -> None:
@@ -111,6 +186,7 @@ def assemble_draft(blueprint: Blueprint, raw_model_content) -> dict:
         raise ValueError('GENERATION_CONTENT_INVALID') from error
     if not v1._IntegerValidator(content_schema(blueprint)).is_valid(content):
         raise ValueError('GENERATION_CONTENT_INVALID')
+    _guard_narrative(blueprint, content)
     names = {oid: value['name'] for oid, value in content['objects'].items()}
     helper = copy.deepcopy(content)
     helper['content_version'] = v1.CONTENT_VERSION

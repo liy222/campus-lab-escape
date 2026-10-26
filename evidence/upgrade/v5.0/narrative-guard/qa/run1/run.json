@@ -1,0 +1,38 @@
+{
+  "started_utc": "2026-10-26T16:19:16.952944+00:00",
+  "candidate_path": "evidence\\upgrade\\v5.0\\narrative-guard\\candidate.json",
+  "candidate_sha256": "633c7ded2fe2febdfe9c47f49635248aa8e364bc48a00a3fb13fcf2252147aeb",
+  "source_count": 426,
+  "source_bundle_sha256": "bac38ee3696e95545c46959c2db7a0f287e7e2da30844742d96afadb14f00ae6",
+  "source_before_matches": true,
+  "actual_command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "D:\\深度能力\\evidence\\upgrade\\v5.0\\narrative-guard\\qa\\run_targeted.py",
+    "--worker",
+    "--output",
+    "D:\\深度能力\\evidence\\upgrade\\v5.0\\narrative-guard\\qa\\run1"
+  ],
+  "pytest_items": [
+    "tests/v5/test_narrative_guard.py"
+  ],
+  "scope_filter": "",
+  "nodes_file_sha256": null,
+  "scope": "New finite narrative policy only; no old suite/private real raw input",
+  "required_inputs_explicit_in_candidate": [
+    "evidence/upgrade/v5.0/narrative-guard/plan.json",
+    "evidence/upgrade/v5.0/narrative-guard/qa/run_targeted.py",
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/offline-preview-v1.json",
+    "tests/v5/conftest.py",
+    "tests/v5/test_blueprint_generation.py",
+    "tests/v5/test_generation.py",
+    "tests/v5/test_narrative_guard.py"
+  ],
+  "timeout_seconds": 120,
+  "exit_code": 0,
+  "real_paid_calls": 0,
+  "ended_utc": "2026-10-26T16:19:23.101090+00:00",
+  "source_after_matches": true
+}

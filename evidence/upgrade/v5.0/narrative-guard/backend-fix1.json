@@ -1,0 +1,82 @@
+{
+  "kind": "NG1 material-literal action scope fix1 Owner development SOURCE STOP",
+  "utc": "2026-10-26T12:33:12.047771+00:00",
+  "source_stop": true,
+  "diagnosis": {
+    "command_chunk": "869147",
+    "exit_code": 0,
+    "finding_reproduced": true,
+    "before_source_sha256": "ed784ccb6e90fd5a921191492a8cc6c76f0133f79c4d0e1cea2b00f9a564dd89",
+    "actual_before": {
+      "item_return_rejected": false,
+      "clue_return_rejected": false,
+      "item_neutral_rejected": false,
+      "clue_neutral_rejected": false
+    },
+    "cause": "An action substring inside the escaped material literal advanced previous_action_end before the literal was skipped, losing the same target for the later actual return action."
+  },
+  "delta": "Only skip material-literal-contained action matches before advancing action scope. No action words, fields, policy revision, schema, Host templates or other function behavior changed.",
+  "changed_file": "backend/app/domain/generation_content_v2.py",
+  "source_sha256": "05f470f9da978555db6f92d62d6b6a23bb14f29a37f31c44ad212c2571bfd782",
+  "removing_exact_three_inserted_lines_restores_entire_before_bytes": true,
+  "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 - (inline7 affected alias checks, syntax and exact inverse-byte proof; full command retained in tool transcript)",
+  "exit_code": 0,
+  "affected_checks": [
+    {
+      "kind": "item",
+      "case": "actual_return",
+      "expected_rejection": true,
+      "actual_rejection": true,
+      "nonmutation": true
+    },
+    {
+      "kind": "item",
+      "case": "neutral_name",
+      "expected_rejection": false,
+      "actual_rejection": false,
+      "nonmutation": true
+    },
+    {
+      "kind": "item",
+      "case": "negated_return",
+      "expected_rejection": false,
+      "actual_rejection": false,
+      "nonmutation": true
+    },
+    {
+      "kind": "clue",
+      "case": "actual_return",
+      "expected_rejection": true,
+      "actual_rejection": true,
+      "nonmutation": true
+    },
+    {
+      "kind": "clue",
+      "case": "neutral_name",
+      "expected_rejection": false,
+      "actual_rejection": false,
+      "nonmutation": true
+    },
+    {
+      "kind": "clue",
+      "case": "negated_return",
+      "expected_rejection": false,
+      "actual_rejection": false,
+      "nonmutation": true
+    }
+  ],
+  "formatted_alias_return_rejected": true,
+  "affected_check_count": 7,
+  "original_backend_owner_sha256": "fe5911ad57f5a0ea35d64380bc5cb1c56f307b3fb788fd0e61691452d6423d9d",
+  "original_backend_owner_unchanged": true,
+  "readme_sha256_unchanged": "00e2d7322e8b192a9fa45f8cfb8610261e858b64e6990be1f2334189b61e5fa9",
+  "original18_matrix_repeated": false,
+  "formal_QA_run": false,
+  "compiler_witness_API_provider_Key_config_liveledger_DB_private_body_access": false,
+  "paid_calls": 0,
+  "limits": [
+    "Owner-only narrow counterexample/fix confirmation; original backend-owner remains its original source epoch.",
+    "No language/policy expansion or arbitrary semantic guarantee; initial finite-pattern risks remain.",
+    "QA preparation awaits new Main freeze; no full matrix, product suite or real sample repeated."
+  ]
+}
