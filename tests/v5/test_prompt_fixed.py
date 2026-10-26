@@ -1,4 +1,4 @@
-"""Prompt checks for accepted Host-structure/AI-content contract v1.0.0.
+"""Prompt checks for accepted Host-structure/name-only AI-content contract v2.0.0.
 
 Supersedes only complete-Draft example expectations of the earlier prompt source
 epoch. Its sealed reports remain historical. Key, whole-payload budget, exact
@@ -17,7 +17,7 @@ from jsonschema import Draft202012Validator
 from backend.app.ai.budget import BudgetLedger, cost_units
 from backend.app.ai.provider import DeepSeekConfig, DeepSeekProvider, GenerationLimits, ProviderError
 from backend.app.ai.v5 import GenerationService, ServiceError
-from backend.app.domain import blueprints
+from backend.app.domain import generation_content_v2 as blueprints
 from backend.app.domain.generated import Draft
 from .conftest import CANARY
 from .test_generation import wire_body
@@ -45,11 +45,11 @@ def test_numeric_requirements_selected_content_schema_and_compatibility_argument
         assert value['schema'] != original and 'shape_example_only' not in value
         assert 'title' in value['schema']['properties'] and 'title' in value['schema']['required']
         Draft202012Validator.check_schema(value['schema'])
-        Draft202012Validator(value['schema']).validate(synthetic_content(blueprint))
+        Draft202012Validator(value['schema']).validate(content_for_messages(messages))
         assert not {'answers', 'witness', 'definition_hash'} & value['blueprint'].keys()
         observation(f'prompt-{blueprint.family}-{rooms}-{difficulty}.json', {
             'requirements': value['requirements'], 'caller_schema_unchanged': True,
-            'model_contract': 'Host blueprint content v1.0.0', 'selected_blueprint': blueprint.blueprint_id,
+            'model_contract': 'Host blueprint name-only content v2.0.0', 'selected_blueprint': blueprint.blueprint_id,
             'payload_sha256': hashlib.sha256(json.dumps(messages, ensure_ascii=False).encode()).hexdigest(),
             'supersedes': 'complete-LevelDraft example/schema expectations only; old evidence unchanged',
             'real_model_calls': 0})

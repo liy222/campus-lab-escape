@@ -1,0 +1,42 @@
+{
+  "started_utc": "2026-10-26T11:09:26.789348+00:00",
+  "candidate_path": "evidence\\upgrade\\v5.0\\text-authority-v2\\candidate.json",
+  "candidate_sha256": "81f80055d1b1816b557f72c28dcfb19994d19543d8a1ff62a775235d6600b6e3",
+  "source_count": 419,
+  "source_bundle_sha256": "f6f4a6f42f58868f480dead7f652784db082306b42115b0046f85bd6c1d9ef5b",
+  "source_before_matches": true,
+  "actual_command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "D:\\深度能力\\evidence\\upgrade\\v5.0\\text-authority-v2\\qa\\run_targeted.py",
+    "--worker",
+    "--output",
+    "D:\\深度能力\\evidence\\upgrade\\v5.0\\text-authority-v2\\qa\\run1"
+  ],
+  "pytest_items": [
+    "tests/v5/test_generation_text_authority.py",
+    "tests/v5/test_blueprint_generation.py::test_production_service_adapter_api_admission_witness_save_restore_and_owner_boundary",
+    "tests/v5/test_blueprint_generation.py::test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback",
+    "tests/v5/test_blueprint_generation.py::test_worker_rejection_does_not_publish_a_playable_level",
+    "tests/v5/test_blueprint_generation.py::test_missing_or_invalid_key_does_not_select_or_dispatch",
+    "tests/v5/test_prompt_fixed.py",
+    "tests/v5/test_blueprint_item_context.py::test_only_request_manifest_and_generation_prompt_ast_changed",
+    "tests/v5/test_blueprint_item_context.py::test_messages_serialize_item_interaction_contract_without_output_schema_change",
+    "tests/v5/test_blueprint_item_context.py::test_whole_request_short_and_four_byte_theme_budget_measurements",
+    "tests/v5/test_generation.py::test_real_adapter_fake_httpx_generation_profile_and_secret_boundary",
+    "tests/v5/test_generation.py::test_fake_budget_and_oversize_limits_prevent_send",
+    "tests/v5/test_generation.py::test_fake_provider_failures_conservative_one_send_and_unknown_charge"
+  ],
+  "scope_filter": "",
+  "observation_parent_checked_absent_before_execution": true,
+  "item_context_observations": "evidence\\upgrade\\v5.0\\blueprint-item-context\\qa\\text-authority-v2-run1\\observations",
+  "cross_namespace_observations_belong_to_this_new_candidate": true,
+  "original_observe_helper_unchanged_not_atomic_creation_claim": true,
+  "timeout_seconds": 300,
+  "exit_code": 1,
+  "real_paid_calls": 0,
+  "ended_utc": "2026-10-26T11:09:33.510845+00:00",
+  "source_after_matches": true
+}

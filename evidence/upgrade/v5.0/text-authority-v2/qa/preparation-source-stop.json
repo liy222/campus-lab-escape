@@ -1,0 +1,127 @@
+{
+  "kind": "QA preparation SOURCE STOP, no formal test execution",
+  "utc": "2026-10-26T11:07:37.392613+00:00",
+  "actor": "Independent AI QA agent",
+  "source_stop": true,
+  "source_sha256": {
+    "tests/v5/test_generation_text_authority.py": "b7d80ed5d980b5e9e7169e7391a10e1f07fca95eaa869bb2a65ca73903ee4708",
+    "tests/v5/test_blueprint_generation.py": "cc7be1a0e36532f203fb3a19a309a7ba1e2742efed0dfcecffc4210f8f90cb80",
+    "tests/v5/test_prompt_fixed.py": "3f1169ac2da08ac878420bf04482c16e03e8c40b7d98c22e1a578570eb5b6d47",
+    "tests/v5/test_blueprint_item_context.py": "638875085ca9f22131fc9374d3a91a58c3c11ceb8f4e7bb43d4969d6fca11c18",
+    "evidence/upgrade/v5.0/text-authority-v2/qa/run_targeted.py": "b9b7467f171ef260a690a160665b9c6310e1d5b8bb2a3438048d79a7d6daac59"
+  },
+  "actual_preparation_commands": [
+    {
+      "tool_chunk": "059118",
+      "exit_code": 0,
+      "scope": "Initial actual test-file inventory and reads"
+    },
+    {
+      "tool_chunk": "19524f",
+      "exit_code": 0,
+      "scope": "v1/current service and isolation dependencies read"
+    },
+    {
+      "tool_chunk": "fc2a7e",
+      "exit_code": 0,
+      "scope": "Accepted interface, ownership and exact old tests read"
+    },
+    {
+      "tool_chunk": "85d437",
+      "exit_code": 1,
+      "scope": "Recovery read succeeded; optional new owner module did not yet exist, final Get-Content returned1, no test or mutation"
+    },
+    {
+      "tool_chunk": "c939f3",
+      "exit_code": 0,
+      "scope": "Three authorized current-contract QA adaptations only"
+    },
+    {
+      "tool_chunk": "470461",
+      "exit_code": 1,
+      "scope": "Read new module presence/test patterns; rg received unsupported PowerShell ErrorAction option, no mutation or formal test"
+    },
+    {
+      "tool_chunk": "fae7b4",
+      "exit_code": 0,
+      "scope": "Read owner v2 implementation and isolated old-hash tests"
+    },
+    {
+      "tool_chunk": "0c989d",
+      "exit_code": 0,
+      "scope": "Five-file AST syntax,20 legacy/guard function ASTs unchanged, test_generation raw unchanged, observation parent absent"
+    },
+    {
+      "scope": "Final five-file ast.parse and git diff --check; standard-library-only preparation metadata write, full tool transcript",
+      "exit_code": 0,
+      "git_diff_check_exit_code": 0
+    }
+  ],
+  "prior_unexecuted_automatic_review_usage_limit": "A read command was rejected before execution on 2026-10-25; resumed user instruction after reset. No partial QA writes or formal run existed then.",
+  "preformal_QA_expectation_correction": {
+    "Main_read_tool": "7496fe",
+    "issue": "unsafe-name reaches original strict_json UNSAFE_TEXT before schema; unified expected schema error would be wrong",
+    "resolution": "Unsafe-text case now expects UNSAFE_TEXT, all schema cases still GENERATION_CONTENT_INVALID; no product change/no formal failure"
+  },
+  "preserved_guards": [
+    "item-context forbid_runtime_boundaries unchanged",
+    "exact GenerationService class and all nonprompt AST retained, only exact two import modules normalized",
+    "wire_body and whole test_generation raw unchanged",
+    "v1 direct fixture/schema/assembly/typed/raw/builder cases unchanged",
+    "provider/Key/onecall/cap assertions retained"
+  ],
+  "proposed_formal_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/text-authority-v2/qa/run_targeted.py --candidate evidence/upgrade/v5.0/text-authority-v2/candidate.json --output evidence/upgrade/v5.0/text-authority-v2/qa/run1",
+  "selected_items": [
+    "tests/v5/test_generation_text_authority.py",
+    "tests/v5/test_blueprint_generation.py::test_production_service_adapter_api_admission_witness_save_restore_and_owner_boundary",
+    "tests/v5/test_blueprint_generation.py::test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback",
+    "tests/v5/test_blueprint_generation.py::test_worker_rejection_does_not_publish_a_playable_level",
+    "tests/v5/test_blueprint_generation.py::test_missing_or_invalid_key_does_not_select_or_dispatch",
+    "tests/v5/test_prompt_fixed.py",
+    "tests/v5/test_blueprint_item_context.py::test_only_request_manifest_and_generation_prompt_ast_changed",
+    "tests/v5/test_blueprint_item_context.py::test_messages_serialize_item_interaction_contract_without_output_schema_change",
+    "tests/v5/test_blueprint_item_context.py::test_whole_request_short_and_four_byte_theme_budget_measurements",
+    "tests/v5/test_generation.py::test_real_adapter_fake_httpx_generation_profile_and_secret_boundary",
+    "tests/v5/test_generation.py::test_fake_budget_and_oversize_limits_prevent_send",
+    "tests/v5/test_generation.py::test_fake_provider_failures_conservative_one_send_and_unknown_charge"
+  ],
+  "estimated_pytest_items": 79,
+  "case_counts": {
+    "new_v2_TXT_C1_C5": 37,
+    "representative_production_API_witness_save_restore_owner": 2,
+    "existing_invalid_reply_worker_invalid_Key": 16,
+    "current_prompt_requirements_payload_budget": 12,
+    "current_item_context_AST_messages_budget": 5,
+    "production_provider_adapter_budget_oversize_failure": 7
+  },
+  "reasons": [
+    "18 exact variants/two parameter sets use pure schema/assembly/derive rather than repeat original solver matrix",
+    "Two representative production MockTransport/API paths prove current assembly admission,witness and save/reopen/restore",
+    "Strict negatives start from valid v2, with invalid input forbidden to reach v1 internal helper; model v1/object description also rejected through service",
+    "Synthetic old full-v1 definition retains description/hash through restore/reload; bad hash rejected without state change",
+    "Existing profile,Key,no-retry,pre-reserve budget/failure cases stay active; no unrelated jobs/companion/classic/UI suite"
+  ],
+  "estimated_duration_seconds": [
+    30,
+    90
+  ],
+  "timeout_seconds": 300,
+  "cross_namespace_observations": {
+    "parent": "evidence/upgrade/v5.0/blueprint-item-context/qa/text-authority-v2-run1",
+    "checked_absent_during_preparation": true,
+    "runtime_runner_checks_absent_again": true,
+    "directory": "evidence/upgrade/v5.0/blueprint-item-context/qa/text-authority-v2-run1/observations",
+    "belongs_only_to_new_candidate": true,
+    "old_observe_helpers_unchanged": true,
+    "not_OS_atomic_creation_claim": true
+  },
+  "old_blueprint_observation_env_unset": true,
+  "formal_runs": 0,
+  "product_imports_tests_compile_solver_provider_network_paid_in_preparation": 0,
+  "limits": [
+    "Await Main exact candidate freeze and explicit formalGO. Preparation syntax is not test acceptance.",
+    "No real private raw/projection or player DB inputs; future execution only synthetic TEMP fixtures and injected transports.",
+    "Old real narrative quality remains OPEN and is not retested here.",
+    "No commits/spawn/build/UI/paid/evaluator or production-source edits."
+  ]
+}

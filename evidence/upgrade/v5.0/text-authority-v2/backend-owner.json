@@ -1,0 +1,385 @@
+{
+  "kind": "TXT1 Backend source stop; synthetic pure Owner development only",
+  "utc": "2026-10-26T11:01:23.288493+00:00",
+  "source_stop": true,
+  "files_created": [
+    "backend/app/domain/generation_content_v2.py",
+    "contracts/v2/generation-content-v2.schema.json",
+    "contracts/v2/build_generation_content_v2.py",
+    "contracts/v2/generation-content-v2.README.md",
+    "evidence/upgrade/v5.0/text-authority-v2/backend-owner.json"
+  ],
+  "source_sha256_before": {
+    "backend/app/domain/generation_content_v2.py": "524325eceea5da4646092a20051b90bac398239f3530507da6eb8ddc3600f1ae",
+    "contracts/v2/generation-content-v2.schema.json": "52aa01c743af18853758aa4174dc1c18d125b970559ed8042e56fbfcec4ac8ef",
+    "contracts/v2/build_generation_content_v2.py": "a0ef04e68fd8f3142282172c6e2277b7af83a76baa0e859d12c02ae31886d81a",
+    "contracts/v2/generation-content-v2.README.md": "fc382080b8be820f781e5184d4186859e3fc962cd43161858a0e4601a9496d98"
+  },
+  "source_sha256_after": {
+    "backend/app/domain/generation_content_v2.py": "524325eceea5da4646092a20051b90bac398239f3530507da6eb8ddc3600f1ae",
+    "contracts/v2/generation-content-v2.schema.json": "52aa01c743af18853758aa4174dc1c18d125b970559ed8042e56fbfcec4ac8ef",
+    "contracts/v2/build_generation_content_v2.py": "a0ef04e68fd8f3142282172c6e2277b7af83a76baa0e859d12c02ae31886d81a",
+    "contracts/v2/generation-content-v2.README.md": "fc382080b8be820f781e5184d4186859e3fc962cd43161858a0e4601a9496d98"
+  },
+  "frozen_raw_unchanged": {
+    "backend/app/domain/blueprints.py": "2fad1607e8d4e379c705c5c36ac9245c2002d622953e08c230934ac6c64e5688",
+    "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+    "backend/app/ai/provider.py": "1c4f5c170f1bd1d303899c2ccf6d3185c258db214f47fff6f0d1e4b442eff85d",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/api/v5.py": "430a9df195e0c01787b7c5bd5b09af634eb5417ca15774437890b447747a6740",
+    "backend/app/storage/v5.py": "eb58009dbfd715d8eff4e28b2db3ea346ac11a3b2d822f80838445b849b70fba",
+    "contracts/v2/generation-content.schema.json": "35e5dc8c75c961353676815f344b352e2536183121e06ceeda0be0558bad1ade",
+    "contracts/v2/build_generation_content.py": "5f1c9f0739f99217630a23e2cb932df9184ca95af22aa508221427c4cd45c6cf",
+    "contracts/v2/generation-content.README.md": "a5adc7c77ab9c65cf87d3f69c32cd91d164c1a7d74d69869f1ebfd120c6ea03c"
+  },
+  "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 - (inline pure Owner checks; full command in tool transcript)",
+  "exit_code": 0,
+  "builder_commands": [
+    {
+      "argv": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "contracts/v2/build_generation_content_v2.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Wrote generation-content-v2.schema.json (18 variants)",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "contracts/v2/build_generation_content_v2.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "generation-content-v2.schema.json matches all 18 current variants",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "contracts/v2/build_generation_content.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "generation-content.schema.json matches all 18 current variants",
+      "stderr": ""
+    }
+  ],
+  "normal_pure_cases": [
+    {
+      "blueprint_id": "position_v1-r1-easy",
+      "family": "position_v1",
+      "rooms": 1,
+      "difficulty": "easy",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 5
+    },
+    {
+      "blueprint_id": "position_v1-r1-normal",
+      "family": "position_v1",
+      "rooms": 1,
+      "difficulty": "normal",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 7
+    },
+    {
+      "blueprint_id": "position_v1-r1-hard",
+      "family": "position_v1",
+      "rooms": 1,
+      "difficulty": "hard",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 8
+    },
+    {
+      "blueprint_id": "position_v1-r2-easy",
+      "family": "position_v1",
+      "rooms": 2,
+      "difficulty": "easy",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 7
+    },
+    {
+      "blueprint_id": "position_v1-r2-normal",
+      "family": "position_v1",
+      "rooms": 2,
+      "difficulty": "normal",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 8
+    },
+    {
+      "blueprint_id": "position_v1-r2-hard",
+      "family": "position_v1",
+      "rooms": 2,
+      "difficulty": "hard",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 11
+    },
+    {
+      "blueprint_id": "position_v1-r3-easy",
+      "family": "position_v1",
+      "rooms": 3,
+      "difficulty": "easy",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 8
+    },
+    {
+      "blueprint_id": "position_v1-r3-normal",
+      "family": "position_v1",
+      "rooms": 3,
+      "difficulty": "normal",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 11
+    },
+    {
+      "blueprint_id": "position_v1-r3-hard",
+      "family": "position_v1",
+      "rooms": 3,
+      "difficulty": "hard",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 14
+    },
+    {
+      "blueprint_id": "mapping_v1-r1-easy",
+      "family": "mapping_v1",
+      "rooms": 1,
+      "difficulty": "easy",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 5
+    },
+    {
+      "blueprint_id": "mapping_v1-r1-normal",
+      "family": "mapping_v1",
+      "rooms": 1,
+      "difficulty": "normal",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 7
+    },
+    {
+      "blueprint_id": "mapping_v1-r1-hard",
+      "family": "mapping_v1",
+      "rooms": 1,
+      "difficulty": "hard",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 8
+    },
+    {
+      "blueprint_id": "mapping_v1-r2-easy",
+      "family": "mapping_v1",
+      "rooms": 2,
+      "difficulty": "easy",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 7
+    },
+    {
+      "blueprint_id": "mapping_v1-r2-normal",
+      "family": "mapping_v1",
+      "rooms": 2,
+      "difficulty": "normal",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 8
+    },
+    {
+      "blueprint_id": "mapping_v1-r2-hard",
+      "family": "mapping_v1",
+      "rooms": 2,
+      "difficulty": "hard",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 11
+    },
+    {
+      "blueprint_id": "mapping_v1-r3-easy",
+      "family": "mapping_v1",
+      "rooms": 3,
+      "difficulty": "easy",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 8
+    },
+    {
+      "blueprint_id": "mapping_v1-r3-normal",
+      "family": "mapping_v1",
+      "rooms": 3,
+      "difficulty": "normal",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 11
+    },
+    {
+      "blueprint_id": "mapping_v1-r3-hard",
+      "family": "mapping_v1",
+      "rooms": 3,
+      "difficulty": "hard",
+      "structure_and_facts_equal_v1": true,
+      "raw_blueprint_nonmutation": true,
+      "deterministic_dict_string_assembly": true,
+      "object_count": 14
+    }
+  ],
+  "negative_cases": [
+    {
+      "case": "v1_version",
+      "error": "GENERATION_CONTENT_INVALID",
+      "helper_not_called": true
+    },
+    {
+      "case": "forbidden_object_description",
+      "error": "GENERATION_CONTENT_INVALID",
+      "helper_not_called": true
+    },
+    {
+      "case": "missing_object",
+      "error": "GENERATION_CONTENT_INVALID",
+      "helper_not_called": true
+    },
+    {
+      "case": "extra_object",
+      "error": "GENERATION_CONTENT_INVALID",
+      "helper_not_called": true
+    },
+    {
+      "case": "extra_root",
+      "error": "GENERATION_CONTENT_INVALID",
+      "helper_not_called": true
+    },
+    {
+      "case": "wrong_name_type",
+      "error": "GENERATION_CONTENT_INVALID",
+      "helper_not_called": true
+    },
+    {
+      "case": "name_too_long",
+      "error": "GENERATION_CONTENT_INVALID",
+      "helper_not_called": true
+    },
+    {
+      "case": "float_position",
+      "error": "GENERATION_CONTENT_INVALID",
+      "helper_not_called": true
+    },
+    {
+      "case": "bool_position",
+      "error": "GENERATION_CONTENT_INVALID",
+      "helper_not_called": true
+    },
+    {
+      "case": "invalid_permutation",
+      "error": "GENERATION_CONTENT_INVALID",
+      "helper_not_called": true
+    },
+    {
+      "case": "unsafe_text",
+      "error": "UNSAFE_TEXT",
+      "helper_not_called": true
+    },
+    {
+      "case": "duplicate_json",
+      "error": "DUPLICATE_KEY",
+      "helper_not_called": true
+    },
+    {
+      "case": "nonfinite",
+      "error": "NONFINITE",
+      "helper_not_called": true
+    },
+    {
+      "case": "size_limit",
+      "error": "OUTPUT_SIZE",
+      "helper_not_called": true
+    },
+    {
+      "case": "depth_limit",
+      "error": "OUTPUT_DEPTH",
+      "helper_not_called": true
+    }
+  ],
+  "representative_role_cases": [
+    {
+      "family": "position_v1",
+      "all_roles_mechanisms_covered": true,
+      "actual_reference_rename_decoy_room_order": true,
+      "parameter_changes_leave_descriptions_unchanged": true,
+      "no_undiscovered_ID_or_values_in_base_descriptions": true,
+      "maximum_item_name_valid": true,
+      "fresh_schema_manifest": true
+    },
+    {
+      "family": "mapping_v1",
+      "all_roles_mechanisms_covered": true,
+      "actual_reference_rename_decoy_room_order": true,
+      "parameter_changes_leave_descriptions_unchanged": true,
+      "no_undiscovered_ID_or_values_in_base_descriptions": true,
+      "maximum_item_name_valid": true,
+      "fresh_schema_manifest": true
+    }
+  ],
+  "elapsed_seconds": 0.616982,
+  "no_param_answer_witness_argument_in_description_helper": true,
+  "actual_history": [
+    {
+      "tool_chunk": "758f43",
+      "exit_code": 1,
+      "note": "Read-only target discovery ended nonzero because new target files did not exist; no mutation."
+    },
+    {
+      "exit_code": null,
+      "note": "Previous-turn apply_patch automatic review could not complete because of usage limit; tool explicitly reported action unexecuted, not unsafe. Recovery confirmed all new files absent."
+    },
+    {
+      "tool_chunk": "a004d4",
+      "exit_code": 0,
+      "note": "Recovery read of plan/interface/target state; no product claimed complete."
+    }
+  ],
+  "compiler_or_witness_run": false,
+  "HTTP_API_or_DB_run": false,
+  "provider_network_paid_calls": 0,
+  "Key_config_liveledger_or_private_real_bodies_read": false,
+  "limits": [
+    "This is Owner development, not independent QA, real model generation or narrative-quality acceptance.",
+    "Only newv2 module/schema/builder/README and this Owner evidence written; original v1/compiled rules/API/Store/provider/budget remain frozen.",
+    "Strict valid2 becomes a new declared Host helper value; invalid2 never invokes v1 helper. The model raw is not rewritten.",
+    "Names/story/room atmosphere can still mislead; original compiler safety/answer-in-prose/proof remains final admission.",
+    "No fullproof/HTTP/Store/save/build/UI/evaluator/old suite or paid sample repeated. Main source freeze and independent formal QA follow."
+  ]
+}

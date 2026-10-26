@@ -1,0 +1,88 @@
+{
+  "kind": "QA-only Windows stdlib socketpair wrapper fix preparation SOURCE STOP",
+  "utc": "2026-10-26T11:13:02.269190+00:00",
+  "actor": "Independent AI QA agent",
+  "source_stop": true,
+  "first_actual_run": {
+    "tool_chunk": "f81c39",
+    "exit_code": 1,
+    "seconds": 7.3588487,
+    "JUnit_cases": 79,
+    "passed": 48,
+    "failures": 30,
+    "error_cases": 1,
+    "junit_sha256": "099b35c4c7ed7ba981d4b9839c95d7a7b40d385e39cae4081de5069705da3454",
+    "output_sha256": "473803bc0edf6fd43d43ffe0bd45200d8c329817cda0675f9ad4e65f7917f8be",
+    "run_json_sha256": "6a7a3bda0229425e9b95078a1d9a0a83ec640ccc0be807e1ef56e330e342ed1f",
+    "runtime_guard_sha256": "d11890027bbfdab10fbd8b98f0bcb2e8befcc5023778cbbcc7eb1b9c6833996b",
+    "source_before_after_match": true,
+    "original_files_untouched": true
+  },
+  "diagnostic_commands": [
+    {
+      "tool_chunk": "d1118a",
+      "exit_code": 0,
+      "scope": "Only actual JUnit counts/failed case identity/hash/stack locations; no raw dump"
+    },
+    {
+      "tool_chunk": "c8aec1",
+      "exit_code": 0,
+      "scope": "Only stack-location/known-error booleans.27 direct socketpair stacks plus4 API-event-loop collateral failures"
+    },
+    {
+      "command": "Standard-library-only JUnit exact31 node mapping, finite privacy scan, AST syntax/diff check and preparation metadata; full tool transcript",
+      "exit_code": 0
+    }
+  ],
+  "classification": "QA runner socket guard mistakenly blocks Windows asyncio stdlib socketpair internal self-wakeup; not a product/real-provider finding",
+  "old_guard_count31_meaning": "Original broad deny counter, diagnosed internal socketpair and associated event-loop failures; not31 external requests or model dispatches. Original JSON unchanged.",
+  "authorized_runner_delta": {
+    "path": "evidence/upgrade/v5.0/text-authority-v2/qa/run_targeted.py",
+    "sha256": "68b014cc2c760ac57468a17fa2623411d1614c28482775401717e6b95d4b18da",
+    "only_prior_candidate_source_path_changed": true,
+    "socketpair_exception": "Only saved original stdlib socketpair, thread-local active flag, permitted address127.0.0.1 or::1 with real port, original connect/connect_ex. Prior flag restored in finally; no blanket localhost allowance.",
+    "retained_denials": [
+      "outside-socketpair socket connect/connect_ex including loopback",
+      "create_connection",
+      "httpx real transports",
+      "DeepSeekConfig.from_environment",
+      "nonTEMP sqlite paths"
+    ],
+    "permitted_stdlib_IPC_connect_count_recorded_separately": true,
+    "new_nodes_file_option": "DefaultITEMS unchanged. Optional frozen exact node list restricted to existingITEMS allowed prefixes, included in candidate, no guessed or passed node selected.",
+    "new_observation_parent": "evidence/upgrade/v5.0/blueprint-item-context/qa/text-authority-v2-run2",
+    "parent_checked_absent": true,
+    "run2_output_checked_absent": true
+  },
+  "failed_nodes_file": "evidence/upgrade/v5.0/text-authority-v2/qa/run1-failed-nodeids.json",
+  "failed_nodes_file_sha256": "d73518f4b30c33189386011dcdc01c0af62e8bc26365547c4a0eb346c78f05cb",
+  "failed_nodes_count": 31,
+  "passed48_reused_not_rerun": true,
+  "privacy": {
+    "files": [
+      {
+        "path": "evidence/upgrade/v5.0/text-authority-v2/qa/run1/output.txt",
+        "sha256": "473803bc0edf6fd43d43ffe0bd45200d8c329817cda0675f9ad4e65f7917f8be",
+        "finite_credential_pattern_matches_excluding_public_synthetic_canary": 0
+      },
+      {
+        "path": "evidence/upgrade/v5.0/text-authority-v2/qa/run1/junit.xml",
+        "sha256": "099b35c4c7ed7ba981d4b9839c95d7a7b40d385e39cae4081de5069705da3454",
+        "finite_credential_pattern_matches_excluding_public_synthetic_canary": 0
+      }
+    ],
+    "public_raw_eligible_in_this_finite_review": true,
+    "redacted_copy_needed": false,
+    "actual_credentials_loaded_to_compare": false,
+    "limits": "Finite patterns and known synthetic-only fixtures, not proof against every secret encoding. No raw failure text printed. Originalbytes preserved."
+  },
+  "proposed_narrow_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/text-authority-v2/qa/run_targeted.py --candidate evidence/upgrade/v5.0/text-authority-v2/candidate-qa-fixed.json --output evidence/upgrade/v5.0/text-authority-v2/qa/run2 --nodes-file evidence/upgrade/v5.0/text-authority-v2/qa/run1-failed-nodeids.json",
+  "formal_continuation_executed": false,
+  "product_sources_modified": false,
+  "new_probe_or_model_network_private_data_access": false,
+  "limits": [
+    "Await Main re-freeze/formal narrowGO before exact31 continuation; no repeat48 or fullsuite.",
+    "This fixes only QA isolation protocol; technical runtime and old narrative quality not yet accepted.",
+    "Old run1 errors/exit1 remain evidence, no single full-green claim."
+  ]
+}

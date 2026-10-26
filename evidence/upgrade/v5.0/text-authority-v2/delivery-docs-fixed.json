@@ -1,0 +1,45 @@
+{
+  "kind": "Text-authority v2 Delivery wording correction",
+  "date": "2026-10-26",
+  "scope": ["README.md", "release/V5.md", "evidence/upgrade/v5.0/text-authority-v2/delivery-docs-fixed.json"],
+  "corrections": [
+    "Clarified that the formal runs used two candidates with identical product-source bytes: first input had 419 sources; after the QA-runner-only correction, the candidate had 420 sources. The 31-item narrow run does not retroactively use the 420-source candidate for the first run.",
+    "Changed old v1 wording to state that existing complete definitions, hashes and saves restore unchanged, while the old internal v1 contract remains.",
+    "Changed the release document's conversion target wording to the original complete Draft format.",
+    "Added the requested single README EOF newline."
+  ],
+  "previous_delivery_record": {
+    "path": "evidence/upgrade/v5.0/text-authority-v2/delivery-docs.json",
+    "sha256": "a9d34e84ff008f84480149a6bb247e158a97b60a0b006a2ee118e7f2c261873d",
+    "preserved": true
+  },
+  "current_evidence_and_document_hashes": {
+    "qa_report_sha256": "38c9a803ebe56f5867277357a3c8b95fbe2543682c1130c7437572a27083f49c",
+    "qa_result_sha256": "ca453697e50257363f29e348f62254ab4a7bdaed59f0b002bb2cd56573272942",
+    "qa_seal_sha256": "cceb8084196a834ad2bef4c60d2767a523aee356543a38ddcd786ff7eacd702f",
+    "README.md": "81d57d09966f94dde2d6fce5ce72586ee4e7d8dfba975245f8cc09061a7f8a9f",
+    "release/V5.md": "49ad8ae8025a2bb9dd0c8f9ff4a2e438a21502befe23ecd2928a2dabfb2760f7"
+  },
+  "commands_and_results": [
+    {
+      "command": "PowerShell targeted UTF-8 replacements for the authorized wording and README single-EOF newline",
+      "exit_code": 0
+    },
+    {
+      "command": "python -c read-only README EOF byte check",
+      "exit_code": 0,
+      "output": "README_EOF_BYTES 2 b'\\r\\n'"
+    },
+    {
+      "command": "Get-FileHash for previous delivery-docs.json, README.md and release/V5.md",
+      "exit_code": 0
+    },
+    {
+      "command": "git -c core.whitespace=cr-at-eol diff --check -- README.md release/V5.md",
+      "exit_code": 0,
+      "note": "Only the existing LF-to-CRLF warning for release/V5.md."
+    }
+  ],
+  "not_run": ["No tests, builds, model calls, or network calls."],
+  "status": "SOURCE STOP; wording correction only."
+}

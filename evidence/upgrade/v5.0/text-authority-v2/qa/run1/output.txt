@@ -1,0 +1,965 @@
+..................................FFEFFFFFFFFFFFFFFFFFF.........FFF..... [ 91%]
+FFFFFFF                                                                  [100%]
+=================================== ERRORS ====================================
+_ ERROR at setup of test_saved_full_v1_definition_text_and_hash_restore_reload_without_content_service _
+tests\v5\conftest.py:108: in actor
+    def actor(system): return Actor(system[0]).authenticate('qa_alpha')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:72: in authenticate
+    anon = self.get('/auth/csrf').json()['data']
+           ^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:69: in get
+    def get(self, url, **kwargs): return self.request('GET', url, **kwargs)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:67: in request
+    validate_response(response,method,url)
+tests\v5\conftest.py:29: in validate_response
+    body=response.json()
+         ^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\httpx\_models.py:832: in json
+    return jsonlib.loads(self.content, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\json\__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\json\decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\json\decoder.py:363: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+================================== FAILURES ===================================
+_ test_production_service_rejects_non_v2_model_reply_once_without_fallback[old-model-version] _
+tests\v5\test_generation_text_authority.py:309: in test_production_service_rejects_non_v2_model_reply_once_without_fallback
+    asyncio.run(GenerationService(lambda key: provider).generate(theme='合成校园', room_count=1,
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_production_service_rejects_non_v2_model_reply_once_without_fallback[forbidden-object-description] _
+tests\v5\test_generation_text_authority.py:309: in test_production_service_rejects_non_v2_model_reply_once_without_fallback
+    asyncio.run(GenerationService(lambda key: provider).generate(theme='合成校园', room_count=1,
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_production_service_adapter_api_admission_witness_save_restore_and_owner_boundary[2-normal-0] _
+tests\v5\test_blueprint_generation.py:337: in test_production_service_adapter_api_admission_witness_save_restore_and_owner_boundary
+    actor = Actor(app).authenticate('blueprint_owner')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:72: in authenticate
+    anon = self.get('/auth/csrf').json()['data']
+           ^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:69: in get
+    def get(self, url, **kwargs): return self.request('GET', url, **kwargs)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:67: in request
+    validate_response(response,method,url)
+tests\v5\conftest.py:29: in validate_response
+    body=response.json()
+         ^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\httpx\_models.py:832: in json
+    return jsonlib.loads(self.content, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\json\__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\json\decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\json\decoder.py:363: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+_ test_production_service_adapter_api_admission_witness_save_restore_and_owner_boundary[3-hard-1] _
+tests\v5\test_blueprint_generation.py:337: in test_production_service_adapter_api_admission_witness_save_restore_and_owner_boundary
+    actor = Actor(app).authenticate('blueprint_owner')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:72: in authenticate
+    anon = self.get('/auth/csrf').json()['data']
+           ^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:69: in get
+    def get(self, url, **kwargs): return self.request('GET', url, **kwargs)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:67: in request
+    validate_response(response,method,url)
+tests\v5\conftest.py:29: in validate_response
+    body=response.json()
+         ^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\httpx\_models.py:832: in json
+    return jsonlib.loads(self.content, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\json\__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\json\decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\json\decoder.py:363: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+_ test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[typed] _
+tests\v5\test_blueprint_generation.py:415: in test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback
+    asyncio.run(service.generate(theme='校园', room_count=1, difficulty='hard', api_key=CANARY, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[extra] _
+tests\v5\test_blueprint_generation.py:415: in test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback
+    asyncio.run(service.generate(theme='校园', room_count=1, difficulty='hard', api_key=CANARY, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[missing] _
+tests\v5\test_blueprint_generation.py:415: in test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback
+    asyncio.run(service.generate(theme='校园', room_count=1, difficulty='hard', api_key=CANARY, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[wrong_blueprint] _
+tests\v5\test_blueprint_generation.py:415: in test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback
+    asyncio.run(service.generate(theme='校园', room_count=1, difficulty='hard', api_key=CANARY, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[credential] _
+tests\v5\test_blueprint_generation.py:415: in test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback
+    asyncio.run(service.generate(theme='校园', room_count=1, difficulty='hard', api_key=CANARY, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[full_draft] _
+tests\v5\test_blueprint_generation.py:415: in test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback
+    asyncio.run(service.generate(theme='校园', room_count=1, difficulty='hard', api_key=CANARY, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[duplicate] _
+tests\v5\test_blueprint_generation.py:415: in test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback
+    asyncio.run(service.generate(theme='校园', room_count=1, difficulty='hard', api_key=CANARY, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[depth] _
+tests\v5\test_blueprint_generation.py:415: in test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback
+    asyncio.run(service.generate(theme='校园', room_count=1, difficulty='hard', api_key=CANARY, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[size] _
+tests\v5\test_blueprint_generation.py:415: in test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback
+    asyncio.run(service.generate(theme='校园', room_count=1, difficulty='hard', api_key=CANARY, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[unsafe] _
+tests\v5\test_blueprint_generation.py:415: in test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback
+    asyncio.run(service.generate(theme='校园', room_count=1, difficulty='hard', api_key=CANARY, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+___________ test_worker_rejection_does_not_publish_a_playable_level ___________
+tests\v5\test_blueprint_generation.py:431: in test_worker_rejection_does_not_publish_a_playable_level
+    actor = Actor(app).authenticate('blueprint_reject')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:72: in authenticate
+    anon = self.get('/auth/csrf').json()['data']
+           ^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:69: in get
+    def get(self, url, **kwargs): return self.request('GET', url, **kwargs)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:67: in request
+    validate_response(response,method,url)
+tests\v5\conftest.py:29: in validate_response
+    body=response.json()
+         ^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\httpx\_models.py:832: in json
+    return jsonlib.loads(self.content, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\json\__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\json\decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\json\decoder.py:363: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+__________ test_missing_or_invalid_key_does_not_select_or_dispatch[] __________
+tests\v5\test_blueprint_generation.py:476: in test_missing_or_invalid_key_does_not_select_or_dispatch
+    asyncio.run(GenerationService(forbidden).generate(theme='校园', room_count=1, difficulty='easy', api_key=key, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_________ test_missing_or_invalid_key_does_not_select_or_dispatch[ ] __________
+tests\v5\test_blueprint_generation.py:476: in test_missing_or_invalid_key_does_not_select_or_dispatch
+    asyncio.run(GenerationService(forbidden).generate(theme='校园', room_count=1, difficulty='easy', api_key=key, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+______ test_missing_or_invalid_key_does_not_select_or_dispatch[bad key] _______
+tests\v5\test_blueprint_generation.py:476: in test_missing_or_invalid_key_does_not_select_or_dispatch
+    asyncio.run(GenerationService(forbidden).generate(theme='校园', room_count=1, difficulty='easy', api_key=key, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+____ test_missing_or_invalid_key_does_not_select_or_dispatch[\u4e2d\u6587] ____
+tests\v5\test_blueprint_generation.py:476: in test_missing_or_invalid_key_does_not_select_or_dispatch
+    asyncio.run(GenerationService(forbidden).generate(theme='校园', room_count=1, difficulty='easy', api_key=key, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_missing_or_invalid_key_does_not_select_or_dispatch[xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx] _
+tests\v5\test_blueprint_generation.py:476: in test_missing_or_invalid_key_does_not_select_or_dispatch
+    asyncio.run(GenerationService(forbidden).generate(theme='校园', room_count=1, difficulty='easy', api_key=key, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_four_byte_unicode_theme_whole_payload_budget_is_measured_without_raising_cap[0] _
+tests\v5\test_prompt_fixed.py:87: in test_four_byte_unicode_theme_whole_payload_budget_is_measured_without_raising_cap
+    result = asyncio.run(service.generate(theme=theme, room_count=3, difficulty='hard', api_key=CANARY, draft_schema=Draft.model_json_schema()))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_four_byte_unicode_theme_whole_payload_budget_is_measured_without_raising_cap[1] _
+tests\v5\test_prompt_fixed.py:82: in test_four_byte_unicode_theme_whole_payload_budget_is_measured_without_raising_cap
+    asyncio.run(service.generate(theme=theme, room_count=3, difficulty='hard', api_key=CANARY, draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_actual_over_cap_payload_is_refused_before_provider_reservation_or_send _
+tests\v5\test_prompt_fixed.py:115: in test_actual_over_cap_payload_is_refused_before_provider_reservation_or_send
+    asyncio.run(provider.complete(messages, [], limits, scope='v5_generation', tool_choice='none'))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_____ test_real_adapter_fake_httpx_generation_profile_and_secret_boundary _____
+tests\v5\test_generation.py:36: in test_real_adapter_fake_httpx_generation_profile_and_secret_boundary
+    result=asyncio.run(service.generate(theme='校园 '+CANARY,room_count=1,difficulty='easy',api_key=CANARY,draft_schema=Draft.model_json_schema()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+______________ test_fake_budget_and_oversize_limits_prevent_send ______________
+tests\v5\test_generation.py:83: in test_fake_budget_and_oversize_limits_prevent_send
+    with pytest.raises(ProviderError) as error: asyncio.run(provider.complete([{'role':'user','content':'test'}],[],GenerationLimits(),scope='v5_generation',tool_choice='none'))
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_fake_provider_failures_conservative_one_send_and_unknown_charge[empty-MODEL_INVALID_OUTPUT] _
+tests\v5\test_generation.py:101: in test_fake_provider_failures_conservative_one_send_and_unknown_charge
+    asyncio.run(service.generate(theme='offline',room_count=1,difficulty='easy',api_key=CANARY,draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_fake_provider_failures_conservative_one_send_and_unknown_charge[truncated-MODEL_INVALID_OUTPUT] _
+tests\v5\test_generation.py:101: in test_fake_provider_failures_conservative_one_send_and_unknown_charge
+    asyncio.run(service.generate(theme='offline',room_count=1,difficulty='easy',api_key=CANARY,draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_fake_provider_failures_conservative_one_send_and_unknown_charge[auth-MODEL_OUTCOME_UNKNOWN] _
+tests\v5\test_generation.py:101: in test_fake_provider_failures_conservative_one_send_and_unknown_charge
+    asyncio.run(service.generate(theme='offline',room_count=1,difficulty='easy',api_key=CANARY,draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_fake_provider_failures_conservative_one_send_and_unknown_charge[timeout-MODEL_OUTCOME_UNKNOWN] _
+tests\v5\test_generation.py:101: in test_fake_provider_failures_conservative_one_send_and_unknown_charge
+    asyncio.run(service.generate(theme='offline',room_count=1,difficulty='easy',api_key=CANARY,draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+_ test_fake_provider_failures_conservative_one_send_and_unknown_charge[missing_usage-MODEL_OUTCOME_UNKNOWN] _
+tests\v5\test_generation.py:101: in test_fake_provider_failures_conservative_one_send_and_unknown_charge
+    asyncio.run(service.generate(theme='offline',room_count=1,difficulty='easy',api_key=CANARY,draft_schema=Draft.model_json_schema()))
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:204: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:60: in __enter__
+    self._lazy_init()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:147: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:847: in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\events.py:735: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:635: in __init__
+    self._make_self_pipe()
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py:781: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\socket.py:629: in _fallback_socketpair
+    csock.connect((addr, port))
+evidence\upgrade\v5.0\text-authority-v2\qa\run_targeted.py:63: in deny
+    raise AssertionError('Synthetic QA attempted external network or environment credentials')
+E   AssertionError: Synthetic QA attempted external network or environment credentials
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+tests/v5/test_generation_text_authority.py: 2 warnings
+tests/v5/test_blueprint_generation.py: 8 warnings
+tests/v5/test_prompt_fixed.py: 2 warnings
+tests/v5/test_generation.py: 4 warnings
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\_pytest\unraisableexception.py:67: PytestUnraisableExceptionWarning: Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x000000000484D900>: None
+  
+  Traceback (most recent call last):
+    File "C:\Users\liyh\.conda\envs\1\Lib\asyncio\base_events.py", line 761, in __del__
+      self.close()
+      ~~~~~~~~~~^^
+    File "C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py", line 692, in close
+      self._close_self_pipe()
+      ~~~~~~~~~~~~~~~~~~~~~^^
+    File "C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py", line 773, in _close_self_pipe
+      self._ssock.close()
+      ^^^^^^^^^^^
+  AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+  
+  
+    warnings.warn(pytest.PytestUnraisableExceptionWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/v5/test_generation_text_authority.py::test_production_service_rejects_non_v2_model_reply_once_without_fallback[old-model-version]
+FAILED tests/v5/test_generation_text_authority.py::test_production_service_rejects_non_v2_model_reply_once_without_fallback[forbidden-object-description]
+FAILED tests/v5/test_blueprint_generation.py::test_production_service_adapter_api_admission_witness_save_restore_and_owner_boundary[2-normal-0]
+FAILED tests/v5/test_blueprint_generation.py::test_production_service_adapter_api_admission_witness_save_restore_and_owner_boundary[3-hard-1]
+FAILED tests/v5/test_blueprint_generation.py::test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[typed]
+FAILED tests/v5/test_blueprint_generation.py::test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[extra]
+FAILED tests/v5/test_blueprint_generation.py::test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[missing]
+FAILED tests/v5/test_blueprint_generation.py::test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[wrong_blueprint]
+FAILED tests/v5/test_blueprint_generation.py::test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[credential]
+FAILED tests/v5/test_blueprint_generation.py::test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[full_draft]
+FAILED tests/v5/test_blueprint_generation.py::test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[duplicate]
+FAILED tests/v5/test_blueprint_generation.py::test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[depth]
+FAILED tests/v5/test_blueprint_generation.py::test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[size]
+FAILED tests/v5/test_blueprint_generation.py::test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[unsafe]
+FAILED tests/v5/test_blueprint_generation.py::test_worker_rejection_does_not_publish_a_playable_level
+FAILED tests/v5/test_blueprint_generation.py::test_missing_or_invalid_key_does_not_select_or_dispatch[]
+FAILED tests/v5/test_blueprint_generation.py::test_missing_or_invalid_key_does_not_select_or_dispatch[ ]
+FAILED tests/v5/test_blueprint_generation.py::test_missing_or_invalid_key_does_not_select_or_dispatch[bad key]
+FAILED tests/v5/test_blueprint_generation.py::test_missing_or_invalid_key_does_not_select_or_dispatch[\u4e2d\u6587]
+FAILED tests/v5/test_blueprint_generation.py::test_missing_or_invalid_key_does_not_select_or_dispatch[xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]
+FAILED tests/v5/test_prompt_fixed.py::test_four_byte_unicode_theme_whole_payload_budget_is_measured_without_raising_cap[0]
+FAILED tests/v5/test_prompt_fixed.py::test_four_byte_unicode_theme_whole_payload_budget_is_measured_without_raising_cap[1]
+FAILED tests/v5/test_prompt_fixed.py::test_actual_over_cap_payload_is_refused_before_provider_reservation_or_send
+FAILED tests/v5/test_generation.py::test_real_adapter_fake_httpx_generation_profile_and_secret_boundary
+FAILED tests/v5/test_generation.py::test_fake_budget_and_oversize_limits_prevent_send
+FAILED tests/v5/test_generation.py::test_fake_provider_failures_conservative_one_send_and_unknown_charge[empty-MODEL_INVALID_OUTPUT]
+FAILED tests/v5/test_generation.py::test_fake_provider_failures_conservative_one_send_and_unknown_charge[truncated-MODEL_INVALID_OUTPUT]
+FAILED tests/v5/test_generation.py::test_fake_provider_failures_conservative_one_send_and_unknown_charge[auth-MODEL_OUTCOME_UNKNOWN]
+FAILED tests/v5/test_generation.py::test_fake_provider_failures_conservative_one_send_and_unknown_charge[timeout-MODEL_OUTCOME_UNKNOWN]
+FAILED tests/v5/test_generation.py::test_fake_provider_failures_conservative_one_send_and_unknown_charge[missing_usage-MODEL_OUTCOME_UNKNOWN]
+ERROR tests/v5/test_generation_text_authority.py::test_saved_full_v1_definition_text_and_hash_restore_reload_without_content_service
+30 failed, 48 passed, 17 warnings, 1 error in 5.44s
+<sys>:0: RuntimeWarning: coroutine 'GenerationService.generate' was never awaited
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x000000000484D900>:
+Traceback (most recent call last):
+  File "C:\Users\liyh\.conda\envs\1\Lib\asyncio\base_events.py", line 761, in __del__
+  File "C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py", line 692, in close
+  File "C:\Users\liyh\.conda\envs\1\Lib\asyncio\proactor_events.py", line 773, in _close_self_pipe
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'

@@ -1,0 +1,23 @@
+{
+  "kind": "TXT2 Main static Owner check; not independent QA",
+  "utc": "2026-10-26T10:59:06.858273+00:00",
+  "source_stop": true,
+  "files": [
+    "backend/app/ai/v5.py"
+  ],
+  "before_sha256": "d1a8cab3dceaa85f933e1d93b49f166d864c4805124ae81725075688de195529",
+  "after_sha256": "6f7cdb58d4242bab8f4434e0a9a3f30c25b912070f8cf8339ece5c1ab8abe288",
+  "actual_checks": {
+    "nonprompt_module_AST_equal_after_exact_two_import_normalization": true,
+    "entire_original_bytes_restored_after_inverse_assigned_replacements": true,
+    "exact_import_nodes": 2,
+    "syntax_parse": true
+  },
+  "command": "Python one-shot prompt/two-import edit and AST/inverse-byte checks; assertions exit on mismatch",
+  "limitations": [
+    "Development static check only; new module integration awaits Backend STOP and independent QA.",
+    "No real model/quality test; no Key/config/ledger/DB/private data/network/provider call.",
+    "Companion/provider/budget/API/storage untouched."
+  ],
+  "paid_calls": 0
+}

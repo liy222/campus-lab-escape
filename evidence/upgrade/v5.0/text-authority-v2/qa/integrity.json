@@ -1,0 +1,209 @@
+{
+  "kind": "Independent AI QA joint targeted v2 integrity/privacy closure",
+  "utc": "2026-10-26T11:19:15.252812+00:00",
+  "actor": "Independent AI QA agent",
+  "exit_code": 0,
+  "current_candidate_path": "evidence/upgrade/v5.0/text-authority-v2/candidate-qa-fixed.json",
+  "current_candidate_sha256": "7210a08f64537f31545bcea9a47cae17b9f0b3138de779bf6fd508586d1fddb9",
+  "current_input_count": 420,
+  "source_bundle_sha256": "15e9e46eca8db586e7b5225be8c2138ed8563e92c03b14100e2bd4cd9abfaa89",
+  "all_current_inputs_match": true,
+  "first_candidate_input_count": 419,
+  "first_candidate_is_historical_not_current": true,
+  "two_epochs_product_inputs_equal_only_QA_runner_and_new_node_list_differ": true,
+  "joint_unique_items": 79,
+  "first_passes_reused": 48,
+  "first_failures": 30,
+  "first_error_cases": 1,
+  "exact_narrow_items_passed": 31,
+  "passed48_not_repeated": true,
+  "old_run1_raw_hashes_preserved": true,
+  "runtime_guard": {
+    "external_network_config_or_nonTEMP_DB_attempts": 0,
+    "stdlib_socketpair_local_IPC_connects": 141,
+    "all_database_connections_restricted_to_TEMP": true,
+    "provider_transports_synthetic_only": true,
+    "real_paid_calls": 0
+  },
+  "old_public_seals": [
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-generation/qa/artifact-seal.json",
+      "seal_sha256": "827b25cfdf44ab45bb8d4bee77217aff4dc39944ff41714ff51990e7d2ca5b0e",
+      "entries": 63,
+      "current_matches": 63,
+      "authorized_historical_source_exceptions": []
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-item-context/qa/artifact-seal.json",
+      "seal_sha256": "b9c51a53a423827b3ca202b2685542880f7374b904e1bd9b38d92d0746496ce5",
+      "entries": 16,
+      "current_matches": 15,
+      "authorized_historical_source_exceptions": [
+        "tests/v5/test_blueprint_item_context.py"
+      ]
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/preflight-review-seal-v1.json",
+      "seal_sha256": "6812ea980a94b4292fbb748005620affb388a84617138ecdcc4e266e35abe088",
+      "entries": 12,
+      "current_matches": 12,
+      "authorized_historical_source_exceptions": []
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-generation/real-samples/qa-actual-review-seal-v1.json",
+      "seal_sha256": "b49f31d9a452e69d7b8b5185aba45f068d90d87e59609d64ea346a1a83ea4abc",
+      "entries": 17,
+      "current_matches": 17,
+      "authorized_historical_source_exceptions": []
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/preflight-review-seal-v1.json",
+      "seal_sha256": "9606c840709190f90a18d04d1e74d284a294604dc7027475b3d5e8ecbf2761c8",
+      "entries": 8,
+      "current_matches": 8,
+      "authorized_historical_source_exceptions": []
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-item-context/real-samples/qa-actual-seal-v1.json",
+      "seal_sha256": "d298c8559fcdb2205a6ce2f69e9994a584afa5d8c737a360673948b4ba1b06f9",
+      "entries": 14,
+      "current_matches": 14,
+      "authorized_historical_source_exceptions": []
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-slot-completeness/qa/artifact-seal.json",
+      "seal_sha256": "ce32e24b623f55ed8d1ba6e19ac91ce12c19f96017e7bba4332f1d5037b6ad4a",
+      "entries": 9,
+      "current_matches": 9,
+      "authorized_historical_source_exceptions": []
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/preflight-seal-v1.json",
+      "seal_sha256": "fdd7942a1c9398293d64e667fba765a5523050e0a872ce311a402b6a7d4421d4",
+      "entries": 8,
+      "current_matches": 8,
+      "authorized_historical_source_exceptions": []
+    },
+    {
+      "path": "evidence/upgrade/v5.0/blueprint-slot-completeness/real-samples/qa-actual-seal-v1.json",
+      "seal_sha256": "c1a7e20161184691d3574a28c661b7d4dba35145d1c3602ec537ded6b8c3115b",
+      "entries": 18,
+      "current_matches": 18,
+      "authorized_historical_source_exceptions": []
+    }
+  ],
+  "historical_source_exception": {
+    "path": "tests/v5/test_blueprint_item_context.py",
+    "current_v2_sha256": "638875085ca9f22131fc9374d3a91a58c3c11ceb8f4e7bb43d4969d6fca11c18",
+    "old_raw_sha256": "51c667b47974d0b05a50d121b70c81b39173f9e5ddc0802dcfcba3bd37beba31",
+    "baseline_commit": "9eea893983cfef68b2c7fea65fa70dcaffffa4c1",
+    "git_blob_exact_raw_match": true,
+    "no_line_ending_conversion": true,
+    "old_seal_not_modified": true
+  },
+  "registered53_current_match": true,
+  "private_real_evidence_opened_or_hashed": false,
+  "finite_output_privacy": [
+    {
+      "path": "evidence/upgrade/v5.0/text-authority-v2/qa/run1/output.txt",
+      "sha256": "473803bc0edf6fd43d43ffe0bd45200d8c329817cda0675f9ad4e65f7917f8be",
+      "finite_nonsynthetic_credential_pattern_matches": 0
+    },
+    {
+      "path": "evidence/upgrade/v5.0/text-authority-v2/qa/run1/junit.xml",
+      "sha256": "099b35c4c7ed7ba981d4b9839c95d7a7b40d385e39cae4081de5069705da3454",
+      "finite_nonsynthetic_credential_pattern_matches": 0
+    },
+    {
+      "path": "evidence/upgrade/v5.0/text-authority-v2/qa/run2/output.txt",
+      "sha256": "524c7d4f90dfdc2f9b95bfb58ba356220231bad2520d8108f26107f272907cd7",
+      "finite_nonsynthetic_credential_pattern_matches": 0
+    },
+    {
+      "path": "evidence/upgrade/v5.0/text-authority-v2/qa/run2/junit.xml",
+      "sha256": "5e4be6b2011a1481743fd18564791ec74710b82452cd9325998d5b3631036eee",
+      "finite_nonsynthetic_credential_pattern_matches": 0
+    }
+  ],
+  "public_raw_outputs_eligible_under_finite_review": true,
+  "credential_comparison_limit": "No configured credentials read; known-pattern scan is finite, not an absence guarantee for every encoding.",
+  "pure_complete_payload_measurements": {
+    "mapping_v1": [
+      {
+        "theme_kind": "short",
+        "theme_characters": 6,
+        "whole_payload_utf8_bytes": 11602,
+        "whole_payload_sha256": "e5ab096ec4f555bdcc115b1c74b361abb2d3aedd8528cfb26c29a631381e94dc",
+        "input_token_bound": 54600,
+        "upper_cost_units": 157200000,
+        "original_cap_units": 200000000,
+        "within_original_budget_cap": true,
+        "actual_dispatch_or_refusal_tested": false
+      },
+      {
+        "theme_kind": "four-byte-max",
+        "theme_characters": 2000,
+        "whole_payload_utf8_bytes": 19584,
+        "whole_payload_sha256": "28b0bc27a98f384df16d89b0136316ebf8f00ec7f6c3cc81c7ee893331a019a1",
+        "input_token_bound": 86528,
+        "upper_cost_units": 221056000,
+        "original_cap_units": 200000000,
+        "within_original_budget_cap": false,
+        "actual_dispatch_or_refusal_tested": false
+      }
+    ],
+    "position_v1": [
+      {
+        "theme_kind": "short",
+        "theme_characters": 6,
+        "whole_payload_utf8_bytes": 8635,
+        "whole_payload_sha256": "9afa7836934d6d94bf564252dca898f1e9c0b879ba8ab421355c3defef5f0e67",
+        "input_token_bound": 42732,
+        "upper_cost_units": 133464000,
+        "original_cap_units": 200000000,
+        "within_original_budget_cap": true,
+        "actual_dispatch_or_refusal_tested": false
+      },
+      {
+        "theme_kind": "four-byte-max",
+        "theme_characters": 2000,
+        "whole_payload_utf8_bytes": 16617,
+        "whole_payload_sha256": "425745a2a1145aec33b45e5f3131b9606910701a9ef1e0cbdbe4ddc06054bf4a",
+        "input_token_bound": 74660,
+        "upper_cost_units": 197320000,
+        "original_cap_units": 200000000,
+        "within_original_budget_cap": true,
+        "actual_dispatch_or_refusal_tested": false
+      }
+    ]
+  },
+  "provider_legal_once_and_overcap_before_reserve_branch_assertions_passed": true,
+  "metadata_audit_failure": {
+    "tool_chunk": "de128c",
+    "exit_code": 1,
+    "stage": "Before output write, not test execution",
+    "cause": "Incorrect blanket current-match assertion included one authorized historical test source in old seal16",
+    "resolution": "Only that source treated as historical;44f54e exit0 proves baseline Gitblob exact old raw hash. All old result/seal/log bytes remain."
+  },
+  "read_commands": [
+    {
+      "tool_chunk": "27965e",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "63ff55",
+      "exit_code": 0
+    },
+    {
+      "tool_chunk": "44f54e",
+      "exit_code": 0
+    }
+  ],
+  "final_closure_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; public hash/JUnit/privacy closure and new report/seal only; full tool transcript",
+  "limits": [
+    "Joint run, not a single full green suite.",
+    "Current v2 has no real model sample/human playtest; old narrative finding OPEN.",
+    "Original source epochs not relabelled current; raw-sensitive files never opened in this epoch.",
+    "Static build() semantic equality only; no separate QA CLI-builder/fullmatrix/UI/build/eval run."
+  ]
+}

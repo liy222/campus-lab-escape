@@ -1,0 +1,28 @@
+{
+  "kind": "Main QA-only Windows asyncio socketpair correction authorization",
+  "utc": "2026-10-26T11:13:14.383606+00:00",
+  "reason": "First finite run denied Windows stdlib socketpair loopback used by asyncio; QA attributed 27 direct guard stacks and 4 consequential API/setup errors, not a product defect.",
+  "Main_actual_metadata_review": {
+    "tool": "9bbd4f",
+    "exit_code": 0,
+    "first_run_exit_code": 1,
+    "JUnit_testcases": 79,
+    "passed": 48,
+    "failed_or_error": 31,
+    "old419_all_matched_at_review": true,
+    "raw_output_not_printed": true
+  },
+  "allowed_source_delta": [
+    "evidence/upgrade/v5.0/text-authority-v2/qa/run_targeted.py"
+  ],
+  "allowed_new_input": "qa/failed-run1-nodeids.json exact JUnit failure/error set if needed for --nodes-file; no guessing",
+  "guard_policy": "Allow original connect/connect_ex only on 127.0.0.1/::1 while original stdlib socketpair executes under a thread-local marker; finally restore prior marker. All other socket, create_connection, HTTPTransport, config and nonTEMP DB guards remain.",
+  "new_unique_outputs": [
+    "evidence/upgrade/v5.0/text-authority-v2/qa/run2",
+    "evidence/upgrade/v5.0/blueprint-item-context/qa/text-authority-v2-run2/observations"
+  ],
+  "old_run1": "Immutable; preserve raw failure/guard31 and accurately distinguish internal denied connection attempts from external provider calls.",
+  "sequence": "QA fix preparation STOP/report -> Main verify exact delta/newfreeze -> explicit GO only failed31; reuse unaffected48 with source boundaries, no fullgreen-single-run claim.",
+  "no_product_changes_or_paid_authorization": true,
+  "logs": "Privacy inspect without printing raw logs; sensitive originals local/excluded, explicit redacted public derivatives if needed."
+}

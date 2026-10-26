@@ -303,3 +303,10 @@ v3.4 提示保留原六主题十八条受限推理文案；新增请求时依据
 Host每次选一个不可变Blueprint；精确槽位与typed参数的content_version1.0.0合同见contracts/v2/generation-content.schema.json和generation-content.README.md。模型不能增删房间/物件/引用/配方/坐标。有效内容按预先声明规则组装为原Draft，再经原compile/proof/Store决定可玩；错误内容直接MODEL_INVALID_OUTPUT，无修补、默认值、fixture/历史关卡替代或重试。模型仍决定数字/位置/设备排列/符号对应值，extra_digits/extra_devices服务独立额外谜题。仅有合法类型不保证文案贴切，完整答案进入叙事仍由原准入拒绝。
 
 首版1房hard恰好8物件；多房通过首房道具与末房道具谜题形成真实跨房依赖。4题以上覆盖四机制。旧编译器全部规模/组合/依赖/材料/布局/25000状态5秒/witness保护继续适用；旧完整定义和档案恢复不调用或重新选择Blueprint。一次模型调用与原profile/Key/预算/任务状态/迟到同步规则不改。合成和真实验收分开，当前选择不构成付费授权。
+
+
+## v5物件说明方案B（2026-10-25接受，实施目标）
+
+用户明确选择B，当前权威为v5-build-plan.md第15节及text-authority-v2/plan.json。模型内部content2.0.0的objects严格仅name；room氛围与title/story/typed参数继续来自模型。Host用实际角色/引用/配方和名称生成description，使用后保留、资料类型等机械事实来自规则，不让模型编新操作。v2校验失败直接拒绝，不删除description、不补值、不接受旧v1回复作为fallback。合法2才声明转换并复用旧v1纯组装helper，原raw不变。
+
+旧v1模块/Schema/构建入口保留；公开格式、规则、资料发现门、API/Store/Key/费用/伙伴和旧档不变，不新增DB字段/表/原稿日志。旧完整定义/hash/文案不重写。Host文字不得含秘密参数/答案/顺序/未发现ID；名称/背景仍可能误导，不承诺全部语义正确。当前为实施规格而非QA/真实模型验收；多骨架/结构变化仍按第14节后续阶段。

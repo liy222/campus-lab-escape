@@ -1,0 +1,87 @@
+{
+  "kind": "TXT0-TXT4 accepted B implementation ownership and validation plan",
+  "utc": "2026-10-25T15:07:42.931630+00:00",
+  "actual_user_choice": "选择方案b",
+  "accepted_proposal_commit": "80135d60c10d641f01160785e2a5b70d911a7bfb",
+  "baseline_head": "9eea893983cfef68b2c7fea65fa70dcaffffa4c1",
+  "baseline_candidate": "evidence/upgrade/v5.0/blueprint-slot-completeness/candidate.json",
+  "baseline410_matched_before_product_edits": true,
+  "registered53_matched": true,
+  "model_content_version": "2.0.0; internal breaking name-only object output",
+  "public_Draft_API_rules_storage_versions": "unchanged",
+  "ownership": {
+    "Main": [
+      "AGENTS.md",
+      "PLAN.md",
+      "STATUS.md",
+      "DECISIONS.md",
+      "docs/v5-build-plan.md",
+      "docs/v5-generation-text-authority-proposal.md",
+      "docs/SPEC.md TXT0 additive scope",
+      "docs/level_design.md TXT0 additive scope",
+      "backend/app/ai/v5.py GENERATION_PROMPT and two generation-only import statements",
+      "this epoch plan/freeze/acceptance/Git records"
+    ],
+    "Backend": [
+      "backend/app/domain/generation_content_v2.py",
+      "contracts/v2/generation-content-v2.schema.json",
+      "contracts/v2/build_generation_content_v2.py",
+      "contracts/v2/generation-content-v2.README.md",
+      "backend-interface.json",
+      "backend-owner.json"
+    ],
+    "QA": [
+      "tests/v5/test_generation_text_authority.py",
+      "tests/v5/test_blueprint_generation.py only message-aware synthetic v1/v2 helper and production-v2 expectations",
+      "tests/v5/test_prompt_fixed.py only production-v2 contract expectations retaining all protection assertions",
+      "tests/v5/test_blueprint_item_context.py only current-v2 messages/budget expectation and exact two-import AST allowance, original runtime forbids retained",
+      "this epoch qa/ runner/report plus review/findings/v5-text-authority-v2.md"
+    ],
+    "Delivery": [
+      "README.md",
+      "release/V5.md",
+      "this epoch delivery-docs.json only after actual QA"
+    ]
+  },
+  "frozen_raw": {
+    "backend/app/domain/blueprints.py": "2fad1607e8d4e379c705c5c36ac9245c2002d622953e08c230934ac6c64e5688",
+    "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+    "backend/app/ai/provider.py": "1c4f5c170f1bd1d303899c2ccf6d3185c258db214f47fff6f0d1e4b442eff85d",
+    "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+    "backend/app/api/v5.py": "430a9df195e0c01787b7c5bd5b09af634eb5417ca15774437890b447747a6740",
+    "backend/app/storage/v5.py": "eb58009dbfd715d8eff4e28b2db3ea346ac11a3b2d822f80838445b849b70fba",
+    "contracts/v2/generation-content.schema.json": "35e5dc8c75c961353676815f344b352e2536183121e06ceeda0be0558bad1ade",
+    "contracts/v2/build_generation_content.py": "5f1c9f0739f99217630a23e2cb932df9184ca95af22aa508221427c4cd45c6cf",
+    "contracts/v2/generation-content.README.md": "a5adc7c77ab9c65cf87d3f69c32cd91d164c1a7d74d69869f1ebfd120c6ea03c"
+  },
+  "optional_frontend": "No change unless proven explanation copy needs it; Main must assign exact Workspace.tsx scope first. No UI feature or full browser rebuild by default.",
+  "same_generation_structure": "Original2families/9shapes/18contracts and forward topology unchanged. Section14 structural diversity remains deferred.",
+  "Main_interface_review": {
+    "path": "evidence/upgrade/v5.0/text-authority-v2/backend-interface.json",
+    "sha256": "6ffc90040df799e5f5398c7ea0a3b29fcec7d0ffffab9604859ccf192b1c2a1d",
+    "read_tool": "5a00e9",
+    "exit_code": 0,
+    "accepted_for_implementation": true
+  },
+  "strict_conversion": "First strict raw JSON and exact v2 validation; invalid2/old1/objects.description fails without fallback. Valid2 converted by declared Host construction to complete internal v1-helper input only for reusing frozen pure structural assembly; original raw untouched.",
+  "Host_description_policy": "Only trusted role/mechanism/recipe/actual refs/valid names, no parameters/answers/witness input; original visible_state discovery gate and deterministic instruction suffix retained. No synonym randomization.",
+  "tests_policy": {
+    "Owner": "Development checks only, distinct from formal acceptance. Backend18pure schema/assembly equivalence and selected negatives/role checks, buildernew+v1 check, no repeated fullproof; Main static AST only.",
+    "QA_formal": "After allSTOP/Mainfreeze, one meaningful targeted new-v2 suite plus affected existing production adapter/prompt/item-current checks. Include v2 exact18 schema, semantic roles/rename/decoy/partial discovery, actual productionservice MockTransport once/API admission+witness+isolated saves/restore and old full definitions noLLM. Original onecall/key/budget/refusal guards unchanged.",
+    "historical_test_adaptation": "Do not leave active current contract assertions silently obsolete; allow exact new module-import normalization only, not entire GenerationService omission. Legacy direct-v1 tests preserved. Old raw/report hashes remain historical.",
+    "optional_test_generation_path": "test_generation.py is read-only unless concrete v2 expectation failure shown; no unauthorized broad edits.",
+    "no_unrelated_runs": "No complete auth/security/classic/UI/build/experiments/evaluator suite or old real executor replay unless finding justifies affected scope.",
+    "logs": "Public logs only sanitized synthetic-fixture results/counts/bools/hashes. If captured failure exposes temp auth/session data, retain raw locally ignored and explicitly derive redacted public evidence, never rewrite sealed original or emit private projections.",
+    "new_observation_path_exception": {
+      "path": "evidence/upgrade/v5.0/blueprint-item-context/qa/text-authority-v2-run1/observations/",
+      "policy": "Use existing observe helper unchanged; verify unique parent absent before formal run, never overwrite old artifacts. These new observations belong to text-authority-v2 epoch; formal runner/result/junit/seal stay in new epoch qa/.",
+      "not_atomic_exclusive_creation": true
+    }
+  },
+  "paid_calls_authorized": 0,
+  "no_Key_config_liveledger_playerDB_private_real_definition_access": true,
+  "no_provider_model_network_calls": "Owner/QA synthetic MockTransport is not a real call; block external network",
+  "stop_rules": "OwnerSTOP -> Mainfreeze -> independentQA; proven finding owner narrowfix/newfreeze, prior failures preserved. Secrets/unauthorized access/newunknown/source change stop affected chain.",
+  "human_and_model_identity": "Only human developer liy222. Existing role requested configurations historical; resumed/Main runtime not independently verified, no new agent/Astra.",
+  "next": "TXT0 docs then Backend TXT1 GO/Main TXT2, QA preparation only until freeze; docs/Git after actualQA. No release/tag/mainmerge/deploy."
+}

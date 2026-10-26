@@ -28,6 +28,7 @@ from backend.app.ai.budget import BudgetLedger
 from backend.app.ai.provider import DeepSeekConfig, DeepSeekProvider, GenerationLimits
 from backend.app.ai.v5 import GenerationService, ServiceError
 from backend.app.domain import blueprints
+from backend.app.domain import generation_content_v2 as current_content
 from backend.app.domain.generated import Draft, GeneratedRules, compile_level
 from tests.v5.test_generation import wire_body
 
@@ -96,8 +97,20 @@ def blueprint_for_messages(messages):
     return next(bp for bp in matches if bp.blueprint_id == selected)
 
 
+def synthetic_model_content(bp, version='2.0.0'):
+    """Explicit QA synthetic reply for the chosen model contract, never real raw repair."""
+    assert version in {'1.0.0', '2.0.0'}
+    value = synthetic_content(bp)
+    value['content_version'] = version
+    if version == '2.0.0':
+        value['objects'] = {key: {'name': row['name']} for key, row in value['objects'].items()}
+    return value
+
+
 def content_for_messages(messages):
-    return synthetic_content(blueprint_for_messages(messages))
+    value = json.loads(messages[1]['content'])
+    version = value['schema']['properties']['content_version']['const']
+    return synthetic_model_content(blueprint_for_messages(messages), version)
 
 
 def expected_answers(bp, params):
@@ -292,15 +305,15 @@ def test_internal_schema_is_reproducible_and_public_contracts_keep_their_roles()
 def test_production_service_adapter_api_admission_witness_save_restore_and_owner_boundary(tmp_path, monkeypatch, rooms, difficulty, seed):
     from backend.app.main import create_v5_app
     from backend.app.domain import generated
-    selected = blueprints.select_blueprint(rooms, difficulty, seed=seed)
-    content = synthetic_content(selected)
-    compiled = compile_level(blueprints.assemble_draft(selected, content), rooms, difficulty)
+    selected = current_content.select_blueprint(rooms, difficulty, seed=seed)
+    content = synthetic_model_content(selected)
+    compiled = compile_level(current_content.assemble_draft(selected, content), rooms, difficulty)
     selected_calls = []
     def choose(*args, **kwargs):
         selected_calls.append((args, kwargs))
         assert args == (rooms, difficulty) and kwargs == {}
         return selected
-    monkeypatch.setattr(blueprints, 'select_blueprint', choose)
+    monkeypatch.setattr(current_content, 'select_blueprint', choose)
     def forbidden_fixture(*args, **kwargs):
         raise AssertionError('Production generation reached make_fixture')
     monkeypatch.setattr(generated, 'make_fixture', forbidden_fixture)
@@ -313,7 +326,7 @@ def test_production_service_adapter_api_admission_witness_save_restore_and_owner
         assert CANARY.encode() not in request.content
         payload = json.loads(request.content)
         supplied = json.loads(payload['messages'][1]['content'])
-        assert supplied['schema'] == blueprints.content_schema(selected)
+        assert supplied['schema'] == current_content.content_schema(selected)
         assert supplied['schema']['properties']['blueprint_id']['const'] == selected.blueprint_id
         assert payload['max_tokens'] == 6000 and payload['response_format'] == {'type': 'json_object'}
         assert not {'tools', 'tool_choice'} & payload.keys()
@@ -349,7 +362,7 @@ def test_production_service_adapter_api_admission_witness_save_restore_and_owner
     assert state['status'] == 'won' and state['room_id'] == 'EXIT'
     def forbidden_reselection(*args, **kwargs):
         raise AssertionError('Restore/reopen attempted to generate or choose a new blueprint')
-    monkeypatch.setattr(blueprints, 'select_blueprint', forbidden_reselection)
+    monkeypatch.setattr(current_content, 'select_blueprint', forbidden_reselection)
     restored = actor.post(f'/sessions/{sid}/saves/{save_id}/restore', actor.versioned(state))
     assert restored.status_code == 200, restored.text
     state = restored.json()['data']['visible_state']
@@ -378,9 +391,9 @@ def test_production_service_adapter_api_admission_witness_save_restore_and_owner
 
 @pytest.mark.parametrize('kind', ['typed', 'extra', 'missing', 'wrong_blueprint', 'credential', 'full_draft', 'duplicate', 'depth', 'size', 'unsafe'])
 def test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback(tmp_path, monkeypatch, kind):
-    selected = blueprints.select_blueprint(1, 'hard', seed=0)
-    monkeypatch.setattr(blueprints, 'select_blueprint', lambda *args, **kwargs: selected)
-    content = synthetic_content(selected)
+    selected = current_content.select_blueprint(1, 'hard', seed=0)
+    monkeypatch.setattr(current_content, 'select_blueprint', lambda *args, **kwargs: selected)
+    content = synthetic_model_content(selected)
     if kind == 'typed': content['parameters']['positions'][0] = True
     elif kind == 'extra': content['answer'] = 'ignored'
     elif kind == 'missing': del content['objects']['obj_relation']
@@ -458,7 +471,7 @@ def test_missing_or_invalid_key_does_not_select_or_dispatch(key, monkeypatch):
     def forbidden(*args, **kwargs):
         calls.append('called')
         pytest.fail('Invalid key reached selection/provider')
-    monkeypatch.setattr(blueprints, 'select_blueprint', forbidden)
+    monkeypatch.setattr(current_content, 'select_blueprint', forbidden)
     with pytest.raises(ServiceError) as error:
         asyncio.run(GenerationService(forbidden).generate(theme='校园', room_count=1, difficulty='easy', api_key=key, draft_schema=Draft.model_json_schema()))
     assert error.value.code == 'AI_KEY_REQUIRED' and calls == []

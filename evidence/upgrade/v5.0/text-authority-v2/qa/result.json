@@ -1,0 +1,60 @@
+{
+  "kind": "Independent AI QA final targeted content2 joint result",
+  "utc": "2026-10-26T11:19:15.422433+00:00",
+  "actor": "Independent AI QA agent",
+  "source_stop": true,
+  "status": "PASS_IN_SCOPE_JOINT_SYNTHETIC_NO_REAL_V2_QUALITY",
+  "current_candidate_path": "evidence/upgrade/v5.0/text-authority-v2/candidate-qa-fixed.json",
+  "current_source_count": 420,
+  "current_source_bundle_sha256": "15e9e46eca8db586e7b5225be8c2138ed8563e92c03b14100e2bd4cd9abfaa89",
+  "current_sources_match": true,
+  "first_formal": {
+    "tool": "f81c39",
+    "exit_code": 1,
+    "items": 79,
+    "passed": 48,
+    "failures": 30,
+    "error_cases": 1,
+    "pytest_seconds": 5.431
+  },
+  "narrow_formal": {
+    "tool": "0913ae",
+    "exit_code": 0,
+    "items": 31,
+    "passed": 31,
+    "pytest_seconds": 5.848
+  },
+  "unique_items_joint": 79,
+  "single_full_green_run": false,
+  "passed48_not_repeated": true,
+  "product_changes_after_first_formal": 0,
+  "QA_protocol_only_fix": true,
+  "runtime_denied_external_config_nonTEMP": 0,
+  "stdlib_socketpair_internal_IPC_count": 141,
+  "real_paid_calls": 0,
+  "real_v2_model_quality_retested": false,
+  "human_teacher_playtest": false,
+  "old_narrative_finding": "BP-REAL-NARRATIVE-01 OPEN",
+  "complete_payload_upper_cny": {
+    "position_short": 0.133464,
+    "position_2000_four_byte": 0.19732,
+    "mapping_short": 0.1572,
+    "mapping_2000_four_byte": 0.221056
+  },
+  "original_cap_cny": 0.2,
+  "mapping_overcap_synthetic_pre_reserve_refusal_verified": true,
+  "historical_source_exception_recorded": true,
+  "old_53_registration_not_new_v2_coverage": true,
+  "report_path": "review/findings/v5-text-authority-v2.md",
+  "report_sha256": "38c9a803ebe56f5867277357a3c8b95fbe2543682c1130c7437572a27083f49c",
+  "artifact_seal_path": "evidence/upgrade/v5.0/text-authority-v2/qa/artifact-seal.json",
+  "artifact_seal_sha256": "cceb8084196a834ad2bef4c60d2767a523aee356543a38ddcd786ff7eacd702f",
+  "artifact_count": 44,
+  "integrity_sha256": "edbf892d1a513fc417c826b1aac40adcfb527014dbe9ffae80b400263606d9c1",
+  "final_metadata_command_exit_code": 0,
+  "limits": [
+    "Synthetic offline scope only; names/story/room atmosphere may still mislead.",
+    "No new real model/private-proof/playerDB/network/paid/UI/build/fullsuite/evaluation.",
+    "Original failures and historical source epochs preserved, no blanket old-seal=current claim."
+  ]
+}

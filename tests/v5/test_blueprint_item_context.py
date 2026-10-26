@@ -24,6 +24,7 @@ from backend.app.ai import v5 as ai_v5
 from backend.app.ai.budget import BudgetLedger, cost_units
 from backend.app.ai.provider import DeepSeekConfig, DeepSeekProvider, GenerationLimits
 from backend.app.domain.blueprints import content_schema, request_manifest, select_blueprint
+from backend.app.domain import generation_content_v2 as current_content
 
 EPOCH = ROOT / 'evidence/upgrade/v5.0/blueprint-item-context'
 PLAN = json.loads((EPOCH / 'plan.json').read_text(encoding='utf-8-sig'))
@@ -108,7 +109,23 @@ def test_only_request_manifest_and_generation_prompt_ast_changed():
     assert tree_without(baseline_text(path), lambda node: isinstance(node, ast.FunctionDef) and node.name == 'request_manifest') == tree_without((ROOT / path).read_text(encoding='utf-8-sig'), lambda node: isinstance(node, ast.FunctionDef) and node.name == 'request_manifest')
     path = 'backend/app/ai/v5.py'
     is_prompt = lambda node: isinstance(node, ast.Assign) and any(isinstance(target, ast.Name) and target.id == 'GENERATION_PROMPT' for target in node.targets)
-    assert tree_without(baseline_text(path), is_prompt) == tree_without((ROOT / path).read_text(encoding='utf-8-sig'), is_prompt)
+    # Only the two declared generation imports may differ. Keep every other
+    # GenerationService and companion AST node in the full comparison.
+    current_tree = ast.parse((ROOT / path).read_text(encoding='utf-8-sig'))
+    service = next(node for node in current_tree.body if isinstance(node, ast.ClassDef) and node.name == 'GenerationService')
+    imports = [(method.name, node) for method in service.body
+               if isinstance(method, (ast.FunctionDef, ast.AsyncFunctionDef))
+               for node in ast.walk(method) if isinstance(node, ast.ImportFrom)]
+    expected = {'messages': ['select_blueprint', 'request_manifest', 'content_schema'],
+                'generate': ['select_blueprint', 'assemble_draft']}
+    assert len(imports) == 2 and {method for method, _ in imports} == set(expected)
+    for method, node in imports:
+        assert node.module == 'domain.generation_content_v2' and node.level == 2
+        assert [alias.name for alias in node.names] == expected[method]
+        assert all(alias.asname is None for alias in node.names)
+        node.module = 'domain.blueprints'
+    current_nodes = [ast.dump(node, include_attributes=False) for node in current_tree.body if not is_prompt(node)]
+    assert tree_without(baseline_text(path), is_prompt) == current_nodes
     frozen = ('contracts/v2/generation-content.schema.json', 'contracts/v2/build_generation_content.py',
               'backend/app/domain/generated.py', 'backend/app/ai/provider.py', 'backend/app/ai/budget.py',
               'backend/app/api/v5.py', 'backend/app/storage/v5.py')
@@ -117,19 +134,20 @@ def test_only_request_manifest_and_generation_prompt_ast_changed():
         # line endings may differ without any source-content change.
         assert BASELINE_RAW[name] == hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), name
     observe('frozen-scope.json', {'only_manifest_and_prompt_AST_changed': True,
-        'frozen_raw_paths': list(frozen), 'output_contract_unchanged': True, 'old_actual_finding_retested': False})
+        'frozen_raw_paths': list(frozen), 'public_Draft_contract_unchanged': True, 'internal_model_contract': '2.0.0',
+        'exact_generation_imports_normalized': 2, 'old_actual_finding_retested': False})
 
 
 @pytest.mark.parametrize('seed', [0, 1])
 def test_messages_serialize_item_interaction_contract_without_output_schema_change(seed):
-    bp = select_blueprint(3, 'hard', seed=seed)
+    bp = current_content.select_blueprint(3, 'hard', seed=seed)
     before = copy.deepcopy(bp)
     legacy_schema = {'caller_owned': ['sentinel']}; original = copy.deepcopy(legacy_schema)
     messages = ai_v5.GenerationService.messages(theme='校园交接', room_count=3, difficulty='hard',
         draft_schema=legacy_schema, blueprint=bp)
     value = json.loads(messages[1]['content'])
-    assert value['schema'] == content_schema(bp)
-    assert value['blueprint'] == request_manifest(bp)
+    assert value['schema'] == current_content.content_schema(bp)
+    assert value['blueprint'] == current_content.request_manifest(bp)
     assert bp == before and legacy_schema == original
     manifest = value['blueprint']
     item_rows = [row for row in manifest['puzzles'] if row['mechanism'] == 'item']
@@ -151,7 +169,7 @@ def wire_body(messages):
 
 @pytest.mark.parametrize('seed', [0, 1])
 def test_whole_request_short_and_four_byte_theme_budget_measurements(seed):
-    bp = select_blueprint(3, 'hard', seed=seed)
+    bp = current_content.select_blueprint(3, 'hard', seed=seed)
     limits = GenerationLimits()
     assert limits.max_cost_units == 200_000_000 and limits.max_tokens == 6000 and limits.timeout_seconds == 60
     measurements = []

@@ -1,0 +1,84 @@
+{
+  "kind": "TXT1 minimum v2 interface proposal; awaiting Main GO before product edits",
+  "document_date": "2026-10-25",
+  "user_direction": "Main reports explicit user choice B; no new paid allowance",
+  "product_code_written": false,
+  "assigned_future_files": [
+    "backend/app/domain/generation_content_v2.py",
+    "contracts/v2/generation-content-v2.schema.json",
+    "contracts/v2/build_generation_content_v2.py",
+    "contracts/v2/generation-content-v2.README.md"
+  ],
+  "interfaces": {
+    "select_blueprint": {
+      "signature": "select_blueprint(room_count, difficulty, *, seed=None) -> existing frozen Blueprint with content_version='2.0.0'",
+      "behavior": "Call the original pure selector exactly once, then dataclasses.replace only content_version. Preserve families, blueprint_id, rooms, objects, puzzles, references, slots, parameter domains and randomness/seed policy. Do not add structure variants."
+    },
+    "content_schema": {
+      "signature": "content_schema(blueprint) -> fresh strict JSON Schema for the chosen v2 Blueprint",
+      "behavior": "Require a v2 Blueprint; reuse the fresh v1 schema representation. Change only content_version const to2.0.0 and objects value-schema to exact name-only. Keep rooms exact name/description, all other root fields, typed parameters, integer/permutation constraints and slot sets unchanged. Add local $defs/object_name alongside the original room text definition."
+    },
+    "request_manifest": {
+      "signature": "request_manifest(blueprint) -> fresh v2 public-to-generator outline",
+      "behavior": "Require a v2 Blueprint; reuse original pure manifest, changing only content_version and text_rule to state name-only objects and Host description authority. Retain actual-reference item_use metadata and parameter meanings. No answers, solver output or parameter values in Host descriptions."
+    },
+    "assemble_draft": {
+      "signature": "assemble_draft(blueprint, raw_model_content) -> original complete Draft dict",
+      "steps": [
+        "Require the same selected immutable v2 Blueprint used by GenerationService.messages.",
+        "Run original strict_json against the untouched raw reply, retaining size/depth/unsafe/duplicate/nonfinite protections, then strict v2 exact-key/type/domain validation.",
+        "On any invalid v2, raise ValueError immediately. Never pass a failed v2 or a model v1 reply to a v1 fallback; never drop forbidden objects.description.",
+        "Only after successful v2 validation, construct a separate declared Host-internal helper input: all accepted fields/parameter values preserved, each object contains its accepted name plus a Host-generated description, and an internal v1 helper-format version tag.",
+        "Call the original pure v1 assemble_draft only on that Host-constructed complete helper value, using the same frozen structural Blueprint. This reuses structure/fact assembly rather than copying it. The helper-format tag is internal; the accepted model contract remains2.0.0.",
+        "Return the complete original Draft to the unchanged worker; no compile/proof call inside assembly, no raw mutation, defaults, repair, retry or provider calls."
+      ]
+    },
+    "messages_handoff": "Main keeps GenerationService.messages/generate in AI/v5.py: import these four current v2 functions, select one Blueprint per generate, pass that same instance explicitly to messages and assembly, retain legacy draft_schema caller compatibility. No new messages implementation in the Backend module."
+  },
+  "host_description_policy": {
+    "permitted_inputs": "Only trusted Blueprint ObjectSlot/PuzzleSlot roles, mechanisms, recipes, actual references and validated generated object names. The description helper has no parameters/answers/witness/solver argument.",
+    "item": "Generic take-to-inventory and retain-after-use fact. An item puzzle resolves required_item_id to actual kind=item ObjectSlot, then references that object's accepted name; never hardcode obj_key, G1 or list order.",
+    "clues": "Distinguish position-family digit/device source from mapping-family symbol source; label position table, symbol correspondence, and extra digit/device fragments correctly. Never assert alphabetic sorting. Extra fragments get type identity, not an early first/second combination order.",
+    "puzzles": "Short truthful base role descriptions for code/sequence/circuit/item; leave the existing visible_state recipe/circuit/nonconsumption instruction suffix in place to avoid duplicating that full text.",
+    "discovery_boundary": "No secret values, complete answers, correct device order, future-room detail or undiscovered clue IDs in new base descriptions. Existing observed-object/all-clues-discovered combination-order gate and notebook facts remain unchanged.",
+    "inspect": "The saved base description is itself truthful when inspect returns it; the object-list projection may append the already-existing deterministic instruction, without any GeneratedRules edit."
+  },
+  "version_compatibility": {
+    "model_content_version": "2.0.0; removal of required object description is a breaking internal-output change",
+    "blueprint_family_versions": "position_v1/mapping_v1 unchanged; these identify existing structural families, independently of model content version",
+    "public_formats": "Original Draft/CompiledLevel/HTTP/Store/session/save formats and versions unchanged",
+    "old_contract": "Original blueprints.py, v1 schema/builder/README remain byte-identical and independently rebuildable",
+    "old_levels": "Saved complete definitions and their text/hash are not regenerated or migrated through v2; no old raw/evidence rewriting",
+    "evidence": "Future authorized validation binds original model raw hash and content contract version separately; no new persistent DB fields/logging"
+  },
+  "explicit_frozen_paths": [
+    "backend/app/domain/blueprints.py",
+    "backend/app/domain/generated.py",
+    "contracts/v2/generation-content.schema.json",
+    "contracts/v2/build_generation_content.py",
+    "contracts/v2/generation-content.README.md",
+    "API/Store/provider/companion/assets/old tests and all old raw/evidence/databases/environments"
+  ],
+  "owner_local_development_proposal": [
+    "Read/hash/AST provenance check of explicit frozen sources; new v2 builder creates18 local-ref variants and --check, old v1 builder --check without rewriting it.",
+    "18 pure schema/assembly cases demonstrate exact v2 slots and old structural/parameter projection equality, excluding only newly authorized descriptions.",
+    "Focused v2 negatives: old version, objects.description, missing/extra slots, type/permutation errors, duplicate JSON keys, unsafe text and raw limits; no fallback on rejection.",
+    "Two representative family hard cases cover all roles/four mechanisms/three recipes/extra fragments; renamed actual item plus decoy, deterministic/fresh output, raw/Blueprint/schema nonmutation and maximum-length names.",
+    "Only necessary representative original compile/witness smoke if Main approves, rather than repeating the unchanged full structural/proof matrix. Independent formal QA remains after stable source stop/Main freeze."
+  ],
+  "risks_and_limits": [
+    "The internal helper adaptation must be visibly after successful v2 validation; accepting raw v1 or silently discarding a model description would violate the design.",
+    "Names, story and room atmosphere remain AI text and may still imply wrong operations or facts; no arbitrary semantic correctness guarantee.",
+    "Finite templates may repeat. No synonym randomization or new structure-diversity implementation is proposed.",
+    "Original compiler answer-in-prose and all safety/admission checks stay final authority; valid schema alone does not establish admission or narrative quality.",
+    "No API/DB/network/provider/Key/config/ledger/private-proof read or paid call in current interface planning."
+  ],
+  "actual_read_commands": [
+    {
+      "tool_chunk": "3ce044",
+      "exit_code": 0,
+      "scope": "Read selected proposal, original blueprints and relevant generated rules/AGENTS; no product execution"
+    }
+  ],
+  "next_action": "Await Main interface review and explicit implementation GO. No product file or backend-owner completion report written yet."
+}

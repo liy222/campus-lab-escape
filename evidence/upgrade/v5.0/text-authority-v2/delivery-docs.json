@@ -1,0 +1,102 @@
+{
+  "kind": "Text-authority v2 Delivery documentation SOURCE STOP",
+  "date": "2026-10-26",
+  "owned_paths": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/text-authority-v2/delivery-docs.json"
+  ],
+  "accepted_candidate": {
+    "path": "evidence/upgrade/v5.0/text-authority-v2/candidate-qa-fixed.json",
+    "sha256": "7210a08f64537f31545bcea9a47cae17b9f0b3138de779bf6fd508586d1fddb9",
+    "source_count": 420,
+    "source_bundle_sha256": "15e9e46eca8db586e7b5225be8c2138ed8563e92c03b14100e2bd4cd9abfaa89"
+  },
+  "qa_evidence": {
+    "report": "review/findings/v5-text-authority-v2.md",
+    "report_sha256": "38c9a803ebe56f5867277357a3c8b95fbe2543682c1130c7437572a27083f49c",
+    "result": "evidence/upgrade/v5.0/text-authority-v2/qa/result.json",
+    "result_sha256": "ca453697e50257363f29e348f62254ab4a7bdaed59f0b002bb2cd56573272942",
+    "artifact_seal": "evidence/upgrade/v5.0/text-authority-v2/qa/artifact-seal.json",
+    "artifact_seal_sha256": "cceb8084196a834ad2bef4c60d2767a523aee356543a38ddcd786ff7eacd702f",
+    "sealed_artifacts": 44,
+    "main_acceptance": "evidence/upgrade/v5.0/text-authority-v2/accepted.json",
+    "main_acceptance_sha256": "aed1662e540cdccce45d83c4a6111edb6a49da4efb8f1ad8482b8ddee22a4281"
+  },
+  "documented_design": {
+    "choice": "User-selected option B",
+    "internal_contract": "GenerationContent 2.0.0; AI emits object names only, while Host derives trusted item explanations from role/mechanism/recipe/real references/names and uses existing discovery gates.",
+    "unchanged": "Public HTTP API, Draft, game rules, Store and save format; historical v1 definitions and saves retain original-version restore behavior.",
+    "structure": "Two existing families, nine request shapes and 18 contract variants; not 18 topologies. Additional structural diversity remains deferred.",
+    "contract_reference": "contracts/v2/generation-content-v2.README.md",
+    "schema_reference": "contracts/v2/generation-content-v2.schema.json"
+  },
+  "formal_qa_joint_summary": {
+    "first_run": {
+      "source_count": 419,
+      "items": 79,
+      "passed": 48,
+      "failed": 30,
+      "errors": 1,
+      "exit_code": 1,
+      "cause": "QA runner guard incorrectly blocked the Windows standard-library socketpair self-wakeup; original artifacts and exit preserved."
+    },
+    "qa_runner_only_fix": "Socketpair QA-runner correction only; no product-source change.",
+    "narrow_run": {
+      "source_count": 420,
+      "items": 31,
+      "passed": 31,
+      "exit_code": 0,
+      "note": "Exact prior failed/error nodes rerun; the first run's 48 passing items were not repeated."
+    },
+    "joint_unique_items": 79,
+    "single_full_green_run": false,
+    "product_source_byte_identical_between_candidates": true,
+    "new_paid_calls": 0,
+    "real_v2_model_quality_sample": false,
+    "human_or_teacher_playtest": false
+  },
+  "budget_and_limits": {
+    "hard_three_room_original_cap_yuan": 0.2,
+    "position_2000_four_byte_theme_upper_yuan": 0.19732,
+    "mapping_2000_four_byte_theme_upper_yuan": 0.221056,
+    "mapping_over_cap_refused_before_reservation_in_synthetic_test": true,
+    "cap_raised": false,
+    "old_narrative_finding": "BP-REAL-NARRATIVE-01 remains OPEN; old text not retroactively fixed.",
+    "semantic_risks": "Generated names, story and room atmosphere may still mislead; no general narrative reliability or human difficulty acceptance.",
+    "evaluation": "The older 53-source registration does not cover the new v2 contract; evaluation remains INSUFFICIENT_EVIDENCE.",
+    "not_run": "No unrelated full suite, build, UI, evaluator or real model run was performed for this documentation task."
+  },
+  "commands_and_results": [
+    {
+      "command": "Read-only ConvertFrom-Json parsing of QA result, QA artifact seal, and Main acceptance",
+      "exit_code": 0
+    },
+    {
+      "command": "Test-Path for all contract/report/result/run/seal/acceptance targets referenced by the new documentation",
+      "exit_code": 0,
+      "output": "ALL_LINKS_EXIST"
+    },
+    {
+      "command": "git -c core.whitespace=cr-at-eol diff --check -- README.md release/V5.md",
+      "exit_code": 0,
+      "note": "Only existing LF-to-CRLF warning for release/V5.md."
+    },
+    {
+      "command": "git diff --stat -- README.md release/V5.md",
+      "exit_code": 0,
+      "output": "2 files changed, 8 insertions(+), 0 deletions(-)"
+    },
+    {
+      "command": "Get-FileHash for accepted candidate, QA report/result/seal, Main acceptance, contract/schema, README.md and release/V5.md",
+      "exit_code": 0
+    }
+  ],
+  "sha256": {
+    "README.md": "921bb6c74943db389b360fbc11db0abc77b7e2f244c1bbf0a406c872d897f3e5",
+    "release/V5.md": "fda0c36e76a6080bc7338acaeb48a254490bbac9536d6dab52afd2532f16ce52",
+    "contracts/v2/generation-content-v2.README.md": "fc382080b8be820f781e5184d4186859e3fc962cd43161858a0e4601a9496d98",
+    "contracts/v2/generation-content-v2.schema.json": "52aa01c743af18853758aa4174dc1c18d125b970559ed8042e56fbfcec4ac8ef"
+  },
+  "status": "DELIVERY SOURCE STOP; documentation only, no commit or push."
+}

@@ -1,6 +1,6 @@
 # 《逃离校园实验室》v5.0正式构建计划书
 
-版本1.3；2026-10-25按用户要求追加第14节后续结构多样性规划，未启动该阶段；第13节当前已接受的生成职责保持。
+版本1.4；2026-10-25用户明确选择物件说明方案B，新增第15节当前实施范围；第14节结构多样性仍在本阶段完成后，尚未启动。
 
 版本1.2修订来源：2026-10-24按用户选择的“程序结构+AI内容与谜面参数”修订，保留2026-10-23实施登记与2026-10-22设计讨论来源。用户于2026-10-23要求开始执行，并持续正常提交到GitHub。此文定义范围和验收，不是执行证明。
 
@@ -269,3 +269,28 @@ R4实际模型质量仍须新的来源绑定请求预检及明确有限授权，
 4. 使用隔离数据库验证当前会话保存/恢复/reload与旧完整定义hash保持；不得使用玩家数据库作测试，不重造旧档或挪用旧验证通过记录。
 5. 结构选择、合法性和差异验证先用离线受控输入完成。新模型合同/完整payload费用另做实际纯计量；需要真实模型时仍须新的有限明确批准，失败占次数，异常停止、原账本和0重试保持。
 6. 结构可解不等于好玩、每次不同或真人难度合格；有限样本与人类体验分别记录。当前本节为Planned，无新增测试、实际生成、发布tag、main合并或部署结论。
+
+
+## 15. 2026-10-25接受：规则生成物件说明（方案B）
+
+用户明确表示“选择方案b”。接受docs/v5-generation-text-authority-proposal.md中的B方向及TXT0–TXT4；第13节结构选择/typed参数/严格编译/费用等保持，本节优先覆盖物件description来源与模型内部合同版本。选择不等于实现或验收通过，不包含新的付费调用。第14节SD0–SD4继续后置。
+
+### 15.1 职责、合同与禁止行为
+
+内部GenerationContent=2.0.0：root仍为content_version/blueprint_id/title/story/rooms/objects/parameters；rooms精确name/description（氛围），objects精确name-only。版本/蓝图const、原18形状及typed参数严格值域保持。多description/错版本/缺项/extra字段直接拒绝，不能接收后删除、补默认值或退回v1。AI保留故事、氛围、名称与真实数字/排列/映射；名称和背景仍有语义风险，不能承诺全部文案可靠。
+
+Host在合法v2内容的首次声明式组装中生成物件说明：只由Blueprint真实角色/机制/配方/引用与合法名称决定，不接收秘密参数、answers/witness或solver结果。道具与装置名称按actual required_item_id引用；不hardcode obj_key、G1或谜题先后。资料按实际类型描述，不断言字母排序，不提前公开数值、正确顺序或未发现ID。复用原visible_state发现门及规则补充，inspect基础说明本身也须真实，避免两套规则文字重复。当前不新增同义随机化或多骨架。
+
+### 15.2 复用、版本和兼容
+
+新backend/app/domain/generation_content_v2.py提供select_blueprint/content_schema/request_manifest/assemble_draft：旧选择器只调用一次，再只改不可变Blueprint.content_version；v2先严格解析/校验，合格后才创建独立Host内部helper值（合法名称/参数保留，description由Host生成，内部v1 helper tag）调用旧纯结构组装器。它是预先定义的v2到原Draft转换，不能把任何bad v2或模型v1回复作为生产fallback。原回复不改、不伪称Host文字来自模型。
+
+旧blueprints.py、v1 Schema/builder/README原字节保留，旧builder仍可重建。新增generation-content-v2.schema.json/build_generation_content_v2.py/说明，公开API/原Draft/CompiledLevel/规则/Store/存档格式及版本不变。无新持久字段/表/原稿日志；rawhash/合同版本仅在授权隔离验证证据中绑定。旧完整定义与文案/hash不重绘，不通过v2重造旧档或调用模型。
+
+### 15.3 文件归属、依赖与验收
+
+精确Owner/冻结hash/命令范围见evidence/upgrade/v5.0/text-authority-v2/plan.json。Main负责TXT0规格/ADR和AI/v5.py生成prompt及两处合同import；Backend负责TXT1新模块与3新合同文件；QA只准备新v2测试及受替代合同期待的窄调整，不放宽Key、一次调用、预算或未知结果保护；Delivery仅在实际QA后改README/release。compiler/generated.py、API/Store/provider/budget、伙伴函数、素材及旧v1路径冻结。若确有必要影响冻结范围，先明确列出原因与实际影响。
+
+顺序TXT0→接口审读→TXT1/TXT2→所有Owner SOURCE STOP/Main候选冻结→独立TXT3→TXT4正常liy222提交推送。验收覆盖：18精确v2合同及非法拒绝；改名/诱饵道具与四机制三配方、基础extra资料的说明事实；未发现/部分/全部发现边界；生产GenerationService+MockTransport一次请求及原Key/超cap拒绝；新档/旧完整定义的隔离保存恢复reload与hash保持。只选受影响范围，不机械重复无关旧全套/build/UI/付费。
+
+Owner开发检查不等于独立验收；旧失败、旧成功与旧评审原字节保留为各自历史epoch。QA证据输出仅必要计数/布尔/hash或明确合成数据，不读取真实私有定义/投影；失败日志若含临时凭据只本地保留原件并另做显式脱敏公开副本。原单次6000tokens/60秒/0.20元及0重试/原账本/old unknown门保持。当前真实生成和叙事质量尚无v2样本，未来需来源绑定纯预检及新的有限批准；不将离线Mock或代码证明当真实质量通过。
