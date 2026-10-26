@@ -479,3 +479,6 @@ Main b19231/69d80a reads finaldocs: initialdelivery record remainsa9d34e84, Deli
 
 ### Text-authority immutable raw pytest whitespace exception, 2026-10-26
 Main precommit a60f18 wrapper1/globalgitcheck2 stopped beforecommit: only original sealed run1/output.txt blanklines909/921/922 contain spaces. Preserve raw473803bc unchanged, do not normalize/rewrite old44seal or fake a clean raw. Main permits exactlythat rawlog byte exception; all remaining staged source/docs/records must pass same CRLF-awarecheck0. New git-whitespace-exception.json records actualfailure/threeblanklines/rawindexmatch/scopedcheck; no source/test/QA rerun or paidcall.
+
+### Text-authority B source remote sealed, 2026-10-26
+Sourcecommit5da36825dc6e523836e576eb9480bcc022699c1d normalcommit/push/remoteverified0, GitHubauthor+committerliy222 verified.78selectedfileindex bytes exact; finitecredential0, onlyimmutable rawpytestlog3space-onlylines exception explicitly recorded, allother source/docs/records whitespace0. Postpush420source/44QA/original8 match, oldsourceepoch/oldP2OPEN preserved. Main now only rootprogress and sync.json metadata; no product/QA/raw/docs retest or paidcall. B finiteoffline delivered, realv2quality notsampled, futuremultiskeleton notstarted, no release/tag/mainmerge/deploy/Actions.
