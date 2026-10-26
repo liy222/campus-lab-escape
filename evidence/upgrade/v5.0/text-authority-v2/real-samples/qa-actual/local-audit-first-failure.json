@@ -1,0 +1,16 @@
+{
+  "kind": "Closed-allowlist local QA first helper comparison failure, no actual generation failure",
+  "actual_tool": "4f8502",
+  "actual_exit_code": 1,
+  "safe_output": {
+    "stage": "saved_definition_gate",
+    "error_type": "AssertionError"
+  },
+  "helper_before_fix_sha256": "fdf3e2ace96668b079c4e1dbaac4da0879b07e5c0f84271adae3551a0589e009",
+  "bare_assembler_dict_equals_saved_full_Draft_dump": false,
+  "validated_Draft_dump_equals_saved_full_Draft_dump": true,
+  "cause": "QA compared unmaterialized assembler dict with saved validated Draft dump including original Pydantic defaults. Must compare Draft.model_validate(...).model_dump; no raw/value alteration.",
+  "private_values_printed": false,
+  "saved_action_replay_reached_before_failure": false,
+  "new_HTTP_provider_compile_solver_DB_calls": 0
+}

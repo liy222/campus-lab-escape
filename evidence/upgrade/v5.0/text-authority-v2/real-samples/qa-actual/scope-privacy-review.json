@@ -1,0 +1,125 @@
+{
+  "kind": "Independent AI QA current actual scope/privacy and prose judgment",
+  "utc": "2026-10-26T11:58:05.327754+00:00",
+  "actor": "Independent AI QA agent",
+  "exit_code": 0,
+  "actual_Main_execute": {
+    "tool": "96c486",
+    "command": "python -B -X utf8 evidence/upgrade/v5.0/text-authority-v2/real-samples/run.py --execute",
+    "exit_code": 0,
+    "seconds": 7.42,
+    "attempts": 1,
+    "remaining_paid_authorization": 0
+  },
+  "QA_local_commands": [
+    {
+      "tool": "4f8502",
+      "exit_code": 1,
+      "stage": "Pre-replay saved-definition comparison; unvalidated dict vs saved normalized Draft dump, no actual model failure or prose output"
+    },
+    {
+      "tool": "1de744",
+      "exit_code": 0,
+      "scope": "Booleans only diagnose old helper representation mismatch"
+    },
+    {
+      "tool": "916b5d",
+      "exit_code": 0,
+      "scope": "Closed-allowlist raw/schema/saved-definition/33-step memory/auth/saved-ledger audit; no HTTP/compiler/solver/provider/DB"
+    },
+    {
+      "tool": "96996a",
+      "exit_code": 0,
+      "scope": "Only explicitly selected admitted player-public prose derivative and scalar checks read"
+    },
+    {
+      "command": "Standard-library-only public-policy/hash/ignore/finite privacy check and new metadata; full tool transcript",
+      "exit_code": 0
+    }
+  ],
+  "source_count": 422,
+  "sources_current_and_saved_after_match_preview": true,
+  "source_map_location": "evidence/upgrade/v5.0/text-authority-v2/real-samples/offline-preview-v1.json",
+  "preflight_original_artifacts_unchanged": 8,
+  "local_private_sha256": {
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/G3-provider-result.json": "4947c238e47aa8f3cd7d846845f6985ba9981c6b77388dc7f7ef09bdd65ca070",
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/raw-sensitive/G3-private-definition-local.json": "3122e470ef1a2a3444deb7d8755bbeb6601a69fd6e6a0350b29152c83e8a3256",
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/raw-sensitive/G3-witness-local.json": "e81a66197c44ae5d33799132a44f4dde7d343008b315ab84568951420b487e05",
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/raw-sensitive/G3-api-replay-local.json": "e148b6312d732346c3a92197c98df61f707df4044e44d2ea3e2b33f525aa6ced"
+  },
+  "all_four_private_originals_ignored": true,
+  "git_check_ignore_exit_code": 0,
+  "Main_private_policy_path": "evidence/upgrade/v5.0/text-authority-v2/real-samples/actual-private-artifact-policy.json",
+  "Main_private_policy_sha256": "1643685c8db1bc3cdd401995673aa57616a8a6c01bcfa902b800c0a2373d83cb",
+  "public_raw_checked": [
+    {
+      "path": "evidence/upgrade/v5.0/text-authority-v2/real-samples/user-authorization.json",
+      "sha256": "1d9048b0693bf57aaebde81e1e8542073868f0a44e682e1475c1bad023ca6423",
+      "finite_credential_pattern_matches": 0
+    },
+    {
+      "path": "evidence/upgrade/v5.0/text-authority-v2/real-samples/authorization-binding.json",
+      "sha256": "2205583bfa08ff65874990c96e60787cbd43d611ed9f450ddadfa6433bca5ee4",
+      "finite_credential_pattern_matches": 0
+    },
+    {
+      "path": "evidence/upgrade/v5.0/text-authority-v2/real-samples/execute-started.json",
+      "sha256": "06973ef6a825930c9d13b9e098db91dff7ab5d3ac6c92fc8f79dd48e6fc02007",
+      "finite_credential_pattern_matches": 0
+    },
+    {
+      "path": "evidence/upgrade/v5.0/text-authority-v2/real-samples/dispatch-journal.jsonl",
+      "sha256": "b31b3092d3bf27d1d9f715bc454913c014ac655b9aec355dc3725bd191cd6faa",
+      "finite_credential_pattern_matches": 0
+    },
+    {
+      "path": "evidence/upgrade/v5.0/text-authority-v2/real-samples/G3-exact-payload.json",
+      "sha256": "3d79fa83314974920f10e7bd2b52be4db96396886ecd1dbcb7a6cfc064bc3ab4",
+      "finite_credential_pattern_matches": 0
+    },
+    {
+      "path": "evidence/upgrade/v5.0/text-authority-v2/real-samples/G3-api-result.json",
+      "sha256": "3437cbe887b3dd13874a0ba50b209ae72102b8dbca58e730b21679f48a602eb6",
+      "finite_credential_pattern_matches": 0
+    },
+    {
+      "path": "evidence/upgrade/v5.0/text-authority-v2/real-samples/ledger-before.json",
+      "sha256": "a069f5dfef35e68f3da40db322b7a34766ea3df3a16a590791e81b0e144824bc",
+      "finite_credential_pattern_matches": 0
+    },
+    {
+      "path": "evidence/upgrade/v5.0/text-authority-v2/real-samples/ledger-after.json",
+      "sha256": "d0c4d47ad54875cd8bc8a01dec6d77d86cb655fc164ab49ac3464c8ae39d6057",
+      "finite_credential_pattern_matches": 0
+    },
+    {
+      "path": "evidence/upgrade/v5.0/text-authority-v2/real-samples/result.json",
+      "sha256": "f327a8f75f1fd1ef59ca8a106a8acb423d649220d2e8dc7641d3cd30a37fc43f",
+      "finite_credential_pattern_matches": 0
+    }
+  ],
+  "provider_raw_excluded_from_public_artifacts": true,
+  "explicit_player_prose_derivative_sha256": "7073ea23478278f30778d17611f9d9b65953ba60c9db379ca4d5bc9068971c1b",
+  "raw_and_derivatives_not_conflated": true,
+  "private_parameters_clue_values_answers_witness_projection_dumped_to_AI_context": false,
+  "prose_findings": [
+    {
+      "id": "TXT-C6-HOST-TEXT",
+      "status": "FINITE_SAMPLE_CONSISTENT",
+      "scope": "Full generated key name in actual required-item device, reusable-item instruction and symbol-source wording are consistent with original rules in this admitted sample."
+    },
+    {
+      "id": "TXT-C6-STORY-01",
+      "priority": "P2",
+      "status": "OPEN",
+      "public_field": "AI_story",
+      "short_quote": "所有材料都要归位，钥匙也不必带走。",
+      "finding": "Story introduces an unsupported material-return expectation and may mislead whether the key must be carried; rules retain the required key to EXIT and offer no return action. Key wording admits an end-of-story interpretation, so not every reading is declared false. Overall narrative quality is not passed."
+    }
+  ],
+  "discovery_limit": "Actual witness had unobserved12 and observed-complete12 object contexts, observed-partial0. Do not claim this actual path tested an observed-partial context; earlier synthetic TXT-C3 and unchanged original gate are separate evidence.",
+  "timing_limit": "Recorded generation/session/time/save metadata reused only to compare saved hashes; automatic elapsed0/ratingS is not human time/difficulty.",
+  "privacy_limit": "Finite pattern scan cannot prove absence of every secret encoding; configured Key never read. Provider raw and three proofs are local-only.",
+  "old_narrative_finding": "BP-REAL-NARRATIVE-01 remains OPEN; old raw/report/seals unmodified",
+  "no_new_runtime_tests_HTTP_compiler_solver_build_UI_eval_provider_paid": true
+}

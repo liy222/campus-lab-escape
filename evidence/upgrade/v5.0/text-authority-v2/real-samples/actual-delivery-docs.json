@@ -1,0 +1,89 @@
+{
+  "kind": "Content2 real G3 sample Delivery documentation SOURCE STOP",
+  "date": "2026-10-26",
+  "owned_paths": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/actual-delivery-docs.json"
+  ],
+  "source_binding": {
+    "accepted_source_count": 422,
+    "source_bundle_sha256": "dc06818ccf9031d4590d6266fd217cbd87ac6bb25a21bd3e03ad1dde923bf085",
+    "independent_review": "review/findings/v5-text-authority-v2-real-result.md",
+    "review_sha256": "f8a2ca099a64721f043af399b17e8ced120c2e44e6bbebdb57c7d9935e339d45",
+    "actual_QA_result": "evidence/upgrade/v5.0/text-authority-v2/real-samples/qa-actual-final-v1.json",
+    "actual_QA_result_sha256": "e01d7d8f29c6904c0c632bb1de1ed48081ac5ca1b0f03745a0d13ae5bb57e46e",
+    "actual_QA_seal": "evidence/upgrade/v5.0/text-authority-v2/real-samples/qa-actual-seal-v1.json",
+    "actual_QA_seal_sha256": "ad7801d01fb37048e22bdd2181ae9c8ee7d6de2a748c7aec4b73b0645b72c443",
+    "Main_acceptance": "evidence/upgrade/v5.0/text-authority-v2/real-samples/main-actual-accepted.json",
+    "Main_acceptance_sha256": "9a510af7d76586419dc2c706e28699f62fd8f779e4d7ed024011c0820affec4a"
+  },
+  "documented_actual_result": {
+    "authorized_calls": 1,
+    "case": "G3, 3 rooms, hard, mapping_v1, controlled Host seed 1",
+    "execution": "ready_and_replayed; exit 0",
+    "object_slots": 14,
+    "HTTP_actions_to_EXIT": 33,
+    "puzzles": "6/6",
+    "clues": "7/7",
+    "independent_local_rule_replay": "Initial state, 33/33 saved step hashes, and final projection matched. Fully named key was used nonconsumingly and remained in inventory through EXIT; Host symbol-source explanation was within its limited verified scope.",
+    "partial_discovery_coverage": 0,
+    "usage_conservative_upper_increment_yuan": 0.011742,
+    "pre_reserved_upper_yuan": 0.158208,
+    "provider_invoice": false,
+    "calls": "146 -> 147",
+    "historical_unknown_count_and_identity_unchanged": 3,
+    "new_unknown": 0,
+    "pending": 0,
+    "frozen": false,
+    "finalization_failures": [],
+    "retries": 0,
+    "partner_or_evaluator_calls": 0,
+    "remaining_authorized_slots": 0
+  },
+  "narrative_and_scope_limits": [
+    "The story says all materials should be put back, an operation that is not implemented. Its line that the key need not be taken away is ambiguous/misleading risk, not evidence that the key is forcibly consumed or discarded.",
+    "Overall narrative quality is not passed; original BP-REAL-NARRATIVE-01 and new TXT-C6-STORY-01 remain OPEN. No general reliability, arbitrary-theme, human difficulty or player experience claim.",
+    "Automated elapsed=0 and rating=S are not human time or ratings. No save/restore, UI, build, evaluation or human/teacher test was performed.",
+    "Only saved initial/step/final state hashes were replayed; original full API response bodies were not saved, so opaque full-body hashes cannot be reconstructed.",
+    "The public evidence uses explicit allowlisted derived prose/metadata and hashes. Three private proof artifacts and provider raw remain local/ignored; this delivery record contains no raw provider output or private values."
+  ],
+  "checks_performed_by_delivery_owner": [
+    {
+      "command": "Test-Path for public review, QA result, QA seal, and Main acceptance links",
+      "exit_code": 0,
+      "output": "ALL_PUBLIC_TARGETS_EXIST"
+    },
+    {
+      "command": "Byte append to README.md and release/V5.md using UTF-8 without rewriting prior bytes",
+      "exit_code": 0
+    },
+    {
+      "command": "python -c EOF byte check for README.md and release/V5.md",
+      "exit_code": 0,
+      "output": "README EOF_BYTES 2 (CRLF); release/V5 EOF_BYTES 1 (LF); both terminate with newline."
+    },
+    {
+      "command": "git -c core.whitespace=cr-at-eol diff --check -- README.md release/V5.md",
+      "exit_code": 0,
+      "note": "Only existing LF-to-CRLF warning for release/V5.md."
+    },
+    {
+      "command": "git diff --stat -- README.md release/V5.md",
+      "exit_code": 0,
+      "output": "2 files changed, 4 insertions(+), 0 deletions(-)"
+    },
+    {
+      "command": "Get-FileHash for both documents and linked public QA/acceptance files",
+      "exit_code": 0
+    }
+  ],
+  "sha256": {
+    "README.md": "70f4b796cee24e5929376233ca993c1fba193764be1e02d02fa3feed67bab1d0",
+    "release/V5.md": "0925ed6fc8d3c0e4e1d20556e4a48509267692115ff0e27122f5911ad19d3583"
+  },
+  "not_run_by_delivery_owner": [
+    "No tests, build, network, provider, model, or paid calls. Raw provider output and private proof files were not opened."
+  ],
+  "status": "SOURCE STOP; documentation only, no commit or push."
+}
