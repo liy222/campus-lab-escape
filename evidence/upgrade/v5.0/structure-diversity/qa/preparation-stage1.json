@@ -1,0 +1,154 @@
+{
+  "kind": "Independent AI QA SD3 stage1 preparation SOURCE STOP; formal0",
+  "utc": "2026-10-27T10:04:23.073401+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "formal_runs": 0,
+  "product_candidate": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/candidate.json",
+    "sha256": "ac5f8825a241b6ac33bc440d6e29679e433a65515ae58d3970d656f0f556ba87",
+    "count": 440,
+    "bundle": "213163d49ab30b159e114ab357aed99d5ee910d255f9cb9366d8650a70cac5b9"
+  },
+  "stage1_inputs_sha256": {
+    "tests/v5/test_structure_variants.py": "b344e1f05318d4ed5fc36b32cfacfa634bc82360f482faa1d9c38a0616501e59",
+    "tests/v5/test_blueprint_generation.py": "e2da4aaf00b00b375af87525e4056bc528cce1396a914850430146c3d960e762",
+    "evidence/upgrade/v5.0/structure-diversity/qa/run_targeted.py": "8f11ffa85c0e7716a9286cd0f04a742daa90c5291ab64589ad7ba8ee8013a383",
+    "evidence/upgrade/v5.0/structure-diversity/qa/reopen_probe.py": "b6738e3fe0506f780901a3262278029490616366787480b3f8fe3618983f3027",
+    "evidence/upgrade/v5.0/structure-diversity/implementation-plan.json": "829beff45ade19eb0239470b9ebee4aee96da35d354bb2fe4fa8248419197c24",
+    "tests/v5/conftest.py": "586e2cb33b5dd9ed379babdc1d9a7eb71e34337713e0bacb9130a95e8f4431bd",
+    "tests/v5/test_generation.py": "1753c6d290586230a738fbdb28f489486ea842193373fae6c5ccdb4daf8fa4fb"
+  },
+  "new_QA_source_inputs": [
+    "tests/v5/test_structure_variants.py",
+    "evidence/upgrade/v5.0/structure-diversity/qa/run_targeted.py",
+    "evidence/upgrade/v5.0/structure-diversity/qa/reopen_probe.py"
+  ],
+  "authorized_old_helper_input": "tests/v5/test_blueprint_generation.py",
+  "old_helper_only_delta": "blueprint_for_messages uses current_content.select_blueprint seeds0..3. Entire inverse bytes recover baseline hash; all AST outside this function unchanged (90e6e4).",
+  "old_helper_historical_raw_sha256": "cc7be1a0e36532f203fb3a19a309a7ba1e2742efed0dfcecffc4210f8f90cb80",
+  "expected_unique_pytest_items": 75,
+  "case_counts_from_static_definition": {
+    "test_36_selected_contracts_original_proof_and_actual_mechanism_order": 36,
+    "test_two_signatures_and_actual_order_change_not_family_or_hash_only": 9,
+    "test_canonical_all_ID_rename_display_order_and_text_value_invariance": 4,
+    "test_unused_identical_material_rows_keep_decoy_multiplicity": 2,
+    "test_signature_nonunique_topology_is_unsupported_not_a_claim_of_unsolvability": 1,
+    "test_manifest_custom_renamed_references_and_unused_item_do_not_depend_on_catalog_ID": 1,
+    "test_reverse_unobserved_partial_complete_discovery_and_retained_item": 2,
+    "test_seed_strictness": 4,
+    "test_default_exactly_one_host_random_choice_and_explicit_legacy_family_seed": 1,
+    "test_new36_and_retained18_catalog_builders_reproduce_without_migration": 1,
+    "test_original_admission_refuses_invalid_or_unproven_candidates": 8,
+    "test_production_same_instance_API_multimoment_restore_and_process_reopen": 2,
+    "test_old_complete_definitions_preserve_bytes_text_and_hash_without_selection": 2,
+    "test_key_before_selection_and_wrong_structure_reply_no_repair": 1,
+    "test_full36_short_and_four_maximal_four_byte_requests_and_overcap_before_reserve": 1
+  },
+  "original36proof_cache": "Once per selected cell, then existing domain witness toEXIT/mechanism sequence. Cache preserves failures without retry; dependent cases reuse compiled cells.",
+  "explicit_checks": [
+    "Accepted9shape room puzzle/object counts, R actualref code/extra migration/G1 shared relation+device/first item and key free/puzzle locks and slots",
+    "Full-row signatures all-ID rename/object reorder, family equivalence, text/typed values excluded, unused item+clue decoy multiplicity, unsupported branch distinction",
+    "Actual legal R1/R3 partial discovery with first-item unlocking relation and retaineditem, Host actualfullname",
+    "Eight original admission invalid/unproven types without lowered bound",
+    "Two production service/MockTransport API R1hard/R3hard exactlyone selection and sameinstance through schema/manifest/assembly, three moments save/selectedrestore/reload/fresh child processhash",
+    "Controlled historical fullv1/v2 definitions preserve bytes/text/hash on save/restore/factoryreload/fresh child; selector and injected generation forbidden after setup",
+    "40 complete payload bounds use real DeepSeekProvider.complete json.dumps capture, legal branches stop at synthetic reservation sentinel; overcap before reserve/send. No real ledger/provider network.",
+    "New36 and retained old18+18 schema builder reproduction checks in new test only"
+  ],
+  "fixture_cache_boundary": "Owned fresh TEMP directory with source-bundle marker and R1/R3 controlled synthetic Draft+witness only; index stores paths/hashes for later owned browser. No old actual raw/private artifacts.",
+  "runtime_isolation": "Entire worker AST matches proven NG Windows-safe socketpair worker. Only original socketpair threadlocal loopback permitted; external transports/config and nonTEMP sqlite denied. Fresh reopen child has all outbound connects denied and sqlite restricted to exact owned TEMP DB.",
+  "observation_output": "new structure-diversity/qa/run1/observations only; all old observation variables removed",
+  "proposed_formal_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/structure-diversity/qa/run_targeted.py --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage1.json --output evidence/upgrade/v5.0/structure-diversity/qa/run1",
+  "expected_wall_seconds": "15-60 seconds, runner120s; proof retains25000/5seconds unchanged",
+  "stage2_pending": [
+    "One necessary VITE_GAMEPLAY_VERSION=v5 npm build with all dist hashes: old build source matches but had no output hash binding",
+    "QA-only browser_service.py and tests/v5/run_structure_variants_browser.mjs still to prepare/freeze separately, products remainSTOP",
+    "True R1hard8objects andR3hard crossroom route at1280desktop/390mobile, owned8001 server only; occupiedport STOP and no user processes killed"
+  ],
+  "actual_preparation_commands": [
+    {
+      "tool_chunk": "6c99f0",
+      "exit_code": 0,
+      "scope": "Read implementation plan and current ownership only"
+    },
+    {
+      "tool_chunk": "c23c21",
+      "exit_code": 0,
+      "scope": "Read isolated existing API/save helpers"
+    },
+    {
+      "tool_chunk": "a8ec02",
+      "exit_code": 0,
+      "scope": "Read existing trueCanvas runner and original admission source"
+    },
+    {
+      "tool_chunk": "c02377",
+      "exit_code": 0,
+      "note": "Read-only fixture/server/UI/build context; invalid Windows rg wildcard emitted nonterminating path error, followed by exact-file lookup623317"
+    },
+    {
+      "tool_chunk": "623317",
+      "exit_code": 0,
+      "scope": "Read build/source configuration paths"
+    },
+    {
+      "tool_chunk": "ffbdb3",
+      "exit_code": 0,
+      "scope": "Read relevant build/static/UI source"
+    },
+    {
+      "tool_chunk": "9b9beb",
+      "exit_code": 0,
+      "scope": "Static oldbuild source matches but lacks dist output hashes; plan one necessary build"
+    },
+    {
+      "tool_chunk": "f127dd",
+      "exit_code": 0,
+      "scope": "Read final Backend interface code only"
+    },
+    {
+      "tool_chunk": "31ced9",
+      "exit_code": 0,
+      "scope": "Read saved state/derive/storage signatures only"
+    },
+    {
+      "tool_chunk": "577f0f",
+      "exit_code": 0,
+      "scope": "Read original load_compiled process-reload path"
+    },
+    {
+      "tool_chunk": "8baa60",
+      "exit_code": 0,
+      "scope": "Read BoundStore and immutable rule metadata"
+    },
+    {
+      "tool_chunk": "69d713",
+      "exit_code": 0,
+      "scope": "Read provider serialization and canonical row fields"
+    },
+    {
+      "tool_chunk": "5f34a8",
+      "exit_code": 0,
+      "scope": "Read provider pre-reserve order; no execution"
+    },
+    {
+      "tool_chunk": "90e6e4",
+      "exit_code": 0,
+      "scope": "Static newtest/probe syntax, whole-worker AST inheritance and oldhelper inverse-byte proof only"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; inline AST-only75item counting/source hashes/this preparation record; full source in transcript",
+      "exit_code": 0
+    }
+  ],
+  "product_import_compile_proof_pytest_browser_build_executed": false,
+  "actual_raw_private_Key_config_liveledger_playerDB_network_or_paid_access": false,
+  "new_agents_or_commit": false,
+  "limitations": [
+    "Stage1 only, not SD3 complete: browser/build preparation and separate explicit GO remain.",
+    "Owner36 development is not this independent execution. Current formal0 until Main QA-source freeze/GO.",
+    "Historical real435 source becomes old epoch; no new structure real-model/narrative/yield/human quality claim.",
+    "Finite signatures do not guarantee unique random outcomes; proofUNKNOWN retained not called solved or unsolvable."
+  ]
+}

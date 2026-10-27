@@ -92,8 +92,8 @@ def synthetic_content(bp, alternate=False):
 def blueprint_for_messages(messages):
     value = json.loads(messages[1]['content'])
     selected = value['schema']['properties']['blueprint_id']['const']
-    matches = [blueprints.select_blueprint(rooms, difficulty, seed=seed)
-               for seed in (0, 1) for rooms, difficulty, *_ in SHAPES]
+    matches = [current_content.select_blueprint(rooms, difficulty, seed=seed)
+               for seed in (0, 1, 2, 3) for rooms, difficulty, *_ in SHAPES]
     return next(bp for bp in matches if bp.blueprint_id == selected)
 
 

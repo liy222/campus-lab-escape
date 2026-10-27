@@ -1,0 +1,913 @@
+{
+  "kind": "Owner synthetic development; not independent QA",
+  "original_solver_limits": {
+    "states": 25000,
+    "seconds": 5
+  },
+  "provider_calls": 0,
+  "records": [
+    {
+      "rooms": 1,
+      "difficulty": "easy",
+      "seed": 0,
+      "blueprint_id": "position_v1-r1-easy",
+      "status": "PASS",
+      "object_counts": [
+        5
+      ],
+      "solved_mechanisms": [
+        "code",
+        "item"
+      ],
+      "witness_steps": 8,
+      "definition_hash": "9dace487e13cd6f7474d45a929d0f956f8c06ec27423663a039651e353e0b923",
+      "signatures": {
+        "dependency": "38245cd27fffb165df84f547f10a554c28dc7dfd3a18bf3a8b1fb448f2a35476",
+        "placement": "a8384f013d862147ac05b63d872207f1583586b3c20ce4d3e117ebe41bc295d4",
+        "full": "d5fe150cbf75bcc62d75d92fe8ec03441488aa908919198b43e8aef8f5606600"
+      },
+      "seconds": 0.070588
+    },
+    {
+      "rooms": 1,
+      "difficulty": "easy",
+      "seed": 1,
+      "blueprint_id": "mapping_v1-r1-easy",
+      "status": "PASS",
+      "object_counts": [
+        5
+      ],
+      "solved_mechanisms": [
+        "code",
+        "item"
+      ],
+      "witness_steps": 8,
+      "definition_hash": "ff5f633d2b76a26fca34b5a89a908fde421ef8c8fe432a2014e6842322536f9b",
+      "signatures": {
+        "dependency": "38245cd27fffb165df84f547f10a554c28dc7dfd3a18bf3a8b1fb448f2a35476",
+        "placement": "a8384f013d862147ac05b63d872207f1583586b3c20ce4d3e117ebe41bc295d4",
+        "full": "d5fe150cbf75bcc62d75d92fe8ec03441488aa908919198b43e8aef8f5606600"
+      },
+      "seconds": 0.063225
+    },
+    {
+      "rooms": 1,
+      "difficulty": "easy",
+      "seed": 2,
+      "blueprint_id": "position_v1-r1-easy-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        5
+      ],
+      "solved_mechanisms": [
+        "item",
+        "code"
+      ],
+      "witness_steps": 8,
+      "definition_hash": "5a230c7142e52155d5d314a030aa0eb77c977067d2941f4627e91fd7f9a6225a",
+      "signatures": {
+        "dependency": "a845a8e4bcebaf1a49d0371212af81f135c7b31d58092611268aa1c5fee7e700",
+        "placement": "8fb3418de531b3d14c8df2a20ac636fbb17b1d1a0811ffba31f53d68b90dcce4",
+        "full": "068dbdaf8dfd1ca7bd12b109629640d8022d3cc476c5c253db8e1f28476339b9"
+      },
+      "seconds": 0.063954
+    },
+    {
+      "rooms": 1,
+      "difficulty": "easy",
+      "seed": 3,
+      "blueprint_id": "mapping_v1-r1-easy-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        5
+      ],
+      "solved_mechanisms": [
+        "item",
+        "code"
+      ],
+      "witness_steps": 8,
+      "definition_hash": "c2d54139117b4c12d3fca6b4ca9a35b9db5935d2f71df120785b906144715400",
+      "signatures": {
+        "dependency": "a845a8e4bcebaf1a49d0371212af81f135c7b31d58092611268aa1c5fee7e700",
+        "placement": "8fb3418de531b3d14c8df2a20ac636fbb17b1d1a0811ffba31f53d68b90dcce4",
+        "full": "068dbdaf8dfd1ca7bd12b109629640d8022d3cc476c5c253db8e1f28476339b9"
+      },
+      "seconds": 0.067761
+    },
+    {
+      "rooms": 1,
+      "difficulty": "normal",
+      "seed": 0,
+      "blueprint_id": "position_v1-r1-normal",
+      "status": "PASS",
+      "object_counts": [
+        7
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "item"
+      ],
+      "witness_steps": 11,
+      "definition_hash": "766363df0db9fb5d80329b428d42682a09ba3491f3e33f70d85e1e52aad70043",
+      "signatures": {
+        "dependency": "8ba8f0fe5e351025106ab53f3f29bd56a5e9fe4de3ce90caf89c7a9ba6a3c61a",
+        "placement": "82d5fdf28e88ad04632c296cc031cab0693be3700d1befc72eb3b6f0fdc98762",
+        "full": "714c9a6a71f4e1a4f22b9a15ce9d6fe3c6715b1df623bcf50e2eb236834c5ddf"
+      },
+      "seconds": 0.068532
+    },
+    {
+      "rooms": 1,
+      "difficulty": "normal",
+      "seed": 1,
+      "blueprint_id": "mapping_v1-r1-normal",
+      "status": "PASS",
+      "object_counts": [
+        7
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "item"
+      ],
+      "witness_steps": 11,
+      "definition_hash": "45ed65ff43eb3c3a6331851abe74ccd371b0575b9585af4c60cf9f11a824deab",
+      "signatures": {
+        "dependency": "8ba8f0fe5e351025106ab53f3f29bd56a5e9fe4de3ce90caf89c7a9ba6a3c61a",
+        "placement": "82d5fdf28e88ad04632c296cc031cab0693be3700d1befc72eb3b6f0fdc98762",
+        "full": "714c9a6a71f4e1a4f22b9a15ce9d6fe3c6715b1df623bcf50e2eb236834c5ddf"
+      },
+      "seconds": 0.072062
+    },
+    {
+      "rooms": 1,
+      "difficulty": "normal",
+      "seed": 2,
+      "blueprint_id": "position_v1-r1-normal-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        7
+      ],
+      "solved_mechanisms": [
+        "item",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 11,
+      "definition_hash": "a197fe03a04a1fe09ef5311f4e6d4a8feadfe1f645a5995317400d95842e2947",
+      "signatures": {
+        "dependency": "f12f8655b448b10b5481ef40a7a1b39fc98293b52a03047e7e2ee9a6fd62ab4d",
+        "placement": "a582ad46103c2f15d150782e5901a9edc78ab0e5fbb9ae398c1d130c4a424823",
+        "full": "b7350a1ea3bf330a675e6e0e3d0cc09b4b5197850c81db5434a086b46825716e"
+      },
+      "seconds": 0.070787
+    },
+    {
+      "rooms": 1,
+      "difficulty": "normal",
+      "seed": 3,
+      "blueprint_id": "mapping_v1-r1-normal-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        7
+      ],
+      "solved_mechanisms": [
+        "item",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 11,
+      "definition_hash": "4e01b2182e69a523198ac220976b4714a9faa0b624fa5f321faef102b3d570e5",
+      "signatures": {
+        "dependency": "f12f8655b448b10b5481ef40a7a1b39fc98293b52a03047e7e2ee9a6fd62ab4d",
+        "placement": "a582ad46103c2f15d150782e5901a9edc78ab0e5fbb9ae398c1d130c4a424823",
+        "full": "b7350a1ea3bf330a675e6e0e3d0cc09b4b5197850c81db5434a086b46825716e"
+      },
+      "seconds": 0.076871
+    },
+    {
+      "rooms": 1,
+      "difficulty": "hard",
+      "seed": 0,
+      "blueprint_id": "position_v1-r1-hard",
+      "status": "PASS",
+      "object_counts": [
+        8
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "witness_steps": 23,
+      "definition_hash": "e458902dda23972a438aa0edc19d61c71d50f549e450f763a713b90a58157442",
+      "signatures": {
+        "dependency": "db14c1db25c13669f87bf243ac21f44af4508224762c53693064038889f57980",
+        "placement": "4c27ab56222658733d5d37635142364fc8a28dc006893733ff4bf82f5f23f6b9",
+        "full": "f2cf25c21c35de919abad1f29538f8bea52dba2446906ba76c6e7cb2f4065e54"
+      },
+      "seconds": 0.071115
+    },
+    {
+      "rooms": 1,
+      "difficulty": "hard",
+      "seed": 1,
+      "blueprint_id": "mapping_v1-r1-hard",
+      "status": "PASS",
+      "object_counts": [
+        8
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "witness_steps": 23,
+      "definition_hash": "6aba31917ab87a6cd4c3f98027fb9ef02f82aa19ca2094bb59458a8871ea9717",
+      "signatures": {
+        "dependency": "db14c1db25c13669f87bf243ac21f44af4508224762c53693064038889f57980",
+        "placement": "4c27ab56222658733d5d37635142364fc8a28dc006893733ff4bf82f5f23f6b9",
+        "full": "f2cf25c21c35de919abad1f29538f8bea52dba2446906ba76c6e7cb2f4065e54"
+      },
+      "seconds": 0.076079
+    },
+    {
+      "rooms": 1,
+      "difficulty": "hard",
+      "seed": 2,
+      "blueprint_id": "position_v1-r1-hard-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        8
+      ],
+      "solved_mechanisms": [
+        "item",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 23,
+      "definition_hash": "2738a83c81194083444401fa2cdcfb1a37cd29891467def0f72c26cbe540e0b9",
+      "signatures": {
+        "dependency": "ad82744e69ba0bf1540d85a62fc27dd675602ce14573a97a6cd21bbf993aa418",
+        "placement": "0cc3c37e42675fafa85c01daeb4aa841cea3f917e68556bc4af6852d6b1ed59f",
+        "full": "d96821124344de3985c8cf6c48da049f00b7352171cba01b52a55ebced521a66"
+      },
+      "seconds": 0.082398
+    },
+    {
+      "rooms": 1,
+      "difficulty": "hard",
+      "seed": 3,
+      "blueprint_id": "mapping_v1-r1-hard-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        8
+      ],
+      "solved_mechanisms": [
+        "item",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 23,
+      "definition_hash": "f243693b77f7935a6bf1a6240f2126067d1421a0a76d743572b566f5a09460b1",
+      "signatures": {
+        "dependency": "ad82744e69ba0bf1540d85a62fc27dd675602ce14573a97a6cd21bbf993aa418",
+        "placement": "0cc3c37e42675fafa85c01daeb4aa841cea3f917e68556bc4af6852d6b1ed59f",
+        "full": "d96821124344de3985c8cf6c48da049f00b7352171cba01b52a55ebced521a66"
+      },
+      "seconds": 0.088731
+    },
+    {
+      "rooms": 2,
+      "difficulty": "easy",
+      "seed": 0,
+      "blueprint_id": "position_v1-r2-easy",
+      "status": "PASS",
+      "object_counts": [
+        5,
+        2
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "item"
+      ],
+      "witness_steps": 12,
+      "definition_hash": "7e0cc42f6460706167efda72f3a7a6b5f6f37d190aa8d7181196cb4a6177335e",
+      "signatures": {
+        "dependency": "8ba8f0fe5e351025106ab53f3f29bd56a5e9fe4de3ce90caf89c7a9ba6a3c61a",
+        "placement": "a40a6a631be787c2011a543e0764a0ca606e9029c80ff796d89ba62be18db3a2",
+        "full": "530d1e582ad5bde8d42ebeb1ea684af55c944a31e0c16207cbee197ce2b24203"
+      },
+      "seconds": 0.067846
+    },
+    {
+      "rooms": 2,
+      "difficulty": "easy",
+      "seed": 1,
+      "blueprint_id": "mapping_v1-r2-easy",
+      "status": "PASS",
+      "object_counts": [
+        5,
+        2
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "item"
+      ],
+      "witness_steps": 12,
+      "definition_hash": "4b68bdd5bbed46a3e7493706d87d2dc38f4d470b9d949d57923c71553ef3edf1",
+      "signatures": {
+        "dependency": "8ba8f0fe5e351025106ab53f3f29bd56a5e9fe4de3ce90caf89c7a9ba6a3c61a",
+        "placement": "a40a6a631be787c2011a543e0764a0ca606e9029c80ff796d89ba62be18db3a2",
+        "full": "530d1e582ad5bde8d42ebeb1ea684af55c944a31e0c16207cbee197ce2b24203"
+      },
+      "seconds": 0.074898
+    },
+    {
+      "rooms": 2,
+      "difficulty": "easy",
+      "seed": 2,
+      "blueprint_id": "position_v1-r2-easy-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        4,
+        3
+      ],
+      "solved_mechanisms": [
+        "item",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 12,
+      "definition_hash": "1bea97945dac97e9361d78bedeef91a15cd19440d2e31e4fbe7ab036b420e3f3",
+      "signatures": {
+        "dependency": "f12f8655b448b10b5481ef40a7a1b39fc98293b52a03047e7e2ee9a6fd62ab4d",
+        "placement": "d29ce180f379d921b792b79a7a8db01243e0e9f2487d671d50d53a2ba73bd333",
+        "full": "6a30bfb0358740079e14ac9396288633029f441549db3fa5b8969da4c5c68d9e"
+      },
+      "seconds": 0.072974
+    },
+    {
+      "rooms": 2,
+      "difficulty": "easy",
+      "seed": 3,
+      "blueprint_id": "mapping_v1-r2-easy-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        4,
+        3
+      ],
+      "solved_mechanisms": [
+        "item",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 12,
+      "definition_hash": "75c6c8f761d73e8d99e8fde8a968a3c9254b1545a47f0c230d7d8f0c404aa045",
+      "signatures": {
+        "dependency": "f12f8655b448b10b5481ef40a7a1b39fc98293b52a03047e7e2ee9a6fd62ab4d",
+        "placement": "d29ce180f379d921b792b79a7a8db01243e0e9f2487d671d50d53a2ba73bd333",
+        "full": "6a30bfb0358740079e14ac9396288633029f441549db3fa5b8969da4c5c68d9e"
+      },
+      "seconds": 0.082456
+    },
+    {
+      "rooms": 2,
+      "difficulty": "normal",
+      "seed": 0,
+      "blueprint_id": "position_v1-r2-normal",
+      "status": "PASS",
+      "object_counts": [
+        6,
+        2
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "witness_steps": 24,
+      "definition_hash": "7bf1999f7b1bd71744837e26607cbda6d7909e84799fc50a194a6f3248260036",
+      "signatures": {
+        "dependency": "db14c1db25c13669f87bf243ac21f44af4508224762c53693064038889f57980",
+        "placement": "9af0c9d7f6b365bb7c7d39ec9257d5a4894cae3fc9e5a41099641b5309e74353",
+        "full": "e5c0ef4a9374fdbd30eb74b23ad9501c50860dce61e9eb4aac3b5db6ce59755c"
+      },
+      "seconds": 0.073052
+    },
+    {
+      "rooms": 2,
+      "difficulty": "normal",
+      "seed": 1,
+      "blueprint_id": "mapping_v1-r2-normal",
+      "status": "PASS",
+      "object_counts": [
+        6,
+        2
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "witness_steps": 24,
+      "definition_hash": "b0703bc031601354a7c8df9bbe9829c1397583371384ba623cca13bb236d8f7d",
+      "signatures": {
+        "dependency": "db14c1db25c13669f87bf243ac21f44af4508224762c53693064038889f57980",
+        "placement": "9af0c9d7f6b365bb7c7d39ec9257d5a4894cae3fc9e5a41099641b5309e74353",
+        "full": "e5c0ef4a9374fdbd30eb74b23ad9501c50860dce61e9eb4aac3b5db6ce59755c"
+      },
+      "seconds": 0.079103
+    },
+    {
+      "rooms": 2,
+      "difficulty": "normal",
+      "seed": 2,
+      "blueprint_id": "position_v1-r2-normal-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        5,
+        3
+      ],
+      "solved_mechanisms": [
+        "item",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 24,
+      "definition_hash": "95b477637cb444d521f2033ca5cbf1ae7c96b5f756d148a88639d161e4e7cf1f",
+      "signatures": {
+        "dependency": "ad82744e69ba0bf1540d85a62fc27dd675602ce14573a97a6cd21bbf993aa418",
+        "placement": "23f60a6aa84098652a6fe758cc6d95c77ece5d30829d2c4bc8b1814b70aaac39",
+        "full": "379bc2edc11cf9f042392da9dd72ad0949a7cc18dcb14e7a190b42f124b578c4"
+      },
+      "seconds": 0.081844
+    },
+    {
+      "rooms": 2,
+      "difficulty": "normal",
+      "seed": 3,
+      "blueprint_id": "mapping_v1-r2-normal-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        5,
+        3
+      ],
+      "solved_mechanisms": [
+        "item",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 24,
+      "definition_hash": "3296e21594cfff6504f842ea47baa4315c46ae9fa7f3f3ec3a908c34651e59dc",
+      "signatures": {
+        "dependency": "ad82744e69ba0bf1540d85a62fc27dd675602ce14573a97a6cd21bbf993aa418",
+        "placement": "23f60a6aa84098652a6fe758cc6d95c77ece5d30829d2c4bc8b1814b70aaac39",
+        "full": "379bc2edc11cf9f042392da9dd72ad0949a7cc18dcb14e7a190b42f124b578c4"
+      },
+      "seconds": 0.088578
+    },
+    {
+      "rooms": 2,
+      "difficulty": "hard",
+      "seed": 0,
+      "blueprint_id": "position_v1-r2-hard",
+      "status": "PASS",
+      "object_counts": [
+        6,
+        5
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "item"
+      ],
+      "witness_steps": 28,
+      "definition_hash": "66760123470def9e5c6ba1c80ff940e8fcad19c3a27e7183313c96b01d9a47c0",
+      "signatures": {
+        "dependency": "156fabefcfd8cda6f0f87f67472755c80399a069354199d9e991115ab44ed38e",
+        "placement": "605c10d47cdce8d79aa428d06f93c63db75bc333e2ff126ec5dcaa907e927277",
+        "full": "1e5ce89d1878aec458402231a8e414fa881a1151f09e11902f107e8374a5ead9"
+      },
+      "seconds": 0.092127
+    },
+    {
+      "rooms": 2,
+      "difficulty": "hard",
+      "seed": 1,
+      "blueprint_id": "mapping_v1-r2-hard",
+      "status": "PASS",
+      "object_counts": [
+        6,
+        5
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "item"
+      ],
+      "witness_steps": 28,
+      "definition_hash": "aff4779ced9947d51f8c18a67c0bac414e1abbf366f590e383656946184e02d8",
+      "signatures": {
+        "dependency": "156fabefcfd8cda6f0f87f67472755c80399a069354199d9e991115ab44ed38e",
+        "placement": "605c10d47cdce8d79aa428d06f93c63db75bc333e2ff126ec5dcaa907e927277",
+        "full": "1e5ce89d1878aec458402231a8e414fa881a1151f09e11902f107e8374a5ead9"
+      },
+      "seconds": 0.100061
+    },
+    {
+      "rooms": 2,
+      "difficulty": "hard",
+      "seed": 2,
+      "blueprint_id": "position_v1-r2-hard-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        7,
+        4
+      ],
+      "solved_mechanisms": [
+        "item",
+        "code",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 28,
+      "definition_hash": "59dabbfea7bf6d8518fa7d4587bafacdc742dee4eaffdd0f5a39004e78818afa",
+      "signatures": {
+        "dependency": "fd9585d241f2c7528ee0a6e9ac53dfe231a5ece092d4df0b2d1776671a7f8c2f",
+        "placement": "759d69e78de6f103c04b28d06c762d5e9a1a82233fe4208d3a425e5c7aa7562c",
+        "full": "092cb8e3efda42f16ff1d1e4c16103beb1434eabce1133ae6d48defc8abbcfa8"
+      },
+      "seconds": 0.104042
+    },
+    {
+      "rooms": 2,
+      "difficulty": "hard",
+      "seed": 3,
+      "blueprint_id": "mapping_v1-r2-hard-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        7,
+        4
+      ],
+      "solved_mechanisms": [
+        "item",
+        "code",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 28,
+      "definition_hash": "1c4bad8204c2378bed62655c9976c3db5e4ff15de11eccaba6c1d1b9262d27b9",
+      "signatures": {
+        "dependency": "fd9585d241f2c7528ee0a6e9ac53dfe231a5ece092d4df0b2d1776671a7f8c2f",
+        "placement": "759d69e78de6f103c04b28d06c762d5e9a1a82233fe4208d3a425e5c7aa7562c",
+        "full": "092cb8e3efda42f16ff1d1e4c16103beb1434eabce1133ae6d48defc8abbcfa8"
+      },
+      "seconds": 0.116111
+    },
+    {
+      "rooms": 3,
+      "difficulty": "easy",
+      "seed": 0,
+      "blueprint_id": "position_v1-r3-easy",
+      "status": "PASS",
+      "object_counts": [
+        5,
+        1,
+        2
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "witness_steps": 25,
+      "definition_hash": "6e1aaac694422dcfa767d47b4189f536bb65e842a712e64e012b195ecd605057",
+      "signatures": {
+        "dependency": "db14c1db25c13669f87bf243ac21f44af4508224762c53693064038889f57980",
+        "placement": "78d80d016abf2af246f49de1cf2c4a774d844338d45473530463f88aa17608f1",
+        "full": "605179c72f08b63130a59e0643a284def644522ffdfff5204d71cffa120f64a5"
+      },
+      "seconds": 0.075443
+    },
+    {
+      "rooms": 3,
+      "difficulty": "easy",
+      "seed": 1,
+      "blueprint_id": "mapping_v1-r3-easy",
+      "status": "PASS",
+      "object_counts": [
+        5,
+        1,
+        2
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "witness_steps": 25,
+      "definition_hash": "13bf1da95612a0be560d80cff8ea7a644775d392eff938ed480e8196cb09b3b4",
+      "signatures": {
+        "dependency": "db14c1db25c13669f87bf243ac21f44af4508224762c53693064038889f57980",
+        "placement": "78d80d016abf2af246f49de1cf2c4a774d844338d45473530463f88aa17608f1",
+        "full": "605179c72f08b63130a59e0643a284def644522ffdfff5204d71cffa120f64a5"
+      },
+      "seconds": 0.085216
+    },
+    {
+      "rooms": 3,
+      "difficulty": "easy",
+      "seed": 2,
+      "blueprint_id": "position_v1-r3-easy-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        4,
+        1,
+        3
+      ],
+      "solved_mechanisms": [
+        "item",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 25,
+      "definition_hash": "493ae0061e1e597934482a2d988217d2abf0556427b2fee6b42108cbc4ed6238",
+      "signatures": {
+        "dependency": "ad82744e69ba0bf1540d85a62fc27dd675602ce14573a97a6cd21bbf993aa418",
+        "placement": "fa643c6dc6223ad5e6f96e0c501647ddea9bdad120739edc7af24743a9523d30",
+        "full": "9ab86a2c952c91be8234ffd38c1a092f714a54278503de52b209857650499601"
+      },
+      "seconds": 0.087462
+    },
+    {
+      "rooms": 3,
+      "difficulty": "easy",
+      "seed": 3,
+      "blueprint_id": "mapping_v1-r3-easy-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        4,
+        1,
+        3
+      ],
+      "solved_mechanisms": [
+        "item",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 25,
+      "definition_hash": "41e3298768076a179f6fafdcb4ea2b9eb05286b86b1647cc7a0d49e92b3794bd",
+      "signatures": {
+        "dependency": "ad82744e69ba0bf1540d85a62fc27dd675602ce14573a97a6cd21bbf993aa418",
+        "placement": "fa643c6dc6223ad5e6f96e0c501647ddea9bdad120739edc7af24743a9523d30",
+        "full": "9ab86a2c952c91be8234ffd38c1a092f714a54278503de52b209857650499601"
+      },
+      "seconds": 0.099735
+    },
+    {
+      "rooms": 3,
+      "difficulty": "normal",
+      "seed": 0,
+      "blueprint_id": "position_v1-r3-normal",
+      "status": "PASS",
+      "object_counts": [
+        5,
+        2,
+        4
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "item"
+      ],
+      "witness_steps": 29,
+      "definition_hash": "eaeccb3073fbc0341ec9cd9b72f08d218e38517c9549a9f3cd098c7779a78018",
+      "signatures": {
+        "dependency": "156fabefcfd8cda6f0f87f67472755c80399a069354199d9e991115ab44ed38e",
+        "placement": "c00055bfd20342e06b114a7368dc03dc0efb59090d820b551bc4e44535e63cc8",
+        "full": "f2393691caa62bd981cca1521013d6d49940bfdf351c3ca1adafb4a62b338617"
+      },
+      "seconds": 0.089861
+    },
+    {
+      "rooms": 3,
+      "difficulty": "normal",
+      "seed": 1,
+      "blueprint_id": "mapping_v1-r3-normal",
+      "status": "PASS",
+      "object_counts": [
+        5,
+        2,
+        4
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "item"
+      ],
+      "witness_steps": 29,
+      "definition_hash": "02652e20c5f70f2bc1e15b523440878b42d4a2f2e9965a81edcc79097687c6d9",
+      "signatures": {
+        "dependency": "156fabefcfd8cda6f0f87f67472755c80399a069354199d9e991115ab44ed38e",
+        "placement": "c00055bfd20342e06b114a7368dc03dc0efb59090d820b551bc4e44535e63cc8",
+        "full": "f2393691caa62bd981cca1521013d6d49940bfdf351c3ca1adafb4a62b338617"
+      },
+      "seconds": 0.098185
+    },
+    {
+      "rooms": 3,
+      "difficulty": "normal",
+      "seed": 2,
+      "blueprint_id": "position_v1-r3-normal-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        4,
+        4,
+        3
+      ],
+      "solved_mechanisms": [
+        "item",
+        "code",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 29,
+      "definition_hash": "f2709b08adcec0c3c1fef4957d2d7a5859a0aa36cc0c3e31de0cabaf59654034",
+      "signatures": {
+        "dependency": "fd9585d241f2c7528ee0a6e9ac53dfe231a5ece092d4df0b2d1776671a7f8c2f",
+        "placement": "0592b486c3f26b313736b79dd28e4d685ef9ffe673ec9e67d6333867e1c6e3bf",
+        "full": "1d941fd7e0a7f4fa6e10045a6c0f4fc13a65fa96ce5e834d66d70e494a1ac451"
+      },
+      "seconds": 0.102672
+    },
+    {
+      "rooms": 3,
+      "difficulty": "normal",
+      "seed": 3,
+      "blueprint_id": "mapping_v1-r3-normal-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        4,
+        4,
+        3
+      ],
+      "solved_mechanisms": [
+        "item",
+        "code",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 29,
+      "definition_hash": "1d1e51a3aed535a84d891471e63061086d91c79274322563ce1337aefb9a165d",
+      "signatures": {
+        "dependency": "fd9585d241f2c7528ee0a6e9ac53dfe231a5ece092d4df0b2d1776671a7f8c2f",
+        "placement": "0592b486c3f26b313736b79dd28e4d685ef9ffe673ec9e67d6333867e1c6e3bf",
+        "full": "1d941fd7e0a7f4fa6e10045a6c0f4fc13a65fa96ce5e834d66d70e494a1ac451"
+      },
+      "seconds": 0.1129
+    },
+    {
+      "rooms": 3,
+      "difficulty": "hard",
+      "seed": 0,
+      "blueprint_id": "position_v1-r3-hard",
+      "status": "PASS",
+      "object_counts": [
+        6,
+        4,
+        4
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "sequence",
+        "item"
+      ],
+      "witness_steps": 33,
+      "definition_hash": "e215ad93ebd39abbc0848ed0c5ecda7b7086533f89b72a06a293d973882c3a3c",
+      "signatures": {
+        "dependency": "b3f0ac292b6a78488038d31b22b1774385d74ca52a29225167a8b365523f3963",
+        "placement": "7c501010d02e718e930a86905fdcdf3c94102c2e09bde67c1578981395bfb4cf",
+        "full": "b71562f2a9f49b9c9e50d01e77ca0399b2d666045f6362743b6647aafa008b82"
+      },
+      "seconds": 0.115566
+    },
+    {
+      "rooms": 3,
+      "difficulty": "hard",
+      "seed": 1,
+      "blueprint_id": "mapping_v1-r3-hard",
+      "status": "PASS",
+      "object_counts": [
+        6,
+        4,
+        4
+      ],
+      "solved_mechanisms": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "sequence",
+        "item"
+      ],
+      "witness_steps": 33,
+      "definition_hash": "9ade9f33ef2a5bb5fe164231f6f7f1924bcd31c26d15c4b8c1d0c9cc1c109fa6",
+      "signatures": {
+        "dependency": "b3f0ac292b6a78488038d31b22b1774385d74ca52a29225167a8b365523f3963",
+        "placement": "7c501010d02e718e930a86905fdcdf3c94102c2e09bde67c1578981395bfb4cf",
+        "full": "b71562f2a9f49b9c9e50d01e77ca0399b2d666045f6362743b6647aafa008b82"
+      },
+      "seconds": 0.11786
+    },
+    {
+      "rooms": 3,
+      "difficulty": "hard",
+      "seed": 2,
+      "blueprint_id": "position_v1-r3-hard-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        7,
+        4,
+        3
+      ],
+      "solved_mechanisms": [
+        "item",
+        "sequence",
+        "code",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 33,
+      "definition_hash": "d48e1863d77bfb5b3d028e07ca0f719108bcc1df55b6530652c62d7e15cada19",
+      "signatures": {
+        "dependency": "d0c2110a3e135b45ccf0f7e18e24640657c56c8b2a069a6db7d2366a2137cdfa",
+        "placement": "a27ce6b357dbb8c506927131265e58ca7041f03372f4c6c9d8a17176c73afa92",
+        "full": "13695044479ba6daa745391a9e8bb3e8ee2624b7cf9fd7cf77d34bbd24a5fb06"
+      },
+      "seconds": 0.120235
+    },
+    {
+      "rooms": 3,
+      "difficulty": "hard",
+      "seed": 3,
+      "blueprint_id": "mapping_v1-r3-hard-sv1-reverse",
+      "status": "PASS",
+      "object_counts": [
+        7,
+        4,
+        3
+      ],
+      "solved_mechanisms": [
+        "item",
+        "sequence",
+        "code",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "witness_steps": 33,
+      "definition_hash": "4dd7c86dfe86a02d9385135f6ca0d7e1b3bbf6435c8c4d5b824870663d7c43d7",
+      "signatures": {
+        "dependency": "d0c2110a3e135b45ccf0f7e18e24640657c56c8b2a069a6db7d2366a2137cdfa",
+        "placement": "a27ce6b357dbb8c506927131265e58ca7041f03372f4c6c9d8a17176c73afa92",
+        "full": "13695044479ba6daa745391a9e8bb3e8ee2624b7cf9fd7cf77d34bbd24a5fb06"
+      },
+      "seconds": 0.13608
+    }
+  ],
+  "first_failure": null,
+  "status": "PASS",
+  "seconds": 3.166912
+}

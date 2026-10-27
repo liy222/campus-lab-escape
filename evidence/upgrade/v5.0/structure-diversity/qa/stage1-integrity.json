@@ -1,0 +1,27 @@
+{
+  "kind": "Independent AI QA SD3 stage1-only integrity/privacy receipt",
+  "utc": "2026-10-27T13:24:46.765971+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_count": 445,
+  "source_bundle_sha256": "a09c8e46f8981185468d1bebccf8c2857cab1b776ff27c6846284ff33c3a2d8c",
+  "candidate_sha256": "306d35df2ce2a9e34911184468f079f3b9cc32bcfbe9a61bf2eef26fb55b6ef4",
+  "all_current445_match": true,
+  "source_before_after_match": true,
+  "public_run_files_scanned": 46,
+  "known_credential_pattern_hits": 0,
+  "raw_output_not_printed_or_changed": true,
+  "redaction_required": false,
+  "synthetic_TEMP_cache_files_hashes_match": true,
+  "runtime_guard": {
+    "external_network_config_or_nonTEMP_DB_attempts": 0,
+    "stdlib_socketpair_local_IPC_connects": 154,
+    "all_database_connections_restricted_to_TEMP": true,
+    "provider_transports_synthetic_only": true,
+    "real_paid_calls": 0
+  },
+  "limits": [
+    "Finite regex checks do not prove absence of all possible encodings.",
+    "Only explicit synthetic fixtures/TEMP DBs/fake ledgers used; old actual raw/private bodies and real Key/liveledger/playerDB were not read.",
+    "Stage2 build/browser still pending, no frontend/whole-product acceptance."
+  ]
+}

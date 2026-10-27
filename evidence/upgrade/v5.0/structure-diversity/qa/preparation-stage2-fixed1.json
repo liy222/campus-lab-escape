@@ -1,0 +1,53 @@
+{
+  "kind": "SD3 stage2 QA-only preparation fix1 SOURCE STOP; runtime0",
+  "utc": "2026-10-27T13:36:02.491386+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "stage2_build_browser_executions": 0,
+  "prior_preparation": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/qa/preparation-stage2.json",
+    "sha256": "d39436e2935e6f4eee21974bad98fe730f93efb97b20e995264f7154370e8a3b",
+    "unchanged": true
+  },
+  "finding_from_Main_static_review": "Repeated inspect may return200 without changing revision; old revision-only wait would timeout or conflate an added inspect with following submit. No product defect or formal browser run.",
+  "only_changed_source": "tests/v5/run_structure_variants_browser.mjs",
+  "new_browser_runner_sha256": "4f22c92ecd7868cce70df5c79a49674a8ccd6813cbe859ee4b4f65392865af89",
+  "old_browser_runner_sha256": "e51be85b21b86ece303835fb0e0be3665533d96dc4b3102755c014639017d8fe",
+  "fix": "Each click/action now waits for its owned-session/actions POST response matching tool and arguments, validates200+visible_state, then two render frames and idle. Added/repeated inspect is awaited independently and permits unchanged revision; take/submit waits its own receipt.",
+  "runtime_service_and_build_helper_unchanged": true,
+  "node_syntax_check_exit_code": 0,
+  "proposed_formal_commands_in_order": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/structure-diversity/qa/run_build.py --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2.json --output evidence/upgrade/v5.0/structure-diversity/qa/build-run1",
+    "C:\\Program Files\\nodejs\\node.exe tests/v5/run_structure_variants_browser.mjs --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2.json --fixtures evidence/upgrade/v5.0/structure-diversity/qa/run1/browser-fixture-index.json --build-receipt evidence/upgrade/v5.0/structure-diversity/qa/build-run1/run.json --output evidence/upgrade/v5.0/structure-diversity/qa/browser-run1"
+  ],
+  "required_explicit_stage2_inputs": {
+    "evidence/upgrade/v5.0/structure-diversity/qa/run_build.py": "0a2f1a52634b8455b238d89c8bd1608d27c79148d2f6c88455e4b4d1863c3fa3",
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser_service.py": "eb12ffab2a1d2def4b4b3912c315e3f63d404b6338f10ddf8a94fbed4fa5ee33",
+    "tests/v5/run_structure_variants_browser.mjs": "4f22c92ecd7868cce70df5c79a49674a8ccd6813cbe859ee4b4f65392865af89",
+    "evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage1.json": "306d35df2ce2a9e34911184468f079f3b9cc32bcfbe9a61bf2eef26fb55b6ef4",
+    "evidence/upgrade/v5.0/structure-diversity/qa/run1/browser-fixture-index.json": "f1de6193e4a246c889234d496641bf0e4382cd31faeccea2cc7ad5ff7fb914f3"
+  },
+  "exact_raw_local_ignored_paths": [
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser-run1/raw-sensitive/server-output.txt",
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser-run1/raw-sensitive/failure-detail.json"
+  ],
+  "actual_commands": [
+    {
+      "operator": "Main",
+      "tools": [
+        "836eda",
+        "3884d0"
+      ],
+      "scope": "Pre-freeze static action-wait review; no product execution"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library source checks plus node --check, newpreparation fix1; full source in transcript",
+      "exit_code": 0
+    }
+  ],
+  "limits": [
+    "Formal0 for stage2; no browser/server/build/HTTP/probe was executed.",
+    "Original preparation and stage1 actual75/seal53 preserved.",
+    "Wait new Main QA-onlyfreeze/GO; no product/oldtest edits, private actualbody/Key/liveledger/playerDB/network/paid/newagents/commit."
+  ]
+}

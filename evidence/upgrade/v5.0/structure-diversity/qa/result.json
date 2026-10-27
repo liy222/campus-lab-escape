@@ -1,0 +1,160 @@
+{
+  "kind": "Independent AI QA SD3 final joint result SOURCE STOP",
+  "utc": "2026-10-27T13:53:36.719514+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "status": "PASS_IN_SCOPE_JOINT_SYNTHETIC_SD3_NO_REAL_MODEL_QUALITY",
+  "stage1": {
+    "actual_runs": 1,
+    "cases": 75,
+    "passed": 75,
+    "exit_code": 0,
+    "matrix_compiled_proven_domain_EXIT": 36,
+    "actual_new_model_calls": 0
+  },
+  "build": {
+    "actual_runs": 1,
+    "exit_code": 0,
+    "dist_files_hashed": 98,
+    "narrow_phase_rebuilt": false
+  },
+  "browser": {
+    "single_full_green_run": false,
+    "first_exit_code": 1,
+    "first_records": 290,
+    "first_completed_scope": [
+      "R1hard1280",
+      "R1hard390"
+    ],
+    "narrow_exit_code": 0,
+    "narrow_records": 301,
+    "narrow_completed_scope": [
+      "R3hard1280",
+      "R3hard390"
+    ],
+    "records_not_summed": true,
+    "QA_only_adapter_fixes": true,
+    "product_or_service_fixes_during_formal": 0,
+    "owned_second_close": {
+      "closed": true,
+      "exit_code": null,
+      "signal_code": "SIGTERM"
+    },
+    "runtime_receipts": [
+      {
+        "synthetic_generation_calls": 3,
+        "network_config_ledger_nonTEMP_denied_attempts": 0,
+        "stdlib_socketpair_local_IPC_connects": 1,
+        "real_paid_calls": 0
+      },
+      {
+        "synthetic_generation_calls": 2,
+        "network_config_ledger_nonTEMP_denied_attempts": 0,
+        "stdlib_socketpair_local_IPC_connects": 1,
+        "real_paid_calls": 0
+      }
+    ]
+  },
+  "current_source_count": 453,
+  "source_bundle_sha256": "48e803d9a2bd28a39445d8356e0a262f5ccd7ee0ba7fa452c6846d8a23084a51",
+  "unique_current_source_map": "evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2-fixed1.json",
+  "stage1_445_current_match": true,
+  "first450_current_exception": [
+    "tests/v5/run_structure_variants_browser.mjs"
+  ],
+  "source_epoch_policy": "First450 report before/after hashes were true in that run. Current453 differs onlyQA JS plus frozen runtime reference inputs; old real435 is historical, never relabelled current.",
+  "budget": {
+    "whole_payload_measurements": 40,
+    "short36_upper_cny_range": [
+      0.11436,
+      0.161528
+    ],
+    "maximal_fourbyte_3hard_seed0123_upper_cny": [
+      0.201504,
+      0.22524,
+      0.201696,
+      0.225432
+    ],
+    "original_cap_cny": 0.2,
+    "all_maximal_cases_refused_before_reserve_send": true
+  },
+  "actual_commands": [
+    {
+      "tool": "508783/session36445 -> fbce7c",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/structure-diversity/qa/run_targeted.py --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage1.json --output evidence/upgrade/v5.0/structure-diversity/qa/run1",
+      "exit_code": 0,
+      "pytest_items": 75,
+      "pytest_seconds": 12.592,
+      "run_seconds": 14.143124
+    },
+    {
+      "tool": "d905bd/session86139 ->2e7475",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/structure-diversity/qa/run_build.py --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2.json --output evidence/upgrade/v5.0/structure-diversity/qa/build-run1",
+      "exit_code": 0,
+      "run_seconds": 11.301904,
+      "dist_files_hashed": 98
+    },
+    {
+      "tool": "c04216/session7959 ->8d3b43",
+      "command": "C:\\Program Files\\nodejs\\node.exe tests/v5/run_structure_variants_browser.mjs --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2.json --fixtures evidence/upgrade/v5.0/structure-diversity/qa/run1/browser-fixture-index.json --build-receipt evidence/upgrade/v5.0/structure-diversity/qa/build-run1/run.json --output evidence/upgrade/v5.0/structure-diversity/qa/browser-run1",
+      "exit_code": 1,
+      "run_seconds": 22.135,
+      "records": 290,
+      "scope": "R1desktop/mobile complete; R3desktop partial, remaining not passed"
+    },
+    {
+      "tool": "503847/session88962 ->145868",
+      "command": "C:\\Program Files\\nodejs\\node.exe tests/v5/run_structure_variants_browser.mjs --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2-fixed1.json --fixtures evidence/upgrade/v5.0/structure-diversity/qa/run1/browser-fixture-index.json --build-receipt evidence/upgrade/v5.0/structure-diversity/qa/build-reuse-stage2-fixed1.json --output evidence/upgrade/v5.0/structure-diversity/qa/browser-r3-run1 --remaining-r3 --reuse-first-run evidence/upgrade/v5.0/structure-diversity/qa/browser-run1/run.json",
+      "exit_code": 0,
+      "run_seconds": 16.681,
+      "records": 301,
+      "scope": "Only R3desktop/mobile. NoR1/75/build rerun."
+    },
+    {
+      "tool": "fa14d0/d5915b",
+      "exit_code": 0,
+      "scope": "Stage1 read-only receipts/privacy, no repeats"
+    },
+    {
+      "tool": "c48eb6/1eff00/8e1fd6/32341f/22d46d",
+      "exit_code": 0,
+      "scope": "First failure closed classification/ownedPID-only absence/source inspection; no raw log print or process kill"
+    },
+    {
+      "tool": "ca6cf1",
+      "exit_code": 0,
+      "scope": "Read narrow terminal metadata only"
+    },
+    {
+      "tool": "tools.view_image via functions.exec",
+      "scope": "Actually viewed4 controlled synthetic PNGs listed in integrity, AI review not human acceptance"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library existing results/source453/445/build98/ignore/privacy and final sealing only; full source in transcript",
+      "exit_code": 0
+    }
+  ],
+  "report": {
+    "path": "review/findings/v5-structure-diversity.md",
+    "sha256": "0cccbaf3f0883b46c413f9ab4c084dd1131f5dac0281600b15c78daadb300235"
+  },
+  "integrity": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/qa/integrity.json",
+    "sha256": "0e0c12c8b835760dd47b0521838b81c7849239568bd354c96b27a3600eb52315"
+  },
+  "seal": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/qa/artifact-seal.json",
+    "sha256": "7ce3df0f558857aa539979ac7f4957e6c0448a674d5de426a97374d2654d4997",
+    "public_artifacts": 102,
+    "local_private_log_hashes": 3
+  },
+  "paid_calls": 0,
+  "real_model_or_evaluator_calls": 0,
+  "old_OPEN_findings_closed": false,
+  "limits": [
+    "Only finite synthetic catalog36/proof/actions and targeted API/save/UI scopes. No infinite uniqueness, general narrative quality, generation-yield or human difficulty claim.",
+    "Physical mobile/OS restart/wholeclassic suite not repeated; old unchanged source/evidence boundaries retained.",
+    "First browser failure and all raw logs preserved; local logs remain ignored, public artifacts contain counts/bools/hash/controlled synthetic screenshots.",
+    "No old actual private raw/Key/config/liveledger/playerDB or user process accessed/terminated. No public deployment/release/tag/mainmerge."
+  ]
+}

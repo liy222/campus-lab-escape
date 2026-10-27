@@ -1,0 +1,17 @@
+{
+  "kind": "derived_build_reuse_no_execution",
+  "date": "2026-10-27",
+  "new_build_executed": false,
+  "exit_code": 0,
+  "candidate_sha256": "cd8f9600d9c2e5683719f852731726c878a74d333acffe7793337f68edcd19b9",
+  "original_build_receipt_path": "evidence/upgrade/v5.0/structure-diversity/qa/build-run1/run.json",
+  "original_build_receipt_sha256": "4692f63186ac5519ffb65bf8c17c779b238940b5e910441bab88f68d8f8567d6",
+  "original_build_candidate_path": "evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2.json",
+  "original_build_candidate_sha256": "ce4ed7575b740a30bb4f88bfd1fcb4f49cb421102ad68bf0b8c00a45e80aabce",
+  "only_source_delta_from_build_candidate": [
+    "tests/v5/run_structure_variants_browser.mjs"
+  ],
+  "original_successful_dist98_all_match": true,
+  "frontend_product_and_build_source_unchanged": true,
+  "scope": "Explicit provenance rebind of old successful build after only QA adapter changes; not a new build or new product-source execution."
+}

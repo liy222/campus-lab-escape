@@ -1,0 +1,38 @@
+{
+  "started_utc": "2026-10-27T10:05:40.547600+00:00",
+  "candidate_path": "evidence\\upgrade\\v5.0\\structure-diversity\\candidate-qa-stage1.json",
+  "candidate_sha256": "306d35df2ce2a9e34911184468f079f3b9cc32bcfbe9a61bf2eef26fb55b6ef4",
+  "source_count": 445,
+  "source_bundle_sha256": "a09c8e46f8981185468d1bebccf8c2857cab1b776ff27c6846284ff33c3a2d8c",
+  "source_before_matches": true,
+  "actual_command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "D:\\深度能力\\evidence\\upgrade\\v5.0\\structure-diversity\\qa\\run_targeted.py",
+    "--worker",
+    "--output",
+    "D:\\深度能力\\evidence\\upgrade\\v5.0\\structure-diversity\\qa\\run1"
+  ],
+  "pytest_items": [
+    "tests/v5/test_structure_variants.py"
+  ],
+  "scope_filter": "",
+  "nodes_file_sha256": null,
+  "scope": "SD3 stage1 new structure suite only; synthetic36 proof cache/API/save; no old full suite/private raw",
+  "required_inputs_explicit_in_candidate": [
+    "evidence/upgrade/v5.0/structure-diversity/implementation-plan.json",
+    "evidence/upgrade/v5.0/structure-diversity/qa/reopen_probe.py",
+    "evidence/upgrade/v5.0/structure-diversity/qa/run_targeted.py",
+    "tests/v5/conftest.py",
+    "tests/v5/test_blueprint_generation.py",
+    "tests/v5/test_generation.py",
+    "tests/v5/test_structure_variants.py"
+  ],
+  "timeout_seconds": 120,
+  "exit_code": 0,
+  "real_paid_calls": 0,
+  "ended_utc": "2026-10-27T10:05:54.690724+00:00",
+  "source_after_matches": true
+}

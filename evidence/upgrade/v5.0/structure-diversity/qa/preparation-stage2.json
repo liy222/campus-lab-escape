@@ -1,0 +1,92 @@
+{
+  "kind": "Independent AI QA SD3 stage2 build/Canvas preparation SOURCE STOP; runtime0",
+  "utc": "2026-10-27T13:34:16.077973+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "stage2_build_browser_executions": 0,
+  "stage1_receipt": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/qa/stage1-result.json",
+    "sha256": "eb63bbab193a20d906d360a18a7496d7330d41e8155897524a5d7ec912f23cca",
+    "tests_not_repeated": true
+  },
+  "new_QA_input_sha256": {
+    "evidence/upgrade/v5.0/structure-diversity/qa/run_build.py": "0a2f1a52634b8455b238d89c8bd1608d27c79148d2f6c88455e4b4d1863c3fa3",
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser_service.py": "eb12ffab2a1d2def4b4b3912c315e3f63d404b6338f10ddf8a94fbed4fa5ee33",
+    "tests/v5/run_structure_variants_browser.mjs": "e51be85b21b86ece303835fb0e0be3665533d96dc4b3102755c014639017d8fe"
+  },
+  "required_explicit_stage2_inputs": {
+    "evidence/upgrade/v5.0/structure-diversity/qa/run_build.py": "0a2f1a52634b8455b238d89c8bd1608d27c79148d2f6c88455e4b4d1863c3fa3",
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser_service.py": "eb12ffab2a1d2def4b4b3912c315e3f63d404b6338f10ddf8a94fbed4fa5ee33",
+    "tests/v5/run_structure_variants_browser.mjs": "e51be85b21b86ece303835fb0e0be3665533d96dc4b3102755c014639017d8fe",
+    "evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage1.json": "306d35df2ce2a9e34911184468f079f3b9cc32bcfbe9a61bf2eef26fb55b6ef4",
+    "evidence/upgrade/v5.0/structure-diversity/qa/run1/browser-fixture-index.json": "f1de6193e4a246c889234d496641bf0e4382cd31faeccea2cc7ad5ff7fb914f3"
+  },
+  "stage1_source445_unchanged": true,
+  "source_freeze_requirement": "New candidate must retain all445 exact hashes and add only QA stage2 inputs; product staysSTOP. Build receipt must bind exact new candidate and hash all dist files; browser checks those raw hashes before service launch.",
+  "proposed_formal_commands_in_order": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/structure-diversity/qa/run_build.py --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2.json --output evidence/upgrade/v5.0/structure-diversity/qa/build-run1",
+    "C:\\Program Files\\nodejs\\node.exe tests/v5/run_structure_variants_browser.mjs --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2.json --fixtures evidence/upgrade/v5.0/structure-diversity/qa/run1/browser-fixture-index.json --build-receipt evidence/upgrade/v5.0/structure-diversity/qa/build-run1/run.json --output evidence/upgrade/v5.0/structure-diversity/qa/browser-run1"
+  ],
+  "outputs_before_execution_absent": [
+    "qa/build-run1",
+    "qa/browser-run1"
+  ],
+  "exact_raw_local_ignored_paths": [
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser-run1/raw-sensitive/server-output.txt",
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser-run1/raw-sensitive/failure-detail.json"
+  ],
+  "initial_git_check_ignore_exit_code": 0,
+  "raw_log_policy": "Child server stdout/stderr and any Playwright failure detail go only new browser-run1/raw-sensitive; never print raw log, headers, cookies/session tokens. Public results use counts/bools/hash/types and controlled synthetic screenshots. Main may additionally freeze exact ignore rule beforeGO.",
+  "minimal_Canvas_scope": {
+    "catalog_cases": [
+      "R1hard mapping seed3,8 catalog objects",
+      "R3hard mapping seed3,changed room placement"
+    ],
+    "viewports": [
+      [
+        1280,
+        720
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "UI_routes": 4,
+    "evidence": "Actual Phaser Canvas nonblank sampled pixels, server-equal visible targets, 44px/in-scene/nonoverlap, no horizontal overflow, unforced actual UI actions toEXIT across rooms, item retained; screenshots entry/late/EXIT. R1 cumulative8objects/slots0..7, never claims8 simultaneously visible.",
+    "expected_wall_seconds": "Build10-45, browser60-180 depending animation/API; no older whole route/matrix repeated"
+  },
+  "owned_server": "Only spawned uvicorn browser_service:app --app-dir newqa on127.0.0.1:8001 using fresh TEMP/game-v5.sqlite; occupiedport exit2, no port substitution/user process kill. A unique health-only QA header binds owned child before browser auth, closing port-race risk without adding fixture/API routes or changing Host policy.",
+  "runtime_isolation": "Exact DB path only; socketconnect/external HTTP/config/ledger constructor denied. Windows original socketpair threadlocal localhost condition+finally restored as in verified worker; counters and safe receipt updated. Injected generator returns only matrix-owned cached synthetic fullDraft; no production provider factory.",
+  "cache_provenance": "Both R1/R3 controlled caches remain in owned TEMP, indexed by file/marker hashes and stage1 bundle; node checks all stage1 inputs unchanged and each cachehash. Raw synthetic cache bodies not public evidence.",
+  "stage2_pending_checks_after_GO": [
+    "Actual build artifacthashes/exit",
+    "Four true Canvas routes/screenshots and owned service receipt",
+    "Read-only raw-log privacy/source check, inspect actual desktop/mobile PNGs, then combined final report/result/seal with stage1"
+  ],
+  "actual_preparation_commands": [
+    {
+      "tool_chunk": "90f0e6",
+      "exit_code": 0,
+      "note": "Read-only UI/server IO boundaries; invalid Windows rg wildcard emitted nonterminating error, no product execution"
+    },
+    {
+      "tool_chunk": "045e66",
+      "exit_code": 0,
+      "scope": "Node syntax/PythonAST/socketpaircondition inheritance/ignore/current445 only"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library AST+node--check/input hashes/cache hashes/futureignore and this preparation record; exact source in transcript",
+      "exit_code": 0
+    }
+  ],
+  "product_or_stage1_QA_source_edits": false,
+  "real_private_actual_body_Key_config_liveledger_playerDB_network_paid_access": false,
+  "no_new_agents_commits_or_runtime_inference": true,
+  "limits": [
+    "Formal build/browser require Main newQA-only candidate freeze and explicitGO; neither has run.",
+    "Only synthetic route/layout evidence, no real new-structure model/narrative/yield/human-difficulty proof.",
+    "Preserve any first failure and do not auto-repeat successful routes or rebuild absent a source/finding justification.",
+    "Physical mobile/OS restart/public release or deployment not covered."
+  ]
+}

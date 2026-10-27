@@ -1,0 +1,105 @@
+{
+  "kind": "Mechanical Delivery record for SD3 finite structure diversity acceptance",
+  "date": "2026-10-27",
+  "status": "SOURCE_STOP",
+  "files": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/structure-diversity/delivery-docs.json"
+  ],
+  "source_prefix_sha256": {
+    "README.md": "b215ecb9769776f88b9636a6a479f6828a08027025295adb17111876e0cdd3a6",
+    "release/V5.md": "100b17f2da8cef730e77f1e873ddd2abc37c67b0342b060682685abf3ed4592e"
+  },
+  "qa": {
+    "browser_first_records": 290,
+    "schema_sha256": "a107ae3a85f90d1ca01b19d3d1534dfe8f236fe7e5a59efa368387defda8fb8c",
+    "report_sha256": "0cccbaf3f0883b46c413f9ab4c084dd1131f5dac0281600b15c78daadb300235",
+    "all_max_refused_before_reserve_send": true,
+    "result_sha256": "6d564dd2cf658fddff4771e9e4330d05408389ed458d8d96f7b8058023903d30",
+    "cases": 75,
+    "request_shapes": 9,
+    "seal_sha256": "7ce3df0f558857aa539979ac7f4957e6c0448a674d5de426a97374d2654d4997",
+    "catalog_sha256": "dd9246d5ea3dc16f29c9ca02b0018f9e3a6e05beb68d579d281e2743662977dc",
+    "report": "review/findings/v5-structure-diversity.md",
+    "new_real_model_quality": false,
+    "browser_counts_summed": false,
+    "browser_first_scope": "R1 desktop/mobile complete",
+    "build_exit": 0,
+    "build_dist_files": 98,
+    "contract_variants": 36,
+    "browser_first_exit": 1,
+    "topology_count_claimed": false,
+    "original_cap_cny": 0.2,
+    "paid_calls": 0,
+    "product_fixes": 0,
+    "browser_narrow_records": 301,
+    "browser_narrow_exit": 0,
+    "browser_narrow_scope": "R3 desktop/mobile only after QA-only adapter fix",
+    "catalog": "contracts/v2/generation-structures-v1.README.md",
+    "human_difficulty_claim": false,
+    "max_theme_budget_upper_cny": [
+      0.201504,
+      0.22524,
+      0.201696,
+      0.225432
+    ],
+    "template_families": 2,
+    "formal_exit": 0,
+    "single_full_green_claim": false,
+    "accepted_sha256": "98a5f565b633c9a30ae26f9f90e55286e4baf2b651c98998e369952032a7c0fd",
+    "seal": "evidence/upgrade/v5.0/structure-diversity/qa/artifact-seal.json",
+    "result": "evidence/upgrade/v5.0/structure-diversity/qa/result.json",
+    "schema": "contracts/v2/generation-structures-v1.schema.json",
+    "accepted": "evidence/upgrade/v5.0/structure-diversity/accepted.json"
+  },
+  "limitations": [
+    "Only finite synthetic catalog/contracts/actions; no infinite uniqueness or arbitrary generation-quality claim.",
+    "First browser failure preserved; narrow run only completes R3, counts are not merged into single green run.",
+    "No new real structure model sample, paid call, or human/physical mobile acceptance.",
+    "No tag/main merge/deployment."
+  ],
+  "actual_steps": [
+    {
+      "action": "Verify public QA/report/acceptance/catalog/schema hashes",
+      "exit": 0
+    },
+    {
+      "action": "Append UTF-8 CRLF documentation bytes and compare existing prefixes",
+      "exit": 0
+    },
+    {
+      "action": "JSON/link/UTF-8 EOF/whitespace verification",
+      "exit": "pending"
+    }
+  ],
+  "actual_commands": [
+    {
+      "exit": 0,
+      "command": "python -B -X utf8 evidence/upgrade/v5.0/structure-diversity/qa/run_targeted.py --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage1.json --output evidence/upgrade/v5.0/structure-diversity/qa/run1",
+      "items": 75
+    },
+    {
+      "exit": 0,
+      "dist_files": 98,
+      "command": "python -B -X utf8 evidence/upgrade/v5.0/structure-diversity/qa/run_build.py --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2.json --output evidence/upgrade/v5.0/structure-diversity/qa/build-run1"
+    },
+    {
+      "exit": 1,
+      "records": 290,
+      "scope": "R1 desktop/mobile complete; R3 partial",
+      "command": "node tests/v5/run_structure_variants_browser.mjs --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2.json --fixtures evidence/upgrade/v5.0/structure-diversity/qa/run1/browser-fixture-index.json --build-receipt evidence/upgrade/v5.0/structure-diversity/qa/build-run1/run.json --output evidence/upgrade/v5.0/structure-diversity/qa/browser-run1"
+    },
+    {
+      "exit": 0,
+      "records": 301,
+      "scope": "R3 desktop/mobile only",
+      "command": "node tests/v5/run_structure_variants_browser.mjs --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2-fixed1.json --fixtures evidence/upgrade/v5.0/structure-diversity/qa/run1/browser-fixture-index.json --build-receipt evidence/upgrade/v5.0/structure-diversity/qa/build-reuse-stage2-fixed1.json --output evidence/upgrade/v5.0/structure-diversity/qa/browser-r3-run1 --remaining-r3 --reuse-first-run evidence/upgrade/v5.0/structure-diversity/qa/browser-run1/run.json"
+    }
+  ],
+  "final_doc_sha256": {
+    "README": "10ac754b5c695ea86f4897fefb1d11387b9645d64f91ebdfd2be69a00a63218a",
+    "release_V5": "94fdb3de5a14307d45ebc5f4bbd1f266f93d1d8936c4d9c651754c31fd6f66f1"
+  },
+  "final_checks_exit": 0
+}

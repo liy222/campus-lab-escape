@@ -11,6 +11,7 @@ import unicodedata
 from dataclasses import replace
 
 from . import blueprints as v1
+from . import structure_variants
 from .generated import strict_json
 
 CONTENT_VERSION = '2.0.0'
@@ -97,8 +98,8 @@ def _require_v2(blueprint: Blueprint) -> None:
 
 
 def select_blueprint(room_count, difficulty, *, seed=None) -> Blueprint:
-    """Select the original structure once; change only the content-contract tag."""
-    return replace(v1.select_blueprint(room_count, difficulty, seed=seed),
+    """Select one versioned structure; change only the content-contract tag."""
+    return replace(structure_variants.select_blueprint(room_count, difficulty, seed=seed),
                    content_version=CONTENT_VERSION)
 
 
@@ -121,6 +122,10 @@ def request_manifest(blueprint: Blueprint) -> dict:
     _require_v2(blueprint)
     manifest = v1.request_manifest(blueprint)
     manifest['content_version'] = CONTENT_VERSION
+    manifest['structure_catalog_version'] = structure_variants.CATALOG_VERSION
+    puzzle_objects = {obj.reference_id: obj.object_id for obj in blueprint.objects if obj.kind == 'puzzle'}
+    for row, puzzle in zip(manifest['puzzles'], blueprint.puzzles):
+        row['prerequisite_object_slots'] = [puzzle_objects[pid] for pid in puzzle.prerequisite_ids]
     manifest['text_rule'] = ('物件槽位只填写name，物件说明由程序按真实角色和规则产生；'
                              'rooms的description只写氛围，不编造操作、完整答案或另一套规则。')
     return manifest

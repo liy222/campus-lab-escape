@@ -1,0 +1,88 @@
+{
+  "kind": "Independent AI QA stage2 first-browser safe diagnosis; no rerun",
+  "utc": "2026-10-27T13:42:25.518896+00:00",
+  "actor": "Independent AI QA agent",
+  "actual_commands": [
+    {
+      "tool_chunk": "d905bd session86139 ->2e7475",
+      "exit_code": 0,
+      "scope": "Unique build succeeded,98dist files hashed"
+    },
+    {
+      "tool_chunk": "c04216 session7959 ->8d3b43",
+      "exit_code": 1,
+      "scope": "First browser,290records,source450unchanged"
+    },
+    {
+      "tool_chunk": "c48eb6",
+      "exit_code": 0,
+      "scope": "Closed error categories/public progress counts only"
+    },
+    {
+      "tool_chunk": "1eff00",
+      "exit_code": 0,
+      "scope": "Error categories/own code line and port8001 listener absent"
+    },
+    {
+      "tool_chunk": "8e1fd6",
+      "exit_code": 0,
+      "scope": "Read own code line96"
+    },
+    {
+      "tool_chunk": "32341f",
+      "exit_code": 0,
+      "scope": "Read production visible exits render order"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; closed local error/PID-only extraction,Get-Process ownedPID existence,hash/static metadata and this safe receipt; full source in transcript",
+      "exit_code": 0
+    }
+  ],
+  "first_browser_actual_exit": 1,
+  "first_browser_records": 290,
+  "first_source450_before_after_current_match": true,
+  "first_browser_issues": [
+    "UI_CASE_FAILED_Error",
+    "OWNED_SERVER_DID_NOT_STOP"
+  ],
+  "UI_failure": {
+    "category": "STRICT_LOCATOR_TWO_PUBLIC_EXITS_SAME_NAME",
+    "matched_elements": 2,
+    "own_runner_line": 96,
+    "fixture_room_count": 3,
+    "distinct_fixture_room_names": 1,
+    "scope": "Synthetic equal room names produce identical forward/back exit labels inG2. Need destination-mapped nav index, not global role/name. No product or model/private defect."
+  },
+  "stop_failure": {
+    "category": "SIGNAL_EXITCODE_NULL_FALSE_POSITIVE",
+    "owned_PID_parsed_only_from_this_local_log": 9512,
+    "owned_PID_currently_exists": false,
+    "port8001_listener_present": false,
+    "signal_or_close_status_not_saved_by_first_adapter": true,
+    "scope": "First adapter checked exitCode alone; cannot infer a live process from null. OwnedPID absent and portfree observed; no user process killed."
+  },
+  "completed_scope_reused": [
+    "R1hard desktop1280 trueCanvas route EXIT",
+    "R1hard mobile390 trueCanvas route EXIT"
+  ],
+  "unfinished_scope": [
+    "R3hard desktop1280 stopped atG2late move; early partial evidence retained",
+    "R3hard mobile390 not executed"
+  ],
+  "needed_narrow_followup": "Only R3 desktop/mobile, firstR1 successful scope not rerun. Replaying desktop setup prefix may be necessary; do not sum repeated layout/action counts.",
+  "original_local_raw_sha256": {
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser-run1/raw-sensitive/failure-detail.json": "89a61e61dd069b932543bebf61fc910b135b4e4d942d45acc04e15d4c9d75e23",
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser-run1/raw-sensitive/server-output.txt": "a7180cdb947c617a0a827e29c091b4ec375bb94b754d86dbb2f72bb49727da98"
+  },
+  "original_public_sha256": {
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser-run1/run.json": "213c7bdb7fcaf1bdde8cd481986f4757ba7ba422dd08b863ab3946afb6092959",
+    "evidence/upgrade/v5.0/structure-diversity/qa/build-run1/run.json": "4692f63186ac5519ffb65bf8c17c779b238940b5e910441bab88f68d8f8567d6"
+  },
+  "product_change_or_new_HTTP_browser_build_test_model_execution": false,
+  "real_private_Key_config_liveledger_userDB_access": false,
+  "paid_calls": 0,
+  "limits": [
+    "Original exit1/290records and both raw files remain untouched; this diagnosis is not a completed R3 pass.",
+    "Need QA-only source freeze and explicit GO before narrow browser rerun; successful build98 should be reused after provenance check."
+  ]
+}

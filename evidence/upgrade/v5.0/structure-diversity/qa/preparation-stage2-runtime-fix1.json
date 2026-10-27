@@ -1,0 +1,77 @@
+{
+  "kind": "Independent AI QA stage2 first actual failure narrow-fix preparation SOURCE STOP",
+  "utc": "2026-10-27T13:44:49.544286+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "narrow_followup_executions": 0,
+  "first_browser_exit1_preserved": true,
+  "safe_diagnosis": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/qa/stage2-first-failure-diagnosis.json",
+    "sha256": "7b60f45700e430850c3d698100b0e09e95e1b4931af4a9a9eee95c6198b95e9d"
+  },
+  "only_source_delta_from_old450": [
+    "tests/v5/run_structure_variants_browser.mjs"
+  ],
+  "browser_runner_sha256": "f30984205ea2806e2f1ccda33dfbca53ab13a78d2f477ce0b5def970c4950429",
+  "all_stage1_445_sources_match": true,
+  "service_and_product_unchanged": true,
+  "first_R1_both_routes_reused_without_repeat": true,
+  "remaining_scope": "Only R3hard desktop1280/mobile390. Desktop partial setup may repeat to finish route; do not sum its repeated records with first run.",
+  "adapter_fixes": [
+    "Move locator uses .v5-exits button index from actual public destination_id order, asserts count and rendered label; duplicate room names no longer cause global role strict violation.",
+    "Owned server close event recorded with code/signal; null exitCode after SIGTERM is not called live. Never kill any process except spawned child.",
+    "New --remaining-r3 requires preserved source-bound first exit1 result with both R1 EXIT proofs. Server expected syntheticgenerations2; R1 not rerun.",
+    "Derived build reuse receipt validates original actual build/candidate hashes, all98dist hashes, and exactly one allowed QAJS source delta. Original successful build receipt never rewritten."
+  ],
+  "new_required_explicit_inputs": {
+    "tests/v5/run_structure_variants_browser.mjs": "f30984205ea2806e2f1ccda33dfbca53ab13a78d2f477ce0b5def970c4950429",
+    "evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2.json": "ce4ed7575b740a30bb4f88bfd1fcb4f49cb421102ad68bf0b8c00a45e80aabce",
+    "evidence/upgrade/v5.0/structure-diversity/qa/build-run1/run.json": "4692f63186ac5519ffb65bf8c17c779b238940b5e910441bab88f68d8f8567d6",
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser-run1/run.json": "213c7bdb7fcaf1bdde8cd481986f4757ba7ba422dd08b863ab3946afb6092959"
+  },
+  "retained_stage2_inputs": {
+    "evidence/upgrade/v5.0/structure-diversity/qa/run_build.py": "0a2f1a52634b8455b238d89c8bd1608d27c79148d2f6c88455e4b4d1863c3fa3",
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser_service.py": "eb12ffab2a1d2def4b4b3912c315e3f63d404b6338f10ddf8a94fbed4fa5ee33",
+    "evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage1.json": "306d35df2ce2a9e34911184468f079f3b9cc32bcfbe9a61bf2eef26fb55b6ef4",
+    "evidence/upgrade/v5.0/structure-diversity/qa/run1/browser-fixture-index.json": "f1de6193e4a246c889234d496641bf0e4382cd31faeccea2cc7ad5ff7fb914f3"
+  },
+  "derived_build_reuse_receipt_to_be_written_by_Main_after_new_freeze": {
+    "output": "evidence/upgrade/v5.0/structure-diversity/qa/build-reuse-stage2-fixed1.json",
+    "required_fields": {
+      "kind": "derived_build_reuse_no_execution",
+      "new_build_executed": false,
+      "exit_code": 0,
+      "candidate_sha256": "SHA of the newly frozen candidate-qa-stage2-fixed1.json",
+      "original_build_receipt_path": "evidence/upgrade/v5.0/structure-diversity/qa/build-run1/run.json",
+      "original_build_receipt_sha256": "4692f63186ac5519ffb65bf8c17c779b238940b5e910441bab88f68d8f8567d6",
+      "original_build_candidate_path": "evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2.json",
+      "original_build_candidate_sha256": "ce4ed7575b740a30bb4f88bfd1fcb4f49cb421102ad68bf0b8c00a45e80aabce",
+      "only_source_delta_from_build_candidate": [
+        "tests/v5/run_structure_variants_browser.mjs"
+      ]
+    },
+    "no_dist_hash_map_copy_required": "Node verifies original build98 raw hashes directly; derived receipt binds original metadata, not a new build."
+  },
+  "proposed_narrow_formal_command": "C:\\Program Files\\nodejs\\node.exe tests/v5/run_structure_variants_browser.mjs --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2-fixed1.json --fixtures evidence/upgrade/v5.0/structure-diversity/qa/run1/browser-fixture-index.json --build-receipt evidence/upgrade/v5.0/structure-diversity/qa/build-reuse-stage2-fixed1.json --output evidence/upgrade/v5.0/structure-diversity/qa/browser-r3-run1 --remaining-r3 --reuse-first-run evidence/upgrade/v5.0/structure-diversity/qa/browser-run1/run.json",
+  "raw_local_exact_ignored_paths": [
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser-r3-run1/raw-sensitive/server-output.txt",
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser-r3-run1/raw-sensitive/failure-detail.json"
+  ],
+  "git_check_ignore_exit_code": 0,
+  "actual_preparation_commands": [
+    {
+      "tool_chunk": "22d46d",
+      "exit_code": 0,
+      "scope": "Safe first-error/PID existence/hash diagnosis only, no raw output"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library unchanged inputs/dist98/first raw hashes/ignore and node --check, this narrow prep; full source in transcript",
+      "exit_code": 0
+    }
+  ],
+  "limits": [
+    "No actual rebuild, browser, HTTP, proof/test rerun occurred during fix preparation.",
+    "Need new Main QA-only freeze/GO before only R3 followup; first290/exit1 and raw2 preserved.",
+    "No product/model/Key/config/liveledger/playerDB/oldprivatebody/paid/newagent/commit."
+  ]
+}

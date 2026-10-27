@@ -1,0 +1,78 @@
+{
+  "kind": "Independent AI QA SD3 stage1-only actual result",
+  "utc": "2026-10-27T13:24:46.765971+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "status": "PASS_STAGE1_ONLY_STAGE2_BUILD_CANVAS_PENDING",
+  "formal_runs": 1,
+  "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/structure-diversity/qa/run_targeted.py --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage1.json --output evidence/upgrade/v5.0/structure-diversity/qa/run1",
+  "execution_tool": "508783 session36445 -> fbce7c",
+  "actual_exit_code": 0,
+  "pytest_cases": 75,
+  "passed": 75,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 0,
+  "pytest_seconds": 12.592,
+  "run_started_utc": "2026-10-27T10:05:40.547600+00:00",
+  "run_ended_utc": "2026-10-27T10:05:54.690724+00:00",
+  "run_duration_seconds": 14.143124,
+  "matrix_original_proof_and_domain_EXIT_cells": 36,
+  "production_synthetic_API_R_save_restore_process_cases": 2,
+  "old_complete_v1_v2_save_restore_process_cases": 2,
+  "partial_R1_R3_legal_action_cases": 2,
+  "whole_payload_measurements": 40,
+  "maximal_fourbyte_upper_cny_by_seed": {
+    "0": 0.201504,
+    "1": 0.22524,
+    "2": 0.201696,
+    "3": 0.225432
+  },
+  "all_four_maximal_fourbyte_over_original_cap": true,
+  "cap_cny_unchanged": 0.2,
+  "short_request_cost_upper_range": [
+    0.11436,
+    0.161528
+  ],
+  "overcap_before_reserve_send_proven_synthetic": true,
+  "source_current445_before_after_match": true,
+  "candidate_source_map": "evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage1.json",
+  "runtime_guard": {
+    "external_network_config_or_nonTEMP_DB_attempts": 0,
+    "stdlib_socketpair_local_IPC_connects": 154,
+    "all_database_connections_restricted_to_TEMP": true,
+    "provider_transports_synthetic_only": true,
+    "real_paid_calls": 0
+  },
+  "privacy_integrity": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/qa/stage1-integrity.json",
+    "sha256": "84e0bf243d66fc363d5e454db3a2148bf538e0b2a6ac12c9a0832f78a0b971c2"
+  },
+  "seal": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/qa/stage1-artifact-seal.json",
+    "sha256": "bf3676c4c24034acbe28d320aecf3c01a3eb4f6e7b518974725dd11dda6be8f1",
+    "artifacts": 53
+  },
+  "actual_followup_commands": [
+    {
+      "tool_chunk": "fa14d0",
+      "exit_code": 0,
+      "scope": "Safe JUnit/runtime/budget metadata only"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library source445/privacy/cache-hash and stage1 receipt sealing; exact source in transcript",
+      "exit_code": 0
+    }
+  ],
+  "no_rerun_after_usage_limit": true,
+  "build_or_browser_executed": false,
+  "new_HTTP_or_model_paid_calls": 0,
+  "old_remaining_paid_authorization": 0,
+  "limits": [
+    "Finite regex checks do not prove absence of all possible encodings.",
+    "Only explicit synthetic fixtures/TEMP DBs/fake ledgers used; old actual raw/private bodies and real Key/liveledger/playerDB were not read.",
+    "Stage2 build/browser still pending, no frontend/whole-product acceptance.",
+    "One36 proof matrix and targeted synthetic75 only, not old suite or real new-structure model/narrative/yield/human quality evidence.",
+    "Usage-limit interruption occurred after actual stage1 success but before this receipt/browser preparation; it was not a subsequent completion or test pass."
+  ]
+}

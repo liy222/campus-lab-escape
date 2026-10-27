@@ -1,0 +1,38 @@
+{
+  "kind": "SD3 stage2 QA-only preparation fixed2 SOURCE STOP; runtime0",
+  "utc": "2026-10-27T13:36:47.905110+00:00",
+  "actor": "Independent AI QA agent",
+  "source_stop": true,
+  "stage2_build_browser_executions": 0,
+  "prior_fixed1_record": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/qa/preparation-stage2-fixed1.json",
+    "sha256": "9f4eb59dfb68211c2e998e586a1eda858d7ccf53f02e660a133f5bfef5d93a72",
+    "unchanged": true
+  },
+  "only_additional_change": "Promise.all attaches handlers to both expected HTTP receipt and click immediately, so a click failure cannot leave an unhandled pending response timeout before owned-server cleanup. Receipt matching and scope unchanged.",
+  "browser_runner_sha256": "55fec24eae110cd2ac03725672b11aeb04b14a584f7871fa082134f8fca89d61",
+  "prior_browser_runner_sha256": "4f22c92ecd7868cce70df5c79a49674a8ccd6813cbe859ee4b4f65392865af89",
+  "required_explicit_stage2_inputs": {
+    "evidence/upgrade/v5.0/structure-diversity/qa/run_build.py": "0a2f1a52634b8455b238d89c8bd1608d27c79148d2f6c88455e4b4d1863c3fa3",
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser_service.py": "eb12ffab2a1d2def4b4b3912c315e3f63d404b6338f10ddf8a94fbed4fa5ee33",
+    "tests/v5/run_structure_variants_browser.mjs": "55fec24eae110cd2ac03725672b11aeb04b14a584f7871fa082134f8fca89d61",
+    "evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage1.json": "306d35df2ce2a9e34911184468f079f3b9cc32bcfbe9a61bf2eef26fb55b6ef4",
+    "evidence/upgrade/v5.0/structure-diversity/qa/run1/browser-fixture-index.json": "f1de6193e4a246c889234d496641bf0e4382cd31faeccea2cc7ad5ff7fb914f3"
+  },
+  "proposed_formal_commands_in_order": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/structure-diversity/qa/run_build.py --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2.json --output evidence/upgrade/v5.0/structure-diversity/qa/build-run1",
+    "C:\\Program Files\\nodejs\\node.exe tests/v5/run_structure_variants_browser.mjs --candidate evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2.json --fixtures evidence/upgrade/v5.0/structure-diversity/qa/run1/browser-fixture-index.json --build-receipt evidence/upgrade/v5.0/structure-diversity/qa/build-run1/run.json --output evidence/upgrade/v5.0/structure-diversity/qa/browser-run1"
+  ],
+  "exact_raw_local_ignored_paths": [
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser-run1/raw-sensitive/server-output.txt",
+    "evidence/upgrade/v5.0/structure-diversity/qa/browser-run1/raw-sensitive/failure-detail.json"
+  ],
+  "node_syntax_check_exit_code": 0,
+  "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library metadata plus node --check only; exact source in transcript",
+  "exit_code": 0,
+  "limits": [
+    "No formal build/browser/server execution, no product changes or repeated tests.",
+    "Original preparation/fixed1 and stage1 actual75/seal53 remain unchanged.",
+    "Wait Main stage2 QA-only freeze/GO; no new network/model/Key/ledger/DB/privateactual access."
+  ]
+}

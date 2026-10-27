@@ -1,0 +1,78 @@
+{
+  "kind": "Main SD1/SD2 implementation GO within frozen SD0",
+  "date": "2026-10-27",
+  "utc": "2026-10-27T04:38:48.261628+00:00",
+  "baseline_head": "9fac9375621a6c0129a6515380fe507c0fc9cd40",
+  "baseline_runtime_source_map": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/offline-preview-v1.json",
+  "SD0_plan_sha256": "9ca7241980f4afc8f87dc4ae6ec8705169f88fedca83675b0d497877e3c434e4",
+  "SD0_acceptance_sha256": "c0c10ddfa3ee4a1b1b2964c12534b594e47a889db17414ae607e09133ef694cb",
+  "scope": "Exactly9shapes x2families xF/R, same rules/limits/API/saves. Ordinary implementation authorized; no new user scope decision required by independent SD0 review.",
+  "ownership": {
+    "existing_Backend": {
+      "product_paths": [
+        "backend/app/domain/structure_variants.py",
+        "backend/app/domain/generation_content_v2.py",
+        "contracts/v2/build_structure_variants_v1.py",
+        "contracts/v2/generation-structures-v1.schema.json",
+        "contracts/v2/generation-structures-v1.README.md"
+      ],
+      "allowed_v2_AST_delta": "one structure_variants import plus select_blueprint/request_manifest functions only; all other functions and guard revision1 byte/AST preserved",
+      "evidence_paths": "new evidence/upgrade/v5.0/structure-diversity/owner/ only, development probes/source-stop, preserve failures; no formal QA claim",
+      "forbidden": "No oldtests, other contracts/oldschema/builders, compiler/generated.py, API/Store/provider/budget/AI/frontend/assets or rootdocs edits"
+    },
+    "Main": [
+      "AGENTS/PLAN/STATUS/DECISIONS",
+      "docs/structure-diversity-plan.md metadata only if needed, no unreviewed scope drift",
+      "docs/SPEC.md and docs/level_design.md additive newcatalog behavior",
+      "integration/freeze/acceptance/Git"
+    ],
+    "existing_QA": {
+      "new_paths": [
+        "tests/v5/test_structure_variants.py",
+        "tests/v5/run_structure_variants_browser.mjs",
+        "review/findings/v5-structure-diversity.md",
+        "evidence/upgrade/v5.0/structure-diversity/qa/"
+      ],
+      "old_helper_only": "tests/v5/test_blueprint_generation.py::blueprint_for_messages use current_content.select_blueprint and seeds0..3; no other old assertion/function changes",
+      "gate": "Preparation/static syntax only while product changes, no product execution/formal tests until OwnerSTOP/Mainfreeze"
+    },
+    "existing_Delivery": "README.md/release/V5.md/newdelivery record only after independent SD3 acceptance"
+  },
+  "interfaces": {
+    "structure_variants.CATALOG_VERSION": "1.0.0",
+    "structure_variants.VARIANTS": [
+      "forward_v1",
+      "reverse_v1"
+    ],
+    "structure_variants.select_blueprint": "same room_count,difficulty,seed keyword; returns immutable v1 Blueprint tag, current v2 wrapper sets2.0.0. seed0/1 identical oldF;2/3R; default exactlyone randbelow4 plus explicit oldfamily seed, no publicseed API",
+    "R_id": "original F blueprint_id + -sv1-reverse",
+    "structure_variants.canonical_structure": "pure chain topological rank and canonical dependency/placement payloads, no literal IDs/family/recipe/text/parameter values; include unused/decoy row multiplicity",
+    "structure_variants.structure_signatures": "returns dependency/placement/full SHA256 strings over explicit canonical schema-versioned data",
+    "manifest": "only structure_catalog_version=1.0.0 and prerequisite_object_slots derived from actual prerequisite/object refs; no registry membership or ID-based variant classifier for custom Blueprints",
+    "new_catalog": "new36schema/builder--check/readme; oldv1/v2 schema/builders/readmes raw-identical and old18 reproducible via seed0/1"
+  },
+  "reverse_algorithm": [
+    "reverse puzzle tuple then allocate using original per-room puzzle counts",
+    "first item free, keyG1 free; rewrite all puzzle prereqs as newchain and puzzle objects locked_by/room to match",
+    "basic code source follows its code newroom; extra material follows own puzzle newroom; relation/device source G1, relation locked_by first item only",
+    "each room original relative order nonpuzzle objects then newchain order puzzle objects, continuous slots0..7"
+  ],
+  "owner_development_validation": "At most one complete36 synthetic matrix probe plus necessary failed-scope fixes only; actual original compile/proof and replay with25000/5s, static signatures and both oldbuilder--check/newbuilder--check, no provider/network/liveDB. Record actual timings/exit/first failures, not independentQA.",
+  "independent_SD3_scope": [
+    "all36 exact contracts, original compiler/proof and domain witness toEXIT with actual solved mechanism sequence F/R",
+    "canonical consistent all-ID rename/object display reordering/value/text invariance; unuseddecoy multiplicity; familylabels not topology; dependency and placement differences independently expected",
+    "cycle/selflock/future-room material/caps/combo/depth/slot invalid candidates refused orunproven, no bypass or repair; unsupported signature branch not labelled compiler unsolvable",
+    "same immutable selection through one production MockTransport request, wrongstructure reply/refused no retry, invalidKey before selection, full serialized short36 and maximalfourbyte3hard4 requests/caps0.20 unchanged",
+    "unobserved/partial/full information boundaries and Host description actual references with R item-first nonconsuming",
+    "isolated API generatedR1hard/R3hard save/multi-moment selectedrestore/reload/process reopen and old fullv1/v2 definition/hash restore without newselector/LLM; necessary classic compatibility",
+    "focused true Canvas R1hard max8 andR3hard changedroom route/layout at desktop/mobile, oldfrontend/assets/source unchanged; reuse prior build only if artifact provenance/read checks justify, otherwise one necessary build not fullsuite"
+  ],
+  "runtime": "NewQA uses existing Windows socketpair-safe isolation, TEMP fakeledgers/databases and MockTransport only. Never load real credentials/config/liveledger/playerDB or oldprivate actualraw. Browser only owned isolated service/test account, never kill existing user processes. Capture failures raw locally if sensitive then explicit redacted public derivative.",
+  "paid_calls_authorized": 0,
+  "no_new_agents_Astra_runtime_inference_release_tag_mainmerge_deploy_Actions": true,
+  "limits": [
+    "Current real435 becomes historical after allowed source deltas, do not call new structure real quality verified.",
+    "Limited2skeleton selection canrepeat; no general narrative/human difficulty guarantee.",
+    "Formal SD3 sourceSTOP/Mainfreeze gate mandatory; no mechanical rerun old fullsuite or paid samples."
+  ]
+}

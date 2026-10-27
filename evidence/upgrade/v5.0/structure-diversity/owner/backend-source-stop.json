@@ -1,0 +1,130 @@
+{
+  "kind": "Backend SD1/SD2 Owner development SOURCE STOP, not independent QA",
+  "status": "SOURCE_STOP",
+  "date": "2026-10-27",
+  "implementation_plan": "evidence/upgrade/v5.0/structure-diversity/implementation-plan.json",
+  "baseline_head": "9fac9375621a6c0129a6515380fe507c0fc9cd40",
+  "files": {
+    "backend/app/domain/structure_variants.py": "163a1be77077e7b2ebce65bfb3b0c72533230f000f40583aca16a802fc80ce19",
+    "backend/app/domain/generation_content_v2.py": "3eb9d60860dde36c9aee64471b25f0f1f048282ef916e9f74648693f7191fcee",
+    "contracts/v2/build_structure_variants_v1.py": "607213f403e1be3016214446aa554993de9e4809454cf19807f1ebf260a6f4bc",
+    "contracts/v2/generation-structures-v1.schema.json": "a107ae3a85f90d1ca01b19d3d1534dfe8f236fe7e5a59efa368387defda8fb8c",
+    "contracts/v2/generation-structures-v1.README.md": "dd9246d5ea3dc16f29c9ca02b0018f9e3a6e05beb68d579d281e2743662977dc"
+  },
+  "implementation": {
+    "content_version": "2.0.0 unchanged",
+    "structure_catalog_version": "1.0.0",
+    "catalog_contracts": 36,
+    "not_36_topologies": true,
+    "seed_map": [
+      "F position",
+      "F mapping",
+      "R position",
+      "R mapping"
+    ],
+    "forward_fields": "original immutable v1 Blueprint equal for seeds0/1 except v2 content tag",
+    "reverse_id_suffix": "-sv1-reverse",
+    "v2_AST_delta": "one import plus select_blueprint/request_manifest only; all other original function source segments match",
+    "manifest_additions": [
+      "structure_catalog_version",
+      "puzzles[].prerequisite_object_slots"
+    ],
+    "signatures": "schema_version/dependency/placement canonical payloads; dependency/placement/full SHA256; ID/family/recipe/text/typed values excluded; actual uses and slots/gates retained; decoy rows and multiplicity retained",
+    "unsupported_signature_code": "STRUCTURE_SIGNATURE_UNSUPPORTED; signature domain only, not compiler admission"
+  },
+  "actual_commands": [
+    {
+      "tool_chunk": "278968",
+      "command": "Get-Content implementation-plan.json + docs/structure-diversity-plan.md + AGENTS.md tail",
+      "exit": 0,
+      "note": "initial display truncation; complete implementation-plan reread in e91dd3"
+    },
+    {
+      "tool_chunk": "52449b",
+      "command": "Get-Content generation_content_v2.py + blueprints.py + old v2 builder; rg compile/replay interfaces",
+      "exit": 0
+    },
+    {
+      "tool_chunk": "e91dd3",
+      "command": "Read complete implementation-plan, generated compiler/proof and synthetic QA references only",
+      "exit": 0
+    },
+    {
+      "tool_chunk": "9205fb",
+      "command": "Standard-library stdin snapshot of nine pre-edit source hashes -> owner/before.json",
+      "exit": 0
+    },
+    {
+      "tool_chunk": "ce35a1",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe contracts/v2/build_structure_variants_v1.py",
+      "exit": 0
+    },
+    {
+      "tool_chunk": "e33a01",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe contracts/v2/build_generation_content.py --check; build_generation_content_v2.py --check; build_structure_variants_v1.py --check (stop on failure)",
+      "exit": 0,
+      "individual_exits": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "tool_chunk": "21b767",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe evidence/upgrade/v5.0/structure-diversity/owner/development_probe.py",
+      "exit": 0,
+      "outer_wall_seconds": 4.2690606,
+      "complete_matrix_runs": 1
+    },
+    {
+      "tool_chunk": "100995",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe evidence/upgrade/v5.0/structure-diversity/owner/boundary_probe.py",
+      "exit": 0,
+      "outer_wall_seconds": 0.6388519,
+      "additional_compile_or_proof_calls": 0
+    }
+  ],
+  "development_results": {
+    "complete_records": 36,
+    "matrix_status": "PASS",
+    "matrix_seconds": 3.166912,
+    "first_failure": null,
+    "all_original_proof_and_domain_replay_EXIT": true,
+    "original_solver_limits": {
+      "states": 25000,
+      "seconds": 5
+    },
+    "per_shape_F_R_dependency_and_placement_different": true,
+    "per_shape_actual_solved_mechanisms_different": true,
+    "per_variant_two_family_signatures_equal": true,
+    "finite_boundary_checks": [
+      "all-ID rename/object+puzzle reorder/family+recipe label excluded",
+      "unused material duplicate canonical rows retained",
+      "nonunique-chain signature domain error only",
+      "real clue use positions retained",
+      "one random selection and immutable selected result",
+      "strict seed types retained",
+      "manifest custom IDs and actual prerequisites",
+      "v2 only one import + select/manifest AST and other functions byte unchanged",
+      "all nine recorded historical sources except allowed v2 unchanged",
+      "new and changed Python syntax"
+    ],
+    "frozen_hash_sources": 9,
+    "frozen_unchanged_excluding_allowed_v2": 8
+  },
+  "evidence": {
+    "evidence/upgrade/v5.0/structure-diversity/owner/before.json": "e1528a9f82aa046fbd5620795c4568b52384c5e6f1db8dcdd3b8fdfa5460c78b",
+    "evidence/upgrade/v5.0/structure-diversity/owner/boundary_probe.py": "3ace00d11888d455c9f8768903221bc2bf6f18f3f4491c222fd895806b63be47",
+    "evidence/upgrade/v5.0/structure-diversity/owner/development-boundaries.json": "ed9378ed3410dcf5a0dc3e43f9695dcf3e40df4be706d86d613eb77ed041348c",
+    "evidence/upgrade/v5.0/structure-diversity/owner/development-matrix.json": "7646b7a787960cdddf9a4ad58dfcf88fcdca5319024be6163c71d4f8a7eb43f2",
+    "evidence/upgrade/v5.0/structure-diversity/owner/development_probe.py": "09f6c235bc13e3cefc5b9222fb763dffdfc947923bb4c3e2f429abdd6f14c7d4"
+  },
+  "limitations": [
+    "Owner development evidence only; independent SD3 waits Main candidate freeze.",
+    "No production-service/HTTP/API/save/restore/browser/build or formal QA suite was run by Owner.",
+    "No current real model/quality or human difficulty claim; historical real435 is historical after product changes.",
+    "Signatures support unique single-chain references only and do not replace compiler or prove arbitrary graphs unsolvable.",
+    "36 contracts cover two families and two skeletons over nine shapes; family differences do not count as topology.",
+    "No provider/network/Key/config/live ledger/player DB/old sensitive bodies accessed; paid0, no commit, no new agents."
+  ]
+}
