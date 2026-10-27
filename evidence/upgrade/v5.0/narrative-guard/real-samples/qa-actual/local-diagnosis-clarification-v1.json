@@ -1,0 +1,32 @@
+{
+  "kind": "Derived diagnostic metadata clarification; preserves original local diagnosis",
+  "utc": "2026-10-27T02:59:57.912717+00:00",
+  "actor": "Independent AI QA agent",
+  "original_diagnosis_path": "evidence/upgrade/v5.0/narrative-guard/real-samples/qa-actual/local-diagnosis-v1.json",
+  "original_diagnosis_sha256": "fbe4a67e2700e885d1e30efc25549f54eaae3f52e4634950555e95f6bf76ea6b",
+  "actual_diagnostic_tool": "ebe6ba",
+  "actual_diagnostic_exit_code": 0,
+  "actual_executor_tool": "8dc620",
+  "actual_executor_exit_code": 1,
+  "reason": "The original metadata used an empty placeholder after strict parsing failed. Its zero object count and list of all14 required slots do not establish14 omissions; no object tree was accepted.",
+  "authoritative_stage_assessment": {
+    "strict_json": "REJECTED_DUPLICATE_KEY",
+    "exact_v2_schema": "NOT_ASSESSED_NOT_REACHED",
+    "object_slot_completeness": "NOT_ASSESSED_NOT_REACHED",
+    "typed_parameters": "NOT_ASSESSED_NOT_REACHED",
+    "finite_narrative_guard": "NOT_ASSESSED_NOT_REACHED",
+    "Host_description": "NOT_REACHED",
+    "v1_helper": "NOT_REACHED",
+    "compile_proof_API_witness": "NOT_REACHED",
+    "candidate_narrative_quality": "NOT_ASSESSED"
+  },
+  "actual_parsed_object_count": null,
+  "actual_missing_required_slots": null,
+  "raw_unchanged": true,
+  "raw_reparsed_or_diagnosis_reexecuted_for_clarification": false,
+  "no_story_or_name_extraction": true,
+  "limits": [
+    "Original metadata and tool output retained. This clarification does not repair model JSON or reinterpret duplicate fields.",
+    "Strict parser rejects before schema/guard; no current guard efficacy, slot-validity or narrative quality result."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "kind": "Independent AI QA finite local diagnosis of rejected actual sample",
+  "utc": "2026-10-27T02:57:50.461237+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "actual_executor_exit_code": 1,
+  "local_diagnostic_exit_code": 0,
+  "local_diagnostic_production_assembler_code": "DUPLICATE_KEY",
+  "structural": {
+    "strict_json_passed": false,
+    "strict_error_code": "DUPLICATE_KEY",
+    "exact_v2_schema_passed": false,
+    "schema_error_count": 0,
+    "schema_validator_counts": {},
+    "expected_object_slots": 14,
+    "actual_object_slot_count": 0,
+    "missing_required_public_schema_object_slots": [
+      "obj_code_source",
+      "obj_device_source",
+      "obj_extra_code_a",
+      "obj_extra_code_b",
+      "obj_extra_devices_a",
+      "obj_extra_devices_b",
+      "obj_key",
+      "obj_puzzle_1",
+      "obj_puzzle_2",
+      "obj_puzzle_3",
+      "obj_puzzle_4",
+      "obj_puzzle_5",
+      "obj_puzzle_6",
+      "obj_relation"
+    ],
+    "extra_object_slot_count": 0
+  },
+  "assembler_spy_call_counts": {
+    "strict": 1,
+    "guard": 0,
+    "description": 0,
+    "v1_helper": 0
+  },
+  "first_refusal_layer": "strict_json",
+  "approved_single_scope_bound": true,
+  "authorization_before_marker": true,
+  "one_dispatch_journal_closed": true,
+  "payload_equals_approved_preview": true,
+  "source428_before_after_current_match": true,
+  "no_level_no_privateproof_no_replay": true,
+  "ledger_saved_snapshots": {
+    "calls_before": 147,
+    "calls_after": 148,
+    "charged_upper_units_before": 1127578000,
+    "charged_upper_units_after": 1132387520,
+    "usage_upper_units_delta": 4809520,
+    "old_unknown_count": 3,
+    "old_unknown_identity_unchanged": true,
+    "new_unknown": 0,
+    "pending": 0,
+    "frozen": false
+  },
+  "approved_slot_used": 1,
+  "remaining_authorized_calls": 0,
+  "reserved_upper_cny": 0.158208,
+  "usage_upper_cny": 0.00480952,
+  "finalization_failures_empty": true,
+  "raw_original_hash_and_bytes_unchanged": true,
+  "private_originals": {
+    "evidence/upgrade/v5.0/narrative-guard/real-samples/G3-provider-result.json": "7d6490c8e6182f5e00818443f112845ca249e76f9858e077d3103d822a13f4e3"
+  },
+  "raw_parameters_clues_answers_or_projection_output": false,
+  "rejected_story_or_names_output": false,
+  "narrative_quality_assessed": false,
+  "guard_actual_effectiveness_proven": false,
+  "runtime_boundary": "Denied ai/storage/api/main imports, socket connections and sqlite3.connect; only pure domain strict/schema/guard/assembler diagnosis. No compiler/planner/proof/HTTP/model/test/build/eval.",
+  "limits": [
+    "One rejected real sample, no ready level or gameplay/public prose quality result.",
+    "No original raw repair, retry, old private read, Key/config/liveledger/userDB/provider/network/paid access.",
+    "No narrative pass, efficacy/yield/false-positive rate, human difficulty or automatic OPEN closure."
+  ]
+}

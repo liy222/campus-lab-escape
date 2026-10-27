@@ -1,0 +1,123 @@
+{
+  "kind": "Independent AI QA narrative-guard actual G3 final SOURCE STOP",
+  "utc": "2026-10-27T02:59:57.912717+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "status": "ACTUAL_REJECTED_STRICT_DUPLICATE_KEY_GUARD_NOT_REACHED",
+  "actual_execute_exit_code": 1,
+  "local_diagnostic_exit_code": 0,
+  "public_api_error": "MODEL_INVALID_OUTPUT",
+  "first_refusal_layer": "strict_json",
+  "exact_internal_code": "DUPLICATE_KEY",
+  "guard_calls": 0,
+  "Host_description_calls": 0,
+  "v1_helper_calls": 0,
+  "schema_slot_parameter_narrative_assessment": "NOT_ASSESSED_NOT_REACHED",
+  "initial_diagnostic_metadata_clarification": {
+    "path": "evidence/upgrade/v5.0/narrative-guard/real-samples/qa-actual/local-diagnosis-clarification-v1.json",
+    "sha256": "bcc0f3e653f3757063f948367cd14c0a9cd67503d4243cfc8ac6db2e58c07e3c",
+    "first_original_retained": true,
+    "no_raw_reparse_or_diagnostic_rerun": true
+  },
+  "ready_level": false,
+  "HTTP_witness_replay": false,
+  "private_definition_witness_replay_count": 0,
+  "one_actual_dispatch": true,
+  "used_authorized_slots": 1,
+  "remaining_authorized_calls": 0,
+  "usage_upper_cny": 0.00480952,
+  "reserved_upper_cny": 0.158208,
+  "saved_ledger_only": {
+    "calls_before": 147,
+    "calls_after": 148,
+    "charged_upper_units_before": 1127578000,
+    "charged_upper_units_after": 1132387520,
+    "usage_upper_units_delta": 4809520,
+    "old_unknown_count": 3,
+    "old_unknown_identity_unchanged": true,
+    "new_unknown": 0,
+    "pending": 0,
+    "frozen": false
+  },
+  "source_count": 428,
+  "source428_after_current_match": true,
+  "unique_full_source_map": "evidence/upgrade/v5.0/narrative-guard/real-samples/offline-preview-v1.json",
+  "source_bundle_sha256": "f8adeb4d224424b7ca1d987c118ee393196b1377a63b296d62f3ff37b0d22ecb",
+  "preflight8_and_guard_QA38_unchanged": true,
+  "report": {
+    "path": "review/findings/v5-narrative-guard-real-result.md",
+    "sha256": "7f74fb156105110233014f71643b48bceb9d1564f7a91203feb4852302ebe91e"
+  },
+  "seal": {
+    "path": "evidence/upgrade/v5.0/narrative-guard/real-samples/qa-actual-seal-v1.json",
+    "sha256": "6548c3013330bf4ab9adca98444766ee4b42156631dc2e0790ac22a8089426e1",
+    "public_artifacts": 16,
+    "local_private_hashes": 1
+  },
+  "actual_commands": [
+    {
+      "operator": "Main",
+      "tool_chunk": "8dc620",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/narrative-guard/real-samples/run.py --execute",
+      "exit_code": 1,
+      "wall_seconds": 8.449,
+      "scope": "Unique approved real dispatch; rejected, no retry"
+    },
+    {
+      "operator": "Main",
+      "tool_chunk": "9ba3c9",
+      "exit_code": 0,
+      "scope": "Safe terminal metadata only; recorded in main-execution-review"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "ebdf85",
+      "exit_code": 0,
+      "scope": "Read AGENTS terminal, artifact names and domain code only"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "744ec9",
+      "exit_code": 0,
+      "scope": "Read public Main terminal review and strict assembly source"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "824ddf",
+      "exit_code": 0,
+      "scope": "Read domain strictJSON/import boundaries and public authorization"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "03eb96",
+      "exit_code": 0,
+      "scope": "Helper AST syntax only; static compile-target lookup corrected before execution"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "7a0de3",
+      "exit_code": 0,
+      "scope": "Read actual compile_level symbol for denial; never invoked"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "ebe6ba",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/narrative-guard/real-samples/qa-actual/audit_actual.py",
+      "exit_code": 0,
+      "scope": "Single closed-output local strict/schema stage diagnosis; no compiler/proof/HTTP"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 - (inline standard-library derived metadata clarification/privacy/source/old seal integrity/final sealing; exact source in tool transcript)",
+      "exit_code": 0,
+      "scope": "No raw reparsing or diagnostic rerun; preserve original metadata"
+    }
+  ],
+  "actual_guard_effectiveness_or_narrative_quality_proven": false,
+  "old_OPEN_findings_closed": false,
+  "limits": [
+    "One rejected real sample, no ready level or gameplay/public prose quality result.",
+    "No original raw repair, retry, old private read, Key/config/liveledger/userDB/provider/network/paid access.",
+    "No narrative pass, efficacy/yield/false-positive rate, human difficulty or automatic OPEN closure."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "kind": "Mechanical Delivery record for current failed narrative-guard G3",
+  "date": "2026-10-27",
+  "status": "SOURCE_STOP",
+  "files": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/narrative-guard/real-samples/actual-delivery-docs.json"
+  ],
+  "source_prefix_sha256": {
+    "README.md": "2a6c130e49baea730d8bbd135e1adc27c86884057ed339b5e44202c257a9e2ed",
+    "release/V5.md": "943caf1e37e795079a2c73203199b945c924f6f886c0a5c0165a9161f4e89701"
+  },
+  "qa": {
+    "reserve_upper_cny": 0.158208,
+    "old_unknown": 3,
+    "frozen": false,
+    "report": "review/findings/v5-narrative-guard-real-result.md",
+    "actual_exit": 1,
+    "replay": false,
+    "seal_sha256": "6548c3013330bf4ab9adca98444766ee4b42156631dc2e0790ac22a8089426e1",
+    "new_unknown": 0,
+    "schema_slots_params_story": "NOT_ASSESSED",
+    "main_accepted_sha256": "7c405285c22df8d7fdc4b4b16f1a995516d7c5c3ee427cd06e415a8b10a0e1a3",
+    "Host_description_calls": 0,
+    "guard_calls": 0,
+    "ready_level": false,
+    "first_refusal": "strict JSON DUPLICATE_KEY",
+    "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/narrative-guard/real-samples/run.py --execute",
+    "result_sha256": "0d771bd02cce1469592af40de1bf55e07c9ebfeae2f5b8a233ff0bb1c240d163",
+    "local_diagnostic_exit": 0,
+    "report_sha256": "7f74fb156105110233014f71643b48bceb9d1564f7a91203feb4852302ebe91e",
+    "usage_upper_cny": 0.00480952,
+    "seal": "evidence/upgrade/v5.0/narrative-guard/real-samples/qa-actual-seal-v1.json",
+    "strict_calls": 1,
+    "calls": "147->148",
+    "pending": 0,
+    "main_accepted": "evidence/upgrade/v5.0/narrative-guard/real-samples/main-actual-accepted.json",
+    "old_unknown_identity_unchanged": true,
+    "result": "evidence/upgrade/v5.0/narrative-guard/real-samples/qa-actual-final-v1.json",
+    "helper_calls": 0,
+    "authorized_calls_remaining": 0
+  },
+  "limitations": [
+    "One rejected real sample only; no guard efficacy or narrative quality evidence.",
+    "Diagnostic empty placeholder is clarified as NOT_ASSESSED; original retained; no raw reread.",
+    "No retry, repair, additional paid call, build, UI, evaluation, or human experience.",
+    "Old open findings remain open; no release acceptance."
+  ],
+  "actual_commands": [
+    {
+      "command": "Read public report/result/seal/accepted; verify expected hashes",
+      "exit": 0
+    },
+    {
+      "command": "Append UTF-8 CRLF paragraph bytes; verify previous document bytes remain an exact prefix",
+      "exit": 0
+    },
+    {
+      "command": "JSON parse; public-link existence; UTF-8 and single EOF CRLF; git -c core.whitespace=cr-at-eol diff --check -- README.md release/V5.md",
+      "exit": 0
+    }
+  ],
+  "document_sha256": {
+    "release_V5": "d91ed8683fa3dea44ff1450861a021fe2817e955eee2c805b5a14c5a5f2e17c8",
+    "README": "91db32bffc051515edea72f91aed206ce5ff363dd13a8bcaee9c0f74cc5c03ac"
+  },
+  "final_check_exit": 0,
+  "correction_log": [
+    {
+      "final_result": 0,
+      "check": "PowerShell stale LASTEXITCODE after ConvertFrom-Json",
+      "corrected_check": "parse in try/catch, then run git check and inspect its exit",
+      "initial_result": "command reported exit1 despite successful JSON parse"
+    }
+  ]
+}
