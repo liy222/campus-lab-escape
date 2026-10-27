@@ -1,0 +1,58 @@
+{
+  "kind": "DJ2 QA-only preparation fixed1 SOURCE STOP; formal0",
+  "utc": "2026-10-27T03:20:07.933019+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "formal_runs": 0,
+  "prior_preparation_path": "evidence/upgrade/v5.0/duplicate-json-prompt/qa/preparation-source-stop.json",
+  "prior_preparation_sha256": "a3e733234d8de78e321c136d91e623b6dd0f31e2c63ad9ad631516c88bbe060b",
+  "prior_preparation_bytes_preserved": true,
+  "finding": "QA raw-byte inverse assumed the new instruction owned its trailing newline; actual Main insertion owns a preceding CRLF and preserves the original following LF. Product unchanged.",
+  "only_code_delta": "audit_request.py inverse buffer now exactly b CRLF + instruction; no other assertions or product/test changes.",
+  "audit_request_sha256": "373a42f20c2b65209f4d7dbf1a3749cafe89f20693b9ab5c464376f4edbf61e4",
+  "prior_audit_request_sha256": "481fd4f99457d704326bcf43b44153eea714ed1c73e025c4f54d054bb4e0a7f1",
+  "runner_sha256": "f958fb931a92cc2590eaf77daaa67ee4aca4d6224b798f4143f49750786b61ec",
+  "nodes_sha256": "24422a26db3a13d003098da5f1a2c692e22ac6007d4933f5d554db10e8beae87",
+  "plan_sha256": "f4c62c2e1fe2ada0cc0c89d81d23ba80e879cfbb4c833d13d14fe1eea721746c",
+  "current_AI_source_sha256": "c8b9874ce85595bea2d33db435750957b7f48be36c6320ad67660a9aa2af192f",
+  "new_inverse_buffer_occurrences": 1,
+  "static_inverse_entire_raw_sha256": "6f7cdb58d4242bab8f4434e0a9a3f30c25b912070f8cf8339ece5c1ab8abe288",
+  "static_inverse_equals_old428_AI_hash": true,
+  "syntax_parse_passed": true,
+  "required_candidate_inputs": [
+    "evidence/upgrade/v5.0/duplicate-json-prompt/plan.json",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/qa/audit_request.py",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/qa/nodes-v1.json",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/qa/run_targeted.py",
+    "evidence/upgrade/v5.0/narrative-guard/plan.json",
+    "evidence/upgrade/v5.0/narrative-guard/qa/run_targeted.py",
+    "evidence/upgrade/v5.0/narrative-guard/real-samples/offline-preview-v1.json",
+    "tests/v5/conftest.py",
+    "tests/v5/test_blueprint_generation.py",
+    "tests/v5/test_generation.py",
+    "tests/v5/test_generation_text_authority.py",
+    "tests/v5/test_narrative_guard.py",
+    "tests/v5/test_prompt_fixed.py"
+  ],
+  "proposed_formal_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/duplicate-json-prompt/qa/run_targeted.py --candidate evidence/upgrade/v5.0/duplicate-json-prompt/candidate.json --output evidence/upgrade/v5.0/duplicate-json-prompt/qa/run1 --nodes-file evidence/upgrade/v5.0/duplicate-json-prompt/qa/nodes-v1.json",
+  "unique_existing_nodes": 7,
+  "Windows_safe_worker_unchanged": true,
+  "actual_commands": [
+    {
+      "operator": "Main",
+      "tool_chunk": "91183a",
+      "scope": "Preparation-only static review, found inverse-buffer assumption before freeze/formal"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; inline standard-library exact inserted-buffer inverse/hash and helper AST only; full source in tool transcript",
+      "exit_code": 0
+    }
+  ],
+  "audit_request_or_meter_or_tests_executed": false,
+  "actual_raw_private_Key_config_ledger_DB_network_or_paid_access": false,
+  "limits": [
+    "No product finding or formal run; no real output improvement claim.",
+    "Previous ae7dae preparation-only static failure and original preparation remain preserved.",
+    "Wait Main refreeze/GO; oldactual428 is historical after the authorized prompt change; remainingpaid0."
+  ]
+}

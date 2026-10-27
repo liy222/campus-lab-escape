@@ -1,0 +1,63 @@
+{
+  "kind": "Mechanical Delivery record for duplicate JSON prompt clarification",
+  "date": "2026-10-27",
+  "status": "SOURCE_STOP",
+  "files": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/delivery-docs.json"
+  ],
+  "source_prefix_sha256": {
+    "README.md": "91db32bffc051515edea72f91aed206ce5ff363dd13a8bcaee9c0f74cc5c03ac",
+    "release/V5.md": "d91ed8683fa3dea44ff1450861a021fe2817e955eee2c805b5a14c5a5f2e17c8"
+  },
+  "qa": {
+    "pure_audit_exit": 0,
+    "source_count": 433,
+    "open_findings_closed": false,
+    "formal_items": 7,
+    "accepted_sha256": "3d466d677beee51f571bc204e14d73af0d168423eea65bcf13b8a68abf2b35f4",
+    "seal": "evidence/upgrade/v5.0/duplicate-json-prompt/qa/artifact-seal.json",
+    "payload_utf8_bytes": 11933,
+    "cost_upper_cny": 0.159848,
+    "output_bound": 6000,
+    "seal_sha256": "e33c40a38eb913ac7936b0818651d46176699783354bc9ca5da1bc2065d3cf8b",
+    "paid_calls": 0,
+    "result": "evidence/upgrade/v5.0/duplicate-json-prompt/qa/result.json",
+    "input_bound": 55924,
+    "old_DUPLICATE_KEY_failure_remains_historical": true,
+    "pytest_seconds": 1.296,
+    "accepted": "evidence/upgrade/v5.0/duplicate-json-prompt/accepted.json",
+    "formal_exit": 0,
+    "formal_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/duplicate-json-prompt/qa/run_targeted.py --candidate evidence/upgrade/v5.0/duplicate-json-prompt/candidate.json --output evidence/upgrade/v5.0/duplicate-json-prompt/qa/run1 --nodes-file evidence/upgrade/v5.0/duplicate-json-prompt/qa/nodes-v1.json",
+    "result_sha256": "7400be8276980c3fe8b410729ccf9c0a5dca46a87e637f377ab3ddb3d153112b",
+    "report_sha256": "17c18b51ac59e4357e4729ca7fa188b9e05729f20c8ad8928b8568a5076dd922",
+    "current_real_sample": false,
+    "cap_cny": 0.2,
+    "report": "review/findings/v5-duplicate-json-prompt.md"
+  },
+  "limitations": [
+    "Prompt clarification does not guarantee model compliance, fewer duplicate keys, higher yield, or narrative quality.",
+    "No new actual generation; old real strict DUPLICATE_KEY rejection remains historical.",
+    "No retry, JSON repair, fallback, cap increase, or release acceptance."
+  ],
+  "actual_steps": [
+    {
+      "action": "Read public QA report/result/seal/acceptance and verify expected hashes",
+      "exit": 0
+    },
+    {
+      "action": "Append one UTF-8 paragraph per doc and byte-compare old prefixes",
+      "exit": 0
+    },
+    {
+      "exit": 0,
+      "action": "JSON parse; public link targets; UTF-8/single EOF CRLF; git -c core.whitespace=cr-at-eol diff --check -- README.md release/V5.md"
+    }
+  ],
+  "document_sha256": {
+    "README": "2f55678fb01dc3903265c6e60f3eea80781350cb193baaeda775693155d41862",
+    "release_V5": "07db325b3ce01a2e2a7f19208b759fceaf9ed972fe884963186cc3b8980aa025"
+  },
+  "final_checks_exit": 0
+}

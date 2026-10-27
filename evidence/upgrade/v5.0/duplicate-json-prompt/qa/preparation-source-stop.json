@@ -1,0 +1,127 @@
+{
+  "kind": "Independent AI QA DJ2 preparation SOURCE STOP; formal0",
+  "utc": "2026-10-27T03:18:31.446159+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "formal_runs": 0,
+  "unique_items": 7,
+  "node_binding": [
+    {
+      "nodeid": "tests/v5/test_generation_text_authority.py::test_raw_invalid_v2_never_reaches_v1_helper[duplicate-root]",
+      "source_sha256": "b7d80ed5d980b5e9e7169e7391a10e1f07fca95eaa869bb2a65ca73903ee4708",
+      "binding": "Function/decorator AST, explicit ids before values; no import or collection"
+    },
+    {
+      "nodeid": "tests/v5/test_generation_text_authority.py::test_raw_invalid_v2_never_reaches_v1_helper[duplicate-nested]",
+      "source_sha256": "b7d80ed5d980b5e9e7169e7391a10e1f07fca95eaa869bb2a65ca73903ee4708",
+      "binding": "Function/decorator AST, explicit ids before values; no import or collection"
+    },
+    {
+      "nodeid": "tests/v5/test_narrative_guard.py::test_original_strict_json_schema_precede_narrative_guard[duplicate-DUPLICATE_KEY]",
+      "source_sha256": "14ae8e0e2f4ecb606156bb23ad508de9c85ba46a7e359a038efa2e8b2132c4a4",
+      "binding": "Function/decorator AST, explicit ids before values; no import or collection"
+    },
+    {
+      "nodeid": "tests/v5/test_blueprint_generation.py::test_invalid_model_reply_is_rejected_after_one_send_without_repair_retry_or_fallback[duplicate]",
+      "source_sha256": "cc7be1a0e36532f203fb3a19a309a7ba1e2742efed0dfcecffc4210f8f90cb80",
+      "binding": "Function/decorator AST, explicit ids before values; no import or collection"
+    },
+    {
+      "nodeid": "tests/v5/test_generation.py::test_real_adapter_fake_httpx_generation_profile_and_secret_boundary",
+      "source_sha256": "1753c6d290586230a738fbdb28f489486ea842193373fae6c5ccdb4daf8fa4fb",
+      "binding": "Function/decorator AST, explicit ids before values; no import or collection"
+    },
+    {
+      "nodeid": "tests/v5/test_prompt_fixed.py::test_four_byte_unicode_theme_whole_payload_budget_is_measured_without_raising_cap[0]",
+      "source_sha256": "3f1169ac2da08ac878420bf04482c16e03e8c40b7d98c22e1a578570eb5b6d47",
+      "binding": "Function/decorator AST, explicit ids before values; no import or collection"
+    },
+    {
+      "nodeid": "tests/v5/test_prompt_fixed.py::test_four_byte_unicode_theme_whole_payload_budget_is_measured_without_raising_cap[1]",
+      "source_sha256": "3f1169ac2da08ac878420bf04482c16e03e8c40b7d98c22e1a578570eb5b6d47",
+      "binding": "Function/decorator AST, explicit ids before values; no import or collection"
+    }
+  ],
+  "runner_sha256": "f958fb931a92cc2590eaf77daaa67ee4aca4d6224b798f4143f49750786b61ec",
+  "nodes_sha256": "24422a26db3a13d003098da5f1a2c692e22ac6007d4933f5d554db10e8beae87",
+  "audit_request_sha256": "481fd4f99457d704326bcf43b44153eea714ed1c73e025c4f54d054bb4e0a7f1",
+  "plan_sha256": "f4c62c2e1fe2ada0cc0c89d81d23ba80e879cfbb4c833d13d14fe1eea721746c",
+  "owner_source_stop_sha256": "efd27009756a8435e4bd0505796fc1d486bbd9cdff8e63c5ae0d47d778dd7c4a",
+  "AI_source_sha256": "c8b9874ce85595bea2d33db435750957b7f48be36c6320ad67660a9aa2af192f",
+  "Windows_safe_worker_entire_AST_equals_prior_NG_runner": true,
+  "prior_runner_sha256": "743116f119d200a845d5769ce7bd6ab97b71cad37b6e69b5eeaf8c1860bde894",
+  "all_existing_tests_helpers_unchanged_by_QA": true,
+  "no_old_observation_directory_output": true,
+  "observation_environment_variables_cleared": [
+    "NARRATIVE_GUARD_QA_OUTPUT",
+    "ITEM_CONTEXT_QA_OUTPUT",
+    "TEXT_AUTHORITY_QA_OUTPUT",
+    "V5_QA_OUTPUT",
+    "BLUEPRINT_QA_OUTPUT"
+  ],
+  "required_candidate_inputs": [
+    "evidence/upgrade/v5.0/duplicate-json-prompt/plan.json",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/qa/audit_request.py",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/qa/nodes-v1.json",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/qa/run_targeted.py",
+    "evidence/upgrade/v5.0/narrative-guard/plan.json",
+    "evidence/upgrade/v5.0/narrative-guard/qa/run_targeted.py",
+    "evidence/upgrade/v5.0/narrative-guard/real-samples/offline-preview-v1.json",
+    "tests/v5/conftest.py",
+    "tests/v5/test_blueprint_generation.py",
+    "tests/v5/test_generation.py",
+    "tests/v5/test_generation_text_authority.py",
+    "tests/v5/test_narrative_guard.py",
+    "tests/v5/test_prompt_fixed.py"
+  ],
+  "new_input_paths": [
+    "evidence/upgrade/v5.0/duplicate-json-prompt/qa/run_targeted.py",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/qa/audit_request.py",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/qa/nodes-v1.json"
+  ],
+  "proposed_formal_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/duplicate-json-prompt/qa/run_targeted.py --candidate evidence/upgrade/v5.0/duplicate-json-prompt/candidate.json --output evidence/upgrade/v5.0/duplicate-json-prompt/qa/run1 --nodes-file evidence/upgrade/v5.0/duplicate-json-prompt/qa/nodes-v1.json",
+  "expected_wall_seconds": "10-30; pytest subprocess120s, separate pure audit30s",
+  "justification": "Seven existing duplicate root/nested/guard-order/one-send/profile-Key and two full four-byte budget branches. No mirrored tests or43/79/full matrix. Pure same-G3 messages/schema/body/fee audit separate from dispatch.",
+  "pure_audit_after_test_success": "qa/audit_request.py, source-bound old428 exactlyone prompt delta/inverse-byte/nonprompt AST and one same-G3 full production messages request; no provider factory/config/Key/ledger/DB/network.",
+  "output_run1_absent": true,
+  "actual_preparation_commands": [
+    {
+      "tool_chunk": "315abf",
+      "exit_code": 0,
+      "note": "Read-only preparation; guessed nonexistent owner-source-stop.json produced PowerShell nonterminating missing-path message, real name read later"
+    },
+    {
+      "tool_chunk": "1e236f",
+      "exit_code": 0,
+      "scope": "Read existing test decorators/helper constraints and real owner filename"
+    },
+    {
+      "tool_chunk": "900876",
+      "exit_code": 0,
+      "scope": "Read main-owner-source-stop and selected helpers"
+    },
+    {
+      "tool_chunk": "4ccb2d",
+      "exit_code": 0,
+      "scope": "Read prompt line and isolation import declarations"
+    },
+    {
+      "tool_chunk": "ae7dae",
+      "exit_code": 1,
+      "scope": "Preparation static enumerator attempted literal_eval of raw expression despite explicit ids; runner/nodes created, no product import/collection/test/audit executed"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; inline corrected explicit-id AST binding/source hashes/preparation record; exact source in tool transcript",
+      "exit_code": 0
+    }
+  ],
+  "preparation_failure_resolution": "Use explicit decorator ids without evaluating nonliteral raw expressions. No test or product implementation changed. Audit timeout writes only new audit-output.txt, preserving original pytest output.",
+  "actual_private_or_raw_body_read": false,
+  "Key_config_liveledger_userDB_network_provider_or_paid_access": false,
+  "limits": [
+    "Wait Main freeze/GO; no actual test, collection or pure production-request execution occurred.",
+    "New prompt guidance is not measured real compliance/duplicate-rate/yield/narrative improvement; oldactual428 is historical.",
+    "No new paid proposal/auth/execute/marker; old approved slot remaining0.",
+    "No new agent/commit/runtime model inference."
+  ]
+}

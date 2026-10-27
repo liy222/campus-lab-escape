@@ -1,0 +1,93 @@
+{
+  "kind": "Independent AI QA DJ2 final SOURCE STOP",
+  "utc": "2026-10-27T03:23:15.444055+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "status": "PASS_FINITE_EXISTING_SYNTHETIC_AND_PURE_ACCOUNTING_NO_REAL_QUALITY",
+  "formal_runs": 1,
+  "actual_formal_exit_code": 0,
+  "cases": 7,
+  "passed": 7,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "pytest_seconds": 1.296,
+  "formal_outer_wall_seconds": 6.5465083,
+  "current_source_count": 433,
+  "source_bundle_sha256": "49250e7a34817896c83cf5763e0d70124cb5a7a017dc01fd43caeec727feb342",
+  "unique_source_map": "evidence/upgrade/v5.0/duplicate-json-prompt/candidate.json",
+  "source_before_after_final_match": true,
+  "pure_request_audit_exit_code": 0,
+  "pure_request_measurement": {
+    "payload_utf8_bytes": 11933,
+    "input_token_bound": 55924,
+    "output_token_bound": 6000,
+    "cost_upper_cny": 0.159848,
+    "cap_cny": 0.2,
+    "payload_sha256": "d0e76d50e03ba27430f0c8b2fd758901087eef5243139ff4a68e5ee5df37f9ae"
+  },
+  "runtime_guard": {
+    "external_network_config_or_nonTEMP_DB_attempts": 0,
+    "stdlib_socketpair_local_IPC_connects": 4,
+    "all_database_connections_restricted_to_TEMP": true,
+    "provider_transports_synthetic_only": true,
+    "real_paid_calls": 0
+  },
+  "historical_actual428_is_current": false,
+  "old_public_sealed_artifacts_unchanged": true,
+  "actual_private_raw_or_Key_config_liveledger_playerDB_read": false,
+  "actual_model_calls": 0,
+  "paid_calls": 0,
+  "old_remaining_paid_authorization": 0,
+  "OPEN_findings_closed": false,
+  "report": {
+    "path": "review/findings/v5-duplicate-json-prompt.md",
+    "sha256": "17c18b51ac59e4357e4729ca7fa188b9e05729f20c8ad8928b8568a5076dd922"
+  },
+  "seal": {
+    "path": "evidence/upgrade/v5.0/duplicate-json-prompt/qa/artifact-seal.json",
+    "sha256": "e33c40a38eb913ac7936b0818651d46176699783354bc9ca5da1bc2065d3cf8b",
+    "artifacts": 16
+  },
+  "actual_commands": [
+    {
+      "tool_chunk": "ae7dae",
+      "exit_code": 1,
+      "phase": "Preparation-only AST enumeration failure; explicit ids corrected before freeze, no formal tests"
+    },
+    {
+      "tool_chunk": "10491a",
+      "exit_code": 0,
+      "phase": "Preparation-only corrected AST/node binding"
+    },
+    {
+      "tool_chunk": "c52451",
+      "exit_code": 0,
+      "phase": "Preparation-only exact inverse-buffer static correction, no product changes"
+    },
+    {
+      "tool_chunk": "5e7db0",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/duplicate-json-prompt/qa/run_targeted.py --candidate evidence/upgrade/v5.0/duplicate-json-prompt/candidate.json --output evidence/upgrade/v5.0/duplicate-json-prompt/qa/run1 --nodes-file evidence/upgrade/v5.0/duplicate-json-prompt/qa/nodes-v1.json",
+      "exit_code": 0,
+      "wall_seconds": 6.5465083,
+      "pytest_seconds": 1.296,
+      "cases": 7,
+      "phase": "Unique formal seven and successful runner-invoked pure audit"
+    },
+    {
+      "tool_chunk": "af9904",
+      "exit_code": 0,
+      "phase": "Safe terminal counts/runtime and audit scalars; no raw log dump"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library JUnit/source/public-seal/privacy audit and final metadata; exact source in tool transcript",
+      "exit_code": 0,
+      "phase": "Final artifact sealing, no tests or product request rerun"
+    }
+  ],
+  "limits": [
+    "Seven existing synthetic checks and one pure request audit only; no duplicate-rate reduction, real compliance/yield or narrative-quality inference.",
+    "No extra43/79/full matrix/build/UI/eval or model/HTTP dispatch; internal fake transports and TEMP test ledgers only.",
+    "Old actualDUPLICATE_KEY rejection and OPEN findings unchanged."
+  ]
+}
