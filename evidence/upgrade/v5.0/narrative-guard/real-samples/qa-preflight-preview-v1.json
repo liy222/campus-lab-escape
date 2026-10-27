@@ -1,0 +1,110 @@
+{
+  "kind": "Independent AI QA actual offline preview review; proposal only",
+  "utc": "2026-10-27T02:48:14.159598+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "status": "PASS_OFFLINE_PROPOSAL_ONLY_FRESH_AUTHORIZATION_REQUIRED",
+  "preview_sha256": "b27e619b9089f9f7c24766895c4dd90a59787d1db61a4275dc4be8e94177f4bf",
+  "unique_full_source_map": "evidence/upgrade/v5.0/narrative-guard/real-samples/offline-preview-v1.json",
+  "source_count": 428,
+  "source_bundle_sha256": "f8adeb4d224424b7ca1d987c118ee393196b1377a63b296d62f3ff37b0d22ecb",
+  "all_current_sources_match": true,
+  "selected_v2_nameonly_schema": true,
+  "exact_objects": 14,
+  "required_extra_clue_objects": 4,
+  "exact_rooms": 3,
+  "typed_parameter_keys": 6,
+  "same_full_payload_as_historical_preview": true,
+  "historical_preview_sha256": "6f7d48de595192dc9a4b106a07349bbf18121372503a80c1b362f35145fe41f2",
+  "body_sha256": "ec708c41b517c7d601e10e106bbc27ef4637fa53d23bf3f9a371b6b14565919a",
+  "complete_bound": {
+    "payload_utf8_bytes": 11728,
+    "input_token_bound": 55104,
+    "output_token_bound": 6000,
+    "cost_upper_units": 158208000,
+    "cost_upper_cny": 0.158208,
+    "payload_sha256": "ec708c41b517c7d601e10e106bbc27ef4637fa53d23bf3f9a371b6b14565919a"
+  },
+  "scope": {
+    "case": "G3",
+    "room_count": 3,
+    "difficulty": "hard",
+    "family": "mapping_v1",
+    "host_seed": 1,
+    "same_theme_as_historical_preview": true
+  },
+  "current_guard_revision": "1",
+  "current_guard_source_sha256": "413ab1e2c6a541c33f9394be3a6dba2daa3d32dbbe5a552106a60667a6f28c36",
+  "fixed_limits": {
+    "maximum_cases": 1,
+    "scope": [
+      "G3"
+    ],
+    "generation_case_cap_cny": 0.2,
+    "sum_reserved_upper_units": 200000000,
+    "sum_reserved_upper_cny": 0.2,
+    "automatic_retries": 0,
+    "historical_unknown_calls_required": 3,
+    "evaluation_calls_allowed": 0
+  },
+  "safety": {
+    "prepare_key_or_config_loaded": false,
+    "prepare_canonical_ledger_opened": false,
+    "prepare_game_database_opened": false,
+    "prepare_provider_or_network_calls": 0,
+    "actual_paid_dispatch": false,
+    "evaluation_invoked": false
+  },
+  "future_private_paths_gitignored": [
+    "evidence/upgrade/v5.0/narrative-guard/real-samples/G3-provider-result.json",
+    "evidence/upgrade/v5.0/narrative-guard/real-samples/raw-sensitive/G3-private-definition-local.json",
+    "evidence/upgrade/v5.0/narrative-guard/real-samples/raw-sensitive/G3-witness-local.json",
+    "evidence/upgrade/v5.0/narrative-guard/real-samples/raw-sensitive/G3-api-replay-local.json"
+  ],
+  "git_check_ignore_exit_code": 0,
+  "absence_before_execution": {
+    "user-authorization.json": true,
+    "authorization-binding.json": true,
+    "execute-started.json": true,
+    "dispatch-journal.jsonl": true,
+    "raw-sensitive": true,
+    "G3-provider-result.json": true,
+    "result.json": true
+  },
+  "inherited_initial_review": {
+    "path": "evidence/upgrade/v5.0/narrative-guard/real-samples/qa-preflight-source-v1.json",
+    "sha256": "27817fa2064c4516dfa0c788e8feb712576facc527052f6b0d9e8eca4be6a4ff",
+    "guard_QA38_and_inherited_preflight8_match": true
+  },
+  "actual_commands": [
+    {
+      "operator": "Main",
+      "tool_chunk": "daad5b",
+      "command": "python -B -X utf8 evidence/upgrade/v5.0/narrative-guard/real-samples/run.py --prepare",
+      "exit_code": 0,
+      "wall_seconds": 4.811,
+      "scope": "Unique offline prepare; operator result supplied by Main and preparation-report"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "0feeaf",
+      "exit_code": 0,
+      "scope": "Read preparation report, frozen budget constants, initial preflight and guard contract"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "683562",
+      "exit_code": 0,
+      "scope": "Read actual preview structural and bound scalars only"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 - (inline standard-library actual-preview/hash/schema/fee/absence/ignore audit and final sealing; complete source in tool transcript)",
+      "exit_code": 0
+    }
+  ],
+  "limits": [
+    "No prepare/probe/test/execute repeated by QA; only static JSON/AST/hash/accounting read checks.",
+    "Body unchanged while current guard is post-schema and pre-helper; this preview establishes neither an actual reply nor guard effectiveness/quality.",
+    "No Key/config/liveledger/playerDB/old private body/network/provider/paid access. Fresh explicit finite user approval remains required."
+  ]
+}

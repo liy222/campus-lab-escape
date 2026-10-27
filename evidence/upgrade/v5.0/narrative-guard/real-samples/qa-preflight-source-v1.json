@@ -1,0 +1,99 @@
+{
+  "kind": "Independent AI QA narrative-guard single-G3 initial static preflight",
+  "utc": "2026-10-27T02:45:38.948225+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "status": "NO_STATIC_BLOCKER_MAIN_ONE_PURE_PREPARE_RECOMMENDED",
+  "source_stop": true,
+  "runner_sha256": "569a231b5bee320c8f5a33dd89c6f3d3a529f11cf6dbb0297a905b02723dce13",
+  "historical_runner_sha256": "5103629ab3ea01411def15068d08b8bbb3480d65a11437cba1547dca40aa05b7",
+  "author_stop_sha256": "d81d17be57a1999921f1baa54ddf90f20cf0b0b0aa8e59efd3ce252943427c6d",
+  "plan_sha256": "3372dde3a59abea56c4060fcd905f7fdf2c2e441c1822d2cd67398dedac196d7",
+  "approved_literal_replacements": 9,
+  "inverse_entire_bytes_equal": true,
+  "normalized_entire_AST_equal": true,
+  "protected_AST_unchanged": [
+    "canonical",
+    "sha",
+    "stamp",
+    "StopRun",
+    "payload",
+    "estimate",
+    "raw_write",
+    "authorization_matches",
+    "require_authorization",
+    "ledger_readonly",
+    "public_snapshot",
+    "Controller",
+    "CaptureProvider",
+    "make_temp_client",
+    "version_body",
+    "main"
+  ],
+  "CASES_v2_imports_ROOT_limits_unknown_identity_unchanged": true,
+  "authorization_precedes_marker_config_Key_ledger": true,
+  "source_model_profile_payload_secret_no_retry_finalization_protocol_inherited": true,
+  "current_sources_matched": 426,
+  "product_bundle_sha256": "bac38ee3696e95545c46959c2db7a0f287e7e2da30844742d96afadb14f00ae6",
+  "future_preview_source_count": 428,
+  "inherited_seals": {
+    "evidence/upgrade/v5.0/narrative-guard/qa/artifact-seal.json": {
+      "sha256": "dc3159cba54afbd8cfed3b49647dce79145278e86bb9a57d903f20fd759a3bd8",
+      "artifacts_matched": 38
+    },
+    "evidence/upgrade/v5.0/text-authority-v2/real-samples/preflight-seal-v1.json": {
+      "sha256": "b2fcb65ec0312bc827af11a5c389230f5512e86662fae58a7e4adc40ec045e51",
+      "artifacts_matched": 8
+    }
+  },
+  "guard_probes_or_product_tests_repeated": false,
+  "future_private_paths_gitignored": [
+    "evidence/upgrade/v5.0/narrative-guard/real-samples/G3-provider-result.json",
+    "evidence/upgrade/v5.0/narrative-guard/real-samples/raw-sensitive/G3-private-definition-local.json",
+    "evidence/upgrade/v5.0/narrative-guard/real-samples/raw-sensitive/G3-witness-local.json",
+    "evidence/upgrade/v5.0/narrative-guard/real-samples/raw-sensitive/G3-api-replay-local.json"
+  ],
+  "git_check_ignore_exit_code": 0,
+  "absence_before_prepare": {
+    "offline-preview-v1.json": true,
+    "preparation-report.json": true,
+    "user-authorization.json": true,
+    "authorization-binding.json": true,
+    "execute-started.json": true,
+    "dispatch-journal.jsonl": true,
+    "raw-sensitive": true,
+    "G3-provider-result.json": true,
+    "result.json": true
+  },
+  "actual_commands": [
+    {
+      "tool_chunk": "a46004",
+      "exit_code": 0,
+      "scope": "Read latest AGENTS tail, new plan and author STOP"
+    },
+    {
+      "tool_chunk": "492f51",
+      "exit_code": 0,
+      "scope": "Read runner first section and public inherited preflight evidence"
+    },
+    {
+      "tool_chunk": "1931f5",
+      "exit_code": 0,
+      "scope": "Read remaining runner finalization/auth order and public seal metadata"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 - (inline standard-library static byte/AST/hash/ignore/absence audit and record; exact source in tool transcript)",
+      "exit_code": 0
+    }
+  ],
+  "runner_imported_or_prepare_execute_run": false,
+  "old_private_or_raw_body_read": false,
+  "Key_config_liveledger_DB_network_provider_access": false,
+  "paid_calls": 0,
+  "future_actual_QA_boundary": "Only closed allowlist fictional player-public prose plus counts/booleans/hashes; no parameters, clues, answers, witness or private projections.",
+  "limits": [
+    "Static inheritance review only; Main must prepare once and QA must review actual preview/full request/cost/source before presentation.",
+    "Max1/.20 is a proposal; no fresh paid authorization, no actual model result, effectiveness/yield/false-positive or current narrative quality claim.",
+    "Old real422 and OPEN findings remain historical; no product/guard/probe rerun or old private body access.",
+    "Existing agent runtime identity is not independently introspected."
+  ]
+}
