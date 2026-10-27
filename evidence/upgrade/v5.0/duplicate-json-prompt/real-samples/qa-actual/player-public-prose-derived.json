@@ -1,0 +1,131 @@
+{
+  "kind": "DERIVED_PLAYER_PUBLIC_PROSE_ALLOWLIST_NOT_RAW_MODEL_REPLY",
+  "original_model_content_raw_sha256": "af9ba19c3b1eca6f83dd6660417b32cbef6bb38237183fddcf5f1a9fda81c62c",
+  "gates": {
+    "admitted": true,
+    "raw_hash_matches": true,
+    "strict_schema2_valid": true,
+    "saved_definition_matches_declared_assembly": true
+  },
+  "AI_title": "标本交接前的三层核对",
+  "AI_story": "校园生态实验楼闭馆前，你们要把三间相连实验室的采样资料与维护装置逐一核对。钥匙、符号表和设备清单分散在室内，只有按顺序整理材料，才能完成离楼检查。",
+  "rooms": [
+    {
+      "AI_name": "采样资料室",
+      "AI_atmosphere_description": "靠窗的标本柜蒙着薄尘，台灯下摊着几份采样记录，空气里有淡淡的酒精味。",
+      "objects": [
+        {
+          "AI_name": "标本柜钥匙",
+          "Host_base_description": "可拿入背包并用于对应装置；使用后仍保留在背包中。",
+          "trusted_kind": "item",
+          "trusted_role": "reusable_key",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "采样编号记录单",
+          "Host_base_description": "这份资料记录用于数字映射的符号源序。按资料展示的先后读取。",
+          "trusted_kind": "clue",
+          "trusted_role": "code_source",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "符号对照卡片",
+          "Host_base_description": "这份资料记录符号的对应关系。",
+          "trusted_kind": "clue",
+          "trusted_role": "symbol_mapping",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "设备轮值表",
+          "Host_base_description": "这份资料记录用于设备映射的符号源序。按资料展示的先后读取。",
+          "trusted_kind": "clue",
+          "trusted_role": "device_source",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "编号锁柜",
+          "Host_base_description": "这是根据资料推理结果填写数字的装置。",
+          "trusted_kind": "puzzle",
+          "trusted_role": "code",
+          "trusted_mechanism": "code"
+        },
+        {
+          "AI_name": "轮值顺序转盘",
+          "Host_base_description": "这是填写四个设备操作顺序的装置。",
+          "trusted_kind": "puzzle",
+          "trusted_role": "sequence",
+          "trusted_mechanism": "sequence"
+        }
+      ]
+    },
+    {
+      "AI_name": "仪器维护室",
+      "AI_atmosphere_description": "实验台整齐排列，指示灯偶尔闪烁，墙角堆着待核对的维护标签。",
+      "objects": [
+        {
+          "AI_name": "维护指示灯面板",
+          "Host_base_description": "这是需要接通入口与出口的线路装置。",
+          "trusted_kind": "puzzle",
+          "trusted_role": "circuit",
+          "trusted_mechanism": "circuit"
+        },
+        {
+          "AI_name": "上半页编号源卡",
+          "Host_base_description": "这是一份数字源序资料片段。组合次序在资料齐备后由装置说明。",
+          "trusted_kind": "clue",
+          "trusted_role": "extra_code_a",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "下半页编号源卡",
+          "Host_base_description": "这是一份数字源序资料片段。组合次序在资料齐备后由装置说明。",
+          "trusted_kind": "clue",
+          "trusted_role": "extra_code_b",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "拼接编号抽屉锁",
+          "Host_base_description": "这是根据资料推理结果填写数字的装置。",
+          "trusted_kind": "puzzle",
+          "trusted_role": "code",
+          "trusted_mechanism": "code"
+        }
+      ]
+    },
+    {
+      "AI_name": "离楼检查室",
+      "AI_atmosphere_description": "门口的交接板还空着，窗外树影摇晃，柜台上留着最后几份设备名册。",
+      "objects": [
+        {
+          "AI_name": "设备名册前册页",
+          "Host_base_description": "这是一份设备源序资料片段。组合次序在资料齐备后由装置说明。",
+          "trusted_kind": "clue",
+          "trusted_role": "extra_devices_a",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "设备名册后册页",
+          "Host_base_description": "这是一份设备源序资料片段。组合次序在资料齐备后由装置说明。",
+          "trusted_kind": "clue",
+          "trusted_role": "extra_devices_b",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "设备顺序交接盘",
+          "Host_base_description": "这是填写四个设备操作顺序的装置。",
+          "trusted_kind": "puzzle",
+          "trusted_role": "sequence",
+          "trusted_mechanism": "sequence"
+        },
+        {
+          "AI_name": "离楼检查锁扣",
+          "Host_base_description": "这是与背包中的「标本柜钥匙」配合使用的装置。",
+          "trusted_kind": "puzzle",
+          "trusted_role": "item",
+          "trusted_mechanism": "item"
+        }
+      ]
+    }
+  ],
+  "scope": "Fictional player prose in its proper room context, not a current-stage all-rooms model input; no facts/parameters/answers/actions/state."
+}

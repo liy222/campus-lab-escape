@@ -1,0 +1,82 @@
+{
+  "kind": "Independent AI QA local audit; counts/bools/hashes only",
+  "exit_code": 0,
+  "source_count": 435,
+  "source_bundle_sha256": "aaa624cf83821a910fc4ddb6450ec5af8063c220358c064edb4756658e944430",
+  "sources_before_after_match": true,
+  "raw_content_sha256": "af9ba19c3b1eca6f83dd6660417b32cbef6bb38237183fddcf5f1a9fda81c62c",
+  "schema2_valid": true,
+  "local_finite_guard_revision1_passed": true,
+  "exact_objects": 14,
+  "required_extra_objects_present": 4,
+  "accepted_model_names_preserved_exactly": true,
+  "Host_descriptions_equal_declared_assembly": true,
+  "definition_hash": "9085ade7f652c424eba74e94f6ee16495565b5ed09e8c3c85ad9b216f3f41c86",
+  "saved_witness_actions": 33,
+  "memory_state_hashes_matched": 33,
+  "initial_state_hash_matches": true,
+  "final_full_projection_matches": true,
+  "recorded_metadata_reused_only_for_hash_comparison": [
+    "session/level identifiers",
+    "generation",
+    "started_at/finished_at",
+    "save projection"
+  ],
+  "final_status": "won",
+  "final_room": "EXIT",
+  "puzzles_solved": 6,
+  "clues_discovered": 7,
+  "discovery_gate_context_counts": {
+    "unobserved": 12,
+    "observed_partial": 0,
+    "observed_complete": 12
+  },
+  "required_item_resolved_by_actual_reference": true,
+  "item_target_contains_exact_generated_item_name": true,
+  "use_item_inventory_unchanged_and_consumed_empty": true,
+  "required_item_retained_at_EXIT": true,
+  "no_return_action_in_original_tools": true,
+  "device_source_description_names_symbol_source": true,
+  "Host_description_has_no_alphabetical_order_instruction": true,
+  "source_symbols_are_alphabetical": false,
+  "mapped_devices_are_alphabetical": false,
+  "usage": {
+    "prompt_tokens": 2967,
+    "completion_tokens": 488,
+    "total_tokens": 3455,
+    "prompt_cache_hit_tokens": 0
+  },
+  "usage_upper_cny": 0.009838,
+  "reserved_upper_cny": 0.159848,
+  "saved_calls_before_after": [
+    148,
+    149
+  ],
+  "saved_charged_upper_units_before_after": [
+    1132387520,
+    1142225520
+  ],
+  "old_unknown_identity_unchanged": true,
+  "pending": 0,
+  "frozen": false,
+  "finalization_failures": [],
+  "actual_payload_equals_approved_preview": true,
+  "authorization_marker_journal_binding": true,
+  "attempts": 1,
+  "remaining_paid_authorization": 0,
+  "automatic_settlement": {
+    "elapsed_seconds": 1,
+    "rating": "S",
+    "human_timing_or_difficulty_evidence": false
+  },
+  "opaque_api_body_hash_limitation": "Full event-id-bearing HTTP response bodies were not retained; per-step opaque body hashes not independently reconstructed. Saved status/state hash chain checked.",
+  "new_HTTP_compiler_solver_provider_network_DB_config_or_Key_access": 0,
+  "local_private_sha256": {
+    "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/G3-provider-result.json": "b6dee4dae66a14009276a8b8b00ee2d769447dc1bdc0ac582302442557d0d073",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/raw-sensitive/G3-private-definition-local.json": "5205cfe1d100f8ddc59734f54b72856210a10bef5fc5dd261c32675c28db4f3f",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/raw-sensitive/G3-witness-local.json": "74bdc8b4bf3652d50ac05391a19f513f81557c6d59da76f61aaa03c27ce870fe",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/raw-sensitive/G3-api-replay-local.json": "8fe4d9d836cf3207cf8770961a2572164908bdef2b3ee0758406bdba18848019"
+  },
+  "local_private_originals_not_publication_artifacts": true,
+  "closed_prose_allowlist_only_no_parameters_clues_answers_witness_projection_output": true
+}

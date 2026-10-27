@@ -1,0 +1,124 @@
+{
+  "kind": "Independent AI QA current-DJ G3 actual final SOURCE STOP",
+  "utc": "2026-10-27T03:53:22.568658+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "status": "FINITE_CURRENT_SAMPLE_TECHNICAL_HOST_PASS_NARRATIVE_LIMITATIONS_NO_GENERAL_QUALITY",
+  "actual_execute_exit_code": 0,
+  "local_audit_exit_code": 0,
+  "strict_JSON_schema2_current_guard1_valid": true,
+  "objects": 14,
+  "extra_clue_objects": 4,
+  "actual_HTTP_actions": 33,
+  "independent_memory_state_hashes_matched": 33,
+  "initial_final_state_match": true,
+  "definition_hash": "9085ade7f652c424eba74e94f6ee16495565b5ed09e8c3c85ad9b216f3f41c86",
+  "source435_before_after_current_match": true,
+  "unique_full_source_map": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/offline-preview-v1.json",
+  "source_bundle_sha256": "aaa624cf83821a910fc4ddb6450ec5af8063c220358c064edb4756658e944430",
+  "exact_request_equals_approved_preview": true,
+  "single_authorized_dispatch": true,
+  "used_calls": 1,
+  "remaining_authorized_calls": 0,
+  "usage": {
+    "prompt_tokens": 2967,
+    "completion_tokens": 488,
+    "total_tokens": 3455,
+    "prompt_cache_hit_tokens": 0
+  },
+  "usage_upper_cny": 0.009838,
+  "reserved_upper_cny": 0.159848,
+  "saved_calls_before_after": [
+    148,
+    149
+  ],
+  "old_unknown_identity_unchanged": true,
+  "pending": 0,
+  "frozen": false,
+  "finalization_failures": [],
+  "discovery_gate_actual_context_counts": {
+    "unobserved": 12,
+    "observed_partial": 0,
+    "observed_complete": 12
+  },
+  "actual_partial_coverage": false,
+  "automatic_elapsed_seconds": 1,
+  "automatic_rating": "S",
+  "human_timing_or_quality_evidence": false,
+  "current_actual_save_restore_tested": false,
+  "closed_prose_only_not_raw": {
+    "path": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/qa-actual/player-public-prose-derived.json",
+    "sha256": "1f0c2d409cfbe3a1de59113438ca5f9d5cfd3ae1811a822f3a21220e344236f2"
+  },
+  "report": {
+    "path": "review/findings/v5-duplicate-json-prompt-real-result.md",
+    "sha256": "6dda357518e3758296958924e0ed853649fb6823b56c26f30aac516de6e6c34b"
+  },
+  "seal": {
+    "path": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/qa-actual-seal-v1.json",
+    "sha256": "6fb23b12f782c6219ad88bab5b7b03cb9b0311535ff1a9ad6d2d54888b42ef66",
+    "public_artifacts": 17,
+    "local_private_hashes": 4
+  },
+  "actual_commands": [
+    {
+      "operator": "Main",
+      "tool_chunk": "5631df",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/run.py --execute",
+      "exit_code": 0,
+      "wall_seconds": 9.3579522,
+      "scope": "Unique approved real request and existing HTTP witness replay"
+    },
+    {
+      "operator": "Main",
+      "tool_chunk": "f88899",
+      "exit_code": 0,
+      "scope": "Safe terminal metadata only, as Main receipt"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "4fe1d8",
+      "exit_code": 0,
+      "scope": "Read current terminal scope/metadata and old helper source index, not old private bodies"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "02b4f7",
+      "exit_code": 0,
+      "scope": "Read corrected old Pydantic-normalizing helper source and rule code only"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "11a60d",
+      "exit_code": 0,
+      "scope": "Write current closed-output local helper and AST syntax check; no raw execution"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "57bc9c",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/qa-actual/audit_actual.py",
+      "exit_code": 0,
+      "scope": "Single pure local normalized-definition/33rule-state/saved accounting audit; no HTTP/proof"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "c74640",
+      "exit_code": 0,
+      "scope": "Hash-gated literal public-prose allowlist only; counts/bools, no raw typed data"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library public metadata/prose assessment/private hashes/source/privacy/final sealing; full source in transcript",
+      "exit_code": 0,
+      "scope": "No replay or model rerun; source/hash/privacy closure only"
+    }
+  ],
+  "old_OPEN_findings_closed": false,
+  "general_duplicate_rate_yield_narrative_semantics_or_human_quality_proven": false,
+  "opaque_API_response_body_hash_limitation": "Full event-id-bearing HTTP response bodies were not retained; per-step opaque body hashes not independently reconstructed. Saved status/state hash chain checked.",
+  "limits": [
+    "One current admitted sample only; prompt compliance improvement and guard effectiveness rates are unmeasured.",
+    "Only this sample private4 used as local machine inputs; no private typed/projection values in tool/AI context, only explicit player-public prose.",
+    "No new HTTP/compile/planner/proof/provider/model/test/build/UI/eval/Key/config/liveledger/userDB/paid, no automatic fix."
+  ]
+}

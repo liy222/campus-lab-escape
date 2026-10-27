@@ -1,0 +1,78 @@
+{
+  "kind": "Mechanical Delivery record for current duplicate-json-prompt G3",
+  "date": "2026-10-27",
+  "status": "SOURCE_STOP",
+  "files": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/actual-delivery-docs.json"
+  ],
+  "source_prefix_sha256": {
+    "README.md": "2f55678fb01dc3903265c6e60f3eea80781350cb193baaeda775693155d41862",
+    "release/V5.md": "07db325b3ce01a2e2a7f19208b759fceaf9ed972fe884963186cc3b8980aa025"
+  },
+  "qa": {
+    "public_artifacts": 17,
+    "state_hashes_matched": 33,
+    "extra_clue_objects": 4,
+    "seal": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/qa-actual-seal-v1.json",
+    "save_restore_build_ui_eval_tested": false,
+    "reserved_upper_cny": 0.159848,
+    "source_count": 435,
+    "report": "review/findings/v5-duplicate-json-prompt-real-result.md",
+    "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/run.py --execute",
+    "initial_final_match": true,
+    "opaque_response_body_hash_not_reconstructed": true,
+    "actual_partial_contexts": 0,
+    "main_accepted_sha256": "3c56c2bcdacd365461aaccb550c0f5ac80fac77f8d13fb5a1ca12b198d36ed8d",
+    "result": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/qa-actual-final-v1.json",
+    "object_slots": 14,
+    "usage_upper_cny": 0.009838,
+    "actual_seconds": 9.3579522,
+    "independent_audit_exit": 0,
+    "actual_exit": 0,
+    "pending": 0,
+    "new_unknown": 0,
+    "local_private_hashes_ignored": 4,
+    "old_unknown3_identity_same": true,
+    "independent_audit_tool": "57bc9c",
+    "seal_sha256": "6fb23b12f782c6219ad88bab5b7b03cb9b0311535ff1a9ad6d2d54888b42ef66",
+    "automatic_rating": "S",
+    "report_sha256": "6dda357518e3758296958924e0ed853649fb6823b56c26f30aac516de6e6c34b",
+    "authorized_calls_remaining": 0,
+    "actual_http_actions": 33,
+    "calls": "148->149",
+    "result_sha256": "c0829266ae660f15f305309f0795de2e53787285a17603a4afdec21ddaa348b5",
+    "automatic_elapsed_seconds": 1,
+    "frozen": false,
+    "not_invoice": true,
+    "main_accepted": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/main-actual-accepted.json",
+    "strict_schema2_guard1": true,
+    "dispatches": 1
+  },
+  "limitations": [
+    "One sample only; no duplicate-key rate, overall yield, or general narrative-quality claim.",
+    "Story wording and upper/lower/front/back item names may imply operation/order; no categorical missing-action, gate-failure, or answer-leak finding.",
+    "Automatic elapsed/rating is not human difficulty; old OPEN items remain open.",
+    "No new model/HTTP/paid call, save-restore, build, UI, or evaluation."
+  ],
+  "actual_steps": [
+    {
+      "action": "Read public report/result/seal/Main acceptance and verify published hashes",
+      "exit": 0
+    },
+    {
+      "action": "Append UTF-8 paragraph bytes to both docs and byte-verify old prefixes",
+      "exit": 0
+    },
+    {
+      "action": "JSON parse; public links; UTF-8/single EOF CRLF; git -c core.whitespace=cr-at-eol diff --check -- README.md release/V5.md",
+      "exit": 0
+    }
+  ],
+  "document_sha256": {
+    "README": "b215ecb9769776f88b9636a6a479f6828a08027025295adb17111876e0cdd3a6",
+    "release_V5": "100b17f2da8cef730e77f1e873ddd2abc37c67b0342b060682685abf3ed4592e"
+  },
+  "final_checks_exit": 0
+}
