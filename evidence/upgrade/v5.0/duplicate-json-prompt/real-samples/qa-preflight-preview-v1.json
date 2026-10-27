@@ -1,0 +1,107 @@
+{
+  "kind": "Independent AI QA actual DJ single-G3 offline-preview review",
+  "utc": "2026-10-27T03:43:31.981873+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "status": "PASS_OFFLINE_PROPOSAL_ONLY_FRESH_FINITE_APPROVAL_REQUIRED",
+  "preview_sha256": "85865e834f6036cfd65e82b84e1fa930ecac5c6f8fe1226eb37691245322d212",
+  "source_count": 435,
+  "source_bundle_sha256": "aaa624cf83821a910fc4ddb6450ec5af8063c220358c064edb4756658e944430",
+  "unique_full_source_map": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/offline-preview-v1.json",
+  "product_sources433_current_match": true,
+  "all_preview435_current_match": true,
+  "selected_exact_v2_nameonly_schema": true,
+  "required_objects": 14,
+  "required_extra_clue_objects": 4,
+  "rooms": 3,
+  "typed_parameter_keys": 6,
+  "same_G3_theme_3hard_mapping_seed1": true,
+  "full_body_matches_prior_pure_request_measurement": {
+    "path": "evidence/upgrade/v5.0/duplicate-json-prompt/qa/run1/static-request-audit.json",
+    "sha256": "b0baeff47dee7f4b8e0d7840527b96aa7536752daa89784dc39eb608cd8e734d",
+    "body_sha256": "d0e76d50e03ba27430f0c8b2fd758901087eef5243139ff4a68e5ee5df37f9ae"
+  },
+  "complete_bound": {
+    "payload_utf8_bytes": 11933,
+    "input_token_bound": 55924,
+    "output_token_bound": 6000,
+    "cost_upper_units": 159848000,
+    "cost_upper_cny": 0.159848,
+    "payload_sha256": "d0e76d50e03ba27430f0c8b2fd758901087eef5243139ff4a68e5ee5df37f9ae"
+  },
+  "fixed_limits": {
+    "maximum_cases": 1,
+    "scope": [
+      "G3"
+    ],
+    "generation_case_cap_cny": 0.2,
+    "sum_reserved_upper_units": 200000000,
+    "sum_reserved_upper_cny": 0.2,
+    "automatic_retries": 0,
+    "historical_unknown_calls_required": 3,
+    "evaluation_calls_allowed": 0
+  },
+  "safety": {
+    "prepare_key_or_config_loaded": false,
+    "prepare_canonical_ledger_opened": false,
+    "prepare_game_database_opened": false,
+    "prepare_provider_or_network_calls": 0,
+    "actual_paid_dispatch": false,
+    "evaluation_invoked": false
+  },
+  "current_prompt_and_guard_source_hashes_bound": true,
+  "inherited_guard_evidence": {
+    "initial_record_sha256": "ff238ccfca39813eecfd555f74c9cc53e0bd46b6cb883e8fa8c231fafea195ab",
+    "protected_AST_and_inverse_bytes_already_verified": true,
+    "guard_probes_or_tests_repeated": false,
+    "QA16_inherited_preflight8_unchanged": true
+  },
+  "future_private_paths_gitignored": [
+    "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/G3-provider-result.json",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/raw-sensitive/G3-private-definition-local.json",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/raw-sensitive/G3-witness-local.json",
+    "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/raw-sensitive/G3-api-replay-local.json"
+  ],
+  "git_check_ignore_exit_code": 0,
+  "absence_before_execution": {
+    "user-authorization.json": true,
+    "authorization-binding.json": true,
+    "execute-started.json": true,
+    "dispatch-journal.jsonl": true,
+    "raw-sensitive": true,
+    "G3-provider-result.json": true,
+    "result.json": true
+  },
+  "actual_commands": [
+    {
+      "operator": "Main",
+      "tool_chunk": "da7ddb",
+      "command": "python -B -X utf8 evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/run.py --prepare",
+      "exit_code": 0,
+      "wall_seconds": 2.93548,
+      "scope": "Unique pure prepare; supplied actual operator receipt and preparation-report"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "2ca67f",
+      "exit_code": 0,
+      "scope": "Read current AGENTS/plan/author STOP only"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "4958d3",
+      "exit_code": 0,
+      "scope": "Initial static inverse-byte/AST/source/seal/ignore/absence review only"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; inline standard-library actual preview/schema/body/hash/fee/absence/ignore audit and final sealing; exact source in transcript",
+      "exit_code": 0
+    }
+  ],
+  "limits": [
+    "Main one pureprepare only; QA did not import runner, repeat prepare/probes/tests, execute or open private body/config/Key/liveledger/playerDB/provider/network.",
+    "Max1/.20 is a proposal and needs fresh explicit source-bound finite approval; preparation creates no actual reply, paid dispatch or quality result.",
+    "Old actual428/strict DUPLICATE_KEY and OPEN findings remain historical. No duplicate-rate, yield, general semantics or human-quality conclusion.",
+    "Current source map is only stored once in Main actual preview."
+  ]
+}

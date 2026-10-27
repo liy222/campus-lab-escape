@@ -1,0 +1,64 @@
+{
+  "kind": "Independent AI QA DJ single-G3 proposal final SOURCE STOP",
+  "utc": "2026-10-27T03:43:31.981873+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "status": "PASS_OFFLINE_PROPOSAL_ONLY_FRESH_FINITE_APPROVAL_REQUIRED",
+  "source_stop": true,
+  "preview_sha256": "85865e834f6036cfd65e82b84e1fa930ecac5c6f8fe1226eb37691245322d212",
+  "source_count": 435,
+  "source_bundle_sha256": "aaa624cf83821a910fc4ddb6450ec5af8063c220358c064edb4756658e944430",
+  "unique_full_source_map": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/offline-preview-v1.json",
+  "proposed_maximum_calls": 1,
+  "proposed_maximum_cny": 0.2,
+  "complete_request_upper_cny": 0.159848,
+  "actual_paid_authorization": false,
+  "paid_calls": 0,
+  "report": {
+    "path": "review/findings/v5-duplicate-json-prompt-real-preflight.md",
+    "sha256": "7f6071a61ed3c4aae0acbc3acb3f58b10fbcefde73dcefbdc1c5a573d35ed192"
+  },
+  "preview_review": {
+    "path": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/qa-preflight-preview-v1.json",
+    "sha256": "853e3e9ad92640d14058ed0fb95634c9c59df2249eb51a174329188bf6da5d8d"
+  },
+  "seal": {
+    "path": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/qa-preflight-seal-v1.json",
+    "sha256": "d84e04c33317692d355aad2020d9fb6ae51969274ed6a57a1360b867689894dd",
+    "artifacts": 8
+  },
+  "actual_commands": [
+    {
+      "operator": "Main",
+      "tool_chunk": "da7ddb",
+      "command": "python -B -X utf8 evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/run.py --prepare",
+      "exit_code": 0,
+      "wall_seconds": 2.93548,
+      "scope": "Unique pure prepare; supplied actual operator receipt and preparation-report"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "2ca67f",
+      "exit_code": 0,
+      "scope": "Read current AGENTS/plan/author STOP only"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "4958d3",
+      "exit_code": 0,
+      "scope": "Initial static inverse-byte/AST/source/seal/ignore/absence review only"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; inline standard-library actual preview/schema/body/hash/fee/absence/ignore audit and final sealing; exact source in transcript",
+      "exit_code": 0
+    }
+  ],
+  "actual_model_quality_or_duplicate_rate_improvement_proven": false,
+  "OPEN_findings_closed": false,
+  "limits": [
+    "Main one pureprepare only; QA did not import runner, repeat prepare/probes/tests, execute or open private body/config/Key/liveledger/playerDB/provider/network.",
+    "Max1/.20 is a proposal and needs fresh explicit source-bound finite approval; preparation creates no actual reply, paid dispatch or quality result.",
+    "Old actual428/strict DUPLICATE_KEY and OPEN findings remain historical. No duplicate-rate, yield, general semantics or human-quality conclusion.",
+    "Current source map is only stored once in Main actual preview."
+  ]
+}

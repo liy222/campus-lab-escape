@@ -1,0 +1,91 @@
+{
+  "kind": "Main integration mechanical author SOURCE STOP; static only",
+  "date": "2026-10-27",
+  "utc": "2026-10-27T03:40:29.463771+00:00",
+  "operator": "Main integration, not independent QA",
+  "source_stop": true,
+  "runner_sha256": "c05c3a779717027e5dfe63c8575c3d4ca592c4cb055db1dbd1c604fbb3bb087e",
+  "runner_bytes": 33942,
+  "historical_executor": "evidence/upgrade/v5.0/narrative-guard/real-samples/run.py",
+  "historical_executor_sha256": "569a231b5bee320c8f5a33dd89c6f3d3a529f11cf6dbb0297a905b02723dce13",
+  "allowed_replacements": [
+    {
+      "from": "v5-narrative-guard-real-G3-pending-approval",
+      "to": "v5-duplicate-json-prompt-real-G3-pending-approval",
+      "occurrences": 1
+    },
+    {
+      "from": "evidence/upgrade/v5.0/narrative-guard/candidate.json",
+      "to": "evidence/upgrade/v5.0/duplicate-json-prompt/candidate.json",
+      "occurrences": 1
+    },
+    {
+      "from": "bac38ee3696e95545c46959c2db7a0f287e7e2da30844742d96afadb14f00ae6",
+      "to": "49250e7a34817896c83cf5763e0d70124cb5a7a017dc01fd43caeec727feb342",
+      "occurrences": 1
+    },
+    {
+      "from": "Bind all 426 named sources",
+      "to": "Bind all 433 named sources",
+      "occurrences": 1
+    },
+    {
+      "from": "candidate.get('source_count') != 426",
+      "to": "candidate.get('source_count') != 433",
+      "occurrences": 1
+    },
+    {
+      "from": "len(expected) != 426",
+      "to": "len(expected) != 433",
+      "occurrences": 1
+    },
+    {
+      "from": "v5-narrative-guard-approved-real-G3-",
+      "to": "v5-duplicate-json-prompt-approved-real-G3-",
+      "occurrences": 1
+    },
+    {
+      "from": "actual_paid_narrative_guard_G3_validation",
+      "to": "actual_paid_duplicate_json_prompt_G3_validation",
+      "occurrences": 1
+    },
+    {
+      "from": "evidence/upgrade/v5.0/narrative-guard/real-samples/run.py --prepare",
+      "to": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/run.py --prepare",
+      "occurrences": 1
+    }
+  ],
+  "inverse_entire_bytes_equal": true,
+  "syntax_AST_valid": true,
+  "protected_AST_unchanged": [
+    "canonical",
+    "sha",
+    "stamp",
+    "StopRun",
+    "payload",
+    "estimate",
+    "raw_write",
+    "authorization_matches",
+    "require_authorization",
+    "ledger_readonly",
+    "public_snapshot",
+    "Controller",
+    "CaptureProvider",
+    "make_temp_client",
+    "version_body",
+    "main"
+  ],
+  "all_import_AST_unchanged": true,
+  "future_source_count": 435,
+  "product_source_count": 433,
+  "product_bundle": "49250e7a34817896c83cf5763e0d70124cb5a7a017dc01fd43caeec727feb342",
+  "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; inline9 literal replacements/inverse-byte and AST checks; exact source in transcript",
+  "exit_code": 0,
+  "runner_imported_or_prepare_execute_run": false,
+  "Key_config_liveledger_DB_privatebody_network_paid_access": false,
+  "limits": [
+    "Static mechanical derivation only; independent initial and actual-preview reviews remain required.",
+    "No fresh paid approval/marker/config/credentials/ledger/provider access.",
+    "No actual current model success or quality claim."
+  ]
+}
