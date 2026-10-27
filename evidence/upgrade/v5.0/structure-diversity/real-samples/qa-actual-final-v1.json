@@ -1,0 +1,152 @@
+{
+  "kind": "Independent AI QA reverse actual G3 local joint final SOURCE STOP",
+  "utc": "2026-10-27T14:32:08.188455+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "status": "FINITE_REVERSE_ACTUAL_TECHNICAL_HOST_PASS_PROSE_LIMITED_LOCAL_JOINT",
+  "actual_generation_exit_code": 0,
+  "actual_HTTP_witness_actions": 33,
+  "single_model_attempt": true,
+  "local_review_single_green_run": false,
+  "first_local_helper_exit_code": 1,
+  "first_checkpoint": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/real-samples/qa-actual/first-local-audit-attempt.json",
+    "sha256": "347c8e3b1387c8c1156440334c6216bbe32072e7f16810a9cc7c7bacc1e1ff86",
+    "completed_initial33state_final_assertions_before_accounting_error": true
+  },
+  "tail_helper_exit_code": 0,
+  "new_rule_replay_derive_compile_solve_or_HTTP_in_tail": false,
+  "definition_hash": "5371808d6549df60336bff859b89556649822465a902716427bff7ff3a33e948",
+  "actual_mechanism_order": [
+    "item",
+    "sequence",
+    "code",
+    "circuit",
+    "sequence",
+    "code"
+  ],
+  "coverage_from_saved_reference_chronology_not_new_replay": {
+    "unobserved": 8,
+    "observed_partial": 0,
+    "observed_complete": 22
+  },
+  "actual_partial_coverage": false,
+  "Host_item_name_nonconsume_retention_and_relation_gate": "Finite passed first-helper prefix and current public-text consistency",
+  "public_prose_result": "No definite new unsupported operation observed; front/back name hints remain; no general narrative PASS",
+  "source_count": 455,
+  "source455_current_match": true,
+  "source_bundle_sha256": "be83c69666ba23b4016f7c418344c4471690cf1d14a1231e302c23c95e3ca487",
+  "unique_full_source_map": "evidence/upgrade/v5.0/structure-diversity/real-samples/offline-preview-v1.json",
+  "usage": {
+    "prompt_tokens": 3067,
+    "completion_tokens": 503,
+    "total_tokens": 3570,
+    "prompt_cache_hit_tokens": 384
+  },
+  "usage_upper_cny": 0.00940536,
+  "reserved_upper_cny": 0.162584,
+  "saved_calls_before_after": [
+    149,
+    150
+  ],
+  "charged_upper_units_before_after": [
+    1142225520,
+    1151630880
+  ],
+  "old_unknown_identity_unchanged": true,
+  "pending": 0,
+  "frozen": false,
+  "finalization_failures": [],
+  "remaining_authorized_calls": 0,
+  "automatic_elapsed_seconds": 0,
+  "automatic_rating": "S",
+  "human_experience_evidence": false,
+  "current_real_save_restore_tested": false,
+  "public_prose_derivative": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/real-samples/qa-actual/player-public-prose-derived.json",
+    "sha256": "ebee2746d49bbe6bb459c245b33d5eb787e6092c2aa71cbd1e40a92314ed27bb"
+  },
+  "actual_commands": [
+    {
+      "operator": "Main",
+      "tool": "8a5ac3",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/structure-diversity/real-samples/run.py --execute",
+      "exit_code": 0,
+      "wall_seconds": 6.6757567,
+      "scope": "Unique user-approved model call and33existing HTTP actions"
+    },
+    {
+      "operator": "Main",
+      "tools": [
+        "656371",
+        "a30ffa"
+      ],
+      "scope": "Saved safe terminal metadata, not new execution"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool": "039001",
+      "exit_code": 0,
+      "scope": "Read terminal and rule/dump/helper source, no old raw bodies"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool": "24056e",
+      "exit_code": 0,
+      "scope": "Derive current helper source and static AST only"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool": "ff58e3",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/structure-diversity/real-samples/qa-actual/audit_actual.py",
+      "exit_code": 1,
+      "scope": "Strict/schema/normalizeddefinition/initial+33hash/final/item/reverseorder/relation assertions completed; later auth.recorded_utc KeyError preserved"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tools": [
+        "319379",
+        "6c6cec",
+        "33ffb1"
+      ],
+      "exit_code": 0,
+      "scope": "Public key diagnosis, source checkpoint and tail AST only"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool": "6b542d",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/structure-diversity/real-samples/qa-actual/finish_accounting_prose.py",
+      "exit_code": 0,
+      "scope": "Only approved_utc accounting/closed prose, no apply_action/derive/compile/solve or33hash rerun"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool": "cf3ce6",
+      "exit_code": 0,
+      "scope": "Hash/shape-gated literal public prose only, no raw typed data"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library existing source455/private4 hash+ignore/publicprivacy/joint final sealing; full source in transcript",
+      "exit_code": 0
+    }
+  ],
+  "report": {
+    "path": "review/findings/v5-structure-diversity-real-result.md",
+    "sha256": "32122153660c09b9d6db55f5aa7a8696a06011d839c19fc2de05b9fab7ca0a91"
+  },
+  "seal": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/real-samples/qa-actual-seal-v1.json",
+    "sha256": "d6356c406648356ea7c60e332af10f5beee2050a2a913bd66bc7ba90ed215806",
+    "public_artifacts": 19,
+    "local_private_hashes": 4
+  },
+  "old_OPEN_findings_closed": false,
+  "new_paid_calls_by_QA": 0,
+  "limits": [
+    "One reverse3hard mapping sample, not duplicate-rate/yield/nonrepeat/general semantics/human difficulty validation.",
+    "First local audit source checkpoint plus successful narrow accounting/prose tail, never called a single all-green local run.",
+    "Opaque full HTTP body hashes not reconstructed; saved initial/33state/final prefix checks completed before metadata error.",
+    "Only current private4 machine inputs; closed fictional prose only in QA context; no old realbody/Key/config/liveledger/playerDB/network/newmodel/test/build/browser/automaticfix."
+  ]
+}

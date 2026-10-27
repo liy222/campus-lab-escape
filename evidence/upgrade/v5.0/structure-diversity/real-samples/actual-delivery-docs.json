@@ -1,0 +1,85 @@
+{
+  "kind": "Mechanical Delivery record for current reverse G3 structure diversity sample",
+  "date": "2026-10-27",
+  "status": "SOURCE_STOP",
+  "files": [
+    "README.md",
+    "release/V5.md",
+    "evidence/upgrade/v5.0/structure-diversity/real-samples/actual-delivery-docs.json"
+  ],
+  "source_prefix_sha256": {
+    "release/V5.md": "94fdb3de5a14307d45ebc5f4bbd1f266f93d1d8936c4d9c651754c31fd6f66f1",
+    "README.md": "21d52bba34ffb2fd15e17db0cc47822773da8904aff7c57a0b0225dbcefaa0be"
+  },
+  "qa": {
+    "authorized_calls_remaining": 0,
+    "http_actions": 33,
+    "reserved_upper_cny": 0.162584,
+    "calls": "149->150",
+    "accepted_sha256": "6ef9ae679a488359b4f93e24589832bf36ccf365cdd7c9a2908880f55f918825",
+    "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/structure-diversity/real-samples/run.py --execute",
+    "frozen": false,
+    "actual_seconds": 6.6757567,
+    "actual_exit": 0,
+    "save_restore_tested": false,
+    "new_unknown": 0,
+    "actual_partial_coverage": 0,
+    "result_sha256": "a3915aff4efdf8d3e243440e31effa0603c45af9d347c45ca63446439c4b3349",
+    "usage_upper_cny": 0.00940536,
+    "single_full_green_claim": false,
+    "accepted": "evidence/upgrade/v5.0/structure-diversity/real-samples/main-actual-accepted.json",
+    "first_helper_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/structure-diversity/real-samples/qa-actual/audit_actual.py",
+    "tail_helper_exit": 0,
+    "automatic_rating": "S",
+    "mechanism_order": [
+      "item",
+      "sequence",
+      "code",
+      "circuit",
+      "sequence",
+      "code"
+    ],
+    "seal_sha256": "d6356c406648356ea7c60e332af10f5beee2050a2a913bd66bc7ba90ed215806",
+    "pending": 0,
+    "objects": 14,
+    "automatic_elapsed_seconds": 0,
+    "report_sha256": "32122153660c09b9d6db55f5aa7a8696a06011d839c19fc2de05b9fab7ca0a91",
+    "report": "review/findings/v5-structure-diversity-real-result.md",
+    "seal": "evidence/upgrade/v5.0/structure-diversity/real-samples/qa-actual-seal-v1.json",
+    "first_helper_exit": 1,
+    "opaque_full_HTTP_body_reconstructed": false,
+    "extra_clue_objects": 4,
+    "not_invoice": true,
+    "result": "evidence/upgrade/v5.0/structure-diversity/real-samples/qa-actual-final-v1.json",
+    "tail_replayed_33_steps": false,
+    "source_count": 455,
+    "initial_33_final_hashes_matched": true,
+    "tail_helper_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 evidence/upgrade/v5.0/structure-diversity/real-samples/qa-actual/finish_accounting_prose.py",
+    "old_unknown3_same": true
+  },
+  "limitations": [
+    "Finite single sample, no universal story-quality or generation-rate claim.",
+    "Front/back naming may cue order; no absolute semantic claim.",
+    "0-second/S automatic scoring is not human difficulty; old OPEN findings remain open.",
+    "No retry, partner/evaluation, product changes, additional paid call, save/restore, build or UI test."
+  ],
+  "actual_steps": [
+    {
+      "action": "Verify public QA report/result/seal/Main acceptance hashes",
+      "exit": 0
+    },
+    {
+      "action": "Append UTF-8 bytes and prove prior docs are exact prefixes",
+      "exit": 0
+    },
+    {
+      "exit": 0,
+      "action": "JSON parse; public evidence links; UTF-8/single EOF CRLF; git -c core.whitespace=cr-at-eol diff --check -- README.md release/V5.md"
+    }
+  ],
+  "final_document_sha256": {
+    "release_V5": "04f88407a89626b6f733c6c6db2db277fd9e24f18f3263d4baf8878adf0fa952",
+    "README": "5e9351b8eb58c92c6aad3535031f90b1f0052a296656bb3de039bd85089858a9"
+  },
+  "final_checks_exit": 0
+}

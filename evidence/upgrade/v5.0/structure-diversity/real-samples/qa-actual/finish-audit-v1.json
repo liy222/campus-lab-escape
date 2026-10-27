@@ -1,0 +1,66 @@
+{
+  "kind": "Local joint audit finish-only; first replay not repeated",
+  "exit_code": 0,
+  "source_count": 455,
+  "source_bundle_sha256": "be83c69666ba23b4016f7c418344c4471690cf1d14a1231e302c23c95e3ca487",
+  "current455_match": true,
+  "definition_hash": "5371808d6549df60336bff859b89556649822465a902716427bff7ff3a33e948",
+  "objects": 14,
+  "extra_clue_objects": 4,
+  "first_local_attempt_exit_code": 1,
+  "first_attempt_checkpoint_sha256": "347c8e3b1387c8c1156440334c6216bbe32072e7f16810a9cc7c7bacc1e1ff86",
+  "initial_33_step_final_hash_assertions_completed_in_first_attempt": true,
+  "GeneratedRules_replay_or_derive_repeated_in_finish_helper": false,
+  "actual_solved_mechanism_order": [
+    "item",
+    "sequence",
+    "code",
+    "circuit",
+    "sequence",
+    "code"
+  ],
+  "discovery_context_counts_from_saved_reference_chronology": {
+    "unobserved": 8,
+    "observed_partial": 0,
+    "observed_complete": 22
+  },
+  "coverage_method": "Counted from existing successful witness inspection/solve/room references, not a second GeneratedRules replay.",
+  "authorization_time_field": "approved_utc",
+  "chronology_and_preview_scope_binding_valid": true,
+  "usage": {
+    "prompt_tokens": 3067,
+    "completion_tokens": 503,
+    "total_tokens": 3570,
+    "prompt_cache_hit_tokens": 384
+  },
+  "usage_upper_cny": 0.00940536,
+  "reserved_upper_cny": 0.162584,
+  "calls_before_after": [
+    149,
+    150
+  ],
+  "charged_upper_units_before_after": [
+    1142225520,
+    1151630880
+  ],
+  "old_unknown_identity_unchanged": true,
+  "pending": 0,
+  "frozen": false,
+  "finalization_failures": [],
+  "used_authorized_slots": 1,
+  "remaining_authorized_calls": 0,
+  "automatic_settlement": {
+    "elapsed_seconds": 0,
+    "rating": "S",
+    "human_difficulty_evidence": false
+  },
+  "opaque_full_HTTP_bodyhash_limitation": "Original per-step full response bodies with event metadata were not saved, so those opaque hashes cannot be reconstructed. Initial/33state/final assertions completed in the first attempt.",
+  "local_private_sha256": {
+    "evidence/upgrade/v5.0/structure-diversity/real-samples/G3-provider-result.json": "ee8f798cbc73a9d4d3318eea102348dc04266f6e062990a21023b0380d4796e6",
+    "evidence/upgrade/v5.0/structure-diversity/real-samples/raw-sensitive/G3-private-definition-local.json": "bbd35297346ca16a3686f0f4ae36ae4cd52bc2dab679293fb2218ea2ef51542b",
+    "evidence/upgrade/v5.0/structure-diversity/real-samples/raw-sensitive/G3-witness-local.json": "25560a1e4190acac1ebb10f9101858dfd6bbf2fb1201e980f80dd0af56112bc7",
+    "evidence/upgrade/v5.0/structure-diversity/real-samples/raw-sensitive/G3-api-replay-local.json": "37d3e6c138b26399feaf90f195e0d7b723c3f984f3b7460a534d300b6d799b0a"
+  },
+  "private_originals_never_publication_artifacts": true,
+  "new_HTTP_model_compile_solve_proof_tests_build_UI_paid": 0
+}

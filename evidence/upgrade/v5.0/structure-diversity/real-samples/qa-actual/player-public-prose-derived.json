@@ -1,0 +1,131 @@
+{
+  "kind": "DERIVED_PLAYER_PUBLIC_PROSE_ALLOWLIST_NOT_RAW_MODEL_REPLY",
+  "original_model_content_raw_sha256": "bbd49e7afb6bea32a1a3908e359cba4ec4e7f3fc0af03017f364978a0e6f7a9d",
+  "gates": {
+    "admitted": true,
+    "raw_hash_matches": true,
+    "strict_schema2_valid": true,
+    "saved_definition_matches_declared_assembly": true
+  },
+  "AI_title": "标本交接离楼检查",
+  "AI_story": "生态实验楼临近闭楼，三间实验室里还留着抽样资料与维护装置。你受托在离开前完成标本交接核对，并逐室核对材料，走完离楼检查。",
+  "rooms": [
+    {
+      "AI_name": "采样准备室",
+      "AI_atmosphere_description": "靠墙的标本柜半掩着，桌面摊着培养皿和标签纸，空气里有淡淡酒精味。",
+      "objects": [
+        {
+          "AI_name": "交接柜通用钥匙",
+          "Host_base_description": "可拿入背包并用于对应装置；使用后仍保留在背包中。",
+          "trusted_kind": "item",
+          "trusted_role": "reusable_key",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "符号数字对照卡",
+          "Host_base_description": "这份资料记录符号的对应关系。",
+          "trusted_kind": "clue",
+          "trusted_role": "symbol_mapping",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "设备顺序登记页",
+          "Host_base_description": "这份资料记录用于设备映射的符号源序。按资料展示的先后读取。",
+          "trusted_kind": "clue",
+          "trusted_role": "device_source",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "前段设备传阅条",
+          "Host_base_description": "这是一份设备源序资料片段。组合次序在资料齐备后由装置说明。",
+          "trusted_kind": "clue",
+          "trusted_role": "extra_devices_a",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "后段设备传阅条",
+          "Host_base_description": "这是一份设备源序资料片段。组合次序在资料齐备后由装置说明。",
+          "trusted_kind": "clue",
+          "trusted_role": "extra_devices_b",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "交接柜锁扣",
+          "Host_base_description": "这是与背包中的「交接柜通用钥匙」配合使用的装置。",
+          "trusted_kind": "puzzle",
+          "trusted_role": "item",
+          "trusted_mechanism": "item"
+        },
+        {
+          "AI_name": "设备排列核对板",
+          "Host_base_description": "这是填写四个设备操作顺序的装置。",
+          "trusted_kind": "puzzle",
+          "trusted_role": "sequence",
+          "trusted_mechanism": "sequence"
+        }
+      ]
+    },
+    {
+      "AI_name": "材料核对室",
+      "AI_atmosphere_description": "长桌上分列着样本盒与核对单，柜门贴着褪色的分类编号，窗边灯管轻轻嗡响。",
+      "objects": [
+        {
+          "AI_name": "前段数字摘录单",
+          "Host_base_description": "这是一份数字源序资料片段。组合次序在资料齐备后由装置说明。",
+          "trusted_kind": "clue",
+          "trusted_role": "extra_code_a",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "后段数字摘录单",
+          "Host_base_description": "这是一份数字源序资料片段。组合次序在资料齐备后由装置说明。",
+          "trusted_kind": "clue",
+          "trusted_role": "extra_code_b",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "四位数核对面板",
+          "Host_base_description": "这是根据资料推理结果填写数字的装置。",
+          "trusted_kind": "puzzle",
+          "trusted_role": "code",
+          "trusted_mechanism": "code"
+        },
+        {
+          "AI_name": "线路通断检查板",
+          "Host_base_description": "这是需要接通入口与出口的线路装置。",
+          "trusted_kind": "puzzle",
+          "trusted_role": "circuit",
+          "trusted_mechanism": "circuit"
+        }
+      ]
+    },
+    {
+      "AI_name": "离楼检查室",
+      "AI_atmosphere_description": "交接台整洁安静，墙上的离楼检查板还没合上，门边留着最后确认的空白。",
+      "objects": [
+        {
+          "AI_name": "数字符号来源页",
+          "Host_base_description": "这份资料记录用于数字映射的符号源序。按资料展示的先后读取。",
+          "trusted_kind": "clue",
+          "trusted_role": "code_source",
+          "trusted_mechanism": null
+        },
+        {
+          "AI_name": "符号序列确认盘",
+          "Host_base_description": "这是填写四个设备操作顺序的装置。",
+          "trusted_kind": "puzzle",
+          "trusted_role": "sequence",
+          "trusted_mechanism": "sequence"
+        },
+        {
+          "AI_name": "离楼数字输入盘",
+          "Host_base_description": "这是根据资料推理结果填写数字的装置。",
+          "trusted_kind": "puzzle",
+          "trusted_role": "code",
+          "trusted_mechanism": "code"
+        }
+      ]
+    }
+  ],
+  "scope": "Fictional player-public prose only; not a stage-visible all-rooms model input, no facts/parameters/answers/witness/private projection."
+}

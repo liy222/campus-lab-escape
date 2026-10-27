@@ -1,0 +1,24 @@
+{
+  "kind": "Main raw-byte document check after stdout display suspicion; no document edits",
+  "date": "2026-10-27",
+  "Main_read_tool": "d2549d",
+  "prior_probe": "e206c5 exit1 assertion expecting CRCRLF; stopped before any file writes",
+  "corrected_check": "Direct bytes confirm actual CRCRLF0; apparent doubled CR came from Windows stdout newline rendering, original Delivery hashes unchanged.",
+  "files": {
+    "README.md": {
+      "sha256": "5e9351b8eb58c92c6aad3535031f90b1f0052a296656bb3de039bd85089858a9",
+      "old_HEAD_prefix_exact": true,
+      "actual_CRCRLF_pairs": 0,
+      "actual_append_CRLF_pairs": 2,
+      "file_modified_by_Main": false
+    },
+    "release/V5.md": {
+      "sha256": "04f88407a89626b6f733c6c6db2db277fd9e24f18f3263d4baf8878adf0fa952",
+      "old_HEAD_prefix_exact": true,
+      "actual_CRCRLF_pairs": 0,
+      "actual_append_CRLF_pairs": 2,
+      "file_modified_by_Main": false
+    }
+  },
+  "product_test_build_model_runs": 0
+}
