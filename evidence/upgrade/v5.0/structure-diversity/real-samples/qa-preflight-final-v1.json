@@ -1,0 +1,64 @@
+{
+  "kind": "Independent AI QA reverse-G3 preflight final SOURCE STOP",
+  "utc": "2026-10-27T14:11:42.770275+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "status": "PASS_OFFLINE_REVERSE_G3_PROPOSAL_FRESH_FINITE_APPROVAL_REQUIRED",
+  "preview_sha256": "903b95f5c99542702fd79299882f9b0960edcecc12e1cb0caf674c2497630c9a",
+  "source_count": 455,
+  "source_bundle_sha256": "be83c69666ba23b4016f7c418344c4471690cf1d14a1231e302c23c95e3ca487",
+  "unique_full_source_map": "evidence/upgrade/v5.0/structure-diversity/real-samples/offline-preview-v1.json",
+  "blueprint_id": "mapping_v1-r3-hard-sv1-reverse",
+  "same_theme_3hard_mapping_seed3_reverse_itemfirst": true,
+  "proposed_maximum_calls": 1,
+  "proposed_maximum_cny": 0.2,
+  "complete_request_upper_cny": 0.162584,
+  "payload_utf8_bytes": 12275,
+  "input_token_bound": 57292,
+  "output_token_bound": 6000,
+  "payload_sha256": "eec25e01c0f543f36a6adf8e367a74df25274d00ae9e539db5a7615ac33e4051",
+  "actual_paid_authorization": false,
+  "paid_calls": 0,
+  "report": {
+    "path": "review/findings/v5-structure-diversity-real-preflight.md",
+    "sha256": "092e3b94c45b26a3a14547f8b2e1053af64df6cb4788a7269fb2b3bf4583878c"
+  },
+  "preview_review": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/real-samples/qa-preflight-preview-v1.json",
+    "sha256": "e6360f971a2169fa37185aa142d5c8b3d6c4ab61561d978e67d6a4b3b2cb1085"
+  },
+  "seal": {
+    "path": "evidence/upgrade/v5.0/structure-diversity/real-samples/qa-preflight-seal-v1.json",
+    "sha256": "f4fd9de9a4590323b51d94430889fc3546c8b6b330538a244c3f6fab92dfec3c",
+    "artifacts": 8
+  },
+  "actual_commands": [
+    {
+      "operator": "Main",
+      "tool_chunk": "7dc51b",
+      "command": "python -B -X utf8 evidence/upgrade/v5.0/structure-diversity/real-samples/run.py --prepare",
+      "exit_code": 0,
+      "wall_seconds": 1.361,
+      "scope": "Unique offline prepare; Main actual receipt and preparation-report"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "888fa7",
+      "exit_code": 0,
+      "scope": "Initial static10inverse/AST/source/hash-only/ignore/absence, no runner execution"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; actual savedpreview/source/hash checks plus pure selector/messages/schema/manifest/cost comparison and sealing; full source in transcript",
+      "exit_code": 0
+    }
+  ],
+  "actual_model_quality_or_yield_proven": false,
+  "OPEN_findings_closed": false,
+  "limits": [
+    "Only pure selector/messages/schema/manifest/budget functions executed; provider factory/config/Key/ledger/DB/network denied. No runner import/prepare/execute or compile/proof/HTTP/test/build/browser.",
+    "One reverse sample max1/.20 remains a proposal. New actual source-bound finite approval is required; failure consumes slot, no retry/repair/fallback.",
+    "No actual model reply, guard effectiveness, generation yield/general narrative/human quality conclusion; prior real435forward and OPEN remain historical.",
+    "All full source mappings reside only in Main actualpreview; raw3/original8 were hashed, never parsed or emitted."
+  ]
+}

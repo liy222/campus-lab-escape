@@ -1,0 +1,109 @@
+{
+  "kind": "Independent AI QA reverse-G3 actual offline preview review",
+  "utc": "2026-10-27T14:11:42.770275+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "status": "PASS_OFFLINE_REVERSE_G3_PROPOSAL_FRESH_FINITE_APPROVAL_REQUIRED",
+  "preview_sha256": "903b95f5c99542702fd79299882f9b0960edcecc12e1cb0caf674c2497630c9a",
+  "source_count": 455,
+  "source_bundle_sha256": "be83c69666ba23b4016f7c418344c4471690cf1d14a1231e302c23c95e3ca487",
+  "parent453_current_match": true,
+  "all_preview455_current_match": true,
+  "unique_full_source_map": "evidence/upgrade/v5.0/structure-diversity/real-samples/offline-preview-v1.json",
+  "selected_blueprint_id": "mapping_v1-r3-hard-sv1-reverse",
+  "content_version": "2.0.0",
+  "structure_catalog_version": "1.0.0",
+  "family": "mapping_v1",
+  "host_seed": 3,
+  "same_prior_theme": true,
+  "mechanism_order": [
+    "item",
+    "sequence",
+    "code",
+    "circuit",
+    "sequence",
+    "code"
+  ],
+  "first_item_free_and_key_G1_free": true,
+  "relation_locked_after_first_item": true,
+  "actual_prerequisite_object_slots_all_match": true,
+  "actual_first_item_reference_nonconsuming": true,
+  "exact_nameonly_objects": 14,
+  "required_extra_clue_objects": 4,
+  "exact_rooms": 3,
+  "typed_parameter_keys": 6,
+  "production_pure_messages_schema_manifest_equal_saved_payload": true,
+  "whole_payload_bound": {
+    "payload_utf8_bytes": 12275,
+    "input_token_bound": 57292,
+    "output_token_bound": 6000,
+    "cost_upper_units": 162584000,
+    "cost_upper_cny": 0.162584,
+    "payload_sha256": "eec25e01c0f543f36a6adf8e367a74df25274d00ae9e539db5a7615ac33e4051"
+  },
+  "fixed_limits": {
+    "maximum_cases": 1,
+    "scope": [
+      "G3"
+    ],
+    "generation_case_cap_cny": 0.2,
+    "sum_reserved_upper_units": 200000000,
+    "sum_reserved_upper_cny": 0.2,
+    "automatic_retries": 0,
+    "historical_unknown_calls_required": 3,
+    "evaluation_calls_allowed": 0
+  },
+  "safety": {
+    "prepare_key_or_config_loaded": false,
+    "prepare_canonical_ledger_opened": false,
+    "prepare_game_database_opened": false,
+    "prepare_provider_or_network_calls": 0,
+    "actual_paid_dispatch": false,
+    "evaluation_invoked": false
+  },
+  "QA102_raw3_original8_preserved_hash_only": true,
+  "inherited_initial_preflight_sha256": "87bd4600e9f6971504c70de5fd5e701c5f0a5316eff4ead187aac5472e0ca1ca",
+  "source_body_profile_model_credential_ledger_authorization_stops_inherited_unchanged": true,
+  "future_private4_exact_paths_gitignored": [
+    "evidence/upgrade/v5.0/structure-diversity/real-samples/G3-provider-result.json",
+    "evidence/upgrade/v5.0/structure-diversity/real-samples/raw-sensitive/G3-private-definition-local.json",
+    "evidence/upgrade/v5.0/structure-diversity/real-samples/raw-sensitive/G3-witness-local.json",
+    "evidence/upgrade/v5.0/structure-diversity/real-samples/raw-sensitive/G3-api-replay-local.json"
+  ],
+  "git_check_ignore_exit_code": 0,
+  "fresh_absence": {
+    "user-authorization.json": true,
+    "authorization-binding.json": true,
+    "execute-started.json": true,
+    "dispatch-journal.jsonl": true,
+    "raw-sensitive": true,
+    "G3-provider-result.json": true,
+    "result.json": true
+  },
+  "actual_commands": [
+    {
+      "operator": "Main",
+      "tool_chunk": "7dc51b",
+      "command": "python -B -X utf8 evidence/upgrade/v5.0/structure-diversity/real-samples/run.py --prepare",
+      "exit_code": 0,
+      "wall_seconds": 1.361,
+      "scope": "Unique offline prepare; Main actual receipt and preparation-report"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "tool_chunk": "888fa7",
+      "exit_code": 0,
+      "scope": "Initial static10inverse/AST/source/hash-only/ignore/absence, no runner execution"
+    },
+    {
+      "operator": "Independent AI QA agent",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; actual savedpreview/source/hash checks plus pure selector/messages/schema/manifest/cost comparison and sealing; full source in transcript",
+      "exit_code": 0
+    }
+  ],
+  "limits": [
+    "Only pure selector/messages/schema/manifest/budget functions executed; provider factory/config/Key/ledger/DB/network denied. No runner import/prepare/execute or compile/proof/HTTP/test/build/browser.",
+    "One reverse sample max1/.20 remains a proposal. New actual source-bound finite approval is required; failure consumes slot, no retry/repair/fallback.",
+    "No actual model reply, guard effectiveness, generation yield/general narrative/human quality conclusion; prior real435forward and OPEN remain historical.",
+    "All full source mappings reside only in Main actualpreview; raw3/original8 were hashed, never parsed or emitted."
+  ]
+}

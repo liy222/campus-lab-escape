@@ -1,0 +1,120 @@
+{
+  "kind": "Independent AI QA reverse-structure G3 initial static preflight only",
+  "utc": "2026-10-27T14:08:26.179922+00:00",
+  "actor": "Independent AI QA agent; no human reviewer",
+  "source_stop": true,
+  "status": "NO_STATIC_BLOCKER_MAIN_ONE_PURE_PREPARE_RECOMMENDED",
+  "runner_sha256": "4575bbf85dd89488185fcb27a6615cf3542bd940effe58a17f7230abde23a35e",
+  "historical_runner_sha256": "c05c3a779717027e5dfe63c8575c3d4ca592c4cb055db1dbd1c604fbb3bb087e",
+  "author_stop_sha256": "e463b5c9c20ba714b16dc5b705ca56cd2a1c216ac2e1dc09ded1d181eb5805e5",
+  "plan_sha256": "1f928c8cedd575242f18bbd601f5313e1a85ad2a4e4dcc401424555b890488f2",
+  "exact_allowed_replacements": 10,
+  "inverse_entire_bytes_equal": true,
+  "protected_AST_unchanged": [
+    "canonical",
+    "sha",
+    "stamp",
+    "StopRun",
+    "payload",
+    "estimate",
+    "raw_write",
+    "authorization_matches",
+    "require_authorization",
+    "ledger_readonly",
+    "public_snapshot",
+    "Controller",
+    "CaptureProvider",
+    "make_temp_client",
+    "version_body",
+    "main"
+  ],
+  "all_import_AST_unchanged": true,
+  "CASES_only_change_host_seed1_to3": true,
+  "scope": {
+    "case": "G3",
+    "room_count": 3,
+    "difficulty": "hard",
+    "family": "mapping_v1",
+    "structure": "reverse_v1",
+    "host_seed": 3,
+    "same_theme_as_prior_forward": true
+  },
+  "expected_reverse_blueprint_id": "mapping_v1-r3-hard-sv1-reverse",
+  "expected_item_first_from_frozen_design_and_prior_synthetic_proof": {
+    "implementation_plan_path": "evidence/upgrade/v5.0/structure-diversity/implementation-plan.json",
+    "implementation_plan_sha256": "829beff45ade19eb0239470b9ebee4aee96da35d354bb2fe4fa8248419197c24",
+    "prior_cell_path": "evidence/upgrade/v5.0/structure-diversity/qa/run1/observations/cell-3-hard-3.json",
+    "prior_cell_sha256": "3d702b06e4cade86fc22e4dcf8aad2ff705d0aaff3e4216ef2e654df633a48cb",
+    "mechanism_order": [
+      "item",
+      "sequence",
+      "code",
+      "circuit",
+      "sequence",
+      "code"
+    ],
+    "evidence_is_prior_synthetic_not_new_real_result": true
+  },
+  "limits_and_oldunknown_identity_unchanged": true,
+  "authorization_precedes_exclusive_marker_config_Key_ledger": true,
+  "source_body_profile_model_secret_concurrency_no_retry_finalization_guards_inherited": true,
+  "current_sources_matched": 453,
+  "product_bundle_sha256": "48e803d9a2bd28a39445d8356e0a262f5ccd7ee0ba7fa452c6846d8a23084a51",
+  "future_preview_source_count": 455,
+  "QA_public102": {
+    "seal_path": "evidence/upgrade/v5.0/structure-diversity/qa/artifact-seal.json",
+    "seal_sha256": "7ce3df0f558857aa539979ac7f4957e6c0448a674d5de426a97374d2654d4997",
+    "all_artifacts_match": true
+  },
+  "local_raw3_hash_only_match_ignored": true,
+  "original8_hash_only": {
+    "authority": "evidence/upgrade/v5.0/blueprint-generation/protected-untracked-before-git.json",
+    "authority_sha256": "283e9895e934c608b54f5ad807eb7569973dde3eda40059546ede1a83a60ac76",
+    "files_matched": 8,
+    "body_parsed_or_output": false
+  },
+  "future_private4_exact_paths_gitignored": [
+    "evidence/upgrade/v5.0/structure-diversity/real-samples/G3-provider-result.json",
+    "evidence/upgrade/v5.0/structure-diversity/real-samples/raw-sensitive/G3-private-definition-local.json",
+    "evidence/upgrade/v5.0/structure-diversity/real-samples/raw-sensitive/G3-witness-local.json",
+    "evidence/upgrade/v5.0/structure-diversity/real-samples/raw-sensitive/G3-api-replay-local.json"
+  ],
+  "git_check_ignore_exit_code": 0,
+  "fresh_absence": {
+    "offline-preview-v1.json": true,
+    "preparation-report.json": true,
+    "user-authorization.json": true,
+    "authorization-binding.json": true,
+    "execute-started.json": true,
+    "dispatch-journal.jsonl": true,
+    "raw-sensitive": true,
+    "G3-provider-result.json": true,
+    "result.json": true
+  },
+  "actual_commands": [
+    {
+      "tool_chunk": "1b186d",
+      "exit_code": 0,
+      "scope": "Read current AGENTS/newplan/author STOP only"
+    },
+    {
+      "tool_chunk": "5f7acc",
+      "exit_code": 0,
+      "scope": "Read integration original8 metadata references; no private bodies"
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; standard-library10inverse/AST/CASES/source453/public102/hash-onlyraw3+original8/ignore/absence audit and this record; exact source in transcript",
+      "exit_code": 0
+    }
+  ],
+  "runner_imported_or_prepare_execute_called": false,
+  "tests_proofs_build_browser_or_guards_repeated": false,
+  "old_actual_private_body_Key_config_liveledger_playerDB_network_provider_access": false,
+  "paid_calls": 0,
+  "limits": [
+    "Static initial review only; Main may pureprepare once, actual455/schema/fullpayload/cost must then be independently reviewed.",
+    "Max1/.20 is a proposal requiring NEW finite actual approval before dispatch. No actual reply or current-reverse model quality/yield/semantics conclusion.",
+    "Prior real435 forward remains historical and OPEN findings unchanged; inherited guard/synthetic evidence is not a new real result.",
+    "No new agents/commit/runtime model inference."
+  ]
+}

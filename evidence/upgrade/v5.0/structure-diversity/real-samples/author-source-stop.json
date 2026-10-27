@@ -1,0 +1,93 @@
+{
+  "kind": "Main mechanical integration author SOURCE STOP; static only",
+  "date": "2026-10-27",
+  "source_stop": true,
+  "runner_sha256": "4575bbf85dd89488185fcb27a6615cf3542bd940effe58a17f7230abde23a35e",
+  "runner_bytes": 33973,
+  "historical_executor": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/run.py",
+  "historical_executor_sha256": "c05c3a779717027e5dfe63c8575c3d4ca592c4cb055db1dbd1c604fbb3bb087e",
+  "allowed_replacements": [
+    {
+      "from": "v5-duplicate-json-prompt-real-G3-pending-approval",
+      "to": "v5-structure-diversity-reverse-real-G3-pending-approval",
+      "occurrences": 1
+    },
+    {
+      "from": "evidence/upgrade/v5.0/duplicate-json-prompt/candidate.json",
+      "to": "evidence/upgrade/v5.0/structure-diversity/candidate-qa-stage2-fixed1.json",
+      "occurrences": 1
+    },
+    {
+      "from": "49250e7a34817896c83cf5763e0d70124cb5a7a017dc01fd43caeec727feb342",
+      "to": "48e803d9a2bd28a39445d8356e0a262f5ccd7ee0ba7fa452c6846d8a23084a51",
+      "occurrences": 1
+    },
+    {
+      "from": "Bind all 433 named sources",
+      "to": "Bind all 453 named sources",
+      "occurrences": 1
+    },
+    {
+      "from": "candidate.get('source_count') != 433",
+      "to": "candidate.get('source_count') != 453",
+      "occurrences": 1
+    },
+    {
+      "from": "len(expected) != 433",
+      "to": "len(expected) != 453",
+      "occurrences": 1
+    },
+    {
+      "from": "'host_seed': 1",
+      "to": "'host_seed': 3",
+      "occurrences": 1
+    },
+    {
+      "from": "v5-duplicate-json-prompt-approved-real-G3-",
+      "to": "v5-structure-diversity-reverse-approved-real-G3-",
+      "occurrences": 1
+    },
+    {
+      "from": "actual_paid_duplicate_json_prompt_G3_validation",
+      "to": "actual_paid_structure_diversity_reverse_G3_validation",
+      "occurrences": 1
+    },
+    {
+      "from": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/run.py --prepare",
+      "to": "evidence/upgrade/v5.0/structure-diversity/real-samples/run.py --prepare",
+      "occurrences": 1
+    }
+  ],
+  "inverse_entire_bytes_equal": true,
+  "syntax_AST_valid": true,
+  "protected_AST_unchanged": [
+    "canonical",
+    "sha",
+    "stamp",
+    "StopRun",
+    "payload",
+    "estimate",
+    "raw_write",
+    "authorization_matches",
+    "require_authorization",
+    "ledger_readonly",
+    "public_snapshot",
+    "Controller",
+    "CaptureProvider",
+    "make_temp_client",
+    "version_body",
+    "main"
+  ],
+  "all_import_AST_unchanged": true,
+  "product_source_count": 453,
+  "future_source_count": 455,
+  "product_bundle": "48e803d9a2bd28a39445d8356e0a262f5ccd7ee0ba7fa452c6846d8a23084a51",
+  "actual_command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -; inline10 literal replacements/inverse-byte/AST/source/hash/ignore checks; full source in transcript",
+  "exit_code": 0,
+  "runner_imported_or_prepare_execute_run": false,
+  "Key_config_liveledger_DB_privatebody_network_paid_access": false,
+  "limits": [
+    "Static derivation only; initial preflight precedes unique pure prepare and finalpreview review.",
+    "No newpaid approval/actualresult/quality claim."
+  ]
+}
