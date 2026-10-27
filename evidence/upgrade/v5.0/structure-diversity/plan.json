@@ -1,0 +1,56 @@
+{
+  "kind": "SD0 design refinement under accepted build-plan section14",
+  "date": "2026-10-27",
+  "utc": "2026-10-27T04:11:33.695786+00:00",
+  "baseline_head": "967e812e10c96ecf514798d57f2d346857a0e7e0",
+  "baseline_remote_match": true,
+  "baseline_source_map": "evidence/upgrade/v5.0/duplicate-json-prompt/real-samples/offline-preview-v1.json",
+  "baseline_verified": {
+    "source": 435,
+    "public_actual_artifacts": 17,
+    "local_private_hash_only": 4,
+    "original_untracked": 8
+  },
+  "accepted_scope": "docs/v5-build-plan.md section14: finite legal skeletons for each supported room/difficulty, genuine distribution and dependency/order change; no arbitrary map/new mechanisms/infinite uniqueness.",
+  "entry_gate": "Current B implementation/offline finite QA/current real single-sample technical+Host descriptions accepted and pushed; global narrative limits remain, not an SD implementation proof.",
+  "phase": "SD0 read/design only until Main stable scope freeze; SD1 implementation requires explicit recorded GO in this epoch",
+  "ownership": {
+    "Main": [
+      "docs/structure-diversity-plan.md",
+      "docs/v5-build-plan.md section14 status and version",
+      "DECISIONS.md",
+      "AGENTS.md",
+      "PLAN.md",
+      "STATUS.md",
+      "this plan/integration/Git"
+    ],
+    "existing_Backend": [
+      "evidence/upgrade/v5.0/structure-diversity/design/backend-assessment.json; read-only production-source feasibility/compatibility assessment, no product edits yet"
+    ],
+    "existing_QA": [
+      "later stable SD0 design review only, exact review paths to be assigned after draft; no formal product tests before stable implemented candidate"
+    ]
+  },
+  "SD0_required_outputs": [
+    "nine-combination feasibility matrix and counts/room caps/combo/depth/cross-room constraints",
+    "at least two concretely defined legal structures per combination; distinguish information placement vs actual dependency/order",
+    "canonical signatures ignoring names/values/random IDs, renaming-invariance and separate placement/dependency claims",
+    "one immutable selected blueprint through manifest/schema/assembly/Host descriptions/proof",
+    "explicit content/catalog/version and old full-definition/save compatibility analysis",
+    "exact SD1/SD2 file ownership and bounded SD3 validation paths, no lowered admission gates"
+  ],
+  "possible_design_for_assessment": "Forward original chain plus reverse mechanism chain, redistribute existing puzzle rooms with same per-room puzzle counts; keep key in G1, move basic code material with its new puzzle, extra material with its own puzzle, optionally gate relation behind first key puzzle. This is a proposal, not executed proof.",
+  "frozen_in_SD0": [
+    "all product/contracts/tests/runner/source435",
+    "all old raw/private bodies, actual artifacts and failures",
+    "keys/liveledger/playerDB/environments/old8 untracked"
+  ],
+  "paid_calls_authorized": 0,
+  "current_remaining_authorization": 0,
+  "no_new_agents_Astra_runtime_inference_or_release": true,
+  "limits": [
+    "SD0 design is not implementation or actual solvability/quality QA.",
+    "Any unsupported combination or changed scope must be surfaced before implementation, no silent weakening.",
+    "Future real calls need new finite approval; no public seed/persistence/API/schema migration by default."
+  ]
+}

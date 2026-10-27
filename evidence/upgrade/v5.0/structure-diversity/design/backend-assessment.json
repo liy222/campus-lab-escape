@@ -1,0 +1,1880 @@
+{
+  "kind": "SD0 Backend read-only feasibility/interface assessment; no product implementation or solvability QA",
+  "utc": "2026-10-27T04:19:44.228023+00:00",
+  "source_stop": true,
+  "read_source_sha256": {
+    "backend/app/domain/blueprints.py": "2fad1607e8d4e379c705c5c36ac9245c2002d622953e08c230934ac6c64e5688",
+    "backend/app/domain/generation_content_v2.py": "413ab1e2c6a541c33f9394be3a6dba2daa3d32dbbe5a552106a60667a6f28c36",
+    "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+    "contracts/v2/build_generation_content_v2.py": "a0ef04e68fd8f3142282172c6e2277b7af83a76baa0e859d12c02ae31886d81a",
+    "frontend/src/v5/GeneratedScene.tsx": "ddfa97ff668d19715aa9008c43fc09d9a4260affce3453f50771e0d915e2e7de"
+  },
+  "conclusion": "Recommend finite forward_v1/reverse_v1 structures for each9shape within each existing2relation families. All static metadata capacities/dependency prerequisites appear feasible; actual original compiler/proof/planner-bound/witness remains mandatory after SD1 implementation.",
+  "count_language": "36 model contract variants =2families x9shapes x2structures. They are not36 distinct topologies: the two relation families share the same normalized structural graph for eachshape/structure.",
+  "nine_combination_matrix": [
+    {
+      "room_count": 1,
+      "difficulty": "easy",
+      "puzzle_count": 2,
+      "required_combo_minimum": 0,
+      "required_hard_depth_minimum": null,
+      "forward_object_counts": [
+        5
+      ],
+      "reverse_object_counts": [
+        5
+      ],
+      "puzzle_room_counts": [
+        2
+      ],
+      "forward_mechanism_chain": [
+        "code",
+        "item"
+      ],
+      "reverse_mechanism_chain": [
+        "item",
+        "code"
+      ],
+      "combo_puzzles": 1,
+      "chain_depth": 2,
+      "item_count": 1,
+      "clue_count": 2,
+      "static_capacity_at_most8": true,
+      "static_no_future_material_or_self_lock": true,
+      "static_cross_room_material_requirement": true,
+      "families": [
+        {
+          "family": "position_v1",
+          "forward_id": "position_v1-r1-easy",
+          "proposed_reverse_id": "position_v1-r1-easy-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              5
+            ],
+            "puzzle_counts": [
+              2
+            ],
+            "mechanism_chain": [
+              "code",
+              "item"
+            ],
+            "combo_puzzles": 1,
+            "chain_depth": 2,
+            "item_count": 1,
+            "clue_count": 2,
+            "cross_material_edges": [],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              5
+            ],
+            "puzzle_counts": [
+              2
+            ],
+            "mechanism_chain": [
+              "item",
+              "code"
+            ],
+            "combo_puzzles": 1,
+            "chain_depth": 2,
+            "item_count": 1,
+            "clue_count": 2,
+            "cross_material_edges": [],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "position_v1-reverse_v1-r1-easy",
+          "proposed_reverse_identifier_length": 31
+        },
+        {
+          "family": "mapping_v1",
+          "forward_id": "mapping_v1-r1-easy",
+          "proposed_reverse_id": "mapping_v1-r1-easy-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              5
+            ],
+            "puzzle_counts": [
+              2
+            ],
+            "mechanism_chain": [
+              "code",
+              "item"
+            ],
+            "combo_puzzles": 1,
+            "chain_depth": 2,
+            "item_count": 1,
+            "clue_count": 2,
+            "cross_material_edges": [],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              5
+            ],
+            "puzzle_counts": [
+              2
+            ],
+            "mechanism_chain": [
+              "item",
+              "code"
+            ],
+            "combo_puzzles": 1,
+            "chain_depth": 2,
+            "item_count": 1,
+            "clue_count": 2,
+            "cross_material_edges": [],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "mapping_v1-reverse_v1-r1-easy",
+          "proposed_reverse_identifier_length": 30
+        }
+      ],
+      "status": "STATIC_METADATA_FEASIBLE_NOT_COMPILED_OR_PROVEN"
+    },
+    {
+      "room_count": 1,
+      "difficulty": "normal",
+      "puzzle_count": 3,
+      "required_combo_minimum": 1,
+      "required_hard_depth_minimum": null,
+      "forward_object_counts": [
+        7
+      ],
+      "reverse_object_counts": [
+        7
+      ],
+      "puzzle_room_counts": [
+        3
+      ],
+      "forward_mechanism_chain": [
+        "code",
+        "sequence",
+        "item"
+      ],
+      "reverse_mechanism_chain": [
+        "item",
+        "sequence",
+        "code"
+      ],
+      "combo_puzzles": 2,
+      "chain_depth": 3,
+      "item_count": 1,
+      "clue_count": 3,
+      "static_capacity_at_most8": true,
+      "static_no_future_material_or_self_lock": true,
+      "static_cross_room_material_requirement": true,
+      "families": [
+        {
+          "family": "position_v1",
+          "forward_id": "position_v1-r1-normal",
+          "proposed_reverse_id": "position_v1-r1-normal-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              7
+            ],
+            "puzzle_counts": [
+              3
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "item"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 3,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              7
+            ],
+            "puzzle_counts": [
+              3
+            ],
+            "mechanism_chain": [
+              "item",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 3,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "position_v1-reverse_v1-r1-normal",
+          "proposed_reverse_identifier_length": 33
+        },
+        {
+          "family": "mapping_v1",
+          "forward_id": "mapping_v1-r1-normal",
+          "proposed_reverse_id": "mapping_v1-r1-normal-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              7
+            ],
+            "puzzle_counts": [
+              3
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "item"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 3,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              7
+            ],
+            "puzzle_counts": [
+              3
+            ],
+            "mechanism_chain": [
+              "item",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 3,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "mapping_v1-reverse_v1-r1-normal",
+          "proposed_reverse_identifier_length": 32
+        }
+      ],
+      "status": "STATIC_METADATA_FEASIBLE_NOT_COMPILED_OR_PROVEN"
+    },
+    {
+      "room_count": 1,
+      "difficulty": "hard",
+      "puzzle_count": 4,
+      "required_combo_minimum": 2,
+      "required_hard_depth_minimum": 3,
+      "forward_object_counts": [
+        8
+      ],
+      "reverse_object_counts": [
+        8
+      ],
+      "puzzle_room_counts": [
+        4
+      ],
+      "forward_mechanism_chain": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "reverse_mechanism_chain": [
+        "item",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "combo_puzzles": 2,
+      "chain_depth": 4,
+      "item_count": 1,
+      "clue_count": 3,
+      "static_capacity_at_most8": true,
+      "static_no_future_material_or_self_lock": true,
+      "static_cross_room_material_requirement": true,
+      "families": [
+        {
+          "family": "position_v1",
+          "forward_id": "position_v1-r1-hard",
+          "proposed_reverse_id": "position_v1-r1-hard-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              8
+            ],
+            "puzzle_counts": [
+              4
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "circuit",
+              "item"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 4,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              8
+            ],
+            "puzzle_counts": [
+              4
+            ],
+            "mechanism_chain": [
+              "item",
+              "circuit",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 4,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "position_v1-reverse_v1-r1-hard",
+          "proposed_reverse_identifier_length": 31
+        },
+        {
+          "family": "mapping_v1",
+          "forward_id": "mapping_v1-r1-hard",
+          "proposed_reverse_id": "mapping_v1-r1-hard-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              8
+            ],
+            "puzzle_counts": [
+              4
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "circuit",
+              "item"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 4,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              8
+            ],
+            "puzzle_counts": [
+              4
+            ],
+            "mechanism_chain": [
+              "item",
+              "circuit",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 4,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "mapping_v1-reverse_v1-r1-hard",
+          "proposed_reverse_identifier_length": 30
+        }
+      ],
+      "status": "STATIC_METADATA_FEASIBLE_NOT_COMPILED_OR_PROVEN"
+    },
+    {
+      "room_count": 2,
+      "difficulty": "easy",
+      "puzzle_count": 3,
+      "required_combo_minimum": 0,
+      "required_hard_depth_minimum": null,
+      "forward_object_counts": [
+        5,
+        2
+      ],
+      "reverse_object_counts": [
+        4,
+        3
+      ],
+      "puzzle_room_counts": [
+        1,
+        2
+      ],
+      "forward_mechanism_chain": [
+        "code",
+        "sequence",
+        "item"
+      ],
+      "reverse_mechanism_chain": [
+        "item",
+        "sequence",
+        "code"
+      ],
+      "combo_puzzles": 2,
+      "chain_depth": 3,
+      "item_count": 1,
+      "clue_count": 3,
+      "static_capacity_at_most8": true,
+      "static_no_future_material_or_self_lock": true,
+      "static_cross_room_material_requirement": true,
+      "families": [
+        {
+          "family": "position_v1",
+          "forward_id": "position_v1-r2-easy",
+          "proposed_reverse_id": "position_v1-r2-easy-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              5,
+              2
+            ],
+            "puzzle_counts": [
+              1,
+              2
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "item"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 3,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "item",
+                "material_role": "reusable_key",
+                "from_room": 1,
+                "to_room": 2
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              4,
+              3
+            ],
+            "puzzle_counts": [
+              1,
+              2
+            ],
+            "mechanism_chain": [
+              "item",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 3,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "code",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 2
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "position_v1-reverse_v1-r2-easy",
+          "proposed_reverse_identifier_length": 31
+        },
+        {
+          "family": "mapping_v1",
+          "forward_id": "mapping_v1-r2-easy",
+          "proposed_reverse_id": "mapping_v1-r2-easy-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              5,
+              2
+            ],
+            "puzzle_counts": [
+              1,
+              2
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "item"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 3,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "item",
+                "material_role": "reusable_key",
+                "from_room": 1,
+                "to_room": 2
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              4,
+              3
+            ],
+            "puzzle_counts": [
+              1,
+              2
+            ],
+            "mechanism_chain": [
+              "item",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 3,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "code",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 2
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "mapping_v1-reverse_v1-r2-easy",
+          "proposed_reverse_identifier_length": 30
+        }
+      ],
+      "status": "STATIC_METADATA_FEASIBLE_NOT_COMPILED_OR_PROVEN"
+    },
+    {
+      "room_count": 2,
+      "difficulty": "normal",
+      "puzzle_count": 4,
+      "required_combo_minimum": 1,
+      "required_hard_depth_minimum": null,
+      "forward_object_counts": [
+        6,
+        2
+      ],
+      "reverse_object_counts": [
+        5,
+        3
+      ],
+      "puzzle_room_counts": [
+        2,
+        2
+      ],
+      "forward_mechanism_chain": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "reverse_mechanism_chain": [
+        "item",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "combo_puzzles": 2,
+      "chain_depth": 4,
+      "item_count": 1,
+      "clue_count": 3,
+      "static_capacity_at_most8": true,
+      "static_no_future_material_or_self_lock": true,
+      "static_cross_room_material_requirement": true,
+      "families": [
+        {
+          "family": "position_v1",
+          "forward_id": "position_v1-r2-normal",
+          "proposed_reverse_id": "position_v1-r2-normal-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              6,
+              2
+            ],
+            "puzzle_counts": [
+              2,
+              2
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "circuit",
+              "item"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 4,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [
+              {
+                "mechanism": "item",
+                "material_role": "reusable_key",
+                "from_room": 1,
+                "to_room": 2
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              5,
+              3
+            ],
+            "puzzle_counts": [
+              2,
+              2
+            ],
+            "mechanism_chain": [
+              "item",
+              "circuit",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 4,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "code",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 2
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "position_v1-reverse_v1-r2-normal",
+          "proposed_reverse_identifier_length": 33
+        },
+        {
+          "family": "mapping_v1",
+          "forward_id": "mapping_v1-r2-normal",
+          "proposed_reverse_id": "mapping_v1-r2-normal-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              6,
+              2
+            ],
+            "puzzle_counts": [
+              2,
+              2
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "circuit",
+              "item"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 4,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [
+              {
+                "mechanism": "item",
+                "material_role": "reusable_key",
+                "from_room": 1,
+                "to_room": 2
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              5,
+              3
+            ],
+            "puzzle_counts": [
+              2,
+              2
+            ],
+            "mechanism_chain": [
+              "item",
+              "circuit",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 4,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "code",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 2
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "mapping_v1-reverse_v1-r2-normal",
+          "proposed_reverse_identifier_length": 32
+        }
+      ],
+      "status": "STATIC_METADATA_FEASIBLE_NOT_COMPILED_OR_PROVEN"
+    },
+    {
+      "room_count": 2,
+      "difficulty": "hard",
+      "puzzle_count": 5,
+      "required_combo_minimum": 2,
+      "required_hard_depth_minimum": 3,
+      "forward_object_counts": [
+        6,
+        5
+      ],
+      "reverse_object_counts": [
+        7,
+        4
+      ],
+      "puzzle_room_counts": [
+        2,
+        3
+      ],
+      "forward_mechanism_chain": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "item"
+      ],
+      "reverse_mechanism_chain": [
+        "item",
+        "code",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "combo_puzzles": 3,
+      "chain_depth": 5,
+      "item_count": 1,
+      "clue_count": 5,
+      "static_capacity_at_most8": true,
+      "static_no_future_material_or_self_lock": true,
+      "static_cross_room_material_requirement": true,
+      "families": [
+        {
+          "family": "position_v1",
+          "forward_id": "position_v1-r2-hard",
+          "proposed_reverse_id": "position_v1-r2-hard-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              6,
+              5
+            ],
+            "puzzle_counts": [
+              2,
+              3
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "circuit",
+              "code",
+              "item"
+            ],
+            "combo_puzzles": 3,
+            "chain_depth": 5,
+            "item_count": 1,
+            "clue_count": 5,
+            "cross_material_edges": [
+              {
+                "mechanism": "item",
+                "material_role": "reusable_key",
+                "from_room": 1,
+                "to_room": 2
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              7,
+              4
+            ],
+            "puzzle_counts": [
+              2,
+              3
+            ],
+            "mechanism_chain": [
+              "item",
+              "code",
+              "circuit",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 3,
+            "chain_depth": 5,
+            "item_count": 1,
+            "clue_count": 5,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "code",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 2
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "position_v1-reverse_v1-r2-hard",
+          "proposed_reverse_identifier_length": 31
+        },
+        {
+          "family": "mapping_v1",
+          "forward_id": "mapping_v1-r2-hard",
+          "proposed_reverse_id": "mapping_v1-r2-hard-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              6,
+              5
+            ],
+            "puzzle_counts": [
+              2,
+              3
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "circuit",
+              "code",
+              "item"
+            ],
+            "combo_puzzles": 3,
+            "chain_depth": 5,
+            "item_count": 1,
+            "clue_count": 5,
+            "cross_material_edges": [
+              {
+                "mechanism": "item",
+                "material_role": "reusable_key",
+                "from_room": 1,
+                "to_room": 2
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              7,
+              4
+            ],
+            "puzzle_counts": [
+              2,
+              3
+            ],
+            "mechanism_chain": [
+              "item",
+              "code",
+              "circuit",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 3,
+            "chain_depth": 5,
+            "item_count": 1,
+            "clue_count": 5,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "code",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 2
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "mapping_v1-reverse_v1-r2-hard",
+          "proposed_reverse_identifier_length": 30
+        }
+      ],
+      "status": "STATIC_METADATA_FEASIBLE_NOT_COMPILED_OR_PROVEN"
+    },
+    {
+      "room_count": 3,
+      "difficulty": "easy",
+      "puzzle_count": 4,
+      "required_combo_minimum": 0,
+      "required_hard_depth_minimum": null,
+      "forward_object_counts": [
+        5,
+        1,
+        2
+      ],
+      "reverse_object_counts": [
+        4,
+        1,
+        3
+      ],
+      "puzzle_room_counts": [
+        1,
+        1,
+        2
+      ],
+      "forward_mechanism_chain": [
+        "code",
+        "sequence",
+        "circuit",
+        "item"
+      ],
+      "reverse_mechanism_chain": [
+        "item",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "combo_puzzles": 2,
+      "chain_depth": 4,
+      "item_count": 1,
+      "clue_count": 3,
+      "static_capacity_at_most8": true,
+      "static_no_future_material_or_self_lock": true,
+      "static_cross_room_material_requirement": true,
+      "families": [
+        {
+          "family": "position_v1",
+          "forward_id": "position_v1-r3-easy",
+          "proposed_reverse_id": "position_v1-r3-easy-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              5,
+              1,
+              2
+            ],
+            "puzzle_counts": [
+              1,
+              1,
+              2
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "circuit",
+              "item"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 4,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "item",
+                "material_role": "reusable_key",
+                "from_room": 1,
+                "to_room": 3
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              4,
+              1,
+              3
+            ],
+            "puzzle_counts": [
+              1,
+              1,
+              2
+            ],
+            "mechanism_chain": [
+              "item",
+              "circuit",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 4,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 3
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 3
+              },
+              {
+                "mechanism": "code",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 3
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "position_v1-reverse_v1-r3-easy",
+          "proposed_reverse_identifier_length": 31
+        },
+        {
+          "family": "mapping_v1",
+          "forward_id": "mapping_v1-r3-easy",
+          "proposed_reverse_id": "mapping_v1-r3-easy-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              5,
+              1,
+              2
+            ],
+            "puzzle_counts": [
+              1,
+              1,
+              2
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "circuit",
+              "item"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 4,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "item",
+                "material_role": "reusable_key",
+                "from_room": 1,
+                "to_room": 3
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              4,
+              1,
+              3
+            ],
+            "puzzle_counts": [
+              1,
+              1,
+              2
+            ],
+            "mechanism_chain": [
+              "item",
+              "circuit",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 2,
+            "chain_depth": 4,
+            "item_count": 1,
+            "clue_count": 3,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 3
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 3
+              },
+              {
+                "mechanism": "code",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 3
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "mapping_v1-reverse_v1-r3-easy",
+          "proposed_reverse_identifier_length": 30
+        }
+      ],
+      "status": "STATIC_METADATA_FEASIBLE_NOT_COMPILED_OR_PROVEN"
+    },
+    {
+      "room_count": 3,
+      "difficulty": "normal",
+      "puzzle_count": 5,
+      "required_combo_minimum": 1,
+      "required_hard_depth_minimum": null,
+      "forward_object_counts": [
+        5,
+        2,
+        4
+      ],
+      "reverse_object_counts": [
+        4,
+        4,
+        3
+      ],
+      "puzzle_room_counts": [
+        1,
+        2,
+        2
+      ],
+      "forward_mechanism_chain": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "item"
+      ],
+      "reverse_mechanism_chain": [
+        "item",
+        "code",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "combo_puzzles": 3,
+      "chain_depth": 5,
+      "item_count": 1,
+      "clue_count": 5,
+      "static_capacity_at_most8": true,
+      "static_no_future_material_or_self_lock": true,
+      "static_cross_room_material_requirement": true,
+      "families": [
+        {
+          "family": "position_v1",
+          "forward_id": "position_v1-r3-normal",
+          "proposed_reverse_id": "position_v1-r3-normal-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              5,
+              2,
+              4
+            ],
+            "puzzle_counts": [
+              1,
+              2,
+              2
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "circuit",
+              "code",
+              "item"
+            ],
+            "combo_puzzles": 3,
+            "chain_depth": 5,
+            "item_count": 1,
+            "clue_count": 5,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "item",
+                "material_role": "reusable_key",
+                "from_room": 1,
+                "to_room": 3
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              4,
+              4,
+              3
+            ],
+            "puzzle_counts": [
+              1,
+              2,
+              2
+            ],
+            "mechanism_chain": [
+              "item",
+              "code",
+              "circuit",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 3,
+            "chain_depth": 5,
+            "item_count": 1,
+            "clue_count": 5,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 3
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 3
+              },
+              {
+                "mechanism": "code",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 3
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "position_v1-reverse_v1-r3-normal",
+          "proposed_reverse_identifier_length": 33
+        },
+        {
+          "family": "mapping_v1",
+          "forward_id": "mapping_v1-r3-normal",
+          "proposed_reverse_id": "mapping_v1-r3-normal-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              5,
+              2,
+              4
+            ],
+            "puzzle_counts": [
+              1,
+              2,
+              2
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "circuit",
+              "code",
+              "item"
+            ],
+            "combo_puzzles": 3,
+            "chain_depth": 5,
+            "item_count": 1,
+            "clue_count": 5,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 2
+              },
+              {
+                "mechanism": "item",
+                "material_role": "reusable_key",
+                "from_room": 1,
+                "to_room": 3
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              4,
+              4,
+              3
+            ],
+            "puzzle_counts": [
+              1,
+              2,
+              2
+            ],
+            "mechanism_chain": [
+              "item",
+              "code",
+              "circuit",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 3,
+            "chain_depth": 5,
+            "item_count": 1,
+            "clue_count": 5,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 3
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 3
+              },
+              {
+                "mechanism": "code",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 3
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "mapping_v1-reverse_v1-r3-normal",
+          "proposed_reverse_identifier_length": 32
+        }
+      ],
+      "status": "STATIC_METADATA_FEASIBLE_NOT_COMPILED_OR_PROVEN"
+    },
+    {
+      "room_count": 3,
+      "difficulty": "hard",
+      "puzzle_count": 6,
+      "required_combo_minimum": 2,
+      "required_hard_depth_minimum": 3,
+      "forward_object_counts": [
+        6,
+        4,
+        4
+      ],
+      "reverse_object_counts": [
+        7,
+        4,
+        3
+      ],
+      "puzzle_room_counts": [
+        2,
+        2,
+        2
+      ],
+      "forward_mechanism_chain": [
+        "code",
+        "sequence",
+        "circuit",
+        "code",
+        "sequence",
+        "item"
+      ],
+      "reverse_mechanism_chain": [
+        "item",
+        "sequence",
+        "code",
+        "circuit",
+        "sequence",
+        "code"
+      ],
+      "combo_puzzles": 4,
+      "chain_depth": 6,
+      "item_count": 1,
+      "clue_count": 7,
+      "static_capacity_at_most8": true,
+      "static_no_future_material_or_self_lock": true,
+      "static_cross_room_material_requirement": true,
+      "families": [
+        {
+          "family": "position_v1",
+          "forward_id": "position_v1-r3-hard",
+          "proposed_reverse_id": "position_v1-r3-hard-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              6,
+              4,
+              4
+            ],
+            "puzzle_counts": [
+              2,
+              2,
+              2
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "circuit",
+              "code",
+              "sequence",
+              "item"
+            ],
+            "combo_puzzles": 4,
+            "chain_depth": 6,
+            "item_count": 1,
+            "clue_count": 7,
+            "cross_material_edges": [
+              {
+                "mechanism": "item",
+                "material_role": "reusable_key",
+                "from_room": 1,
+                "to_room": 3
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              7,
+              4,
+              3
+            ],
+            "puzzle_counts": [
+              2,
+              2,
+              2
+            ],
+            "mechanism_chain": [
+              "item",
+              "sequence",
+              "code",
+              "circuit",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 4,
+            "chain_depth": 6,
+            "item_count": 1,
+            "clue_count": 7,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 3
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 3
+              },
+              {
+                "mechanism": "code",
+                "material_role": "reading_positions",
+                "from_room": 1,
+                "to_room": 3
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "position_v1-reverse_v1-r3-hard",
+          "proposed_reverse_identifier_length": 31
+        },
+        {
+          "family": "mapping_v1",
+          "forward_id": "mapping_v1-r3-hard",
+          "proposed_reverse_id": "mapping_v1-r3-hard-sv1-reverse",
+          "forward": {
+            "object_counts": [
+              6,
+              4,
+              4
+            ],
+            "puzzle_counts": [
+              2,
+              2,
+              2
+            ],
+            "mechanism_chain": [
+              "code",
+              "sequence",
+              "circuit",
+              "code",
+              "sequence",
+              "item"
+            ],
+            "combo_puzzles": 4,
+            "chain_depth": 6,
+            "item_count": 1,
+            "clue_count": 7,
+            "cross_material_edges": [
+              {
+                "mechanism": "item",
+                "material_role": "reusable_key",
+                "from_room": 1,
+                "to_room": 3
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "reverse_static_model": {
+            "object_counts": [
+              7,
+              4,
+              3
+            ],
+            "puzzle_counts": [
+              2,
+              2,
+              2
+            ],
+            "mechanism_chain": [
+              "item",
+              "sequence",
+              "code",
+              "circuit",
+              "sequence",
+              "code"
+            ],
+            "combo_puzzles": 4,
+            "chain_depth": 6,
+            "item_count": 1,
+            "clue_count": 7,
+            "cross_material_edges": [
+              {
+                "mechanism": "sequence",
+                "material_role": "device_source",
+                "from_room": 1,
+                "to_room": 3
+              },
+              {
+                "mechanism": "sequence",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 3
+              },
+              {
+                "mechanism": "code",
+                "material_role": "symbol_mapping",
+                "from_room": 1,
+                "to_room": 3
+              }
+            ],
+            "future_material_room_edges": [],
+            "self_or_later_material_lock_edges": [],
+            "unique_slots_each_room": true
+          },
+          "calculation_model_blueprint_id": "mapping_v1-reverse_v1-r3-hard",
+          "proposed_reverse_identifier_length": 30
+        }
+      ],
+      "status": "STATIC_METADATA_FEASIBLE_NOT_COMPILED_OR_PROVEN"
+    }
+  ],
+  "exact_reverse_design": [
+    "Reverse the original puzzle tuple while retaining puzzle IDs and mechanism/recipe/clue/item bindings. Assign new rooms using the original per-room puzzle counts, with rooms in original forward order.",
+    "Replace each puzzle prerequisites with the immediately previous puzzle in that new order; first puzzle is the original final item puzzle, free of prerequisites. Puzzle object locked_by follows the same preceding puzzle.",
+    "Keep the actual reusable item in room ordinal0, unlocked. Move basic code_source to its actual owning code puzzle room; move extra_code/devices fragments to their actual owning puzzle room. Keep base device source and relation in room ordinal0.",
+    "Make relation locked_by exactly the first item puzzle. It never gates that item or its required key, so it is a discovery change even for one room without creating the proposed immediate self-lock.",
+    "For reverse only, pack original-relative-order nonpuzzle objects followed by puzzle objects in the new chain order; assign unique local slots0..count-1 per room. Forward is returned unchanged, preserving all original slots/IDs/locks.",
+    "Do not move objects by hardcoded obj_key or puzzle_1 numbers. Resolve roles/actual references and room ordinal from the selected immutable Blueprint."
+  ],
+  "static_reachability_argument": "New chain room indices are nondecreasing; each prerequisite is earlier, each required item/clue is in the current or an earlier room, and relation unlock comes from the first free item puzzle using the unlocked first-room key. Thus the metadata model shows no future-room/self-lock obstruction. This is not a new engine-action witness or proof: circuit solving, typed values,25k/5s resource bounds and all admission rules must still be checked by the unchanged compiler.",
+  "single_room_difference": "Code and item change actual prerequisite direction/order; relation changes from initially visible to first-item-gated. Reverse packing also places the first item puzzle where the first code puzzle previously stood. This is more than ID/name/parameter renaming.",
+  "multiroom_difference": "Basic code material moves from first room to the code puzzle final room, extras move with new puzzle ownership, relation discovery is gated. Cross-room proof must cite shared relation/base device material to later puzzles; the reverse item-first key is same-room and cannot be claimed as its cross-room dependency.",
+  "version_and_seed_policy": {
+    "content_version": "Keep2.0.0: same exact fields/name-only object/typed domains. Newly selected blueprint_id const and placement differ; no raw repair or schema weakening.",
+    "new_catalog_version": "Add explicit StructureCatalog1.0.0 metadata, independent of model content2.0.0 and family position_v1/mapping_v1.",
+    "seeds": "New selector choices0/1 are legacy forward position/mapping with byte-equivalent Blueprint fields and old IDs;2/3 are reverse position/mapping with new reverse_v1 IDs. Integer seed%4 chooses one. Default makes one secrets.randbelow(4), then calls originalv1 selector with explicit seed%2 exactly once.",
+    "immutability": "Return one frozen Blueprint, content_version2.0.0, through messages, dynamic schema, manifest, Host descriptions, strict assembly and original proof. No reselect during those phases.",
+    "old_contracts": "Oldv1 module/schema/builder/README and oldcontent2 static schema/builder/README can stay raw-identical. The oldv2 builder enumerates FAMILIES with seeds0/1; preserving those forward choices reproduces its original18 variants even after currentv2 selector wrapper changes.",
+    "dynamic_schema_support": "By source inspection, existing content2 schema only requires content_version2 and derives blueprint_id const/object slot keys from its Blueprint; it has no static-ID catalog membership lookup. It should already support reverse IDs and moved/locked objects without schema-function edits; not executed against a new production variant inSD0.",
+    "new_static_catalog": "Separate new36-variant catalog/schema and builder, never overwrite the old18 schema.",
+    "public_and_save_formats": "No new HTTP/request seed/family field, CompiledLevel/Draft/rules/save format or DB migration. Old full definitions/hash/text remain stored and execute directly, not regenerated from the new catalog. New definition hashes naturally reflect new placement/locks.",
+    "reverse_ID_recommendation": "Use the original forward_id plus -sv1-reverse; all18 suggested reverse IDs are Identifier-compatible and at most33characters. The count model used an inert alternative ID label; no ID is used as evidence of structure change."
+  },
+  "manifest_recommendation": {
+    "minimum": "Add structure_catalog_version=1.0.0 and per-puzzle prerequisite_object_slots derived from actual prerequisite puzzle references and their objects. Blueprint_id itself versions the R choice; do not classify variant via brittle ID parsing or send evidence signatures to the model.",
+    "custom_Blueprint_compatibility": "Actual-reference lookup must work after consistent renaming and with unused decoy objects; it must not require ID membership in a fixed registry merely to build a manifest.",
+    "AI_service": "Current generation_content_v2.select becomes the narrow wrapper; request_manifest enriches actual refs. AI/v5.py imports/prompt and other functions need not change. Same immutable instance remains authoritative throughout."
+  },
+  "canonical_signature_algorithm": {
+    "scope": "Initial catalog is full chains<=6puzzles. Obtain a unique topological rank from actual prerequisite edges, independent of puzzle tuple/ID ordering. Reject unsupported nonunique topology as a signature-contract issue rather than breaking ties by IDs.",
+    "normalization_steps": [
+      "Rooms are semantic ordinal positions in room_ids. Puzzles use unique chain ranks and rows containing mechanism and prerequisite rank list; do not include family or recipe relation labels.",
+      "For each clue-object row record kind=clue, true uses sorted as(puzzle rank, index in that puzzle clue_ids), and locked_by ranks. For each item-object row record kind=item, actual consumer ranks and locked_by ranks. No clue/item renumbering is needed.",
+      "Sort complete canonical JSON material rows, preserving duplicate rows and multiplicity. Unused decoys have uses=[] and remain counted; never drop/deduplicate them or break ties with original IDs.",
+      "Dependency-only signature contains mechanism/prerequisite chain rows and omits physical room/slot/family/recipe. Placement/discovery payload adds room ordinal and actualslot for all object rows plus locked_by ranks; puzzle-object rows tie to true puzzle rank. Full signature includes both canonical payloads.",
+      "Ignore names/story/AI values, seed, original Blueprint/room/object/puzzle/clue/item IDs and original object/puzzle display order. Clue_position means the ordered reference index in clue_ids, never the AI positions array or derived numeric facts.",
+      "Forward position/mapping graphs must share the same normalized signatures; changing a relation-family tag alone is not diversity. Compare F/R within a fixed family/shape and also report explicit code-source location/relation-gate differences.",
+      "Actual engine witness solved-mechanism sequence, in addition to dependency-only signature, must substantiate changed solve order in independentSD3. Slot movement or definition hash alone is insufficient."
+    ],
+    "required_validation": "Consistent all-ID renaming and object-list reordering preserve signatures; typed/prose changes preserve them; multiplicity survives unused decoys;36 catalog variants are not36 topologies. Signature algorithm and real witnesses have not been executed inSD0."
+  },
+  "recommended_SD1_SD2_exact_paths": {
+    "Backend_SD1": [
+      "backend/app/domain/structure_variants.py new: immutable catalog/selection/reverse transform/metadata/signature utilities",
+      "backend/app/domain/generation_content_v2.py select_blueprint narrow wrapper only"
+    ],
+    "Backend_SD2": [
+      "backend/app/domain/generation_content_v2.py request_manifest only structure_catalog_version and actual prerequisite_object_slots extension",
+      "contracts/v2/generation-structures-v1.schema.json new36 variants",
+      "contracts/v2/build_structure_variants_v1.py new explicit build/check",
+      "contracts/v2/generation-structures-v1.README.md newcatalog/version/compatibility explanation"
+    ],
+    "Main_Spec": [
+      "docs/structure-diversity-plan.md",
+      "docs/SPEC.md additive scope",
+      "docs/level_design.md additive scope",
+      "docs/v5-build-plan.md section14 status",
+      "DECISIONS.md and root/evidence integration"
+    ],
+    "QA_future": [
+      "tests/v5/test_structure_variants.py new independent structure/difference/proof/gate/save coverage",
+      "tests/v5/test_blueprint_generation.py::blueprint_for_messages minimal fixture update: current_content.select +seed0..3 instead ofv1 seed0..1, without weakening guard assertions"
+    ],
+    "Frontend": "No layout/code change predicted: GeneratedScene.tsx has8 fixed positions and renders server slot0..7. Keep current UI/assets frozen absent a proven interaction/copy finding.",
+    "frozen_other_functions": "Existing content_schema/_describe/assemble/guard and AI/v5.py prompt/imports/companion, oldv1/alloldschema-builders, generated compiler/rules, API/Store/provider/budget and old real evidence unchanged unless later proven finding requires a separate handoff."
+  },
+  "compatibility_risks_and_unresolved": [
+    "Current old Mock helper recognizes only18 IDs via v1 selector; default reverse will fail fixture lookup until the exact QA fixture upgrade. That is a harness adaptation, not relaxed product assertions.",
+    "Reversing tuple order alone is insufficient: prereqs, puzzle object locked_by and room assignments must all be rewritten together, relation must not gate its first-item prerequisite, and all per-room slots must be recomputed.",
+    "Canonical material rows must be sorted without dropping duplicates or unused decoy counts; unique topological rank is the declared current-chain assumption, not an original-ID tie breaker.",
+    "Index/map families are data-relation variants, not separate topology proof. Do not call36 model variants36topologies or promise nonrepeat/infinite uniqueness.",
+    "Extra reverse first-room materials may enlarge planner branching despite caps; original25kstates/5seconds admission must run, UNKNOWN is not bypassed or called proven unsolvable.",
+    "All-room source outlines can still tempt AI ordering names/story errors. Host factual descriptions and current finite narrative guard remain, but general narrative quality is not guaranteed.",
+    "New exact payload/schema source must be remeasured purely before any future separately approved actual call. SD0 grants no paid or evaluation access."
+  ],
+  "actual_commands": [
+    {
+      "tool_chunk": "3d4a76",
+      "exit_code": 1,
+      "scope": "Read plan/blueprints/builder; finalrg used nonexistent GeneratedScene.ts path. No mutation; corrected to.tsx."
+    },
+    {
+      "tool_chunk": "6bd6ac",
+      "exit_code": 0,
+      "scope": "Read exactsection14, GeneratedScene.tsx, dynamic schema/assembly and compiler/room gates."
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 - (inline pure-select static metadata counting and assessment write; full command in transcript)",
+      "exit_code": 0,
+      "scope": "Old pureselect +in-memory dataclass metadata transform only; no compile/proof/derive/assembly/app/service/model."
+    },
+    {
+      "tool_chunk": "a74a83",
+      "exit_code": 0,
+      "scope": "Read Main DRAFT; all previously read source hashes still match. No product run."
+    },
+    {
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 - (owned assessment-only alignment of Main DRAFT metadata/signature/paths and Identifier arithmetic)",
+      "exit_code": 0,
+      "scope": "No product/schema/test changes or compiler/proof invocation."
+    }
+  ],
+  "implemented_product_files": [],
+  "compiler_solver_witness_test_API_DB_provider_Key_config_ledger_private_body_network_access": false,
+  "paid_calls": 0,
+  "new_agents_or_commits": false,
+  "limitations": "This is a read-only SD0 assessment plus permitted pure metadata arithmetic. Counts and static constraints are computed, but no production reverse selector/catalog/signature implementation or actual engine solvability, planner bounds, HTTP/save/UI or independentQA has been executed.",
+  "Main_DRAFT_alignment": {
+    "read_tool_chunk": "a74a83",
+    "exit_code": 0,
+    "draft_path": "docs/structure-diversity-plan.md",
+    "draft_sha256": "862fb1cfa63ba602229f6898f50fcde52de52c9509d4b36996d0721a05c0060c",
+    "initial_assessment_sha256_before_alignment": "c72899e2f3a0b46b5e92674e5f33dd4d6baa6853da422760e492dc9efb86a22a",
+    "recommendations": [
+      "Adopt the DRAFT contract filenames listed here rather than the optional initial names.",
+      "Freeze reverse object packing explicitly: original nonpuzzle relative order then new puzzle-chain order, per-room continuous slots.",
+      "Clarify clue_position is the reference-list ordinal, not numeric parameter data; simplified canonical material rows need no clue/item IDs.",
+      "Use versioned -sv1-reverse suffix with original F IDs fixed; no old static contract rewrite.",
+      "Keep SD0 status static-only even though matrix counts now have pure metadata computation; still no actual solvability/QA result."
+    ],
+    "last_Main_interface_constraints_incorporated": true
+  }
+}
