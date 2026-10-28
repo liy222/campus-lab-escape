@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "stage": "v5-rainy-astronomy-ui",
+  "title": "雨夜天文社主题场景与前端UI",
+  "created_at": "2026-10-28T15:20:29.647780Z",
+  "technical_status": "passed_synthetic_visual_scopes",
+  "human_review_status": "not_reviewed",
+  "owner_review_status": "not_reviewed",
+  "peer_review_status": "not_reviewed",
+  "current_human_review_round": 1,
+  "human_review_rounds": {},
+  "collections": [],
+  "summary": "reviews/technical-review.md",
+  "scope": "雨夜天文社首包（3背景/6角色12外观/特写/状态）、主题解析与回退、新版创建-游戏-谜题-存档-结算界面；不改后端/生成/规则/存档格式",
+  "art": {
+    "pack": "rainy-astronomy",
+    "pack_version": "1.0.0",
+    "method": "authored SVG rendered by local headless Chrome; no image generation model, no paid service",
+    "backgrounds": 3,
+    "object_variants": 12,
+    "closeups": 12,
+    "manifest": "frontend/src/assets/themes/rainy-astronomy/manifest.json",
+    "list": "output/art-concepts/rainy-astronomy/ASSET-LIST.md"
+  },
+  "browser_runs": {
+    "total": 21,
+    "passed": 6,
+    "failed_retained": 15,
+    "final": "automated/browser-2026-10-28T16-20-30-946Z-97ce062e/browser-result.json",
+    "final_checks": 36,
+    "final_exit_code": 0,
+    "note": "21 次运行中 15 次失败全部保留；失败多为选择器/顺序/等待问题，另有两次真实产品修复（导航控件 38→44px、生成完成后列表延迟刷新）与一次 restore 断言修正。不合并成单轮全绿。独立只读复核发现完成态贴图未加载（设备完成后从画面消失），已修复并新增场景贴图断言、手机结算适配、存档→推进→读取→重载链检查。"
+  },
+  "not_confirmed": [
+    "human_review",
+    "peer_review",
+    "real_model_generated_story_quality",
+    "real_device_mobile_test",
+    "other_themes_visual_coverage",
+    "overall_acceptance"
+  ],
+  "paid_calls": 0,
+  "real_model_calls": 0
+}

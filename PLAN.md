@@ -9,6 +9,8 @@
 
 体验反馈修复已完成并推送d9feba2/3afe821：线路反馈、原主题/故事展示与动态界面已修订。Evaluation/Observability和固定证据入口已实现，必要定向及独立检查完成；证据从开发开始持续保存，历史结果按来源归档。本人已实际反馈随机生成、通关、注册与登录正常，UI、主题画面关联与素材数量需改进，原话和原图已保存。下一完整阶段为主题场景、美术与UI一起改善，以此前“雨夜天文社”首包为起点；E&O逐条核查/真实同伴仍未确认，见正式构建计划第18、19节。
 
+2026-10-29：上述主题场景阶段（VU0–VU5）已由一个主实施对话完成。`rainy-astronomy` 1.0.0 首包接入 3 背景 / 6 角色 12 外观 / 12 特写，新版创建-游戏-谜题-存档-结算界面统一；前端按已保存 `level.theme` 选包，未知主题回退旧通用素材。隔离合成浏览器检查 36 项 exit 0（21 次运行、15 次失败保留），未改后端/生成/规则/API/存档格式，0 付费、0 图像模型调用（素材为本机矢量绘制+Chrome 渲染）。真人核验、真实模型关卡画面与真机触控仍未核，见[状态](STATUS.md)与[阶段证据](evidence/project/stages/v5-rainy-astronomy-ui/)。
+
 Source: docs/execution-plan.md V2.1, R01-R18 and A01-A28 retained without reduction.
 M0 T01 scope DONE (course source PPT not supplied), T02 contract READY, T03 runnable scaffold READY, T04 mock probe READY / real BLOCKED.
 M1 T05 state <- T02,T03; T06 R1 <- T05; T07 UI <- T02,T03,T06; T08 independent QA <- T06,T07.

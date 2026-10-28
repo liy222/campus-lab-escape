@@ -1,0 +1,835 @@
+{
+  "kind": "Synthetic visual UI browser",
+  "run_id": "aa1ccd89-543a-464c-8f12-4dff688e8bea",
+  "started_at_utc": "2026-10-28T15:57:29.421Z",
+  "ended_at_utc": "2026-10-28T15:57:56.961Z",
+  "execution_status": "FAILED",
+  "browser_executed": true,
+  "exit_code": 1,
+  "stage_id": "v5-rainy-astronomy-ui",
+  "provenance": {
+    "git": {
+      "revision": "727ba1462f87098d6ea1f0a9871c4a899dcfee85",
+      "dirty": true,
+      "dirty_scope": "tracked working tree; no contents recorded"
+    },
+    "sources": [
+      {
+        "path": "tests/v5/run_visual_ui_browser.mjs",
+        "bytes": 25038,
+        "sha256": "c3fda370ea34c415968765450517aadef18a625442af29e81d48cf6624468976"
+      },
+      {
+        "path": "tests/v5/visual_ui_fixture_server.py",
+        "bytes": 3627,
+        "sha256": "342d82728e71c75e4a9c6f020caecc1ea4c857ec6ddf29f3fce27a17ffdf9961"
+      },
+      {
+        "path": "frontend/src/v5/GeneratedPlay.tsx",
+        "bytes": 20549,
+        "sha256": "a560026c7513839dbf300f476118e19dacc9117610faeeac490ada82846dc0b8"
+      },
+      {
+        "path": "frontend/src/v5/GeneratedScene.tsx",
+        "bytes": 4545,
+        "sha256": "c0f1267d26c8c66e604d42d3c7fcc84b29321b65e9227ac731372f92ccb72e1c"
+      },
+      {
+        "path": "frontend/src/v5/Workspace.tsx",
+        "bytes": 15814,
+        "sha256": "060bfaab80e8e36bacd06a0c599998b7ed7746758999f6b61e1550995de5236a"
+      },
+      {
+        "path": "frontend/src/v5/v5.css",
+        "bytes": 29903,
+        "sha256": "55fde8808a23955aa8fae804057fdee0074f089ecc17d6b9d5f619907f1fe182"
+      },
+      {
+        "path": "frontend/src/v5/visual/types.ts",
+        "bytes": 1995,
+        "sha256": "2c6f5121f34820313748fdd51b752f913eafdf4c1154de3cacf386f520fd27fd"
+      },
+      {
+        "path": "frontend/src/v5/visual/registry.ts",
+        "bytes": 3937,
+        "sha256": "463683ee78ff4edc2c6fb4b55ca8af3daa4d7f8dae1d0073e43f2a8b9dd91a69"
+      },
+      {
+        "path": "frontend/src/v5/visual/scene.ts",
+        "bytes": 4632,
+        "sha256": "6de092ff535dad4d6314f28afc36f1efab7b5a935cbed00873af3dbf660ad8a6"
+      },
+      {
+        "path": "frontend/src/assets/themes/rainy-astronomy/manifest.json",
+        "bytes": 13949,
+        "sha256": "0a161cf66921c9eab5370d561b1468dec018a19b30fd6ac2ac774a9e19993bcb"
+      }
+    ],
+    "build": {
+      "index": {
+        "path": "frontend/dist-v5/index.html",
+        "bytes": 486,
+        "sha256": "c224e8e6a98be3d8f57e0f095e1aaaccd4ed0ac088bff1dbcfc018054b2f7678"
+      },
+      "entry_resources": [
+        {
+          "path": "frontend/dist-v5/assets/index-NiIMVNUn.js",
+          "bytes": 350153,
+          "sha256": "8d7e1297f0510a2a3db9527f953e3ea1a848f9dfd8bdeb18440d51ade3abfa84"
+        },
+        {
+          "path": "frontend/dist-v5/assets/phaser-lfjrd5S3.js",
+          "bytes": 1388183,
+          "sha256": "cbfbaa117ff99036b8d7e201f48c71a701f2066b0488527fdf2da5a372b37c46"
+        },
+        {
+          "path": "frontend/dist-v5/assets/index-BEM0xQ3F.css",
+          "bytes": 74862,
+          "sha256": "46617121b7fc41c7c2becb240d5cd657aa35556b191aeca8fe176f105f997ddb"
+        }
+      ],
+      "freshly_built_by_this_run": false
+    },
+    "art": {
+      "pack": "rainy-astronomy",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/backgrounds/neutral_lab.png",
+          "bytes": 1582828,
+          "sha256": "417c000e6f0062ab8ff95dc25564b06a22c2f4be2af78a4bc6eaa393a3e86450"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/backgrounds/neutral_archive.png",
+          "bytes": 1578686,
+          "sha256": "f01dba0e56427a696ca9cc11db9c593478c739789c85cfe2d21c4dcbbab9cc7f"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/backgrounds/neutral_control.png",
+          "bytes": 93758,
+          "sha256": "8008a2be48bb21682ca76d0565ee29fb1e03eb950bdef1055863f19ed144e14c"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/objects/note-logbook.png",
+          "bytes": 41986,
+          "sha256": "7a10fea3cd0f18b1cafc2d305de3e11d13e0dac89c9473293e5ac0966d6b135d"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/closeups/note-logbook.png",
+          "bytes": 86531,
+          "sha256": "35ddca70f3341126f5a8a8ceb99c48bb5d6f39be8d2bcafdea937c527863126f"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/objects/note-chart.png",
+          "bytes": 118132,
+          "sha256": "27a3c780f200dc65d40e3748d634e5b954a66afcb92299363bf37f6497b0977b"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/closeups/note-chart.png",
+          "bytes": 256659,
+          "sha256": "61d3778b288ce83a9ed2abdd217515e8f1f1f5ff2d4ff12f2dbd612798295727"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/objects/note-sealed.png",
+          "bytes": 44999,
+          "sha256": "0d87400c2dd3f51789752a96a58cbac7421ba03a934512bb1f38fd5ef8416bcd"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/closeups/note-sealed.png",
+          "bytes": 88020,
+          "sha256": "0c497af32b1682860f1cc361948954a8849bad25eea011f9531841af23f18e32"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/objects/key-brass.png",
+          "bytes": 45895,
+          "sha256": "f36def9f31c005ce2810f298b7d359cf4c1e987cb95d3670da9a3b7bc9766690"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/closeups/key-brass.png",
+          "bytes": 99200,
+          "sha256": "85e9420348f6d2a37389aad5f3ee5142f12204df38be0df78f4127233cc574e4"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/objects/terminal-off.png",
+          "bytes": 58115,
+          "sha256": "003a21e9a7c7304c8b1a565b1f9fa24b695a441615e9d218a52c96bff31d35eb"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/closeups/terminal-off.png",
+          "bytes": 112774,
+          "sha256": "564b9819335aa2e141805910eeb0738ef58ad78875506e21396aa1f522764404"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/objects/terminal-on.png",
+          "bytes": 64975,
+          "sha256": "e85a15c131543c014f08deb6bb80afa0c6775b5216e721326d893db5bab68fae"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/closeups/terminal-on.png",
+          "bytes": 134197,
+          "sha256": "b895e31197076c1129d9b47faf1d77d31614fe77e861fcef0c528761392c5fab"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/objects/cabinet-closed.png",
+          "bytes": 49860,
+          "sha256": "9d178b75eba0407a508aef75306e080c23cc76ee45357f746d55d4c0b7d01c2a"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/closeups/cabinet-closed.png",
+          "bytes": 95598,
+          "sha256": "18f954ce1610078ffe8f73b0ead856ce1f1748f633e1b35c9cca6e2177a101e0"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/objects/cabinet-open.png",
+          "bytes": 60801,
+          "sha256": "5e0316647474c14dbb573e3011444eb71f08cf45a0ff6620ca906ad6d6423dca"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/closeups/cabinet-open.png",
+          "bytes": 121268,
+          "sha256": "93baa394683d11eb02c4f18a11b20ad0eae094a189c7df557c79de74d0db8cb5"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/objects/circuit-off.png",
+          "bytes": 36301,
+          "sha256": "8db74c5c2dc03b17b4ac39bd85f1c8cc04347ddd08c4287666546494c0197ec7"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/closeups/circuit-off.png",
+          "bytes": 71217,
+          "sha256": "e60b558061dbff12ac7089d4a45da890b8b62a2739ef7cff5a748595b5d377ff"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/objects/circuit-on.png",
+          "bytes": 38531,
+          "sha256": "d9b8e64798bf2cc9951815155adb4e94b4f43a0a015dbe825e782e85891c9b2c"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/closeups/circuit-on.png",
+          "bytes": 76170,
+          "sha256": "c7782f8c3beb7bc2661087d94fca547ad3487215ba84ba8296794c87709d3e71"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/objects/panel-idle.png",
+          "bytes": 48614,
+          "sha256": "609a0a260f7cd3aca22b679cf42f212e8a999a8e9d4658f7ae673dab7f2312cf"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/closeups/panel-idle.png",
+          "bytes": 96504,
+          "sha256": "12d6ebb7e4f4ac0b3fe07fce57f10b6c4e18d62b860da3dffa522ebb582d8656"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/objects/panel-lit.png",
+          "bytes": 52895,
+          "sha256": "5126e6c882d4c03430b99edad6cec2f36e838b3ed41e55fd0730eea2a0f1772f"
+        },
+        {
+          "path": "frontend/public/art-themes/rainy-astronomy/closeups/panel-lit.png",
+          "bytes": 104149,
+          "sha256": "d21b2caa5f51c820684461362d08a51719e8a759513e99b7e6cbd7983714b2c3"
+        }
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "owned synthetic server ready",
+      "pass": true,
+      "expected": {
+        "ready": true,
+        "owned_temp": true
+      },
+      "actual": {
+        "ready": true,
+        "owned_temp": true
+      },
+      "input": {},
+      "context": {
+        "stage": "startup",
+        "viewport": null,
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:30.797Z"
+    },
+    {
+      "name": "creation shows supported theme",
+      "pass": true,
+      "expected": {
+        "mentions_pack": true
+      },
+      "actual": {
+        "text": "✦ 已支持专属场景「雨夜天文社」：雨夜活动室、观测资料与天文设备会随房间出现。"
+      },
+      "input": {
+        "theme": "雨夜里的天文社旧活动室，寻找封存的观测记录"
+      },
+      "context": {
+        "stage": "landing-and-create",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:34.153Z"
+    },
+    {
+      "name": "astronomy pack resolves background",
+      "pass": true,
+      "expected": {
+        "theme": "rainy-astronomy",
+        "background_contains": "/art-themes/rainy-astronomy/backgrounds/neutral_lab.png"
+      },
+      "actual": {
+        "theme": "rainy-astronomy",
+        "background": "/art-themes/rainy-astronomy/backgrounds/neutral_lab.png"
+      },
+      "input": {},
+      "context": {
+        "stage": "theme-scene",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:35.802Z"
+    },
+    {
+      "name": "every visible object maps to a theme variant",
+      "pass": true,
+      "expected": {
+        "count": 5,
+        "all_themed": true
+      },
+      "actual": [
+        {
+          "object": "obj_key",
+          "variant": "key-brass",
+          "label": "查看黄铜钥匙"
+        },
+        {
+          "object": "obj_source",
+          "variant": "note-logbook",
+          "label": "查看观测记录册"
+        },
+        {
+          "object": "obj_order",
+          "variant": "note-chart",
+          "label": "查看星图资料页"
+        },
+        {
+          "object": "obj_puzzle_0",
+          "variant": "terminal-off",
+          "label": "查看资料终端"
+        },
+        {
+          "object": "obj_puzzle_1",
+          "variant": "cabinet-closed",
+          "label": "查看封存资料柜"
+        }
+      ],
+      "input": {
+        "mapping": [
+          {
+            "object": "obj_key",
+            "variant": "key-brass",
+            "label": "查看黄铜钥匙"
+          },
+          {
+            "object": "obj_source",
+            "variant": "note-logbook",
+            "label": "查看观测记录册"
+          },
+          {
+            "object": "obj_order",
+            "variant": "note-chart",
+            "label": "查看星图资料页"
+          },
+          {
+            "object": "obj_puzzle_0",
+            "variant": "terminal-off",
+            "label": "查看资料终端"
+          },
+          {
+            "object": "obj_puzzle_1",
+            "variant": "cabinet-closed",
+            "label": "查看封存资料柜"
+          }
+        ]
+      },
+      "context": {
+        "stage": "theme-scene",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:35.805Z"
+    },
+    {
+      "name": "key is a key",
+      "pass": true,
+      "expected": {
+        "variant": "key-brass"
+      },
+      "actual": {
+        "object": "obj_key",
+        "variant": "key-brass",
+        "label": "查看黄铜钥匙"
+      },
+      "input": {},
+      "context": {
+        "stage": "theme-scene",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:35.805Z"
+    },
+    {
+      "name": "44px game 1280",
+      "pass": true,
+      "expected": {
+        "minimum_width": 44,
+        "minimum_height": 44
+      },
+      "actual": {
+        "controls": 11,
+        "minimum_width": 75,
+        "minimum_height": 44
+      },
+      "input": {
+        "label": "game 1280",
+        "smallest": []
+      },
+      "context": {
+        "stage": "theme-scene",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:35.810Z"
+    },
+    {
+      "name": "no overflow game 1280",
+      "pass": true,
+      "expected": {
+        "scroll_width_at_most": 1281
+      },
+      "actual": {
+        "scroll_width": 1280,
+        "viewport_width": 1280
+      },
+      "input": {
+        "tolerance_px": 1
+      },
+      "context": {
+        "stage": "theme-scene",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:35.811Z"
+    },
+    {
+      "name": "close-up uses theme artwork",
+      "pass": true,
+      "expected": {
+        "under": "/art-themes/rainy-astronomy/closeups/"
+      },
+      "actual": {
+        "closeup": "/art-themes/rainy-astronomy/closeups/note-logbook.png"
+      },
+      "input": {
+        "object": "观测记录册"
+      },
+      "context": {
+        "stage": "closeup",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:36.549Z"
+    },
+    {
+      "name": "escape closes the sheet",
+      "pass": true,
+      "expected": {
+        "before": true,
+        "after": 0
+      },
+      "actual": {
+        "before": true,
+        "after": 0
+      },
+      "input": {},
+      "context": {
+        "stage": "overlay-behaviour",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:36.869Z"
+    },
+    {
+      "name": "backdrop click does not leak to the scene",
+      "pass": true,
+      "expected": {
+        "sheet_still_open": true,
+        "hotspots_disabled": true
+      },
+      "actual": {
+        "sheet_still_open": true,
+        "hotspots_disabled": true
+      },
+      "input": {},
+      "context": {
+        "stage": "overlay-behaviour",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:37.467Z"
+    },
+    {
+      "name": "44px game 1280",
+      "pass": true,
+      "expected": {
+        "minimum_width": 44,
+        "minimum_height": 44
+      },
+      "actual": {
+        "controls": 11,
+        "minimum_width": 75,
+        "minimum_height": 44
+      },
+      "input": {
+        "label": "game 1280",
+        "smallest": []
+      },
+      "context": {
+        "stage": "resize",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:38.260Z"
+    },
+    {
+      "name": "no overflow game 1280",
+      "pass": true,
+      "expected": {
+        "scroll_width_at_most": 1281
+      },
+      "actual": {
+        "scroll_width": 1280,
+        "viewport_width": 1280
+      },
+      "input": {
+        "tolerance_px": 1
+      },
+      "context": {
+        "stage": "resize",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:38.261Z"
+    },
+    {
+      "name": "44px game 390",
+      "pass": true,
+      "expected": {
+        "minimum_width": 44,
+        "minimum_height": 44
+      },
+      "actual": {
+        "controls": 11,
+        "minimum_width": 70,
+        "minimum_height": 44
+      },
+      "input": {
+        "label": "game 390",
+        "smallest": []
+      },
+      "context": {
+        "stage": "resize",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:39.039Z"
+    },
+    {
+      "name": "no overflow game 390",
+      "pass": true,
+      "expected": {
+        "scroll_width_at_most": 391
+      },
+      "actual": {
+        "scroll_width": 390,
+        "viewport_width": 390
+      },
+      "input": {
+        "tolerance_px": 1
+      },
+      "context": {
+        "stage": "resize",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:39.040Z"
+    },
+    {
+      "name": "44px game 812",
+      "pass": true,
+      "expected": {
+        "minimum_width": 44,
+        "minimum_height": 44
+      },
+      "actual": {
+        "controls": 11,
+        "minimum_width": 72,
+        "minimum_height": 44
+      },
+      "input": {
+        "label": "game 812",
+        "smallest": []
+      },
+      "context": {
+        "stage": "resize",
+        "viewport": {
+          "width": 812,
+          "height": 375
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:39.600Z"
+    },
+    {
+      "name": "no overflow game 812",
+      "pass": true,
+      "expected": {
+        "scroll_width_at_most": 813
+      },
+      "actual": {
+        "scroll_width": 812,
+        "viewport_width": 812
+      },
+      "input": {
+        "tolerance_px": 1
+      },
+      "context": {
+        "stage": "resize",
+        "viewport": {
+          "width": 812,
+          "height": 375
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:39.601Z"
+    },
+    {
+      "name": "theme variants stable across reload",
+      "pass": true,
+      "expected": {
+        "identical": true
+      },
+      "actual": {
+        "before": [
+          {
+            "object": "obj_key",
+            "variant": "key-brass",
+            "label": "查看黄铜钥匙"
+          },
+          {
+            "object": "obj_source",
+            "variant": "note-logbook",
+            "label": "查看观测记录册"
+          },
+          {
+            "object": "obj_order",
+            "variant": "note-chart",
+            "label": "查看星图资料页"
+          },
+          {
+            "object": "obj_puzzle_0",
+            "variant": "terminal-off",
+            "label": "查看资料终端"
+          },
+          {
+            "object": "obj_puzzle_1",
+            "variant": "cabinet-closed",
+            "label": "查看封存资料柜"
+          }
+        ],
+        "after": [
+          {
+            "object": "obj_key",
+            "variant": "key-brass",
+            "label": "查看黄铜钥匙"
+          },
+          {
+            "object": "obj_source",
+            "variant": "note-logbook",
+            "label": "查看观测记录册"
+          },
+          {
+            "object": "obj_order",
+            "variant": "note-chart",
+            "label": "查看星图资料页"
+          },
+          {
+            "object": "obj_puzzle_0",
+            "variant": "terminal-off",
+            "label": "查看资料终端"
+          },
+          {
+            "object": "obj_puzzle_1",
+            "variant": "cabinet-closed",
+            "label": "查看封存资料柜"
+          }
+        ]
+      },
+      "input": {},
+      "context": {
+        "stage": "stability",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:41.444Z"
+    },
+    {
+      "name": "execution failure",
+      "pass": false,
+      "expected": "visual flow completes",
+      "actual": {
+        "error_type": "TimeoutError2",
+        "message": "locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '← 我的关卡' })\u001b[22m\n"
+      },
+      "input": {},
+      "context": {
+        "stage": "stability",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:56.455Z"
+    },
+    {
+      "name": "owned server stopped",
+      "pass": true,
+      "expected": true,
+      "actual": true,
+      "input": {
+        "owned_port": 8002
+      },
+      "context": {
+        "stage": "cleanup",
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T15:57:56.961Z"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "01-landing.png",
+      "stage": "landing-and-create",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "captured_at_utc": "2026-10-28T15:57:31.839Z"
+    },
+    {
+      "path": "02-dashboard.png",
+      "stage": "landing-and-create",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "captured_at_utc": "2026-10-28T15:57:32.250Z"
+    },
+    {
+      "path": "03-game-desktop.png",
+      "stage": "theme-scene",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "captured_at_utc": "2026-10-28T15:57:36.070Z"
+    },
+    {
+      "path": "04-closeup-note.png",
+      "stage": "closeup",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "captured_at_utc": "2026-10-28T15:57:36.549Z"
+    },
+    {
+      "path": "10-game-1280.png",
+      "stage": "resize",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "captured_at_utc": "2026-10-28T15:57:38.516Z"
+    },
+    {
+      "path": "10-game-390.png",
+      "stage": "resize",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_at_utc": "2026-10-28T15:57:39.087Z"
+    },
+    {
+      "path": "10-game-812.png",
+      "stage": "resize",
+      "viewport": {
+        "width": 812,
+        "height": 375
+      },
+      "captured_at_utc": "2026-10-28T15:57:39.687Z"
+    }
+  ],
+  "owned_temp": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-visual-j7l3qs",
+  "owned_server_stopped": true,
+  "player8001_service_contacted": false,
+  "transport": "isolated browser context forwards all 8001 requests to owned 8002 with original Host/Origin",
+  "paid_calls": 0,
+  "real_model_semantic_quality_tested": false,
+  "privacy": "Synthetic fixture only; no credential, Cookie, token, full state, hidden definition or raw server log is recorded"
+}
