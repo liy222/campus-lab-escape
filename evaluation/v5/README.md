@@ -1,8 +1,10 @@
 # V5 finite engineering evaluator
 
+Current source note (2026-10-28): the pinned READY registration describes its historical source epoch. Product sources have since changed, so neither the READY field nor the 2026-10-27 precheck below certifies the current worktree. This documentation update does not refresh registration or its pin. The course's focused checks and manual review are described in [the V5 evaluation guide](../../docs/v5-evaluation.md); they do not claim a new semantic evaluator PASS.
+
 This adapter reads registered evidence through the existing `EvidenceTools` and `Evaluator`. It never imports or runs game code, target scripts, hooks or AGENTS instructions. The three real criteria are limited to C1 nine room/difficulty admissions and actual replays plus twenty rejected examples; C2 two-account read/restore isolation; C3 three saved moments and corrupt-save preservation. They do not certify arbitrary generated levels, absolute security, model quality or human approval.
 
-The trusted contract is `contract.json`, ID `campus-lab-v5-engineering`, version `1.0.0`. `registration.schema.json` is strict, and `registration.template.json` is an intentionally unusable template. The current pinned `registration.json` is READY for source/evidence identity checks. The new loader uses its own EvidenceTools instance. No old contract, freeze, case, engine, reader, provider or old result is changed. The CLI change is only the exact v5 release/fixture routing branch.
+The trusted contract is `contract.json`, ID `campus-lab-v5-engineering`, version `1.0.0`. `registration.schema.json` is strict, and `registration.template.json` is an intentionally unusable template. The pinned `registration.json` contains a historical READY record; actual identity checking must match its registered sources. The new loader uses its own EvidenceTools instance. No old contract, freeze, case, engine, reader, provider or old result is changed. The CLI change is only the exact v5 release/fixture routing branch.
 
 
 ## Current read-only status (2026-10-27)

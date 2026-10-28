@@ -1,0 +1,41 @@
+{
+  "kind": "derived_index_not_new_execution",
+  "compiled_at": "2026-10-28T10:02:58.534082Z",
+  "actor": "Main integration",
+  "stage": "2026-10-28-evaluation-observability",
+  "technical_status": "passed_focused_scopes",
+  "api": {
+    "result": "../automated/api-result.json",
+    "exit_code": 0,
+    "summary": "11 passed, 1 warning in 9.07s"
+  },
+  "browser": {
+    "first": {
+      "result": "../automated/browser-run1/browser-result.json",
+      "run_id": "a2c0348d-f986-412b-ae82-4292ec4bde71",
+      "exit_code": 1,
+      "note": "核心范围已过，检查器登出等待竞态致尾部失败，原结果保留"
+    },
+    "auth_only_finish": {
+      "result": "../automated/browser-auth-finish1/browser-result.json",
+      "run_id": "63640e78-132c-4372-a487-5e903cf2d38c",
+      "exit_code": 0,
+      "note": "仅补auth/legacy，联合范围，不称单次全绿"
+    }
+  },
+  "archive_tools": {
+    "result": "../automated/archive-tools/result.json",
+    "exit_code": 0,
+    "passed": 5
+  },
+  "new_paid_calls": 0,
+  "new_builds": 0,
+  "human_review": "not_reviewed",
+  "peer_review": "not_reviewed",
+  "limits": [
+    "有限Synthetic范围",
+    "未新测真实模型语义",
+    "专属美术未制作",
+    "旧可信登记不刷新"
+  ]
+}

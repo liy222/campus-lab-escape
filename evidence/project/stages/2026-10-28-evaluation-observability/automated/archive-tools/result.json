@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-28",
+  "actor": "independent AI QA agent",
+  "status": "PASS_IN_TEMP_ARCHIVE_TOOL_SCOPE",
+  "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m pytest -q --tb=no tests/v5/test_evidence_hub.py",
+  "execution": "69b5ee",
+  "exit_code": 0,
+  "passed": 5,
+  "pytest_seconds": 0.51,
+  "warnings": 1,
+  "warning": "Existing StarletteDeprecationWarning",
+  "coverage": [
+    "init is not acceptance; refuse existing stage",
+    "explicit file copy/import without execution or overwrite",
+    "reject tested private/database/credential inputs",
+    "append-only feedback; separate owner/peer; spaced screenshot link",
+    "read-only trace export; refuse overwrite"
+  ],
+  "static_review": [
+    "runner default reads valid active_stage slug only; missing/invalid index returns NOT_RUN",
+    "self-test exits before reading stage index"
+  ],
+  "not_run": [
+    "11 API tests",
+    "browser",
+    "checker self-test",
+    "build",
+    "model"
+  ],
+  "paid_calls": 0,
+  "limits": [
+    "Synthetic TEMP cases, not real human acceptance",
+    "No universal secret-detection guarantee",
+    "No product or runtime quality claim"
+  ]
+}

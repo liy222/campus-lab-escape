@@ -18,8 +18,10 @@ from .budget import cost_units
 
 
 class ServiceError(Exception):
-    def __init__(self, code):
+    def __init__(self, code, *, diagnostic=None, counts=None):
         self.code = code
+        self.generation_diagnostic = diagnostic
+        self.generation_counts = counts or {}
         super().__init__(code)
 
 
@@ -89,14 +91,28 @@ class GenerationService:
         blueprint = select_blueprint(room_count, difficulty)
         messages = self.messages(theme=theme.replace(api_key, '[REDACTED]'), room_count=room_count,
                                  difficulty=difficulty, draft_schema=draft_schema, blueprint=blueprint)
-        reply = await _complete(provider, messages, GenerationLimits(), 'v5_generation')
+        from ..domain.generation_observability import text_counts
+        encoded = json.dumps(messages, ensure_ascii=False, separators=(',', ':'))
+        counts = {}
+        try: counts['messages_utf8_bytes'] = len(encoded.encode('utf-8'))
+        except UnicodeEncodeError: pass
+        try:
+            reply = await _complete(provider, messages, GenerationLimits(), 'v5_generation')
+        except ServiceError as error:
+            reason = ('response_envelope' if error.code == 'MODEL_INVALID_OUTPUT' else
+                      'provider_unknown' if error.code == 'MODEL_OUTCOME_UNKNOWN' else
+                      'timeout' if error.code == 'MODEL_TIMEOUT' else 'provider')
+            raise ServiceError(error.code, diagnostic=reason, counts=counts) from None
+        counts.update(text_counts('model_response', reply.content))
         try:
             value = assemble_draft(blueprint, reply.content)
             if api_key in json.dumps(value, ensure_ascii=False):
-                raise ValueError('CREDENTIAL_CONTENT')
+                raise ServiceError('MODEL_INVALID_OUTPUT', diagnostic='credential', counts=counts)
             return value
-        except (ValueError, TypeError, RecursionError):
-            raise ServiceError('MODEL_INVALID_OUTPUT') from None
+        except (ValueError, TypeError, RecursionError) as error:
+            raise ServiceError('MODEL_INVALID_OUTPUT',
+                               diagnostic=getattr(error, 'generation_diagnostic', 'assembly'),
+                               counts=counts) from None
 
 
 def local_hint(state, level):

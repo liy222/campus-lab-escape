@@ -1,0 +1,185 @@
+{
+  "kind": "Actual API stages using two Synthetic TEMP inputs",
+  "synthetic_generator": true,
+  "paid_calls": 0,
+  "observations": [
+    {
+      "run_id": "7516cd391132435aa1304ef556775468",
+      "input": {
+        "theme_text_recorded": false,
+        "theme_characters": 21,
+        "theme_utf8_bytes": 21,
+        "requested_rooms": 1,
+        "difficulty_rank": 1
+      },
+      "expected": {
+        "stages": [
+          "pending",
+          "generating",
+          "validating",
+          "ready"
+        ],
+        "final_rooms": 1,
+        "final_puzzles": 2
+      },
+      "actual": {
+        "current_status": "ready",
+        "recorded": true,
+        "source": {
+          "source_version": "generation-observability-v1",
+          "git_revision": "72ac42ecfeaf225618baeee729371535662c8770",
+          "file_fingerprints": {
+            "backend/app/api/v5.py": "403c0894cba19a98f24fabae4635d3f7a1df97ed1de473e29c8e17b1904c86e8",
+            "backend/app/ai/v5.py": "658beff1aef7f5d6ac857153a97821f0a7998de907db1f74c7db46fe588dc5d8",
+            "backend/app/ai/provider.py": "1c4f5c170f1bd1d303899c2ccf6d3185c258db214f47fff6f0d1e4b442eff85d",
+            "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+            "backend/app/storage/v5.py": "141fdff45340df3556583c1780c70076c778cb9d6892dec6c9eb017776c5ac67",
+            "backend/app/domain/generation_content_v2.py": "4a480ec122b17afb5b8b85f673664d5d45598f182c01131c3b6feb0ea67ec999",
+            "backend/app/domain/generation_observability.py": "fa26cf388ab827393a8a3ab80d460c347ffd76a4b6fc40b0002f1f06468e4d62",
+            "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+            "backend/app/domain/blueprints.py": "2fad1607e8d4e379c705c5c36ac9245c2002d622953e08c230934ac6c64e5688",
+            "backend/app/domain/structure_variants.py": "163a1be77077e7b2ebce65bfb3b0c72533230f000f40583aca16a802fc80ce19",
+            "frontend/src/assets/generated-catalog.json": "c702e73f0c8b234af95564b321652979ebd806a0093f008042e9c2a3fc9b80b8"
+          }
+        },
+        "events": [
+          {
+            "event_id": 1,
+            "recorded_at": "2026-10-28T07:41:11.463227Z",
+            "stage": "pending",
+            "reason": "requested",
+            "counts": {
+              "difficulty_rank": 1,
+              "requested_rooms": 1,
+              "theme_characters": 21,
+              "theme_utf8_bytes": 21
+            }
+          },
+          {
+            "event_id": 2,
+            "recorded_at": "2026-10-28T07:41:11.476710Z",
+            "stage": "generating",
+            "reason": "started",
+            "counts": {}
+          },
+          {
+            "event_id": 3,
+            "recorded_at": "2026-10-28T07:41:11.495796Z",
+            "stage": "validating",
+            "reason": "generated",
+            "counts": {
+              "clues": 2,
+              "draft_response_characters": 1301,
+              "draft_response_utf8_bytes": 1469,
+              "objects": 5,
+              "puzzles": 2,
+              "rooms": 1
+            }
+          },
+          {
+            "event_id": 4,
+            "recorded_at": "2026-10-28T07:41:11.633941Z",
+            "stage": "ready",
+            "reason": "completed",
+            "counts": {
+              "clues": 2,
+              "objects": 5,
+              "puzzles": 2,
+              "rooms": 1,
+              "witness_steps": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "run_id": "035dedeec811494e9427c7ebf923954f",
+      "input": {
+        "theme_text_recorded": false,
+        "theme_characters": 9,
+        "theme_utf8_bytes": 28,
+        "requested_rooms": 2,
+        "difficulty_rank": 2
+      },
+      "expected": {
+        "stages": [
+          "pending",
+          "generating",
+          "validating",
+          "ready"
+        ],
+        "final_rooms": 2,
+        "final_puzzles": 4
+      },
+      "actual": {
+        "current_status": "ready",
+        "recorded": true,
+        "source": {
+          "source_version": "generation-observability-v1",
+          "git_revision": "72ac42ecfeaf225618baeee729371535662c8770",
+          "file_fingerprints": {
+            "backend/app/api/v5.py": "403c0894cba19a98f24fabae4635d3f7a1df97ed1de473e29c8e17b1904c86e8",
+            "backend/app/ai/v5.py": "658beff1aef7f5d6ac857153a97821f0a7998de907db1f74c7db46fe588dc5d8",
+            "backend/app/ai/provider.py": "1c4f5c170f1bd1d303899c2ccf6d3185c258db214f47fff6f0d1e4b442eff85d",
+            "backend/app/ai/budget.py": "37384fc6ac136e17be67c3b285c2af4a32ac001d23ea6bedb736362892e7dc20",
+            "backend/app/storage/v5.py": "141fdff45340df3556583c1780c70076c778cb9d6892dec6c9eb017776c5ac67",
+            "backend/app/domain/generation_content_v2.py": "4a480ec122b17afb5b8b85f673664d5d45598f182c01131c3b6feb0ea67ec999",
+            "backend/app/domain/generation_observability.py": "fa26cf388ab827393a8a3ab80d460c347ffd76a4b6fc40b0002f1f06468e4d62",
+            "backend/app/domain/generated.py": "c3fb78a7b0e9a1d79e063154a400512bd6ee926be33c8557e7c0eaa2bcde89cf",
+            "backend/app/domain/blueprints.py": "2fad1607e8d4e379c705c5c36ac9245c2002d622953e08c230934ac6c64e5688",
+            "backend/app/domain/structure_variants.py": "163a1be77077e7b2ebce65bfb3b0c72533230f000f40583aca16a802fc80ce19",
+            "frontend/src/assets/generated-catalog.json": "c702e73f0c8b234af95564b321652979ebd806a0093f008042e9c2a3fc9b80b8"
+          }
+        },
+        "events": [
+          {
+            "event_id": 5,
+            "recorded_at": "2026-10-28T07:41:11.752744Z",
+            "stage": "pending",
+            "reason": "requested",
+            "counts": {
+              "difficulty_rank": 2,
+              "requested_rooms": 2,
+              "theme_characters": 9,
+              "theme_utf8_bytes": 28
+            }
+          },
+          {
+            "event_id": 6,
+            "recorded_at": "2026-10-28T07:41:11.769632Z",
+            "stage": "generating",
+            "reason": "started",
+            "counts": {}
+          },
+          {
+            "event_id": 7,
+            "recorded_at": "2026-10-28T07:41:11.790502Z",
+            "stage": "validating",
+            "reason": "generated",
+            "counts": {
+              "clues": 2,
+              "draft_response_characters": 1974,
+              "draft_response_utf8_bytes": 2208,
+              "objects": 7,
+              "puzzles": 4,
+              "rooms": 2
+            }
+          },
+          {
+            "event_id": 8,
+            "recorded_at": "2026-10-28T07:41:11.937809Z",
+            "stage": "ready",
+            "reason": "completed",
+            "counts": {
+              "clues": 2,
+              "objects": 7,
+              "puzzles": 4,
+              "rooms": 2,
+              "witness_steps": 23
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

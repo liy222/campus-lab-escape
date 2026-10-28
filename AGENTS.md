@@ -7,12 +7,20 @@
 - 按完整功能阶段持续推进，普通实现与修复由代理自行完成；阶段稳定后集中做必要验证与一次独立复核，不逐小步等待确认。
 - 验证针对实际改动；复用未受影响的结果，修复后只检查受影响范围。小型文案或低影响改动不新建候选、哈希封条、审计回执或层层接受记录。
 - 同一功能阶段集中提交并推送，不为同步回执再建一次提交。进度只说已完成的功能、剩余工作和实际阻塞。
-- 大阶段完成时提供可打开的效果、简短体验步骤与重要已知问题，再请用户集中检查；不把命令数或审计数作为完成效果。
+- 证据从开发开始随实际执行、失败、修复和反馈持续保存；每个大阶段结束必须提供效果入口、简短检查步骤与重要已知问题，明确邀请用户本人核验。核验前状态为待真人检查，不能把技术通过或“继续”自动记为真人接受。
+- 固定证据入口为evidence/project/：stages/<stage-id>/保存自动结果、日志导出、标准/评价和截图；human-reviews/<stage-id>/round-XX/单独保存真人原话、核查结论、截图和来源。自动化截图不冒充真人截图，未实际发生的本人/同伴检查不预填。小步骤及时记录，大阶段集中交付，无需逐小步确认。
+- 旧证据可迁移归档到固定入口；保留原时间、来源和实际执行状态。对被历史记录/可信登记固定引用的原件先保留兼容，归档副本逐文件标明来源；不把搬运当新执行，不静默改写历史结果或移动数据库/私有原稿到可提交目录。
 - 保留现有密钥、数据库和未跟踪文件保护；付费调用仍须有效有限授权。未发生的测试、调用或人工验收不得写成完成。
 
 2026-10-28体验反馈轮：Main统筹/root docs/Git；新建 v5_experience_frontend_oct28（实际请求gpt-6.1-sol/high）拥有frontend/；新建 v5_experience_theme_oct28（实际请求gpt-6.1-sol/high）临时拥有AI/v5.py、domain/generation_content_v2.py、storage/v5.py、必要的contracts/v2/api.schema.json及其build_contracts.py生成源，以及新tests/v5/test_theme_experience.py。只修线路等待指针、主题元数据/提示与界面；素材包下一阶段实施。稳定后一次独立必要复核，不建多层候选/封条，0新增付费；Main/运行时型号不作独立核验声明。
 
 本轮既有blueprint_qa独立拥有新experience_fixture_server.py/run_experience_browser.mjs、集中报告与experience-20261028产物，5API0及浏览器必要范围联合完成；两次新QA定位失败保留、不冒充单轮全绿，未重建或读取玩家库。Main看4张实际PNG后接受本次有限修复并重启自有预览供用户体验。普通liy222一次提交推送；旧评价登记/pin不刷新，主题专属图像未制作。
+
+2026-10-28 E&O补齐轮（用户明确授权）：恢复既有v5_experience_theme_oct28，临时拥有api/storage/ai的v5.py、domain/generation_content_v2.py、一个小观测helper、scripts/generation_trace.py及新test_generation_observability.py；仅增加内部受控阶段记录与只读查看入口，公开错误码/规则/费用/原定义保持。既有v5_experience_frontend_oct28本轮转为检查入口Owner，只写run_experience_browser.mjs与必要小JS判定helper，补实际值、运行关联及唯一结果目录，不改frontend产品。Main拥有新docs/v5-evaluation.md、根文档/正式计划及evaluation/v5/README.md的历史范围说明。稳定后既有QA集中必要验证，0新增付费，无素材制作；恢复不独立核验运行型号，不新建封条或层层审计。
+
+同轮用户追加固定证据与真人核验要求：既有Backend临时Delivery拥有scripts/evidence_hub.py、新test_evidence_hub.py及generation_trace.py仅导出扩展；既有检查Owner仅调整runner默认输出到当前固定阶段。Main拥有实际归档/索引、历史兼容说明及真人已有反馈导入；QA只做归档工具必要窄验，不重跑已完成11API/浏览器/build。原反馈截图来自用户提供的2026-10-28附件，不是新截屏或修复后接受。
+
+E&O与归档阶段技术完成：独立11项定向API通过；浏览器首轮核心+修复检查器后的auth-only窄补联合通过，首轮exit1保留；独立归档工具5项TEMP检查通过。Main已实际归档代表性历史结果及用户修复前原话/原截图，当前人类检查待提供。没有额外build/付费、旧pin刷新或美术制作；后续每阶段持续记录，完成时必须明确邀请本人检查。
 
 The human is the sole developer. The attachment docs/execution-plan.md is the accepted project scope, not proof of execution. Never invent tests, people, approvals or model calls.
 Main owns AGENTS.md, PLAN.md, STATUS.md, DECISIONS.md, integration and git. Agents write only assigned paths, never commit, never spawn further agents. Shared workspace; do not overwrite another owner's files. Default delegates gpt-6.1-sol/high, simple mechanical tasks gpt-6-luna/medium. No Astra unless needed. Main runtime model is not independently introspectable and must not be claimed as verified.

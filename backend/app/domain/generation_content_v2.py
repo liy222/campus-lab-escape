@@ -184,18 +184,27 @@ def assemble_draft(blueprint: Blueprint, raw_model_content) -> dict:
     reply and accepted values remain untouched; original compile/proof belongs
     to the caller and is never invoked here.
     """
-    _require_v2(blueprint)
+    stage = 'assembly'
     try:
-        content = strict_json(raw_model_content)
-    except (TypeError, RecursionError) as error:
-        raise ValueError('GENERATION_CONTENT_INVALID') from error
-    if not v1._IntegerValidator(content_schema(blueprint)).is_valid(content):
-        raise ValueError('GENERATION_CONTENT_INVALID')
-    _guard_narrative(blueprint, content)
-    names = {oid: value['name'] for oid, value in content['objects'].items()}
-    helper = copy.deepcopy(content)
-    helper['content_version'] = v1.CONTENT_VERSION
-    helper['objects'] = {obj.object_id: {'name': names[obj.object_id],
-                                       'description': _describe(blueprint, obj, names)}
-                         for obj in blueprint.objects}
-    return v1.assemble_draft(blueprint, helper)
+        _require_v2(blueprint)
+        stage = 'parse'
+        try:
+            content = strict_json(raw_model_content)
+        except (TypeError, RecursionError) as error:
+            raise ValueError('GENERATION_CONTENT_INVALID') from error
+        stage = 'schema'
+        if not v1._IntegerValidator(content_schema(blueprint)).is_valid(content):
+            raise ValueError('GENERATION_CONTENT_INVALID')
+        stage = 'narrative'
+        _guard_narrative(blueprint, content)
+        stage = 'assembly'
+        names = {oid: value['name'] for oid, value in content['objects'].items()}
+        helper = copy.deepcopy(content)
+        helper['content_version'] = v1.CONTENT_VERSION
+        helper['objects'] = {obj.object_id: {'name': names[obj.object_id],
+                                           'description': _describe(blueprint, obj, names)}
+                             for obj in blueprint.objects}
+        return v1.assemble_draft(blueprint, helper)
+    except (ValueError, TypeError, RecursionError) as error:
+        error.generation_diagnostic = stage
+        raise

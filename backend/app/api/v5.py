@@ -13,6 +13,7 @@ from pydantic import Field, ValidationError, field_validator
 from ..domain.models import StrictModel, Identifier
 from ..domain.graybox_models import HintRequest
 from ..domain.generated import Draft, compile_level
+from ..domain.generation_observability import draft_counts, text_counts
 from ..storage.sqlite import new_id
 from ..storage.v5 import V5Database, digest
 
@@ -99,26 +100,29 @@ async def invoke(service,method,**kwargs):
 async def generate(request_app,uid,job_id,request,key):
     db=request_app.state.v5_database
     try:
-        db.job_phase(job_id,'generating')
+        db.job_phase(job_id,'generating',reason='started')
         service=request_app.state.generation_service
         if service is None:
-            db.job_phase(job_id,'failed','MODEL_UNAVAILABLE'); return
+            db.job_phase(job_id,'failed','MODEL_UNAVAILABLE',reason='provider_unavailable'); return
         raw=await asyncio.wait_for(invoke(service,'generate',theme=request.theme,room_count=request.room_count,difficulty=request.difficulty,api_key=key,draft_schema=Draft.model_json_schema()),timeout=90)
         # A provider cannot cause a credential to become immutable level content.
         rendered=json.dumps(raw,ensure_ascii=False) if not isinstance(raw,str) else raw
-        if key and key in rendered: db.job_phase(job_id,'rejected','MODEL_INVALID_OUTPUT'); return
-        db.job_phase(job_id,'validating')
+        if key and key in rendered: db.job_phase(job_id,'rejected','MODEL_INVALID_OUTPUT',reason='credential'); return
+        db.job_phase(job_id,'validating',reason='generated',counts={**text_counts('draft_response',rendered),**draft_counts(raw)})
         try: compiled=await asyncio.to_thread(compile_level,raw,request.room_count,request.difficulty)
         except (ValueError,ValidationError,KeyError,TypeError) as error:
-            db.job_phase(job_id,'rejected','PROOF_UNKNOWN' if str(error)=='PROOF_UNKNOWN' else 'ADMISSION_REJECTED'); return
+            proof=str(error) in {'PROOF_UNKNOWN','UNSOLVABLE','CIRCUIT_UNPROVEN','WITNESS_REPLAY'}
+            db.job_phase(job_id,'rejected','PROOF_UNKNOWN' if str(error)=='PROOF_UNKNOWN' else 'ADMISSION_REJECTED',reason='proof' if proof else 'admission'); return
         db.commit_level(job_id,compiled)
     except asyncio.CancelledError:
-        db.job_phase(job_id,'unknown','MODEL_OUTCOME_UNKNOWN'); raise
-    except (TimeoutError,asyncio.TimeoutError): db.job_phase(job_id,'unknown','MODEL_OUTCOME_UNKNOWN')
+        db.job_phase(job_id,'unknown','MODEL_OUTCOME_UNKNOWN',reason='cancelled'); raise
+    except (TimeoutError,asyncio.TimeoutError): db.job_phase(job_id,'unknown','MODEL_OUTCOME_UNKNOWN',reason='timeout')
     except Exception as error:
         code=getattr(error,'code','MODEL_UNAVAILABLE')
         if code not in {'MODEL_TIMEOUT','MODEL_INVALID_OUTPUT','MODEL_UNAVAILABLE','AI_LIMIT_REACHED','MODEL_OUTCOME_UNKNOWN'}: code='MODEL_UNAVAILABLE'
-        db.job_phase(job_id,'unknown' if code=='MODEL_OUTCOME_UNKNOWN' else ('rejected' if code=='MODEL_INVALID_OUTPUT' else 'failed'),code)
+        db.job_phase(job_id,'unknown' if code=='MODEL_OUTCOME_UNKNOWN' else ('rejected' if code=='MODEL_INVALID_OUTPUT' else 'failed'),code,
+                     reason=getattr(error,'generation_diagnostic',None) or ('provider_unknown' if code=='MODEL_OUTCOME_UNKNOWN' else 'provider' if getattr(error,'code',None) else 'internal'),
+                     counts=getattr(error,'generation_counts',None))
     finally:
         key=None
 

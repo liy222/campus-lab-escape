@@ -57,3 +57,8 @@ evidence/upgrade/v5.0/blueprint-generation/real-samples/G[23]-api-replay-local.j
 
 # Future reverse-structure real sample raw model response, local only.
 /evidence/upgrade/v5.0/structure-diversity/real-samples/G3-provider-result.json
+
+# Explicit safe JSON trace exports in the fixed evidence hub; raw logs stay ignored.
+!evidence/project/stages/*/logs/
+evidence/project/stages/*/logs/*
+!evidence/project/stages/*/logs/*.json

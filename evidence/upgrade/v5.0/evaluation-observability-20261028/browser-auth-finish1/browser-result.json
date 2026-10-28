@@ -1,0 +1,322 @@
+{
+  "kind": "Synthetic focused experience browser",
+  "run_id": "63640e78-132c-4372-a487-5e903cf2d38c",
+  "started_at_utc": "2026-10-28T07:47:05.973Z",
+  "ended_at_utc": "2026-10-28T07:47:12.708Z",
+  "execution_status": "COMPLETED",
+  "browser_executed": true,
+  "exit_code": 0,
+  "scope": "auth-and-legacy-only",
+  "first_result": {
+    "path": "evidence/upgrade/v5.0/evaluation-observability-20261028/browser-run1/browser-result.json",
+    "run_id": "a2c0348d-f986-412b-ae82-4292ec4bde71",
+    "sha256": "e80a30de981c4f2c4ce0ff6061279fddb9a252fe9ef2c90bf66019c8846f1be5",
+    "original_controller_sha256": "830fc23c8f250266cc8ceb5b9925680172c1a5d8e364aa6aba58e32e6e78c54d",
+    "current_controller_sha256": "59d43ac0a0b1cebc7671b83acd4e6ccc2616cdaded74ac00ed1bdc9dcc5658ff"
+  },
+  "provenance": {
+    "git": {
+      "revision": "72ac42ecfeaf225618baeee729371535662c8770",
+      "dirty": true,
+      "dirty_scope": "tracked working tree; no file contents recorded"
+    },
+    "sources": [
+      {
+        "path": "tests/v5/run_experience_browser.mjs",
+        "bytes": 28548,
+        "sha256": "59d43ac0a0b1cebc7671b83acd4e6ccc2616cdaded74ac00ed1bdc9dcc5658ff"
+      },
+      {
+        "path": "tests/v5/experience_observation.mjs",
+        "bytes": 1771,
+        "sha256": "786635f98e4ea8cb38bf2da049bdd5f78780cf4f66735c900f542692d186cc8e"
+      },
+      {
+        "path": "tests/v5/experience_fixture_server.py",
+        "bytes": 2175,
+        "sha256": "b824a5046eb73e4eb70c0ded68ec03dd9bf7187ac193d89df05d302542de0922"
+      },
+      {
+        "path": "frontend/src/v5/CircuitBoard.tsx",
+        "bytes": 3554,
+        "sha256": "559e7ab1699083d37c76c83219c92f96bba28c754565e114b350c37589111b09"
+      },
+      {
+        "path": "frontend/src/v5/GeneratedPlay.tsx",
+        "bytes": 14716,
+        "sha256": "f19530341cd65067d63c1991de958b9cf457b70506e9911f9f47626f95d54806"
+      },
+      {
+        "path": "frontend/src/v5/GeneratedScene.tsx",
+        "bytes": 4994,
+        "sha256": "02385db363bb5f92a628ce8e6f90ac857aacde570447e5300d3790ff82e34505"
+      },
+      {
+        "path": "frontend/src/v5/Workspace.tsx",
+        "bytes": 11992,
+        "sha256": "3758b326eead8f1f872c2c369617638d72bf9c19c2f1d6da0ccfe8e71d403be6"
+      },
+      {
+        "path": "frontend/src/v5/client.ts",
+        "bytes": 5630,
+        "sha256": "04d4803a4eb5374c696e4f28ebd642b576faa1e12a8f802bb25c1afae253d6ca"
+      },
+      {
+        "path": "frontend/src/v5/v5.css",
+        "bytes": 23758,
+        "sha256": "5fa1ecc195bd05061eb3c731710e97cbad3437a81a6b9dc69afacdba19f230ec"
+      },
+      {
+        "path": "backend/app/api/v5.py",
+        "bytes": 20990,
+        "sha256": "403c0894cba19a98f24fabae4635d3f7a1df97ed1de473e29c8e17b1904c86e8"
+      },
+      {
+        "path": "backend/app/storage/v5.py",
+        "bytes": 29664,
+        "sha256": "141fdff45340df3556583c1780c70076c778cb9d6892dec6c9eb017776c5ac67"
+      },
+      {
+        "path": "backend/app/ai/v5.py",
+        "bytes": 21119,
+        "sha256": "658beff1aef7f5d6ac857153a97821f0a7998de907db1f74c7db46fe588dc5d8"
+      },
+      {
+        "path": "backend/app/domain/generation_content_v2.py",
+        "bytes": 11216,
+        "sha256": "4a480ec122b17afb5b8b85f673664d5d45598f182c01131c3b6feb0ea67ec999"
+      },
+      {
+        "path": "backend/app/domain/generation_observability.py",
+        "bytes": 3794,
+        "sha256": "fa26cf388ab827393a8a3ab80d460c347ffd76a4b6fc40b0002f1f06468e4d62"
+      },
+      {
+        "path": "scripts/generation_trace.py",
+        "bytes": 3867,
+        "sha256": "3ddcda93bdfbd52ef1cdd754b3df1c9245be1614dabf6ea7bd4b1360eb68e368"
+      }
+    ],
+    "build": {
+      "index": {
+        "path": "frontend/dist-v5/index.html",
+        "bytes": 486,
+        "sha256": "dfdc7176894628483c21f6775d79bdf87e4c37bdc6d854dbd9036b4129c26c37"
+      },
+      "entry_resources": [
+        {
+          "path": "frontend/dist-v5/assets/index-B3leoBuN.js",
+          "bytes": 337087,
+          "sha256": "7bfe2dd9dec420ab5f97e2153cba55686b7ce02462d601059207a93bfbd171fb"
+        },
+        {
+          "path": "frontend/dist-v5/assets/phaser-lfjrd5S3.js",
+          "bytes": 1388183,
+          "sha256": "cbfbaa117ff99036b8d7e201f48c71a701f2066b0488527fdf2da5a372b37c46"
+        },
+        {
+          "path": "frontend/dist-v5/assets/index-BG8q4fgj.css",
+          "bytes": 73946,
+          "sha256": "a2954f26acea93a472fe869db7cc09adb0495ea19ea3ddb7d304f2e0cb453c87"
+        }
+      ],
+      "freshly_built_by_this_run": false
+    }
+  },
+  "checks": [
+    {
+      "name": "bound auth finish source",
+      "pass": true,
+      "expected": {
+        "valid_first_result": true,
+        "same_product_and_fixture_sources": true,
+        "same_actual_build": true,
+        "explicit_owned_temp_valid": true
+      },
+      "actual": {
+        "valid_first_result": true,
+        "same_product_and_fixture_sources": true,
+        "same_actual_build": true,
+        "explicit_owned_temp_valid": true
+      },
+      "input": {
+        "first_result": "evidence/upgrade/v5.0/evaluation-observability-20261028/browser-run1/browser-result.json",
+        "first_run_id": "a2c0348d-f986-412b-ae82-4292ec4bde71",
+        "scope": "auth-and-legacy-only"
+      },
+      "context": {
+        "stage": "context",
+        "viewport": null,
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:47:06.701Z"
+    },
+    {
+      "name": "owned port8002 available",
+      "pass": true,
+      "expected": {
+        "available": true,
+        "port": 8002
+      },
+      "actual": {
+        "available": true,
+        "port": 8002
+      },
+      "input": {},
+      "context": {
+        "stage": "context",
+        "viewport": null,
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:47:06.710Z"
+    },
+    {
+      "name": "owned Synthetic server ready",
+      "pass": true,
+      "expected": {
+        "ready": true,
+        "owned_temp_available": true
+      },
+      "actual": {
+        "ready": true,
+        "owned_temp_available": true
+      },
+      "input": {},
+      "context": {
+        "stage": "context",
+        "viewport": null,
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:47:08.408Z"
+    },
+    {
+      "name": "logout completed before relogin",
+      "pass": true,
+      "expected": {
+        "logout_http_ok": true,
+        "auth_form_visible": true,
+        "login_button_visible": true,
+        "busy_elements": 0
+      },
+      "actual": {
+        "logout_http_status": 200,
+        "auth_form_visible": true,
+        "login_button_visible": true,
+        "busy_elements": 0
+      },
+      "input": {
+        "operation": "logout POST, stable auth form, then login mode"
+      },
+      "context": {
+        "stage": "relogin-and-legacy",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:47:10.268Z"
+    },
+    {
+      "name": "theme survives relogin",
+      "pass": true,
+      "expected": "雨夜里的天文社旧活动室,寻找封存的观测记录",
+      "actual": "雨夜里的天文社旧活动室,寻找封存的观测记录",
+      "input": {},
+      "context": {
+        "stage": "relogin-and-legacy",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:47:10.513Z"
+    },
+    {
+      "name": "simulated legacy omission story fallback",
+      "pass": true,
+      "expected": "Synthetic：雨夜的天文社旧活动室里，封存的观测记录等待查阅。",
+      "actual": "Synthetic：雨夜的天文社旧活动室里，封存的观测记录等待查阅。",
+      "input": {
+        "simulation": "theme omitted from public metadata response"
+      },
+      "context": {
+        "stage": "relogin-and-legacy",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:47:10.926Z"
+    },
+    {
+      "name": "simulated legacy no theme accepted",
+      "pass": true,
+      "expected": {
+        "theme_heading_present": false,
+        "story_present": true
+      },
+      "actual": {
+        "theme_heading_present": false,
+        "story_present": true
+      },
+      "input": {
+        "simulation": "theme omitted from public metadata response"
+      },
+      "context": {
+        "stage": "relogin-and-legacy",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:47:12.391Z"
+    },
+    {
+      "name": "no external browser requests",
+      "pass": true,
+      "expected": {
+        "count": 0
+      },
+      "actual": {
+        "count": 0
+      },
+      "input": {},
+      "context": {
+        "stage": "relogin-and-legacy",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:47:12.391Z"
+    },
+    {
+      "name": "owned server stopped",
+      "pass": true,
+      "expected": true,
+      "actual": true,
+      "input": {
+        "owned_port": 8002
+      },
+      "context": {
+        "stage": "cleanup",
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:47:12.707Z"
+    }
+  ],
+  "screenshots": [],
+  "owned_temp": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-experience-Lr1hiI",
+  "owned_server_stopped": true,
+  "player8001_service_contacted": false,
+  "transport": "isolated browser context forwards all 8001 requests to owned8002 with original Host/Origin",
+  "paid_calls": 0,
+  "real_model_semantic_quality_tested": false,
+  "legacy_theme_omission_explicit_simulation": true,
+  "privacy": "Synthetic fixture only; no credential value, Cookie, token, full state, hidden definition, or raw server log is recorded"
+}

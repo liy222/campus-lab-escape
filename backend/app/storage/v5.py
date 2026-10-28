@@ -14,6 +14,7 @@ from argon2 import PasswordHasher
 from argon2.exceptions import VerificationError
 from .sqlite import Store, canonical, new_id, utc_now, select_rules
 from ..domain.generated import compile_level, GeneratedRules
+from ..domain.generation_observability import STAGES, safe_counts, safe_reason, source_snapshot, text_counts
 
 PASSWORD_HASHER=PasswordHasher(time_cost=2,memory_cost=19456,parallelism=1,hash_len=32,salt_len=16)
 HASH_SLOTS=threading.BoundedSemaphore(2)
@@ -51,8 +52,13 @@ class V5Database:
             CREATE TABLE IF NOT EXISTS session_requests(user_id TEXT NOT NULL,request_id TEXT NOT NULL,request_hash TEXT NOT NULL,session_id TEXT NOT NULL,PRIMARY KEY(user_id,request_id));
             CREATE TABLE IF NOT EXISTS level_generations(job_id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(user_id),request_id TEXT NOT NULL,request_hash TEXT NOT NULL,theme TEXT NOT NULL,room_count INTEGER NOT NULL,difficulty TEXT NOT NULL,status TEXT NOT NULL,created_at REAL NOT NULL,updated_at REAL NOT NULL,level_id TEXT,error_code TEXT,UNIQUE(user_id,request_id));
             CREATE TABLE IF NOT EXISTS generated_levels(level_id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(user_id),job_id TEXT NOT NULL UNIQUE,definition_json TEXT NOT NULL,definition_hash TEXT NOT NULL,definition_version TEXT NOT NULL,metadata_json TEXT NOT NULL);
+            CREATE TABLE IF NOT EXISTS generation_job_events(event_id INTEGER PRIMARY KEY AUTOINCREMENT,job_id TEXT NOT NULL,stage TEXT NOT NULL,recorded_at TEXT NOT NULL,reason TEXT NOT NULL,counts_json TEXT NOT NULL,source_json TEXT NOT NULL);
+            CREATE INDEX IF NOT EXISTS generation_job_events_job ON generation_job_events(job_id,event_id);
             ''')
+            interrupted=c.execute("SELECT job_id,status FROM level_generations WHERE status IN ('pending','generating','validating') AND EXISTS(SELECT 1 FROM generation_job_events e WHERE e.job_id=level_generations.job_id)").fetchall()
             c.execute("UPDATE level_generations SET status=CASE status WHEN 'generating' THEN 'unknown' ELSE 'failed' END,error_code='PROCESS_RESTARTED',updated_at=? WHERE status IN ('pending','generating','validating')",(time.time(),))
+            for row in interrupted:
+                self.record_job_event(c,row['job_id'],'unknown' if row['status']=='generating' else 'failed',reason='process_restart')
     def transaction(self): return self.base.transaction()
     def anonymous(self,existing_nonce=None):
         now=time.time()
@@ -200,10 +206,19 @@ class V5Database:
             if c.execute('SELECT COUNT(*) FROM level_generations WHERE user_id=? AND created_at>?',(uid,now-600)).fetchone()[0]>=3 or c.execute('SELECT COUNT(*) FROM level_generations WHERE user_id=? AND created_at>=?',(uid,day)).fetchone()[0]>=10: return 429,None,False
             job_id=new_id()
             c.execute('INSERT INTO level_generations VALUES(?,?,?,?,?,?,?,?,?,?,?,?)',(job_id,uid,request.request_id,hashed,request.theme,request.room_count,request.difficulty,'pending',now,now,None,None))
+            self.record_job_event(c,job_id,'pending',reason='requested',counts={
+                **text_counts('theme',request.theme),'requested_rooms':request.room_count,
+                'difficulty_rank':{'easy':1,'normal':2,'hard':3}[request.difficulty]})
             row=c.execute('SELECT * FROM level_generations WHERE job_id=?',(job_id,)).fetchone()
             return 202,self.job_public(row),True
-    def job_phase(self,job_id,phase,error=None):
-        with self.transaction() as c: c.execute('UPDATE level_generations SET status=?,error_code=?,updated_at=? WHERE job_id=?',(phase,error,time.time(),job_id))
+    def record_job_event(self,c,job_id,stage,*,reason='unspecified',counts=None):
+        if stage not in STAGES: return
+        c.execute('INSERT INTO generation_job_events(job_id,stage,recorded_at,reason,counts_json,source_json) VALUES(?,?,?,?,?,?)',
+                  (job_id,stage,utc_now(),safe_reason(reason),canonical(safe_counts(counts)),canonical(source_snapshot())))
+    def job_phase(self,job_id,phase,error=None,*,reason='unspecified',counts=None):
+        with self.transaction() as c:
+            changed=c.execute('UPDATE level_generations SET status=?,error_code=?,updated_at=? WHERE job_id=?',(phase,error,time.time(),job_id))
+            if changed.rowcount: self.record_job_event(c,job_id,phase,reason=reason,counts=counts)
     def commit_level(self,job_id,compiled):
         with self.transaction() as c:
             job=c.execute('SELECT * FROM level_generations WHERE job_id=?',(job_id,)).fetchone()
@@ -212,6 +227,9 @@ class V5Database:
             metadata={'level_id':lid,'title':d.title,'story':d.story,'room_count':job['room_count'],'difficulty':job['difficulty'],'definition_hash':compiled.definition_hash,'definition_version':'1.0.0','rules_version':'1.0.0','policy_version':compiled.policy_version,'created_at':utc_now()}
             c.execute('INSERT INTO generated_levels VALUES(?,?,?,?,?,?,?)',(lid,job['user_id'],job_id,canonical(compiled.private_dump()),compiled.definition_hash,'1.0.0',canonical(metadata)))
             c.execute("UPDATE level_generations SET status='ready',level_id=?,updated_at=? WHERE job_id=?",(lid,time.time(),job_id))
+            self.record_job_event(c,job_id,'ready',reason='completed',counts={
+                'rooms':len(d.rooms),'objects':sum(len(room.objects) for room in d.rooms),
+                'clues':len(d.clues),'puzzles':len(d.puzzles),'witness_steps':len(compiled.witness)})
     def levels(self,uid,lid=None):
         # Generation requests are Key/cookie-redacted by the sole HTTP creation
         # route before reservation. Project only the owning job's theme; never

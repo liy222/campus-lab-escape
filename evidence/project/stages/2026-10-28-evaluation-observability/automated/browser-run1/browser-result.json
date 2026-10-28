@@ -1,0 +1,1535 @@
+{
+  "kind": "Synthetic focused experience browser",
+  "run_id": "a2c0348d-f986-412b-ae82-4292ec4bde71",
+  "started_at_utc": "2026-10-28T07:41:36.919Z",
+  "ended_at_utc": "2026-10-28T07:42:02.402Z",
+  "execution_status": "FAILED",
+  "browser_executed": true,
+  "exit_code": 1,
+  "provenance": {
+    "git": {
+      "revision": "72ac42ecfeaf225618baeee729371535662c8770",
+      "dirty": true,
+      "dirty_scope": "tracked working tree; no file contents recorded"
+    },
+    "sources": [
+      {
+        "path": "tests/v5/run_experience_browser.mjs",
+        "bytes": 23388,
+        "sha256": "830fc23c8f250266cc8ceb5b9925680172c1a5d8e364aa6aba58e32e6e78c54d"
+      },
+      {
+        "path": "tests/v5/experience_observation.mjs",
+        "bytes": 1771,
+        "sha256": "786635f98e4ea8cb38bf2da049bdd5f78780cf4f66735c900f542692d186cc8e"
+      },
+      {
+        "path": "tests/v5/experience_fixture_server.py",
+        "bytes": 2175,
+        "sha256": "b824a5046eb73e4eb70c0ded68ec03dd9bf7187ac193d89df05d302542de0922"
+      },
+      {
+        "path": "frontend/src/v5/CircuitBoard.tsx",
+        "bytes": 3554,
+        "sha256": "559e7ab1699083d37c76c83219c92f96bba28c754565e114b350c37589111b09"
+      },
+      {
+        "path": "frontend/src/v5/GeneratedPlay.tsx",
+        "bytes": 14716,
+        "sha256": "f19530341cd65067d63c1991de958b9cf457b70506e9911f9f47626f95d54806"
+      },
+      {
+        "path": "frontend/src/v5/GeneratedScene.tsx",
+        "bytes": 4994,
+        "sha256": "02385db363bb5f92a628ce8e6f90ac857aacde570447e5300d3790ff82e34505"
+      },
+      {
+        "path": "frontend/src/v5/Workspace.tsx",
+        "bytes": 11992,
+        "sha256": "3758b326eead8f1f872c2c369617638d72bf9c19c2f1d6da0ccfe8e71d403be6"
+      },
+      {
+        "path": "frontend/src/v5/client.ts",
+        "bytes": 5630,
+        "sha256": "04d4803a4eb5374c696e4f28ebd642b576faa1e12a8f802bb25c1afae253d6ca"
+      },
+      {
+        "path": "frontend/src/v5/v5.css",
+        "bytes": 23758,
+        "sha256": "5fa1ecc195bd05061eb3c731710e97cbad3437a81a6b9dc69afacdba19f230ec"
+      },
+      {
+        "path": "backend/app/api/v5.py",
+        "bytes": 20990,
+        "sha256": "403c0894cba19a98f24fabae4635d3f7a1df97ed1de473e29c8e17b1904c86e8"
+      },
+      {
+        "path": "backend/app/storage/v5.py",
+        "bytes": 29664,
+        "sha256": "141fdff45340df3556583c1780c70076c778cb9d6892dec6c9eb017776c5ac67"
+      },
+      {
+        "path": "backend/app/ai/v5.py",
+        "bytes": 21119,
+        "sha256": "658beff1aef7f5d6ac857153a97821f0a7998de907db1f74c7db46fe588dc5d8"
+      },
+      {
+        "path": "backend/app/domain/generation_content_v2.py",
+        "bytes": 11216,
+        "sha256": "4a480ec122b17afb5b8b85f673664d5d45598f182c01131c3b6feb0ea67ec999"
+      },
+      {
+        "path": "backend/app/domain/generation_observability.py",
+        "bytes": 3794,
+        "sha256": "fa26cf388ab827393a8a3ab80d460c347ffd76a4b6fc40b0002f1f06468e4d62"
+      },
+      {
+        "path": "scripts/generation_trace.py",
+        "bytes": 3867,
+        "sha256": "3ddcda93bdfbd52ef1cdd754b3df1c9245be1614dabf6ea7bd4b1360eb68e368"
+      }
+    ],
+    "build": {
+      "index": {
+        "path": "frontend/dist-v5/index.html",
+        "bytes": 486,
+        "sha256": "dfdc7176894628483c21f6775d79bdf87e4c37bdc6d854dbd9036b4129c26c37"
+      },
+      "entry_resources": [
+        {
+          "path": "frontend/dist-v5/assets/index-B3leoBuN.js",
+          "bytes": 337087,
+          "sha256": "7bfe2dd9dec420ab5f97e2153cba55686b7ce02462d601059207a93bfbd171fb"
+        },
+        {
+          "path": "frontend/dist-v5/assets/phaser-lfjrd5S3.js",
+          "bytes": 1388183,
+          "sha256": "cbfbaa117ff99036b8d7e201f48c71a701f2066b0488527fdf2da5a372b37c46"
+        },
+        {
+          "path": "frontend/dist-v5/assets/index-BG8q4fgj.css",
+          "bytes": 73946,
+          "sha256": "a2954f26acea93a472fe869db7cc09adb0495ea19ea3ddb7d304f2e0cb453c87"
+        }
+      ],
+      "freshly_built_by_this_run": false
+    }
+  },
+  "checks": [
+    {
+      "name": "isolated judgement self-test",
+      "pass": true,
+      "expected": {
+        "all_cases_pass": true,
+        "real_ui_executed": false
+      },
+      "actual": {
+        "kind": "isolated judgement self-test, invented values only",
+        "real_ui_executed": false,
+        "cases": [
+          {
+            "name": "completed module with wait fails",
+            "expected": false,
+            "actual": false,
+            "pass": true
+          },
+          {
+            "name": "control below 44px fails",
+            "expected": false,
+            "actual": false,
+            "pass": true
+          },
+          {
+            "name": "normal completed modules pass",
+            "expected": true,
+            "actual": true,
+            "pass": true
+          },
+          {
+            "name": "44px controls pass",
+            "expected": true,
+            "actual": true,
+            "pass": true
+          },
+          {
+            "name": "pending requires actual busy state",
+            "expected": false,
+            "actual": false,
+            "pass": true
+          }
+        ],
+        "pass": true
+      },
+      "input": {},
+      "context": {
+        "stage": "context",
+        "viewport": null,
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:36.922Z"
+    },
+    {
+      "name": "owned port8002 available",
+      "pass": true,
+      "expected": {
+        "available": true,
+        "port": 8002
+      },
+      "actual": {
+        "available": true,
+        "port": 8002
+      },
+      "input": {},
+      "context": {
+        "stage": "context",
+        "viewport": null,
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:37.683Z"
+    },
+    {
+      "name": "owned Synthetic server ready",
+      "pass": true,
+      "expected": {
+        "ready": true,
+        "owned_temp_created": true
+      },
+      "actual": {
+        "ready": true,
+        "owned_temp_created": true
+      },
+      "input": {},
+      "context": {
+        "stage": "context",
+        "viewport": null,
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:39.366Z"
+    },
+    {
+      "name": "44px create desktop",
+      "pass": true,
+      "expected": {
+        "minimum_width": 44,
+        "minimum_height": 44,
+        "at_least_one_control": true
+      },
+      "actual": {
+        "controls": [
+          {
+            "index": 0,
+            "tag": "textarea",
+            "type": null,
+            "label": "",
+            "width": 489.53125,
+            "height": 132
+          },
+          {
+            "index": 1,
+            "tag": "select",
+            "type": null,
+            "label": "",
+            "width": 237.265625,
+            "height": 45
+          },
+          {
+            "index": 2,
+            "tag": "select",
+            "type": null,
+            "label": "",
+            "width": 237.265625,
+            "height": 45
+          },
+          {
+            "index": 3,
+            "tag": "input",
+            "type": "password",
+            "label": "",
+            "width": 489.53125,
+            "height": 44
+          }
+        ],
+        "minimum_width": 237.265625,
+        "minimum_height": 44
+      },
+      "input": {
+        "scope": "visible enabled buttons and form controls",
+        "label": "create desktop"
+      },
+      "context": {
+        "stage": "registration-and-create",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:41.245Z"
+    },
+    {
+      "name": "no overflow create desktop",
+      "pass": true,
+      "expected": {
+        "scroll_width_at_most": 1281
+      },
+      "actual": {
+        "scroll_width": 1280,
+        "viewport_width": 1280,
+        "viewport_height": 720
+      },
+      "input": {
+        "tolerance_px": 1
+      },
+      "context": {
+        "stage": "registration-and-create",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:41.246Z"
+    },
+    {
+      "name": "list theme",
+      "pass": true,
+      "expected": "雨夜里的天文社旧活动室,寻找封存的观测记录",
+      "actual": "雨夜里的天文社旧活动室,寻找封存的观测记录",
+      "input": {
+        "room_count": 1,
+        "difficulty": "hard",
+        "theme": "雨夜里的天文社旧活动室,寻找封存的观测记录"
+      },
+      "context": {
+        "stage": "theme-and-generation",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:43.649Z"
+    },
+    {
+      "name": "synthetic input cleared",
+      "pass": true,
+      "expected": {
+        "empty": true
+      },
+      "actual": {
+        "empty": true
+      },
+      "input": {
+        "input_value_recorded": false
+      },
+      "context": {
+        "stage": "theme-and-generation",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:43.653Z"
+    },
+    {
+      "name": "archive theme and Synthetic story",
+      "pass": true,
+      "expected": {
+        "theme_present": true,
+        "story_present": true
+      },
+      "actual": {
+        "theme_present": true,
+        "story_present": true
+      },
+      "input": {
+        "expected_theme": "雨夜里的天文社旧活动室,寻找封存的观测记录",
+        "expected_story": "Synthetic：雨夜的天文社旧活动室里，封存的观测记录等待查阅。"
+      },
+      "context": {
+        "stage": "theme-and-generation",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:45.151Z"
+    },
+    {
+      "name": "save accepted",
+      "pass": true,
+      "expected": {
+        "http_ok": true,
+        "counts": {
+          "status": "playing",
+          "objects": 7,
+          "clues": 0,
+          "inventory": 0,
+          "circuits": 0,
+          "completed_circuits": 0
+        }
+      },
+      "actual": {
+        "http_status": 201,
+        "counts": {
+          "status": "playing",
+          "objects": 7,
+          "clues": 0,
+          "inventory": 0,
+          "circuits": 0,
+          "completed_circuits": 0
+        }
+      },
+      "input": {
+        "name": "Synthetic线路前"
+      },
+      "context": {
+        "stage": "save",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:45.889Z"
+    },
+    {
+      "name": "actual 3x3 modules",
+      "pass": true,
+      "expected": {
+        "count": 9
+      },
+      "actual": {
+        "count": 9
+      },
+      "input": {},
+      "context": {
+        "stage": "circuit-error-and-busy",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:46.181Z"
+    },
+    {
+      "name": "actual disconnected circuit error",
+      "pass": true,
+      "expected": {
+        "error_code": "WRONG_CODE"
+      },
+      "actual": {
+        "error_code": "WRONG_CODE",
+        "http_status": 409
+      },
+      "input": {
+        "operation": "submit_circuit",
+        "circuit_initially_disconnected": true
+      },
+      "context": {
+        "stage": "circuit-error-and-busy",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:46.287Z"
+    },
+    {
+      "name": "error shown and busy recovered",
+      "pass": true,
+      "expected": {
+        "error_visible": true,
+        "aria_busy": "false",
+        "modules_enabled": true,
+        "cursor_not": [
+          "wait",
+          "progress"
+        ]
+      },
+      "actual": {
+        "error_visible": true,
+        "aria_busy": "false",
+        "modules": [
+          {
+            "index": 0,
+            "label": "第1行第1列，直线接头，上与下相连，电源从左侧进入，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 1,
+            "label": "第1行第2列，直线接头，上与下相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 2,
+            "label": "第1行第3列，转角接头，上与右相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 3,
+            "label": "第2行第1列，转角接头，上与右相连，出口在左侧，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 4,
+            "label": "第2行第2列，直线接头，上与下相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 5,
+            "label": "第2行第3列，直线接头，上与下相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 6,
+            "label": "第3行第1列，转角接头，上与右相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 7,
+            "label": "第3行第2列，直线接头，上与下相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 8,
+            "label": "第3行第3列，转角接头，上与右相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          }
+        ]
+      },
+      "input": {},
+      "context": {
+        "stage": "circuit-error-and-busy",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:46.296Z"
+    },
+    {
+      "name": "real pending aria-busy and cursor",
+      "pass": true,
+      "expected": {
+        "aria_busy": "true",
+        "module_count": 9,
+        "modules_disabled": true,
+        "module_cursor": "wait"
+      },
+      "actual": {
+        "aria_busy": "true",
+        "modules": [
+          {
+            "index": 0,
+            "label": "第1行第1列，直线接头，上与下相连，电源从左侧进入，顺时针旋转",
+            "completed": false,
+            "disabled": true,
+            "cursor": "wait"
+          },
+          {
+            "index": 1,
+            "label": "第1行第2列，直线接头，上与下相连，顺时针旋转",
+            "completed": false,
+            "disabled": true,
+            "cursor": "wait"
+          },
+          {
+            "index": 2,
+            "label": "第1行第3列，转角接头，上与右相连，顺时针旋转",
+            "completed": false,
+            "disabled": true,
+            "cursor": "wait"
+          },
+          {
+            "index": 3,
+            "label": "第2行第1列，转角接头，上与右相连，出口在左侧，顺时针旋转",
+            "completed": false,
+            "disabled": true,
+            "cursor": "wait"
+          },
+          {
+            "index": 4,
+            "label": "第2行第2列，直线接头，上与下相连，顺时针旋转",
+            "completed": false,
+            "disabled": true,
+            "cursor": "wait"
+          },
+          {
+            "index": 5,
+            "label": "第2行第3列，直线接头，上与下相连，顺时针旋转",
+            "completed": false,
+            "disabled": true,
+            "cursor": "wait"
+          },
+          {
+            "index": 6,
+            "label": "第3行第1列，转角接头，上与右相连，顺时针旋转",
+            "completed": false,
+            "disabled": true,
+            "cursor": "wait"
+          },
+          {
+            "index": 7,
+            "label": "第3行第2列，直线接头，上与下相连，顺时针旋转",
+            "completed": false,
+            "disabled": true,
+            "cursor": "wait"
+          },
+          {
+            "index": 8,
+            "label": "第3行第3列，转角接头，上与右相连，顺时针旋转",
+            "completed": false,
+            "disabled": true,
+            "cursor": "wait"
+          }
+        ]
+      },
+      "input": {
+        "operation": "rotate_circuit",
+        "module_index": 0,
+        "transport_delay_ms": 650
+      },
+      "context": {
+        "stage": "circuit-error-and-busy",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:46.354Z"
+    },
+    {
+      "name": "rotation pending recovered",
+      "pass": true,
+      "expected": {
+        "aria_busy": "false",
+        "modules_enabled": true,
+        "cursor_not": [
+          "wait",
+          "progress"
+        ]
+      },
+      "actual": {
+        "aria_busy": "false",
+        "modules": [
+          {
+            "index": 0,
+            "label": "第1行第1列，直线接头，右与左相连，电源从左侧进入，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 1,
+            "label": "第1行第2列，直线接头，上与下相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 2,
+            "label": "第1行第3列，转角接头，上与右相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 3,
+            "label": "第2行第1列，转角接头，上与右相连，出口在左侧，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 4,
+            "label": "第2行第2列，直线接头，上与下相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 5,
+            "label": "第2行第3列，直线接头，上与下相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 6,
+            "label": "第3行第1列，转角接头，上与右相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 7,
+            "label": "第3行第2列，直线接头，上与下相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          },
+          {
+            "index": 8,
+            "label": "第3行第3列，转角接头，上与右相连，顺时针旋转",
+            "completed": false,
+            "disabled": false,
+            "cursor": "pointer"
+          }
+        ]
+      },
+      "input": {},
+      "context": {
+        "stage": "circuit-error-and-busy",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:47.102Z"
+    },
+    {
+      "name": "completed modules disabled cursor not wait",
+      "pass": true,
+      "expected": {
+        "count": 9,
+        "each_completed": true,
+        "each_disabled": true,
+        "cursor_not": [
+          "wait",
+          "progress"
+        ]
+      },
+      "actual": [
+        {
+          "index": 0,
+          "label": "第1行第1列，直线接头，右与左相连，电源从左侧进入，线路已接通",
+          "completed": true,
+          "disabled": true,
+          "cursor": "default"
+        },
+        {
+          "index": 1,
+          "label": "第1行第2列，直线接头，右与左相连，线路已接通",
+          "completed": true,
+          "disabled": true,
+          "cursor": "default"
+        },
+        {
+          "index": 2,
+          "label": "第1行第3列，转角接头，下与左相连，线路已接通",
+          "completed": true,
+          "disabled": true,
+          "cursor": "default"
+        },
+        {
+          "index": 3,
+          "label": "第2行第1列，转角接头，下与左相连，出口在左侧，线路已接通",
+          "completed": true,
+          "disabled": true,
+          "cursor": "default"
+        },
+        {
+          "index": 4,
+          "label": "第2行第2列，直线接头，上与下相连，线路已接通",
+          "completed": true,
+          "disabled": true,
+          "cursor": "default"
+        },
+        {
+          "index": 5,
+          "label": "第2行第3列，直线接头，上与下相连，线路已接通",
+          "completed": true,
+          "disabled": true,
+          "cursor": "default"
+        },
+        {
+          "index": 6,
+          "label": "第3行第1列，转角接头，上与右相连，线路已接通",
+          "completed": true,
+          "disabled": true,
+          "cursor": "default"
+        },
+        {
+          "index": 7,
+          "label": "第3行第2列，直线接头，右与左相连，线路已接通",
+          "completed": true,
+          "disabled": true,
+          "cursor": "default"
+        },
+        {
+          "index": 8,
+          "label": "第3行第3列，转角接头，左与上相连，线路已接通",
+          "completed": true,
+          "disabled": true,
+          "cursor": "default"
+        }
+      ],
+      "input": {
+        "rotations_sent": 10
+      },
+      "context": {
+        "stage": "circuit-error-and-busy",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:48.570Z"
+    },
+    {
+      "name": "completed submit disabled cursor not wait",
+      "pass": true,
+      "expected": {
+        "disabled": true,
+        "cursor_not": [
+          "wait",
+          "progress"
+        ]
+      },
+      "actual": {
+        "disabled": true,
+        "cursor": "default"
+      },
+      "input": {},
+      "context": {
+        "stage": "circuit-error-and-busy",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:48.584Z"
+    },
+    {
+      "name": "44px circuit 1280",
+      "pass": true,
+      "expected": {
+        "minimum_width": 44,
+        "minimum_height": 44,
+        "at_least_one_control": true
+      },
+      "actual": {
+        "controls": [
+          {
+            "index": 0,
+            "tag": "button",
+            "type": null,
+            "label": "← 我的关卡",
+            "width": 96.859375,
+            "height": 44
+          },
+          {
+            "index": 1,
+            "tag": "button",
+            "type": null,
+            "label": "退出登录",
+            "width": 80,
+            "height": 44
+          },
+          {
+            "index": 2,
+            "tag": "button",
+            "type": null,
+            "label": "笔记 0",
+            "width": 64.609375,
+            "height": 44
+          },
+          {
+            "index": 3,
+            "tag": "button",
+            "type": null,
+            "label": "探索伙伴",
+            "width": 78,
+            "height": 44
+          },
+          {
+            "index": 4,
+            "tag": "button",
+            "type": null,
+            "label": "进度与存档",
+            "width": 90,
+            "height": 44
+          },
+          {
+            "index": 5,
+            "tag": "button",
+            "type": null,
+            "label": "关闭面板",
+            "width": 76,
+            "height": 44
+          }
+        ],
+        "minimum_width": 64.609375,
+        "minimum_height": 44
+      },
+      "input": {
+        "scope": "visible enabled buttons and form controls",
+        "label": "circuit 1280"
+      },
+      "context": {
+        "stage": "responsive",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:48.589Z"
+    },
+    {
+      "name": "no overflow circuit 1280",
+      "pass": true,
+      "expected": {
+        "scroll_width_at_most": 1281
+      },
+      "actual": {
+        "scroll_width": 1280,
+        "viewport_width": 1280,
+        "viewport_height": 720
+      },
+      "input": {
+        "tolerance_px": 1
+      },
+      "context": {
+        "stage": "responsive",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:48.591Z"
+    },
+    {
+      "name": "panel scrollable 1280",
+      "pass": true,
+      "expected": {
+        "fits_or_scrollable": true,
+        "scrollable_values": [
+          "auto",
+          "scroll"
+        ]
+      },
+      "actual": {
+        "scroll_height": 841,
+        "client_height": 616,
+        "overflow_y": "auto"
+      },
+      "input": {},
+      "context": {
+        "stage": "responsive",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:48.597Z"
+    },
+    {
+      "name": "44px circuit 390",
+      "pass": true,
+      "expected": {
+        "minimum_width": 44,
+        "minimum_height": 44,
+        "at_least_one_control": true
+      },
+      "actual": {
+        "controls": [
+          {
+            "index": 0,
+            "tag": "button",
+            "type": null,
+            "label": "← 我的关卡",
+            "width": 86.859375,
+            "height": 44
+          },
+          {
+            "index": 1,
+            "tag": "button",
+            "type": null,
+            "label": "退出登录",
+            "width": 70,
+            "height": 44
+          },
+          {
+            "index": 2,
+            "tag": "button",
+            "type": null,
+            "label": "笔记 0",
+            "width": 119.328125,
+            "height": 44
+          },
+          {
+            "index": 3,
+            "tag": "button",
+            "type": null,
+            "label": "探索伙伴",
+            "width": 119.328125,
+            "height": 44
+          },
+          {
+            "index": 4,
+            "tag": "button",
+            "type": null,
+            "label": "进度与存档",
+            "width": 119.34375,
+            "height": 44
+          },
+          {
+            "index": 5,
+            "tag": "button",
+            "type": null,
+            "label": "关闭面板",
+            "width": 76,
+            "height": 44
+          }
+        ],
+        "minimum_width": 70,
+        "minimum_height": 44
+      },
+      "input": {
+        "scope": "visible enabled buttons and form controls",
+        "label": "circuit 390"
+      },
+      "context": {
+        "stage": "responsive",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:48.790Z"
+    },
+    {
+      "name": "no overflow circuit 390",
+      "pass": true,
+      "expected": {
+        "scroll_width_at_most": 391
+      },
+      "actual": {
+        "scroll_width": 390,
+        "viewport_width": 390,
+        "viewport_height": 844
+      },
+      "input": {
+        "tolerance_px": 1
+      },
+      "context": {
+        "stage": "responsive",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:48.791Z"
+    },
+    {
+      "name": "panel scrollable 390",
+      "pass": true,
+      "expected": {
+        "fits_or_scrollable": true,
+        "scrollable_values": [
+          "auto",
+          "scroll"
+        ]
+      },
+      "actual": {
+        "scroll_height": 816,
+        "client_height": 763,
+        "overflow_y": "auto"
+      },
+      "input": {},
+      "context": {
+        "stage": "responsive",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:48.802Z"
+    },
+    {
+      "name": "44px circuit 812",
+      "pass": true,
+      "expected": {
+        "minimum_width": 44,
+        "minimum_height": 44,
+        "at_least_one_control": true
+      },
+      "actual": {
+        "controls": [
+          {
+            "index": 0,
+            "tag": "button",
+            "type": null,
+            "label": "← 我的关卡",
+            "width": 96.859375,
+            "height": 44
+          },
+          {
+            "index": 1,
+            "tag": "button",
+            "type": null,
+            "label": "退出登录",
+            "width": 80,
+            "height": 44
+          },
+          {
+            "index": 2,
+            "tag": "button",
+            "type": null,
+            "label": "笔记 0",
+            "width": 64.609375,
+            "height": 44
+          },
+          {
+            "index": 3,
+            "tag": "button",
+            "type": null,
+            "label": "探索伙伴",
+            "width": 78,
+            "height": 44
+          },
+          {
+            "index": 4,
+            "tag": "button",
+            "type": null,
+            "label": "进度与存档",
+            "width": 90,
+            "height": 44
+          },
+          {
+            "index": 5,
+            "tag": "button",
+            "type": null,
+            "label": "关闭面板",
+            "width": 76,
+            "height": 44
+          }
+        ],
+        "minimum_width": 64.609375,
+        "minimum_height": 44
+      },
+      "input": {
+        "scope": "visible enabled buttons and form controls",
+        "label": "circuit 812"
+      },
+      "context": {
+        "stage": "responsive",
+        "viewport": {
+          "width": 812,
+          "height": 375
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:48.949Z"
+    },
+    {
+      "name": "no overflow circuit 812",
+      "pass": true,
+      "expected": {
+        "scroll_width_at_most": 813
+      },
+      "actual": {
+        "scroll_width": 812,
+        "viewport_width": 812,
+        "viewport_height": 375
+      },
+      "input": {
+        "tolerance_px": 1
+      },
+      "context": {
+        "stage": "responsive",
+        "viewport": {
+          "width": 812,
+          "height": 375
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:48.951Z"
+    },
+    {
+      "name": "panel scrollable 812",
+      "pass": true,
+      "expected": {
+        "fits_or_scrollable": true,
+        "scrollable_values": [
+          "auto",
+          "scroll"
+        ]
+      },
+      "actual": {
+        "scroll_height": 750,
+        "client_height": 301,
+        "overflow_y": "auto"
+      },
+      "input": {},
+      "context": {
+        "stage": "responsive",
+        "viewport": {
+          "width": 812,
+          "height": 375
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:48.958Z"
+    },
+    {
+      "name": "44px scene mobile",
+      "pass": true,
+      "expected": {
+        "minimum_width": 44,
+        "minimum_height": 44,
+        "at_least_one_control": true
+      },
+      "actual": {
+        "controls": [
+          {
+            "index": 0,
+            "tag": "button",
+            "type": null,
+            "label": "← 我的关卡",
+            "width": 86.859375,
+            "height": 44
+          },
+          {
+            "index": 1,
+            "tag": "button",
+            "type": null,
+            "label": "退出登录",
+            "width": 70,
+            "height": 44
+          },
+          {
+            "index": 2,
+            "tag": "button",
+            "type": null,
+            "label": "笔记 0",
+            "width": 119.328125,
+            "height": 44
+          },
+          {
+            "index": 3,
+            "tag": "button",
+            "type": null,
+            "label": "探索伙伴",
+            "width": 119.328125,
+            "height": 44
+          },
+          {
+            "index": 4,
+            "tag": "button",
+            "type": null,
+            "label": "进度与存档",
+            "width": 119.34375,
+            "height": 44
+          },
+          {
+            "index": 5,
+            "tag": "button",
+            "type": null,
+            "label": "查看钥匙",
+            "width": 68.765625,
+            "height": 44
+          },
+          {
+            "index": 6,
+            "tag": "button",
+            "type": null,
+            "label": "查看数据纸",
+            "width": 68.765625,
+            "height": 44
+          },
+          {
+            "index": 7,
+            "tag": "button",
+            "type": null,
+            "label": "查看读取说明",
+            "width": 68.765625,
+            "height": 44
+          },
+          {
+            "index": 8,
+            "tag": "button",
+            "type": null,
+            "label": "查看观测台配电线路",
+            "width": 68.765625,
+            "height": 44
+          },
+          {
+            "index": 9,
+            "tag": "button",
+            "type": null,
+            "label": "查看装置2",
+            "width": 68.765625,
+            "height": 44
+          },
+          {
+            "index": 10,
+            "tag": "button",
+            "type": null,
+            "label": "查看装置3",
+            "width": 68.765625,
+            "height": 44
+          },
+          {
+            "index": 11,
+            "tag": "button",
+            "type": null,
+            "label": "查看装置4",
+            "width": 68.765625,
+            "height": 44
+          },
+          {
+            "index": 12,
+            "tag": "button",
+            "type": null,
+            "label": "出口 →",
+            "width": 368,
+            "height": 44
+          }
+        ],
+        "minimum_width": 68.765625,
+        "minimum_height": 44
+      },
+      "input": {
+        "scope": "visible enabled buttons and form controls",
+        "label": "scene mobile"
+      },
+      "context": {
+        "stage": "responsive",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:49.137Z"
+    },
+    {
+      "name": "no overflow scene mobile",
+      "pass": true,
+      "expected": {
+        "scroll_width_at_most": 391
+      },
+      "actual": {
+        "scroll_width": 390,
+        "viewport_width": 390,
+        "viewport_height": 844
+      },
+      "input": {
+        "tolerance_px": 1
+      },
+      "context": {
+        "stage": "responsive",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:49.138Z"
+    },
+    {
+      "name": "real selected save restore",
+      "pass": true,
+      "expected": {
+        "http_ok": true,
+        "after": {
+          "status": "playing",
+          "objects": 7,
+          "clues": 0,
+          "inventory": 0,
+          "circuits": 0,
+          "completed_circuits": 0
+        }
+      },
+      "actual": {
+        "http_status": 200,
+        "before": {
+          "status": "playing",
+          "objects": 7,
+          "clues": 0,
+          "inventory": 0,
+          "circuits": 1,
+          "completed_circuits": 1
+        },
+        "after": {
+          "status": "playing",
+          "objects": 7,
+          "clues": 0,
+          "inventory": 0,
+          "circuits": 0,
+          "completed_circuits": 0
+        }
+      },
+      "input": {
+        "selected_synthetic_save_name": "Synthetic线路前"
+      },
+      "context": {
+        "stage": "restore",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:49.622Z"
+    },
+    {
+      "name": "restore early observation and clues",
+      "pass": true,
+      "expected": {
+        "circuits": 0,
+        "clues": 0
+      },
+      "actual": {
+        "status": "playing",
+        "objects": 7,
+        "clues": 0,
+        "inventory": 0,
+        "circuits": 0,
+        "completed_circuits": 0
+      },
+      "input": {},
+      "context": {
+        "stage": "restore",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:41:49.622Z"
+    },
+    {
+      "name": "execution failure",
+      "pass": false,
+      "expected": "focused flow completes",
+      "actual": {
+        "error_type": "TimeoutError2",
+        "error_code": null
+      },
+      "input": {},
+      "context": {
+        "stage": "relogin-and-legacy",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:42:01.811Z"
+    },
+    {
+      "name": "owned server stopped",
+      "pass": true,
+      "expected": true,
+      "actual": true,
+      "input": {
+        "owned_port": 8002
+      },
+      "context": {
+        "stage": "cleanup",
+        "synthetic": true
+      },
+      "observed_at_utc": "2026-10-28T07:42:02.402Z"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "create-desktop.png",
+      "stage": "registration-and-create",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "captured_at_utc": "2026-10-28T07:41:41.471Z"
+    },
+    {
+      "path": "game-desktop.png",
+      "stage": "theme-and-generation",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "captured_at_utc": "2026-10-28T07:41:45.533Z"
+    },
+    {
+      "path": "circuit-1280.png",
+      "stage": "responsive",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "captured_at_utc": "2026-10-28T07:41:48.773Z"
+    },
+    {
+      "path": "circuit-390.png",
+      "stage": "responsive",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_at_utc": "2026-10-28T07:41:48.928Z"
+    },
+    {
+      "path": "circuit-812.png",
+      "stage": "responsive",
+      "viewport": {
+        "width": 812,
+        "height": 375
+      },
+      "captured_at_utc": "2026-10-28T07:41:49.072Z"
+    },
+    {
+      "path": "game-mobile.png",
+      "stage": "responsive",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_at_utc": "2026-10-28T07:41:49.289Z"
+    }
+  ],
+  "owned_temp": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-experience-Lr1hiI",
+  "owned_server_stopped": true,
+  "player8001_service_contacted": false,
+  "transport": "isolated browser context forwards all 8001 requests to owned8002 with original Host/Origin",
+  "paid_calls": 0,
+  "real_model_semantic_quality_tested": false,
+  "legacy_theme_omission_explicit_simulation": true,
+  "privacy": "Synthetic fixture only; no credential value, Cookie, token, full state, hidden definition, or raw server log is recorded"
+}
