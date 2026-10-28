@@ -20,7 +20,7 @@
 
 同轮用户追加固定证据与真人核验要求：既有Backend临时Delivery拥有scripts/evidence_hub.py、新test_evidence_hub.py及generation_trace.py仅导出扩展；既有检查Owner仅调整runner默认输出到当前固定阶段。Main拥有实际归档/索引、历史兼容说明及真人已有反馈导入；QA只做归档工具必要窄验，不重跑已完成11API/浏览器/build。原反馈截图来自用户提供的2026-10-28附件，不是新截屏或修复后接受。
 
-E&O与归档阶段技术完成：独立11项定向API通过；浏览器首轮核心+修复检查器后的auth-only窄补联合通过，首轮exit1保留；独立归档工具5项TEMP检查通过。Main已实际归档代表性历史结果及用户修复前原话/原截图，当前人类检查待提供。没有额外build/付费、旧pin刷新或美术制作；后续每阶段持续记录，完成时必须明确邀请本人检查。
+E&O与归档阶段技术完成：独立11项定向API通过；浏览器首轮核心+修复检查器后的auth-only窄补联合通过，首轮exit1保留；独立归档工具5项TEMP检查通过。Main已实际归档代表性历史结果及用户修复前原话/原截图。随后用户实际反馈随机生成/通关/注册/登录正常，但UI简陋、主题画面不符、素材过少；本轮原话/原图另存当前真人round-01，结论changes-requested，仅覆盖实际反馈，E&O逐条检查/同伴/整体接受仍未确认。没有额外build/付费、旧pin刷新或美术制作；后续每阶段持续记录，完成时必须明确邀请本人检查。
 
 The human is the sole developer. The attachment docs/execution-plan.md is the accepted project scope, not proof of execution. Never invent tests, people, approvals or model calls.
 Main owns AGENTS.md, PLAN.md, STATUS.md, DECISIONS.md, integration and git. Agents write only assigned paths, never commit, never spawn further agents. Shared workspace; do not overwrite another owner's files. Default delegates gpt-6.1-sol/high, simple mechanical tasks gpt-6-luna/medium. No Astra unless needed. Main runtime model is not independently introspectable and must not be claimed as verified.

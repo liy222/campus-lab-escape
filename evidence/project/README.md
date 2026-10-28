@@ -13,7 +13,7 @@
 - [独立复核说明](stages/2026-10-28-evaluation-observability/reviews/qa.md)
 - [本阶段真人检查表](human-reviews/2026-10-28-evaluation-observability/round-01/review.md)
 
-真人状态保持未核验，直到收到本人实际反馈。技术检查和真人结论分别记录。
+本人已提交[本轮实际试玩反馈和原截图](human-reviews/2026-10-28-evaluation-observability/round-01/review.md)：生成、通关、注册、登录正常；UI简陋、主题画面不符、素材不足，状态为需改进。E&O证据条目和真实同伴仍未确认，整体未接受。技术结果摘要保留编写时状态，最新真人结论以阶段元数据和真人记录为准。
 
 ## 目录怎样使用
 

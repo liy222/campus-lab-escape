@@ -5,7 +5,7 @@
 按用户新要求，以完整功能阶段组织开发、必要验证和一次提交推送；普通修复在阶段内自主完成，停止逐小步审计、重复封存和回执提交。大阶段完成后给出可体验入口和效果说明，由用户集中检查。
 前轮交接已完成并推送1321350：当时只读预检READY（exit0），确定性评价三项均INSUFFICIENT_EVIDENCE（exit2）。这是此前来源的有限结果。
 
-体验反馈修复已完成并推送d9feba2/3afe821：线路反馈、原主题/故事展示与动态界面已修订。Evaluation/Observability和固定证据入口已实现，必要定向及独立检查完成；证据从开发开始持续保存，历史结果按来源归档。当前交付本人检查，记录真实反馈和截图，真人/同伴核条保持待办。之后再进入“雨夜天文社”资源包，见正式构建计划第18、19节。
+体验反馈修复已完成并推送d9feba2/3afe821：线路反馈、原主题/故事展示与动态界面已修订。Evaluation/Observability和固定证据入口已实现，必要定向及独立检查完成；证据从开发开始持续保存，历史结果按来源归档。本人已实际反馈随机生成、通关、注册与登录正常，UI、主题画面关联与素材数量需改进，原话和原图已保存。下一完整阶段为主题场景、美术与UI一起改善，以此前“雨夜天文社”首包为起点；E&O逐条核查/真实同伴仍未确认，见正式构建计划第18、19节。
 
 Source: docs/execution-plan.md V2.1, R01-R18 and A01-A28 retained without reduction.
 M0 T01 scope DONE (course source PPT not supplied), T02 contract READY, T03 runnable scaffold READY, T04 mock probe READY / real BLOCKED.

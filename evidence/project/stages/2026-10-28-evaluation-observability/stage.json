@@ -4,11 +4,16 @@
   "title": "Evaluation与Observability补齐及固定证据入口",
   "created_at": "2026-10-28T09:45:38.869486Z",
   "technical_status": "passed_focused_scopes",
-  "human_review_status": "not_reviewed",
-  "owner_review_status": "not_reviewed",
+  "human_review_status": "changes-requested",
+  "owner_review_status": "changes-requested",
   "peer_review_status": "not_reviewed",
   "current_human_review_round": 1,
-  "human_review_rounds": {},
+  "human_review_rounds": {
+    "1": {
+      "owner": "changes-requested",
+      "peer": "not_reviewed"
+    }
+  },
   "collections": [
     {
       "source_path": "D:\\深度能力\\evidence\\upgrade\\v5.0\\evaluation-observability-20261028\\api-result.json",
@@ -129,5 +134,26 @@
     }
   ],
   "summary": "evaluation/summary.json",
-  "scope": "内部生成阶段观测、实际值判定与固定证据入口；不含新付费或主题美术"
+  "scope": "内部生成阶段观测、实际值判定与固定证据入口；不含新付费或主题美术",
+  "human_feedback_scope": {
+    "event_id": "6fc604ddecd9498d8b07b25f33c5e797",
+    "delivery_baseline_context": "86680be3fc510c003b3267055ecdc81816c9fa3e",
+    "observed_source_revision": null,
+    "user_reported_pass": [
+      "random_generation",
+      "playthrough",
+      "registration",
+      "login"
+    ],
+    "user_reported_changes": [
+      "ui_presentation",
+      "theme_visual_consistency",
+      "art_asset_coverage"
+    ],
+    "not_confirmed": [
+      "EO_evidence_item_review",
+      "peer_review",
+      "overall_acceptance"
+    ]
+  }
 }
