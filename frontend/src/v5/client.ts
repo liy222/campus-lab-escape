@@ -1,7 +1,7 @@
 import { ApiError, type VisibleState, type Session, api as classicApi } from '../api';
 export type Identity = { user_id: string; username: string };
 export type Auth = { user: Identity | null; auth_context: string | null; csrf_token: string };
-export type Level = { level_id: string; title?: string; theme?: string; room_count: number; difficulty: string; created_at?: string };
+export type Level = { level_id: string; title?: string; story?: string; theme?: string; room_count: number; difficulty: string; created_at?: string };
 export type Run = { session_id: string; mode: 'classic' | 'generated'; level_id: string | null; status?: string; room_id?: string; revision?: number };
 export type Job = { job_id: string; status: 'pending'|'generating'|'validating'|'ready'|'rejected'|'failed'|'unknown'; level_id?: string; error_code?: string; error?: {code?:string;message?:string}|string; message?: string };
 export function sanitize(value: string, key = '') { return (key ? value.split(key).join('[已隐藏]') : value).replace(/sk-[A-Za-z0-9_-]{8,}/g, '[已隐藏]'); }

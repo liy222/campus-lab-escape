@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-28",
+  "actor": "independent AI QA agent",
+  "status": "PASS_IN_FOCUSED_SYNTHETIC_SCOPE_JOINT",
+  "blocking_findings": [],
+  "api": {
+    "command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "-q",
+      "--tb=no",
+      "tests/v5/test_theme_experience.py",
+      "tests/v5/test_security.py::test_all_private_ids_read_write_denied_without_owner_change",
+      "tests/v5/test_blueprint_generation.py::test_preblueprint_full_definition_and_archive_restore_without_new_selection"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 7.846,
+    "summary": "5 passed, 1 warning in 5.85s",
+    "paid_calls": 0
+  },
+  "browser": {
+    "first": {
+      "command": "node tests/v5/run_experience_browser.mjs",
+      "execution": "29e57a/fb0bc2",
+      "exit_code": 1,
+      "scope": "Registration/create-page controls and screenshot completed; exact select-label QA locator timed out before any generation job"
+    },
+    "remaining": {
+      "command": "node tests/v5/run_experience_browser.mjs --remaining",
+      "execution": "8ae86a/825798",
+      "exit_code": 1,
+      "scope": "Theme/story, actual circuit error/rotate/success/cursor/busy, three viewports and save/advance/restore passed; QA login-form toggle timed out at final relogin"
+    },
+    "tail": {
+      "command": "node tests/v5/run_experience_browser.mjs --tail",
+      "execution": "fccbca/c95c82",
+      "exit_code": 0,
+      "scope": "Only same owned Synthetic TEMP account relogin, persisted theme and explicit legacy-theme response omission; no repeated circuit/layout/save checks"
+    },
+    "completed_modules_disabled_cursor_not_wait": true,
+    "pending_aria_busy_during_delayed_actual_action": true,
+    "actual_disconnected_error_recovery": true,
+    "viewports": [
+      [
+        1280,
+        720
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        812,
+        375
+      ]
+    ],
+    "visible_enabled_controls_44px_no_horizontal_overflow": true,
+    "panels_scrollable": true,
+    "new_save_advance_selected_restore": true,
+    "theme_after_relogin": true,
+    "legacy_theme_omission": "Explicit intercepted response simulation, not a historical player database",
+    "owned_servers_stopped": true,
+    "player8001_contacted": false
+  },
+  "build": "Reused Frontend Owner sole successful dist-v5 build; QA did not rebuild",
+  "screenshots": [
+    "create-desktop.png",
+    "browser-run2/game-desktop.png",
+    "browser-run2/circuit-1280.png",
+    "browser-run2/circuit-390.png",
+    "browser-run2/circuit-812.png",
+    "browser-run2/game-mobile.png"
+  ],
+  "paid_calls": 0,
+  "limitations": [
+    "Synthetic generator and controlled text, not real model theme/semantic quality proof",
+    "Joint coverage; two QA locator failures preserved, not one all-green browser run",
+    "Headless Chrome viewports, not physical mobile or human usability signoff",
+    "Focused first circuit and save/restore, not complete route/all old tests",
+    "Existing generic hand-painted assets; no theme-specific art generation"
+  ]
+}

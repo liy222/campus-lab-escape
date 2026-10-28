@@ -1,0 +1,117 @@
+{
+  "kind": "Synthetic focused experience browser",
+  "exit_code": 1,
+  "checks": [
+    {
+      "name": "owned port8002 available",
+      "pass": true
+    },
+    {
+      "name": "list theme",
+      "pass": true
+    },
+    {
+      "name": "synthetic input cleared",
+      "pass": true
+    },
+    {
+      "name": "archive theme and Synthetic story",
+      "pass": true
+    },
+    {
+      "name": "actual 3x3 modules",
+      "pass": true
+    },
+    {
+      "name": "actual disconnected circuit error",
+      "pass": true
+    },
+    {
+      "name": "error shown and busy recovered",
+      "pass": true
+    },
+    {
+      "name": "real pending aria-busy",
+      "pass": true
+    },
+    {
+      "name": "completed modules disabled cursor not wait",
+      "pass": true
+    },
+    {
+      "name": "completed submit disabled cursor not wait",
+      "pass": true
+    },
+    {
+      "name": "44px circuit 1280",
+      "pass": true
+    },
+    {
+      "name": "no overflow circuit 1280",
+      "pass": true
+    },
+    {
+      "name": "panel scrollable 1280",
+      "pass": true
+    },
+    {
+      "name": "44px circuit 390",
+      "pass": true
+    },
+    {
+      "name": "no overflow circuit 390",
+      "pass": true
+    },
+    {
+      "name": "panel scrollable 390",
+      "pass": true
+    },
+    {
+      "name": "44px circuit 812",
+      "pass": true
+    },
+    {
+      "name": "no overflow circuit 812",
+      "pass": true
+    },
+    {
+      "name": "panel scrollable 812",
+      "pass": true
+    },
+    {
+      "name": "44px scene mobile",
+      "pass": true
+    },
+    {
+      "name": "no overflow scene mobile",
+      "pass": true
+    },
+    {
+      "name": "real selected save restore",
+      "pass": true
+    },
+    {
+      "name": "restore early observation and clues",
+      "pass": true
+    },
+    {
+      "name": "failure",
+      "pass": false,
+      "stage": "relogin-and-legacy",
+      "error_type": "TimeoutError2"
+    }
+  ],
+  "screenshots": [
+    "game-desktop.png",
+    "circuit-1280.png",
+    "circuit-390.png",
+    "circuit-812.png",
+    "game-mobile.png"
+  ],
+  "owned_server_stopped": true,
+  "player8001_service_contacted": false,
+  "transport": "isolated context all 8001 requests forwarded to owned8002 with original Host/Origin",
+  "paid_calls": 0,
+  "real_model_semantic_quality_tested": false,
+  "legacy_theme_omission_explicit_simulation": true
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "Synthetic focused experience browser",
+  "exit_code": 0,
+  "checks": [
+    {
+      "name": "owned port8002 available",
+      "pass": true
+    },
+    {
+      "name": "theme survives relogin",
+      "pass": true
+    },
+    {
+      "name": "simulated legacy omission story fallback",
+      "pass": true
+    },
+    {
+      "name": "simulated legacy no theme accepted",
+      "pass": true
+    },
+    {
+      "name": "no external browser requests",
+      "pass": true
+    }
+  ],
+  "screenshots": [],
+  "owned_server_stopped": true,
+  "player8001_service_contacted": false,
+  "transport": "isolated context all 8001 requests forwarded to owned8002 with original Host/Origin",
+  "paid_calls": 0,
+  "real_model_semantic_quality_tested": false,
+  "legacy_theme_omission_explicit_simulation": true
+}

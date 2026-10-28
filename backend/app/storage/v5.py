@@ -213,11 +213,22 @@ class V5Database:
             c.execute('INSERT INTO generated_levels VALUES(?,?,?,?,?,?,?)',(lid,job['user_id'],job_id,canonical(compiled.private_dump()),compiled.definition_hash,'1.0.0',canonical(metadata)))
             c.execute("UPDATE level_generations SET status='ready',level_id=?,updated_at=? WHERE job_id=?",(lid,time.time(),job_id))
     def levels(self,uid,lid=None):
+        # Generation requests are Key/cookie-redacted by the sole HTTP creation
+        # route before reservation. Project only the owning job's theme; never
+        # open or rewrite the private definition or stored legacy metadata.
+        query=('SELECT l.metadata_json,j.theme FROM generated_levels l '
+               'LEFT JOIN level_generations j ON j.job_id=l.job_id '
+               'AND j.user_id=l.user_id AND j.level_id=l.level_id '
+               'WHERE l.user_id=?')
+        def public(row):
+            result=json.loads(row['metadata_json'])
+            if row['theme'] is not None: result['theme']=row['theme']
+            return result
         with self.transaction() as c:
             if lid:
-                row=c.execute('SELECT metadata_json FROM generated_levels WHERE user_id=? AND level_id=?',(uid,lid)).fetchone()
-                return json.loads(row[0]) if row else None
-            return [json.loads(r[0]) for r in c.execute('SELECT metadata_json FROM generated_levels WHERE user_id=? ORDER BY rowid DESC',(uid,))]
+                row=c.execute(query+' AND l.level_id=?',(uid,lid)).fetchone()
+                return public(row) if row else None
+            return [public(row) for row in c.execute(query+' ORDER BY l.rowid DESC',(uid,))]
 
 class BoundStore(Store):
     """Per-request facade. No mutable global rules/principal switching."""

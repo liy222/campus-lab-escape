@@ -10,6 +10,10 @@
 - 大阶段完成时提供可打开的效果、简短体验步骤与重要已知问题，再请用户集中检查；不把命令数或审计数作为完成效果。
 - 保留现有密钥、数据库和未跟踪文件保护；付费调用仍须有效有限授权。未发生的测试、调用或人工验收不得写成完成。
 
+2026-10-28体验反馈轮：Main统筹/root docs/Git；新建 v5_experience_frontend_oct28（实际请求gpt-6.1-sol/high）拥有frontend/；新建 v5_experience_theme_oct28（实际请求gpt-6.1-sol/high）临时拥有AI/v5.py、domain/generation_content_v2.py、storage/v5.py、必要的contracts/v2/api.schema.json及其build_contracts.py生成源，以及新tests/v5/test_theme_experience.py。只修线路等待指针、主题元数据/提示与界面；素材包下一阶段实施。稳定后一次独立必要复核，不建多层候选/封条，0新增付费；Main/运行时型号不作独立核验声明。
+
+本轮既有blueprint_qa独立拥有新experience_fixture_server.py/run_experience_browser.mjs、集中报告与experience-20261028产物，5API0及浏览器必要范围联合完成；两次新QA定位失败保留、不冒充单轮全绿，未重建或读取玩家库。Main看4张实际PNG后接受本次有限修复并重启自有预览供用户体验。普通liy222一次提交推送；旧评价登记/pin不刷新，主题专属图像未制作。
+
 The human is the sole developer. The attachment docs/execution-plan.md is the accepted project scope, not proof of execution. Never invent tests, people, approvals or model calls.
 Main owns AGENTS.md, PLAN.md, STATUS.md, DECISIONS.md, integration and git. Agents write only assigned paths, never commit, never spawn further agents. Shared workspace; do not overwrite another owner's files. Default delegates gpt-6.1-sol/high, simple mechanical tasks gpt-6-luna/medium. No Astra unless needed. Main runtime model is not independently introspectable and must not be claimed as verified.
 Spec owns docs/SPEC.md, docs/level_design.md, contracts/. Delivery owns scripts/, README.md, release/, .gitignore, .env.example. Backend owns backend/app/{domain,api,storage}, backend/app/main.py and Python dependencies. Frontend owns frontend/. AI owns backend/app/ai/. QA owns tests/ and review/findings/. Experiments owns experiments/. Evaluator owns evaluation/.

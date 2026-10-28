@@ -1,0 +1,33 @@
+{
+  "kind": "Synthetic focused experience browser",
+  "exit_code": 1,
+  "checks": [
+    {
+      "name": "owned port8002 available",
+      "pass": true
+    },
+    {
+      "name": "44px create desktop",
+      "pass": true
+    },
+    {
+      "name": "no overflow create desktop",
+      "pass": true
+    },
+    {
+      "name": "failure",
+      "pass": false,
+      "stage": "registration-and-create",
+      "error_type": "TimeoutError2"
+    }
+  ],
+  "screenshots": [
+    "create-desktop.png"
+  ],
+  "owned_server_stopped": true,
+  "player8001_service_contacted": false,
+  "transport": "isolated context all 8001 requests forwarded to owned8002 with original Host/Origin",
+  "paid_calls": 0,
+  "real_model_semantic_quality_tested": false,
+  "legacy_theme_omission_explicit_simulation": true
+}

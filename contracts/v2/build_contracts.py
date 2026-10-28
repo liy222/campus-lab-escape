@@ -65,6 +65,8 @@ def build():
     definitions['auth_data']=obj({'user':nullable(obj({'user_id':sid,'username':string(24)})),'auth_context':nullable(sid),'csrf_token':string(256)})
     definitions['job']=obj({'job_id':sid,'status':enum('pending','generating','validating','ready','rejected','failed','unknown'),'room_count':enum(1,2,3),'difficulty':enum('easy','normal','hard'),'created_at':{'type':'number'},'updated_at':{'type':'number'},'level_id':nullable(sid),'error_code':nullable(sid)})
     definitions['level']=obj({'level_id':sid,'title':string(40),'story':string(240),'room_count':enum(1,2,3),'difficulty':enum('easy','normal','hard'),'definition_hash':string(64),'definition_version':const('1.0.0'),'rules_version':const('1.0.0'),'policy_version':enum('0.9.0','1.0.0'),'created_at':stamp})
+    # Optional read projection: redaction can expand a 2000-character theme 10x.
+    definitions['level']['properties']['theme']=string(20000)
     definitions['session_summary']=obj({'session_id':sid,'mode':enum('classic','generated'),'level_id':string(100),'created_at':stamp,'status':status,'room_id':sid,'revision':n,'clues_found':n,'puzzles_solved':n})
     def response(name, data): definitions[name]=obj({'ok':const(True),'event_id':sid,'data':data})
     response('auth_response',ref('auth_data')); response('logout_response',obj({'logged_out':const(True)}))
