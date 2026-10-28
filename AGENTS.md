@@ -1,4 +1,15 @@
 # Agent ownership
+
+### 当前执行节奏（用户要求，2026-10-28）
+
+本节优先于历史记录中逐小步冻结、审计、留档和同步的做法；功能范围与原文件归属继续沿用。
+
+- 按完整功能阶段持续推进，普通实现与修复由代理自行完成；阶段稳定后集中做必要验证与一次独立复核，不逐小步等待确认。
+- 验证针对实际改动；复用未受影响的结果，修复后只检查受影响范围。小型文案或低影响改动不新建候选、哈希封条、审计回执或层层接受记录。
+- 同一功能阶段集中提交并推送，不为同步回执再建一次提交。进度只说已完成的功能、剩余工作和实际阻塞。
+- 大阶段完成时提供可打开的效果、简短体验步骤与重要已知问题，再请用户集中检查；不把命令数或审计数作为完成效果。
+- 保留现有密钥、数据库和未跟踪文件保护；付费调用仍须有效有限授权。未发生的测试、调用或人工验收不得写成完成。
+
 The human is the sole developer. The attachment docs/execution-plan.md is the accepted project scope, not proof of execution. Never invent tests, people, approvals or model calls.
 Main owns AGENTS.md, PLAN.md, STATUS.md, DECISIONS.md, integration and git. Agents write only assigned paths, never commit, never spawn further agents. Shared workspace; do not overwrite another owner's files. Default delegates gpt-6.1-sol/high, simple mechanical tasks gpt-6-luna/medium. No Astra unless needed. Main runtime model is not independently introspectable and must not be claimed as verified.
 Spec owns docs/SPEC.md, docs/level_design.md, contracts/. Delivery owns scripts/, README.md, release/, .gitignore, .env.example. Backend owns backend/app/{domain,api,storage}, backend/app/main.py and Python dependencies. Frontend owns frontend/. AI owns backend/app/ai/. QA owns tests/ and review/findings/. Experiments owns experiments/. Evaluator owns evaluation/.
@@ -659,3 +670,6 @@ Maind2549d reads Delivery97d258ee/twoexactprefix appendtexts, actualscope/QA/cos
 
 ### Reverse actual G3 remote sealed / paid terminal, 2026-10-27
 Actualresult61d2b1396ae6ab19b77f73d77967d9b32a8bca7c normalcommit/push0 113984, remote/GitHubauthor+committerliy222 verified.31selectedfiles exactindex/finitecredential0/privatepaths0/CRLF-awarewhitespace0; postpush455/public19/private4hashignore/original8 match. Actualone8a5ac3 exit0/33HTTP EXIT, localjoint firstff58e3 metadataexit1 afterstateasserts +tail6b542d0/no repeated33 retained. TECH+HostfinitePASS/storynoexplicitnewunsupportedop, front/back hints/partial0/nonhuman0S/opaqueAPIhash limits/oldOPEN remain. usageupper.00940536/reserved.162584/calls149to150/old3unknownsame/new0/pending0/frozenfalse/remainingpaid0. Allproduct/runner/QA/Delivery/rawSTOP; Mainonlyroot/actual-sync metadata now, no automaticfix/retry/newpaid/newagents/runtimeinference/release/tag/mainmerge/deploy/Actions.
+
+### Delivery readiness read-only evaluator status and document GO, 2026-10-27
+Usercontinues after28fe5f3; Mainacb2a1/7bb2b5/570a1a finds allregistered53sourcesmatch, existingregistrationREADY butEvaluatorREADME stillclaimsNOT_READY; priorA1/A2real delivery confirmedhistoricalaa8740, no automaticpaidrepeat. Newdelivery-readiness/plan.json freezesdoc-only scope: Mainonceexistingprecheck+deterministicCLI (newownedreportoutputs only), no paid/mock/calibration/targetcode/Key/liveledger/userDB; then currenthandoff. ExistingDelivery temporaryonlyevaluation/v5/README.md plusnewdocrecord afteractualstatus, no loader/pin/contract/registration changes; existingQAfinalstaticread/hash onlyafterdocSTOP. Old455 broadmap includesEvalREADME so docchange isexplicitnewmetadataepoch, not gamecodechange or newruntimequalityclaim. Product/AI/API/Store/oldtests/raw frozen; no newfeatures/agents/Astra/runtime inference/release/tag/mainmerge/deploy/Actions.

@@ -1,4 +1,10 @@
 # Plan
+
+## 当前推进方式（2026-10-28）
+
+按用户新要求，以完整功能阶段组织开发、必要验证和一次提交推送；普通修复在阶段内自主完成，停止逐小步审计、重复封存和回执提交。大阶段完成后给出可体验入口和效果说明，由用户集中检查。
+本轮交接整理已完成：只读预检READY（exit0），确定性评价三项均INSUFFICIENT_EVIDENCE（exit2）；评价说明与当前交接已通过一次独立静态复核，无阻断发现，以本次提交集中交付。不新增功能、付费调用或重复测试。
+
 Source: docs/execution-plan.md V2.1, R01-R18 and A01-A28 retained without reduction.
 M0 T01 scope DONE (course source PPT not supplied), T02 contract READY, T03 runnable scaffold READY, T04 mock probe READY / real BLOCKED.
 M1 T05 state <- T02,T03; T06 R1 <- T05; T07 UI <- T02,T03,T06; T08 independent QA <- T06,T07.
@@ -451,3 +457,5 @@ T7仍缺可靠的真实多房间生成；伙伴已有一个阶段两轮有限实
 2026-10-27当前反向实际样本有限接收：33HTTP到EXIT、反向item→sequence→code→circuit→sequence→code与初始/33状态/最终保存hash匹配。独立local为首helper元数据字段exit1后窄tail0联合，原件保留、未重复回放。Host同名钥匙/非消耗/relation门通过；故事无明确新增未支持操作，前后段命名风险、actualpartial0和自动0S非人类限制保留。用量上界0.00940536元、1次名额已尽。455源/公开19+私有4哈希、预检8/旧QA102/原8匹配；仅文档及liy222提交收尾，不自动修提示或付费。
 
 2026-10-27反向真实单样本结果已正常推送61d2b1396ae6ab19b77f73d77967d9b32a8bca7c，远端及GitHub作者/提交者liy222核实。31选择性文件字节/凭据/路径/格式通过；455源/19公开产物/4本地原件哈希及原8保持。实际1次/33HTTP出口、有限技术/Host通过，局部审计联合且失败保留；用量费用上界0.00940536元、名额用完，前后命名/partial0/真人限制和旧OPEN保留。当前仅同步元数据，不重测或追加调用。
+
+2026-10-27继续当前交付核查：旧评价登记53来源仍逐字节匹配、READY及9证据，但Evaluator README还写未登记。按T7只做一次只读precheck/一次deterministic确认当前有限状态，随后修正该文档、补当前交接与独立静态核查；不改评价合同/登记/pin或产品，不重复真实伙伴/生成、旧全套或付费。新Host/36结构与旧有限三Claim边界分开。

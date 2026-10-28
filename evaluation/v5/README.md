@@ -2,9 +2,16 @@
 
 This adapter reads registered evidence through the existing `EvidenceTools` and `Evaluator`. It never imports or runs game code, target scripts, hooks or AGENTS instructions. The three real criteria are limited to C1 nine room/difficulty admissions and actual replays plus twenty rejected examples; C2 two-account read/restore isolation; C3 three saved moments and corrupt-save preservation. They do not certify arbitrary generated levels, absolute security, model quality or human approval.
 
-The trusted contract is `contract.json`, ID `campus-lab-v5-engineering`, version `1.0.0`. `registration.schema.json` is strict, `registration.template.json` is an intentionally unusable template, and `registration.json` is deliberately NOT_READY. The new loader uses its own EvidenceTools instance. No old contract, freeze, case, engine, reader, provider or old result is changed. The CLI change is only the exact v5 release/fixture routing branch.
+The trusted contract is `contract.json`, ID `campus-lab-v5-engineering`, version `1.0.0`. `registration.schema.json` is strict, and `registration.template.json` is an intentionally unusable template. The current pinned `registration.json` is READY for source/evidence identity checks. The new loader uses its own EvidenceTools instance. No old contract, freeze, case, engine, reader, provider or old result is changed. The CLI change is only the exact v5 release/fixture routing branch.
 
-## Main registration handoff
+
+## Current read-only status (2026-10-27)
+
+Main's existing precheck returned READY (exit 0); the existing deterministic assessment returned exit 2 with C1, C2 and C3 all `INSUFFICIENT_EVIDENCE`. The 81 evaluator inputs matched before and after, and the 53 registered source entries and nine evidence entries remain matched. READY confirms pinned identity/coverage only, not semantic PASS; this registration does not certify newer Host structure-catalog behavior (36 content-contract variants, not 36 topologies). The three historical unknown paid-call records remain a gate; no paid evaluation, Key, ledger or network access occurred. See the [precheck report](../../evidence/upgrade/v5.0/evaluator-owner/runs/20261027T145049591159Z/report.json), [deterministic report](../../evidence/upgrade/v5.0/evaluator-owner/runs/20261027T145050057576Z/report.json) and [read-only result receipt](../../evidence/upgrade/v5.0/delivery-readiness/readonly-results.json).
+
+## Main registration handoff (future trusted re-registration)
+
+The steps below describe a future trusted re-registration only. They do not automatically modify the current READY registration or its pinned evidence.
 
 Only Main may perform the final registration after actual runs and independent review. Do not fill placeholders from planned scope, completion prose or synthetic fixtures.
 
@@ -30,7 +37,7 @@ python -B -X utf8 -m evaluation.cli calibrate --fixture-set v5-k1-k6-v1 --mode m
 python -B -X utf8 -m evaluation.cli calibrate --fixture-set v5-k1-k6-v1 --mode deterministic
 ```
 
-Without Main's actual registration, precheck reports NOT_READY and exits 2; the real three Claims remain INSUFFICIENT_EVIDENCE. A ready precheck is identity/coverage validation, not a semantic PASS. Deterministic-only assessment cannot produce semantic PASS; definite failures may still be FAIL. Real-release mock always asks for INSUFFICIENT_EVIDENCE. Mock judgements are explicitly synthetic.
+For a future unregistered record, precheck may report NOT_READY and exit 2. In the current read-only check, precheck is READY, while deterministic C1-C3 remain INSUFFICIENT_EVIDENCE. A ready precheck is identity/coverage validation, not semantic PASS. Deterministic-only assessment cannot produce semantic PASS; definite failures may still be FAIL. Real-release mock always asks for INSUFFICIENT_EVIDENCE. Mock judgements are explicitly synthetic.
 
 `--mode paid` immediately stops with `PRIOR_CALL_UNKNOWN_STOP` for this v5 route. It does not open a budget ledger, instantiate PaidProvider, read a Key, send a request, reserve funds or erase historical unknowns. There is no approval-ID escape hatch in this adapter. Reports are written only below `evidence/upgrade/v5.0/evaluator-owner/runs/`.
 

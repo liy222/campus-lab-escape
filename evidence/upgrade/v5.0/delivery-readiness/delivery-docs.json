@@ -1,0 +1,76 @@
+{
+  "kind": "Mechanical Delivery record for evaluator readiness documentation epoch",
+  "date": "2026-10-27",
+  "status": "SOURCE_STOP",
+  "files": [
+    "evaluation/v5/README.md",
+    "evidence/upgrade/v5.0/delivery-readiness/delivery-docs.json"
+  ],
+  "document_before_sha256": "37a03d75f66f7b335dd9f0b6a5830aa49f401267fe7c921e389a2a52dbf85f98",
+  "document_after_sha256": "8ffc154d1417a827a506e2d3421f35c01d1081bda948e95f149fc30d809d9db5",
+  "readonly_receipt": "evidence/upgrade/v5.0/delivery-readiness/readonly-results.json",
+  "readonly_receipt_sha256": "6f17bfdb7fa9be8e9e3f1c8db22dde3392332be82e1d3b361078232959fcc4c0",
+  "commands": [
+    {
+      "exit": 0,
+      "report": "evidence/upgrade/v5.0/evaluator-owner/runs/20261027T145049591159Z/report.json",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m evaluation.cli precheck --release v5.0-engineering",
+      "operator": "Main, pre-existing execution",
+      "status": "READY",
+      "report_sha256": "0e8a1cef97e0279949ab56c6a2d659956deb44b2873f910c5c7aff65ee68a95b"
+    },
+    {
+      "claims": [
+        "V5-C1 INSUFFICIENT_EVIDENCE",
+        "V5-C2 INSUFFICIENT_EVIDENCE",
+        "V5-C3 INSUFFICIENT_EVIDENCE"
+      ],
+      "exit": 2,
+      "report": "evidence/upgrade/v5.0/evaluator-owner/runs/20261027T145050057576Z/report.json",
+      "command": "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe -B -X utf8 -m evaluation.cli evaluate --release v5.0-engineering --mode deterministic",
+      "operator": "Main, pre-existing execution",
+      "report_sha256": "954f28b6477501eb6ecdc2c2d8479c8e8a315acf1aa3540dfcec2af30d326629"
+    },
+    {
+      "operator": "Delivery",
+      "command": "PowerShell UTF-8 targeted text replacements and write; no CLI/tests",
+      "exit": 0
+    },
+    {
+      "operator": "Delivery",
+      "command": "PowerShell verifies evidence link targets, current/future wording, UTF-8, and EOF newline",
+      "exit": 0
+    }
+  ],
+  "source_scope": {
+    "before_after_inputs": 81,
+    "registered_evidence": 9,
+    "current_registration": "READY",
+    "before_after_equal": true,
+    "registered_sources": 53,
+    "old_paid_unknown_gate": "retained; no paid run",
+    "new_Host36_certification": false
+  },
+  "limitations": [
+    "READY is pinned identity/coverage, not semantic PASS.",
+    "Deterministic C1-C3 remain INSUFFICIENT_EVIDENCE.",
+    "Main-registration steps are future trusted re-registration guidance and do not change current registration.",
+    "No semantic PASS, paid execution, Key/ledger/network access, product change, or current Host36 certification."
+  ],
+  "final_checks": {
+    "whitespace_command": "git -c core.whitespace=cr-at-eol diff --check -- evaluation/v5/README.md",
+    "link_targets_exist": 0,
+    "future_registration_note": 0,
+    "stale_status_absent": 0,
+    "whitespace_exit": 0,
+    "utf8_eof": 0
+  },
+  "documentation_epoch": {
+    "old_wide_455_source_map": "Historical prior snapshot; not rewritten or represented as current after this documentation epoch.",
+    "current_registration_53_sources_and_9_evidence": "Unchanged; precheck verified identities",
+    "document_before_sha256": "37a03d75f66f7b335dd9f0b6a5830aa49f401267fe7c921e389a2a52dbf85f98",
+    "game_runtime_or_registration_changed": false,
+    "document_after_sha256": "8ffc154d1417a827a506e2d3421f35c01d1081bda948e95f149fc30d809d9db5",
+    "scope": "README metadata only"
+  }
+}

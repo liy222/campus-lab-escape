@@ -1,0 +1,78 @@
+{
+  "kind": "Main actual finite readonly evaluator current-status check; no semantic approval",
+  "date": "2026-10-27",
+  "commands": [
+    {
+      "actual_command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "evaluation.cli",
+        "precheck",
+        "--release",
+        "v5.0-engineering"
+      ],
+      "operator": "Main",
+      "started_utc": "2026-10-27T14:50:49.367508+00:00",
+      "ended_utc": "2026-10-27T14:50:49.845790+00:00",
+      "exit_code": 0,
+      "raw_report_path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261027T145049591159Z/report.json",
+      "raw_report_sha256": "0e8a1cef97e0279949ab56c6a2d659956deb44b2873f910c5c7aff65ee68a95b",
+      "precheck_status": "READY",
+      "precheck_issues": [],
+      "semantic_statuses": [],
+      "evaluator_sources_before_after_equal": true,
+      "paid_network_credential_ledger_target_execution": false
+    },
+    {
+      "actual_command": [
+        "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "evaluation.cli",
+        "evaluate",
+        "--release",
+        "v5.0-engineering",
+        "--mode",
+        "deterministic"
+      ],
+      "operator": "Main",
+      "started_utc": "2026-10-27T14:50:49.846502+00:00",
+      "ended_utc": "2026-10-27T14:50:50.897662+00:00",
+      "exit_code": 2,
+      "raw_report_path": "evidence/upgrade/v5.0/evaluator-owner/runs/20261027T145050057576Z/report.json",
+      "raw_report_sha256": "954f28b6477501eb6ecdc2c2d8479c8e8a315acf1aa3540dfcec2af30d326629",
+      "precheck_status": "READY",
+      "precheck_issues": [],
+      "semantic_statuses": [
+        {
+          "claim_id": "V5-C1",
+          "status": "INSUFFICIENT_EVIDENCE"
+        },
+        {
+          "claim_id": "V5-C2",
+          "status": "INSUFFICIENT_EVIDENCE"
+        },
+        {
+          "claim_id": "V5-C3",
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      ],
+      "evaluator_sources_before_after_equal": true,
+      "paid_network_credential_ledger_target_execution": false
+    }
+  ],
+  "frozen81_before_after_current_equal": true,
+  "registered_sources53_still_match": true,
+  "actual_model_or_paid_calls": 0,
+  "tests_build_UI_product_runs": 0,
+  "scope": "Only existing53source/9evidence C1-C3 registry; not newHost36 semantic certification.",
+  "limits": [
+    "Precheck READY means source/coverage identity, not semanticPASS.",
+    "Deterministic INSUFFICIENT_EVIDENCE remains unresolved, paid evaluator blocked by old3unknown; no budget escape."
+  ]
+}
