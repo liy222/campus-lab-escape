@@ -3,9 +3,9 @@
   "stage": "v5-handpainted-rebuild",
   "title": "雨夜天文社手绘重建与UI缺陷修复",
   "created_at": "2026-10-29T04:43:15.133689Z",
-  "technical_status": "passed_scoped_independent_ai_review_after_hp01",
-  "human_review_status": "not_reviewed",
-  "owner_review_status": "not_reviewed",
+  "technical_status": "changes_required_after_passage_semantics_feedback",
+  "human_review_status": "changes-requested",
+  "owner_review_status": "changes-requested",
   "peer_review_status": "not_reviewed",
   "current_human_review_round": 2,
   "human_review_rounds": {
@@ -14,7 +14,7 @@
       "peer": "not_reviewed"
     },
     "2": {
-      "owner": "not_reviewed",
+      "owner": "changes-requested",
       "peer": "not_reviewed"
     }
   },
@@ -63,5 +63,23 @@
         1080
       ]
     ]
+  },
+  "human_accepted_scope": {
+    "art_style": "accepted",
+    "visual_theme": "accepted",
+    "scope": "仅用户本次画风/主题反馈，不等于所有内容或整体接受"
+  },
+  "passage_semantics_issue": {
+    "id": "SP-01",
+    "summary": "储物柜锁谜题完成与进入下一空间直接挂钩，缺少门锁/门禁的物理语义",
+    "status": "technically_fixed_in_followup_stage_pending_human_review",
+    "feedback_event_id": "fbe3efbc9e0043b0bae38ff7324c2ac3",
+    "source_findings": [
+      "GeneratedRules.exits按当前房间全部谜题完成计算通行；没有单独门锁角色",
+      "AI物件命名只受机制角色约束，未区分柜锁与通行装置",
+      "前端通道按钮未显示exit.unlocked锁定状态"
+    ],
+    "hp01_manual_recheck": "not_explicitly_confirmed",
+    "followup_stage": "v5-passage-semantics"
   }
 }

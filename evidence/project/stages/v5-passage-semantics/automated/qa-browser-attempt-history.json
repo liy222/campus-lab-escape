@@ -1,0 +1,22 @@
+{
+  "run_id": "eea0f65c-0df4-4fad-88c6-344a97389451",
+  "event_epochs": [
+    {
+      "exit_code": 1,
+      "cause": "Initial browser reader listened only for POST and did not capture initial state response; safe helper correction expanded response observation.",
+      "screenshot": "qa-browser-failure.png"
+    },
+    {
+      "exit_code": 1,
+      "cause": "The first test TEMP now contained its generated fixture DB; fresh DB guard correctly refused reuse. Copied only R1/R3 synthetic JSON into a new owned campus-visual-sp TEMP directory and reran."
+    },
+    {
+      "exit_code": 1,
+      "cause": "First navigation click happened while the object details panel remained open, so UI correctly kept the exit disabled. Runner now closes the panel before checking enabled/clicking; no product change."
+    },
+    {
+      "exit_code": 0,
+      "cause": "Final browser run passed all 11 checks in R1 and R3, with self-started 8002 service stopped."
+    }
+  ]
+}

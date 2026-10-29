@@ -1,0 +1,28 @@
+
+> campus-lab-escape@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 64 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-v5/index.html                         0.42 kB │ gzip:   0.29 kB
+dist-v5/assets/index-B8rMVV9-.css         66.35 kB │ gzip:  15.87 kB
+dist-v5/assets/Settlement-B_pbQ1p6.js      1.97 kB │ gzip:   0.83 kB
+dist-v5/assets/painted-BN5BAGKa.js         2.05 kB │ gzip:   1.16 kB
+dist-v5/assets/Room1-Dab3SvKk.js           3.10 kB │ gzip:   1.41 kB
+dist-v5/assets/Room2-8izCeTWU.js           3.99 kB │ gzip:   1.65 kB
+dist-v5/assets/Room3-DaGXIYIK.js           4.70 kB │ gzip:   1.93 kB
+dist-v5/assets/Room1Scene-CWFuAA_U.js      6.74 kB │ gzip:   2.81 kB
+dist-v5/assets/Room3Scene-mbBSiApR.js      7.01 kB │ gzip:   3.16 kB
+dist-v5/assets/RoomChrome-ClrzNlOF.js      7.21 kB │ gzip:   2.91 kB
+dist-v5/assets/Room2Scene-BLbmsadD.js      9.29 kB │ gzip:   4.01 kB
+dist-v5/assets/index-CuDpgPBf.js         354.62 kB │ gzip: 110.73 kB
+dist-v5/assets/phaser-lfjrd5S3.js      1,388.18 kB │ gzip: 371.84 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3.56s

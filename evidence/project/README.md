@@ -2,13 +2,17 @@
 
 今后从这里读取、整理和提交证据。开发中每次实际检查、失败、修复和反馈及时保存，大阶段结束再集中交付并邀请真人核验。
 
-## 当前阶段：手绘重建、UI修复与电脑端清理
+## 当前阶段：门锁与门禁通行语义修正
 
-2026-10-29追加HP-01名称点击修复：[真实反馈round-01](human-reviews/v5-handpainted-rebuild/round-01/review.md)、[独立检查](stages/v5-handpainted-rebuild/reviews/hotspot-pointer.md)、[修复后本人复验round-02](human-reviews/v5-handpainted-rebuild/round-02/review.md)。鼠标按下动效覆盖居中已修复，实际游戏定向联合通过；本人尚未复验。
+用户已选择门锁/门禁负责通行，柜子仅负责真实线索和物品；画风/主题获得本次局部认可，整体仍待核验。新阶段见[实施计划](../../docs/v5-passage-semantics-plan.md)、[阶段记录](stages/v5-passage-semantics/stage.json)、[独立QA](stages/v5-passage-semantics/reviews/qa.md)和[本人检查入口](human-reviews/v5-passage-semantics/round-01/review.md)。已有定义和存档保留原名，新生成采用用途/命名规则。
+
+## 前一阶段：手绘重建、UI修复与电脑端清理
+
+2026-10-29追加HP-01名称点击修复：[真实反馈round-01](human-reviews/v5-handpainted-rebuild/round-01/review.md)、[独立检查](stages/v5-handpainted-rebuild/reviews/hotspot-pointer.md)、[随后本人反馈round-02](human-reviews/v5-handpainted-rebuild/round-02/review.md)。鼠标按下动效覆盖居中已修复，实际游戏定向联合通过；本次新反馈认可画风/主题并提出通行语义问题，没有明确确认HP-01。
 
 - [本阶段交付摘要](stages/v5-handpainted-rebuild/reviews/delivery.md)：4项UI修复、15张实际手绘原图、经典/V5电脑端范围；技术联合检查通过，待本人检查。
 - [手绘/UI独立QA](stages/v5-handpainted-rebuild/reviews/qa.md)、[电脑端构建](stages/v5-handpainted-rebuild/automated/desktop-cleanup-build1/result.json)、[最终桌面窄补](stages/v5-handpainted-rebuild/automated/desktop-smoke-2026-10-29T05-41-37-562Z-adadb34b/result.json)。各轮范围分开，原失败保留。
-- [阶段状态](stages/v5-handpainted-rebuild/stage.json)与[本人检查步骤](human-reviews/v5-handpainted-rebuild/round-02/review.md)：round-01实际点击问题已记录为需修改，修复后的round-02尚未收到反馈，未登记接受。
+- [阶段状态](stages/v5-handpainted-rebuild/stage.json)与[本人检查步骤](human-reviews/v5-handpainted-rebuild/round-02/review.md)：round-01记录点击问题；round-02已收到画风/主题局部认可和通行语义修改要求，整体未登记接受。
 - [新版桌面实际截图](stages/v5-handpainted-rebuild/automated/desktop-smoke-2026-10-29T05-41-37-562Z-adadb34b/v5-desktop-1280.png)、[第三房间实际截图](stages/v5-handpainted-rebuild/automated/browser-2026-10-29T05-06-00-985Z-3c2b8e97/theme-G3.png)。均为自动截图，不冒充本人截图。
 
 ## 前一主题/UI来源

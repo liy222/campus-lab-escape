@@ -11,6 +11,7 @@ SOURCE_FILES = (
     'backend/app/storage/v5.py', 'backend/app/domain/generation_content_v2.py',
     'backend/app/domain/generation_observability.py', 'backend/app/domain/generated.py',
     'backend/app/domain/blueprints.py', 'backend/app/domain/structure_variants.py',
+    'backend/app/domain/puzzle_purpose.py',
     'frontend/src/assets/generated-catalog.json',
 )
 STAGES = frozenset({'pending', 'generating', 'validating', 'ready', 'failed', 'rejected', 'unknown'})

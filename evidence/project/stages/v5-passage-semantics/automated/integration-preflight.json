@@ -1,0 +1,54 @@
+{
+  "operator": "Main integration",
+  "exit_code": 0,
+  "helper_source_fingerprint": "0716b86651400f4935c2091a79177061ff9a9f777ce9e0693c49b9b893594a35",
+  "source_snapshot_git_revision": "b09908b4d665a7913fa832ffb3951f1e215db7cd",
+  "source_revision_note": "working-source hashes, not an assertion of clean HEAD",
+  "request_preflight": [
+    {
+      "seed": 0,
+      "blueprint": "position_v1-r3-hard",
+      "serialized_payload_bytes": 11280,
+      "payload_sha256": "4609dbb6fe4e0627266640c80746eaf468a14de9f5a90bc3bdaf9a1f471bcac7",
+      "configured_upper_cost_cny": 0.154624,
+      "within_unchanged_per_call_cap": true,
+      "stop_before_reserve_attempts": 1,
+      "controlled_error": null
+    },
+    {
+      "seed": 1,
+      "blueprint": "mapping_v1-r3-hard",
+      "serialized_payload_bytes": 14247,
+      "payload_sha256": "f79cd69bba865cf919070aceab5df583d600894ca07358c0d751449b528c215f",
+      "configured_upper_cost_cny": 0.17836,
+      "within_unchanged_per_call_cap": true,
+      "stop_before_reserve_attempts": 1,
+      "controlled_error": null
+    },
+    {
+      "seed": 2,
+      "blueprint": "position_v1-r3-hard-sv1-reverse",
+      "serialized_payload_bytes": 11320,
+      "payload_sha256": "b9136133876fe3fa66158171ccbdd06126d532c634e28b9877f668e95189e7c1",
+      "configured_upper_cost_cny": 0.154944,
+      "within_unchanged_per_call_cap": true,
+      "stop_before_reserve_attempts": 1,
+      "controlled_error": null
+    },
+    {
+      "seed": 3,
+      "blueprint": "mapping_v1-r3-hard-sv1-reverse",
+      "serialized_payload_bytes": 14287,
+      "payload_sha256": "541fb692599189e412e64c3654be24676c75ffddfe3a5f02f97b0186b17402f0",
+      "configured_upper_cost_cny": 0.17868,
+      "within_unchanged_per_call_cap": true,
+      "stop_before_reserve_attempts": 1,
+      "controlled_error": null
+    }
+  ],
+  "actual_reservations": 0,
+  "transport_calls": 0,
+  "real_provider_calls": 0,
+  "database_constructors": 0,
+  "player_database_access": false
+}

@@ -83,6 +83,7 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
   function openDrawer(kind: Exclude<Drawer, null>) { panelTrigger.current = document.activeElement as HTMLElement; setView(null); setDrawer(kind); }
   function action(tool: Tool, args: ActionArguments) {
     if (!current.current || uncertain) return;
+    if (tool === 'move' && !current.current.exits.some(exit => exit.destination_id === args.destination_id && exit.unlocked)) return;
     const old = current.current;
     void work(async () => {
       const r = await api.action(session, old, tool, args);
@@ -160,7 +161,11 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
       <div className="v5-stage-foot">
         <p className="v5-room-note"><span aria-hidden="true">⌖</span>{state.room.description}</p>
         <nav className="v5-exits" aria-label="可见通道">
-          {state.exits.map(exit => <button key={exit.destination_id} disabled={disabled || Boolean(view) || Boolean(drawer)} onClick={() => action('move', { destination_id: exit.destination_id })}>{exit.name}<span aria-hidden="true">→</span></button>)}
+          {state.exits.map(exit => <button key={exit.destination_id} data-destination={exit.destination_id} data-locked={!exit.unlocked} aria-label={exit.name} aria-describedby={`v5-exit-status-${exit.destination_id}`} disabled={!exit.unlocked || disabled || Boolean(view) || Boolean(drawer)} onClick={() => action('move', { destination_id: exit.destination_id })}>
+            <span className="v5-exit-name">{exit.name}</span>
+            <span className="v5-exit-status" id={`v5-exit-status-${exit.destination_id}`}>{exit.unlocked ? '可通行' : '已锁定'}</span>
+            <span className="v5-exit-arrow" aria-hidden="true">→</span>
+          </button>)}
         </nav>
         {state.status === 'won' && !victoryOpen && <button className="v5-reopen" onClick={() => setVictoryOpen(true)}>重看结算</button>}
       </div>

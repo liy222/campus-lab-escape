@@ -1,0 +1,19 @@
+{
+  "operator": "Main",
+  "at_utc": "2026-10-29T15:38:22.656983+00:00",
+  "action": "start_existing_v5_launcher_after_no_listener",
+  "checks": [
+    {
+      "name": "health",
+      "status": 200
+    },
+    {
+      "name": "entry",
+      "status": 200,
+      "matches_current_v5_build": true,
+      "sha256": "c216fd1c11c2543639d5b5ca7f165b5d9644ddf20dbffe5cebcd365ae699c6a9"
+    }
+  ],
+  "paid_calls": 0,
+  "player_state_queries": 0
+}

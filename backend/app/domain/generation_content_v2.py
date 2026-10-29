@@ -13,6 +13,7 @@ from dataclasses import replace
 from . import blueprints as v1
 from . import structure_variants
 from .generated import strict_json
+from .puzzle_purpose import puzzle_effects, validate_puzzle_names, describe_effect
 
 CONTENT_VERSION = '2.0.0'
 NARRATIVE_GUARD_REVISION = '1'
@@ -123,9 +124,11 @@ def request_manifest(blueprint: Blueprint) -> dict:
     manifest = v1.request_manifest(blueprint)
     manifest['content_version'] = CONTENT_VERSION
     manifest['structure_catalog_version'] = structure_variants.CATALOG_VERSION
+    effects = puzzle_effects(blueprint)
     puzzle_objects = {obj.reference_id: obj.object_id for obj in blueprint.objects if obj.kind == 'puzzle'}
     for row, puzzle in zip(manifest['puzzles'], blueprint.puzzles):
         row['prerequisite_object_slots'] = [puzzle_objects[pid] for pid in puzzle.prerequisite_ids]
+        row['effect'] = effects[row['object_slot']]
     manifest['text_rule'] = ('物件槽位只填写name，物件说明由程序按真实角色和规则产生；'
                              'rooms的description只写氛围，不编造操作、完整答案或另一套规则。')
     return manifest
@@ -197,12 +200,17 @@ def assemble_draft(blueprint: Blueprint, raw_model_content) -> dict:
             raise ValueError('GENERATION_CONTENT_INVALID')
         stage = 'narrative'
         _guard_narrative(blueprint, content)
-        stage = 'assembly'
         names = {oid: value['name'] for oid, value in content['objects'].items()}
+        effects = puzzle_effects(blueprint)
+        validate_puzzle_names(blueprint, names, effects)
+        stage = 'assembly'
+        room_names = {rid: value['name'] for rid, value in content['rooms'].items()}
         helper = copy.deepcopy(content)
         helper['content_version'] = v1.CONTENT_VERSION
         helper['objects'] = {obj.object_id: {'name': names[obj.object_id],
-                                           'description': _describe(blueprint, obj, names)}
+                                           'description': _describe(blueprint, obj, names) + (
+                                               describe_effect(effects[obj.object_id], room_names)
+                                               if obj.kind == 'puzzle' else '')}
                              for obj in blueprint.objects}
         return v1.assemble_draft(blueprint, helper)
     except (ValueError, TypeError, RecursionError) as error:

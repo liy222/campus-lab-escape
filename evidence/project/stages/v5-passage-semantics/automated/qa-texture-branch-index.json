@@ -1,0 +1,68 @@
+{
+  "stage": "v5-passage-semantics generic texture fix",
+  "new_output_mapping": true,
+  "prior_results_modified": false,
+  "build": {
+    "result": "automated/qa-texture-fix-v5-build-result.json",
+    "command": "Push-Location frontend; npm run build; Pop-Location",
+    "environment": {
+      "CAMPUS_BACKEND_URL": "http://127.0.0.1:8001",
+      "VITE_GAMEPLAY_VERSION": "v5"
+    },
+    "exit_code": 0
+  },
+  "browser_runs": [
+    {
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "SP_CACHE_DIR": "TEMP/campus-visual-sp-reveal-392d5b1769ce4ba994e30cc8ef570950"
+      },
+      "run_id": "7a3234d7-1ab9-41cc-bd0c-97593b72e34f",
+      "scope": "R3 cached witness; dynamic themed aliases; G1 gate and first move to G2; exploratory only and not generic defect closure",
+      "command": "node tests/v5/run_passage_semantics_browser.mjs --reveal-only",
+      "exit_code": 0,
+      "role": "theme exploratory only",
+      "result_path": "automated/qa-browser-2026-10-29T15-50-50-233Z-7a3234d7/qa-browser-result.json",
+      "scene_theme": "雨夜里的天文社旧活动室，寻找封存的观测记录",
+      "runner_epoch_note": "Earlier helper used theme-only alias assertions; current committed --reveal-only helper targets generic legacy aliases. Theme input/check changes are mapped here, not identical runner source epochs."
+    },
+    {
+      "run_id": "964f78b6-2a49-495d-a06c-f851483c45be",
+      "note": "expectedAliases check was corrected to the actual legacy:<asset id>:<state order index> contract",
+      "role": "generic initial assertion attempt",
+      "scope": "R3 cached witness; generic branch; old theme-only alias assertion caused QA failure despite missing=0; preserved and superseded",
+      "result_path": "automated/qa-browser-2026-10-29T15-50-18-256Z-964f78b6/qa-browser-result.json",
+      "command": "node tests/v5/run_passage_semantics_browser.mjs --reveal-only",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "SP_CACHE_DIR": "TEMP/campus-visual-sp-reveal-771c0717cbfd4fb8a025e2fc373c0d63"
+      },
+      "scene_theme": "SP synthetic passage 3",
+      "exit_code": 1,
+      "runner_epoch_note": "Earlier helper used theme-only alias assertions; current committed --reveal-only helper targets generic legacy aliases. Theme input/check changes are mapped here, not identical runner source epochs."
+    },
+    {
+      "run_id": "461a8bc6-539c-4f40-b45b-493510ec9e21",
+      "role": "generic defect closure",
+      "scope": "R3 cached witness; generic dynamic texture aliases after key/reveal/gate and actual G1→G2 background change",
+      "checks": "13/13",
+      "result_path": "automated/qa-browser-2026-10-29T15-53-44-556Z-461a8bc6/qa-browser-result.json",
+      "command": "node tests/v5/run_passage_semantics_browser.mjs --reveal-only",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "SP_CACHE_DIR": "TEMP/campus-visual-sp-generic-cf48661ba6db416aac99131f38029dbc"
+      },
+      "scene_theme": "SP synthetic passage 3",
+      "exit_code": 0,
+      "runner_epoch_note": "Earlier helper used theme-only alias assertions; current committed --reveal-only helper targets generic legacy aliases. Theme input/check changes are mapped here, not identical runner source epochs."
+    }
+  ],
+  "owned_service": {
+    "forwarded_upstream": "127.0.0.1:8002",
+    "external_requests": 0,
+    "port": 8002,
+    "player_db_access": false,
+    "service_stopped": true,
+    "real_calls": 0
+  }
+}

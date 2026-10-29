@@ -261,8 +261,11 @@
 .v5-room-note { flex: 1 1 260px; margin: 0; font-size: 12.5px; line-height: 1.75; color: #c5d0bd; }
 .v5-room-note span { margin-right: 7px; color: var(--brass); }
 .v5-exits { display: flex; gap: 8px; flex-wrap: wrap; }
-.v5-exits button { font-size: 13px; padding: 8px 14px; background: #1d3a30d9; border-color: #5c755f; }
-.v5-exits button span { margin-left: 6px; color: var(--brass-lite); }
+.v5-exits button { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; padding: 8px 14px; background: #1d3a30d9; border-color: #5c755f; }
+.v5-exit-status { font-size: 14px; color: #c8dfb7; }
+.v5-exits button .v5-exit-arrow { color: var(--brass-lite); }
+.v5-exits button[data-locked="true"] { opacity: .85; background: #26302f; border-color: #58645b; color: #bcc3b2; }
+.v5-exits button[data-locked="true"] .v5-exit-status { color: #bcc3b2; }
 .v5-reopen { font-size: 12px; padding: 7px 13px; }
 
 /* tray */

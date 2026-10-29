@@ -1,0 +1,220 @@
+{
+  "run_id": "461a8bc6-539c-4f40-b45b-493510ec9e21",
+  "command": "node tests/v5/run_passage_semantics_browser.mjs --reveal-only",
+  "scope": "R3 cached witness through G1 gate and first G1→G2 move; dynamic textures only",
+  "owned_service_port": 8002,
+  "owned_server_stopped": true,
+  "external_requests": 0,
+  "real_provider_calls": 0,
+  "player_database_access": false,
+  "cache_files": [
+    "R1.json",
+    "R3.json"
+  ],
+  "records": [
+    {
+      "name": "R3 initial visible exit",
+      "actual": {
+        "disabled": true,
+        "status": "已锁定",
+        "describedby": "v5-exit-status-G2"
+      },
+      "expected": {
+        "disabled": true,
+        "status": "已锁定",
+        "describedby_present": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:53:49.263Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 physical click while locked emits no move",
+      "actual": 0,
+      "expected": 0,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:53:49.799Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 reveal after take images loaded for current aliases",
+      "actual": {
+        "theme": "generic",
+        "missing": 0,
+        "loading": "false",
+        "current_objects": 4,
+        "loaded_current_aliases": 4
+      },
+      "expected": {
+        "missing": 0,
+        "loading": "false",
+        "all_current_aliases_loaded": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:53:50.120Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 reveal after use_item images loaded for current aliases",
+      "actual": {
+        "theme": "generic",
+        "missing": 0,
+        "loading": "false",
+        "current_objects": 6,
+        "loaded_current_aliases": 6
+      },
+      "expected": {
+        "missing": 0,
+        "loading": "false",
+        "all_current_aliases_loaded": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:53:51.433Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 reveal after inspect obj_relation images loaded for current aliases",
+      "actual": {
+        "theme": "generic",
+        "missing": 0,
+        "loading": "false",
+        "current_objects": 6,
+        "loaded_current_aliases": 6
+      },
+      "expected": {
+        "missing": 0,
+        "loading": "false",
+        "all_current_aliases_loaded": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:53:51.618Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 reveal after submit_sequence images loaded for current aliases",
+      "actual": {
+        "theme": "generic",
+        "missing": 0,
+        "loading": "false",
+        "current_objects": 6,
+        "loaded_current_aliases": 6
+      },
+      "expected": {
+        "missing": 0,
+        "loading": "false",
+        "all_current_aliases_loaded": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:53:52.391Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 witness unlocks forward exit",
+      "actual": {
+        "unlocked": true,
+        "disabled": false,
+        "status": "可通行"
+      },
+      "expected": "enabled and 可通行",
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:53:52.601Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 door open before room transition images loaded for current aliases",
+      "actual": {
+        "theme": "generic",
+        "missing": 0,
+        "loading": "false",
+        "current_objects": 6,
+        "loaded_current_aliases": 6
+      },
+      "expected": {
+        "missing": 0,
+        "loading": "false",
+        "all_current_aliases_loaded": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:53:52.609Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 one actual UI move reaches expected destination",
+      "actual": {
+        "move_requests": 1,
+        "room": "G2",
+        "status": "playing"
+      },
+      "expected": {
+        "move_requests": 1,
+        "room": "G2"
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:53:53.072Z",
+      "synthetic": true
+    },
+    {
+      "name": "G1 to G2 actual room transition images loaded for current aliases",
+      "actual": {
+        "theme": "generic",
+        "missing": 0,
+        "loading": "false",
+        "current_objects": 3,
+        "loaded_current_aliases": 3
+      },
+      "expected": {
+        "missing": 0,
+        "loading": "false",
+        "all_current_aliases_loaded": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:53:53.079Z",
+      "synthetic": true
+    },
+    {
+      "name": "G2 uses its actual public room background after move",
+      "actual": {
+        "from": "/art-handpainted/backgrounds/r1-room-shell.png",
+        "to": "/art-handpainted/backgrounds/r2-room-shell-off.png",
+        "room_background_id": "neutral_archive"
+      },
+      "expected": {
+        "to": "/art-handpainted/backgrounds/r2-room-shell-off.png",
+        "changed": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:53:53.080Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 reached first witness exit",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:53:53.374Z",
+      "synthetic": true
+    },
+    {
+      "name": "no external requests",
+      "actual": 0,
+      "expected": 0,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:53:53.374Z",
+      "synthetic": true
+    }
+  ],
+  "screenshots": [
+    "qa-browser-R3-locked.png",
+    "qa-browser-R3-reveal-take-shared_key.png",
+    "qa-browser-R3-reveal-inspect-obj_relation.png",
+    "qa-browser-R3-reveal-submit_sequence-puzzle_5.png",
+    "qa-browser-R3-door-open-textures.png",
+    "qa-browser-R3-G2-background-textures.png"
+  ],
+  "issues": [],
+  "exit_code": 0,
+  "limitations": [
+    "Synthetic witnesses only; not model-following or complete route acceptance",
+    "No save, classic, mobile or human acceptance claim"
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "run_id": "eea0f65c-0df4-4fad-88c6-344a97389451",
+  "command": "node tests/v5/run_passage_semantics_browser.mjs",
+  "scope": "R1/R3 synthetic cached drafts; locked physical click; replay to first witness move; unlocked UI click; one actual move per sample",
+  "owned_service_port": 8002,
+  "owned_server_stopped": true,
+  "external_requests": 0,
+  "real_provider_calls": 0,
+  "player_database_access": false,
+  "cache_files": [
+    "R1.json",
+    "R3.json"
+  ],
+  "records": [
+    {
+      "name": "R1 initial visible exit",
+      "actual": {
+        "disabled": true,
+        "status": "已锁定",
+        "describedby": "v5-exit-status-EXIT"
+      },
+      "expected": {
+        "disabled": true,
+        "status": "已锁定",
+        "describedby_present": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:31:25.096Z",
+      "synthetic": true
+    },
+    {
+      "name": "R1 physical click while locked emits no move",
+      "actual": 0,
+      "expected": 0,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:31:25.605Z",
+      "synthetic": true
+    },
+    {
+      "name": "R1 witness unlocks forward exit",
+      "actual": {
+        "unlocked": true,
+        "disabled": false,
+        "status": "可通行"
+      },
+      "expected": "enabled and 可通行",
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:31:31.645Z",
+      "synthetic": true
+    },
+    {
+      "name": "R1 one actual UI move reaches expected destination",
+      "actual": {
+        "move_requests": 1,
+        "room": "EXIT",
+        "status": "won"
+      },
+      "expected": {
+        "move_requests": 1,
+        "room": "EXIT"
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:31:32.075Z",
+      "synthetic": true
+    },
+    {
+      "name": "R1 reached first witness exit",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:31:32.257Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 initial visible exit",
+      "actual": {
+        "disabled": true,
+        "status": "已锁定",
+        "describedby": "v5-exit-status-G2"
+      },
+      "expected": {
+        "disabled": true,
+        "status": "已锁定",
+        "describedby_present": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:31:34.620Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 physical click while locked emits no move",
+      "actual": 0,
+      "expected": 0,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:31:35.127Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 witness unlocks forward exit",
+      "actual": {
+        "unlocked": true,
+        "disabled": false,
+        "status": "可通行"
+      },
+      "expected": "enabled and 可通行",
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:31:37.095Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 one actual UI move reaches expected destination",
+      "actual": {
+        "move_requests": 1,
+        "room": "G2",
+        "status": "playing"
+      },
+      "expected": {
+        "move_requests": 1,
+        "room": "G2"
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:31:37.515Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 reached first witness exit",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:31:37.774Z",
+      "synthetic": true
+    },
+    {
+      "name": "no external requests",
+      "actual": 0,
+      "expected": 0,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:31:37.774Z",
+      "synthetic": true
+    }
+  ],
+  "screenshots": [
+    "qa-browser-R1-locked.png",
+    "qa-browser-R1-unlocked.png",
+    "qa-browser-R1-destination.png",
+    "qa-browser-R3-locked.png",
+    "qa-browser-R3-unlocked.png",
+    "qa-browser-R3-destination.png"
+  ],
+  "issues": [],
+  "exit_code": 0,
+  "limitations": [
+    "Synthetic witnesses only; not model-following or complete route acceptance",
+    "No save, classic, mobile or human acceptance claim"
+  ]
+}

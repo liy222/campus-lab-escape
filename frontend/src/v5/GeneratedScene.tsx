@@ -15,17 +15,41 @@ export default function GeneratedScene({ model, disabled, onObject, roomName }: 
   const host = useRef<HTMLDivElement>(null);
   const scene = useRef<Phaser.Scene | null>(null);
   const textureAliases = useRef(new Map<string, string>());
+  const urlTextures = useRef(new Map<string, string>());
   const current = useRef(model);
   current.current = model;
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
   const [retry, setRetry] = useState(0);
   const [textures, setTextures] = useState<string[]>([]);
+  const [missingTextures, setMissingTextures] = useState(0);
+  const [loadingTextures, setLoadingTextures] = useState(false);
+
+  function queueResources(target: Phaser.Scene) {
+    const active = current.current;
+    const resources = [active.background, ...(active.background.fallback ? [active.background.fallback] : []),
+      ...active.objects.flatMap(object => [{ key: object.key, src: object.src }, ...(object.fallback ? [object.fallback] : [])]), ...active.extras];
+    let added = false;
+    resources.forEach(resource => {
+      let textureKey = urlTextures.current.get(resource.src);
+      if (!textureKey) {
+        // Independent internal keys prevent one logical key from retaining a previous URL.
+        textureKey = `v5-resource:${urlTextures.current.size}`;
+        urlTextures.current.set(resource.src, textureKey);
+        target.load.image(textureKey, resource.src);
+        added = true;
+      }
+      // A newly revealed object/index can reuse a loaded or pending URL without a request.
+      textureAliases.current.set(resource.key, textureKey);
+    });
+    return added;
+  }
 
   function draw(target: Phaser.Scene) {
     target.children.list.slice().forEach(child => child.destroy());
     const active = current.current;
-    const loadedKey = (key: string) => { const resolved = textureAliases.current.get(key) ?? key; return target.textures.exists(resolved) ? resolved : null; };
+    let missing = 0;
+    const loadedKey = (key: string) => { const resolved = textureAliases.current.get(key); return resolved && target.textures.exists(resolved) ? resolved : null; };
     const backgroundKey = loadedKey(active.background.key) ?? (active.background.fallback && loadedKey(active.background.fallback.key));
     if (backgroundKey) {
       target.add.image(800, 450, backgroundKey).setDisplaySize(1600, 900);
@@ -36,6 +60,7 @@ export default function GeneratedScene({ model, disabled, onObject, roomName }: 
       const primaryKey = loadedKey(object.key);
       const key = primaryKey ?? (object.fallback && loadedKey(object.fallback.key));
       if (!key) {
+        missing++;
         // The named, accessible hotspot remains usable when every image fails.
         target.add.rectangle(object.x, object.y - object.renderHeight / 2, 240, 115, 0x344539, 0.9).setStrokeStyle(2, 0xe8c07c);
         target.add.text(object.x, object.y - object.renderHeight / 2, `${object.name}\n图像暂缺`, { fontFamily: 'sans-serif', fontSize: '23px', color: '#f3e5c7', align: 'center', wordWrap: { width: 220 } }).setOrigin(.5);
@@ -53,6 +78,9 @@ export default function GeneratedScene({ model, disabled, onObject, roomName }: 
         target.add.ellipse(object.x, object.y - object.renderHeight - 26, 34, 34, 0x2f5445, 0.92).setStrokeStyle(2, 0xdfc78c);
       }
     });
+    setMissingTextures(missing);
+    // Report logical aliases only when their actual URL texture is present.
+    setTextures([...textureAliases.current].filter(([, key]) => target.textures.exists(key)).map(([alias]) => alias));
   }
 
   useEffect(() => {
@@ -60,30 +88,35 @@ export default function GeneratedScene({ model, disabled, onObject, roomName }: 
     let mounted = true;
     setReady(false);
     setFailed(false);
-    const active = current.current;
+    setTextures([]);
+    setMissingTextures(0);
+    setLoadingTextures(true);
+    textureAliases.current = new Map();
+    urlTextures.current = new Map();
     class GeneratedRoom extends Phaser.Scene {
       constructor() { super('generated-studio'); }
       preload() {
-        const resources = [active.background, ...(active.background.fallback ? [active.background.fallback] : []),
-          ...active.objects.flatMap(object => [{ key: object.key, src: object.src }, ...(object.fallback ? [object.fallback] : [])]), ...active.extras];
-        const urls = new Map<string, string>();
-        textureAliases.current = new Map();
-        resources.forEach(resource => {
-          const existing = urls.get(resource.src);
-          textureAliases.current.set(resource.key, existing ?? resource.key);
-          if (existing) return;
-          urls.set(resource.src, resource.key);
-          this.load.image(resource.key, resource.src);
-        });
+        if (!mounted) return;
+        queueResources(this);
         this.load.on('loaderror', () => { if (mounted) setFailed(true); });
+        this.load.on('complete', () => {
+          if (!mounted || scene.current !== this) return;
+          // Failed URLs stay in the cache too: only explicit user retry resets it.
+          const added = queueResources(this);
+          draw(this);
+          setLoadingTextures(added);
+          if (added) this.load.start();
+        });
       }
       create() {
+        if (!mounted) return;
         scene.current = this;
+        // Public state may have changed while the initial batch was loading.
+        const added = queueResources(this);
         draw(this);
-        if (mounted) {
-          setTextures(this.textures.getTextureKeys().filter(key => key.startsWith('theme:') || key.startsWith('legacy:') || key.startsWith('fallback:')));
-          setReady(true);
-        }
+        setReady(true);
+        setLoadingTextures(added);
+        if (added) this.load.start();
       }
     }
     const game = new Phaser.Game({
@@ -94,15 +127,23 @@ export default function GeneratedScene({ model, disabled, onObject, roomName }: 
       backgroundColor: '#101c24',
       scene: GeneratedRoom,
       scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH },
+      loader: { maxRetries: 0 },
       audio: { noAudio: true },
       banner: false,
     });
     return () => { mounted = false; scene.current = null; game.destroy(true); };
-  }, [retry, model.background.key]);
+  }, [retry]);
 
-  useEffect(() => { if (ready && scene.current) draw(scene.current); }, [model, ready]);
+  useEffect(() => {
+    if (!ready || !scene.current) return;
+    const target = scene.current;
+    const added = queueResources(target);
+    draw(target);
+    setLoadingTextures(added || target.load.isLoading());
+    if (added && !target.load.isLoading()) target.load.start();
+  }, [model, ready]);
 
-  return <div className="v5-scene" aria-label={`${roomName}固定视角场景`} data-theme={model.themeId ?? 'generic'} data-background={model.background.src} data-textures={textures.join(' ')}>
+  return <div className="v5-scene" aria-label={`${roomName}固定视角场景`} data-theme={model.themeId ?? 'generic'} data-background={model.background.src} data-textures={textures.join(' ')} data-missing-textures={missingTextures} data-loading-textures={loadingTextures}>
     <div ref={host} className="v5-phaser" />
     {!ready && !failed && <p className="v5-scene-status" role="status">正在铺开场景…</p>}
     {failed && <div className="v5-scene-status" role="alert">部分素材未加载，已使用可用资源或文字标记。<button onClick={() => setRetry(value => value + 1)}>重试加载</button></div>}

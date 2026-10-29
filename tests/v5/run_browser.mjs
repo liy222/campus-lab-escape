@@ -87,7 +87,7 @@ try{
   }else if(action.tool==='take'){
    await close();const object=s.objects.find(o=>o.actions.some(a=>a.tool==='take'&&a.arguments.item_id===args.item_id));await page.getByRole('button',{name:'查看'+object.name,exact:true}).click();await stable();await page.getByRole('button',{name:'拿取',exact:true}).click();await stable();await page.locator('.v5-hotspots button:enabled').first().waitFor({timeout:5000});check(await page.locator('.v5-hotspots button').evaluateAll(es=>es.length>0&&es.every(e=>!e.disabled)),'take removes invalid closeup and releases visible hotspots without Escape');
   }else if(action.tool==='move'){
-   await close();const exit=s.exits.find(e=>e.destination_id===args.destination_id);await page.getByRole('button',{name:exit.name+' →',exact:true}).click();
+   await close();const exit=s.exits.find(e=>e.destination_id===args.destination_id);check(!!exit&&exit.unlocked,'witness destination is publicly unlocked');const button=page.locator('.v5-exits button').filter({has:page.locator('.v5-exit-name',{hasText:exit.name})}).and(page.locator('[data-destination="'+args.destination_id+'"]'));check(await button.getAttribute('aria-label')===exit.name,'public exit accessible name');check(await button.getAttribute('data-locked')==='false'&&await button.isEnabled(),'public exit unlocked UI');await button.click();
   }else{
    const obj=s.objects.find(o=>o.target_id===args.target_id);const heading=page.getByRole('heading',{name:obj.name,exact:true});
    if(!await heading.isVisible().catch(()=>false)){await close();await page.getByRole('button',{name:'查看'+obj.name,exact:true}).click();await stable();}

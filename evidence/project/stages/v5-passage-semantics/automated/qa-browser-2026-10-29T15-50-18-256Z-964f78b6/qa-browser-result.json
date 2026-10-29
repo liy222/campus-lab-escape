@@ -1,0 +1,72 @@
+{
+  "run_id": "964f78b6-2a49-495d-a06c-f851483c45be",
+  "command": "node tests/v5/run_passage_semantics_browser.mjs --reveal-only",
+  "scope": "R3 cached witness through G1 gate and first G1→G2 move; dynamic textures only",
+  "owned_service_port": 8002,
+  "owned_server_stopped": true,
+  "external_requests": 0,
+  "real_provider_calls": 0,
+  "player_database_access": false,
+  "cache_files": [
+    "R1.json",
+    "R3.json"
+  ],
+  "records": [
+    {
+      "name": "R3 initial visible exit",
+      "actual": {
+        "disabled": true,
+        "status": "已锁定",
+        "describedby": "v5-exit-status-G2"
+      },
+      "expected": {
+        "disabled": true,
+        "status": "已锁定",
+        "describedby_present": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:50:22.964Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 physical click while locked emits no move",
+      "actual": 0,
+      "expected": 0,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T15:50:23.498Z",
+      "synthetic": true
+    },
+    {
+      "name": "R3 reveal after take images loaded for current aliases",
+      "actual": {
+        "missing": 0,
+        "loading": "false",
+        "current_theme_variants": 0,
+        "loaded_theme_aliases": 0
+      },
+      "expected": {
+        "missing": 0,
+        "loading": "false",
+        "all_current_aliases_loaded": true
+      },
+      "pass": false,
+      "observed_at_utc": "2026-10-29T15:50:23.820Z",
+      "synthetic": true
+    }
+  ],
+  "screenshots": [
+    "qa-browser-R3-locked.png",
+    "qa-browser-failure.png"
+  ],
+  "issues": [
+    {
+      "type": "Error",
+      "message": "R3 reveal after take images loaded for current aliases"
+    }
+  ],
+  "exit_code": 1,
+  "limitations": [
+    "Synthetic witnesses only; not model-following or complete route acceptance",
+    "No save, classic, mobile or human acceptance claim"
+  ]
+}

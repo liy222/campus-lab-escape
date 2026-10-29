@@ -47,6 +47,14 @@ def content(bp, alternate=False):
     letters = '甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳'
     for index, row in enumerate(result['objects'].values()):
         row['name'] = '合成校园物件' + letters[index]
+    effects = v2.puzzle_effects(bp)
+    for obj in bp.objects:
+        if obj.kind != 'puzzle':
+            continue
+        effect = effects[obj.object_id]
+        identity = '门禁甲' if effect['purpose'] == 'passage_control' else '校验甲'
+        suffix = '供电箱' if obj.art_id == 'circuit' else '终端'
+        result['objects'][obj.object_id]['name'] = '合成' + identity + suffix
     return result
 
 

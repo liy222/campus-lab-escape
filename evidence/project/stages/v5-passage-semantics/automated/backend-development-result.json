@@ -1,0 +1,139 @@
+{
+  "kind": "Owner finite synthetic development, not independent QA",
+  "checks": [
+    {
+      "metadata_variants": 36,
+      "gate_mechanisms": [
+        "circuit",
+        "code",
+        "item",
+        "sequence"
+      ],
+      "proof_calls": 0,
+      "tuple_order_invariant": true
+    },
+    {
+      "finite_name_cases": [
+        {
+          "name": "柜旁门禁终端",
+          "accepted": true
+        },
+        {
+          "name": "储物柜门旁的门禁终端",
+          "accepted": true
+        },
+        {
+          "name": "前厅门锁控制台",
+          "accepted": true
+        },
+        {
+          "name": "前厅储物柜锁",
+          "accepted": false
+        },
+        {
+          "name": "储物柜锁控制台",
+          "accepted": false
+        },
+        {
+          "name": "储物柜门禁终端",
+          "accepted": false
+        },
+        {
+          "name": "校验终端",
+          "accepted": false
+        },
+        {
+          "name": "门禁供电箱",
+          "accepted": false
+        }
+      ],
+      "ordinary_fake_container_rejected": true
+    },
+    {
+      "actual_reference_rename": true
+    },
+    {
+      "strict_schema_before_name_guard": true,
+      "bad_raw_unchanged": true,
+      "bad_name_helper_calls": 0
+    },
+    {
+      "representative_original_proof_replay": [
+        {
+          "seed": 0,
+          "witness_steps": 33,
+          "status": "won",
+          "passage_transitions": [
+            {
+              "target": "G2",
+              "before": false,
+              "after": true
+            },
+            {
+              "target": "G3",
+              "before": false,
+              "after": true
+            },
+            {
+              "target": "EXIT",
+              "before": false,
+              "after": true
+            }
+          ]
+        },
+        {
+          "seed": 3,
+          "witness_steps": 33,
+          "status": "won",
+          "passage_transitions": [
+            {
+              "target": "G2",
+              "before": false,
+              "after": true
+            },
+            {
+              "target": "G3",
+              "before": false,
+              "after": true
+            },
+            {
+              "target": "EXIT",
+              "before": false,
+              "after": true
+            }
+          ]
+        }
+      ],
+      "limits": "unchanged 25000/5s"
+    },
+    {
+      "actual_old_definition_loader": "unchanged with legacy cabinet names",
+      "database_constructor_calls": 0
+    },
+    {
+      "fake_provider_service_invalid_name": "MODEL_INVALID_OUTPUT",
+      "fake_provider_calls": 1,
+      "retries": 0
+    },
+    {
+      "builder": "build_generation_content.py",
+      "exit": 0,
+      "stdout": "generation-content.schema.json matches all 18 current variants"
+    },
+    {
+      "builder": "build_generation_content_v2.py",
+      "exit": 0,
+      "stdout": "generation-content-v2.schema.json matches all 18 current variants"
+    },
+    {
+      "builder": "build_structure_variants_v1.py",
+      "exit": 0,
+      "stdout": "generation-structures-v1.schema.json matches all 36 variants"
+    }
+  ],
+  "real_provider_calls": 0,
+  "database_constructors": 0,
+  "first_failure": null,
+  "status": "PASS",
+  "seconds": 1.574564
+}

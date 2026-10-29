@@ -1,0 +1,7 @@
+{
+  "command": "python.exe -B -X utf8 -m pytest -q tests/v5/test_passage_semantics.py",
+  "exit_code": 1,
+  "summary": "47 passed, 2 failed: both representative witness checks omitted required synthetic session ID in GeneratedRules.visible_state",
+  "repair": "Test-only call now supplies synthetic_passage_session; no product code changed",
+  "first_failure_preserved": true
+}

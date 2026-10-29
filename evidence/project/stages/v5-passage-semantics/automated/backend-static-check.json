@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "kind": "Owner static change-range check",
+  "syntax_files": [
+    "backend/app/domain/puzzle_purpose.py",
+    "backend/app/domain/generation_content_v2.py",
+    "backend/app/ai/v5.py",
+    "backend/app/domain/generation_observability.py"
+  ],
+  "ai_delta": "GENERATION_PROMPT only",
+  "observability_delta": "SOURCE_FILES only",
+  "frozen_content_equal_after_LF_normalization": [
+    "backend/app/domain/generated.py",
+    "backend/app/domain/blueprints.py",
+    "backend/app/domain/structure_variants.py",
+    "backend/app/storage/v5.py",
+    "backend/app/ai/provider.py",
+    "backend/app/ai/budget.py",
+    "contracts/v2/generation-content.schema.json",
+    "contracts/v2/generation-content-v2.schema.json",
+    "contracts/v2/generation-structures-v1.schema.json"
+  ],
+  "initial_static_failure": {
+    "chunk": "e727aa",
+    "exit": 1,
+    "cause": "incorrect raw comparison of CRLF working tree against LF Git blob; first mismatch generated.py; no product error or source correction"
+  },
+  "correction_diagnosis": {
+    "chunk": "7d1ef9",
+    "exit": 0,
+    "working_CRLF": 444,
+    "git_CRLF": 0,
+    "normalized_equal": true
+  },
+  "no_product_execution": true
+}
