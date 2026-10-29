@@ -128,7 +128,7 @@ export default function Workspace() {
     <div className="v5-veil" aria-hidden="true" />
     <header className="v5-masthead">
       <div>
-        <p className="v5-kicker">CAMPUS · LOCAL ARCHIVE · 雨夜天文社</p>
+        <p className="v5-kicker">CAMPUS · LOCAL ARCHIVE{coverage.pack ? ` · ${coverage.pack.display_name}` : ''}</p>
         <h1>校园里的另一扇门</h1>
         <p className="v5-intro">在旧档案与手写便笺之间，寻找只属于你的校园故事。</p>
         <ul className="v5-tags"><li>手绘校园</li><li>线索解谜</li><li>本地保存</li></ul>
@@ -177,8 +177,9 @@ export default function Workspace() {
               <textarea rows={4} maxLength={2000} placeholder="例如：雨夜里的天文社旧活动室，寻找封存的观测记录…" value={theme} onChange={event => setTheme(sanitize(event.target.value, key))} />
               <small>{theme.length}/2000</small>
             </label>
-            {coverage.pack && <p className="v5-coverage is-on"><span aria-hidden="true">✦</span> 已支持专属场景「{coverage.name}」：雨夜活动室、观测资料与天文设备会随房间出现。</p>}
-            {!coverage.pack && coverage.related && <p className="v5-coverage">这个主题还没有专属素材，将使用通用校园手绘画面，主题会体现在故事、物件名称与线索里。</p>}
+            <p className="v5-coverage">已备主题素材：天文社、图书馆档案、化学实验室、计算机机房、校园广播室。</p>
+            {coverage.pack && <p className="v5-coverage is-on"><span aria-hidden="true">✦</span> 已支持主题素材「{coverage.pack.display_name}」：{coverage.pack.coverage || '使用本主题的场景与代表物件，部分角色沿用通用手绘素材。'}</p>}
+            {!coverage.pack && theme.trim() && <p className="v5-coverage">这个主题还没有专属素材，将使用通用校园手绘画面，主题会体现在故事、物件名称与线索里。</p>}
             <p className="v5-step">02 / 探索的规模</p>
             <div className="v5-fields">
               <label>房间数量<select value={roomCount} onChange={event => setRoomCount(Number(event.target.value))}><option value={1}>1 间</option><option value={2}>2 间</option><option value={3}>3 间</option></select></label>

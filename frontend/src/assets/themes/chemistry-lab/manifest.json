@@ -1,0 +1,581 @@
+{
+  "schema_version": 1,
+  "theme_id": "chemistry-lab",
+  "pack_version": "1.0.0",
+  "display_name": "化学实验室",
+  "coverage": "校园化学实验、试剂准备和实验管理主题；三房背景与专属资料、终端。",
+  "backgrounds": {
+    "neutral_lab": {
+      "src": "/art-themes/chemistry-lab/v1/backgrounds/neutral_lab.png",
+      "width": 1672,
+      "height": 941,
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1672,
+        "height": 941
+      }
+    },
+    "neutral_archive": {
+      "src": "/art-themes/chemistry-lab/v1/backgrounds/neutral_archive.png",
+      "width": 1672,
+      "height": 941,
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1672,
+        "height": 941
+      }
+    },
+    "neutral_control": {
+      "src": "/art-themes/chemistry-lab/v1/backgrounds/neutral_control.png",
+      "width": 1672,
+      "height": 941,
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1672,
+        "height": 941
+      }
+    }
+  },
+  "objects": {
+    "note": {
+      "chemistry-lab-note-logbook": {
+        "role": "note",
+        "state": "default",
+        "note_style": "logbook",
+        "src": "/art-themes/chemistry-lab/v1/objects/note-logbook.png",
+        "width": 1402,
+        "height": 1122,
+        "bbox": {
+          "x": 26,
+          "y": 76,
+          "width": 1370,
+          "height": 981
+        },
+        "closeup": "/art-themes/chemistry-lab/v1/objects/note-logbook.png",
+        "closeup_width": 1402,
+        "closeup_height": 1122,
+        "closeup_bbox": {
+          "x": 26,
+          "y": 76,
+          "width": 1370,
+          "height": 981
+        }
+      },
+      "chemistry-lab-note-sealed": {
+        "role": "note",
+        "state": "default",
+        "note_style": "sealed-note",
+        "src": "/art-themes/chemistry-lab/v1/objects/note-sealed.png",
+        "width": 1402,
+        "height": 1122,
+        "bbox": {
+          "x": 63,
+          "y": 58,
+          "width": 1296,
+          "height": 1016
+        },
+        "closeup": "/art-themes/chemistry-lab/v1/objects/note-sealed.png",
+        "closeup_width": 1402,
+        "closeup_height": 1122,
+        "closeup_bbox": {
+          "x": 63,
+          "y": 58,
+          "width": 1296,
+          "height": 1016
+        }
+      }
+    },
+    "key": {
+      "key-brass": {
+        "role": "key",
+        "state": "default",
+        "note_style": null,
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/key-brass.png",
+        "closeup": "/art-themes/rainy-astronomy/handpainted-v2/objects/key-brass.png",
+        "width": 1402,
+        "height": 1122,
+        "bbox": {
+          "x": 159,
+          "y": 115,
+          "width": 1140,
+          "height": 836
+        },
+        "closeup_width": 1402,
+        "closeup_height": 1122,
+        "closeup_bbox": {
+          "x": 159,
+          "y": 115,
+          "width": 1140,
+          "height": 836
+        }
+      }
+    },
+    "terminal": {
+      "chemistry-lab-terminal-off": {
+        "role": "terminal",
+        "state": "default",
+        "note_style": null,
+        "src": "/art-themes/chemistry-lab/v1/objects/terminal-off.png",
+        "width": 1402,
+        "height": 1122,
+        "bbox": {
+          "x": 53,
+          "y": 81,
+          "width": 1306,
+          "height": 968
+        },
+        "closeup": "/art-themes/chemistry-lab/v1/objects/terminal-off.png",
+        "closeup_width": 1402,
+        "closeup_height": 1122,
+        "closeup_bbox": {
+          "x": 53,
+          "y": 81,
+          "width": 1306,
+          "height": 968
+        }
+      },
+      "chemistry-lab-terminal-on": {
+        "role": "terminal",
+        "state": "completed",
+        "note_style": null,
+        "src": "/art-themes/chemistry-lab/v1/objects/terminal-on.png",
+        "width": 1402,
+        "height": 1122,
+        "bbox": {
+          "x": 53,
+          "y": 81,
+          "width": 1307,
+          "height": 969
+        },
+        "closeup": "/art-themes/chemistry-lab/v1/objects/terminal-on.png",
+        "closeup_width": 1402,
+        "closeup_height": 1122,
+        "closeup_bbox": {
+          "x": 53,
+          "y": 81,
+          "width": 1307,
+          "height": 969
+        }
+      }
+    },
+    "cabinet": {
+      "cabinet-closed": {
+        "role": "cabinet",
+        "state": "default",
+        "note_style": null,
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/cabinet-closed.png",
+        "closeup": "/art-themes/rainy-astronomy/handpainted-v2/objects/cabinet-closed.png",
+        "width": 1402,
+        "height": 1122,
+        "bbox": {
+          "x": 213,
+          "y": 59,
+          "width": 971,
+          "height": 992
+        },
+        "closeup_width": 1402,
+        "closeup_height": 1122,
+        "closeup_bbox": {
+          "x": 213,
+          "y": 59,
+          "width": 971,
+          "height": 992
+        }
+      },
+      "cabinet-open": {
+        "role": "cabinet",
+        "state": "completed",
+        "note_style": null,
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/cabinet-open.png",
+        "closeup": "/art-themes/rainy-astronomy/handpainted-v2/objects/cabinet-open.png",
+        "width": 1402,
+        "height": 1122,
+        "bbox": {
+          "x": 201,
+          "y": 58,
+          "width": 1152,
+          "height": 994
+        },
+        "closeup_width": 1402,
+        "closeup_height": 1122,
+        "closeup_bbox": {
+          "x": 201,
+          "y": 58,
+          "width": 1152,
+          "height": 994
+        }
+      }
+    },
+    "circuit": {
+      "circuit-off": {
+        "role": "circuit",
+        "state": "default",
+        "note_style": null,
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-off.png",
+        "closeup": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-off.png",
+        "width": 1402,
+        "height": 1122,
+        "bbox": {
+          "x": 104,
+          "y": 80,
+          "width": 1195,
+          "height": 962
+        },
+        "closeup_width": 1402,
+        "closeup_height": 1122,
+        "closeup_bbox": {
+          "x": 104,
+          "y": 80,
+          "width": 1195,
+          "height": 962
+        }
+      },
+      "circuit-on": {
+        "role": "circuit",
+        "state": "completed",
+        "note_style": null,
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-on.png",
+        "closeup": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-on.png",
+        "width": 1402,
+        "height": 1122,
+        "bbox": {
+          "x": 102,
+          "y": 78,
+          "width": 1198,
+          "height": 966
+        },
+        "closeup_width": 1402,
+        "closeup_height": 1122,
+        "closeup_bbox": {
+          "x": 102,
+          "y": 78,
+          "width": 1198,
+          "height": 966
+        }
+      }
+    },
+    "panel": {
+      "panel-idle": {
+        "role": "panel",
+        "state": "default",
+        "note_style": null,
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/panel-idle.png",
+        "closeup": "/art-themes/rainy-astronomy/handpainted-v2/objects/panel-idle.png",
+        "width": 1402,
+        "height": 1122,
+        "bbox": {
+          "x": 300,
+          "y": 54,
+          "width": 803,
+          "height": 1012
+        },
+        "closeup_width": 1402,
+        "closeup_height": 1122,
+        "closeup_bbox": {
+          "x": 300,
+          "y": 54,
+          "width": 803,
+          "height": 1012
+        }
+      },
+      "panel-lit": {
+        "role": "panel",
+        "state": "completed",
+        "note_style": null,
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/panel-lit.png",
+        "closeup": "/art-themes/rainy-astronomy/handpainted-v2/objects/panel-lit.png",
+        "width": 1402,
+        "height": 1122,
+        "bbox": {
+          "x": 299,
+          "y": 50,
+          "width": 805,
+          "height": 1018
+        },
+        "closeup_width": 1402,
+        "closeup_height": 1122,
+        "closeup_bbox": {
+          "x": 299,
+          "y": 50,
+          "width": 805,
+          "height": 1018
+        }
+      }
+    }
+  },
+  "slot_layout": {
+    "neutral_lab": [
+      {
+        "x": 310,
+        "y": 410,
+        "height": 186,
+        "hotspot": {
+          "x": 195.0,
+          "y": 231.44,
+          "width": 230,
+          "height": 196.28
+        }
+      },
+      {
+        "x": 668,
+        "y": 410,
+        "height": 186,
+        "hotspot": {
+          "x": 555.0,
+          "y": 231.44,
+          "width": 226,
+          "height": 196.28
+        }
+      },
+      {
+        "x": 1022,
+        "y": 410,
+        "height": 186,
+        "hotspot": {
+          "x": 909.0,
+          "y": 231.44,
+          "width": 226,
+          "height": 196.28
+        }
+      },
+      {
+        "x": 1372,
+        "y": 410,
+        "height": 186,
+        "hotspot": {
+          "x": 1259.0,
+          "y": 231.44,
+          "width": 226,
+          "height": 196.28
+        }
+      },
+      {
+        "x": 304,
+        "y": 856,
+        "height": 236,
+        "hotspot": {
+          "x": 179.0,
+          "y": 629.44,
+          "width": 250,
+          "height": 245.28
+        }
+      },
+      {
+        "x": 672,
+        "y": 856,
+        "height": 236,
+        "hotspot": {
+          "x": 547.0,
+          "y": 629.44,
+          "width": 250,
+          "height": 245.28
+        }
+      },
+      {
+        "x": 1036,
+        "y": 856,
+        "height": 236,
+        "hotspot": {
+          "x": 911.0,
+          "y": 629.44,
+          "width": 250,
+          "height": 245.28
+        }
+      },
+      {
+        "x": 1382,
+        "y": 856,
+        "height": 236,
+        "hotspot": {
+          "x": 1257.0,
+          "y": 629.44,
+          "width": 250,
+          "height": 245.28
+        }
+      }
+    ],
+    "neutral_archive": [
+      {
+        "x": 340,
+        "y": 410,
+        "height": 190,
+        "hotspot": {
+          "x": 225.0,
+          "y": 227.60000000000002,
+          "width": 230,
+          "height": 200.2
+        }
+      },
+      {
+        "x": 700,
+        "y": 410,
+        "height": 190,
+        "hotspot": {
+          "x": 587.0,
+          "y": 227.60000000000002,
+          "width": 226,
+          "height": 200.2
+        }
+      },
+      {
+        "x": 1046,
+        "y": 410,
+        "height": 190,
+        "hotspot": {
+          "x": 933.0,
+          "y": 227.60000000000002,
+          "width": 226,
+          "height": 200.2
+        }
+      },
+      {
+        "x": 1382,
+        "y": 410,
+        "height": 190,
+        "hotspot": {
+          "x": 1269.0,
+          "y": 227.60000000000002,
+          "width": 226,
+          "height": 200.2
+        }
+      },
+      {
+        "x": 324,
+        "y": 856,
+        "height": 232,
+        "hotspot": {
+          "x": 201.0,
+          "y": 633.28,
+          "width": 246,
+          "height": 241.35999999999999
+        }
+      },
+      {
+        "x": 700,
+        "y": 856,
+        "height": 232,
+        "hotspot": {
+          "x": 577.0,
+          "y": 633.28,
+          "width": 246,
+          "height": 241.35999999999999
+        }
+      },
+      {
+        "x": 1064,
+        "y": 856,
+        "height": 232,
+        "hotspot": {
+          "x": 941.0,
+          "y": 633.28,
+          "width": 246,
+          "height": 241.35999999999999
+        }
+      },
+      {
+        "x": 1400,
+        "y": 856,
+        "height": 232,
+        "hotspot": {
+          "x": 1277.0,
+          "y": 633.28,
+          "width": 246,
+          "height": 241.35999999999999
+        }
+      }
+    ],
+    "neutral_control": [
+      {
+        "x": 310,
+        "y": 410,
+        "height": 188,
+        "hotspot": {
+          "x": 195.0,
+          "y": 229.51999999999998,
+          "width": 230,
+          "height": 198.24
+        }
+      },
+      {
+        "x": 576,
+        "y": 410,
+        "height": 188,
+        "hotspot": {
+          "x": 464.0,
+          "y": 229.51999999999998,
+          "width": 224,
+          "height": 198.24
+        }
+      },
+      {
+        "x": 1178,
+        "y": 410,
+        "height": 190,
+        "hotspot": {
+          "x": 1065.0,
+          "y": 227.60000000000002,
+          "width": 226,
+          "height": 200.2
+        }
+      },
+      {
+        "x": 1438,
+        "y": 410,
+        "height": 190,
+        "hotspot": {
+          "x": 1325.0,
+          "y": 227.60000000000002,
+          "width": 226,
+          "height": 200.2
+        }
+      },
+      {
+        "x": 304,
+        "y": 856,
+        "height": 236,
+        "hotspot": {
+          "x": 181.0,
+          "y": 629.44,
+          "width": 246,
+          "height": 245.28
+        }
+      },
+      {
+        "x": 608,
+        "y": 856,
+        "height": 236,
+        "hotspot": {
+          "x": 485.0,
+          "y": 629.44,
+          "width": 246,
+          "height": 245.28
+        }
+      },
+      {
+        "x": 930,
+        "y": 856,
+        "height": 236,
+        "hotspot": {
+          "x": 807.0,
+          "y": 629.44,
+          "width": 246,
+          "height": 245.28
+        }
+      },
+      {
+        "x": 1248,
+        "y": 856,
+        "height": 236,
+        "hotspot": {
+          "x": 1125.0,
+          "y": 629.44,
+          "width": 246,
+          "height": 245.28
+        }
+      }
+    ]
+  }
+}

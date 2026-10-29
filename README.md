@@ -2,6 +2,8 @@
 
 当前仅面向电脑浏览器，使用鼠标和键盘，检查尺寸1280×720、1920×1080。经典版与V5的手机专用界面和测试路径已退出当前范围；历史测试原件按原事实保留。
 
+2026-10-30新增四类校园主题素材：图书馆档案、化学实验室、计算机机房、校园广播室，原天文社保留。28张新原图已接入现有随机关卡的主题匹配，通用钥匙等共享。[直接看美术图集](http://127.0.0.1:8001/art-themes/campus-theme-library.html)，无需创建关卡或填写密钥；[实际结果与限制](evidence/project/stages/v5-campus-theme-library/reviews/delivery.md)、[邀请本人检查](evidence/project/human-reviews/v5-campus-theme-library/round-01/review.md)。
+
 2026-10-29新版手绘/UI修复与电脑端清理已完成有限技术检查；雨夜天文社使用15张内置生图原图。请从[8001本地入口](http://127.0.0.1:8001/)继续已有主题关卡；[交付摘要与实际结果](evidence/project/stages/v5-handpainted-rebuild/reviews/delivery.md)，[本人检查步骤](evidence/project/human-reviews/v5-handpainted-rebuild/round-02/review.md)。画风/主题已获本次局部认可；其余核验见最新SP-01入口。
 
 门禁通行与动态图片修复SP-01已完成定向验证：新生成按真实用途命名门禁，通道显示锁态，新显现物件与换房背景会补载。已有关卡/存档保留原名和进度。请刷新[8001入口](http://127.0.0.1:8001/)，按[本轮检查步骤](evidence/project/human-reviews/v5-passage-semantics/round-01/review.md)集中体验；[实际交付与限制](evidence/project/stages/v5-passage-semantics/reviews/delivery.md)。名称点击跳位的HP-01修复保留。[原因与检查记录](evidence/project/stages/v5-handpainted-rebuild/reviews/hotspot-pointer.md)、[后续计划](docs/v5-build-plan.md#20-2026-10-29当前后续顺序点击修复与集中体验)。

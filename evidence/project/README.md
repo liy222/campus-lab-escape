@@ -2,7 +2,11 @@
 
 今后从这里读取、整理和提交证据。开发中每次实际检查、失败、修复和反馈及时保存，大阶段结束再集中交付并邀请真人核验。
 
-## 当前阶段：门锁与门禁通行语义修正
+## 当前阶段：四类校园主题素材库
+
+28张新原图已接入图书馆、化学实验室、机房和广播室；原天文社保留，通用物件共享。[美术图集](http://127.0.0.1:8001/art-themes/campus-theme-library.html) · [交付/限制](stages/v5-campus-theme-library/reviews/delivery.md) · [独立QA](stages/v5-campus-theme-library/reviews/qa.md) · [逐张制作记录](stages/v5-campus-theme-library/logs/image-generation.json) · [本人检查](human-reviews/v5-campus-theme-library/round-01/review.md)。一次构建与分范围联合检查完成，两次列表/就绪提示失败保留；本人尚未核验。
+
+## 前阶段：门锁与门禁通行语义修正
 
 用户已选择门锁/门禁负责通行，柜子仅负责真实线索和物品；画风/主题获得本次局部认可，整体仍待核验。新阶段见[实施计划](../../docs/v5-passage-semantics-plan.md)、[阶段记录](stages/v5-passage-semantics/stage.json)、[独立QA](stages/v5-passage-semantics/reviews/qa.md)和[本人检查入口](human-reviews/v5-passage-semantics/round-01/review.md)。已有定义和存档保留原名，新生成采用用途/命名规则。
 

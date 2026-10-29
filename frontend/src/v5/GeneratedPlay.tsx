@@ -7,6 +7,7 @@ import { localSession, type Level, type Run, type V5Client } from './client';
 import GeneratedScene from './GeneratedScene';
 import CircuitBoard from './CircuitBoard';
 import { buildSceneModel } from './visual/scene';
+import { themeCoverage } from './visual/registry';
 import type { GeneratedState, SceneModel } from './visual/types';
 import './v5.css';
 
@@ -118,6 +119,7 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
   const circuit = circuits.find(board => board?.target_id === (object?.target_id || view));
   const seq = sequences.find(board => board?.target_id === (object?.target_id || view));
   const sceneObject = model?.objects.find(candidate => candidate.object_id === view);
+  const coverage = themeCoverage(level?.theme);
 
   return <main className="v5-game" aria-busy={pending}>
     <header className="v5-hud">
@@ -142,7 +144,7 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
 
     <div className="v5-stage">
       {sceneModel && <GeneratedScene model={sceneModel} disabled={disabled || Boolean(drawer) || Boolean(view) || Boolean(confirm)} onObject={inspect} roomName={state.room.name} />}
-      <div className="v5-stage-caption" aria-hidden="true"><span>{model?.themeName ? `${model.themeName} · 雨夜` : '通用校园手绘'}</span><span>点击场景中的光点查看物件</span></div>
+      <div className="v5-stage-caption" aria-hidden="true"><span>{model?.themeName ? `${model.themeName} · 手绘校园` : '通用校园手绘'}</span><span>点击场景中的光点查看物件</span></div>
       {state.status === 'won' && victoryOpen && <section className="v5-victory" role="status" aria-label="探索结算">
         <p className="v5-kicker">探索完成 / CLEARED</p>
         <h2>你找到了出口。</h2>
@@ -182,7 +184,7 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
         <summary>探索档案 <span>{level?.theme ? '创作主题与故事' : '本关故事'}</span></summary>
         {level?.theme && <div className="v5-theme-brief"><small>你的创作主题</small><p>{level.theme}</p></div>}
         {level?.story ? <p className="v5-story-text">{level.story}</p> : <p>{state.room.description}</p>}
-        <small className="v5-art-note">{model?.themeName ? `当前画面使用「${model.themeName}」主题素材，仅覆盖天文社相关主题。` : '当前主题尚未提供专属素材，画面使用通用校园手绘，主题由故事、物件与线索呈现。'}</small>
+        <small className="v5-art-note">{coverage.pack ? `当前画面使用「${coverage.pack.display_name}」主题素材。${coverage.pack.coverage || '使用本主题的场景与代表物件，部分角色沿用通用手绘素材。'}` : '当前主题尚未提供专属素材，画面使用通用校园手绘，主题由故事、物件与线索呈现。'}</small>
       </details>
     </section>
 

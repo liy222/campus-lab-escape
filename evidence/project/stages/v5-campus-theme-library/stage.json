@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "stage": "v5-campus-theme-library",
+  "title": "校园常用主题素材库第一批",
+  "created_at": "2026-10-29T16:50:02.396222Z",
+  "technical_status": "verified_pending_human_review",
+  "human_review_status": "not_reviewed",
+  "owner_review_status": "not_reviewed",
+  "peer_review_status": "not_reviewed",
+  "current_human_review_round": 1,
+  "human_review_rounds": {},
+  "collections": [],
+  "source_commit": "5a9b53c",
+  "scope": "预制四类校园主题美术并复用现有主题包接口；不修改关卡规则、生成后端、存档或数据库",
+  "proposed_themes": [
+    "library-archive",
+    "chemistry-lab",
+    "computer-room",
+    "campus-broadcast"
+  ],
+  "theme_selection_note": "用户已通过本对话异步选项明确选择推荐四类；这是制作范围选择，不是成品接受",
+  "project_provider_paid_calls": 0,
+  "image_tool_calls": 28,
+  "copied_originals": 28,
+  "completed_packs": [
+    "library-archive",
+    "chemistry-lab",
+    "computer-room",
+    "campus-broadcast"
+  ],
+  "theme_selection_source": "request_user_input_async call_2fbdeb7d4d624978b6fdb4c2e0874834 item0",
+  "independent_ai_review_status": "joint_targeted_checks_passed_with_retained_ui_refresh_failures",
+  "summary": "reviews/delivery.md",
+  "independent_review": "reviews/qa.md",
+  "preview": "http://127.0.0.1:8001/art-themes/campus-theme-library.html",
+  "shared_roles": [
+    "key",
+    "cabinet",
+    "circuit",
+    "panel"
+  ],
+  "known_boundary": "Fast Synthetic ready jobs did not always update UI list/status; existing refresh used for remaining asset checks; automatic list behaviour not accepted"
+}

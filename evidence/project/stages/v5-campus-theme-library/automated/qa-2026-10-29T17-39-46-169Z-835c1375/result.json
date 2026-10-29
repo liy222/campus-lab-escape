@@ -1,0 +1,707 @@
+{
+  "run_id": "835c1375-2202-4eea-b322-baf4b9169a85",
+  "command": "node tests/v5/run_theme_library_browser.mjs --resume-from chemistry-lab",
+  "started_at_utc": "2026-10-29T17:39:46.169Z",
+  "finished_at_utc": "2026-10-29T17:41:14.425Z",
+  "scope": "remaining three-room Synthetic browser runs from chemistry-lab; static/topic-matching results reused from first run; partial witness only",
+  "static_audit_reused_from": "automated/qa-2026-10-29T17-33-54-163Z-e6732213/static-image-observations.json",
+  "browser_TEMP": null,
+  "server_port": 8002,
+  "server_stopped": true,
+  "external_requests": 0,
+  "real_provider_calls": 0,
+  "paid_calls": 0,
+  "player_database_access": false,
+  "records": [
+    {
+      "name": "chemistry-lab synthetic job accepted",
+      "actual": {
+        "status": "pending"
+      },
+      "expected": "accepted",
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:39:50.617Z"
+    },
+    {
+      "name": "chemistry-lab synthetic job ready",
+      "actual": "pending",
+      "expected": "ready",
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:39:52.475Z"
+    },
+    {
+      "name": "chemistry-lab actual room neutral_lab assets",
+      "actual": {
+        "theme": "chemistry-lab",
+        "background": "/art-themes/chemistry-lab/v1/backgrounds/neutral_lab.png",
+        "missing": 0,
+        "loading": "false",
+        "aliases": [
+          "theme:background:/art-themes/chemistry-lab/v1/backgrounds/neutral_lab.png",
+          "fallback:background:neutral_lab",
+          "theme:key-brass",
+          "theme:chemistry-lab-note-logbook",
+          "fallback:note",
+          "theme:chemistry-lab-note-sealed",
+          "theme:chemistry-lab-terminal-off",
+          "fallback:terminal",
+          "theme:cabinet-closed",
+          "fallback:cabinet",
+          "theme:chemistry-lab-terminal-on",
+          "theme:cabinet-open"
+        ],
+        "variants": [
+          "key-brass",
+          "chemistry-lab-note-logbook",
+          "chemistry-lab-note-sealed",
+          "chemistry-lab-terminal-off",
+          "cabinet-closed"
+        ],
+        "current_theme_aliases": 5
+      },
+      "expected": {
+        "theme": "chemistry-lab",
+        "background": "/art-themes/chemistry-lab/v1/backgrounds/neutral_lab.png",
+        "missing": 0,
+        "loading": "false",
+        "all_current_aliases_loaded": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:39:54.902Z"
+    },
+    {
+      "name": "chemistry-lab actual note closeup",
+      "actual": {
+        "id": "chemistry-lab-note-logbook",
+        "src": "/art-themes/chemistry-lab/v1/objects/note-logbook.png",
+        "naturalWidth": 1402
+      },
+      "expected": {
+        "expected_src": "/art-themes/chemistry-lab/v1/objects/note-logbook.png",
+        "width_gt_zero": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:39:55.710Z"
+    },
+    {
+      "name": "chemistry-lab visible logbook note variant",
+      "actual": {
+        "object_id": "obj_source",
+        "variant_id": "chemistry-lab-note-logbook",
+        "note_style": "logbook"
+      },
+      "expected": "logbook",
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:39:56.006Z"
+    },
+    {
+      "name": "chemistry-lab actual note closeup",
+      "actual": {
+        "id": "chemistry-lab-note-sealed",
+        "src": "/art-themes/chemistry-lab/v1/objects/note-sealed.png",
+        "naturalWidth": 1402
+      },
+      "expected": {
+        "expected_src": "/art-themes/chemistry-lab/v1/objects/note-sealed.png",
+        "width_gt_zero": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:39:56.213Z"
+    },
+    {
+      "name": "chemistry-lab visible sealed-note note variant",
+      "actual": {
+        "object_id": "obj_order",
+        "variant_id": "chemistry-lab-note-sealed",
+        "note_style": "sealed-note"
+      },
+      "expected": "sealed-note",
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:39:56.491Z"
+    },
+    {
+      "name": "chemistry-lab actual terminal closeup",
+      "actual": {
+        "id": "chemistry-lab-terminal-off",
+        "src": "/art-themes/chemistry-lab/v1/objects/terminal-off.png",
+        "naturalWidth": 1402
+      },
+      "expected": {
+        "expected_src": "/art-themes/chemistry-lab/v1/objects/terminal-off.png",
+        "width_gt_zero": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:39:56.767Z"
+    },
+    {
+      "name": "chemistry-lab terminal default state",
+      "actual": "chemistry-lab-terminal-off",
+      "expected": "chemistry-lab-terminal-off",
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:39:57.056Z"
+    },
+    {
+      "name": "chemistry-lab actual terminal closeup",
+      "actual": {
+        "id": "chemistry-lab-terminal-on",
+        "src": "/art-themes/chemistry-lab/v1/objects/terminal-on.png",
+        "naturalWidth": 1402
+      },
+      "expected": {
+        "expected_src": "/art-themes/chemistry-lab/v1/objects/terminal-on.png",
+        "width_gt_zero": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:39:58.319Z"
+    },
+    {
+      "name": "chemistry-lab terminal completed state",
+      "actual": {
+        "variant": "chemistry-lab-terminal-on",
+        "closeup": "chemistry-lab-terminal-on"
+      },
+      "expected": {
+        "variant": "chemistry-lab-terminal-on",
+        "closeup": "chemistry-lab-terminal-on"
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:39:58.656Z"
+    },
+    {
+      "name": "chemistry-lab terminal completed state",
+      "actual": "chemistry-lab-terminal-on",
+      "expected": "chemistry-lab-terminal-on",
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:39:59.311Z"
+    },
+    {
+      "name": "chemistry-lab actual room neutral_archive assets",
+      "actual": {
+        "theme": "chemistry-lab",
+        "background": "/art-themes/chemistry-lab/v1/backgrounds/neutral_archive.png",
+        "missing": 0,
+        "loading": "false",
+        "aliases": [
+          "theme:background:/art-themes/chemistry-lab/v1/backgrounds/neutral_lab.png",
+          "fallback:background:neutral_lab",
+          "theme:key-brass",
+          "theme:chemistry-lab-note-logbook",
+          "fallback:note",
+          "theme:chemistry-lab-note-sealed",
+          "theme:chemistry-lab-terminal-off",
+          "fallback:terminal",
+          "theme:cabinet-closed",
+          "fallback:cabinet",
+          "theme:chemistry-lab-terminal-on",
+          "theme:cabinet-open",
+          "theme:background:/art-themes/chemistry-lab/v1/backgrounds/neutral_archive.png",
+          "fallback:background:neutral_archive",
+          "theme:circuit-off",
+          "fallback:circuit",
+          "theme:panel-idle",
+          "fallback:panel",
+          "theme:circuit-on",
+          "theme:panel-lit"
+        ],
+        "variants": [
+          "circuit-off",
+          "panel-idle"
+        ],
+        "current_theme_aliases": 2
+      },
+      "expected": {
+        "theme": "chemistry-lab",
+        "background": "/art-themes/chemistry-lab/v1/backgrounds/neutral_archive.png",
+        "missing": 0,
+        "loading": "false",
+        "all_current_aliases_loaded": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:39:59.942Z"
+    },
+    {
+      "name": "chemistry-lab actual room neutral_control assets",
+      "actual": {
+        "theme": "chemistry-lab",
+        "background": "/art-themes/chemistry-lab/v1/backgrounds/neutral_control.png",
+        "missing": 0,
+        "loading": "false",
+        "aliases": [
+          "theme:background:/art-themes/chemistry-lab/v1/backgrounds/neutral_lab.png",
+          "fallback:background:neutral_lab",
+          "theme:key-brass",
+          "theme:chemistry-lab-note-logbook",
+          "fallback:note",
+          "theme:chemistry-lab-note-sealed",
+          "theme:chemistry-lab-terminal-off",
+          "fallback:terminal",
+          "theme:cabinet-closed",
+          "fallback:cabinet",
+          "theme:chemistry-lab-terminal-on",
+          "theme:cabinet-open",
+          "theme:background:/art-themes/chemistry-lab/v1/backgrounds/neutral_archive.png",
+          "fallback:background:neutral_archive",
+          "theme:circuit-off",
+          "fallback:circuit",
+          "theme:panel-idle",
+          "fallback:panel",
+          "theme:circuit-on",
+          "theme:panel-lit",
+          "theme:background:/art-themes/chemistry-lab/v1/backgrounds/neutral_control.png",
+          "fallback:background:neutral_control"
+        ],
+        "variants": [
+          "circuit-off",
+          "chemistry-lab-terminal-off"
+        ],
+        "current_theme_aliases": 2
+      },
+      "expected": {
+        "theme": "chemistry-lab",
+        "background": "/art-themes/chemistry-lab/v1/backgrounds/neutral_control.png",
+        "missing": 0,
+        "loading": "false",
+        "all_current_aliases_loaded": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:08.157Z"
+    },
+    {
+      "name": "chemistry-lab reached both note styles and terminal states",
+      "actual": {
+        "representativeNote": true,
+        "note_styles": [
+          "logbook",
+          "sealed-note"
+        ],
+        "terminalDefault": true,
+        "completedTerminal": true
+      },
+      "expected": {
+        "representativeNote": true,
+        "note_styles": [
+          "logbook",
+          "sealed-note"
+        ],
+        "terminalDefault": true,
+        "completedTerminal": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:08.671Z"
+    },
+    {
+      "name": "chemistry-lab reload keeps resolved theme and variants",
+      "actual": {
+        "theme": "chemistry-lab",
+        "background": "/art-themes/chemistry-lab/v1/backgrounds/neutral_control.png",
+        "variants": [
+          [
+            "obj_puzzle_4",
+            "circuit-off"
+          ],
+          [
+            "obj_puzzle_5",
+            "chemistry-lab-terminal-off"
+          ]
+        ]
+      },
+      "expected": {
+        "theme": "chemistry-lab",
+        "background": "/art-themes/chemistry-lab/v1/backgrounds/neutral_control.png",
+        "variants": [
+          [
+            "obj_puzzle_4",
+            "circuit-off"
+          ],
+          [
+            "obj_puzzle_5",
+            "chemistry-lab-terminal-off"
+          ]
+        ]
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:10.357Z"
+    },
+    {
+      "name": "computer-room synthetic job accepted",
+      "actual": {
+        "status": "pending"
+      },
+      "expected": "accepted",
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:10.540Z"
+    },
+    {
+      "name": "computer-room synthetic job ready",
+      "actual": "pending",
+      "expected": "ready",
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:12.384Z"
+    },
+    {
+      "name": "computer-room actual room neutral_lab assets",
+      "actual": {
+        "theme": "computer-room",
+        "background": "/art-themes/computer-room/v1/backgrounds/neutral_lab.png",
+        "missing": 0,
+        "loading": "false",
+        "aliases": [
+          "theme:background:/art-themes/computer-room/v1/backgrounds/neutral_lab.png",
+          "fallback:background:neutral_lab",
+          "theme:key-brass",
+          "theme:computer-room-note-logbook",
+          "fallback:note",
+          "theme:computer-room-note-sealed",
+          "theme:computer-room-terminal-off",
+          "fallback:terminal",
+          "theme:cabinet-closed",
+          "fallback:cabinet",
+          "theme:computer-room-terminal-on",
+          "theme:cabinet-open"
+        ],
+        "variants": [
+          "key-brass",
+          "computer-room-note-logbook",
+          "computer-room-note-sealed",
+          "computer-room-terminal-off",
+          "cabinet-closed"
+        ],
+        "current_theme_aliases": 5
+      },
+      "expected": {
+        "theme": "computer-room",
+        "background": "/art-themes/computer-room/v1/backgrounds/neutral_lab.png",
+        "missing": 0,
+        "loading": "false",
+        "all_current_aliases_loaded": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:13.505Z"
+    },
+    {
+      "name": "computer-room actual note closeup",
+      "actual": {
+        "id": "computer-room-note-logbook",
+        "src": "/art-themes/computer-room/v1/objects/note-logbook.png",
+        "naturalWidth": 1402
+      },
+      "expected": {
+        "expected_src": "/art-themes/computer-room/v1/objects/note-logbook.png",
+        "width_gt_zero": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:14.276Z"
+    },
+    {
+      "name": "computer-room visible logbook note variant",
+      "actual": {
+        "object_id": "obj_source",
+        "variant_id": "computer-room-note-logbook",
+        "note_style": "logbook"
+      },
+      "expected": "logbook",
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:14.590Z"
+    },
+    {
+      "name": "computer-room actual note closeup",
+      "actual": {
+        "id": "computer-room-note-sealed",
+        "src": "/art-themes/computer-room/v1/objects/note-sealed.png",
+        "naturalWidth": 1402
+      },
+      "expected": {
+        "expected_src": "/art-themes/computer-room/v1/objects/note-sealed.png",
+        "width_gt_zero": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:14.857Z"
+    },
+    {
+      "name": "computer-room visible sealed-note note variant",
+      "actual": {
+        "object_id": "obj_order",
+        "variant_id": "computer-room-note-sealed",
+        "note_style": "sealed-note"
+      },
+      "expected": "sealed-note",
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:15.140Z"
+    },
+    {
+      "name": "computer-room actual terminal closeup",
+      "actual": {
+        "id": "computer-room-terminal-off",
+        "src": "/art-themes/computer-room/v1/objects/terminal-off.png",
+        "naturalWidth": 1402
+      },
+      "expected": {
+        "expected_src": "/art-themes/computer-room/v1/objects/terminal-off.png",
+        "width_gt_zero": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:15.408Z"
+    },
+    {
+      "name": "computer-room terminal default state",
+      "actual": "computer-room-terminal-off",
+      "expected": "computer-room-terminal-off",
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:15.726Z"
+    },
+    {
+      "name": "computer-room actual terminal closeup",
+      "actual": {
+        "id": "computer-room-terminal-on",
+        "src": "/art-themes/computer-room/v1/objects/terminal-on.png",
+        "naturalWidth": 1402
+      },
+      "expected": {
+        "expected_src": "/art-themes/computer-room/v1/objects/terminal-on.png",
+        "width_gt_zero": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:16.916Z"
+    },
+    {
+      "name": "computer-room terminal completed state",
+      "actual": {
+        "variant": "computer-room-terminal-on",
+        "closeup": "computer-room-terminal-on"
+      },
+      "expected": {
+        "variant": "computer-room-terminal-on",
+        "closeup": "computer-room-terminal-on"
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:17.241Z"
+    },
+    {
+      "name": "computer-room terminal completed state",
+      "actual": "computer-room-terminal-on",
+      "expected": "computer-room-terminal-on",
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:17.982Z"
+    },
+    {
+      "name": "computer-room actual room neutral_archive assets",
+      "actual": {
+        "theme": "computer-room",
+        "background": "/art-themes/computer-room/v1/backgrounds/neutral_archive.png",
+        "missing": 0,
+        "loading": "false",
+        "aliases": [
+          "theme:background:/art-themes/computer-room/v1/backgrounds/neutral_lab.png",
+          "fallback:background:neutral_lab",
+          "theme:key-brass",
+          "theme:computer-room-note-logbook",
+          "fallback:note",
+          "theme:computer-room-note-sealed",
+          "theme:computer-room-terminal-off",
+          "fallback:terminal",
+          "theme:cabinet-closed",
+          "fallback:cabinet",
+          "theme:computer-room-terminal-on",
+          "theme:cabinet-open",
+          "theme:background:/art-themes/computer-room/v1/backgrounds/neutral_archive.png",
+          "fallback:background:neutral_archive",
+          "theme:circuit-off",
+          "fallback:circuit",
+          "theme:panel-idle",
+          "fallback:panel",
+          "theme:circuit-on",
+          "theme:panel-lit"
+        ],
+        "variants": [
+          "circuit-off",
+          "panel-idle"
+        ],
+        "current_theme_aliases": 2
+      },
+      "expected": {
+        "theme": "computer-room",
+        "background": "/art-themes/computer-room/v1/backgrounds/neutral_archive.png",
+        "missing": 0,
+        "loading": "false",
+        "all_current_aliases_loaded": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:18.622Z"
+    },
+    {
+      "name": "computer-room actual room neutral_control assets",
+      "actual": {
+        "theme": "computer-room",
+        "background": "/art-themes/computer-room/v1/backgrounds/neutral_control.png",
+        "missing": 0,
+        "loading": "false",
+        "aliases": [
+          "theme:background:/art-themes/computer-room/v1/backgrounds/neutral_lab.png",
+          "fallback:background:neutral_lab",
+          "theme:key-brass",
+          "theme:computer-room-note-logbook",
+          "fallback:note",
+          "theme:computer-room-note-sealed",
+          "theme:computer-room-terminal-off",
+          "fallback:terminal",
+          "theme:cabinet-closed",
+          "fallback:cabinet",
+          "theme:computer-room-terminal-on",
+          "theme:cabinet-open",
+          "theme:background:/art-themes/computer-room/v1/backgrounds/neutral_archive.png",
+          "fallback:background:neutral_archive",
+          "theme:circuit-off",
+          "fallback:circuit",
+          "theme:panel-idle",
+          "fallback:panel",
+          "theme:circuit-on",
+          "theme:panel-lit",
+          "theme:background:/art-themes/computer-room/v1/backgrounds/neutral_control.png",
+          "fallback:background:neutral_control"
+        ],
+        "variants": [
+          "circuit-off",
+          "computer-room-terminal-off"
+        ],
+        "current_theme_aliases": 2
+      },
+      "expected": {
+        "theme": "computer-room",
+        "background": "/art-themes/computer-room/v1/backgrounds/neutral_control.png",
+        "missing": 0,
+        "loading": "false",
+        "all_current_aliases_loaded": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:26.253Z"
+    },
+    {
+      "name": "computer-room reached both note styles and terminal states",
+      "actual": {
+        "representativeNote": true,
+        "note_styles": [
+          "logbook",
+          "sealed-note"
+        ],
+        "terminalDefault": true,
+        "completedTerminal": true
+      },
+      "expected": {
+        "representativeNote": true,
+        "note_styles": [
+          "logbook",
+          "sealed-note"
+        ],
+        "terminalDefault": true,
+        "completedTerminal": true
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:26.729Z"
+    },
+    {
+      "name": "computer-room reload keeps resolved theme and variants",
+      "actual": {
+        "theme": "computer-room",
+        "background": "/art-themes/computer-room/v1/backgrounds/neutral_control.png",
+        "variants": [
+          [
+            "obj_puzzle_4",
+            "circuit-off"
+          ],
+          [
+            "obj_puzzle_5",
+            "computer-room-terminal-off"
+          ]
+        ]
+      },
+      "expected": {
+        "theme": "computer-room",
+        "background": "/art-themes/computer-room/v1/backgrounds/neutral_control.png",
+        "variants": [
+          [
+            "obj_puzzle_4",
+            "circuit-off"
+          ],
+          [
+            "obj_puzzle_5",
+            "computer-room-terminal-off"
+          ]
+        ]
+      },
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:28.169Z"
+    },
+    {
+      "name": "campus-broadcast synthetic job accepted",
+      "actual": {
+        "status": "pending"
+      },
+      "expected": "accepted",
+      "pass": true,
+      "scope": "browser",
+      "observed_at_utc": "2026-10-29T17:40:28.375Z"
+    }
+  ],
+  "screenshots": [
+    "chemistry-lab-R1.png",
+    "chemistry-lab-R1-note-closeup.png",
+    "chemistry-lab-R1-note-closeup.png",
+    "chemistry-lab-R1-terminal-closeup.png",
+    "chemistry-lab-terminal-on-terminal-closeup.png",
+    "chemistry-lab-R2.png",
+    "chemistry-lab-R3.png",
+    "computer-room-R1.png",
+    "computer-room-R1-note-closeup.png",
+    "computer-room-R1-note-closeup.png",
+    "computer-room-R1-terminal-closeup.png",
+    "computer-room-terminal-on-terminal-closeup.png",
+    "computer-room-R2.png",
+    "computer-room-R3.png",
+    "failure.png"
+  ],
+  "issues": [
+    {
+      "type": "TimeoutError2",
+      "scope": "theme-library QA",
+      "message": "locator.waitFor: Timeout 45000ms exceeded."
+    }
+  ],
+  "exit_code": 1,
+  "limitations": [
+    "Synthetic public fixture only; no real model outputs or human acceptance",
+    "Does not complete full three-room games or cover saves/classic/mobile",
+    "Original and shared artwork must be distinguished in static result"
+  ]
+}
