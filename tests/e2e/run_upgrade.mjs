@@ -231,11 +231,11 @@ try {
   await expect(page.getByRole('heading', { name: '成功逃离实验室', exact: true })).toBeVisible();
   await layout(page, 1280, 'three-room-victory');
 
-  await page.setViewportSize({ width: 375, height: 812 });
-  await layout(page, 375, 'mobile-victory');
+
+
   assert.equal(pageErrors.length, 0);
-  checks.push({ stage: 'three-room-route-save-restore-refresh-win', passed: true, final_room: resultState.room.room_id, legacy_level: saved.level_version, mobile_width: 375 });
-  await page.screenshot({ path: path.join(folder, 'mobile-victory.png'), fullPage: true });
+  checks.push({ stage: 'three-room-route-save-restore-refresh-win', passed: true, final_room: resultState.room.room_id, legacy_level: saved.level_version });
+
   await context.close();
 } catch (error) {
   issues.push({ stage: 'runner', error: error.message });
@@ -259,7 +259,7 @@ try {
   const metadata = {
     candidate, started, ended: new Date().toISOString(), command: [process.execPath, ...process.argv.slice(1)],
     provider: 'AI_PROVIDER=mock; no paid model call', browser: 'Google Chrome, headless isolated context',
-    viewport_widths: [1280, 375], backend_port: backendPort, frontend_port: frontendPort,
+    viewport_widths: [1280], backend_port: backendPort, frontend_port: frontendPort,
     source_sha256_before: before, source_sha256_after: after,
     exit_code: issues.length ? 1 : 0,
     limitations: ['This scripted browser route does not measure real-player completion time or human acceptance.'],

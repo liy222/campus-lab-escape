@@ -59,12 +59,13 @@ export type SceneObject = {
   closeup: string | null;
   closeupBox: Box | null;
   variantId: string | null;
+  fallback: { key: string; src: string; bbox: Box } | null;
 };
 
 export type SceneModel = {
   themeId: string | null;
   themeName: string | null;
-  background: { key: string; src: string };
+  background: { key: string; src: string; fallback?: { key: string; src: string } };
   objects: SceneObject[];
   /** Other variants of the roles in this room, so a completion can swap art without a reload. */
   extras: { key: string; src: string }[];

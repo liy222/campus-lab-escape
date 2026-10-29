@@ -265,13 +265,13 @@ try {
   assert.deepEqual(state.minigames, { circuit: null, sequence: null });
   assert.equal(state.statistics.clues_total,10); assert.equal(state.statistics.hidden_total,2); assert.equal(state.statistics.hint_count,0); assert.equal(state.settlement,null); await hint(page,3,false);
   await layout(page, 1280, 'R1-graybox'); await page.screenshot({ path: path.join(folder, 'R1-graybox.png'), fullPage: true });
-  await page.setViewportSize({ width: 375, height: 812 }); await layout(page, 375, 'R1-mobile'); await page.setViewportSize({ width: 1280, height: 900 });
+    await page.setViewportSize({ width: 1280, height: 900 });
   // Prove early exploration, before obtaining any item or powering/login.
   await observe(page, 'r1_door'); await interact(page, 'r1_door'); await move(page, 'R2');
   await observe(page, 'r2_door'); await interact(page, 'r2_door'); await move(page, 'R3'); await observe(page, 'r3_legend');
   assert.equal(state.inventory.length, 0); assert.equal(state.device_states.computer, 'OFF');
   await layout(page, 1280, 'R3-early-graybox'); await page.screenshot({ path: path.join(folder, 'R3-graybox.png'), fullPage: true });
-  await page.setViewportSize({ width: 375, height: 812 }); await layout(page, 375, 'R3-mobile'); await page.setViewportSize({ width: 1280, height: 900 });
+    await page.setViewportSize({ width: 1280, height: 900 });
   await move(page, 'R2'); await move(page, 'R1');
   await observe(page, 'r1_clock'); await observe(page, 'r1_record'); await observe(page, 'r1_plaque');
   const levelAnswers=[]; for(const level of [1,2,3]) levelAnswers.push(await hint(page,level)); assert.equal(new Set(levelAnswers).size,3); await expect(page.locator('.run-statistics [data-stat="hint_count"]')).toHaveText('3');
@@ -298,7 +298,7 @@ try {
   start('v3.4-backend-partial-board-restarted',python,service.backendArgs,service.backendEnv); await ready(service.backendURL+'/api/health');
   await http(page,'state',() => page.getByRole('button',{name:'同步进度',exact:true}).click(),200,'/state'); assert.deepEqual(state,beforeBoardRestart);
   await openCircuit(page); await layout(page,1280,'R2-partial-circuit'); await page.screenshot({path:path.join(folder,'R2-partial-circuit.png'),fullPage:true});
-  await page.setViewportSize({width:375,height:812}); await layout(page,375,'R2-mobile-circuit'); await page.setViewportSize({width:1280,height:900});
+    await page.setViewportSize({width:1280,height:900});
   const solution = deriveCircuit(state.minigames.circuit), alternate = {...solution};
   const straight = state.minigames.circuit.modules.find(module => module.shape==='I'); alternate[straight.module_id]=(alternate[straight.module_id]+2)%4;
   assert(connected(state.minigames.circuit,solution)); assert(connected(state.minigames.circuit,alternate)); assert.notDeepEqual(solution,alternate);
@@ -320,7 +320,7 @@ try {
   await select(page, 'r2_monitor'); await page.getByRole('button', { name: /^互动$/ }).click();
   await expect(page.getByLabel('用户名', { exact: true })).toHaveValue(''); await expect(page.getByLabel('密码', { exact: true })).toHaveValue('');
   await layout(page, 1280, 'R2-login-graybox'); await page.screenshot({ path: path.join(folder, 'R2-graybox.png'), fullPage: true });
-  await page.setViewportSize({ width: 375, height: 812 }); await layout(page, 375, 'R2-mobile-login'); await page.setViewportSize({ width: 1280, height: 900 });
+    await page.setViewportSize({ width: 1280, height: 900 });
   await login(page, 'LAB-42', '2117'); await interact(page, 'r2_monitor');
   await observe(page, 'research_strip'); await interact(page, 'research_strip'); await observe(page, 'access_card'); await interact(page, 'access_card');
   await move(page, 'R3'); await observe(page, 'r3_panel'); await observe(page, 'exit_door');
@@ -338,7 +338,7 @@ try {
   await draftSequence(page,derivedSequence.slice(0,2)); await refresh(page); await openSequence(page); await expect(page.locator('.sequence-submit')).toBeDisabled();
   await draftSequence(page,derivedSequence.slice(0,2)); await move(page,'R2'); await move(page,'R3'); await openSequence(page); await expect(page.locator('.sequence-submit')).toBeDisabled();
   await layout(page,1280,'R3-sequence-panel'); await page.screenshot({path:path.join(folder,'R3-sequence-panel.png'),fullPage:true});
-  await page.setViewportSize({width:375,height:812}); await layout(page,375,'R3-mobile-sequence'); await page.setViewportSize({width:1280,height:900});
+    await page.setViewportSize({width:1280,height:900});
   await draftSequence(page,derivedSequence); await submitSequence(page); assert.equal(state.progress.check_done,true); assert.equal(state.device_states.exit,'FINAL_CHECK');
   const miniCompleted=(await control(page,'save')).data.visible_state; await control(page,'reset'); await control(page,'restore'); await refresh(page); assert.deepEqual(publicGame(state),publicGame(miniCompleted));
   checks.push({check:'cross-room-public-sequence-wrong-duplicates-draft-clears-restore-reload-room-and-completed-save',passed:true,derived_sequence:derivedSequence});
@@ -368,12 +368,12 @@ try {
   assert.deepEqual(state.settlement,score);await expect(page.locator('.save-slot')).toHaveCount(4);
   checks.push({check:'three-immutable-archives-plus-old-slot-persist-reset-refresh-OSrestart',passed:true,archive_count:3,legacy_count:1});
   checks.push({check:'settlement-authoritative-UTC-score-winfreeze-reset-slot-restore-refresh-OSrestart',passed:true,settlement:score});
-  await page.setViewportSize({ width: 375, height: 812 }); await layout(page, 375, 'mobile-victory');
-  await page.locator('.save-panel').screenshot({path:path.join(folder,'mobile-three-archive-list.png')});
+
+
   await page.locator(`.save-slot[data-save-id="${partialArchive.slot.save_id}"] .save-slot-restore`).click();
-  await page.getByRole('dialog').screenshot({path:path.join(folder,'mobile-selected-restore-confirmation.png')});
+
   await page.getByRole('dialog').getByRole('button',{name:'取消',exact:true}).click();assert.deepEqual(state.settlement,score);
-  await page.screenshot({ path: path.join(folder, 'mobile-victory.png'), fullPage: true }); assert.equal(pageErrors.length, 0);
+   assert.equal(pageErrors.length, 0);
   checks.push({ check: 'three-room-route-slots-items-save-restore-reload-actual-server-restart-win', passed: true, final_room: state.room.room_id });
   await context.close();
   await lightOldVersion('legacy', '2.0.0', 'campus-lab-session-v1');

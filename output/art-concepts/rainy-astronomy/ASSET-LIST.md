@@ -1,5 +1,8 @@
 # 素材清单 · rainy-astronomy
 
+> 当前接入版本为1.1.0手绘重建版，详见[实际新清单](handpainted-v2/assets.json)与[说明](handpainted-v2/README.md)。下表是原1.0.0矢量包的生成清单，保留原数据，不代表当前加载资源。
+
+
 主题包 `rainy-astronomy` / `1.0.0`，显示名「雨夜天文社」。
 本文件由 `source/asset_report.py` 按实际构建结果生成：尺寸、bbox、文件大小都来自磁盘上的 PNG。
 

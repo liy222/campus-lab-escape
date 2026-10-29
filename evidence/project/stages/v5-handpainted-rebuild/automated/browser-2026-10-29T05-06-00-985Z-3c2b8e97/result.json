@@ -1,0 +1,1585 @@
+{
+  "kind": "Independent handpainted rebuild focused browser",
+  "run_id": "3c2b8e97-d9d1-453d-9110-7e0e95851bc1",
+  "started_at_utc": "2026-10-29T05:06:00.985Z",
+  "ended_at_utc": "2026-10-29T05:06:28.802Z",
+  "command": "node tests/v5/run_handpainted_rebuild_browser.mjs",
+  "inputs": [
+    {
+      "rooms": 1,
+      "difficulty": "easy",
+      "theme": "冬夜图书馆，寻找借阅登记"
+    },
+    {
+      "rooms": 3,
+      "difficulty": "hard",
+      "theme": "雨夜里的天文社旧活动室，寻找封存的观测记录"
+    }
+  ],
+  "provenance": {
+    "git_revision": "440fc58d18bcfadb44e82a5881932ad3501265f1",
+    "sources": [
+      {
+        "path": "tests/v5/run_handpainted_rebuild_browser.mjs",
+        "bytes": 25110,
+        "sha256": "572f23bee784d108512566fe699110ea528ea5703093947045094511a5737f24"
+      },
+      {
+        "path": "tests/v5/visual_ui_fixture_server.py",
+        "bytes": 3681,
+        "sha256": "da1304f158ab233cbad4458ea3f959dfdf7ec29dc9f3b211167834532562d166"
+      },
+      {
+        "path": "frontend/src/v5/GeneratedPlay.tsx",
+        "bytes": 20306,
+        "sha256": "821aaad82877bc2eb8ed8c0dcd4b1177e689d681309c638dd87559ead72bd108"
+      },
+      {
+        "path": "frontend/src/v5/GeneratedScene.tsx",
+        "bytes": 6277,
+        "sha256": "33a0cad863a70fc3658e1bc1d920b19d2af12991fc7b917adec42779d4590808"
+      },
+      {
+        "path": "frontend/src/v5/ObjectCloseup.tsx",
+        "bytes": 992,
+        "sha256": "0dd67ae6dca4d8342a02de85658489656301cbe4a8656bce91359d390af6350c"
+      },
+      {
+        "path": "frontend/src/v5/usePanelFocus.ts",
+        "bytes": 2197,
+        "sha256": "50b7b68bae1db1aff8d4e8cdba99230b8b20e28025e0b541276e289693d450e2"
+      },
+      {
+        "path": "frontend/src/v5/visual/scene.ts",
+        "bytes": 5768,
+        "sha256": "2ba8f180d325f72c7faf48859e26f8fb2da0bfba21c398b8b0530d415e5b393c"
+      },
+      {
+        "path": "frontend/src/v5/visual/registry.ts",
+        "bytes": 3937,
+        "sha256": "463683ee78ff4edc2c6fb4b55ca8af3daa4d7f8dae1d0073e43f2a8b9dd91a69"
+      },
+      {
+        "path": "frontend/src/v5/v5.css",
+        "bytes": 27523,
+        "sha256": "66b3dfac35a3343a3a469e515f286199d3061b9d5cccf0ef0098ce7628677313"
+      },
+      {
+        "path": "frontend/src/assets/themes/rainy-astronomy/manifest.json",
+        "bytes": 13916,
+        "sha256": "e99992bed03a0b1ef80efb72c1cb1aad82db10fb328e3471b126876801b2ecf0"
+      }
+    ],
+    "build": {
+      "index": {
+        "path": "frontend/dist-v5/index.html",
+        "bytes": 486,
+        "sha256": "50340ba09196e6d1af3409a4163a211d9bc32a795063d129fba15350facc8d93"
+      },
+      "entries": [
+        {
+          "path": "frontend/dist-v5/assets/index-Br6pgX5W.js",
+          "bytes": 353879,
+          "sha256": "3d4ae7204443fe609aefb38857d7a7589b5d39b6a5fedfd9165b1bba1d01a0fa"
+        },
+        {
+          "path": "frontend/dist-v5/assets/phaser-lfjrd5S3.js",
+          "bytes": 1388183,
+          "sha256": "cbfbaa117ff99036b8d7e201f48c71a701f2066b0488527fdf2da5a372b37c46"
+        },
+        {
+          "path": "frontend/dist-v5/assets/index-kc1DlNlo.css",
+          "bytes": 72955,
+          "sha256": "23ad242963b1ea8b64c94864cf41f2924fa98f6db6663e16aa5e1a8ef586f57c"
+        }
+      ],
+      "new_execution_by_QA": false
+    }
+  },
+  "used_image_resources": [
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_lab.png",
+      "bytes": 2526613,
+      "sha256": "5b91e51727108e1375b2dcdd1dbc67f200c5473d35193c05e2afaa59077c355f",
+      "png_size": {
+        "width": 1672,
+        "height": 941
+      }
+    },
+    {
+      "src": "/art-handpainted/backgrounds/r1-room-shell.png",
+      "bytes": 2072524,
+      "sha256": "20a499c7a0905b97b964a30b6ebe74cd63b8e566f4d83b60b2e493387d87d0cc",
+      "png_size": {
+        "width": 1672,
+        "height": 941
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/key-brass.png",
+      "bytes": 899306,
+      "sha256": "7a5ccce96a85bad5e31153a2e4f2ff64c24a7228f66eccef3a6ce80b75810b0e",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-handpainted/room2/r2_monitor_off.png",
+      "bytes": 1701558,
+      "sha256": "531a5816be16c768faab66b5653f8a142cb498449bec1fe7c9154b10de80729e",
+      "png_size": {
+        "width": 1448,
+        "height": 1086
+      }
+    },
+    {
+      "src": "/art-handpainted/room1/r1_cabinet_locked.png",
+      "bytes": 1816567,
+      "sha256": "c17e7af3b87b69b557a00a6a5e307a97f1efd9307189bb566c2b4ddb258da82b",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-handpainted/room1/r1_record.png",
+      "bytes": 1957797,
+      "sha256": "3ca611ab452cb37fc2ca6c38898a7d80597df1c1541994e37e03e6ebf435a250",
+      "png_size": {
+        "width": 1142,
+        "height": 1377
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/terminal-on.png",
+      "bytes": 1538831,
+      "sha256": "2b71c223cef622e072ca4ee7b26e73e445e31513b006c9b0c44a614cc72c563b",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/terminal-off.png",
+      "bytes": 1595162,
+      "sha256": "a4120208f70683aec8f3560de456e7a1a43bd5c9e0082ff11bc6ec11e3aaa4c0",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/cabinet-closed.png",
+      "bytes": 1660507,
+      "sha256": "4cb0b039949dd0e4768c5302f85faebfd1ad0b8131aabd2705d6f99e186e72ff",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/note-logbook.png",
+      "bytes": 1980724,
+      "sha256": "bf9e9d88fa709ae797fb89e065bc9efc867435a01151b83b3a3d2c75eb9bce8d",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/note-chart.png",
+      "bytes": 2200586,
+      "sha256": "eda74e0326a26090a7b7802e9d3423da84430b1ef2c3223672553aedc84c311c",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/note-sealed.png",
+      "bytes": 1958130,
+      "sha256": "11208414ccb93cee7c7b8ea9a4a53a6ca80ad4b77bf1f42f2a171c7e0735f019",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/cabinet-open.png",
+      "bytes": 1844722,
+      "sha256": "9de17e83eb28fcbc4ffc1c4f86d59640a9bc362f3467d83e5af881de1ccbd2c3",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-handpainted/room2/r2_powerbox_closed.png",
+      "bytes": 1428758,
+      "sha256": "16dbf5c9224338af15bbe83bf338505ca8c40a17cabd3db701077293bf129cf7",
+      "png_size": {
+        "width": 1388,
+        "height": 1133
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/panel-lit.png",
+      "bytes": 1342611,
+      "sha256": "3fdeca8c6003921cc507437f0652fd5a332f6b12e364046cf2865a85932fc769",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/panel-idle.png",
+      "bytes": 1480975,
+      "sha256": "65772bd92482b999f4c2eb43a10df6dd0bc9b6c030358e3140f9f988b48030c9",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-on.png",
+      "bytes": 1684072,
+      "sha256": "588595a7020d0103a809cc25c44a5b7e7e7e2e627b71d7755ae982ae4fe9eda5",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-off.png",
+      "bytes": 1850175,
+      "sha256": "33fe87920078608d7d7183366d43e000b8834ac929ce90472ddbdbd8449df869",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_archive.png",
+      "bytes": 2572750,
+      "sha256": "f6bee12b8a1007265392b9df35616d4bdb46b02ae7d93eebe36f75e575a05caa",
+      "png_size": {
+        "width": 1672,
+        "height": 941
+      }
+    },
+    {
+      "src": "/art-handpainted/backgrounds/r2-room-shell-off.png",
+      "bytes": 2079953,
+      "sha256": "bacc4908cf9d54b088b5a9d123067d8678349bacb8391ef0abf3f6265e66dde4",
+      "png_size": {
+        "width": 1672,
+        "height": 941
+      }
+    },
+    {
+      "src": "/art-handpainted/room3/r3_panel_empty.png",
+      "bytes": 2149334,
+      "sha256": "0c362a36b7bbdd2f0270c7df1d27dde3b40fa137d360b7e6febc8274dafaf762",
+      "png_size": {
+        "width": 1024,
+        "height": 1536
+      }
+    },
+    {
+      "src": "/art-handpainted/backgrounds/r3-room-shell-off.png",
+      "bytes": 1982176,
+      "sha256": "1c40131b1b0fdb97cf3357e5a42e62b3f446873e594b761ac3db8c1968eaf259",
+      "png_size": {
+        "width": 1672,
+        "height": 941
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_control.png",
+      "bytes": 2662046,
+      "sha256": "5285f5e6b21823bb373e226d333727662878304e81c7adb58b1156c249cf89f3",
+      "png_size": {
+        "width": 1672,
+        "height": 941
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "UI-R01 generic key shares resolved brass identity",
+      "actual": {
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/key-brass.png",
+        "complete": true,
+        "width": 1402,
+        "height": 1122,
+        "scene_source": "/art-themes/rainy-astronomy/handpainted-v2/objects/key-brass.png",
+        "scene_source_requested": true
+      },
+      "expected": {
+        "closeup": "/art-themes/rainy-astronomy/handpainted-v2/objects/key-brass.png",
+        "not_fuse": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:08.279Z",
+      "context": {
+        "stage": "generic-key-and-focus",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "confirmation ShiftTab remains modal",
+      "actual": false,
+      "expected": true,
+      "pass": false,
+      "observed_at_utc": "2026-10-29T05:06:08.824Z",
+      "context": {
+        "stage": "generic-key-and-focus",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "UI-R03 after deleting row Tab stays modal",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:09.010Z",
+      "context": {
+        "stage": "generic-key-and-focus",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "UI-R03 after deleting row Shift+Tab stays modal",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:09.013Z",
+      "context": {
+        "stage": "generic-key-and-focus",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "Escape closes save panel",
+      "actual": 0,
+      "expected": 0,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:09.157Z",
+      "context": {
+        "stage": "generic-key-and-focus",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "UI-R02 neutral generic settlement",
+      "actual": "本次探索已完成，你已找到出口。可以查看存档或回顾线索。",
+      "expected": "No astronomy or unsupported archiving claim",
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:10.819Z",
+      "context": {
+        "stage": "generic-settlement",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "loading status actually visible",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:13.490Z",
+      "context": {
+        "stage": "themed-loading",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "actual G1 handpainted background",
+      "actual": {
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_lab.png",
+        "canvas": {
+          "width": 1600,
+          "height": 900,
+          "colors": 1374
+        }
+      },
+      "expected": {
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_lab.png",
+        "nonblank_canvas": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:14.418Z",
+      "context": {
+        "stage": "themed-loading",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "actual discovery advances before restore",
+      "actual": 1,
+      "expected": "greater than zero",
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.103Z",
+      "context": {
+        "stage": "theme-save-restore",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "theme stable after actual selected restore",
+      "actual": {
+        "theme": "rainy-astronomy",
+        "background": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_lab.png",
+        "variant": "note-logbook",
+        "clues": 0
+      },
+      "expected": {
+        "theme": "rainy-astronomy",
+        "background": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_lab.png",
+        "variant": "note-logbook",
+        "clues": 0
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.397Z",
+      "context": {
+        "stage": "theme-save-restore",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "44px scene 1280",
+      "actual": [
+        {
+          "index": 0,
+          "width": 98.859375,
+          "height": 44
+        },
+        {
+          "index": 1,
+          "width": 82,
+          "height": 44
+        },
+        {
+          "index": 2,
+          "width": 80,
+          "height": 44
+        },
+        {
+          "index": 3,
+          "width": 82,
+          "height": 44
+        },
+        {
+          "index": 4,
+          "width": 95,
+          "height": 44
+        },
+        {
+          "index": 5,
+          "width": 89,
+          "height": 44
+        },
+        {
+          "index": 6,
+          "width": 101.5,
+          "height": 44
+        },
+        {
+          "index": 7,
+          "width": 101.5,
+          "height": 44
+        },
+        {
+          "index": 8,
+          "width": 89,
+          "height": 44
+        },
+        {
+          "index": 9,
+          "width": 101.5,
+          "height": 44
+        },
+        {
+          "index": 10,
+          "width": 140,
+          "height": 44
+        }
+      ],
+      "expected": {
+        "minimum": 44
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.406Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "body 14px scene 1280",
+      "actual": [
+        {
+          "selector": "v5-room-note",
+          "font_size": 14
+        },
+        {
+          "selector": "v5-empty",
+          "font_size": 14
+        }
+      ],
+      "expected": {
+        "minimum": 14
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.406Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "no horizontal overflow scene 1280",
+      "actual": {
+        "scroll_width": 1280,
+        "viewport_width": 1280
+      },
+      "expected": {
+        "maximum": 1280
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.406Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "actual usable closeup 1280",
+      "actual": {
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/note-logbook.png",
+        "complete": true,
+        "width": 1402,
+        "height": 1122
+      },
+      "expected": {
+        "width_positive": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.539Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "44px closeup 1280",
+      "actual": [
+        {
+          "index": 0,
+          "width": 98.859375,
+          "height": 44
+        },
+        {
+          "index": 1,
+          "width": 82,
+          "height": 44
+        },
+        {
+          "index": 2,
+          "width": 80,
+          "height": 44
+        },
+        {
+          "index": 3,
+          "width": 82,
+          "height": 44
+        },
+        {
+          "index": 4,
+          "width": 95,
+          "height": 44
+        },
+        {
+          "index": 5,
+          "width": 94,
+          "height": 44
+        }
+      ],
+      "expected": {
+        "minimum": 44
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.546Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "body 14px closeup 1280",
+      "actual": [
+        {
+          "selector": "v5-room-note",
+          "font_size": 14
+        },
+        {
+          "selector": "v5-empty",
+          "font_size": 14
+        },
+        {
+          "selector": "v5-object-text",
+          "font_size": 14
+        },
+        {
+          "selector": "P",
+          "font_size": 14
+        }
+      ],
+      "expected": {
+        "minimum": 14
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.546Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "no horizontal overflow closeup 1280",
+      "actual": {
+        "scroll_width": 1280,
+        "viewport_width": 1280
+      },
+      "expected": {
+        "maximum": 1280
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.546Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "44px scene 1920",
+      "actual": [
+        {
+          "index": 0,
+          "width": 98.859375,
+          "height": 44
+        },
+        {
+          "index": 1,
+          "width": 82,
+          "height": 44
+        },
+        {
+          "index": 2,
+          "width": 80,
+          "height": 44
+        },
+        {
+          "index": 3,
+          "width": 82,
+          "height": 44
+        },
+        {
+          "index": 4,
+          "width": 95,
+          "height": 44
+        },
+        {
+          "index": 5,
+          "width": 89,
+          "height": 44
+        },
+        {
+          "index": 6,
+          "width": 101.5,
+          "height": 44
+        },
+        {
+          "index": 7,
+          "width": 101.5,
+          "height": 44
+        },
+        {
+          "index": 8,
+          "width": 89,
+          "height": 44
+        },
+        {
+          "index": 9,
+          "width": 101.5,
+          "height": 44
+        },
+        {
+          "index": 10,
+          "width": 140,
+          "height": 44
+        }
+      ],
+      "expected": {
+        "minimum": 44
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.767Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "body 14px scene 1920",
+      "actual": [
+        {
+          "selector": "v5-room-note",
+          "font_size": 14
+        },
+        {
+          "selector": "v5-empty",
+          "font_size": 14
+        }
+      ],
+      "expected": {
+        "minimum": 14
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.767Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "no horizontal overflow scene 1920",
+      "actual": {
+        "scroll_width": 1920,
+        "viewport_width": 1920
+      },
+      "expected": {
+        "maximum": 1920
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.767Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "actual usable closeup 1920",
+      "actual": {
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/note-logbook.png",
+        "complete": true,
+        "width": 1402,
+        "height": 1122
+      },
+      "expected": {
+        "width_positive": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.912Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "44px closeup 1920",
+      "actual": [
+        {
+          "index": 0,
+          "width": 98.859375,
+          "height": 44
+        },
+        {
+          "index": 1,
+          "width": 82,
+          "height": 44
+        },
+        {
+          "index": 2,
+          "width": 80,
+          "height": 44
+        },
+        {
+          "index": 3,
+          "width": 82,
+          "height": 44
+        },
+        {
+          "index": 4,
+          "width": 95,
+          "height": 44
+        },
+        {
+          "index": 5,
+          "width": 94,
+          "height": 44
+        }
+      ],
+      "expected": {
+        "minimum": 44
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.920Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "body 14px closeup 1920",
+      "actual": [
+        {
+          "selector": "v5-room-note",
+          "font_size": 14
+        },
+        {
+          "selector": "v5-empty",
+          "font_size": 14
+        },
+        {
+          "selector": "v5-object-text",
+          "font_size": 14
+        },
+        {
+          "selector": "P",
+          "font_size": 14
+        }
+      ],
+      "expected": {
+        "minimum": 14
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.920Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "no horizontal overflow closeup 1920",
+      "actual": {
+        "scroll_width": 1920,
+        "viewport_width": 1920
+      },
+      "expected": {
+        "maximum": 1920
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:15.920Z",
+      "context": {
+        "stage": "layout-and-closeup",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "UI-R04 dynamic actual primary404 usable fallback",
+      "actual": {
+        "original_src": "/art-themes/rainy-astronomy/handpainted-v2/objects/note-logbook.png",
+        "src": "/art-handpainted/room1/r1_record.png",
+        "complete": true,
+        "width": 1142,
+        "height": 1377,
+        "intercepts": {
+          "/art-themes/rainy-astronomy/handpainted-v2/objects/note-logbook.png": 2
+        }
+      },
+      "expected": {
+        "original_intercepted": true,
+        "alternate_usable": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:17.670Z",
+      "context": {
+        "stage": "dynamic-primary-404",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "all candidates404 remain readable without retry loop",
+      "actual": {
+        "candidate_count": 2,
+        "intercepts": {
+          "/art-themes/rainy-astronomy/handpainted-v2/objects/note-logbook.png": 2,
+          "/art-handpainted/room1/r1_record.png": 2
+        },
+        "html_failed_sources": [
+          "/art-themes/rainy-astronomy/handpainted-v2/objects/note-logbook.png",
+          "/art-handpainted/room1/r1_record.png"
+        ],
+        "text_fallback_visible": true,
+        "description_visible": true
+      },
+      "expected": {
+        "text_alternative": true,
+        "each_HTML_source_once": true,
+        "no_new_requests_after_settle": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:19.314Z",
+      "context": {
+        "stage": "all-closeup-images-404",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "actual G2 handpainted background",
+      "actual": {
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_archive.png",
+        "canvas": {
+          "width": 1600,
+          "height": 900,
+          "colors": 1377
+        }
+      },
+      "expected": {
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_archive.png",
+        "nonblank_canvas": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:22.559Z",
+      "context": {
+        "stage": "three-room-real-UI-route",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "circuit G2 submits through actual UI",
+      "actual": "completed",
+      "expected": "completed",
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:24.423Z",
+      "context": {
+        "stage": "three-room-real-UI-route",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "completed art G2 circuit",
+      "actual": {
+        "variant_id": "circuit-on",
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-on.png",
+        "complete": true,
+        "width": 1402,
+        "height": 1122
+      },
+      "expected": {
+        "state": "completed",
+        "closeup": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-on.png"
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:24.444Z",
+      "context": {
+        "stage": "three-room-real-UI-route",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "sequence submits through actual UI",
+      "actual": "completed",
+      "expected": "completed",
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:25.098Z",
+      "context": {
+        "stage": "three-room-real-UI-route",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "completed art G2 panel",
+      "actual": {
+        "variant_id": "panel-lit",
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/panel-lit.png",
+        "complete": true,
+        "width": 1402,
+        "height": 1122
+      },
+      "expected": {
+        "state": "completed",
+        "closeup": "/art-themes/rainy-astronomy/handpainted-v2/objects/panel-lit.png"
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:25.109Z",
+      "context": {
+        "stage": "three-room-real-UI-route",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "actual G3 handpainted background",
+      "actual": {
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_control.png",
+        "canvas": {
+          "width": 1600,
+          "height": 900,
+          "colors": 1380
+        }
+      },
+      "expected": {
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_control.png",
+        "nonblank_canvas": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:25.698Z",
+      "context": {
+        "stage": "three-room-real-UI-route",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "circuit G3 submits through actual UI",
+      "actual": "completed",
+      "expected": "completed",
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:27.572Z",
+      "context": {
+        "stage": "three-room-real-UI-route",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "completed art G3 circuit",
+      "actual": {
+        "variant_id": "circuit-on",
+        "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-on.png",
+        "complete": true,
+        "width": 1402,
+        "height": 1122
+      },
+      "expected": {
+        "state": "completed",
+        "closeup": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-on.png"
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:27.583Z",
+      "context": {
+        "stage": "three-room-real-UI-route",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "three-room hard actual UI reaches EXIT",
+      "actual": {
+        "status": "won",
+        "room": "EXIT",
+        "actions": {
+          "take": 2,
+          "submit_code": 3,
+          "use_item": 2,
+          "move": 4,
+          "rotate_circuit": 20,
+          "submit_circuit": 2,
+          "submit_sequence": 1
+        }
+      },
+      "expected": {
+        "status": "won"
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:28.200Z",
+      "context": {
+        "stage": "three-room-real-UI-route",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "used handpainted PNG dimensions match manifest",
+      "actual": [
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_lab.png",
+          "declared": {
+            "width": 1672,
+            "height": 941
+          },
+          "actual": {
+            "width": 1672,
+            "height": 941
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_archive.png",
+          "declared": {
+            "width": 1672,
+            "height": 941
+          },
+          "actual": {
+            "width": 1672,
+            "height": 941
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_control.png",
+          "declared": {
+            "width": 1672,
+            "height": 941
+          },
+          "actual": {
+            "width": 1672,
+            "height": 941
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/note-logbook.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/note-logbook.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/note-chart.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/note-chart.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/note-sealed.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/note-sealed.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/key-brass.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/key-brass.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/terminal-off.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/terminal-off.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/terminal-on.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/terminal-on.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/cabinet-closed.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/cabinet-closed.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/cabinet-open.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/cabinet-open.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-off.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-off.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-on.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/circuit-on.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/panel-idle.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/panel-idle.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/panel-lit.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        },
+        {
+          "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/panel-lit.png",
+          "declared": {
+            "width": 1402,
+            "height": 1122
+          },
+          "actual": {
+            "width": 1402,
+            "height": 1122
+          }
+        }
+      ],
+      "expected": "each loaded PNG matches all declarations",
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:28.414Z",
+      "context": {
+        "stage": "three-room-real-UI-route",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "no external requests",
+      "actual": 0,
+      "expected": 0,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:06:28.414Z",
+      "context": {
+        "stage": "three-room-real-UI-route",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "generic-key.png",
+    "focus-after-delete.png",
+    "generic-ending.png",
+    "theme-G1.png",
+    "closeup-desktop-1280.png",
+    "closeup-desktop-1920.png",
+    "primary404-fallback.png",
+    "all-images-text-fallback.png",
+    "theme-G2.png",
+    "circuit-G2-completed.png",
+    "sequence-completed.png",
+    "theme-G3.png",
+    "circuit-G3-completed.png",
+    "theme-EXIT.png"
+  ],
+  "exit_code": 1,
+  "owned_server_stopped": true,
+  "player8001_contacted": false,
+  "paid_calls": 0,
+  "new_builds": 0,
+  "limits": [
+    "Synthetic fixture and witness only; no real model or human acceptance",
+    "Image byte provenance and screenshots do not prove universal semantic consistency",
+    "Old failed results remain unchanged"
+  ]
+}

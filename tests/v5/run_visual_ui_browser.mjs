@@ -263,7 +263,7 @@ try {
   await closePanel();
 
   stage = 'resize';
-  for (const [width, height] of [[1280, 720], [390, 844], [812, 375]]) {
+  for (const [width, height] of [[1280, 720], [1920, 1080]]) {
     await page.setViewportSize({ width, height });
     await pause(500);
     await sizes(`game ${width}`);
@@ -322,16 +322,6 @@ try {
   const settlement = await page.locator('.v5-stats').innerText();
   check('settlement shows server statistics', { settlement, status: state.status }, { status: 'won', has_rating: true }, state.status === 'won' && /评级/.test(settlement) && /线索/.test(settlement));
   await heroShot('06-victory');
-  await page.setViewportSize({ width: 390, height: 844 });
-  await pause(600);
-  const fit = await page.evaluate(() => {
-    const stageBox = document.querySelector('.v5-stage').getBoundingClientRect();
-    const actions = document.querySelector('.v5-victory-actions').getBoundingClientRect();
-    return { stage_bottom: Math.round(stageBox.bottom), actions_bottom: Math.round(actions.bottom), stage_top: Math.round(stageBox.top), actions_top: Math.round(actions.top) };
-  });
-  check('settlement fits inside the stage on a phone viewport', fit, { actions_within_stage: true }, fit.actions_bottom <= fit.stage_bottom + 1 && fit.actions_top >= fit.stage_top - 1);
-  await shot('06b-victory-390', { full: false });
-  await page.setViewportSize({ width: 1280, height: 720 });
   await pause(500);
   await page.getByRole('button', { name: '再看一眼场景' }).click();
   await pause(400);

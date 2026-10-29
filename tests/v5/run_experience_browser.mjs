@@ -93,7 +93,7 @@ async function bindFinishSource() {
   const resultPath = path.resolve(root, resumeFrom);
   const bytes = await fs.readFile(resultPath);
   const first = JSON.parse(bytes.toString('utf8'));
-  const coreNames = ['list theme', 'archive theme and Synthetic story', 'completed modules disabled cursor not wait', 'completed submit disabled cursor not wait', 'real pending aria-busy and cursor', 'rotation pending recovered', '44px circuit 1280', '44px circuit 390', '44px circuit 812', 'real selected save restore', 'restore early observation and clues'];
+  const coreNames = ['list theme', 'archive theme and Synthetic story', 'completed modules disabled cursor not wait', 'completed submit disabled cursor not wait', 'real pending aria-busy and cursor', 'rotation pending recovered', '44px circuit 1280', 'real selected save restore', 'restore early observation and clues'];
   const currentSources = provenance.sources.filter(source => source.path !== 'tests/v5/run_experience_browser.mjs');
   const originalController = first.provenance?.sources?.find(source => source.path === 'tests/v5/run_experience_browser.mjs');
   const validResult = path.basename(resultPath) === 'browser-result.json' && first.kind === 'Synthetic focused experience browser' && /^[0-9a-f-]{36}$/i.test(first.run_id || '') && !first.first_result && first.browser_executed === true && first.exit_code === 1 && first.execution_status === 'FAILED' && first.owned_server_stopped === true && first.player8001_service_contacted === false && first.paid_calls === 0 && first.checks?.some(item => item.name === 'execution failure' && !item.pass && item.context?.stage === 'relogin-and-legacy') && coreNames.every(name => first.checks?.some(item => item.name === name && item.pass === true)) && /^[0-9a-f]{64}$/i.test(originalController?.sha256 || '');
@@ -267,13 +267,13 @@ try {
   const completedSubmit = await page.getByRole('button', { name: '线路已接通', exact: true }).evaluate(element => ({ disabled: element.disabled, cursor: getComputedStyle(element).cursor }));
   check('completed submit disabled cursor not wait', completedSubmit, { disabled: true, cursor_not: ['wait', 'progress'] }, completedSubmit.disabled && !['wait', 'progress'].includes(completedSubmit.cursor));
   stage = 'responsive';
-  for (const [width, height] of [[1280, 720], [390, 844], [812, 375]]) {
+  for (const [width, height] of [[1280, 720], [1920, 1080]]) {
     await page.setViewportSize({ width, height }); await sizes('circuit ' + width);
     const panel = await page.locator('.v5-panel').evaluate(element => ({ scroll_height: element.scrollHeight, client_height: element.clientHeight, overflow_y: getComputedStyle(element).overflowY }));
     check('panel scrollable ' + width, panel, { fits_or_scrollable: true, scrollable_values: ['auto', 'scroll'] }, panel.scroll_height <= panel.client_height + 1 || ['auto', 'scroll'].includes(panel.overflow_y));
     await shot('circuit-' + width);
   }
-  await close(); await page.setViewportSize({ width: 390, height: 844 }); await sizes('scene mobile'); await shot('game-mobile');
+  await close(); await page.setViewportSize({ width: 1280, height: 720 });
   stage = 'restore';
   await page.getByRole('button', { name: '进度与存档', exact: true }).click(); await stable();
   await page.getByRole('button', { name: '读取', exact: true }).click();

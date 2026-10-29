@@ -1,14 +1,6 @@
 import PaintedObject from './PaintedObject';
-import { useEffect, useState } from 'react';
 import type { VisibleState } from '../api';
 import { room1Assets, room2Assets, room3Assets } from '../assets/manifest';
-
-export function useCompactStage() {
-  const query = '(max-width:760px) and (orientation:portrait), (max-height:520px)';
-  const [compact, setCompact] = useState(() => window.matchMedia(query).matches);
-  useEffect(() => { const media = window.matchMedia(query), update = () => setCompact(media.matches); media.addEventListener('change', update); return () => media.removeEventListener('change', update); }, []);
-  return compact;
-}
 
 export function RoomBackdrop({ state }: { state: VisibleState }) {
   const image = state.room.room_id === 'R3' ? (state.progress.power_on ? room3Assets.r3_background : room3Assets.r3_background_off) : state.room.room_id === 'R2' ? (state.progress.power_on ? room2Assets.r2_background_on : room2Assets.r2_background_dark) : room1Assets.background;
@@ -19,7 +11,7 @@ export function RoomBackdrop({ state }: { state: VisibleState }) {
 export function RoomHud({ state, onNotebook, onAssistant, onMenu }: { state: VisibleState; onNotebook: () => void; onAssistant: () => void; onMenu: () => void }) {
   return <header className="game-hud"><div><small>CAMPUS LAB / {state.room.room_id}</small><h2 id="room-title">{state.room.name}</h2></div><div>
     <button className="hud-button" aria-label="线索笔记" onClick={onNotebook}>笔记 <span>{state.clues.length}</span></button>
-    <button className="hud-button" aria-label="AI 探索伙伴" onClick={onAssistant}><span className="hud-label-long">LAB ASSIST</span><span className="hud-label-short">伙伴</span></button>
+    <button className="hud-button" aria-label="AI 探索伙伴" onClick={onAssistant}><span className="hud-label-long">LAB ASSIST</span></button>
     <button className="hud-button" aria-label="游戏菜单" onClick={onMenu}>☰</button>
   </div></header>;
 }

@@ -10,6 +10,7 @@
 - 证据从开发开始随实际执行、失败、修复和反馈持续保存；每个大阶段结束必须提供效果入口、简短检查步骤与重要已知问题，明确邀请用户本人核验。核验前状态为待真人检查，不能把技术通过或“继续”自动记为真人接受。
 - 固定证据入口为evidence/project/：stages/<stage-id>/保存自动结果、日志导出、标准/评价和截图；human-reviews/<stage-id>/round-XX/单独保存真人原话、核查结论、截图和来源。自动化截图不冒充真人截图，未实际发生的本人/同伴检查不预填。小步骤及时记录，大阶段集中交付，无需逐小步确认。
 - 旧证据可迁移归档到固定入口；保留原时间、来源和实际执行状态。对被历史记录/可信登记固定引用的原件先保留兼容，归档副本逐文件标明来源；不把搬运当新执行，不静默改写历史结果或移动数据库/私有原稿到可提交目录。
+- 2026-10-29用户最新范围：只做桌面端，删除整个项目现行手机专用布局、触屏模式、键盘提示配置及当前/后续验收、检查中的手机要求，桌面采用1280×720与1920×1080。原手机测试及原截图作为历史证据保留，不重跑或改写。
 - 保留现有密钥、数据库和未跟踪文件保护；付费调用仍须有效有限授权。未发生的测试、调用或人工验收不得写成完成。
 
 2026-10-28体验反馈轮：Main统筹/root docs/Git；新建 v5_experience_frontend_oct28（实际请求gpt-6.1-sol/high）拥有frontend/；新建 v5_experience_theme_oct28（实际请求gpt-6.1-sol/high）临时拥有AI/v5.py、domain/generation_content_v2.py、storage/v5.py、必要的contracts/v2/api.schema.json及其build_contracts.py生成源，以及新tests/v5/test_theme_experience.py。只修线路等待指针、主题元数据/提示与界面；素材包下一阶段实施。稳定后一次独立必要复核，不建多层候选/封条，0新增付费；Main/运行时型号不作独立核验声明。
@@ -23,6 +24,8 @@
 E&O与归档阶段技术完成：独立11项定向API通过；浏览器首轮核心+修复检查器后的auth-only窄补联合通过，首轮exit1保留；独立归档工具5项TEMP检查通过。Main已实际归档代表性历史结果及用户修复前原话/原截图。随后用户实际反馈随机生成/通关/注册/登录正常，但UI简陋、主题画面不符、素材过少；本轮原话/原图另存当前真人round-01，结论changes-requested，仅覆盖实际反馈，E&O逐条检查/同伴/整体接受仍未确认。没有额外build/付费、旧pin刷新或美术制作；后续每阶段持续记录，完成时必须明确邀请本人检查。
 
 2026-10-29用户要求检查其他对话的74eb523实现。本对话Main独立执行新tests/v5/run_visual_ui_review.mjs，单次10项：6通过/4失败、控制器异常0；新增第三房间/两处线路/顺序实际UI提交及三房困难Synthetic EXIT证据，复现4项UI问题。报告位于evidence/project/stages/v5-rainy-astronomy-ui/reviews/root-review-20261029.md；当前技术状态需修复，真人未核验。Main本轮只写新检查入口、实际结果/截图、当前索引及根进度；产品源码/旧原始执行结果不改，新增build0/paid0，无新派工或型号核验声明。
+
+2026-10-29用户进一步授权修复未达标与手绘重建：Main拥有新handpainted-v2原图/提示/metadata及manifest、根文档/Git，并临时接管README/release/docs当前桌面范围说明；恢复既有Frontend拥有frontend/产品源码修复4项问题、14px说明与全项目手机专用布局/触屏分支清理（美术与manifest归Main）；恢复既有QA拥有新run_handpainted_rebuild_browser与本阶段实际产物；用户扩大清理范围后，临时拥有tests/现行手机路径清理，历史执行记录不改。稳定后集中必要构建和定向桌面浏览器。新阶段v5-handpainted-rebuild持续记录，旧review失败证据不改。内置imagegen实际15次制作3背景+12物件/状态，高分原图共用于场景和特写；未用外部Key/CLI/项目付费生成。角色仅恢复，不推断当前运行型号，未新建代理。
 
 The human is the sole developer. The attachment docs/execution-plan.md is the accepted project scope, not proof of execution. Never invent tests, people, approvals or model calls.
 Main owns AGENTS.md, PLAN.md, STATUS.md, DECISIONS.md, integration and git. Agents write only assigned paths, never commit, never spawn further agents. Shared workspace; do not overwrite another owner's files. Default delegates gpt-6.1-sol/high, simple mechanical tasks gpt-6-luna/medium. No Astra unless needed. Main runtime model is not independently introspectable and must not be claimed as verified.

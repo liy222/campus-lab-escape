@@ -109,7 +109,7 @@ async function roomView(page) {
   }
   await expect(page.locator('.game-canvas-host')).toHaveAttribute('data-view','room');
 }
-async function canvasInput(page,id,tool='object',keyboard=false,touch=false) {
+async function canvasInput(page,id,tool='object',keyboard=false) {
   const host=page.locator('.game-canvas-host');await expect(host).toHaveAttribute('data-assets-ready','true');
   await expect(host.locator('canvas')).toHaveCount(1);
   const hotspot=host.locator(`.scene-keyboard-hotspot[data-object-id="${id}"][data-scene-action="${tool}"]`);
@@ -119,7 +119,7 @@ async function canvasInput(page,id,tool='object',keyboard=false,touch=false) {
     const values=(await hotspot.getAttribute('data-bounds')).split(',').map(Number), box=await host.locator('canvas').boundingBox();
     assert(box);const x=box.x+(values[0]+values[2]/2)*box.width/1600,y=box.y+(values[1]+values[3]/2)*box.height/900;
     const hit=await page.evaluate(({x,y})=>document.elementFromPoint(x,y)?.tagName,{x,y});assert.equal(hit,'CANVAS','Mouse input must hit actual canvas');
-    if(touch) await page.touchscreen.tap(x,y);else await page.mouse.click(x,y);
+    await page.mouse.click(x,y);
   }
 }
 async function select(page,id,keyboard=false) {
@@ -316,18 +316,7 @@ async function hint(page,level,expectAccepted=true) {
 function publicRating(score) { return score.clues_found>=9&&score.hint_count<=1&&score.mistake_count<=2?'S':score.clues_found>=7&&score.hint_count<=3&&score.mistake_count<=5?'A':score.hint_count<=8?'B':'C'; }
 
 
-async function touchSmoke(service) {
-  const context=await browser.newContext({viewport:{width:375,height:812},hasTouch:true,isMobile:true,deviceScaleFactor:1}),page=await context.newPage();
-  const errors=[];page.on('pageerror',()=>errors.push('uncaught touch browser exception'));state=undefined;
-  await page.goto(service.frontendURL,{waitUntil:'networkidle'});
-  await http(page,'touch-create',()=>page.getByRole('button',{name:'开始新游戏 →',exact:true}).click(),201,'/api/sessions');
-  await http(page,'real-touchscreen-canvas-clock-inspect',()=>canvasInput(page,'r1_clock','object',false,true));
-  await expect(page.locator('.game-canvas-host')).toHaveAttribute('data-view','r1_clock');assert(state.clues.some(clue=>clue.object_id==='r1_clock'));
-  await canvasPixels(page,'R1-touch-clock-closeup');await page.screenshot({path:path.join(folder,'R1-touch-clock-closeup.png'),fullPage:true});
-  await select(page,'r1_record',true);assert(state.clues.some(clue=>clue.object_id==='r1_record'));
-  await layout(page,375,'R1-actual-touch-keyboard');assert.equal(errors.length,0);
-  checks.push({check:'hasTouch-mobile-actual-touchscreen-tap-and-keyboard-Enter',passed:true,width:375});await context.close();
-}
+
 async function canvasPixels(page,label) {
   const host=page.locator('.game-canvas-host');
   await expect(host).toHaveAttribute('data-assets-ready','true');
@@ -427,8 +416,8 @@ async function readable(page,label) {
   await page.screenshot({path:path.join(folder,label+'.png'),fullPage:true});await canvasPixels(page,label);
 }
 async function widths(page,id,label) {
-  for(const width of [1920,1280,375]) {
-    await page.setViewportSize({width,height:width===375?812:width===1920?1080:900});
+  for(const width of [1920,1280]) {
+    await page.setViewportSize({width,height:width===1920?1080:900});
     await observe(page,id);await readable(page,label+'-'+width);
   }
 }
@@ -445,8 +434,8 @@ try {
   await observe(page,'sample_slide');await interact(page,'sample_slide');await use(page,'sample_slide','r1_microscope');assert.equal(state.puzzle_states.microscope,'SLIDE_PLACED');
   await widths(page,'r1_microscope','fixed-eyepiece-reading');
   await widths(page,'r1_cabinet','fixed-four-wheel-lock');
-  for(const width of [1920,1280,375]) {
-    await page.setViewportSize({width,height:width===375?812:width===1920?1080:900});await select(page,'r1_cabinet');
+  for(const width of [1920,1280]) {
+    await page.setViewportSize({width,height:width===1920?1080:900});await select(page,'r1_cabinet');
     const before=structuredClone(state);await page.locator('#code-r1_cabinet').fill('0000');await http(page,'fixed-visible-wrong-code-'+width,()=>page.locator('.code-form').getByRole('button',{name:'提交',exact:true}).click(),409);countedMistake(before);await readable(page,'fixed-wrong-code-'+width);
   }
   await page.setViewportSize({width:1280,height:900});await code(page,'r1_cabinet','4217');assert.equal(state.device_states.cabinet,'CODE_ACCEPTED');await readable(page,'fixed-accepted-closed');

@@ -1,0 +1,466 @@
+{
+  "kind": "Independent handpainted rebuild focused browser",
+  "run_id": "92dc7467-37a1-43a2-8302-eb79d08cc9ee",
+  "started_at_utc": "2026-10-29T05:10:21.657Z",
+  "ended_at_utc": "2026-10-29T05:10:27.379Z",
+  "command": "node tests/v5/run_handpainted_rebuild_browser.mjs --focus-only",
+  "scope": "minimal-confirm-focus-diagnostic",
+  "temporary_database": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-visual-handpainted-XfG1ZT",
+  "inputs": [
+    {
+      "rooms": 1,
+      "difficulty": "easy",
+      "theme": "冬夜图书馆，寻找借阅登记"
+    },
+    {
+      "rooms": 3,
+      "difficulty": "hard",
+      "theme": "雨夜里的天文社旧活动室，寻找封存的观测记录"
+    }
+  ],
+  "provenance": {
+    "git_revision": "440fc58d18bcfadb44e82a5881932ad3501265f1",
+    "sources": [
+      {
+        "path": "tests/v5/run_handpainted_rebuild_browser.mjs",
+        "bytes": 27674,
+        "sha256": "64f8257b1deb9f5517358b25cf8e79c61dc32a215f0d9ef5cb0553866acde05d"
+      },
+      {
+        "path": "tests/v5/visual_ui_fixture_server.py",
+        "bytes": 3681,
+        "sha256": "da1304f158ab233cbad4458ea3f959dfdf7ec29dc9f3b211167834532562d166"
+      },
+      {
+        "path": "frontend/src/v5/GeneratedPlay.tsx",
+        "bytes": 20306,
+        "sha256": "821aaad82877bc2eb8ed8c0dcd4b1177e689d681309c638dd87559ead72bd108"
+      },
+      {
+        "path": "frontend/src/v5/GeneratedScene.tsx",
+        "bytes": 6277,
+        "sha256": "33a0cad863a70fc3658e1bc1d920b19d2af12991fc7b917adec42779d4590808"
+      },
+      {
+        "path": "frontend/src/v5/ObjectCloseup.tsx",
+        "bytes": 992,
+        "sha256": "0dd67ae6dca4d8342a02de85658489656301cbe4a8656bce91359d390af6350c"
+      },
+      {
+        "path": "frontend/src/v5/usePanelFocus.ts",
+        "bytes": 2197,
+        "sha256": "50b7b68bae1db1aff8d4e8cdba99230b8b20e28025e0b541276e289693d450e2"
+      },
+      {
+        "path": "frontend/src/v5/visual/scene.ts",
+        "bytes": 5768,
+        "sha256": "2ba8f180d325f72c7faf48859e26f8fb2da0bfba21c398b8b0530d415e5b393c"
+      },
+      {
+        "path": "frontend/src/v5/visual/registry.ts",
+        "bytes": 3937,
+        "sha256": "463683ee78ff4edc2c6fb4b55ca8af3daa4d7f8dae1d0073e43f2a8b9dd91a69"
+      },
+      {
+        "path": "frontend/src/v5/v5.css",
+        "bytes": 27523,
+        "sha256": "66b3dfac35a3343a3a469e515f286199d3061b9d5cccf0ef0098ce7628677313"
+      },
+      {
+        "path": "frontend/src/assets/themes/rainy-astronomy/manifest.json",
+        "bytes": 13916,
+        "sha256": "e99992bed03a0b1ef80efb72c1cb1aad82db10fb328e3471b126876801b2ecf0"
+      }
+    ],
+    "build": {
+      "index": {
+        "path": "frontend/dist-v5/index.html",
+        "bytes": 486,
+        "sha256": "50340ba09196e6d1af3409a4163a211d9bc32a795063d129fba15350facc8d93"
+      },
+      "entries": [
+        {
+          "path": "frontend/dist-v5/assets/index-Br6pgX5W.js",
+          "bytes": 353879,
+          "sha256": "3d4ae7204443fe609aefb38857d7a7589b5d39b6a5fedfd9165b1bba1d01a0fa"
+        },
+        {
+          "path": "frontend/dist-v5/assets/phaser-lfjrd5S3.js",
+          "bytes": 1388183,
+          "sha256": "cbfbaa117ff99036b8d7e201f48c71a701f2066b0488527fdf2da5a372b37c46"
+        },
+        {
+          "path": "frontend/dist-v5/assets/index-kc1DlNlo.css",
+          "bytes": 72955,
+          "sha256": "23ad242963b1ea8b64c94864cf41f2924fa98f6db6663e16aa5e1a8ef586f57c"
+        }
+      ],
+      "new_execution_by_QA": false
+    }
+  },
+  "used_image_resources": [
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_lab.png",
+      "bytes": 2526613,
+      "sha256": "5b91e51727108e1375b2dcdd1dbc67f200c5473d35193c05e2afaa59077c355f",
+      "png_size": {
+        "width": 1672,
+        "height": 941
+      }
+    },
+    {
+      "src": "/art-handpainted/backgrounds/r1-room-shell.png",
+      "bytes": 2072524,
+      "sha256": "20a499c7a0905b97b964a30b6ebe74cd63b8e566f4d83b60b2e493387d87d0cc",
+      "png_size": {
+        "width": 1672,
+        "height": 941
+      }
+    },
+    {
+      "src": "/art-themes/rainy-astronomy/handpainted-v2/objects/key-brass.png",
+      "bytes": 899306,
+      "sha256": "7a5ccce96a85bad5e31153a2e4f2ff64c24a7228f66eccef3a6ce80b75810b0e",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-handpainted/room2/r2_monitor_off.png",
+      "bytes": 1701558,
+      "sha256": "531a5816be16c768faab66b5653f8a142cb498449bec1fe7c9154b10de80729e",
+      "png_size": {
+        "width": 1448,
+        "height": 1086
+      }
+    },
+    {
+      "src": "/art-handpainted/room1/r1_cabinet_locked.png",
+      "bytes": 1816567,
+      "sha256": "c17e7af3b87b69b557a00a6a5e307a97f1efd9307189bb566c2b4ddb258da82b",
+      "png_size": {
+        "width": 1402,
+        "height": 1122
+      }
+    },
+    {
+      "src": "/art-handpainted/room1/r1_record.png",
+      "bytes": 1957797,
+      "sha256": "3ca611ab452cb37fc2ca6c38898a7d80597df1c1541994e37e03e6ebf435a250",
+      "png_size": {
+        "width": 1142,
+        "height": 1377
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "native confirm keyboard diagnostic avoids app background controls",
+      "actual": [
+        {
+          "key": "before",
+          "active_tag": "BUTTON",
+          "active_role": null,
+          "active_control_label": "取消",
+          "document_has_focus": true,
+          "active_is_body": false,
+          "in_dialog": true,
+          "in_v5_panel": false,
+          "active_is_background_control": false,
+          "dialog_open": true,
+          "dialog_native_modal": true,
+          "confirm_controls": [
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "取消"
+            },
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "确认删除"
+            }
+          ]
+        },
+        {
+          "key": "Shift+Tab",
+          "active_tag": "BODY",
+          "active_role": null,
+          "active_control_label": null,
+          "document_has_focus": false,
+          "active_is_body": true,
+          "in_dialog": false,
+          "in_v5_panel": false,
+          "active_is_background_control": false,
+          "dialog_open": true,
+          "dialog_native_modal": true,
+          "confirm_controls": [
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "取消"
+            },
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "确认删除"
+            }
+          ]
+        },
+        {
+          "key": "Tab",
+          "active_tag": "BUTTON",
+          "active_role": null,
+          "active_control_label": "取消",
+          "document_has_focus": true,
+          "active_is_body": false,
+          "in_dialog": true,
+          "in_v5_panel": false,
+          "active_is_background_control": false,
+          "dialog_open": true,
+          "dialog_native_modal": true,
+          "confirm_controls": [
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "取消"
+            },
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "确认删除"
+            }
+          ]
+        },
+        {
+          "key": "Tab",
+          "active_tag": "BUTTON",
+          "active_role": null,
+          "active_control_label": "确认删除",
+          "document_has_focus": true,
+          "active_is_body": false,
+          "in_dialog": true,
+          "in_v5_panel": false,
+          "active_is_background_control": false,
+          "dialog_open": true,
+          "dialog_native_modal": true,
+          "confirm_controls": [
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "取消"
+            },
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "确认删除"
+            }
+          ]
+        },
+        {
+          "key": "Tab",
+          "active_tag": "BUTTON",
+          "active_role": null,
+          "active_control_label": "取消",
+          "document_has_focus": true,
+          "active_is_body": false,
+          "in_dialog": true,
+          "in_v5_panel": false,
+          "active_is_background_control": false,
+          "dialog_open": true,
+          "dialog_native_modal": true,
+          "confirm_controls": [
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "取消"
+            },
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "确认删除"
+            }
+          ]
+        },
+        {
+          "key": "Tab",
+          "active_tag": "BUTTON",
+          "active_role": null,
+          "active_control_label": "确认删除",
+          "document_has_focus": true,
+          "active_is_body": false,
+          "in_dialog": true,
+          "in_v5_panel": false,
+          "active_is_background_control": false,
+          "dialog_open": true,
+          "dialog_native_modal": true,
+          "confirm_controls": [
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "取消"
+            },
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "确认删除"
+            }
+          ]
+        },
+        {
+          "key": "Tab",
+          "active_tag": "BODY",
+          "active_role": null,
+          "active_control_label": null,
+          "document_has_focus": false,
+          "active_is_body": true,
+          "in_dialog": false,
+          "in_v5_panel": false,
+          "active_is_background_control": false,
+          "dialog_open": true,
+          "dialog_native_modal": true,
+          "confirm_controls": [
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "取消"
+            },
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "确认删除"
+            }
+          ]
+        },
+        {
+          "key": "Tab",
+          "active_tag": "BUTTON",
+          "active_role": null,
+          "active_control_label": "取消",
+          "document_has_focus": true,
+          "active_is_body": false,
+          "in_dialog": true,
+          "in_v5_panel": false,
+          "active_is_background_control": false,
+          "dialog_open": true,
+          "dialog_native_modal": true,
+          "confirm_controls": [
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "取消"
+            },
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "确认删除"
+            }
+          ]
+        },
+        {
+          "key": "Shift+Tab",
+          "active_tag": "BUTTON",
+          "active_role": null,
+          "active_control_label": "确认删除",
+          "document_has_focus": true,
+          "active_is_body": false,
+          "in_dialog": true,
+          "in_v5_panel": false,
+          "active_is_background_control": false,
+          "dialog_open": true,
+          "dialog_native_modal": true,
+          "confirm_controls": [
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "取消"
+            },
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "确认删除"
+            }
+          ]
+        },
+        {
+          "key": "Shift+Tab",
+          "active_tag": "BUTTON",
+          "active_role": null,
+          "active_control_label": "取消",
+          "document_has_focus": true,
+          "active_is_body": false,
+          "in_dialog": true,
+          "in_v5_panel": false,
+          "active_is_background_control": false,
+          "dialog_open": true,
+          "dialog_native_modal": true,
+          "confirm_controls": [
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "取消"
+            },
+            {
+              "tag": "BUTTON",
+              "role": null,
+              "label": "确认删除"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "no_background_control_focus": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:10:26.708Z",
+      "context": {
+        "stage": "focus-only-diagnostic",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    },
+    {
+      "name": "native confirm cancel restores current V5 panel focus",
+      "actual": {
+        "inside_panel": true,
+        "active_tag": "BUTTON",
+        "active_label": "删除",
+        "document_has_focus": true,
+        "panel_visible": true
+      },
+      "expected": {
+        "inside_panel": true,
+        "panel_visible": true
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T05:10:26.961Z",
+      "context": {
+        "stage": "focus-only-diagnostic",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "synthetic": true
+      }
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "focus-native-confirm.png",
+    "focus-after-native-cancel.png"
+  ],
+  "exit_code": 0,
+  "owned_server_stopped": true,
+  "player8001_contacted": false,
+  "paid_calls": 0,
+  "new_builds": 0,
+  "limits": [
+    "Synthetic fixture and witness only; no real model or human acceptance",
+    "Image byte provenance and screenshots do not prove universal semantic consistency",
+    "Old failed results remain unchanged"
+  ]
+}

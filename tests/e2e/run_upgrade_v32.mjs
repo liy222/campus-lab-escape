@@ -160,13 +160,13 @@ try {
   assert.equal(await page.evaluate(() => sessionStorage.getItem('campus-lab-session-v1')), 'qa-preserve-legacy');
   assert.equal(await page.evaluate(() => sessionStorage.getItem('campus-lab-session-upgrade-v3.1')), 'qa-preserve-v31');
   await layout(page, 1280, 'R1-graybox'); await page.screenshot({ path: path.join(folder, 'R1-graybox.png'), fullPage: true });
-  await page.setViewportSize({ width: 375, height: 812 }); await layout(page, 375, 'R1-mobile'); await page.setViewportSize({ width: 1280, height: 900 });
+    await page.setViewportSize({ width: 1280, height: 900 });
   // Prove early exploration, before obtaining any item or powering/login.
   await observe(page, 'r1_door'); await interact(page, 'r1_door'); await move(page, 'R2');
   await observe(page, 'r2_door'); await interact(page, 'r2_door'); await move(page, 'R3'); await observe(page, 'r3_legend');
   assert.equal(state.inventory.length, 0); assert.equal(state.device_states.computer, 'OFF');
   await layout(page, 1280, 'R3-early-graybox'); await page.screenshot({ path: path.join(folder, 'R3-graybox.png'), fullPage: true });
-  await page.setViewportSize({ width: 375, height: 812 }); await layout(page, 375, 'R3-mobile'); await page.setViewportSize({ width: 1280, height: 900 });
+    await page.setViewportSize({ width: 1280, height: 900 });
   await move(page, 'R2'); await move(page, 'R1');
   await observe(page, 'r1_clock'); await observe(page, 'r1_record'); await observe(page, 'r1_plaque');
   await observe(page, 'r1_microscope'); await observe(page, 'sample_slide'); await interact(page, 'sample_slide');
@@ -190,7 +190,7 @@ try {
   await select(page, 'r2_monitor'); await page.getByRole('button', { name: /^互动$/ }).click();
   await expect(page.getByLabel('用户名', { exact: true })).toHaveValue(''); await expect(page.getByLabel('密码', { exact: true })).toHaveValue('');
   await layout(page, 1280, 'R2-login-graybox'); await page.screenshot({ path: path.join(folder, 'R2-graybox.png'), fullPage: true });
-  await page.setViewportSize({ width: 375, height: 812 }); await layout(page, 375, 'R2-mobile-login'); await page.setViewportSize({ width: 1280, height: 900 });
+    await page.setViewportSize({ width: 1280, height: 900 });
   await login(page, 'LAB-42', '2117'); await interact(page, 'r2_monitor');
   await observe(page, 'research_strip'); await interact(page, 'research_strip'); await observe(page, 'access_card'); await interact(page, 'access_card');
   await move(page, 'R3'); await observe(page, 'r3_panel'); await observe(page, 'exit_door');
@@ -203,8 +203,8 @@ try {
   await interact(page, 'exit_door'); assert.equal(state.device_states.exit, 'UNLOCKED');
   await interact(page, 'exit_door'); await move(page, 'EXIT'); assert.equal(state.status, 'won');
   await expect(page.getByRole('heading', { name: '成功逃离实验室', exact: true })).toBeVisible();
-  await page.setViewportSize({ width: 375, height: 812 }); await layout(page, 375, 'mobile-victory');
-  await page.screenshot({ path: path.join(folder, 'mobile-victory.png'), fullPage: true }); assert.equal(pageErrors.length, 0);
+
+   assert.equal(pageErrors.length, 0);
   checks.push({ check: 'three-room-route-slots-items-save-restore-reload-actual-server-restart-win', passed: true, final_room: state.room.room_id });
   await context.close();
   await lightOldVersion('legacy', '2.0.0', 'campus-lab-session-v1');

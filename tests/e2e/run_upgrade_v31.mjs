@@ -189,8 +189,8 @@ try {
   assert.equal(await page.evaluate(() => sessionStorage.getItem('campus-lab-session-v1')), 'qa-preserve-legacy-namespace');
   await layout(page, 1280, 'R1-start');
   assert.equal(await page.getByText(/可用于|使用于/).count(), 0);
-  await page.setViewportSize({ width: 375, height: 812 });
-  await layout(page, 375, 'mobile-R1');
+
+
   await page.setViewportSize({ width: 1280, height: 900 });
   await observe(page, '值班便签'); await observe(page, '值班柜');
   const accepted = await password(page, '值班柜', '382');
@@ -211,8 +211,8 @@ try {
   await expectStage(await interact(page, '电源箱'), 'powerbox', 'MISSING_FUSE');
   let installed = await expectStage(await useItem(page, '保险丝', '电源箱'), 'powerbox', 'FUSE_INSTALLED');
   assert.equal(installed.progress.power_on, false);
-  await page.setViewportSize({ width: 375, height: 812 });
-  await layout(page, 375, 'mobile-fuse-installed');
+
+
   await page.setViewportSize({ width: 1280, height: 900 });
   const saved = await control(page, 'save');
   assert.equal(saved.save.level_version, '3.1.0');
@@ -259,9 +259,9 @@ try {
   assert.equal(resultState.status, 'won');
   await expect(page.getByRole('heading', { name: '成功逃离实验室', exact: true })).toBeVisible();
   await layout(page, 1280, 'three-room-victory');
-  await page.setViewportSize({ width: 375, height: 812 });
-  await layout(page, 375, 'mobile-victory');
-  await page.screenshot({ path: path.join(folder, 'mobile-victory.png'), fullPage: true });
+
+
+
   await keyInput(page);
   await control(page, 'reset'); await keyCleared(page);
   assert.equal(pageErrors.length, 0);
@@ -273,7 +273,7 @@ try {
   start('legacy-backend', python, ['-m', 'uvicorn', 'backend.app.main:app', '--host', '127.0.0.1', '--port', String(legacyBackendPort), '--no-access-log'], { GAMEPLAY_VERSION: 'legacy', SQLITE_PATH: path.join(temp, 'legacy.sqlite') });
   start('legacy-frontend', process.execPath, [path.join(root, 'frontend/node_modules/vite/bin/vite.js'), '--host', '127.0.0.1', '--port', String(legacyFrontendPort), '--strictPort'], { CAMPUS_BACKEND_URL: legacyBackendURL, VITE_GAMEPLAY_VERSION: 'legacy' }, path.join(root, 'frontend'));
   await Promise.all([ready(`${legacyBackendURL}/api/health`), ready(legacyFrontendURL)]);
-  const legacyContext = await browser.newContext({ viewport: { width: 375, height: 812 } });
+  const legacyContext = await browser.newContext({ viewport: { width: 1280, height: 900 } });
   const legacy = await legacyContext.newPage();
   await legacy.goto(legacyFrontendURL, { waitUntil: 'networkidle' });
   await legacy.evaluate(() => sessionStorage.setItem('campus-lab-session-upgrade-v3.1', 'qa-preserve-upgrade-namespace'));
@@ -295,7 +295,7 @@ try {
   await legacy.reload({ waitUntil: 'networkidle' });
   await legacy.locator('.welcome-buttons').getByRole('button', { name: '继续当前游戏', exact: true }).press('Enter');
   await expect(legacy.locator('#room-title')).toHaveText('设备间');
-  await layout(legacy, 375, 'legacy-mobile-restored');
+
   checks.push({ stage: 'same-source-legacy-mode-level2-slot-and-storage-namespace', passed: true });
   await legacyContext.close();
 } catch (error) {
@@ -320,7 +320,7 @@ try {
   const metadata = {
     candidate, started, ended: new Date().toISOString(), command: [process.execPath, ...process.argv.slice(1)],
     provider: 'AI_PROVIDER=mock; no paid model call', browser: 'Google Chrome, headless isolated context',
-    viewport_widths: [1280, 375], backend_port: backendPort, frontend_port: frontendPort,
+    viewport_widths: [1280], backend_port: backendPort, frontend_port: frontendPort,
     source_sha256_before: before, source_sha256_after: after,
     exit_code: issues.length ? 1 : 0,
     limitations: ['This scripted browser route does not measure real-player completion time or human acceptance.'],

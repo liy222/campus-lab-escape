@@ -116,7 +116,7 @@ async function roomView(page) {
   }
   await expect(page.locator('.game-canvas-host')).toHaveAttribute('data-view','room');
 }
-async function canvasInput(page,id,tool='object',keyboard=false,touch=false) {
+async function canvasInput(page,id,tool='object',keyboard=false) {
   const host=page.locator('.game-canvas-host');await expect(host).toHaveAttribute('data-assets-ready','true');
   await expect(host.locator('canvas')).toHaveCount(1);
   const hotspot=host.locator(`.scene-keyboard-hotspot[data-object-id="${id}"][data-scene-action="${tool}"]`);
@@ -126,7 +126,7 @@ async function canvasInput(page,id,tool='object',keyboard=false,touch=false) {
     const values=(await hotspot.getAttribute('data-bounds')).split(',').map(Number), box=await host.locator('canvas').boundingBox();
     assert(box);const x=box.x+(values[0]+values[2]/2)*box.width/1600,y=box.y+(values[1]+values[3]/2)*box.height/900;
     const hit=await page.evaluate(({x,y})=>document.elementFromPoint(x,y)?.tagName,{x,y});assert.equal(hit,'CANVAS','Mouse input must hit actual canvas');
-    if(touch) await page.touchscreen.tap(x,y);else await page.mouse.click(x,y);
+    await page.mouse.click(x,y);
   }
 }
 async function select(page,id,keyboard=false) {
@@ -353,18 +353,7 @@ async function hint(page,level,expectAccepted=true) {
 function publicRating(score) { return score.clues_found>=9&&score.hint_count<=1&&score.mistake_count<=2?'S':score.clues_found>=7&&score.hint_count<=3&&score.mistake_count<=5?'A':score.hint_count<=8?'B':'C'; }
 
 
-async function touchSmoke(service) {
-  const context=await browser.newContext({viewport:{width:375,height:812},hasTouch:true,isMobile:true,deviceScaleFactor:1}),page=await context.newPage();
-  const errors=[];page.on('pageerror',()=>errors.push('uncaught touch browser exception'));state=undefined;
-  await page.goto(service.frontendURL,{waitUntil:'networkidle'});
-  await http(page,'touch-create',()=>page.getByRole('button',{name:'开始新游戏 →',exact:true}).click(),201,'/api/sessions');
-  await http(page,'real-touchscreen-canvas-clock-inspect',()=>canvasInput(page,'r1_clock','object',false,true));
-  await expect(page.locator('.game-canvas-host')).toHaveAttribute('data-view','r1_clock');assert(state.clues.some(clue=>clue.object_id==='r1_clock'));
-  await canvasPixels(page,'R1-touch-clock-closeup');await page.screenshot({path:path.join(folder,'R1-touch-clock-closeup.png'),fullPage:true});
-  await select(page,'r1_record',true);assert(state.clues.some(clue=>clue.object_id==='r1_record'));
-  await layout(page,375,'R1-actual-touch-keyboard');assert.equal(errors.length,0);
-  checks.push({check:'hasTouch-mobile-actual-touchscreen-tap-and-keyboard-Enter',passed:true,width:375});await context.close();
-}
+
 async function canvasPixels(page,label) {
   const host=page.locator('.game-canvas-host');
   await expect(host).toHaveAttribute('data-assets-ready','true');
@@ -451,14 +440,14 @@ async function lightOldVersion(version, level, key) {
   await control(page, 'reset'); await control(page, 'restore'); assert.deepEqual(publicGame(state), publicGame(saved));
   checks.push({ check: 'light-old-mode-selection-save-slot-and-namespace', mode: version, level, passed: true }); await context.close();
 }
-async function moduleInput(page,id,keyboard=false,touch=false) {
+async function moduleInput(page,id,keyboard=false) {
   const host=page.locator('.game-canvas-host[data-room="R2"]');await expect(host).toHaveAttribute('data-assets-ready','true');
   const zone=host.locator(`.scene-keyboard-hotspot[data-module-id="${id}"]`);await expect(zone).toHaveCount(1);await expect(zone).toBeEnabled();
   if(keyboard) {await zone.focus();await zone.press('Enter');return;}
   const values=(await zone.getAttribute('data-bounds')).split(',').map(Number),box=await host.locator('canvas').boundingBox();assert(box);
   const x=box.x+(values[0]+values[2]/2)*box.width/1600,y=box.y+(values[1]+values[3]/2)*box.height/900;
   assert.equal(await page.evaluate(({x,y})=>document.elementFromPoint(x,y)?.tagName,{x,y}),'CANVAS');
-  if(touch) await page.touchscreen.tap(x,y);else await page.mouse.click(x,y);
+  await page.mouse.click(x,y);
 }
 async function assertSnapshotIdle(page) {
   await closeDrawer(page);await expect(page.locator('.game-canvas-host')).toHaveAttribute('data-animation','idle');
@@ -485,22 +474,7 @@ async function r2Checkpoint(page,label) {
   await page.screenshot({path:path.join(folder,label+'.png'),fullPage:true});await canvasPixels(page,label);
   checks.push({check:'R2-public-state-membership-rendering-and-readable-controls',label,powerbox:state.device_states.powerbox,computer:state.device_states.computer,power_on:state.progress.power_on,...measured,passed:true});
 }
-async function touchR2Smoke(service) {
-  // A synthetic context creates its own session; it cannot read another session's archive.
-  const context=await browser.newContext({viewport:{width:375,height:812},hasTouch:true,isMobile:true,deviceScaleFactor:1}),page=await context.newPage();
-  const errors=[];page.on('pageerror',()=>errors.push('uncaught R2 touch exception'));state=undefined;
-  await page.goto(service.frontendURL,{waitUntil:'networkidle'});await http(page,'R2-touch-create',()=>page.getByRole('button',{name:'开始新游戏 →',exact:true}).click(),201,'/api/sessions');await trackMarkers(page);
-  await observe(page,'r1_clock');await observe(page,'r1_record');await observe(page,'r1_plaque');await observe(page,'sample_slide');await interact(page,'sample_slide');await use(page,'sample_slide','r1_microscope');await observe(page,'r1_microscope');
-  await code(page,'r1_cabinet','4217');await interact(page,'r1_cabinet');await observe(page,'r1_fuse');await interact(page,'r1_fuse');
-  await observe(page,'r1_door');await interact(page,'r1_door');await move(page,'R2');
-  await http(page,'R2-real-touch-maintenance',()=>canvasInput(page,'r2_maintenance','object',false,true));assert(state.clues.some(clue=>clue.object_id==='r2_maintenance'));
-  await select(page,'r2_powerbox',true);await http(page,'R2-real-touch-open-box',()=>canvasInput(page,'r2_powerbox','interact',false,true));assert.equal(state.device_states.powerbox,'OPEN');
-  await http(page,'R2-keyboard-remove-guard',()=>canvasInput(page,'r2_powerbox','interact',true));assert.equal(state.device_states.powerbox,'MISSING_FUSE');
-  await use(page,'fuse','r2_powerbox');await openCircuit(page);const beforeTouchRotate=structuredClone(state),first=state.minigames.circuit.modules[0];
-  await http(page,'R2-real-touch-public-circuit-module',()=>moduleInput(page,first.module_id,false,true));assert.equal(state.minigames.circuit.modules[0].rotation,(beforeTouchRotate.minigames.circuit.modules[0].rotation+1)%4);assert.equal(state.device_states.powerbox,'FUSE_INSTALLED');assert.equal(state.progress.power_on,false);
-  await r2Checkpoint(page,'R2-real-touch-keyboard-375');assert.equal(errors.length,0);
-  checks.push({check:'R2-hasTouch-real-canvas-and-independent-keyboard',passed:true,width:375});await context.close();
-}
+
 try {
   assert(fs.existsSync(chromePath));
   const service = await pair('v3.4');
@@ -524,13 +498,13 @@ try {
   assert.deepEqual(state.minigames, { circuit: null, sequence: null });
   assert.equal(state.statistics.clues_total,10); assert.equal(state.statistics.hidden_total,2); assert.equal(state.statistics.hint_count,0); assert.equal(state.settlement,null); await hint(page,3,false);
   await visualOpening(page); await closeDrawer(page); await layout(page,1920,'R1-visual-desktop'); await page.screenshot({path:path.join(folder,'R1-visual-desktop.png'),fullPage:true});
-  await page.setViewportSize({ width: 375, height: 812 }); await layout(page,375,'R1-mobile');await page.screenshot({path:path.join(folder,'R1-visual-mobile.png'),fullPage:true});await page.setViewportSize({width:1280,height:900});
+   await page.setViewportSize({width:1280,height:900});
   // Prove early exploration, before obtaining any item or powering/login.
   await observe(page, 'r1_door'); await interact(page, 'r1_door'); await move(page, 'R2');
   await r2Checkpoint(page,'R2-initial-dark-no-tray-no-service');await observe(page, 'r2_door'); await interact(page, 'r2_door'); await move(page, 'R3'); await observe(page, 'r3_legend');
   assert.equal(state.inventory.length, 0); assert.equal(state.device_states.computer, 'OFF');
   await layout(page, 1280, 'R3-early-graybox'); await page.screenshot({ path: path.join(folder, 'R3-graybox.png'), fullPage: true });
-  await page.setViewportSize({ width: 375, height: 812 }); await layout(page, 375, 'R3-mobile'); await page.setViewportSize({ width: 1280, height: 900 });
+    await page.setViewportSize({ width: 1280, height: 900 });
   await move(page, 'R2'); await move(page, 'R1');
   await observe(page, 'r1_clock'); await observe(page, 'r1_record'); await observe(page, 'r1_plaque');
   const levelAnswers=[]; for(const level of [1,2,3]) levelAnswers.push(await hint(page,level)); assert.equal(new Set(levelAnswers).size,3); await closeDrawer(page);await menu(page);await expect(page.locator('.menu-statistics [data-stat="hint_count"]')).toHaveText('3');await closeDrawer(page);
@@ -567,7 +541,7 @@ try {
   start('v3.4-backend-partial-board-restarted',python,service.backendArgs,service.backendEnv); await ready(service.backendURL+'/api/health');
   await menu(page);await http(page,'state',() => page.getByRole('button',{name:'同步进度',exact:true}).click(),200,'/state'); assert.deepEqual(state,beforeBoardRestart);
   await openCircuit(page); await layout(page,1280,'R2-partial-circuit'); await page.screenshot({path:path.join(folder,'R2-partial-circuit.png'),fullPage:true});
-  await page.setViewportSize({width:375,height:812}); await layout(page,375,'R2-mobile-circuit');await page.screenshot({path:path.join(folder,'R2-mobile-circuit.png'),fullPage:true});await page.setViewportSize({width:1280,height:900});
+   await page.setViewportSize({width:1280,height:900});
   const solution = deriveCircuit(state.minigames.circuit), alternate = {...solution};
   const straight = state.minigames.circuit.modules.find(module => module.shape==='I'); alternate[straight.module_id]=(alternate[straight.module_id]+2)%4;
   assert(connected(state.minigames.circuit,solution)); assert(connected(state.minigames.circuit,alternate)); assert.notDeepEqual(solution,alternate);
@@ -597,10 +571,10 @@ try {
   await expect(page.locator('#terminal-username')).toHaveCount(1);await expect(page.locator('#terminal-password')).toHaveCount(1);
   await expect(page.locator('#terminal-username')).toHaveValue('');await expect(page.locator('#terminal-password')).toHaveValue('');
   await layout(page, 1280, 'R2-login-visual'); await page.screenshot({ path: path.join(folder, 'R2-visual.png'), fullPage: true });
-  await page.setViewportSize({ width: 375, height: 812 }); await layout(page,375,'R2-mobile-login');await page.screenshot({path:path.join(folder,'R2-mobile-login.png'),fullPage:true});await page.setViewportSize({width:1280,height:900});
+   await page.setViewportSize({width:1280,height:900});
   await login(page,'LAB-42','2117');await interact(page,'r2_monitor');assert.equal(state.device_states.computer,'DATA_READ');
   assert(state.objects.some(object=>object.object_id==='research_strip'));assert(state.objects.some(object=>object.object_id==='access_card'));
-  assert(!state.inventory.some(item=>['research_strip','access_card'].includes(item.item_id)));await r2Checkpoint(page,'R2-DATA_READ-tray-items-not-auto-taken');await page.setViewportSize({width:375,height:812});await r2Checkpoint(page,'R2-DATA_READ-tray-mobile');await page.setViewportSize({width:1280,height:900});
+  assert(!state.inventory.some(item=>['research_strip','access_card'].includes(item.item_id)));await r2Checkpoint(page,'R2-DATA_READ-tray-items-not-auto-taken');await page.setViewportSize({width:1280,height:900});
   await observe(page,'research_strip');await interact(page,'research_strip');assert(state.inventory.some(item=>item.item_id==='research_strip'));assert(!state.objects.some(object=>object.object_id==='research_strip'));assert(state.objects.some(object=>object.object_id==='access_card'));
   await observe(page,'access_card');await interact(page,'access_card');await r2Checkpoint(page,'R2-tray-both-items-taken');
   await move(page, 'R3'); await observe(page, 'r3_panel'); await observe(page, 'exit_door');
@@ -618,7 +592,7 @@ try {
   await draftSequence(page,derivedSequence.slice(0,2)); await refresh(page); await openSequence(page); await expect(page.locator('.sequence-submit')).toBeDisabled();
   await draftSequence(page,derivedSequence.slice(0,2)); await move(page,'R2'); await move(page,'R3'); await openSequence(page); await expect(page.locator('.sequence-submit')).toBeDisabled();
   await layout(page,1280,'R3-sequence-panel'); await page.screenshot({path:path.join(folder,'R3-sequence-panel.png'),fullPage:true});
-  await page.setViewportSize({width:375,height:812}); await layout(page,375,'R3-mobile-sequence'); await page.setViewportSize({width:1280,height:900});
+    await page.setViewportSize({width:1280,height:900});
   await draftSequence(page,derivedSequence); await submitSequence(page); assert.equal(state.progress.check_done,true); assert.equal(state.device_states.exit,'FINAL_CHECK');
   const miniCompleted=(await control(page,'save')).data.visible_state; await control(page,'reset'); await control(page,'restore'); await refresh(page); assert.deepEqual(publicGame(state),publicGame(miniCompleted));
   checks.push({check:'cross-room-public-sequence-wrong-duplicates-draft-clears-restore-reload-room-and-completed-save',passed:true,derived_sequence:derivedSequence});
@@ -648,15 +622,15 @@ try {
   assert.deepEqual(state.settlement,score);await expect(page.locator('.save-slot')).toHaveCount(6);
   checks.push({check:'five-immutable-archives-plus-old-slot-persist-reset-refresh-OSrestart',passed:true,archive_count:5,legacy_count:1});
   checks.push({check:'settlement-authoritative-UTC-score-winfreeze-reset-slot-restore-refresh-OSrestart',passed:true,settlement:score});
-  await page.setViewportSize({ width: 375, height: 812 }); await layout(page, 375, 'mobile-victory');
-  await page.locator('.save-panel').screenshot({path:path.join(folder,'mobile-three-archive-list.png')});
+
+
   await page.locator(`.save-slot[data-save-id="${partialArchive.slot.save_id}"] .save-slot-restore`).click();
-  await page.getByRole('dialog').screenshot({path:path.join(folder,'mobile-selected-restore-confirmation.png')});
+
   await page.getByRole('dialog').getByRole('button',{name:'取消',exact:true}).click();assert.deepEqual(state.settlement,score);
-  await page.screenshot({ path: path.join(folder, 'mobile-victory.png'), fullPage: true }); assert.equal(pageErrors.length, 0);
+   assert.equal(pageErrors.length, 0);
   checks.push({ check: 'three-room-route-slots-items-save-restore-reload-actual-server-restart-win', passed: true, final_room: state.room.room_id });
   await context.close();
-  await touchSmoke(service);await touchR2Smoke(service);
+
   await lightOldVersion('legacy', '2.0.0', 'campus-lab-session-v1');
   await lightOldVersion('v3.1', '3.1.0', 'campus-lab-session-upgrade-v3.1');
   await lightOldVersion('v3.2', '3.2.0', 'campus-lab-session-upgrade-v3.2');

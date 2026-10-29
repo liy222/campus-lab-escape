@@ -1,0 +1,23 @@
+{
+  "builds": [
+    {
+      "entry": "classic",
+      "command": "npm run build",
+      "cwd": "frontend",
+      "VITE_GAMEPLAY_VERSION": "upgrade",
+      "CAMPUS_BACKEND_URL": "http://127.0.0.1:8001",
+      "exit_code": 0,
+      "elapsed_seconds": 7.707
+    },
+    {
+      "entry": "v5",
+      "command": "npm run build",
+      "cwd": "frontend",
+      "VITE_GAMEPLAY_VERSION": "v5",
+      "CAMPUS_BACKEND_URL": "http://127.0.0.1:8001",
+      "exit_code": 0,
+      "elapsed_seconds": 7.778
+    }
+  ],
+  "paid_calls": 0
+}

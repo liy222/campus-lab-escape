@@ -24,7 +24,7 @@ const folder=path.join(root,'evidence/integration/closeup-panel/qa',new Date().t
 fs.mkdirSync(folder,{recursive:true});
 const temp=fs.mkdtempSync(path.join(os.tmpdir(),'campus-closeup-panel-')),children=[],commands=[],checks=[],issues=[];
 let browser,page,state,backendURL,frontendURL;const started=new Date().toISOString();
-const viewportCases=[[1920,1080],[1280,900],[375,812],[812,375]];
+const viewportCases=[[1920,1080],[1280,900]];
 async function port(){return new Promise((resolve,reject)=>{const s=net.createServer();s.once('error',reject);s.listen(0,'127.0.0.1',()=>{const p=s.address().port;s.close(e=>e?reject(e):resolve(p));});});}
 function start(label,exe,args,env,cwd=root){commands.push({label,executable:exe,arguments:args,cwd,public_environment:env});const p=spawn(exe,args,{cwd,env:{...process.env,...env},windowsHide:true,stdio:'ignore'});children.push(p);p.on('error',e=>issues.push({label,error:e.message}));return p;}
 async function ready(url){await expect.poll(async()=>{try{return(await fetch(url)).status;}catch{return 0;}},{timeout:30000}).toBe(200);}
@@ -50,7 +50,7 @@ async function input(selector,kind='mouse'){
   if(kind==='keyboard'){await button.focus();await page.keyboard.press('Enter');return;}
   const b=(await button.getAttribute('data-bounds')).split(',').map(Number),c=await page.locator('.game-canvas-host canvas').boundingBox();
   const x=c.x+(b[0]+b[2]/2)*c.width/1600,y=c.y+(b[1]+b[3]/2)*c.height/900;
-  if(kind==='touch')await page.touchscreen.tap(x,y);else await page.mouse.click(x,y);
+  await page.mouse.click(x,y);
 }
 async function select(id,kind='mouse'){const back=page.locator('.closeup-back');if(await back.isVisible())await back.click();await response('/actions',()=>input(`[data-object-id="${id}"][data-scene-action="object"]`,kind));await expect(page.locator('.game-canvas-host')).toHaveAttribute('data-view',id);}
 // Solver copied from the sealed old QA, based only on public reciprocal ports.
@@ -73,13 +73,13 @@ async function isolation(id,allowed,label){
   const used=[];const original=structuredClone(state),begin=actionRequests.length;
   for(const o of probes){const x=canvas.x+o.x*canvas.width/1600,y=canvas.y+o.y*canvas.height/900;
     const target=await page.evaluate(({x,y})=>document.elementFromPoint(x,y)?.tagName,{x,y});if(target!=='CANVAS'){checks.push({check:'probe-excluded-native-overlay',label,object:o.id});continue;}
-    await page.mouse.click(x,y);await page.touchscreen.tap(x,y);used.push(o.id);
+    await page.mouse.click(x,y);used.push(o.id);
   }
   assert(used.length>0,label+' requires at least one genuine unoccluded stale-background probe');
   await page.waitForTimeout(400);assert.equal(actionRequests.length,begin,label+' stale point caused action');
   await expect(host).toHaveAttribute('data-view',id);
   const visible=await page.evaluate(async()=>{const s=JSON.parse(sessionStorage.getItem('campus-lab-session-upgrade-v3.4'));const r=await fetch(`/api/sessions/${s.session_id}/state`,{headers:{'X-Session-Token':s.token}});if(!r.ok)throw new Error('state read rejected');return(await r.json()).data.visible_state;});assert.deepEqual(visible,original,label+' click-through state changed');
-  await page.screenshot({path:path.join(folder,label+'.png'),fullPage:true});checks.push({check:'real-mouse-touch-stale-overview-no-action-and-keyboard-scope',label,probed:used,allowed,revision:state.revision});
+  await page.screenshot({path:path.join(folder,label+'.png'),fullPage:true});checks.push({check:'real-mouse-stale-overview-no-action-and-keyboard-scope',label,probed:used,allowed,revision:state.revision});
 }
 async function child(id,kind){await response('/actions',()=>input(`[data-object-id="${id}"][data-scene-action="object"]`,kind));await expect(page.locator('.game-canvas-host')).toHaveAttribute('data-view',id);}
 async function takeSelected(id,kind){await response('/actions',()=>input(`[data-object-id="${id}"][data-scene-action="take"]`,kind));await canvasReady();}
@@ -91,24 +91,24 @@ async function archiveReloadRestore(){
   checks.push({check:'actual-named-save-reload-selected-restore-early-board',passed:true});
 }
 async function run(){
-  const context=await browser.newContext({viewport:{width:1280,height:900},hasTouch:true,deviceScaleFactor:1});page=await context.newPage();page.on('pageerror',e=>issues.push({check:'uncaught',error:e.message}));
+  const context=await browser.newContext({viewport:{width:1280,height:900},deviceScaleFactor:1});page=await context.newPage();page.on('pageerror',e=>issues.push({check:'uncaught',error:e.message}));
   page.on('request',r=>{const u=new URL(r.url());if(u.pathname.endsWith('/actions')&&r.method()==='POST')actionRequests.push({tool:r.postDataJSON()?.tool});if(u.hostname==='api.deepseek.com')issues.push({check:'unexpected-paid-endpoint'});});
   await page.goto(frontendURL,{waitUntil:'networkidle'});await response('/api/sessions',()=>page.getByRole('button',{name:'开始新游戏 →',exact:true}).click(),201);
   for(const id of ['r1_clock','r1_record','r1_plaque','r1_microscope'])await object(id);await object('sample_slide','take');await api('use_item',{item_id:'sample_slide',target_id:'r1_microscope'});await object('r1_microscope');await object('r1_cabinet','submit_code',{code:'4217'});await object('r1_cabinet','interact');await sync();
-  if(['all','r1'].includes(only)){for(const [w,h] of [[1280,900],[375,812]]){await page.setViewportSize({width:w,height:h});await isolation('r1_cabinet',['r1_cabinet','r1_symbols','r1_fuse'],`R1-cabinet-${w}`);}await child('r1_symbols','keyboard');await select('r1_cabinet');await child('r1_fuse','touch');await takeSelected('r1_fuse','mouse');await select('r1_cabinet');await child('r1_photo','keyboard');checks.push({check:'real-cabinet-child-symbol-fuse-photo-and-back',passed:true});if(only==='r1'){await context.close();return;}}
+  if(['all','r1'].includes(only)){for(const [w,h] of [[1280,900]]){await page.setViewportSize({width:w,height:h});await isolation('r1_cabinet',['r1_cabinet','r1_symbols','r1_fuse'],`R1-cabinet-${w}`);}await child('r1_symbols','keyboard');await select('r1_cabinet');await child('r1_fuse','mouse');await takeSelected('r1_fuse','mouse');await select('r1_cabinet');await child('r1_photo','keyboard');checks.push({check:'real-cabinet-child-symbol-fuse-photo-and-back',passed:true});if(only==='r1'){await context.close();return;}}
   else{await object('r1_symbols');await object('r1_fuse','take');}
   await object('r1_door','interact');await api('move',{destination_id:'R2'});await object('r2_maintenance');await object('r2_powerbox','interact');await object('r2_powerbox','interact');await api('use_item',{item_id:'fuse',target_id:'r2_powerbox'});await sync();
   if(['all','r2','remaining'].includes(only)){await page.setViewportSize({width:1280,height:900});await isolation('r2_powerbox',['r2_powerbox',...state.minigames.circuit.modules.map(m=>m.module_id)],'R2-circuit');const m=state.minigames.circuit.modules[0];await response('/actions',()=>input(`[data-module-id="${m.module_id}"]`,'keyboard'));assert.equal(state.minigames.circuit.modules[0].rotation,(m.rotation+1)%4);}
   const rotations=solution(state.minigames.circuit);for(const m of [...state.minigames.circuit.modules])for(let t=0;t<(rotations[m.module_id]-m.rotation+4)%4;t++)await api('rotate_circuit',{target_id:'r2_powerbox',module_id:m.module_id});await api('submit_circuit',{target_id:'r2_powerbox'});await object('r2_powerbox','interact');await object('r2_monitor','interact');await object('r2_monitor','interact');await object('r2_monitor','submit_login',{username:'LAB-42',password:'2117'});await object('r2_monitor','interact');await sync();
-  if(['all','r2','remaining'].includes(only)){for(const [w,h] of [[1280,900],[375,812]]){await page.setViewportSize({width:w,height:h});await isolation('r2_monitor',['r2_monitor','research_strip','access_card'],`R2-tray-${w}`);}await child('research_strip','touch');await takeSelected('research_strip','keyboard');await select('r2_monitor');await child('access_card','mouse');await takeSelected('access_card','touch');await select('r2_powerbox');await child('r2_service_label','keyboard');checks.push({check:'real-tray-items-service-label-and-current-module',passed:true});if(only==='r2'){await context.close();return;}}
+  if(['all','r2','remaining'].includes(only)){for(const [w,h] of [[1280,900]]){await page.setViewportSize({width:w,height:h});await isolation('r2_monitor',['r2_monitor','research_strip','access_card'],`R2-tray-${w}`);}await child('research_strip','mouse');await takeSelected('research_strip','keyboard');await select('r2_monitor');await child('access_card','mouse');await takeSelected('access_card','mouse');await select('r2_powerbox');await child('r2_service_label','keyboard');checks.push({check:'real-tray-items-service-label-and-current-module',passed:true});if(only==='r2'){await context.close();return;}}
   else{await object('research_strip','take');await object('access_card','take');}
   await object('r2_door','interact');await api('move',{destination_id:'R3'});await object('r3_legend');await object('r3_panel');await sync();assert.equal(state.minigames.sequence,null);
   if(['all','r3','remaining'].includes(only)){
     await select('r3_panel');await page.locator('[data-item-id="research_strip"] button').click();await response('/actions',()=>page.locator('.use-button').click());assert.equal(state.puzzle_states.panel,'STRIP_INSERTED');assert.equal(state.device_states.exit,'LOCKED');assert.equal(state.progress.check_done,false);assert.equal(state.minigames.sequence.devices.length,4);if(await page.locator('.cancel-item').isVisible())await page.locator('.cancel-item').click();assert(!state.objects.find(o=>o.object_id==='r3_panel').actions.some(a=>a.tool==='submit_sequence'));
-    for(const [w,h] of [[1280,900],[375,812]]){await page.setViewportSize({width:w,height:h});await isolation('r3_panel',['r3_panel',...state.minigames.sequence.devices.map(d=>d.device_id)],`R3-early-devices-${w}`);await expect(hot('[data-device-id]')).toHaveCount(4);}
+    for(const [w,h] of [[1280,900]]){await page.setViewportSize({width:w,height:h});await isolation('r3_panel',['r3_panel',...state.minigames.sequence.devices.map(d=>d.device_id)],`R3-early-devices-${w}`);await expect(hot('[data-device-id]')).toHaveCount(4);}
     for(const id of sequence())await input(`[data-device-id="${id}"]`,'keyboard');await expect(page.locator('.sequence-submit')).toBeDisabled();await page.locator('.sequence-clear').click();await archiveReloadRestore();
-    await object('exit_door');await api('use_item',{item_id:'access_card',target_id:'exit_door'});await object('exit_door','interact');await sync();await select('r3_panel');const order=sequence();for(let i=0;i<order.length;i++)await input(`[data-device-id="${order[i]}"]`,i%2?'keyboard':'touch');await response('/actions',()=>page.locator('.sequence-submit').click());assert.equal(state.progress.check_done,true);assert.equal(state.minigames.sequence.status,'completed');
-    await select('exit_door');await response('/actions',()=>input('[data-object-id="exit_door"][data-scene-action="interact"]','mouse'));await response('/actions',()=>input('[data-object-id="exit_door"][data-scene-action="interact"]','touch'));await response('/actions',()=>input('[data-object-id="exit_door"][data-scene-action="move"]','keyboard'));assert.equal(state.status,'won');await expect(page.locator('.victory-screen')).toBeVisible();await page.screenshot({path:path.join(folder,'EXIT.png'),fullPage:true});checks.push({check:'true-Canvas-finalcheck-sequence-door-EXIT',passed:true});
+    await object('exit_door');await api('use_item',{item_id:'access_card',target_id:'exit_door'});await object('exit_door','interact');await sync();await select('r3_panel');const order=sequence();for(let i=0;i<order.length;i++)await input(`[data-device-id="${order[i]}"]`,i%2?'keyboard':'mouse');await response('/actions',()=>page.locator('.sequence-submit').click());assert.equal(state.progress.check_done,true);assert.equal(state.minigames.sequence.status,'completed');
+    await select('exit_door');await response('/actions',()=>input('[data-object-id="exit_door"][data-scene-action="interact"]','mouse'));await response('/actions',()=>input('[data-object-id="exit_door"][data-scene-action="interact"]','mouse'));await response('/actions',()=>input('[data-object-id="exit_door"][data-scene-action="move"]','keyboard'));assert.equal(state.status,'won');await expect(page.locator('.victory-screen')).toBeVisible();await page.screenshot({path:path.join(folder,'EXIT.png'),fullPage:true});checks.push({check:'true-Canvas-finalcheck-sequence-door-EXIT',passed:true});
   }
   await context.close();
 }

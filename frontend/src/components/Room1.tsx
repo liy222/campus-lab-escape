@@ -41,7 +41,7 @@ export default function Room1(props: Props) {
         {selectedItemId && <button className="button use-button" disabled={disabled} onClick={() => onAction('use_item', { item_id: selectedItemId, target_id: object.object_id })}>使用物品 ↗</button>}
       </div>
       {codeAction && <form className="code-form mechanical-lock" onSubmit={event => { event.preventDefault(); const code = props.codes[object.object_id] || ''; if (!/^[0-9]{1,16}$/.test(code)) { props.onError('请输入 1–16 位数字。'); return; } onAction('submit_code', { ...codeAction.arguments, code }); }}>
-        <label htmlFor={`code-${object.object_id}`}>输入你推理出的数字</label><div><input id={`code-${object.object_id}`} inputMode="numeric" autoComplete="off" maxLength={16} pattern="[0-9]{1,16}" placeholder="••••" value={props.codes[object.object_id] || ''} disabled={disabled} onChange={event => props.onCode(object.object_id, event.target.value)}/><button className="button" disabled={disabled}>提交</button></div>
+        <label htmlFor={`code-${object.object_id}`}>输入你推理出的数字</label><div><input id={`code-${object.object_id}`} autoComplete="off" maxLength={16} pattern="[0-9]{1,16}" placeholder="••••" value={props.codes[object.object_id] || ''} disabled={disabled} onChange={event => props.onCode(object.object_id, event.target.value)}/><button className="button" disabled={disabled}>提交</button></div>
       </form>}
       {clue && <article className={`closeup-reading ${object.object_id === 'r1_microscope' ? 'eyepiece-reading' : ''}`}><small>{clue.title}</small><p>{clue.text}</p></article>}
       {!clue && <p className="closeup-description">{object.description}</p>}

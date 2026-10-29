@@ -4,35 +4,22 @@
 
 | 项目 | 当前情况 |
 |---|---|
-| 可体验功能 | 新版按主题、1–3房间和难度生成关卡；两套有限骨架；「雨夜天文社」首包已接入（3背景/6角色12外观/特写/完成态）与统一的新版创建-游戏-谜题-存档-结算界面 |
-| 已完成验证 | 结构专项75项、一次构建、桌面/手机浏览器分轮覆盖；本阶段新增合成浏览器检查 36 项 exit 0（主题选择、回退、稳定性、完成态贴图、四类面板、存档保存/读取/删除、手机结算、三视口） |
-| 已完成体验修复 | 线路等待指针、接点/方向/完成反馈、创建页/场景/面板、导航控件 44px、生成后列表延迟刷新；此前已推送d9feba2/3afe821 |
-| 当前阶段 | 74eb523主题包/UI已接入；本对话独立补查10项：6通过、4失败，**需修复后再检查**；真人未核验 |
-| 体验入口 | http://127.0.0.1:8001/ ；固定证据与当前真人检查表见下方入口 |
-| 主题素材范围 | 只有「雨夜天文社」有专属美术；其他主题回退通用手绘并在创建页/场景中说明 |
-| 主要未决 | 通用钥匙特写错图、通用结算写死天文故事、删档后焦点移出面板、特写404无回退；矢量风偏离原手绘约定；真人/真实模型/真机未核 |
+| 当前阶段 | 手绘重建、4项UI修复与全项目电脑端清理；技术范围联合通过，待本人检查 |
+| 可体验功能 | 主题生成、1–3房间/难度、有限骨架、账号、提示/伙伴、多时刻存档；原后端/规则/API/存档格式复用 |
+| 美术 | rainy-astronomy 1.1.0，实际内置imagegen 15张：3背景+12物件/状态；12种特写共用原图，原矢量版保留 |
+| UI修复 | 通用钥匙错图、通用结算写死故事、删档后焦点外移、特写404无回退已修复；常用说明14px |
+| 电脑端范围 | 经典与V5仅鼠标/键盘、1280×720和1920×1080；手机专用布局/模式/键盘配置与现行手机测试路径已移除；历史原始结果保留 |
+| 实际验证 | 手绘/UI首轮37项36通过、1项过严原生焦点断言；仅焦点澄清2项通过，原exit1保留。清理类型/语法检查exit0；classic/V5构建各一次exit0，R1/线路/CRT/R3与V5两桌面联合窄验完成，三次检查器适配失败保留 |
+| 体验入口 | http://127.0.0.1:8001/ ，或“启动新版.cmd”；已有主题关卡可继续看新画面，不必重新付费生成 |
+| 限制 | 目前只有雨夜天文社专属美术，其他主题回退通用手绘；无新增真实模型故事质量/真人难度结论；本人/同伴尚未验收 |
 
-2026-10-29[独立检查报告](evidence/project/stages/v5-rainy-astronomy-ui/reviews/root-review-20261029.md)：本对话只补未覆盖范围，实际通过第三房间、两处线路、顺序提交和三房困难Synthetic通关；复现4项UI问题，控制器异常0。原10源码/4产物/27美术身份一致，复用原36项检查，新增构建0/付费0，未改产品源码。
+本阶段[交付摘要](evidence/project/stages/v5-handpainted-rebuild/reviews/delivery.md)、[固定证据入口](evidence/project/README.md)、[技术记录](evidence/project/stages/v5-handpainted-rebuild/stage.json)、[独立QA报告](evidence/project/stages/v5-handpainted-rebuild/reviews/qa.md)、[真人检查步骤](evidence/project/human-reviews/v5-handpainted-rebuild/round-01/review.md)。项目真实生成/伙伴/评价器调用0；内置生图15次如实单列，未使用外部Key/CLI。
 
-本轮[固定证据入口](evidence/project/README.md)已建立：实际结果、两种输入的安全阶段日志、评价标准与技术复核统一可读，开发过程中持续保存。历史V5代表性结果已按原字节归档并保留原入口；更早证据仍由历史索引指向原位置，未声称全部搬完。用户修复前原话和原截图已单列保存。
+此前74eb523的矢量主题/UI与其36项合成检查、440fc58的10项独立补查均保留原结果；本轮4项失败修复以新阶段证据核对，旧失败不改成通过。[原复核报告](evidence/project/stages/v5-rainy-astronomy-ui/reviews/root-review-20261029.md)。
 
-此前E&O阶段独立11项API exit0；首浏览器exit1（核心通过、检查器登出等待竞态），只补auth/legacy exit0，原失败与六截图保留；归档工具5项TEMP检查exit0。没有重复构建或付费调用。[结果索引](evidence/project/stages/2026-10-28-evaluation-observability/evaluation/summary.json)是Main汇总，不是新执行。[本人核验记录](evidence/project/human-reviews/2026-10-28-evaluation-observability/round-01/review.md)已保存本次原话与原图：随机生成、通关、注册、登录按本人反馈通过，UI/主题视觉/素材需改进，整体未接受。E&O证据逐条核验与真实同伴未确认、专属美术未制作、旧评价pin不刷新。
+E&O与固定证据归档阶段已有独立11项API、浏览器核心/auth分轮和5项归档工具检查；[实际结果摘要](evidence/project/stages/2026-10-28-evaluation-observability/evaluation/summary.json)。[本人此前反馈](evidence/project/human-reviews/2026-10-28-evaluation-observability/round-01/review.md)确认随机生成、通关、注册/登录正常，要求改善UI、主题视觉与素材；不是本轮修复后的接受。逐条E&O与真实同伴仍未确认。
 
-后续按完整功能阶段交付可体验结果，普通修复与必要验证集中处理，不再逐小步审计或提交同步回执。历史记录保留；最新交接见 [HANDOFF-20261027](docs/HANDOFF-20261027.md)。
-
-本轮独立[集中复核报告](review/findings/v5-experience-20261028.md)：5项API通过，复用Owner唯一成功构建；实际线路错误恢复/延迟请求忙碌/成功提交指针、三视口布局、一次存档恢复、重登主题及旧字段缺省模拟联合完成。两次QA定位器失败保留，未重复核心范围；使用隔离合成关卡，不是新真实模型语义或真人体验证明。Main已查看创建页、桌面/手机线路板和手机游戏截图。
-
-### 2026-10-28/29 雨夜天文社主题包与新版UI（本次完整阶段）
-
-按[前端/美术UI交接计划](docs/v5-frontend-art-ui-plan.md)执行 VU0–VU5，未新建对话拆前端与美术，未改后端/生成/规则/API/存档格式。
-
-- **主题包**：`rainy-astronomy` 1.0.0。3 张 1600×900 背景（活动室/资料室/设备间）、6 类物件 12 种外观（note 三种纸面、key 黄铜钥匙；terminal/cabinet/circuit/panel 各有默认与完成态）、12 张特写；`manifest.json` 由构建脚本按真实像素与 alpha bbox 生成。素材全部是本机矢量绘制 + headless Chrome 渲染，**没有图像模型、没有付费调用**。
-- **接入**：`frontend/src/v5/visual/` 按已保存 `level.theme` 匹配包，物件按公开 `art_id`+`completed`+稳定哈希选择外观；槽位、热点与图像同源；未匹配主题回退旧 `generated-catalog`，经典页面与旧素材未动。
-- **界面**：创建页/登录/关卡列表/游戏 HUD/场景/物品栏/四类谜题面板/笔记/伙伴/存档/结算统一为同一套夜色-纸色-黄铜语言；结算在场景框内，显示服务端统计。
-- **验证**：`tests/v5/run_visual_ui_browser.mjs`（隔离 8002 + TEMP 库 + 合成生成器）32 项 exit 0，覆盖主题解析/背景、5 物件映射、44px 与三视口无溢出、特写来源、Escape 与背景点击不穿透、公开线索推码、取钥匙、线路 9 模块、顺序 4 设备、存档保存/读取/删除、重载稳定、未支持主题回退、0 外部请求。21 次运行中 15 次失败全部保留。
-- **未做/未核**：真人核验、真实模型生成的关卡画面、真机触控、其他主题专属素材、雨滴动效（MAY）。E&O 逐条核验与真实同伴仍未确认。
-- **入口**：[阶段证据](evidence/project/stages/v5-rainy-astronomy-ui/)、[自动结果](evidence/project/stages/v5-rainy-astronomy-ui/automated/browser-2026-10-28T16-20-30-946Z-97ce062e/browser-result.json)、[标准与结论](evidence/project/stages/v5-rainy-astronomy-ui/evaluation/notes.md)、[待本人检查](evidence/project/human-reviews/v5-rainy-astronomy-ui/round-01/review.md)、[素材清单](output/art-concepts/rainy-astronomy/ASSET-LIST.md)。
-
+以下为历史进度，按原版本/来源保留，不能当作当前手机支持、新执行或当前待办。当前范围以以上概览及2026-10-29构建计划为准。
 
 <!-- upgrade-current-start -->
 ## 当前升级进度（2026-10-14）

@@ -1,0 +1,422 @@
+{
+  "run_id": "adadb34b-8a80-4a71-a624-aa7624abe4e4",
+  "started": "2026-10-29T05:41:37.562Z",
+  "ended": "2026-10-29T05:41:48.219Z",
+  "command": "node tests/v5/run_desktop_cleanup_browser.mjs --r3-and-v5",
+  "scope": "Only R3/V5; R1 and circuit/CRT reused",
+  "reused_circuit_CRT": "../desktop-smoke-2026-10-29T05-40-11-594Z-ed9fcfb4/result.json",
+  "first_result": "../desktop-smoke-2026-10-29T05-36-56-238Z-9c43fede/result.json",
+  "build_results": "../desktop-cleanup-build1/result.json",
+  "effective_builds": [
+    {
+      "entry": "classic",
+      "index": "frontend\\dist\\index.html",
+      "sha256": "57f8eae1ddb72793c3968b21824552f9e1a37f436404ac1862ce40f4fba2be77"
+    },
+    {
+      "entry": "v5",
+      "index": "frontend\\dist-v5\\index.html",
+      "sha256": "6dab308c5a455036b1a8b81303cfee1a735919cce9c48cecf3b021d02402b674"
+    }
+  ],
+  "records": [
+    {
+      "name": "owned port8002 available",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "entry": "classic",
+      "stage": "start",
+      "utc": "2026-10-29T05:41:37.870Z"
+    },
+    {
+      "name": "owned service ready",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "entry": "classic",
+      "stage": "start",
+      "utc": "2026-10-29T05:41:38.551Z"
+    },
+    {
+      "name": "actual UI /api/sessions",
+      "actual": {
+        "http_status": 201
+      },
+      "expected": "2xx",
+      "pass": true,
+      "entry": "classic",
+      "stage": "classic-R1",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T05:41:39.038Z"
+    },
+    {
+      "name": "actual hotspot hits Canvas",
+      "actual": {
+        "x": 656,
+        "y": 410,
+        "hit": "CANVAS"
+      },
+      "expected": "CANVAS",
+      "pass": true,
+      "entry": "classic",
+      "stage": "classic-R3-panel",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T05:41:42.269Z"
+    },
+    {
+      "name": "actual UI /actions",
+      "actual": {
+        "http_status": 200
+      },
+      "expected": "2xx",
+      "pass": true,
+      "entry": "classic",
+      "stage": "classic-R3-panel",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T05:41:42.285Z"
+    },
+    {
+      "name": "actual hotspot hits Canvas",
+      "actual": {
+        "x": 564,
+        "y": 408,
+        "hit": "CANVAS"
+      },
+      "expected": "CANVAS",
+      "pass": true,
+      "entry": "classic",
+      "stage": "classic-R3-panel",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T05:41:42.386Z"
+    },
+    {
+      "name": "actual desktop sequence draft",
+      "actual": {
+        "count": 1,
+        "revision": 49
+      },
+      "expected": {
+        "count": 1,
+        "revision": 49
+      },
+      "pass": true,
+      "entry": "classic",
+      "stage": "classic-R3-panel",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T05:41:42.394Z"
+    },
+    {
+      "name": "no overflow R3 panel",
+      "actual": {
+        "scroll_width": 1280,
+        "viewport": 1280
+      },
+      "expected": "scrollWidth <= viewport",
+      "pass": true,
+      "entry": "classic",
+      "stage": "classic-R3-panel",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T05:41:42.395Z"
+    },
+    {
+      "name": "actual hotspot hits Canvas",
+      "actual": {
+        "x": 984,
+        "y": 615,
+        "hit": "CANVAS"
+      },
+      "expected": "CANVAS",
+      "pass": true,
+      "entry": "classic",
+      "stage": "classic-R3-panel",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T05:41:42.645Z"
+    },
+    {
+      "name": "actual UI /actions",
+      "actual": {
+        "http_status": 200
+      },
+      "expected": "2xx",
+      "pass": true,
+      "entry": "classic",
+      "stage": "classic-R3-panel",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T05:41:42.663Z"
+    },
+    {
+      "name": "actual hotspot hits Canvas",
+      "actual": {
+        "x": 846,
+        "y": 612,
+        "hit": "CANVAS"
+      },
+      "expected": "CANVAS",
+      "pass": true,
+      "entry": "classic",
+      "stage": "classic-R3-panel",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T05:41:42.789Z"
+    },
+    {
+      "name": "actual desktop sequence draft",
+      "actual": {
+        "count": 1,
+        "revision": 49
+      },
+      "expected": {
+        "count": 1,
+        "revision": 49
+      },
+      "pass": true,
+      "entry": "classic",
+      "stage": "classic-R3-panel",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T05:41:42.795Z"
+    },
+    {
+      "name": "no overflow R3 panel",
+      "actual": {
+        "scroll_width": 1920,
+        "viewport": 1920
+      },
+      "expected": "scrollWidth <= viewport",
+      "pass": true,
+      "entry": "classic",
+      "stage": "classic-R3-panel",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T05:41:42.796Z"
+    },
+    {
+      "name": "owned port8002 available",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "entry": "v5",
+      "stage": "classic-R3-panel",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T05:41:43.244Z"
+    },
+    {
+      "name": "owned service ready",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "entry": "v5",
+      "stage": "classic-R3-panel",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T05:41:44.106Z"
+    },
+    {
+      "name": "no overflow V5 scene",
+      "actual": {
+        "scroll_width": 1280,
+        "viewport": 1280
+      },
+      "expected": "scrollWidth <= viewport",
+      "pass": true,
+      "entry": "v5",
+      "stage": "v5-shared-desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T05:41:47.041Z"
+    },
+    {
+      "name": "actual UI /actions",
+      "actual": {
+        "http_status": 200
+      },
+      "expected": "2xx",
+      "pass": true,
+      "entry": "v5",
+      "stage": "v5-shared-desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T05:41:47.088Z"
+    },
+    {
+      "name": "V5 desktop save panel controls",
+      "actual": [
+        {
+          "width": 94,
+          "height": 44
+        },
+        {
+          "width": 684,
+          "height": 48
+        }
+      ],
+      "expected": {
+        "minimum": 44
+      },
+      "pass": true,
+      "entry": "v5",
+      "stage": "v5-shared-desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T05:41:47.245Z"
+    },
+    {
+      "name": "no overflow V5 panel",
+      "actual": {
+        "scroll_width": 1280,
+        "viewport": 1280
+      },
+      "expected": "scrollWidth <= viewport",
+      "pass": true,
+      "entry": "v5",
+      "stage": "v5-shared-desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T05:41:47.246Z"
+    },
+    {
+      "name": "no overflow V5 scene",
+      "actual": {
+        "scroll_width": 1920,
+        "viewport": 1920
+      },
+      "expected": "scrollWidth <= viewport",
+      "pass": true,
+      "entry": "v5",
+      "stage": "v5-shared-desktop",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T05:41:47.598Z"
+    },
+    {
+      "name": "actual UI /actions",
+      "actual": {
+        "http_status": 200
+      },
+      "expected": "2xx",
+      "pass": true,
+      "entry": "v5",
+      "stage": "v5-shared-desktop",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T05:41:47.637Z"
+    },
+    {
+      "name": "V5 desktop save panel controls",
+      "actual": [
+        {
+          "width": 94,
+          "height": 44
+        },
+        {
+          "width": 684,
+          "height": 48
+        }
+      ],
+      "expected": {
+        "minimum": 44
+      },
+      "pass": true,
+      "entry": "v5",
+      "stage": "v5-shared-desktop",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T05:41:47.769Z"
+    },
+    {
+      "name": "no overflow V5 panel",
+      "actual": {
+        "scroll_width": 1920,
+        "viewport": 1920
+      },
+      "expected": "scrollWidth <= viewport",
+      "pass": true,
+      "entry": "v5",
+      "stage": "v5-shared-desktop",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T05:41:47.771Z"
+    },
+    {
+      "name": "external requests",
+      "actual": 0,
+      "expected": 0,
+      "pass": true,
+      "entry": "v5",
+      "stage": "v5-shared-desktop",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T05:41:47.962Z"
+    }
+  ],
+  "issues": [],
+  "screenshots": [
+    "classic-panel-1280.png",
+    "classic-panel-1920.png",
+    "v5-desktop-1280.png",
+    "v5-desktop-1920.png"
+  ],
+  "exit_code": 0,
+  "owned_services_stopped": true,
+  "paid_calls": 0,
+  "player8001_contacted": false,
+  "limits": [
+    "Classic prerequisites use isolated public API fixture; not full route replay",
+    "V5 Synthetic shared CSS only; previous37 and focus clarification reused",
+    "Two desktop viewports; no human signoff"
+  ]
+}

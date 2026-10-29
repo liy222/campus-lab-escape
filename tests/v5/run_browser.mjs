@@ -47,7 +47,7 @@ async function login(register=false,name='qa_browser'){
  await page.getByRole('button',{name:register?'注册并进入':'登录',exact:true}).click();await page.getByRole('heading',{name:'我的关卡',exact:true}).waitFor();
 }
 try{
- await start();browser=await chromium.launch({headless:true,channel:'chrome'});const context=await browser.newContext({viewport:{width:1280,height:720},hasTouch:true});page=await context.newPage();
+ await start();browser=await chromium.launch({headless:true,channel:'chrome'});const context=await browser.newContext({viewport:{width:1280,height:720}});page=await context.newPage();
  context.on('page',p=>p.on('pageerror',e=>errors.push(e.message)));
  page.on('pageerror',e=>errors.push(e.message));
  page.on('request',r=>{const u=new URL(r.url());if(!['data:','blob:'].includes(u.protocol)&&u.origin!==base)issues.push('unexpected external request origin');});
@@ -57,7 +57,7 @@ try{
  await page.getByRole('button',{name:'进入经典关卡 →',exact:true}).click();
  await page.locator('.game-canvas-host[data-assets-ready="true"] canvas').waitFor();
     check(await page.locator('.game-canvas-host canvas').evaluate(c=>c.width>0&&c.height>0),'actual classic Phaser canvas ready');
-    for(const [width,height] of [[1280,720],[390,844],[812,375]]){await page.setViewportSize({width,height});await controlSizes('classic-'+width);await snap('classic-'+width);}
+    for(const [width,height] of [[1280,720],[1920,1080]]){await page.setViewportSize({width,height});await controlSizes('classic-'+width);await snap('classic-'+width);}
     await page.setViewportSize({width:1280,height:720});
  await page.getByRole('button',{name:'← 我的关卡',exact:true}).click();
  }else record('remaining continuation',{reused_scope:'first browser epoch dashboard/classic actual Canvas and three viewports; not repeated or added to this run count'});
@@ -73,7 +73,7 @@ try{
   const action=plan.witness[index];const args=action.arguments;let s=await state();
   if(!viewed.has(s.room_id)){
    await close();
-   for(const [width,height] of [[1280,720],[390,844],[812,375]]){await page.setViewportSize({width,height});await controlSizes(s.room_id+'-'+width);await snap(s.room_id+'-'+width);}
+   for(const [width,height] of [[1280,720],[1920,1080]]){await page.setViewportSize({width,height});await controlSizes(s.room_id+'-'+width);await snap(s.room_id+'-'+width);}
    await page.setViewportSize({width:1280,height:720});viewed.add(s.room_id);
   }
   if(index===Math.floor(plan.witness.length/2))await save('middle');
@@ -81,7 +81,7 @@ try{
   if(action.tool==='inspect'){
    await close();const object=s.objects.find(o=>o.object_id===args.object_id);check(!!object,'witness object publicly visible');
    const button=page.getByRole('button',{name:'查看'+object.name,exact:true});
-   if(!checkedCloseup){await button.focus();await page.keyboard.press('Enter');}else await button.tap();
+   if(!checkedCloseup){await button.focus();await page.keyboard.press('Enter');}else await button.click();
    await stable();
    if(!checkedCloseup){const before=(await state()).revision;check(await page.locator('.v5-hotspots button:enabled').count()===0,'closeup disables background targets');await page.locator('.v5-scene canvas').click({position:{x:10,y:10},force:true});check((await state()).revision===before,'closeup background no action');await snap('closeup-public-clue');checkedCloseup=true;record('first actual inspect keyboard Enter opens closeup',{pass:true});}
   }else if(action.tool==='take'){
@@ -125,5 +125,5 @@ try{
  check(await page.evaluate(()=>!Object.keys(localStorage).concat(Object.keys(sessionStorage)).some(k=>/campus-lab-session|key|credential/i.test(k))),'no key or legacy bearer browser storage');
  check(errors.length===0,'no browser page errors');check(assetFailures.length===0,'no missing asset response');check(issues.length===0,'only same-origin requests');
 }catch(error){issues.push(String(error.message||error));if(page)await snap('failure').catch(()=>{});}finally{
- if(browser)await browser.close();await stop();await fs.writeFile(path.join(output,'browser.json'),JSON.stringify({status:issues.length?'FAIL':'PASS',kind:'independent production UI plus explicitly synthetic injected generator',scope:identityOnly?'only unfinished cross-account identity/Key scope; prior material modal reused':finalPhase?'only changed public material modal and unfinished cross-account identity scope':afterTakeFix?'remaining after take fix; classic and G1 size matrices reused from preceding epochs':remaining?'remaining generated route and identity scope; classic matrix reused from first epoch':'initial full scope',records,issues,page_errors:errors,missing_assets:assetFailures,paid_calls:0,real_model_calls:0,limitations:['Synthetic generator proves offline pipeline/UI only; no real model quality claim.','Process restart is the owned QA backend only; no OS restart or interactive root CMD claim.','Viewports are browser emulation, not physical mobile devices.']},null,2)+'\n');
+ if(browser)await browser.close();await stop();await fs.writeFile(path.join(output,'browser.json'),JSON.stringify({status:issues.length?'FAIL':'PASS',kind:'independent production UI plus explicitly synthetic injected generator',scope:identityOnly?'only unfinished cross-account identity/Key scope; prior material modal reused':finalPhase?'only changed public material modal and unfinished cross-account identity scope':afterTakeFix?'remaining after take fix; classic and G1 size matrices reused from preceding epochs':remaining?'remaining generated route and identity scope; classic matrix reused from first epoch':'initial full scope',records,issues,page_errors:errors,missing_assets:assetFailures,paid_calls:0,real_model_calls:0,limitations:['Synthetic generator proves offline pipeline/UI only; no real model quality claim.','Process restart is the owned QA backend only; no OS restart or interactive root CMD claim.','Desktop viewports are browser emulation.']},null,2)+'\n');
 }process.exit(issues.length?1:0);

@@ -168,7 +168,7 @@ export default function Assistant({ apiOverride, session, state, manualPending, 
       </div>
       {provider === 'deepseek' && <div className="ai-key-settings">
         <label htmlFor="ai-api-key">DeepSeek API Key</label>
-        <div className="ai-key-row"><input id="ai-api-key" type="password" autoComplete="off" autoCapitalize="none" spellCheck={false} value={apiKey} placeholder="在这里输入你的 API Key" aria-describedby={`ai-key-note${missingApiKey || invalidApiKey ? ' ai-key-required' : ''}`} onChange={event => setApiKey(event.target.value)}/><button type="button" className="button subtle" disabled={!apiKey || !!pending} onClick={() => setApiKey('')}>清除密钥</button></div>
+        <div className="ai-key-row"><input id="ai-api-key" type="password" autoComplete="off" spellCheck={false} value={apiKey} placeholder="在这里输入你的 API Key" aria-describedby={`ai-key-note${missingApiKey || invalidApiKey ? ' ai-key-required' : ''}`} onChange={event => setApiKey(event.target.value)}/><button type="button" className="button subtle" disabled={!apiKey || !!pending} onClick={() => setApiKey('')}>清除密钥</button></div>
         <p id="ai-key-note">密钥仅在当前页面内存中保留；刷新、切换游戏或回到免费模拟时会清除，不随进度保存。</p>
         {(missingApiKey || invalidApiKey) && <p id="ai-key-required" className="ai-key-required">{missingApiKey ? '请先填写 API Key，才能询问真实伙伴。' : 'API Key 格式不正确，请重新输入，避免空格、中文或换行。'}</p>}
         <p className="ai-real-note">{companionMode ? '每次交流会发送当前问题、最近3轮对话、已发现线索和当前公开进度；不会读取未发现内容或代你操作。回答是简短引导，不会直接给出完整答案。请求会使用你的 API 账户用量。使用模型：deepseek-flash。' : hintMode ? '点击“获取提示”会根据已发现的信息请求一个受限提示。发送给 DeepSeek 的仅是符合条件的提示主题名称和已发现线索 ID，不包含你的问题、对话历史或线索全文；请求会使用你的 API 账户用量。AI 伙伴当前仍提供受限提示，不会按问题自由聊天。使用模型：deepseek-flash。' : '点击“询问伙伴”会把你的问题与已发现的线索发送给 DeepSeek，并扣除你的 API 账户用量。使用模型：deepseek-flash。'}</p>

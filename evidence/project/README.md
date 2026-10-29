@@ -2,12 +2,16 @@
 
 今后从这里读取、整理和提交证据。开发中每次实际检查、失败、修复和反馈及时保存，大阶段结束再集中交付并邀请真人核验。
 
-## 当前阶段：雨夜天文社与新版UI
+## 当前阶段：手绘重建、UI修复与电脑端清理
 
-- [最新独立检查报告](stages/v5-rainy-astronomy-ui/reviews/root-review-20261029.md)：实际复现4项问题，美术画风与原约定仍有差异；当前需修复后再检查。
-- [本轮10项实际结果与6张截图](stages/v5-rainy-astronomy-ui/automated/review-2026-10-29T04-28-27-425Z-18b019ed/result.json)
-- [阶段状态](stages/v5-rainy-astronomy-ui/stage.json)与[全部运行索引](stages/v5-rainy-astronomy-ui/automated/README.md)
-- [本人检查表](human-reviews/v5-rainy-astronomy-ui/round-01/review.md)：保持未核验
+- [本阶段交付摘要](stages/v5-handpainted-rebuild/reviews/delivery.md)：4项UI修复、15张实际手绘原图、经典/V5电脑端范围；技术联合检查通过，待本人检查。
+- [手绘/UI独立QA](stages/v5-handpainted-rebuild/reviews/qa.md)、[电脑端构建](stages/v5-handpainted-rebuild/automated/desktop-cleanup-build1/result.json)、[最终桌面窄补](stages/v5-handpainted-rebuild/automated/desktop-smoke-2026-10-29T05-41-37-562Z-adadb34b/result.json)。各轮范围分开，原失败保留。
+- [阶段状态](stages/v5-handpainted-rebuild/stage.json)与[本人检查步骤](human-reviews/v5-handpainted-rebuild/round-01/review.md)：未收到本轮真人反馈，未登记接受。
+- [新版桌面实际截图](stages/v5-handpainted-rebuild/automated/desktop-smoke-2026-10-29T05-41-37-562Z-adadb34b/v5-desktop-1280.png)、[第三房间实际截图](stages/v5-handpainted-rebuild/automated/browser-2026-10-29T05-06-00-985Z-3c2b8e97/theme-G3.png)。均为自动截图，不冒充本人截图。
+
+## 前一主题/UI来源
+
+[74eb523来源的独立检查](stages/v5-rainy-astronomy-ui/reviews/root-review-20261029.md)实际复现4项问题，原10项结果、旧截图和原阶段状态保留。修复结论以当前新阶段为准，不将旧失败改为通过。手机相关原始证据保留为旧版本事实，现行实现与测试不再包含手机专用路径。
 
 ## 此前E&O阶段
 

@@ -24,7 +24,7 @@ const folder=path.join(root,'evidence/integration/panel-submit/qa',new Date().to
 fs.mkdirSync(folder,{recursive:true});
 const temp=fs.mkdtempSync(path.join(os.tmpdir(),'campus-panel-submit-')),children=[],commands=[],checks=[],issues=[];
 let browser,page,state,backendURL,frontendURL;const started=new Date().toISOString();
-const viewportCases=[[1920,1080],[1280,900],[375,812],[812,375]];
+const viewportCases=[[1920,1080],[1280,900]];
 async function port(){return new Promise((resolve,reject)=>{const s=net.createServer();s.once('error',reject);s.listen(0,'127.0.0.1',()=>{const p=s.address().port;s.close(e=>e?reject(e):resolve(p));});});}
 function start(label,exe,args,env,cwd=root){commands.push({label,executable:exe,arguments:args,cwd,public_environment:env});const p=spawn(exe,args,{cwd,env:{...process.env,...env},windowsHide:true,stdio:'ignore'});children.push(p);p.on('error',e=>issues.push({label,error:e.message}));return p;}
 async function ready(url){await expect.poll(async()=>{try{return(await fetch(url)).status;}catch{return 0;}},{timeout:30000}).toBe(200);}
@@ -50,7 +50,7 @@ async function input(selector,kind='mouse'){
   if(kind==='keyboard'){await button.focus();await page.keyboard.press('Enter');return;}
   const b=(await button.getAttribute('data-bounds')).split(',').map(Number),c=await page.locator('.game-canvas-host canvas').boundingBox();
   const x=c.x+(b[0]+b[2]/2)*c.width/1600,y=c.y+(b[1]+b[3]/2)*c.height/900;
-  if(kind==='touch')await page.touchscreen.tap(x,y);else await page.mouse.click(x,y);
+  await page.mouse.click(x,y);
 }
 async function select(id,kind='mouse'){const back=page.locator('.closeup-back');if(await back.isVisible())await back.click();await response('/actions',()=>input(`[data-object-id="${id}"][data-scene-action="object"]`,kind));await expect(page.locator('.game-canvas-host')).toHaveAttribute('data-view',id);}
 // Solver copied from the sealed old QA, based only on public reciprocal ports.
@@ -82,7 +82,7 @@ async function heldUse(item,id,kind='mouse'){
   await select(id,kind);await canvasReady();await page.locator(`.inventory-item[data-item-id="${item}"] .item-select-button`).click();
   const b=await response('/actions',()=>page.locator('.closeup-actions .use-button').click());assert.equal(b.data.receipt.tool,'use_item');assert.equal(b.data.receipt.arguments.item_id,item);assert.equal(b.data.receipt.arguments.target_id,id);await canvasReady();
 }
-async function localDraft(ids,kinds=['mouse','keyboard','touch','mouse']){
+async function localDraft(ids,kinds=['mouse','keyboard','mouse','mouse']){
   const before=structuredClone(state),requests=actionRequests.length;for(let i=0;i<ids.length;i++)await input(`[data-device-id="${ids[i]}"]`,kinds[i%kinds.length]);
   await expect.poll(draft).toEqual(ids);await readState();assert.deepEqual(state,before);assert.equal(actionRequests.length,requests);checks.push({check:'actual-device-input-local-draft-no-server-use-item',kinds,device_ids:ids,selected_card:await card().getAttribute('aria-pressed')});
 }
@@ -119,9 +119,9 @@ async function oneViewport(width,height,kind){
   await response('/actions',()=>page.locator('.closeup-actions [data-scene-action="move"]').click());assert.equal(state.status,'won');await expect(page.locator('.victory-screen')).toBeVisible();await page.screenshot({path:path.join(folder,`victory-${width}.png`),fullPage:true});checks.push({check:'actual-UI-UNLOCKED-OPEN-EXIT',width});
 }
 async function run(){
-  const context=await browser.newContext({viewport:{width:1280,height:900},hasTouch:true,deviceScaleFactor:1});page=await context.newPage();page.setDefaultTimeout(20000);
+  const context=await browser.newContext({viewport:{width:1280,height:900},deviceScaleFactor:1});page=await context.newPage();page.setDefaultTimeout(20000);
   page.on('pageerror',e=>issues.push({check:'uncaught',error:e.message}));page.on('request',r=>{const u=new URL(r.url());if(u.pathname.endsWith('/actions')&&r.method()==='POST'){const b=r.postDataJSON();actionRequests.push({tool:b?.tool,target_id:b?.arguments?.target_id,object_id:b?.arguments?.object_id});}if(!['127.0.0.1','localhost'].includes(u.hostname)&&u.protocol.startsWith('http'))issues.push({check:'unexpected-external-request',hostname:u.hostname});});
-  for(const [width,height,kind]of [[1280,900,'mouse'],[375,812,'touch']]){await page.goto(frontendURL,{waitUntil:'networkidle'});await page.evaluate(()=>sessionStorage.clear());await page.reload({waitUntil:'networkidle'});await response('/api/sessions',()=>page.getByRole('button',{name:'开始新游戏 →',exact:true}).click(),201);await oneViewport(width,height,kind);}
+  for(const [width,height,kind]of [[1280,900,'mouse']]){await page.goto(frontendURL,{waitUntil:'networkidle'});await page.evaluate(()=>sessionStorage.clear());await page.reload({waitUntil:'networkidle'});await response('/api/sessions',()=>page.getByRole('button',{name:'开始新游戏 →',exact:true}).click(),201);await oneViewport(width,height,kind);}
   await context.close();
 }
 let code=0;
@@ -134,5 +134,5 @@ try{
 finally{
   if(browser)await browser.close();for(const p of children.reverse())if(p.pid&&p.exitCode===null){const r=spawnSync('taskkill',['/PID',String(p.pid),'/T','/F'],{windowsHide:true,encoding:'utf8'});checks.push({check:'stop-owned-process-tree',exit_code:r.status});}
   const after=hashes();if(JSON.stringify(before)!==JSON.stringify(after)){code=1;issues.push({check:'source-changed'});}for(const[p,h]of Object.entries(protocol.immutable_sha256))if(sha(p)!==h){code=1;issues.push({check:'immutable-changed',path:p});}
-  fs.writeFileSync(path.join(folder,'run.json'),JSON.stringify({candidate:candidatePath,candidate_sha256:sha(candidatePath),command:[process.execPath,...process.argv.slice(1)],started,ended:new Date().toISOString(),exit_code:code,commands,source_sha256_before:before,source_sha256_after:after,checks,issues,paid_calls:0,limitations:['Isolated public API prerequisites for R1/R2 are not counted as human or UI main-route execution.','R3 actual UI covers desktop1280/mobile375 mouse,touch,keyboard; no 127-method backend suite or unrelated visual scope rerun.','Page draft intentionally is not archived and clears on selected restore/reload; server stage is archived.','No paid-provider, human timing, historical user DB, OS restart or root launcher claim.','Owned temporary database is not committed; no session tokens/API keys are saved.']},null,2)+'\n');console.log(JSON.stringify({evidence:folder,exit_code:code,checks:checks.length,issues:issues.length}));process.exitCode=code;
+  fs.writeFileSync(path.join(folder,'run.json'),JSON.stringify({candidate:candidatePath,candidate_sha256:sha(candidatePath),command:[process.execPath,...process.argv.slice(1)],started,ended:new Date().toISOString(),exit_code:code,commands,source_sha256_before:before,source_sha256_after:after,checks,issues,paid_calls:0,limitations:['Isolated public API prerequisites for R1/R2 are not counted as human or UI main-route execution.','R3 actual UI covers desktop1280 mouse/keyboard; no 127-method backend suite or unrelated visual scope rerun.','Page draft intentionally is not archived and clears on selected restore/reload; server stage is archived.','No paid-provider, human timing, historical user DB, OS restart or root launcher claim.','Owned temporary database is not committed; no session tokens/API keys are saved.']},null,2)+'\n');console.log(JSON.stringify({evidence:folder,exit_code:code,checks:checks.length,issues:issues.length}));process.exitCode=code;
 }

@@ -1,3 +1,5 @@
+当前默认已切换至[手绘重建版1.1.0](handpainted-v2/README.md)。以下为原矢量版1.0.0的历史制作记录，保留来源，不代表当前美术制作方式。
+
 # 雨夜天文社主题包：制作与接入说明
 
 本目录保存 `rainy-astronomy` 主题包的源文件、构建脚本和成品清单。成品图片在 `frontend/public/art-themes/rainy-astronomy/`，前端描述在 `frontend/src/assets/themes/rainy-astronomy/manifest.json`。

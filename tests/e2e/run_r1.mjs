@@ -280,7 +280,7 @@ try {
   start('frontend', process.execPath, [path.join(root, 'frontend/node_modules/vite/bin/vite.js'), '--host', '127.0.0.1', '--port', String(frontendPort), '--strictPort'], { CAMPUS_BACKEND_URL: backendURL }, path.join(root, 'frontend'));
   await Promise.all([ready(`${backendURL}/api/health`), ready(frontendURL)]);
   browser = await chromium.launch({ headless: true, executablePath: browserPath });
-  for (const width of [1280, 768, 390]) {
+  for (const width of [1280,1920]) {
     try { await route(width); } catch (error) { issues.push({ stage: 'R1_browser', width, error: error.message }); }
   }
   scanBuiltResources();
@@ -304,7 +304,7 @@ finally {
   fs.writeFileSync(path.join(folder, 'checks.json'), JSON.stringify({ checks, issues }, null, 2));
   fs.writeFileSync(path.join(folder, 'server-output.json'), JSON.stringify(serverLogs, null, 2));
   const evidenceHashes = Object.fromEntries(fs.readdirSync(folder).map(name => [name, crypto.createHash('sha256').update(fs.readFileSync(path.join(folder, name))).digest('hex')]));
-  const metadata = { candidate, suite, target: 'Manual baseline working-tree local backend/frontend candidate; backend/app/ai independent provider probe excluded, no gameplay AI calls', head: gitRead('rev-parse', 'HEAD'), working_tree: gitRead('status', '--short'), command: [process.execPath, ...process.argv.slice(1)], started, ended: new Date().toISOString(), provider: 'AI_PROVIDER=mock explicitly; no model call', node: process.version, playwright: requireFrontend('@playwright/test/package.json').version, browser_executable: browserPath, browser_mode: 'new isolated headless context; no user profile', widths: [1280, 768, 390], source_sha256_before: before, source_sha256_after: after, evidence_sha256: evidenceHashes, exit_code: issues.length ? 1 : 0, privacy: 'No create response, request headers, sessionStorage, HAR, or browser trace recorded. Screenshots only UI.' };
+  const metadata = { candidate, suite, target: 'Manual baseline working-tree local backend/frontend candidate; backend/app/ai independent provider probe excluded, no gameplay AI calls', head: gitRead('rev-parse', 'HEAD'), working_tree: gitRead('status', '--short'), command: [process.execPath, ...process.argv.slice(1)], started, ended: new Date().toISOString(), provider: 'AI_PROVIDER=mock explicitly; no model call', node: process.version, playwright: requireFrontend('@playwright/test/package.json').version, browser_executable: browserPath, browser_mode: 'new isolated headless context; no user profile', widths: [1280,1920], source_sha256_before: before, source_sha256_after: after, evidence_sha256: evidenceHashes, exit_code: issues.length ? 1 : 0, privacy: 'No create response, request headers, sessionStorage, HAR, or browser trace recorded. Screenshots only UI.' };
   fs.writeFileSync(path.join(folder, 'run.json'), JSON.stringify(metadata, null, 2));
   console.log(JSON.stringify({ evidence: folder, passed_widths: checks.filter(c => c.route && c.passed).map(c => c.width), issues, exit_code: metadata.exit_code }, null, 2));
   process.exitCode = metadata.exit_code;

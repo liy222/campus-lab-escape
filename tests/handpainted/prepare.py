@@ -26,7 +26,7 @@ protocol = {
     'bbox_protocol': 'Transparent objects alpha>16; catalog kind closeup, clean backgrounds and no-alpha images full canvas',
     'paint_frame_marker': 'bbox-contain-v1',
     'controlled_clues_protocol': 'comma-separated known state.clues object IDs matching projection.view, plus r1_symbols while viewing r1_cabinet; original order',
-    'minigame_hotspot_protocol': 'Actual responsive DOM rectangles of modules/devices pairwise nonoverlapping with 0.05 CSS px float epsilon; 375px edge mouse+touch correct object/module receipt or device draft per room',
+    'minigame_hotspot_protocol': 'Actual responsive DOM rectangles of modules/devices pairwise nonoverlapping with 0.05 CSS px float epsilon; desktop edge mouse/keyboard correct object/module receipt or device draft per room',
     'immutable_sha256': {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in sorted(paths)},
     'limitations': ['No build/browser/API execution by this preparation.', 'Final asset and geometry protocol needs owner SOURCE STOP.'],
 }

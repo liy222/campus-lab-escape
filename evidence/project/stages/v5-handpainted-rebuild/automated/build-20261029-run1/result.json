@@ -1,0 +1,19 @@
+{
+  "command": [
+    "cmd.exe",
+    "/d",
+    "/c",
+    "npm",
+    "run",
+    "build"
+  ],
+  "cwd": "frontend",
+  "environment": {
+    "VITE_GAMEPLAY_VERSION": "v5",
+    "CAMPUS_BACKEND_URL": "http://127.0.0.1:8001"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 10.008,
+  "output": "output.txt",
+  "paid_calls": 0
+}

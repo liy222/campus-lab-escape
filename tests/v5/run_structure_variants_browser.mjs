@@ -51,7 +51,7 @@ if(remainingR3){
  if(!within(qa,firstRunPath))throw Error('First result outside assigned QA');
  const bytes=await fs.readFile(firstRunPath), first=JSON.parse(bytes), relative=path.relative(root,path.resolve(firstRunPath)).replaceAll('\\','/');
  if(expected[relative]!==digest(bytes)||first.exit_code!==1||!first.source_after_match)throw Error('First result not source-bound/preserved');
- for(const width of [1280,390])if(!first.records.some(row=>row.label===`explicit-server-and-UI-EXIT-1-${width}`&&row.pass===true))throw Error('Cannot reuse incomplete R1 route');
+ for(const width of [1280])if(!first.records.some(row=>row.label===`explicit-server-and-UI-EXIT-1-${width}`&&row.pass===true))throw Error('Cannot reuse incomplete R1 route');
  firstRunSHA=digest(bytes);
 }
 const plans={};
@@ -60,7 +60,7 @@ await fs.mkdir(output,{recursive:false});
 const privateDir=path.join(output,'raw-sensitive');await fs.mkdir(privateDir);
 const base='http://127.0.0.1:8001', python='C:/Users/liyh/.conda/envs/1/python.exe';
 const records=[], issues=[], pageErrors=[], assetFailures=[];
-const report={kind:'SD3 real Canvas with explicitly injected synthetic generator',actor:'Independent AI QA agent',candidate_sha256:digest(candidateBytes),source_count:Object.keys(expected).length,source_bundle_sha256:candidate.source_bundle_sha256,source_before_match:true,build_receipt_sha256:digest(await fs.readFile(buildPath)),build_reused_without_new_execution:buildReceipt.kind==='derived_build_reuse_no_execution',fixture_index_sha256:digest(await fs.readFile(fixtureIndex)),reused_R1_first_result_sha256:firstRunSHA,route_scope:remainingR3?'Only unfinished R3 desktop/mobile; R1 passed first run reused':'Initial R1/R3 desktop/mobile',started_utc:new Date().toISOString(),records,issues,real_model_calls:0,paid_calls:0};
+const report={kind:'SD3 real Canvas with explicitly injected synthetic generator',actor:'Independent AI QA agent',candidate_sha256:digest(candidateBytes),source_count:Object.keys(expected).length,source_bundle_sha256:candidate.source_bundle_sha256,source_before_match:true,build_receipt_sha256:digest(await fs.readFile(buildPath)),build_reused_without_new_execution:buildReceipt.kind==='derived_build_reuse_no_execution',fixture_index_sha256:digest(await fs.readFile(fixtureIndex)),reused_R1_first_result_sha256:firstRunSHA,route_scope:remainingR3?'Only unfinished R3 desktop; R1 passed first run reused':'Initial R1/R3 desktop',started_utc:new Date().toISOString(),records,issues,real_model_calls:0,paid_calls:0};
 const check=(condition,label,facts={})=>{records.push({label,pass:!!condition,...facts});if(!condition)throw Error(label);};
 let server,browser,page,temp,ownedServerClosed=false;
 const available=await new Promise(resolve=>{const s=net.createServer();s.once('error',()=>resolve(false));s.listen(8001,'127.0.0.1',()=>s.close(()=>resolve(true)));});
@@ -94,7 +94,7 @@ async function inspectLayout(label,s){
  await screenshot(label);
 }
 async function runCase(rooms,width,height){
- const context=await browser.newContext({viewport:{width,height},hasTouch:true});
+ const context=await browser.newContext({viewport:{width,height}});
  await context.route('**/*',route=>{const u=new URL(route.request().url());if(['data:','blob:'].includes(u.protocol)||u.origin===base)return route.continue();issues.push('EXTERNAL_BROWSER_ORIGIN_BLOCKED');return route.abort();});
  page=await context.newPage();page.on('pageerror',error=>{pageErrors.push(error.name);});page.on('response',response=>{if(response.status()>=400&&/\.(png|svg|jpg|webp|js|css)(\?|$)/.test(response.url()))assetFailures.push(response.status());});
  await page.goto(base);await page.getByRole('button',{name:'第一次来？注册本地账户',exact:true}).click();
@@ -145,7 +145,7 @@ try{
  server.stdout.on('data',capture);server.stderr.on('data',capture);
  let ready=false;for(let i=0;i<100;i++){if(server.exitCode!==null)throw Error('OWNED_SERVER_EXITED');try{const response=await fetch(base+'/health');if(response.ok&&response.headers.get('X-Synthetic-QA-Instance')===serviceMarker&&(await response.json()).service==='campus-lab-escape-v5'){ready=true;break;}}catch{}await new Promise(r=>setTimeout(r,100));}check(ready,'owned-TEMP-service-health-marker-before-browser-auth');
  browser=await chromium.launch({headless:true,channel:'chrome'});
- const caseRooms=remainingR3?[3]:[1,3];for(const rooms of caseRooms)for(const [width,height] of [[1280,720],[390,844]])await runCase(rooms,width,height);
+ const caseRooms=remainingR3?[3]:[1,3];for(const rooms of caseRooms)for(const [width,height] of [[1280,720],[1920,1080]])await runCase(rooms,width,height);
  check(pageErrors.length===0,'no-page-errors',{count:pageErrors.length});check(assetFailures.length===0,'no-missing-assets',{count:assetFailures.length});check(issues.length===0,'same-origin-only');
  const receipt=JSON.parse(await fs.readFile(path.join(output,'server-runtime.json'),'utf8'));
  check(receipt.synthetic_generation_calls===caseRooms.length*2&&receipt.network_config_ledger_nonTEMP_denied_attempts===0&&receipt.real_paid_calls===0,'expected-explicit-synthetic-generations-and-runtime-boundary',receipt);
@@ -156,7 +156,7 @@ try{
  report.source_after_match=await sourceMatches();if(!report.source_after_match)issues.push('SOURCE_CHANGED');
  report.ended_utc=new Date().toISOString();report.exit_code=issues.length?1:0;report.raw_local_log_sha256={};
  for(const name of await fs.readdir(privateDir)){report.raw_local_log_sha256['raw-sensitive/'+name]=digest(await fs.readFile(path.join(privateDir,name)));}
- report.limitations=['Synthetic cached Draft/witness and real Canvas/API only; not model-quality evidence.','R1 catalogue8 means cumulative objects/slots and retained inventory item, not8 simultaneous visible targets.','Desktop/mobile viewport emulation, not physical-device or human difficulty acceptance.','Only the owned backend child is stopped. No user process is killed; no AI/real ledger access.'];
+ report.limitations=['Synthetic cached Draft/witness and real Canvas/API only; not model-quality evidence.','R1 catalogue8 means cumulative objects/slots and retained inventory item, not8 simultaneous visible targets.','Desktop viewport emulation, not human difficulty acceptance.','Only the owned backend child is stopped. No user process is killed; no AI/real ledger access.'];
  await fs.writeFile(path.join(output,'run.json'),JSON.stringify(report,null,2)+'\n');
 }
 console.log(JSON.stringify({exit_code:report.exit_code,records:records.length,source_after_match:report.source_after_match,paid_calls:0}));process.exit(report.exit_code);

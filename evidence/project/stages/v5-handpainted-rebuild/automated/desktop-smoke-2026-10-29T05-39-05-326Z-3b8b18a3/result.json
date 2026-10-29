@@ -1,0 +1,70 @@
+{
+  "run_id": "3b8b18a3-17ed-4274-ab60-35dee0fcd774",
+  "started": "2026-10-29T05:39:05.326Z",
+  "ended": "2026-10-29T05:39:21.410Z",
+  "command": "node tests/v5/run_desktop_cleanup_browser.mjs --remaining",
+  "scope": "Remaining circuit/CRT/R3 and V5; two R1 desktop checks reused",
+  "first_result": "../desktop-smoke-2026-10-29T05-36-56-238Z-9c43fede/result.json",
+  "build_results": "../desktop-cleanup-build1/result.json",
+  "effective_builds": [
+    {
+      "entry": "classic",
+      "index": "frontend\\dist\\index.html",
+      "sha256": "57f8eae1ddb72793c3968b21824552f9e1a37f436404ac1862ce40f4fba2be77"
+    }
+  ],
+  "records": [
+    {
+      "name": "owned port8002 available",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "entry": "classic",
+      "stage": "start",
+      "utc": "2026-10-29T05:39:05.691Z"
+    },
+    {
+      "name": "owned service ready",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "entry": "classic",
+      "stage": "start",
+      "utc": "2026-10-29T05:39:06.749Z"
+    },
+    {
+      "name": "actual UI /api/sessions",
+      "actual": {
+        "http_status": 201
+      },
+      "expected": "2xx",
+      "pass": true,
+      "entry": "classic",
+      "stage": "classic-R1",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T05:39:07.406Z"
+    }
+  ],
+  "issues": [
+    {
+      "stage": "classic-public-fixture",
+      "type": "TimeoutError2",
+      "message": "locator.click: Timeout 12000ms exceeded."
+    }
+  ],
+  "screenshots": [
+    "execution-stop.png"
+  ],
+  "exit_code": 1,
+  "owned_services_stopped": true,
+  "paid_calls": 0,
+  "player8001_contacted": false,
+  "limits": [
+    "Classic prerequisites use isolated public API fixture; not full route replay",
+    "V5 Synthetic shared CSS only; previous37 and focus clarification reused",
+    "Two desktop viewports; no human signoff"
+  ]
+}

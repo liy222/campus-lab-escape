@@ -5,13 +5,7 @@ import { GameBridge, sameSceneInput, type SceneInput, type SceneProjection } fro
 import type { Room2Hotspot } from './Room2Scene';
 
 const exitSuffix = { LOCKED: 'locked', CARD_ACCEPTED: 'card_accepted', FINAL_CHECK: 'final_check', UNLOCKED: 'unlocked', OPEN: 'open' };
-// Enlarge the painted operation plate with its buttons, instead of overlapping transparent hit areas.
-const panelZoom = (projection: SceneProjection) => Math.max(1, Math.ceil(projection.minHitArea || 44) / 130);
-function panelBox(projection: SceneProjection, box: [number, number, number, number]): [number, number, number, number] {
-  const zoom = panelZoom(projection), x = zoom > 1 ? 260 : 590;
-  return [x + (box[0] - 590) * zoom, 445 + (box[1] - 445) * zoom, box[2] * zoom, box[3] * zoom];
-}
-const buttonBox = (projection: SceneProjection, index: number): [number, number, number, number] => panelBox(projection, [590 + (index % 2) * 235, 445 + Math.floor(index / 2) * 130, 230, 130]);
+const buttonBox = (index: number): [number, number, number, number] => [590 + (index % 2) * 235, 445 + Math.floor(index / 2) * 130, 230, 130];
 function panelSuffix(projection: SceneProjection) {
   if (projection.state.progress.check_done) return 'passed';
   if (projection.state.device_states?.exit === 'FINAL_CHECK') return 'final_check';
@@ -28,8 +22,8 @@ export function room3Hotspots(projection: SceneProjection): Room2Hotspot[] {
     if (!object) return [];
     if (view === 'r3_panel') {
       const sequence = state.minigames?.sequence;
-      if (sequence) sequence.devices.forEach((device, index) => spots.push({ id: device.device_id, label: `将${device.label}（${device.symbol}）加入当前顺序草稿`, box: buttonBox(projection, index), input: { kind: 'sequence-device', targetId: sequence.target_id, deviceId: device.device_id }, disabled: sequence.status === 'completed' || (projection.sequenceDraft?.length || 0) >= sequence.length }));
-      else spots.push({ id: view, label: '终检窄纸槽', box: panelBox(projection, [645, 285, 445, 65]), input: { kind: 'action', tool: 'inspect', targetId: view } });
+      if (sequence) sequence.devices.forEach((device, index) => spots.push({ id: device.device_id, label: `将${device.label}（${device.symbol}）加入当前顺序草稿`, box: buttonBox(index), input: { kind: 'sequence-device', targetId: sequence.target_id, deviceId: device.device_id }, disabled: sequence.status === 'completed' || (projection.sequenceDraft?.length || 0) >= sequence.length }));
+      else spots.push({ id: view, label: '终检窄纸槽', box: [645, 285, 445, 65], input: { kind: 'action', tool: 'inspect', targetId: view } });
     }
     if (view === 'exit_door') {
       const next = object.actions.find(action => action.tool === 'interact');
@@ -83,26 +77,23 @@ export default class Room3Scene extends Phaser.Scene {
       }
     } else {
       this.add.rectangle(800, 450, 1600, 900, 0x101b20, .8);
-      this.image(view === 'r3_panel' ? `r3_closeup_panel_${panel}` : view === 'exit_door' ? `r3_closeup_exit_door_${exitSuffix[exit]}` : 'r3_closeup_legend', view === 'r3_panel' ? panelBox(projection, [-330, -185, 2400, 1350]) : [0, 0, 1600, 900]);
+      this.image(view === 'r3_panel' ? `r3_closeup_panel_${panel}` : view === 'exit_door' ? `r3_closeup_exit_door_${exitSuffix[exit]}` : 'r3_closeup_legend', view === 'r3_panel' ? [-330, -185, 2400, 1350] : [0, 0, 1600, 900]);
       const sequence = view === 'r3_panel' ? state.minigames?.sequence : null;
       if (sequence) {
         sequence.devices.forEach((device, index) => {
-          const [x, y, w, h] = buttonBox(projection, index);
+          const [x, y, w, h] = buttonBox(index);
           this.add.rectangle(x + w / 2, y + h / 2, w - 8, h - 8, 0x344440).setStrokeStyle(2, sequence.status === 'completed' ? 0x98ae87 : 0x87917a);
-          const zoom = panelZoom(projection); this.text(x + 25 * zoom, y + 48 * zoom, `${device.symbol} ${device.label}`, 36 * zoom);
-          this.lamps.set(device.device_id, this.add.circle(x + w - 25 * zoom, y + 25 * zoom, 9 * zoom, sequence.status === 'completed' ? 0xb4c78d : 0x4f675c));
+          this.text(x + 25, y + 48, `${device.symbol} ${device.label}`, 36);
+          this.lamps.set(device.device_id, this.add.circle(x + w - 25, y + 25, 9, sequence.status === 'completed' ? 0xb4c78d : 0x4f675c));
         });
-        const zoom = panelZoom(projection);
-        // The compact camera focuses on the operation plate; its paper slot carries the same local draft.
-        const draftY = zoom > 1 ? 307 : 108;
         for (let index = 0; index < sequence.length; index++) {
           const id = projection.sequenceDraft?.[index], device = sequence.devices.find(device => device.device_id === id);
-          const [x, y, w, h] = panelBox(projection, [684 + index * 93, draftY - 16, 86, 38]);
-          this.add.rectangle(x + w / 2, y + h / 2, w, h, zoom > 1 ? 0xd7c5a1 : 0x14262a);
-          this.text(x + 6 * zoom, y + 4 * zoom, sequence.status === 'completed' ? '✓' : device ? `${index + 1} ${device.symbol}` : `${index + 1} ·`, 23 * zoom, zoom > 1 ? '#433d2c' : '#c9d5bb');
+          const [x, y, w, h] = [684 + index * 93, 92, 86, 38];
+          this.add.rectangle(x + w / 2, y + h / 2, w, h, 0x14262a);
+          this.text(x + 6, y + 4, sequence.status === 'completed' ? '✓' : device ? `${index + 1} ${device.symbol}` : `${index + 1} ·`, 23, '#c9d5bb');
         }
-        if (zoom === 1) this.text(715, 140, sequence.status === 'completed' ? '终检通过' : '设备顺序', 20);
-      } else if (view === 'r3_panel' && panelZoom(projection) === 1) this.text(715, 108, state.puzzle_states?.panel === 'STRIP_INSERTED' ? '窄纸已固定' : '状态灯熄灭', 25);
+        this.text(715, 140, sequence.status === 'completed' ? '终检通过' : '设备顺序', 20);
+      } else if (view === 'r3_panel') this.text(715, 108, state.puzzle_states?.panel === 'STRIP_INSERTED' ? '窄纸已固定' : '状态灯熄灭', 25);
       if (view === 'exit_door') this.text(1095, 200, { LOCKED: '读卡器待机', CARD_ACCEPTED: '门禁已接受\n状态灯待机', FINAL_CHECK: state.progress.check_done ? '终检已通过' : '等待终检', UNLOCKED: '门锁已解除', OPEN: '通道已打开' }[exit], 25);
     }
     const clue = view ? knownClue(state, view) : null;

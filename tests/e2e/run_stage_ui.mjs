@@ -12,7 +12,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const {chromium,expect}=createRequire(path.join(root,'frontend/package.json'))('@playwright/test');
 const candidatePath=process.argv[2],only=(process.argv.find(x=>x.startsWith('--only='))||'--only=all').slice(7);
 assert(candidatePath,'Frozen Main candidate required');
-assert(['all','lock','circuit','login','sequence','victory','panels','remaining','tail','finish','final','end','feedback'].includes(only));
+assert(['all','lock','circuit','login','sequence','victory','panels','remaining','tail','finish','final','end'].includes(only));
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8').replace(/^\uFEFF/,''));
 const protocol=read('evidence/integration/stage-ui/qa/preparation.json');
 assert(protocol.protocol_ready,'Final owner stage selector must be bound before formal execution');
@@ -24,7 +24,7 @@ const folder=path.join(root,'evidence/integration/stage-ui/qa',new Date().toISOS
 fs.mkdirSync(folder,{recursive:true});
 const temp=fs.mkdtempSync(path.join(os.tmpdir(),'campus-stage-ui-')),children=[],commands=[],checks=[],issues=[];
 let browser,page,state,backendURL,frontendURL;const started=new Date().toISOString();
-const viewportCases=[[1920,1080],[1280,900],[375,812],[812,375]];
+const viewportCases=[[1920,1080],[1280,900]];
 async function port(){return new Promise((resolve,reject)=>{const s=net.createServer();s.once('error',reject);s.listen(0,'127.0.0.1',()=>{const p=s.address().port;s.close(e=>e?reject(e):resolve(p));});});}
 function start(label,exe,args,env,cwd=root){commands.push({label,executable:exe,arguments:args,cwd,public_environment:env});const p=spawn(exe,args,{cwd,env:{...process.env,...env},windowsHide:true,stdio:'ignore'});children.push(p);p.on('error',e=>issues.push({label,error:e.message}));return p;}
 async function ready(url){await expect.poll(async()=>{try{return(await fetch(url)).status;}catch{return 0;}},{timeout:30000}).toBe(200);}
@@ -50,7 +50,7 @@ async function input(selector,kind='mouse'){
   if(kind==='keyboard'){await button.focus();await page.keyboard.press('Enter');return;}
   const b=(await button.getAttribute('data-bounds')).split(',').map(Number),c=await page.locator('.game-canvas-host canvas').boundingBox();
   const x=c.x+(b[0]+b[2]/2)*c.width/1600,y=c.y+(b[1]+b[3]/2)*c.height/900;
-  if(kind==='touch')await page.touchscreen.tap(x,y);else await page.mouse.click(x,y);
+  await page.mouse.click(x,y);
 }
 async function select(id,kind='mouse'){const back=page.locator('.closeup-back');if(await back.isVisible())await back.click();await response('/actions',()=>input(`[data-object-id="${id}"][data-scene-action="object"]`,kind));await expect(page.locator('.game-canvas-host')).toHaveAttribute('data-view',id);}
 async function geometry(label,inventoryOnly=false){
@@ -105,43 +105,28 @@ async function panels(){
   const hint=await response('/ai/turns',()=>page.locator('.hint-ask').click());assert.equal(hint.data.usage.provider,'mock');assert.equal(hint.data.usage.model_calls,0);await geometry('mock-assistant');await close();
   }
   await page.reload({waitUntil:'networkidle'});await response('/state',()=>page.getByRole('button',{name:'继续当前游戏',exact:true}).click());await menu();
-  await page.locator(`[data-save-id="${id}"] .save-slot-restore`).click();const dialog=page.locator('dialog[open]');for(const [width,height] of [[1280,900],[375,812],[812,375]]){await page.setViewportSize({width,height});await geometry(`selected-restore-confirm-${width}x${height}`);}await response(`/saves/${id}/restore`,()=>dialog.getByRole('button',{name:'读取此存档',exact:true}).click());for(const key of ['room','device_states','puzzle_states','inventory','clues','progress'])assert.deepEqual(state[key],snapshot[key],key);assert(state.revision>snapshot.revision);assert.notEqual(state.generation,snapshot.generation);await close();await page.setViewportSize({width:1280,height:900});await canvasReady();
+  await page.locator(`[data-save-id="${id}"] .save-slot-restore`).click();const dialog=page.locator('dialog[open]');for(const [width,height] of [[1280,900]]){await page.setViewportSize({width,height});await geometry(`selected-restore-confirm-${width}x${height}`);}await response(`/saves/${id}/restore`,()=>dialog.getByRole('button',{name:'读取此存档',exact:true}).click());for(const key of ['room','device_states','puzzle_states','inventory','clues','progress'])assert.deepEqual(state[key],snapshot[key],key);assert(state.revision>snapshot.revision);assert.notEqual(state.generation,snapshot.generation);await close();await page.setViewportSize({width:1280,height:900});await canvasReady();
   await page.getByRole('button',{name:'AI 探索伙伴',exact:true}).click();await page.locator('input[value="deepseek"]').check();await expect(page.locator('#ai-api-key')).toHaveValue('');await close();
   checks.push({check:'named-save-reload-selected-restore-notebook-mock-key-memory',passed:true});
 }
-async function feedbackSmoke(){
-  await page.setViewportSize({width:812,height:375});await select('r3_panel');
-  await expect(page.locator('.feedback p')).toBeVisible();
-  const measured=await page.evaluate(()=>{
-    const rect=n=>{const r=n.getBoundingClientRect();return{x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height};};
-    const feedback=[...document.querySelectorAll('.feedback p')].filter(n=>n.getClientRects().length).map(rect),hud=[...document.querySelectorAll('.game-hud button')].map(rect);
-    const overlaps=feedback.flatMap(a=>hud.filter(b=>Math.min(a.right,b.right)>Math.max(a.x,b.x)&&Math.min(a.bottom,b.bottom)>Math.max(a.y,b.y)));
-    return{feedback,hud,overlap_count:overlaps.length,viewport:{width:innerWidth,height:innerHeight},document:{width:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight}};
-  });
-  checks.push({check:'landscape-feedback-HUD-observation',...measured});await page.screenshot({path:path.join(folder,'R3-landscape-feedback-HUD-812x375.png'),fullPage:true});
-  assert.equal(measured.overlap_count,0,'Feedback visually overlaps HUD');assert.equal(measured.document.height,375);assert.equal(measured.document.width,812);
-  await page.getByRole('button',{name:'游戏菜单',exact:true}).click();await expect(page.locator('.save-panel')).toBeVisible();await close();
-  await page.getByRole('button',{name:'线索笔记',exact:true}).click();await expect(page.locator('.notebook-modal')).toBeVisible();await close();
-  const device=state.minigames.sequence.devices[0].device_id;await input(`[data-device-id="${device}"]`,'touch');await expect(page.locator(`.sequence-draft li[data-device-id="${device}"]`)).toHaveCount(1);
-  checks.push({check:'landscape-HUD-real-mouse-and-scene-device-real-touch-reachable',passed:true});
-}
+
 async function run(){
-  const context=await browser.newContext({viewport:{width:1280,height:900},hasTouch:true,deviceScaleFactor:1});page=await context.newPage();page.on('pageerror',e=>issues.push({check:'uncaught',error:e.message}));
+  const context=await browser.newContext({viewport:{width:1280,height:900},deviceScaleFactor:1});page=await context.newPage();page.on('pageerror',e=>issues.push({check:'uncaught',error:e.message}));
   page.on('request',r=>{if(r.url().includes('deepseek.com'))issues.push({check:'unexpected-paid-endpoint'});});
   await page.goto(frontendURL,{waitUntil:'networkidle'});await response('/api/sessions',()=>page.getByRole('button',{name:'开始新游戏 →',exact:true}).click(),201);
   for(const id of ['r1_clock','r1_record','r1_plaque','r1_microscope'])await object(id);await object('sample_slide','take');await api('use_item',{item_id:'sample_slide',target_id:'r1_microscope'});await object('r1_microscope');await sync();
   if(['all','lock'].includes(only)){await select('r1_cabinet');await matrix('R1-lock');await response('/actions',async()=>{await page.locator('#code-r1_cabinet').fill('4217');await page.locator('.mechanical-lock button').click();});assert.equal(state.device_states.cabinet,'CODE_ACCEPTED');}
   else await object('r1_cabinet','submit_code',{code:'4217'});
   await object('r1_cabinet','interact');await object('r1_symbols');await object('r1_fuse','take');await object('r1_door','interact');await api('move',{destination_id:'R2'});await object('r2_maintenance');await object('r2_powerbox','interact');await object('r2_powerbox','interact');await api('use_item',{item_id:'fuse',target_id:'r2_powerbox'});await sync();
-  if(['all','circuit'].includes(only)){await select('r2_powerbox','touch');await matrix('R2-circuit');const m=state.minigames.circuit.modules[0];await response('/actions',()=>input(`[data-module-id="${m.module_id}"]`,'touch'));assert.equal(state.minigames.circuit.modules[0].rotation,(m.rotation+1)%4);}
+  if(['all','circuit'].includes(only)){await select('r2_powerbox','mouse');await matrix('R2-circuit');const m=state.minigames.circuit.modules[0];await response('/actions',()=>input(`[data-module-id="${m.module_id}"]`,'mouse'));assert.equal(state.minigames.circuit.modules[0].rotation,(m.rotation+1)%4);}
   const rotations=solution(state.minigames.circuit);for(const m of [...state.minigames.circuit.modules])for(let t=0;t<(rotations[m.module_id]-m.rotation+4)%4;t++)await api('rotate_circuit',{target_id:'r2_powerbox',module_id:m.module_id});await api('submit_circuit',{target_id:'r2_powerbox'});await object('r2_powerbox','interact');await object('r2_monitor','interact');await object('r2_monitor','interact');await sync();
   if(['all','login','remaining'].includes(only)){await select('r2_monitor');if(only!=='remaining')await matrix('R2-login');await expect(page.locator('.game-canvas-host > .crt-login')).toBeVisible();await response('/actions',async()=>{await page.locator('#terminal-username').fill('LAB-42');await page.locator('#terminal-password').fill('2117');await expect(page.locator('#terminal-username')).toHaveValue('LAB-42');await expect(page.locator('#terminal-password')).toHaveValue('2117');await page.locator('.crt-login button').click();});assert.equal(state.device_states.computer,'UNLOCKED');checks.push({check:'actual-CRT-login-submit',passed:true});}
   else {await object('r2_monitor','submit_login',{username:'LAB-42',password:'2117'});await sync();}
   await object('r2_monitor','interact');await object('research_strip','take');await object('access_card','take');await object('r2_door','interact');await api('move',{destination_id:'R3'});await object('r3_legend');await object('r3_panel');await api('use_item',{item_id:'research_strip',target_id:'r3_panel'});await object('exit_door');await api('use_item',{item_id:'access_card',target_id:'exit_door'});await object('exit_door','interact');await sync();
-  if(only==='feedback'){await feedbackSmoke();await context.close();return;}
+
   if(['all','panels','remaining','tail','finish','final'].includes(only))await panels();
   const order=sequence();
-  if(['all','sequence','remaining','tail','finish','final','end'].includes(only)){await select('r3_panel');if(only==='end'){await matrix('R3-affected-inventory',viewportCases,true);await matrix('R3-sequence',[[375,812],[812,375]]);}else await matrix('R3-sequence');await page.setViewportSize({width:375,height:812});for(let i=0;i<order.length;i++)await input(`[data-device-id="${order[i]}"]`,i%2?'keyboard':'touch');await expect(page.locator('.sequence-draft li[data-device-id]')).toHaveCount(4);await response('/actions',()=>page.locator('.sequence-submit').click());assert.equal(state.minigames.sequence.status,'completed');checks.push({check:'actual-Canvas-touch-independent-keyboard-local-draft-and-server-sequence-submit',passed:true});}
+  if(['all','sequence','remaining','tail','finish','final','end'].includes(only)){await select('r3_panel');if(only==='end'){await matrix('R3-affected-inventory',viewportCases,true);}else await matrix('R3-sequence');for(let i=0;i<order.length;i++)await input(`[data-device-id="${order[i]}"]`,i%2?'keyboard':'mouse');await expect(page.locator('.sequence-draft li[data-device-id]')).toHaveCount(4);await response('/actions',()=>page.locator('.sequence-submit').click());assert.equal(state.minigames.sequence.status,'completed');checks.push({check:'actual-Canvas-mouse-independent-keyboard-local-draft-and-server-sequence-submit',passed:true});}
   else await api('submit_sequence',{target_id:'r3_panel',device_ids:order});
   await object('exit_door','interact');await object('exit_door','interact');await api('move',{destination_id:'EXIT'});await sync();
   if(['all','victory','remaining','tail','finish','final','end'].includes(only))await matrix('EXIT-victory');await context.close();

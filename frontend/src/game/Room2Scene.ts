@@ -15,16 +15,15 @@ const childBoxes: Record<string, [number, number, number, number]> = {
   research_strip: [465, 670, 245, 75], access_card: [790, 665, 150, 90], r2_service_label: [1110, 700, 190, 90],
 };
 const objectTexture: Record<string, string> = { research_strip: 'r2_research_strip', access_card: 'r2_access_card' };
-// Small canvases zoom the board itself; hit rectangles never overlap adjacent modules.
-function circuitGeometry(projection: SceneProjection) {
-  const minimum = Math.ceil(projection.minHitArea || 44), width = Math.max(165, minimum), height = Math.max(157, minimum);
-  return { x: minimum > 157 ? 280 : 480, y: 153, width, height, zoom: Math.max(width / 165, height / 157) };
+// The board uses the desktop scene geometry.
+function circuitGeometry() {
+  return { x: 480, y: 153, width: 165, height: 157, zoom: 1 };
 }
 const moduleBox = (projection: SceneProjection, row: number, column: number): [number, number, number, number] => {
-  const g = circuitGeometry(projection); return [g.x + column * g.width, g.y + row * g.height, g.width, g.height];
+  const g = circuitGeometry(); return [g.x + column * g.width, g.y + row * g.height, g.width, g.height];
 };
 function powerBox(projection: SceneProjection, box: [number, number, number, number]): [number, number, number, number] {
-  const g = circuitGeometry(projection); return [g.x + (box[0] - 480) * g.zoom, g.y + (box[1] - 153) * g.zoom, box[2] * g.zoom, box[3] * g.zoom];
+  const g = circuitGeometry(); return [g.x + (box[0] - 480) * g.zoom, g.y + (box[1] - 153) * g.zoom, box[2] * g.zoom, box[3] * g.zoom];
 }
 export function room2Hotspots(projection: SceneProjection): Room2Hotspot[] {
   const { state, view } = projection;
@@ -92,7 +91,7 @@ export default class Room2Scene extends Phaser.Scene {
       const [x, y, width, height] = moduleBox(projection, module.row, module.column), cx = x + width / 2, cy = y + height / 2;
       this.add.rectangle(cx, cy, width - 7, height - 7, 0x263b3b).setStrokeStyle(3, board.status === 'completed' ? 0x819b7c : 0x627b78);
       const wire = this.add.graphics({ x: cx, y: cy });
-      wire.lineStyle(10 * circuitGeometry(projection).zoom, board.status === 'completed' ? 0x98b187 : 0xc5c49b, 1);
+      wire.lineStyle(10 * circuitGeometry().zoom, board.status === 'completed' ? 0x98b187 : 0xc5c49b, 1);
       const arm = Math.min(width, height) * .33;
       wire.beginPath(); wire.moveTo(0, -arm); wire.lineTo(0, 0); wire.lineTo(module.shape === 'I' ? 0 : arm, module.shape === 'I' ? arm : 0); wire.strokePath();
       wire.fillStyle(0xcfc9a0, 1); wire.fillCircle(0, -arm, 8); wire.fillCircle(module.shape === 'I' ? 0 : arm, module.shape === 'I' ? arm : 0, 8);
@@ -104,7 +103,7 @@ export default class Room2Scene extends Phaser.Scene {
       const [x, y, w, h] = moduleBox(projection, module.row, module.column);
       const offset: Record<string, [number, number]> = { N: [w / 2, -12], E: [w + 10, h / 2], S: [w / 2, h + 10], W: [-12, h / 2] };
       const [dx, dy] = offset[terminal.side]; this.add.circle(x + dx, y + dy, 10, 0xcfbd80);
-      const g = circuitGeometry(projection); this.text(g.x + (terminal === board.source ? 0 : g.width * 1.65), terminal === board.source ? g.y - 40 : g.y + g.height * 3 + 20, `${label} ${terminal.side}`, 22 * g.zoom, '#d2c595');
+      const g = circuitGeometry(); this.text(g.x + (terminal === board.source ? 0 : g.width * 1.65), terminal === board.source ? g.y - 40 : g.y + g.height * 3 + 20, `${label} ${terminal.side}`, 22 * g.zoom, '#d2c595');
     }
   }
   sync(projection: SceneProjection) {

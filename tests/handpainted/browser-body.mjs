@@ -10,7 +10,7 @@ async function edgeInput(selector,kind){
   const inset=3;assert(w>inset*2&&h>inset*2);
   const candidates=[{side:'left',x:left+inset,y:top+h/2},{side:'right',x:left+w-inset,y:top+h/2},{side:'top',x:left+w/2,y:top+inset},{side:'bottom',x:left+w/2,y:top+h-inset}];
   let point;for(const p of candidates)if(await page.evaluate(({x,y})=>document.elementFromPoint(x,y)?.tagName,p)==='CANVAS'){point=p;break;}
-  assert(point,'An unoccluded actual Canvas edge must be reachable: '+selector);if(kind==='touch')await page.touchscreen.tap(point.x,point.y);else await page.mouse.click(point.x,point.y);
+  assert(point,'An unoccluded actual Canvas edge must be reachable: '+selector);await page.mouse.click(point.x,point.y);
   checks.push({check:'actual-Canvas-edge-input',selector,kind,inset_css_px:inset,side:point.side,width:w,height:h});
 }
 async function uiSelect(id,kind='mouse'){
@@ -75,24 +75,7 @@ async function checkpoint(label){
   const dimensions=await page.evaluate(()=>({w:innerWidth,h:innerHeight,scroll:document.documentElement.scrollWidth}));assert(dimensions.scroll<=dimensions.w+1,'horizontal overflow');
   await page.screenshot({path:path.join(folder,label+'.png'),fullPage:true});checks.push({check:'actual-render-state-44px-and-overflow',label,...dimensions});
 }
-async function mobile(label){
-  for(const [width,height]of [[375,812],[812,375]]){await page.setViewportSize({width,height});await checkpoint(label+'-'+width);
-    if(width===375&&label==='R1-clock'){
-      for(const kind of ['mouse','touch']){await overview();const b=await response('/actions',()=>edgeInput('[data-object-id="r1_clock"][data-scene-action="object"]',kind));assert.equal(b.data.receipt.tool,'inspect');assert.equal(b.data.receipt.arguments.object_id,'r1_clock');await expect(page.locator('.game-canvas-host')).toHaveAttribute('data-view','r1_clock');checks.push({check:'R1-edge-mouse-touch-correct-object-receipt',kind});}
-    }
-    if(width===375&&label==='R2-circuit'){
-      const id=state.minigames.circuit.modules[0].module_id;for(const kind of ['mouse','touch']){const before=state.minigames.circuit.modules.find(m=>m.module_id===id).rotation;const b=await response('/actions',()=>edgeInput(`[data-module-id="${id}"]`,kind));assert.equal(b.data.receipt.tool,'rotate_circuit');assert.equal(b.data.receipt.arguments.module_id,id);assert.equal(state.minigames.circuit.modules.find(m=>m.module_id===id).rotation,(before+1)%4);checks.push({check:'R2-edge-mouse-touch-correct-module-receipt',kind,module_id:id});}
-    }
-    if(width===375&&label==='R3-early-panel'){
-      const id=state.minigames.sequence.devices[0].device_id,before=structuredClone(state);for(const kind of ['mouse','touch'])await edgeInput(`[data-device-id="${id}"]`,kind);
-      assert.deepEqual(await page.locator('.sequence-draft li[data-device-id]').evaluateAll(ns=>ns.map(n=>n.dataset.deviceId)),[id,id]);assert.deepEqual(state,before);await expect(page.locator('.sequence-submit')).toBeDisabled();await page.locator('.sequence-clear').click();checks.push({check:'R3-edge-mouse-touch-correct-device-local-draft',device_id:id});
-    }
-    if(state.room.room_id==='R3'&&await hot('[data-device-id]:enabled').count()>=2&&await page.locator('.sequence-submit').isDisabled()){
-      const publicIds=state.minigames.sequence.devices.map(d=>d.device_id),before=structuredClone(state);await input(`[data-device-id="${publicIds[0]}"]`,'touch');await input(`[data-device-id="${publicIds[1]}"]`,'keyboard');assert.deepEqual(state,before);await expect(page.locator('.sequence-submit')).toBeDisabled();await page.locator('.sequence-clear').click();checks.push({check:'actual-responsive-touch-and-keyboard-local-draft',width,height});
-    }
-  }
-  await page.setViewportSize({width:1280,height:900});await idle();
-}
+
 async function saveMoment(name){await menu();const snap=structuredClone(state);await page.locator('#save-slot-name').fill(name);const b=await response('/saves',()=>page.locator('.save-slot-create-button').click(),201);assert.deepEqual(state,snap);await close();return{id:b.data.slot.save_id,state:snap,name};}
 async function restoreMoment(moment,cancel=false){
   await menu();const row=page.locator(`[data-save-id="${moment.id}"]`);await row.locator('.save-slot-restore').click();const dialog=page.locator('dialog[open]');
@@ -114,13 +97,13 @@ async function pngFailure(){
 }
 async function finishRoute(early,r1){
   await uiAction('exit_door');await checkpoint('R3-door-FINAL_CHECK');await uiSelect('r3_panel');await checkpoint('R3-panel-FINAL_CHECK');const ids=sequence();const draftBefore=structuredClone(state);
-  for(let i=0;i<ids.length;i++)await input(`[data-device-id="${ids[i]}"]`,i===0?'touch':i===1?'keyboard':'mouse');assert.deepEqual(state,draftBefore);await mobile('R3-sequence-draft');await response('/actions',()=>page.locator('.sequence-submit').click());await checkpoint('R3-panel-passed');
+  for(let i=0;i<ids.length;i++)await input(`[data-device-id="${ids[i]}"]`,i===0?'mouse':i===1?'keyboard':'mouse');assert.deepEqual(state,draftBefore);await response('/actions',()=>page.locator('.sequence-submit').click());await checkpoint('R3-panel-passed');
   await uiAction('exit_door');await checkpoint('R3-door-UNLOCKED');await uiAction('exit_door');await checkpoint('R3-door-OPEN');await uiMove('EXIT');
   const s=state.settlement,time=[Math.floor(s.elapsed_seconds/3600),Math.floor(s.elapsed_seconds/60)%60,Math.floor(s.elapsed_seconds)%60].map(v=>String(v).padStart(2,'0')).join(':');const values={elapsed_seconds:time,clues_found:`${s.clues_found}/${s.clues_total}`,hidden_found:`${s.hidden_found}/${s.hidden_total}`,hint_count:String(s.hint_count),mistake_count:String(s.mistake_count),rating:s.rating};for(const[k,v]of Object.entries(values))await expect(page.locator(`.victory-screen [data-stat="${k}"]`)).toHaveText(v);assert.equal(await page.locator('.game-canvas-host').count(),0);await checkpoint('Victory-desktop');
-  const win=await saveMoment('已逃出');await page.setViewportSize({width:375,height:812});await restoreMoment(early,true);await checkpoint('R1-mobile-selected-restore');await restoreMoment(r1);await restoreMoment(win);await checkpoint('Victory-mobile');await reload();assert.deepEqual(state.settlement,s);checks.push({check:'authoritative-Victory-six-fields-multiple-moments-restore-reload',values,archives:5});
+  const win=await saveMoment('已逃出');await restoreMoment(early,true);await restoreMoment(r1);await restoreMoment(win);await reload();assert.deepEqual(state.settlement,s);checks.push({check:'authoritative-Victory-six-fields-multiple-moments-restore-reload',values,archives:5});
 }
 async function remaining(){
-  const context=await browser.newContext({viewport:{width:1280,height:900},hasTouch:true,deviceScaleFactor:1});page=await context.newPage();page.on('pageerror',e=>issues.push({check:'uncaught',error:e.message}));page.on('request',r=>{const u=new URL(r.url());if(u.pathname.endsWith('/actions')&&r.method()==='POST')actionRequests.push({tool:r.postDataJSON()?.tool});if(u.hostname==='api.deepseek.com')issues.push({check:'unexpected-paid-endpoint'});});
+  const context=await browser.newContext({viewport:{width:1280,height:900},deviceScaleFactor:1});page=await context.newPage();page.on('pageerror',e=>issues.push({check:'uncaught',error:e.message}));page.on('request',r=>{const u=new URL(r.url());if(u.pathname.endsWith('/actions')&&r.method()==='POST')actionRequests.push({tool:r.postDataJSON()?.tool});if(u.hostname==='api.deepseek.com')issues.push({check:'unexpected-paid-endpoint'});});
   await page.goto(frontendURL,{waitUntil:'networkidle'});await response('/api/sessions',()=>page.getByRole('button',{name:'开始新游戏 →',exact:true}).click(),201);
   async function fixtureSave(name){const snap=structuredClone(state),b=await api('fixture-archive',{name},'/saves');return{id:b.data.slot.save_id,state:snap,name};}
   const early=await fixtureSave('公开fixture初始');
@@ -138,24 +121,24 @@ async function remaining(){
 }
 async function run(){
   if(['remaining','presentation'].includes(only))return remaining();
-  const context=await browser.newContext({viewport:{width:1280,height:900},hasTouch:true,deviceScaleFactor:1});page=await context.newPage();page.on('pageerror',e=>issues.push({check:'uncaught',error:e.message}));
+  const context=await browser.newContext({viewport:{width:1280,height:900},deviceScaleFactor:1});page=await context.newPage();page.on('pageerror',e=>issues.push({check:'uncaught',error:e.message}));
   const resources=[];page.on('request',r=>{const u=new URL(r.url());resources.push({path:u.pathname,method:r.method()});if(u.pathname.endsWith('/actions')&&r.method()==='POST')actionRequests.push({tool:r.postDataJSON()?.tool});if(u.hostname==='api.deepseek.com')issues.push({check:'unexpected-paid-endpoint'});});
   await page.goto(frontendURL,{waitUntil:'networkidle'});assert(!resources.some(r=>/phaser|Room[123]|GameCanvas/.test(r.path)),'Engine lazily loaded after Start only');checks.push({check:'production-welcome-lazy-network',requests:structuredClone(resources)});
   await response('/api/sessions',()=>page.getByRole('button',{name:'开始新游戏 →',exact:true}).click(),201);await idle();await checkpoint('R1-overview');const early=await saveMoment('初始手绘房间');await pngFailure();
-  for(const id of ['r1_clock','r1_record','r1_plaque','r1_microscope']){await uiSelect(id,id==='r1_clock'?'keyboard':'mouse');await checkpoint(id+'-initial');}await uiSelect('r1_clock');await mobile('R1-clock');
-  await uiAction('sample_slide','take','touch');await uiUse('sample_slide','r1_microscope');await uiSelect('r1_microscope');await checkpoint('R1-microscope-slide');
+  for(const id of ['r1_clock','r1_record','r1_plaque','r1_microscope']){await uiSelect(id,id==='r1_clock'?'keyboard':'mouse');await checkpoint(id+'-initial');}await uiSelect('r1_clock');
+  await uiAction('sample_slide','take','mouse');await uiUse('sample_slide','r1_microscope');await uiSelect('r1_microscope');await checkpoint('R1-microscope-slide');
   await uiSelect('r1_cabinet');await checkpoint('R1-cabinet-LOCKED');await page.locator('#code-r1_cabinet').fill('4217');await response('/actions',()=>page.locator('.code-form button').click());await checkpoint('R1-cabinet-CODE_ACCEPTED');
   await uiAction('r1_cabinet');await checkpoint('R1-cabinet-OPEN');await isolation('r1_cabinet',['r1_cabinet','r1_symbols','r1_fuse'],'R1-real-closeup-isolation');await uiSelect('r1_symbols');await checkpoint('R1-symbols');await uiAction('r1_fuse','take');await uiSelect('r1_cabinet');await checkpoint('R1-cabinet-ITEM_TAKEN');await uiSelect('r1_photo');await checkpoint('R1-hidden-photo');
   const r1=await saveMoment('已取保险丝');await uiAction('r1_door');await uiMove('R2');await overview();await checkpoint('R2-overview-dark');await uiSelect('r2_maintenance');await checkpoint('R2-maintenance');await uiSelect('r2_monitor');await checkpoint('R2-computer-OFF');
   await uiSelect('r2_powerbox');await checkpoint('R2-powerbox-CLOSED');await uiAction('r2_powerbox');await checkpoint('R2-powerbox-OPEN');await uiAction('r2_powerbox');await checkpoint('R2-powerbox-MISSING_FUSE');await uiUse('fuse','r2_powerbox');await checkpoint('R2-powerbox-FUSE_INSTALLED');
-  await isolation('r2_powerbox',['r2_powerbox',...state.minigames.circuit.modules.map(m=>m.module_id)],'R2-real-closeup-isolation');await mobile('R2-circuit');
-  const board=structuredClone(state.minigames.circuit),answer=solution(board);for(const m of board.modules)for(let i=0;i<(answer[m.module_id]-m.rotation+4)%4;i++)await response('/actions',()=>input(`[data-module-id="${m.module_id}"]`,i===0?'touch':'mouse'));
+  await isolation('r2_powerbox',['r2_powerbox',...state.minigames.circuit.modules.map(m=>m.module_id)],'R2-real-closeup-isolation');
+  const board=structuredClone(state.minigames.circuit),answer=solution(board);for(const m of board.modules)for(let i=0;i<(answer[m.module_id]-m.rotation+4)%4;i++)await response('/actions',()=>input(`[data-module-id="${m.module_id}"]`,i===0?'mouse':'mouse'));
   await response('/actions',()=>page.locator('.circuit-submit').click());assert.equal(state.device_states.powerbox,'CIRCUIT_READY');assert.equal(state.progress.power_on,false);await checkpoint('R2-powerbox-CIRCUIT_READY');const dark=await saveMoment('线路完成仍未通电');
   await uiAction('r2_powerbox');await checkpoint('R2-powerbox-POWER_ON');await overview();await checkpoint('R2-overview-on');await uiSelect('r2_service_label');await checkpoint('R2-hidden-maintenance');
   await uiMove('R1');await checkpoint('R1-return-powered');await uiMove('R2');await restoreMoment(dark);assert.equal(state.progress.power_on,false);await overview();await checkpoint('R2-restored-dark');await uiAction('r2_powerbox');
-  await uiAction('r2_monitor');await checkpoint('R2-computer-BOOTING');await uiAction('r2_monitor');await checkpoint('R2-computer-LOGIN_LOCKED');await mobile('R2-login');await page.locator('#terminal-username').fill('LAB-42');await page.locator('#terminal-password').fill('2117');await response('/actions',()=>page.locator('.login-form [data-scene-action="submit_login"]').click());await checkpoint('R2-computer-UNLOCKED');
-  await uiAction('r2_monitor');await checkpoint('R2-computer-DATA_READ');await uiSelect('research_strip');await checkpoint('R2-research-strip');await uiAction('research_strip','take');await uiAction('access_card','take','touch');await uiAction('r2_door');await uiMove('R3');await overview();await checkpoint('R3-overview');await uiSelect('r3_legend');await checkpoint('R3-legend');
-  await uiSelect('r3_panel');await checkpoint('R3-panel-EMPTY');await uiUse('research_strip','r3_panel');assert.equal(state.device_states.exit,'LOCKED');await expect(hot('[data-device-id]')).toHaveCount(4);await expect(page.locator('.sequence-submit')).toBeDisabled();await checkpoint('R3-panel-early-STRIP_INSERTED');await mobile('R3-early-panel');
+  await uiAction('r2_monitor');await checkpoint('R2-computer-BOOTING');await uiAction('r2_monitor');await checkpoint('R2-computer-LOGIN_LOCKED');await page.locator('#terminal-username').fill('LAB-42');await page.locator('#terminal-password').fill('2117');await response('/actions',()=>page.locator('.login-form [data-scene-action="submit_login"]').click());await checkpoint('R2-computer-UNLOCKED');
+  await uiAction('r2_monitor');await checkpoint('R2-computer-DATA_READ');await uiSelect('research_strip');await checkpoint('R2-research-strip');await uiAction('research_strip','take');await uiAction('access_card','take','mouse');await uiAction('r2_door');await uiMove('R3');await overview();await checkpoint('R3-overview');await uiSelect('r3_legend');await checkpoint('R3-legend');
+  await uiSelect('r3_panel');await checkpoint('R3-panel-EMPTY');await uiUse('research_strip','r3_panel');assert.equal(state.device_states.exit,'LOCKED');await expect(hot('[data-device-id]')).toHaveCount(4);await expect(page.locator('.sequence-submit')).toBeDisabled();await checkpoint('R3-panel-early-STRIP_INSERTED');
   const panel=await saveMoment('纸条已插入未刷卡');await uiMove('R2');await uiMove('R3');await uiSelect('r3_panel');await expect(hot('[data-device-id]')).toHaveCount(4);await reload();await restoreMoment(panel,true);await restart();await uiSelect('r3_panel');await isolation('r3_panel',state.minigames.sequence.devices.map(d=>d.device_id),'R3-real-closeup-isolation');
   await uiSelect('exit_door');await checkpoint('R3-door-LOCKED');await uiUse('access_card','exit_door');await checkpoint('R3-door-CARD_ACCEPTED');await uiSelect('r3_panel');await expect(hot('[data-device-id]')).toHaveCount(4);await expect(page.locator('.sequence-submit')).toBeDisabled();
   await finishRoute(early,r1);await context.close();

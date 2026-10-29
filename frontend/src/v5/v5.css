@@ -71,7 +71,7 @@
 .v5-shell {
   position: relative; min-height: 100svh; isolation: isolate;
   padding: 46px max(22px, calc((100vw - 1180px) / 2)) 80px;
-  background: #081118 url('/art-themes/rainy-astronomy/ui/landing-cover.jpg') center 26% / cover no-repeat fixed;
+  background: #081118 url('/art-themes/rainy-astronomy/handpainted-v2/backgrounds/neutral_lab.png') center 26% / cover no-repeat fixed;
 }
 .v5-shell::before {
   content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
@@ -407,68 +407,16 @@
   .v5-dashboard { grid-template-columns: 1fr; }
   .v5-classic { grid-row: auto; min-height: 320px; }
 }
-@media (max-width: 700px) {
-  .v5-shell { padding: 26px 14px 46px; background-attachment: scroll; }
-  .v5-masthead { flex-direction: column; gap: 16px; margin-bottom: 22px; }
-  .v5-masthead h1 { font-size: 33px; }
-  .v5-intro { font-size: 14px; }
-  .v5-tags { gap: 12px; font-size: 10px; }
-  .v5-account { width: 100%; justify-content: space-between; }
-  .v5-auth-panel { padding: 24px 20px 18px; margin-top: 4vh; }
-  .v5-auth-panel h2 { font-size: 25px; }
-  .v5-generator { padding: 22px 18px; }
-  .v5-generator h2 { font-size: 23px; }
-  .v5-classic { min-height: 260px; padding: 22px; }
-  .v5-classic h2 { font-size: 26px; }
-  .v5-levels { padding: 18px 14px; }
-  .v5-level-card { grid-template-columns: 92px minmax(0, 1fr); gap: 12px; }
-  .v5-level-cover { height: 66px; }
-  .v5-level-card > button { grid-column: 2; justify-self: start; }
-  .v5-play-nav { height: 52px; padding: 0 10px; gap: 6px; }
-  .v5-play-nav button { font-size: 12px; padding: 6px 10px; }
-  .v5-play-id { display: none; }
-  .v5-game { padding: 12px 10px 30px; }
-  .v5-hud { flex-direction: column; align-items: stretch; gap: 10px; }
-  .v5-hud-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-  .v5-hud-actions button { font-size: 12px; padding: 9px 6px; }
-  .v5-stage { border-radius: 8px; }
-  .v5-stage-caption { inset: 8px 10px auto; font-size: 8.5px; letter-spacing: .08em; }
-  .v5-stage-caption span:last-child { display: none; }
-  .v5-hotspots button { opacity: .92; font-size: 10px; padding: 5px 8px; gap: 5px; max-width: 30%; }
-  .v5-hotspot-name { max-width: 58px; }
-  .v5-stage-foot { padding: 10px 11px; gap: 10px; }
-  .v5-room-note { font-size: 11.5px; }
-  .v5-exits { width: 100%; }
-  .v5-exits button { flex: 1; font-size: 12px; padding: 9px 8px; }
-  .v5-tray { margin-top: 10px; }
-  .v5-inventory { padding: 10px; gap: 7px; }
-  .v5-inventory strong { width: 100%; }
-  .v5-inventory button { font-size: 12px; }
-  .v5-story summary { padding: 11px 12px; font-size: 12px; }
-  .v5-theme-brief, .v5-story-text, .v5-story > p, .v5-art-note { padding: 0 13px 12px; font-size: 12.5px; }
-  .v5-overlay { padding: 8px 8px 20px; }
-  .v5-sheet { padding: 18px 16px 22px; }
-  .v5-sheet h2 { font-size: 23px; }
-  .v5-closeup { height: min(38vh, 250px); }
-  .v5-stats div { min-width: 74px; padding: 8px 10px; }
-  .v5-stats dd { font-size: 18px; }
-  .v5-victory { padding: 12px; gap: 6px; align-content: start; }
-  .v5-victory .v5-stats div { min-width: 66px; padding: 7px 9px; }
-  .v5-victory h2 { font-size: 26px; }
-  .v5-victory-lead { font-size: 12px; }
-  .v5-victory::before { inset: 10px; }
-  .v5-victory-actions button { font-size: 12px; padding: 8px 12px; }
-}
-@media (max-height: 460px) and (min-width: 700px) {
-  .v5-game { padding: 8px 14px 16px; }
-  .v5-hud-title h1 { font-size: 18px; }
-  .v5-hud-actions button { padding: 6px 11px; font-size: 12px; }
-  .v5-stage { max-width: 62vw; }
-  .v5-tray { max-width: 62vw; }
-  .v5-overlay { align-items: flex-start; padding: 8px 14px; }
-  .v5-sheet { padding: 18px 22px 22px; }
-  .v5-closeup { height: 210px; }
-}
 @media (prefers-reduced-motion: reduce) {
   .v5-shell button, .v5-game button, .v5-play-nav button { transition: none; }
 }
+
+/* Readable common instructions for desktop play. */
+.v5-room-note, .v5-hud-room, .v5-feedback, .v5-empty,
+.v5-theme-brief, .v5-story-text, .v5-story > p, .v5-art-note,
+.v5-clue p, .v5-save p, .v5-confirm p, .v5-victory-lead,
+.v5-circuit-help, .v5-circuit-caption, .v5-sequence > p,
+.v5-scene-status { font-size: 14px; }
+.v5-art-note { font-size: 14px !important; }
+.v5-image-fallback { display: grid; gap: 12px; max-width: 440px; padding: 22px; margin: 0; color: #e9e1c8; text-align: center; font-size: 14px; line-height: 1.8; }
+.v5-image-fallback strong { font-size: 18px; }

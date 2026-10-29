@@ -172,7 +172,7 @@ try{
   await Promise.all([ready(`${backendURL}/api/health`),ready(frontendURL)]);
   for(const [name,executable] of browsers){
     const browser=await chromium.launch({headless:true,executablePath:executable});
-    try{for(const width of [1280,768,390])try{await run(browser,name,width);}catch(error){issues.push({browser:name,width,stage:'route',error:error.message});}}finally{await browser.close();}
+    try{for(const width of [1280,1920])try{await run(browser,name,width);}catch(error){issues.push({browser:name,width,stage:'route',error:error.message});}}finally{await browser.close();}
   }
   const built=[];
   function scan(directory){for(const name of fs.readdirSync(directory)){const p=path.join(directory,name);if(fs.statSync(p).isDirectory())scan(p);else{
@@ -188,7 +188,7 @@ finally{
   fs.writeFileSync(path.join(folder,'checks.json'),JSON.stringify({checks,issues},null,2));
   fs.writeFileSync(path.join(folder,'server-startup-only.json'),JSON.stringify(logs,null,2));
   const evidenceHashes=Object.fromEntries(fs.readdirSync(folder).map(name=>[name,crypto.createHash('sha256').update(fs.readFileSync(path.join(folder,name))).digest('hex')]));
-  const result={candidate,command:[process.execPath,...process.argv.slice(1)],provider:'deterministic mock only, no paid network provider',started,ended:new Date().toISOString(),browsers,widths:[1280,768,390],source_sha256_before:before,source_sha256_after:after,evidence_sha256:evidenceHashes,
+  const result={candidate,command:[process.execPath,...process.argv.slice(1)],provider:'deterministic mock only, no paid network provider',started,ended:new Date().toISOString(),browsers,widths:[1280,1920],source_sha256_before:before,source_sha256_after:after,evidence_sha256:evidenceHashes,
     head:spawnSync('git',['-c',`safe.directory=${root.replaceAll('\\','/')}`,'rev-parse','HEAD'],{cwd:root,encoding:'utf8',windowsHide:true}).stdout.trim(),exit_code:issues.length?1:0,
     privacy:'No creation response, headers, token/sessionStorage, HAR, raw provider data or private DB exported. UI trace saved as public visible text.'};
   fs.writeFileSync(path.join(folder,'run.json'),JSON.stringify(result,null,2));

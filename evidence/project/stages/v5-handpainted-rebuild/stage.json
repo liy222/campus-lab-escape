@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "stage": "v5-handpainted-rebuild",
+  "title": "雨夜天文社手绘重建与UI缺陷修复",
+  "created_at": "2026-10-29T04:43:15.133689Z",
+  "technical_status": "passed_scoped_independent_ai_review",
+  "human_review_status": "not_reviewed",
+  "owner_review_status": "not_reviewed",
+  "peer_review_status": "not_reviewed",
+  "current_human_review_round": 1,
+  "human_review_rounds": {},
+  "collections": [],
+  "scope": "经典与V5电脑端1280x720/1920x1080；4项UI修复、14px常用说明、15张手绘原图及12种共源特写；移除现行手机专用实现/测试要求",
+  "art": {
+    "method": "built-in image_gen",
+    "pack_version": "1.1.0",
+    "image_tool_calls": 15,
+    "physical_images": 15,
+    "backgrounds": 3,
+    "object_state_images": 12,
+    "closeup_presentations": 12,
+    "source_report": "output/art-concepts/rainy-astronomy/handpainted-v2/assets.json"
+  },
+  "project_provider_paid_calls": 0,
+  "independent_ai_review_status": "passed_with_retained_harness_failures",
+  "summary": "reviews/delivery.md",
+  "desktop_builds": "automated/desktop-cleanup-build1/result.json"
+}

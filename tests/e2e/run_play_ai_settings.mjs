@@ -59,7 +59,7 @@ try {
   start(process.execPath, [path.join(root, 'frontend/node_modules/vite/bin/vite.js'), '--host', '127.0.0.1', '--port', '15146', '--strictPort'], { CAMPUS_BACKEND_URL: backendURL }, path.join(root, 'frontend'));
   await Promise.all([ready(backendURL + '/api/health'), ready(frontendURL)]);
   browser = await chromium.launch({ headless: true, executablePath });
-  const context = await browser.newContext({ viewport: { width: 375, height: 900 } });
+  const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
   const page = await context.newPage(); let realIntercepts = 0, realRequest = null;
   page.on('pageerror', () => issues.push('Uncaught browser exception'));
   // Block all non-loopback requests, including any external provider calls.
@@ -96,12 +96,12 @@ try {
   await question.fill('请给下一步建议');
   await real.check(); await expect(input).toHaveAttribute('type', 'password'); await expect(ask).toBeDisabled();
   assert.equal(requests.filter(r => r.isAi).length, 0, 'Selecting real issued AI call');
-  await layout(page, 'mobile-real-missing-key');
+  await layout(page, 'desktop-real-missing-key');
   await input.fill(key); await storage(page); await expect(ask).toBeEnabled();
   await page.getByRole('button', { name: '清除密钥', exact: true }).click(); await expect(input).toHaveValue(''); await expect(ask).toBeDisabled();
   await input.fill(key); await mock.check(); await expect(input).toHaveCount(0); await real.check(); await expect(input).toHaveValue('');
   assert.equal(requests.filter(r => r.isAi).length, 0, 'Editing/clearing modes issued AI call');
-  await input.fill(key); await storage(page); await layout(page, 'mobile-real-synthetic-password');
+  await input.fill(key); await storage(page); await layout(page, 'desktop-real-synthetic-password');
   await post(page, '/save', () => page.getByRole('button', { name: '保存进度', exact: true }).click());
   await post(page, '/actions', () => page.getByRole('button', { name: '查看背包', exact: true }).click());
   await expect(input).toHaveValue(key);
@@ -141,7 +141,7 @@ try {
   await expect(page.locator('.committed-receipt')).toBeVisible();
   await page.locator('.object-grid').getByRole('button', { name: /值班便签/ }).click();
   await post(page, '/actions', () => page.locator('.object-details').getByRole('button', { name: /查看/ }).click());
-  await layout(page, 'mobile-mock-proposal-and-manual');
+  await layout(page, 'desktop-mock-proposal-and-manual');
   await page.setViewportSize({ width: 1280, height: 900 }); await real.check(); await input.fill(key); await layout(page, 'desktop-real-synthetic-password');
   await storage(page);
   const dbScan = spawnSync(python, ['-c', 'import pathlib,sqlite3,sys; p=pathlib.Path(sys.argv[1]); c=sqlite3.connect(p); s=sys.argv[2]; clean=s not in "\\n".join(c.iterdump()) and all(s.encode() not in f.read_bytes() for f in p.parent.glob("game.sqlite*")); c.close(); print("clean" if clean else "found"); sys.exit(0 if clean else 1)', path.join(temp, 'game.sqlite'), key], { windowsHide: true, encoding: 'utf8' });

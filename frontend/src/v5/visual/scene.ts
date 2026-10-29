@@ -1,4 +1,5 @@
 import catalog from '../../assets/generated-catalog.json';
+import rainyAstronomy from '../../assets/themes/rainy-astronomy/manifest.json';
 import { noteVariantFor, packBackground, themePackFor, variantFor } from './registry';
 import type { SceneModel, SceneObject } from './types';
 
@@ -26,18 +27,15 @@ type LegacyAsset = { id: string; url: string; width: number; height: number; bbo
 const legacyAssets = catalog.assets as LegacyAsset[];
 
 /** The legacy catalogue painted the key as an old fuse; use the neutral brass key instead. */
-const neutralKey = {
-  id: 'key',
-  url: '/art-themes/rainy-astronomy/objects/key-brass.png',
-  width: 640,
-  height: 512,
-  bbox: { x: 112, y: 96, width: 430, height: 300 },
-};
+const brassKey = rainyAstronomy.objects.key['key-brass'];
+const neutralKey = { id: 'key', url: brassKey.src, width: brassKey.width, height: brassKey.height, bbox: brassKey.bbox };
+
+function neutralAsset(role: string): LegacyAsset {
+  return role === 'key' ? neutralKey : legacyAssets.find(candidate => candidate.id === role) ?? legacyAssets.find(candidate => candidate.id === 'note')!;
+}
 
 function legacyObject(object: SceneObjectInput, index: number, slotIndex: number): SceneObject {
-  const asset = object.art_id === 'key'
-    ? neutralKey
-    : legacyAssets.find(candidate => candidate.id === object.art_id) ?? legacyAssets.find(candidate => candidate.id === 'note')!;
+  const asset = neutralAsset(object.art_id);
   const [x, y] = legacyPositions[Math.max(0, Math.min(7, slotIndex))] ?? legacyPositions[0];
   const scale = Math.min(310 / asset.bbox.width, 245 / asset.bbox.height);
   const width = asset.bbox.width * scale;
@@ -53,9 +51,10 @@ function legacyObject(object: SceneObjectInput, index: number, slotIndex: number
     y: y + 27,
     renderHeight: asset.bbox.height * scale,
     hotspot: { x: x - width / 2, y: y + 27 - asset.bbox.height * scale, width, height: asset.bbox.height * scale + 24 },
-    closeup: null,
-    closeupBox: null,
+    closeup: object.art_id === 'key' ? brassKey.closeup : asset.url,
+    closeupBox: object.art_id === 'key' ? brassKey.closeup_bbox : asset.bbox,
     variantId: null,
+    fallback: null,
   };
 }
 
@@ -87,6 +86,7 @@ export function buildSceneModel(input: SceneInput): SceneModel {
       return;
     }
     const { id, variant } = resolved;
+    const neutral = neutralAsset(object.art_id);
     const fitHeight = slot.height / variant.bbox.height;
     const fitWidth = (slot.hotspot.width * 1.02) / variant.bbox.width;
     const scale = Math.min(fitHeight, fitWidth);
@@ -105,6 +105,7 @@ export function buildSceneModel(input: SceneInput): SceneModel {
       closeup: variant.closeup,
       closeupBox: variant.closeup_bbox,
       variantId: id,
+      fallback: neutral.url === variant.src ? null : { key: `fallback:${neutral.id}`, src: neutral.url, bbox: neutral.bbox },
     });
   });
   // Preload the other state of every role present, so completion swaps art on screen.
@@ -117,10 +118,11 @@ export function buildSceneModel(input: SceneInput): SceneModel {
       extras.push({ key, src: variant.src });
     }
   });
+  const neutralBackground = legacyAssets.find(candidate => candidate.id === (input.room.background_id || input.room.background_art_id)) ?? legacyAssets.find(candidate => candidate.id === 'neutral_lab')!;
   return {
     themeId: pack.theme_id,
     themeName: pack.display_name,
-    background: { key: `theme:background:${background.src}`, src: background.src },
+    background: { key: `theme:background:${background.src}`, src: background.src, fallback: { key: `fallback:background:${neutralBackground.id}`, src: neutralBackground.url } },
     objects: themed,
     extras,
   };

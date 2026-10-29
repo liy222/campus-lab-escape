@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Assistant from '../Assistant';
-import catalog from '../assets/generated-catalog.json';
 import { ApiError, type ActionArguments, type SaveSlot, type Tool, type VisibleState } from '../api';
-import { trapPanelFocus } from '../components/panelFocus';
+import ObjectCloseup from './ObjectCloseup';
+import { usePanelFocus } from './usePanelFocus';
 import { localSession, type Level, type Run, type V5Client } from './client';
 import GeneratedScene from './GeneratedScene';
 import CircuitBoard from './CircuitBoard';
@@ -21,6 +21,7 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
   const [confirm, setConfirm] = useState<{ kind: 'reset' | 'restore' | 'delete'; slot?: SaveSlot } | null>(null), dialog = useRef<HTMLDialogElement>(null), alive = useRef(true), panelTrigger = useRef<HTMLElement | null>(null);
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const [victoryOpen, setVictoryOpen] = useState(true);
+  const panel = usePanelFocus(Boolean(view || drawer), dialog);
 
   function apply(next: GeneratedState, reconciled = false) {
     const old = current.current;
@@ -116,7 +117,6 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
   const circuit = circuits.find(board => board?.target_id === (object?.target_id || view));
   const seq = sequences.find(board => board?.target_id === (object?.target_id || view));
   const sceneObject = model?.objects.find(candidate => candidate.object_id === view);
-  const legacyArt = !sceneObject?.closeup ? catalog.assets.find(asset => asset.id === object?.art_id) : null;
 
   return <main className="v5-game" aria-busy={pending}>
     <header className="v5-hud">
@@ -141,11 +141,11 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
 
     <div className="v5-stage">
       {sceneModel && <GeneratedScene model={sceneModel} disabled={disabled || Boolean(drawer) || Boolean(view) || Boolean(confirm)} onObject={inspect} roomName={state.room.name} />}
-      <div className="v5-stage-caption" aria-hidden="true"><span>{model?.themeName ? `${model.themeName} · 雨夜` : '通用校园手绘'}</span><span>点按场景中的光点查看物件</span></div>
+      <div className="v5-stage-caption" aria-hidden="true"><span>{model?.themeName ? `${model.themeName} · 雨夜` : '通用校园手绘'}</span><span>点击场景中的光点查看物件</span></div>
       {state.status === 'won' && victoryOpen && <section className="v5-victory" role="status" aria-label="探索结算">
         <p className="v5-kicker">探索完成 / CLEARED</p>
         <h2>你找到了出口。</h2>
-        <p className="v5-victory-lead">{state.room.name}的雨声还在，观测记录已经归档。</p>
+        <p className="v5-victory-lead">本次探索已完成，你已找到出口。可以查看存档或回顾线索。</p>
         {state.settlement && <dl className="v5-stats">
           <div><dt>用时</dt><dd>{Math.floor(state.settlement.elapsed_seconds / 60)} 分</dd></div>
           <div><dt>线索</dt><dd>{state.settlement.clues_found}</dd></div>
@@ -181,18 +181,14 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
       </details>
     </section>
 
-    {(object || drawer) && <div className={`v5-overlay ${circuit ? 'has-circuit' : ''}`} role="dialog" aria-modal="true" aria-label={object?.name || '游戏面板'} onKeyDown={trapPanelFocus}>
+    {(object || drawer) && <div className={`v5-overlay ${circuit ? 'has-circuit' : ''}`} role="dialog" aria-modal="true" aria-label={object?.name || '游戏面板'} ref={panel} tabIndex={-1}>
       <section className="v5-sheet">
         <button className="v5-close" onClick={() => { setView(null); setDrawer(null); }}>关闭面板</button>
         {object && <>
           <p className="v5-kicker">{object.kind === 'item' ? '可携带物品' : '物件特写'}</p>
           <h2>{object.name}</h2>
           {object.completed && <p className="v5-done">✓ 已完成</p>}
-          <div className={`v5-closeup ${sceneObject?.variantId ?? 'generic'}`} aria-hidden="true">
-            {sceneObject?.closeup
-              ? <img src={sceneObject.closeup} alt="" data-closeup-src={sceneObject.closeup} />
-              : legacyArt ? <img src={legacyArt.url} alt="" data-closeup-src={legacyArt.url} /> : null}
-          </div>
+          {sceneObject && <ObjectCloseup key={`${sceneObject.object_id}:${sceneObject.key}:${sceneObject.src}:${sceneObject.closeup}`} object={sceneObject} />}
           <p className="v5-object-text">{object.description}</p>
           {state.clues.filter(clue => clue.object_id === object.object_id).map(clue => <article className="v5-clue" key={clue.clue_id}><h3>{clue.title}</h3><p>{clue.text}</p></article>)}
           <div className="v5-object-actions">
