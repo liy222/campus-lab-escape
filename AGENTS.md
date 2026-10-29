@@ -22,6 +22,8 @@
 
 E&O与归档阶段技术完成：独立11项定向API通过；浏览器首轮核心+修复检查器后的auth-only窄补联合通过，首轮exit1保留；独立归档工具5项TEMP检查通过。Main已实际归档代表性历史结果及用户修复前原话/原截图。随后用户实际反馈随机生成/通关/注册/登录正常，但UI简陋、主题画面不符、素材过少；本轮原话/原图另存当前真人round-01，结论changes-requested，仅覆盖实际反馈，E&O逐条检查/同伴/整体接受仍未确认。没有额外build/付费、旧pin刷新或美术制作；后续每阶段持续记录，完成时必须明确邀请本人检查。
 
+2026-10-29用户要求检查其他对话的74eb523实现。本对话Main独立执行新tests/v5/run_visual_ui_review.mjs，单次10项：6通过/4失败、控制器异常0；新增第三房间/两处线路/顺序实际UI提交及三房困难Synthetic EXIT证据，复现4项UI问题。报告位于evidence/project/stages/v5-rainy-astronomy-ui/reviews/root-review-20261029.md；当前技术状态需修复，真人未核验。Main本轮只写新检查入口、实际结果/截图、当前索引及根进度；产品源码/旧原始执行结果不改，新增build0/paid0，无新派工或型号核验声明。
+
 The human is the sole developer. The attachment docs/execution-plan.md is the accepted project scope, not proof of execution. Never invent tests, people, approvals or model calls.
 Main owns AGENTS.md, PLAN.md, STATUS.md, DECISIONS.md, integration and git. Agents write only assigned paths, never commit, never spawn further agents. Shared workspace; do not overwrite another owner's files. Default delegates gpt-6.1-sol/high, simple mechanical tasks gpt-6-luna/medium. No Astra unless needed. Main runtime model is not independently introspectable and must not be claimed as verified.
 Spec owns docs/SPEC.md, docs/level_design.md, contracts/. Delivery owns scripts/, README.md, release/, .gitignore, .env.example. Backend owns backend/app/{domain,api,storage}, backend/app/main.py and Python dependencies. Frontend owns frontend/. AI owns backend/app/ai/. QA owns tests/ and review/findings/. Experiments owns experiments/. Evaluator owns evaluation/.

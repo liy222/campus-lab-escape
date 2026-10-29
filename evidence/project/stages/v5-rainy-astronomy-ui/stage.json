@@ -3,14 +3,14 @@
   "stage": "v5-rainy-astronomy-ui",
   "title": "雨夜天文社主题场景与前端UI",
   "created_at": "2026-10-28T15:20:29.647780Z",
-  "technical_status": "passed_synthetic_visual_scopes",
+  "technical_status": "changes_required_after_independent_review",
   "human_review_status": "not_reviewed",
   "owner_review_status": "not_reviewed",
   "peer_review_status": "not_reviewed",
   "current_human_review_round": 1,
   "human_review_rounds": {},
   "collections": [],
-  "summary": "reviews/technical-review.md",
+  "summary": "reviews/root-review-20261029.md",
   "scope": "雨夜天文社首包（3背景/6角色12外观/特写/状态）、主题解析与回退、新版创建-游戏-谜题-存档-结算界面；不改后端/生成/规则/存档格式",
   "art": {
     "pack": "rainy-astronomy",
@@ -40,5 +40,22 @@
     "overall_acceptance"
   ],
   "paid_calls": 0,
-  "real_model_calls": 0
+  "real_model_calls": 0,
+  "implementation_technical_status": "passed_synthetic_visual_scopes",
+  "implementation_summary": "reviews/technical-review.md",
+  "independent_review": {
+    "date": "2026-10-29",
+    "actor": "Main in the original handoff chat; not the 74eb523 product implementation chat",
+    "source_commit": "74eb52327500237243d08c36519d4c33885c2c1d",
+    "result": "automated/review-2026-10-29T04-28-27-425Z-18b019ed/result.json",
+    "checks": 10,
+    "passed": 6,
+    "failed": 4,
+    "controller_errors": 0,
+    "exit_code": 1,
+    "paid_calls": 0,
+    "new_builds": 0,
+    "additional_art_gap": "Vector style differs from accepted R1 v3 hand-painted direction; no human acceptance of that change recorded",
+    "note": "Original 21 implementation browser runs and their raw results remain unchanged; this is one separate focused follow-up."
+  }
 }

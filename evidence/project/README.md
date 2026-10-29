@@ -2,7 +2,14 @@
 
 今后从这里读取、整理和提交证据。开发中每次实际检查、失败、修复和反馈及时保存，大阶段结束再集中交付并邀请真人核验。
 
-## 当前阶段
+## 当前阶段：雨夜天文社与新版UI
+
+- [最新独立检查报告](stages/v5-rainy-astronomy-ui/reviews/root-review-20261029.md)：实际复现4项问题，美术画风与原约定仍有差异；当前需修复后再检查。
+- [本轮10项实际结果与6张截图](stages/v5-rainy-astronomy-ui/automated/review-2026-10-29T04-28-27-425Z-18b019ed/result.json)
+- [阶段状态](stages/v5-rainy-astronomy-ui/stage.json)与[全部运行索引](stages/v5-rainy-astronomy-ui/automated/README.md)
+- [本人检查表](human-reviews/v5-rainy-astronomy-ui/round-01/review.md)：保持未核验
+
+## 此前E&O阶段
 
 - [本阶段结果摘要](stages/2026-10-28-evaluation-observability/evaluation/summary.json)
 - [评价标准与评价器说明](stages/2026-10-28-evaluation-observability/evaluation/evaluator-status.md)

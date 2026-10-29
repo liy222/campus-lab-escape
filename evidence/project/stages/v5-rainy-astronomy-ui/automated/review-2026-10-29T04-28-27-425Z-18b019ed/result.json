@@ -1,0 +1,124 @@
+{
+  "kind": "Independent focused visual UI review",
+  "run_id": "18b019ed-2061-4cf2-a148-027eb28bfa94",
+  "started_at_utc": "2026-10-29T04:28:27.425Z",
+  "ended_at_utc": "2026-10-29T04:28:44.382Z",
+  "source_commit": "74eb52327500237243d08c36519d4c33885c2c1d",
+  "controller_sha256": "2bb99347d925ed442a816995cdb21bfaedd211f335016251a427991b63c6a53e",
+  "original_implementation_result": "automated/browser-2026-10-28T16-20-30-946Z-97ce062e/browser-result.json",
+  "checks": [
+    {
+      "name": "generic key closeup keeps brass-key identity",
+      "actual": "/art-handpainted/room1/r1_fuse.png",
+      "expected": "key artwork, not fuse",
+      "pass": false,
+      "observed_at_utc": "2026-10-29T04:28:33.976Z"
+    },
+    {
+      "name": "focus remains in open save panel after deleting focused row",
+      "actual": {
+        "in_panel": false,
+        "text": "← 我的关卡"
+      },
+      "expected": {
+        "in_panel": true
+      },
+      "pass": false,
+      "observed_at_utc": "2026-10-29T04:28:34.530Z"
+    },
+    {
+      "name": "generic ending avoids unrelated fixed astronomy story",
+      "actual": "出口的雨声还在，观测记录已经归档。",
+      "expected": "generic/theme-neutral ending",
+      "pass": false,
+      "observed_at_utc": "2026-10-29T04:28:36.128Z"
+    },
+    {
+      "name": "missing closeup uses a usable fallback image",
+      "actual": {
+        "src": "/art-themes/rainy-astronomy/closeups/note-logbook.png",
+        "natural_width": 0
+      },
+      "expected": {
+        "natural_width_greater_than": 0
+      },
+      "pass": false,
+      "observed_at_utc": "2026-10-29T04:28:38.740Z"
+    },
+    {
+      "name": "circuit G2 submits through actual UI",
+      "actual": "completed",
+      "expected": "completed",
+      "pass": true,
+      "observed_at_utc": "2026-10-29T04:28:41.618Z"
+    },
+    {
+      "name": "sequence submits through actual UI",
+      "actual": "completed",
+      "expected": "completed",
+      "pass": true,
+      "observed_at_utc": "2026-10-29T04:28:41.941Z"
+    },
+    {
+      "name": "third room uses themed control background",
+      "actual": "/art-themes/rainy-astronomy/backgrounds/neutral_control.png",
+      "expected": "/art-themes/rainy-astronomy/backgrounds/neutral_control.png",
+      "pass": true,
+      "observed_at_utc": "2026-10-29T04:28:42.227Z"
+    },
+    {
+      "name": "circuit G3 submits through actual UI",
+      "actual": "completed",
+      "expected": "completed",
+      "pass": true,
+      "observed_at_utc": "2026-10-29T04:28:43.734Z"
+    },
+    {
+      "name": "three-room hard synthetic route reaches server victory",
+      "actual": {
+        "status": "won",
+        "room": "EXIT",
+        "action_counts": {
+          "take": 2,
+          "submit_code": 3,
+          "use_item": 2,
+          "move": 4,
+          "rotate_circuit": 20,
+          "submit_circuit": 2,
+          "submit_sequence": 1
+        }
+      },
+      "expected": {
+        "status": "won"
+      },
+      "pass": true,
+      "observed_at_utc": "2026-10-29T04:28:44.124Z"
+    },
+    {
+      "name": "no external browser requests",
+      "actual": 0,
+      "expected": 0,
+      "pass": true,
+      "observed_at_utc": "2026-10-29T04:28:44.124Z"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "generic-key-closeup.png",
+    "focus-after-delete.png",
+    "generic-ending.png",
+    "missing-closeup.png",
+    "sequence-completed.png",
+    "third-room.png"
+  ],
+  "exit_code": 1,
+  "paid_calls": 0,
+  "new_builds": 0,
+  "player8001_contacted": false,
+  "owned_server_stopped": true,
+  "temporary_database": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-visual-review-W1vKI7",
+  "limits": [
+    "Synthetic fixture only; private synthetic witness kept in memory",
+    "Not a real-model quality or human acceptance result"
+  ]
+}
