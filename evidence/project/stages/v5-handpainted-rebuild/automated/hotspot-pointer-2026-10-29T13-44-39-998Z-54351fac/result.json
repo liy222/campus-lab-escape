@@ -1,0 +1,949 @@
+{
+  "command": "node tests/v5/run_hotspot_pointer_browser.mjs --generic-only",
+  "run_id": "54351fac-58fe-44ee-a2e0-7f30c0608f22",
+  "started": "2026-10-29T13:44:39.998Z",
+  "ended": "2026-10-29T13:44:52.732Z",
+  "effective_builds": [
+    {
+      "entry": "v5",
+      "index": "frontend\\dist-v5\\index.html",
+      "sha256": "654d1dfc6f5f9e47afd2d23b1cdbea51afbbd525821ece8502c948aa9a69adb2"
+    }
+  ],
+  "records": [
+    {
+      "name": "owned port8002 available",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "entry": "v5",
+      "stage": "start",
+      "utc": "2026-10-29T13:44:40.326Z"
+    },
+    {
+      "name": "owned service ready",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "entry": "v5",
+      "stage": "start",
+      "utc": "2026-10-29T13:44:41.141Z"
+    },
+    {
+      "name": "correct scene family",
+      "actual": "generic",
+      "expected": "generic",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:44.004Z"
+    },
+    {
+      "name": "pointer starts on correct object",
+      "actual": {
+        "point": "text-left",
+        "hit": "obj_source"
+      },
+      "expected": "obj_source",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:44.469Z"
+    },
+    {
+      "name": "hold180ms geometry stable",
+      "actual": {
+        "point": "text-left",
+        "idle": {
+          "x": 442,
+          "y": 369.84375,
+          "width": 101.5,
+          "height": 44
+        },
+        "hover": {
+          "x": 442,
+          "y": 369.84375,
+          "width": 101.5,
+          "height": 44
+        },
+        "down": {
+          "x": 442,
+          "y": 369.84375,
+          "width": 101.5,
+          "height": 44
+        },
+        "max_delta": 0
+      },
+      "expected": "<=1px",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:44.846Z"
+    },
+    {
+      "name": "mouseup original point and geometry",
+      "actual": {
+        "point": "text-left",
+        "event": {
+          "rect": {
+            "x": 442,
+            "y": 369.84375,
+            "width": 101.5,
+            "height": 44
+          },
+          "hit": "obj_source"
+        },
+        "max_delta": 0
+      },
+      "expected": "same target <=1px",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:45.029Z"
+    },
+    {
+      "name": "post-inspect scene-relative geometry stable",
+      "actual": {
+        "point": "text-left",
+        "idle": {
+          "x": 442,
+          "y": 369.84375,
+          "width": 101.5,
+          "height": 44
+        },
+        "up": {
+          "x": 442,
+          "y": 420.34375,
+          "width": 101.5,
+          "height": 44
+        },
+        "idle_scene": {
+          "x": 51,
+          "y": 196.25,
+          "width": 1178,
+          "height": 662.625
+        },
+        "up_scene": {
+          "x": 51,
+          "y": 246.75,
+          "width": 1178,
+          "height": 662.625
+        },
+        "viewport_delta": 50.5,
+        "scene_relative_delta": 0
+      },
+      "expected": "relative <=1px; feedback may shift scene",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:45.029Z"
+    },
+    {
+      "name": "one click one actual inspect",
+      "actual": {
+        "point": "text-left",
+        "count": 1,
+        "correct": true
+      },
+      "expected": "1 correct inspect",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:45.029Z"
+    },
+    {
+      "name": "pointer starts on correct object",
+      "actual": {
+        "point": "label-edge",
+        "hit": "obj_source"
+      },
+      "expected": "obj_source",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:45.596Z"
+    },
+    {
+      "name": "hold180ms geometry stable",
+      "actual": {
+        "point": "label-edge",
+        "idle": {
+          "x": 442,
+          "y": 420.34375,
+          "width": 101.5,
+          "height": 44
+        },
+        "hover": {
+          "x": 442,
+          "y": 420.34375,
+          "width": 101.5,
+          "height": 44
+        },
+        "down": {
+          "x": 442,
+          "y": 420.34375,
+          "width": 101.5,
+          "height": 44
+        },
+        "max_delta": 0
+      },
+      "expected": "<=1px",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:45.976Z"
+    },
+    {
+      "name": "mouseup original point and geometry",
+      "actual": {
+        "point": "label-edge",
+        "event": {
+          "rect": {
+            "x": 442,
+            "y": 420.34375,
+            "width": 101.5,
+            "height": 44
+          },
+          "hit": "obj_source"
+        },
+        "max_delta": 0
+      },
+      "expected": "same target <=1px",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:46.136Z"
+    },
+    {
+      "name": "post-inspect scene-relative geometry stable",
+      "actual": {
+        "point": "label-edge",
+        "idle": {
+          "x": 442,
+          "y": 420.34375,
+          "width": 101.5,
+          "height": 44
+        },
+        "up": {
+          "x": 442,
+          "y": 420.34375,
+          "width": 101.5,
+          "height": 44
+        },
+        "idle_scene": {
+          "x": 51,
+          "y": 246.75,
+          "width": 1178,
+          "height": 662.625
+        },
+        "up_scene": {
+          "x": 51,
+          "y": 246.75,
+          "width": 1178,
+          "height": 662.625
+        },
+        "viewport_delta": 0,
+        "scene_relative_delta": 0
+      },
+      "expected": "relative <=1px; feedback may shift scene",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:46.136Z"
+    },
+    {
+      "name": "one click one actual inspect",
+      "actual": {
+        "point": "label-edge",
+        "count": 1,
+        "correct": true
+      },
+      "expected": "1 correct inspect",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:46.136Z"
+    },
+    {
+      "name": "pointer starts on correct object",
+      "actual": {
+        "point": "center",
+        "hit": "obj_source"
+      },
+      "expected": "obj_source",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:46.546Z"
+    },
+    {
+      "name": "hold180ms geometry stable",
+      "actual": {
+        "point": "center",
+        "idle": {
+          "x": 442,
+          "y": 420.34375,
+          "width": 101.5,
+          "height": 44
+        },
+        "hover": {
+          "x": 442,
+          "y": 420.34375,
+          "width": 101.5,
+          "height": 44
+        },
+        "down": {
+          "x": 442,
+          "y": 420.34375,
+          "width": 101.5,
+          "height": 44
+        },
+        "max_delta": 0
+      },
+      "expected": "<=1px",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:46.934Z"
+    },
+    {
+      "name": "mouseup original point and geometry",
+      "actual": {
+        "point": "center",
+        "event": {
+          "rect": {
+            "x": 442,
+            "y": 420.34375,
+            "width": 101.5,
+            "height": 44
+          },
+          "hit": "obj_source"
+        },
+        "max_delta": 0
+      },
+      "expected": "same target <=1px",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:47.104Z"
+    },
+    {
+      "name": "post-inspect scene-relative geometry stable",
+      "actual": {
+        "point": "center",
+        "idle": {
+          "x": 442,
+          "y": 420.34375,
+          "width": 101.5,
+          "height": 44
+        },
+        "up": {
+          "x": 442,
+          "y": 420.34375,
+          "width": 101.5,
+          "height": 44
+        },
+        "idle_scene": {
+          "x": 51,
+          "y": 246.75,
+          "width": 1178,
+          "height": 662.625
+        },
+        "up_scene": {
+          "x": 51,
+          "y": 246.75,
+          "width": 1178,
+          "height": 662.625
+        },
+        "viewport_delta": 0,
+        "scene_relative_delta": 0
+      },
+      "expected": "relative <=1px; feedback may shift scene",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:47.104Z"
+    },
+    {
+      "name": "one click one actual inspect",
+      "actual": {
+        "point": "center",
+        "count": 1,
+        "correct": true
+      },
+      "expected": "1 correct inspect",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:47.104Z"
+    },
+    {
+      "name": "Enter opens correct object once",
+      "actual": 1,
+      "expected": 1,
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:47.463Z"
+    },
+    {
+      "name": "hotspot disabled behind drawer",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:47.686Z"
+    },
+    {
+      "name": "disabled pointer sends no inspect",
+      "actual": 0,
+      "expected": 0,
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "utc": "2026-10-29T13:44:48.076Z"
+    },
+    {
+      "name": "pointer starts on correct object",
+      "actual": {
+        "point": "text-left",
+        "hit": "obj_source"
+      },
+      "expected": "obj_source",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:48.758Z"
+    },
+    {
+      "name": "hold180ms geometry stable",
+      "actual": {
+        "point": "text-left",
+        "idle": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "hover": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "down": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "max_delta": 0
+      },
+      "expected": "<=1px",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:49.141Z"
+    },
+    {
+      "name": "mouseup original point and geometry",
+      "actual": {
+        "point": "text-left",
+        "event": {
+          "rect": {
+            "x": 799.5,
+            "y": 370.53125,
+            "width": 101.5,
+            "height": 44
+          },
+          "hit": "obj_source"
+        },
+        "max_delta": 0
+      },
+      "expected": "same target <=1px",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:49.309Z"
+    },
+    {
+      "name": "post-inspect scene-relative geometry stable",
+      "actual": {
+        "point": "text-left",
+        "idle": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "up": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "idle_scene": {
+          "x": 521,
+          "y": 246.75,
+          "width": 878,
+          "height": 493.875
+        },
+        "up_scene": {
+          "x": 521,
+          "y": 246.75,
+          "width": 878,
+          "height": 493.875
+        },
+        "viewport_delta": 0,
+        "scene_relative_delta": 0
+      },
+      "expected": "relative <=1px; feedback may shift scene",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:49.309Z"
+    },
+    {
+      "name": "one click one actual inspect",
+      "actual": {
+        "point": "text-left",
+        "count": 1,
+        "correct": true
+      },
+      "expected": "1 correct inspect",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:49.309Z"
+    },
+    {
+      "name": "pointer starts on correct object",
+      "actual": {
+        "point": "label-edge",
+        "hit": "obj_source"
+      },
+      "expected": "obj_source",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:49.796Z"
+    },
+    {
+      "name": "hold180ms geometry stable",
+      "actual": {
+        "point": "label-edge",
+        "idle": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "hover": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "down": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "max_delta": 0
+      },
+      "expected": "<=1px",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:50.171Z"
+    },
+    {
+      "name": "mouseup original point and geometry",
+      "actual": {
+        "point": "label-edge",
+        "event": {
+          "rect": {
+            "x": 799.5,
+            "y": 370.53125,
+            "width": 101.5,
+            "height": 44
+          },
+          "hit": "obj_source"
+        },
+        "max_delta": 0
+      },
+      "expected": "same target <=1px",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:50.337Z"
+    },
+    {
+      "name": "post-inspect scene-relative geometry stable",
+      "actual": {
+        "point": "label-edge",
+        "idle": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "up": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "idle_scene": {
+          "x": 521,
+          "y": 246.75,
+          "width": 878,
+          "height": 493.875
+        },
+        "up_scene": {
+          "x": 521,
+          "y": 246.75,
+          "width": 878,
+          "height": 493.875
+        },
+        "viewport_delta": 0,
+        "scene_relative_delta": 0
+      },
+      "expected": "relative <=1px; feedback may shift scene",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:50.337Z"
+    },
+    {
+      "name": "one click one actual inspect",
+      "actual": {
+        "point": "label-edge",
+        "count": 1,
+        "correct": true
+      },
+      "expected": "1 correct inspect",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:50.337Z"
+    },
+    {
+      "name": "pointer starts on correct object",
+      "actual": {
+        "point": "center",
+        "hit": "obj_source"
+      },
+      "expected": "obj_source",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:50.758Z"
+    },
+    {
+      "name": "hold180ms geometry stable",
+      "actual": {
+        "point": "center",
+        "idle": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "hover": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "down": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "max_delta": 0
+      },
+      "expected": "<=1px",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:51.144Z"
+    },
+    {
+      "name": "mouseup original point and geometry",
+      "actual": {
+        "point": "center",
+        "event": {
+          "rect": {
+            "x": 799.5,
+            "y": 370.53125,
+            "width": 101.5,
+            "height": 44
+          },
+          "hit": "obj_source"
+        },
+        "max_delta": 0
+      },
+      "expected": "same target <=1px",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:51.316Z"
+    },
+    {
+      "name": "post-inspect scene-relative geometry stable",
+      "actual": {
+        "point": "center",
+        "idle": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "up": {
+          "x": 799.5,
+          "y": 370.53125,
+          "width": 101.5,
+          "height": 44
+        },
+        "idle_scene": {
+          "x": 521,
+          "y": 246.75,
+          "width": 878,
+          "height": 493.875
+        },
+        "up_scene": {
+          "x": 521,
+          "y": 246.75,
+          "width": 878,
+          "height": 493.875
+        },
+        "viewport_delta": 0,
+        "scene_relative_delta": 0
+      },
+      "expected": "relative <=1px; feedback may shift scene",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:51.316Z"
+    },
+    {
+      "name": "one click one actual inspect",
+      "actual": {
+        "point": "center",
+        "count": 1,
+        "correct": true
+      },
+      "expected": "1 correct inspect",
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:51.316Z"
+    },
+    {
+      "name": "Enter opens correct object once",
+      "actual": 1,
+      "expected": 1,
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:51.680Z"
+    },
+    {
+      "name": "hotspot disabled behind drawer",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:51.905Z"
+    },
+    {
+      "name": "disabled pointer sends no inspect",
+      "actual": 0,
+      "expected": 0,
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:52.284Z"
+    },
+    {
+      "name": "external requests",
+      "actual": 0,
+      "expected": 0,
+      "pass": true,
+      "entry": "v5",
+      "stage": "generic",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "utc": "2026-10-29T13:44:52.489Z"
+    }
+  ],
+  "issues": [],
+  "screenshots": [
+    "generic-1280-opened.png",
+    "generic-1920-opened.png"
+  ],
+  "exit_code": 0,
+  "owned_services_stopped": true,
+  "paid_calls": 0,
+  "player8001_contacted": false,
+  "limits": [
+    "Synthetic one-room fixtures; two desktop viewports only",
+    "Main old-CSS reproduction is development diagnosis, not this independent run",
+    "No full route/model quality/human acceptance claim"
+  ]
+}

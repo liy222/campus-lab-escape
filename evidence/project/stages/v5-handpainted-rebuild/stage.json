@@ -3,12 +3,21 @@
   "stage": "v5-handpainted-rebuild",
   "title": "雨夜天文社手绘重建与UI缺陷修复",
   "created_at": "2026-10-29T04:43:15.133689Z",
-  "technical_status": "passed_scoped_independent_ai_review",
+  "technical_status": "passed_scoped_independent_ai_review_after_hp01",
   "human_review_status": "not_reviewed",
   "owner_review_status": "not_reviewed",
   "peer_review_status": "not_reviewed",
-  "current_human_review_round": 1,
-  "human_review_rounds": {},
+  "current_human_review_round": 2,
+  "human_review_rounds": {
+    "1": {
+      "owner": "changes-requested",
+      "peer": "not_reviewed"
+    },
+    "2": {
+      "owner": "not_reviewed",
+      "peer": "not_reviewed"
+    }
+  },
   "collections": [],
   "scope": "经典与V5电脑端1280x720/1920x1080；4项UI修复、14px常用说明、15张手绘原图及12种共源特写；移除现行手机专用实现/测试要求",
   "art": {
@@ -24,5 +33,35 @@
   "project_provider_paid_calls": 0,
   "independent_ai_review_status": "passed_with_retained_harness_failures",
   "summary": "reviews/delivery.md",
-  "desktop_builds": "automated/desktop-cleanup-build1/result.json"
+  "desktop_builds": "automated/desktop-cleanup-build1/result.json",
+  "followup_issue": {
+    "id": "HP-01",
+    "summary": "按下场景物品名称时标签偏移、点击困难",
+    "status": "technically_fixed_pending_owner_recheck",
+    "feedback_event_id": "fb4c14d231464b89b70df10e4e225fed",
+    "cause": "普通按钮:active的transform覆盖了物品标签的translate(-50%,-50%)居中",
+    "diagnostic": {
+      "operator": "Main",
+      "kind": "原版本真实样式的隔离DOM，非实际玩法/API验收",
+      "source_commit": "a86b91b",
+      "path": "automated/hotspot-main-probe-2026-10-29T13-29-57-226Z/result.json",
+      "shift_x_css_px": 63.25,
+      "shift_y_css_px": 23,
+      "click_events_after_release": 0
+    },
+    "product_change": "frontend/src/v5/v5.css:43；通用active规则排除热点按钮",
+    "independent_review": "reviews/hotspot-pointer.md",
+    "hold_ms": 180,
+    "observed_hold_delta_css_px": 0,
+    "verified_viewports": [
+      [
+        1280,
+        720
+      ],
+      [
+        1920,
+        1080
+      ]
+    ]
+  }
 }

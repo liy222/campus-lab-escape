@@ -40,7 +40,7 @@
 .v5-shell button:hover:not(:disabled), .v5-game button:hover:not(:disabled), .v5-play-nav button:hover:not(:disabled) {
   border-color: var(--brass-lite); box-shadow: 0 3px 12px #0a1512a0;
 }
-.v5-shell button:active:not(:disabled), .v5-game button:active:not(:disabled) { transform: translateY(1px); }
+.v5-shell button:active:not(:disabled), .v5-game button:active:not(:disabled):not(.v5-hotspots button) { transform: translateY(1px); }
 .v5-shell button:disabled, .v5-game button:disabled { opacity: .55; cursor: not-allowed; }
 .v5-shell button:focus-visible, .v5-game button:focus-visible, .v5-play-nav button:focus-visible,
 .v5-shell input:focus-visible, .v5-shell select:focus-visible, .v5-shell textarea:focus-visible,

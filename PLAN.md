@@ -1,15 +1,17 @@
 # Plan
 
-## 当前阶段（2026-10-29）：手绘重建、UI修复与电脑端清理
+## 当前阶段（2026-10-29）：手绘阶段点击反馈修复
 
-按用户要求修复其他对话74eb523实现中独立复现的4项UI问题，重建雨夜天文社手绘包；随后扩大到整个项目移除手机专用功能及现行检查要求。工作基线440fc58，复用后端、规则、生成、AI、账号、API和存档。
+前阶段手绘/UI与电脑端清理已提交推送a86b91b。本人现反馈“点击场景中物品名字会偏移，很难点开”，当前优先HP-01定位修复；Main用原版本真实样式的隔离DOM复现标签右移63.25px/下移23px且抬起点击为0，证实普通按钮active变换覆盖了标签居中；一条CSS规则已修复；一次V5构建通过，实际游戏主题/通用两桌面按住180ms位移0、正确单次inspect、键盘及禁用检查已联合通过，控制器失败原件保留。当前待本人round-02复验。只改必要前端样式并集中窄验，复用后端、规则、生成、AI、账号、API和存档。
 
 - 已实现：通用钥匙场景/特写一致、通用结算中性、删档后面板焦点修复、缺图有限回退；常用说明14px。内置imagegen实际15次生成3背景+12物件/状态原图，场景与12种特写共用原图，包1.1.0。
 - 电脑范围：经典入口与V5仅用鼠标/键盘，检查1280×720、1920×1080；移除手机CSS、紧凑/触屏特化、手机键盘配置与可执行手机测试路径，保留通用窗口缩放与鼠标交互。历史原始证据不改写。
 - 当前技术进度：手绘/UI集中37项首轮36通过、1项原生确认框焦点断言过严；仅焦点澄清2项通过，原exit1保留。全项目电脑端清理类型/语法检查通过，classic与V5各构建一次exit0；经典R1/线路/CRT/R3与V5两桌面联合窄验完成，三次检查器适配失败原件保留，不称单次全绿。未重跑旧整轮或后端套件。
 - 交付：必要验证完成，本阶段一次正常liy222提交推送；本机8001效果入口和短检查步骤交本人集中核验，技术通过不当成本人接受。项目真实生成/伙伴/评价器新增付费0。
 
-[固定证据入口](evidence/project/README.md) · [本阶段记录](evidence/project/stages/v5-handpainted-rebuild/stage.json) · [独立QA](evidence/project/stages/v5-handpainted-rebuild/reviews/qa.md) · [本人待检查](evidence/project/human-reviews/v5-handpainted-rebuild/round-01/review.md)。此前E&O与归档已完成有限技术检查；本人已反馈生成/通关/注册/登录正常，要求改善UI/主题画面/素材。E&O逐条/真实同伴仍待确认。
+后续顺序：[点击修复→本人三房间体验→按反馈集中修正→确定下一主题包范围](docs/v5-build-plan.md#20-2026-10-29当前后续顺序点击修复与集中体验)。本人本次点击反馈已记录为需修改，不能推定接受其他效果。
+
+[固定证据入口](evidence/project/README.md) · [本阶段记录](evidence/project/stages/v5-handpainted-rebuild/stage.json) · [独立QA](evidence/project/stages/v5-handpainted-rebuild/reviews/qa.md) · [本人待检查](evidence/project/human-reviews/v5-handpainted-rebuild/round-02/review.md)。此前E&O与归档已完成有限技术检查；本人已反馈生成/通关/注册/登录正常，要求改善UI/主题画面/素材。E&O逐条/真实同伴仍待确认。
 
 按完整功能阶段推进，普通实现/修复自行完成；实际执行与失败及时归档，大阶段集中必要复核和Git同步，不恢复逐小步封条/回执。正式范围：[构建计划](docs/v5-build-plan.md)、[前端/美术计划](docs/v5-frontend-art-ui-plan.md)。
 

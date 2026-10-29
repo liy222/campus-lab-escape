@@ -2,7 +2,9 @@
 
 当前仅面向电脑浏览器，使用鼠标和键盘，检查尺寸1280×720、1920×1080。经典版与V5的手机专用界面和测试路径已退出当前范围；历史测试原件按原事实保留。
 
-2026-10-29新版手绘/UI修复与电脑端清理已完成有限技术检查；雨夜天文社使用15张内置生图原图。请从[8001本地入口](http://127.0.0.1:8001/)继续已有主题关卡；[交付摘要与实际结果](evidence/project/stages/v5-handpainted-rebuild/reviews/delivery.md)，[本人检查步骤](evidence/project/human-reviews/v5-handpainted-rebuild/round-01/review.md)。当前待本人核验。
+2026-10-29新版手绘/UI修复与电脑端清理已完成有限技术检查；雨夜天文社使用15张内置生图原图。请从[8001本地入口](http://127.0.0.1:8001/)继续已有主题关卡；[交付摘要与实际结果](evidence/project/stages/v5-handpainted-rebuild/reviews/delivery.md)，[本人检查步骤](evidence/project/human-reviews/v5-handpainted-rebuild/round-02/review.md)。当前待本人核验。
+
+名称点击跳位的HP-01已作一条CSS修复并完成定向联合检查；请刷新已有游戏页面复验。[原因与检查记录](evidence/project/stages/v5-handpainted-rebuild/reviews/hotspot-pointer.md)、[后续计划](docs/v5-build-plan.md#20-2026-10-29当前后续顺序点击修复与集中体验)。
 
 V5 目前是未发布的开发候选，启动、隔离与有限验证范围见本页末尾的 [V5 说明](#v5-开发候选未发布验收)。
 

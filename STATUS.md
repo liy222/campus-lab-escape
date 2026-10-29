@@ -4,7 +4,7 @@
 
 | 项目 | 当前情况 |
 |---|---|
-| 当前阶段 | 手绘重建、4项UI修复与全项目电脑端清理；技术范围联合通过，待本人检查 |
+| 当前阶段 | a86b91b手绘/UI与电脑端清理已交付；本人新反馈名称点击移位/困难，HP-01已最小CSS修复并完成定向联合检查，待本人round-02复验 |
 | 可体验功能 | 主题生成、1–3房间/难度、有限骨架、账号、提示/伙伴、多时刻存档；原后端/规则/API/存档格式复用 |
 | 美术 | rainy-astronomy 1.1.0，实际内置imagegen 15张：3背景+12物件/状态；12种特写共用原图，原矢量版保留 |
 | UI修复 | 通用钥匙错图、通用结算写死故事、删档后焦点外移、特写404无回退已修复；常用说明14px |
@@ -13,7 +13,11 @@
 | 体验入口 | http://127.0.0.1:8001/ ，或“启动新版.cmd”；已有主题关卡可继续看新画面，不必重新付费生成 |
 | 限制 | 目前只有雨夜天文社专属美术，其他主题回退通用手绘；无新增真实模型故事质量/真人难度结论；本人/同伴尚未验收 |
 
-本阶段[交付摘要](evidence/project/stages/v5-handpainted-rebuild/reviews/delivery.md)、[固定证据入口](evidence/project/README.md)、[技术记录](evidence/project/stages/v5-handpainted-rebuild/stage.json)、[独立QA报告](evidence/project/stages/v5-handpainted-rebuild/reviews/qa.md)、[真人检查步骤](evidence/project/human-reviews/v5-handpainted-rebuild/round-01/review.md)。项目真实生成/伙伴/评价器调用0；内置生图15次如实单列，未使用外部Key/CLI。
+本人本次[点击问题原话](evidence/project/human-reviews/v5-handpainted-rebuild/round-01/review.md)已按实际范围记录为需修改；其他视觉/整体体验尚未确认。后续步骤见[正式计划第20节](docs/v5-build-plan.md#20-2026-10-29当前后续顺序点击修复与集中体验)。
+
+点击修复[独立小结](evidence/project/stages/v5-handpainted-rebuild/reviews/hotspot-pointer.md)：一次V5构建exit0，主题/通用两桌面文字、边缘和中心按住180ms位移0；正确单次inspect、Enter和禁用状态通过。旧快速点击检查漏掉了保持按下状态，本次已补测；响应后新反馈造成整个场景下移50.5px单独记录，不当成标签相对场景跳位。[本人本轮复验](evidence/project/human-reviews/v5-handpainted-rebuild/round-02/review.md)未发生。
+
+本阶段[交付摘要](evidence/project/stages/v5-handpainted-rebuild/reviews/delivery.md)、[固定证据入口](evidence/project/README.md)、[技术记录](evidence/project/stages/v5-handpainted-rebuild/stage.json)、[独立QA报告](evidence/project/stages/v5-handpainted-rebuild/reviews/qa.md)、[真人检查步骤](evidence/project/human-reviews/v5-handpainted-rebuild/round-02/review.md)。项目真实生成/伙伴/评价器调用0；内置生图15次如实单列，未使用外部Key/CLI。
 
 此前74eb523的矢量主题/UI与其36项合成检查、440fc58的10项独立补查均保留原结果；本轮4项失败修复以新阶段证据核对，旧失败不改成通过。[原复核报告](evidence/project/stages/v5-rainy-astronomy-ui/reviews/root-review-20261029.md)。
 

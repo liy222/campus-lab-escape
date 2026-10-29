@@ -4,9 +4,11 @@
 
 ## 当前阶段：手绘重建、UI修复与电脑端清理
 
+2026-10-29追加HP-01名称点击修复：[真实反馈round-01](human-reviews/v5-handpainted-rebuild/round-01/review.md)、[独立检查](stages/v5-handpainted-rebuild/reviews/hotspot-pointer.md)、[修复后本人复验round-02](human-reviews/v5-handpainted-rebuild/round-02/review.md)。鼠标按下动效覆盖居中已修复，实际游戏定向联合通过；本人尚未复验。
+
 - [本阶段交付摘要](stages/v5-handpainted-rebuild/reviews/delivery.md)：4项UI修复、15张实际手绘原图、经典/V5电脑端范围；技术联合检查通过，待本人检查。
 - [手绘/UI独立QA](stages/v5-handpainted-rebuild/reviews/qa.md)、[电脑端构建](stages/v5-handpainted-rebuild/automated/desktop-cleanup-build1/result.json)、[最终桌面窄补](stages/v5-handpainted-rebuild/automated/desktop-smoke-2026-10-29T05-41-37-562Z-adadb34b/result.json)。各轮范围分开，原失败保留。
-- [阶段状态](stages/v5-handpainted-rebuild/stage.json)与[本人检查步骤](human-reviews/v5-handpainted-rebuild/round-01/review.md)：未收到本轮真人反馈，未登记接受。
+- [阶段状态](stages/v5-handpainted-rebuild/stage.json)与[本人检查步骤](human-reviews/v5-handpainted-rebuild/round-02/review.md)：round-01实际点击问题已记录为需修改，修复后的round-02尚未收到反馈，未登记接受。
 - [新版桌面实际截图](stages/v5-handpainted-rebuild/automated/desktop-smoke-2026-10-29T05-41-37-562Z-adadb34b/v5-desktop-1280.png)、[第三房间实际截图](stages/v5-handpainted-rebuild/automated/browser-2026-10-29T05-06-00-985Z-3c2b8e97/theme-G3.png)。均为自动截图，不冒充本人截图。
 
 ## 前一主题/UI来源
