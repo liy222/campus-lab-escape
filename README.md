@@ -2,6 +2,8 @@
 
 当前仅面向电脑浏览器，使用鼠标和键盘，检查尺寸1280×720、1920×1080。经典版与V5的手机专用界面和测试路径已退出当前范围；历史测试原件按原事实保留。
 
+2026-10-30人工生成已取消“每10分钟3次、每天10次”的累计次数上限；失败后可再次手动提交，已有任务在处理时等待它结束。原费用保护与一次请求不自动重试保持。[本轮诊断/检查](evidence/project/stages/v5-generation-attempts/stage.json)。
+
 2026-10-30生成入口改为选择已有主题：雨夜天文社、图书馆档案、化学实验室、计算机机房、校园广播室，默认雨夜天文社，不再手动输入主题；原生成、房数/难度与旧关卡保留。[本轮记录](evidence/project/stages/v5-theme-selection/stage.json)。
 
 2026-10-30五类主题内部变化扩充：新增31张原图，累计74张独立原图。每主题的三类房间各增加一套背景与独立布局，并增加同类资料、黄铜钥匙及四类设备成对状态外观。新关卡按固定标识选用，刷新和读档不变；旧关卡保留原外观，有限组合可重复。内置imagegen实际制作，提示和来源见[制作记录](output/art-concepts/theme-variation/README.md)，[本轮计划](docs/v5-theme-variation-plan.md)、[技术阶段](evidence/project/stages/v5-theme-variation/stage.json)、[本人检查入口](evidence/project/human-reviews/v5-theme-variation/round-01/review.md)。已完成一次V5构建和194条独立定向检查，待本人集中核验。

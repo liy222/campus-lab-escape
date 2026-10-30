@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "stage": "v5-generation-attempts",
+  "title": "取消人工生成次数上限",
+  "created_at": "2026-10-30T09:37:54.396009Z",
+  "technical_status": "complete_preview_reloaded_pending_human_review",
+  "human_review_status": "not_reviewed",
+  "owner_review_status": "product_and_test_diff_reviewed",
+  "peer_review_status": "not_reviewed",
+  "current_human_review_round": 1,
+  "human_review_rounds": {},
+  "collections": [],
+  "source_commit": "77058c0",
+  "independent_qa_status": "8_targeted_tests_passed",
+  "real_model_calls": 0,
+  "paid_calls": 0,
+  "scope": "取消人工生成3/10分钟和10/日累计次数限制；保留在途、幂等、费用与严格内容准入",
+  "validation": {
+    "command": "python -B -X utf8 -m pytest -q (4 affected node selections; see qa.md)",
+    "exit_code": 0,
+    "passed": 8,
+    "log": "automated/qa-20261030T093953009Z/pytest.log",
+    "exit_record": "automated/qa-20261030T093953009Z/exit-code.txt",
+    "qa_report": "reviews/qa.md",
+    "preview_restart": "logs/preview-restart.json",
+    "build_runs": 0,
+    "browser_runs": 0
+  },
+  "diagnosis": {
+    "recent_rejected_tasks": 3,
+    "safe_reason": "narrative",
+    "exact_content_cause": "unknown/not retained in safe log",
+    "generation_quality_fixed": false,
+    "read_only_metadata": "logs/latest-failures-summary.json"
+  }
+}

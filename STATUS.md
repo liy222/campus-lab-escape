@@ -4,12 +4,13 @@
 
 | 项目 | 当前情况 |
 |---|---|
-| 当前阶段 | 生成入口改为五个已有主题选择，默认雨夜天文社；有限技术检查完成，待本人检查 |
+| 当前阶段 | 人工生成已取消每10分钟/每日累计次数上限，8项定向检查通过；自有预览重启生效，待本人检查 |
 | 可体验功能 | 主题生成、1–3房间/难度、有限骨架、账号、提示/伙伴、多时刻存档；原后端/规则/API/存档格式复用 |
 | 美术 | 本轮新增15背景、8资料/钥匙、8设备状态，共31新原图；累计74个独立图片来源。五主题每房型两布局，设备两款外观各成对，特写共源 |
 | UI修复 | 通用钥匙错图、通用结算写死故事、删档后焦点外移、特写404无回退已修复；常用说明14px |
 | 电脑端范围 | 经典与V5仅鼠标/键盘、1280×720和1920×1080；手机专用布局/模式/键盘配置与现行手机测试路径已移除；历史原始结果保留 |
-| 本轮验证 | V5构建exit0；五选项/覆盖/单次Synthetic提交/两桌面通过，原键盘断言失败后fresh键盘窄补exit0；两轮exit1保留，不称一轮全绿，真实调用0 |
+| 本轮验证 | 一次定向pytest 8项exit0；历史失败/超过10次后可创建，记录保留、重复请求/并发/预算拒绝保持；0真实调用，无新build/browser |
+| 主题选择验证 | 前阶段V5构建exit0；五选项/单次Synthetic提交/两桌面及fresh键盘联合范围完成，原两轮exit1保留 |
 | 素材变化验证 | 前阶段一次V5构建exit0、194/194独立定向记录通过；实际游戏两桌面/reload、HTTP与file图集通过。原派生计数字段错误保留并映射更正，不重跑，真实调用0 |
 | 前批素材库验证 | 一次V5构建exit0、68静态检查与四主题有限联合范围通过；原2次列表/就绪提示超时保留，不当成本轮新执行 |
 | SP-01验证 | 新模块49通过、受影响旧输入20通过、通道UI11通过、generic渲染窄验13通过；两次必要V5构建通过，检查器失败与执行时点分开保存，真实调用0 |
@@ -17,7 +18,7 @@
 | 体验入口 | 直接双击[美术图集.html](美术图集.html)或[网页图集](http://127.0.0.1:8001/art-themes/campus-theme-library.html)；游戏仍为8001或“启动新版.cmd”，新关卡稳定选用搭配；旧关卡保留原外观与进度 |
 | 限制 | 专属素材覆盖五类主题族，其他主题回退通用图；快速Synthetic任务列表/就绪提示更新边界保留，必要时使用现有刷新列表；真实AI质量/本人/同伴尚未确认 |
 
-当前[主题选择记录](evidence/project/stages/v5-theme-selection/stage.json)与[本人检查](evidence/project/human-reviews/v5-theme-selection/round-01/review.md)。前阶段[变化扩充计划](docs/v5-theme-variation-plan.md)、[技术阶段](evidence/project/stages/v5-theme-variation/stage.json)与[本人检查](evidence/project/human-reviews/v5-theme-variation/round-01/review.md)。前批[主题库交付](evidence/project/stages/v5-campus-theme-library/reviews/delivery.md)与[本人待检查](evidence/project/human-reviews/v5-campus-theme-library/round-01/review.md)。以下保留前阶段实际范围，不能当成本轮新执行或真人接受。
+当前[次数调整记录](evidence/project/stages/v5-generation-attempts/stage.json)与[本人步骤](evidence/project/human-reviews/v5-generation-attempts/round-01/review.md)。前阶段[主题选择记录](evidence/project/stages/v5-theme-selection/stage.json)与[本人检查](evidence/project/human-reviews/v5-theme-selection/round-01/review.md)。前阶段[变化扩充计划](docs/v5-theme-variation-plan.md)、[技术阶段](evidence/project/stages/v5-theme-variation/stage.json)与[本人检查](evidence/project/human-reviews/v5-theme-variation/round-01/review.md)。前批[主题库交付](evidence/project/stages/v5-campus-theme-library/reviews/delivery.md)与[本人待检查](evidence/project/human-reviews/v5-campus-theme-library/round-01/review.md)。以下保留前阶段实际范围，不能当成本轮新执行或真人接受。
 
 本人本次[点击问题原话](evidence/project/human-reviews/v5-handpainted-rebuild/round-01/review.md)已按实际范围记录为需修改；画风/主题随后获局部认可，整体体验尚未确认。后续步骤见[正式计划第20节](docs/v5-build-plan.md#20-2026-10-29当前后续顺序点击修复与集中体验)。
 

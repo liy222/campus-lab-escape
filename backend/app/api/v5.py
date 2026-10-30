@@ -219,7 +219,7 @@ async def new_job(request:Request,background_tasks:BackgroundTasks):
     if len(keys)!=1 or not keys[0].strip() or len(keys[0])>256 or any(ord(c)<33 or ord(c)>126 for c in keys[0]): raise APIError(422,'AI_KEY_REQUIRED','生成关卡需要临时 API Key。')
     key=keys[0]; raw=raw.model_copy(update={'theme':raw.theme.replace(key,'[REDACTED]').replace(request.cookies.get(COOKIE) or '\0','[REDACTED]')})
     status,item,dispatch=request.app.state.v5_database.reserve_job(p['user_id'],raw)
-    if item is None: return failure(status,'REQUEST_ID_CONFLICT' if status==409 else 'GENERATION_LIMIT_REACHED','同一请求标识不能更改内容。' if status==409 else '生成名额或频率已达上限，请稍后重试。')
+    if item is None: return failure(status,'REQUEST_ID_CONFLICT' if status==409 else 'GENERATION_LIMIT_REACHED','同一请求标识不能更改内容。' if status==409 else '当前已有生成任务正在处理，请等待任务结束后再生成。')
     if dispatch: background_tasks.add_task(generate,request.app,p['user_id'],item['job_id'],raw,key)
     return success({'job':item},status)
 @router.get('/levels')

@@ -1,6 +1,10 @@
 # Plan
 
-## 当前阶段（2026-10-30）：生成入口选择已有主题
+## 当前阶段（2026-10-30）：取消人工生成累计次数上限
+
+按用户要求移除3/10分钟与10/日次数门，保留在途/幂等与费用约束；8项独立受影响检查通过，自有预览已重启生效、health200，待本人核验。[本轮记录](evidence/project/stages/v5-generation-attempts/stage.json) · [真人步骤](evidence/project/human-reviews/v5-generation-attempts/round-01/review.md)。最近三次为narrative拒绝，仅定位阶段，未修内容质量；没有新增真实/付费调用。
+
+## 前阶段（2026-10-30）：生成入口选择已有主题
 
 按用户要求，用五项选择替代自由输入，原生成体系/旧关卡保持；仅改Workspace.tsx，一次V5构建及有限联合检查完成，原检查器失败保留，待本人查看入口。[总计划第24节](docs/v5-build-plan.md#24-2026-10-30-生成入口选择已有主题) · [本轮记录](evidence/project/stages/v5-theme-selection/stage.json) · [本人检查](evidence/project/human-reviews/v5-theme-selection/round-01/review.md)。本轮集中提交推送、交本人看入口；0真实/付费调用。
 

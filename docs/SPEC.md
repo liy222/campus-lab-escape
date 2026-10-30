@@ -282,7 +282,7 @@ v3.4 提示保留原六主题十八条受限推理文案；新增请求时依据
 |GEN-01–04|1–3房间与三种结构难度；严格数据草稿→确定性编译→规划与真实规则回放→不可变定义；只有ready可玩；失败/未知不重发|v2生成API、tests/v5/test_kernel.py、test_generation.py|
 |USER-01–03|小写唯一用户名、Argon2id；服务端Cookie、轮换/撤销/期限/限速；所有私人列表和资源先认证再归属校验|test_auth.py、test_security.py|
 |KEY-01–02|Key只页面内存及请求/官方认证头，禁止落库/模型内容/URL/日志；换身份、免费、恢复/reset等清理；旧身份迟到结果不写入|test_generation.py、test_security.py、真实浏览器隔离Canary|
-|COST-01–02|每用户1/global2在途，3/10分钟、10/北京时间日；生成6000/60秒、整项90秒；伙伴600/20秒；原账本10元，单次保守峰值先预留；没有自动重试|临时账本+MockTransport、生成任务/重放/未知测试|
+|COST-01–02|每用户1/global2在途，人工创建不按累计成功或失败次数限流；生成6000/60秒、整项90秒；伙伴600/20秒；原账本10元，单次保守峰值先预留；没有自动重试|临时账本+MockTransport、生成任务/重放/未知测试|
 |SAVE-01–02、SYNC-01|复用Store事务/回执/revision/generation；档绑定身份/会话/关卡/hash/版本；选择恢复后新generation；坏档拒绝且不覆盖；reset保留档；删除不改当前事实|test_integration.py及真实浏览器|
 |AI-01–02|免费分级只看公开状态；伙伴仅当前公开投影、最近至多3轮成功对话和3条无参数动作；无工具/提案/代执行；双层最终校验；失败/本地提醒不算成功帮助|test_generation.py、test_integration.py；真实质量单独标注|
 |WEB-01–02、API-01|精确Host/Origin、单一CSRF/context、JSON与16KiB限制、CSP/无敏感静态文件/无旧匿名路由；契约见contracts/v2|contracts/v2/check_contracts.py与test_security.py|

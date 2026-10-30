@@ -8,7 +8,6 @@ import sqlite3
 import threading
 import time
 from contextlib import closing
-from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from argon2 import PasswordHasher
 from argon2.exceptions import VerificationError
@@ -202,8 +201,6 @@ class V5Database:
             if old: return (200,self.job_public(old),False) if old['request_hash']==hashed else (409,None,False)
             pending=c.execute("SELECT user_id FROM level_generations WHERE status IN ('pending','generating','validating')").fetchall()
             if len(pending)>=2 or any(r['user_id']==uid for r in pending): return 429,None,False
-            day=datetime.now(timezone(timedelta(hours=8))).replace(hour=0,minute=0,second=0,microsecond=0).timestamp()
-            if c.execute('SELECT COUNT(*) FROM level_generations WHERE user_id=? AND created_at>?',(uid,now-600)).fetchone()[0]>=3 or c.execute('SELECT COUNT(*) FROM level_generations WHERE user_id=? AND created_at>=?',(uid,day)).fetchone()[0]>=10: return 429,None,False
             job_id=new_id()
             c.execute('INSERT INTO level_generations VALUES(?,?,?,?,?,?,?,?,?,?,?,?)',(job_id,uid,request.request_id,hashed,request.theme,request.room_count,request.difficulty,'pending',now,now,None,None))
             self.record_job_event(c,job_id,'pending',reason='requested',counts={

@@ -156,18 +156,42 @@ def test_concurrent_jobs_per_user_global_and_replay(system):
         assert f1.result(timeout=10).status_code==202 and f2.result(timeout=10).status_code==202
     assert count==2 and c.get('/level-generations').json()['data']['jobs']==[]
 
-def test_generation_ten_minute_and_day_limits(actor,system):
-    db=system[0].state.v5_database; uid=actor.auth['user']['user_id']
-    for _ in range(3): actor.generate()
-    body={'request_id':rid(),'theme':'limited','room_count':1,'difficulty':'easy'}
-    assert_error(actor.post('/level-generations',body,headers={'X-AI-Api-Key':CANARY}),429,'GENERATION_LIMIT_REACHED')
-    # Retain today's records outside 10m; then create the remainder by the same reservation API.
-    with db.transaction() as c: c.execute('UPDATE level_generations SET created_at=?',(time.time()-601,))
-    for _ in range(7):
-        status,item,_=db.reserve_job(uid,GenerationRequest(**{**body,'request_id':rid()})); assert status==202
-        db.job_phase(item['job_id'],'failed')
-        with db.transaction() as c: c.execute('UPDATE level_generations SET created_at=? WHERE job_id=?',(time.time()-601,item['job_id']))
-    assert_error(actor.post('/level-generations',{**body,'request_id':rid()},headers={'X-AI-Api-Key':CANARY}),429,'GENERATION_LIMIT_REACHED')
+def test_generation_attempts_do_not_accumulate_limits_and_replay_is_idempotent(actor,system):
+    db,generator=system[0].state.v5_database,system[1]
+    uid=actor.auth['user']['user_id']
+    generator.error=ServiceError('MODEL_UNAVAILABLE')
+    failed_ids=[]
+    for _ in range(4):
+        body={'request_id':rid(),'theme':'synthetic failure history','room_count':1,'difficulty':'easy'}
+        response=actor.post('/level-generations',body,headers={'X-AI-Api-Key':CANARY})
+        assert response.status_code==202
+        job=response.json()['data']['job']
+        failed_ids.append(job['job_id'])
+        assert actor.get('/level-generations/'+job['job_id']).json()['data']['job']['status']=='failed'
+    assert len(generator.calls)==4
+
+    generator.error=None
+    completed_ids=[actor.generate()['job_id'] for _ in range(11)]
+    assert len(generator.calls)==15
+    new_body={'request_id':rid(),'theme':'after prior attempts','room_count':1,'difficulty':'easy'}
+    accepted=actor.post('/level-generations',new_body,headers={'X-AI-Api-Key':CANARY})
+    assert accepted.status_code==202
+    new_job=accepted.json()['data']['job']
+    assert actor.get('/level-generations/'+new_job['job_id']).json()['data']['job']['status']=='ready'
+    calls_after_new_request=len(generator.calls)
+    assert calls_after_new_request==16
+
+    replayed=actor.post('/level-generations',new_body,headers={'X-AI-Api-Key':'SYNTHETIC-DIFFERENT-KEY'})
+    assert replayed.status_code==200
+    assert replayed.json()['data']['job']['job_id']==new_job['job_id']
+    assert len(generator.calls)==calls_after_new_request
+
+    retained=actor.get('/level-generations').json()['data']['jobs']
+    retained_by_id={job['job_id']:job['status'] for job in retained}
+    assert all(retained_by_id.get(jid)=='failed' for jid in failed_ids)
+    assert all(retained_by_id.get(jid)=='ready' for jid in completed_ids)
+    assert retained_by_id.get(new_job['job_id'])=='ready'
+    assert len(retained)==16
 
 def test_generation_finished_after_identity_switch_stays_with_original_owner(actor,system):
     app,_=system; b=Actor(app).authenticate('qa_beta'); db=app.state.v5_database

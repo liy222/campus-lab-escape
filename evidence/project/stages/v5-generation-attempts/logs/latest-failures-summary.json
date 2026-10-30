@@ -1,0 +1,53 @@
+{
+  "observed_at_utc": "2026-10-30T09:38:08.200576+00:00",
+  "operator": "Main",
+  "method": "SQLite URI mode=ro; SELECT recent3 task metadata and last safe event only",
+  "source": "data/game-v5.sqlite (private database retained in place)",
+  "baseline": "77058c0",
+  "metadata_only": true,
+  "database_written": false,
+  "credentials_or_raw_content_read": false,
+  "recent_jobs": [
+    {
+      "job_id": "a68c576fd44145b99146d41cbc88422d",
+      "status": "rejected",
+      "error_code": "MODEL_INVALID_OUTPUT",
+      "room_count": 2,
+      "difficulty": "normal",
+      "created_at": 1793352231.5298865,
+      "last_event": {
+        "stage": "rejected",
+        "reason": "narrative",
+        "recorded_at": "2026-10-30T09:23:55.777231Z"
+      }
+    },
+    {
+      "job_id": "ed7452719f1a4135b1b45efc54b89b91",
+      "status": "rejected",
+      "error_code": "MODEL_INVALID_OUTPUT",
+      "room_count": 2,
+      "difficulty": "normal",
+      "created_at": 1793352224.5464644,
+      "last_event": {
+        "stage": "rejected",
+        "reason": "narrative",
+        "recorded_at": "2026-10-30T09:23:47.386195Z"
+      }
+    },
+    {
+      "job_id": "24db6eaf6f5640baa4d2e6ae6358d69d",
+      "status": "rejected",
+      "error_code": "MODEL_INVALID_OUTPUT",
+      "room_count": 2,
+      "difficulty": "normal",
+      "created_at": 1793352211.4135802,
+      "last_event": {
+        "stage": "rejected",
+        "reason": "narrative",
+        "recorded_at": "2026-10-30T09:23:39.964520Z"
+      }
+    }
+  ],
+  "finding": "Latest three rejected at narrative stage; existing reserve_job counts all outcomes towards 3/10min and10/day",
+  "limitation": "Safe log has no exact rejected sentence/name; generation-quality cause remains unresolved"
+}

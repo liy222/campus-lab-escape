@@ -2,7 +2,11 @@
 
 今后从这里读取、整理和提交证据。开发中每次实际检查、失败、修复和反馈及时保存，大阶段结束再集中交付并邀请真人核验。
 
-## 当前阶段：生成入口选择已有主题
+## 当前阶段：取消人工生成累计次数上限
+
+移除3/10分钟、10/日累计门，保留原在途/幂等/费用约束。8项独立窄验通过：[阶段](stages/v5-generation-attempts/stage.json) · [只读失败阶段诊断](stages/v5-generation-attempts/logs/latest-failures-summary.json) · [独立QA](stages/v5-generation-attempts/reviews/qa.md) · [本人步骤](human-reviews/v5-generation-attempts/round-01/review.md)。次数修复不代表narrative拒绝质量已修。
+
+## 前阶段：生成入口选择已有主题
 
 五个已有主题选择替代自由输入，保持原生成链与旧关卡。必要联合检查完成，待本人查看：[交付/局限](stages/v5-theme-selection/reviews/delivery.md) · [独立QA](stages/v5-theme-selection/reviews/qa.md) · [本轮记录](stages/v5-theme-selection/stage.json) · [本人检查](human-reviews/v5-theme-selection/round-01/review.md)。0真实/付费调用，不重跑旧全套。
 
