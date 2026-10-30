@@ -3,12 +3,17 @@
   "stage": "v5-generation-reliability",
   "title": "关卡生成可靠性改进与有限成功率测试准备",
   "created_at": "2026-10-30T10:00:43.288782Z",
-  "technical_status": "finite_real_batch_complete_pending_human_review",
-  "human_review_status": "not_reviewed",
-  "owner_review_status": "product_diff_and_finite_runner_reviewed",
+  "technical_status": "finite_real_batch_complete",
+  "human_review_status": "accepted",
+  "owner_review_status": "accepted",
   "peer_review_status": "not_reviewed",
   "current_human_review_round": 1,
-  "human_review_rounds": {},
+  "human_review_rounds": {
+    "1": {
+      "owner": "accepted",
+      "peer": "not_reviewed"
+    }
+  },
   "collections": [],
   "source_commit": "7b20e34",
   "scope": "逐装置命名要求共源/提示澄清/安全诊断细分及有限真实采样准备；不放宽准入",
@@ -55,5 +60,12 @@
   "automatic_retries": 0,
   "remaining_authorized_calls": 0,
   "independent_real_review_status": "finite_read_only_evidence_review_passed",
-  "independent_real_review": "reviews/real-qa.md"
+  "independent_real_review": "reviews/real-qa.md",
+  "technical_owner_review_status": "product_diff_and_finite_runner_reviewed",
+  "human_review_scope": "仅确认本人实测关卡生成成功率提升，定性结论；不是整体版本或故事/美术质量接受",
+  "human_feedback_event": "19fc29390ee949c08a08b53381735dc1",
+  "human_reported_generation_improvement": true,
+  "human_reported_attempt_count": null,
+  "human_reported_success_rate": null,
+  "overall_version_acceptance": "not_confirmed"
 }

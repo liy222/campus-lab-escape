@@ -4,7 +4,7 @@
 
 | 项目 | 当前情况 |
 |---|---|
-| 当前阶段 | 生成可靠性改进：逐装置名称指导与安全原因细分已实现，离线必要窄验完成且预览生效；获批6个真实受控样本全部准入及EXIT回放，待本人体验 |
+| 当前阶段 | 生成可靠性改进：逐装置名称指导与安全原因细分已实现，离线必要窄验完成且预览生效；获批6个真实受控样本全部准入及EXIT回放；本人随后实测确认生成成功率提升（定性） |
 | 可体验功能 | 主题生成、1–3房间/难度、有限骨架、账号、提示/伙伴、多时刻存档；原后端/规则/API/存档格式复用 |
 | 美术 | 本轮新增15背景、8资料/钥匙、8设备状态，共31新原图；累计74个独立图片来源。五主题每房型两布局，设备两款外观各成对，特写共源 |
 | UI修复 | 通用钥匙错图、通用结算写死故事、删档后焦点外移、特写404无回退已修复；常用说明14px |
@@ -17,7 +17,7 @@
 | SP-01验证 | 新模块49通过、受影响旧输入20通过、通道UI11通过、generic渲染窄验13通过；两次必要V5构建通过，检查器失败与执行时点分开保存，真实调用0 |
 | 前阶段验证 | 手绘/UI首轮37项36通过、1项过严原生焦点断言；仅焦点澄清2项通过，原exit1保留。清理类型/语法检查exit0；classic/V5构建各一次exit0，R1/线路/CRT/R3与V5两桌面联合窄验完成，三次检查器适配失败保留 |
 | 体验入口 | 直接双击[美术图集.html](美术图集.html)或[网页图集](http://127.0.0.1:8001/art-themes/campus-theme-library.html)；游戏仍为8001或“启动新版.cmd”，新关卡稳定选用搭配；旧关卡保留原外观与进度 |
-| 限制 | 专属素材覆盖五类主题族，其他主题回退通用图；快速Synthetic任务列表/就绪提示更新边界保留，必要时使用现有刷新列表；真实AI质量/本人/同伴尚未确认 |
+| 限制 | 专属素材覆盖五类主题族，其他主题回退通用图；快速Synthetic任务列表/就绪提示更新边界保留，必要时使用现有刷新列表；生成成功率改善已获本人定性确认；故事质量、整体接受及同伴核验仍未确认 |
 
 当前[可靠性计划](docs/v5-generation-reliability-plan.md)与[阶段](evidence/project/stages/v5-generation-reliability/stage.json)。前阶段[次数调整记录](evidence/project/stages/v5-generation-attempts/stage.json)与[本人步骤](evidence/project/human-reviews/v5-generation-attempts/round-01/review.md)。前阶段[主题选择记录](evidence/project/stages/v5-theme-selection/stage.json)与[本人检查](evidence/project/human-reviews/v5-theme-selection/round-01/review.md)。前阶段[变化扩充计划](docs/v5-theme-variation-plan.md)、[技术阶段](evidence/project/stages/v5-theme-variation/stage.json)与[本人检查](evidence/project/human-reviews/v5-theme-variation/round-01/review.md)。前批[主题库交付](evidence/project/stages/v5-campus-theme-library/reviews/delivery.md)与[本人待检查](evidence/project/human-reviews/v5-campus-theme-library/round-01/review.md)。以下保留前阶段实际范围，不能当成本轮新执行或真人接受。
 
