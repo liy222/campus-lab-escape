@@ -3,12 +3,17 @@
   "stage": "v5-delivery-wrapup",
   "title": "V5整体交付总览与接管收尾",
   "created_at": "2026-10-30T13:55:12.948296Z",
-  "technical_status": "documentation_complete_pending_overall_human_review",
-  "human_review_status": "not_reviewed",
-  "owner_review_status": "not_reviewed",
+  "technical_status": "documentation_complete_human_playthrough_confirmed",
+  "human_review_status": "accepted",
+  "owner_review_status": "accepted",
   "peer_review_status": "not_reviewed",
   "current_human_review_round": 1,
-  "human_review_rounds": {},
+  "human_review_rounds": {
+    "1": {
+      "owner": "accepted",
+      "peer": "not_reviewed"
+    }
+  },
   "collections": [],
   "baseline_commit": "7bd8c40",
   "scope": "既有功能/实际证据/真人反馈总览、当前要求更正与接管文档；不新增玩法或扩大验收",
@@ -39,5 +44,9 @@
     },
     "qa_report_link_check_exit_code": 0
   },
-  "delivery_report": "reviews/delivery.md"
+  "delivery_report": "reviews/delivery.md",
+  "human_confirmation_source_commit": "32eed7c",
+  "human_confirmed_scope": "本人反馈本次测试成功并正常通关，附一张正常结算原图；未逐项描述其他检查。",
+  "five_theme_itemized_acceptance": "not_explicitly_confirmed",
+  "full_release_acceptance": "not_explicitly_confirmed"
 }

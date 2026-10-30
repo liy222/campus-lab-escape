@@ -2,7 +2,7 @@
 
 ## 当前阶段（2026-10-30）：整体验收与接管收尾
 
-汇总既有功能、26项要求证据、有限本人反馈与剩余问题，形成[当前交付总览](docs/V5-DELIVERY.md)和[最新接管包](docs/HANDOFF-20261030.md)，同步README/发布说明的当前入口，修正现行P05残留手机尺寸。文档与一次独立只读复核完成：26项需求及144个本地链接有效，初始提取器3个文字误报原件保留并经独立AI实读消解。未运行产品全套/build/付费或刷新旧登记。[实际交付](evidence/project/stages/v5-delivery-wrapup/reviews/delivery.md)。整版本人接受仍待明确，分阶段接受保持原范围。
+汇总既有功能、26项要求证据、有限本人反馈与剩余问题，形成[当前交付总览](docs/V5-DELIVERY.md)和[最新接管包](docs/HANDOFF-20261030.md)，同步README/发布说明的当前入口，修正现行P05残留手机尺寸。文档与一次独立只读复核完成：26项需求及144个本地链接有效，初始提取器3个文字误报原件保留并经独立AI实读消解。未运行产品全套/build/付费或刷新旧登记。[实际交付](evidence/project/stages/v5-delivery-wrapup/reviews/delivery.md)。本人随后反馈“测试成功，正常通关”并附结算原图，已保存[本次真人反馈](evidence/project/human-reviews/v5-delivery-wrapup/round-01/review.md)；确认本次正常通关，五主题逐项和整版发布接受仍未明确，分阶段接受保持原范围。
 
 ## 前阶段（2026-10-30）：临时API Key界面安全与交付收尾
 

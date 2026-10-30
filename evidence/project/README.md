@@ -4,7 +4,7 @@
 
 ## 当前阶段：整体验收与接管收尾
 
-[当前功能与26项证据总览](../../docs/V5-DELIVERY.md) · [最新接管包](../../docs/HANDOFF-20261030.md) · [阶段](stages/v5-delivery-wrapup/stage.json)。当前资料与独立只读复核完成，26Req/144本地链接有效；原提取器文字误报保留并经AI实读消解。[本轮实际结果](stages/v5-delivery-wrapup/reviews/delivery.md)。产品测试/build/模型0，旧登记保持，整体本人检查仍待反馈。
+[当前功能与26项证据总览](../../docs/V5-DELIVERY.md) · [最新接管包](../../docs/HANDOFF-20261030.md) · [阶段](stages/v5-delivery-wrapup/stage.json)。当前资料与独立只读复核完成，26Req/144本地链接有效；原提取器文字误报保留并经AI实读消解。[本轮实际结果](stages/v5-delivery-wrapup/reviews/delivery.md)。产品测试/build/模型0，旧登记保持，本人随后已反馈本次测试成功、正常通关，并附一张结算原图；[原话及图源](human-reviews/v5-delivery-wrapup/round-01/review.md)已保存，五主题逐项和整版发布不自动接受。
 
 ## 前阶段：临时API Key界面安全收尾
 
