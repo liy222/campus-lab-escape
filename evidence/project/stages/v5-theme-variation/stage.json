@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "stage": "v5-theme-variation",
+  "title": "五类主题内部美术变化扩充",
+  "created_at": "2026-10-30T04:44:56.268644Z",
+  "technical_status": "complete_pending_human_review",
+  "human_review_status": "not_reviewed",
+  "owner_review_status": "finite_source_and_image_review_complete",
+  "peer_review_status": "not_reviewed",
+  "current_human_review_round": 1,
+  "human_review_rounds": {},
+  "collections": [],
+  "source_commit": "bf434ed",
+  "catalog_additions_available_from": "2026-10-30T04:44:56.276Z",
+  "scope": "现有五类主题增加背景/布局和物件候选；按关卡稳定选用，旧关卡保持旧外观；不改后端/机械规则/API/存档",
+  "planned_new_originals": 31,
+  "image_tool_calls": 31,
+  "project_provider_paid_calls": 0,
+  "copied_originals": 31,
+  "manifests_installed": true,
+  "independent_qa_status": "passed_with_disclosed_derived_counter_correction",
+  "gallery_image_elements": 86,
+  "unique_runtime_original_images": 74,
+  "real_project_model_calls": 0,
+  "validation": {
+    "build": "automated/build-2026-10-30T05-43-52-429Z-5d393833/result.json",
+    "build_exit": 0,
+    "targeted": "automated/qa-2026-10-30T05-44-19-562Z-49c3ea93/result.json",
+    "targeted_exit": 0,
+    "checks_passed": 194,
+    "checks_total": 194,
+    "derived_counter_correction": "automated/mapping-2026-10-30T05-46-07-766Z-8f266a12/result.json",
+    "report": "reviews/qa.md",
+    "main_delivery": "reviews/delivery.md"
+  },
+  "limitations": [
+    "Finite combinations may repeat",
+    "Five theme families only; shared devices",
+    "One Synthetic game sample, new-layout completion image is a labelled model probe",
+    "No real AI quality retest or human acceptance",
+    "Original selected_new_source_count=0 is invalid; preserved and corrected by read-only mapping"
+  ]
+}

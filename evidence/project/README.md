@@ -2,7 +2,11 @@
 
 今后从这里读取、整理和提交证据。开发中每次实际检查、失败、修复和反馈及时保存，大阶段结束再集中交付并邀请真人核验。
 
-## 当前阶段：四类校园主题素材库
+## 当前阶段：五类主题内部变化扩充
+
+新31原图（15背景、8资料/钥匙、8设备状态）与稳定选图已接入，已完成一次V5构建和194条独立定向检查，待本人集中核验。固定入口：[交付/限制](stages/v5-theme-variation/reviews/delivery.md) · [独立QA](stages/v5-theme-variation/reviews/qa.md) · [阶段](stages/v5-theme-variation/stage.json) · [评价标准](stages/v5-theme-variation/evaluation/criteria.md) · [制作日志](stages/v5-theme-variation/logs/image-generation.json) · [本人待检查](human-reviews/v5-theme-variation/round-01/review.md) · [本地图集](../../美术图集.html)。累计74个独立图片来源；图集86卡片中的共享重复不另计。
+
+## 前阶段：四类校园主题素材库
 
 28张新原图已接入图书馆、化学实验室、机房和广播室；原天文社保留，通用物件共享。[本地双击图集](../../美术图集.html)（无需启动服务） · [网页图集](http://127.0.0.1:8001/art-themes/campus-theme-library.html) · [交付/限制](stages/v5-campus-theme-library/reviews/delivery.md) · [独立QA](stages/v5-campus-theme-library/reviews/qa.md) · [逐张制作记录](stages/v5-campus-theme-library/logs/image-generation.json) · [本人检查](human-reviews/v5-campus-theme-library/round-01/review.md)。一次构建与分范围联合检查完成，两次列表/就绪提示失败保留；本人尚未核验。
 

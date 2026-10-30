@@ -19,6 +19,8 @@ export type Box = { x: number; y: number; width: number; height: number };
 export type ThemeVariant = {
   role: string;
   state: 'default' | 'completed';
+  family?: string;
+  available_from?: string;
   note_style: string | null;
   src: string;
   closeup: string;
@@ -32,6 +34,14 @@ export type ThemeVariant = {
 
 export type ThemeSlot = { x: number; y: number; height: number; hotspot: Box };
 
+export type ThemeSelection = { level_id: string; created_at?: string | null };
+export type ThemeBackgroundVariant = {
+  id: string;
+  background: { src: string; width: number; height: number };
+  slots: ThemeSlot[];
+  available_from?: string;
+};
+
 export type ThemePack = {
   schema_version: 1;
   theme_id: string;
@@ -41,6 +51,7 @@ export type ThemePack = {
   backgrounds: Record<string, { src: string; width: number; height: number }>;
   objects: Record<string, Record<string, ThemeVariant>>;
   slot_layout: Record<string, ThemeSlot[]>;
+  background_variants?: Record<string, ThemeBackgroundVariant[]>;
 };
 
 /** One object as it is actually painted in the scene. */

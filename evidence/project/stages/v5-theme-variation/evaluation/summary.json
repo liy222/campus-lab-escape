@@ -1,0 +1,30 @@
+{
+  "status": "finite_technical_checks_passed_pending_human",
+  "criteria": "criteria.md",
+  "build": {
+    "result": "../automated/build-2026-10-30T05-43-52-429Z-5d393833/result.json",
+    "exit": 0
+  },
+  "targeted": {
+    "result": "../automated/qa-2026-10-30T05-44-19-562Z-49c3ea93/result.json",
+    "exit": 0,
+    "passed": 194,
+    "total": 194
+  },
+  "derived_counter_correction": "../automated/mapping-2026-10-30T05-46-07-766Z-8f266a12/result.json",
+  "human_review": "not_reviewed",
+  "real_model_calls": 0,
+  "image_tool_calls": 31,
+  "main_review": {
+    "operator": "Main",
+    "method": "source read and actual image viewing",
+    "viewed": [
+      "game-ui-1280x720.png",
+      "game-ui-1920x1080.png",
+      "model-probe-1280x720-default.png",
+      "model-probe-1920x1080-completed.png",
+      "gallery-new-background.png"
+    ],
+    "notes": "Model probe and actual UI are distinct scopes; not human acceptance"
+  }
+}

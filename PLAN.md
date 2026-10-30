@@ -1,6 +1,10 @@
 # Plan
 
-## 当前阶段（2026-10-30）：四类校园主题素材库
+## 当前阶段（2026-10-30）：五类主题内部变化扩充
+
+用户要求继续增加素材；31张新原图和稳定选图已接入，已完成一次V5构建和194条独立定向检查，待本人集中核验。[交付与限制](evidence/project/stages/v5-theme-variation/reviews/delivery.md)。范围/归属见[本轮计划](docs/v5-theme-variation-plan.md)，[实际阶段](evidence/project/stages/v5-theme-variation/stage.json)、[对照图集](美术图集.html)、[本人检查](evidence/project/human-reviews/v5-theme-variation/round-01/review.md)。保留旧关卡外观，不改后端/API/规则/存档；项目真实调用0。
+
+## 前阶段（2026-10-30）：四类校园主题素材库
 
 用户已明确选择图书馆档案、化学实验室、计算机机房、校园广播室；28张新原图已制作接入，天文社保留，通用角色共享。一次V5构建和四主题必要联合检查完成，原两次列表更新失败保留。[实际交付](evidence/project/stages/v5-campus-theme-library/reviews/delivery.md) · [美术图集](http://127.0.0.1:8001/art-themes/campus-theme-library.html) · [本人检查](evidence/project/human-reviews/v5-campus-theme-library/round-01/review.md)。当前待本人看整批效果，未新增项目真实模型调用；后续按实际反馈集中修正，不自行扩展主题或玩法。
 

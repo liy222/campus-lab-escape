@@ -2,7 +2,9 @@
 
 当前仅面向电脑浏览器，使用鼠标和键盘，检查尺寸1280×720、1920×1080。经典版与V5的手机专用界面和测试路径已退出当前范围；历史测试原件按原事实保留。
 
-2026-10-30新增四类校园主题素材：图书馆档案、化学实验室、计算机机房、校园广播室，原天文社保留。28张新原图已接入现有随机关卡的主题匹配，通用钥匙等共享。[直接看美术图集](http://127.0.0.1:8001/art-themes/campus-theme-library.html)，也可直接双击项目根目录的[美术图集.html](美术图集.html)，无需启动服务、创建关卡或填写密钥；[实际结果与限制](evidence/project/stages/v5-campus-theme-library/reviews/delivery.md)、[邀请本人检查](evidence/project/human-reviews/v5-campus-theme-library/round-01/review.md)。
+2026-10-30五类主题内部变化扩充：新增31张原图，累计74张独立原图。每主题的三类房间各增加一套背景与独立布局，并增加同类资料、黄铜钥匙及四类设备成对状态外观。新关卡按固定标识选用，刷新和读档不变；旧关卡保留原外观，有限组合可重复。内置imagegen实际制作，提示和来源见[制作记录](output/art-concepts/theme-variation/README.md)，[本轮计划](docs/v5-theme-variation-plan.md)、[技术阶段](evidence/project/stages/v5-theme-variation/stage.json)、[本人检查入口](evidence/project/human-reviews/v5-theme-variation/round-01/review.md)。已完成一次V5构建和194条独立定向检查，待本人集中核验。
+
+此前2026-10-30新增四类校园主题素材：图书馆档案、化学实验室、计算机机房、校园广播室，原天文社保留。28张新原图已接入现有随机关卡的主题匹配，通用钥匙等共享。[直接看美术图集](http://127.0.0.1:8001/art-themes/campus-theme-library.html)，也可直接双击项目根目录的[美术图集.html](美术图集.html)，无需启动服务、创建关卡或填写密钥；[实际结果与限制](evidence/project/stages/v5-campus-theme-library/reviews/delivery.md)、[邀请本人检查](evidence/project/human-reviews/v5-campus-theme-library/round-01/review.md)。
 
 2026-10-29新版手绘/UI修复与电脑端清理已完成有限技术检查；雨夜天文社使用15张内置生图原图。请从[8001本地入口](http://127.0.0.1:8001/)继续已有主题关卡；[交付摘要与实际结果](evidence/project/stages/v5-handpainted-rebuild/reviews/delivery.md)，[本人检查步骤](evidence/project/human-reviews/v5-handpainted-rebuild/round-02/review.md)。画风/主题已获本次局部认可；其余核验见最新SP-01入口。
 

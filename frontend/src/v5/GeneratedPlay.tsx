@@ -72,10 +72,11 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
 
   const sceneInput = useMemo(() => state ? {
     level_id: state.level_id,
+    created_at: level?.created_at,
     theme: level?.theme ?? null,
     room: state.room,
     objects: state.objects,
-  } : null, [state?.level_id, state?.room, state?.objects, level?.theme]);
+  } : null, [state?.level_id, state?.room, state?.objects, level?.theme, level?.created_at]);
   const model = useMemo(() => sceneInput ? buildSceneModel(sceneInput) : null, [sceneInput]);
   const lastRoom = useRef<SceneModel | null>(null);
   if (model && model.objects.length) lastRoom.current = model;

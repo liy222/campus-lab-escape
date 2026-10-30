@@ -18,9 +18,9 @@ const jobError: Record<string, string> = {
   AI_LIMIT_REACHED: '已达到生成额度或调用限制。',
 };
 
-function coverFor(theme?: string | null) {
-  const coverage = themeCoverage(theme);
-  return coverage.pack ? packBackground(coverage.pack, 'neutral_lab').background.src : '/art-handpainted/backgrounds/r1-room-shell.png';
+function coverFor(level: Level) {
+  const coverage = themeCoverage(level.theme);
+  return coverage.pack ? packBackground(coverage.pack, 'neutral_lab', { level_id: level.level_id, created_at: level.created_at }).background.src : '/art-handpainted/backgrounds/r1-room-shell.png';
 }
 
 export default function Workspace() {
@@ -215,7 +215,7 @@ export default function Workspace() {
               const run = runs.find(candidate => candidate.level_id === level.level_id);
               const themed = themeCoverage(level.theme);
               return <li className="v5-level-card" key={level.level_id}>
-                <div className="v5-level-cover" style={{ backgroundImage: `url(${coverFor(level.theme)})` }} aria-hidden="true"><span>{String(index + 1).padStart(2, '0')}</span>{themed.pack && <em>{themed.name}</em>}</div>
+                <div className="v5-level-cover" style={{ backgroundImage: `url(${coverFor(level)})` }} aria-hidden="true"><span>{String(index + 1).padStart(2, '0')}</span>{themed.pack && <em>{themed.name}</em>}</div>
                 <div className="v5-level-copy">
                   <h3>{level.title || level.theme || '校园探索'}</h3>
                   <p>{level.room_count} 间房 · {difficultyLabel[level.difficulty] || level.difficulty}{run ? ` · ${run.status === 'won' ? '已通关' : '已有进度'}` : ''}</p>

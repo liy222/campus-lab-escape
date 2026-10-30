@@ -3,7 +3,7 @@ import libraryArchive from '../../assets/themes/library-archive/manifest.json';
 import chemistryLab from '../../assets/themes/chemistry-lab/manifest.json';
 import computerRoom from '../../assets/themes/computer-room/manifest.json';
 import campusBroadcast from '../../assets/themes/campus-broadcast/manifest.json';
-import type { ThemePack } from './types';
+import type { ThemePack, ThemeSelection } from './types';
 
 type PackEntry = { pack: ThemePack; match: RegExp; keywords: string[] };
 
@@ -79,20 +79,49 @@ export function stableHash(value: string): number {
   return hash >>> 0;
 }
 
+/** Mix both halves before small-pool modulo; fixed suffixes must not lock binary choices together. */
+function visualIndex(seed: string, length: number): number {
+  let hash = stableHash(seed);
+  hash ^= hash >>> 16;
+  hash = Math.imul(hash, 0x85ebca6b);
+  hash ^= hash >>> 13;
+  hash = Math.imul(hash, 0xc2b2ae35);
+  hash ^= hash >>> 16;
+  return (hash >>> 0) % length;
+}
+
+/** Only complete ISO timestamps are metadata; malformed dates keep legacy art. */
+function selectionTime(value?: string | null): number | null {
+  if (!value) return null;
+  const parts = /^(\d{4}-\d{2}-\d{2})T(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d(?:\.\d+)?(?:Z|[+-](?:[01]\d|2[0-3]):[0-5]\d)$/.exec(value);
+  if (!parts) return null;
+  const date = Date.parse(`${parts[1]}T00:00:00Z`), time = Date.parse(value);
+  if (!Number.isFinite(date) || !Number.isFinite(time) || new Date(date).toISOString().slice(0, 10) !== parts[1]) return null;
+  return time;
+}
+
+function availableAt(candidate: { available_from?: string }, createdAt?: string | null): boolean {
+  if (candidate.available_from === undefined) return true;
+  const created = selectionTime(createdAt), available = selectionTime(candidate.available_from);
+  return created !== null && available !== null && created >= available;
+}
+
 const CHART_NAME = /星图|星座|星象|天球|chart/i;
 const SEALED_NAME = /便笺|便条|封存|信封|封条|便函|note/i;
 
-/** Paper objects keep an identity that matches their published name. */
+/** Resolve the existing paper category first, then choose an eligible design within it. */
 export function noteVariantFor(
   pack: ThemePack,
   name: string,
   seed: string,
+  createdAt?: string | null,
 ): { id: string; variant: ThemePack['objects'][string][string] } | null {
-  const variants = Object.entries(pack.objects.note ?? {}).filter(([, variant]) => variant.state === 'default');
+  const variants = Object.entries(pack.objects.note ?? {}).filter(([, variant]) => variant.state === 'default' && availableAt(variant, createdAt));
   if (!variants.length) return null;
   const wanted = CHART_NAME.test(name) ? 'star-chart' : SEALED_NAME.test(name) ? 'sealed-note' : null;
   const preferred = variants.find(([, variant]) => variant.note_style === wanted) ?? variants.find(([, variant]) => variant.note_style === 'logbook');
-  const [id, variant] = preferred ?? variants[stableHash(`${seed}`) % variants.length];
+  const pool = preferred ? variants.filter(([, variant]) => variant.note_style === preferred[1].note_style) : variants;
+  const [id, variant] = pool[visualIndex(seed, pool.length)];
   return { id, variant };
 }
 
@@ -101,21 +130,29 @@ export function variantFor(
   role: string,
   seed: string,
   completed: boolean,
+  createdAt?: string | null,
 ): { id: string; variant: ThemePack['objects'][string][string] } | null {
-  const variants = Object.entries(pack.objects[role] ?? {}).sort(([a], [b]) => a.localeCompare(b));
+  const variants = Object.entries(pack.objects[role] ?? {}).filter(([, variant]) => availableAt(variant, createdAt)).sort(([a], [b]) => a.localeCompare(b));
   if (!variants.length) return null;
   const defaults = variants.filter(([, variant]) => variant.state === 'default');
   const completedVariants = variants.filter(([, variant]) => variant.state === 'completed');
-  if (completed && completedVariants.length) {
-    const [id, variant] = completedVariants[0];
-    return { id, variant };
-  }
   const pool = defaults.length ? defaults : variants;
-  const [id, variant] = pool[stableHash(`${role}:${seed}`) % pool.length];
+  const selected = pool[visualIndex(`${role}:${seed}`, pool.length)];
+  // Completion changes state on the selected machine, never its appearance family.
+  // Old manifests without family keep their previous single completed-state behavior.
+  const finished = completed ? (selected[1].family
+    ? completedVariants.find(([, variant]) => variant.family === selected[1].family)
+    : completedVariants[0]) : undefined;
+  const [id, variant] = finished ?? selected;
   return { id, variant };
 }
 
-export function packBackground(pack: ThemePack, backgroundId?: string | null) {
+export function packBackground(pack: ThemePack, backgroundId?: string | null, selection?: ThemeSelection) {
   const id = backgroundId && pack.backgrounds[backgroundId] ? backgroundId : 'neutral_lab';
-  return { id, background: pack.backgrounds[id], slots: pack.slot_layout[id] ?? pack.slot_layout.neutral_lab };
+  const base = { id, variantId: id, background: pack.backgrounds[id], slots: pack.slot_layout[id] ?? pack.slot_layout.neutral_lab };
+  if (!selection?.level_id || selectionTime(selection.created_at) === null) return base;
+  const pool = (pack.background_variants?.[id] ?? []).filter(candidate => availableAt(candidate, selection.created_at));
+  if (!pool.length) return base;
+  const selected = pool[visualIndex(`${selection.level_id}:${id}`, pool.length)];
+  return { id, variantId: selected.id, background: selected.background, slots: selected.slots };
 }

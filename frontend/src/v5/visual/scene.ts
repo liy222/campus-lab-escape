@@ -17,6 +17,7 @@ export type SceneObjectInput = {
 
 export type SceneInput = {
   level_id: string;
+  created_at?: string | null;
   theme?: string | null;
   room: { name: string; background_id?: string | null; background_art_id?: string | null };
   objects: SceneObjectInput[];
@@ -72,15 +73,15 @@ export function buildSceneModel(input: SceneInput): SceneModel {
       extras: [],
     };
   }
-  const { background, slots } = packBackground(pack, input.room.background_id || input.room.background_art_id);
+  const { background, slots } = packBackground(pack, input.room.background_id || input.room.background_art_id, { level_id: input.level_id, created_at: input.created_at });
   const themed: SceneObject[] = [];
   const extras: { key: string; src: string }[] = [];
   objects.forEach(({ object, index }) => {
     const slotIndex = Math.max(0, Math.min(slots.length - 1, Number.isFinite(object.slot) ? object.slot : 0));
     const slot = slots[slotIndex];
     const resolved = object.art_id === 'note'
-      ? noteVariantFor(pack, object.name, `${input.level_id}:${object.object_id}`)
-      : variantFor(pack, object.art_id, `${input.level_id}:${object.object_id}`, Boolean(object.completed));
+      ? noteVariantFor(pack, object.name, `${input.level_id}:${object.object_id}`, input.created_at)
+      : variantFor(pack, object.art_id, `${input.level_id}:${object.object_id}`, Boolean(object.completed), input.created_at);
     if (!resolved || !slot) {
       themed.push(legacyObject(object, index, slotIndex));
       return;
@@ -108,15 +109,15 @@ export function buildSceneModel(input: SceneInput): SceneModel {
       fallback: neutral.url === variant.src ? null : { key: `fallback:${neutral.id}`, src: neutral.url, bbox: neutral.bbox },
     });
   });
-  // Preload the other state of every role present, so completion swaps art on screen.
+  // Load only the paired state of the design selected for each current device.
   const used = new Set(themed.map(object => object.key));
-  input.objects.forEach(object => {
-    for (const [id, variant] of Object.entries(pack.objects[object.art_id] ?? {})) {
-      const key = `theme:${id}`;
-      if (used.has(key)) continue;
-      used.add(key);
-      extras.push({ key, src: variant.src });
-    }
+  input.objects.filter(object => object.art_id !== 'note').forEach(object => {
+    const other = variantFor(pack, object.art_id, `${input.level_id}:${object.object_id}`, !object.completed, input.created_at);
+    if (!other) return;
+    const key = `theme:${other.id}`;
+    if (used.has(key)) return;
+    used.add(key);
+    extras.push({ key, src: other.variant.src });
   });
   const neutralBackground = legacyAssets.find(candidate => candidate.id === (input.room.background_id || input.room.background_art_id)) ?? legacyAssets.find(candidate => candidate.id === 'neutral_lab')!;
   return {
