@@ -135,7 +135,7 @@ def csrf(request:Request):
         token=db.csrf_for(p,request.cookies.get(COOKIE))
         return success({'csrf_token':token,'auth_context':p['auth_context'],'user':{'user_id':p['user_id'],'username':p['username']}})
     existing_nonce=request.cookies.get(ANON_COOKIE)
-    nonce,token=db.anonymous(existing_nonce); response=success({'csrf_token':token,'auth_context':None,'user':None})
+    nonce,token=db.anonymous(existing_nonce); response=success({'csrf_token':token,'auth_context':None,'user':None,'usernames':db.login_usernames()})
     if nonce!=existing_nonce: set_cookie(response,ANON_COOKIE,nonce,max_age=600)
     return response
 

@@ -1,0 +1,100 @@
+{
+  "run_id": "3629c535-2668-40dc-aae8-43ae69ad1ff0",
+  "command": "node tests/v5/run_login_usernames_browser.mjs --mode-switch-only",
+  "started_at_utc": "2026-10-30T11:45:37.369Z",
+  "finished_at_utc": "2026-10-30T11:45:41.645Z",
+  "scope": "mode-toggle clears password and preserves local username list/default only; no auth or generation requests",
+  "TEMP": "campus-visual-login-usernames-YQjetd",
+  "server_port": 8002,
+  "server_stopped": true,
+  "external_requests": 0,
+  "generation_POSTs": 0,
+  "synthetic_credential_observations": [],
+  "passwords_recorded": false,
+  "player_database_access": false,
+  "model_calls": 0,
+  "paid_calls": 0,
+  "screenshots": [],
+  "records": [
+    {
+      "name": "reused owned Synthetic fixture exposes the expected two names",
+      "actual": {
+        "options": [
+          {
+            "text": "synth_alpha",
+            "value": "synth_alpha"
+          },
+          {
+            "text": "synth_beta",
+            "value": "synth_beta"
+          }
+        ],
+        "selected": "synth_alpha"
+      },
+      "expected": {
+        "names": [
+          "synth_alpha",
+          "synth_beta"
+        ],
+        "selected": "synth_alpha"
+      },
+      "pass": true,
+      "scope": "mode-switch",
+      "observed_at_utc": "2026-10-30T11:45:40.815Z"
+    },
+    {
+      "name": "switching from login to registration clears password",
+      "actual": {
+        "password_empty": true,
+        "registration_username_empty": true
+      },
+      "expected": {
+        "password_empty": true,
+        "registration_username_empty": true
+      },
+      "pass": true,
+      "scope": "mode-switch",
+      "observed_at_utc": "2026-10-30T11:45:41.068Z"
+    },
+    {
+      "name": "switching back retains names/default and leaves password empty",
+      "actual": {
+        "options": [
+          "synth_alpha",
+          "synth_beta"
+        ],
+        "selected": "synth_alpha",
+        "password_empty": true
+      },
+      "expected": {
+        "options": [
+          "synth_alpha",
+          "synth_beta"
+        ],
+        "selected": "synth_alpha",
+        "password_empty": true
+      },
+      "pass": true,
+      "scope": "mode-switch",
+      "observed_at_utc": "2026-10-30T11:45:41.119Z"
+    },
+    {
+      "name": "mode-switch-only branch made no auth, generation, or external requests",
+      "actual": {
+        "credential_posts": 0,
+        "generation_posts": 0,
+        "external_requests": 0
+      },
+      "expected": {
+        "credential_posts": 0,
+        "generation_posts": 0,
+        "external_requests": 0
+      },
+      "pass": true,
+      "scope": "scope",
+      "observed_at_utc": "2026-10-30T11:45:41.120Z"
+    }
+  ],
+  "issues": [],
+  "exit_code": 0
+}

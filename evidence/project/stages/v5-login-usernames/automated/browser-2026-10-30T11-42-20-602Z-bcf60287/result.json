@@ -1,0 +1,105 @@
+{
+  "run_id": "bcf60287-9389-427b-9555-0d23e0fd50de",
+  "command": "node tests/v5/run_login_usernames_browser.mjs",
+  "started_at_utc": "2026-10-30T11:42:20.602Z",
+  "finished_at_utc": "2026-10-30T11:42:43.284Z",
+  "scope": "empty-list/register-two-Synthetic-users/sorted-login-picker/switch-clear/wrong-password-retention/correct-login; desktop 1280x720 and 1920x1080",
+  "TEMP": "campus-visual-login-usernames-AhqVs7",
+  "server_port": 8002,
+  "server_stopped": true,
+  "external_requests": 0,
+  "generation_POSTs": 0,
+  "synthetic_credential_observations": [
+    {
+      "operation": "register",
+      "username": "synth_alpha",
+      "password_present": true
+    },
+    {
+      "operation": "register",
+      "username": "synth_beta",
+      "password_present": true
+    }
+  ],
+  "passwords_recorded": false,
+  "player_database_access": false,
+  "model_calls": 0,
+  "paid_calls": 0,
+  "screenshots": [],
+  "records": [
+    {
+      "name": "empty local user list shows register guidance and disables login",
+      "actual": {
+        "options": [],
+        "note": "本机还没有已注册用户，请先注册本地账户。",
+        "login_disabled": true
+      },
+      "expected": {
+        "options": [
+          {
+            "text": "暂无已有用户名",
+            "value": ""
+          }
+        ],
+        "guidance": true,
+        "login_disabled": true
+      },
+      "pass": false,
+      "scope": "empty-list",
+      "observed_at_utc": "2026-10-30T11:42:26.321Z"
+    },
+    {
+      "name": "empty-list login has no password or freeform username prefill",
+      "actual": {
+        "password_empty": true,
+        "username_textbox_count": 0
+      },
+      "expected": {
+        "password_empty": true,
+        "username_textbox_count": 0
+      },
+      "pass": true,
+      "scope": "empty-list",
+      "observed_at_utc": "2026-10-30T11:42:26.333Z"
+    },
+    {
+      "name": "registration form retains typed username synth_alpha",
+      "actual": "synth_alpha",
+      "expected": "synth_alpha",
+      "pass": true,
+      "scope": "register",
+      "observed_at_utc": "2026-10-30T11:42:26.565Z"
+    },
+    {
+      "name": "Synthetic registration accepted synth_alpha",
+      "actual": 201,
+      "expected": 201,
+      "pass": true,
+      "scope": "register",
+      "observed_at_utc": "2026-10-30T11:42:26.836Z"
+    },
+    {
+      "name": "registration form retains typed username synth_beta",
+      "actual": "synth_beta",
+      "expected": "synth_beta",
+      "pass": true,
+      "scope": "register",
+      "observed_at_utc": "2026-10-30T11:42:27.244Z"
+    },
+    {
+      "name": "Synthetic registration accepted synth_beta",
+      "actual": 201,
+      "expected": 201,
+      "pass": true,
+      "scope": "register",
+      "observed_at_utc": "2026-10-30T11:42:27.410Z"
+    }
+  ],
+  "issues": [
+    {
+      "type": "TimeoutError2",
+      "message": "locator.inputValue: Timeout 15000ms exceeded."
+    }
+  ],
+  "exit_code": 1
+}

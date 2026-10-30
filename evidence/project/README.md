@@ -2,7 +2,11 @@
 
 今后从这里读取、整理和提交证据。开发中每次实际检查、失败、修复和反馈及时保存，大阶段结束再集中交付并邀请真人核验。
 
-## 当前阶段：关卡生成可靠性改进
+## 当前阶段：已有用户名选择与密码手填
+
+本机登录前可选已注册用户名，默认首项，密码自行填写；选择本身不登录，原认证/限频/归属保持。独立API 5项、一次V5构建及桌面浏览器主流程13项/模式切换窄补4项均通过；原始检查器失败保留。预览已生效，0模型/付费，待本人查看。[交付/边界](stages/v5-login-usernames/reviews/delivery.md) · [独立QA](stages/v5-login-usernames/reviews/qa.md)。[阶段](stages/v5-login-usernames/stage.json) · [本人步骤](human-reviews/v5-login-usernames/round-01/review.md)。
+
+## 前阶段：关卡生成可靠性改进
 
 命名指导共用现有校验词表，原准入保持；独立窄验后，用户批准的6个真实受控样本均通过准入及EXIT规则回放，用量计费估算0.04783912元（非账单）。本地改进已生效，本人随后实际反馈“已经测试关卡生成成功率提升”，作为定性确认保存，未填写具体比例。[交付/边界](stages/v5-generation-reliability/reviews/delivery.md) · [计划](../../docs/v5-generation-reliability-plan.md) · [阶段](stages/v5-generation-reliability/stage.json) · [本人检查](human-reviews/v5-generation-reliability/round-01/review.md)。开发中旧预检不能当最终批准来源；正式approval及真实逐项结果保留，离线/真实/真人结论分开。
 

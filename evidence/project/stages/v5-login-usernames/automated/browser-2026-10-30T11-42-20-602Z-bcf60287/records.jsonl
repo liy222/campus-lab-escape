@@ -1,0 +1,6 @@
+{"name":"empty local user list shows register guidance and disables login","actual":{"options":[],"note":"本机还没有已注册用户，请先注册本地账户。","login_disabled":true},"expected":{"options":[{"text":"暂无已有用户名","value":""}],"guidance":true,"login_disabled":true},"pass":false,"scope":"empty-list","observed_at_utc":"2026-10-30T11:42:26.321Z"}
+{"name":"empty-list login has no password or freeform username prefill","actual":{"password_empty":true,"username_textbox_count":0},"expected":{"password_empty":true,"username_textbox_count":0},"pass":true,"scope":"empty-list","observed_at_utc":"2026-10-30T11:42:26.333Z"}
+{"name":"registration form retains typed username synth_alpha","actual":"synth_alpha","expected":"synth_alpha","pass":true,"scope":"register","observed_at_utc":"2026-10-30T11:42:26.565Z"}
+{"name":"Synthetic registration accepted synth_alpha","actual":201,"expected":201,"pass":true,"scope":"register","observed_at_utc":"2026-10-30T11:42:26.836Z"}
+{"name":"registration form retains typed username synth_beta","actual":"synth_beta","expected":"synth_beta","pass":true,"scope":"register","observed_at_utc":"2026-10-30T11:42:27.244Z"}
+{"name":"Synthetic registration accepted synth_beta","actual":201,"expected":201,"pass":true,"scope":"register","observed_at_utc":"2026-10-30T11:42:27.410Z"}

@@ -28,13 +28,24 @@ export default function Workspace() {
   const client = useRef(new V5Client()).current;
   const [auth, setAuth] = useState<Auth | null>(null), [loading, setLoading] = useState(true), [busy, setBusy] = useState(false), [error, setError] = useState('');
   const [form, setForm] = useState({ username: '', password: '' }), [register, setRegister] = useState(false);
+  const [knownUsernames, setKnownUsernames] = useState<string[]>([]), [selectedUsername, setSelectedUsername] = useState('');
   const [levels, setLevels] = useState<Level[]>([]), [runs, setRuns] = useState<Run[]>([]), [active, setActive] = useState<Run | null>(null);
   const [theme, setTheme] = useState('雨夜天文社'), [roomCount, setRoomCount] = useState(2), [difficulty, setDifficulty] = useState('normal'), [key, setKey] = useState(''), [job, setJob] = useState<Job | null>(null);
   const liveAuth = useRef(''); liveAuth.current = auth?.auth_context || '';
   const channel = useRef<BroadcastChannel | null>(null);
   const clear = () => { setKey(''); setActive(null); setLevels([]); setRuns([]); setJob(null); };
-  const invalidate = () => { client.auth = { user: null, auth_context: null, csrf_token: '' }; clear(); setAuth(null); setError('登录状态已改变。请重新登录；临时密钥已清除。'); };
+  const invalidate = () => { client.auth = { user: null, auth_context: null, csrf_token: '' }; clear(); setForm(previous => ({ ...previous, password: '' })); setRegister(false); setAuth(null); setError('登录状态已改变。请重新登录；临时密钥已清除。'); };
   client.onInvalid = invalidate;
+
+  function receiveAuth(next: Auth) {
+    setAuth(next);
+    if (!next.user) {
+      const names = (next.usernames ?? []).filter(name => typeof name === 'string' && /^[A-Za-z0-9_]{3,24}$/.test(name));
+      setKnownUsernames(names);
+      setSelectedUsername(previous => names.includes(previous) ? previous : names[0] || '');
+      setForm(previous => ({ ...previous, password: '' }));
+    }
+  }
 
   async function refresh() {
     const stamp = client.epoch;
@@ -46,7 +57,7 @@ export default function Workspace() {
   useEffect(() => {
     let alive = true;
     void (async () => {
-      try { const a = await client.csrf(); if (!alive) return; setAuth(a); if (a.user) await refresh(); }
+      try { const a = await client.csrf(); if (!alive) return; receiveAuth(a); if (a.user) await refresh(); }
       catch (e) { if (alive) setError((e as Error).message); }
       finally { if (alive) setLoading(false); }
     })();
@@ -55,7 +66,7 @@ export default function Workspace() {
     broadcast.onmessage = event => {
       if (event.data === 'identitychanged') {
         client.epoch++; invalidate();
-        void client.csrf().then(a => { if (alive) setAuth(a); });
+        void client.csrf().then(a => { if (alive) receiveAuth(a); }).catch(e => { if (alive) setError(e.message); });
       }
     };
     return () => { alive = false; client.epoch++; broadcast.close(); };
@@ -105,7 +116,7 @@ export default function Workspace() {
       } finally { setKey(''); }
     });
   }
-  const logout = () => void task(async () => { await client.logout(); clear(); setAuth(await client.csrf()); channel.current?.postMessage('identitychanged'); });
+  const logout = () => void task(async () => { await client.logout(); clear(); setRegister(false); setForm({ username: '', password: '' }); receiveAuth(await client.csrf()); channel.current?.postMessage('identitychanged'); });
   const coverage = themeCoverage(theme);
   const generating = Boolean(job && ['pending', 'generating', 'validating'].includes(job.status));
 
@@ -147,15 +158,23 @@ export default function Workspace() {
         <form onSubmit={event => {
           event.preventDefault();
           void task(async () => {
-            if (!client.auth.csrf_token) await client.csrf();
-            clear();
-            const a = await client.authenticate(register ? 'register' : 'login', form.username, form.password);
-            setForm({ username: '', password: '' }); setAuth(a); channel.current?.postMessage('identitychanged'); await refresh();
+            try {
+              const username = register ? form.username : selectedUsername;
+              if (!register && (!username || !knownUsernames.includes(username))) throw new ApiError('USERNAME_REQUIRED', '请选择本机已有用户名；还没有账户请先注册。');
+              if (!client.auth.csrf_token) receiveAuth(await client.csrf());
+              clear();
+              const a = await client.authenticate(register ? 'register' : 'login', username, form.password);
+              setForm({ username: '', password: '' }); receiveAuth(a); channel.current?.postMessage('identitychanged'); await refresh();
+            } finally { setForm(previous => ({ ...previous, password: '' })); }
           });
         }}>
-          <label>用户名（3–24位字母、数字或下划线）<input required autoComplete="username" minLength={3} maxLength={24} pattern="[A-Za-z0-9_]+" title="3–24位字母、数字或下划线" value={form.username} onChange={event => setForm({ ...form, username: event.target.value })} /></label>
-          <label>密码（12–128位）<input type="password" required minLength={12} maxLength={128} autoComplete={register ? 'new-password' : 'current-password'} value={form.password} onChange={event => setForm({ ...form, password: event.target.value })} /></label>
-          <button className="v5-primary" disabled={busy}>{busy ? '正在处理…' : register ? '注册并进入' : '登录'}</button>
+          {register
+            ? <label>用户名（3–24位字母、数字或下划线）<input required autoComplete="username" minLength={3} maxLength={24} pattern="[A-Za-z0-9_]+" title="3–24位字母、数字或下划线" disabled={busy} value={form.username} onChange={event => setForm({ username: event.target.value, password: '' })} /></label>
+            : <><label>已有用户名<select required disabled={busy || knownUsernames.length === 0} value={selectedUsername} onChange={event => { setSelectedUsername(event.target.value); setForm(previous => ({ ...previous, password: '' })); }}>
+              {knownUsernames.length ? knownUsernames.map(username => <option key={username} value={username}>{username}</option>) : <option value="">暂无已有用户名</option>}
+            </select></label><p className="v5-auth-note">{knownUsernames.length ? '这是本机已注册用户。请选择用户名后自行填写密码。' : '本机还没有已注册用户，请先注册本地账户。'}</p></>}
+          <label>密码（12–128位）<input type="password" required minLength={12} maxLength={128} autoComplete={register ? 'new-password' : 'off'} disabled={busy} value={form.password} onChange={event => setForm({ ...form, password: event.target.value })} /></label>
+          <button className="v5-primary" disabled={busy || !register && (!selectedUsername || !knownUsernames.includes(selectedUsername))}>{busy ? '正在处理…' : register ? '注册并进入' : '登录'}</button>
         </form>
         <button className="v5-quiet" disabled={busy} onClick={() => { setRegister(!register); setForm({ username: '', password: '' }); setError(''); }}>{register ? '已有账户，返回登录' : '第一次来？注册本地账户'}</button>
       </section>

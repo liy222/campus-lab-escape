@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "stage": "v5-login-usernames",
+  "title": "已有本机用户名选择与密码手填",
+  "created_at": "2026-10-30T11:33:29.575070Z",
+  "technical_status": "complete_live_pending_human_review",
+  "human_review_status": "not_reviewed",
+  "owner_review_status": "not_reviewed",
+  "peer_review_status": "not_reviewed",
+  "current_human_review_round": 1,
+  "human_review_rounds": {},
+  "collections": [],
+  "scope": "匿名csrf只读名称列表及登录选择/手填密码；保留注册/认证/限频/私人资源隔离",
+  "visibility_change": "Registered local username strings intentionally visible on unauthenticated local login page",
+  "real_model_calls": 0,
+  "paid_calls": 0,
+  "implementation_baseline_commit": "cd22d1e",
+  "independent_verification": {
+    "report": "reviews/qa.md",
+    "api": {
+      "passed": 5,
+      "exit_code": 0,
+      "path": "automated/api-20261030T114139634Z"
+    },
+    "v5_build": {
+      "runs": 1,
+      "exit_code": 0,
+      "path": "automated/build-20261030T114154456Z"
+    },
+    "browser_main": {
+      "passed": 13,
+      "exit_code": 0,
+      "path": "automated/browser-2026-10-30T11-43-52-442Z-a57b28cc"
+    },
+    "browser_mode_switch_only": {
+      "passed": 4,
+      "exit_code": 0,
+      "path": "automated/browser-2026-10-30T11-45-37-369Z-3629c535"
+    },
+    "initial_api_helper_and_browser_locator_failures_retained": true,
+    "main_viewed_automated_screenshots": 2,
+    "scope": "Auth, username visibility and manual-password UI only; not a full application security certification"
+  },
+  "preview": {
+    "url": "http://127.0.0.1:8001/",
+    "health_http_status": 200,
+    "record": "logs/preview-restart.json"
+  },
+  "delivery_report": "reviews/delivery.md",
+  "player_database_rebuilt": false
+}

@@ -1,5 +1,5 @@
 {
-  "active_stage": "v5-generation-reliability",
+  "active_stage": "v5-login-usernames",
   "stages": [
     {
       "stage": "history-v5-engineering",
@@ -66,6 +66,12 @@
       "title": "关卡生成可靠性改进与有限成功率测试准备",
       "stage_metadata": "stages/v5-generation-reliability/stage.json",
       "human_review": "human-reviews/v5-generation-reliability/round-01/review.md"
+    },
+    {
+      "stage": "v5-login-usernames",
+      "title": "已有本机用户名选择与密码手填",
+      "stage_metadata": "stages/v5-login-usernames/stage.json",
+      "human_review": "human-reviews/v5-login-usernames/round-01/review.md"
     }
   ]
 }

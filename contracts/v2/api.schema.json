@@ -7992,6 +7992,15 @@
         "csrf_token": {
           "type": "string",
           "maxLength": 256
+        },
+        "usernames": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 24,
+            "pattern": "^[a-z0-9_]+$"
+          }
         }
       },
       "required": [

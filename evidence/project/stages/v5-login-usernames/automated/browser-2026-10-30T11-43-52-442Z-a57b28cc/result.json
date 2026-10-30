@@ -1,0 +1,271 @@
+{
+  "run_id": "a57b28cc-21e2-4cae-b3ab-ed816433c699",
+  "command": "node tests/v5/run_login_usernames_browser.mjs",
+  "started_at_utc": "2026-10-30T11:43:52.442Z",
+  "finished_at_utc": "2026-10-30T11:43:59.399Z",
+  "scope": "empty-list/register-two-Synthetic-users/sorted-login-picker/switch-clear/wrong-password-retention/correct-login; desktop 1280x720 and 1920x1080",
+  "TEMP": "campus-visual-login-usernames-YQjetd",
+  "server_port": 8002,
+  "server_stopped": true,
+  "external_requests": 0,
+  "generation_POSTs": 0,
+  "synthetic_credential_observations": [
+    {
+      "operation": "register",
+      "username": "synth_alpha",
+      "password_present": true
+    },
+    {
+      "operation": "register",
+      "username": "synth_beta",
+      "password_present": true
+    },
+    {
+      "operation": "login",
+      "username": "synth_beta",
+      "password_present": true
+    },
+    {
+      "operation": "login",
+      "username": "synth_beta",
+      "password_present": true
+    }
+  ],
+  "passwords_recorded": false,
+  "player_database_access": false,
+  "model_calls": 0,
+  "paid_calls": 0,
+  "screenshots": [
+    "login-names-1280x720.png",
+    "login-names-1920x1080.png"
+  ],
+  "records": [
+    {
+      "name": "empty local user list shows register guidance and disables login",
+      "actual": {
+        "options": [
+          {
+            "text": "暂无已有用户名",
+            "value": ""
+          }
+        ],
+        "note": "本机还没有已注册用户，请先注册本地账户。",
+        "login_disabled": true
+      },
+      "expected": {
+        "options": [
+          {
+            "text": "暂无已有用户名",
+            "value": ""
+          }
+        ],
+        "guidance": true,
+        "login_disabled": true
+      },
+      "pass": true,
+      "scope": "empty-list",
+      "observed_at_utc": "2026-10-30T11:43:55.977Z"
+    },
+    {
+      "name": "empty-list login has no password or freeform username prefill",
+      "actual": {
+        "password_empty": true,
+        "username_textbox_count": 0
+      },
+      "expected": {
+        "password_empty": true,
+        "username_textbox_count": 0
+      },
+      "pass": true,
+      "scope": "empty-list",
+      "observed_at_utc": "2026-10-30T11:43:55.989Z"
+    },
+    {
+      "name": "registration form retains typed username synth_alpha",
+      "actual": "synth_alpha",
+      "expected": "synth_alpha",
+      "pass": true,
+      "scope": "register",
+      "observed_at_utc": "2026-10-30T11:43:56.204Z"
+    },
+    {
+      "name": "Synthetic registration accepted synth_alpha",
+      "actual": 201,
+      "expected": 201,
+      "pass": true,
+      "scope": "register",
+      "observed_at_utc": "2026-10-30T11:43:56.487Z"
+    },
+    {
+      "name": "registration form retains typed username synth_beta",
+      "actual": "synth_beta",
+      "expected": "synth_beta",
+      "pass": true,
+      "scope": "register",
+      "observed_at_utc": "2026-10-30T11:43:56.810Z"
+    },
+    {
+      "name": "Synthetic registration accepted synth_beta",
+      "actual": 201,
+      "expected": 201,
+      "pass": true,
+      "scope": "register",
+      "observed_at_utc": "2026-10-30T11:43:56.993Z"
+    },
+    {
+      "name": "logout refresh lists registered names in normalized sorted order",
+      "actual": {
+        "options": [
+          {
+            "text": "synth_alpha",
+            "value": "synth_alpha"
+          },
+          {
+            "text": "synth_beta",
+            "value": "synth_beta"
+          }
+        ],
+        "selected": "synth_alpha",
+        "password_empty": true
+      },
+      "expected": {
+        "options": [
+          {
+            "text": "synth_alpha",
+            "value": "synth_alpha"
+          },
+          {
+            "text": "synth_beta",
+            "value": "synth_beta"
+          }
+        ],
+        "selected": "synth_alpha",
+        "password_empty": true
+      },
+      "pass": true,
+      "scope": "login-list",
+      "observed_at_utc": "2026-10-30T11:43:57.383Z"
+    },
+    {
+      "name": "changing selected local username clears password",
+      "actual": {
+        "selected": "synth_beta",
+        "password_empty": true
+      },
+      "expected": {
+        "selected": "synth_beta",
+        "password_empty": true
+      },
+      "pass": true,
+      "scope": "login-list",
+      "observed_at_utc": "2026-10-30T11:43:58.555Z"
+    },
+    {
+      "name": "wrong password remains a 401 and retains names after auth invalidation",
+      "actual": {
+        "status": 401,
+        "selected": "synth_beta",
+        "names": [
+          "synth_alpha",
+          "synth_beta"
+        ],
+        "password_empty": true,
+        "alert_present": true
+      },
+      "expected": {
+        "status": 401,
+        "selected": "synth_beta",
+        "names": [
+          "synth_alpha",
+          "synth_beta"
+        ],
+        "password_empty": true,
+        "alert_present": true
+      },
+      "pass": true,
+      "scope": "wrong-password",
+      "observed_at_utc": "2026-10-30T11:43:58.748Z"
+    },
+    {
+      "name": "correct distinct password succeeds after csrf refresh",
+      "actual": {
+        "status": 200,
+        "account_visible": true
+      },
+      "expected": {
+        "status": 200,
+        "account_visible": true
+      },
+      "pass": true,
+      "scope": "login",
+      "observed_at_utc": "2026-10-30T11:43:58.919Z"
+    },
+    {
+      "name": "Synthetic passwords are not stored in localStorage",
+      "actual": false,
+      "expected": false,
+      "pass": true,
+      "scope": "privacy",
+      "observed_at_utc": "2026-10-30T11:43:58.923Z"
+    },
+    {
+      "name": "no generation or third-party request in auth flow",
+      "actual": {
+        "generation_posts": 0,
+        "external_requests": 0
+      },
+      "expected": {
+        "generation_posts": 0,
+        "external_requests": 0
+      },
+      "pass": true,
+      "scope": "scope",
+      "observed_at_utc": "2026-10-30T11:43:58.923Z"
+    },
+    {
+      "name": "all credential request observations contain only expected synthetic account names and presence flags",
+      "actual": [
+        {
+          "operation": "register",
+          "username": "synth_alpha",
+          "password_present": true
+        },
+        {
+          "operation": "register",
+          "username": "synth_beta",
+          "password_present": true
+        },
+        {
+          "operation": "login",
+          "username": "synth_beta",
+          "password_present": true
+        },
+        {
+          "operation": "login",
+          "username": "synth_beta",
+          "password_present": true
+        }
+      ],
+      "expected": {
+        "operations": [
+          "register",
+          "register",
+          "login",
+          "login"
+        ],
+        "usernames": [
+          "synth_alpha",
+          "synth_beta",
+          "synth_beta",
+          "synth_beta"
+        ],
+        "all_passwords_present": true
+      },
+      "pass": true,
+      "scope": "scope",
+      "observed_at_utc": "2026-10-30T11:43:58.923Z"
+    }
+  ],
+  "issues": [],
+  "exit_code": 0
+}

@@ -280,7 +280,7 @@ v3.4 提示保留原六主题十八条受限推理文案；新增请求时依据
 |需求|权威行为/实现边界|验收入口|
 |---|---|---|
 |GEN-01–04|1–3房间与三种结构难度；严格数据草稿→确定性编译→规划与真实规则回放→不可变定义；只有ready可玩；失败/未知不重发|v2生成API、tests/v5/test_kernel.py、test_generation.py|
-|USER-01–03|小写唯一用户名、Argon2id；服务端Cookie、轮换/撤销/期限/限速；所有私人列表和资源先认证再归属校验|test_auth.py、test_security.py|
+|USER-01–03|小写唯一用户名、Argon2id；服务端Cookie、轮换/撤销/期限/限速；所有私人列表和资源先认证再归属校验；用户明确要求的本机登录名列表可匿名读取，仅名称，密码仍需验证|test_auth.py、test_security.py、test_login_usernames.py|
 |KEY-01–02|Key只页面内存及请求/官方认证头，禁止落库/模型内容/URL/日志；换身份、免费、恢复/reset等清理；旧身份迟到结果不写入|test_generation.py、test_security.py、真实浏览器隔离Canary|
 |COST-01–02|每用户1/global2在途，人工创建不按累计成功或失败次数限流；生成6000/60秒、整项90秒；伙伴600/20秒；原账本10元，单次保守峰值先预留；没有自动重试|临时账本+MockTransport、生成任务/重放/未知测试|
 |SAVE-01–02、SYNC-01|复用Store事务/回执/revision/generation；档绑定身份/会话/关卡/hash/版本；选择恢复后新generation；坏档拒绝且不覆盖；reset保留档；删除不改当前事实|test_integration.py及真实浏览器|

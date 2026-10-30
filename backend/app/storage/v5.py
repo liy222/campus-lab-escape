@@ -131,6 +131,10 @@ class V5Database:
             with self.transaction() as c: c.execute("DELETE FROM auth_limits WHERE kind='account' AND identity=?",(identity,))
             return 200,user['user_id']
         finally: HASH_SLOTS.release()
+    def login_usernames(self):
+        """Names intentionally visible on this local app's login picker."""
+        with self.transaction() as c:
+            return [row['username'] for row in c.execute('SELECT username FROM users ORDER BY username')]
     def owned(self,principal,session_id):
         with self.transaction() as c:
             row=c.execute('SELECT * FROM session_owners WHERE session_id=? AND user_id=?',(session_id,principal['user_id'])).fetchone()

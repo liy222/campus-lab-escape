@@ -1,6 +1,10 @@
 # Plan
 
-## 当前阶段（2026-10-30）：关卡生成可靠性改进与有限采样
+## 当前阶段（2026-10-30）：已有用户名选择与密码手填
+
+已实现本机已有用户名选择、默认首项与密码清空，注册保留手填；复用匿名csrf可选名称列表，不增路由/表，密码认证与账号隔离保持。必要独立API 5项、一次V5构建及桌面浏览器主流程13项/模式切换窄补4项均通过；初始检查器失败原件保留，0模型/付费。[总计划第27节](docs/v5-build-plan.md#27-2026-10-30-已有用户名选择与密码手填) · [固定阶段](evidence/project/stages/v5-login-usernames/stage.json) · [本人检查](evidence/project/human-reviews/v5-login-usernames/round-01/review.md)。自有预览已重启、health200，当前待本人查看；[交付与验证边界](evidence/project/stages/v5-login-usernames/reviews/delivery.md)。
+
+## 前阶段（2026-10-30）：关卡生成可靠性改进与有限采样
 
 对齐逐装置名称指导与原校验词表，新增三类safe reason；实现与独立必要窄验完成，66项及替换后的审批阻断1项分范围记录；最终6请求费用上界0.99208元，自有预览已生效。用户已批准6次/1.00元并执行完成：本批6/6通过准入及EXIT规则回放，用量计费估算0.04783912元；六次名额已用完，未追加调用。[计划与六样本](docs/v5-generation-reliability-plan.md) · [固定阶段](evidence/project/stages/v5-generation-reliability/stage.json)。旧三次narrative细因仍未知；真实小样本不外推普遍成功率。本人随后明确反馈“已经测试关卡生成成功率提升”，本阶段该改善已获定性确认；未提供具体次数/比例。后续按实际问题集中修正与整体交付收尾，不自行扩大测试或功能。
 

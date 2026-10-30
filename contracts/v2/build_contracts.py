@@ -63,6 +63,8 @@ def build():
     definitions['ai_turn_data']['properties']['answer']=string(360)
     definitions['ai_turn_data']['properties']['proposal']={'type':'null'}
     definitions['auth_data']=obj({'user':nullable(obj({'user_id':sid,'username':string(24)})),'auth_context':nullable(sid),'csrf_token':string(256)})
+    # Anonymous local login convenience; existing auth response shapes stay valid.
+    definitions['auth_data']['properties']['usernames']=arr({'type':'string','minLength':3,'maxLength':24,'pattern':r'^[a-z0-9_]+$'})
     definitions['job']=obj({'job_id':sid,'status':enum('pending','generating','validating','ready','rejected','failed','unknown'),'room_count':enum(1,2,3),'difficulty':enum('easy','normal','hard'),'created_at':{'type':'number'},'updated_at':{'type':'number'},'level_id':nullable(sid),'error_code':nullable(sid)})
     definitions['level']=obj({'level_id':sid,'title':string(40),'story':string(240),'room_count':enum(1,2,3),'difficulty':enum('easy','normal','hard'),'definition_hash':string(64),'definition_version':const('1.0.0'),'rules_version':const('1.0.0'),'policy_version':enum('0.9.0','1.0.0'),'created_at':stamp})
     # Optional read projection: redaction can expand a 2000-character theme 10x.
