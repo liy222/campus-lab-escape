@@ -1,6 +1,10 @@
 # Plan
 
-## 当前阶段（2026-10-30）：取消人工生成累计次数上限
+## 当前阶段（2026-10-30）：关卡生成可靠性改进与有限采样
+
+对齐逐装置名称指导与原校验词表，新增三类safe reason；实现与独立必要窄验完成，66项及替换后的审批阻断1项分范围记录；最终6请求费用上界0.99208元，自有预览已生效。真实样本拟最多6次/1.00元，目前未授权/未调用。[计划与六样本](docs/v5-generation-reliability-plan.md) · [固定阶段](evidence/project/stages/v5-generation-reliability/stage.json)。旧三次narrative细因仍未知，不把本轮离线通过写成已提高真实成功率。
+
+## 前阶段（2026-10-30）：取消人工生成累计次数上限
 
 按用户要求移除3/10分钟与10/日次数门，保留在途/幂等与费用约束；8项独立受影响检查通过，自有预览已重启生效、health200，待本人核验。[本轮记录](evidence/project/stages/v5-generation-attempts/stage.json) · [真人步骤](evidence/project/human-reviews/v5-generation-attempts/round-01/review.md)。最近三次为narrative拒绝，仅定位阶段，未修内容质量；没有新增真实/付费调用。
 

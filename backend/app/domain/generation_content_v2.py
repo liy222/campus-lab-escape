@@ -13,7 +13,8 @@ from dataclasses import replace
 from . import blueprints as v1
 from . import structure_variants
 from .generated import strict_json
-from .puzzle_purpose import puzzle_effects, validate_puzzle_names, describe_effect
+from .puzzle_purpose import puzzle_effects, name_requirements, validate_puzzle_names, describe_effect
+from .generation_observability import NAME_REASONS
 
 CONTENT_VERSION = '2.0.0'
 NARRATIVE_GUARD_REVISION = '1'
@@ -129,6 +130,7 @@ def request_manifest(blueprint: Blueprint) -> dict:
     for row, puzzle in zip(manifest['puzzles'], blueprint.puzzles):
         row['prerequisite_object_slots'] = [puzzle_objects[pid] for pid in puzzle.prerequisite_ids]
         row['effect'] = effects[row['object_slot']]
+        row['name_requirements'] = name_requirements(row['effect'])
     manifest['text_rule'] = ('物件槽位只填写name，物件说明由程序按真实角色和规则产生；'
                              'rooms的description只写氛围，不编造操作、完整答案或另一套规则。')
     return manifest
@@ -200,6 +202,7 @@ def assemble_draft(blueprint: Blueprint, raw_model_content) -> dict:
             raise ValueError('GENERATION_CONTENT_INVALID')
         stage = 'narrative'
         _guard_narrative(blueprint, content)
+        stage = 'assembly'
         names = {oid: value['name'] for oid, value in content['objects'].items()}
         effects = puzzle_effects(blueprint)
         validate_puzzle_names(blueprint, names, effects)
@@ -214,5 +217,6 @@ def assemble_draft(blueprint: Blueprint, raw_model_content) -> dict:
                              for obj in blueprint.objects}
         return v1.assemble_draft(blueprint, helper)
     except (ValueError, TypeError, RecursionError) as error:
-        error.generation_diagnostic = stage
+        name_reason = getattr(error, 'generation_name_reason', None)
+        error.generation_diagnostic = name_reason if isinstance(name_reason, str) and name_reason in NAME_REASONS else stage
         raise

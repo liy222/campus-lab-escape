@@ -34,8 +34,13 @@ def prepared(tmp_path, monkeypatch, raw=None, provider_error=None):
     bp = content.select_blueprint(1, 'easy', seed=0)
     monkeypatch.setattr(content, 'select_blueprint', lambda *args, **kwargs: bp)
     good = synthetic_model_content(bp)
-    for index, value in enumerate(good['objects'].values()):
-        value['name'] = '合成物件' + '甲乙丙丁戊己庚辛'[index]
+    effects = content.puzzle_effects(bp)
+    for obj in bp.objects:
+        if obj.kind != 'puzzle':
+            continue
+        requirements = content.name_requirements(effects[obj.object_id])
+        prefix = '门禁甲' if requirements['require_access_word'] else '主题甲'
+        good['objects'][obj.object_id]['name'] = prefix + requirements['allowed_suffixes'][0]
     provider = FakeProvider(json.dumps(good, ensure_ascii=False) if raw is None else raw, provider_error)
     app = create_v5_app(tmp_path / 'temp-only.sqlite', generation_service=GenerationService(lambda key: provider))
     actor = Actor(app).authenticate('trace_actor')

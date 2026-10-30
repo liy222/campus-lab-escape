@@ -17,7 +17,8 @@ _HEADS = {
     'terminal': ('终端', '控制台', '控制器', '控制面板', '验证面板', '操作面板', '读卡器'),
     'circuit': ('供电箱', '配电箱', '电源箱', '线路箱', '电路箱', '控制箱'),
 }
-_ACCESS = re.compile(r'门禁|门锁|通行|出入口')
+_ACCESS_WORDS = ('门禁', '门锁', '通行', '出入口')
+_ACCESS = re.compile('|'.join(re.escape(word) for word in _ACCESS_WORDS))
 _CONTAINER = r'(?:储物柜|器材柜|档案柜|文件柜|橱柜|柜子|抽屉|保险箱|储物箱|柜)'
 _CONTAINER_LOCATION = re.compile(
     _CONTAINER + r'(?:的)?(?:门|锁)?(?:旁边|旁|侧面|侧|边上|边|附近|上方|下方)(?:的)?')
@@ -85,6 +86,26 @@ def puzzle_effects(blueprint: Blueprint) -> dict[str, dict]:
     return effects
 
 
+def name_requirements(effect: dict) -> dict:
+    """Fresh model-facing requirements from the exact finite admission vocabulary."""
+    suffixes = list(_HEADS[effect['carrier']])
+    access_required = effect['purpose'] == 'passage_control'
+    prefix = _ACCESS_WORDS[0] if access_required else '校内'
+    return {
+        'allowed_suffixes': suffixes,
+        'must_end_with': True,
+        'require_access_word': access_required,
+        'allowed_access_words': list(_ACCESS_WORDS),
+        'examples': [prefix + suffix for suffix in suffixes[:2]],
+    }
+
+
+def _invalid_name(reason: str) -> ValueError:
+    error = ValueError(_NAME_INVALID)
+    error.generation_name_reason = reason
+    return error
+
+
 def validate_puzzle_names(blueprint: Blueprint, names: dict[str, str], effects: dict[str, dict]) -> None:
     """Reject incompatible new names; accepted original names remain untouched.
 
@@ -98,10 +119,12 @@ def validate_puzzle_names(blueprint: Blueprint, names: dict[str, str], effects: 
         effect = effects[obj.object_id]
         compared = re.sub(r'\s+', '', unicodedata.normalize('NFKC', names[obj.object_id]))
         identity = _CONTAINER_LOCATION.sub('', compared)
-        if (not identity.endswith(_HEADS[effect['carrier']])
-                or _CONTAINER_IDENTITY.search(identity)
-                or effect['purpose'] == 'passage_control' and not _ACCESS.search(identity)):
-            raise ValueError(_NAME_INVALID)
+        if _CONTAINER_IDENTITY.search(identity):
+            raise _invalid_name('name_container')
+        if not identity.endswith(_HEADS[effect['carrier']]):
+            raise _invalid_name('name_suffix')
+        if effect['purpose'] == 'passage_control' and not _ACCESS.search(identity):
+            raise _invalid_name('name_access')
 
 
 def describe_effect(effect: dict, room_names: dict[str, str]) -> str:

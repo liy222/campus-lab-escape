@@ -1,5 +1,5 @@
 {
-  "active_stage": "v5-generation-attempts",
+  "active_stage": "v5-generation-reliability",
   "stages": [
     {
       "stage": "history-v5-engineering",
@@ -60,6 +60,12 @@
       "title": "取消人工生成次数上限",
       "stage_metadata": "stages/v5-generation-attempts/stage.json",
       "human_review": "human-reviews/v5-generation-attempts/round-01/review.md"
+    },
+    {
+      "stage": "v5-generation-reliability",
+      "title": "关卡生成可靠性改进与有限成功率测试准备",
+      "stage_metadata": "stages/v5-generation-reliability/stage.json",
+      "human_review": "human-reviews/v5-generation-reliability/round-01/review.md"
     }
   ]
 }

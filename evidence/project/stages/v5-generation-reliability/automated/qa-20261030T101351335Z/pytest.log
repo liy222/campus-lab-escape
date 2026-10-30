@@ -1,0 +1,409 @@
+..............................................F.......FFFFFFFF...F       [100%]
+================================== FAILURES ===================================
+_ test_finite_reliability_runner_is_bounded_and_gates_credentials_and_ledger __
+
+    def test_finite_reliability_runner_is_bounded_and_gates_credentials_and_ledger():
+        root = Path(__file__).resolve().parents[2]
+        source = (root / 'scripts/generation_reliability.py').read_text(encoding='utf-8')
+>       assert 'MAX_CALLS = 6' in source and 'MAX_TOTAL_UNITS = 1_200_000_000' in source
+E       assert ('MAX_CALLS = 6' in '"""Finite reliability sampling. Preparation never opens credentials or a ledger.\n\nExecute is Main-only after actual...on.dumps({\'status\': \'stopped\', \'reason\': \'PRECONDITION_OR_EXECUTION_FAILURE\'}))\n        raise SystemExit(1)\n' and 'MAX_TOTAL_UNITS = 1_200_000_000' in '"""Finite reliability sampling. Preparation never opens credentials or a ledger.\n\nExecute is Main-only after actual...on.dumps({\'status\': \'stopped\', \'reason\': \'PRECONDITION_OR_EXECUTION_FAILURE\'}))\n        raise SystemExit(1)\n')
+
+tests\v5\test_generation_reliability.py:168: AssertionError
+_ test_original_strict_json_schema_precede_narrative_guard[duplicate-DUPLICATE_KEY] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000000006DFEF10>
+kind = 'duplicate', error = 'DUPLICATE_KEY'
+
+    @pytest.mark.parametrize('kind,error', [('duplicate', 'DUPLICATE_KEY'), ('raw-size', 'OUTPUT_SIZE'),
+        ('unsafe', 'UNSAFE_TEXT'), ('extra-description', 'GENERATION_CONTENT_INVALID'),
+        ('missing-object', 'GENERATION_CONTENT_INVALID'), ('typed-bool', 'GENERATION_CONTENT_INVALID'),
+        ('empty-name', 'GENERATION_CONTENT_INVALID')])
+    def test_original_strict_json_schema_precede_narrative_guard(monkeypatch, kind, error):
+        bp = v2.select_blueprint(3, 'hard', seed=0)
+        valid = valid_content(bp)
+>       v2.assemble_draft(bp, valid)
+
+tests\v5\test_narrative_guard.py:260: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend\app\domain\generation_content_v2.py:208: in assemble_draft
+    validate_puzzle_names(blueprint, names, effects)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+blueprint = Blueprint(blueprint_id='position_v1-r3-hard', family='position_v1', room_count=3, difficulty='hard', room_ids=('G1', '...prerequisite_ids=('puzzle_5',), clue_ids=(), recipe='concat', required_item_id='shared_key')), content_version='2.0.0')
+names = {'obj_key': '校园记录物件', 'obj_code_source': '校园记录物件', 'obj_relation': '校园记录物件', 'obj_device_source': '校园记录物件', ...}
+effects = {'obj_puzzle_1': {'purpose': 'puzzle_control', 'carrier': 'terminal', 'unlocks_material_slots': []}, 'obj_puzzle_2': {...'purpose': 'passage_control', 'carrier': 'terminal', 'unlocks_material_slots': [], 'destination_room_slot': 'G3'}, ...}
+
+    def validate_puzzle_names(blueprint: Blueprint, names: dict[str, str], effects: dict[str, dict]) -> None:
+        """Reject incompatible new names; accepted original names remain untouched.
+    
+        A clear container location is distinct from claiming a cabinet lock as the
+        device. Required noun heads keep the stated carrier explicit. This finite
+        vocabulary does not claim to resolve arbitrary prose or every compound.
+        """
+        for obj in blueprint.objects:
+            if obj.kind != 'puzzle':
+                continue
+            effect = effects[obj.object_id]
+            compared = re.sub(r'\s+', '', unicodedata.normalize('NFKC', names[obj.object_id]))
+            identity = _CONTAINER_LOCATION.sub('', compared)
+            if _CONTAINER_IDENTITY.search(identity):
+                raise _invalid_name('name_container')
+            if not identity.endswith(_HEADS[effect['carrier']]):
+>               raise _invalid_name('name_suffix')
+E               ValueError: GENERATION_PUZZLE_NAME_INVALID
+
+backend\app\domain\puzzle_purpose.py:125: ValueError
+_ test_original_strict_json_schema_precede_narrative_guard[raw-size-OUTPUT_SIZE] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000739B750>
+kind = 'raw-size', error = 'OUTPUT_SIZE'
+
+    @pytest.mark.parametrize('kind,error', [('duplicate', 'DUPLICATE_KEY'), ('raw-size', 'OUTPUT_SIZE'),
+        ('unsafe', 'UNSAFE_TEXT'), ('extra-description', 'GENERATION_CONTENT_INVALID'),
+        ('missing-object', 'GENERATION_CONTENT_INVALID'), ('typed-bool', 'GENERATION_CONTENT_INVALID'),
+        ('empty-name', 'GENERATION_CONTENT_INVALID')])
+    def test_original_strict_json_schema_precede_narrative_guard(monkeypatch, kind, error):
+        bp = v2.select_blueprint(3, 'hard', seed=0)
+        valid = valid_content(bp)
+>       v2.assemble_draft(bp, valid)
+
+tests\v5\test_narrative_guard.py:260: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend\app\domain\generation_content_v2.py:208: in assemble_draft
+    validate_puzzle_names(blueprint, names, effects)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+blueprint = Blueprint(blueprint_id='position_v1-r3-hard', family='position_v1', room_count=3, difficulty='hard', room_ids=('G1', '...prerequisite_ids=('puzzle_5',), clue_ids=(), recipe='concat', required_item_id='shared_key')), content_version='2.0.0')
+names = {'obj_key': '校园记录物件', 'obj_code_source': '校园记录物件', 'obj_relation': '校园记录物件', 'obj_device_source': '校园记录物件', ...}
+effects = {'obj_puzzle_1': {'purpose': 'puzzle_control', 'carrier': 'terminal', 'unlocks_material_slots': []}, 'obj_puzzle_2': {...'purpose': 'passage_control', 'carrier': 'terminal', 'unlocks_material_slots': [], 'destination_room_slot': 'G3'}, ...}
+
+    def validate_puzzle_names(blueprint: Blueprint, names: dict[str, str], effects: dict[str, dict]) -> None:
+        """Reject incompatible new names; accepted original names remain untouched.
+    
+        A clear container location is distinct from claiming a cabinet lock as the
+        device. Required noun heads keep the stated carrier explicit. This finite
+        vocabulary does not claim to resolve arbitrary prose or every compound.
+        """
+        for obj in blueprint.objects:
+            if obj.kind != 'puzzle':
+                continue
+            effect = effects[obj.object_id]
+            compared = re.sub(r'\s+', '', unicodedata.normalize('NFKC', names[obj.object_id]))
+            identity = _CONTAINER_LOCATION.sub('', compared)
+            if _CONTAINER_IDENTITY.search(identity):
+                raise _invalid_name('name_container')
+            if not identity.endswith(_HEADS[effect['carrier']]):
+>               raise _invalid_name('name_suffix')
+E               ValueError: GENERATION_PUZZLE_NAME_INVALID
+
+backend\app\domain\puzzle_purpose.py:125: ValueError
+_ test_original_strict_json_schema_precede_narrative_guard[unsafe-UNSAFE_TEXT] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000739AE50>
+kind = 'unsafe', error = 'UNSAFE_TEXT'
+
+    @pytest.mark.parametrize('kind,error', [('duplicate', 'DUPLICATE_KEY'), ('raw-size', 'OUTPUT_SIZE'),
+        ('unsafe', 'UNSAFE_TEXT'), ('extra-description', 'GENERATION_CONTENT_INVALID'),
+        ('missing-object', 'GENERATION_CONTENT_INVALID'), ('typed-bool', 'GENERATION_CONTENT_INVALID'),
+        ('empty-name', 'GENERATION_CONTENT_INVALID')])
+    def test_original_strict_json_schema_precede_narrative_guard(monkeypatch, kind, error):
+        bp = v2.select_blueprint(3, 'hard', seed=0)
+        valid = valid_content(bp)
+>       v2.assemble_draft(bp, valid)
+
+tests\v5\test_narrative_guard.py:260: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend\app\domain\generation_content_v2.py:208: in assemble_draft
+    validate_puzzle_names(blueprint, names, effects)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+blueprint = Blueprint(blueprint_id='position_v1-r3-hard', family='position_v1', room_count=3, difficulty='hard', room_ids=('G1', '...prerequisite_ids=('puzzle_5',), clue_ids=(), recipe='concat', required_item_id='shared_key')), content_version='2.0.0')
+names = {'obj_key': '校园记录物件', 'obj_code_source': '校园记录物件', 'obj_relation': '校园记录物件', 'obj_device_source': '校园记录物件', ...}
+effects = {'obj_puzzle_1': {'purpose': 'puzzle_control', 'carrier': 'terminal', 'unlocks_material_slots': []}, 'obj_puzzle_2': {...'purpose': 'passage_control', 'carrier': 'terminal', 'unlocks_material_slots': [], 'destination_room_slot': 'G3'}, ...}
+
+    def validate_puzzle_names(blueprint: Blueprint, names: dict[str, str], effects: dict[str, dict]) -> None:
+        """Reject incompatible new names; accepted original names remain untouched.
+    
+        A clear container location is distinct from claiming a cabinet lock as the
+        device. Required noun heads keep the stated carrier explicit. This finite
+        vocabulary does not claim to resolve arbitrary prose or every compound.
+        """
+        for obj in blueprint.objects:
+            if obj.kind != 'puzzle':
+                continue
+            effect = effects[obj.object_id]
+            compared = re.sub(r'\s+', '', unicodedata.normalize('NFKC', names[obj.object_id]))
+            identity = _CONTAINER_LOCATION.sub('', compared)
+            if _CONTAINER_IDENTITY.search(identity):
+                raise _invalid_name('name_container')
+            if not identity.endswith(_HEADS[effect['carrier']]):
+>               raise _invalid_name('name_suffix')
+E               ValueError: GENERATION_PUZZLE_NAME_INVALID
+
+backend\app\domain\puzzle_purpose.py:125: ValueError
+_ test_original_strict_json_schema_precede_narrative_guard[extra-description-GENERATION_CONTENT_INVALID] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000000074888C0>
+kind = 'extra-description', error = 'GENERATION_CONTENT_INVALID'
+
+    @pytest.mark.parametrize('kind,error', [('duplicate', 'DUPLICATE_KEY'), ('raw-size', 'OUTPUT_SIZE'),
+        ('unsafe', 'UNSAFE_TEXT'), ('extra-description', 'GENERATION_CONTENT_INVALID'),
+        ('missing-object', 'GENERATION_CONTENT_INVALID'), ('typed-bool', 'GENERATION_CONTENT_INVALID'),
+        ('empty-name', 'GENERATION_CONTENT_INVALID')])
+    def test_original_strict_json_schema_precede_narrative_guard(monkeypatch, kind, error):
+        bp = v2.select_blueprint(3, 'hard', seed=0)
+        valid = valid_content(bp)
+>       v2.assemble_draft(bp, valid)
+
+tests\v5\test_narrative_guard.py:260: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend\app\domain\generation_content_v2.py:208: in assemble_draft
+    validate_puzzle_names(blueprint, names, effects)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+blueprint = Blueprint(blueprint_id='position_v1-r3-hard', family='position_v1', room_count=3, difficulty='hard', room_ids=('G1', '...prerequisite_ids=('puzzle_5',), clue_ids=(), recipe='concat', required_item_id='shared_key')), content_version='2.0.0')
+names = {'obj_key': '校园记录物件', 'obj_code_source': '校园记录物件', 'obj_relation': '校园记录物件', 'obj_device_source': '校园记录物件', ...}
+effects = {'obj_puzzle_1': {'purpose': 'puzzle_control', 'carrier': 'terminal', 'unlocks_material_slots': []}, 'obj_puzzle_2': {...'purpose': 'passage_control', 'carrier': 'terminal', 'unlocks_material_slots': [], 'destination_room_slot': 'G3'}, ...}
+
+    def validate_puzzle_names(blueprint: Blueprint, names: dict[str, str], effects: dict[str, dict]) -> None:
+        """Reject incompatible new names; accepted original names remain untouched.
+    
+        A clear container location is distinct from claiming a cabinet lock as the
+        device. Required noun heads keep the stated carrier explicit. This finite
+        vocabulary does not claim to resolve arbitrary prose or every compound.
+        """
+        for obj in blueprint.objects:
+            if obj.kind != 'puzzle':
+                continue
+            effect = effects[obj.object_id]
+            compared = re.sub(r'\s+', '', unicodedata.normalize('NFKC', names[obj.object_id]))
+            identity = _CONTAINER_LOCATION.sub('', compared)
+            if _CONTAINER_IDENTITY.search(identity):
+                raise _invalid_name('name_container')
+            if not identity.endswith(_HEADS[effect['carrier']]):
+>               raise _invalid_name('name_suffix')
+E               ValueError: GENERATION_PUZZLE_NAME_INVALID
+
+backend\app\domain\puzzle_purpose.py:125: ValueError
+_ test_original_strict_json_schema_precede_narrative_guard[missing-object-GENERATION_CONTENT_INVALID] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000000006E32C60>
+kind = 'missing-object', error = 'GENERATION_CONTENT_INVALID'
+
+    @pytest.mark.parametrize('kind,error', [('duplicate', 'DUPLICATE_KEY'), ('raw-size', 'OUTPUT_SIZE'),
+        ('unsafe', 'UNSAFE_TEXT'), ('extra-description', 'GENERATION_CONTENT_INVALID'),
+        ('missing-object', 'GENERATION_CONTENT_INVALID'), ('typed-bool', 'GENERATION_CONTENT_INVALID'),
+        ('empty-name', 'GENERATION_CONTENT_INVALID')])
+    def test_original_strict_json_schema_precede_narrative_guard(monkeypatch, kind, error):
+        bp = v2.select_blueprint(3, 'hard', seed=0)
+        valid = valid_content(bp)
+>       v2.assemble_draft(bp, valid)
+
+tests\v5\test_narrative_guard.py:260: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend\app\domain\generation_content_v2.py:208: in assemble_draft
+    validate_puzzle_names(blueprint, names, effects)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+blueprint = Blueprint(blueprint_id='position_v1-r3-hard', family='position_v1', room_count=3, difficulty='hard', room_ids=('G1', '...prerequisite_ids=('puzzle_5',), clue_ids=(), recipe='concat', required_item_id='shared_key')), content_version='2.0.0')
+names = {'obj_key': '校园记录物件', 'obj_code_source': '校园记录物件', 'obj_relation': '校园记录物件', 'obj_device_source': '校园记录物件', ...}
+effects = {'obj_puzzle_1': {'purpose': 'puzzle_control', 'carrier': 'terminal', 'unlocks_material_slots': []}, 'obj_puzzle_2': {...'purpose': 'passage_control', 'carrier': 'terminal', 'unlocks_material_slots': [], 'destination_room_slot': 'G3'}, ...}
+
+    def validate_puzzle_names(blueprint: Blueprint, names: dict[str, str], effects: dict[str, dict]) -> None:
+        """Reject incompatible new names; accepted original names remain untouched.
+    
+        A clear container location is distinct from claiming a cabinet lock as the
+        device. Required noun heads keep the stated carrier explicit. This finite
+        vocabulary does not claim to resolve arbitrary prose or every compound.
+        """
+        for obj in blueprint.objects:
+            if obj.kind != 'puzzle':
+                continue
+            effect = effects[obj.object_id]
+            compared = re.sub(r'\s+', '', unicodedata.normalize('NFKC', names[obj.object_id]))
+            identity = _CONTAINER_LOCATION.sub('', compared)
+            if _CONTAINER_IDENTITY.search(identity):
+                raise _invalid_name('name_container')
+            if not identity.endswith(_HEADS[effect['carrier']]):
+>               raise _invalid_name('name_suffix')
+E               ValueError: GENERATION_PUZZLE_NAME_INVALID
+
+backend\app\domain\puzzle_purpose.py:125: ValueError
+_ test_original_strict_json_schema_precede_narrative_guard[typed-bool-GENERATION_CONTENT_INVALID] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000000006BC0910>
+kind = 'typed-bool', error = 'GENERATION_CONTENT_INVALID'
+
+    @pytest.mark.parametrize('kind,error', [('duplicate', 'DUPLICATE_KEY'), ('raw-size', 'OUTPUT_SIZE'),
+        ('unsafe', 'UNSAFE_TEXT'), ('extra-description', 'GENERATION_CONTENT_INVALID'),
+        ('missing-object', 'GENERATION_CONTENT_INVALID'), ('typed-bool', 'GENERATION_CONTENT_INVALID'),
+        ('empty-name', 'GENERATION_CONTENT_INVALID')])
+    def test_original_strict_json_schema_precede_narrative_guard(monkeypatch, kind, error):
+        bp = v2.select_blueprint(3, 'hard', seed=0)
+        valid = valid_content(bp)
+>       v2.assemble_draft(bp, valid)
+
+tests\v5\test_narrative_guard.py:260: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend\app\domain\generation_content_v2.py:208: in assemble_draft
+    validate_puzzle_names(blueprint, names, effects)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+blueprint = Blueprint(blueprint_id='position_v1-r3-hard', family='position_v1', room_count=3, difficulty='hard', room_ids=('G1', '...prerequisite_ids=('puzzle_5',), clue_ids=(), recipe='concat', required_item_id='shared_key')), content_version='2.0.0')
+names = {'obj_key': '校园记录物件', 'obj_code_source': '校园记录物件', 'obj_relation': '校园记录物件', 'obj_device_source': '校园记录物件', ...}
+effects = {'obj_puzzle_1': {'purpose': 'puzzle_control', 'carrier': 'terminal', 'unlocks_material_slots': []}, 'obj_puzzle_2': {...'purpose': 'passage_control', 'carrier': 'terminal', 'unlocks_material_slots': [], 'destination_room_slot': 'G3'}, ...}
+
+    def validate_puzzle_names(blueprint: Blueprint, names: dict[str, str], effects: dict[str, dict]) -> None:
+        """Reject incompatible new names; accepted original names remain untouched.
+    
+        A clear container location is distinct from claiming a cabinet lock as the
+        device. Required noun heads keep the stated carrier explicit. This finite
+        vocabulary does not claim to resolve arbitrary prose or every compound.
+        """
+        for obj in blueprint.objects:
+            if obj.kind != 'puzzle':
+                continue
+            effect = effects[obj.object_id]
+            compared = re.sub(r'\s+', '', unicodedata.normalize('NFKC', names[obj.object_id]))
+            identity = _CONTAINER_LOCATION.sub('', compared)
+            if _CONTAINER_IDENTITY.search(identity):
+                raise _invalid_name('name_container')
+            if not identity.endswith(_HEADS[effect['carrier']]):
+>               raise _invalid_name('name_suffix')
+E               ValueError: GENERATION_PUZZLE_NAME_INVALID
+
+backend\app\domain\puzzle_purpose.py:125: ValueError
+_ test_original_strict_json_schema_precede_narrative_guard[empty-name-GENERATION_CONTENT_INVALID] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000000006B717F0>
+kind = 'empty-name', error = 'GENERATION_CONTENT_INVALID'
+
+    @pytest.mark.parametrize('kind,error', [('duplicate', 'DUPLICATE_KEY'), ('raw-size', 'OUTPUT_SIZE'),
+        ('unsafe', 'UNSAFE_TEXT'), ('extra-description', 'GENERATION_CONTENT_INVALID'),
+        ('missing-object', 'GENERATION_CONTENT_INVALID'), ('typed-bool', 'GENERATION_CONTENT_INVALID'),
+        ('empty-name', 'GENERATION_CONTENT_INVALID')])
+    def test_original_strict_json_schema_precede_narrative_guard(monkeypatch, kind, error):
+        bp = v2.select_blueprint(3, 'hard', seed=0)
+        valid = valid_content(bp)
+>       v2.assemble_draft(bp, valid)
+
+tests\v5\test_narrative_guard.py:260: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend\app\domain\generation_content_v2.py:208: in assemble_draft
+    validate_puzzle_names(blueprint, names, effects)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+blueprint = Blueprint(blueprint_id='position_v1-r3-hard', family='position_v1', room_count=3, difficulty='hard', room_ids=('G1', '...prerequisite_ids=('puzzle_5',), clue_ids=(), recipe='concat', required_item_id='shared_key')), content_version='2.0.0')
+names = {'obj_key': '校园记录物件', 'obj_code_source': '校园记录物件', 'obj_relation': '校园记录物件', 'obj_device_source': '校园记录物件', ...}
+effects = {'obj_puzzle_1': {'purpose': 'puzzle_control', 'carrier': 'terminal', 'unlocks_material_slots': []}, 'obj_puzzle_2': {...'purpose': 'passage_control', 'carrier': 'terminal', 'unlocks_material_slots': [], 'destination_room_slot': 'G3'}, ...}
+
+    def validate_puzzle_names(blueprint: Blueprint, names: dict[str, str], effects: dict[str, dict]) -> None:
+        """Reject incompatible new names; accepted original names remain untouched.
+    
+        A clear container location is distinct from claiming a cabinet lock as the
+        device. Required noun heads keep the stated carrier explicit. This finite
+        vocabulary does not claim to resolve arbitrary prose or every compound.
+        """
+        for obj in blueprint.objects:
+            if obj.kind != 'puzzle':
+                continue
+            effect = effects[obj.object_id]
+            compared = re.sub(r'\s+', '', unicodedata.normalize('NFKC', names[obj.object_id]))
+            identity = _CONTAINER_LOCATION.sub('', compared)
+            if _CONTAINER_IDENTITY.search(identity):
+                raise _invalid_name('name_container')
+            if not identity.endswith(_HEADS[effect['carrier']]):
+>               raise _invalid_name('name_suffix')
+E               ValueError: GENERATION_PUZZLE_NAME_INVALID
+
+backend\app\domain\puzzle_purpose.py:125: ValueError
+______ test_one_production_mock_send_rejected_worker_publishes_no_level _______
+
+tmp_path = WindowsPath('C:/Users/liyh/AppData/Local/Temp/pytest-of-liyh/pytest-29/test_one_production_mock_send_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000000002C10120>
+
+    def test_one_production_mock_send_rejected_worker_publishes_no_level(tmp_path, monkeypatch):
+        from backend.app.main import create_v5_app
+        from backend.app.api import v5 as api_v5
+        bp = v2.select_blueprint(3, 'hard', seed=1)
+        raw = valid_content(bp)
+>       v2.assemble_draft(bp, raw)
+
+tests\v5\test_narrative_guard.py:309: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend\app\domain\generation_content_v2.py:208: in assemble_draft
+    validate_puzzle_names(blueprint, names, effects)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+blueprint = Blueprint(blueprint_id='mapping_v1-r3-hard', family='mapping_v1', room_count=3, difficulty='hard', room_ids=('G1', 'G2...prerequisite_ids=('puzzle_5',), clue_ids=(), recipe='concat', required_item_id='shared_key')), content_version='2.0.0')
+names = {'obj_key': '校园记录物件', 'obj_code_source': '校园记录物件', 'obj_relation': '校园记录物件', 'obj_device_source': '校园记录物件', ...}
+effects = {'obj_puzzle_1': {'purpose': 'puzzle_control', 'carrier': 'terminal', 'unlocks_material_slots': []}, 'obj_puzzle_2': {...'purpose': 'passage_control', 'carrier': 'terminal', 'unlocks_material_slots': [], 'destination_room_slot': 'G3'}, ...}
+
+    def validate_puzzle_names(blueprint: Blueprint, names: dict[str, str], effects: dict[str, dict]) -> None:
+        """Reject incompatible new names; accepted original names remain untouched.
+    
+        A clear container location is distinct from claiming a cabinet lock as the
+        device. Required noun heads keep the stated carrier explicit. This finite
+        vocabulary does not claim to resolve arbitrary prose or every compound.
+        """
+        for obj in blueprint.objects:
+            if obj.kind != 'puzzle':
+                continue
+            effect = effects[obj.object_id]
+            compared = re.sub(r'\s+', '', unicodedata.normalize('NFKC', names[obj.object_id]))
+            identity = _CONTAINER_LOCATION.sub('', compared)
+            if _CONTAINER_IDENTITY.search(identity):
+                raise _invalid_name('name_container')
+            if not identity.endswith(_HEADS[effect['carrier']]):
+>               raise _invalid_name('name_suffix')
+E               ValueError: GENERATION_PUZZLE_NAME_INVALID
+
+backend\app\domain\puzzle_purpose.py:125: ValueError
+__ test_actual_content_failure_branches_have_safe_distinct_reasons[assembly] __
+
+tmp_path = WindowsPath('C:/Users/liyh/AppData/Local/Temp/pytest-of-liyh/pytest-29/test_actual_content_failure_br3')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000000006E3ADB0>
+branch = 'assembly'
+
+    @pytest.mark.parametrize('branch', ['parse', 'schema', 'narrative', 'assembly'])
+    def test_actual_content_failure_branches_have_safe_distinct_reasons(tmp_path, monkeypatch, branch):
+        app, actor, provider, good = prepared(tmp_path, monkeypatch)
+        if branch == 'parse': provider.raw = '{' + PRIVATE_TEXT
+        elif branch == 'schema': provider.raw = json.dumps({'title': PRIVATE_TEXT})
+        elif branch == 'narrative':
+            good['story'] = '离开前必须归还所有资料。'
+            provider.raw = json.dumps(good, ensure_ascii=False)
+        else:
+            def fail_assembly(*args): raise ValueError(PRIVATE_TEXT)
+            monkeypatch.setattr(content.v1, 'assemble_draft', fail_assembly)
+        theme = '仅供隔离测试的主题' + branch
+        job = run_job(actor, theme)
+        assert job['status'] == 'rejected' and job['error_code'] == 'MODEL_INVALID_OUTPUT'
+        trace = read_trace(app.state.v5_database.path, job['job_id'])
+        assert [event['stage'] for event in trace['events']] == ['pending', 'generating', 'rejected']
+        terminal = trace['events'][-1]
+>       assert terminal['reason'] == branch
+E       AssertionError: assert 'name_suffix' == 'assembly'
+E         
+E         - assembly
+E         + name_suffix
+
+tests\v5\test_generation_observability.py:84: AssertionError
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/v5/test_generation_reliability.py::test_finite_reliability_runner_is_bounded_and_gates_credentials_and_ledger
+FAILED tests/v5/test_narrative_guard.py::test_original_strict_json_schema_precede_narrative_guard[duplicate-DUPLICATE_KEY]
+FAILED tests/v5/test_narrative_guard.py::test_original_strict_json_schema_precede_narrative_guard[raw-size-OUTPUT_SIZE]
+FAILED tests/v5/test_narrative_guard.py::test_original_strict_json_schema_precede_narrative_guard[unsafe-UNSAFE_TEXT]
+FAILED tests/v5/test_narrative_guard.py::test_original_strict_json_schema_precede_narrative_guard[extra-description-GENERATION_CONTENT_INVALID]
+FAILED tests/v5/test_narrative_guard.py::test_original_strict_json_schema_precede_narrative_guard[missing-object-GENERATION_CONTENT_INVALID]
+FAILED tests/v5/test_narrative_guard.py::test_original_strict_json_schema_precede_narrative_guard[typed-bool-GENERATION_CONTENT_INVALID]
+FAILED tests/v5/test_narrative_guard.py::test_original_strict_json_schema_precede_narrative_guard[empty-name-GENERATION_CONTENT_INVALID]
+FAILED tests/v5/test_narrative_guard.py::test_one_production_mock_send_rejected_worker_publishes_no_level
+FAILED tests/v5/test_generation_observability.py::test_actual_content_failure_branches_have_safe_distinct_reasons[assembly]
+10 failed, 56 passed, 1 warning in 1.91s

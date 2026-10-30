@@ -1,5 +1,7 @@
 # GenerationContent 2.0.0（模型内部合同）
 
+2026-10-30生成指导补充：请求manifest的每个puzzle新增name_requirements，由原后缀/门禁词表导出allowed_suffixes、must_end_with、require_access_word、allowed_access_words和合法examples；提示明确合法后缀必须位于名称末尾。接受/拒绝集合保持；非法名字仍为GENERATION_PUZZLE_NAME_INVALID，内部safe reason细分name_suffix/name_access/name_container，不记录名字或模型正文。narrative仅保留叙事guard阶段，旧合并日志不追补细因。只改请求指导，不改模型回复Schema或2.0.0版本，不代表已提高真实成功率。
+
 2026-10-29通行语义补充（新生成入口）：`puzzle_purpose.py`按真实前置祖先，找出覆盖本房其余任务的唯一末题，标为`passage_control`；manifest的各puzzle增加Host确定的`effect`，包含用途、实际`carrier`、真实可释放的本房资料/物品槽位，门禁另含目的房间槽位或EXIT。其余题为`puzzle_control`，当前不新增柜体、钥匙获取步骤或机制。Host基础说明补充真实通行效果，不显示答案、参数或未发现的资料ID。
 
 新名称在原strict JSON、exact Schema和叙事政策之后、完整Draft构造前接受有限校验：谜题名称须以实际terminal/circuit载体支持的明确名词为主体；门禁题还须明确门禁、门锁或通行身份。柜锁/柜体身份拒绝，明确位置修饰如“柜旁门禁终端”可保留。错误为纯code `GENERATION_PUZZLE_NAME_INVALID`，沿现有narrative诊断；合法模型原名不改写，不修补、不重试。此有限名词规则不是任意语义保证，可能拒绝未列出的合法别称或漏过复杂歧义。内容JSON的字段、2.0.0版本和原Schema字节不变；旧完整定义/Hash/存档加载不运行新名称校验，不迁移玩家数据。

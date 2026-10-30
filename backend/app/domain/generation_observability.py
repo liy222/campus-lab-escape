@@ -15,10 +15,11 @@ SOURCE_FILES = (
     'frontend/src/assets/generated-catalog.json',
 )
 STAGES = frozenset({'pending', 'generating', 'validating', 'ready', 'failed', 'rejected', 'unknown'})
+NAME_REASONS = frozenset({'name_suffix', 'name_access', 'name_container'})
 REASONS = frozenset({'requested', 'started', 'generated', 'completed', 'parse', 'schema',
     'narrative', 'assembly', 'credential', 'admission', 'proof', 'provider',
     'provider_unavailable', 'provider_unknown', 'response_envelope', 'timeout',
-    'cancelled', 'process_restart', 'internal', 'unspecified'})
+    'cancelled', 'process_restart', 'internal', 'unspecified'}) | NAME_REASONS
 COUNT_FIELDS = frozenset({'theme_characters', 'theme_utf8_bytes', 'requested_rooms', 'difficulty_rank',
     'messages_utf8_bytes', 'model_response_characters', 'model_response_utf8_bytes',
     'draft_response_characters', 'draft_response_utf8_bytes', 'rooms', 'objects',

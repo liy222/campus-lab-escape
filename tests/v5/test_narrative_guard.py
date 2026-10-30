@@ -51,6 +51,13 @@ def valid_content(bp):
     """Only established QA-owned synthetic names/parameters, no real raw input."""
     result = synthetic_model_content(bp)
     result['story'] = '窗外下着小雨，校园活动室里保存着活动记录。'
+    effects = v2.puzzle_effects(bp)
+    for obj in bp.objects:
+        if obj.kind != 'puzzle':
+            continue
+        requirements = v2.name_requirements(effects[obj.object_id])
+        prefix = '门禁甲' if requirements['require_access_word'] else '主题甲'
+        result['objects'][obj.object_id]['name'] = prefix + requirements['allowed_suffixes'][0]
     for room in result['rooms'].values():
         room['description'] = '窗边摆着旧桌椅，地面映着柔和的灯光。'
     return result
