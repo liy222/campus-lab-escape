@@ -8,6 +8,7 @@ import './v5.css';
 
 const jobLabel: Record<Job['status'], string> = { pending: '等待生成', generating: '正在生成', validating: '正在校验', ready: '已就绪', rejected: '校验拒绝', failed: '生成失败', unknown: '结果未知' };
 const difficultyLabel: Record<string, string> = { easy: '简单', normal: '普通', hard: '困难' };
+const campusThemes = ['雨夜天文社', '图书馆档案', '化学实验室', '计算机机房', '校园广播室'];
 const jobError: Record<string, string> = {
   PROCESS_RESTARTED: '本地服务重启中断任务，请查询结果；不会自动重复付费生成。',
   MODEL_TIMEOUT: '模型超时，生成结果未知；不会自动重试。',
@@ -28,7 +29,7 @@ export default function Workspace() {
   const [auth, setAuth] = useState<Auth | null>(null), [loading, setLoading] = useState(true), [busy, setBusy] = useState(false), [error, setError] = useState('');
   const [form, setForm] = useState({ username: '', password: '' }), [register, setRegister] = useState(false);
   const [levels, setLevels] = useState<Level[]>([]), [runs, setRuns] = useState<Run[]>([]), [active, setActive] = useState<Run | null>(null);
-  const [theme, setTheme] = useState(''), [roomCount, setRoomCount] = useState(2), [difficulty, setDifficulty] = useState('normal'), [key, setKey] = useState(''), [job, setJob] = useState<Job | null>(null);
+  const [theme, setTheme] = useState('雨夜天文社'), [roomCount, setRoomCount] = useState(2), [difficulty, setDifficulty] = useState('normal'), [key, setKey] = useState(''), [job, setJob] = useState<Job | null>(null);
   const liveAuth = useRef(''); liveAuth.current = auth?.auth_context || '';
   const channel = useRef<BroadcastChannel | null>(null);
   const clear = () => { setKey(''); setActive(null); setLevels([]); setRuns([]); setJob(null); };
@@ -91,7 +92,7 @@ export default function Workspace() {
     const temporaryKey = key.trim();
     if (!temporaryKey) { setError('生成关卡需要你自己的 DeepSeek API Key。'); return; }
     if (temporaryKey.length > 256 || /[^\x21-\x7E]/.test(temporaryKey)) { setError('密钥格式不正确，请去除空格、中文或换行。'); return; }
-    if (!theme.trim()) { setError('请描述校园主题。'); return; }
+    if (!theme.trim()) { setError('请选择校园主题。'); return; }
     await task(async () => {
       if (owner !== client.auth.auth_context) throw new ApiError('STALE_AUTH', '账号已改变，请重新填写密钥。');
       const id = crypto.randomUUID();
@@ -168,18 +169,17 @@ export default function Workspace() {
 
         <section className="v5-generator" aria-labelledby="create-title">
           <p className="v5-kicker">一段故事，从这里开始 / CREATE</p>
-          <h2 id="create-title">把你的想象写进校园</h2>
-          <p className="v5-generator-lead">程序安排可解的关卡结构，AI 围绕校园主题创作故事与谜面；数字、设备顺序和对应关系随谜底变化，生成结果仍需通过校验。</p>
+          <h2 id="create-title">选择校园主题，开始探索</h2>
+          <p className="v5-generator-lead">从已有五类手绘主题中选择，AI 围绕所选主题创作故事与谜面，程序安排可解的关卡结构；数字、设备顺序和对应关系随谜底变化，生成结果仍需通过校验。</p>
           <form onSubmit={event => { event.preventDefault(); void generate(); }}>
             <label className="v5-field">
-              <span className="v5-step">01 / 故事的起点</span>
+              <span className="v5-step">01 / 选择主题</span>
               校园主题
-              <textarea rows={4} maxLength={2000} placeholder="例如：雨夜里的天文社旧活动室，寻找封存的观测记录…" value={theme} onChange={event => setTheme(sanitize(event.target.value, key))} />
-              <small>{theme.length}/2000</small>
+              <select value={theme} onChange={event => setTheme(event.target.value)}>
+                {campusThemes.map(name => <option key={name} value={name}>{name}</option>)}
+              </select>
             </label>
-            <p className="v5-coverage">已备主题素材：天文社、图书馆档案、化学实验室、计算机机房、校园广播室。</p>
             {coverage.pack && <p className="v5-coverage is-on"><span aria-hidden="true">✦</span> 已支持主题素材「{coverage.pack.display_name}」：{coverage.pack.coverage || '使用本主题的场景与代表物件，部分角色沿用通用手绘素材。'}</p>}
-            {!coverage.pack && theme.trim() && <p className="v5-coverage">这个主题还没有专属素材，将使用通用校园手绘画面，主题会体现在故事、物件名称与线索里。</p>}
             <p className="v5-step">02 / 探索的规模</p>
             <div className="v5-fields">
               <label>房间数量<select value={roomCount} onChange={event => setRoomCount(Number(event.target.value))}><option value={1}>1 间</option><option value={2}>2 间</option><option value={3}>3 间</option></select></label>

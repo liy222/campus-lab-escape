@@ -33,6 +33,8 @@ E&O与归档阶段技术完成：独立11项定向API通过；浏览器首轮核
 
 2026-10-30用户继续增加素材：本阶段v5-theme-variation复用既有五主题，Main拥有31张新原图/提示/制作源、五manifest、图集、固定证据/根文档/Git；恢复Frontend仅拥有visual/types.ts、registry.ts、scene.ts与GeneratedPlay.tsx/Workspace.tsx必要日期/封面接线；恢复Luna QA仅新run_theme_variation_browser.mjs/theme_variation_fixture_server.py和阶段实际产物。31次内置imagegen实际完成，15背景+8资料/钥匙+8设备状态；设备两态按family配对，旧关卡按公开创建时间保留旧候选。复用后端/API/规则/存档，不读玩家库，0项目真实/付费；稳定后一次必要V5构建与独立有限复核，结束邀请本人核验。恢复角色不声明当前型号已独立核实，不新建代理或Astra。
 
+2026-10-30用户要求生成校园主题从已有五类选择，不再自由输入：本阶段v5-theme-selection，既有Frontend仅Workspace.tsx固定五选项与相关说明；Main根文档/正式范围/固定证据/Git；既有Luna QA仅新窄浏览器入口、最近variation入口的主题控件适配与本阶段实际结果。后端字符串合同/AI/规则/账户/旧关卡/存档和素材不改。一次必要V5构建与五选项/覆盖文案/单次Synthetic提交的有限独立检查，0真实/付费调用，不重跑全套；交付邀请本人检查，不推定已接受。恢复角色不作运行型号核验声明。
+
 The human is the sole developer. The attachment docs/execution-plan.md is the accepted project scope, not proof of execution. Never invent tests, people, approvals or model calls.
 Main owns AGENTS.md, PLAN.md, STATUS.md, DECISIONS.md, integration and git. Agents write only assigned paths, never commit, never spawn further agents. Shared workspace; do not overwrite another owner's files. Default delegates gpt-6.1-sol/high, simple mechanical tasks gpt-6-luna/medium. No Astra unless needed. Main runtime model is not independently introspectable and must not be claimed as verified.
 Spec owns docs/SPEC.md, docs/level_design.md, contracts/. Delivery owns scripts/, README.md, release/, .gitignore, .env.example. Backend owns backend/app/{domain,api,storage}, backend/app/main.py and Python dependencies. Frontend owns frontend/. AI owns backend/app/ai/. QA owns tests/ and review/findings/. Experiments owns experiments/. Evaluator owns evaluation/.

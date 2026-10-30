@@ -1,6 +1,10 @@
 # Plan
 
-## 当前阶段（2026-10-30）：五类主题内部变化扩充
+## 当前阶段（2026-10-30）：生成入口选择已有主题
+
+按用户要求，用五项选择替代自由输入，原生成体系/旧关卡保持；仅改Workspace.tsx，一次V5构建及有限联合检查完成，原检查器失败保留，待本人查看入口。[总计划第24节](docs/v5-build-plan.md#24-2026-10-30-生成入口选择已有主题) · [本轮记录](evidence/project/stages/v5-theme-selection/stage.json) · [本人检查](evidence/project/human-reviews/v5-theme-selection/round-01/review.md)。本轮集中提交推送、交本人看入口；0真实/付费调用。
+
+## 前阶段（2026-10-30）：五类主题内部变化扩充
 
 用户要求继续增加素材；31张新原图和稳定选图已接入，已完成一次V5构建和194条独立定向检查，待本人集中核验。[交付与限制](evidence/project/stages/v5-theme-variation/reviews/delivery.md)。范围/归属见[本轮计划](docs/v5-theme-variation-plan.md)，[实际阶段](evidence/project/stages/v5-theme-variation/stage.json)、[对照图集](美术图集.html)、[本人检查](evidence/project/human-reviews/v5-theme-variation/round-01/review.md)。保留旧关卡外观，不改后端/API/规则/存档；项目真实调用0。
 

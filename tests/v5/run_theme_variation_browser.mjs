@@ -316,7 +316,7 @@ async function browserAudit(newAssets, packs, probe) {
     await page.getByLabel('密码（12–128位）', {exact: true}).fill('Synthetic-Variation-only!');
     await page.getByRole('button', {name: '注册并进入', exact: true}).click();
     await page.getByRole('heading', {name: '我的关卡', exact: true}).waitFor();
-    await page.getByLabel(/校园主题/).fill('图书馆档案主题变化合成样例');
+    await page.getByRole('combobox', {name: /校园主题/}).selectOption('图书馆档案');
     await page.getByLabel(/^房间数量/).selectOption('3');
     await page.getByLabel(/^难度/).selectOption('hard');
     await page.getByLabel(/本次生成的 DeepSeek API Key/).fill('SYNTHETIC-ONLY-NOT-A-REAL-KEY');

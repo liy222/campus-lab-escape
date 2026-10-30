@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "stage": "v5-theme-selection",
+  "title": "生成入口改为已有校园主题选择",
+  "created_at": "2026-10-30T07:08:52.159827Z",
+  "technical_status": "complete_pending_human_review",
+  "human_review_status": "not_reviewed",
+  "owner_review_status": "source_and_two_actual_screenshots_reviewed",
+  "peer_review_status": "not_reviewed",
+  "current_human_review_round": 1,
+  "human_review_rounds": {},
+  "collections": [],
+  "source_commit": "5cfe76d",
+  "scope": "仅创建入口将自由主题改为五个已有主题选择；后端/API/旧关卡/存档/素材保持",
+  "real_model_calls": 0,
+  "paid_calls": 0,
+  "independent_qa_status": "finite_joint_checks_with_preserved_failures",
+  "validation": {
+    "build": "automated/build-2026-10-30T07-13-55-522Z-d58c44e2/result.json",
+    "build_exit": 0,
+    "first_browser": "automated/qa-2026-10-30T07-14-21-763Z-e5eec62f/result.json",
+    "first_exit": 1,
+    "second_browser": "automated/qa-2026-10-30T07-15-21-008Z-1be7124e/result.json",
+    "second_exit": 1,
+    "second_passed": 15,
+    "second_total": 16,
+    "keyboard_only": "automated/qa-2026-10-30T07-17-09-784Z-903ba870/result.json",
+    "keyboard_only_exit": 0,
+    "report": "reviews/qa.md",
+    "delivery": "reviews/delivery.md"
+  },
+  "limitations": [
+    "Original broad label selector failed before assertions; preserved",
+    "Same-run native-select keyboard assertion failed; fresh keyboard-only passed, no single all-green claim",
+    "One Synthetic generation only; no real-content quality claim",
+    "Human review pending"
+  ]
+}

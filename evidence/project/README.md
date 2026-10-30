@@ -2,7 +2,11 @@
 
 今后从这里读取、整理和提交证据。开发中每次实际检查、失败、修复和反馈及时保存，大阶段结束再集中交付并邀请真人核验。
 
-## 当前阶段：五类主题内部变化扩充
+## 当前阶段：生成入口选择已有主题
+
+五个已有主题选择替代自由输入，保持原生成链与旧关卡。必要联合检查完成，待本人查看：[交付/局限](stages/v5-theme-selection/reviews/delivery.md) · [独立QA](stages/v5-theme-selection/reviews/qa.md) · [本轮记录](stages/v5-theme-selection/stage.json) · [本人检查](human-reviews/v5-theme-selection/round-01/review.md)。0真实/付费调用，不重跑旧全套。
+
+## 前阶段：五类主题内部变化扩充
 
 新31原图（15背景、8资料/钥匙、8设备状态）与稳定选图已接入，已完成一次V5构建和194条独立定向检查，待本人集中核验。固定入口：[交付/限制](stages/v5-theme-variation/reviews/delivery.md) · [独立QA](stages/v5-theme-variation/reviews/qa.md) · [阶段](stages/v5-theme-variation/stage.json) · [评价标准](stages/v5-theme-variation/evaluation/criteria.md) · [制作日志](stages/v5-theme-variation/logs/image-generation.json) · [本人待检查](human-reviews/v5-theme-variation/round-01/review.md) · [本地图集](../../美术图集.html)。累计74个独立图片来源；图集86卡片中的共享重复不另计。
 
