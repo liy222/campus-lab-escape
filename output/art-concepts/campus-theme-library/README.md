@@ -15,7 +15,7 @@
 
 成品路径为frontend/public/art-themes/<theme-id>/v1/，运行清单位于frontend/src/assets/themes/<theme-id>/manifest.json。运行时不引用Codex缓存；原图逐字节复制，install_metadata.py仅读取尺寸/alpha bbox并写元数据，不修改像素。
 
-[静态美术预览](http://127.0.0.1:8001/art-themes/campus-theme-library.html) · [逐张提示、来源和实际尺寸](assets.json) · [固定证据记录](../../../evidence/project/stages/v5-campus-theme-library/logs/image-generation.json) · [实施范围](../../../docs/v5-campus-theme-library-plan.md)
+本地直接双击[项目根目录美术图集.html](../../../美术图集.html)，或用[静态美术预览](http://127.0.0.1:8001/art-themes/campus-theme-library.html) · [逐张提示、来源和实际尺寸](assets.json) · [固定证据记录](../../../evidence/project/stages/v5-campus-theme-library/logs/image-generation.json) · [实施范围](../../../docs/v5-campus-theme-library-plan.md)
 
 主题选择用明确词匹配，混合描述取最先出现的明确主题，未覆盖内容保留通用手绘。同一关卡重开外观稳定；预制包覆盖主题族，文字中的任意天气、年代及具体物件细节不等于另有专属原图。
 

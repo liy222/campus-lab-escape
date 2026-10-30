@@ -12,7 +12,7 @@
 | 本轮验证 | 一次V5构建exit0、68静态检查通过，四主题三房/双资料/终端双态/重载联合通过；原2次列表/就绪提示超时保留，图集28图加载，项目真实调用0 |
 | SP-01验证 | 新模块49通过、受影响旧输入20通过、通道UI11通过、generic渲染窄验13通过；两次必要V5构建通过，检查器失败与执行时点分开保存，真实调用0 |
 | 前阶段验证 | 手绘/UI首轮37项36通过、1项过严原生焦点断言；仅焦点澄清2项通过，原exit1保留。清理类型/语法检查exit0；classic/V5构建各一次exit0，R1/线路/CRT/R3与V5两桌面联合窄验完成，三次检查器适配失败保留 |
-| 体验入口 | [直接看四主题图集](http://127.0.0.1:8001/art-themes/campus-theme-library.html)；游戏仍为8001或“启动新版.cmd”，已有匹配主题关卡刷新后使用新画面、进度保留 |
+| 体验入口 | 直接双击[美术图集.html](美术图集.html)或[网页图集](http://127.0.0.1:8001/art-themes/campus-theme-library.html)；游戏仍为8001或“启动新版.cmd”，已有匹配主题关卡刷新后使用新画面、进度保留 |
 | 限制 | 专属素材覆盖五类主题族，其他主题回退通用图；快速Synthetic任务列表/就绪提示更新边界保留，必要时使用现有刷新列表；真实AI质量/本人/同伴尚未确认 |
 
 当前[主题库交付](evidence/project/stages/v5-campus-theme-library/reviews/delivery.md)与[本人待检查](evidence/project/human-reviews/v5-campus-theme-library/round-01/review.md)。以下保留前阶段实际范围，不能当成本轮新执行或真人接受。

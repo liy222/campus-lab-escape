@@ -4,7 +4,7 @@
 
 ## 当前阶段：四类校园主题素材库
 
-28张新原图已接入图书馆、化学实验室、机房和广播室；原天文社保留，通用物件共享。[美术图集](http://127.0.0.1:8001/art-themes/campus-theme-library.html) · [交付/限制](stages/v5-campus-theme-library/reviews/delivery.md) · [独立QA](stages/v5-campus-theme-library/reviews/qa.md) · [逐张制作记录](stages/v5-campus-theme-library/logs/image-generation.json) · [本人检查](human-reviews/v5-campus-theme-library/round-01/review.md)。一次构建与分范围联合检查完成，两次列表/就绪提示失败保留；本人尚未核验。
+28张新原图已接入图书馆、化学实验室、机房和广播室；原天文社保留，通用物件共享。[本地双击图集](../../美术图集.html)（无需启动服务） · [网页图集](http://127.0.0.1:8001/art-themes/campus-theme-library.html) · [交付/限制](stages/v5-campus-theme-library/reviews/delivery.md) · [独立QA](stages/v5-campus-theme-library/reviews/qa.md) · [逐张制作记录](stages/v5-campus-theme-library/logs/image-generation.json) · [本人检查](human-reviews/v5-campus-theme-library/round-01/review.md)。一次构建与分范围联合检查完成，两次列表/就绪提示失败保留；本人尚未核验。
 
 ## 前阶段：门锁与门禁通行语义修正
 
