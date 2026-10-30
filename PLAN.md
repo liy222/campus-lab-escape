@@ -2,7 +2,7 @@
 
 ## 当前阶段（2026-10-30）：关卡生成可靠性改进与有限采样
 
-对齐逐装置名称指导与原校验词表，新增三类safe reason；实现与独立必要窄验完成，66项及替换后的审批阻断1项分范围记录；最终6请求费用上界0.99208元，自有预览已生效。真实样本拟最多6次/1.00元，目前未授权/未调用。[计划与六样本](docs/v5-generation-reliability-plan.md) · [固定阶段](evidence/project/stages/v5-generation-reliability/stage.json)。旧三次narrative细因仍未知，不把本轮离线通过写成已提高真实成功率。
+对齐逐装置名称指导与原校验词表，新增三类safe reason；实现与独立必要窄验完成，66项及替换后的审批阻断1项分范围记录；最终6请求费用上界0.99208元，自有预览已生效。用户已批准6次/1.00元并执行完成：本批6/6通过准入及EXIT规则回放，用量计费估算0.04783912元；六次名额已用完，未追加调用。[计划与六样本](docs/v5-generation-reliability-plan.md) · [固定阶段](evidence/project/stages/v5-generation-reliability/stage.json)。旧三次narrative细因仍未知；真实小样本不外推普遍成功率。下一步请本人按需体验并反馈，按实际问题集中修正，不自行扩大测试或功能。
 
 ## 前阶段（2026-10-30）：取消人工生成累计次数上限
 

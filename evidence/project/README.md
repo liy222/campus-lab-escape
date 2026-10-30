@@ -4,7 +4,7 @@
 
 ## 当前阶段：关卡生成可靠性改进
 
-命名指导共用现有校验词表，原准入保持；独立窄验与有限真实调用纯预检完成，自有预览已生效，真实6次/1元尚未批准。[交付/边界](stages/v5-generation-reliability/reviews/delivery.md) · [计划](../../docs/v5-generation-reliability-plan.md) · [阶段](stages/v5-generation-reliability/stage.json) · [本人检查](human-reviews/v5-generation-reliability/round-01/review.md)。开发中旧预检不能当最终批准来源，真实结果与离线检查分开。
+命名指导共用现有校验词表，原准入保持；独立窄验后，用户批准的6个真实受控样本均通过准入及EXIT规则回放，用量计费估算0.04783912元（非账单）。本地改进已生效，真人体验待反馈。[交付/边界](stages/v5-generation-reliability/reviews/delivery.md) · [计划](../../docs/v5-generation-reliability-plan.md) · [阶段](stages/v5-generation-reliability/stage.json) · [本人检查](human-reviews/v5-generation-reliability/round-01/review.md)。开发中旧预检不能当最终批准来源；正式approval及真实逐项结果保留，离线/真实/真人结论分开。
 
 ## 前阶段：取消人工生成累计次数上限
 
