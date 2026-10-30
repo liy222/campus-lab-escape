@@ -2,9 +2,13 @@
 
 今后从这里读取、整理和提交证据。开发中每次实际检查、失败、修复和反馈及时保存，大阶段结束再集中交付并邀请真人核验。
 
-## 当前阶段：已有用户名选择与密码手填
+## 当前阶段：临时API Key界面安全收尾
 
-本机登录前可选已注册用户名，默认首项，密码自行填写；选择本身不登录，原认证/限频/归属保持。独立API 5项、一次V5构建及桌面浏览器主流程13项/模式切换窄补4项均通过；原始检查器失败保留。预览已生效，0模型/付费，待本人查看。[交付/边界](stages/v5-login-usernames/reviews/delivery.md) · [独立QA](stages/v5-login-usernames/reviews/qa.md)。[阶段](stages/v5-login-usernames/stage.json) · [本人步骤](human-reviews/v5-login-usernames/round-01/review.md)。
+补当前界面的Key生命周期与允许传输范围，0真实模型/付费，复用未受影响后端证据。最终10条记录通过，42个API响应扫描完成、未读0，旧失败与检查器补强前结果按时点保留；待本人查看。[交付与边界](stages/v5-key-safety/reviews/delivery.md) · [独立QA](stages/v5-key-safety/reviews/qa.md)。[范围](stages/v5-key-safety/reviews/scope.md) · [阶段](stages/v5-key-safety/stage.json)。
+
+## 前阶段：已有用户名选择与密码手填
+
+本机登录前可选已注册用户名，默认首项，密码自行填写；选择本身不登录，原认证/限频/归属保持。独立API 5项、一次V5构建及桌面浏览器主流程13项/模式切换窄补4项均通过；原始检查器失败保留。预览已生效，0模型/付费。本人已确认错误密码拒绝、跨账号关卡和存档进度隔离，原话及两张用户截图已归档，未外推整体安全。[交付/边界](stages/v5-login-usernames/reviews/delivery.md) · [独立QA](stages/v5-login-usernames/reviews/qa.md)。[阶段](stages/v5-login-usernames/stage.json) · [本人步骤](human-reviews/v5-login-usernames/round-01/review.md)。
 
 ## 前阶段：关卡生成可靠性改进
 

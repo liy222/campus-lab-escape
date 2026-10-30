@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "stage": "v5-key-safety",
+  "title": "临时API Key界面安全与交付收尾",
+  "created_at": "2026-10-30T13:28:26.242052Z",
+  "technical_status": "complete_targeted_checks_pending_human_review",
+  "human_review_status": "not_reviewed",
+  "owner_review_status": "not_reviewed",
+  "peer_review_status": "not_reviewed",
+  "current_human_review_round": 1,
+  "human_review_rounds": {},
+  "collections": [],
+  "implementation_baseline_commit": "d6806b1",
+  "real_model_calls": 0,
+  "paid_calls": 0,
+  "scope": "总计划T7中受当前登录/生成界面影响的KEY-01/KEY-02证据；隔离Synthetic测试，既有Web/认证后端结果按原范围复用",
+  "prior_evidence_reused_as_historical_only": [
+    {
+      "path": "evidence/upgrade/v5.0/qa/final-offline-result.json",
+      "scope": "原候选安全/存档等联合结果；不代表当前源码重测，不刷新旧登记或结论"
+    },
+    {
+      "path": "evidence/project/stages/v5-login-usernames/reviews/qa.md",
+      "scope": "前一阶段独立auth/用户名必要检查，当前不重复"
+    }
+  ],
+  "independent_verification": {
+    "report": "reviews/qa.md",
+    "command": "node tests/v5/run_key_safety_browser.mjs",
+    "exit_code": 0,
+    "passed_records": 10,
+    "result": "automated/browser-2026-10-30T13-40-45-503Z-67fd5aac/result.json",
+    "checked_api_responses": 42,
+    "unread_responses": 0,
+    "initial_failures_retained": 4,
+    "earlier_exit0_checker_blindspots_retained": true,
+    "main_viewed_final_automated_screenshots": 2
+  },
+  "tested_git_head": "d6806b17a1e779b68d6b5dbc9a155e513ae9cd6b",
+  "loaded_script_files": [
+    "index-nlwtZpdA.js"
+  ],
+  "product_source_changed": false,
+  "frontend_builds": 0,
+  "player_database_access": false,
+  "delivery_report": "reviews/delivery.md"
+}

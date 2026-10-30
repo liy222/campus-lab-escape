@@ -1,8 +1,12 @@
 # Plan
 
-## 当前阶段（2026-10-30）：已有用户名选择与密码手填
+## 当前阶段（2026-10-30）：临时API Key界面安全与交付收尾
 
-已实现本机已有用户名选择、默认首项与密码清空，注册保留手填；复用匿名csrf可选名称列表，不增路由/表，密码认证与账号隔离保持。必要独立API 5项、一次V5构建及桌面浏览器主流程13项/模式切换窄补4项均通过；初始检查器失败原件保留，0模型/付费。[总计划第27节](docs/v5-build-plan.md#27-2026-10-30-已有用户名选择与密码手填) · [固定阶段](evidence/project/stages/v5-login-usernames/stage.json) · [本人检查](evidence/project/human-reviews/v5-login-usernames/round-01/review.md)。自有预览已重启、health200，当前待本人查看；[交付与验证边界](evidence/project/stages/v5-login-usernames/reviews/delivery.md)。
+按总计划T7补当前界面的Key清空/允许传输范围证据，复用未受影响的旧后端检查，不重跑账号核验；隔离Synthetic、0真实模型/付费、不操作玩家库、不新增功能。最终定向10条记录exit0、42个API响应扫描完成且未读0，确认受理/模拟失败/刷新/退出/跨页换号清空；Main补强检查器后只验证本范围，旧失败均保留。当前待本人检查，[交付与边界](evidence/project/stages/v5-key-safety/reviews/delivery.md)。[范围与验收](evidence/project/stages/v5-key-safety/reviews/scope.md) · [固定阶段](evidence/project/stages/v5-key-safety/stage.json)。
+
+## 前阶段（2026-10-30）：已有用户名选择与密码手填
+
+已实现本机已有用户名选择、默认首项与密码清空，注册保留手填；复用匿名csrf可选名称列表，不增路由/表，密码认证与账号隔离保持。必要独立API 5项、一次V5构建及桌面浏览器主流程13项/模式切换窄补4项均通过；初始检查器失败原件保留，0模型/付费。[总计划第27节](docs/v5-build-plan.md#27-2026-10-30-已有用户名选择与密码手填) · [固定阶段](evidence/project/stages/v5-login-usernames/stage.json) · [本人检查](evidence/project/human-reviews/v5-login-usernames/round-01/review.md)。自有预览已生效；本人已实际确认错误密码拒绝、账号间生成关卡与存档进度隔离，原话与两张附图已归档。其他未提供核验项不外推；[交付与验证边界](evidence/project/stages/v5-login-usernames/reviews/delivery.md)。
 
 ## 前阶段（2026-10-30）：关卡生成可靠性改进与有限采样
 

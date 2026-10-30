@@ -3,12 +3,17 @@
   "stage": "v5-login-usernames",
   "title": "已有本机用户名选择与密码手填",
   "created_at": "2026-10-30T11:33:29.575070Z",
-  "technical_status": "complete_live_pending_human_review",
-  "human_review_status": "not_reviewed",
-  "owner_review_status": "not_reviewed",
+  "technical_status": "complete_live_human_confirmed_scoped",
+  "human_review_status": "accepted",
+  "owner_review_status": "accepted",
   "peer_review_status": "not_reviewed",
   "current_human_review_round": 1,
-  "human_review_rounds": {},
+  "human_review_rounds": {
+    "1": {
+      "owner": "accepted",
+      "peer": "not_reviewed"
+    }
+  },
   "collections": [],
   "scope": "匿名csrf只读名称列表及登录选择/手填密码；保留注册/认证/限频/私人资源隔离",
   "visibility_change": "Registered local username strings intentionally visible on unauthenticated local login page",
@@ -47,5 +52,11 @@
     "record": "logs/preview-restart.json"
   },
   "delivery_report": "reviews/delivery.md",
-  "player_database_rebuilt": false
+  "player_database_rebuilt": false,
+  "human_confirmed_scope": [
+    "wrong_password_rejected",
+    "generated_levels_isolated_between_accounts",
+    "save_progress_isolated_between_accounts"
+  ],
+  "human_confirmation_source_commit": "d6806b1"
 }

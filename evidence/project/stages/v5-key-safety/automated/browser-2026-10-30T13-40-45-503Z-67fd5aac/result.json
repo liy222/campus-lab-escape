@@ -1,0 +1,205 @@
+{
+  "run_id": "67fd5aac-b248-409e-8d21-f9c7500c457a",
+  "command": "node tests/v5/run_key_safety_browser.mjs",
+  "started_at_utc": "2026-10-30T13:40:45.503Z",
+  "finished_at_utc": "2026-10-30T13:40:54.348Z",
+  "scope": "isolated Synthetic V5 UI; empty key; success; controlled local 503; refresh/logout; second-tab real logout/login; canary transmission scan",
+  "canary_id": "KEY-CANARY-01",
+  "canary_value_recorded": false,
+  "fixture_temp": "campus-experience-key-safety-S7kbNZ",
+  "owned_server_port": 8002,
+  "owned_server_stopped": true,
+  "git_head": "d6806b17a1e779b68d6b5dbc9a155e513ae9cd6b",
+  "loaded_script_files": [
+    "index-nlwtZpdA.js"
+  ],
+  "checked_response_count": 42,
+  "unread_response_count": 0,
+  "exposure": {
+    "url": 0,
+    "body": 0,
+    "non_allowed_request_headers": 0,
+    "ordinary_response": 0,
+    "local_storage": 0,
+    "session_storage": 0,
+    "allowed_key_header": 2,
+    "target_generation_posts": 2,
+    "external_requests": 0
+  },
+  "storage_values_recorded": false,
+  "credentials_recorded": false,
+  "cookies_or_tokens_recorded": false,
+  "player_database_access": false,
+  "real_model_calls": 0,
+  "paid_calls": 0,
+  "screenshots": [
+    "after-failure-key-cleared.png",
+    "after-success-key-cleared.png"
+  ],
+  "records": [
+    {
+      "name": "generator is enabled after login refresh settles",
+      "actual": {
+        "count": 1,
+        "disabled": false,
+        "theme": "图书馆档案",
+        "room_count": "1",
+        "difficulty": "hard"
+      },
+      "expected": {
+        "count": 1,
+        "disabled": false,
+        "room_count": "1",
+        "difficulty": "hard"
+      },
+      "pass": true,
+      "scope": "key-safety",
+      "observed_at_utc": "2026-10-30T13:40:48.085Z"
+    },
+    {
+      "name": "empty key blocks generation before request",
+      "actual": {
+        "generation_posts_delta": 0,
+        "key_empty": true
+      },
+      "expected": {
+        "generation_posts_delta": 0,
+        "key_empty": true
+      },
+      "pass": true,
+      "scope": "key-safety",
+      "observed_at_utc": "2026-10-30T13:40:48.108Z"
+    },
+    {
+      "name": "key cleared after controlled API failure",
+      "actual": {
+        "http_status": 503,
+        "empty": true,
+        "alert_has_no_canary": true
+      },
+      "expected": {
+        "http_status": 503,
+        "empty": true,
+        "alert_has_no_canary": true
+      },
+      "pass": true,
+      "scope": "controlled-failure",
+      "observed_at_utc": "2026-10-30T13:40:48.154Z"
+    },
+    {
+      "name": "page refresh clears the in-memory key",
+      "actual": {
+        "empty": true
+      },
+      "expected": {
+        "empty": true
+      },
+      "pass": true,
+      "scope": "refresh",
+      "observed_at_utc": "2026-10-30T13:40:48.544Z"
+    },
+    {
+      "name": "logout and subsequent login do not restore the key",
+      "actual": {
+        "empty": true
+      },
+      "expected": {
+        "empty": true
+      },
+      "pass": true,
+      "scope": "logout",
+      "observed_at_utc": "2026-10-30T13:40:48.777Z"
+    },
+    {
+      "name": "real second-tab logout/login identity change clears first-tab key",
+      "actual": {
+        "key_empty": true,
+        "second_tab_user_is_beta": true
+      },
+      "expected": {
+        "key_empty": true,
+        "second_tab_user_is_beta": true
+      },
+      "pass": true,
+      "scope": "cross-tab",
+      "observed_at_utc": "2026-10-30T13:40:49.887Z"
+    },
+    {
+      "name": "Synthetic generation request accepted locally and key cleared after response",
+      "actual": {
+        "http_status": 202,
+        "key_empty": true,
+        "only_local_target_header_count": 2
+      },
+      "expected": {
+        "http_accepted": true,
+        "key_empty": true,
+        "key_header_present": true
+      },
+      "pass": true,
+      "scope": "key-safety",
+      "observed_at_utc": "2026-10-30T13:40:51.963Z"
+    },
+    {
+      "name": "Canary absent from browser local and session storage before and after requests",
+      "actual": {
+        "pre_submit_local_storage_hit": false,
+        "pre_submit_session_storage_hit": false,
+        "local_storage_hits": 0,
+        "session_storage_hits": 0
+      },
+      "expected": {
+        "pre_submit_local_storage_hit": false,
+        "pre_submit_session_storage_hit": false,
+        "local_storage_hits": 0,
+        "session_storage_hits": 0
+      },
+      "pass": true,
+      "scope": "privacy",
+      "observed_at_utc": "2026-10-30T13:40:54.044Z"
+    },
+    {
+      "name": "Canary exposure is limited to local generation auth header",
+      "actual": {
+        "canary_id": "KEY-CANARY-01",
+        "allowed_key_header_occurrences": 2,
+        "url": 0,
+        "body": 0,
+        "non_allowed_request_headers": 0,
+        "ordinary_response": 0,
+        "checked_response_count": 42,
+        "unread_response_count": 0
+      },
+      "expected": {
+        "url": 0,
+        "body": 0,
+        "non_allowed_request_headers": 0,
+        "ordinary_response": 0,
+        "unread_response_count": 0,
+        "storage_hits": 0
+      },
+      "pass": true,
+      "scope": "key-safety",
+      "observed_at_utc": "2026-10-30T13:40:54.045Z"
+    },
+    {
+      "name": "traffic remained local and used no real provider",
+      "actual": {
+        "external_requests": 0,
+        "synthetic_key_header_occurrences": 2,
+        "generation_posts": 2,
+        "fixture_provider": "mock"
+      },
+      "expected": {
+        "external_requests": 0,
+        "synthetic_key_header_occurrences": 2,
+        "fixture_provider": "mock"
+      },
+      "pass": true,
+      "scope": "key-safety",
+      "observed_at_utc": "2026-10-30T13:40:54.045Z"
+    }
+  ],
+  "issues": [],
+  "exit_code": 0
+}
