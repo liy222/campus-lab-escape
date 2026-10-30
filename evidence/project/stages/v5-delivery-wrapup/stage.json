@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "stage": "v5-delivery-wrapup",
+  "title": "V5整体交付总览与接管收尾",
+  "created_at": "2026-10-30T13:55:12.948296Z",
+  "technical_status": "documentation_complete_pending_overall_human_review",
+  "human_review_status": "not_reviewed",
+  "owner_review_status": "not_reviewed",
+  "peer_review_status": "not_reviewed",
+  "current_human_review_round": 1,
+  "human_review_rounds": {},
+  "collections": [],
+  "baseline_commit": "7bd8c40",
+  "scope": "既有功能/实际证据/真人反馈总览、当前要求更正与接管文档；不新增玩法或扩大验收",
+  "real_model_calls": 0,
+  "paid_calls": 0,
+  "product_test_runs": 0,
+  "frontend_builds": 0,
+  "delivery_overview": "docs/V5-DELIVERY.md",
+  "handoff": "docs/HANDOFF-20261030.md",
+  "product_source_changed": false,
+  "independent_review": {
+    "report": "reviews/qa.md",
+    "operator": "independent_ai_qa",
+    "requirements_unique": 26,
+    "local_links_checked": 144,
+    "material_document_findings": 0,
+    "initial_static_extraction": {
+      "result": "automated/doc-review-20261030T140214Z-ded55a44.json",
+      "command": "python - (read-only markdown links, Req index, and cited safe evidence summaries)",
+      "exit_code": 1,
+      "status": "REVIEW_REQUIRED",
+      "overly_strict_text_match_flags": 3
+    },
+    "followup": {
+      "method": "rg -n and independent AI direct reading of cited text; original JSON retained",
+      "exit_code": 0,
+      "three_flags_resolved_as_extractor_mismatches": true
+    },
+    "qa_report_link_check_exit_code": 0
+  },
+  "delivery_report": "reviews/delivery.md"
+}

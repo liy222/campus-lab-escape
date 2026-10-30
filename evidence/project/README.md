@@ -2,7 +2,11 @@
 
 今后从这里读取、整理和提交证据。开发中每次实际检查、失败、修复和反馈及时保存，大阶段结束再集中交付并邀请真人核验。
 
-## 当前阶段：临时API Key界面安全收尾
+## 当前阶段：整体验收与接管收尾
+
+[当前功能与26项证据总览](../../docs/V5-DELIVERY.md) · [最新接管包](../../docs/HANDOFF-20261030.md) · [阶段](stages/v5-delivery-wrapup/stage.json)。当前资料与独立只读复核完成，26Req/144本地链接有效；原提取器文字误报保留并经AI实读消解。[本轮实际结果](stages/v5-delivery-wrapup/reviews/delivery.md)。产品测试/build/模型0，旧登记保持，整体本人检查仍待反馈。
+
+## 前阶段：临时API Key界面安全收尾
 
 补当前界面的Key生命周期与允许传输范围，0真实模型/付费，复用未受影响后端证据。最终10条记录通过，42个API响应扫描完成、未读0，旧失败与检查器补强前结果按时点保留；本人已反馈“测试成功”，本次未附图，按授权复用原自动图作辅助；[真人反馈/辅助图源](human-reviews/v5-key-safety/round-01/review.md)。[交付与边界](stages/v5-key-safety/reviews/delivery.md) · [独立QA](stages/v5-key-safety/reviews/qa.md)。[范围](stages/v5-key-safety/reviews/scope.md) · [阶段](stages/v5-key-safety/stage.json)。
 

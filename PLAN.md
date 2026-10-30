@@ -1,6 +1,10 @@
 # Plan
 
-## 当前阶段（2026-10-30）：临时API Key界面安全与交付收尾
+## 当前阶段（2026-10-30）：整体验收与接管收尾
+
+汇总既有功能、26项要求证据、有限本人反馈与剩余问题，形成[当前交付总览](docs/V5-DELIVERY.md)和[最新接管包](docs/HANDOFF-20261030.md)，同步README/发布说明的当前入口，修正现行P05残留手机尺寸。文档与一次独立只读复核完成：26项需求及144个本地链接有效，初始提取器3个文字误报原件保留并经独立AI实读消解。未运行产品全套/build/付费或刷新旧登记。[实际交付](evidence/project/stages/v5-delivery-wrapup/reviews/delivery.md)。整版本人接受仍待明确，分阶段接受保持原范围。
+
+## 前阶段（2026-10-30）：临时API Key界面安全与交付收尾
 
 按总计划T7补当前界面的Key清空/允许传输范围证据，复用未受影响的旧后端检查，不重跑账号核验；隔离Synthetic、0真实模型/付费、不操作玩家库、不新增功能。最终定向10条记录exit0、42个API响应扫描完成且未读0，确认受理/模拟失败/刷新/退出/跨页换号清空；Main补强检查器后只验证本范围，旧失败均保留。本人已反馈“测试成功”；未附图，按其明确授权关联既有自动截图作辅助，未新增执行。[本人记录](evidence/project/human-reviews/v5-key-safety/round-01/review.md) · [交付与边界](evidence/project/stages/v5-key-safety/reviews/delivery.md)。[范围与验收](evidence/project/stages/v5-key-safety/reviews/scope.md) · [固定阶段](evidence/project/stages/v5-key-safety/stage.json)。
 
