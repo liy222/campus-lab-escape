@@ -4,7 +4,7 @@
 
 ## 当前阶段：临时API Key界面安全收尾
 
-补当前界面的Key生命周期与允许传输范围，0真实模型/付费，复用未受影响后端证据。最终10条记录通过，42个API响应扫描完成、未读0，旧失败与检查器补强前结果按时点保留；待本人查看。[交付与边界](stages/v5-key-safety/reviews/delivery.md) · [独立QA](stages/v5-key-safety/reviews/qa.md)。[范围](stages/v5-key-safety/reviews/scope.md) · [阶段](stages/v5-key-safety/stage.json)。
+补当前界面的Key生命周期与允许传输范围，0真实模型/付费，复用未受影响后端证据。最终10条记录通过，42个API响应扫描完成、未读0，旧失败与检查器补强前结果按时点保留；本人已反馈“测试成功”，本次未附图，按授权复用原自动图作辅助；[真人反馈/辅助图源](human-reviews/v5-key-safety/round-01/review.md)。[交付与边界](stages/v5-key-safety/reviews/delivery.md) · [独立QA](stages/v5-key-safety/reviews/qa.md)。[范围](stages/v5-key-safety/reviews/scope.md) · [阶段](stages/v5-key-safety/stage.json)。
 
 ## 前阶段：已有用户名选择与密码手填
 

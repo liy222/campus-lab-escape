@@ -3,12 +3,17 @@
   "stage": "v5-key-safety",
   "title": "临时API Key界面安全与交付收尾",
   "created_at": "2026-10-30T13:28:26.242052Z",
-  "technical_status": "complete_targeted_checks_pending_human_review",
-  "human_review_status": "not_reviewed",
-  "owner_review_status": "not_reviewed",
+  "technical_status": "complete_human_confirmed_scoped",
+  "human_review_status": "accepted",
+  "owner_review_status": "accepted",
   "peer_review_status": "not_reviewed",
   "current_human_review_round": 1,
-  "human_review_rounds": {},
+  "human_review_rounds": {
+    "1": {
+      "owner": "accepted",
+      "peer": "not_reviewed"
+    }
+  },
   "collections": [],
   "implementation_baseline_commit": "d6806b1",
   "real_model_calls": 0,
@@ -43,5 +48,9 @@
   "product_source_changed": false,
   "frontend_builds": 0,
   "player_database_access": false,
-  "delivery_report": "reviews/delivery.md"
+  "delivery_report": "reviews/delivery.md",
+  "human_confirmation_source_commit": "9441586",
+  "human_confirmed_scope": "用户针对上一条Key界面清空检查邀请反馈测试成功；未提供分项执行记录。",
+  "human_screenshot_status": "not_supplied_automatic_images_linked_as_supplement",
+  "supporting_automated_evidence": "human-reviews/v5-key-safety/round-01/supporting-automated-evidence.json"
 }

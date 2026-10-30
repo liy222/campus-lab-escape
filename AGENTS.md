@@ -9,6 +9,7 @@
 - 同一功能阶段集中提交并推送，不为同步回执再建一次提交。进度只说已完成的功能、剩余工作和实际阻塞。
 - 证据从开发开始随实际执行、失败、修复和反馈持续保存；每个大阶段结束必须提供效果入口、简短检查步骤与重要已知问题，明确邀请用户本人核验。核验前状态为待真人检查，不能把技术通过或“继续”自动记为真人接受。
 - 固定证据入口为evidence/project/：stages/<stage-id>/保存自动结果、日志导出、标准/评价和截图；human-reviews/<stage-id>/round-XX/单独保存真人原话、核查结论、截图和来源。自动化截图不冒充真人截图，未实际发生的本人/同伴检查不预填。小步骤及时记录，大阶段集中交付，无需逐小步确认。
+- 2026-10-30用户要求：真人反馈成功但未附截图时，提交中沿用匹配当前阶段的已有自动测试图作为辅助；保留原目录、运行时点和自动来源，在真人记录中建立链接/来源清单，不冒充本人实测截图，不把复用记为新测试。没有匹配自动图时如实保留缺图，不为补图重复付费或重跑无关检查。
 - 旧证据可迁移归档到固定入口；保留原时间、来源和实际执行状态。对被历史记录/可信登记固定引用的原件先保留兼容，归档副本逐文件标明来源；不把搬运当新执行，不静默改写历史结果或移动数据库/私有原稿到可提交目录。
 - 2026-10-29用户最新范围：只做桌面端，删除整个项目现行手机专用布局、触屏模式、键盘提示配置及当前/后续验收、检查中的手机要求，桌面采用1280×720与1920×1080。原手机测试及原截图作为历史证据保留，不重跑或改写。
 - 保留现有密钥、数据库和未跟踪文件保护；付费调用仍须有效有限授权。未发生的测试、调用或人工验收不得写成完成。
@@ -41,7 +42,7 @@ E&O与归档阶段技术完成：独立11项定向API通过；浏览器首轮核
 
 2026-10-30用户要求自动选择已有用户名、密码自己填写以便实测账号安全：阶段v5-login-usernames，Main临时接管storage/v5.py仅只读login_usernames方法、api/v5.py仅匿名csrf返回已有username数组，以及contracts/v2/build_contracts.py和对应api.schema.json可选字段；不增路由/表/迁移。既有Frontend仅Workspace.tsx/client.ts（必要小CSS）登录选择/空列表/注册与密码清空，既有Luna QA只新API/浏览器定向入口及阶段实际产物。登录页未登录可见本机账号名是用户明确要求的便利行为，仅返回名称；不返回其他ID/密码/hash/令牌/私人关卡。密码仍原Argon2/CSRF/会话/限频与归属，注册保留手动输入。0真实模型/付费；稳定后一次必要V5构建与受影响auth/选择/两账号隔离和两桌面检查，不跑旧全套、不读玩家库测试。Main仅在无在途生成时重启自有预览，集中提交推送并邀请本人核验；不推定整体安全已接受。
 
-2026-10-30用户本人确认错误密码拒绝、跨账号生成关卡与存档进度隔离，两张本人附图按原来源存入v5-login-usernames/round-01，接受仅限原话范围。用户要求开始下一步，按总计划T7进入v5-key-safety：Main根文档/索引/Git，既有passage_qa_exec_luna仅新run_key_safety_browser.mjs、必要隔离fixture与本阶段结果/QA报告；检查当前界面Key空值阻断、成功/失败提交及刷新/退出/跨页身份变更清空、允许认证头且无URL/正文/存储/普通响应泄漏。稳定产品d6806b1，只用隔离TEMP/8002及Synthetic，0真实模型/付费、不重建前端或重跑旧全套，未受影响后端Web/认证结果按原范围复用。具体缺陷出现后再按必要路径修复，完成集中Git并请本人核验，不将前阶段本人反馈扩展到新阶段。最终独立Key专项10条记录exit0，42个API响应完成/未读0；Main补强三个新检查器盲点后仅复核本范围与两张实际截图，旧失败/旧exit0按时点保留。产品0改动/build0/真实模型0，Key阶段真人待核验。
+2026-10-30用户本人确认错误密码拒绝、跨账号生成关卡与存档进度隔离，两张本人附图按原来源存入v5-login-usernames/round-01，接受仅限原话范围。用户要求开始下一步，按总计划T7进入v5-key-safety：Main根文档/索引/Git，既有passage_qa_exec_luna仅新run_key_safety_browser.mjs、必要隔离fixture与本阶段结果/QA报告；检查当前界面Key空值阻断、成功/失败提交及刷新/退出/跨页身份变更清空、允许认证头且无URL/正文/存储/普通响应泄漏。稳定产品d6806b1，只用隔离TEMP/8002及Synthetic，0真实模型/付费、不重建前端或重跑旧全套，未受影响后端Web/认证结果按原范围复用。具体缺陷出现后再按必要路径修复，完成集中Git并请本人核验，不将前阶段本人反馈扩展到新阶段。最终独立Key专项10条记录exit0，42个API响应完成/未读0；Main补强三个新检查器盲点后仅复核本范围与两张实际截图，旧失败/旧exit0按时点保留。产品0改动/build0/真实模型0，Key阶段随后本人反馈“测试成功”，未附图，按明确授权关联已有自动图作辅助；仅接受所邀Key界面检查范围，同伴未核验。
 
 The human is the sole developer. The attachment docs/execution-plan.md is the accepted project scope, not proof of execution. Never invent tests, people, approvals or model calls.
 Main owns AGENTS.md, PLAN.md, STATUS.md, DECISIONS.md, integration and git. Agents write only assigned paths, never commit, never spawn further agents. Shared workspace; do not overwrite another owner's files. Default delegates gpt-6.1-sol/high, simple mechanical tasks gpt-6-luna/medium. No Astra unless needed. Main runtime model is not independently introspectable and must not be claimed as verified.
