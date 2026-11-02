@@ -1,0 +1,238 @@
+{
+  "frozen_input_file_sha256": "7609c5b66fcaaf662c04a5783d3ffac6e3d00c89cda0ed7ba1a804e1fe111cef",
+  "scope": "Only nine domain admissions/real witness replays and twenty frozen bad definitions; no HTTP or full E1 repeat",
+  "admissions": [
+    {
+      "case_id": "GOOD-1-easy",
+      "input_sha256": "c5364678688f0e169999726e631e9153cd313f823b6c9d65d4840499a8cda9ca",
+      "room_count": 1,
+      "difficulty": "easy",
+      "admitted": true,
+      "replay_won": true,
+      "steps": 8,
+      "definition_hash": "d5ee40d65a8dc8b2538be48f3f903d81e0024793dd3b6b262922befe9f482a96"
+    },
+    {
+      "case_id": "GOOD-1-normal",
+      "input_sha256": "bfe3ab93cc3ba0d0b3bbf46824c4cc47545df32018de67aea5890029e3b6018e",
+      "room_count": 1,
+      "difficulty": "normal",
+      "admitted": true,
+      "replay_won": true,
+      "steps": 10,
+      "definition_hash": "9b3cf17eb642c4049a9dbfc4b70efc7b022e828b8c927ed6e38d65963c32bdd6"
+    },
+    {
+      "case_id": "GOOD-1-hard",
+      "input_sha256": "08abf140a59bcf3e0caa2ae2c7ebd23677b072c2247a4a43c5b7d8c57df72f31",
+      "room_count": 1,
+      "difficulty": "hard",
+      "admitted": true,
+      "replay_won": true,
+      "steps": 22,
+      "definition_hash": "553408145425b8b635076578c1e9144715817b400928b714e204e650c89d208f"
+    },
+    {
+      "case_id": "GOOD-2-easy",
+      "input_sha256": "01677644697a3f7b63fd728f99ca2651737f490ee39989c2ea651c245a69a9b3",
+      "room_count": 2,
+      "difficulty": "easy",
+      "admitted": true,
+      "replay_won": true,
+      "steps": 11,
+      "definition_hash": "84c6dd9c42116d0621a57371728fae3a0910699f7f4bbb79d9d73c7baad4cd1c"
+    },
+    {
+      "case_id": "GOOD-2-normal",
+      "input_sha256": "c214ece907ee1de6c47ba49bf1097be818f1a731329b7f6579db30fddd7daf76",
+      "room_count": 2,
+      "difficulty": "normal",
+      "admitted": true,
+      "replay_won": true,
+      "steps": 23,
+      "definition_hash": "40777532ec57ec4f17ca4d6898d711df315149703825a4b216a7205d7e20288f"
+    },
+    {
+      "case_id": "GOOD-2-hard",
+      "input_sha256": "7f3cee721be570f317fcbda1bc1f045fe60d6100446efef6975f2b0331395d73",
+      "room_count": 2,
+      "difficulty": "hard",
+      "admitted": true,
+      "replay_won": true,
+      "steps": 25,
+      "definition_hash": "b8f208d38995c5186ece4f3965d60031a5d281e29b1668e52e2f6605147d7f77"
+    },
+    {
+      "case_id": "GOOD-3-easy",
+      "input_sha256": "01032b6850766dabfc3557d449f26e8a78f5961d829fb0494450b0870dfe2d19",
+      "room_count": 3,
+      "difficulty": "easy",
+      "admitted": true,
+      "replay_won": true,
+      "steps": 24,
+      "definition_hash": "64d7666501a07c90fa001e67faf14dbdba337a2d954200cf2c4f7a884b9b876d"
+    },
+    {
+      "case_id": "GOOD-3-normal",
+      "input_sha256": "76ea6892bb9698daa7514fd14d4a4d43aaee98e83db616b0dcac345eefdd3a99",
+      "room_count": 3,
+      "difficulty": "normal",
+      "admitted": true,
+      "replay_won": true,
+      "steps": 26,
+      "definition_hash": "68626f5ebd5bbe3546a31783982ae6843ca329d9d000bde9e8b41470e8a1432e"
+    },
+    {
+      "case_id": "GOOD-3-hard",
+      "input_sha256": "ddc8806500d5b1ad2a5e07cb756ff76d88c291cfc8b08110e6914a7458389d43",
+      "room_count": 3,
+      "difficulty": "hard",
+      "admitted": true,
+      "replay_won": true,
+      "steps": 38,
+      "definition_hash": "9068286eac33529a2dc16ebd542504e36749db9a7288a89b5f855fa8b5e164c1"
+    }
+  ],
+  "rejections": [
+    {
+      "case_id": "REF-01",
+      "input_sha256": "b0343131c4f34930db75bf6af9483807fb22cbadb69cf7a46cbecbb28a39d465",
+      "category": "reference",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "REF-02",
+      "input_sha256": "4c37b3d051fce37320623cc7373eec267902e143f231c0a2c55b5b8b3c8604ce",
+      "category": "reference",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "REF-03",
+      "input_sha256": "7913aee397df508feaa44a4d9abbb4c9ad57dd5105fd7e2a6b88aae9c2af94d2",
+      "category": "reference",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "REF-04",
+      "input_sha256": "7dbc63f1164223b589c86a58d01746062fb934da40eb127f08837ae10004c8f1",
+      "category": "reference",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "REF-05",
+      "input_sha256": "7cfe9b72ea290b5da5541d1810c4421fd5c896644b85fac4e52a5030ab566123",
+      "category": "reference",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "DEP-01",
+      "input_sha256": "6dd57cf19122a816b2f5f8dc08777d710c8c69e9172ee6822ead9485140ca3e7",
+      "category": "dependency",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "DEP-02",
+      "input_sha256": "a400508025ac14cca621cc09f05bb35f69487661c7f37589917988e01e522706",
+      "category": "dependency",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "DEP-03",
+      "input_sha256": "e5506362e40a92afad7ac62e7ae5ef98766769eb15c17dbc0deb23b88b4b7d72",
+      "category": "dependency",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "DEP-04",
+      "input_sha256": "ffa9da36cb2bee838c27346925928adf5c38a369ad2dcd9b54e4c79b8d432da2",
+      "category": "dependency",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "DEP-05",
+      "input_sha256": "71580a48cfd99dcee9feacf65acf0722fa41fa3fab5fcedca31b551668301358",
+      "category": "dependency",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "SEM-01",
+      "input_sha256": "3b566a0a03753603cf00ef95a87dd103c41ca971467444b7d2fea5c84e9cf7b7",
+      "category": "semantic",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "SEM-02",
+      "input_sha256": "1f8dad8647190af5a9e205adb9c502442ebdb323a460d3d32ea0d6260538eec0",
+      "category": "semantic",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "SEM-03",
+      "input_sha256": "e54ee62c017485ead285623f94d0433794b809a515945156a31ad0ece4d271e0",
+      "category": "semantic",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "SEM-04",
+      "input_sha256": "d15ccd83f2509f89cad221c79a3b1f6acc9b5eaae037524cf8d7ab660398cbfc",
+      "category": "semantic",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "SEM-05",
+      "input_sha256": "b2236d652ce2882f6e1a9498a4f7f13b87dab1ca334583f235b54d28e5221f4d",
+      "category": "semantic",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "LAY-01",
+      "input_sha256": "e1e2efacbf82d71f7bb5c0532a6e6744cf4cb03f4e29a0d88e987a92c6d2686e",
+      "category": "layout",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "LAY-02",
+      "input_sha256": "ecdcf8ff77171a29d0632f521a541d5b3964fdbaa0b3472d2dde6310fff6804a",
+      "category": "layout",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "LAY-03",
+      "input_sha256": "9e600fab61a53984c29fde125153cff3b4cb3d6e7e7bf203eb6041ccb3c63ef5",
+      "category": "layout",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "LAY-04",
+      "input_sha256": "27ac2c9c84d35bb9b51491efa82b366747daa34e78b9d4f71eec87275683305b",
+      "category": "layout",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    },
+    {
+      "case_id": "LAY-05",
+      "input_sha256": "8852376192b560cc6403a73a77be4c938bd369eeed42503c5fc726d097b5efa7",
+      "category": "layout",
+      "rejected": true,
+      "error_code": "ADMISSION_REJECTED"
+    }
+  ]
+}

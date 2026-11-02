@@ -6,6 +6,8 @@
 
 本页汇总已有事实，不是一次新的源码全套测试。交付整理基线7bd8c40；最新产品改动d6806b1，生成命名改进66a54a6。各证据保留实际源码、执行时间、失败与范围，读取新汇总不会刷新旧评价登记。
 
+2026-11-02补齐：当前C1–C3有限证据已重新执行/登记，71来源、9证据，precheck READY；deterministic三项IE只因未运行LLM判读，仍保留原付费硬门控。见[本轮实际结果](../evidence/project/stages/v5-current-evaluation/reviews/delivery.md)及[本人接管步骤](V5-TAKEOVER-CHECK.md)。本人明确该接管流程尚未执行。
+
 ## 先打开哪里
 
 - 游戏：[http://127.0.0.1:8001/](http://127.0.0.1:8001/)。服务未启动时双击根目录[启动新版.cmd](../启动新版.cmd)。已有构建和依赖继续复用。
@@ -62,14 +64,14 @@
 | LEGACY-01 | [原旧版回归](../review/findings/v5-offline-joint.md)、[桌面清理交付](../evidence/project/stages/v5-handpainted-rebuild/reviews/delivery.md) | 旧库/入口保留，未重跑旧全套或迁移玩家库 |
 | ENG-01 | [固定证据入口](../evidence/project/README.md)、[E&O标准](v5-evaluation.md) | 来源/执行/失败/反馈分开；旧登记保持原身份和范围 |
 | ENG-02 | [E1/E2/E3原实际结果](../evidence/project/stages/history-v5-engineering/automated/experiments/result.json) | 历史9正常/20坏例等实验，不计本阶段新实验 |
-| EVAL-01 | [有限评价状态说明](../evaluation/v5/README.md) | 离线适配/校准与确定性缺证分开；没有真实语义PASS |
+| EVAL-01 | [当前有限评价登记](../evidence/project/stages/v5-current-evaluation/reviews/delivery.md)、[评价器说明](../evaluation/v5/README.md) | 当前71来源/9证据precheck READY；确定性三项IE，未运行LLM判读；旧合同/门控保留 |
 | DELIVERY-01 | [最新接管包](HANDOFF-20261030.md)、[运行说明](../release/V5.md) | 启动与数据政策可读；本人全流程接管/回退和整体接受尚待实际反馈 |
 
 ## 剩余项与下一步
 
 1. 请本人集中看五主题美术和当前完整游玩流程；账号及Key已经确认的部分不要求重测。已有图集和本人已有生成关卡可用，不必为验收再生成付费关卡。
 2. 当前AI自然度、普遍成功率、真人难度/时长和五主题伙伴质量只保留有限证据，不自行扩大真实采样。
-3. E1/E2/E3和评价离线材料可提交；旧C1/C2/C3评价仍非真实语义PASS，旧三条unknown门控保留。没有新的真实调用批准，不执行付费评价或更改旧账本/登记。
+3. E1/E2/E3和评价离线材料可提交；C1/C2/C3当前登记已READY，但确定性结果仍非真实语义PASS，旧三条unknown门控保留。没有新的真实调用批准，不执行付费评价或更改旧账本/登记。
 4. 本轮集中交接并正常提交推送。版本tag、合并main、部署、Actions、老师/同伴签字和整版接受未发生。
 
 ## 请本人集中检查一次

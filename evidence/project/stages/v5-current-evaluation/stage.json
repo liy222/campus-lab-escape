@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "stage": "v5-current-evaluation",
+  "title": "当前版本有限评价证据与接管验收补齐",
+  "created_at": "2026-11-02T06:42:04.027913Z",
+  "technical_status": "current_registration_ready_semantic_and_takeover_pending",
+  "human_review_status": "undecided",
+  "owner_review_status": "undecided",
+  "peer_review_status": "not_reviewed",
+  "current_human_review_round": 1,
+  "human_review_rounds": {
+    "1": {
+      "owner": "undecided",
+      "peer": "not_reviewed"
+    }
+  },
+  "collections": [
+    {
+      "source_path": "D:\\深度能力\\evaluation\\v5\\registration.json",
+      "archive_path": "stages/v5-current-evaluation/evaluation/previous-registration.json",
+      "sha256": "80b312f31b73d3cef3a29575e07d1ca8f4f84d114490edd8289779aa7cb7a63d",
+      "bytes": 13401,
+      "collected_at": "2026-11-02T06:43:51.670516Z",
+      "category": "evaluation",
+      "new_execution": false
+    },
+    {
+      "source_path": "D:\\深度能力\\evidence\\upgrade\\v5.0\\evaluator-owner\\runs\\20261102T065647753871Z\\report.json",
+      "archive_path": "stages/v5-current-evaluation/evaluation/current-precheck.json",
+      "sha256": "d63115cb1c85007fea303a72f9ddc4540dd7c9cc8516f1d23693b467a37b8036",
+      "bytes": 67812,
+      "collected_at": "2026-11-02T06:56:48.051773Z",
+      "category": "evaluation",
+      "new_execution": false
+    },
+    {
+      "source_path": "D:\\深度能力\\evidence\\upgrade\\v5.0\\evaluator-owner\\runs\\20261102T065648260580Z\\report.json",
+      "archive_path": "stages/v5-current-evaluation/evaluation/current-deterministic.json",
+      "sha256": "2cfd549424df05f1947e620bd0d7fa3a18bdef00bec746b673bfa4702d0d2dc3",
+      "bytes": 135814,
+      "collected_at": "2026-11-02T06:56:49.375685Z",
+      "category": "evaluation",
+      "new_execution": false
+    }
+  ],
+  "baseline_commit": "f0be900",
+  "scope": "当前版本C1-C3实际产品离线执行与可信重新登记；真实付费评价门控保持；提供本人接管步骤",
+  "real_model_calls": 0,
+  "paid_calls": 0,
+  "live_player_database_tested": false,
+  "actual_product_verification": {
+    "nodes": 4,
+    "exit_code": 0,
+    "result": "automated/current-evidence-20261102T064847Z-6770f20d/result.json",
+    "source_files": 71,
+    "source_before_after_equal": true,
+    "C1_admissions_and_replay": 9,
+    "C1_rejections": 20,
+    "C2_denied_requests_state_unchanged": 11,
+    "C3_moments_restored": 3,
+    "C3_bad_checksum_rejected_state_unchanged": true
+  },
+  "current_registration": {
+    "path": "evaluation/v5/registration.json",
+    "candidate_id": "v5-current-evidence-20261102T064847Z-6770f20d",
+    "evidence_entries": 9,
+    "precheck_status": "READY",
+    "precheck_exit_code": 0,
+    "precheck_report": "evaluation/current-precheck.json"
+  },
+  "semantic_evaluation": {
+    "mode": "deterministic",
+    "exit_code": 2,
+    "statuses": {
+      "V5-C1": "INSUFFICIENT_EVIDENCE",
+      "V5-C2": "INSUFFICIENT_EVIDENCE",
+      "V5-C3": "INSUFFICIENT_EVIDENCE"
+    },
+    "reason": "LLM evidence interpretation not run.",
+    "report": "evaluation/current-deterministic.json",
+    "paid_guard_unchanged": true,
+    "historical_unknown_gate_preserved": true
+  },
+  "takeover_status": "user_reported_not_yet_executed_steps_provided",
+  "takeover_steps": "docs/V5-TAKEOVER-CHECK.md",
+  "independent_evaluator_review": {
+    "report": "reviews/evaluator-review.md",
+    "current_registration_proposal_matches_active": true,
+    "single_pin_literal_change_verified": true,
+    "source_files": 71,
+    "evidence_entries": 9,
+    "installation_pins": 16,
+    "all_model_windows_within_16k": true,
+    "semantic_missing_only": "Approved LLM evidence interpretation not run",
+    "actual_paid_or_network_calls": 0
+  }
+}

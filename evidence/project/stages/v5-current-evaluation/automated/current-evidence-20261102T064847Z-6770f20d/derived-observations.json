@@ -1,0 +1,234 @@
+{
+  "format": "observed-current-evidence-v1",
+  "from_actual_raw_files": true,
+  "C1": {
+    "frozen_input_file_sha256": "7609c5b66fcaaf662c04a5783d3ffac6e3d00c89cda0ed7ba1a804e1fe111cef",
+    "scope": "Only nine domain admissions/real witness replays and twenty frozen bad definitions; no HTTP or full E1 repeat",
+    "admitted_count": 9,
+    "rejected_count": 20,
+    "all_admitted_have_witness_exit": true,
+    "all_negative_cases_rejected": true,
+    "admissions": [
+      {
+        "case_id": "GOOD-1-easy",
+        "room_count": 1,
+        "difficulty": "easy",
+        "steps": 8,
+        "replay_won": true,
+        "definition_hash": "d5ee40d65a8dc8b2538be48f3f903d81e0024793dd3b6b262922befe9f482a96"
+      },
+      {
+        "case_id": "GOOD-1-normal",
+        "room_count": 1,
+        "difficulty": "normal",
+        "steps": 10,
+        "replay_won": true,
+        "definition_hash": "9b3cf17eb642c4049a9dbfc4b70efc7b022e828b8c927ed6e38d65963c32bdd6"
+      },
+      {
+        "case_id": "GOOD-1-hard",
+        "room_count": 1,
+        "difficulty": "hard",
+        "steps": 22,
+        "replay_won": true,
+        "definition_hash": "553408145425b8b635076578c1e9144715817b400928b714e204e650c89d208f"
+      },
+      {
+        "case_id": "GOOD-2-easy",
+        "room_count": 2,
+        "difficulty": "easy",
+        "steps": 11,
+        "replay_won": true,
+        "definition_hash": "84c6dd9c42116d0621a57371728fae3a0910699f7f4bbb79d9d73c7baad4cd1c"
+      },
+      {
+        "case_id": "GOOD-2-normal",
+        "room_count": 2,
+        "difficulty": "normal",
+        "steps": 23,
+        "replay_won": true,
+        "definition_hash": "40777532ec57ec4f17ca4d6898d711df315149703825a4b216a7205d7e20288f"
+      },
+      {
+        "case_id": "GOOD-2-hard",
+        "room_count": 2,
+        "difficulty": "hard",
+        "steps": 25,
+        "replay_won": true,
+        "definition_hash": "b8f208d38995c5186ece4f3965d60031a5d281e29b1668e52e2f6605147d7f77"
+      },
+      {
+        "case_id": "GOOD-3-easy",
+        "room_count": 3,
+        "difficulty": "easy",
+        "steps": 24,
+        "replay_won": true,
+        "definition_hash": "64d7666501a07c90fa001e67faf14dbdba337a2d954200cf2c4f7a884b9b876d"
+      },
+      {
+        "case_id": "GOOD-3-normal",
+        "room_count": 3,
+        "difficulty": "normal",
+        "steps": 26,
+        "replay_won": true,
+        "definition_hash": "68626f5ebd5bbe3546a31783982ae6843ca329d9d000bde9e8b41470e8a1432e"
+      },
+      {
+        "case_id": "GOOD-3-hard",
+        "room_count": 3,
+        "difficulty": "hard",
+        "steps": 38,
+        "replay_won": true,
+        "definition_hash": "9068286eac33529a2dc16ebd542504e36749db9a7288a89b5f855fa8b5e164c1"
+      }
+    ],
+    "rejections": [
+      {
+        "case_id": "REF-01",
+        "category": "reference",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "REF-02",
+        "category": "reference",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "REF-03",
+        "category": "reference",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "REF-04",
+        "category": "reference",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "REF-05",
+        "category": "reference",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "DEP-01",
+        "category": "dependency",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "DEP-02",
+        "category": "dependency",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "DEP-03",
+        "category": "dependency",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "DEP-04",
+        "category": "dependency",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "DEP-05",
+        "category": "dependency",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "SEM-01",
+        "category": "semantic",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "SEM-02",
+        "category": "semantic",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "SEM-03",
+        "category": "semantic",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "SEM-04",
+        "category": "semantic",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "SEM-05",
+        "category": "semantic",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "LAY-01",
+        "category": "layout",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "LAY-02",
+        "category": "layout",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "LAY-03",
+        "category": "layout",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "LAY-04",
+        "category": "layout",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      },
+      {
+        "case_id": "LAY-05",
+        "category": "layout",
+        "error_code": "ADMISSION_REJECTED",
+        "rejected": true
+      }
+    ]
+  },
+  "C2": {
+    "request_count": 11,
+    "all_http_404": true,
+    "all_target_state_hashes_unchanged": true,
+    "request_kinds": {
+      "actions": 1,
+      "ai/turns": 1,
+      "create_session": 1,
+      "read": 4,
+      "reset": 1,
+      "restore": 1,
+      "saves": 1,
+      "saves/8d7b110c346441b78b09c64a7b98d6b6/delete": 1
+    },
+    "private_identifiers_copied_only_to_raw_artifact": true
+  },
+  "C3": {
+    "three_moment_restores_observed": 3,
+    "all_moment_hashes_match": true,
+    "moment_definition_hashes_match": true,
+    "checksum_bad_restore_observed": true,
+    "checksum_rejected_with_409": true,
+    "checksum_failure_preserved_current_state": true
+  },
+  "complete_observed_artifacts": true,
+  "required_observations_match_actual_counts": true
+}

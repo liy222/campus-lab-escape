@@ -2,7 +2,11 @@
 
 今后从这里读取、整理和提交证据。开发中每次实际检查、失败、修复和反馈及时保存，大阶段结束再集中交付并邀请真人核验。
 
-## 当前阶段：整体验收与接管收尾
+## 当前阶段：当前版本有限评价与接管补齐
+
+[本轮计划](../../docs/v5-completion-plan-20261102.md) · [本人接管步骤](../../docs/V5-TAKEOVER-CHECK.md) · [阶段](stages/v5-current-evaluation/stage.json)。只补C1-C3必要实际产品观察和可信登记，0真实模型/付费；保留旧活动登记原件与出处。当前有限登记已READY：一次4节点exit0、71来源/9证据，确定性三项IE因未调用LLM，不写成语义PASS；[实际交付](stages/v5-current-evaluation/reviews/delivery.md)。本人接管明确尚未做，步骤已提供。
+
+## 前阶段：整体验收与接管收尾
 
 [当前功能与26项证据总览](../../docs/V5-DELIVERY.md) · [最新接管包](../../docs/HANDOFF-20261030.md) · [阶段](stages/v5-delivery-wrapup/stage.json)。当前资料与独立只读复核完成，26Req/144本地链接有效；原提取器文字误报保留并经AI实读消解。[本轮实际结果](stages/v5-delivery-wrapup/reviews/delivery.md)。产品测试/build/模型0，旧登记保持，本人随后已反馈本次测试成功、正常通关，并附一张结算原图；[原话及图源](human-reviews/v5-delivery-wrapup/round-01/review.md)已保存，五主题逐项和整版发布不自动接受。
 

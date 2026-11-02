@@ -1,0 +1,52 @@
+[
+  {
+    "label": "precheck",
+    "command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "evaluation.cli",
+      "precheck",
+      "--release",
+      "v5.0-engineering"
+    ],
+    "exit_code": 0,
+    "original_report": "evidence/upgrade/v5.0/evaluator-owner/runs/20261102T065647753871Z/report.json",
+    "archive": "stages/v5-current-evaluation/evaluation/current-precheck.json",
+    "precheck_status": "READY",
+    "issues": [],
+    "claim_statuses": {},
+    "paid_calls": 0,
+    "network_calls": 0
+  },
+  {
+    "label": "deterministic",
+    "command": [
+      "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "evaluation.cli",
+      "evaluate",
+      "--release",
+      "v5.0-engineering",
+      "--mode",
+      "deterministic"
+    ],
+    "exit_code": 2,
+    "original_report": "evidence/upgrade/v5.0/evaluator-owner/runs/20261102T065648260580Z/report.json",
+    "archive": "stages/v5-current-evaluation/evaluation/current-deterministic.json",
+    "precheck_status": "READY",
+    "issues": [],
+    "claim_statuses": {
+      "V5-C1": "INSUFFICIENT_EVIDENCE",
+      "V5-C2": "INSUFFICIENT_EVIDENCE",
+      "V5-C3": "INSUFFICIENT_EVIDENCE"
+    },
+    "paid_calls": 0,
+    "network_calls": 0
+  }
+]
