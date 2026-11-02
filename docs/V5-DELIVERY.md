@@ -8,7 +8,7 @@
 
 2026-11-02补齐：当前C1–C3有限证据已重新执行/登记，71来源、9证据，precheck READY；deterministic三项IE只因未运行LLM判读，仍保留原付费硬门控。见[本轮实际结果](../evidence/project/stages/v5-current-evaluation/reviews/delivery.md)及[本人接管步骤](V5-TAKEOVER-CHECK.md)。本人随后已反馈接管操作全部成功，并解释程序/AI职责与存档复用；见[本人原话](../evidence/project/human-reviews/v5-current-evaluation/round-01/review.md)。本次无本人截图，不等于语义评价通过。
 
-2026-11-02后续：[保守核账与评价恢复准备](../evidence/project/stages/v5-conservative-recovery/reviews/delivery.md)已完成隔离检查、真实账本只读预演及免费费用预览。受控入口实现已替代paid无条件停止，但三条unknown仍在真实账本中，尚未批准apply或新付费；语义判断仍未执行。
+2026-11-02后续：[实际核账与真实评价结果](../evidence/project/stages/v5-conservative-recovery/reviews/execution.md)：本人具体批准后，三笔完整0.110616元上界保留并完成核账；C1-C3真实评价各一次全部PASS，估算0.02607224元/限额0.40元，三次额度用尽，unknown0/reserved0。前轮确定性IE和硬门控结果按原时点保留，不代表当前仍缺这三项真实判读；本轮结果接受仍待本人核对。
 
 ## 先打开哪里
 
@@ -45,7 +45,7 @@
 | GEN-01 | [近期6真实样本](../evidence/project/stages/v5-generation-reliability/reviews/delivery.md) | 本批真实通过；主题/生成总体质量仅有限确认 |
 | GEN-02 | [原准入与坏例](../review/findings/v5-offline-joint.md)、[结构专项](../review/findings/v5-structure-diversity.md) | 历史负例拒绝；原校验未放松，无当前全套新执行 |
 | GEN-03 | [结构专项](../review/findings/v5-structure-diversity.md) | 36合同变体历史合成证明/回放；非36种拓扑 |
-| GEN-04 | [原生成专项与必要补验](../review/findings/v5-offline-joint.md) | 原失败/未知/不重发覆盖；旧unknown仍未知 |
+| GEN-04 | [原生成专项与必要补验](../review/findings/v5-offline-joint.md) | 原失败/未知/不重发覆盖；三笔历史实际用量仍未知，已按完整上界保守核账 |
 | USER-01 | [本人资源隔离](../evidence/project/human-reviews/v5-login-usernames/round-01/review.md)、[原私有ID专项](../review/findings/v5-offline-joint.md) | 本人确认关卡/进度隔离，原端点交换证据保留 |
 | USER-02 | [原集成恢复](../review/findings/v5-offline-joint.md)、[结构兼容](../review/findings/v5-structure-diversity.md) | 原重登/进程重开覆盖，不计今天新重启测试 |
 | USER-03 | [最新auth专项](../evidence/project/stages/v5-login-usernames/reviews/qa.md) | 错密、CSRF及原限频节点窄验；本人确认错密拒绝 |
@@ -66,14 +66,14 @@
 | LEGACY-01 | [原旧版回归](../review/findings/v5-offline-joint.md)、[桌面清理交付](../evidence/project/stages/v5-handpainted-rebuild/reviews/delivery.md) | 旧库/入口保留，未重跑旧全套或迁移玩家库 |
 | ENG-01 | [固定证据入口](../evidence/project/README.md)、[E&O标准](v5-evaluation.md) | 来源/执行/失败/反馈分开；旧登记保持原身份和范围 |
 | ENG-02 | [E1/E2/E3原实际结果](../evidence/project/stages/history-v5-engineering/automated/experiments/result.json) | 历史9正常/20坏例等实验，不计本阶段新实验 |
-| EVAL-01 | [当前有限评价登记](../evidence/project/stages/v5-current-evaluation/reviews/delivery.md)、[评价器说明](../evaluation/v5/README.md) | 当前71来源/9证据precheck READY；确定性三项IE，未运行LLM判读；旧合同/门控保留 |
+| EVAL-01 | [当前有限评价登记](../evidence/project/stages/v5-current-evaluation/reviews/delivery.md)、[评价器说明](../evaluation/v5/README.md) | 当前71来源/9证据READY；新增获批C1-C3真实3/3 PASS，引用/身份检查通过；旧确定性IE按历史时点保留，不代表全范围认证 |
 | DELIVERY-01 | [最新接管包](HANDOFF-20261030.md)、[运行说明](../release/V5.md) | 启动与数据政策可读；本人已确认所给停启读档/经典版切换步骤成功；整版发布接受仍未明确 |
 
 ## 剩余项与下一步
 
 1. 请本人集中看五主题美术和当前完整游玩流程；账号及Key已经确认的部分不要求重测。已有图集和本人已有生成关卡可用，不必为验收再生成付费关卡。
 2. 当前AI自然度、普遍成功率、真人难度/时长和五主题伙伴质量只保留有限证据，不自行扩大真实采样。
-3. E1/E2/E3和评价离线材料可提交；C1/C2/C3当前登记已READY，但确定性结果仍非真实语义PASS，旧三条unknown门控保留。没有新的真实调用批准，不执行付费评价或更改旧账本/登记。
+3. E1/E2/E3及C1-C3有限评价材料可提交；本轮已按具体批准完成保守核账与三项真实PASS，旧原件保留。三次名额已用尽，不追加真实采样；三个PASS不扩大为绝对安全、AI整体质量或整版发布验收。
 4. 本轮集中交接并正常提交推送。版本tag、合并main、部署、Actions、老师/同伴签字和整版接受未发生。
 
 ## 请本人集中检查一次

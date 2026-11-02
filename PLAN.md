@@ -1,8 +1,8 @@
 # Plan
 
-## 当前阶段（2026-11-02）：保守核账与受控评价恢复准备
+## 当前阶段（2026-11-02）：保守核账与有限真实评价完成，待本人核对
 
-用户已选择保守核账方向，准备精确三目标工具、受控评价入口和免费预检；0.110616元完整上界继续保留。工具及受控评价入口已完成隔离验证，真实账本只读预演与免费请求预览各一次exit0；真实账本未改、付费未批准。具体三笔变更及最多3次/0.40元提案见[本轮交付](evidence/project/stages/v5-conservative-recovery/reviews/delivery.md)，待本人确认。[本轮计划](docs/v5-conservative-recovery-plan.md) · [阶段](evidence/project/stages/v5-conservative-recovery/stage.json)。
+本人已具体批准三笔核账及最多3次/0.40元评价。Main实际apply exit0，0.110616元完整上界与NULL用量保留；C1-C3真实评价各一次均PASS/exit0，按返回用量估算0.02607224元，unknown0/reserved0，三次额度用尽，无重试/生成/伙伴/产品重跑。原确定性IE、准备提案和测试失败保留历史；本人接管已成功，本轮结果与整版接受不能由授权代替。[实际结果与本人核对入口](evidence/project/stages/v5-conservative-recovery/reviews/execution.md) · [计划](docs/v5-conservative-recovery-plan.md) · [阶段](evidence/project/stages/v5-conservative-recovery/stage.json)。
 
 ## 前阶段（2026-11-02）：当前版本有限评价与接管补齐
 

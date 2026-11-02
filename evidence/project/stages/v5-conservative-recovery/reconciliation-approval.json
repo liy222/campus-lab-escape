@@ -1,0 +1,113 @@
+{
+  "approved": true,
+  "approved_by": "liy222",
+  "human_reply": "批准核账及3次评价／0.40元（推荐）",
+  "purpose": "v5_conservative_unknown_accounting_closure",
+  "reason": "HUMAN_ACCEPTED_UPPER_RETAINED",
+  "helper_raw_sha256": "9eff858e24e30480ebd24cf769c94925f6a33add8a2daa5cebee7024056721a0",
+  "dryrun_relative_path": "evidence/project/stages/v5-conservative-recovery/runs/20261102T113622500889Z-4ea33b806f6f/result.json",
+  "dryrun_raw_sha256": "fdfbd109c0ba04bd402b97e4c76c2ee85436c2a0c39941ec2ca3f7323446864c",
+  "targets": [
+    [
+      "e0ed1e09d56c43fe99cf554ee98cb8d3",
+      "game",
+      "2026-10-07T07:24:24.341639+00:00",
+      27760000,
+      27760000,
+      "unknown",
+      "INTERRUPTED_OR_INTERNAL",
+      null,
+      null,
+      null
+    ],
+    [
+      "d717f047d96542f0b391c7a50f47f994",
+      "game",
+      "2026-10-07T07:34:15.860291+00:00",
+      27760000,
+      27760000,
+      "unknown",
+      "MODEL_AUTH_ERROR",
+      null,
+      null,
+      null
+    ],
+    [
+      "d6b0528c32c048efa845e5ae813001b2",
+      "game",
+      "2026-10-18T15:07:18.189412+00:00",
+      55096000,
+      55096000,
+      "unknown",
+      "MODEL_AUTH_ERROR",
+      null,
+      null,
+      null
+    ]
+  ],
+  "retained_upper_units": 110616000,
+  "before_fingerprint": {
+    "schema_sha256": "5485fe3c19529e4b3d67b0ce65faa53cd8fdba2a0fe7c74260823f3c6f4e37bb",
+    "tables": {
+      "budget_calls": {
+        "columns": [
+          "id",
+          "scope",
+          "created_at",
+          "reserved",
+          "charged",
+          "state",
+          "reason",
+          "prompt_tokens",
+          "completion_tokens",
+          "cache_hit_tokens"
+        ],
+        "rows": 175,
+        "sha256": "70480a3f26627369e1fbe08b7434485533f337c1ac2bdbd934ea29ce81186401"
+      },
+      "budget_config": {
+        "columns": [
+          "id",
+          "cap",
+          "frozen"
+        ],
+        "rows": 1,
+        "sha256": "c75765ef6deaaa3a7e384cb480fbe7938f2448e3813cd5132e67bbec5dd092ab"
+      }
+    },
+    "full_sha256": "cb9e832d949d2c694badc17455fe74dd8adbddeab66ceaef11b1bc20da389560"
+  },
+  "proposed_after_fingerprint": {
+    "schema_sha256": "5485fe3c19529e4b3d67b0ce65faa53cd8fdba2a0fe7c74260823f3c6f4e37bb",
+    "tables": {
+      "budget_calls": {
+        "columns": [
+          "id",
+          "scope",
+          "created_at",
+          "reserved",
+          "charged",
+          "state",
+          "reason",
+          "prompt_tokens",
+          "completion_tokens",
+          "cache_hit_tokens"
+        ],
+        "rows": 175,
+        "sha256": "89064db1343b3d1ef76e37f88e5a2ef9c4c8715e8142dafea86ad12451c17fd3"
+      },
+      "budget_config": {
+        "columns": [
+          "id",
+          "cap",
+          "frozen"
+        ],
+        "rows": 1,
+        "sha256": "c75765ef6deaaa3a7e384cb480fbe7938f2448e3813cd5132e67bbec5dd092ab"
+      }
+    },
+    "full_sha256": "2d2f6a9b58c4f3ba1de0a72a0a9c628365f2c30d85997f434e8ebf9cc7031928"
+  },
+  "issued_at_utc": "2026-11-02T11:46:24.098847+00:00",
+  "expires_at_utc": "2026-11-02T13:46:24.098847+00:00"
+}

@@ -3,7 +3,7 @@
   "stage": "v5-conservative-recovery",
   "title": "三笔未知调用保守核账与受控评价恢复准备",
   "created_at": "2026-11-02T07:35:43.607660Z",
-  "technical_status": "prepared_verified_pending_human_approval",
+  "technical_status": "execution_complete_pending_human_review",
   "human_review_status": "undecided",
   "owner_review_status": "undecided",
   "peer_review_status": "not_reviewed",
@@ -17,11 +17,11 @@
   "collections": [],
   "baseline_commit": "c20dffd",
   "conservative_retained_upper_cny": "0.110616",
-  "ledger_apply_authorized": false,
-  "ledger_modified": false,
-  "paid_calls_authorized": false,
-  "real_model_calls": 0,
-  "paid_calls": 0,
+  "ledger_apply_authorized": true,
+  "ledger_modified": true,
+  "paid_calls_authorized": true,
+  "real_model_calls": 3,
+  "paid_calls": 3,
   "ledger_dryrun": "runs/20261102T113622500889Z-4ea33b806f6f/result.json",
   "free_preview": "evaluation/preview-20261102T113731971881Z-e6d252b2/preview.json",
   "delivery_report": "reviews/delivery.md",
@@ -38,8 +38,46 @@
     "max_cost_cny": "0.40",
     "preview_upper_cny": "0.382960",
     "retry": 0,
-    "approved": false
+    "approved": true
   },
   "source_registration_preserved": true,
-  "original_installation_pins_preserved": true
+  "original_installation_pins_preserved": true,
+  "approval_id": "v5-claims-20261102T114624Z",
+  "reconciliation_approval": "reconciliation-approval.json",
+  "human_authorization": {
+    "reply": "批准核账及3次评价／0.40元（推荐）",
+    "question": "是否批准按已推送 e4bf70b 的预演处理三笔旧未知记录（仅改核账状态和原因标记，保留0.110616元上界及未知用量），并随后对C1–C3各评价1次，最多3次／合计0.40元？费用预检上界0.38296元；失败占次数、不重试、异常即停，不生成关卡或调用伙伴。",
+    "source": "human-reviews/v5-conservative-recovery/round-01/review.md",
+    "issued_at_utc": "2026-11-02T11:46:24.098847+00:00",
+    "expires_at_utc": "2026-11-02T13:46:24.098847+00:00"
+  },
+  "ledger_apply": "runs/20261102T114636930048Z-2ecb52918a60/result.json",
+  "actual_network_calls": 3,
+  "paid_report": "evaluation/paid-20261102T114835067721Z-d8ca9df3/report.json",
+  "execution_receipt": "evaluation/execution-v5-claims-20261102T114624Z.json",
+  "ledger_after": "logs/after-execution-readonly.json",
+  "execution_report": "reviews/execution.md",
+  "semantic_results": {
+    "V5-C1": "PASS",
+    "V5-C2": "PASS",
+    "V5-C3": "PASS"
+  },
+  "usage_estimated_cost_cny": "0.02607224",
+  "provider_invoice_verified": false,
+  "unknown_calls_after": 0,
+  "reserved_calls_after": 0,
+  "authorization_consumed_calls": 3,
+  "authorization_remaining_calls": 0,
+  "independent_execution_review": "reviews/execution-review.md",
+  "live_player_database_tested": false,
+  "independent_execution_review_result": {
+    "status": "passed_finite_scope",
+    "read_only_commands": 2,
+    "exit_codes": [
+      0,
+      0
+    ],
+    "no_calls_repeated": true,
+    "report": "reviews/execution-review.md"
+  }
 }

@@ -1,0 +1,117 @@
+{
+  "recorded_at_utc": "2026-11-02T11:49:35.735032+00:00",
+  "operator": "Main",
+  "mode": "readonly_after_execution",
+  "sqlite_open_mode": "ro",
+  "query_only": true,
+  "config": [
+    [
+      1,
+      10000000000,
+      0
+    ]
+  ],
+  "states": [
+    [
+      "settled",
+      178
+    ]
+  ],
+  "call_count": 178,
+  "charged_upper_units": 1348075920,
+  "columns": [
+    "id",
+    "scope",
+    "created_at",
+    "reserved",
+    "charged",
+    "state",
+    "reason",
+    "prompt_tokens",
+    "completion_tokens",
+    "cache_hit_tokens"
+  ],
+  "targets": [
+    [
+      "e0ed1e09d56c43fe99cf554ee98cb8d3",
+      "game",
+      "2026-10-07T07:24:24.341639+00:00",
+      27760000,
+      27760000,
+      "settled",
+      "HUMAN_ACCEPTED_UPPER_RETAINED",
+      null,
+      null,
+      null
+    ],
+    [
+      "d717f047d96542f0b391c7a50f47f994",
+      "game",
+      "2026-10-07T07:34:15.860291+00:00",
+      27760000,
+      27760000,
+      "settled",
+      "HUMAN_ACCEPTED_UPPER_RETAINED",
+      null,
+      null,
+      null
+    ],
+    [
+      "d6b0528c32c048efa845e5ae813001b2",
+      "game",
+      "2026-10-18T15:07:18.189412+00:00",
+      55096000,
+      55096000,
+      "settled",
+      "HUMAN_ACCEPTED_UPPER_RETAINED",
+      null,
+      null,
+      null
+    ]
+  ],
+  "current_evaluation_rows": [
+    [
+      "eval_v5-claims-20261102T114624Z_1",
+      "evaluation",
+      "2026-11-02T11:48:36.362009+00:00",
+      156192000,
+      11236000,
+      "settled",
+      null,
+      5186,
+      108,
+      0
+    ],
+    [
+      "eval_v5-claims-20261102T114624Z_2",
+      "evaluation",
+      "2026-11-02T11:48:39.182018+00:00",
+      117664000,
+      7981120,
+      "settled",
+      null,
+      3696,
+      105,
+      128
+    ],
+    [
+      "eval_v5-claims-20261102T114624Z_3",
+      "evaluation",
+      "2026-11-02T11:48:41.776269+00:00",
+      109104000,
+      6855120,
+      "settled",
+      null,
+      3197,
+      89,
+      128
+    ]
+  ],
+  "actual_usage_estimated_cost_units": 26072240,
+  "actual_usage_estimated_cost_cny": 0.02607224,
+  "provider_invoice_verified": false,
+  "unknown_calls": 0,
+  "reserved_calls": 0,
+  "new_model_calls_by_this_check": 0,
+  "paid_report": "evaluation/paid-20261102T114835067721Z-d8ca9df3/report.json"
+}

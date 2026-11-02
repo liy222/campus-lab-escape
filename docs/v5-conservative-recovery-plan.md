@@ -26,3 +26,7 @@
 ## 实际交付
 
 必要隔离验证及各一次真实只读dry-run/免费preview已完成，实际命令、失败夹具与窄补、三笔具体差异及最多3次/0.40元提案见[固定交付报告](../evidence/project/stages/v5-conservative-recovery/reviews/delivery.md)。真实账本apply及真实评价均未授权或执行。
+
+## 具体批准后的实际执行
+
+本人已批准核账及3次/0.40元，实际apply和三项真实评价均exit0，C1-C3全部PASS、用量估算0.02607224元，无新增unknown或重试。三次额度用尽；前文“只准备/未授权”是e4bf70b提案阶段范围，后续具体批准和实际结果以[执行报告](../evidence/project/stages/v5-conservative-recovery/reviews/execution.md)为准。

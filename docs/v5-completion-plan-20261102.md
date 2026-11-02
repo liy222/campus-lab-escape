@@ -17,3 +17,7 @@ Main拥有本计划、接管步骤、根进度/AGENTS/Git、旧登记归档及�
 固定阶段evidence/project/stages/v5-current-evaluation；实际观察可因旧helper路径约束先写全新旧QA子目录后立即归档到固定入口，说明来源且不当新执行。失败原件保留、只补受影响范围。只做一次集中C1-C3定向执行与必要独立复核，最终一次普通liy222提交推送。
 
 验收：新precheck匹配当前有限源码/观察，确定性输出准确保留缺证或实败；旧登记可追溯，真实调用0；本人接管仍未发生时保持未核验。登记READY代表证据身份/覆盖，不是语义PASS或全版本验收。
+
+## 后续实际补齐
+
+本人随后确认接管操作全部成功并提供本人解释；之后另批准具体三笔保守核账与3次/0.40元真实评价，C1-C3已实际3/3 PASS。见[后续实际结果](../evidence/project/stages/v5-conservative-recovery/reviews/execution.md)，原四节点/登记/确定性IE结果不改写。
