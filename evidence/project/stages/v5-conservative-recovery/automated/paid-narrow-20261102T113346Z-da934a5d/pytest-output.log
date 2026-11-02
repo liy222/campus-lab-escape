@@ -1,0 +1,786 @@
+.........FFFFFFFF.FFFFFFFF.                                              [100%]
+================================== FAILURES ===================================
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[PRIOR_CALL_UNKNOWN_STOP-9000000000-rows0-3-9000000000-PRIOR_CALL_UNKNOWN_STOP] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x000000000655B4D0>, ...}
+ledger_error = 'PRIOR_CALL_UNKNOWN_STOP', remaining = 9000000000, rows = ()
+gate_calls = 3, gate_cost = 9000000000, expected = 'PRIOR_CALL_UNKNOWN_STOP'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+                v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+        else:
+            provider = v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+            with pytest.raises(EvaluationError, match=expected):
+                asyncio.run(provider.complete(_messages()))
+    
+        assert paid_fakes["counts"]["provider_init"] == 0
+        assert paid_fakes["env"].reads == 0
+>       assert provider.last_metadata is None
+               ^^^^^^^^
+E       UnboundLocalError: cannot access local variable 'provider' where it is not associated with a value
+
+tests\v5\test_paid_recovery.py:310: UnboundLocalError
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[AI_BUDGET_EXHAUSTED-9000000000-rows1-3-9000000000-AI_BUDGET_EXHAUSTED] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x000000000694CB00>, ...}
+ledger_error = 'AI_BUDGET_EXHAUSTED', remaining = 9000000000, rows = ()
+gate_calls = 3, gate_cost = 9000000000, expected = 'AI_BUDGET_EXHAUSTED'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+                v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+        else:
+            provider = v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+            with pytest.raises(EvaluationError, match=expected):
+                asyncio.run(provider.complete(_messages()))
+    
+        assert paid_fakes["counts"]["provider_init"] == 0
+        assert paid_fakes["env"].reads == 0
+>       assert provider.last_metadata is None
+               ^^^^^^^^
+E       UnboundLocalError: cannot access local variable 'provider' where it is not associated with a value
+
+tests\v5\test_paid_recovery.py:310: UnboundLocalError
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-0-rows2-3-9000000000-AI_BUDGET_EXHAUSTED] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x000000000694C640>, ...}
+ledger_error = None, remaining = 0, rows = (), gate_calls = 3
+gate_cost = 9000000000, expected = 'AI_BUDGET_EXHAUSTED'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+>               v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+
+tests\v5\test_paid_recovery.py:302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x000000000694C640>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows3-3-9000000000-PRIOR_CALL_UNKNOWN_STOP] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x00000000066ABD10>, ...}
+ledger_error = None, remaining = 9000000000
+rows = [('game', 'another-scope-unknown', 1, 'unknown')], gate_calls = 3
+gate_cost = 9000000000, expected = 'PRIOR_CALL_UNKNOWN_STOP'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+>               v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+
+tests\v5\test_paid_recovery.py:302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x00000000066ABD10>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows4-3-9000000000-PRIOR_CALL_UNKNOWN_STOP] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x00000000069A3570>, ...}
+ledger_error = None, remaining = 9000000000
+rows = [('experiment', 'another-scope-reserved', 1, 'reserved')], gate_calls = 3
+gate_cost = 9000000000, expected = 'PRIOR_CALL_UNKNOWN_STOP'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+>               v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+
+tests\v5\test_paid_recovery.py:302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x00000000069A3570>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows5-1-9000000000-EVALUATION_GATE_EXHAUSTED] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x00000000069A3790>, ...}
+ledger_error = None, remaining = 9000000000
+rows = [('evaluation', 'eval_synthetic-qa-gate_1', 1, 'settled')]
+gate_calls = 1, gate_cost = 9000000000, expected = 'EVALUATION_GATE_EXHAUSTED'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+                v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+        else:
+>           provider = v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\v5\test_paid_recovery.py:304: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x00000000069A3790>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows6-3-1-EVALUATION_GATE_EXHAUSTED] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...': 3, 'max_cost_units': 1, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006913750>, ...}
+ledger_error = None, remaining = 9000000000, rows = (), gate_calls = 3
+gate_cost = 1, expected = 'EVALUATION_GATE_EXHAUSTED'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+                v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+        else:
+>           provider = v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\v5\test_paid_recovery.py:304: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006913750>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows7-3-9000000000-PRIOR_CALL_UNKNOWN_STOP] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006911550>, ...}
+ledger_error = None, remaining = 9000000000
+rows = [('evaluation', 'eval_synthetic-qa-gate_1', 1, 'unknown')]
+gate_calls = 3, gate_cost = 9000000000, expected = 'PRIOR_CALL_UNKNOWN_STOP'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+>               v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+
+tests\v5\test_paid_recovery.py:302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006911550>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+__ test_frozen_or_changed_global_cap_blocks_before_fake_provider[cap_drift] ___
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006671220>, ...}
+condition = 'cap_drift'
+
+    @pytest.mark.parametrize("condition", ["frozen", "cap_drift"])
+    def test_frozen_or_changed_global_cap_blocks_before_fake_provider(
+        registered_v5, paid_fakes, condition
+    ):
+        _files, tools, context = registered_v5
+        if condition == "frozen":
+            paid_fakes["ledger"].frozen = True
+        else:
+            paid_fakes["ledger"].cap = CAP - 1
+        with pytest.raises(EvaluationError, match="AI_BUDGET_EXHAUSTED"):
+>           v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+
+tests\v5\test_paid_recovery.py:328: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006671220>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+__________ test_identity_change_after_prepare_stops_before_provider ___________
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006695710>, ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000666FD10>
+
+    def test_identity_change_after_prepare_stops_before_provider(registered_v5, paid_fakes, monkeypatch):
+        _files, tools, context = registered_v5
+>       provider = v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\v5\test_paid_recovery.py:338: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006695710>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+_______ test_identity_change_after_fake_dispatch_stops_remaining_claims _______
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 0, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x00000000066960B0>, ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000000068E7750>
+
+    def test_identity_change_after_fake_dispatch_stops_remaining_claims(
+        registered_v5, paid_fakes, monkeypatch
+    ):
+        files, tools, context = registered_v5
+        paid_fakes["provider"].scripts = ["PASS", "PASS", "PASS"]
+        binding = copy.deepcopy(paid_fakes["binding"])
+        changed = {**binding, "input_sha256": "f" * 64}
+        observed = []
+    
+        def change_after_first_judgement():
+            observed.append(None)
+            # prepare + pre-dispatch see the reviewed bytes; post-dispatch sees drift.
+            return copy.deepcopy(changed if len(observed) >= 3 else binding)
+    
+        monkeypatch.setattr(v5, "paid_input_binding", change_after_first_judgement)
+        report = _report()
+    
+>       code = asyncio.run(v5.evaluate_paid_claims(files, tools, context, APPROVAL_ID, report))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\v5\test_paid_recovery.py:367: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:205: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:128: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\base_events.py:720: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+evaluation\v5.py:472: in evaluate_paid_claims
+    provider = prepare_paid_provider(tools, context, approval_id, report)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x00000000066960B0>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+____ test_gate_change_stops_after_prior_fake_call_and_clears_old_metadata _____
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006657110>, ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000000006938050>
+
+    def test_gate_change_stops_after_prior_fake_call_and_clears_old_metadata(
+        registered_v5, paid_fakes, monkeypatch
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["provider"].scripts = ["pass"]
+        report = _report()
+>       provider = v5.prepare_paid_provider(tools, context, APPROVAL_ID, report)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\v5\test_paid_recovery.py:385: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006657110>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+_ test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry[INSUFFICIENT_EVIDENCE] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x000000000662FDD0>, ...}
+first_action = 'INSUFFICIENT_EVIDENCE'
+
+    @pytest.mark.parametrize("first_action", ["INSUFFICIENT_EVIDENCE", "invalid_reference", "raise"])
+    def test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry(
+        registered_v5, paid_fakes, first_action
+    ):
+        files, tools, context = registered_v5
+        paid_fakes["provider"].scripts = [first_action, "pass", "pass"]
+        report = _report()
+    
+>       code = asyncio.run(v5.evaluate_paid_claims(files, tools, context, APPROVAL_ID, report))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\v5\test_paid_recovery.py:411: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:205: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:128: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\base_events.py:720: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+evaluation\v5.py:472: in evaluate_paid_claims
+    provider = prepare_paid_provider(tools, context, approval_id, report)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x000000000662FDD0>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+_ test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry[invalid_reference] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x000000000662FA10>, ...}
+first_action = 'invalid_reference'
+
+    @pytest.mark.parametrize("first_action", ["INSUFFICIENT_EVIDENCE", "invalid_reference", "raise"])
+    def test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry(
+        registered_v5, paid_fakes, first_action
+    ):
+        files, tools, context = registered_v5
+        paid_fakes["provider"].scripts = [first_action, "pass", "pass"]
+        report = _report()
+    
+>       code = asyncio.run(v5.evaluate_paid_claims(files, tools, context, APPROVAL_ID, report))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\v5\test_paid_recovery.py:411: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:205: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:128: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\base_events.py:720: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+evaluation\v5.py:472: in evaluate_paid_claims
+    provider = prepare_paid_provider(tools, context, approval_id, report)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x000000000662FA10>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+_ test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry[raise] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006907280>, ...}
+first_action = 'raise'
+
+    @pytest.mark.parametrize("first_action", ["INSUFFICIENT_EVIDENCE", "invalid_reference", "raise"])
+    def test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry(
+        registered_v5, paid_fakes, first_action
+    ):
+        files, tools, context = registered_v5
+        paid_fakes["provider"].scripts = [first_action, "pass", "pass"]
+        report = _report()
+    
+>       code = asyncio.run(v5.evaluate_paid_claims(files, tools, context, APPROVAL_ID, report))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\v5\test_paid_recovery.py:411: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:205: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:128: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\base_events.py:720: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+evaluation\v5.py:472: in evaluate_paid_claims
+    provider = prepare_paid_provider(tools, context, approval_id, report)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006907280>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+_________ test_valid_fail_is_retained_and_later_fake_claims_complete __________
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006904B50>, ...}
+
+    def test_valid_fail_is_retained_and_later_fake_claims_complete(registered_v5, paid_fakes):
+        files, tools, context = registered_v5
+        paid_fakes["provider"].scripts = ["FAIL", "PASS", "PASS"]
+        report = _report()
+    
+>       code = asyncio.run(v5.evaluate_paid_claims(files, tools, context, APPROVAL_ID, report))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\v5\test_paid_recovery.py:434: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:205: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\runners.py:128: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\liyh\.conda\envs\1\Lib\asyncio\base_events.py:720: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+evaluation\v5.py:472: in evaluate_paid_claims
+    provider = prepare_paid_provider(tools, context, approval_id, report)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluation\v5.py:466: in prepare_paid_provider
+    ledger.assert_ready()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006904B50>
+
+    def assert_ready(self):
+        self.assert_ready_calls += 1
+        if self.ready_error:
+            raise EvaluationError(self.ready_error)
+>       if self.frozen or self.cap != v5.CAP or self.remaining <= 0:
+                                      ^^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'CAP'
+
+tests\v5\test_paid_recovery.py:70: AttributeError
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[PRIOR_CALL_UNKNOWN_STOP-9000000000-rows0-3-9000000000-PRIOR_CALL_UNKNOWN_STOP]
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[AI_BUDGET_EXHAUSTED-9000000000-rows1-3-9000000000-AI_BUDGET_EXHAUSTED]
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-0-rows2-3-9000000000-AI_BUDGET_EXHAUSTED]
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows3-3-9000000000-PRIOR_CALL_UNKNOWN_STOP]
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows4-3-9000000000-PRIOR_CALL_UNKNOWN_STOP]
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows5-1-9000000000-EVALUATION_GATE_EXHAUSTED]
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows6-3-1-EVALUATION_GATE_EXHAUSTED]
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows7-3-9000000000-PRIOR_CALL_UNKNOWN_STOP]
+FAILED tests/v5/test_paid_recovery.py::test_frozen_or_changed_global_cap_blocks_before_fake_provider[cap_drift]
+FAILED tests/v5/test_paid_recovery.py::test_identity_change_after_prepare_stops_before_provider
+FAILED tests/v5/test_paid_recovery.py::test_identity_change_after_fake_dispatch_stops_remaining_claims
+FAILED tests/v5/test_paid_recovery.py::test_gate_change_stops_after_prior_fake_call_and_clears_old_metadata
+FAILED tests/v5/test_paid_recovery.py::test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry[INSUFFICIENT_EVIDENCE]
+FAILED tests/v5/test_paid_recovery.py::test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry[invalid_reference]
+FAILED tests/v5/test_paid_recovery.py::test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry[raise]
+FAILED tests/v5/test_paid_recovery.py::test_valid_fail_is_retained_and_later_fake_claims_complete
+16 failed, 11 passed, 1 warning in 7.94s

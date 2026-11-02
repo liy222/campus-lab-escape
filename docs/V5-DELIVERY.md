@@ -6,7 +6,9 @@
 
 本页汇总已有事实，不是一次新的源码全套测试。交付整理基线7bd8c40；最新产品改动d6806b1，生成命名改进66a54a6。各证据保留实际源码、执行时间、失败与范围，读取新汇总不会刷新旧评价登记。
 
-2026-11-02补齐：当前C1–C3有限证据已重新执行/登记，71来源、9证据，precheck READY；deterministic三项IE只因未运行LLM判读，仍保留原付费硬门控。见[本轮实际结果](../evidence/project/stages/v5-current-evaluation/reviews/delivery.md)及[本人接管步骤](V5-TAKEOVER-CHECK.md)。本人明确该接管流程尚未执行。
+2026-11-02补齐：当前C1–C3有限证据已重新执行/登记，71来源、9证据，precheck READY；deterministic三项IE只因未运行LLM判读，仍保留原付费硬门控。见[本轮实际结果](../evidence/project/stages/v5-current-evaluation/reviews/delivery.md)及[本人接管步骤](V5-TAKEOVER-CHECK.md)。本人随后已反馈接管操作全部成功，并解释程序/AI职责与存档复用；见[本人原话](../evidence/project/human-reviews/v5-current-evaluation/round-01/review.md)。本次无本人截图，不等于语义评价通过。
+
+2026-11-02后续：[保守核账与评价恢复准备](../evidence/project/stages/v5-conservative-recovery/reviews/delivery.md)已完成隔离检查、真实账本只读预演及免费费用预览。受控入口实现已替代paid无条件停止，但三条unknown仍在真实账本中，尚未批准apply或新付费；语义判断仍未执行。
 
 ## 先打开哪里
 
@@ -65,7 +67,7 @@
 | ENG-01 | [固定证据入口](../evidence/project/README.md)、[E&O标准](v5-evaluation.md) | 来源/执行/失败/反馈分开；旧登记保持原身份和范围 |
 | ENG-02 | [E1/E2/E3原实际结果](../evidence/project/stages/history-v5-engineering/automated/experiments/result.json) | 历史9正常/20坏例等实验，不计本阶段新实验 |
 | EVAL-01 | [当前有限评价登记](../evidence/project/stages/v5-current-evaluation/reviews/delivery.md)、[评价器说明](../evaluation/v5/README.md) | 当前71来源/9证据precheck READY；确定性三项IE，未运行LLM判读；旧合同/门控保留 |
-| DELIVERY-01 | [最新接管包](HANDOFF-20261030.md)、[运行说明](../release/V5.md) | 启动与数据政策可读；本人全流程接管/回退和整体接受尚待实际反馈 |
+| DELIVERY-01 | [最新接管包](HANDOFF-20261030.md)、[运行说明](../release/V5.md) | 启动与数据政策可读；本人已确认所给停启读档/经典版切换步骤成功；整版发布接受仍未明确 |
 
 ## 剩余项与下一步
 

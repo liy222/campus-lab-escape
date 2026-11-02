@@ -4,13 +4,13 @@
   "title": "当前版本有限评价证据与接管验收补齐",
   "created_at": "2026-11-02T06:42:04.027913Z",
   "technical_status": "current_registration_ready_semantic_and_takeover_pending",
-  "human_review_status": "undecided",
-  "owner_review_status": "undecided",
+  "human_review_status": "accepted",
+  "owner_review_status": "accepted",
   "peer_review_status": "not_reviewed",
   "current_human_review_round": 1,
   "human_review_rounds": {
     "1": {
-      "owner": "undecided",
+      "owner": "accepted",
       "peer": "not_reviewed"
     }
   },
@@ -86,7 +86,7 @@
     "paid_entry_implementation": "fixed_stop_not_dynamic_recovery",
     "reconciliation_or_paid_authorization": "not_granted"
   },
-  "takeover_status": "user_reported_not_yet_executed_steps_provided",
+  "takeover_status": "human_confirmed_guided_operations_success",
   "takeover_steps": "docs/V5-TAKEOVER-CHECK.md",
   "independent_evaluator_review": {
     "report": "reviews/evaluator-review.md",
@@ -98,5 +98,15 @@
     "all_model_windows_within_16k": true,
     "semantic_missing_only": "Approved LLM evidence interpretation not run",
     "actual_paid_or_network_calls": 0
+  },
+  "takeover_human_explanation_received": true,
+  "takeover_human_explanation": "操作全部成功，程序负责规定结构，合法返回结果，ai负责生成结果的多样性，因为存档已经保存了生成结果",
+  "takeover_source": "human-reviews/v5-current-evaluation/round-01/review.md",
+  "takeover_screenshot_status": "not_provided_no_matching_automatic_screenshot",
+  "takeover_auxiliary_evidence": {
+    "path": "evaluation/current-registration/V5-C3.json",
+    "origin": "previous_automated_current_evidence",
+    "new_execution": false,
+    "human_screenshot": false
   }
 }

@@ -1,8 +1,12 @@
 # Plan
 
-## 当前阶段（2026-11-02）：当前版本有限评价与接管补齐
+## 当前阶段（2026-11-02）：保守核账与受控评价恢复准备
 
-已取得C1–C3当前实际证据并完成可信重新登记：一次4节点exit0、71来源/9证据；precheck exit0/READY，deterministic exit2/三项IE（未运行LLM判读）。旧登记与原结果已保留，原付费门控不变，新增项目模型/付费0。[实际交付](evidence/project/stages/v5-current-evaluation/reviews/delivery.md)。本人明确尚未做接管测试，已提供[具体步骤](docs/V5-TAKEOVER-CHECK.md)，不得预填通过。[本轮计划](docs/v5-completion-plan-20261102.md) · [固定阶段](evidence/project/stages/v5-current-evaluation/stage.json)。
+用户已选择保守核账方向，准备精确三目标工具、受控评价入口和免费预检；0.110616元完整上界继续保留。工具及受控评价入口已完成隔离验证，真实账本只读预演与免费请求预览各一次exit0；真实账本未改、付费未批准。具体三笔变更及最多3次/0.40元提案见[本轮交付](evidence/project/stages/v5-conservative-recovery/reviews/delivery.md)，待本人确认。[本轮计划](docs/v5-conservative-recovery-plan.md) · [阶段](evidence/project/stages/v5-conservative-recovery/stage.json)。
+
+## 前阶段（2026-11-02）：当前版本有限评价与接管补齐
+
+已取得C1–C3当前实际证据并完成可信重新登记：一次4节点exit0、71来源/9证据；precheck exit0/READY，deterministic exit2/三项IE（未运行LLM判读）。旧登记与原结果已保留，原付费门控不变，新增项目模型/付费0。[实际交付](evidence/project/stages/v5-current-evaluation/reviews/delivery.md)。本人随后已反馈接管操作全部成功，并说明程序/AI职责及读档复用结果；[原话记录](evidence/project/human-reviews/v5-current-evaluation/round-01/review.md)与[复现步骤](docs/V5-TAKEOVER-CHECK.md)可查。未附本人截图，不扩展为付费授权或语义PASS。[本轮计划](docs/v5-completion-plan-20261102.md) · [固定阶段](evidence/project/stages/v5-current-evaluation/stage.json)。
 
 ## 前阶段（2026-10-30）：整体验收与接管收尾
 

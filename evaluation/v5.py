@@ -1,16 +1,21 @@
 """Fixed-root V5 evaluator adapter; target material is read only, never executed."""
 from __future__ import annotations
+import asyncio
 import copy
+from contextlib import closing
 from datetime import datetime, timezone
+import json
 from pathlib import Path
 import re
 import sys
 import tempfile
+from uuid import uuid4
 from jsonschema import Draft202012Validator
 from jsonschema.exceptions import ValidationError
 from .common import PROJECT_ROOT, EvaluationError, identifier, json_bytes, sha256, strict_json
 from .engine import Evaluator
-from .provider import MockProvider
+from .provider import (MockProvider, ExistingLedger, PaidProvider, validate_gate,
+                       MODEL, OFFICIAL_BASE, PRODUCTION_LEDGER, cost_units)
 from .reader import EvidenceTools, safe_read
 
 RELEASE='v5.0-engineering'
@@ -278,15 +283,246 @@ async def calibrate_v5(mode):
     return rows
 
 
+def paid_input_binding():
+    """Bind the active registration and trusted evaluator/config bytes, not gates.
+
+    This free identity read never opens a ledger or inspects credentials. Gates
+    live outside the digest so Main can approve this digest without a hash cycle.
+    """
+    registration = sha256(safe_read(PROJECT_ROOT, ROOT + 'registration.json'))
+    if REGISTRATION_RAW_SHA256 is None or registration != REGISTRATION_RAW_SHA256:
+        raise EvaluationError('V5_MAIN_REGISTRATION_PIN_MISMATCH')
+    identities = _installation()
+    config_path = 'evaluation/trusted/root-config.json'
+    config_raw = safe_read(PROJECT_ROOT, config_path)
+    config = strict_json(config_raw)
+    expected = {'base_url': OFFICIAL_BASE, 'credential_env': 'EVALUATION_MODEL_API_KEY', 'model': MODEL}
+    if (not isinstance(config, dict) or any(config.get(key) != value for key, value in expected.items())
+            or any(not isinstance(config.get(key), str) or not config[key] for key in ('ledger', 'project_root'))
+            or Path(config.get('ledger', '')).resolve() != PRODUCTION_LEDGER.resolve()
+            or Path(config.get('project_root', '')).resolve() != PROJECT_ROOT.resolve()):
+        raise EvaluationError('UNAPPROVED_PROVIDER_CONFIG')
+    identities[config_path] = sha256(config_raw)
+    preview_path = 'scripts/preview_v5_evaluation.py'
+    identities[preview_path] = sha256(safe_read(PROJECT_ROOT, preview_path))
+    value = {'binding_version': 'v5-paid-input-v1', 'registration_raw_sha256': registration,
+             'evaluator_sources': identities}
+    return {**value, 'input_sha256': sha256(json_bytes(value))}
+
+
+def paid_wire_bytes(messages, *, max_tokens=1000):
+    """The exact text-only PaidProvider wire serialization, without sending it."""
+    if type(max_tokens) is not int or not 1 <= max_tokens <= 1000:
+        raise EvaluationError('INVALID_GATE_LIMITS')
+    if (not isinstance(messages, list) or not 1 <= len(messages) <= 3
+            or any(not isinstance(m, dict) or set(m) != {'role', 'content'}
+                   or m['role'] not in {'system', 'user'} or not isinstance(m['content'], str)
+                   for m in messages)):
+        raise EvaluationError('INVALID_MESSAGES')
+    payload = {'model': MODEL, 'messages': messages, 'max_tokens': max_tokens,
+               'thinking': {'type': 'disabled'}, 'stream': False}
+    return json.dumps(payload, ensure_ascii=False, separators=(',', ':'), allow_nan=False).encode('utf-8')
+
+
+def require_paid_evidence(tools, context, *, expected_binding=None):
+    """Pure identity/coverage gate, repeated before every paid dispatch."""
+    precheck = context.precheck(tools)
+    if precheck['status'] != 'READY' or precheck['issues']:
+        raise EvaluationError('V5_PAID_EVIDENCE_NOT_READY')
+    if ([c['claim_id'] for c in context.claims] != list(CLAIMS)
+            or any(context.coverage.get(cid, {}).get('status') != 'complete' for cid in CLAIMS)):
+        raise EvaluationError('V5_PAID_COVERAGE_INCOMPLETE')
+    binding = paid_input_binding()
+    if expected_binding is not None and binding != expected_binding:
+        raise EvaluationError('V5_PAID_INPUT_CHANGED')
+    return binding
+
+
+def fixed_paid_gate(approval_id, input_hash):
+    """Read only Main's fixed approval file; no CLI path or expiry bypass."""
+    if not approval_id:
+        raise EvaluationError('MAIN_FINITE_PAID_GO_REQUIRED')
+    identifier(approval_id)
+    raw = safe_read(PROJECT_ROOT, 'evaluation/trusted/paid-gates.json')
+    value = strict_json(raw)
+    approvals = value.get('approvals') if isinstance(value, dict) else None
+    if not isinstance(approvals, list) or any(not isinstance(gate, dict) for gate in approvals):
+        raise EvaluationError('MAIN_FINITE_PAID_GO_REQUIRED')
+    matches = [gate for gate in approvals if gate.get('approval_id') == approval_id]
+    if len(matches) != 1 or matches[0].get('purpose') != 'claims':
+        raise EvaluationError('MAIN_FINITE_PAID_GO_REQUIRED')
+    gate = matches[0]
+    try:
+        validate_gate(gate, input_hash=input_hash)
+    except (TypeError, AttributeError, ValueError):
+        raise EvaluationError('INVALID_GATE_LIMITS') from None
+    if gate['max_calls'] > len(CLAIMS):
+        raise EvaluationError('INVALID_GATE_LIMITS')
+    return copy.deepcopy(gate), sha256(raw)
+
+
+class GuardedV5PaidProvider:
+    """Lazy real provider: evidence, approval and ledger readiness precede Key.
+
+    ExistingLedger.reserve remains the final atomic budget check. Each attempt
+    retains PaidProvider's own reservation/usage/unknown metadata; never retry.
+    """
+    mode = 'paid'
+
+    def __init__(self, tools, context, binding, gate, gate_file_hash, ledger, report):
+        self.tools, self.context, self.binding = tools, context, binding
+        self.gate, self.gate_file_hash, self.ledger, self.report = gate, gate_file_hash, ledger, report
+        self.provider = None
+        self.current_claim = None
+        self._last_metadata = None
+
+    @property
+    def calls(self):
+        return self.provider.calls if self.provider is not None else 0
+
+    @property
+    def last_metadata(self):
+        return self._last_metadata
+
+    def _guard(self):
+        require_paid_evidence(self.tools, self.context, expected_binding=self.binding)
+        gate, digest = fixed_paid_gate(self.gate['approval_id'], self.binding['input_sha256'])
+        if gate != self.gate or digest != self.gate_file_hash:
+            raise EvaluationError('V5_PAID_GATE_CHANGED')
+        snapshot = self.ledger.assert_ready()
+        if snapshot['remaining_units'] <= 0:
+            raise EvaluationError('AI_BUDGET_EXHAUSTED')
+        return snapshot
+
+    async def complete(self, messages):
+        attempt = {'claim_id': self.current_claim, 'provider_invoked': False,
+                   'actual_network_call': False, 'call_id': None, 'error_code': None}
+        before = self.calls
+        # A guard failure must not inherit the preceding claim's call metadata.
+        self._last_metadata = None
+        self.report['paid_attempts'].append(attempt)
+        try:
+            snapshot = self._guard()
+            if self.calls >= self.gate['max_calls']:
+                raise EvaluationError('EVALUATION_GATE_EXHAUSTED')
+            wire = paid_wire_bytes(messages, max_tokens=self.gate['max_tokens'])
+            input_bound = len(wire) * 4 + 8192
+            if input_bound > 1_000_000:
+                raise EvaluationError('INPUT_TOO_LARGE')
+            bound = cost_units(input_bound, self.gate['max_tokens'])
+            if bound > min(snapshot['remaining_units'], self.gate['max_cost_units']):
+                raise EvaluationError('AI_BUDGET_EXHAUSTED')
+            # Read the same gate-prefix allowance as reserve before Key access.
+            # reserve still repeats these checks atomically under BEGIN IMMEDIATE.
+            prefix = 'eval_' + self.gate['approval_id'] + '_'
+            with closing(self.ledger._connect()) as db:
+                prior = db.execute("SELECT charged,state FROM budget_calls WHERE scope='evaluation' AND substr(id,1,?)=?",
+                                   (len(prefix), prefix)).fetchall()
+            if any(state != 'settled' for _, state in prior):
+                raise EvaluationError('PRIOR_CALL_UNKNOWN_STOP')
+            if len(prior) >= self.gate['max_calls'] or sum(charged for charged, _ in prior) + bound > self.gate['max_cost_units']:
+                raise EvaluationError('EVALUATION_GATE_EXHAUSTED')
+            attempt.update(wire_sha256=sha256(wire), wire_bytes=len(wire), input_token_bound=input_bound,
+                           reservation_bound_units=bound)
+            if self.provider is None:
+                self.report['credential_access_attempted'] = True
+                try:
+                    self.provider = PaidProvider(self.gate, self.binding['input_sha256'])
+                except BaseException as error:
+                    if isinstance(error, EvaluationError) and error.code == 'MISSING_EVALUATOR_CREDENTIALS':
+                        self.report['credentials_accessed'] = True
+                    elif not isinstance(error, EvaluationError):
+                        self.report['credentials_accessed'] = None
+                    raise
+                self.report['credentials_accessed'] = True
+            attempt['provider_invoked'] = True
+            reply = await self.provider.complete(messages)
+            self._guard()
+            return reply
+        except BaseException as error:
+            attempt['error_code'] = error.code if isinstance(error, EvaluationError) else 'PAID_ATTEMPT_INTERRUPTED_OR_INTERNAL'
+            raise
+        finally:
+            metadata = getattr(self.provider, 'last_metadata', None) if attempt['provider_invoked'] else None
+            self._last_metadata = copy.deepcopy(metadata)
+            attempt['reserved_call_delta'] = self.calls - before
+            if attempt['provider_invoked'] and isinstance(metadata, dict):
+                attempt.update({key: copy.deepcopy(metadata.get(key)) for key in
+                                ('actual_network_call', 'call_id', 'usage', 'requested_model', 'reported_model',
+                                 'finish_reason', 'cost_upper_units')})
+
+
+def prepare_paid_provider(tools, context, approval_id, report):
+    """Order is evidence -> fixed gate -> ledger -> lazy provider/credential."""
+    binding = require_paid_evidence(tools, context)
+    report['paid_input_binding'] = binding
+    gate, gate_hash = fixed_paid_gate(approval_id, binding['input_sha256'])
+    report['paid_gate'] = {key: gate[key] for key in
+                          ('approval_id', 'input_sha256', 'max_calls', 'max_cost_units', 'max_tokens',
+                           'timeout_seconds', 'expires_at')}
+    report['ledger_access_attempted'] = True
+    ledger = ExistingLedger()
+    report['ledger_opened'] = True
+    ledger.assert_ready()
+    return GuardedV5PaidProvider(tools, context, binding, gate, gate_hash, ledger, report)
+
+
+async def evaluate_paid_claims(files, tools, context, approval_id, report):
+    """Evaluate at most three fixed claims, stopping on any uncertain outcome."""
+    provider = prepare_paid_provider(tools, context, approval_id, report)
+    evaluator = Evaluator(tools, files, provider)
+    rows, audits = [], []
+    report.update(results=rows, audits=audits)
+    stopped = None
+    for claim in context.claims:
+        if stopped:
+            row = evaluator._output(claim, 'INSUFFICIENT_EVIDENCE', [], 'V5_PAID_RUN_STOPPED',
+                                    ['Resolve the recorded stop before a separately approved new run.'], 'not_run')
+            audit = {'claim_id': claim['claim_id'], 'raw_suggestion': None, 'provider_metadata': None,
+                     'validation_errors': ['V5_PAID_RUN_STOPPED']}
+        else:
+            provider.current_claim = claim['claim_id']
+            row, audit = await evaluator.evaluate(claim, CONTRACT, VERSION)
+            if audit.get('validation_errors'):
+                stopped = audit['validation_errors'][0]
+            elif row['status'] == 'INSUFFICIENT_EVIDENCE':
+                stopped = 'V5_PAID_JUDGEMENT_INSUFFICIENT'
+            elif row['execution_scope']['llm_status'] != 'completed':
+                stopped = 'V5_PAID_JUDGEMENT_NOT_COMPLETED'
+        rows.append(row)
+        audits.append(audit)
+    report['paid_stop_reason'] = stopped
+    final = context.precheck(tools)
+    report['final_precheck'] = final
+    if final['issues']:
+        report['paid_stop_reason'] = 'V5_IDENTITY_NOT_READY_OR_CHANGED'
+        for row in rows:
+            row.update(status='INSUFFICIENT_EVIDENCE', evidence_refs=[], reason='V5_IDENTITY_NOT_READY_OR_CHANGED',
+                       missing_check=['Re-register changed identities; no automatic retry.'])
+    return 1 if any(row['status'] == 'FAIL' for row in rows) else 2 if any(
+        row['status'] == 'INSUFFICIENT_EVIDENCE' for row in rows) else 0
+
+
 async def run_v5(args):
     mode=getattr(args,'mode','deterministic');started=datetime.now(timezone.utc).isoformat()
-    folder=PROJECT_ROOT/'evidence/upgrade/v5.0/evaluator-owner/runs'/datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ');folder.mkdir(parents=True,exist_ok=False)
-    report={'command':[sys.executable,'-m','evaluation.cli',*sys.argv[1:]],'started':started,'mode':mode,'target_code_executed':False,'actual_paid_calls':0,'actual_network_calls':0,'credentials_accessed':False,'ledger_opened':False,'synthetic':mode=='mock' or args.action=='calibrate','human_signoff':None,'teacher_approval':None,'limitations':['Synthetic calibration is not independent QA or real semantic evaluation.','Three historical unknown calls keep paid evaluation strictly blocked.']}
+    if mode == 'paid':
+        folder = (PROJECT_ROOT / 'evidence/project/stages/v5-conservative-recovery/evaluation' /
+                  ('paid-' + datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ') + '-' + uuid4().hex[:8]))
+    else:
+        folder=PROJECT_ROOT/'evidence/upgrade/v5.0/evaluator-owner/runs'/datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+    folder.mkdir(parents=True,exist_ok=False)
+    report={'command':[sys.executable,'-m','evaluation.cli',*sys.argv[1:]],'started':started,'mode':mode,'target_code_executed':False,'actual_paid_calls':0,'actual_network_calls':0,'credentials_accessed':False,'ledger_opened':False,'synthetic':mode=='mock' or args.action=='calibrate','human_signoff':None,'teacher_approval':None,'limitations':['Synthetic calibration is not independent QA or real semantic evaluation.','Paid requires current bound Main approval and a ready existing shared ledger; unknown/reserved/frozen/cap still block.']}
+    if mode == 'paid':
+        report.update(paid_attempts=[], paid_stop_reason=None, credential_access_attempted=False,
+                      ledger_access_attempted=False,
+                      network_count_basis='PaidProvider attempt metadata; not proof of a received response.')
     source_paths=(*INSTALLATION_PINS,'evaluation/v5.py','evaluation/cli.py')
-    report['evaluator_source_before']={p:sha256(safe_read(PROJECT_ROOT,p)) for p in source_paths}
     code=2
+    files = tools = context = None
     try:
-        if mode=='paid':raise EvaluationError('PRIOR_CALL_UNKNOWN_STOP')
+        report['evaluator_source_before']={p:sha256(safe_read(PROJECT_ROOT,p)) for p in source_paths}
+        if mode == 'paid' and args.action != 'evaluate':
+            raise EvaluationError('V5_PAID_CLAIMS_ONLY')
         if args.action=='calibrate':
             if args.fixture_set!='v5-k1-k6-v1':raise EvaluationError('UNKNOWN_FIXTURE_SET')
             _installation();rows=await calibrate_v5(mode);report['results']=rows;report['calibration']={'case_count':len(rows),'matches':sum(r['matches_expected'] for r in rows),'false_pass':[r['case_id'] for r in rows if r['actual']=='PASS' and r['expected']!='PASS'],'synthetic_inputs':True,'real_paid_calibration':False}
@@ -294,6 +530,8 @@ async def run_v5(args):
         else:
             files,tools,context=load_v5();precheck=context.precheck(tools);report['precheck']=precheck
             if args.action=='precheck':code=0 if not precheck['issues'] else 2
+            elif mode == 'paid':
+                code = await evaluate_paid_claims(files, tools, context, getattr(args, 'approval_id', None), report)
             else:
                 rows=[];audits=[];evaluator=Evaluator(tools,files)
                 for claim in context.claims:
@@ -306,9 +544,55 @@ async def run_v5(args):
                 code=1 if any(r['status']=='FAIL' for r in rows) else 2 if any(r['status']=='INSUFFICIENT_EVIDENCE' for r in rows) else 0
     except (EvaluationError,UnicodeError) as e:
         report['error_code']=e.code if isinstance(e,EvaluationError) else 'NON_UTF8_TRUSTED_DATA';code=2
-    report['evaluator_source_after']={p:sha256(safe_read(PROJECT_ROOT,p)) for p in source_paths}
-    if report['evaluator_source_before']!=report['evaluator_source_after']:
+    except BaseException as error:
+        if mode != 'paid':
+            raise
+        report['error_code'] = ('V5_PAID_INTERRUPTED' if isinstance(error, (KeyboardInterrupt, asyncio.CancelledError))
+                                else 'V5_PAID_INTERNAL_ERROR')
+        code = 2
+    if mode == 'paid':
+        attempts = report['paid_attempts']
+        report['actual_paid_calls'] = len({a['call_id'] for a in attempts if a.get('actual_network_call') and a.get('call_id')})
+        report['actual_network_calls'] = sum(bool(a.get('actual_network_call')) for a in attempts)
+        report['paid_provider_invocations'] = sum(a['provider_invoked'] for a in attempts)
+        if report.get('error_code'):
+            report['paid_stop_reason'] = report['error_code']
+        if report.get('paid_input_binding'):
+            try:
+                report['paid_input_binding_after'] = paid_input_binding()
+                if report['paid_input_binding_after'] != report['paid_input_binding']:
+                    raise EvaluationError('V5_PAID_INPUT_CHANGED')
+            except (EvaluationError, UnicodeError, OSError, TypeError, ValueError) as error:
+                reason = error.code if isinstance(error, EvaluationError) else 'V5_PAID_FINALIZATION_ERROR'
+                report['error_code'] = report['paid_stop_reason'] = reason
+                code = 2
+                for row in report.get('results', []):
+                    row.update(status='INSUFFICIENT_EVIDENCE', evidence_refs=[], reason=reason,
+                               missing_check=['Re-register changed identities; no automatic retry.'])
+        if report.get('error_code') and context is not None:
+            rows = report.setdefault('results', [])
+            audits = report.setdefault('audits', [])
+            completed = {row['claim_id'] for row in rows}
+            stopped_evaluator = Evaluator(tools, files)
+            for claim in context.claims:
+                if claim['claim_id'] not in completed:
+                    rows.append(stopped_evaluator._output(claim, 'INSUFFICIENT_EVIDENCE', [], 'V5_PAID_RUN_STOPPED',
+                                ['Resolve the recorded stop before a separately approved new run.'], 'not_run'))
+                    audits.append({'claim_id': claim['claim_id'], 'raw_suggestion': None, 'provider_metadata': None,
+                                   'validation_errors': ['V5_PAID_RUN_STOPPED']})
+    if mode == 'paid':
+        report['evaluator_source_after'] = {}
+        for p in source_paths:
+            try:
+                report['evaluator_source_after'][p] = sha256(safe_read(PROJECT_ROOT, p))
+            except (EvaluationError, UnicodeError, OSError):
+                report['evaluator_source_after'][p] = None
+    else:
+        report['evaluator_source_after']={p:sha256(safe_read(PROJECT_ROOT,p)) for p in source_paths}
+    if report.get('evaluator_source_before')!=report['evaluator_source_after']:
         report['error_code']='V5_EVALUATOR_CHANGED_DURING_RUN';code=2
+        if mode == 'paid':
+            report['paid_stop_reason'] = report['error_code']
         for row in report.get('results',[]):
             output=row.get('output',row);output.update(status='INSUFFICIENT_EVIDENCE',evidence_refs=[],reason='V5_EVALUATOR_CHANGED_DURING_RUN',missing_check=['Refreeze the changed evaluator and rerun only affected checks.'])
             if 'actual' in row:
@@ -316,4 +600,4 @@ async def run_v5(args):
         if 'calibration' in report:
             rows=report['results'];report['calibration'].update(matches=sum(r['matches_expected'] for r in rows),false_pass=[r['case_id'] for r in rows if r['actual']=='PASS' and r['expected']!='PASS'])
     report['exit_code']=code;report['ended']=datetime.now(timezone.utc).isoformat();path=folder/'report.json';path.write_bytes(json_bytes(report))
-    print('V5 evidence:',path);print('Exit:',code,'; paid/network calls: 0');return code
+    print('V5 evidence:',path);print('Exit:',code,'; paid/network attempts:',report['actual_paid_calls'],report['actual_network_calls']);return code

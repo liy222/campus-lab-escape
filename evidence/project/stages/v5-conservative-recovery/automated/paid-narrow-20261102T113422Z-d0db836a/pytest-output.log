@@ -1,0 +1,353 @@
+.........FFFFF.FF..........                                              [100%]
+================================== FAILURES ===================================
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[PRIOR_CALL_UNKNOWN_STOP-9000000000-rows0-3-9000000000-PRIOR_CALL_UNKNOWN_STOP] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x000000000655B4D0>, ...}
+ledger_error = 'PRIOR_CALL_UNKNOWN_STOP', remaining = 9000000000, rows = ()
+gate_calls = 3, gate_cost = 9000000000, expected = 'PRIOR_CALL_UNKNOWN_STOP'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+                v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+        else:
+            provider = v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+            with pytest.raises(EvaluationError, match=expected):
+                asyncio.run(provider.complete(_messages()))
+    
+        assert paid_fakes["counts"]["provider_init"] == 0
+        assert paid_fakes["env"].reads == 0
+>       assert provider.last_metadata is None
+               ^^^^^^^^
+E       UnboundLocalError: cannot access local variable 'provider' where it is not associated with a value
+
+tests\v5\test_paid_recovery.py:310: UnboundLocalError
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[AI_BUDGET_EXHAUSTED-9000000000-rows1-3-9000000000-AI_BUDGET_EXHAUSTED] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006928B00>, ...}
+ledger_error = 'AI_BUDGET_EXHAUSTED', remaining = 9000000000, rows = ()
+gate_calls = 3, gate_cost = 9000000000, expected = 'AI_BUDGET_EXHAUSTED'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+                v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+        else:
+            provider = v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+            with pytest.raises(EvaluationError, match=expected):
+                asyncio.run(provider.complete(_messages()))
+    
+        assert paid_fakes["counts"]["provider_init"] == 0
+        assert paid_fakes["env"].reads == 0
+>       assert provider.last_metadata is None
+               ^^^^^^^^
+E       UnboundLocalError: cannot access local variable 'provider' where it is not associated with a value
+
+tests\v5\test_paid_recovery.py:310: UnboundLocalError
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-0-rows2-3-9000000000-AI_BUDGET_EXHAUSTED] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x0000000006928640>, ...}
+ledger_error = None, remaining = 0, rows = (), gate_calls = 3
+gate_cost = 9000000000, expected = 'AI_BUDGET_EXHAUSTED'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+                v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+        else:
+            provider = v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+            with pytest.raises(EvaluationError, match=expected):
+                asyncio.run(provider.complete(_messages()))
+    
+        assert paid_fakes["counts"]["provider_init"] == 0
+        assert paid_fakes["env"].reads == 0
+>       assert provider.last_metadata is None
+               ^^^^^^^^
+E       UnboundLocalError: cannot access local variable 'provider' where it is not associated with a value
+
+tests\v5\test_paid_recovery.py:310: UnboundLocalError
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows3-3-9000000000-PRIOR_CALL_UNKNOWN_STOP] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x00000000066AB9B0>, ...}
+ledger_error = None, remaining = 9000000000
+rows = [('game', 'another-scope-unknown', 1, 'unknown')], gate_calls = 3
+gate_cost = 9000000000, expected = 'PRIOR_CALL_UNKNOWN_STOP'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+                v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+        else:
+            provider = v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+            with pytest.raises(EvaluationError, match=expected):
+                asyncio.run(provider.complete(_messages()))
+    
+        assert paid_fakes["counts"]["provider_init"] == 0
+        assert paid_fakes["env"].reads == 0
+>       assert provider.last_metadata is None
+               ^^^^^^^^
+E       UnboundLocalError: cannot access local variable 'provider' where it is not associated with a value
+
+tests\v5\test_paid_recovery.py:310: UnboundLocalError
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows4-3-9000000000-PRIOR_CALL_UNKNOWN_STOP] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x00000000069B9E10>, ...}
+ledger_error = None, remaining = 9000000000
+rows = [('experiment', 'another-scope-reserved', 1, 'reserved')], gate_calls = 3
+gate_cost = 9000000000, expected = 'PRIOR_CALL_UNKNOWN_STOP'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+                v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+        else:
+            provider = v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+            with pytest.raises(EvaluationError, match=expected):
+                asyncio.run(provider.complete(_messages()))
+    
+        assert paid_fakes["counts"]["provider_init"] == 0
+        assert paid_fakes["env"].reads == 0
+>       assert provider.last_metadata is None
+               ^^^^^^^^
+E       UnboundLocalError: cannot access local variable 'provider' where it is not associated with a value
+
+tests\v5\test_paid_recovery.py:310: UnboundLocalError
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows6-3-1-EVALUATION_GATE_EXHAUSTED] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 2, 'gate': 2, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...': 3, 'max_cost_units': 1, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x00000000068FFC50>, ...}
+ledger_error = None, remaining = 9000000000, rows = (), gate_calls = 3
+gate_cost = 1, expected = 'EVALUATION_GATE_EXHAUSTED'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+                v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+        else:
+            provider = v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+>           with pytest.raises(EvaluationError, match=expected):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: Regex pattern did not match.
+E             Expected regex: 'EVALUATION_GATE_EXHAUSTED'
+E             Actual message: 'AI_BUDGET_EXHAUSTED'
+
+tests\v5\test_paid_recovery.py:305: AssertionError
+_ test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows7-3-9000000000-PRIOR_CALL_UNKNOWN_STOP] _
+
+registered_v5 = ({'schemas/output.schema.json': {'additionalProperties': False, 'properties': {'claim_id': {'maxLength': 4000, 'minLen...<evaluation.reader.EvidenceTools object at 0x00000000066B0C20>, <evaluation.v5.V5Context object at 0x00000000066B1010>)
+paid_fakes = {'counts': {'binding': 1, 'gate': 1, 'ledger_init': 1, 'provider_init': 0}, 'binding': {'binding_version': 'v5-paid-in...x_cost_units': 9000000000, ...}, 'ledger': <tests.v5.test_paid_recovery._FakeLedger object at 0x00000000068FE150>, ...}
+ledger_error = None, remaining = 9000000000
+rows = [('evaluation', 'eval_synthetic-qa-gate_1', 1, 'unknown')]
+gate_calls = 3, gate_cost = 9000000000, expected = 'PRIOR_CALL_UNKNOWN_STOP'
+
+    @pytest.mark.parametrize(
+        ("ledger_error", "remaining", "rows", "gate_calls", "gate_cost", "expected"),
+        [
+            ("PRIOR_CALL_UNKNOWN_STOP", 9_000_000_000, (), 3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            ("AI_BUDGET_EXHAUSTED", 9_000_000_000, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 0, (), 3, 9_000_000_000, "AI_BUDGET_EXHAUSTED"),
+            (None, 9_000_000_000, [("game", "another-scope-unknown", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("experiment", "another-scope-reserved", 1, "reserved")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "settled")],
+             1, 9_000_000_000, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, (), 3, 1, "EVALUATION_GATE_EXHAUSTED"),
+            (None, 9_000_000_000, [("evaluation", f"eval_{APPROVAL_ID}_1", 1, "unknown")],
+             3, 9_000_000_000, "PRIOR_CALL_UNKNOWN_STOP"),
+        ],
+    )
+    def test_global_ledger_and_used_gate_allowance_reject_before_fake_provider(
+        registered_v5, paid_fakes, ledger_error, remaining, rows, gate_calls, gate_cost, expected
+    ):
+        _files, tools, context = registered_v5
+        paid_fakes["ledger"].ready_error = ledger_error
+        paid_fakes["ledger"].remaining = remaining
+        paid_fakes["ledger"].rows = list(rows)
+        paid_fakes["gate"]["max_calls"] = gate_calls
+        paid_fakes["gate"]["max_cost_units"] = gate_cost
+        if expected in {"PRIOR_CALL_UNKNOWN_STOP", "AI_BUDGET_EXHAUSTED"}:
+            with pytest.raises(EvaluationError, match=expected):
+                v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+        else:
+            provider = v5.prepare_paid_provider(tools, context, APPROVAL_ID, _report())
+            with pytest.raises(EvaluationError, match=expected):
+                asyncio.run(provider.complete(_messages()))
+    
+        assert paid_fakes["counts"]["provider_init"] == 0
+        assert paid_fakes["env"].reads == 0
+>       assert provider.last_metadata is None
+               ^^^^^^^^
+E       UnboundLocalError: cannot access local variable 'provider' where it is not associated with a value
+
+tests\v5\test_paid_recovery.py:310: UnboundLocalError
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[PRIOR_CALL_UNKNOWN_STOP-9000000000-rows0-3-9000000000-PRIOR_CALL_UNKNOWN_STOP]
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[AI_BUDGET_EXHAUSTED-9000000000-rows1-3-9000000000-AI_BUDGET_EXHAUSTED]
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-0-rows2-3-9000000000-AI_BUDGET_EXHAUSTED]
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows3-3-9000000000-PRIOR_CALL_UNKNOWN_STOP]
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows4-3-9000000000-PRIOR_CALL_UNKNOWN_STOP]
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows6-3-1-EVALUATION_GATE_EXHAUSTED]
+FAILED tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows7-3-9000000000-PRIOR_CALL_UNKNOWN_STOP]
+7 failed, 20 passed, 1 warning in 15.51s

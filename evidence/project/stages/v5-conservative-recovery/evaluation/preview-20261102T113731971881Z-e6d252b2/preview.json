@@ -1,0 +1,95 @@
+{
+  "actual_network_calls": 0,
+  "actual_paid_calls": 0,
+  "capture_dispatches": 3,
+  "claims": [
+    {
+      "claim_id": "V5-C1",
+      "cost_upper_units": 156192000,
+      "input_token_bound": 74096,
+      "output_token_cap": 1000,
+      "real_model_calls": 0,
+      "synthetic_capture_only": true,
+      "wire_bytes": 16476,
+      "wire_sha256": "e0b0c468be9affbae0e5232d1aa19cb02253afc30bed75fc24b07eb3a6c1b524"
+    },
+    {
+      "claim_id": "V5-C2",
+      "cost_upper_units": 117664000,
+      "input_token_bound": 54832,
+      "output_token_cap": 1000,
+      "real_model_calls": 0,
+      "synthetic_capture_only": true,
+      "wire_bytes": 11660,
+      "wire_sha256": "7d57d9d92aff1acc01f5d488084260b981dd7ad6269cfcf89088a491bdef8ccf"
+    },
+    {
+      "claim_id": "V5-C3",
+      "cost_upper_units": 109104000,
+      "input_token_bound": 50552,
+      "output_token_cap": 1000,
+      "real_model_calls": 0,
+      "synthetic_capture_only": true,
+      "wire_bytes": 10590,
+      "wire_sha256": "ad95fa882d2176cd551732b70cb491e15d6305d2727a8b1af0824eb9a1dcae2d"
+    }
+  ],
+  "command": [
+    "C:\\Users\\liyh\\.conda\\envs\\1\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "scripts/preview_v5_evaluation.py"
+  ],
+  "credentials_accessed": false,
+  "ended_at_utc": "2026-11-02T11:37:34.678396+00:00",
+  "exit_code": 0,
+  "kind": "Free synthetic V5 engine-message/wire preview, not semantic evaluation",
+  "ledger_opened": false,
+  "limitations": [
+    "No gate or paid approval is created or inherited.",
+    "Wire bounds are conservative estimates, not provider usage.",
+    "Unknown/reserved/frozen/cap and finite authorization still gate any future paid run."
+  ],
+  "paid_input_binding": {
+    "binding_version": "v5-paid-input-v1",
+    "evaluator_sources": {
+      "evaluation/cli.py": "f0bf46132fd3a7b49bacfb5c1b76b409f6f0eb2b34426337775d243e1bca7076",
+      "evaluation/common.py": "91509d55058126319117b45f7e256aec5f46d35f97cd6bda7cbe6472f8227ab8",
+      "evaluation/engine.py": "2e9778f186c8191a475db9fa359a06dea8725cd4733872c450bf261d0cbfb74c",
+      "evaluation/provider.py": "438178cb8e3575b9172cb98f5df3ee84a5ec20874840c8af8ccf0dab4856a4dd",
+      "evaluation/reader.py": "050a8f6deb3e7ca209fde3362cd617274f0941cd5968662606bc2a6e282c5e7b",
+      "evaluation/schemas/output.schema.json": "19a0062cdb3a2990178bac3ebdb078e29c898691f034c9adcca3dcdd7bc9c6b8",
+      "evaluation/schemas/suggestion.schema.json": "b009e075e956c5c276bc27495d13223d8c0293271b23d2184b29163fd132a05b",
+      "evaluation/trust.py": "8f8e02c1734d37263bbac3a0203f94c5b1f24fdea7f104c34ff53a0d67c38a14",
+      "evaluation/trusted/root-config.json": "dbe8dc68c92b8829baaa80339d2d6c2f44bacecb3c1a6f6c7c2cdf43f441bdd5",
+      "evaluation/v5.py": "bf981aea7e8fd2eb1986894389039e3efa405e2a9cf92777a16ebb227b09e128",
+      "evaluation/v5/contract.json": "85a3b4ac3d0e3c9b6b55a0d9cba531e8ca06fe144b7e38d209aad1885ef2b744",
+      "evaluation/v5/fixture-contract.json": "8cebb1a471255fd2ff884f53b97bfb4fc7308a7d2287d92a9bb75e345b250aea",
+      "evaluation/v5/fixtures/failure.json": "0a01591fa9207f1775c3dac2795fefc2e05abbddbde3aa14298d2d376f212fbf",
+      "evaluation/v5/fixtures/injection.json": "28922151828991230f07529f2fc826aee0c0f3a51af62293d5f92331ba4fd1fd",
+      "evaluation/v5/fixtures/na.json": "096d9f87b6fcfbf65b51fab9cd827b1e9fd4240c2c005ec9460e9aad89bc88fb",
+      "evaluation/v5/fixtures/self-claim.json": "7847b0eb7939b30560cbb9af186ab8244a381aeeaf0562d6f4b25623de63156a",
+      "evaluation/v5/fixtures/source.json": "78b2168fbb2df8e03760f4e522df3b00018ccfcedf1b672d973c00e91cba533e",
+      "evaluation/v5/fixtures/support.json": "c6278c3855a0f1475a0dead5eead50f49b124bc493b0620345c48339ad45fc66",
+      "evaluation/v5/registration.schema.json": "5e2b8f6248d8bba29d89371c6f90c8243d653049e6b0972ba27cd611f5f77860",
+      "scripts/preview_v5_evaluation.py": "22216566c315d9a1c63f718c287aecf6791a90d45853fe5a39fcedc8f94287a0"
+    },
+    "input_sha256": "9b6a057ceae686a07e661980297694baff37085485d08c80628d6203395578bf",
+    "registration_raw_sha256": "ee7b394208c5e1c5e8df107c053692db322b23bec1801d1e372bd63e6f55c7de"
+  },
+  "peak_single_call_upper_units": 156192000,
+  "proposed_max_calls": 3,
+  "provider_profile": {
+    "base_url": "https://api.deepseek.com",
+    "max_tokens": 1000,
+    "model": "deepseek-flash",
+    "timeout_seconds": 20
+  },
+  "real_model_calls": 0,
+  "started_at_utc": "2026-11-02T11:37:31.971881+00:00",
+  "status": "PREVIEW_ONLY",
+  "synthetic_capture_only": true,
+  "total_cost_upper_cny": 0.38296,
+  "total_cost_upper_units": 382960000
+}

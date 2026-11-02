@@ -1,0 +1,1058 @@
+..............F......EEEEEEEEEEEEEEEEEEEF                                [100%]
+=================================== ERRORS ====================================
+_ ERROR at setup of test_paid_evidence_gate_rejects_before_binding_and_provider _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000666F200>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_missing_fixed_approval_stops_before_ledger_or_provider _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000666FE30>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[PRIOR_CALL_UNKNOWN_STOP-9000000000-rows0-3-9000000000-PRIOR_CALL_UNKNOWN_STOP] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000000066C9390>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[AI_BUDGET_EXHAUSTED-9000000000-rows1-3-9000000000-AI_BUDGET_EXHAUSTED] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000000006790BB0>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-0-rows2-3-9000000000-AI_BUDGET_EXHAUSTED] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000000069D8E20>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows3-3-9000000000-PRIOR_CALL_UNKNOWN_STOP] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000663B1D0>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows4-3-9000000000-PRIOR_CALL_UNKNOWN_STOP] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000663B4D0>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows5-1-9000000000-EVALUATION_GATE_EXHAUSTED] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000694E0A0>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows6-3-1-EVALUATION_GATE_EXHAUSTED] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000694E6D0>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows7-3-9000000000-PRIOR_CALL_UNKNOWN_STOP] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000000067DF570>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_frozen_or_changed_global_cap_blocks_before_fake_provider[frozen] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000000067DF9D0>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_frozen_or_changed_global_cap_blocks_before_fake_provider[cap_drift] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000662BDA0>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_identity_change_after_prepare_stops_before_provider __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000673A7D0>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_identity_change_after_fake_dispatch_stops_remaining_claims _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000000069EBBD0>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_gate_change_stops_after_prior_fake_call_and_clears_old_metadata _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000696A820>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry[INSUFFICIENT_EVIDENCE] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000696B070>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry[invalid_reference] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000696B620>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry[raise] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000696BB60>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+_ ERROR at setup of test_valid_fail_is_retained_and_later_fake_claims_complete _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000696BD90>
+
+    @pytest.fixture
+    def paid_fakes(monkeypatch):
+        counts = {"binding": 0, "gate": 0, "ledger_init": 0, "provider_init": 0}
+        binding = {
+            "binding_version": "v5-paid-input-v1", "registration_raw_sha256": "c" * 64,
+            "evaluator_sources": {"synthetic-source.py": "d" * 64}, "input_sha256": INPUT_HASH,
+        }
+        gate = {
+            "approval_id": APPROVAL_ID, "input_sha256": INPUT_HASH, "max_calls": 3,
+            "max_cost_units": 9_000_000_000, "max_tokens": 1000, "timeout_seconds": 20,
+            "expires_at": "2099-01-01T00:00:00+00:00",
+        }
+        ledger = _FakeLedger()
+        env = _ForbiddenEnvironment()
+    
+        def read_binding():
+            counts["binding"] += 1
+            return copy.deepcopy(binding)
+    
+        def read_gate(approval_id, input_hash):
+            counts["gate"] += 1
+            assert approval_id == APPROVAL_ID
+            assert input_hash == INPUT_HASH
+            return copy.deepcopy(gate), GATE_HASH
+    
+        def new_ledger():
+            counts["ledger_init"] += 1
+            return ledger
+    
+        class FakeProvider(_FakePaidProvider):
+            scripts = []
+            instances = []
+    
+            def __init__(self, provider_gate, input_hash):
+                counts["provider_init"] += 1
+                super().__init__(provider_gate, input_hash)
+    
+        FakeProvider.scripts = []
+        FakeProvider.instances = []
+        monkeypatch.setattr(v5, "paid_input_binding", read_binding)
+        monkeypatch.setattr(v5, "fixed_paid_gate", read_gate)
+        monkeypatch.setattr(v5, "ExistingLedger", new_ledger)
+        monkeypatch.setattr(v5, "PaidProvider", FakeProvider)
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:154: AttributeError
+================================== FAILURES ===================================
+________ test_paid_input_binding_is_pure_and_covers_registered_sources ________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000000000663E060>
+
+    def test_paid_input_binding_is_pure_and_covers_registered_sources(monkeypatch):
+        env = _ForbiddenEnvironment()
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:173: AttributeError
+_ test_free_preview_matches_fake_engine_messages_and_never_touches_paid_surfaces _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000000069696A0>
+
+    def test_free_preview_matches_fake_engine_messages_and_never_touches_paid_surfaces(
+        monkeypatch
+    ):
+        captured = []
+        original_complete = preview.CaptureProvider.complete
+    
+        async def capture_messages(self, messages):
+            captured.append(copy.deepcopy(messages))
+            return await original_complete(self, messages)
+    
+        def forbidden(*_args, **_kwargs):
+            pytest.fail("free preview must not touch paid provider, ledger, or fixed gate")
+    
+        monkeypatch.setattr(preview.CaptureProvider, "complete", capture_messages)
+        monkeypatch.setattr(v5, "ExistingLedger", forbidden)
+        monkeypatch.setattr(v5, "PaidProvider", forbidden)
+        monkeypatch.setattr(v5, "fixed_paid_gate", forbidden)
+        env = _ForbiddenEnvironment()
+>       monkeypatch.setattr(v5.os, "environ", env)
+                            ^^^^^
+E       AttributeError: module 'evaluation.v5' has no attribute 'os'
+
+tests\v5\test_paid_recovery.py:454: AttributeError
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/v5/test_paid_recovery.py::test_paid_input_binding_is_pure_and_covers_registered_sources
+FAILED tests/v5/test_paid_recovery.py::test_free_preview_matches_fake_engine_messages_and_never_touches_paid_surfaces
+ERROR tests/v5/test_paid_recovery.py::test_paid_evidence_gate_rejects_before_binding_and_provider
+ERROR tests/v5/test_paid_recovery.py::test_missing_fixed_approval_stops_before_ledger_or_provider
+ERROR tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[PRIOR_CALL_UNKNOWN_STOP-9000000000-rows0-3-9000000000-PRIOR_CALL_UNKNOWN_STOP]
+ERROR tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[AI_BUDGET_EXHAUSTED-9000000000-rows1-3-9000000000-AI_BUDGET_EXHAUSTED]
+ERROR tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-0-rows2-3-9000000000-AI_BUDGET_EXHAUSTED]
+ERROR tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows3-3-9000000000-PRIOR_CALL_UNKNOWN_STOP]
+ERROR tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows4-3-9000000000-PRIOR_CALL_UNKNOWN_STOP]
+ERROR tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows5-1-9000000000-EVALUATION_GATE_EXHAUSTED]
+ERROR tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows6-3-1-EVALUATION_GATE_EXHAUSTED]
+ERROR tests/v5/test_paid_recovery.py::test_global_ledger_and_used_gate_allowance_reject_before_fake_provider[None-9000000000-rows7-3-9000000000-PRIOR_CALL_UNKNOWN_STOP]
+ERROR tests/v5/test_paid_recovery.py::test_frozen_or_changed_global_cap_blocks_before_fake_provider[frozen]
+ERROR tests/v5/test_paid_recovery.py::test_frozen_or_changed_global_cap_blocks_before_fake_provider[cap_drift]
+ERROR tests/v5/test_paid_recovery.py::test_identity_change_after_prepare_stops_before_provider
+ERROR tests/v5/test_paid_recovery.py::test_identity_change_after_fake_dispatch_stops_remaining_claims
+ERROR tests/v5/test_paid_recovery.py::test_gate_change_stops_after_prior_fake_call_and_clears_old_metadata
+ERROR tests/v5/test_paid_recovery.py::test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry[INSUFFICIENT_EVIDENCE]
+ERROR tests/v5/test_paid_recovery.py::test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry[invalid_reference]
+ERROR tests/v5/test_paid_recovery.py::test_insufficient_invalid_or_exception_stops_remaining_claims_without_retry[raise]
+ERROR tests/v5/test_paid_recovery.py::test_valid_fail_is_retained_and_later_fake_claims_complete
+2 failed, 20 passed, 1 warning, 19 errors in 0.59s

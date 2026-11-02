@@ -1,0 +1,24 @@
+{
+  "kind": "Owner finite synthetic development only, not formal QA",
+  "status": "PASS",
+  "checks": [
+    "missing approval / bad evidence: no ledger or provider constructor",
+    "gate max4 / expired / stale binding refused on synthetic bytes",
+    "lazy fake provider; later unknown blocks with no stale prior-call metadata",
+    "already spent synthetic gate refused before credential/provider",
+    "synthetic valid FAIL preserved while fixed remaining claims run",
+    "synthetic IE stops remaining claims without retry",
+    "unexpected synthetic paid internal exception writes stopped report, no actual I/O",
+    "preview capture emits only explicit synthetic IE; fixed PaidProvider wire profile",
+    "registration pin + installation dictionary AST unchanged; all pre-existing helpers unchanged"
+  ],
+  "real_credentials_read": false,
+  "real_ledger_opened": false,
+  "real_network_calls": 0,
+  "actual_free_preview_runs": 0,
+  "product_tests_run": 0,
+  "notes": [
+    "Synthetic in-memory gate dictionaries are not approvals and were not persisted.",
+    "Temporary report was produced only with patched fake identities/providers/ledger; no actual CLI execution."
+  ]
+}

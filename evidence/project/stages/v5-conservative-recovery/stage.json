@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "stage": "v5-conservative-recovery",
+  "title": "三笔未知调用保守核账与受控评价恢复准备",
+  "created_at": "2026-11-02T07:35:43.607660Z",
+  "technical_status": "prepared_verified_pending_human_approval",
+  "human_review_status": "undecided",
+  "owner_review_status": "undecided",
+  "peer_review_status": "not_reviewed",
+  "current_human_review_round": 1,
+  "human_review_rounds": {
+    "1": {
+      "owner": "undecided",
+      "peer": "not_reviewed"
+    }
+  },
+  "collections": [],
+  "baseline_commit": "c20dffd",
+  "conservative_retained_upper_cny": "0.110616",
+  "ledger_apply_authorized": false,
+  "ledger_modified": false,
+  "paid_calls_authorized": false,
+  "real_model_calls": 0,
+  "paid_calls": 0,
+  "ledger_dryrun": "runs/20261102T113622500889Z-4ea33b806f6f/result.json",
+  "free_preview": "evaluation/preview-20261102T113731971881Z-e6d252b2/preview.json",
+  "delivery_report": "reviews/delivery.md",
+  "independent_qa": {
+    "report": "reviews/qa.md",
+    "reconciliation_passed": 14,
+    "initial_combined_exit_code": 1,
+    "paid_narrow_passed": 28,
+    "final_paid_narrow_exit_code": 0,
+    "single_combined_green": false
+  },
+  "proposed_paid_evaluation": {
+    "max_calls": 3,
+    "max_cost_cny": "0.40",
+    "preview_upper_cny": "0.382960",
+    "retry": 0,
+    "approved": false
+  },
+  "source_registration_preserved": true,
+  "original_installation_pins_preserved": true
+}

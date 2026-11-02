@@ -1,5 +1,5 @@
 {
-  "active_stage": "v5-current-evaluation",
+  "active_stage": "v5-conservative-recovery",
   "stages": [
     {
       "stage": "history-v5-engineering",
@@ -90,6 +90,12 @@
       "title": "当前版本有限评价证据与接管验收补齐",
       "stage_metadata": "stages/v5-current-evaluation/stage.json",
       "human_review": "human-reviews/v5-current-evaluation/round-01/review.md"
+    },
+    {
+      "stage": "v5-conservative-recovery",
+      "title": "三笔未知调用保守核账与受控评价恢复准备",
+      "stage_metadata": "stages/v5-conservative-recovery/stage.json",
+      "human_review": "human-reviews/v5-conservative-recovery/round-01/review.md"
     }
   ]
 }
