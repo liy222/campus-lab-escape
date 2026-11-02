@@ -1,0 +1,55 @@
+{
+  "recorded_at_utc": "2026-11-02T07:24:48.279685+00:00",
+  "observed_local_date": "2026-11-02",
+  "source": "Main tool output e95e93: direct sqlite3 URI mode=ro, PRAGMA query_only=ON, BEGIN read transaction, safe budget fields only; no BudgetLedger initialization",
+  "snapshot_states": {
+    "settled": 172,
+    "unknown": 3,
+    "reserved": 0
+  },
+  "snapshot_frozen": false,
+  "rows": [
+    {
+      "call_id": "e0ed1e09d56c43fe99cf554ee98cb8d3",
+      "scope": "game",
+      "created_at_utc": "2026-10-07T07:24:24.341639+00:00",
+      "reserved_units": 27760000,
+      "charged_units": 27760000,
+      "state": "unknown",
+      "reason": "INTERRUPTED_OR_INTERNAL",
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "cache_hit_tokens": null
+    },
+    {
+      "call_id": "d717f047d96542f0b391c7a50f47f994",
+      "scope": "game",
+      "created_at_utc": "2026-10-07T07:34:15.860291+00:00",
+      "reserved_units": 27760000,
+      "charged_units": 27760000,
+      "state": "unknown",
+      "reason": "MODEL_AUTH_ERROR",
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "cache_hit_tokens": null
+    },
+    {
+      "call_id": "d6b0528c32c048efa845e5ae813001b2",
+      "scope": "game",
+      "created_at_utc": "2026-10-18T15:07:18.189412+00:00",
+      "reserved_units": 55096000,
+      "charged_units": 55096000,
+      "state": "unknown",
+      "reason": "MODEL_AUTH_ERROR",
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "cache_hit_tokens": null
+    }
+  ],
+  "retained_upper_units": 110616000,
+  "retained_upper_cny": "0.110616",
+  "supplier_bill_verified": false,
+  "database_written": false,
+  "paid_or_network_calls": 0,
+  "paid_entry_code_observation": "evaluation/v5.py: run_v5 unconditionally raises PRIOR_CALL_UNKNOWN_STOP when mode=paid; it does not dynamically inspect this ledger snapshot."
+}
