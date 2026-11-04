@@ -1,0 +1,61 @@
+{
+  "schema": "reproduction-cleanup-check/v1",
+  "operator": "Main",
+  "checked_at_utc": "2026-11-04T07:04:28.634760+00:00",
+  "exit_code": 0,
+  "removed_targets_absent": true,
+  "preserved_archive_and_old_test_database_checks": [
+    {
+      "path": "data/reproduction/20261005T110938Z/source.zip",
+      "bytes_and_sha256_unchanged": true
+    },
+    {
+      "path": "data/reproduction/20261005T111419Z/source.zip",
+      "bytes_and_sha256_unchanged": true
+    },
+    {
+      "path": "data/reproduction/20261005T115741Z/source.zip",
+      "bytes_and_sha256_unchanged": true
+    },
+    {
+      "path": "data/reproduction/20261005T111419Z/clean/data/rollback/game-v1.sqlite",
+      "bytes_and_sha256_unchanged": true
+    },
+    {
+      "path": "data/reproduction/20261005T111419Z/clean/data/runtime/game-v2.sqlite",
+      "bytes_and_sha256_unchanged": true
+    },
+    {
+      "path": "data/reproduction/20261005T115741Z/clean/data/rollback/game-v1.sqlite",
+      "bytes_and_sha256_unchanged": true
+    },
+    {
+      "path": "data/reproduction/20261005T115741Z/clean/data/runtime/game-v2.sqlite",
+      "bytes_and_sha256_unchanged": true
+    }
+  ],
+  "expanded_source_presence": [
+    {
+      "workspace": "data/reproduction/20261005T111419Z/clean",
+      "pinned_source_files_present": 6014,
+      "missing": 0,
+      "content_retested": false
+    },
+    {
+      "workspace": "data/reproduction/20261005T115741Z/clean",
+      "pinned_source_files_present": 10778,
+      "missing": 0,
+      "content_retested": false
+    }
+  ],
+  "current_builds_dependencies_data_and_key_file_present": true,
+  "key_file_content_read": false,
+  "canonical_player_database_opened": false,
+  "junction_preserved_and_resolves_to_original_data": true,
+  "remaining_reproduction_bytes_excluding_junction_target": 856286317,
+  "remaining_reproduction_files_excluding_junction_target": 27596,
+  "removed_bytes": 178372794,
+  "removed_files": 5374,
+  "product_tests_build_browser_model_calls": 0,
+  "scope": "File-presence checks for pinned old sources; SHA-256 comparison only for three preserved ZIPs and four old test databases. Not a new product or historical test execution."
+}

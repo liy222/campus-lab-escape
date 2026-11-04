@@ -1,0 +1,27 @@
+{
+  "schema": "reproduction-cleanup/v1",
+  "operator": "Main",
+  "started_at_utc": "2026-11-04T07:03:29.8604048Z",
+  "status": "completed",
+  "command": "PowerShell Remove-Item -LiteralPath <two verified allowlisted old node_modules paths> -Recurse -Force",
+  "targets": [
+    {
+      "path": "data/reproduction/20261005T111419Z/clean/frontend/node_modules",
+      "resolved_absolute": "D:\\深度能力\\data\\reproduction\\20261005T111419Z\\clean\\frontend\\node_modules",
+      "bytes": 89186397,
+      "files": 2687,
+      "deleted": true
+    },
+    {
+      "path": "data/reproduction/20261005T115741Z/clean/frontend/node_modules",
+      "resolved_absolute": "D:\\深度能力\\data\\reproduction\\20261005T115741Z\\clean\\frontend\\node_modules",
+      "bytes": 89186397,
+      "files": 2687,
+      "deleted": true
+    }
+  ],
+  "exit_code": 0,
+  "removed_bytes": 178372794,
+  "removed_files": 5374,
+  "completed_at_utc": "2026-11-04T07:03:32.3294481Z"
+}
