@@ -31,6 +31,11 @@ class SessionRequest(StrictModel):
     request_id: Identifier
     mode: Literal['classic','generated']
     level_id: Identifier | None = None
+class SharedSessionRequest(StrictModel):
+    request_id: Identifier
+class SharingRequest(StrictModel):
+    published: bool
+    revision: Annotated[int,Field(ge=0)]
 class GenerationRequest(StrictModel):
     request_id: Identifier
     theme: Annotated[str,Field(min_length=1,max_length=2000)]
@@ -229,6 +234,43 @@ def level(lid:str,request:Request):
     item=request.app.state.v5_database.levels(principal(request)['user_id'],lid)
     if item is None: raise APIError(404,'NOT_FOUND','未找到该关卡。')
     return success({'level':item})
+
+@router.post('/levels/{lid}/sharing')
+async def set_sharing(lid:str,request:Request):
+    p=principal(request,True); raw=await raw_body(request,SharingRequest)
+    try: status,data=request.app.state.v5_database.set_sharing(p['user_id'],lid,raw.published,raw.revision)
+    except (ValueError,ValidationError,KeyError,TypeError): raise APIError(409,'DEFINITION_MISMATCH','关卡定义校验失败，共享状态已保留。') from None
+    return success(data,status) if status==200 else result_response((status,data))
+
+@router.get('/shared-levels')
+def shared_levels(request:Request):
+    p=principal(request); view=request.query_params.get('view','hall'); page=request.query_params.get('page','1')
+    if view not in {'hall','joined'} or len(page)>10 or not page.isascii() or not page.isdigit() or not 1<=int(page)<=2147483647:
+        raise APIError(422,'BAD_ARGUMENT','共享列表参数不符合要求。')
+    return success(request.app.state.v5_database.shared_levels(p['user_id'],view,int(page)))
+
+@router.get('/shared-levels/{share_id}')
+def shared_level(share_id:str,request:Request):
+    item=request.app.state.v5_database.shared_detail(principal(request)['user_id'],share_id)
+    if item is None: raise APIError(404,'NOT_FOUND','未找到该共享关卡。')
+    return success({'shared_level':item})
+
+@router.post('/shared-levels/{share_id}/sessions')
+async def join_shared(share_id:str,request:Request):
+    p=principal(request,True); raw=await raw_body(request,SharedSessionRequest); db=request.app.state.v5_database
+    try:
+        status,data=db.join_shared(p,share_id,raw)
+        if status not in {200,201}: return result_response((status,data))
+        store=db.owned(p,data['session_id']); _,body=store.read(data['session_id'],None)
+        data.update(mode='generated',level_id=store.metadata['level_id'],visible_state=body['data']['visible_state'])
+    except (ValueError,ValidationError,KeyError,TypeError): raise APIError(409,'DEFINITION_MISMATCH','关卡定义校验失败，当前进度已保留。') from None
+    return success(data,status)
+
+@router.get('/shared-levels/{share_id}/leaderboard')
+def leaderboard(share_id:str,request:Request):
+    data=request.app.state.v5_database.leaderboard(principal(request)['user_id'],share_id)
+    if data is None: raise APIError(404,'NOT_FOUND','未找到该共享关卡。')
+    return success(data)
 @router.post('/sessions/{sid}/ai/turns')
 async def ai_turn(sid:str,request:Request):
     store=bound(request,sid,True); raw=await raw_body(request,HintRequest)

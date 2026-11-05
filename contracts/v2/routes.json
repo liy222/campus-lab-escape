@@ -225,6 +225,62 @@
       "success_statuses": [
         200
       ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/levels/{lid}/sharing",
+      "request": "sharing_request",
+      "response": "sharing_response",
+      "authenticated": true,
+      "csrf_required": true,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/shared-levels",
+      "request": null,
+      "response": "shared_levels_response",
+      "authenticated": true,
+      "csrf_required": false,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/shared-levels/{share_id}",
+      "request": null,
+      "response": "shared_level_response",
+      "authenticated": true,
+      "csrf_required": false,
+      "success_statuses": [
+        200
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/shared-levels/{share_id}/sessions",
+      "request": "shared_session_request",
+      "response": "session_response",
+      "authenticated": true,
+      "csrf_required": true,
+      "success_statuses": [
+        200,
+        201
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/shared-levels/{share_id}/leaderboard",
+      "request": null,
+      "response": "leaderboard_response",
+      "authenticated": true,
+      "csrf_required": false,
+      "success_statuses": [
+        200
+      ]
     }
   ],
   "health_paths": [

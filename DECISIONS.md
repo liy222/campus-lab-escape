@@ -1,4 +1,6 @@
 # Decisions
+
+- 2026-11-04：用户明确批准共享与排行榜计划及全部已选规则。本机账号大厅主动发布，固定已保存定义；内部共享会话独立、对外generated+share_id；排行榜取服务端连续完整挑战的个人最快，作者可参榜并标记，允许辅助且累计标注。同轮读档不回退时间/辅助，跨轮或已结束轮次读档转练习，旧已完成成绩保留。只对真实action通关原子记分，不采信前端用时或restore结算。新数据增量表/独立迁移标记，旧状态和快照不改；当前旧付费评价属于旧源码，本轮不改旧pin或新增付费。具体合同和验收见docs/v5-sharing-leaderboard-plan.md。
 - 2026-10-01: User explicitly authorized implementation, private liy222/campus-lab-escape creation, normal commits/push, specified existing Conda interpreter. Empty directory confirmed. No existing成果 overwritten.
 - Accept three-room fixed puzzle, React/TypeScript + FastAPI + SQLite, six tools, server truth, visible-only AI, one-time confirmation, single save slot. Contract v1 must be frozen before module implementation.
 - COURSE01 OPEN: solo submission, free topic, genuine peer review alternatives, grading/deadlines and formal CH01 approval need teacher confirmation; no surrogate human evidence.

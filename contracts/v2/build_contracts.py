@@ -7,7 +7,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from backend.app.api.v5 import Credentials, SessionRequest, GenerationRequest, LogoutRequest, router
+from backend.app.api.v5 import Credentials, SessionRequest, SharedSessionRequest, SharingRequest, GenerationRequest, LogoutRequest, router
 from backend.app.domain.models import ActionRequest, VersionRequest
 from backend.app.domain.graybox_models import HintRequest
 from backend.app.domain.save_models import CreateSaveRequest
@@ -31,7 +31,7 @@ def build():
     status=enum('playing','won'); stamp={'type':'string','format':'date-time'}
     def model(name, cls):
         schema=cls.model_json_schema(); definitions.update(schema.pop('$defs',{})); definitions[name]=schema
-    for name,cls in [('credentials',Credentials),('session_request',SessionRequest),('generation_request',GenerationRequest),('logout_request',LogoutRequest),('action_request',ActionRequest),('version_request',VersionRequest),('hint_request',HintRequest),('create_save_request',CreateSaveRequest)]: model(name,cls)
+    for name,cls in [('credentials',Credentials),('session_request',SessionRequest),('shared_session_request',SharedSessionRequest),('sharing_request',SharingRequest),('generation_request',GenerationRequest),('logout_request',LogoutRequest),('action_request',ActionRequest),('version_request',VersionRequest),('hint_request',HintRequest),('create_save_request',CreateSaveRequest)]: model(name,cls)
     classic=copy.deepcopy(definitions['graybox_visible_state'])
     classic['properties'].update(mode=const('classic'),level_id={'type':'null'})
     classic['required']+=['mode','level_id']; definitions['classic_visible_state']=classic
@@ -56,6 +56,11 @@ def build():
     definitions['visible_state']={'oneOf':[ref('classic_visible_state'),ref('generated_visible_state')]}
     generated_slot=copy.deepcopy(definitions['save_slot']['oneOf'][-2]); generated_slot['properties'].update(schema_version=const('2.0.0'),level_version=const('5.0.0'),room_id=sid)
     definitions['save_slot']['oneOf'].append(generated_slot)
+    generated_legacy=copy.deepcopy(next(variant for variant in definitions['save_slot']['oneOf']
+        if variant['properties']['kind'].get('const')=='legacy'
+        and variant['properties']['level_version'].get('const')=='3.4.0'))
+    generated_legacy['properties'].update(schema_version=const('2.0.0'),level_version=const('5.0.0'))
+    definitions['save_slot']['oneOf'].append(generated_legacy)
     # Generic generated actions carry strings/arrays; old receipt enum was classic-only.
     for variant in definitions['receipt']['oneOf']:
         tool=variant['properties']['tool'].get('const')
@@ -69,11 +74,33 @@ def build():
     definitions['level']=obj({'level_id':sid,'title':string(40),'story':string(240),'room_count':enum(1,2,3),'difficulty':enum('easy','normal','hard'),'definition_hash':string(64),'definition_version':const('1.0.0'),'rules_version':const('1.0.0'),'policy_version':enum('0.9.0','1.0.0'),'created_at':stamp})
     # Optional read projection: redaction can expand a 2000-character theme 10x.
     definitions['level']['properties']['theme']=string(20000)
+    definitions['sharing_state']=obj({'share_id':nullable(sid),'published':boolean,'revision':n,'published_at':nullable(stamp)})
+    definitions['challenge']=obj({'attempt_id':sid,'status':enum('active','practice','finished'),'started_at':stamp,
+        'finished_at':nullable(stamp),'elapsed_ms':nullable(n),'hint_count':n,'companion_count':n,'is_author':boolean})
+    definitions['generated_visible_state']['properties'].update(share_id=sid,challenge=ref('challenge'))
+    definitions['generated_visible_state']['dependentRequired']={'share_id':['challenge'],'challenge':['share_id']}
+    definitions['level']['properties']['sharing']=ref('sharing_state')
+    definitions['level']['required'].append('sharing')
+    shared=copy.deepcopy(definitions['level'])
+    shared['properties'].pop('sharing'); shared['required'].remove('sharing')
+    shared['properties'].update(share_id=sid,author_username=string(24),is_author=boolean,published=boolean,
+        sharing_revision=n,published_at=stamp,session_id=nullable(sid),status=nullable(status),
+        challenge_status=nullable(enum('active','practice','finished')))
+    shared['required']+=['share_id','author_username','is_author','published','sharing_revision','published_at','session_id','status','challenge_status']
+    definitions['shared_level']=shared
+    definitions['leaderboard_entry']=obj({'rank':{'type':'integer','minimum':1},'attempt_id':sid,'username':string(24),
+        'is_author':boolean,'elapsed_ms':n,'finished_at':stamp,'hint_count':n,'companion_count':n})
     definitions['session_summary']=obj({'session_id':sid,'mode':enum('classic','generated'),'level_id':string(100),'created_at':stamp,'status':status,'room_id':sid,'revision':n,'clues_found':n,'puzzles_solved':n})
+    definitions['session_summary']['properties'].update(share_id=sid,challenge_status=enum('active','practice','finished'))
     def response(name, data): definitions[name]=obj({'ok':const(True),'event_id':sid,'data':data})
     response('auth_response',ref('auth_data')); response('logout_response',obj({'logged_out':const(True)}))
     response('sessions_response',obj({'sessions':arr(ref('session_summary'))}))
     response('session_response',obj({'session_id':sid,'existing':boolean,'mode':enum('classic','generated'),'level_id':nullable(sid),'visible_state':ref('visible_state')}))
+    definitions['session_response']['properties']['data']['properties']['share_id']=sid
+    response('sharing_response',obj({'sharing':ref('sharing_state')}))
+    response('shared_level_response',obj({'shared_level':ref('shared_level')}))
+    response('shared_levels_response',obj({'shared_levels':arr(ref('shared_level')),'page':{'type':'integer','minimum':1},'page_size':const(20),'total':n}))
+    response('leaderboard_response',obj({'share_id':sid,'entries':{'type':'array','maxItems':50,'items':ref('leaderboard_entry')},'own_entry':nullable(ref('leaderboard_entry')),'total_players':n}))
     for singular,plural in [('job','jobs'),('level','levels')]:
         response(singular+'_response',obj({singular:ref(singular)})); response(plural+'_response',obj({plural:arr(ref(singular))}))
     definitions['error_response']=obj({'ok':const(False),'event_id':sid,'error':obj({'code':sid,'message':string()}),'visible_state':ref('visible_state')},['ok','event_id','error'])
@@ -83,9 +110,13 @@ def build():
         ('GET','/sessions'):(None,'sessions_response'),('POST','/sessions'):('session_request','session_response'),('GET','/sessions/{sid}/state'):(None,'state_response'),('POST','/sessions/{sid}/actions'):('action_request','action_response'),('POST','/sessions/{sid}/reset'):('version_request','control_response'),
         ('GET','/sessions/{sid}/saves'):(None,'list_saves_response'),('POST','/sessions/{sid}/saves'):('create_save_request','save_slot_response'),('POST','/sessions/{sid}/saves/{save_id}/restore'):('version_request','save_slot_response'),('POST','/sessions/{sid}/saves/{save_id}/delete'):('version_request','delete_save_response'),('POST','/sessions/{sid}/ai/turns'):('hint_request','ai_turn_response'),
         ('GET','/level-generations'):(None,'jobs_response'),('POST','/level-generations'):('generation_request','job_response'),('GET','/level-generations/{job_id}'):(None,'job_response'),('GET','/levels'):(None,'levels_response'),('GET','/levels/{lid}'):(None,'level_response')}
+    pairs.update({('POST','/levels/{lid}/sharing'):('sharing_request','sharing_response'),
+        ('GET','/shared-levels'):(None,'shared_levels_response'),('GET','/shared-levels/{share_id}'):(None,'shared_level_response'),
+        ('POST','/shared-levels/{share_id}/sessions'):('shared_session_request','session_response'),
+        ('GET','/shared-levels/{share_id}/leaderboard'):(None,'leaderboard_response')})
     routes=[]
     for (method,path),(request,response_name) in pairs.items():
-        routes.append({'method':method,'path':'/api/v2'+path,'request':request,'response':response_name,'authenticated':path not in {'/auth/csrf','/auth/register','/auth/login'},'csrf_required':method=='POST','success_statuses':[200,201] if path in {'/sessions','/auth/register'} else [201] if path=='/sessions/{sid}/saves' and method=='POST' else [200,202] if path=='/level-generations' and method=='POST' else [200]})
+        routes.append({'method':method,'path':'/api/v2'+path,'request':request,'response':response_name,'authenticated':path not in {'/auth/csrf','/auth/register','/auth/login'},'csrf_required':method=='POST','success_statuses':[200,201] if path in {'/sessions','/auth/register','/shared-levels/{share_id}/sessions'} else [201] if path=='/sessions/{sid}/saves' and method=='POST' else [200,202] if path=='/level-generations' and method=='POST' else [200]})
     draft=Draft.model_json_schema(); draft['$schema']=DIALECT
     return {'api.schema.json':api,'level-draft.schema.json':draft,'routes.json':{'contract_version':'2.0.0','schema':'api.schema.json','routes':routes,'health_paths':['/health','/api/v2/health'],'headers':{'mutations':['Origin','Content-Type: application/json','X-CSRF-Token','X-Auth-Context'],'generation':['X-AI-Api-Key'],'partner':['X-AI-Provider','X-AI-Api-Key']}}}
 

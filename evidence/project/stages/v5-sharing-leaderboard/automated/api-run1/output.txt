@@ -1,0 +1,81 @@
+FF..F...FFF......                                                        [100%]
+================================== FAILURES ===================================
+______ test_publication_fixed_definition_cancel_republish_and_join_reuse ______
+tests\v5\test_sharing.py:140: in test_publication_fixed_definition_cancel_republish_and_join_reuse
+    assert w.c.get('/shared-levels?view=hall&page=1').json()['data']['total'] == 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:69: in get
+    def get(self, url, **kwargs): return self.request('GET', url, **kwargs)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:67: in request
+    validate_response(response,method,url)
+tests\v5\conftest.py:34: in validate_response
+    assert route is not None, 'No V5 route contract for successful response'
+E   AssertionError: No V5 route contract for successful response
+E   assert None is not None
+________ test_three_owners_private_resources_and_progress_are_isolated ________
+tests\v5\test_sharing.py:165: in test_three_owners_private_resources_and_progress_are_isolated
+    assert w.b.post('/sessions', {'request_id': rid(), 'mode': 'shared', 'level_id': w.lid}).status_code == 400
+E   AssertionError: assert 422 == 400
+E    +  where 422 = <Response [422 Unprocessable Entity]>.status_code
+E    +    where <Response [422 Unprocessable Entity]> = post('/sessions', {'request_id': '27528b75-2f03-471c-81d6-90253f1cc6b6', 'mode': 'shared', 'level_id': 'ee7659e13a1e4564a7a99196f78a7f82'})
+E    +      where post = <tests.v5.conftest.Actor object at 0x0000000007E003E0>.post
+E    +        where <tests.v5.conftest.Actor object at 0x0000000007E003E0> = namespace(app=<fastapi.applications.FastAPI object at 0x0000000006C67B60>, a=<tests.v5.conftest.Actor object at 0x0000...indowsPath('C:/Users/liyh/AppData/Local/Temp/pytest-of-liyh/pytest-33/test_three_owners_private_reso0/game-v5.sqlite')).b
+_ test_same_round_restore_keeps_clock_assists_and_cross_round_becomes_practice[legacy] _
+tests\v5\test_sharing.py:216: in test_same_round_restore_keeps_clock_assists_and_cross_round_becomes_practice
+    w.clock.ms += 8000; state = restore(w.b, state, save_id)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\test_sharing.py:113: in restore
+    response = actor.post(f"/sessions/{state['session_id']}/saves/{save_id}/restore", actor.versioned(state))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:70: in post
+    def post(self, url, body=None, **kwargs): return self.request('POST', url, json={} if body is None else body, **kwargs)
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:67: in request
+    validate_response(response,method,url)
+tests\v5\conftest.py:39: in validate_response
+    assert not errors, '; '.join(f"{list(e.path)}: {e.message}" for e in errors[:3])
+E   AssertionError: ['data', 'slot']: {'schema_version': '2.0.0', 'level_version': '5.0.0', 'saved_at': '2026-11-04T13:42:07.049858Z', 'source_revision': 0, 'source_generation': '5b9d8d7f-4d74-4155-a18c-e7f6e8a8bf3d', 'save_id': 'legacy', 'name': '旧版单槽存档', 'room_id': None, 'status': None, 'clues_found': None, 'kind': 'legacy'} is not valid under any of the given schemas
+E   assert not [<ValidationError: "{'schema_version': '2.0.0', 'level_version': '5.0.0', 'saved_at': '2026-11-04T13:42:07.049858Z', '... 'room_id': None, 'status': None, 'clues_found': None, 'kind': 'legacy'} is not valid under any of the given schemas">]
+________ test_assists_count_only_success_not_failure_unknown_or_replay ________
+tests\v5\test_sharing.py:310: in test_assists_count_only_success_not_failure_unknown_or_replay
+    assert w.companion.calls == 1
+E   AssertionError: assert 2 == 1
+E    +  where 2 = <tests.v5.test_sharing.SyntheticCompanion object at 0x0000000006D2C950>.calls
+E    +    where <tests.v5.test_sharing.SyntheticCompanion object at 0x0000000006D2C950> = namespace(app=<fastapi.applications.FastAPI object at 0x0000000007DDD6A0>, a=<tests.v5.conftest.Actor object at 0x0000...indowsPath('C:/Users/liyh/AppData/Local/Temp/pytest-of-liyh/pytest-33/test_assists_count_only_succes0/game-v5.sqlite')).companion
+________ test_new_routes_keep_authentication_csrf_and_identity_context ________
+tests\v5\test_sharing.py:340: in test_new_routes_keep_authentication_csrf_and_identity_context
+    assert w.b.get('/shared-levels?view=joined&page=1').json()['data']['total'] == 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:69: in get
+    def get(self, url, **kwargs): return self.request('GET', url, **kwargs)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\v5\conftest.py:67: in request
+    validate_response(response,method,url)
+tests\v5\conftest.py:34: in validate_response
+    assert route is not None, 'No V5 route contract for successful response'
+E   AssertionError: No V5 route contract for successful response
+E   assert None is not None
+___ test_existing_v5_backup_and_migration_are_idempotent_preserve_old_json ____
+tests\v5\test_sharing.py:377: in test_existing_v5_backup_and_migration_are_idempotent_preserve_old_json
+    if index == 0: assert c.execute('SELECT session_id,state_json FROM sessions ORDER BY session_id').fetchall() == original_state
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   assert [<sqlite3.Row...000007CDF670>] == [('7d83ddbc04...em_ids":[]}')]
+E     
+E     At index 0 diff: <sqlite3.Row object at 0x0000000007CDDCF0> != ('7d83ddbc04e64bb29bab041f99c713ea', '{"circuit_rotations":{},"definition_hash":"d5ee40d65a8dc8b2538be48f3f903d81e0024793dd3b6b262922befe9f482a96","definition_version":"1.0.0","discovered_clue_ids":[],"finished_at":null,"generation":"c938c20f-e411-4141-801d-7b5f63f71fee","hint_count":0,"inventory":[],"level_id":"6e6bb5584d2745e7a1f5afb8def4b22d","level_version":"5.0.0","mistake_count":0,"observed_object_ids":[],"owner_id":"31e969356dcb4415b5580e7d570a4705","policy_version":"1.0.0","revision":0,"room_id":"G1"...
+E     
+E     ...Full output truncated (2 lines hidden), use '-vv' to show
+============================== warnings summary ===============================
+C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\liyh\.conda\envs\1\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/v5/test_sharing.py::test_publication_fixed_definition_cancel_republish_and_join_reuse
+FAILED tests/v5/test_sharing.py::test_three_owners_private_resources_and_progress_are_isolated
+FAILED tests/v5/test_sharing.py::test_same_round_restore_keeps_clock_assists_and_cross_round_becomes_practice[legacy]
+FAILED tests/v5/test_sharing.py::test_assists_count_only_success_not_failure_unknown_or_replay
+FAILED tests/v5/test_sharing.py::test_new_routes_keep_authentication_csrf_and_identity_context
+FAILED tests/v5/test_sharing.py::test_existing_v5_backup_and_migration_are_idempotent_preserve_old_json
+6 failed, 11 passed, 1 warning in 16.27s

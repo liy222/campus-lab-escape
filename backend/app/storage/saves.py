@@ -133,6 +133,8 @@ class SaveStoreMixin:
             except RuleError as error:
                 status, body = self.failure(connection, event_id, session_id, operation, error.code, error.message, state, normalized, revision_before=revision_before)
             else:
+                self.after_mutation(connection, session_id, operation, state, updated,
+                                    archive_id if operation == 'archive_create' else save_id)
                 if operation == 'archive_restore':
                     connection.execute('UPDATE sessions SET state_json=? WHERE session_id=?', (canonical(updated.model_dump()), session_id))
                     self.invalidate_pending(connection, session_id)

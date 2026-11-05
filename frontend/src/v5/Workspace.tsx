@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import App from '../App';
 import { ApiError } from '../api';
-import { V5Client, localSession, sanitize, type Auth, type Job, type Level, type Run } from './client';
+import { V5Client, localSession, sanitize, type Auth, type Job, type Level, type Run, type SharedLevel } from './client';
 import GeneratedPlay from './GeneratedPlay';
+import SharedLibrary from './SharedLibrary';
+import { LeaderboardDialog } from './Leaderboard';
 import { packBackground, themeCoverage } from './visual/registry';
 import './v5.css';
 
@@ -30,10 +32,13 @@ export default function Workspace() {
   const [form, setForm] = useState({ username: '', password: '' }), [register, setRegister] = useState(false);
   const [knownUsernames, setKnownUsernames] = useState<string[]>([]), [selectedUsername, setSelectedUsername] = useState('');
   const [levels, setLevels] = useState<Level[]>([]), [runs, setRuns] = useState<Run[]>([]), [active, setActive] = useState<Run | null>(null);
+  const [workspaceView, setWorkspaceView] = useState<'mine' | 'hall' | 'joined'>('mine'), [activeShared, setActiveShared] = useState<SharedLevel | null>(null);
+  const [board, setBoard] = useState<{ shareId: string; title: string } | null>(null), [sharingNotice, setSharingNotice] = useState(''), [sharedRefresh, setSharedRefresh] = useState(0);
+  const taskBusy = useRef(false);
   const [theme, setTheme] = useState('雨夜天文社'), [roomCount, setRoomCount] = useState(2), [difficulty, setDifficulty] = useState('normal'), [key, setKey] = useState(''), [job, setJob] = useState<Job | null>(null);
   const liveAuth = useRef(''); liveAuth.current = auth?.auth_context || '';
   const channel = useRef<BroadcastChannel | null>(null);
-  const clear = () => { setKey(''); setActive(null); setLevels([]); setRuns([]); setJob(null); };
+  const clear = () => { setKey(''); setActive(null); setLevels([]); setRuns([]); setJob(null); setActiveShared(null); setBoard(null); setSharingNotice(''); setWorkspaceView('mine'); };
   const invalidate = () => { client.auth = { user: null, auth_context: null, csrf_token: '' }; clear(); setForm(previous => ({ ...previous, password: '' })); setRegister(false); setAuth(null); setError('登录状态已改变。请重新登录；临时密钥已清除。'); };
   client.onInvalid = invalidate;
 
@@ -87,15 +92,42 @@ export default function Workspace() {
   }, [job]);
 
   async function task(work: () => Promise<void>) {
-    if (busy) return;
-    setBusy(true); setError('');
-    try { await work(); } catch (e) { setError(e instanceof ApiError ? e.message : '操作未完成，请重试。'); } finally { setBusy(false); }
+    if (taskBusy.current) return;
+    taskBusy.current = true; setBusy(true); setError('');
+    try { await work(); } catch (e) { setError(e instanceof ApiError ? e.message : '操作未完成，请重试。'); } finally { taskBusy.current = false; setBusy(false); }
   }
   async function start(mode: 'classic' | 'generated', levelId?: string) {
     setKey('');
     await task(async () => {
       const r = await client.request<Run>('sessions', { request_id: crypto.randomUUID(), mode, ...(levelId ? { level_id: levelId } : {}) });
-      setActive(r.data);
+      setActiveShared(null); setActive(r.data);
+    });
+  }
+  function showBoard(shareId: string, title: string) { setKey(''); setBoard({ shareId, title }); }
+  function switchView(next: 'mine' | 'hall' | 'joined') { setKey(''); setBoard(null); setSharingNotice(''); setWorkspaceView(next); }
+  async function startShared(shareId: string) {
+    setKey('');
+    await task(async () => {
+      const detail = await client.sharedLevel(shareId);
+      const response = await client.joinShared(shareId);
+      setActiveShared(detail.data.shared_level); setActive(response.data);
+    });
+  }
+  async function changeSharing(level: Level, published: boolean) {
+    setKey(''); setSharingNotice('');
+    await task(async () => {
+      try {
+        const response = await client.setSharing(level.level_id, published, level.sharing?.revision ?? 0);
+        setLevels(previous => previous.map(item => item.level_id === level.level_id ? { ...item, sharing: response.data.sharing } : item));
+        setSharedRefresh(value => value + 1);
+        setSharingNotice(published ? '关卡已发布到共享大厅。私人进度与存档仍只属于你。' : '已取消共享，新玩家无法加入；原参与者可以继续，已有成绩保留。');
+      } catch (problem) {
+        if (problem instanceof ApiError && ['STALE_SHARING', 'NETWORK_ERROR', 'SERVICE_UNAVAILABLE'].includes(problem.code)) {
+          try { await refresh(); setSharedRefresh(value => value + 1); } catch { /* Preserve the original failure; never repeat a publication write. */ }
+          if (problem.code === 'STALE_SHARING') throw new ApiError('STALE_SHARING', '共享状态已变化，已尝试刷新列表。请确认当前状态后再操作。');
+        }
+        throw problem;
+      }
     });
   }
   async function generate() {
@@ -126,13 +158,13 @@ export default function Workspace() {
     const adapter = client.classic(active.session_id);
     return <div className="v5-play-shell">
       <nav className="v5-play-nav">
-        <button onClick={() => { setKey(''); setActive(null); void refresh().catch(e => setError(e.message)); }}><span aria-hidden="true">←</span> 我的关卡</button>
-        <span className="v5-play-id">{auth.user.username} · {active.mode === 'classic' ? '经典校园实验室' : '生成关卡'}</span>
+        <button onClick={() => { setKey(''); setWorkspaceView(active.share_id ? 'joined' : 'mine'); setActive(null); setActiveShared(null); setSharedRefresh(value => value + 1); void refresh().catch(e => setError(e.message)); }}><span aria-hidden="true">←</span> {active.share_id ? '我的参与' : '我的关卡'}</button>
+        <span className="v5-play-id">{auth.user.username} · {active.mode === 'classic' ? '经典校园实验室' : active.share_id ? '计时挑战' : '私人关卡'}</span>
         <button onClick={logout}>退出登录</button>
       </nav>
       {active.mode === 'classic'
         ? <App key={`${auth.auth_context}:${active.session_id}`} connection={{ api: adapter, session: localSession(active.session_id), onForbidden: invalidate }} />
-        : <GeneratedPlay key={`${auth.auth_context}:${active.session_id}`} client={client} run={active} level={levels.find(level => level.level_id === active.level_id)} />}
+        : <GeneratedPlay key={`${auth.auth_context}:${active.session_id}`} client={client} run={active} level={active.share_id ? activeShared ?? undefined : levels.find(level => level.level_id === active.level_id)} authorUsername={activeShared?.author_username} />}
     </div>;
   }
 
@@ -178,7 +210,12 @@ export default function Workspace() {
         </form>
         <button className="v5-quiet" disabled={busy} onClick={() => { setRegister(!register); setForm({ username: '', password: '' }); setError(''); }}>{register ? '已有账户，返回登录' : '第一次来？注册本地账户'}</button>
       </section>
-      : <div className="v5-dashboard">
+      : <><nav className="v5-workspace-tabs" aria-label="关卡分类">
+        <button type="button" aria-pressed={workspaceView === 'mine'} onClick={() => switchView('mine')}>我的关卡</button>
+        <button type="button" aria-pressed={workspaceView === 'hall'} onClick={() => switchView('hall')}>共享大厅</button>
+        <button type="button" aria-pressed={workspaceView === 'joined'} onClick={() => switchView('joined')}>我的参与</button>
+      </nav>{sharingNotice && <p className="v5-sharing-message" role="status">{sharingNotice}</p>}
+      {workspaceView === 'mine' ? <div className="v5-dashboard">
         <section className="v5-classic">
           <p className="v5-kicker">原有三房间 · 手绘场景</p>
           <h2>经典校园实验室</h2>
@@ -229,22 +266,31 @@ export default function Workspace() {
 
         <section className="v5-levels" aria-labelledby="levels-title">
           <div className="v5-row"><div><p className="v5-kicker">我的探索档案 / COLLECTION</p><h2 id="levels-title">我的关卡</h2></div><button className="v5-quiet" disabled={busy} onClick={() => void task(refresh)}>刷新列表</button></div>
+          <p className="v5-sharing-note">发布后，本机其他登录账号可以加入同一关卡；每人的进度与存档各自独立。取消共享只阻止新加入，已参与的进度和榜单保留。私人探索不计入排行榜。</p>
           {levels.length === 0 ? <p className="v5-empty">尚无生成关卡。生成通过校验后，会保存在这里。</p> : <ul>
             {levels.map((level, index) => {
-              const run = runs.find(candidate => candidate.level_id === level.level_id);
+              const run = runs.find(candidate => candidate.mode === 'generated' && !candidate.share_id && candidate.level_id === level.level_id);
               const themed = themeCoverage(level.theme);
-              return <li className="v5-level-card" key={level.level_id}>
+              return <li className="v5-level-card" key={level.level_id} data-level-id={level.level_id} data-published={Boolean(level.sharing?.published)}>
                 <div className="v5-level-cover" style={{ backgroundImage: `url(${coverFor(level)})` }} aria-hidden="true"><span>{String(index + 1).padStart(2, '0')}</span>{themed.pack && <em>{themed.name}</em>}</div>
                 <div className="v5-level-copy">
                   <h3>{level.title || level.theme || '校园探索'}</h3>
                   <p>{level.room_count} 间房 · {difficultyLabel[level.difficulty] || level.difficulty}{run ? ` · ${run.status === 'won' ? '已通关' : '已有进度'}` : ''}</p>
                   {(level.theme || level.story) && <p className="v5-level-description">{level.theme || level.story}</p>}
+                  <p className="v5-sharing-status">{level.sharing?.published ? '共享中' : level.sharing?.share_id ? '已取消共享' : '未发布'} · 此处为私人进度</p>
                 </div>
-                <button disabled={busy} onClick={() => void start('generated', level.level_id)}>{run ? '继续探索' : '开始探索'} <span aria-hidden="true">→</span></button>
+                <div className="v5-level-actions">
+                  <button disabled={busy} onClick={() => void start('generated', level.level_id)}>{run ? '继续探索' : '开始探索'} <span aria-hidden="true">→</span></button>
+                  <button type="button" className="v5-quiet" disabled={busy} onClick={() => void changeSharing(level, !level.sharing?.published)}>{level.sharing?.published ? '取消共享' : '发布关卡'}</button>
+                  {level.sharing?.share_id && <button type="button" className="v5-quiet" disabled={busy} onClick={() => showBoard(level.sharing!.share_id!, level.title || level.theme || '校园探索')}>查看排行榜</button>}
+                  {level.sharing?.published && level.sharing.share_id && <button type="button" className="v5-quiet" disabled={busy} onClick={() => void startShared(level.sharing!.share_id!)}>参加计时挑战</button>}
+                </div>
               </li>;
             })}
           </ul>}
         </section>
-      </div>}
+      </div> : <SharedLibrary key={`${auth.auth_context}:${workspaceView}`} client={client} view={workspaceView} busy={busy} refreshVersion={sharedRefresh} onStart={level => void startShared(level.share_id)} onLeaderboard={level => showBoard(level.share_id, level.title || level.theme || '校园探索')} />}
+      {board && <LeaderboardDialog key={board.shareId} client={client} shareId={board.shareId} title={board.title} onClose={() => setBoard(null)} />}
+      </>}
   </main>;
 }

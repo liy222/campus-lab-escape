@@ -1,8 +1,15 @@
 import { ApiError, type VisibleState, type Session, api as classicApi } from '../api';
 export type Identity = { user_id: string; username: string };
 export type Auth = { user: Identity | null; auth_context: string | null; csrf_token: string; usernames?: string[] };
-export type Level = { level_id: string; title?: string; story?: string; theme?: string; room_count: number; difficulty: string; created_at?: string };
-export type Run = { session_id: string; mode: 'classic' | 'generated'; level_id: string | null; status?: string; room_id?: string; revision?: number };
+export type SharingState = { share_id: string | null; published: boolean; revision: number; published_at: string | null };
+export type ChallengeStatus = 'active' | 'practice' | 'finished';
+export type Challenge = { attempt_id: string; status: ChallengeStatus; started_at: string; finished_at: string | null; elapsed_ms: number | null; hint_count: number; companion_count: number; is_author: boolean };
+export type Level = { level_id: string; title?: string; story?: string; theme?: string; room_count: number; difficulty: string; created_at?: string; sharing?: SharingState };
+export type SharedLevel = Level & { share_id: string; author_username: string; is_author: boolean; published: boolean; sharing_revision: number; published_at: string | null; session_id: string | null; status: 'playing' | 'won' | null; challenge_status: ChallengeStatus | null };
+export type SharedPage = { shared_levels: SharedLevel[]; page: number; page_size: number; total: number };
+export type LeaderboardEntry = { rank: number; attempt_id: string; username: string; is_author: boolean; elapsed_ms: number; finished_at: string; hint_count: number; companion_count: number };
+export type Leaderboard = { share_id: string; entries: LeaderboardEntry[]; own_entry: LeaderboardEntry | null; total_players: number };
+export type Run = { session_id: string; mode: 'classic' | 'generated'; level_id: string | null; status?: string; room_id?: string; revision?: number; share_id?: string; challenge_status?: ChallengeStatus; existing?: boolean };
 export type Job = { job_id: string; status: 'pending'|'generating'|'validating'|'ready'|'rejected'|'failed'|'unknown'; level_id?: string; error_code?: string; error?: {code?:string;message?:string}|string; message?: string };
 export function sanitize(value: string, key = '') { return (key ? value.split(key).join('[已隐藏]') : value).replace(/sk-[A-Za-z0-9_-]{8,}/g, '[已隐藏]'); }
 export class V5Client {
@@ -34,6 +41,11 @@ export class V5Client {
   async csrf() { const r=await this.request<Auth>('auth/csrf');this.auth=r.data;return r.data; }
   async authenticate(operation:'login'|'register',username:string,password:string) {const r=await this.request<Auth>(`auth/${operation}`,{username,password});this.epoch++;this.auth=r.data;return r.data;}
   async logout(){await this.request('auth/logout',{});this.epoch++;this.auth={user:null,auth_context:null,csrf_token:''};}
+  sharedLevels(view: 'hall' | 'joined', page = 1) { return this.request<SharedPage>(`shared-levels?view=${view}&page=${page}`); }
+  sharedLevel(shareId: string) { return this.request<{ shared_level: SharedLevel }>(`shared-levels/${encodeURIComponent(shareId)}`); }
+  joinShared(shareId: string) { return this.request<Run>(`shared-levels/${encodeURIComponent(shareId)}/sessions`, { request_id: crypto.randomUUID() }); }
+  setSharing(levelId: string, published: boolean, revision: number) { return this.request<{ sharing: SharingState }>(`levels/${encodeURIComponent(levelId)}/sharing`, { published, revision }); }
+  leaderboard(shareId: string) { return this.request<Leaderboard>(`shared-levels/${encodeURIComponent(shareId)}/leaderboard`); }
   version(state:VisibleState){return {request_id:crypto.randomUUID(),revision:state.revision,generation:state.generation};}
   classic(sessionId: string): typeof classicApi {
     const p=`sessions/${encodeURIComponent(sessionId)}`;

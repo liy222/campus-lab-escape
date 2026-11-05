@@ -1,5 +1,9 @@
 # V5 finite engineering evaluator
 
+## Sharing/leaderboard source epoch — 2026-11-04
+
+The approved sharing/leaderboard extension changes product storage, API, contracts and frontend sources. The registration and paid C1-C3 PASS reports below remain evidence for their original November 2 source epoch, not a fresh result for the extension. The old registration, pins and raw paid reports are preserved. This extension is verified with new isolated deterministic/API/browser evidence and independent review in [its fixed stage](../../evidence/project/stages/v5-sharing-leaderboard/stage.json); no new paid evaluator request is authorized or scheduled. Human acceptance remains pending until actual feedback.
+
 ## Latest finite paid completion — 2026-11-02
 
 After the user's specific approval for the three-row accounting closure and at most three real judgements/CNY0.40, Main applied the reviewed closure and ran C1/C2/C3 once each: all PASS, exit0. Peak-rate usage estimate CNY0.02607224, not an invoice; all three call slots are consumed, no retry. The ledger now has 178 settled rows, no unknown/reserved rows, unchanged CNY10 cap; the historic CNY0.110616 upper remains counted and its NULL usage remains unknown. See the [actual execution and human review entry](../../evidence/project/stages/v5-conservative-recovery/reviews/execution.md) and [real paid report](../../evidence/project/stages/v5-conservative-recovery/evaluation/paid-20261102T114835067721Z-d8ca9df3/report.json).

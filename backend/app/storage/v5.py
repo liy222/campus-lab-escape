@@ -12,6 +12,7 @@ from pathlib import Path
 from argon2 import PasswordHasher
 from argon2.exceptions import VerificationError
 from .sqlite import Store, canonical, new_id, utc_now, select_rules
+from . import sharing
 from ..domain.generated import compile_level, GeneratedRules
 from ..domain.generation_observability import STAGES, safe_counts, safe_reason, source_snapshot, text_counts
 
@@ -22,12 +23,13 @@ ACTIVE_PHASES=('pending','generating','validating')
 def digest(value): return hashlib.sha256(value.encode()).hexdigest()
 def public_user(row): return {'user_id':row['user_id'],'username':row['username']}
 
-class V5Database:
+class V5Database(sharing.SharingDatabaseMixin):
     def __init__(self,path):
         self.path=str(path)
         if self.path==':memory:': raise ValueError('V5 requires isolated file-backed database')
         target=Path(self.path)
         target.parent.mkdir(parents=True,exist_ok=True)
+        sharing.backup_before_upgrade(self.path)
         # Crucially, do this before Store's migrations or WAL writes.
         if target.exists() and target.stat().st_size:
             with closing(sqlite3.connect(self.path)) as c:
@@ -58,6 +60,7 @@ class V5Database:
             c.execute("UPDATE level_generations SET status=CASE status WHEN 'generating' THEN 'unknown' ELSE 'failed' END,error_code='PROCESS_RESTARTED',updated_at=? WHERE status IN ('pending','generating','validating')",(time.time(),))
             for row in interrupted:
                 self.record_job_event(c,row['job_id'],'unknown' if row['status']=='generating' else 'failed',reason='process_restart')
+            sharing.migrate(c)
     def transaction(self): return self.base.transaction()
     def anonymous(self,existing_nonce=None):
         now=time.time()
@@ -142,7 +145,15 @@ class V5Database:
             row=dict(row)
             if row['mode']=='classic': rules=select_rules('3.4')
             else:
-                level=c.execute('SELECT * FROM generated_levels WHERE level_id=? AND user_id=?',(row['level_id'],principal['user_id'])).fetchone()
+                if row['mode']=='shared':
+                    level=c.execute('''SELECT l.* FROM generated_levels l
+                        JOIN shared_levels p ON p.level_id=l.level_id AND p.author_id=l.user_id AND p.definition_hash=l.definition_hash
+                        JOIN shared_sessions s ON s.share_id=p.share_id
+                        WHERE s.session_id=? AND s.user_id=? AND l.level_id=?''',(session_id,principal['user_id'],row['level_id'])).fetchone()
+                    link=c.execute('SELECT share_id FROM shared_sessions WHERE session_id=? AND user_id=?',(session_id,principal['user_id'])).fetchone()
+                    if link: row['share_id']=link['share_id']
+                else:
+                    level=c.execute('SELECT * FROM generated_levels WHERE level_id=? AND user_id=?',(row['level_id'],principal['user_id'])).fetchone()
                 if not level: raise ValueError('DEFINITION_MISSING')
                 compiled=self.load_compiled(level)
                 rules=GeneratedRules(compiled,owner_id=principal['user_id'],level_id=row['level_id'])
@@ -164,7 +175,11 @@ class V5Database:
             result=[]
             for row in rows:
                 state=json.loads(row['state_json'])
-                result.append({key:row[key] for key in ('session_id','mode','level_id','created_at')} | {'status':state['status'],'room_id':state['room_id'],'revision':state['revision'],'clues_found':len(state['discovered_clue_ids']),'puzzles_solved':len(state.get('solved_puzzle_ids',[]))})
+                item={key:row[key] for key in ('session_id','mode','level_id','created_at')} | {'status':state['status'],'room_id':state['room_id'],'revision':state['revision'],'clues_found':len(state['discovered_clue_ids']),'puzzles_solved':len(state.get('solved_puzzle_ids',[]))}
+                if row['mode']=='shared':
+                    link=c.execute('SELECT share_id FROM shared_sessions WHERE session_id=?',(row['session_id'],)).fetchone()
+                    item.update(mode='generated',share_id=link['share_id'],challenge_status=sharing.challenge_projection(c,row['session_id'])['status'])
+                result.append(item)
             return result
     def create_session(self,principal,request):
         normalized=request.model_dump(); hashed=digest(canonical(normalized)); uid=principal['user_id']
@@ -242,6 +257,7 @@ class V5Database:
         def public(row):
             result=json.loads(row['metadata_json'])
             if row['theme'] is not None: result['theme']=row['theme']
+            result['sharing']=sharing.sharing_state(c,result['level_id'])
             return result
         with self.transaction() as c:
             if lid:
@@ -259,8 +275,14 @@ class BoundStore(Store):
         return self.parse_state(row['state_json']) if row else None
     def projection(self,c,session_id,state):
         result=super().projection(c,session_id,state)
-        result.update(mode=self.metadata['mode'],level_id=self.metadata['level_id'] or None)
+        result.update(mode='generated' if self.metadata['mode']=='shared' else self.metadata['mode'],level_id=self.metadata['level_id'] or None)
+        if self.metadata['mode']=='shared':
+            result.update(share_id=self.metadata['share_id'],challenge=sharing.challenge_projection(c,session_id))
         return result
+
+    def after_mutation(self,c,session_id,operation,before,after,save_id=None):
+        if self.metadata['mode']=='shared':
+            sharing.after_mutation(c,session_id,operation,before,after,save_id)
 
     def begin_v5_ai(self,session_id,request,provider):
         from ..domain.models import validate_generation
@@ -326,9 +348,14 @@ class BoundStore(Store):
                 c.execute("UPDATE action_receipts SET phase='completed',response_json=?,http_status=? WHERE session_id=? AND request_id=?",(canonical(body),status,session_id,request.request_id))
                 return status,body
             count=result.get('count_hint',True)
-            if count and s.status=='playing':
-                if hasattr(s,'statistics'): s.statistics.hint_count+=1; s.statistics.current_hint_level=request.hint_level
-                else: s.hint_count+=1
+            # An omitted optional usage field must not suppress a delivered answer.
+            # Explicit local, zero-call reminders are not companion assistance.
+            companion=(started['provider']=='deepseek' and (count or (result.get('usage') or {}).get('model_calls')!=0))
+            shared_assistance=self.metadata['mode']=='shared' and s.status=='playing' and (count or companion)
+            if (count or shared_assistance) and s.status=='playing':
+                if count:
+                    if hasattr(s,'statistics'): s.statistics.hint_count+=1; s.statistics.current_hint_level=request.hint_level
+                    else: s.hint_count+=1
                 s.revision+=1; self.rules.validate_invariants(s)
                 c.execute('UPDATE sessions SET state_json=? WHERE session_id=?',(canonical(s.model_dump()),session_id))
                 self.invalidate_pending(c,session_id)
@@ -341,6 +368,9 @@ class BoundStore(Store):
                 if type(usage[name]) is not int or usage[name]<0: usage[name]=None
             usage['model_calls']=1 if usage.get('model_calls')==1 else 0
             usage['read_tool_calls']=0
+            if self.metadata['mode']=='shared' and s.status=='playing':
+                sharing.count_assistance(c,session_id,hint=bool(count and started['provider']=='mock'),
+                                         companion=companion)
             data={'turn_id':started['turn_id'],'answer':answer,'clue_refs':refs,'proposal':None,'status':'no_suggestion','stop_reason':None,'usage':usage,'visible_state':self.projection(c,session_id,s)}
             body={'ok':True,'event_id':started['event_id'],'data':data}
             self.event(c,started['event_id'],session_id,'v5_ai_turn','committed',body,s,{'message':request.message},started['revision'])

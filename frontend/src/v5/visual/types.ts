@@ -1,9 +1,12 @@
 import type { GameObject, VisibleState } from '../../api';
+import type { Challenge } from '../client';
 
 export type GeneratedObject = GameObject & { art_id: string; slot: number; target_id?: string | null; completed?: boolean; mechanism?: string | null };
 
 export type GeneratedState = Omit<VisibleState, 'objects' | 'room' | 'minigames'> & {
   mode: 'generated';
+  share_id?: string;
+  challenge?: Challenge;
   level_id: string;
   definition_hash: string;
   room: VisibleState['room'] & { background_id?: string; background_art_id?: string };

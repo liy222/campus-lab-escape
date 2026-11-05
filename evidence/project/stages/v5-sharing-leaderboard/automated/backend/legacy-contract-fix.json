@@ -1,0 +1,26 @@
+{
+  "kind": "owner_contract_only_not_api_qa",
+  "exit_code": 0,
+  "source_qa_tests": 17,
+  "source_qa_failed": [
+    "test_publication_fixed_definition_cancel_republish_and_join_reuse",
+    "test_three_owners_private_resources_and_progress_are_isolated",
+    "test_same_round_restore_keeps_clock_assists_and_cross_round_becomes_practice[legacy]",
+    "test_assists_count_only_success_not_failure_unknown_or_replay",
+    "test_new_routes_keep_authentication_csrf_and_identity_context",
+    "test_existing_v5_backup_and_migration_are_idempotent_preserve_old_json"
+  ],
+  "checks": [
+    "only_one_generated_legacy_branch_added",
+    "all_previous_branches_unchanged",
+    "actual_failed_slot_shape_valid",
+    "classic_legacy_still_valid",
+    "nonnull_legacy_room_rejected",
+    "mixed_version_rejected",
+    "nonlegacy_id_rejected",
+    "routes_draft_classic_raw_unchanged"
+  ],
+  "database_opened": false,
+  "network_calls": 0,
+  "paid_calls": 0
+}

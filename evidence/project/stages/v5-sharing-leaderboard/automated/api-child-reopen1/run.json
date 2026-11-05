@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:/Users/liyh/.conda/envs/1/python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short",
+    "tests/v5/test_sharing_reopen.py::test_child_process_keeps_start_and_finishes_original_attempt",
+    "--junitxml=evidence\\project\\stages\\v5-sharing-leaderboard\\automated\\api-child-reopen1\\junit.xml"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 3.247,
+  "scope": "only actual child process continuation",
+  "paid_calls": 0
+}

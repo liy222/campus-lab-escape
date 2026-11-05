@@ -1,0 +1,67 @@
+{
+  "status": "JOINT_TARGETED_TECHNICAL_PASS_HUMAN_REVIEW_PENDING",
+  "actor": "independent AI QA agent",
+  "api_unique_items": 18,
+  "api_history": [
+    {
+      "run": "api-run1",
+      "exit_code": 1,
+      "elapsed_seconds": 18.646
+    },
+    {
+      "run": "api-failed6-run1",
+      "exit_code": 1,
+      "elapsed_seconds": 7.057
+    },
+    {
+      "run": "api-assists-run1",
+      "exit_code": 0,
+      "elapsed_seconds": 2.667
+    },
+    {
+      "run": "api-child-reopen1",
+      "exit_code": 0,
+      "elapsed_seconds": 3.247
+    }
+  ],
+  "api_note": "Original17:11pass/6fail; only failed6:5pass/1fail; only assistance1:pass; one additional actual-child-process scope:pass. Not a single all-green full run.",
+  "product_finding": "Generated V5 legacy save-slot response missing public schema branch; Owner fixed strict2.0.0/5.0.0 branch; affected test passed.",
+  "qa_adaptations": [
+    "query passed through existing Actor params",
+    "invalid session mode422",
+    "Synthetic free hint service invocation included in counts",
+    "sqlite.Row normalized to tuple for comparison",
+    "timeout504 and unknown replay503",
+    "browser nested form label locators corrected; original failures retained"
+  ],
+  "build": {
+    "path": "automated/build-run1/result.json",
+    "executions": 1,
+    "exit_code": 0,
+    "elapsed_seconds": 10.967
+  },
+  "browser": {
+    "path": "automated/browser-2026-11-04T13-49-27-940Z-831e772c/result.json",
+    "exit_code": 0,
+    "records": 102,
+    "screenshots": 12,
+    "issues": [],
+    "old_puzzle_setup": "Isolated API witness prerequisites; actual UI final exit. New sharing/save/restore/board/reset/cancel interactions are real UI."
+  },
+  "cover_only": {
+    "path": "automated/browser-cover-2026-11-04T13-54-10-571Z-7fce3dab/result.json",
+    "exit_code": 0,
+    "records": 4,
+    "note": "Explicit same TEMP after completed browser; same SharedLibrary joined-card resource, HTTP/decode observed. No game/publication replay."
+  },
+  "key_check_reused": "automated/browser-2026-11-04T13-45-35-064Z-5d4a62aa/result.json",
+  "limits": [
+    "Synthetic controlled definition/companion and clocks, no real model quality or human timing claim",
+    "Top50 SQL query fixture seeds51 controlled score rows; not51 additional actual user completions",
+    "No player database/8001 service contacted, no credentials or canonical budget ledger read",
+    "Actual project paid/model calls0; no deployment or human/peer acceptance",
+    "Limited credential-pattern scan is not a universal data-leak proof"
+  ],
+  "owned_services_stopped": true,
+  "paid_calls": 0
+}

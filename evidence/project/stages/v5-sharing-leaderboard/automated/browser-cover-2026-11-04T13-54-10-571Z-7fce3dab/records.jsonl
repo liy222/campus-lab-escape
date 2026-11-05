@@ -1,0 +1,4 @@
+{"name":"owned fixture ready","actual":true,"expected":true,"pass":true,"phase":"setup","utc":"2026-11-04T13:54:11.390Z"}
+{"name":"actual UI POST /auth/login","actual":{"status":200},"expected":"2xx","pass":true,"phase":"cover-only","utc":"2026-11-04T13:54:12.492Z"}
+{"name":"actual selected cover HTTP and decoded image","actual":{"url":"/art-themes/library-archive/variation-v1/backgrounds/neutral_lab-b.png","http_status":200,"content_type":"image/png","bytes":2445959,"natural_width":1672,"natural_height":941,"background_size":"cover"},"expected":"200 image with positive dimensions","pass":true,"phase":"cover-only","utc":"2026-11-04T13:54:12.797Z"}
+{"name":"no external requests","actual":0,"expected":0,"pass":true,"phase":"cover-only","utc":"2026-11-04T13:54:13.228Z"}

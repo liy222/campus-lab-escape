@@ -1,0 +1,22 @@
+{
+  "command": [
+    "C:/Users/liyh/.conda/envs/1/python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short",
+    "tests/v5/test_sharing.py::test_publication_fixed_definition_cancel_republish_and_join_reuse",
+    "tests/v5/test_sharing.py::test_three_owners_private_resources_and_progress_are_isolated",
+    "tests/v5/test_sharing.py::test_same_round_restore_keeps_clock_assists_and_cross_round_becomes_practice[legacy]",
+    "tests/v5/test_sharing.py::test_assists_count_only_success_not_failure_unknown_or_replay",
+    "tests/v5/test_sharing.py::test_new_routes_keep_authentication_csrf_and_identity_context",
+    "tests/v5/test_sharing.py::test_existing_v5_backup_and_migration_are_idempotent_preserve_old_json",
+    "--junitxml=evidence\\project\\stages\\v5-sharing-leaderboard\\automated\\api-failed6-run1\\junit.xml"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 7.057,
+  "paid_calls": 0
+}

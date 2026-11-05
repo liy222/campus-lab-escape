@@ -423,3 +423,61 @@
 .v5-art-note { font-size: 14px !important; }
 .v5-image-fallback { display: grid; gap: 12px; max-width: 440px; padding: 22px; margin: 0; color: #e9e1c8; text-align: center; font-size: 14px; line-height: 1.8; }
 .v5-image-fallback strong { font-size: 18px; }
+
+/* Local sharing desk, using the existing paper/brass/night palette. */
+.v5-workspace-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 20px; }
+.v5-workspace-tabs button { background: #12272edb; border-color: #72806a; min-height: 44px; }
+.v5-workspace-tabs button[aria-pressed="true"] { background: #ecd6a7; border-color: #e9cc8e; color: #283a2f; font-weight: 700; }
+.v5-sharing-message { padding: 13px 17px; margin: 0 0 18px; background: #203b2fec; border: 1px solid #789365; border-radius: 6px; color: #e4e7ce; font-size: 14px; line-height: 1.8; }
+.v5-sharing-note { margin: 0 0 18px; max-width: 78em; color: #bbc8b5; font-size: 14px; line-height: 1.85; }
+.v5-level-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; max-width: 340px; }
+.v5-level-actions button { padding: 8px 13px; font-size: 13px; white-space: nowrap; }
+.v5-shell .v5-level-actions .v5-quiet { color: #e7ddbf !important; border-color: #7b8267 !important; }
+.v5-level-copy .v5-sharing-status { margin-top: 8px; color: #d8c48e; font-size: 13px; line-height: 1.7; }
+.v5-author-tag,.v5-me-tag { display: inline-block; margin: 0 6px; padding: 1px 7px; border-radius: 3px; border: 1px solid #a8915d; font-size: 11px; line-height: 1.8; color: #775a29; background: #eee0bc; white-space: nowrap; vertical-align: middle; }
+.v5-me-tag { border-color: #87a079; background: #e0ebd0; color: #3e6439; }
+.v5-shared-library { color: #d7dec8; }
+.v5-sharing-pages { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 18px; margin-top: 22px; color: #becab4; font-size: 14px; }
+.v5-sharing-pages button { min-width: 88px; }
+.v5-leaderboard-dialog { color-scheme: light; width: min(1080px, calc(100vw - 48px)); max-height: calc(100svh - 48px); overflow: auto; padding: 26px 30px; border: 1px solid #b4a37c; border-top: 5px solid #bd8f52; border-radius: 8px; background: #f0e5cd; color: #263a2d; box-shadow: 0 24px 80px #02090bc2; }
+.v5-leaderboard-dialog::backdrop { background: #071017d9; backdrop-filter: blur(4px); }
+.v5-leaderboard-dialog h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 10px 0 22px; }
+.v5-leaderboard-dialog button { min-height: 44px; min-width: 44px; font: inherit; padding: 8px 13px; border: 1px solid #7d7254; border-radius: 5px; color: #f7edcf; background: #31513f; cursor: pointer; }
+.v5-leaderboard-dialog button:disabled { opacity: .55; cursor: not-allowed; }
+.v5-leaderboard-dialog button:focus-visible { outline: 3px solid #ad7931; outline-offset: 3px; }
+.v5-leaderboard { font-size: 14px; line-height: 1.8; color: #374834; }
+.v5-board-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+.v5-board-heading h3 { font-size: 21px; font-family: var(--serif); font-weight: 500; margin: 0; }
+.v5-board-heading button { font-size: 13px; white-space: nowrap; }
+.v5-own-best { padding: 14px 17px; background: #e1e9d0; border-left: 3px solid #7b9566; margin: 10px 0 16px; border-radius: 0 5px 5px 0; }
+.v5-own-best strong { font-size: 18px; font-variant-numeric: tabular-nums; }
+.v5-own-best p { margin: 4px 0 0; font-size: 14px; line-height: 1.8; }
+.v5-board-note { margin: 12px 0; font-size: 14px; color: #626b54; }
+.v5-board-error { background: #f3ddc5; color: #79452c; border: 1px solid #b88d66; border-radius: 5px; padding: 12px 15px; margin: 10px 0; }
+.v5-board-table-wrap { width: 100%; overflow-x: auto; border: 1px solid #b9ab87; border-radius: 5px; }
+.v5-leaderboard table { width: 100%; min-width: 650px; border-collapse: collapse; font-size: 14px; text-align: left; background: #f8f0de; }
+.v5-leaderboard caption { padding: 11px 14px; text-align: left; color: #6d705a; border-bottom: 1px solid #c7bb9a; font-size: 13px; }
+.v5-leaderboard th,.v5-leaderboard td { padding: 11px 12px; border-bottom: 1px solid #d2c7aa; vertical-align: middle; line-height: 1.7; }
+.v5-leaderboard thead th { background: #e5d9b9; color: #4d5942; font-weight: 600; white-space: nowrap; }
+.v5-leaderboard tbody tr:last-child td,.v5-leaderboard tbody tr:last-child th { border-bottom: 0; }
+.v5-leaderboard tr[data-is-own="true"] { background: #e7edd5; }
+.v5-leaderboard td time { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.v5-leaderboard td:nth-child(4) { min-width: 160px; }
+.v5-leaderboard.is-summary { max-width: 600px; }
+.v5-challenge { max-width: 1180px; margin: 0 auto 15px; padding: 16px 19px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border: 1px solid #766447; border-left: 4px solid #c7a25e; border-radius: 6px; background: #14292e; color: #dce4cc; }
+.v5-challenge .v5-kicker { margin: 0 0 7px; font-size: 11px; }
+.v5-challenge strong { color: #f0e3b8; font-size: 17px; font-weight: 600; }
+.v5-challenge-clock { margin-left: 18px; font-size: 21px; color: #f4dca0; font-variant-numeric: tabular-nums; }
+.v5-challenge p:not(.v5-kicker) { margin: 7px 0 0; line-height: 1.8; font-size: 14px; }
+.v5-challenge .v5-challenge-rule { color: #aebda5; max-width: 66em; }
+.v5-challenge[data-challenge-status="practice"] { border-left-color: #ac9665; background: #2c3027; }
+.v5-challenge-actions { display: flex; gap: 9px; flex-wrap: wrap; justify-content: flex-end; min-width: 220px; }
+.v5-challenge-actions button { padding: 8px 13px; font-size: 13px; }
+.v5-sheet .v5-challenge-save-note { padding: 13px 16px; border-left: 3px solid #af8e4f; background: #e4dabd; font-size: 14px; line-height: 1.9; }
+.v5-victory > .v5-leaderboard { width: min(570px, 100%); text-align: left; margin: 3px auto; background: #f0e6ce; border-radius: 6px; padding: 12px 17px; }
+.v5-victory .v5-own-best { margin-bottom: 0; padding: 9px 12px; }
+.v5-victory .v5-board-heading { margin-bottom: 4px; }
+.v5-victory .v5-board-heading h3 { font-size: 18px; }
+.v5-victory .v5-stats dd { font-size: 19px; font-variant-numeric: tabular-nums; }
+
+.v5-shell .v5-levels > .v5-row .v5-quiet { color: #e7ddbf !important; border-color: #7b8267 !important; }

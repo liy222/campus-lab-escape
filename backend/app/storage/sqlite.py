@@ -158,6 +158,10 @@ class Store(AIStoreMixin, SaveStoreMixin):
         row = connection.execute("SELECT summary_json FROM saves WHERE session_id=?", (session_id,)).fetchone()
         return self.rules.visible_state(session_id, state, json.loads(row["summary_json"]) if row else None)
 
+    def after_mutation(self, connection, session_id, operation, before, after, save_id=None):
+        """Optional transaction-bound accounting extension; classic stores do nothing."""
+        pass
+
     def event(self, connection, event_id, session_id, operation, outcome, result, state=None, request=None, revision_before=None):
         connection.execute("""INSERT INTO events
             (event_id,session_id,created_at,operation,outcome,request_json,result_json,revision_before,revision_after,generation)
@@ -279,6 +283,7 @@ class Store(AIStoreMixin, SaveStoreMixin):
                         state = failed
                 status, body = self.failure(connection, event_id, session_id, operation, error.code, error.message, state, normalized, revision_before=revision_before)
             else:
+                self.after_mutation(connection, session_id, operation, state, updated)
                 data["visible_state"] = self.projection(connection, session_id, updated)
                 body = {"ok": True, "event_id": event_id, "data": data}
                 status = 200

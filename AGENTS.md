@@ -1,5 +1,9 @@
 # Agent ownership
 
+2026-11-04用户明确批准实施docs/v5-sharing-leaderboard-plan.md：Main拥有该规格、根进度、固定证据/真人交付与Git，临时拥有README/release及evaluation/v5/README当前范围说明；恢复v5_backend独占storage/v5.py、新sharing模块、必要sqlite.py/saves.py默认noop窄hook、api/v5.py及contracts/v2生成源/api.schema.json/routes.json。恢复v5_experience_frontend_oct28拥有frontend共享大厅/发布/挑战计时/榜单，不改素材；恢复blueprint_qa仅新增共享API/浏览器/fixture及本阶段实际结果。先实现稳定后一次必要独立QA、V5构建与两桌面浏览器，失败只窄补；当前玩家数据不作测试、迁移前一致性备份，预算库/Key/旧快照/旧评价原件和pin保持。本轮项目真实/付费0，不新建代理或Astra；角色恢复不独立核验型号。完整功能集中liy222提交推送，结束明确请本人检查，不自动接受。
+
+2026-11-05本阶段交付收尾：Backend/Frontend/QA均SOURCE STOP。11月4日独立原17项联合通过、真实child重开1项通过、V5 build仅一次、两桌面102观察通过；generated legacy合同缺口严格窄修，原API/控制器失败保留。封面仅同TEMP/同构建HTTP与解码窄核4观察，无产品重改。Main实际看5PNG；昨日升级前备份保留，今日仅恢复自有预览并核对health/静态页面/匿名共享401，不重产品测试/build/模型/费用。Main只做交付文档/证据状态与普通liy222提交推送；真人仍待实际反馈，旧评价pin保持历史范围。
+
 ### 当前执行节奏（用户要求，2026-10-28）
 
 本节优先于历史记录中逐小步冻结、审计、留档和同步的做法；功能范围与原文件归属继续沿用。

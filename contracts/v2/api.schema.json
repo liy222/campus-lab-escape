@@ -6269,6 +6269,61 @@
             "kind"
           ],
           "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "2.0.0"
+            },
+            "level_version": {
+              "const": "5.0.0"
+            },
+            "saved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "source_revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_generation": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "save_id": {
+              "const": "legacy"
+            },
+            "name": {
+              "const": "旧版单槽存档"
+            },
+            "room_id": {
+              "type": "null"
+            },
+            "status": {
+              "type": "null"
+            },
+            "clues_found": {
+              "type": "null"
+            },
+            "kind": {
+              "const": "legacy"
+            }
+          },
+          "required": [
+            "schema_version",
+            "level_version",
+            "saved_at",
+            "source_revision",
+            "source_generation",
+            "save_id",
+            "name",
+            "room_id",
+            "status",
+            "clues_found",
+            "kind"
+          ],
+          "additionalProperties": false
         }
       ]
     },
@@ -6490,6 +6545,43 @@
         "mode"
       ],
       "title": "SessionRequest",
+      "type": "object"
+    },
+    "shared_session_request": {
+      "additionalProperties": false,
+      "properties": {
+        "request_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Request Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "request_id"
+      ],
+      "title": "SharedSessionRequest",
+      "type": "object"
+    },
+    "sharing_request": {
+      "additionalProperties": false,
+      "properties": {
+        "published": {
+          "title": "Published",
+          "type": "boolean"
+        },
+        "revision": {
+          "minimum": 0,
+          "title": "Revision",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "published",
+        "revision"
+      ],
+      "title": "SharingRequest",
       "type": "object"
     },
     "generation_request": {
@@ -7919,6 +8011,15 @@
           "properties": {},
           "required": [],
           "additionalProperties": false
+        },
+        "share_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "challenge": {
+          "$ref": "#/$defs/challenge"
         }
       },
       "required": [
@@ -7944,7 +8045,15 @@
         "save",
         "flags"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "dependentRequired": {
+        "share_id": [
+          "challenge"
+        ],
+        "challenge": [
+          "share_id"
+        ]
+      }
     },
     "auth_data": {
       "type": "object",
@@ -8106,9 +8215,188 @@
           "type": "string",
           "maxLength": 240
         },
+        "room_count": {
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        },
+        "difficulty": {
+          "enum": [
+            "easy",
+            "normal",
+            "hard"
+          ]
+        },
+        "definition_hash": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "definition_version": {
+          "const": "1.0.0"
+        },
+        "rules_version": {
+          "const": "1.0.0"
+        },
+        "policy_version": {
+          "enum": [
+            "0.9.0",
+            "1.0.0"
+          ]
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
         "theme": {
           "type": "string",
           "maxLength": 20000
+        },
+        "sharing": {
+          "$ref": "#/$defs/sharing_state"
+        }
+      },
+      "required": [
+        "level_id",
+        "title",
+        "story",
+        "room_count",
+        "difficulty",
+        "definition_hash",
+        "definition_version",
+        "rules_version",
+        "policy_version",
+        "created_at",
+        "sharing"
+      ],
+      "additionalProperties": false
+    },
+    "sharing_state": {
+      "type": "object",
+      "properties": {
+        "share_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "published_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "share_id",
+        "published",
+        "revision",
+        "published_at"
+      ],
+      "additionalProperties": false
+    },
+    "challenge": {
+      "type": "object",
+      "properties": {
+        "attempt_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "status": {
+          "enum": [
+            "active",
+            "practice",
+            "finished"
+          ]
+        },
+        "started_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "finished_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "elapsed_ms": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "hint_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "companion_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "is_author": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "attempt_id",
+        "status",
+        "started_at",
+        "finished_at",
+        "elapsed_ms",
+        "hint_count",
+        "companion_count",
+        "is_author"
+      ],
+      "additionalProperties": false
+    },
+    "shared_level": {
+      "type": "object",
+      "properties": {
+        "level_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "story": {
+          "type": "string",
+          "maxLength": 240
         },
         "room_count": {
           "enum": [
@@ -8143,6 +8431,74 @@
         "created_at": {
           "type": "string",
           "format": "date-time"
+        },
+        "theme": {
+          "type": "string",
+          "maxLength": 20000
+        },
+        "share_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "author_username": {
+          "type": "string",
+          "maxLength": 24
+        },
+        "is_author": {
+          "type": "boolean"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "sharing_revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "published_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "session_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "anyOf": [
+            {
+              "enum": [
+                "playing",
+                "won"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "challenge_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "active",
+                "practice",
+                "finished"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       },
       "required": [
@@ -8155,7 +8511,65 @@
         "definition_version",
         "rules_version",
         "policy_version",
-        "created_at"
+        "created_at",
+        "share_id",
+        "author_username",
+        "is_author",
+        "published",
+        "sharing_revision",
+        "published_at",
+        "session_id",
+        "status",
+        "challenge_status"
+      ],
+      "additionalProperties": false
+    },
+    "leaderboard_entry": {
+      "type": "object",
+      "properties": {
+        "rank": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "attempt_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "username": {
+          "type": "string",
+          "maxLength": 24
+        },
+        "is_author": {
+          "type": "boolean"
+        },
+        "elapsed_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "finished_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "hint_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "companion_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "rank",
+        "attempt_id",
+        "username",
+        "is_author",
+        "elapsed_ms",
+        "finished_at",
+        "hint_count",
+        "companion_count"
       ],
       "additionalProperties": false
     },
@@ -8205,6 +8619,19 @@
         "puzzles_solved": {
           "type": "integer",
           "minimum": 0
+        },
+        "share_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "challenge_status": {
+          "enum": [
+            "active",
+            "practice",
+            "finished"
+          ]
         }
       },
       "required": [
@@ -8355,6 +8782,12 @@
             },
             "visible_state": {
               "$ref": "#/$defs/visible_state"
+            },
+            "share_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
             }
           },
           "required": [
@@ -8363,6 +8796,178 @@
             "mode",
             "level_id",
             "visible_state"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "sharing_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "sharing": {
+              "$ref": "#/$defs/sharing_state"
+            }
+          },
+          "required": [
+            "sharing"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "shared_level_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "shared_level": {
+              "$ref": "#/$defs/shared_level"
+            }
+          },
+          "required": [
+            "shared_level"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "shared_levels_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "shared_levels": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/shared_level"
+              }
+            },
+            "page": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "page_size": {
+              "const": 20
+            },
+            "total": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "shared_levels",
+            "page",
+            "page_size",
+            "total"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "ok",
+        "event_id",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "leaderboard_response": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "share_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "entries": {
+              "type": "array",
+              "maxItems": 50,
+              "items": {
+                "$ref": "#/$defs/leaderboard_entry"
+              }
+            },
+            "own_entry": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/leaderboard_entry"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "total_players": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "share_id",
+            "entries",
+            "own_entry",
+            "total_players"
           ],
           "additionalProperties": false
         }

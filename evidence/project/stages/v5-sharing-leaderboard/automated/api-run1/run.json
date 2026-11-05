@@ -1,0 +1,22 @@
+{
+  "command": [
+    "C:/Users/liyh/.conda/envs/1/python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short",
+    "tests/v5/test_sharing.py",
+    "tests/v5/test_security.py::test_all_private_ids_read_write_denied_without_owner_change",
+    "tests/v5/test_integration.py::test_three_archives_restore_delete_reset_relogin_reopen",
+    "tests/v5/test_integration.py::test_bad_definition_or_archive_does_not_overwrite[checksum]",
+    "tests/v5/test_legacy.py::test_account_classic_uses_v34_and_snapshot_rules",
+    "tests/v5/test_legacy.py::test_policy09_definition_and_archive_reopen_without_recompile_policy_change",
+    "--junitxml=evidence\\project\\stages\\v5-sharing-leaderboard\\automated\\api-run1\\junit.xml"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 18.646,
+  "paid_calls": 0
+}

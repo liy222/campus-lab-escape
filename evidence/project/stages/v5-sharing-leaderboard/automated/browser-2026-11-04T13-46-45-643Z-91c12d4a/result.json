@@ -1,0 +1,73 @@
+{
+  "command": "node tests/v5/run_sharing_browser.mjs --after-key-check",
+  "reused_key_check": "../browser-2026-11-04T13-45-35-064Z-5d4a62aa/result.json",
+  "run_id": "91c12d4a-30e8-496e-ac91-5c6d845dbdcd",
+  "started": "2026-11-04T13:46:45.643Z",
+  "ended": "2026-11-04T13:46:49.212Z",
+  "exit_code": 1,
+  "records": [
+    {
+      "name": "owned fixture ready",
+      "actual": true,
+      "expected": true,
+      "pass": true,
+      "phase": "setup",
+      "utc": "2026-11-04T13:46:46.684Z"
+    },
+    {
+      "name": "actual UI POST /auth/register",
+      "actual": {
+        "status": 201
+      },
+      "expected": "2xx",
+      "pass": true,
+      "phase": "author-1280",
+      "utc": "2026-11-04T13:46:48.213Z"
+    },
+    {
+      "name": "actual UI POST /auth/register",
+      "actual": {
+        "status": 201
+      },
+      "expected": "2xx",
+      "pass": true,
+      "phase": "author-1280",
+      "utc": "2026-11-04T13:46:48.451Z"
+    }
+  ],
+  "issues": [
+    {
+      "phase": "author-1280",
+      "type": "PlaywrightError",
+      "reason": "Controller did not complete; no raw request log recorded"
+    }
+  ],
+  "screenshots": [
+    "execution-stop.png"
+  ],
+  "source": {
+    "tests/v5/run_sharing_browser.mjs": "c56e30f8c7dd30995e0498aaf221bd7c2069230e473f9e700465a0f935d3ffbf",
+    "tests/v5/sharing_fixture_server.py": "ce77a534e8d3f953e217a257890b3550f649b62e8203ae0dc8a7bfcb95ee11ff",
+    "backend/app/storage/sharing.py": "9355361d3d4404ac805bafb7187892d8c56ae39f846653d70a1b86c10d914d5e",
+    "backend/app/storage/v5.py": "65aeec9bb01c6eef4ae9f32ed447a5b00ef68a238a37621bf03e7fff1b0a16c8",
+    "backend/app/storage/sqlite.py": "9267ecb0121c4ccf9df18d440bdaba8d56417b979208c6ae1ec7dfa5c8da7af5",
+    "backend/app/storage/saves.py": "bbded8697c314f2ce5b46123f3ee6afb27549b975f75af1afc7857299228ef7e",
+    "backend/app/api/v5.py": "905f58a076c73f82cb044928efcab78ce7178dfc372d87ed98505f06207bab8c",
+    "frontend/src/v5/Workspace.tsx": "0497bd8280a299e0bfb53a62329e0ef89e3d34ea6b54593e11cad82fcaf55d19",
+    "frontend/src/v5/GeneratedPlay.tsx": "d12e10dbfc8f09dc546ac6c510bf015dd1539ee31b1a2ce66c21a483416d6049",
+    "frontend/src/v5/SharedLibrary.tsx": "0dc30479e1c317ccf2a5915c826f38ec3a0c2ce618f6df41520c8213ddf18913",
+    "frontend/src/v5/Leaderboard.tsx": "6e9a069e887a39e7cd54e29f3cd74baf852d523dc62ed1271190da3a3ab35afe",
+    "frontend/src/v5/ChallengeBanner.tsx": "20584e40eb88aa97a1042799a9943006912c6adc029446be62667c85d62fda15",
+    "frontend/dist-v5/index.html": "bf17e75885f88f9ac389d958635c566bc3d248442d69e8543d984ca84c0597cb"
+  },
+  "owned_temp": "C:\\Users\\liyh\\AppData\\Local\\Temp\\campus-sharing-browser-wQxaC6",
+  "owned_server_stopped": true,
+  "paid_calls": 0,
+  "player8001_contacted": false,
+  "limits": [
+    "Synthetic fixed definition and injected companion; no real model quality claim",
+    "Old puzzle prerequisites use explicit isolated API witness; only final exit is actual UI completion, plus one UI inspect/save/restore",
+    "Desktop 1280x720 and 1920x1080 only",
+    "AI QA; human acceptance pending"
+  ]
+}

@@ -6,14 +6,16 @@ import { usePanelFocus } from './usePanelFocus';
 import { localSession, type Level, type Run, type V5Client } from './client';
 import GeneratedScene from './GeneratedScene';
 import CircuitBoard from './CircuitBoard';
+import ChallengeBanner from './ChallengeBanner';
+import { LeaderboardPanel, formatDuration } from './Leaderboard';
 import { buildSceneModel } from './visual/scene';
 import { themeCoverage } from './visual/registry';
 import type { GeneratedState, SceneModel } from './visual/types';
 import './v5.css';
 
-type Drawer = 'notebook' | 'assistant' | 'saves' | null;
+type Drawer = 'notebook' | 'assistant' | 'saves' | 'leaderboard' | null;
 
-export default function GeneratedPlay({ client, run, level }: { client: V5Client; run: Run; level?: Level }) {
+export default function GeneratedPlay({ client, run, level, authorUsername }: { client: V5Client; run: Run; level?: Level; authorUsername?: string }) {
   const api = useRef(client.classic(run.session_id)).current, session = localSession(run.session_id);
   const [state, setState] = useState<GeneratedState | null>(null), current = useRef<GeneratedState | null>(null), retired = useRef(new Set<string>());
   const [pending, setPending] = useState(false), busy = useRef(false), [error, setError] = useState(''), [notice, setNotice] = useState(''), [uncertain, setUncertain] = useState(false);
@@ -23,6 +25,7 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const [victoryOpen, setVictoryOpen] = useState(true);
   const panel = usePanelFocus(Boolean(view || drawer), dialog);
+  const sharedId = state?.share_id || run.share_id;
 
   function apply(next: GeneratedState, reconciled = false) {
     const old = current.current;
@@ -68,7 +71,7 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
       document.querySelector<HTMLElement>('.v5-overlay button')?.focus();
     } else if (panelTrigger.current) { panelTrigger.current.focus(); panelTrigger.current = null; }
   }, [view, drawer]);
-  useEffect(() => { setVictoryOpen(true); }, [state?.status]);
+  useEffect(() => { setVictoryOpen(true); }, [state?.status, state?.challenge?.attempt_id, state?.challenge?.status]);
 
   const sceneInput = useMemo(() => state ? {
     level_id: state.level_id,
@@ -143,21 +146,24 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
       {uncertain && <button onClick={() => void work(sync)} disabled={pending}>同步实际进度</button>}
     </div>
 
+    {sharedId && <ChallengeBanner challenge={state.challenge} shareId={sharedId} author={authorUsername} disabled={pending || uncertain} onLeaderboard={() => openDrawer('leaderboard')} onRestart={() => setConfirm({ kind: 'reset' })} />}
+
     <div className="v5-stage">
       {sceneModel && <GeneratedScene model={sceneModel} disabled={disabled || Boolean(drawer) || Boolean(view) || Boolean(confirm)} onObject={inspect} roomName={state.room.name} />}
       <div className="v5-stage-caption" aria-hidden="true"><span>{model?.themeName ? `${model.themeName} · 手绘校园` : '通用校园手绘'}</span><span>点击场景中的光点查看物件</span></div>
       {state.status === 'won' && victoryOpen && <section className="v5-victory" role="status" aria-label="探索结算">
         <p className="v5-kicker">探索完成 / CLEARED</p>
-        <h2>你找到了出口。</h2>
-        <p className="v5-victory-lead">本次探索已完成，你已找到出口。可以查看存档或回顾线索。</p>
+        <h2>{sharedId && state.challenge?.status === 'practice' ? '练习已完成。' : '你找到了出口。'}</h2>
+        <p className="v5-victory-lead">{sharedId ? state.challenge?.status === 'practice' ? '本次为练习，不产生新成绩；已有个人最佳保留。重新开始可开启完整挑战。' : state.challenge?.status === 'finished' ? '本轮已由服务端结算，排行榜为每个账号保留最快成绩。' : '已找到出口，请同步服务端挑战结算状态。' : '本次探索已完成，你已找到出口。可以查看存档或回顾线索。'}</p>
         {state.settlement && <dl className="v5-stats">
-          <div><dt>用时</dt><dd>{Math.floor(state.settlement.elapsed_seconds / 60)} 分</dd></div>
+          <div><dt>{sharedId ? '本轮正式用时' : '用时'}</dt><dd>{sharedId ? state.challenge?.status === 'finished' && state.challenge.elapsed_ms !== null ? formatDuration(state.challenge.elapsed_ms) : state.challenge?.status === 'practice' ? '练习不计分' : '待同步' : `${Math.floor(state.settlement.elapsed_seconds / 60)} 分`}</dd></div>
           <div><dt>线索</dt><dd>{state.settlement.clues_found}</dd></div>
-          <div><dt>提示</dt><dd>{state.settlement.hint_count}</dd></div>
+          <div><dt>提示</dt><dd>{sharedId ? state.challenge?.hint_count ?? 0 : state.settlement.hint_count}</dd></div>
           <div><dt>评级</dt><dd>{state.settlement.rating}</dd></div>
         </dl>}
+        {sharedId && <LeaderboardPanel key={`${sharedId}:${state.challenge?.attempt_id}:${state.generation}`} client={client} shareId={sharedId} summaryOnly />}
         <div className="v5-victory-actions">
-          <button onClick={() => openDrawer('saves')}>查看存档</button>
+          <button onClick={() => openDrawer('saves')}>查看存档</button>{sharedId && <button onClick={() => openDrawer('leaderboard')}>查看排行榜</button>}
           <button className="v5-quiet" onClick={() => setVictoryOpen(false)}>再看一眼场景</button>
         </div>
       </section>}
@@ -227,6 +233,7 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
             </div>
           </section>}
         </>}
+        {drawer === 'leaderboard' && sharedId && <><p className="v5-kicker">计时挑战 / LEADERBOARD</p><h2>{level?.title || '本关排行榜'}</h2><LeaderboardPanel client={client} shareId={sharedId} /></>}
         {drawer === 'notebook' && <>
           <p className="v5-kicker">探索笔记 / FIELD NOTES</p>
           <h2>已发现的线索</h2>
@@ -239,6 +246,7 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
           <p className="v5-kicker">进度与存档 / ARCHIVE</p>
           <h2>保存与读取</h2>
           <p className="v5-empty">进度跟随当前本地账户。重新开始复用同一关卡，保留已有存档。</p>
+          {sharedId && <p className="v5-challenge-save-note">计时挑战连续计时，读档不会回退时间或辅助次数。读取本轮未完成挑战的进行中存档可继续参榜；跨轮、已结束轮次或已通关存档会转为练习。重新开始将开启新一轮，已有成绩仍保留。</p>}
           <form className="v5-save-form" onSubmit={event => { event.preventDefault(); void work(async () => { const r = await api.createSaveSlot(session, state, saveName.trim() || undefined); if (apply(r.data.visible_state as GeneratedState)) { setSaveName(''); await saves(); setNotice(r.data.message); } }); }}>
             <label>存档名称<input maxLength={40} value={saveName} onChange={event => setSaveName(event.target.value)} /></label>
             <button disabled={pending || uncertain}>保存新时刻</button>
@@ -248,14 +256,14 @@ export default function GeneratedPlay({ client, run, level }: { client: V5Client
             <div><button disabled={pending || uncertain} onClick={() => setConfirm({ kind: 'restore', slot })}>读取</button><button className="v5-quiet" disabled={pending || uncertain} onClick={() => setConfirm({ kind: 'delete', slot })}>删除</button></div>
           </article>)}
           {!slots.length && <p className="v5-empty">还没有保存的时刻。</p>}
-          <button className="v5-danger" disabled={pending || uncertain} onClick={() => setConfirm({ kind: 'reset' })}>重新开始当前关卡</button>
+          <button className="v5-danger" disabled={pending || uncertain} onClick={() => setConfirm({ kind: 'reset' })}>{sharedId ? '重新开始挑战' : '重新开始当前关卡'}</button>
         </>}
       </section>
     </div>}
 
     <dialog className="v5-confirm" ref={dialog} onCancel={() => setConfirm(null)} onClose={() => setConfirm(null)}>
-      <h2>{confirm?.kind === 'delete' ? '删除这份存档？' : confirm?.kind === 'restore' ? '读取这份存档？' : '重新开始？'}</h2>
-      <p>{confirm?.kind === 'delete' ? `“${confirm.slot?.name}”删除后无法恢复，当前进度不变。` : confirm?.kind === 'restore' ? `将当前进度替换为“${confirm.slot?.name}”，清除临时输入和密钥。` : '清空当前探索，复用此关卡；已有存档仍保留。'}</p>
+      <h2>{confirm?.kind === 'delete' ? '删除这份存档？' : confirm?.kind === 'restore' ? '读取这份存档？' : sharedId ? '开启新一轮挑战？' : '重新开始？'}</h2>
+      <p>{confirm?.kind === 'delete' ? `“${confirm.slot?.name}”删除后无法恢复，当前进度不变。` : confirm?.kind === 'restore' ? `将当前进度替换为“${confirm.slot?.name}”，清除临时输入和密钥。${sharedId ? '本轮进行中存档可保留挑战资格，计时不回退；跨轮、已结束轮次或已通关存档会转为练习，不产生新成绩。' : ''}` : sharedId ? '清空当前进度并从现在开启新一轮计时挑战。未完成轮次结束，已有个人最佳和存档保留；之后读取旧轮次存档将进入练习。' : '清空当前探索，复用此关卡；已有存档仍保留。'}</p>
       <div><button autoFocus onClick={() => setConfirm(null)}>取消</button><button disabled={pending} onClick={() => void confirmed()}>确认{confirm?.kind === 'delete' ? '删除' : confirm?.kind === 'restore' ? '读取' : '重新开始'}</button></div>
     </dialog>
   </main>;
