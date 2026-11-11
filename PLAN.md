@@ -2,7 +2,7 @@
 
 ## 当前阶段（2026-11-05交付）：关卡共享与通关排行榜
 
-用户批准完整计划后，已按[实施规格](docs/v5-sharing-leaderboard-plan.md)完成共享大厅、独立进度、连续挑战、存档轮次与个人最佳榜单。原17接口/兼容项联合通过，另补真实子进程重开1项，一次构建及两桌面主链102观察通过；旧单槽合同窄修、原失败和封面加载窄核均保留实际范围。Main已启动新版并留有升级前一致性备份，项目真实/付费0。当前剩本人集中核验，原评价/整版接受不由技术结果替代。[实际交付/截图/步骤](evidence/project/stages/v5-sharing-leaderboard/reviews/delivery.md) · [阶段](evidence/project/stages/v5-sharing-leaderboard/stage.json)。
+用户批准完整计划后，已按[实施规格](docs/v5-sharing-leaderboard-plan.md)完成共享大厅、独立进度、连续挑战、存档轮次与个人最佳榜单。原17接口/兼容项联合通过，另补真实子进程重开1项，一次构建及两桌面主链102观察通过；旧单槽合同窄修、原失败和封面加载窄核均保留实际范围。Main已启动新版并留有升级前一致性备份，项目真实/付费0。本人已于11月5日确认所反馈的核心流程，11月11日完成原话与9张不同原图归档；图号按截图时间，重复排行图单独关联。此次未增加实现范围，个人最佳刷新/辅助使用等未反馈项保留原自动验证范围，原评价/整版接受不扩展。[真人核验记录](evidence/project/human-reviews/v5-sharing-leaderboard/round-01/review.md)。[实际交付/截图/步骤](evidence/project/stages/v5-sharing-leaderboard/reviews/delivery.md) · [阶段](evidence/project/stages/v5-sharing-leaderboard/stage.json)。
 
 ## 前阶段（2026-11-02）：保守核账与有限真实评价完成，待本人核对
 

@@ -2,7 +2,7 @@
 
 ## Sharing/leaderboard source epoch — 2026-11-04
 
-The approved sharing/leaderboard extension changes product storage, API, contracts and frontend sources. The registration and paid C1-C3 PASS reports below remain evidence for their original November 2 source epoch, not a fresh result for the extension. The old registration, pins and raw paid reports are preserved. This extension is verified with new isolated deterministic/API/browser evidence and independent review in [its fixed stage](../../evidence/project/stages/v5-sharing-leaderboard/stage.json); no new paid evaluator request is authorized or scheduled. Human acceptance remains pending until actual feedback.
+The approved sharing/leaderboard extension changes product storage, API, contracts and frontend sources. The registration and paid C1-C3 PASS reports below remain evidence for their original November 2 source epoch, not a fresh result for the extension. The old registration, pins and raw paid reports are preserved. This extension is verified with new isolated deterministic/API/browser evidence and independent review in [its fixed stage](../../evidence/project/stages/v5-sharing-leaderboard/stage.json); no new paid evaluator request is authorized or scheduled. The user confirmed the reported sharing, continuous restore timing, leaderboard, practice-mode and withdrawal flows on2026-11-05; original human screenshots were archived on2026-11-11. See the [scoped human record](../../evidence/project/human-reviews/v5-sharing-leaderboard/round-01/review.md). This does not extend the old paid results to the new source or assert unreported human checks.
 
 ## Latest finite paid completion — 2026-11-02
 

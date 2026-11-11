@@ -3,7 +3,7 @@
   "title": "关卡共享与通关排行榜",
   "date": "2026-11-04",
   "baseline": "8bd46aa218dbb89506eeacb81e1f1ea311ca6509",
-  "status": "technical_complete_pending_human_review",
+  "status": "human_reviewed_core_flows",
   "specification": "../../../../docs/v5-sharing-leaderboard-plan.md",
   "formal_verification": {
     "result": "joint_targeted_pass",
@@ -19,8 +19,19 @@
   },
   "paid_calls": 0,
   "human_review": "../../human-reviews/v5-sharing-leaderboard/round-01/review.md",
-  "human_acceptance": "pending",
+  "human_acceptance": "accepted_for_reported_core_flows",
   "delivery_date": "2026-11-05",
   "delivery": "reviews/delivery.md",
-  "preview": "automated/preview-20261105.json"
+  "preview": "automated/preview-20261105.json",
+  "human_feedback_date": "2026-11-05",
+  "human_feedback_archived_on": "2026-11-11",
+  "human_accepted_scope": [
+    "发布后其他账号可查看共享关卡",
+    "同轮存档恢复后仍为计时挑战且时间不回退",
+    "通关后排行榜显示正常",
+    "重新挑战后读取上轮存档显示练习",
+    "取消共享后原参与者仍可继续",
+    "尚未加入的第三账号不再从大厅加入已取消关卡"
+  ],
+  "human_evidence": "../../human-reviews/v5-sharing-leaderboard/round-01/sources.json"
 }

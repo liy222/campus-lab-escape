@@ -2,7 +2,7 @@
 
 ## 关卡共享与排行榜（2026-11-04）
 
-已新增“发布关卡 → 共享大厅 → 独立计时挑战 → 每关个人最快排行榜”。作者可参榜并标记，允许提示与伙伴并标注使用次数；同轮读档继续计时，跨轮读档转练习，私人进度和旧存档保留。两桌面定向验证已联合完成，本轮真实模型/付费0，当前待本人检查。[效果入口](http://127.0.0.1:8001/) · [交付、截图与检查步骤](evidence/project/stages/v5-sharing-leaderboard/reviews/delivery.md) · [实施规格](docs/v5-sharing-leaderboard-plan.md)。首次升级已有V5库前自动在data/backups保存一致性备份；以下旧记录仍按各自源码与时点理解。
+已新增“发布关卡 → 共享大厅 → 独立计时挑战 → 每关个人最快排行榜”。作者可参榜并标记，允许提示与伙伴并标注使用次数；同轮读档继续计时，跨轮读档转练习，私人进度和旧存档保留。两桌面定向验证已联合完成，本轮开发真实模型/付费0；本人已确认发布、跨账号查看、读档连续计时、排行榜、跨轮练习及取消后的访问规则，记录限于实际反馈。[真人原话与时间顺序原图](evidence/project/human-reviews/v5-sharing-leaderboard/round-01/review.md)。[效果入口](http://127.0.0.1:8001/) · [交付、截图与检查步骤](evidence/project/stages/v5-sharing-leaderboard/reviews/delivery.md) · [实施规格](docs/v5-sharing-leaderboard-plan.md)。首次升级已有V5库前自动在data/backups保存一致性备份；以下旧记录仍按各自源码与时点理解。
 
 ## 当前交付速览（2026-10-30）
 
