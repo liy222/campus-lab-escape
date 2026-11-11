@@ -2,7 +2,13 @@
 
 今后从这里读取、整理和提交证据。开发中每次实际检查、失败、修复和反馈及时保存，大阶段结束再集中交付并邀请真人核验。
 
-## 当前阶段：当前版本有限评价与接管补齐
+## 当前功能阶段：共享与通关排行榜
+
+[自动交付/截图](stages/v5-sharing-leaderboard/reviews/delivery.md) · [本人11月5日检查原话及时间顺序原图](human-reviews/v5-sharing-leaderboard/round-01/review.md) · [阶段索引](index.json)。主要流程已按本人实际反馈归档，不扩为未反馈项目或整版发布接受。
+
+2026-11-11仓库维护：81个开发提交快进合并main；[老师评阅入口](../../docs/TEACHER-REVIEW.md)、[整理范围与实际检查](stages/maintenance-repository-consolidation-20261111/README.md)。以下历史证据、失败、截图及固定原件继续提交Git，目录不迁移；旧C1–C3真实评价只覆盖11月2日固定源码，不覆盖共享扩展。
+
+## 历史阶段：11月2日有限评价与接管补齐（下述为原时点）
 
 [本轮计划](../../docs/v5-completion-plan-20261102.md) · [本人接管步骤](../../docs/V5-TAKEOVER-CHECK.md) · [阶段](stages/v5-current-evaluation/stage.json)。只补C1-C3必要实际产品观察和可信登记，0真实模型/付费；保留旧活动登记原件与出处。当前有限登记已READY：一次4节点exit0、71来源/9证据，确定性三项IE因未调用LLM，不写成语义PASS；[实际交付](stages/v5-current-evaluation/reviews/delivery.md)。本人接管明确尚未做，步骤已提供。
 

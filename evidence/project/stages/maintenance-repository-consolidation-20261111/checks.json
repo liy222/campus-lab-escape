@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-11",
+  "executor": "Main",
+  "scope": "Documentation/Git maintenance only, not product QA.",
+  "exit_code": 0,
+  "local_markdown_links_checked": 345,
+  "missing_local_links": [],
+  "json_files_parsed": [
+    "evidence/project/index.json",
+    "docs/history/repository-notes-20261111/sources.json",
+    "evidence\\project\\stages\\maintenance-repository-consolidation-20261111\\stage.json"
+  ],
+  "archive_source_checks": [
+    {
+      "original_path": "README.md",
+      "bytes": 49574,
+      "source_bytes_identical": true,
+      "sha256_matches": true
+    },
+    {
+      "original_path": "PLAN.md",
+      "bytes": 98615,
+      "source_bytes_identical": true,
+      "sha256_matches": true
+    },
+    {
+      "original_path": "STATUS.md",
+      "bytes": 111894,
+      "source_bytes_identical": true,
+      "sha256_matches": true
+    }
+  ],
+  "unexpected_tracked_changes_or_deletions": [],
+  "pre_staging_tracked_changes": [
+    "M\tAGENTS.md",
+    "M\tPLAN.md",
+    "M\tREADME.md",
+    "M\tSTATUS.md",
+    "M\tdocs/HANDOFF-20261030.md",
+    "M\tdocs/V5-DELIVERY.md",
+    "M\tevidence/project/README.md",
+    "M\tevidence/project/index.json",
+    "M\trelease/V5.md"
+  ],
+  "credential_scan": "Current tracked tree: 0 runtime/secret-named paths; 0 common credential-pattern matches in tracked text. This is finite pattern checking, not complete security assurance.",
+  "product_tests": 0,
+  "builds": 0,
+  "browser_runs": 0,
+  "model_calls": 0,
+  "paid_calls": 0,
+  "validation_method": "Python inline local-link/JSON/archive checks; git diff --no-renames --name-status; no product execution. Exact stage/identity checks occur before commit.",
+  "initial_check": {
+    "exit_code": 1,
+    "missing_local_links": [
+      {
+        "from": "evidence\\project\\stages\\maintenance-repository-consolidation-20261111\\README.md",
+        "target": "checks.json"
+      }
+    ],
+    "cause": "Validator checked its checks.json output link before writing that output; not a missing grading source."
+  },
+  "narrow_followup": {
+    "exit_code": 0,
+    "path": "evidence/project/stages/maintenance-repository-consolidation-20261111/checks.json",
+    "exists": true,
+    "json_parsed": true,
+    "scope": "Only rechecked the one self-output path after the first pass wrote it; reused the other 344 path checks and 3 archive matches."
+  },
+  "git_tracked_link_check": {
+    "exit_code": 0,
+    "local_links": 345,
+    "missing_from_index": [],
+    "scope": "Checks new/current entry links resolve to tracked files or tracked directories, including staged additions; no network browse."
+  },
+  "staging_checks": {
+    "exit_code": 0,
+    "file_count": 18,
+    "only_documentation_and_maintenance": true,
+    "staged_bytes_equal_worktree": true,
+    "whitespace_exit_code": 0,
+    "historical_originals_excluded_from_reformatting": true,
+    "author_and_committer": "liy222 <177762329+liy222@users.noreply.github.com>"
+  }
+}
